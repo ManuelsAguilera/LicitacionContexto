@@ -1,0 +1,10 @@
+# opencode — dependencias y sesiones locales
+.opencode/node_modules/
+.opencode/opencode-loop/
+
+# Lockfiles no usados
+bun.lock
+
+# Sistema
+.DS_Store
+Thumbs.db
