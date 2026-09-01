@@ -18,4 +18,10 @@ Si necesitas helpers similares (Excel, Word, PowerPoint, PDF, diagramas, riesgos
 2. Instala solo los que uses; no se versionan aquí para evitar duplicación y confusión entre herramientas.
 3. Ejemplos útiles para esta propuesta: manejo de `.xlsx`, `.docx`, `.pptx`, manejo de PDF, evaluación de riesgos y redacción técnica.
 
+## Diagramas
+
+- **Mermaid**: escribir bloques ```mermaid``` en los `.md`; la UI de Claude Code y GitHub los renderizan nativo (misma convención que en `AGENTS.md` → "Renderizado de diagramas").
+- **PlantUML/UML formal**: `.puml` → PNG/SVG vía Kroki (`curl https://kroki.io/plantuml/png -d 'diagram_source=...'`), o kroki-docker/`plantuml.jar` local. GitHub no lo renderiza: importa siempre la imagen a `Diagramas/`.
+- Los exports van a `Diagramas/` para incrustar en `.docx`/PDF, igual que en opencode.
+
 Nota: cualquier duda de contenido, reglas o precedencia se resuelve en `Bases/` y en `AGENTS.md`, no en equivalencias de skills.

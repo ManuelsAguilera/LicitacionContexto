@@ -36,6 +36,7 @@ Regla de precedencia: el caso puede **endurecer** un requisito transversal, nunc
 - `productos/` — salidas entregables: consultas al mandante (`.docx`), planilla de consultas con nomenclatura Art. 43.3 (`.xlsx`) y registro de decisiones del caso (`.xlsx`).
 - `TrabajosAnteriores/` — 10 subdocumentos de un **caso previo distinto** (DistriProducto, industria de logística/bodegas — WMS/TMS/YMS). Son fragmentos (índice + introducción) que solo sirven de **referencia de forma**; cada subdocumento N corresponde al capítulo N+1 de aquella propuesta.
 - `.opencode/` — configuración local de opencode: skills versionadas (`.opencode/skills/`), plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` (sesiones locales) no se versionan (ver `.gitignore`).
+- `Diagramas/` — PNG/SVG/PDF exportados de diagramas (Mermaid/PlantUML) para incrustar en `.docx` y PDF final. La fuente de los diagramas vive en los `.md` (ver "Renderizado de diagramas"). Este archivo `.gitkeep` solo marca la convención.
 
 ### TrabajosAnteriores: cuándo consultarlos (solo referencia de forma)
 
@@ -62,6 +63,8 @@ No hay build, test ni lint (solo markdown y Excel). La "verificación" del traba
 
 Las skills se cargan con la herramienta `skill`. El skill **`licitacion-workflow`** (`.opencode/skills/licitacion-workflow/`) es el orquestador: **cárgalo al iniciar cualquier avance de la propuesta**; indica qué skill activar en cada fase. El plugin **`.opencode/plugins/activar-skills.ts`** refuerza esa activación inyectándola en el prompt de sistema.
 
+Nota: `opencode.jsonc` agrega el plugin `opencode-mermaid-renderer` (render ASCII de bloques Mermaid en la terminal). Requiere opencode ≥ 1.0.137 y **reiniciar opencode** tras cualquier cambio de config.
+
 Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detecta al clonar el repo, no dependen de la config global de cada máquina) y su fase:
 
 | Skill | Uso en la propuesta |
@@ -78,5 +81,19 @@ Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detect
 | `legal-risk-assessment` / `risk-assessment` | Evaluación de riesgos contractuales y técnicos |
 | `deep-research` | Investigar lo que el caso no explica (normativa, estándares, mercado) |
 | `technical-writing` | Redacción de documentos técnicos extensos |
+| `mermaid-diagrams` | Diagramas en Markdown (```mermaid```) que GitHub renderiza nativo; ver "Renderizado de diagramas" |
+| `plantuml-diagrams` | Diagramas UML/C4 formales (.puml) renderizados a PNG/SVG vía Kroki (curl); ver "Renderizado de diagramas" |
 
 Nota: se eliminó la skill global `risk-manager-financiero` (era de trading financiero, no aplica al caso).
+
+## Renderizado de diagramas
+
+Regla de selección:
+
+| Tipo de diagrama | Herramienta | Dónde se ve | Export para `.docx`/`.pdf` |
+| :--- | :--- | :--- | :--- |
+| Flujo, arquitectura, secuencia, ER, C4 de la propuesta | **Mermaid** (bloque ```mermaid``` en el `.md`) | **GitHub renderiza nativo** → todo el equipo lo ve en la web sin tooling | `npx -y @mermaid-js/mermaid-cli` → `mmdc -i archivo.mmd -o archivo.svg/png/pdf` |
+| UML/C4 formal, componente, secuencia estricta | **PlantUML** (`.puml`) | GitHub **no** lo renderiza: exportar siempre a imagen | `curl https://kroki.io/plantuml/png -d 'diagram_source=...'` (o kroki docker local) |
+| Diagrama interactivo/animado (presentaciones, sobres) | **`architecture-diagrams`** | HTML en navegador (GitHub no lo muestra) | screenshot del HTML → PNG |
+
+Convención: la **fuente de los diagramas es texto** dentro de los `.md` de la propuesta (versionable y revisable en PR). Los **PNG/SVG/PDF exportados** se guardan en `Diagramas/` y de ahí se incrustan en Word (`docx`) y en el PDF final (`pdf-handling`). Usar Mermaid por defecto; reservar PlantUML para UML/C4 formales y `architecture-diagrams` para lo interactivo.

@@ -1,0 +1,5 @@
+Diagramas en texto (Mermaid / PlantUML) viven dentro de los .md de la propuesta
+(GitHub los renderiza o se exportan a imagen). Los PNG/SVG/PDF exportados para
+incrustar en .docx y PDF final se guardan aquí.
+
+Ver AGENTS.md → "Renderizado de diagramas".
