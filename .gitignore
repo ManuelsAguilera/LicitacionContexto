@@ -21,3 +21,6 @@ bun.lock
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Informe: snapshots auto-descargados por dispositivo; no se versionan.
+06_Informes/informes/Informe_*.md
