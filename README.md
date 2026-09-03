@@ -9,7 +9,7 @@ Todo el trabajo es **documentación tipo oferta en español** (arquitectura, ser
 | Carpeta | Contenido |
 | :--- | :--- |
 | `Bases/` | Documentos rectores y fuente de verdad (precedencia en `AGENTS.md`) |
-| `Requerimientos/` | Planillas Excel de requerimientos (preferir la atomizada) |
+| `Requerimientos/` | Planillas Excel de requerimientos (fuente oficial: catálogo depurado `RequerimientosAtomizados_Depuracion_Alcance.xlsx`) |
 | `productos/` | Salidas: consultas al mandante, planilla de consultas, registro de decisiones |
 | `TrabajosAnteriores/` | Subdocumentos de un caso previo (DistriProducto): referencia de **forma**, no de contenido |
 | `.opencode/` | Skills y plugin de opencode para el flujo de trabajo |

@@ -32,7 +32,7 @@ Regla de precedencia: el caso puede **endurecer** un requisito transversal, nunc
 ## Carpetas
 
 - `Bases/` — documentos rectores (ver precedencia arriba).
-- `Requerimientos/` — dos archivos Excel: `RequerimientosHumanos.xlsx` (análisis hecho por personas) y `RequerimientosAtomizados.xlsx` (versión atomizada/desglosada de la anterior). **Preferir el atomizado** como base para el trabajo de requerimientos.
+- `Requerimientos/` — planillas Excel de requerimientos. **Fuente oficial y de trabajo: `RequerimientosAtomizados_Depuracion_Alcance.xlsx`** (catálogo v3.0 renumerado y depurado: `RF-001`..`RF-226`, `RNF-01`..`RNF-76`, `OP-01`..`OP-09`). Incluye `6_Equivalencia_IDs` (mapeo de IDs viejos a nuevos) y `7_Depuracion_Alcance` (decisiones de depuración: ELIMINAR/TRASLADAR/CONSOLIDAR/RECLASIFICAR/CONDICIONAR/REVISAR). `RequerimientosAtomizados.xlsx` (v2.1) queda como **histórico/referencia** (uso los IDs del depurado; mapeo vía `6_Equivalencia_IDs`). `RequerimientosHumanos.xlsx` es el análisis original de personas.
 - `productos/` — salidas entregables: consultas al mandante (`.docx`), planilla de consultas con nomenclatura Art. 43.3 (`.xlsx`) y registro de decisiones del caso (`.xlsx`).
 - `TrabajosAnteriores/` — 10 subdocumentos de un **caso previo distinto** (DistriProducto, industria de logística/bodegas — WMS/TMS/YMS). Son fragmentos (índice + introducción) que solo sirven de **referencia de forma**; cada subdocumento N corresponde al capítulo N+1 de aquella propuesta.
 - `.opencode/` — configuración local de opencode: skills versionadas (`.opencode/skills/`), plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` (sesiones locales) no se versionan (ver `.gitignore`).
@@ -83,8 +83,31 @@ Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detect
 | `technical-writing` | Redacción de documentos técnicos extensos |
 | `mermaid-diagrams` | Diagramas en Markdown (```mermaid```) que GitHub renderiza nativo; ver "Renderizado de diagramas" |
 | `plantuml-diagrams` | Diagramas UML/C4 formales (.puml) renderizados a PNG/SVG vía Kroki (curl); ver "Renderizado de diagramas" |
+| `jira-workflow` | Integración opcional con Jira Cloud: tomar tareas, marcarlas asignadas/en progreso/completadas, consultar sprint/board y comentar |
 
 Nota: se eliminó la skill global `risk-manager-financiero` (era de trading financiero, no aplica al caso).
+
+## Integración con Jira (opcional)
+
+Este proyecto puede conectarse a **Jira Cloud** vía el servidor MCP oficial de Atlassian (Rovo) para gestionar tareas mientras se trabaja: **tomar una tarea, marcarla como asignada/en progreso/completada, consultar sprints/boards y registrar comentarios** — todo restringido a los permisos del usuario autenticado.
+
+**Los agentes deben:** al leer este archivo, si notan que hay tareas por gestionar o el servidor `jira` está activo en la sesión, **recomendar de forma proactiva** conectar/activar Jira y explicar cómo hacerlo (pasos abajo). Si el usuario no tiene cuenta Jira o el MCP está desactivado, **no bloquear el trabajo**: mencionarlo brevemente y seguir con la tarea.
+
+**Comportamiento sin cuenta vinculada:** el servidor MCP `jira` está configurado en `opencode.jsonc` con `"enabled": false` por defecto. Por eso **no interfiere si no hay cuenta**: opencode no intenta conectar y todas las demás herramientas siguen disponibles. Las herramientas `jira_*` solo aparecen tras activar y autenticar.
+
+**Cómo activar la conexión (una vez por máquina/usuario):**
+
+1. En `opencode.jsonc`, cambiar `"enabled": false` → `"enabled": true` en el bloque `mcp.jira`.
+2. Reiniciar opencode (los cambios de MCP requieren reinicio).
+3. Autenticar con el flujo OAuth de Atlassian (abre el navegador):
+   ```bash
+   opencode mcp auth jira
+   ```
+4. Verificar: `opencode mcp list`
+
+Requisitos: cuenta **Jira Cloud**; endpoint oficial `https://mcp.atlassian.com/v1/mcp/authv2`; no se crea app en Atlassian (Dynamic Client Registration). El token OAuth se guarda localmente en `~/.local/share/opencode/mcp-auth.json` y **nunca en el repositorio**.
+
+Para el flujo "tomar tarea → marcarla → completar al cerrar", cargar el skill **`jira-workflow`** (`.opencode/skills/jira-workflow/`).
 
 ## Renderizado de diagramas
 

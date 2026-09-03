@@ -14,7 +14,7 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 | Fase de la propuesta | Qué implicar | Activar skill(s) |
 | :--- | :--- | :--- |
 | **Arquitectura** (lógica, física, datos, seguridad, despliegue — ISO 42010 y vistas) | Diseñar y describir la solución híbrida nube+on-premise por capas; justificar emplazamiento; diagramar | `architecture-diagrams`, `cloud-architecture`, `sre-practices` |
-| **Requerimientos / volumetría** | Leer y procesar `Requerimientos/*.xlsx` (preferir `RequerimientosAtomizados.xlsx`); responder requisitos RT uno a uno (Formulario T-12) | `xlsx` |
+| **Requerimientos / volumetría** | Leer y procesar `Requerimientos/*.xlsx` (preferir `RequerimientosAtomizados_Depuracion_Alcance.xlsx`, catálogo v3.0 depurado; `RequerimientosAtomizados.xlsx` v2.1 queda como histórico); responder requisitos RT uno a uno (Formulario T-12) | `xlsx` |
 | **Estimación de esfuerzo y roles** | Desglosar tareas por rol (BE/FE/QA/DevOps/PM), aplicar factores de riesgo y holguras (nivelación T-15) | `project-estimation`, `xlsx` |
 | **Riesgos** (contractuales y técnicos) | Evaluar y clasificar riesgos de la propuesta y el contrato | `legal-risk-assessment`, `risk-assessment` |
 | **Oferta económica y flujo de caja** | Valorizar en CLP / UF / USD, desglosar neto+IVA+total, flujo de caja por hito (E-25), 5 innovaciones | `project-estimation`, `xlsx` |
