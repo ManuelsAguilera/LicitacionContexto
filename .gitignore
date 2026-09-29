@@ -1,8 +1,18 @@
-# opencode — dependencias y sesiones locales
+# Dependencias de opencode
 .opencode/node_modules/
 .opencode/opencode-loop/
 
-# Lockfiles no usados
+# Entorno local de Python para los espejos .md de las planillas
+.venv/
+__pycache__/
+*.pyc
+
+# Secretos: nunca versionar
+.env
+.env.*
+!.env.example
+
+# Lockfile no usado
 bun.lock
 
 # Sistema
