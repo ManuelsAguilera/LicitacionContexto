@@ -1,0 +1,12 @@
+# Normalizacion de fin de linea: el repositorio guarda LF, el working tree usa
+# lo nativo de cada plataforma. Evita que los .md generados en Windows
+# aparezcan como modificados en cada cambio.
+* text=auto eol=lf
+
+# Binarios que no deben tocarse
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.pdf binary
+*.png binary
+*.svg text
