@@ -14,7 +14,7 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 | Fase de la propuesta | Qué implicar | Activar skill(s) |
 | :--- | :--- | :--- |
 | **Arquitectura** (lógica, física, datos, seguridad, despliegue — ISO 42010 y vistas) | Diseñar y describir la solución híbrida nube+on-premise por capas; justificar emplazamiento; diagramar | `architecture-diagrams`, `cloud-architecture`, `sre-practices` |
-| **Requerimientos / volumetría** | Leer y procesar `Requerimientos/*.xlsx` (preferir `RequerimientosAtomizados_Depuracion_Alcance.xlsx`, catálogo v3.0 depurado; `RequerimientosAtomizados.xlsx` v2.1 queda como histórico); responder requisitos RT uno a uno (Formulario T-12) | `xlsx` |
+| **Requerimientos / volumetría** | Leer y procesar `01_Requerimientos/*.xlsx` (preferir `RequerimientosAtomizados_Depuracion_Alcance.xlsx`, catálogo v3.0 depurado; `RequerimientosAtomizados.xlsx` v2.1 queda como histórico); responder requisitos RT uno a uno (Formulario T-12) | `xlsx` |
 | **Estimación de esfuerzo y roles** | Desglosar tareas por rol (BE/FE/QA/DevOps/PM), aplicar factores de riesgo y holguras (nivelación T-15) | `project-estimation`, `xlsx` |
 | **Riesgos** (contractuales y técnicos) | Evaluar y clasificar riesgos de la propuesta y el contrato | `legal-risk-assessment`, `risk-assessment` |
 | **Oferta económica y flujo de caja** | Valorizar en CLP / UF / USD, desglosar neto+IVA+total, flujo de caja por hito (E-25), 5 innovaciones | `project-estimation`, `xlsx` |
@@ -26,10 +26,12 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 
 ## Recordatorios críticos del proyecto (para no repetir errores)
 
-- **Precedencia** (Art. 5° Bases Admin): `Bases_Administrativas.md` > `Bases_Transversales.md` > `Caso_09_Cadena_Multitienda.md`. El caso puede endurecer requisitos transversales, nunca rebajarlos.
+- **Precedencia** (Art. 5° Bases Admin): `00_Bases/Bases_Administrativas.md` > `00_Bases/Bases_Transversales.md` > `00_Bases/Caso_09_Cadena_Multitienda.md`. El caso puede endurecer requisitos transversales, nunca rebajarlos.
 - **Despliegue híbrido obligatorio** (Art. 16): nube pública + componentes on-premise. Rechazar propuestas solo-nube o solo-on-premise.
 - **Cronograma de 56 meses innegociable** (Art. 17): Etapa 1 (1–15, prod mes 16), Etapa 2 (13–20, prod mes 21), Operación 21–56. Cifras/plazos deben ser consistentes.
 - **5 innovaciones obligatorias** (Cap. 5), una por tipo, trazables con arquitectura, EDT y flujo de caja.
 - **Línea roja del caso**: la compañía es tienda + emisor de crédito fiscalizado (dos regímenes). No tratar como un solo negocio ni mezclar sus datos.
-- **TrabajosAnteriores/** proviene de un caso distinto (logística WMS/TMS/YMS). Usar SOLO como referencia de formato; no relacionar su contenido.
+- **TrabajosAnteriores_DistriProducto/** (en `90_Referencia/`) proviene de un caso distinto (logística WMS/TMS/YMS). Usar SOLO como referencia de formato; no relacionar su contenido.
+- **Formato de los artefactos**: el contenido se escribe en `.md` dentro de `02_Propuesta/`, con un archivo por sección. Los binarios (`.xlsx`, `.docx`, `.pptx`, `.pdf`) solo son export o documento de lectura/entrega.
+- **Tablas incompletas**: la tabla de ponderación del T-21 en `00_Bases/` no se puede reconstruir. No hardcodear porcentajes; dejarlos en blanco con nota de pendiente.
 - **Idioma**: todo en español.
