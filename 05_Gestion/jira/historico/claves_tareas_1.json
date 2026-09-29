@@ -1,0 +1,144 @@
+{
+  "items": [
+    {
+      "n": 2,
+      "epicRef": 1,
+      "epicClave": "OSS-72",
+      "summary": "Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "clave": "OSS-105"
+    },
+    {
+      "n": 3,
+      "epicRef": 1,
+      "epicClave": "OSS-72",
+      "summary": "Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones",
+      "clave": "OSS-106"
+    },
+    {
+      "n": 6,
+      "epicRef": 2,
+      "epicClave": "OSS-69",
+      "summary": "Hacer un diagrama de contexto",
+      "clave": "OSS-107"
+    },
+    {
+      "n": 8,
+      "epicRef": 3,
+      "epicClave": "OSS-73",
+      "summary": "Elaborar organigrama de la estructura organizacional",
+      "clave": "OSS-108"
+    },
+    {
+      "n": 10,
+      "epicRef": 4,
+      "epicClave": "OSS-74",
+      "summary": "Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables",
+      "clave": "OSS-109"
+    },
+    {
+      "n": 12,
+      "epicRef": 5,
+      "epicClave": "OSS-75",
+      "summary": "Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente",
+      "clave": "OSS-110"
+    },
+    {
+      "n": 14,
+      "epicRef": 5,
+      "epicClave": "OSS-75",
+      "summary": "Buscar certificaciones institucionales",
+      "clave": "OSS-111"
+    },
+    {
+      "n": 16,
+      "epicRef": 6,
+      "epicClave": "OSS-76",
+      "summary": "Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12",
+      "clave": "OSS-112"
+    },
+    {
+      "n": 18,
+      "epicRef": 7,
+      "epicClave": "OSS-77",
+      "summary": "Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3)",
+      "clave": "OSS-113"
+    },
+    {
+      "n": 20,
+      "epicRef": 8,
+      "epicClave": "OSS-78",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "clave": "OSS-114"
+    },
+    {
+      "n": 22,
+      "epicRef": 9,
+      "epicClave": "OSS-79",
+      "summary": "Elaborar síntesis del problema, su magnitud y los actores afectados",
+      "clave": "OSS-115"
+    },
+    {
+      "n": 24,
+      "epicRef": 10,
+      "epicClave": "OSS-80",
+      "summary": "Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.",
+      "clave": "OSS-116"
+    },
+    {
+      "n": 26,
+      "epicRef": 11,
+      "epicClave": "OSS-81",
+      "summary": "Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.",
+      "clave": "OSS-117"
+    },
+    {
+      "n": 28,
+      "epicRef": 12,
+      "epicClave": "OSS-82",
+      "summary": "Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés",
+      "clave": "OSS-118"
+    },
+    {
+      "n": 30,
+      "epicRef": 13,
+      "epicClave": "OSS-83",
+      "summary": "Crear resumen de requerimientos, supuestos, exclusiones y restricciones",
+      "clave": "OSS-119"
+    },
+    {
+      "n": 31,
+      "epicRef": 13,
+      "epicClave": "OSS-83",
+      "summary": "Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados",
+      "clave": "OSS-120"
+    },
+    {
+      "n": 33,
+      "epicRef": 14,
+      "epicClave": "OSS-84",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "clave": "OSS-121"
+    },
+    {
+      "n": 35,
+      "epicRef": 15,
+      "epicClave": "OSS-85",
+      "summary": "Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses)",
+      "clave": "OSS-122"
+    },
+    {
+      "n": 37,
+      "epicRef": 16,
+      "epicClave": "OSS-86",
+      "summary": "Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.",
+      "clave": "OSS-123"
+    },
+    {
+      "n": 38,
+      "epicRef": 16,
+      "epicClave": "OSS-86",
+      "summary": "Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios)",
+      "clave": "OSS-124"
+    }
+  ]
+}

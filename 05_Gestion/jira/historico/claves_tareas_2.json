@@ -1,0 +1,24 @@
+{
+  "items": [
+    { "n": 39, "epicRef": 16, "epicClave": "OSS-86", "summary": "Anexar el Formulario T-12", "clave": "OSS-125" },
+    { "n": 41, "epicRef": 17, "epicClave": "OSS-87", "summary": "Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno", "clave": "OSS-126" },
+    { "n": 42, "epicRef": 17, "epicClave": "OSS-87", "summary": "Documentar el esquema de solución, con explicaciones, etc.", "clave": "OSS-127" },
+    { "n": 44, "epicRef": 18, "epicClave": "OSS-88", "summary": "Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos)", "clave": "OSS-128" },
+    { "n": 46, "epicRef": 19, "epicClave": "OSS-89", "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios", "clave": "OSS-129" },
+    { "n": 48, "epicRef": 20, "epicClave": "OSS-90", "summary": "Analizar inconsistencias con el esquema solución", "clave": "OSS-130" },
+    { "n": 49, "epicRef": 20, "epicClave": "OSS-90", "summary": "Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio)", "clave": "OSS-131" },
+    { "n": 50, "epicRef": 20, "epicClave": "OSS-90", "summary": "Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias", "clave": "OSS-132" },
+    { "n": 51, "epicRef": 20, "epicClave": "OSS-90", "summary": "Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas", "clave": "OSS-133" },
+    { "n": 52, "epicRef": 20, "epicClave": "OSS-90", "summary": "Diagramar nuevo diagrama lógico", "clave": "OSS-134" },
+    { "n": 53, "epicRef": 20, "epicClave": "OSS-90", "summary": "Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios)", "clave": "OSS-135" },
+    { "n": 54, "epicRef": 20, "epicClave": "OSS-90", "summary": "Reescribir subdocumento 4 Parte 1", "clave": "OSS-136" },
+    { "n": 56, "epicRef": 21, "epicClave": "OSS-91", "summary": "Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión", "clave": "OSS-137" },
+    { "n": 58, "epicRef": 22, "epicClave": "OSS-92", "summary": "Realizar el flujo físico en base al diagrama lógico", "clave": "OSS-138" },
+    { "n": 59, "epicRef": 22, "epicClave": "OSS-92", "summary": "Reescribir subdocumento 4 Parte 2", "clave": "OSS-139" },
+    { "n": 61, "epicRef": 23, "epicClave": "OSS-93", "summary": "El hardware que ocupemos, anotarlo en un Excel", "clave": "OSS-140" },
+    { "n": 62, "epicRef": 23, "epicClave": "OSS-93", "summary": "Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros", "clave": "OSS-141" },
+    { "n": 64, "epicRef": 24, "epicClave": "OSS-94", "summary": "Investigar tecnologías nube, y hardware del datacenter", "clave": "OSS-142" },
+    { "n": 65, "epicRef": 24, "epicClave": "OSS-94", "summary": "Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2)", "clave": "OSS-143" },
+    { "n": 67, "epicRef": 25, "epicClave": "OSS-95", "summary": "Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda", "clave": "OSS-144" }
+  ]
+}

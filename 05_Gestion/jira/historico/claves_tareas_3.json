@@ -1,0 +1,144 @@
+{
+  "items": [
+    {
+      "n": 69,
+      "epicRef": 26,
+      "epicClave": "OSS-96",
+      "summary": "Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación",
+      "clave": "OSS-145"
+    },
+    {
+      "n": 71,
+      "epicRef": 27,
+      "epicClave": "OSS-97",
+      "summary": "Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos",
+      "clave": "OSS-146"
+    },
+    {
+      "n": 73,
+      "epicRef": 28,
+      "epicClave": "OSS-98",
+      "summary": "Identificar los dominios de información del sistema",
+      "clave": "OSS-147"
+    },
+    {
+      "n": 74,
+      "epicRef": 28,
+      "epicClave": "OSS-98",
+      "summary": "Diseñar el modelo de datos para cada dominio, con figuras legibles",
+      "clave": "OSS-148"
+    },
+    {
+      "n": 75,
+      "epicRef": 28,
+      "epicClave": "OSS-98",
+      "summary": "Realizar el diccionario de datos en los anexos",
+      "clave": "OSS-149"
+    },
+    {
+      "n": 77,
+      "epicRef": 29,
+      "epicClave": "OSS-99",
+      "summary": "Selección del motor y del paradigma de persistencia",
+      "clave": "OSS-150"
+    },
+    {
+      "n": 78,
+      "epicRef": 29,
+      "epicClave": "OSS-99",
+      "summary": "Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP)",
+      "clave": "OSS-151"
+    },
+    {
+      "n": 79,
+      "epicRef": 29,
+      "epicClave": "OSS-99",
+      "summary": "Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura",
+      "clave": "OSS-152"
+    },
+    {
+      "n": 81,
+      "epicRef": 30,
+      "epicClave": "OSS-100",
+      "summary": "Diseñar la estrategia de migración",
+      "clave": "OSS-153"
+    },
+    {
+      "n": 82,
+      "epicRef": 30,
+      "epicClave": "OSS-100",
+      "summary": "Definir el proceso de saneamiento/limpieza de datos",
+      "clave": "OSS-154"
+    },
+    {
+      "n": 83,
+      "epicRef": 30,
+      "epicClave": "OSS-100",
+      "summary": "Definir mecanismos de validación de datos migrados",
+      "clave": "OSS-155"
+    },
+    {
+      "n": 84,
+      "epicRef": 30,
+      "epicClave": "OSS-100",
+      "summary": "Definir el proceso de conciliación entre origen y destino",
+      "clave": "OSS-156"
+    },
+    {
+      "n": 85,
+      "epicRef": 30,
+      "epicClave": "OSS-100",
+      "summary": "Verificar que la migración y las ventanas de corte sean compatibles con el cronograma",
+      "clave": "OSS-157"
+    },
+    {
+      "n": 87,
+      "epicRef": 31,
+      "epicClave": "OSS-101",
+      "summary": "Definir estrategias de indexación, particionamiento, caché y optimización de consultas",
+      "clave": "OSS-158"
+    },
+    {
+      "n": 88,
+      "epicRef": 31,
+      "epicClave": "OSS-101",
+      "summary": "Justificar estas decisiones utilizando la volumetría del caso",
+      "clave": "OSS-159"
+    },
+    {
+      "n": 90,
+      "epicRef": 32,
+      "epicClave": "OSS-102",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "clave": "OSS-160"
+    },
+    {
+      "n": 92,
+      "epicRef": 33,
+      "epicClave": "OSS-103",
+      "summary": "Investigar innovaciones (conocimiento)",
+      "clave": "OSS-161"
+    },
+    {
+      "n": 93,
+      "epicRef": 33,
+      "epicClave": "OSS-103",
+      "summary": "Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición",
+      "clave": "OSS-162"
+    },
+    {
+      "n": 94,
+      "epicRef": 33,
+      "epicClave": "OSS-103",
+      "summary": "Ligar el conocimiento al esquema solución",
+      "clave": "OSS-163"
+    },
+    {
+      "n": 96,
+      "epicRef": 34,
+      "epicClave": "OSS-104",
+      "summary": "Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°",
+      "clave": "OSS-164"
+    }
+  ]
+}

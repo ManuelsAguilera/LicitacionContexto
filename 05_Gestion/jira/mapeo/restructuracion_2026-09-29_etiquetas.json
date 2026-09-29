@@ -1,0 +1,547 @@
+{
+  "OSS-165": [
+    "cap-1"
+  ],
+  "OSS-166": [
+    "cap-2"
+  ],
+  "OSS-167": [
+    "cap-3"
+  ],
+  "OSS-168": [
+    "cap-4"
+  ],
+  "OSS-169": [
+    "cap-4"
+  ],
+  "OSS-170": [
+    "cap-4"
+  ],
+  "OSS-171": [
+    "cap-5"
+  ],
+  "OSS-172": [
+    "cap-13"
+  ],
+  "OSS-72": [
+    "cap-1",
+    "sec-1"
+  ],
+  "OSS-69": [
+    "cap-1",
+    "sec-1-1"
+  ],
+  "OSS-73": [
+    "cap-1",
+    "sec-1-2"
+  ],
+  "OSS-74": [
+    "cap-1",
+    "sec-1-3"
+  ],
+  "OSS-75": [
+    "cap-1",
+    "sec-1-4"
+  ],
+  "OSS-76": [
+    "cap-1",
+    "sec-1-5"
+  ],
+  "OSS-77": [
+    "cap-1",
+    "sec-1-6"
+  ],
+  "OSS-78": [
+    "cap-2",
+    "sec-2"
+  ],
+  "OSS-79": [
+    "cap-2",
+    "sec-2-1"
+  ],
+  "OSS-80": [
+    "cap-2",
+    "sec-2-2"
+  ],
+  "OSS-81": [
+    "cap-2",
+    "sec-2-3"
+  ],
+  "OSS-82": [
+    "cap-2",
+    "sec-2-4"
+  ],
+  "OSS-83": [
+    "cap-2",
+    "sec-2-5"
+  ],
+  "OSS-84": [
+    "cap-3",
+    "sec-3"
+  ],
+  "OSS-85": [
+    "cap-3",
+    "sec-3-1"
+  ],
+  "OSS-86": [
+    "cap-3",
+    "sec-3-2"
+  ],
+  "OSS-87": [
+    "cap-3",
+    "sec-3-3"
+  ],
+  "OSS-88": [
+    "cap-3",
+    "sec-3-4"
+  ],
+  "OSS-89": [
+    "cap-4",
+    "sec-4"
+  ],
+  "OSS-90": [
+    "cap-4",
+    "sec-4-1"
+  ],
+  "OSS-91": [
+    "cap-4",
+    "sec-4-1-1"
+  ],
+  "OSS-92": [
+    "cap-4",
+    "sec-4-2"
+  ],
+  "OSS-93": [
+    "cap-4",
+    "sec-4-2-1"
+  ],
+  "OSS-94": [
+    "cap-4",
+    "sec-4-3"
+  ],
+  "OSS-95": [
+    "cap-4",
+    "sec-4-3-1"
+  ],
+  "OSS-96": [
+    "cap-4",
+    "sec-4-3-2"
+  ],
+  "OSS-97": [
+    "cap-5",
+    "sec-5"
+  ],
+  "OSS-98": [
+    "cap-5",
+    "sec-5-1"
+  ],
+  "OSS-99": [
+    "cap-5",
+    "sec-5-2"
+  ],
+  "OSS-100": [
+    "cap-5",
+    "sec-5-3"
+  ],
+  "OSS-101": [
+    "cap-5",
+    "sec-5-4"
+  ],
+  "OSS-102": [
+    "cap-13",
+    "sec-13"
+  ],
+  "OSS-103": [
+    "cap-13",
+    "sec-13-3"
+  ],
+  "OSS-104": [
+    "cap-13",
+    "sec-13-4"
+  ],
+  "OSS-173": [
+    "cap-1",
+    "sec-1",
+    "tipo-tarea"
+  ],
+  "OSS-174": [
+    "cap-1",
+    "sec-1",
+    "tipo-tarea"
+  ],
+  "OSS-175": [
+    "cap-1",
+    "sec-1-1",
+    "tipo-tarea"
+  ],
+  "OSS-176": [
+    "cap-1",
+    "sec-1-1",
+    "tipo-tarea"
+  ],
+  "OSS-177": [
+    "cap-1",
+    "sec-1-2",
+    "tipo-tarea"
+  ],
+  "OSS-178": [
+    "cap-1",
+    "sec-1-3",
+    "tipo-tarea"
+  ],
+  "OSS-179": [
+    "cap-1",
+    "sec-1-4",
+    "tipo-tt"
+  ],
+  "OSS-180": [
+    "cap-1",
+    "sec-1-4",
+    "tipo-tarea"
+  ],
+  "OSS-181": [
+    "cap-1",
+    "sec-1-4",
+    "tipo-tarea"
+  ],
+  "OSS-182": [
+    "cap-1",
+    "sec-1-5",
+    "tipo-tarea"
+  ],
+  "OSS-183": [
+    "cap-1",
+    "sec-1-6",
+    "tipo-tt"
+  ],
+  "OSS-184": [
+    "cap-2",
+    "sec-2",
+    "tipo-tarea"
+  ],
+  "OSS-185": [
+    "cap-2",
+    "sec-2-1",
+    "tipo-tarea"
+  ],
+  "OSS-186": [
+    "cap-2",
+    "sec-2-2",
+    "tipo-spike"
+  ],
+  "OSS-187": [
+    "cap-2",
+    "sec-2-3",
+    "tipo-tt"
+  ],
+  "OSS-188": [
+    "cap-2",
+    "sec-2-4",
+    "tipo-tarea"
+  ],
+  "OSS-189": [
+    "cap-2",
+    "sec-2-5",
+    "tipo-tarea"
+  ],
+  "OSS-190": [
+    "cap-2",
+    "sec-2-5",
+    "tipo-tarea"
+  ],
+  "OSS-191": [
+    "cap-3",
+    "sec-3-1",
+    "tipo-tarea"
+  ],
+  "OSS-192": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-193": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-194": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-195": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-196": [
+    "cap-3",
+    "sec-3-3",
+    "tipo-tt"
+  ],
+  "OSS-197": [
+    "cap-3",
+    "sec-3-3",
+    "tipo-tt"
+  ],
+  "OSS-198": [
+    "cap-3",
+    "sec-3-4",
+    "tipo-tarea"
+  ],
+  "OSS-199": [
+    "cap-4",
+    "sec-4",
+    "tipo-tarea"
+  ],
+  "OSS-200": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-spike"
+  ],
+  "OSS-201": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tt"
+  ],
+  "OSS-202": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tarea"
+  ],
+  "OSS-203": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tt"
+  ],
+  "OSS-204": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tt"
+  ],
+  "OSS-205": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tt"
+  ],
+  "OSS-206": [
+    "cap-4",
+    "sec-4-1",
+    "tipo-tarea"
+  ],
+  "OSS-207": [
+    "cap-4",
+    "sec-4-1-1",
+    "tipo-tarea"
+  ],
+  "OSS-208": [
+    "cap-4",
+    "sec-4-2",
+    "tipo-tt"
+  ],
+  "OSS-209": [
+    "cap-4",
+    "sec-4-2",
+    "tipo-tarea"
+  ],
+  "OSS-210": [
+    "cap-4",
+    "sec-4-2-1",
+    "tipo-tarea"
+  ],
+  "OSS-211": [
+    "cap-4",
+    "sec-4-2-1",
+    "tipo-tarea"
+  ],
+  "OSS-212": [
+    "cap-4",
+    "sec-4-3",
+    "tipo-spike"
+  ],
+  "OSS-213": [
+    "cap-4",
+    "sec-4-3",
+    "tipo-tarea"
+  ],
+  "OSS-214": [
+    "cap-4",
+    "sec-4-3-1",
+    "tipo-tarea"
+  ],
+  "OSS-215": [
+    "cap-4",
+    "sec-4-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-216": [
+    "cap-5",
+    "sec-5",
+    "tipo-tarea"
+  ],
+  "OSS-217": [
+    "cap-5",
+    "sec-5-1",
+    "tipo-tarea"
+  ],
+  "OSS-218": [
+    "cap-5",
+    "sec-5-1",
+    "tipo-tt"
+  ],
+  "OSS-219": [
+    "cap-5",
+    "sec-5-1",
+    "tipo-tt"
+  ],
+  "OSS-220": [
+    "cap-5",
+    "sec-5-2",
+    "tipo-tt"
+  ],
+  "OSS-221": [
+    "cap-5",
+    "sec-5-2",
+    "tipo-tarea"
+  ],
+  "OSS-222": [
+    "cap-5",
+    "sec-5-2",
+    "tipo-tt"
+  ],
+  "OSS-223": [
+    "cap-5",
+    "sec-5-3",
+    "tipo-tarea"
+  ],
+  "OSS-224": [
+    "cap-5",
+    "sec-5-3",
+    "tipo-tt"
+  ],
+  "OSS-225": [
+    "cap-5",
+    "sec-5-3",
+    "tipo-tt"
+  ],
+  "OSS-226": [
+    "cap-5",
+    "sec-5-3",
+    "tipo-tarea"
+  ],
+  "OSS-227": [
+    "cap-5",
+    "sec-5-3",
+    "tipo-tarea"
+  ],
+  "OSS-228": [
+    "cap-5",
+    "sec-5-4",
+    "tipo-tarea"
+  ],
+  "OSS-229": [
+    "cap-5",
+    "sec-5-4",
+    "tipo-tarea"
+  ],
+  "OSS-230": [
+    "cap-13",
+    "sec-13",
+    "tipo-tarea"
+  ],
+  "OSS-231": [
+    "cap-13",
+    "sec-13-3",
+    "tipo-spike"
+  ],
+  "OSS-232": [
+    "cap-13",
+    "sec-13-3",
+    "tipo-tt"
+  ],
+  "OSS-233": [
+    "cap-13",
+    "sec-13-3",
+    "tipo-tt"
+  ],
+  "OSS-234": [
+    "cap-13",
+    "sec-13-4",
+    "tipo-tarea"
+  ],
+  "OSS-235": [
+    "cap-3",
+    "sec-3",
+    "tipo-tarea"
+  ],
+  "OSS-236": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-237": [
+    "cap-3",
+    "sec-3",
+    "tipo-tarea"
+  ],
+  "OSS-238": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-239": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-spike"
+  ],
+  "OSS-240": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-spike"
+  ],
+  "OSS-241": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-242": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tt"
+  ],
+  "OSS-243": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-244": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-245": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-246": [
+    "cap-3",
+    "sec-3-2",
+    "tipo-tarea"
+  ],
+  "OSS-247": [
+    "cap-3",
+    "sec-3-3",
+    "tipo-spike"
+  ],
+  "OSS-248": [
+    "cap-3",
+    "sec-3-3",
+    "tipo-tt"
+  ],
+  "OSS-249": [
+    "cap-3",
+    "sec-3-3",
+    "tipo-tt"
+  ]
+}

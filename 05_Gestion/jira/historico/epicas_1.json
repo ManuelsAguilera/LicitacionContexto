@@ -1,0 +1,126 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "items": [
+    {
+      "n": 1,
+      "epicRef": 1,
+      "issueType": "Epicas",
+      "summary": "1. Introducción",
+      "description": "Sección principal: 1. Introducción"
+    },
+    {
+      "n": 7,
+      "epicRef": 3,
+      "issueType": "Epicas",
+      "summary": "1.2 Estructura Organizacional",
+      "description": "Sección principal: 1.2 Estructura Organizacional"
+    },
+    {
+      "n": 9,
+      "epicRef": 4,
+      "issueType": "Epicas",
+      "summary": "1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "description": "Sección principal: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento"
+    },
+    {
+      "n": 11,
+      "epicRef": 5,
+      "issueType": "Epicas",
+      "summary": "1.4 Experiencia y Certificaciones",
+      "description": "Sección principal: 1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 15,
+      "epicRef": 6,
+      "issueType": "Epicas",
+      "summary": "1.5 Estructura para Proyecto",
+      "description": "Sección principal: 1.5 Estructura para Proyecto"
+    },
+    {
+      "n": 17,
+      "epicRef": 7,
+      "issueType": "Epicas",
+      "summary": "1.6 Alianzas",
+      "description": "Sección principal: 1.6 Alianzas"
+    },
+    {
+      "n": 19,
+      "epicRef": 8,
+      "issueType": "Epicas",
+      "summary": "2. Introducción",
+      "description": "Sección principal: 2. Introducción"
+    },
+    {
+      "n": 21,
+      "epicRef": 9,
+      "issueType": "Epicas",
+      "summary": "2.1 Resumen Ejecutivo del problema",
+      "description": "Sección principal: 2.1 Resumen Ejecutivo del problema"
+    },
+    {
+      "n": 23,
+      "epicRef": 10,
+      "issueType": "Epicas",
+      "summary": "2.2 Comprensión del problema y de la necesidad",
+      "description": "Sección principal: 2.2 Comprensión del problema y de la necesidad"
+    },
+    {
+      "n": 25,
+      "epicRef": 11,
+      "issueType": "Epicas",
+      "summary": "2.3 Dimensionamiento del problema",
+      "description": "Sección principal: 2.3 Dimensionamiento del problema"
+    },
+    {
+      "n": 27,
+      "epicRef": 12,
+      "issueType": "Epicas",
+      "summary": "2.4 Actores y Grupos de Interés",
+      "description": "Sección principal: 2.4 Actores y Grupos de Interés"
+    },
+    {
+      "n": 29,
+      "epicRef": 13,
+      "issueType": "Epicas",
+      "summary": "2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "description": "Sección principal: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "n": 32,
+      "epicRef": 14,
+      "issueType": "Epicas",
+      "summary": "3. Introducción",
+      "description": "Sección principal: 3. Introducción"
+    },
+    {
+      "n": 34,
+      "epicRef": 15,
+      "issueType": "Epicas",
+      "summary": "3.1 Resumen Ejecutivo de la Solución",
+      "description": "Sección principal: 3.1 Resumen Ejecutivo de la Solución"
+    },
+    {
+      "n": 36,
+      "epicRef": 16,
+      "issueType": "Epicas",
+      "summary": "3.2 Alcance",
+      "description": "Sección principal: 3.2 Alcance"
+    },
+    {
+      "n": 40,
+      "epicRef": 17,
+      "issueType": "Epicas",
+      "summary": "3.3 Esquema de solución",
+      "description": "Sección principal: 3.3 Esquema de solución"
+    },
+    {
+      "n": 43,
+      "epicRef": 18,
+      "issueType": "Epicas",
+      "summary": "3.4 Explicación de la Solución",
+      "description": "Sección principal: 3.4 Explicación de la Solución"
+    }
+  ]
+}

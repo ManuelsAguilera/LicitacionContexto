@@ -1,0 +1,167 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "items": [
+    {
+      "n": 69,
+      "epicRef": 26,
+      "issueType": "Tareas",
+      "summary": "Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación",
+      "description": "Sección del informe: 4.3.2 Especificaciones Data Center Secundario",
+      "epicResumen": "4.3.2 Especificaciones Data Center Secundario"
+    },
+    {
+      "n": 71,
+      "epicRef": 27,
+      "issueType": "Tareas",
+      "summary": "Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos",
+      "description": "Sección del informe: 5. Introducción",
+      "epicResumen": "5. Introducción"
+    },
+    {
+      "n": 73,
+      "epicRef": 28,
+      "issueType": "Tareas",
+      "summary": "Identificar los dominios de información del sistema",
+      "description": "Sección del informe: 5.1 Modelo",
+      "epicResumen": "5.1 Modelo"
+    },
+    {
+      "n": 74,
+      "epicRef": 28,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diseñar el modelo de datos para cada dominio, con figuras legibles",
+      "description": "Sección del informe: 5.1 Modelo",
+      "epicResumen": "5.1 Modelo"
+    },
+    {
+      "n": 75,
+      "epicRef": 28,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Realizar el diccionario de datos en los anexos",
+      "description": "Sección del informe: 5.1 Modelo",
+      "epicResumen": "5.1 Modelo"
+    },
+    {
+      "n": 77,
+      "epicRef": 29,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Selección del motor y del paradigma de persistencia",
+      "description": "Sección del informe: 5.2 Gestión de datos",
+      "epicResumen": "5.2 Gestión de datos"
+    },
+    {
+      "n": 78,
+      "epicRef": 29,
+      "issueType": "Tareas",
+      "summary": "Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP)",
+      "description": "Sección del informe: 5.2 Gestión de datos",
+      "epicResumen": "5.2 Gestión de datos"
+    },
+    {
+      "n": 79,
+      "epicRef": 29,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura",
+      "description": "Sección del informe: 5.2 Gestión de datos",
+      "epicResumen": "5.2 Gestión de datos"
+    },
+    {
+      "n": 81,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Diseñar la estrategia de migración",
+      "description": "Sección del informe: 5.3 Estrategia de migración",
+      "epicResumen": "5.3 Estrategia de migración"
+    },
+    {
+      "n": 82,
+      "epicRef": 30,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir el proceso de saneamiento/limpieza de datos",
+      "description": "Sección del informe: 5.3 Estrategia de migración",
+      "epicResumen": "5.3 Estrategia de migración"
+    },
+    {
+      "n": 83,
+      "epicRef": 30,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir mecanismos de validación de datos migrados",
+      "description": "Sección del informe: 5.3 Estrategia de migración",
+      "epicResumen": "5.3 Estrategia de migración"
+    },
+    {
+      "n": 84,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Definir el proceso de conciliación entre origen y destino",
+      "description": "Sección del informe: 5.3 Estrategia de migración",
+      "epicResumen": "5.3 Estrategia de migración"
+    },
+    {
+      "n": 85,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Verificar que la migración y las ventanas de corte sean compatibles con el cronograma",
+      "description": "Sección del informe: 5.3 Estrategia de migración",
+      "epicResumen": "5.3 Estrategia de migración"
+    },
+    {
+      "n": 87,
+      "epicRef": 31,
+      "issueType": "Tareas",
+      "summary": "Definir estrategias de indexación, particionamiento, caché y optimización de consultas",
+      "description": "Sección del informe: 5.4 Estrategia de desempeño",
+      "epicResumen": "5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 88,
+      "epicRef": 31,
+      "issueType": "Tareas",
+      "summary": "Justificar estas decisiones utilizando la volumetría del caso",
+      "description": "Sección del informe: 5.4 Estrategia de desempeño",
+      "epicResumen": "5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 90,
+      "epicRef": 32,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 13. Introducción",
+      "epicResumen": "13. Introducción"
+    },
+    {
+      "n": 92,
+      "epicRef": 33,
+      "issueType": "Spikes",
+      "summary": "Investigar innovaciones (conocimiento)",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "epicResumen": "13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 93,
+      "epicRef": 33,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "epicResumen": "13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 94,
+      "epicRef": 33,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Ligar el conocimiento al esquema solución",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "epicResumen": "13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 96,
+      "epicRef": 34,
+      "issueType": "Tareas",
+      "summary": "Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°",
+      "description": "Sección del informe: 13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "epicResumen": "13.4 Innovación 4 — Modelo de negocio o de contratación"
+    }
+  ]
+}

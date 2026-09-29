@@ -1,0 +1,681 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "epics": [
+    {
+      "n": 1,
+      "epicRef": 1,
+      "issueType": "Epicas",
+      "summary": "1. Introducción",
+      "description": "Sección principal: 1. Introducción"
+    },
+    {
+      "n": 4,
+      "epicRef": 2,
+      "issueType": "Epicas",
+      "summary": "1.1 Presentación de la empresa",
+      "description": "Sección principal: 1.1 Presentación de la empresa"
+    },
+    {
+      "n": 7,
+      "epicRef": 3,
+      "issueType": "Epicas",
+      "summary": "1.2 Estructura Organizacional",
+      "description": "Sección principal: 1.2 Estructura Organizacional"
+    },
+    {
+      "n": 9,
+      "epicRef": 4,
+      "issueType": "Epicas",
+      "summary": "1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "description": "Sección principal: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento"
+    },
+    {
+      "n": 11,
+      "epicRef": 5,
+      "issueType": "Epicas",
+      "summary": "1.4 Experiencia y Certificaciones",
+      "description": "Sección principal: 1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 15,
+      "epicRef": 6,
+      "issueType": "Epicas",
+      "summary": "1.5 Estructura para Proyecto",
+      "description": "Sección principal: 1.5 Estructura para Proyecto"
+    },
+    {
+      "n": 17,
+      "epicRef": 7,
+      "issueType": "Epicas",
+      "summary": "1.6 Alianzas",
+      "description": "Sección principal: 1.6 Alianzas"
+    },
+    {
+      "n": 19,
+      "epicRef": 8,
+      "issueType": "Epicas",
+      "summary": "2. Introducción",
+      "description": "Sección principal: 2. Introducción"
+    },
+    {
+      "n": 21,
+      "epicRef": 9,
+      "issueType": "Epicas",
+      "summary": "2.1 Resumen Ejecutivo del problema",
+      "description": "Sección principal: 2.1 Resumen Ejecutivo del problema"
+    },
+    {
+      "n": 23,
+      "epicRef": 10,
+      "issueType": "Epicas",
+      "summary": "2.2 Comprensión del problema y de la necesidad",
+      "description": "Sección principal: 2.2 Comprensión del problema y de la necesidad"
+    },
+    {
+      "n": 25,
+      "epicRef": 11,
+      "issueType": "Epicas",
+      "summary": "2.3 Dimensionamiento del problema",
+      "description": "Sección principal: 2.3 Dimensionamiento del problema"
+    },
+    {
+      "n": 27,
+      "epicRef": 12,
+      "issueType": "Epicas",
+      "summary": "2.4 Actores y Grupos de Interés",
+      "description": "Sección principal: 2.4 Actores y Grupos de Interés"
+    },
+    {
+      "n": 29,
+      "epicRef": 13,
+      "issueType": "Epicas",
+      "summary": "2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "description": "Sección principal: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "n": 32,
+      "epicRef": 14,
+      "issueType": "Epicas",
+      "summary": "3. Introducción",
+      "description": "Sección principal: 3. Introducción"
+    },
+    {
+      "n": 34,
+      "epicRef": 15,
+      "issueType": "Epicas",
+      "summary": "3.1 Resumen Ejecutivo de la Solución",
+      "description": "Sección principal: 3.1 Resumen Ejecutivo de la Solución"
+    },
+    {
+      "n": 36,
+      "epicRef": 16,
+      "issueType": "Epicas",
+      "summary": "3.2 Alcance",
+      "description": "Sección principal: 3.2 Alcance"
+    },
+    {
+      "n": 40,
+      "epicRef": 17,
+      "issueType": "Epicas",
+      "summary": "3.3 Esquema de solución",
+      "description": "Sección principal: 3.3 Esquema de solución"
+    },
+    {
+      "n": 43,
+      "epicRef": 18,
+      "issueType": "Epicas",
+      "summary": "3.4 Explicación de la Solución",
+      "description": "Sección principal: 3.4 Explicación de la Solución"
+    },
+    {
+      "n": 45,
+      "epicRef": 19,
+      "issueType": "Epicas",
+      "summary": "4. Introducción",
+      "description": "Sección principal: 4. Introducción"
+    },
+    {
+      "n": 47,
+      "epicRef": 20,
+      "issueType": "Epicas",
+      "summary": "4.1 Arquitectura lógica",
+      "description": "Sección principal: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 55,
+      "epicRef": 21,
+      "issueType": "Epicas",
+      "summary": "4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "description": "Sección principal: 4.1.1 Especificaciones Tecnologías de Software a utilizar"
+    },
+    {
+      "n": 57,
+      "epicRef": 22,
+      "issueType": "Epicas",
+      "summary": "4.2 Arquitectura física",
+      "description": "Sección principal: 4.2 Arquitectura física"
+    },
+    {
+      "n": 60,
+      "epicRef": 23,
+      "issueType": "Epicas",
+      "summary": "4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "description": "Sección principal: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 63,
+      "epicRef": 24,
+      "issueType": "Epicas",
+      "summary": "4.3 Data center",
+      "description": "Sección principal: 4.3 Data center"
+    },
+    {
+      "n": 66,
+      "epicRef": 25,
+      "issueType": "Epicas",
+      "summary": "4.3.1 Especificaciones Data Center Primario",
+      "description": "Sección principal: 4.3.1 Especificaciones Data Center Primario"
+    },
+    {
+      "n": 68,
+      "epicRef": 26,
+      "issueType": "Epicas",
+      "summary": "4.3.2 Especificaciones Data Center Secundario",
+      "description": "Sección principal: 4.3.2 Especificaciones Data Center Secundario"
+    },
+    {
+      "n": 70,
+      "epicRef": 27,
+      "issueType": "Epicas",
+      "summary": "5. Introducción",
+      "description": "Sección principal: 5. Introducción"
+    },
+    {
+      "n": 72,
+      "epicRef": 28,
+      "issueType": "Epicas",
+      "summary": "5.1 Modelo",
+      "description": "Sección principal: 5.1 Modelo"
+    },
+    {
+      "n": 76,
+      "epicRef": 29,
+      "issueType": "Epicas",
+      "summary": "5.2 Gestión de datos",
+      "description": "Sección principal: 5.2 Gestión de datos"
+    },
+    {
+      "n": 80,
+      "epicRef": 30,
+      "issueType": "Epicas",
+      "summary": "5.3 Estrategia de migración",
+      "description": "Sección principal: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 86,
+      "epicRef": 31,
+      "issueType": "Epicas",
+      "summary": "5.4 Estrategia de desempeño",
+      "description": "Sección principal: 5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 89,
+      "epicRef": 32,
+      "issueType": "Epicas",
+      "summary": "13. Introducción",
+      "description": "Sección principal: 13. Introducción"
+    },
+    {
+      "n": 91,
+      "epicRef": 33,
+      "issueType": "Epicas",
+      "summary": "13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "description": "Sección principal: 13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 95,
+      "epicRef": 34,
+      "issueType": "Epicas",
+      "summary": "13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "description": "Sección principal: 13.4 Innovación 4 — Modelo de negocio o de contratación"
+    }
+  ],
+  "tasks": [
+    {
+      "n": 2,
+      "epicRef": 1,
+      "issueType": "Tareas",
+      "summary": "Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 1. Introducción"
+    },
+    {
+      "n": 3,
+      "epicRef": 1,
+      "issueType": "Tareas",
+      "summary": "Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones",
+      "description": "Sección del informe: 1. Introducción"
+    },
+    {
+      "n": 5,
+      "epicRef": 2,
+      "issueType": "Tareas",
+      "summary": "Ver que cumpla con las 11 preguntas del profe",
+      "description": "Sección del informe: 1.1 Presentación de la empresa"
+    },
+    {
+      "n": 6,
+      "epicRef": 2,
+      "issueType": "Tareas",
+      "summary": "Hacer un diagrama de contexto",
+      "description": "Sección del informe: 1.1 Presentación de la empresa"
+    },
+    {
+      "n": 8,
+      "epicRef": 3,
+      "issueType": "Tareas",
+      "summary": "Elaborar organigrama de la estructura organizacional",
+      "description": "Sección del informe: 1.2 Estructura Organizacional"
+    },
+    {
+      "n": 10,
+      "epicRef": 4,
+      "issueType": "Tareas",
+      "summary": "Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables",
+      "description": "Sección del informe: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento"
+    },
+    {
+      "n": 12,
+      "epicRef": 5,
+      "issueType": "Tareas",
+      "summary": "Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente",
+      "description": "Sección del informe: 1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 13,
+      "epicRef": 5,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Realizar el resumen y análisis del capítulo; el detalle de los proyectos va en el Formulario T-6 (Art. 34°: al menos tres proyectos, uno con arquitectura híbrida y uno con SLA de disponibilidad ≥ 99,5 %).",
+      "description": "Sección del informe: 1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 14,
+      "epicRef": 5,
+      "issueType": "Tareas",
+      "summary": "Buscar certificaciones institucionales",
+      "description": "Sección del informe: 1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 16,
+      "epicRef": 6,
+      "issueType": "Tareas",
+      "summary": "Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12",
+      "description": "Sección del informe: 1.5 Estructura para Proyecto"
+    },
+    {
+      "n": 18,
+      "epicRef": 7,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3)",
+      "description": "Sección del informe: 1.6 Alianzas"
+    },
+    {
+      "n": 20,
+      "epicRef": 8,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 2. Introducción"
+    },
+    {
+      "n": 22,
+      "epicRef": 9,
+      "issueType": "Tareas",
+      "summary": "Elaborar síntesis del problema, su magnitud y los actores afectados",
+      "description": "Sección del informe: 2.1 Resumen Ejecutivo del problema"
+    },
+    {
+      "n": 24,
+      "epicRef": 10,
+      "issueType": "Spikes",
+      "summary": "Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.",
+      "description": "Sección del informe: 2.2 Comprensión del problema y de la necesidad"
+    },
+    {
+      "n": 26,
+      "epicRef": 11,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.",
+      "description": "Sección del informe: 2.3 Dimensionamiento del problema"
+    },
+    {
+      "n": 28,
+      "epicRef": 12,
+      "issueType": "Tareas",
+      "summary": "Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés",
+      "description": "Sección del informe: 2.4 Actores y Grupos de Interés"
+    },
+    {
+      "n": 30,
+      "epicRef": 13,
+      "issueType": "Tareas",
+      "summary": "Crear resumen de requerimientos, supuestos, exclusiones y restricciones",
+      "description": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones — Detalle: Resumen y análisis de lo que el CLIENTE requiere según las Bases, de los supuestos declarados con su fundamento, y de las exclusiones y restricciones que impone el caso. El detalle va en EMPRESA-Subdocumento2-Anexos."
+    },
+    {
+      "n": 31,
+      "epicRef": 13,
+      "issueType": "Tareas",
+      "summary": "Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados",
+      "description": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "n": 33,
+      "epicRef": 14,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 3. Introducción"
+    },
+    {
+      "n": 35,
+      "epicRef": 15,
+      "issueType": "Tareas",
+      "summary": "Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses)",
+      "description": "Sección del informe: 3.1 Resumen Ejecutivo de la Solución"
+    },
+    {
+      "n": 37,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.",
+      "description": "Sección del informe: 3.2 Alcance"
+    },
+    {
+      "n": 38,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios)",
+      "description": "Sección del informe: 3.2 Alcance — Detalle a considerar: - Alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas. - Exclusiones explícitas, supuestos y restricciones del alcance. - Catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (trazabilidad completa en el Formulario T-12). - Criterios de aceptación del alcance comprometido."
+    },
+    {
+      "n": 39,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Anexar el Formulario T-12",
+      "description": "Sección del informe: 3.2 Alcance"
+    },
+    {
+      "n": 41,
+      "epicRef": 17,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno",
+      "description": "Sección del informe: 3.3 Esquema de solución"
+    },
+    {
+      "n": 42,
+      "epicRef": 17,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Documentar el esquema de solución, con explicaciones, etc.",
+      "description": "Sección del informe: 3.3 Esquema de solución"
+    },
+    {
+      "n": 44,
+      "epicRef": 18,
+      "issueType": "Tareas",
+      "summary": "Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos)",
+      "description": "Sección del informe: 3.4 Explicación de la Solución"
+    },
+    {
+      "n": 46,
+      "epicRef": 19,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 4. Introducción"
+    },
+    {
+      "n": 48,
+      "epicRef": 20,
+      "issueType": "Spikes",
+      "summary": "Analizar inconsistencias con el esquema solución",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 49,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio)",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 50,
+      "epicRef": 20,
+      "issueType": "Tareas",
+      "summary": "Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 51,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 52,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diagramar nuevo diagrama lógico",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 53,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios)",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 54,
+      "epicRef": 20,
+      "issueType": "Tareas",
+      "summary": "Reescribir subdocumento 4 Parte 1",
+      "description": "Sección del informe: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 56,
+      "epicRef": 21,
+      "issueType": "Tareas",
+      "summary": "Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión",
+      "description": "Sección del informe: 4.1.1 Especificaciones Tecnologías de Software a utilizar"
+    },
+    {
+      "n": 58,
+      "epicRef": 22,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Realizar el flujo físico en base al diagrama lógico",
+      "description": "Sección del informe: 4.2 Arquitectura física"
+    },
+    {
+      "n": 59,
+      "epicRef": 22,
+      "issueType": "Tareas",
+      "summary": "Reescribir subdocumento 4 Parte 2",
+      "description": "Sección del informe: 4.2 Arquitectura física"
+    },
+    {
+      "n": 61,
+      "epicRef": 23,
+      "issueType": "Tareas",
+      "summary": "El hardware que ocupemos, anotarlo en un Excel",
+      "description": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 62,
+      "epicRef": 23,
+      "issueType": "Tareas",
+      "summary": "Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros",
+      "description": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 64,
+      "epicRef": 24,
+      "issueType": "Spikes",
+      "summary": "Investigar tecnologías nube, y hardware del datacenter",
+      "description": "Sección del informe: 4.3 Data center"
+    },
+    {
+      "n": 65,
+      "epicRef": 24,
+      "issueType": "Tareas",
+      "summary": "Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2)",
+      "description": "Sección del informe: 4.3 Data center"
+    },
+    {
+      "n": 67,
+      "epicRef": 25,
+      "issueType": "Tareas",
+      "summary": "Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda",
+      "description": "Sección del informe: 4.3.1 Especificaciones Data Center Primario"
+    },
+    {
+      "n": 69,
+      "epicRef": 26,
+      "issueType": "Tareas",
+      "summary": "Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación",
+      "description": "Sección del informe: 4.3.2 Especificaciones Data Center Secundario"
+    },
+    {
+      "n": 71,
+      "epicRef": 27,
+      "issueType": "Tareas",
+      "summary": "Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos",
+      "description": "Sección del informe: 5. Introducción"
+    },
+    {
+      "n": 73,
+      "epicRef": 28,
+      "issueType": "Tareas",
+      "summary": "Identificar los dominios de información del sistema",
+      "description": "Sección del informe: 5.1 Modelo"
+    },
+    {
+      "n": 74,
+      "epicRef": 28,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diseñar el modelo de datos para cada dominio, con figuras legibles",
+      "description": "Sección del informe: 5.1 Modelo"
+    },
+    {
+      "n": 75,
+      "epicRef": 28,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Realizar el diccionario de datos en los anexos",
+      "description": "Sección del informe: 5.1 Modelo"
+    },
+    {
+      "n": 77,
+      "epicRef": 29,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Selección del motor y del paradigma de persistencia",
+      "description": "Sección del informe: 5.2 Gestión de datos"
+    },
+    {
+      "n": 78,
+      "epicRef": 29,
+      "issueType": "Tareas",
+      "summary": "Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP)",
+      "description": "Sección del informe: 5.2 Gestión de datos"
+    },
+    {
+      "n": 79,
+      "epicRef": 29,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura",
+      "description": "Sección del informe: 5.2 Gestión de datos"
+    },
+    {
+      "n": 81,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Diseñar la estrategia de migración",
+      "description": "Sección del informe: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 82,
+      "epicRef": 30,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir el proceso de saneamiento/limpieza de datos",
+      "description": "Sección del informe: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 83,
+      "epicRef": 30,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir mecanismos de validación de datos migrados",
+      "description": "Sección del informe: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 84,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Definir el proceso de conciliación entre origen y destino",
+      "description": "Sección del informe: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 85,
+      "epicRef": 30,
+      "issueType": "Tareas",
+      "summary": "Verificar que la migración y las ventanas de corte sean compatibles con el cronograma",
+      "description": "Sección del informe: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 87,
+      "epicRef": 31,
+      "issueType": "Tareas",
+      "summary": "Definir estrategias de indexación, particionamiento, caché y optimización de consultas",
+      "description": "Sección del informe: 5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 88,
+      "epicRef": 31,
+      "issueType": "Tareas",
+      "summary": "Justificar estas decisiones utilizando la volumetría del caso",
+      "description": "Sección del informe: 5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 90,
+      "epicRef": 32,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 13. Introducción"
+    },
+    {
+      "n": 92,
+      "epicRef": 33,
+      "issueType": "Spikes",
+      "summary": "Investigar innovaciones (conocimiento)",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 93,
+      "epicRef": 33,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 94,
+      "epicRef": 33,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Ligar el conocimiento al esquema solución",
+      "description": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 96,
+      "epicRef": 34,
+      "issueType": "Tareas",
+      "summary": "Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°",
+      "description": "Sección del informe: 13.4 Innovación 4 — Modelo de negocio o de contratación"
+    }
+  ]
+}

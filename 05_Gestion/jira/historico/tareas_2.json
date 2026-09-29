@@ -1,0 +1,167 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "items": [
+    {
+      "n": 39,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Anexar el Formulario T-12",
+      "description": "Sección del informe: 3.2 Alcance",
+      "epicResumen": "3.2 Alcance"
+    },
+    {
+      "n": 41,
+      "epicRef": 17,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno",
+      "description": "Sección del informe: 3.3 Esquema de solución",
+      "epicResumen": "3.3 Esquema de solución"
+    },
+    {
+      "n": 42,
+      "epicRef": 17,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Documentar el esquema de solución, con explicaciones, etc.",
+      "description": "Sección del informe: 3.3 Esquema de solución",
+      "epicResumen": "3.3 Esquema de solución"
+    },
+    {
+      "n": 44,
+      "epicRef": 18,
+      "issueType": "Tareas",
+      "summary": "Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos)",
+      "description": "Sección del informe: 3.4 Explicación de la Solución",
+      "epicResumen": "3.4 Explicación de la Solución"
+    },
+    {
+      "n": 46,
+      "epicRef": 19,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 4. Introducción",
+      "epicResumen": "4. Introducción"
+    },
+    {
+      "n": 48,
+      "epicRef": 20,
+      "issueType": "Spikes",
+      "summary": "Analizar inconsistencias con el esquema solución",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 49,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio)",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 50,
+      "epicRef": 20,
+      "issueType": "Tareas",
+      "summary": "Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 51,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 52,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Diagramar nuevo diagrama lógico",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 53,
+      "epicRef": 20,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios)",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 54,
+      "epicRef": 20,
+      "issueType": "Tareas",
+      "summary": "Reescribir subdocumento 4 Parte 1",
+      "description": "Sección del informe: 4.1 Arquitectura lógica",
+      "epicResumen": "4.1 Arquitectura lógica"
+    },
+    {
+      "n": 56,
+      "epicRef": 21,
+      "issueType": "Tareas",
+      "summary": "Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión",
+      "description": "Sección del informe: 4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "epicResumen": "4.1.1 Especificaciones Tecnologías de Software a utilizar"
+    },
+    {
+      "n": 58,
+      "epicRef": 22,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Realizar el flujo físico en base al diagrama lógico",
+      "description": "Sección del informe: 4.2 Arquitectura física",
+      "epicResumen": "4.2 Arquitectura física"
+    },
+    {
+      "n": 59,
+      "epicRef": 22,
+      "issueType": "Tareas",
+      "summary": "Reescribir subdocumento 4 Parte 2",
+      "description": "Sección del informe: 4.2 Arquitectura física",
+      "epicResumen": "4.2 Arquitectura física"
+    },
+    {
+      "n": 61,
+      "epicRef": 23,
+      "issueType": "Tareas",
+      "summary": "El hardware que ocupemos, anotarlo en un Excel",
+      "description": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "epicResumen": "4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 62,
+      "epicRef": 23,
+      "issueType": "Tareas",
+      "summary": "Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros",
+      "description": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "epicResumen": "4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 64,
+      "epicRef": 24,
+      "issueType": "Spikes",
+      "summary": "Investigar tecnologías nube, y hardware del datacenter",
+      "description": "Sección del informe: 4.3 Data center",
+      "epicResumen": "4.3 Data center"
+    },
+    {
+      "n": 65,
+      "epicRef": 24,
+      "issueType": "Tareas",
+      "summary": "Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2)",
+      "description": "Sección del informe: 4.3 Data center",
+      "epicResumen": "4.3 Data center"
+    },
+    {
+      "n": 67,
+      "epicRef": 25,
+      "issueType": "Tareas",
+      "summary": "Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda",
+      "description": "Sección del informe: 4.3.1 Especificaciones Data Center Primario",
+      "epicResumen": "4.3.1 Especificaciones Data Center Primario"
+    }
+  ]
+}

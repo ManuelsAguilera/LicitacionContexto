@@ -1,0 +1,167 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "items": [
+    {
+      "n": 2,
+      "epicRef": 1,
+      "issueType": "Tareas",
+      "summary": "Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 1. Introducción",
+      "epicResumen": "1. Introducción"
+    },
+    {
+      "n": 3,
+      "epicRef": 1,
+      "issueType": "Tareas",
+      "summary": "Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones",
+      "description": "Sección del informe: 1. Introducción",
+      "epicResumen": "1. Introducción"
+    },
+    {
+      "n": 6,
+      "epicRef": 2,
+      "issueType": "Tareas",
+      "summary": "Hacer un diagrama de contexto",
+      "description": "Sección del informe: 1.1 Presentación de la empresa",
+      "epicResumen": "1.1 Presentación de la empresa"
+    },
+    {
+      "n": 8,
+      "epicRef": 3,
+      "issueType": "Tareas",
+      "summary": "Elaborar organigrama de la estructura organizacional",
+      "description": "Sección del informe: 1.2 Estructura Organizacional",
+      "epicResumen": "1.2 Estructura Organizacional"
+    },
+    {
+      "n": 10,
+      "epicRef": 4,
+      "issueType": "Tareas",
+      "summary": "Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables",
+      "description": "Sección del informe: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "epicResumen": "1.3 Gobierno interno Calidad, Seguridad y Conocimiento"
+    },
+    {
+      "n": 12,
+      "epicRef": 5,
+      "issueType": "Tareas",
+      "summary": "Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente",
+      "description": "Sección del informe: 1.4 Experiencia y Certificaciones",
+      "epicResumen": "1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 14,
+      "epicRef": 5,
+      "issueType": "Tareas",
+      "summary": "Buscar certificaciones institucionales",
+      "description": "Sección del informe: 1.4 Experiencia y Certificaciones",
+      "epicResumen": "1.4 Experiencia y Certificaciones"
+    },
+    {
+      "n": 16,
+      "epicRef": 6,
+      "issueType": "Tareas",
+      "summary": "Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12",
+      "description": "Sección del informe: 1.5 Estructura para Proyecto",
+      "epicResumen": "1.5 Estructura para Proyecto"
+    },
+    {
+      "n": 18,
+      "epicRef": 7,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3)",
+      "description": "Sección del informe: 1.6 Alianzas",
+      "epicResumen": "1.6 Alianzas"
+    },
+    {
+      "n": 20,
+      "epicRef": 8,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 2. Introducción",
+      "epicResumen": "2. Introducción"
+    },
+    {
+      "n": 22,
+      "epicRef": 9,
+      "issueType": "Tareas",
+      "summary": "Elaborar síntesis del problema, su magnitud y los actores afectados",
+      "description": "Sección del informe: 2.1 Resumen Ejecutivo del problema",
+      "epicResumen": "2.1 Resumen Ejecutivo del problema"
+    },
+    {
+      "n": 24,
+      "epicRef": 10,
+      "issueType": "Spikes",
+      "summary": "Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.",
+      "description": "Sección del informe: 2.2 Comprensión del problema y de la necesidad",
+      "epicResumen": "2.2 Comprensión del problema y de la necesidad"
+    },
+    {
+      "n": 26,
+      "epicRef": 11,
+      "issueType": "Trabajo Tecnico",
+      "summary": "Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.",
+      "description": "Sección del informe: 2.3 Dimensionamiento del problema",
+      "epicResumen": "2.3 Dimensionamiento del problema"
+    },
+    {
+      "n": 28,
+      "epicRef": 12,
+      "issueType": "Tareas",
+      "summary": "Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés",
+      "description": "Sección del informe: 2.4 Actores y Grupos de Interés",
+      "epicResumen": "2.4 Actores y Grupos de Interés"
+    },
+    {
+      "n": 30,
+      "epicRef": 13,
+      "issueType": "Tareas",
+      "summary": "Crear resumen de requerimientos, supuestos, exclusiones y restricciones",
+      "description": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones — Detalle: Resumen y análisis de lo que el CLIENTE requiere según las Bases, de los supuestos declarados con su fundamento, y de las exclusiones y restricciones que impone el caso. El detalle va en EMPRESA-Subdocumento2-Anexos.",
+      "epicResumen": "2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "n": 31,
+      "epicRef": 13,
+      "issueType": "Tareas",
+      "summary": "Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados",
+      "description": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "epicResumen": "2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "n": 33,
+      "epicRef": 14,
+      "issueType": "Tareas",
+      "summary": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "description": "Sección del informe: 3. Introducción",
+      "epicResumen": "3. Introducción"
+    },
+    {
+      "n": 35,
+      "epicRef": 15,
+      "issueType": "Tareas",
+      "summary": "Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses)",
+      "description": "Sección del informe: 3.1 Resumen Ejecutivo de la Solución",
+      "epicResumen": "3.1 Resumen Ejecutivo de la Solución"
+    },
+    {
+      "n": 37,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.",
+      "description": "Sección del informe: 3.2 Alcance",
+      "epicResumen": "3.2 Alcance"
+    },
+    {
+      "n": 38,
+      "epicRef": 16,
+      "issueType": "Tareas",
+      "summary": "Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios)",
+      "description": "Sección del informe: 3.2 Alcance — Detalle a considerar: - Alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas. - Exclusiones explícitas, supuestos y restricciones del alcance. - Catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (trazabilidad completa en el Formulario T-12). - Criterios de aceptación del alcance comprometido.",
+      "epicResumen": "3.2 Alcance"
+    }
+  ]
+}

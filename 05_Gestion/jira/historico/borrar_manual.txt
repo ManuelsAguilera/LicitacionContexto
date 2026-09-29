@@ -1,0 +1,69 @@
+INCIDENCIAS ORIGINALES A BORRAR (62) — OSS
+Reemplazadas por las Subtareas OSS-173..OSS-235 bajo las Historias OSS-69..OSS-104.
+
+JQL para localizarlas de una sola vez:
+project = OSS AND key in (OSS-105,OSS-106,OSS-70,OSS-107,OSS-108,OSS-109,OSS-71,OSS-110,OSS-111,OSS-112,OSS-113,OSS-114,OSS-115,OSS-116,OSS-117,OSS-118,OSS-119,OSS-120,OSS-122,OSS-121,OSS-123,OSS-124,OSS-125,OSS-126,OSS-127,OSS-128,OSS-129,OSS-130,OSS-131,OSS-132,OSS-133,OSS-134,OSS-135,OSS-136,OSS-137,OSS-138,OSS-139,OSS-140,OSS-141,OSS-142,OSS-143,OSS-144,OSS-145,OSS-146,OSS-147,OSS-148,OSS-149,OSS-150,OSS-151,OSS-152,OSS-153,OSS-154,OSS-155,OSS-156,OSS-157,OSS-158,OSS-159,OSS-160,OSS-161,OSS-162,OSS-163,OSS-164) ORDER BY key ASC
+
+Claves (una por linea):
+OSS-105	OSS-173	Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios
+OSS-106	OSS-174	Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones
+OSS-70	OSS-175	Ver que cumpla con las 11 preguntas del profe
+OSS-107	OSS-176	Hacer un diagrama de contexto
+OSS-108	OSS-177	Elaborar organigrama de la estructura organizacional
+OSS-109	OSS-178	Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables
+OSS-71	OSS-179	Realizar el resumen y análisis del capítulo; el detalle de los proyectos va en el Formulario T-6 (Art. 34°: al menos tres proyectos, uno con arquitectura híbrida y uno con SLA de disponibilidad ≥ 99,5 %).
+OSS-110	OSS-180	Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente
+OSS-111	OSS-181	Buscar certificaciones institucionales
+OSS-112	OSS-182	Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12
+OSS-113	OSS-183	Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3)
+OSS-114	OSS-184	Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios
+OSS-115	OSS-185	Elaborar síntesis del problema, su magnitud y los actores afectados
+OSS-116	OSS-186	Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.
+OSS-117	OSS-187	Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.
+OSS-118	OSS-188	Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés
+OSS-119	OSS-189	Crear resumen de requerimientos, supuestos, exclusiones y restricciones
+OSS-120	OSS-190	Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados
+OSS-122	OSS-191	Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses)
+OSS-121	OSS-192	Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios
+OSS-123	OSS-193	Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.
+OSS-124	OSS-194	Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios)
+OSS-125	OSS-195	Anexar el Formulario T-12
+OSS-126	OSS-196	Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno
+OSS-127	OSS-197	Documentar el esquema de solución, con explicaciones, etc.
+OSS-128	OSS-198	Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos)
+OSS-129	OSS-199	Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios
+OSS-130	OSS-200	Analizar inconsistencias con el esquema solución
+OSS-131	OSS-201	Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio)
+OSS-132	OSS-202	Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias
+OSS-133	OSS-203	Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas
+OSS-134	OSS-204	Diagramar nuevo diagrama lógico
+OSS-135	OSS-205	Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios)
+OSS-136	OSS-206	Reescribir subdocumento 4 Parte 1
+OSS-137	OSS-207	Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión
+OSS-138	OSS-208	Realizar el flujo físico en base al diagrama lógico
+OSS-139	OSS-209	Reescribir subdocumento 4 Parte 2
+OSS-140	OSS-210	El hardware que ocupemos, anotarlo en un Excel
+OSS-141	OSS-211	Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros
+OSS-142	OSS-212	Investigar tecnologías nube, y hardware del datacenter
+OSS-143	OSS-213	Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2)
+OSS-144	OSS-214	Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda
+OSS-145	OSS-215	Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación
+OSS-146	OSS-216	Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos
+OSS-147	OSS-217	Identificar los dominios de información del sistema
+OSS-148	OSS-218	Diseñar el modelo de datos para cada dominio, con figuras legibles
+OSS-149	OSS-219	Realizar el diccionario de datos en los anexos
+OSS-150	OSS-220	Selección del motor y del paradigma de persistencia
+OSS-151	OSS-221	Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP)
+OSS-152	OSS-222	Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura
+OSS-153	OSS-223	Diseñar la estrategia de migración
+OSS-154	OSS-224	Definir el proceso de saneamiento/limpieza de datos
+OSS-155	OSS-225	Definir mecanismos de validación de datos migrados
+OSS-156	OSS-226	Definir el proceso de conciliación entre origen y destino
+OSS-157	OSS-227	Verificar que la migración y las ventanas de corte sean compatibles con el cronograma
+OSS-158	OSS-228	Definir estrategias de indexación, particionamiento, caché y optimización de consultas
+OSS-159	OSS-229	Justificar estas decisiones utilizando la volumetría del caso
+OSS-160	OSS-230	Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios
+OSS-161	OSS-231	Investigar innovaciones (conocimiento)
+OSS-162	OSS-232	Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición
+OSS-163	OSS-233	Ligar el conocimiento al esquema solución
+OSS-164	OSS-234	Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°

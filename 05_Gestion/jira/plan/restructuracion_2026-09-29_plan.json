@@ -1,0 +1,1574 @@
+{
+  "agrupadoras": [
+    {
+      "id": "E-1",
+      "resumen": "1. Capítulo 1 — Presentación de la Empresa",
+      "descripcion": "Épica agrupadora del capítulo 1. Reúne las secciones 1. a 1.6 del índice del informe (Formulario T-7): quién es la empresa, cómo se gobierna internamente y qué capacidades acreditan para ejecutar el proyecto.",
+      "etiquetas": [
+        "cap-1"
+      ],
+      "secciones": [
+        "OSS-72",
+        "OSS-69",
+        "OSS-73",
+        "OSS-74",
+        "OSS-75",
+        "OSS-76",
+        "OSS-77"
+      ],
+      "clave": "OSS-165"
+    },
+    {
+      "id": "E-2",
+      "resumen": "2. Capítulo 2 — Problema y Necesidad",
+      "descripcion": "Épica agrupadora del capítulo 2. Reúne las secciones 2. a 2.5: síntesis del problema, comprensión del contexto de la industria, dimensionamiento, actores e intereses, y el resumen de requerimientos, supuestos, exclusiones y restricciones.",
+      "etiquetas": [
+        "cap-2"
+      ],
+      "secciones": [
+        "OSS-78",
+        "OSS-79",
+        "OSS-80",
+        "OSS-81",
+        "OSS-82",
+        "OSS-83"
+      ],
+      "clave": "OSS-166"
+    },
+    {
+      "id": "E-3",
+      "resumen": "3. Capítulo 3 — Alcance y Esquema de la Solución",
+      "descripcion": "Épica agrupadora del capítulo 3. Reúne las secciones 3. a 3.4: resumen ejecutivo de la solución, alcance, esquema de solución y explicación funcional. El alcance arrastra el Formulario T-12.",
+      "etiquetas": [
+        "cap-3"
+      ],
+      "secciones": [
+        "OSS-84",
+        "OSS-85",
+        "OSS-86",
+        "OSS-87",
+        "OSS-88"
+      ],
+      "clave": "OSS-167"
+    },
+    {
+      "id": "E-4",
+      "resumen": "4. Capítulo 4 — Arquitectura Lógica",
+      "descripcion": "Épica agrupadora (lógica) del capítulo 4. Reúne 4., 4.1 y 4.1.1: diagrama lógico, módulos, vistas por dominio, flujos de actor y justificación del stack de software. Debe mapear al 100 % con el esquema de solución del capítulo 3.",
+      "etiquetas": [
+        "cap-4"
+      ],
+      "secciones": [
+        "OSS-89",
+        "OSS-90",
+        "OSS-91"
+      ],
+      "clave": "OSS-168"
+    },
+    {
+      "id": "E-5",
+      "resumen": "4. Capítulo 4 — Arquitectura Física e Implementos",
+      "descripcion": "Épica agrupadora (física) del capítulo 4. Reúne 4.2 y 4.2.1: flujo físico derivado del diagrama lógico, zonas, segmentación de red e inventario de hardware y software a provisión.",
+      "etiquetas": [
+        "cap-4"
+      ],
+      "secciones": [
+        "OSS-92",
+        "OSS-93"
+      ],
+      "clave": "OSS-169"
+    },
+    {
+      "id": "E-6",
+      "resumen": "4. Capítulo 4 — Data Center",
+      "descripcion": "Épica agrupadora (data center) del capítulo 4. Reúne 4.3, 4.3.1 y 4.3.2: estrategia de centros de datos, datacenter primario y datacenter secundario. Acá se demuestra el despliegue híbrido obligatorio (Art. 16° y RT-03) y se fijan RPO, RTO y conmutación.",
+      "etiquetas": [
+        "cap-4"
+      ],
+      "secciones": [
+        "OSS-94",
+        "OSS-95",
+        "OSS-96"
+      ],
+      "clave": "OSS-170"
+    },
+    {
+      "id": "E-7",
+      "resumen": "5. Capítulo 5 — Modelo de Datos",
+      "descripcion": "Épica agrupadora del capítulo 5. Reúne las secciones 5. a 5.4: modelo de datos por dominio, gestión de datos, estrategia de migración y estrategia de desempeño.",
+      "etiquetas": [
+        "cap-5"
+      ],
+      "secciones": [
+        "OSS-97",
+        "OSS-98",
+        "OSS-99",
+        "OSS-100",
+        "OSS-101"
+      ],
+      "clave": "OSS-171"
+    },
+    {
+      "id": "E-8",
+      "resumen": "13. Capítulo 13 — Innovaciones",
+      "descripcion": "Épica agrupadora del capítulo 13. Reúne 13., 13.3 y 13.4. Solo se cargan las innovaciones 3 y 4: las 1 y 2 todavía no tienen secciones en el índice del informe y deben agregarse aparte.",
+      "etiquetas": [
+        "cap-13"
+      ],
+      "secciones": [
+        "OSS-102",
+        "OSS-103",
+        "OSS-104"
+      ],
+      "clave": "OSS-172"
+    }
+  ],
+  "secciones": [
+    {
+      "clave": "OSS-72",
+      "resumen": "1. Introducción",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1. Introducción",
+      "etiquetas": [
+        "cap-1",
+        "sec-1"
+      ]
+    },
+    {
+      "clave": "OSS-69",
+      "resumen": "1.1 Presentación de la empresa",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.1 Presentación de la empresa",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-1"
+      ]
+    },
+    {
+      "clave": "OSS-73",
+      "resumen": "1.2 Estructura Organizacional",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.2 Estructura Organizacional",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-2"
+      ]
+    },
+    {
+      "clave": "OSS-74",
+      "resumen": "1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-3"
+      ]
+    },
+    {
+      "clave": "OSS-75",
+      "resumen": "1.4 Experiencia y Certificaciones",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.4 Experiencia y Certificaciones",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-4"
+      ]
+    },
+    {
+      "clave": "OSS-76",
+      "resumen": "1.5 Estructura para Proyecto",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.5 Estructura para Proyecto",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-5"
+      ]
+    },
+    {
+      "clave": "OSS-77",
+      "resumen": "1.6 Alianzas",
+      "agrupadora": "E-1",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 1.6 Alianzas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-6"
+      ]
+    },
+    {
+      "clave": "OSS-78",
+      "resumen": "2. Introducción",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2. Introducción",
+      "etiquetas": [
+        "cap-2",
+        "sec-2"
+      ]
+    },
+    {
+      "clave": "OSS-79",
+      "resumen": "2.1 Resumen Ejecutivo del problema",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2.1 Resumen Ejecutivo del problema",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-1"
+      ]
+    },
+    {
+      "clave": "OSS-80",
+      "resumen": "2.2 Comprensión del problema y de la necesidad",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2.2 Comprensión del problema y de la necesidad",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-2"
+      ]
+    },
+    {
+      "clave": "OSS-81",
+      "resumen": "2.3 Dimensionamiento del problema",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2.3 Dimensionamiento del problema",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-3"
+      ]
+    },
+    {
+      "clave": "OSS-82",
+      "resumen": "2.4 Actores y Grupos de Interés",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2.4 Actores y Grupos de Interés",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-4"
+      ]
+    },
+    {
+      "clave": "OSS-83",
+      "resumen": "2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "agrupadora": "E-2",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-5"
+      ]
+    },
+    {
+      "clave": "OSS-84",
+      "resumen": "3. Introducción",
+      "agrupadora": "E-3",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 3. Introducción",
+      "etiquetas": [
+        "cap-3",
+        "sec-3"
+      ]
+    },
+    {
+      "clave": "OSS-85",
+      "resumen": "3.1 Resumen Ejecutivo de la Solución",
+      "agrupadora": "E-3",
+      "tipoActual": "Historia",
+      "descripcion": "Sección principal: 3.1 Resumen Ejecutivo de la Solución",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-1"
+      ]
+    },
+    {
+      "clave": "OSS-86",
+      "resumen": "3.2 Alcance",
+      "agrupadora": "E-3",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 3.2 Alcance",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2"
+      ]
+    },
+    {
+      "clave": "OSS-87",
+      "resumen": "3.3 Esquema de solución",
+      "agrupadora": "E-3",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 3.3 Esquema de solución",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3"
+      ]
+    },
+    {
+      "clave": "OSS-88",
+      "resumen": "3.4 Explicación de la Solución",
+      "agrupadora": "E-3",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 3.4 Explicación de la Solución",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-4"
+      ]
+    },
+    {
+      "clave": "OSS-89",
+      "resumen": "4. Introducción",
+      "agrupadora": "E-4",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4. Introducción",
+      "etiquetas": [
+        "cap-4",
+        "sec-4"
+      ]
+    },
+    {
+      "clave": "OSS-90",
+      "resumen": "4.1 Arquitectura lógica",
+      "agrupadora": "E-4",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.1 Arquitectura lógica",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1"
+      ]
+    },
+    {
+      "clave": "OSS-91",
+      "resumen": "4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "agrupadora": "E-4",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1-1"
+      ]
+    },
+    {
+      "clave": "OSS-92",
+      "resumen": "4.2 Arquitectura física",
+      "agrupadora": "E-5",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.2 Arquitectura física",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2"
+      ]
+    },
+    {
+      "clave": "OSS-93",
+      "resumen": "4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "agrupadora": "E-5",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2-1"
+      ]
+    },
+    {
+      "clave": "OSS-94",
+      "resumen": "4.3 Data center",
+      "agrupadora": "E-6",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.3 Data center",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3"
+      ]
+    },
+    {
+      "clave": "OSS-95",
+      "resumen": "4.3.1 Especificaciones Data Center Primario",
+      "agrupadora": "E-6",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.3.1 Especificaciones Data Center Primario",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3-1"
+      ]
+    },
+    {
+      "clave": "OSS-96",
+      "resumen": "4.3.2 Especificaciones Data Center Secundario",
+      "agrupadora": "E-6",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 4.3.2 Especificaciones Data Center Secundario",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3-2"
+      ]
+    },
+    {
+      "clave": "OSS-97",
+      "resumen": "5. Introducción",
+      "agrupadora": "E-7",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 5. Introducción",
+      "etiquetas": [
+        "cap-5",
+        "sec-5"
+      ]
+    },
+    {
+      "clave": "OSS-98",
+      "resumen": "5.1 Modelo",
+      "agrupadora": "E-7",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 5.1 Modelo",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-1"
+      ]
+    },
+    {
+      "clave": "OSS-99",
+      "resumen": "5.2 Gestión de datos",
+      "agrupadora": "E-7",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 5.2 Gestión de datos",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-2"
+      ]
+    },
+    {
+      "clave": "OSS-100",
+      "resumen": "5.3 Estrategia de migración",
+      "agrupadora": "E-7",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 5.3 Estrategia de migración",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3"
+      ]
+    },
+    {
+      "clave": "OSS-101",
+      "resumen": "5.4 Estrategia de desempeño",
+      "agrupadora": "E-7",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 5.4 Estrategia de desempeño",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-4"
+      ]
+    },
+    {
+      "clave": "OSS-102",
+      "resumen": "13. Introducción",
+      "agrupadora": "E-8",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 13. Introducción",
+      "etiquetas": [
+        "cap-13",
+        "sec-13"
+      ]
+    },
+    {
+      "clave": "OSS-103",
+      "resumen": "13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "agrupadora": "E-8",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-3"
+      ]
+    },
+    {
+      "clave": "OSS-104",
+      "resumen": "13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "agrupadora": "E-8",
+      "tipoActual": "Epicas",
+      "descripcion": "Sección principal: 13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-4"
+      ]
+    }
+  ],
+  "subtareas": [
+    {
+      "origenClave": "OSS-105",
+      "seccion": "OSS-72",
+      "resumen": "Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 1. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-173"
+    },
+    {
+      "origenClave": "OSS-106",
+      "seccion": "OSS-72",
+      "resumen": "Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones",
+      "descripcion": "Sección del informe: 1. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-174"
+    },
+    {
+      "origenClave": "OSS-70",
+      "seccion": "OSS-69",
+      "resumen": "Ver que cumpla con las 11 preguntas del profe",
+      "descripcion": "Sección del informe: 1. Presentación de la empresa",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-175"
+    },
+    {
+      "origenClave": "OSS-107",
+      "seccion": "OSS-69",
+      "resumen": "Hacer un diagrama de contexto",
+      "descripcion": "Sección del informe: 1.1 Presentación de la empresa",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-176"
+    },
+    {
+      "origenClave": "OSS-108",
+      "seccion": "OSS-73",
+      "resumen": "Elaborar organigrama de la estructura organizacional",
+      "descripcion": "Sección del informe: 1.2 Estructura Organizacional",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-177"
+    },
+    {
+      "origenClave": "OSS-109",
+      "seccion": "OSS-74",
+      "resumen": "Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables",
+      "descripcion": "Sección del informe: 1.3 Gobierno interno Calidad, Seguridad y Conocimiento",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-178"
+    },
+    {
+      "origenClave": "OSS-71",
+      "seccion": "OSS-75",
+      "resumen": "Realizar el resumen y análisis del capítulo; el detalle de los proyectos va en el Formulario T-6 (Art. 34°: al menos tres proyectos, uno con arquitectura híbrida y uno con SLA de disponibilidad ≥ 99,5 %).",
+      "descripcion": "Sección del informe: 1.4 Experiencia y Certificaciones",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-4",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-179"
+    },
+    {
+      "origenClave": "OSS-110",
+      "seccion": "OSS-75",
+      "resumen": "Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente",
+      "descripcion": "Sección del informe: 1.4 Experiencia y Certificaciones",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-180"
+    },
+    {
+      "origenClave": "OSS-111",
+      "seccion": "OSS-75",
+      "resumen": "Buscar certificaciones institucionales",
+      "descripcion": "Sección del informe: 1.4 Experiencia y Certificaciones",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-181"
+    },
+    {
+      "origenClave": "OSS-112",
+      "seccion": "OSS-76",
+      "resumen": "Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12",
+      "descripcion": "Sección del informe: 1.5 Estructura para Proyecto",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-5",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-182"
+    },
+    {
+      "origenClave": "OSS-113",
+      "seccion": "OSS-77",
+      "resumen": "Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3)",
+      "descripcion": "Sección del informe: 1.6 Alianzas",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-1",
+        "sec-1-6",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-183"
+    },
+    {
+      "origenClave": "OSS-114",
+      "seccion": "OSS-78",
+      "resumen": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 2. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-2",
+        "sec-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-184"
+    },
+    {
+      "origenClave": "OSS-115",
+      "seccion": "OSS-79",
+      "resumen": "Elaborar síntesis del problema, su magnitud y los actores afectados",
+      "descripcion": "Sección del informe: 2.1 Resumen Ejecutivo del problema",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-185"
+    },
+    {
+      "origenClave": "OSS-116",
+      "seccion": "OSS-80",
+      "resumen": "Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.",
+      "descripcion": "Sección del informe: 2.2 Comprensión del problema y de la necesidad",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-2",
+        "tipo-spike"
+      ],
+      "nuevaClave": "OSS-186"
+    },
+    {
+      "origenClave": "OSS-117",
+      "seccion": "OSS-81",
+      "resumen": "Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.",
+      "descripcion": "Sección del informe: 2.3 Dimensionamiento del problema",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-187"
+    },
+    {
+      "origenClave": "OSS-118",
+      "seccion": "OSS-82",
+      "resumen": "Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés",
+      "descripcion": "Sección del informe: 2.4 Actores y Grupos de Interés",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-188"
+    },
+    {
+      "origenClave": "OSS-119",
+      "seccion": "OSS-83",
+      "resumen": "Crear resumen de requerimientos, supuestos, exclusiones y restricciones",
+      "descripcion": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones — Detalle: Resumen y análisis de lo que el CLIENTE requiere según las Bases, de los supuestos declarados con su fundamento, y de las exclusiones y restricciones que impone el caso. El detalle va en EMPRESA-Subdocumento2-Anexos.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-5",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-189"
+    },
+    {
+      "origenClave": "OSS-120",
+      "seccion": "OSS-83",
+      "resumen": "Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados",
+      "descripcion": "Sección del informe: 2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-2",
+        "sec-2-5",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-190"
+    },
+    {
+      "origenClave": "OSS-122",
+      "seccion": "OSS-85",
+      "resumen": "Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses)",
+      "descripcion": "Sección del informe: 3.1 Resumen Ejecutivo de la Solución",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-191"
+    },
+    {
+      "origenClave": "OSS-121",
+      "seccion": "OSS-86",
+      "resumen": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 3. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-192"
+    },
+    {
+      "origenClave": "OSS-123",
+      "seccion": "OSS-86",
+      "resumen": "Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-193"
+    },
+    {
+      "origenClave": "OSS-124",
+      "seccion": "OSS-86",
+      "resumen": "Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios)",
+      "descripcion": "Sección del informe: 3.2 Alcance — Detalle a considerar: - Alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas. - Exclusiones explícitas, supuestos y restricciones del alcance. - Catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (trazabilidad completa en el Formulario T-12). - Criterios de aceptación del alcance comprometido.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-194"
+    },
+    {
+      "origenClave": "OSS-125",
+      "seccion": "OSS-86",
+      "resumen": "Anexar el Formulario T-12",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-195"
+    },
+    {
+      "origenClave": "OSS-126",
+      "seccion": "OSS-87",
+      "resumen": "Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno",
+      "descripcion": "Sección del informe: 3.3 Esquema de solución",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-196"
+    },
+    {
+      "origenClave": "OSS-127",
+      "seccion": "OSS-87",
+      "resumen": "Documentar el esquema de solución, con explicaciones, etc.",
+      "descripcion": "Sección del informe: 3.3 Esquema de solución",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-197"
+    },
+    {
+      "origenClave": "OSS-128",
+      "seccion": "OSS-88",
+      "resumen": "Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos)",
+      "descripcion": "Sección del informe: 3.4 Explicación de la Solución",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-198"
+    },
+    {
+      "origenClave": "OSS-129",
+      "seccion": "OSS-89",
+      "resumen": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 4. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-199"
+    },
+    {
+      "origenClave": "OSS-130",
+      "seccion": "OSS-90",
+      "resumen": "Analizar inconsistencias con el esquema solución",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-spike"
+      ],
+      "nuevaClave": "OSS-200"
+    },
+    {
+      "origenClave": "OSS-131",
+      "seccion": "OSS-90",
+      "resumen": "Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio)",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-201"
+    },
+    {
+      "origenClave": "OSS-132",
+      "seccion": "OSS-90",
+      "resumen": "Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-202"
+    },
+    {
+      "origenClave": "OSS-133",
+      "seccion": "OSS-90",
+      "resumen": "Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-203"
+    },
+    {
+      "origenClave": "OSS-134",
+      "seccion": "OSS-90",
+      "resumen": "Diagramar nuevo diagrama lógico",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-204"
+    },
+    {
+      "origenClave": "OSS-135",
+      "seccion": "OSS-90",
+      "resumen": "Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios)",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-205"
+    },
+    {
+      "origenClave": "OSS-136",
+      "seccion": "OSS-90",
+      "resumen": "Reescribir subdocumento 4 Parte 1",
+      "descripcion": "Sección del informe: 4.1 Arquitectura lógica",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-206"
+    },
+    {
+      "origenClave": "OSS-137",
+      "seccion": "OSS-91",
+      "resumen": "Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión",
+      "descripcion": "Sección del informe: 4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-1-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-207"
+    },
+    {
+      "origenClave": "OSS-138",
+      "seccion": "OSS-92",
+      "resumen": "Realizar el flujo físico en base al diagrama lógico",
+      "descripcion": "Sección del informe: 4.2 Arquitectura física",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-208"
+    },
+    {
+      "origenClave": "OSS-139",
+      "seccion": "OSS-92",
+      "resumen": "Reescribir subdocumento 4 Parte 2",
+      "descripcion": "Sección del informe: 4.2 Arquitectura física",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-209"
+    },
+    {
+      "origenClave": "OSS-140",
+      "seccion": "OSS-93",
+      "resumen": "El hardware que ocupemos, anotarlo en un Excel",
+      "descripcion": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-210"
+    },
+    {
+      "origenClave": "OSS-141",
+      "seccion": "OSS-93",
+      "resumen": "Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros",
+      "descripcion": "Sección del informe: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-2-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-211"
+    },
+    {
+      "origenClave": "OSS-142",
+      "seccion": "OSS-94",
+      "resumen": "Investigar tecnologías nube, y hardware del datacenter",
+      "descripcion": "Sección del informe: 4.3 Data center",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3",
+        "tipo-spike"
+      ],
+      "nuevaClave": "OSS-212"
+    },
+    {
+      "origenClave": "OSS-143",
+      "seccion": "OSS-94",
+      "resumen": "Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2)",
+      "descripcion": "Sección del informe: 4.3 Data center",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-213"
+    },
+    {
+      "origenClave": "OSS-144",
+      "seccion": "OSS-95",
+      "resumen": "Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda",
+      "descripcion": "Sección del informe: 4.3.1 Especificaciones Data Center Primario",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-214"
+    },
+    {
+      "origenClave": "OSS-145",
+      "seccion": "OSS-96",
+      "resumen": "Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación",
+      "descripcion": "Sección del informe: 4.3.2 Especificaciones Data Center Secundario",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-4",
+        "sec-4-3-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-215"
+    },
+    {
+      "origenClave": "OSS-146",
+      "seccion": "OSS-97",
+      "resumen": "Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos",
+      "descripcion": "Sección del informe: 5. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-216"
+    },
+    {
+      "origenClave": "OSS-147",
+      "seccion": "OSS-98",
+      "resumen": "Identificar los dominios de información del sistema",
+      "descripcion": "Sección del informe: 5.1 Modelo",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-1",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-217"
+    },
+    {
+      "origenClave": "OSS-148",
+      "seccion": "OSS-98",
+      "resumen": "Diseñar el modelo de datos para cada dominio, con figuras legibles",
+      "descripcion": "Sección del informe: 5.1 Modelo",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-218"
+    },
+    {
+      "origenClave": "OSS-149",
+      "seccion": "OSS-98",
+      "resumen": "Realizar el diccionario de datos en los anexos",
+      "descripcion": "Sección del informe: 5.1 Modelo",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-1",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-219"
+    },
+    {
+      "origenClave": "OSS-150",
+      "seccion": "OSS-99",
+      "resumen": "Selección del motor y del paradigma de persistencia",
+      "descripcion": "Sección del informe: 5.2 Gestión de datos",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-2",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-220"
+    },
+    {
+      "origenClave": "OSS-151",
+      "seccion": "OSS-99",
+      "resumen": "Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP)",
+      "descripcion": "Sección del informe: 5.2 Gestión de datos",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-2",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-221"
+    },
+    {
+      "origenClave": "OSS-152",
+      "seccion": "OSS-99",
+      "resumen": "Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura",
+      "descripcion": "Sección del informe: 5.2 Gestión de datos",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-2",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-222"
+    },
+    {
+      "origenClave": "OSS-153",
+      "seccion": "OSS-100",
+      "resumen": "Diseñar la estrategia de migración",
+      "descripcion": "Sección del informe: 5.3 Estrategia de migración",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-223"
+    },
+    {
+      "origenClave": "OSS-154",
+      "seccion": "OSS-100",
+      "resumen": "Definir el proceso de saneamiento/limpieza de datos",
+      "descripcion": "Sección del informe: 5.3 Estrategia de migración",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-224"
+    },
+    {
+      "origenClave": "OSS-155",
+      "seccion": "OSS-100",
+      "resumen": "Definir mecanismos de validación de datos migrados",
+      "descripcion": "Sección del informe: 5.3 Estrategia de migración",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-225"
+    },
+    {
+      "origenClave": "OSS-156",
+      "seccion": "OSS-100",
+      "resumen": "Definir el proceso de conciliación entre origen y destino",
+      "descripcion": "Sección del informe: 5.3 Estrategia de migración",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-226"
+    },
+    {
+      "origenClave": "OSS-157",
+      "seccion": "OSS-100",
+      "resumen": "Verificar que la migración y las ventanas de corte sean compatibles con el cronograma",
+      "descripcion": "Sección del informe: 5.3 Estrategia de migración",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-227"
+    },
+    {
+      "origenClave": "OSS-158",
+      "seccion": "OSS-101",
+      "resumen": "Definir estrategias de indexación, particionamiento, caché y optimización de consultas",
+      "descripcion": "Sección del informe: 5.4 Estrategia de desempeño",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-228"
+    },
+    {
+      "origenClave": "OSS-159",
+      "seccion": "OSS-101",
+      "resumen": "Justificar estas decisiones utilizando la volumetría del caso",
+      "descripcion": "Sección del informe: 5.4 Estrategia de desempeño",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-5",
+        "sec-5-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-229"
+    },
+    {
+      "origenClave": "OSS-160",
+      "seccion": "OSS-102",
+      "resumen": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 13. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-13",
+        "sec-13",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-230"
+    },
+    {
+      "origenClave": "OSS-161",
+      "seccion": "OSS-103",
+      "resumen": "Investigar innovaciones (conocimiento)",
+      "descripcion": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-3",
+        "tipo-spike"
+      ],
+      "nuevaClave": "OSS-231"
+    },
+    {
+      "origenClave": "OSS-162",
+      "seccion": "OSS-103",
+      "resumen": "Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición",
+      "descripcion": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-232"
+    },
+    {
+      "origenClave": "OSS-163",
+      "seccion": "OSS-103",
+      "resumen": "Ligar el conocimiento al esquema solución",
+      "descripcion": "Sección del informe: 13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-3",
+        "tipo-tt"
+      ],
+      "nuevaClave": "OSS-233"
+    },
+    {
+      "origenClave": "OSS-164",
+      "seccion": "OSS-104",
+      "resumen": "Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°",
+      "descripcion": "Sección del informe: 13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-13",
+        "sec-13-4",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-234"
+    },
+    {
+      "seccion": "OSS-84",
+      "resumen": "Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios",
+      "descripcion": "Sección del informe: 3. Introducción",
+      "tipoOriginal": "Tareas",
+      "origenClave": null,
+      "etiquetas": [
+        "cap-3",
+        "sec-3",
+        "tipo-tarea"
+      ],
+      "nuevaClave": "OSS-235"
+    },
+    {
+      "nuevaClave": "OSS-236",
+      "seccion": "OSS-86",
+      "resumen": "Revisar objetivos, redacción, y alineación con proyecto",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "asignado": "712020:a9288d98-996a-4d37-9635-d70d8d5dd75d"
+    },
+    {
+      "nuevaClave": "OSS-237",
+      "seccion": "OSS-84",
+      "resumen": "Verificar que el capítulo 3 responda las 11 preguntas del profesor",
+      "descripcion": "Sección del informe: 3. Introducción",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3",
+        "tipo-tarea"
+      ],
+      "asignado": "609a0d9f5d67f20069ae5a6e"
+    },
+    {
+      "nuevaClave": "OSS-238",
+      "seccion": "OSS-86",
+      "resumen": "Contrastar los requisitos técnicos (RT) con los requisitos del proyecto (RF/RNF)",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-239",
+      "seccion": "OSS-86",
+      "resumen": "Spike: revisar el PMBOK para entradas y salidas de proceso",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-spike"
+      ],
+      "asignado": "712020:a9288d98-996a-4d37-9635-d70d8d5dd75d"
+    },
+    {
+      "nuevaClave": "OSS-240",
+      "seccion": "OSS-86",
+      "resumen": "Spike: investigar un enunciado de alcance",
+      "descripcion": "Sección del informe: 3.2 Alcance",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-spike"
+      ],
+      "asignado": "712020:4ca60652-625c-4b3b-b333-fc7430cdd61f"
+    },
+    {
+      "nuevaClave": "OSS-241",
+      "seccion": "OSS-86",
+      "resumen": "Definir la separación y los criterios de asignación de alcance entre la Etapa 1 y la Etapa 2 (Art. 17)",
+      "descripcion": "Sección del informe: 3.2 Alcance\nCubre: Bases_Administrativas.md:2089 — Alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-242",
+      "seccion": "OSS-86",
+      "resumen": "Consolidar el catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (RF/RNF ↔ T-12)",
+      "descripcion": "Sección del informe: 3.2 Alcance\nCubre: Bases_Administrativas.md:2093 — Catálogo de requerimientos funcionales y no funcionales, priorizado y trazable.",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tt"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-243",
+      "seccion": "OSS-86",
+      "resumen": "Validar los supuestos, exclusiones, requisitos y restricciones del alcance",
+      "descripcion": "Sección del informe: 3.2 Alcance\nSe ejecuta al cerrar el resto del capítulo 3.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ],
+      "bloqueadaPor": [
+        "OSS-237",
+        "OSS-238",
+        "OSS-239",
+        "OSS-240",
+        "OSS-241",
+        "OSS-242",
+        "OSS-244",
+        "OSS-245",
+        "OSS-246",
+        "OSS-247",
+        "OSS-248",
+        "OSS-249"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-244",
+      "seccion": "OSS-86",
+      "resumen": "Definir los criterios de aceptación del alcance comprometido",
+      "descripcion": "Sección del informe: 3.2 Alcance\nCubre: Bases_Administrativas.md:2097 — Criterios de aceptación del alcance comprometido.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-245",
+      "seccion": "OSS-86",
+      "resumen": "Definir la estrategia para obtener el apoyo de los grupos de interés clave",
+      "descripcion": "Sección del informe: 3.2 Alcance\nCubre: Bases_Administrativas.md:2095 — Estrategia para obtener el apoyo de los grupos de interés clave.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-246",
+      "seccion": "OSS-86",
+      "resumen": "Definir la frontera entre los dos negocios (retail y crédito fiscalizado) antes de cualquier vista unificada",
+      "descripcion": "Sección del informe: 3.2 Alcance\nCubre: Caso_09_Cadena_Multitienda.md:988 y :997 — que la frontera entre los dos negocios esté definida antes que cualquier vista unificada.",
+      "tipoOriginal": "Tareas",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-2",
+        "tipo-tarea"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-247",
+      "seccion": "OSS-87",
+      "resumen": "Spike: investigar el diagrama de contexto de la solución",
+      "descripcion": "Sección del informe: 3.3 Esquema de solución",
+      "tipoOriginal": "Spikes",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3",
+        "tipo-spike"
+      ],
+      "asignado": "609a0d9f5d67f20069ae5a6e"
+    },
+    {
+      "nuevaClave": "OSS-248",
+      "seccion": "OSS-87",
+      "resumen": "Elaborar el diagrama de contexto de la solución",
+      "descripcion": "Sección del informe: 3.3 Esquema de solución",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3",
+        "tipo-tt"
+      ]
+    },
+    {
+      "nuevaClave": "OSS-249",
+      "seccion": "OSS-87",
+      "resumen": "Fuente única de verdad de la existencia y del cálculo del disponible: decisión, fundamento y costeo",
+      "descripcion": "Sección del informe: 3.3 Esquema de solución\nCubre: Caso_09_Cadena_Multitienda.md:988 — que la decisión sobre la fuente única de verdad de la existencia y sobre el cálculo del disponible esté tomada, fundada y costeada.",
+      "tipoOriginal": "Trabajo Tecnico",
+      "etiquetas": [
+        "cap-3",
+        "sec-3-3",
+        "tipo-tt"
+      ]
+    }
+  ],
+  "aBorrar": [
+    "OSS-105",
+    "OSS-106",
+    "OSS-70",
+    "OSS-107",
+    "OSS-108",
+    "OSS-109",
+    "OSS-71",
+    "OSS-110",
+    "OSS-111",
+    "OSS-112",
+    "OSS-113",
+    "OSS-114",
+    "OSS-115",
+    "OSS-116",
+    "OSS-117",
+    "OSS-118",
+    "OSS-119",
+    "OSS-120",
+    "OSS-122",
+    "OSS-121",
+    "OSS-123",
+    "OSS-124",
+    "OSS-125",
+    "OSS-126",
+    "OSS-127",
+    "OSS-128",
+    "OSS-129",
+    "OSS-130",
+    "OSS-131",
+    "OSS-132",
+    "OSS-133",
+    "OSS-134",
+    "OSS-135",
+    "OSS-136",
+    "OSS-137",
+    "OSS-138",
+    "OSS-139",
+    "OSS-140",
+    "OSS-141",
+    "OSS-142",
+    "OSS-143",
+    "OSS-144",
+    "OSS-145",
+    "OSS-146",
+    "OSS-147",
+    "OSS-148",
+    "OSS-149",
+    "OSS-150",
+    "OSS-151",
+    "OSS-152",
+    "OSS-153",
+    "OSS-154",
+    "OSS-155",
+    "OSS-156",
+    "OSS-157",
+    "OSS-158",
+    "OSS-159",
+    "OSS-160",
+    "OSS-161",
+    "OSS-162",
+    "OSS-163",
+    "OSS-164"
+  ]
+}

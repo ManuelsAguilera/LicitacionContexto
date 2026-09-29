@@ -1,0 +1,78 @@
+origen,nueva,seccion,seccion_resumen,agrupadora,subtarea_resumen,tipo_original,etiquetas
+OSS-105,OSS-173,OSS-72,1. Introducción,OSS-165,Elaborar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-1|sec-1|tipo-tarea
+OSS-106,OSS-174,OSS-72,1. Introducción,OSS-165,Revisar qué partes del informe hay que cambiar, dado el nuevo resumen y justificaciones,Tareas,cap-1|sec-1|tipo-tarea
+OSS-70,OSS-175,OSS-69,1.1 Presentación de la empresa,OSS-165,Ver que cumpla con las 11 preguntas del profe,Tareas,cap-1|sec-1-1|tipo-tarea
+OSS-107,OSS-176,OSS-69,1.1 Presentación de la empresa,OSS-165,Hacer un diagrama de contexto,Tareas,cap-1|sec-1-1|tipo-tarea
+OSS-108,OSS-177,OSS-73,1.2 Estructura Organizacional,OSS-165,Elaborar organigrama de la estructura organizacional,Tareas,cap-1|sec-1-2|tipo-tarea
+OSS-109,OSS-178,OSS-74,1.3 Gobierno interno Calidad, Seguridad y Conocimiento,OSS-165,Definir el modelo de gobierno interno de calidad, de seguridad de la información y de gestión del conocimiento: sus políticas, instancias y responsables,Tareas,cap-1|sec-1-3|tipo-tarea
+OSS-71,OSS-179,OSS-75,1.4 Experiencia y Certificaciones,OSS-165,Realizar el resumen y análisis del capítulo; el detalle de los proyectos va en el Formulario T-6 (Art. 34°: al menos tres proyectos, uno con arquitectura híbrida y uno con SLA de disponibilidad ≥ 99,5 %).,Trabajo Tecnico,cap-1|sec-1-4|tipo-tt
+OSS-110,OSS-180,OSS-75,1.4 Experiencia y Certificaciones,OSS-165,Inventar experiencia relevante en la industria del caso y en proyectos de complejidad equivalente,Tareas,cap-1|sec-1-4|tipo-tarea
+OSS-111,OSS-181,OSS-75,1.4 Experiencia y Certificaciones,OSS-165,Buscar certificaciones institucionales,Tareas,cap-1|sec-1-4|tipo-tarea
+OSS-112,OSS-182,OSS-76,1.5 Estructura para Proyecto,OSS-165,Establecer la estructura para el proyecto: cómo se organiza la empresa para abordar el proyecto. El equipo nominado se desarrolla en el capítulo 12,Tareas,cap-1|sec-1-5|tipo-tarea
+OSS-113,OSS-183,OSS-77,1.6 Alianzas,OSS-165,Definir las alianzas tecnológicas vigentes de la empresa (las alianzas específicas de este proyecto van en 12.3),Trabajo Tecnico,cap-1|sec-1-6|tipo-tt
+OSS-114,OSS-184,OSS-78,2. Introducción,OSS-166,Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-2|sec-2|tipo-tarea
+OSS-115,OSS-185,OSS-79,2.1 Resumen Ejecutivo del problema,OSS-166,Elaborar síntesis del problema, su magnitud y los actores afectados,Tareas,cap-2|sec-2-1|tipo-tarea
+OSS-116,OSS-186,OSS-80,2.2 Comprensión del problema y de la necesidad,OSS-166,Comprender el problema y la necesidad: hacer el contexto de la industria y sus particularidades operacionales, regulatorias y estacionales.,Spikes,cap-2|sec-2-2|tipo-spike
+OSS-117,OSS-187,OSS-81,2.3 Dimensionamiento del problema,OSS-166,Dimensionar el problema: dimensionar realisticamente la magnitud del problema o desafío, con foco cualitativo y con datos cuantitativos que lo sustenten. Cada cifra debe derivar de las Bases Técnicas del caso o de un cálculo mostrado.,Trabajo Tecnico,cap-2|sec-2-3|tipo-tt
+OSS-118,OSS-188,OSS-82,2.4 Actores y Grupos de Interés,OSS-166,Identificar actores y grupos de interés: actores afectados y grupos de interés, estableciendo nivel de influencia e interés,Tareas,cap-2|sec-2-4|tipo-tarea
+OSS-119,OSS-189,OSS-83,2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones,OSS-166,Crear resumen de requerimientos, supuestos, exclusiones y restricciones,Tareas,cap-2|sec-2-5|tipo-tarea
+OSS-120,OSS-190,OSS-83,2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones,OSS-166,Crear un detalle llamado ONLYSIMPLESOLUTIONS con: - Listado de requerimientos - Listado de supuestos, exclusiones y restricciones - Otros listados,Tareas,cap-2|sec-2-5|tipo-tarea
+OSS-122,OSS-191,OSS-85,3.1 Resumen Ejecutivo de la Solución,OSS-167,Elaborar síntesis de la solución (implementación de etapas 1 y 2; implantación con marchas blancas y pasos a producción; operación de soporte por 36 meses),Tareas,cap-3|sec-3-1|tipo-tarea
+OSS-121,OSS-192,OSS-86,3.2 Alcance,OSS-167,Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-3|sec-3-2|tipo-tarea
+OSS-123,OSS-193,OSS-86,3.2 Alcance,OSS-167,Revisar el alcance, qué tecnologías vamos a pedir o usar, etc.,Tareas,cap-3|sec-3-2|tipo-tarea
+OSS-124,OSS-194,OSS-86,3.2 Alcance,OSS-167,Identificar el alcance de la solución (Etapas, exclusiones, catálogo y criterios),Tareas,cap-3|sec-3-2|tipo-tarea
+OSS-125,OSS-195,OSS-86,3.2 Alcance,OSS-167,Anexar el Formulario T-12,Tareas,cap-3|sec-3-2|tipo-tarea
+OSS-126,OSS-196,OSS-87,3.3 Esquema de solución,OSS-167,Diagramar uno o varios esquemas de solución, con explicación en texto para cada uno,Trabajo Tecnico,cap-3|sec-3-3|tipo-tt
+OSS-127,OSS-197,OSS-87,3.3 Esquema de solución,OSS-167,Documentar el esquema de solución, con explicaciones, etc.,Trabajo Tecnico,cap-3|sec-3-3|tipo-tt
+OSS-128,OSS-198,OSS-88,3.4 Explicación de la Solución,OSS-167,Explicar la solución desde la perspectiva operativa/negocio y su conexión con el Cap. 2 (debe mapear al 100 % con la arquitectura lógica del Cap. 4: los componentes tienen el mismo nombre en ambos capítulos),Tareas,cap-3|sec-3-4|tipo-tarea
+OSS-129,OSS-199,OSS-89,4. Introducción,OSS-168,Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-4|sec-4|tipo-tarea
+OSS-130,OSS-200,OSS-90,4.1 Arquitectura lógica,OSS-168,Analizar inconsistencias con el esquema solución,Spikes,cap-4|sec-4-1|tipo-spike
+OSS-131,OSS-201,OSS-90,4.1 Arquitectura lógica,OSS-168,Mirar el esquema solución, explicitar lo de los módulos, en base a lo del ppt. (Consultar definición microservicio),Trabajo Tecnico,cap-4|sec-4-1|tipo-tt
+OSS-132,OSS-202,OSS-90,4.1 Arquitectura lógica,OSS-168,Revisar que los actores y vistas sean consistentes con el informe, y si no lo son registrar las inconsistencias,Tareas,cap-4|sec-4-1|tipo-tarea
+OSS-133,OSS-203,OSS-90,4.1 Arquitectura lógica,OSS-168,Tomar el diagrama lógico, poner las mismas vistas que el esquema de solución; arreglar inconsistencias generales entre ambos diagramas,Trabajo Tecnico,cap-4|sec-4-1|tipo-tt
+OSS-134,OSS-204,OSS-90,4.1 Arquitectura lógica,OSS-168,Diagramar nuevo diagrama lógico,Trabajo Tecnico,cap-4|sec-4-1|tipo-tt
+OSS-135,OSS-205,OSS-90,4.1 Arquitectura lógica,OSS-168,Hacer flujos de cómo el actor interactúa con el sistema (al menos 2 dominios),Trabajo Tecnico,cap-4|sec-4-1|tipo-tt
+OSS-136,OSS-206,OSS-90,4.1 Arquitectura lógica,OSS-168,Reescribir subdocumento 4 Parte 1,Tareas,cap-4|sec-4-1|tipo-tarea
+OSS-137,OSS-207,OSS-91,4.1.1 Especificaciones Tecnologías de Software a utilizar,OSS-168,Revisar stack tecnológico: lenguajes, marcos, motores, servicios y productos, justificando su selección con las alternativas evaluadas y el criterio de decisión,Tareas,cap-4|sec-4-1-1|tipo-tarea
+OSS-138,OSS-208,OSS-92,4.2 Arquitectura física,OSS-169,Realizar el flujo físico en base al diagrama lógico,Trabajo Tecnico,cap-4|sec-4-2|tipo-tt
+OSS-139,OSS-209,OSS-92,4.2 Arquitectura física,OSS-169,Reescribir subdocumento 4 Parte 2,Tareas,cap-4|sec-4-2|tipo-tarea
+OSS-140,OSS-210,OSS-93,4.2.1 Especificaciones Implementos a proveer (Hardware y Software),OSS-169,El hardware que ocupemos, anotarlo en un Excel,Tareas,cap-4|sec-4-2-1|tipo-tarea
+OSS-141,OSS-211,OSS-93,4.2.1 Especificaciones Implementos a proveer (Hardware y Software),OSS-169,Identificar elementos de hardware que en el caso no se especifiquen, o que debamos proveer nosotros,Tareas,cap-4|sec-4-2-1|tipo-tarea
+OSS-142,OSS-212,OSS-94,4.3 Data center,OSS-170,Investigar tecnologías nube, y hardware del datacenter,Spikes,cap-4|sec-4-3|tipo-spike
+OSS-143,OSS-213,OSS-94,4.3 Data center,OSS-170,Redactar la estrategia de centros de datos (texto que precede a 4.3.1 y 4.3.2),Tareas,cap-4|sec-4-3|tipo-tarea
+OSS-144,OSS-214,OSS-95,4.3.1 Especificaciones Data Center Primario,OSS-170,Especificaciones del datacenter primario: identificar proveedor, definir región y zonas de disponibilidad, identificar los servicios, y definir sitio on-premise según corresponda,Tareas,cap-4|sec-4-3-1|tipo-tarea
+OSS-145,OSS-215,OSS-96,4.3.2 Especificaciones Data Center Secundario,OSS-170,Especificaciones del datacenter secundario: definir región o sitio de recuperación, definir estrategia de replicación, establecer el RPO, establecer el RTO, y documentar el procedimiento de conmutación,Tareas,cap-4|sec-4-3-2|tipo-tarea
+OSS-146,OSS-216,OSS-97,5. Introducción,OSS-171,Redactar la introducción y el resumen del capítulo, explicando la conexión con los demás capítulos,Tareas,cap-5|sec-5|tipo-tarea
+OSS-147,OSS-217,OSS-98,5.1 Modelo,OSS-171,Identificar los dominios de información del sistema,Tareas,cap-5|sec-5-1|tipo-tarea
+OSS-148,OSS-218,OSS-98,5.1 Modelo,OSS-171,Diseñar el modelo de datos para cada dominio, con figuras legibles,Trabajo Tecnico,cap-5|sec-5-1|tipo-tt
+OSS-149,OSS-219,OSS-98,5.1 Modelo,OSS-171,Realizar el diccionario de datos en los anexos,Trabajo Tecnico,cap-5|sec-5-1|tipo-tt
+OSS-150,OSS-220,OSS-99,5.2 Gestión de datos,OSS-171,Selección del motor y del paradigma de persistencia,Trabajo Tecnico,cap-5|sec-5-2|tipo-tt
+OSS-151,OSS-221,OSS-99,5.2 Gestión de datos,OSS-171,Justificación de la selección considerando: transaccionalidad, consistencia, disponibilidad, relacional o no relacional (teorema CAP),Tareas,cap-5|sec-5-2|tipo-tarea
+OSS-152,OSS-222,OSS-99,5.2 Gestión de datos,OSS-171,Definir la separación entre almacenamiento transaccional y analítico, y el modelo de explotación de la información: calidad de datos, retención, archivado y eliminación segura,Trabajo Tecnico,cap-5|sec-5-2|tipo-tt
+OSS-153,OSS-223,OSS-100,5.3 Estrategia de migración,OSS-171,Diseñar la estrategia de migración,Tareas,cap-5|sec-5-3|tipo-tarea
+OSS-154,OSS-224,OSS-100,5.3 Estrategia de migración,OSS-171,Definir el proceso de saneamiento/limpieza de datos,Trabajo Tecnico,cap-5|sec-5-3|tipo-tt
+OSS-155,OSS-225,OSS-100,5.3 Estrategia de migración,OSS-171,Definir mecanismos de validación de datos migrados,Trabajo Tecnico,cap-5|sec-5-3|tipo-tt
+OSS-156,OSS-226,OSS-100,5.3 Estrategia de migración,OSS-171,Definir el proceso de conciliación entre origen y destino,Tareas,cap-5|sec-5-3|tipo-tarea
+OSS-157,OSS-227,OSS-100,5.3 Estrategia de migración,OSS-171,Verificar que la migración y las ventanas de corte sean compatibles con el cronograma,Tareas,cap-5|sec-5-3|tipo-tarea
+OSS-158,OSS-228,OSS-101,5.4 Estrategia de desempeño,OSS-171,Definir estrategias de indexación, particionamiento, caché y optimización de consultas,Tareas,cap-5|sec-5-4|tipo-tarea
+OSS-159,OSS-229,OSS-101,5.4 Estrategia de desempeño,OSS-171,Justificar estas decisiones utilizando la volumetría del caso,Tareas,cap-5|sec-5-4|tipo-tarea
+OSS-160,OSS-230,OSS-102,13. Introducción,OSS-172,Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-13|sec-13|tipo-tarea
+OSS-161,OSS-231,OSS-103,13.3 Innovación 3 — Tecnológica o de arquitectura,OSS-172,Investigar innovaciones (conocimiento),Spikes,cap-13|sec-13-3|tipo-spike
+OSS-162,OSS-232,OSS-103,13.3 Innovación 3 — Tecnológica o de arquitectura,OSS-172,Desarrollar la innovación de base tecnológica o de arquitectura, con los siete elementos del Art. 29° y fuentes en norma APA 7.ª edición,Trabajo Tecnico,cap-13|sec-13-3|tipo-tt
+OSS-163,OSS-233,OSS-103,13.3 Innovación 3 — Tecnológica o de arquitectura,OSS-172,Ligar el conocimiento al esquema solución,Trabajo Tecnico,cap-13|sec-13-3|tipo-tt
+OSS-164,OSS-234,OSS-104,13.4 Innovación 4 — Modelo de negocio o de contratación,OSS-172,Desarrollar la innovación de modelo de negocio o de contratación, con los siete elementos del Art. 29°,Tareas,cap-13|sec-13-4|tipo-tarea
+None,OSS-235,OSS-84,3. Introducción,OSS-167,Redactar el resumen del capítulo y su conexión con los demás capítulos, anexos y formularios,Tareas,cap-3|sec-3|tipo-tarea
+NUEVA,OSS-236,OSS-86,3.2 Alcance,OSS-167,Revisar objetivos, redacción, y alineación con proyecto,Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-237,OSS-84,3. Introducción,OSS-167,Verificar que el capítulo 3 responda las 11 preguntas del profesor,Tareas,cap-3|sec-3|tipo-tarea
+NUEVA,OSS-238,OSS-86,3.2 Alcance,OSS-167,Contrastar los requisitos técnicos (RT) con los requisitos del proyecto (RF/RNF),Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-239,OSS-86,3.2 Alcance,OSS-167,Spike: revisar el PMBOK para entradas y salidas de proceso,Spikes,cap-3|sec-3-2|tipo-spike
+NUEVA,OSS-240,OSS-86,3.2 Alcance,OSS-167,Spike: investigar un enunciado de alcance,Spikes,cap-3|sec-3-2|tipo-spike
+NUEVA,OSS-241,OSS-86,3.2 Alcance,OSS-167,Definir la separación y los criterios de asignación de alcance entre la Etapa 1 y la Etapa 2 (Art. 17),Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-242,OSS-86,3.2 Alcance,OSS-167,Consolidar el catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (RF/RNF ↔ T-12),Trabajo Tecnico,cap-3|sec-3-2|tipo-tt
+NUEVA,OSS-243,OSS-86,3.2 Alcance,OSS-167,Validar los supuestos, exclusiones, requisitos y restricciones del alcance,Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-244,OSS-86,3.2 Alcance,OSS-167,Definir los criterios de aceptación del alcance comprometido,Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-245,OSS-86,3.2 Alcance,OSS-167,Definir la estrategia para obtener el apoyo de los grupos de interés clave,Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-246,OSS-86,3.2 Alcance,OSS-167,Definir la frontera entre los dos negocios (retail y crédito fiscalizado) antes de cualquier vista unificada,Tareas,cap-3|sec-3-2|tipo-tarea
+NUEVA,OSS-247,OSS-87,3.3 Esquema de solución,OSS-167,Spike: investigar el diagrama de contexto de la solución,Spikes,cap-3|sec-3-3|tipo-spike
+NUEVA,OSS-248,OSS-87,3.3 Esquema de solución,OSS-167,Elaborar el diagrama de contexto de la solución,Trabajo Tecnico,cap-3|sec-3-3|tipo-tt
+NUEVA,OSS-249,OSS-87,3.3 Esquema de solución,OSS-167,Fuente única de verdad de la existencia y del cálculo del disponible: decisión, fundamento y costeo,Trabajo Tecnico,cap-3|sec-3-3|tipo-tt

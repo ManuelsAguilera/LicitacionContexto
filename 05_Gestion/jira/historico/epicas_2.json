@@ -1,0 +1,119 @@
+{
+  "cloudId": "b662438c-9aba-4643-a083-82a2fde025f3",
+  "projectKey": "OSS",
+  "reporterAccountId": "609a0d9f5d67f20069ae5a6e",
+  "items": [
+    {
+      "n": 45,
+      "epicRef": 19,
+      "issueType": "Epicas",
+      "summary": "4. Introducción",
+      "description": "Sección principal: 4. Introducción"
+    },
+    {
+      "n": 47,
+      "epicRef": 20,
+      "issueType": "Epicas",
+      "summary": "4.1 Arquitectura lógica",
+      "description": "Sección principal: 4.1 Arquitectura lógica"
+    },
+    {
+      "n": 55,
+      "epicRef": 21,
+      "issueType": "Epicas",
+      "summary": "4.1.1 Especificaciones Tecnologías de Software a utilizar",
+      "description": "Sección principal: 4.1.1 Especificaciones Tecnologías de Software a utilizar"
+    },
+    {
+      "n": 57,
+      "epicRef": 22,
+      "issueType": "Epicas",
+      "summary": "4.2 Arquitectura física",
+      "description": "Sección principal: 4.2 Arquitectura física"
+    },
+    {
+      "n": 60,
+      "epicRef": 23,
+      "issueType": "Epicas",
+      "summary": "4.2.1 Especificaciones Implementos a proveer (Hardware y Software)",
+      "description": "Sección principal: 4.2.1 Especificaciones Implementos a proveer (Hardware y Software)"
+    },
+    {
+      "n": 63,
+      "epicRef": 24,
+      "issueType": "Epicas",
+      "summary": "4.3 Data center",
+      "description": "Sección principal: 4.3 Data center"
+    },
+    {
+      "n": 66,
+      "epicRef": 25,
+      "issueType": "Epicas",
+      "summary": "4.3.1 Especificaciones Data Center Primario",
+      "description": "Sección principal: 4.3.1 Especificaciones Data Center Primario"
+    },
+    {
+      "n": 68,
+      "epicRef": 26,
+      "issueType": "Epicas",
+      "summary": "4.3.2 Especificaciones Data Center Secundario",
+      "description": "Sección principal: 4.3.2 Especificaciones Data Center Secundario"
+    },
+    {
+      "n": 70,
+      "epicRef": 27,
+      "issueType": "Epicas",
+      "summary": "5. Introducción",
+      "description": "Sección principal: 5. Introducción"
+    },
+    {
+      "n": 72,
+      "epicRef": 28,
+      "issueType": "Epicas",
+      "summary": "5.1 Modelo",
+      "description": "Sección principal: 5.1 Modelo"
+    },
+    {
+      "n": 76,
+      "epicRef": 29,
+      "issueType": "Epicas",
+      "summary": "5.2 Gestión de datos",
+      "description": "Sección principal: 5.2 Gestión de datos"
+    },
+    {
+      "n": 80,
+      "epicRef": 30,
+      "issueType": "Epicas",
+      "summary": "5.3 Estrategia de migración",
+      "description": "Sección principal: 5.3 Estrategia de migración"
+    },
+    {
+      "n": 86,
+      "epicRef": 31,
+      "issueType": "Epicas",
+      "summary": "5.4 Estrategia de desempeño",
+      "description": "Sección principal: 5.4 Estrategia de desempeño"
+    },
+    {
+      "n": 89,
+      "epicRef": 32,
+      "issueType": "Epicas",
+      "summary": "13. Introducción",
+      "description": "Sección principal: 13. Introducción"
+    },
+    {
+      "n": 91,
+      "epicRef": 33,
+      "issueType": "Epicas",
+      "summary": "13.3 Innovación 3 — Tecnológica o de arquitectura",
+      "description": "Sección principal: 13.3 Innovación 3 — Tecnológica o de arquitectura"
+    },
+    {
+      "n": 95,
+      "epicRef": 34,
+      "issueType": "Epicas",
+      "summary": "13.4 Innovación 4 — Modelo de negocio o de contratación",
+      "description": "Sección principal: 13.4 Innovación 4 — Modelo de negocio o de contratación"
+    }
+  ]
+}
