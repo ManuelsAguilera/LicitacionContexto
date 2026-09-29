@@ -4,6 +4,8 @@
 
 El contexto completo del proyecto está en **`AGENTS.md`** (única fuente de verdad). Léelo antes de trabajar: identidad del proponente (Only Simple Solutions), fuentes y precedencia de `00_Bases/`, reglas que condicionan el diseño, carpetas y criterios de verificación.
 
+La convención de IDs, estados, metadatos y procedencia está en `05_Gestion/convenciones/artefactos.md`. Los scripts documentales y su uso están descritos en `05_Gestion/README.md`.
+
 Este archivo solo existe para que los usuarios de Claude Code arranquen con el mismo contexto sin duplicar contenido.
 
 ## Skills y plugin de opencode

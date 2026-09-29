@@ -67,6 +67,15 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 
 **Espejos:** cuando un `.xlsx` es la fuente oficial y además hay que leerlo con agentes, se genera un `.md` espejo. **Si el espejo y el Excel difieren, manda el Excel.** Los espejos se regeneran, no se editan a mano.
 
+### Sistema de artefactos verificables
+
+- La convención de IDs, estados, frontmatter y procedencia vive en `05_Gestion/convenciones/artefactos.md`.
+- El estado `revisado` requiere revisión humana registrada; ningún script o agente lo asigna automáticamente.
+- El índice obligatorio del Comunicado 10 gobierna la estructura entregable. Los maestros actuales pueden documentar una estructura provisional; no migrar su tabla de secciones como verdad oficial sin cotejarla.
+- La migración desde Google Docs se realiza mediante exportación DOCX; un `.md` completo también puede importarse. El modo `--dry-run` no escribe secciones. Los mapeos ambiguos se revisan antes de aplicar y el contenido fuente se conserva.
+- `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
+- Todo PDF se genera desde los artefactos Markdown y los nombres de entrega siguen el Comunicado 10. Google Docs es copia editable derivada, no fuente de verdad.
+
 ## Convención de nombres de los artefactos
 
 | Tipo | Patrón | Ejemplo |

@@ -3,6 +3,10 @@
 Material de gestión: aquí vive la trazabilidad entre el plan de trabajo, los artefactos redactados y
 la propuesta.
 
+## Sistema de artefactos
+
+`convenciones/artefactos.md` define IDs y metadatos; `reportes/` contiene reconocimiento, problemas y contradicciones; `scripts/` en la raíz de esta carpeta contiene importación, validación, estado, contexto y exportación. Ejecutar `python 05_Gestion/scripts/<script>.py --help` para ver opciones. Los comandos de importación y compilación admiten `--dry-run`; los importes requieren un mapa revisado para aplicar.
+
 ## `jira/`
 
 Estructura del proyecto `OSS` en Jira Cloud, que organiza el trabajo por capítulo.

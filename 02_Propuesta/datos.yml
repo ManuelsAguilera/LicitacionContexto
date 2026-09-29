@@ -1,0 +1,38 @@
+# Registro mínimo de cifras/nombres clave con fuente rastreable.
+# No usar como sustituto de las Bases; agregar una clave solo tras verificar el origen.
+cronograma_total_meses:
+  valor: 56
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+etapa_1_meses:
+  valor: "1-15"
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+produccion_etapa_1_mes:
+  valor: 16
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+etapa_2_meses:
+  valor: "13-20"
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+produccion_etapa_2_mes:
+  valor: 21
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+operacion_meses:
+  valor: "21-56"
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+duracion_operacion_meses:
+  valor: 36
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+plataformas_existentes:
+  valor: 9
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+proveedores_existentes:
+  valor: 6
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+interfaces_punto_a_punto:
+  valor: 14
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+discrepancia_conteo_ciclico_pct:
+  valor: 12.4
+  fuente: "AGENTS.md: Reglas que condicionan todo el diseño"
+empresa_proponente:
+  valor: "Only Simple Solutions"
+  fuente: "AGENTS.md: Identidad del proponente"
