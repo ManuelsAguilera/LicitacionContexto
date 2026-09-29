@@ -55,7 +55,7 @@ Estructura de pipeline: los prefijos numéricos declaran la etapa del flujo.
 | `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo. **Solo referencia de forma.** |
 | `.opencode/` | Skills versionadas, plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` no se versionan. |
 
-Cada carpeta tiene un `README.md` con su propósito. Leer el de la carpeta antes de escribir en ella.
+Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la carpeta antes de escribir en ella. Las subcarpetas no lo tienen: su propósito está en la tabla de arriba y en un `.gitkeep` comentado mientras están vacías.
 
 ## Convención de formato de los artefactos
 

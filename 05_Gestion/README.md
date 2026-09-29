@@ -9,16 +9,16 @@ Estructura del proyecto `OSS` en Jira Cloud, que organiza el trabajo por capítu
 
 | Subcarpeta | Contenido |
 | :--- | :--- |
-| `plan/` | `restructuracion_2026-09-29_plan.json`: **fuente de verdad** de la estructura de 3 niveles (Épica de capítulo > Historia de sección > Subtarea) |
-| `mapeo/` | CSV de correspondencia entre subtareas y secciones, payload de importación y JSON de etiquetas |
-| `scripts/` | Utilidades Python y PowerShell que generan los artefactos anteriores y consultan la API de Jira |
-| `historico/` | Estructura plana de 2 niveles de la importación original, ya reemplazada. Se conserva como referencia; **no se usa para operar** |
+| `jira/plan/` | `restructuracion_2026-09-29_plan.json`: **fuente de verdad** de la estructura de 3 niveles (Épica de capítulo > Historia de sección > Subtarea) |
+| `jira/mapeo/` | CSV de correspondencia entre subtareas y secciones, payload de importación y JSON de etiquetas |
+| `jira/scripts/` | Utilidades Python y PowerShell que generan los artefactos anteriores y consultan la API de Jira |
+| `jira/historico/` | Estructura plana de 2 niveles de la importación original, ya reemplazada. Se conserva como referencia; **no se usa para operar** |
 
 ### Estructura actual en Jira
 
 8 agrupadoras (capítulos 1 a 5 y 13) > 34 historias > 77 subtareas. Las subtareas
 `OSS-173` a `OSS-235` reemplazan a los originales `OSS-105` a `OSS-164`, que ya fueron borrados.
-`historico/borrar_manual.txt` describe ese borrado y está obsoleto a propósito.
+`jira/historico/borrar_manual.txt` describe ese borrado y está obsoleto a propósito.
 
 ### Advertencia: dos taxonomías de secciones
 

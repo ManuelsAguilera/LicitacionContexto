@@ -12,6 +12,9 @@ __pycache__/
 .env.*
 !.env.example
 
+# Vistas derivadas de Jira: se regeneran desde 05_Gestion/jira/plan y /mapeo
+Informe de uso*.pdf
+
 # Lockfile no usado
 bun.lock
 
