@@ -20,6 +20,9 @@ def main():
         candidate_fm,_=parse_frontmatter(candidate.read_text(encoding="utf-8-sig"))
         if candidate_fm.get("id"): all_ids.add(candidate_fm["id"])
     registry={x["id"]:x for x in json.loads(registry_path.read_text(encoding="utf-8"))} if registry_path.exists() else {}
+    ai_path=ROOT/"05_Gestion"/"ia"/"registro.json"
+    ai_records=json.loads(ai_path.read_text(encoding="utf-8")).get("registros",[]) if ai_path.exists() else []
+    registered_ai={x.get("artefacto") for x in ai_records}
     for p in (ROOT/"02_Propuesta").rglob("*.md"):
         if p.name=="indice.md": continue
         if a.parte and not any(p.parts[-2].startswith("sd-"+x[3:]+"_") for x in a.parte): continue
@@ -31,6 +34,13 @@ def main():
         aid=fm.get("id")
         if aid in ids: errors.append(f"ID duplicado {aid}: {ids[aid]} y {rel}")
         elif aid: ids[aid]=rel
+        if fm.get("tipo")=="parte":
+            part_num=int(fm.get("parte","T7-00")[3:])
+            refs=p.parent/f"sd-{part_num:02d}_referencias.md"
+            if not refs.is_file(): warnings.append(f"{rel}: falta la sección final obligatoria Referencias ({refs.name})")
+            expected=list(fm.get("secciones",[])) + (fm.get("adjuntos",[]) if isinstance(fm.get("adjuntos",[]),list) else [])
+            for expected_id in expected:
+                if expected_id not in registered_ai: warnings.append(f"{rel}: falta registro de uso de IA para {expected_id}")
         if fm.get("estado") in {"revisado","congelado"}:
             review=fm.get("revision_humana",{})
             if not isinstance(review,dict) or not review.get("revisor") or not review.get("evidencia"):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Ensambla Markdown por parte, genera HTML corporativo y PDF de revisión/entrega."""
 from __future__ import annotations
-import argparse, html, json, os, re, shutil, subprocess, sys, tempfile
+import argparse, hashlib, html, json, os, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 from urllib.parse import quote
 from artefactos import ROOT, frontmatter_text, parse_frontmatter, words
@@ -112,6 +112,18 @@ def render_html(part,title,ordered,theme,draft,output,page_numbers=None,front_on
     content=[]; toc=[]
     for i,(_,section_title,path,sfm,body) in enumerate(ordered,1):
         _,body=parse_frontmatter(path.read_text(encoding="utf-8-sig"))
+        diagrams=re.findall(r"```mermaid\s*\n(.*?)\n```",body,re.S|re.I)
+        if diagrams:
+            mmdc=shutil.which("mmdc")
+            if not mmdc: raise RuntimeError(f"{path.relative_to(ROOT)} contiene Mermaid; se requiere Mermaid CLI (mmdc) para exportarlo como figura")
+            for source in diagrams:
+                digest=hashlib.sha256(source.encode("utf-8")).hexdigest()[:16]; builddir=ROOT/"05_Gestion"/"build"; builddir.mkdir(parents=True,exist_ok=True)
+                mmd=builddir/f"{part}-{digest}.mmd"; svg=builddir/f"{part}-{digest}.svg"
+                if not svg.exists():
+                    mmd.write_text(source+"\n",encoding="utf-8"); proc=subprocess.run([mmdc,"-i",str(mmd),"-o",str(svg),"-b","transparent"],capture_output=True,text=True,timeout=120)
+                    if proc.returncode or not svg.exists(): raise RuntimeError("Mermaid CLI falló: "+proc.stderr[-800:])
+                figure=f'<figure class="diagram"><img src="{html.escape(svg.resolve().as_uri(),quote=True)}" alt="Diagrama Mermaid"></figure>'
+                body=re.sub(r"```mermaid\s*\n"+re.escape(source)+r"\n```",lambda _:figure,body,count=1,flags=re.I)
         slug=f"seccion-{i}"
         pandoc=shutil.which("pandoc")
         if pandoc:
@@ -122,7 +134,7 @@ def render_html(part,title,ordered,theme,draft,output,page_numbers=None,front_on
             rendered=fallback_markdown(body)
         def local_uri(match):
             href=match.group(2)
-            if href.startswith(("http:","https:","#","data:")): return match.group(0)
+            if href.startswith(("http:","https:","file:","#","data:")): return match.group(0)
             resolved=(path.parent/href).resolve()
             return f'{match.group(1)}="{html.escape(resolved.as_uri(),quote=True)}"'
         rendered=re.sub(r'(src|href)="([^"]+)"',local_uri,rendered)
@@ -183,10 +195,31 @@ def declared_attachments(fm):
     wanted=set(fm.get("adjuntos",[]))
     return [x for x in registry if x.get("id") in wanted]
 
+def ai_declaration(part,fm,sections,builddir):
+    registry_path=ROOT/"05_Gestion"/"ia"/"registro.json"
+    registry=json.loads(registry_path.read_text(encoding="utf-8")) if registry_path.exists() else {"registros":[]}
+    records={r.get("artefacto"):r for r in registry.get("registros",[])}
+    expected=[(sfm.get("id"),section_title) for _,section_title,_,sfm,_ in sections]
+    expected += [(r["id"],r["nombre"]) for r in declared_attachments(fm)]
+    missing=[aid for aid,_ in expected if aid not in records]
+    if missing: raise ValueError("Registro de uso de IA incompleto para: "+", ".join(str(x) for x in missing))
+    valid={"Ninguno","Bajo","Medio","Alto"}
+    rows=[]
+    for aid,title in expected:
+        r=records[aid]
+        if r.get("nivel_texto") not in valid or r.get("nivel_diagramas") not in valid or not r.get("herramienta") or not r.get("finalidad") or not r.get("verificador") or r.get("verificador"," ").casefold() in {"pendiente","por definir","tbd"} or not r.get("comprobaciones"):
+            raise ValueError(f"Registro IA incompleto o inválido: {aid}")
+        rows.append((aid,r["herramienta"],r["finalidad"],r["nivel_texto"],r["nivel_diagramas"],r["verificador"]+": "+"; ".join(r["comprobaciones"])))
+    body=["# Declaración de uso de IA","","La siguiente declaración identifica el apoyo utilizado en cada artefacto y la verificación humana registrada.","","| Artefacto | Herramienta | Finalidad | Texto | Diagramas | Verificación humana |","|---|---|---|---|---|---|"]
+    body += ["| "+" | ".join(str(x).replace("|","\\|").replace("\n"," ") for x in row)+" |" for row in rows]
+    path=builddir/f"{part}.declaracion-ia.md"; path.parent.mkdir(parents=True,exist_ok=True); path.write_text("\n".join(body)+"\n",encoding="utf-8")
+    fm={"id":part+"-IA","estado":"revisado" if rows else "borrador"}
+    return (len(sections)+2,"Declaración de uso de IA",path,fm,"\n".join(body)+"\n")
+
 def annex_html(part,title,record,theme,output,draft):
     source=ROOT/record["ruta"]
     if source.suffix.casefold()==".md":
-        _,body=parse_frontmatter(source.read_text(encoding="utf-8-sig")); content=fallback_markdown(body)
+        annex_meta,body=parse_frontmatter(source.read_text(encoding="utf-8-sig")); title=str(annex_meta.get("titulo",title)); content=fallback_markdown(body)
         def local_uri(match):
             href=match.group(2)
             if href.startswith(("http:","https:","#","data:")): return match.group(0)
@@ -200,6 +233,7 @@ def annex_html(part,title,record,theme,output,draft):
     watermark='<div class="draft-watermark">BORRADOR</div>' if draft else ''
     doc=f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{html.escape(title)}</title><style>{css}</style></head><body><div class="running-company">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</div>{watermark}<section class="annex-cover"><p class="cover-mark">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</p><h1>{html.escape(title)}</h1><p>{part} · Anexo {html.escape(record["id"])}</p></section><section class="section-content">{content}</section></body></html>'
     output.write_text(doc,encoding="utf-8")
+    return title
 
 def export_annexes(part,fm,title,theme,edge,builddir,profile,outdir,draft):
     records=declared_attachments(fm)
@@ -210,9 +244,9 @@ def export_annexes(part,fm,title,theme,edge,builddir,profile,outdir,draft):
     for record in annexes:
         source=ROOT/record["ruta"]; label=re.sub(r"[^A-Za-z0-9-]+","-",source.stem).strip("-")
         html_path=builddir/f"{part}.{record['id']}.html"; pdf=outdir/f"OnlySimpleSolutions-Subdocumento{int(part[3:])}-Anexos-{record['id']}_{label}.pdf"
-        annex_html(part,title+" · "+source.stem,record,theme,html_path,draft)
+        annex_title=annex_html(part,title+" · "+source.stem,record,theme,html_path,draft)
         pages=print_pdf(edge,html_path,pdf,profile)
-        verify_pdf(pdf,source.stem,part)
+        verify_pdf(pdf,annex_title,part)
         if not 1<=pages<=200: raise ValueError(f"Número de páginas fuera de rango en {pdf.name}: {pages}")
         html_path.unlink(missing_ok=True); outputs.append((pdf,pages))
     return outputs
@@ -229,6 +263,9 @@ def build_one(part,dry):
             state="pendiente" if not (ROOT/record["ruta"]).exists() else "presente"
             kind="formulario separado" if Path(record["nombre"]).name.casefold().startswith("form-") else "PDF de anexo"
             print(f"  {record['id']} · {kind} · {state}: {record['ruta']}")
+        references=folder/f"sd-{int(part[3:]):02d}_referencias.md"
+        print(f"  T7-{int(part[3:]):02d}-REF · {'presente' if references.exists() else 'pendiente'}: {references.relative_to(ROOT)}")
+        print(f"  T7-{int(part[3:]):02d}-IA · requiere registro humano por sección/anexo/formulario")
         return 0
     for _,_,p,_,body in sections:
         if re.search(r"\bTODO\b|\[VERIFICAR\]",body,re.I): raise ValueError(f"Marcador pendiente en {p.relative_to(ROOT)}")
@@ -242,15 +279,27 @@ def build_one(part,dry):
     if missing_annexes: raise ValueError("Anexos declarados pendientes: "+", ".join(missing_annexes))
     unsupported=[r["ruta"] for r in annex_records if Path(r["ruta"]).suffix.casefold() not in {".md",".svg",".png",".jpg",".jpeg",".webp"}]
     if unsupported: raise ValueError("Formato de anexo sin conversión implementada: "+", ".join(unsupported))
-    render_html(part,title,sections,theme,draft,front_html,front_only=True)
+    references_path=folder/f"sd-{int(part[3:]):02d}_referencias.md"
+    if not references_path.is_file(): raise ValueError(f"Falta la sección final obligatoria Referencias: {references_path.relative_to(ROOT)}")
+    references_fm,references_body=parse_frontmatter(references_path.read_text(encoding="utf-8-sig"))
+    if not references_body.strip(): raise ValueError("La sección obligatoria Referencias no puede estar vacía")
+    if not references_fm.get("id") or references_fm.get("estado") not in {"revisado","congelado"}:
+        raise ValueError("Referencias requiere frontmatter con ID y estado revisado/congelado antes de exportar")
+    if re.search(r"\bTODO\b|\[VERIFICAR\]",references_body,re.I) or re.search(r"\bstyle\s*=",references_body,re.I):
+        raise ValueError("Referencias contiene un marcador pendiente o estilos inline prohibidos")
+    ref_tuple=(len(sections)+1,"Referencias",references_path,references_fm,references_body)
+    ia_tuple=ai_declaration(part,fm,sections,builddir)
+    output_sections=sections+[ref_tuple,ia_tuple]
+    draft=draft or references_fm.get("estado") not in {"revisado","congelado"}
+    render_html(part,title,output_sections,theme,draft,front_html,front_only=True)
     fixed_pages=print_pdf(edge,front_html,front_pdf,profile)
     page_map={}; page_cursor=fixed_pages+1; section_pdfs=[]
-    for i,section in enumerate(sections):
+    for i,section in enumerate(output_sections):
         section_html=builddir/f"{part}.section-{i+1}.html"; section_pdf=builddir/f"{part}.section-{i+1}.pdf"
-        render_html(part,title,sections,theme,draft,section_html,section_only=i)
+        render_html(part,title,output_sections,theme,draft,section_html,section_only=i)
         section_pages=print_pdf(edge,section_html,section_pdf,profile); page_map[f"seccion-{i+1}"]=page_cursor
         page_cursor+=section_pages; section_pdfs.append(section_pdf)
-    render_html(part,title,sections,theme,draft,html_path,page_numbers=page_map)
+    render_html(part,title,output_sections,theme,draft,html_path,page_numbers=page_map)
     expected_pages=page_cursor-1; pages=print_pdf(edge,html_path,pdf,profile)
     front_html.unlink(missing_ok=True); front_pdf.unlink(missing_ok=True)
     for p in section_pdfs: p.unlink(missing_ok=True)
@@ -270,7 +319,7 @@ def main():
     try:
         if a.muestra:
             theme=simple_yaml(THEME); out=ROOT/"05_Gestion"/"build"/"muestra.html"; out.parent.mkdir(parents=True,exist_ok=True)
-            render_html("T7-00","Muestra visual",[(1,"Componentes",ROOT/"plantillas"/"muestra.md",{},(ROOT/"plantillas"/"muestra.md").read_text(encoding="utf-8"))],theme,True,out)
+            render_html("T7-00","Muestra visual",[(1,"Componentes",ROOT/"plantillas"/"muestra.md",{},(ROOT/"plantillas"/"muestra.md").read_text(encoding="utf-8"))],theme,True,out,page_numbers={"seccion-1":3})
             print(f"Muestra HTML creada: {out.relative_to(ROOT)}")
             if not a.dry_run:
                 edge=edge_renderer()

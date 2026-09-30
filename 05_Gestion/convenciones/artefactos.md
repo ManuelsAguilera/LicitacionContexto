@@ -4,6 +4,7 @@
 
 - Parte del Formulario T-7: `T7-NN` (dos dígitos; por ejemplo `T7-03`).
 - Sección: `T7-NN-x.y` usando la numeración obligatoria del Comunicado 10.
+- Secciones finales no numeradas: `T7-NN-REF` (Referencias) y `T7-NN-IA` (Declaración de uso de IA); la declaración se construye desde `05_Gestion/ia/registro.json`.
 - Adjunto: `ADJ-NNN`, correlativo y estable; el mismo ID se conserva si cambia el nombre del archivo.
 - Requisito: ID oficial existente en el espejo v3.0 (RF, RNF u OP). No se crean equivalencias por inferencia.
 - Jira: clave existente `OSS-NNN`; consultar únicamente `05_Gestion/jira/mapeo/` vigente.

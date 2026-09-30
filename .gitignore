@@ -8,6 +8,14 @@ __pycache__/
 *.pyc
 05_Gestion/build/
 05_Gestion/reportes/muestra_visual.pdf
+.claude/skills/redactar-seccion/
+.claude/skills/revisar-seccion/
+.claude/skills/cerrar-parte/
+.claude/skills/exportar/
+.opencode/skills/redactar-seccion/
+.opencode/skills/revisar-seccion/
+.opencode/skills/cerrar-parte/
+.opencode/skills/exportar/
 
 # Secretos: nunca versionar
 .env
