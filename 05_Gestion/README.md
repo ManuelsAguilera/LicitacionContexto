@@ -16,6 +16,8 @@ la propuesta.
 
 El PDF se imprime con Edge/Chromium en modo sin interfaz, disponible en Windows; Pandoc se utiliza cuando está instalado para convertir Markdown, con un conversor local acotado como fallback. La salida PDF no reemplaza la validación visual ni la revisión del índice obligatorio. La publicación como Google Docs queda como copia derivada y requiere importación nativa y lectura de vuelta; no tratar el HTML como documento publicado.
 
+Cada adjunto no-formulario declarado se exporta como PDF individual cuando existe y su tipo es Markdown, SVG o imagen; los formularios conservan su archivo separado. Si falta un adjunto o su tipo no está soportado, el build se detiene antes de publicar el PDF principal. La verificación final exige `pypdf` para comprobar extracción de texto, marcadores, metadatos y fuentes incrustadas.
+
 El piloto T7-03 parte del Informe 1, pero su mapa actual es una **propuesta no aprobada**: las 55 asignaciones requieren revisión humana y todavía no se han materializado archivos de sección a partir de ellas. Las diferencias entre el maestro provisional y el índice del Comunicado 10 deben resolverse a favor de este último. La fase de exportación final y los anexos se validan tras esa migración aprobada.
 
 La fuente de skills compartidas está en `.agents/skills/`. En Windows, ejecutar `05_Gestion/scripts/link_skills.ps1` para crear junctions hacia `.claude/skills/` y `.opencode/skills/`; el script no reemplaza carpetas con contenido.

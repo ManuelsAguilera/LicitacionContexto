@@ -6,6 +6,8 @@
 .venv/
 __pycache__/
 *.pyc
+05_Gestion/build/
+05_Gestion/reportes/muestra_visual.pdf
 
 # Secretos: nunca versionar
 .env
