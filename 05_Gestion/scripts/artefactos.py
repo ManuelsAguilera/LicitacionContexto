@@ -120,7 +120,9 @@ def source_blocks(path):
         if line.lstrip().startswith("|"):
             rows=[]
             while i<len(lines) and lines[i].lstrip().startswith("|"):
-                rows.append([cell.strip() for cell in lines[i].strip().strip("|").split("|")]); i+=1
+                row=[cell.strip() for cell in lines[i].strip().strip("|").split("|")]
+                if not all(re.fullmatch(r":?-{3,}:?",cell) for cell in row): rows.append(row)
+                i+=1
             blocks.append({"kind":"table","level":"","text":"\n".join(" | ".join(row) for row in rows)}); continue
         if line.lstrip().startswith("```"):
             lang=line.strip()[3:].strip(); code=[]; i+=1

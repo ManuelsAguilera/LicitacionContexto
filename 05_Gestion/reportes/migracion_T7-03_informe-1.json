@@ -2338,6 +2338,8 @@
     "requieren_revision": 55,
     "sin_correspondencia": 0,
     "figuras": 0,
-    "tablas": 25
+    "figuras_fuera_capitulo": 1,
+    "tablas": 25,
+    "tablas_fuera_capitulo": 1
   }
 }
