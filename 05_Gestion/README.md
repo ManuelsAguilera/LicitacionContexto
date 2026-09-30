@@ -7,6 +7,19 @@ la propuesta.
 
 `convenciones/artefactos.md` define IDs y metadatos; `reportes/` contiene reconocimiento, problemas y contradicciones; `scripts/` en la raíz de esta carpeta contiene importación, validación, estado, contexto y exportación. Ejecutar `python 05_Gestion/scripts/<script>.py --help` para ver opciones. Los comandos de importación y compilación admiten `--dry-run`; los importes requieren un mapa revisado para aplicar.
 
+### Flujo operativo
+
+1. Importar un `.docx` (incluida una exportación de Google Docs) o un `.md` completo con `migrar.py --fuente <archivo> --parte T7-NN --dry-run --reporte <json>`. El informe conserva bloques, tablas y referencias detectadas, propone destinos y registra hashes de fuente e índice.
+2. Revisar todas las asignaciones y completar un mapa con esos hashes, `aprobado_por`, `aprobado_el` y `asignaciones` por número de bloque. Solo entonces ejecutar `migrar.py` sin `--dry-run --mapa-aprobado <json>`. Nunca sobrescribe secciones o adjuntos existentes.
+3. Ejecutar `agregar_frontmatter.py --dry-run` antes de aplicarlo; usar `check.py`, `estado.py` y `brief.py` para revisar trazabilidad, faltantes y contexto.
+4. Diseñar desde `plantillas/tema.yml`, `base.css` y los componentes Lua; probar con `build.py --muestra --todo`. Para exportar, ejecutar `build.py --parte T7-NN` o `--todo`.
+
+El PDF se imprime con Edge/Chromium en modo sin interfaz, disponible en Windows; Pandoc se utiliza cuando está instalado para convertir Markdown, con un conversor local acotado como fallback. La salida PDF no reemplaza la validación visual ni la revisión del índice obligatorio. La publicación como Google Docs queda como copia derivada y requiere importación nativa y lectura de vuelta; no tratar el HTML como documento publicado.
+
+El piloto T7-03 parte del Informe 1, pero su mapa actual es una **propuesta no aprobada**: las 55 asignaciones requieren revisión humana y todavía no se han materializado archivos de sección a partir de ellas. Las diferencias entre el maestro provisional y el índice del Comunicado 10 deben resolverse a favor de este último. La fase de exportación final y los anexos se validan tras esa migración aprobada.
+
+La fuente de skills compartidas está en `.agents/skills/`. En Windows, ejecutar `05_Gestion/scripts/link_skills.ps1` para crear junctions hacia `.claude/skills/` y `.opencode/skills/`; el script no reemplaza carpetas con contenido.
+
 ## `jira/`
 
 Estructura del proyecto `OSS` en Jira Cloud, que organiza el trabajo por capítulo.

@@ -75,6 +75,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 - La migración desde Google Docs se realiza mediante exportación DOCX; un `.md` completo también puede importarse. El modo `--dry-run` no escribe secciones. Los mapeos ambiguos se revisan antes de aplicar y el contenido fuente se conserva.
 - `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
 - Todo PDF se genera desde los artefactos Markdown y los nombres de entrega siguen el Comunicado 10. Google Docs es copia editable derivada, no fuente de verdad.
+- Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`; en Windows, `05_Gestion/scripts/link_skills.ps1` las enlaza desde Claude Code y OpenCode. Editar siempre la fuente canónica.
 
 ## Convención de nombres de los artefactos
 

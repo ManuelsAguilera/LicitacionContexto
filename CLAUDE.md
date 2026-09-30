@@ -12,13 +12,9 @@ Este archivo solo existe para que los usuarios de Claude Code arranquen con el m
 
 El skill orquestador `licitacion-workflow` y el plugin `activar-skills.ts` que viven en `.opencode/` son **específicos de opencode** (se cargan con la herramienta `skill` y se inyectan en su prompt de sistema). No aplican a Claude Code; ignóralos.
 
-## Cómo instalar skills equivalentes en Claude Code
+## Skills compartidas
 
-Si necesitas helpers similares (Excel, Word, PowerPoint, PDF, diagramas, riesgos, estimación), Claude Code ofrece **Agent Skills** del mismo formato (`SKILL.md` con frontmatter `name`/`description`), que se buscan e instalan por repositorio en `.claude/skills/`.
-
-1. En el config de Claude Code: busca skills/repos de skills (marketplace) o agrega `.claude/skills/<nombre>/SKILL.md` al proyecto local.
-2. Instala solo los que uses; no se versionan aquí para evitar duplicación y confusión entre herramientas.
-3. Ejemplos útiles para esta propuesta: manejo de `.xlsx`, `.docx`, `.pptx`, manejo de PDF, evaluación de riesgos y redacción técnica.
+Las skills nuevas del flujo de artefactos se mantienen versionadas en `.agents/skills/`. En Windows, ejecutar `05_Gestion/scripts/link_skills.ps1` para exponerlas a Claude Code (`.claude/skills/`) y OpenCode (`.opencode/skills/`) mediante junctions locales. No editar las copias enlazadas desde una integración: la fuente canónica está en `.agents/skills/`. Las skills preexistentes de OpenCode se conservan sin cambios.
 
 ## Diagramas
 
