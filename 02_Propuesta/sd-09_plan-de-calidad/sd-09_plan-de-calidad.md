@@ -1,3 +1,25 @@
+---
+id: T7-09
+tipo: parte
+parte: T7-09
+titulo: Plan de calidad
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-022
+  - ADJ-023
+jira: []
+cifras: []
+secciones:
+  - T7-09-9.1
+  - T7-09-9.2
+  - T7-09-9.3
+  - T7-09-9.4
+  - T7-09-9.5
+actualizado: 2026-09-29
+---
 # Subdocumento 9 — Plan de calidad
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-09_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

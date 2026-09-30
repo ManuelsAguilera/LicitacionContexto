@@ -1,3 +1,28 @@
+---
+id: T7-13
+tipo: parte
+parte: T7-13
+titulo: Innovaciones
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-025
+  - ADJ-026
+jira:
+  - OSS-102
+  - OSS-103
+  - OSS-104
+  - OSS-172
+cifras: []
+secciones:
+  - T7-13-13.1
+  - T7-13-13.2
+  - T7-13-13.3
+  - T7-13-13.4
+actualizado: 2026-09-29
+---
 # Subdocumento 13 — Innovaciones
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-13_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

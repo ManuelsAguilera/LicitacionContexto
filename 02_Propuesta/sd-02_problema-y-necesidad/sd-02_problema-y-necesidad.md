@@ -1,3 +1,34 @@
+---
+id: T7-02
+tipo: parte
+parte: T7-02
+titulo: "Resumen Ejecutivo, comprensión del problema y de la necesidad"
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-004
+  - ADJ-005
+jira:
+  - OSS-166
+  - OSS-78
+  - OSS-79
+  - OSS-80
+  - OSS-81
+  - OSS-82
+  - OSS-83
+cifras: []
+secciones:
+  - T7-02-2.1
+  - T7-02-2.2
+  - T7-02-2.3
+  - T7-02-2.4
+  - T7-02-2.5
+  - T7-02-2.6
+  - T7-02-2.7
+actualizado: 2026-09-29
+---
 # Subdocumento 2 — Resumen Ejecutivo, comprensión del problema y de la necesidad
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-02_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

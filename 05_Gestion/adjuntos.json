@@ -1,0 +1,210 @@
+[
+  {
+    "id": "ADJ-001",
+    "parte": "T7-01",
+    "nombre": "form-T-6_experiencia-relevante.docx",
+    "ruta": "02_Propuesta/sd-01_presentacion-empresa/form-T-6_experiencia-relevante.docx",
+    "declarado_en": "02_Propuesta/sd-01_presentacion-empresa/sd-01_presentacion-empresa.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-002",
+    "parte": "T7-01",
+    "nombre": "adj-sd-01_s5_certificaciones.pdf",
+    "ruta": "02_Propuesta/sd-01_presentacion-empresa/adj-sd-01_s5_certificaciones.pdf",
+    "declarado_en": "02_Propuesta/sd-01_presentacion-empresa/sd-01_presentacion-empresa.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-003",
+    "parte": "T7-01",
+    "nombre": "adj-sd-01_s6_frente-jefaturas.md",
+    "ruta": "02_Propuesta/sd-01_presentacion-empresa/adj-sd-01_s6_frente-jefaturas.md",
+    "declarado_en": "02_Propuesta/sd-01_presentacion-empresa/sd-01_presentacion-empresa.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-004",
+    "parte": "T7-02",
+    "nombre": "adj-sd-02_s4_dimensionamiento.xlsx",
+    "ruta": "02_Propuesta/sd-02_problema-y-necesidad/adj-sd-02_s4_dimensionamiento.xlsx",
+    "declarado_en": "02_Propuesta/sd-02_problema-y-necesidad/sd-02_problema-y-necesidad.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-005",
+    "parte": "T7-02",
+    "nombre": "adj-sd-02_s4_referencias-APA7.md",
+    "ruta": "02_Propuesta/sd-02_problema-y-necesidad/adj-sd-02_s4_referencias-APA7.md",
+    "declarado_en": "02_Propuesta/sd-02_problema-y-necesidad/sd-02_problema-y-necesidad.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-006",
+    "parte": "T7-03",
+    "nombre": "form-T-12_matriz-cumplimiento-tecnico.xlsx",
+    "ruta": "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/form-T-12_matriz-cumplimiento-tecnico.xlsx",
+    "declarado_en": "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_esquema-de-solucion-y-alcance.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-007",
+    "parte": "T7-03",
+    "nombre": "diag-03-01_esquema-conceptual-solucion.svg",
+    "ruta": "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/diag-03-01_esquema-conceptual-solucion.svg",
+    "declarado_en": "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_esquema-de-solucion-y-alcance.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-008",
+    "parte": "T7-04",
+    "nombre": "diag-04-01_arquitectura-logica.svg",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-01_arquitectura-logica.svg",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-009",
+    "parte": "T7-04",
+    "nombre": "diag-04-02_arquitectura-fisica.svg",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-02_arquitectura-fisica.svg",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-010",
+    "parte": "T7-04",
+    "nombre": "diag-04-03_data-center.svg",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-03_data-center.svg",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-011",
+    "parte": "T7-04",
+    "nombre": "adj-sd-04_s2_inventario-hardware.xlsx",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/adj-sd-04_s2_inventario-hardware.xlsx",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-012",
+    "parte": "T7-04",
+    "nombre": "form-T-11_especificaciones-tecnicas-ofertadas.docx",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/form-T-11_especificaciones-tecnicas-ofertadas.docx",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-013",
+    "parte": "T7-05",
+    "nombre": "diag-05-01_modelo-datos.svg",
+    "ruta": "02_Propuesta/sd-05_modelo-y-gestion-de-datos/diag-05-01_modelo-datos.svg",
+    "declarado_en": "02_Propuesta/sd-05_modelo-y-gestion-de-datos/sd-05_modelo-y-gestion-de-datos.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-014",
+    "parte": "T7-05",
+    "nombre": "diag-05-02_frontera-datos-retail-financiero.svg",
+    "ruta": "02_Propuesta/sd-05_modelo-y-gestion-de-datos/diag-05-02_frontera-datos-retail-financiero.svg",
+    "declarado_en": "02_Propuesta/sd-05_modelo-y-gestion-de-datos/sd-05_modelo-y-gestion-de-datos.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-015",
+    "parte": "T7-06",
+    "nombre": "form-T-9_metodologia-gestion-proyectos.docx",
+    "ruta": "02_Propuesta/sd-06_metodologias/form-T-9_metodologia-gestion-proyectos.docx",
+    "declarado_en": "02_Propuesta/sd-06_metodologias/sd-06_metodologias.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-016",
+    "parte": "T7-06",
+    "nombre": "form-T-10_metodologia-desarrollo.docx",
+    "ruta": "02_Propuesta/sd-06_metodologias/form-T-10_metodologia-desarrollo.docx",
+    "declarado_en": "02_Propuesta/sd-06_metodologias/sd-06_metodologias.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-017",
+    "parte": "T7-07",
+    "nombre": "adj-sd-07_s4_carta-gantt.pdf",
+    "ruta": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/adj-sd-07_s4_carta-gantt.pdf",
+    "declarado_en": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/sd-07_plan-de-trabajo-EDT-e-implantacion.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-018",
+    "parte": "T7-07",
+    "nombre": "form-T-14_plan-de-trabajo-EDT.docx",
+    "ruta": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/form-T-14_plan-de-trabajo-EDT.docx",
+    "declarado_en": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/sd-07_plan-de-trabajo-EDT-e-implantacion.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-019",
+    "parte": "T7-07",
+    "nombre": "form-T-15_nivelacion-de-recursos.xlsx",
+    "ruta": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/form-T-15_nivelacion-de-recursos.xlsx",
+    "declarado_en": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/sd-07_plan-de-trabajo-EDT-e-implantacion.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-020",
+    "parte": "T7-07",
+    "nombre": "form-T-18.docx",
+    "ruta": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/form-T-18.docx",
+    "declarado_en": "02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/sd-07_plan-de-trabajo-EDT-e-implantacion.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-021",
+    "parte": "T7-08",
+    "nombre": "form-T-16_plan-de-riesgos.docx",
+    "ruta": "02_Propuesta/sd-08_plan-de-riesgos/form-T-16_plan-de-riesgos.docx",
+    "declarado_en": "02_Propuesta/sd-08_plan-de-riesgos/sd-08_plan-de-riesgos.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-022",
+    "parte": "T7-09",
+    "nombre": "form-T-13.docx",
+    "ruta": "02_Propuesta/sd-09_plan-de-calidad/form-T-13.docx",
+    "declarado_en": "02_Propuesta/sd-09_plan-de-calidad/sd-09_plan-de-calidad.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-023",
+    "parte": "T7-09",
+    "nombre": "form-T-17_protocolo-aceptacion.docx",
+    "ruta": "02_Propuesta/sd-09_plan-de-calidad/form-T-17_protocolo-aceptacion.docx",
+    "declarado_en": "02_Propuesta/sd-09_plan-de-calidad/sd-09_plan-de-calidad.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-024",
+    "parte": "T7-12",
+    "nombre": "form-T-8_equipo-subcontrataciones-alianzas.docx",
+    "ruta": "02_Propuesta/sd-12_equipo-subcontrataciones-y-alianzas/form-T-8_equipo-subcontrataciones-alianzas.docx",
+    "declarado_en": "02_Propuesta/sd-12_equipo-subcontrataciones-y-alianzas/sd-12_equipo-subcontrataciones-y-alianzas.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-025",
+    "parte": "T7-13",
+    "nombre": "form-T-19_cartera-innovaciones.docx",
+    "ruta": "02_Propuesta/sd-13_innovaciones/form-T-19_cartera-innovaciones.docx",
+    "declarado_en": "02_Propuesta/sd-13_innovaciones/sd-13_innovaciones.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-026",
+    "parte": "T7-13",
+    "nombre": "adj-sd-13_s2_referencias-APA7.md",
+    "ruta": "02_Propuesta/sd-13_innovaciones/adj-sd-13_s2_referencias-APA7.md",
+    "declarado_en": "02_Propuesta/sd-13_innovaciones/sd-13_innovaciones.md",
+    "existe": false
+  }
+]

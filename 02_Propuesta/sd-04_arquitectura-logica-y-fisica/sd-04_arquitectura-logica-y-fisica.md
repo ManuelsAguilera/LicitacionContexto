@@ -1,3 +1,36 @@
+---
+id: T7-04
+tipo: parte
+parte: T7-04
+titulo: Arquitectura lógica y física de la solución
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-008
+  - ADJ-009
+  - ADJ-010
+  - ADJ-011
+  - ADJ-012
+jira:
+  - OSS-168
+  - OSS-169
+  - OSS-170
+  - OSS-89
+  - OSS-90
+  - OSS-91
+  - OSS-92
+  - OSS-93
+  - OSS-94
+  - OSS-95
+  - OSS-96
+cifras: []
+secciones:
+  - T7-04-4.1
+  - T7-04-4.2
+actualizado: 2026-09-29
+---
 # Subdocumento 4 — Arquitectura lógica y física de la solución
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-04_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

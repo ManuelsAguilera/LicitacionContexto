@@ -1,3 +1,24 @@
+---
+id: T7-08
+tipo: parte
+parte: T7-08
+titulo: Plan de riesgos
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-021
+jira: []
+cifras: []
+secciones:
+  - T7-08-8.1
+  - T7-08-8.2
+  - T7-08-8.3
+  - T7-08-8.4
+  - T7-08-8.5
+actualizado: 2026-09-29
+---
 # Subdocumento 8 — Plan de riesgos
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-08_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

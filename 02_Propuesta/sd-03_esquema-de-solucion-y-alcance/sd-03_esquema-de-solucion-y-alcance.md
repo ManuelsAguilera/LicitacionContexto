@@ -1,3 +1,40 @@
+---
+id: T7-03
+tipo: parte
+parte: T7-03
+titulo: Esquema de solución y alcance
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-006
+  - ADJ-007
+jira:
+  - OSS-167
+  - OSS-241
+  - OSS-244
+  - OSS-245
+  - OSS-84
+  - OSS-85
+  - OSS-86
+  - OSS-87
+  - OSS-88
+cifras: []
+secciones:
+  - T7-03-3.1
+  - T7-03-3.2
+  - T7-03-3.3
+  - T7-03-3.4
+  - T7-03-3.5
+  - T7-03-3.6
+  - T7-03-3.7
+  - T7-03-3.8
+  - T7-03-3.9
+  - T7-03-3.10
+  - T7-03-3.11
+actualizado: 2026-09-29
+---
 # Subdocumento 3 — Esquema de solución y alcance
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-03_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

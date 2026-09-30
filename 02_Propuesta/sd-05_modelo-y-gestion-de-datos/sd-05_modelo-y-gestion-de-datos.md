@@ -1,3 +1,37 @@
+---
+id: T7-05
+tipo: parte
+parte: T7-05
+titulo: Modelo y gestión de datos
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-013
+  - ADJ-014
+jira:
+  - OSS-100
+  - OSS-101
+  - OSS-171
+  - OSS-249
+  - OSS-97
+  - OSS-98
+  - OSS-99
+cifras: []
+secciones:
+  - T7-05-5.1
+  - T7-05-5.2
+  - T7-05-5.3
+  - T7-05-5.4
+  - T7-05-5.5
+  - T7-05-5.6
+  - T7-05-5.7
+  - T7-05-5.8
+  - T7-05-5.9
+  - T7-05-5.10
+actualizado: 2026-09-29
+---
 # Subdocumento 5 — Modelo y gestión de datos
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-05_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
