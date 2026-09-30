@@ -1,0 +1,13 @@
+{
+  "esquema": {
+    "artefacto": "ID T7-NN, T7-NN-x.y o ADJ-NNN",
+    "herramienta": "Nombre/version de herramienta o Ninguna",
+    "finalidad": "Apoyo concreto realizado",
+    "nivel_texto": "Ninguno|Bajo|Medio|Alto",
+    "nivel_diagramas": "Ninguno|Bajo|Medio|Alto",
+    "verificador": "Persona que hizo la revisión, o pendiente",
+    "comprobaciones": ["Comprobación efectivamente realizada"],
+    "fecha": "YYYY-MM-DD"
+  },
+  "registros": []
+}

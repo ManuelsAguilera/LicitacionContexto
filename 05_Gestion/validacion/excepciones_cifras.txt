@@ -1,0 +1,2 @@
+# Una expresión regular por línea; se omite la comprobación numérica de una línea coincidente.
+# Mantener esta lista específica y explicar el motivo en el comentario inmediato.
