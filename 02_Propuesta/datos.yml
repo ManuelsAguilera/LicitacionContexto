@@ -1,0 +1,38 @@
+# Registro mínimo de cifras/nombres clave con fuente rastreable.
+# No usar como sustituto de las Bases; agregar una clave solo tras verificar el origen.
+cronograma_total_meses:
+  valor: 56
+  fuente: "00_Bases/Bases_Administrativas.md:405"
+etapa_1_meses:
+  valor: "1-15"
+  fuente: "00_Bases/Bases_Administrativas.md:395"
+produccion_etapa_1_mes:
+  valor: 16
+  fuente: "00_Bases/Bases_Administrativas.md:395"
+etapa_2_meses:
+  valor: "13-20"
+  fuente: "00_Bases/Bases_Administrativas.md:467"
+produccion_etapa_2_mes:
+  valor: 21
+  fuente: "00_Bases/Bases_Administrativas.md:467"
+operacion_meses:
+  valor: "21-56"
+  fuente: "00_Bases/Bases_Administrativas.md:403"
+duracion_operacion_meses:
+  valor: 36
+  fuente: "00_Bases/Bases_Administrativas.md:159"
+plataformas_existentes:
+  valor: 9
+  fuente: "00_Bases/Caso_09_Cadena_Multitienda.md:987"
+proveedores_existentes:
+  valor: 6
+  fuente: "00_Bases/Caso_09_Cadena_Multitienda.md:1032"
+interfaces_punto_a_punto:
+  valor: 14
+  fuente: "00_Bases/Caso_09_Cadena_Multitienda.md:1032"
+discrepancia_conteo_ciclico_pct:
+  valor: 12.4
+  fuente: "00_Bases/Caso_09_Cadena_Multitienda.md:951"
+empresa_proponente:
+  valor: "Only Simple Solutions"
+  fuente: "AGENTS.md:11; identidad del proponente declarada por el equipo"

@@ -4,6 +4,11 @@ El Art. 45.º obliga a **tres informes y tres presentaciones preparatorias**, en
 Formulario T-20. Cada informe debe resolver explícitamente las observaciones de la instancia
 anterior, mediante una tabla de trazabilidad observación-respuesta-sección modificada.
 
+La retroalimentación del Informe 1 se conserva como [transcripción por página](../80_Artefactos/revision_informe_1_transcripcion.md)
+y como [rúbrica de cierre por subsección](../80_Artefactos/revision_informe_1_rubrica_de_cierre.md).
+La rúbrica orienta la tabla de respuesta del Informe 2; no reemplaza las Bases ni acredita por sí
+sola que una observación esté resuelta en los archivos actuales.
+
 ## Carpetas
 
 | Carpeta | Contenido | Nomenclatura |

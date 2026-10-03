@@ -1,3 +1,29 @@
+---
+id: T7-07
+tipo: parte
+parte: T7-07
+titulo: "Plan de trabajo, EDT, cronograma e implantación"
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-017
+  - ADJ-018
+  - ADJ-019
+  - ADJ-020
+jira: []
+cifras: []
+secciones:
+  - T7-07-7.1
+  - T7-07-7.2
+  - T7-07-7.3
+  - T7-07-7.4
+  - T7-07-7.5
+  - T7-07-7.6
+  - T7-07-7.7
+actualizado: 2026-09-29
+---
 # Subdocumento 7 — Plan de trabajo, EDT, cronograma e implantación
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-07_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

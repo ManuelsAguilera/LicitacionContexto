@@ -1,3 +1,24 @@
+---
+id: T7-06
+tipo: parte
+parte: T7-06
+titulo: Metodologías
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-015
+  - ADJ-016
+jira: []
+cifras: []
+secciones:
+  - T7-06-6.1
+  - T7-06-6.2
+  - T7-06-6.3
+  - T7-06-6.4
+actualizado: 2026-09-29
+---
 # Subdocumento 6 — Metodologías
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-06_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

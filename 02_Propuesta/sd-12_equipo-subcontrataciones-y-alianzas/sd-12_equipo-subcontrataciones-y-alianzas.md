@@ -1,3 +1,25 @@
+---
+id: T7-12
+tipo: parte
+parte: T7-12
+titulo: "Equipo de trabajo, subcontrataciones y alianzas"
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-024
+jira: []
+cifras: []
+secciones:
+  - T7-12-12.1
+  - T7-12-12.2
+  - T7-12-12.3
+  - T7-12-12.4
+  - T7-12-12.5
+  - T7-12-12.6
+actualizado: 2026-09-29
+---
 # Subdocumento 12 — Equipo de trabajo, subcontrataciones y alianzas
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-12_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

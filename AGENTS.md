@@ -68,6 +68,17 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 
 **Espejos:** cuando un `.xlsx` es la fuente oficial y además hay que leerlo con agentes, se genera un `.md` espejo. **Si el espejo y el Excel difieren, manda el Excel.** Los espejos se regeneran, no se editan a mano.
 
+### Sistema de artefactos verificables
+
+- La convención de IDs, estados, frontmatter y procedencia vive en `05_Gestion/convenciones/artefactos.md`.
+- El estado `revisado` requiere revisión humana registrada; ningún script o agente lo asigna automáticamente.
+- El índice obligatorio del Comunicado 10 gobierna la estructura entregable. Los maestros actuales pueden documentar una estructura provisional; no migrar su tabla de secciones como verdad oficial sin cotejarla.
+- La migración desde Google Docs se realiza mediante exportación DOCX; un `.md` completo también puede importarse. El modo `--dry-run` no escribe secciones. Los mapeos ambiguos se revisan antes de aplicar y el contenido fuente se conserva.
+- `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
+- Todo PDF se genera desde los artefactos Markdown y los nombres de entrega siguen el Comunicado 10. Google Docs es copia editable derivada, no fuente de verdad.
+- La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
+- Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`; en Windows, `05_Gestion/scripts/link_skills.ps1` las enlaza desde Claude Code y OpenCode. Editar siempre la fuente canónica.
+
 ## Convención de nombres de los artefactos
 
 | Tipo | Patrón | Ejemplo |
@@ -198,3 +209,9 @@ Regla de selección:
 | Diagrama interactivo/animado (presentaciones, sobres) | **`architecture-diagrams`** | HTML en navegador (GitHub no lo muestra) | screenshot del HTML → PNG |
 
 Convención: la **fuente de los diagramas es texto** dentro de los `.md` de la propuesta (versionable y revisable en PR). Los **PNG/SVG/PDF exportados** se guardan en `04_Adjuntos/diagramas/` y de ahí se incrustan en Word (`docx`) y en el PDF final (`pdf-handling`). Usar Mermaid por defecto; reservar PlantUML para UML/C4 formales y `architecture-diagrams` para lo interactivo.
+
+## Graphify
+
+La copia de trabajo tiene un grafo local en `graphify-out/graph.json`. Por ahora indexa únicamente scripts; no incluye el contenido de la propuesta ni de las Bases. Para consultas sobre relaciones entre scripts, usar `graphify query`, `graphify path` o `graphify explain` y confirmar los resultados en los archivos originales. Para contenido documental, rigen las fuentes y la precedencia definidas arriba.
+
+La skill está en `.codex/skills/graphify/` y se invoca como `$graphify` en Codex. Después de modificar scripts, ejecutar `graphify update .` para actualizar la parte estructural del grafo.

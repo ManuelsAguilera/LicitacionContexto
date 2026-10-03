@@ -1,0 +1,1129 @@
+{
+  "parte": "T7-02",
+  "fuente": "C:\\Users\\manu\\Downloads\\Informes(5).md",
+  "sha256_fuente": "5817fc142c70e5fc23cf34c92135b34212b8a93a7422f052901aea0baee73e8f",
+  "sha256_especificacion": "cf2a9d51a34a322cd08b4952abf8205d254167bb8e35709423b5cfd8291291c7",
+  "bloques_fuera_del_capitulo": 66,
+  "fragmentos_fuera_del_capitulo": [
+    {
+      "bloque_origen": 1,
+      "kind": "paragraph",
+      "level": "",
+      "text": "    Subdocumento 2"
+    },
+    {
+      "bloque_origen": 2,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Propuesta solución \\- Multitienda Ancoa S.A."
+    },
+    {
+      "bloque_origen": 3,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Septiembre 2026"
+    },
+    {
+      "bloque_origen": 4,
+      "kind": "heading",
+      "level": "1",
+      "text": "**ÍNDICE GENERAL** {#índice-general}"
+    },
+    {
+      "bloque_origen": 5,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[ÍNDICE GENERAL\t2](#índice-general)"
+    },
+    {
+      "bloque_origen": 6,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[LISTA DE TABLAS\t3](#lista-de-tablas)"
+    },
+    {
+      "bloque_origen": 7,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[LISTA DE ACRÓNIMOS\t4](#lista-de-acrónimos)"
+    },
+    {
+      "bloque_origen": 8,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[INTRODUCCIÓN\t5](#introducción)"
+    },
+    {
+      "bloque_origen": 9,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2\\. COMPRENSIÓN DEL PROBLEMA Y LA NECESIDAD\t1](#2.-comprensión-del-problema-y-la-necesidad)"
+    },
+    {
+      "bloque_origen": 10,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1. Resumen ejecutivo\t1](#2.1.-resumen-ejecutivo-del-problema)"
+    },
+    {
+      "bloque_origen": 11,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1.1. Por qué licita\t1](#heading=h.55bpuxb74uv)"
+    },
+    {
+      "bloque_origen": 12,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1.2. Ancoa establece 4 promesas diariamente\t1](#heading=h.5v3amssxpz0c)"
+    },
+    {
+      "bloque_origen": 13,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1.3. Doble naturaleza jurídica: por qué es la restricción central\t2](#heading=h.w52o13tyej6g)"
+    },
+    {
+      "bloque_origen": 14,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1.4. El encargo y sus límites\t2](#heading=h.gbtcwrf3euur)"
+    },
+    {
+      "bloque_origen": 15,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.1.5. Lo que se evalúa, en una frase\t3](#heading=h.73z1fx6k8q6f)"
+    },
+    {
+      "bloque_origen": 16,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.2. Contexto de la industria y de la compañía\t3](#2.2.-comprensión-del-problema-y-de-la-necesidad)"
+    },
+    {
+      "bloque_origen": 17,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.3. La particularidad estructural: dos negocios, un mostrador\t4](#2.3.-dimensionamiento-del-problema)"
+    },
+    {
+      "bloque_origen": 18,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4. Dimensionamiento del problema por dominio\t4](#2.4.-actores-y-grupos-de-interés)"
+    },
+    {
+      "bloque_origen": 19,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.1. Inexactitud del inventario\t4](#2.4.1.-actores-afectados-y-grupos-de-interés)"
+    },
+    {
+      "bloque_origen": 20,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.2. Divergencia entre precio exhibido y precio cobrado\t5](#2.4.2.-matriz-influencia---interés)"
+    },
+    {
+      "bloque_origen": 21,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.3. Consentimiento no acreditable en repactaciones del negocio financiero\t5](#2.4.3.-tensiones-entre-interesados.)"
+    },
+    {
+      "bloque_origen": 22,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.4. Fragilidad tecnológica\t5](#heading=h.w8l3tbbu5i7)"
+    },
+    {
+      "bloque_origen": 23,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.5. Fragilidad de conectividad y de red\t6](#heading=h.bxsuqrpftlm5)"
+    },
+    {
+      "bloque_origen": 24,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.6. Estacionalidad: dos peaks de naturaleza distinta\t6](#heading=h.11vghsx5m8r7)"
+    },
+    {
+      "bloque_origen": 25,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.4.7. Restricción humana\t6](#heading=h.jnjshuh7ibu6)"
+    },
+    {
+      "bloque_origen": 26,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.5. Mapa de actores y grupos de interés\t6](#2.5.-resumen-de-requerimientos,-supuestos,-exclusiones-y-restricciones)"
+    },
+    {
+      "bloque_origen": 27,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.6. Supuestos declarados del análisis\t9](#heading=h.4dvqhnfw9vh3)"
+    },
+    {
+      "bloque_origen": 28,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[2.7. Síntesis del problema central\t14](#heading=h.rh5jf21e7s15)"
+    },
+    {
+      "bloque_origen": 29,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[REFERENCIAS\t15](#referencias)"
+    },
+    {
+      "bloque_origen": 30,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[DECLARACIÓN USO IA\t16](#declaración-uso-ia)"
+    },
+    {
+      "bloque_origen": 31,
+      "kind": "heading",
+      "level": "1",
+      "text": "**LISTA DE TABLAS** {#lista-de-tablas}"
+    },
+    {
+      "bloque_origen": 32,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[Tabla 2.1: Matriz de poder-interés.\t6](#heading=h.1q8s9a45tly7)"
+    },
+    {
+      "bloque_origen": 33,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[Tabla 2.2: Actitud esperada y estrategia por actor.\t7](#heading=h.22t7qmwd0s9j)"
+    },
+    {
+      "bloque_origen": 34,
+      "kind": "paragraph",
+      "level": "",
+      "text": "[Tabla 2.3: Supuestos declarados del análisis.\t9](#heading=h.7jvy4r22l2uo)"
+    },
+    {
+      "bloque_origen": 35,
+      "kind": "heading",
+      "level": "1",
+      "text": "**LISTA DE ACRÓNIMOS** {#lista-de-acrónimos}"
+    },
+    {
+      "bloque_origen": 36,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**ABC:** Clasificación ABC (gestión de inventario valor/rotación: A semanal, B mensual, C trimestral)"
+    },
+    {
+      "bloque_origen": 37,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**B2B:** Business-to-Business"
+    },
+    {
+      "bloque_origen": 38,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**CD:** Centro de distribución"
+    },
+    {
+      "bloque_origen": 39,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**CLP:** Peso chileno"
+    },
+    {
+      "bloque_origen": 40,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**DTE:** Documento Tributario Electrónico"
+    },
+    {
+      "bloque_origen": 41,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**EDT:** Estructura de Desglose del Trabajo"
+    },
+    {
+      "bloque_origen": 42,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**ERP:** Enterprise Resource Planning (Planificación de Recursos Empresariales)"
+    },
+    {
+      "bloque_origen": 43,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**P2P:** Punto a punto"
+    },
+    {
+      "bloque_origen": 44,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**POS:** Point of Sale / Punto de Venta"
+    },
+    {
+      "bloque_origen": 45,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**S.A.:** Sociedad Anónima"
+    },
+    {
+      "bloque_origen": 46,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**SERNAC:** Servicio Nacional del Consumidor"
+    },
+    {
+      "bloque_origen": 47,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**SVS/CMF:** Superintendencia de Valores y Seguros / Comisión para el Mercado Financiero"
+    },
+    {
+      "bloque_origen": 48,
+      "kind": "paragraph",
+      "level": "",
+      "text": "**TI:** Tecnologías de la Información"
+    },
+    {
+      "bloque_origen": 49,
+      "kind": "heading",
+      "level": "1",
+      "text": "**INTRODUCCIÓN**  {#introducción}"
+    },
+    {
+      "bloque_origen": 50,
+      "kind": "paragraph",
+      "level": "",
+      "text": "El siguiente subdocumento tiene como finalidad sintetizar el problema que origina la licitación de Multitiendas Ancoa S.A., explica el contexto operacional, regulatorio y estacional, dimensionar su magnitud con datos trazables e identifica a los actores. Además resume los requerimientos del negocio, los supuestos del análisis, las exclusiones y las restricciones que condicionan la propuesta. El detalle se encuentra en el anexo correspondiente al subdocumento 2"
+    },
+    {
+      "bloque_origen": 51,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Este capítulo, se conecta con el capítulo 3, que definirá el alcance y explicará la solución, con el capítulo 4 en donde se desarrollará la arquitectura lógica y física de la solución, con los capítulos ………..y con los formularios T-7 y T-12."
+    },
+    {
+      "bloque_origen": 170,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Cámara de Comercio de Santiago. (2025, 23 de octubre). CCS anuncia su Black Friday oficial con cientos de empresas verificadas y descuentos imperdibles. [https\\://www\\.ccs.cl/2025/10/23/ccs-anuncia-black-friday-oficial-descuentos-imperdibles/](https://www.ccs.cl/2025/10/23/ccs-anuncia-black-friday-oficial-descuentos-imperdibles/)"
+    },
+    {
+      "bloque_origen": 171,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Cámara de Comercio de Santiago. (2026a, 27 de marzo). Comercio electrónico bordeó los US\\$ 10 mil millones en 2025\\. [https\\://www\\.ccs.cl/ecommerce/comercio-electronico-chile-2025/](https://www.ccs.cl/ecommerce/comercio-electronico-chile-2025/)"
+    },
+    {
+      "bloque_origen": 172,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Cámara de Comercio de Santiago. (2026b, 26 de mayo). CyberDay 2026 incorporará inteligencia artificial para facilitar la experiencia de compra online. [https\\://www\\.ccs.cl/2026/05/26/cyberday-2026-incorporara-inteligencia-artificial-facilitar-experiencia-compra-online/](https://www.ccs.cl/2026/05/26/cyberday-2026-incorporara-inteligencia-artificial-facilitar-experiencia-compra-online/)"
+    },
+    {
+      "bloque_origen": 173,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Cámara de Comercio de Santiago. (2026c, 29 de septiembre). CyberMonday 2026 marca los 15 años de la industria que transformó el comercio electrónico en Chile. [https\\://www\\.ccs.cl/2026/09/29/cybermonday-2026-marca-los-15-anos-de-la-industria-que-transformo-el-comercio-electronico-en-chile/](https://www.ccs.cl/2026/09/29/cybermonday-2026-marca-los-15-anos-de-la-industria-que-transformo-el-comercio-electronico-en-chile/)"
+    },
+    {
+      "bloque_origen": 174,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Comisión para el Mercado Financiero. (s. f.). Información de supervisados. Recuperado el 29 de septiembre de 2026, de [https\\://www\\.cmfchile.cl/portal/principal/623/w4-propertyname-900.html](https://www.cmfchile.cl/portal/principal/623/w4-propertyname-900.html)"
+    },
+    {
+      "bloque_origen": 175,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Decreto N.º 6, Aprueba Reglamento de Comercio Electrónico, Diario Oficial de la República de Chile (2021). https\\://www\\.bcn.cl/leychile/Navegar?idNorma=1165504 Chilean Congress Library Portal"
+    },
+    {
+      "bloque_origen": 176,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Ley N.º 18.010, Establece normas para las operaciones de crédito y otras obligaciones de dinero que indica, Diario Oficial de la República de Chile (1981). https\\://www\\.bcn.cl/leychile/Navegar?idNorma=29438 Chilean Congress Library Portal"
+    },
+    {
+      "bloque_origen": 177,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Ley N.º 19.496, Establece normas sobre protección de los derechos de los consumidores, Diario Oficial de la República de Chile (1997). https\\://www\\.bcn.cl/leychile/Navegar?idLey=19496 Chilean Congress Library Portal"
+    },
+    {
+      "bloque_origen": 178,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Ley N.º 21.719, Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, Diario Oficial de la República de Chile (2024). https\\://www\\.bcn.cl/leychile/Navegar?idNorma=1209272 Chilean Congress Library Portal"
+    },
+    {
+      "bloque_origen": 179,
+      "kind": "paragraph",
+      "level": "",
+      "text": "Servicio Nacional del Consumidor. (2022, 5 de abril). Reglamento de comercio electrónico establece nuevas exigencias para las empresas. https\\://www\\.sernac.cl/604/w3-article-65050.html"
+    },
+    {
+      "bloque_origen": 180,
+      "kind": "heading",
+      "level": "1",
+      "text": "**DECLARACIÓN USO IA** {#declaración-uso-ia}"
+    },
+    {
+      "bloque_origen": 181,
+      "kind": "paragraph",
+      "level": "",
+      "text": "El equipo declara que el uso de herramientas de inteligencia artificial generativa en este subdocumento se limitó a las actividades indicadas en la siguiente tabla. Todo contenido, dato, cálculo, decisión de diseño, diagrama, conclusión y referencia fue revisado y verificado por las personas identificadas, quienes asumen como propio el resultado final y la responsabilidad íntegra sobre su exactitud, originalidad y coherencia técnica."
+    },
+    {
+      "bloque_origen": 182,
+      "kind": "table",
+      "level": "",
+      "text": "Sección | Herramienta | Finalidad de uso | Nivel en texto | Nivel en diagramas | Revisión humana\n\\[Sección o capítulo\\] | \\[Herramienta y versión / No aplica\\] | \\[Uso concreto / No se utilizó IA\\] | \\[Seleccione\\] | \\[Seleccione\\] | \\[Nombre y verificación realizada\\]\n |  |  |  |  | \n |  |  |  |  | \n |  |  |  |  | \n2.3 | Codex GPT 5.6 Sol medio | Se utilizó para proponer ideas de como mostrar el dimensionamiento de los datos de mejor manera y visual |  |  | Samira Becerra"
+    },
+    {
+      "bloque_origen": 183,
+      "kind": "paragraph",
+      "level": "",
+      "text": "A continuación, se detalla la escala de niveles para completar la tabla anterior."
+    },
+    {
+      "bloque_origen": 184,
+      "kind": "table",
+      "level": "",
+      "text": "Nivel | Texto | Diagramas\n**Ninguno** | Sin uso de IA. | Sin uso de IA.\n**Bajo** | Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. | Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo.\n**Medio** | Borradores o síntesis de partes que el grupo reescribió y verificó. | Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo.\n**Alto** | Texto generado sustancialmente por IA y editado por el grupo. | Diagrama generado sustancialmente por IA."
+    }
+  ],
+  "secciones_destino": [
+    {
+      "id": "T7-02-2.1",
+      "titulo": "Resumen Ejecutivo del problema",
+      "archivo": "sd-02_s1_resumen-ejecutivo-del-problema.md"
+    },
+    {
+      "id": "T7-02-2.2",
+      "titulo": "Comprensión del problema y de la necesidad",
+      "archivo": "sd-02_s2_comprension-del-problema-y-de-la-necesidad.md"
+    },
+    {
+      "id": "T7-02-2.3",
+      "titulo": "Dimensionamiento del problema",
+      "archivo": "sd-02_s3_dimensionamiento-del-problema.md"
+    },
+    {
+      "id": "T7-02-2.4",
+      "titulo": "Actores y Grupos de Interés",
+      "archivo": "sd-02_s4_actores-y-grupos-de-interes.md"
+    },
+    {
+      "id": "T7-02-2.5",
+      "titulo": "Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones",
+      "archivo": "sd-02_s5_requerimientos-supuestos-exclusiones-y-restricciones.md"
+    }
+  ],
+  "bloques": [
+    {
+      "bloque": 1,
+      "titulo_origen": "2. COMPRENSIÓN DEL PROBLEMA Y LA NECESIDAD",
+      "contenido": [],
+      "seccion_sugerida": "",
+      "revision": "sin_correspondencia",
+      "motivo": "sin regla de asignación"
+    },
+    {
+      "bloque": 2,
+      "titulo_origen": "2.1. Resumen ejecutivo del problema",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Multitiendas Ancoa S.A. es una cadena de tiendas por departamento chilena, sociedad anónima cerrada, en operación desde 1972, con ingresos consolidados de **\\$474.000 millones de pesos**, esta se rige bajo la Ley del consumidor N°19.496 (Congreso Nacional de Chile, 2021\\) . Simultáneamente, se consolida como un emisor de crédito fiscalizado, en donde el negocio financiero se desarrolla a través de una filial emisora de tarjeta de casa comercial, sujeta a la fiscalización de la CMF (Información de Supervisados, s. f.). Ambos dominios están sujetos a la nueva Ley de datos personales. N°21.719 (Congreso Nacional de Chile, 2026\\) ."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Actualmente, Ancoa enfrenta una brecha entre lo que promete a sus clientes, lo que sus registros permiten conocer y lo que puede acreditar después, la compañía realiza cuatro promesas operacionales, las cuales consisten en que el producto existe, que el precio cobrado coincide con el exhibido, que la entrega llegará en la fecha informada y que las condiciones del crédito son las entregadas y aceptadas. Estas cuatro promesas dependen de información que está fragmentada, no está sincronizada y es no recuperable."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Esto queda expuesto en tres hechos concretos en donde **2.840** pedidos fueron cancelados por falta de existencia durante un evento de **104.000** pedidos, discrepancias de precios en el **11%** de 120 productos revisados en cuatro tiendas y **1.240** repactaciones de 2025 que no tenían evidencia recuperable del consentimiento. En paralelo, el cumplimiento de la fecha de entrega es del **81%**, en donde existen nueve plataformas conectadas por catorce interfaces cuyo mapa completo no está disponible y la separación de los datos entre el retail y la filial emisora es parcial y no documentada."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El problema afecta a todos los asociados a Ancoa, es decir, cliente, titulares de tarjeta, vendedores, cajeros, jefaturas de tienda, logística, canales digitales, comercial, la filial financiera, TI, vendedores de marketplace, proveedores y autoridades fiscalizadoras. En cuanto a su resolución futura deberá reconocer que Ancoa opera dos negocios ante una misma persona, retail y crédito que comparten marca y puntos de contacto, pero no pueden compartir libremente datos ni obligaciones."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Sumando a esto, se agregan tres situaciones futuras que deben ser abordadas obligatoriamente por en el proyecto. Por una parte, está la migración de la cartera de **620.000** clientes con saldo desde la plataforma antigua hacía la nueva, proceso que deberá realizarse sin pérdida de información, interrupción del servicio ni discrepancias en los saldos. Por otra parte, está el término en el año 2029 del soporte proporcionado por el fabricante de la plataforma de originación y cobranza de créditos actualmente en operación desde 2011\\. Finalmente, tenemos el vencimiento, en el año **2029** del último hito del plan de remediación instruido por la autoridad fiscalizadora. Si estos inconvenientes no son resueltos, Ancoa podría enfrentar interrupciones en la operación financiera, inconsistencias en las cuentas de sus clientes, dependencia de una plataforma sin soporte e incumplimientos ante la autoridad competente."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.1",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen Ejecutivo del problema"
+    },
+    {
+      "bloque": 3,
+      "titulo_origen": "2.2. Comprensión del problema y de la necesidad",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Esta sección profundiza en las condiciones propias de la industria y de la operación que explican el problema presentado anteriormente. Para ello, se consideran las características del modelo omnicanal, la convivencia entre el retail y el negocio financiero, el marco regulatorio aplicable y la estacionalidad del comercio, sin abordar todavía el dimensionamiento detallado del problema ni las decisiones asociadas a su solución."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.2",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"
+    },
+    {
+      "bloque": 4,
+      "titulo_origen": "2.2.1. Contexto de la industria",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La operación de Multitiendas Ancoa S.A. combina una red tiendas físicas con un alcance a nivel nacional con canales digitales y un marketplace de terceros. A esta actividad se suma el negocio financiero, desarrollado mediante una filial emisora de tarjeta de casa comercial. De esta forma, Ancoa participa simultáneamente en la industria del comercio minorista y en el sector financiero, actividades que se relacionan directamente en el punto de venta y frente a un mismo cliente."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La compañía mantiene 22 tiendas distribuidas en 11 regiones, de las cuales 14 funcionan dentro de centros comerciales y ocho corresponden a tiendas con acceso a la calle. En conjunto, estas instalaciones suman 96.000 m² de superficie de venta y presentan condiciones operativas distintas entre sí, desde la tienda insignia ubicada en Santiago hasta establecimientos más pequeños y aislados, como el ubicado en Coyhaique, que presentan restricciones de conectividad y abastecimiento."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El funcionamiento físico de la tienda se complementa con el canal en línea y el marketplace. Su canal digital representa un 19% de las ventas y procesa aproximadamente 1,9 millones de pedidos al año. A la vez, cerca del 71% de las referencias del catálogo corresponden a vendedores externos del marketplace, mientras que el 29% restante corresponde a referencias del catálogo propio. Esto implica que Ancoa no se limita al modelo tradicional de compra y venta en el local, sino que debe coordinar productos, inventario y atención al cliente entre canales propios y de terceros."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Como referencia del sector, la Cámara de Comercio de Santiago estimó que durante 2025 el comercio electrónico representó un 12,6% de las ventas del comercio minorista en Chile y un 16,1% en el caso de las tiendas por departamento. Además, las ventas online crecieron un 11,6% nominal durante ese año. En este contexto, la participación digital de Ancoa, equivalente al 19% de sus ventas, se encuentra por sobre la referencia informada para las tiendas por departamento y confirma que el canal digital tiene un peso relevante dentro de su operación (Cámara de Comercio de Santiago \\[CCS\\], 2026a)."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Las tiendas tampoco se limitan a participar en la venta presencial. Un 41% de los pedidos en línea son retirados en tienda, y también despachan a un 17% de estos. Por esto parte de la infraestructura y del personal de sala participa directamente en el cumplimiento de los pedidos digitales. Las mesas de atención también realizan los cambios, devoluciones y reciben los reclamos de distintos canales. Es por esto que la tienda física, el canal digital y el marketplace funcionan mediante procesos que ocupan, en cierto grado, la misma infraestructura y personal."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.2",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"
+    },
+    {
+      "bloque": 5,
+      "titulo_origen": "2.2.2. Particularidades operacionales",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La principal particularidad del funcionamiento de Ancoa es que las actividades de los sectores de retail y financiero coinciden en el mismo entorno operacional. El negocio financiero funciona mediante una filial distinta, pero comparte con el retail la marca, el cliente y parte de los puntos de atención. Durante una visita a la tienda, la misma persona puede comprar un producto, pagar con su tarjeta propia y realizar gestiones relacionadas al crédito. Es por esta convivencia que procesos de ambos negocios se pueden realizar frente al mismo cliente, y en algunos casos por el mismo personal."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "A esto se suma la naturaleza fragmentada del entorno tecnológico. El negocio funciona gracias a nueve plataformas de seis proveedores, conectadas mediante catorce interfaces punto a punto a lo largo de quince años. Varias de estas plataformas comparten información mediante procesos nocturnos, y Ancoa no cuenta con un mapa completo de todas las conexiones entre sistemas. Esto implica que la información utilizada por el negocio puede encontrarse distribuida entre distintas plataformas, y no actualizarse al mismo tiempo."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Otra condición sensible es la relación entre el retail y la filial financiera. Ambos comparten centros de datos, red y equipos de tecnologías de la información, mientras que su separación lógica está implementada de manera parcial, y no completamente documentada. Por lo tanto, aunque comparte la infraestructura tecnológica, la información de ambos negocios no puede tratarse sin hacer la distinción necesaria."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La fuerza laboral también condiciona la forma en que se ejecutan los procesos. La compañía cuenta con 3.820 vendedores de piso y cajeros, cuya remuneración posee un componente variable asociado a comisiones y cuya rotación anual alcanza el 62%. La comisión aumenta cuando una venta se paga mediante la tarjeta propia, por lo que el tiempo requerido para completar los procesos comerciales y financieros forma parte de las condiciones habituales de trabajo del vendedor."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En las salas de venta trabajan aproximadamente 1.100 repositores que están contratados por proveedores externos, y no tienen relación laboral directa con Ancoa. A esto se suma que los vendedores comparten 640 terminales móviles para consultar la existencia de productos, las cuales están distribuidas de forma desigual entre las tiendas. Estas condiciones deben considerarse para comprender una operación en la que interactúan personal propio, personal externo, equipos compartidos y procesos presenciales y digitales."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.2",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"
+    },
+    {
+      "bloque": 6,
+      "titulo_origen": "2.2.3. Particularidades regulatorias",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La coexistencia de ambos dominios hace que Ancoa se rige por regímenes jurídicos de distinta naturaleza."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En lo que respecta al dominio del retail,  materia de protección al consumidor, la Ley N.º 19.496 establece obligaciones relacionadas con la información proporcionada al cliente y los precios de los bienes y servicios. Su artículo 30 exige que el precio sea informado de forma claramente visible antes de perfeccionarse el acto de consumo y contempla también la oferta de productos realizada mediante sitios de Internet (Ley N.º 19.496, 1997). Esto es relevante en una operación donde un mismo producto puede tener un precio registrado centralmente, uno publicado en el canal digital y una etiqueta física exhibida en tienda."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Por otro lado y dentro del mismo dominio, el canal digital está sujeto al decreto N°6 del 2021, Reglamento del comercio electrónico. Esta normativa establece los deberes de información en las ventas realizadas mediante medios digitales y distingue las obligaciones de los vendedores y operadores de las plataformas electrónicas. (Decreto N.º 6, 2021\\)"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En particular, el reglamento exige informar aspectos como el costo total de la compra, la inexistencia de stock, los plazos de despacho o retiro y los canales de contacto para consultas, cambios o devoluciones. Estas obligaciones resultan especialmente relevantes en operaciones que combinan comercio electrónico, retiro en tienda y marketplace (Servicio Nacional del Consumidor \\[SERNAC\\], 2022)."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La filial financiera se encuentra bajo un marco distinto para cada una de sus áreas. Por un lado los emisores de tarjetas de crédito no bancarias forman parte de las entidades reguladas y supervisadas por la Comisión para el Mercado Financiero, mientras que las operaciones de crédito de dinero se encuentran reguladas por la Ley N.º 18.010 (Ley N.º 18.010, 1981). Por lo que, procesos como la originación, modificación de condiciones, repactación y cobranza poseen exigencias distintas a las de una venta de retail."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La diferencia entre ambos dominios también trae consigo responsabilidades distintas respecto al tratamiento de la información. La empresa tiene interés en utilizar los antecedentes de sus clientes del dominio de retail para análisis y campañas, mientras que la información del dominio de la filial ha sido utilizada para finalidades asociadas al crédito. El cruce de información entre ambos ámbitos requiere determinar previamente qué datos pueden utilizarse, con qué finalidad y bajo qué fundamento."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Durante el horizonte del proyecto también deberá considerarse la Ley N.º 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales. La norma fue publicada el 13 de diciembre de 2024 y su entrada en vigencia está fijada para el 1 de diciembre de 2026 (Ley N.º 21.719, 2024). Esto es especialmente relevante por la cantidad y diversidad de información de clientes procesada entre los canales comerciales y el negocio financiero."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Por estas razones, una interacción con un cliente está sujeta a restricciones distintas dependiendo del ámbito del negocio con el que esté interactuando. La particularidad regulatoria de Ancoa radica en que estas actividades están estrechamente relacionadas en la operación diaria, aunque no se encuentran sometidas a un único régimen jurídico."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.2",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"
+    },
+    {
+      "bloque": 7,
+      "titulo_origen": "2.2.3. Particularidades estacionales",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Durante el transcurso del año hay períodos en que la demanda aumenta a niveles considerablemente distintos del régimen normal. Entre el 1 de noviembre y el 6 de enero se desarrolla la campaña de navidad, y la posterior liquidación de enero, lo que corresponde al nivel de demanda más alto de las ventas. Durante esta etapa, la dotación aumenta desde aproximadamente 6.400 hasta 8.300 trabajadores mediante la incorporación de cerca de 1.900 personas de temporada."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "También existen otros períodos de mayor actividad durante el año. La temporada de vuelta a clases se extiende aproximadamente desde la última semana de enero hasta la primera semana de marzo y concentra la demanda en determinadas categorías. A esto se suma el Día de la Madre durante mayo y otros eventos comerciales de descuentos. Estas variaciones afectan de forma distinta a las categorías de productos y a los canales de venta, por lo que la carga operacional no se distribuye uniformemente durante el año."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En la industria chilena, algunos de los principales eventos promocionales poseen fechas definidas externamente a cada retailer. CyberDay y CyberMonday son organizados por el Comité de Comercio Electrónico de la Cámara de Comercio de Santiago, entidad que anuncia las fechas correspondientes a cada edición. En 2026, CyberDay se realizó entre el 1 y el 3 de junio, mientras que CyberMonday fue fijado entre el 5 y el 7 de octubre (CCS, 2026b, 2026c)."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La CCS también organiza una versión oficial de Black Friday. Por ejemplo, la edición de 2025 se realizó entre el 28 de noviembre y el 1 de diciembre. La propia Cámara distingue esta versión oficial de otras iniciativas comerciales que utilizan la denominación Black Friday sin encontrarse vinculadas al gremio (CCS, 2025). Por lo tanto, para los retailers participantes estos eventos constituyen hitos externos del calendario comercial a los que deben adaptar previamente su capacidad operativa, logística y tecnológica."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El principal peak del canal digital corresponde al evento anual de comercio electrónico desarrollado entre mayo y junio. Durante tres días, el canal procesa un volumen equivalente a aproximadamente 22 días de venta normal en línea. Esta concentración afecta simultáneamente al canal digital, los centros de distribución, las tiendas que preparan pedidos, los puntos de retiro y la capacidad de despacho."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La estacionalidad, por lo tanto, no corresponde únicamente a un aumento temporal de las ventas. Los períodos de mayor demanda modifican la dotación disponible, el volumen de pedidos, la utilización de las tiendas como puntos logísticos y la carga sobre los sistemas que sostienen la operación. Estas condiciones permiten comprender el entorno en que se manifiesta el problema, mientras que sus efectos cuantitativos específicos se desarrollarán posteriormente en el dimensionamiento."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.2",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"
+    },
+    {
+      "bloque": 8,
+      "titulo_origen": "2.3. Dimensionamiento del problema",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La siguiente sección establece qué tan grande es el problema descrito y por qué resulta crítico para la compañía. Para ello, se analizan las cuatro promesas que Ancoa realiza diariamente a sus clientes, estas son, que el producto existe, que el precio cobrado es el de la etiqueta, que la entrega llega en la fecha ofrecida y que las condiciones del crédito son las informadas. Cada una de estas promesas se dimensiona con los indicadores que se entregan, correspondientes a los datos obtenidos del año 2025 y al primer semestre de 2026, proveniente de los registros de la propia compañía."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Multitiendas Ancoa S.A registró ingresos consolidados de \\$474.000 millones de pesos, a"
+        },
+        {
+          "kind": "figure",
+          "level": "",
+          "text": "Diagrama conceptual de solución e interacción de actores",
+          "media_ref": "data:image/png;base64,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"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Tabla 2.2:** Indicadores por promesa: valor actual, referencia y brecha."
+        },
+        {
+          "kind": "table",
+          "level": "",
+          "text": "Promesa que busca cumplir ancoa | Indicador | Valor actual | Criterio de aceptación de Ancoa | Diferencia entre el valor actual y el criterio de aceptación\n**1\\. El producto existe** | Diferencias detectadas en conteo cíclico | 12,4 % | \\< 2 % | 6,2 veces\n | Merma o pérdida desconocida sobre la venta | 1,9 % | \\< 1 % | 1,9 veces\n | Pedidos en línea cancelados por falta de existencia, 2025 | 1,9 % | \\< 0,3 % | 6,3 veces\n | Pedidos cancelados en el evento de junio de 2026 | 2,7 % | 0 | Sin tolerancia\n**2\\. El precio es el exhibido** | Productos con precio exhibido distinto del cobrado (muestra de 120\\) | 11 % | Sin valor numérico | No calculable\n**3\\. La entrega llega en la fecha** | Pedidos entregados en la fecha ofrecida | 81 % | \\> 97 % | 6,3 veces (19 % frente a 3 % fuera de plazo)\n**4.Las condiciones del crédito son las informadas** | Tiempo de evaluación crediticia en el punto de venta | 40 s a 3 min | \\< 10 s | 4 a 18 veces\n | Repactaciones sin evidencia recuperable del consentimiento | 1.240 | 0 | Sin tolerancia\n | Conservación de las grabaciones de originación y repactación | 90 días | Plazo del crédito \\+ 6 años | 24,3 veces o más"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Como muestra la tabla, ninguna de las cuatro promesas alcanza la referencia definida y en tres de ellas, la compañía tampoco cuenta con un registro que le permita demostrar lo ocurrido."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 9,
+      "titulo_origen": "2.3.1 Promesa 1: El producto existe",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En cuanto a las"
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 10,
+      "titulo_origen": "2.3.2. Promesa 2: El precio es el exhibido",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En cuanto a las"
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 11,
+      "titulo_origen": "2.3.3. Promesa 3: La entrega llega en la fecha",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En cuanto a las"
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 12,
+      "titulo_origen": "2.3.4. Promesa 4: Las condiciones del crédito son las informadas** HOLA SAMIRA DONDE ESTASHOLA SAMIRA DONDE ESTAS",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En cuanto a las"
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 13,
+      "titulo_origen": "2.3.5. Síntesis …………",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En cuanto a las"
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.3",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Dimensionamiento del problema"
+    },
+    {
+      "bloque": 14,
+      "titulo_origen": "2.4. Actores y grupos de interés",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El problema de Ancoa S.A. involucra actores internos y externos pertenecientes a los dominios comercial, operacional, tecnológico y financiero. No todos estos actores enfrentan los problemas de la misma manera, algunos poseen la capacidad para condicionar decisiones, imponer restricciones o bloquear cambios, mientras otros se encuentran principalmente expuestos a las consecuencias de las inconsistencias de inventario, precios, pedidos y crédito."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Para este análisis, la influencia corresponde a la capacidad de un actor para condicionar decisiones, restricciones o procesos relevantes para Ancoa. El interés representa el grado en que ese actor se encuentra afectado por el problema o depende de que la compañía pueda cumplir y acreditar sus cuatro promesas operacionales: existencia del producto, precio exhibido, fecha de entrega y condiciones del crédito."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Las distintas áreas de Ancoa enfrentan el problema desde objetivos y responsabilidades diferentes. Mientras algunas buscan maximizar disponibilidad, velocidad de venta o aprovechamiento comercial de la información, otras deben resguardar exactitud operacional, trazabilidad y cumplimiento regulatorio. Estas diferencias generan tensiones que condicionan la operación y la toma de decisiones."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.4",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Actores y Grupos de Interés"
+    },
+    {
+      "bloque": 15,
+      "titulo_origen": "2.4.1. Actores afectados y grupos de interés",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los actores identificados se agrupan según la naturaleza de su participación y su capacidad para incidir en la operación de Ancoa. Esta agrupación permite distinguir a quienes intervienen directamente en las decisiones del negocio, a quienes ejecutan los procesos afectados y a los grupos externos cuya actuación condiciona el funcionamiento de la compañía. La Tabla 2.X sintetiza los principales grupos de interés y su nivel relativo de influencia e interés."
+        },
+        {
+          "kind": "table",
+          "level": "",
+          "text": "Grupo | Actores principales | Influencia | Interés\nDirección y control | Directorio, Gerencia General, Contraloría | Alta | Alta\nPropiedad | Grupo familiar controlador y fondos de inversión | Alta | Media\nNegocios y operación | Comercial, Canales Digitales, Logística, Negocio Financiero | Alta | Alta\nSoporte tecnológico y control operacional | TI, Prevención de Pérdidas | Alta | Alta\nOperación de tienda | Jefaturas, vendedores, cajeros, reposición y bodega | Media | Alta\nClientes y terceros operacionales | Clientes, titulares de tarjeta, vendedores de marketplace, proveedores tecnológicos y logísticos | Baja – media | Alta\nOrganismos externos | Autoridad financiera, autoridad de protección al consumidor y autoridad tributaria | Alta | Media – alta"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Fuente: elaboración propia."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La mayoría de actores con alta influencia e interés se concentran dentro de la misma organización. Esto se debe a la naturaleza transversal del problema, comercial administra surtido, precios y campañas, canales digitales utiliza la disponibilidad registrada para comprometer pedidos, logística depende de esa misma información para abastecer y despachar, el negocio financiero requiere agilidad en la atención y originación, contraloría debe resguardar la acreditación y separación entre ambos negocios, y TI sostiene el conjunto de plataformas e integraciones sobre las cuales operan estos procesos."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los actores encargados de la operación de la tienda tienen una influencia menor sobre las decisiones corporativas, pero un interés elevado debido a su interacción diaria con los problemas. Ancoa cuenta con **3.820 vendedores de piso y cajeros**, con una rotación anual del 62 %, además de personal de reposición, bodega y aproximadamente 1.100 repositores pertenecientes a proveedores externos que trabajan dentro de las salas de venta."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los clientes, titulares de tarjetas, vendedores del marketplace y proveedores poseen una menor capacidad para influenciar las decisiones internas, pero experimentan directamente las consecuencias de las inconsistencias. Especialmente el cliente, el cual interactúa con la misma marca independiente de si su compra corresponde al canal presencial, digital, marketplace o al uso de la tarjeta propia, por lo que la fragmentación interna se vuelve visible cuando una promesa no puede cumplirse o acreditarse."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.4",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Actores y Grupos de Interés"
+    },
+    {
+      "bloque": 16,
+      "titulo_origen": "2.4.2. Matriz influencia \\- interés",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La caracterización anterior permite ubicar a los principales actores y grupos de interés según dos variables, las cuales son, su capacidad para influir en las decisiones y procesos de Ancoa y el grado en que se encuentran afectados por el problema. Esta relación se representa en la Figura 2.X mediante cuatro cuadrantes que permiten diferenciar el nivel de atención requerido para cada grupo."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "![][image2]Fuente: elaboración propia"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La mayor concentración se encuentra en el cuadrante de alta influencia y alto interés, en este se ubican el directorio y gerencia general, contraloría, comercial, canales digitales, logística, negocio financiero, TI, prevención de pérdidas, y las principales autoridades fiscalizadoras. Estos actores poseen la capacidad para condicionar las decisiones relevantes, y al mismo tiempo, están directamente vinculados con las consecuencias operacionales, comerciales y regulatorias del problema, razón por la cual requieren un involucramiento cercano en el proceso del proyecto."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En el cuadrante de alta influencia y menor interés se encuentran el grupo familiar controlador, los fondos de inversión y la autoridad tributaria. Su participación en la operación cotidiana es menor, pero mantienen capacidad para condicionar decisiones corporativas o establecer obligaciones que Ancoa debe cumplir. En consecuencia, requieren mantenerse satisfechos y ser consultados en aquellas materias que afecten sus ámbitos de responsabilidad."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los actores de menor influencia y alto interés corresponden principalmente a quienes experimentan directamente los efectos de las deficiencias actuales: jefaturas de tienda, vendedores y cajeros, personal de reposición y bodega, clientes, titulares de tarjeta, vendedores del marketplace y proveedores tecnológicos y logísticos. Aunque disponen de menor capacidad para determinar las decisiones corporativas, su participación resulta relevante porque ejecutan los procesos afectados o reciben directamente sus consecuencias. Estos grupos deben mantenerse informados y considerados en el levantamiento de necesidades operacionales."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Finalmente, los administradores de centros comerciales y los repositores externos se ubican en el cuadrante de menor influencia y menor interés relativo. Su participación se concentra en ámbitos específicos de la operación y poseen una capacidad limitada para modificar las decisiones generales de Ancoa, por lo que requieren principalmente seguimiento."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Esta distribución evidencia que la gestión de los grupos de interés no puede concentrarse únicamente en los niveles directivos. Los actores con mayor influencia determinan restricciones y decisiones relevantes, mientras que una parte importante de quienes poseen alto interés corresponde a usuarios, clientes y terceros que interactúan diariamente con los procesos afectados. Esta diferencia entre capacidad de decisión y exposición al problema permite anticipar los puntos donde será necesaria una mayor coordinación entre los distintos grupos durante el proyecto."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.4",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Actores y Grupos de Interés"
+    },
+    {
+      "bloque": 17,
+      "titulo_origen": "2.4.3. Tensiones entre interesados.",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Las tensiones identificadas surgen de objetivos, incentivos y responsabilidades que no siempre coinciden. Algunas son desacuerdos expresos entre actores; otras son desajustes de coordinación entre quienes prometen, ejecutan y reciben un servicio. Su identificación permite comprender el problema sin anticipar el diseño de la solución."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Una de las tensiones más explícitas se presenta entre el Negocio Financiero y Contraloría. Álvaro Peña necesita que la evaluación crediticia se resuelva en segundos para evitar la pérdida de ventas y favorecer el uso de la tarjeta propia. Cecilia Bordalí exige que la información precontractual completa se entregue antes de la aceptación y que quede evidencia recuperable de lo informado y consentido. Ambos reconocen la tensión entre rapidez comercial y cumplimiento, aunque Álvaro también reconoce la necesidad de acreditar las operaciones de la filial fiscalizada"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El conflicto también afecta a los vendedores de piso, cuyos incentivos económicos dependen de cerrar ventas y promover la tarjeta propia. Jonathan Millán explica que su comisión mejora cuando el cliente paga con tarjeta y advierte que dejaría de ofrecer si el proceso se vuelve más largo. Además, reconoce que la presión de atender filas lo lleva a entregar el documento precontractual y comunicar sólo sus aspectos principales. Cecilia señala que la capacitación, por sí sola, no resuelve esta situación, porque el incentivo a cerrar rápidamente permanece."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Entre Canales Digitales y Logística existe una tensión relacionada con la cantidad de existencia que puede publicarse sin comprometer productos que la compañía no podrá entregar. Nicolás Errázuriz necesita mantener una oferta comercial competitiva, pero reconoce que depende de un inventario impreciso y de un descuento de seguridad fijo. Fernanda Quilaqueo destaca que la reposición y el cumplimiento de pedidos dependen de la calidad de ese registro. Publicar menos reduce el riesgo de cancelaciones, pero también puede reducir las ventas."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La Gerencia Comercial y la operación de tienda enfrentan ritmos distintos para gestionar los precios. Rodrigo Sanhueza considera necesario modificarlos varias veces al día para responder a la competencia, mientras Marisol Tapia explica que las etiquetas físicas se reemplazan de noche y que el personal no siempre alcanza a completar todos los cambios. La decisión comercial se aplica en cajas y en el canal digital antes de reflejarse en la sala, generando diferencias entre el precio exhibido y el cobrado"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": " El despacho desde tienda genera otra tensión entre el canal digital y las jefaturas y vendedores de los locales. Para el canal digital, utilizar unidades de las tiendas permite acercar el producto al cliente. Sin embargo, la tienda debe destinar personal a preparar pedidos y entregar unidades que podrían venderse presencialmente, sin que el vendedor reciba la comisión correspondiente. Marisol señala que esta práctica perjudica los resultados de su tienda, Jonathan manifiesta su molestia por perder unidades que tenía comprometidas con clientes y Fernanda advierte que la tienda no fue diseñada para operar como bodega y preparar pedidos en línea."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Marketing y Contraloría presentan una tensión respecto del aprovechamiento comercial de los datos financieros. Según la entrevista de Cecilia, Marketing busca utilizar el comportamiento de pago para segmentar ofertas del retail. Contraloría advierte que esa información fue obtenida en un negocio regulado y que su utilización requiere definir la finalidad, la base que autoriza el cruce y los controles aplicables. Su posición no establece una prohibición absoluta de compartir información, sino que cuestiona hacerlo sin reglas documentadas y auditables."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "También existe una diferencia entre las prioridades del comité y la urgencia del Negocio Financiero. El comité prefiere atender primero la exactitud del inventario y los precios, dejando el negocio financiero para después. Álvaro objeta esa secuencia porque el plan de remediación y el soporte de la plataforma crediticia vencen en 2029, y la migración de una cartera viva requiere preparación y convivencia suficientes."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Estas tensiones muestran que el problema no se explica únicamente por limitaciones tecnológicas. También intervienen incentivos comerciales, capacidad de ejecución, distribución de responsabilidades y restricciones del negocio fiscalizado. Comprenderlas es necesario para comprender las condiciones que debe considerar posteriormente la propuesta para cumplir y acreditar las cuatro promesas."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.4",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Actores y Grupos de Interés"
+    },
+    {
+      "bloque": 18,
+      "titulo_origen": "2.5. Resumen de requerimientos, supuestos, exclusiones y restricciones",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Esta sección resume y analiza lo que el cliente requiere, los supuestos que el equipo declara para interpretar la información disponible, con su respectivo fundamento, y las exclusiones y restricciones que impone el caso. Su propósito es dejar explícito, antes de describir la solución, qué se debe cumplir, que se da por supuesto y lo que queda fuera de la propuesta."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El detalle de cada elemento con su identificador individual, se encuentra en el archivo de anexos correspondiente a este subdocumento, contiene el listado de requerimientos, el listado de supuestos, exclusiones y restricciones y otros listados de apoyo."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "bloque": 19,
+      "titulo_origen": "2.5.1 Resumen de requerimientos",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los requerimientos se obtuvieron en base a lo estipulado por el cliente, de modo que exprese una sola condición verificable. Se clasificaron en tres tipos, 223 requerimientos funcionales (RF), que describen lo que el sistema debe hacer, 75 requerimientos no funcionales (RFN), que fijan un umbral medible y su método de verificación, que corresponden a compromisos de la oferta y no a funciones del sistema por lo que no admiten caso de prueba d software."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La Tabla 2.1 resume su distribución por categoría."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Tabla 2.1:** Requerimientos del CLIENTE por tipo y categoría."
+        },
+        {
+          "kind": "table",
+          "level": "",
+          "text": "Tipo y categoría | N.º | Síntesis de lo que exige el CLIENTE\nRF Pedidos y cumplimiento | 47 | Promesa de entrega confiable, elección del punto de despacho por costo total de servir, y retiro o despacho desde tienda.\nRF  Inventario y disponibilidad | 38 | Cálculo centralizado del disponible para vender, conteo cíclico por clasificación ABC y clasificación obligatoria de la merma.\nRF Crédito y cobranza | 28 | Evaluación y cupo en el punto de venta, evidencia del consentimiento y de la información precontractual, y migración de la cartera.\nRF – Marketplace | 25 | Reglas de desempeño y sanciones para los vendedores externos, gestión de catálogo y devoluciones.\nRF – Operación de tienda | 20 | Continuidad en modo desconectado: venta, cobro, promociones y documento de venta en contingencia.\nRF – Precios y etiquetado | 16 | Coherencia entre el precio exhibido y el cobrado, y evidencia del precio publicado.\nRF – Seguridad y accesos | 14 | Credenciales individuales, sin acceso anónimo ni credenciales compartidas.\nRF – Gobernanza de datos | 12 | Separación de datos entre retail y filial financiera, finalidad declarada e inventario de interfaces.\nRF – Devoluciones y garantía legal | 12 | Atención íntegra en el mesón, sin derivar al cliente, y decisión de aptitud antes de reingresar una unidad al stock.\nRF – Evento de alta concurrencia | 10 | Degradación controlada de servicios y bloqueo de despliegues en las cinco ventanas de congelamiento.\nRF – Ventas en tienda | 1 | Prioridad de la venta física sobre una reserva digital temporal.\n**Subtotal RF** | **223** | \nRNF – Seguridad | 16 | Arquitectura segura, segmentación de red en las 22 tiendas, separación acreditada de la filial, tokenización de medios de pago y DevSecOps.\nRNF – Desempeño y capacidad | 15 | Tiempos de respuesta (evaluación crediticia ≤ 8 s, confirmación de pedido ≤ 3 s, propagación de precios ≤ 5 min) y soporte del peak del evento anual.\nRNF – Cumplimiento y auditabilidad | 13 | Plazos de conservación de la evidencia, base de licitud y registro de actividades de tratamiento de datos.\nRNF – Disponibilidad y recuperabilidad | 11 | Operación sin enlace externo (≥ 8 h en tienda), recuperación ante desastres (RTO ≤ 4 h; RPO ≤ 15 min).\nRNF – Operabilidad e interoperabilidad | 10 | Notificaciones y avisos oportunos al cliente, y estándares de intercambio con proveedores.\nRNF – Migración, portabilidad y escalabilidad | 4 | Migración de 620.000 clientes con saldo sin pérdida, interrupción ni divergencias; apertura de tiendas por parametrización.\nRNF – Efectividad de negocio | 3 | Metas sobre la línea base: cancelación \\< 0,3 %, cumplimiento de entrega ≥ 97 % y diferencia de inventario \\< 2 %.\nRNF – Usabilidad | 2 | Operación con capacitación mínima y lenguaje claro en las comunicaciones del crédito.\nRNF – Consistencia de datos | 1 | Mismo estado del pedido en todos los canales de consulta.\n**Subtotal RNF** | **75** | \nOP – Obligaciones del proponente | 9 | Alternativa de etiquetas electrónicas, dispositivos móviles por tienda y análisis de hacer o comprar del CD de Concepción.\n**Total** | **307** | "
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "bloque": 20,
+      "titulo_origen": "Fuente: Elaboración propia a partir de EMPRESA-Subdocumento2-Anexos, Anexos A.1 a A.3.",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "La distribución muestra que el 62 % de los requerimientos funcionales (138 de 223\\) se concentra en cuatro categorías: pedidos y cumplimiento, inventario y disponibilidad, crédito y cobranza, y marketplace. Esta concentración es coherente con el diagnóstico, porque esas categorías sostienen directamente tres de las cuatro promesas de Ancoa: que el producto existe, que la entrega llegará en la fecha informada y que las condiciones del crédito son aceptadas. La cuarta promesa, que el precio cobrado coincida con el exhibido, se aborda en la categoría de precios y etiquetado, que tiene menos requerimientos, pero un alto impacto regulatorio."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Los requerimientos no funcionales, por su parte, convierten el problema dimensionado en metas verificables. Tres de ellos fijan la mejora esperada respecto de la línea base: reducir la cancelación por falta de existencia a menos de 0,3 % anual, elevar el cumplimiento de la fecha de entrega desde 81 % a 97 % o más, y bajar la diferencia de inventario por categoría desde 12,4 % a menos de 2 %. Otros tres exigen que la migración de los 620.000 clientes con saldo se complete sin pérdida de datos, sin interrupción del cobro y sin divergencias de saldo antes de 2029\\. Las obligaciones del proponente, en cambio, no describen funciones del sistema, sino entregables de la oferta, como el análisis de hacer o comprar del CD de Concepción."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento, el componente que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Anexo A.5.2."
+        }
+      ],
+      "seccion_sugerida": "",
+      "revision": "sin_correspondencia",
+      "motivo": "sin numeración reconocible"
+    },
+    {
+      "bloque": 21,
+      "titulo_origen": "2.5.2. Resumen de supuestos",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Cuando las Bases describen un problema, pero no definen la regla con la que debe resolverse, el equipo declara un supuesto. Se declararon 25 supuestos (SUP-01 a SUP-25), cada uno con su fundamento en los datos del caso o en la normativa aplicable. Se agrupan en seis temas:"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Inventario y disponibilidad (SUP-01, SUP-12, SUP-17, SUP-18 y SUP-20):** el disponible para vender se calcula de forma centralizada con un colchón de seguridad dinámico por categoría y tienda, las reservas del carro digital expiran, todo ajuste de inventario se clasifica según su causa y el CD de Concepción queda fuera del disponible mientras opere con planillas manuales."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Precios (SUP-08 a SUP-10):** ante una discrepancia prevalece el precio exhibido más bajo, el precio nuevo se activa en caja solo cuando se confirma el cambio de etiqueta y el historial de precios publicados se conserva de forma inalterable."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Pedidos y logística (SUP-11, SUP-13, SUP-14 y SUP-22):** ante un quiebre se ofrece sustitución, compra a terceros o entrega compensada antes de cobrar; el origen del despacho se elige por costo total de servir; la comisión se atribuye a la tienda que abastece el pedido; y el producto devuelto por retracto se inspecciona antes de reingresar al stock."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Marketplace y postventa (SUP-15, SUP-16 y SUP-21):** las garantías y devoluciones se resuelven en el mesón sin derivar al cliente, y los 310 vendedores externos operan con reglas de desempeño y sanciones automatizadas."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Crédito y datos personales (SUP-03 a SUP-07 y SUP-25):** identidad del cliente en dos capas, frontera de datos entre retail y filial cerrada por defecto, evidencia digital inalterable del consentimiento y de la hoja resumen, venta con crédito en modo desconectado contra un cupo preaprobado, y migración de la cartera por etapas con conciliación diaria y reversión."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Tecnología y personas (SUP-02, SUP-19, SUP-23 y SUP-24):** transición gradual sin reemplazo «Big Bang», con el ERP como único emisor tributario; degradación escalonada en eventos de alta demanda; y accesos individuales con altas y bajas automáticas para el personal propio, temporal y externo."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "En conjunto, los supuestos comparten un mismo criterio: tratar los registros actuales como imperfectos y exigir evidencia verificable de cada promesa. Los más sensibles para la propuesta son SUP-02, SUP-04 y SUP-25, porque condicionan la estrategia de transición, la separación entre ambos negocios y la migración de la cartera financiera; si alguno de ellos no se confirma, cambia el plan de implantación. El listado completo, con el enunciado y el fundamento de cada supuesto, se encuentra en el Anexo A.4.1."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "bloque": 22,
+      "titulo_origen": "2.5.3. Resumen de exclusiones",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Las exclusiones delimitan lo que la propuesta no asume, ya sea porque las Bases lo dejan fuera del alcance o porque la información disponible no permite sostenerlo. Se identificaron ocho exclusiones (EXC-01 a EXC-08), de dos tipos:"
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **De alcance (EXC-01 a EXC-06):** la adquisición de etiquetas electrónicas, que se especifica y costea por separado sin incluir su compra; el CD de Concepción como origen de la promesa de entrega mientras no acredite su sistema de gestión de almacenes; el reemplazo del ERP heredado como emisor tributario; la sustitución simultánea de las nueve plataformas actuales; la gestión laboral y la capacitación de los repositores externos; y cualquier flujo que derive al cliente a terceros en garantías o devoluciones."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "●       **Del análisis (EXC-07 y EXC-08):** no se proyecta el 11 % de discrepancia de precios más allá de la muestra fiscalizada, ni se descompone la merma histórica entre pérdida física y error de registro, porque las Bases no entregan información suficiente para hacerlo."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Declarar estas exclusiones evita comprometer resultados que dependen de decisiones del CLIENTE o de información que hoy no existe. El detalle y el origen de cada exclusión se presentan en el Anexo A.4.2."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "bloque": 23,
+      "titulo_origen": "2.5.4. Resumen de restricciones",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Las restricciones son condiciones del caso que la solución no puede modificar y dentro de las cuales debe operar. Se identificaron 15 restricciones (RES-01 a RES-15), que la Tabla 2.2 agrupa por tipo junto con su efecto sobre la propuesta."
+        },
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Tabla 2.2:** Síntesis de restricciones por tipo."
+        },
+        {
+          "kind": "table",
+          "level": "",
+          "text": "Tipo | Restricciones principales | Efecto en la propuesta\nRegulatoria (RES-01 a RES-05) | Ley N.º 19.496; Decreto N.º 6 de 2021; Ley N.º 18.010 y fiscalización de la CMF; Ley N.º 21.719, vigente desde el 1 de diciembre de 2026; plazos de conservación de la evidencia. | Cada operación debe dejar evidencia verificable y respetar el régimen del negocio al que pertenece. El cruce de datos entre retail y filial queda cerrado por defecto.\nTemporal (RES-06 a RES-08) | Fin del soporte de la plataforma de originación y cobranza, y último hito del plan de remediación, en 2029; cinco ventanas anuales de congelamiento; eventos comerciales con fechas fijadas externamente. | El plan de implantación debe calzar entre las ventanas de congelamiento y terminar la migración financiera antes de 2029\\.\nTecnológica y de infraestructura (RES-09 a RES-11) | Nueve plataformas y catorce interfaces punto a punto sin mapa completo; infraestructura compartida con la filial; 14 tiendas dependientes del enlace del centro comercial y 13 sin segmentación de red. | La transición debe ser gradual, con operación desconectada en tienda y separación acreditada de la filial.\nMigración (RES-12) | 620.000 clientes con saldo que deben migrarse sin pérdida de datos, interrupción del cobro ni divergencias de saldo. | Migración por etapas, con coexistencia de plataformas y conciliación diaria de saldos.\nHumana y organizacional (RES-13 a RES-15) | 3.820 vendedores y cajeros con rotación anual del 62 %; 1.900 contrataciones de temporada; 640 terminales compartidos; 1.100 repositores externos; 46 profesionales de TI en el CLIENTE. | Interfaces operables con capacitación mínima, traspaso rápido de sesión en terminales compartidos y una carga de cambio acotada para el equipo del CLIENTE."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    },
+    {
+      "bloque": 24,
+      "titulo_origen": "Fuente: Elaboración propia a partir de EMPRESA-Subdocumento2-Anexos, Anexo A.4.3.",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "El análisis de las restricciones muestra que el principal límite del proyecto no es tecnológico, sino regulatorio y temporal: la solución debe separar dos negocios que comparten cliente e infraestructura y, al mismo tiempo, migrar la cartera financiera antes de 2029 sin intervenir la operación durante las ventanas de congelamiento. El detalle de cada restricción y su origen se encuentra en el Anexo A.4.3."
+        }
+      ],
+      "seccion_sugerida": "",
+      "revision": "sin_correspondencia",
+      "motivo": "sin numeración reconocible"
+    },
+    {
+      "bloque": 25,
+      "titulo_origen": "2.5.5. Otros listados",
+      "contenido": [
+        {
+          "kind": "paragraph",
+          "level": "",
+          "text": "Como apoyo, el Anexo A.5 incluye dos listados adicionales: los indicadores con su línea base y la meta comprometida (Anexo A.5.1), que conectan el dimensionamiento de la sección 2.3 con los requerimientos no funcionales, y la matriz de cumplimiento y trazabilidad (Anexo A.5.2), que relaciona cada requerimiento con el componente que lo satisface y la sección de la propuesta donde se desarrolla."
+        }
+      ],
+      "seccion_sugerida": "T7-02-2.5",
+      "revision": "sugerida_revisar",
+      "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"
+    }
+  ],
+  "resumen": {
+    "bloques_capitulo": 25,
+    "asignados_sugeridos": 22,
+    "requieren_revision": 25,
+    "sin_correspondencia": 3,
+    "figuras": 1,
+    "figuras_fuera_capitulo": 0,
+    "tablas": 4,
+    "tablas_fuera_capitulo": 2
+  }
+}

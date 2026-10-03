@@ -1,3 +1,33 @@
+---
+id: T7-03
+tipo: parte
+parte: T7-03
+titulo: Esquema de solución y alcance
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-006
+  - ADJ-007
+jira:
+  - OSS-167
+  - OSS-241
+  - OSS-244
+  - OSS-245
+  - OSS-84
+  - OSS-85
+  - OSS-86
+  - OSS-87
+  - OSS-88
+cifras: []
+secciones:
+  - T7-03-3.1
+  - T7-03-3.2
+  - T7-03-3.3
+  - T7-03-3.4
+actualizado: 2026-09-30
+---
 # Subdocumento 3 — Esquema de solución y alcance
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-03_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
@@ -41,30 +71,14 @@
 
 | N | Sección | Archivo | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Descripción de la solución propuesta y coherencia con el problema definido | `sd-03_s1_descripcion-de-la-solucion-propuesta-y-coherencia-con-el-p.md` | Parcial en el Informe 1 |
-| 2 | Resolución de las decisiones pendientes declaradas por el CLIENTE | `sd-03_s2_resolucion-de-las-decisiones-pendientes-declaradas-por-el-.md` | Desarrollado en el Informe 1 |
-| 3 | Módulos funcionales de la solución | `sd-03_s3_modulos-funcionales-de-la-solucion.md` | Desarrollado en el Informe 1 |
-| 4 | Diagrama conceptual de solución e interacción de actores | `sd-03_s4_diagrama-conceptual-de-solucion-e-interaccion-de-actores.md` | Sin redactar |
-| 5 | Objetivos del proyecto | `sd-03_s5_objetivos-del-proyecto.md` | Desarrollado en el Informe 1 |
-| 6 | Alcance de la Etapa 1 y de la Etapa 2, con criterio de asignación | `sd-03_s6_alcance-de-la-etapa-1-y-de-la-etapa-2-con-criterio-de-asig.md` | Desarrollado en el Informe 1 |
-| 7 | Exclusiones explícitas, supuestos y restricciones | `sd-03_s7_exclusiones-explicitas-supuestos-y-restricciones.md` | Desarrollado en el Informe 1 |
-| 8 | Catálogo de requerimientos funcionales core | `sd-03_s8_catalogo-de-requerimientos-funcionales-core.md` | Desarrollado en el Informe 1 |
-| 9 | Catálogo de requerimientos no funcionales core | `sd-03_s9_catalogo-de-requerimientos-no-funcionales-core.md` | Parcial en el Informe 1 |
-| 10 | Estrategia para obtener el apoyo de los grupos de interés clave | `sd-03_s10_estrategia-para-obtener-el-apoyo-de-los-grupos-de-interes-.md` | Sin redactar |
-| 11 | Criterios de aceptación del alcance comprometido | `sd-03_s11_criterios-de-aceptacion-del-alcance-comprometido.md` | Sin redactar |
+| 1 | Resumen Ejecutivo de la Solución | `sd-03_s1_resumen-ejecutivo-de-la-solucion.md` | Borrador migrado; revisar |
+| 2 | Alcance | `sd-03_s2_alcance.md` | Borrador migrado; revisar |
+| 3 | Esquema de solución | `sd-03_s3_esquema-de-solucion.md` | Borrador migrado; revisar |
+| 4 | Explicación de la Solución | `sd-03_s4_explicacion-de-la-solucion.md` | Borrador migrado; revisar |
 
-### Notas por sección
+### Nota de migración
 
-- **1. Descripción de la solución propuesta y coherencia con el problema definido** - El T-7 exige explícitamente la coherencia con el problema. El cuerpo del informe abre con un enunciado más genérico.
-- **2. Resolución de las decisiones pendientes declaradas por el CLIENTE** - Desarrolla SUP-01 a SUP-07 y las decisiones 3.2.6.1 a 3.2.6.6 (existencia, precio, pedido, postventa, crédito e identidad). Es el núcleo argumental del capítulo.
-- **3. Módulos funcionales de la solución** - Siete bloques: 3.3.1 a 3.3.7. Los nombres de los componentes deben coincidir al 100 % con los de la arquitectura lógica (subdocumento 4).
-- **4. Diagrama conceptual de solución e interacción de actores** - Fuente Mermaid dentro del `.md`; export en `04_Adjuntos/diagramas/`.
-- **5. Objetivos del proyecto** - 3.5.1 objetivo general, 3.5.2 objetivos específicos y 3.5.3 responsabilidad e indicadores.
-- **6. Alcance de la Etapa 1 y de la Etapa 2, con criterio de asignación** - Debe respetar la separación de etapas del Art. 17 y el solapamiento de los meses 13 a 15 y 19 a 20. Referencia de trazabilidad: OSS-241.
-- **8. Catálogo de requerimientos funcionales core** - Secciones 3.8.1 a 3.8.8. Debe trazarse contra el catálogo v3.0 de `01_Requerimientos/`.
-- **9. Catálogo de requerimientos no funcionales core** - El título 3.9 aparece duplicado al final del capítulo: hay un encabezado repetido que habrá que resolver al ensamblar.
-- **10. Estrategia para obtener el apoyo de los grupos de interés clave** - Referencia de trazabilidad: OSS-245.
-- **11. Criterios de aceptación del alcance comprometido** - Referencia de trazabilidad: OSS-244.
+La estructura entregable sigue las cuatro secciones obligatorias del Comunicado 10. El contenido importado conserva su procedencia y permanece en estado borrador hasta revisión humana.
 
 ## Trazabilidad con Jira
 

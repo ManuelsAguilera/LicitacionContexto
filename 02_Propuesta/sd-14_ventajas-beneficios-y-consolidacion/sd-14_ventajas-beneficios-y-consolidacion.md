@@ -1,3 +1,23 @@
+---
+id: T7-14
+tipo: parte
+parte: T7-14
+titulo: "Ventajas, beneficios y consolidación"
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos: []
+jira: []
+cifras: []
+secciones:
+  - T7-14-14.1
+  - T7-14-14.2
+  - T7-14-14.3
+  - T7-14-14.4
+  - T7-14-14.5
+actualizado: 2026-09-29
+---
 # Subdocumento 14 — Ventajas, beneficios y consolidación
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-14_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

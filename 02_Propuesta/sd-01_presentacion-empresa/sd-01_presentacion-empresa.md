@@ -1,3 +1,35 @@
+---
+id: T7-01
+tipo: parte
+parte: T7-01
+titulo: Presentación de la empresa
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos:
+  - ADJ-001
+  - ADJ-002
+  - ADJ-003
+jira:
+  - OSS-165
+  - OSS-69
+  - OSS-72
+  - OSS-73
+  - OSS-74
+  - OSS-75
+  - OSS-76
+  - OSS-77
+cifras: []
+secciones:
+  - T7-01-1.1
+  - T7-01-1.2
+  - T7-01-1.3
+  - T7-01-1.4
+  - T7-01-1.5
+  - T7-01-1.6
+actualizado: 2026-09-29
+---
 # Subdocumento 1 — Presentación de la empresa
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-01_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.

@@ -1,3 +1,23 @@
+---
+id: T7-11
+tipo: parte
+parte: T7-11
+titulo: Planes en operación
+estado: borrador
+bases: []
+requisitos: []
+depende_de: []
+adjuntos: []
+jira: []
+cifras: []
+secciones:
+  - T7-11-11.1
+  - T7-11-11.2
+  - T7-11-11.3
+  - T7-11-11.4
+  - T7-11-11.5
+actualizado: 2026-09-29
+---
 # Subdocumento 11 — Planes en operación
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-11_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
