@@ -1,0 +1,8 @@
+digraph G {
+  rankdir=TB; graph [bgcolor="white", pad="0.2", nodesep="0.35", ranksep="0.55"];
+  node [shape=box, style="rounded,filled", color="#1f4f68", fillcolor="#e9f2f6", fontname="DejaVu Sans", fontsize=11];
+  edge [color="#47768a", arrowsize=0.7];
+  jp [label="Jefe de Proyecto"];
+  ar [label="Arquitectura y construcción"]; se [label="Seguridad"]; da [label="Datos"]; qa [label="Calidad"]; op [label="Operación"]; im [label="Implantación"];
+  jp -> {ar se da qa op im};
+}

@@ -28,7 +28,7 @@ secciones:
   - T7-01-1.4
   - T7-01-1.5
   - T7-01-1.6
-actualizado: 2026-09-29
+actualizado: 2026-10-03
 ---
 # Subdocumento 1 — Presentación de la empresa
 
@@ -43,7 +43,7 @@ actualizado: 2026-09-29
 | Carpeta | `02_Propuesta/sd-01_presentacion-empresa/` |
 | Capítulo en el informe | Capítulo I |
 | Formularios asociados | T-6 |
-| Estado | Desarrollado en el Informe 1 |
+| Estado | Borrador alineado con rúbrica; acreditaciones pendientes |
 
 ## Ponderación (Formulario T-21)
 
@@ -71,20 +71,17 @@ actualizado: 2026-09-29
 
 | N | Sección | Archivo | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Identificación y perfil corporativo | `sd-01_s1_identificacion-y-perfil-corporativo.md` | Desarrollado en el Informe 1 |
-| 2 | Capacidades instaladas | `sd-01_s2_capacidades-instaladas.md` | Desarrollado en el Informe 1 |
-| 3 | Misión, visión y valores | `sd-01_s3_mision-vision-y-valores.md` | Desarrollado en el Informe 1 |
-| 4 | Experiencia relevante (Formulario T-6) | `sd-01_s4_experiencia-relevante-formulario-t-6.md` | Desarrollado en el Informe 1 |
-| 5 | Certificaciones institucionales y alianzas tecnológicas vigentes | `sd-01_s5_certificaciones-institucionales-y-alianzas-tecnologicas-vi.md` | Parcial en el Informe 1 |
-| 6 | Frente de jefaturas asignado | `sd-01_s6_frente-de-jefaturas-asignado.md` | Parcial en el Informe 1 |
+| 0 | Introducción | `sd-01_s0_introduccion.md` | Redactado |
+| 1 | 1.1 Presentación de la empresa | `sd-01_s1_presentacion-de-la-empresa.md` | Borrador; cifras institucionales por conciliar |
+| 2 | 1.2 Estructura Organizacional | `sd-01_s2_estructura-organizacional.md` | Borrador; desglose permanente pendiente |
+| 3 | 1.3 Gobierno interno Calidad, Seguridad y Conocimiento | `sd-01_s3_gobierno-interno.md` | Borrador; políticas y registros pendientes |
+| 4 | 1.4 Experiencia y Certificaciones | `sd-01_s4_experiencia-y-certificaciones.md` | Borrador; T-6 y certificados pendientes |
+| 5 | 1.5 Estructura para Proyecto | `sd-01_s5_estructura-para-proyecto.md` | Borrador; dedicaciones y T-8 pendientes |
+| 6 | 1.6 Alianzas | `sd-01_s6_alianzas.md` | Borrador; acuerdos pendientes |
 
-### Notas por sección
+### Notas de revisión
 
-- **1. Identificación y perfil corporativo** - Datos de operación de Ancoa y presentación de la proponente.
-- **2. Capacidades instaladas** - Fábrica de software, célula de datos, célula de ciberseguridad y mesa de servicio.
-- **4. Experiencia relevante (Formulario T-6)** - Mínimo tres proyectos finalizados y en operación en los últimos cinco años.
-- **5. Certificaciones institucionales y alianzas tecnológicas vigentes** - Falta acreditar ISO 9001, ISO/IEC 27001 y PCI-DSS: el texto actual dice literalmente «Copiar del caso, o con claude». Es requisito habilitante (Art. 34).
-- **6. Frente de jefaturas asignado** - Solo consta el nombre del jefe de proyecto (Vicente Rosales Miranda). Faltan arquitecto de solución, encargado de seguridad, líder de datos y líder de implantación.
+El [diagnóstico por criterio](revision-rubrica-y-anexo.md) contrasta los borradores «Informes(7).md» y «Informes(8).md» con las Bases, el Comunicado 10 y la rúbrica S1-01 a S1-09. El anexo A.2 aporta datos preliminares para T-6, pero incluye valores estimados, referencias sin contacto nominal y una atribución a una empresa real. No se consideran acreditados los habilitantes hasta recibir los soportes. El artículo 34 exige ISO/IEC 27001 vigente **o** un plan formal firmado con hitos en los primeros doce meses; el texto de las Bases disponible no establece aquí PCI DSS como certificación institucional habilitante.
 
 ## Trazabilidad con Jira
 
@@ -104,16 +101,17 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ## Adjuntos esperados
 
-- `form-T-6_experiencia-relevante.docx : formulario oficial, se entrega en el Sobre 2`
-- `adj-sd-01_s5_certificaciones.pdf (evidencia de certificaciones)`
-- `adj-sd-01_s6_frente-jefaturas.md (matriz de roles, RAE y dedicación)`
+- Formulario T-6 en archivo separado del subdocumento: falta consolidar estimaciones y referencias verificables.
+- Certificados institucionales vigentes o plan formal ISO/IEC 27001 firmado, según corresponda.
+- Matriz de roles y dedicación, currículos, cartas y credenciales individuales en Capítulo 12 / Formulario T-8.
+- Certificado de socio del proveedor de nube o carta de compromiso de socio certificado participante.
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-01_sN_*.md` con contenido redactado
+- [x] La introducción y cada sección oficial 1.1 a 1.6 tienen su archivo `sd-01_sN_*.md` con contenido redactado
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
-- [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
+- [x] Figuras 1 y 2 incrustadas como imágenes; fuentes `.dot` y exportaciones PNG/PDF en `04_Adjuntos/diagramas/`
 
 ---
 

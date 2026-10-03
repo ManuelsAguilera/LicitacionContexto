@@ -7,6 +7,7 @@
 __pycache__/
 *.pyc
 05_Gestion/build/
+02_Propuesta/latex_final/build/
 05_Gestion/reportes/muestra_visual.pdf
 .claude/skills/redactar-seccion/
 .claude/skills/revisar-seccion/

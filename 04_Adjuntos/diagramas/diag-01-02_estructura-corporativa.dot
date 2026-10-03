@@ -1,0 +1,9 @@
+digraph G {
+  rankdir=TB; graph [bgcolor="white", pad="0.2", nodesep="0.35", ranksep="0.55"];
+  node [shape=box, style="rounded,filled", color="#1f4f68", fillcolor="#e9f2f6", fontname="DejaVu Sans", fontsize=11];
+  edge [color="#47768a", arrowsize=0.7];
+  gg [label="Gerencia General"];
+  fs [label="Fábrica de software"]; da [label="Célula de datos"]; si [label="Seguridad de la información"]; ms [label="Mesa de servicio"];
+  pr [label="Equipos de proyecto"];
+  gg -> {fs da si ms}; {fs da si ms} -> pr;
+}

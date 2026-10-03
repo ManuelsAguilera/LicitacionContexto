@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{oss}[2026/10/03 Estilo de la propuesta Only Simple Solutions]
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{eso-pic}
+\RequirePackage{pagecolor}
+\RequirePackage{tikz}
+\definecolor{ossazul}{HTML}{196197}
+\definecolor{ossclaro}{HTML}{277FA8}
+\definecolor{ossverde}{HTML}{7FC6AA}
+\definecolor{osstexto}{HTML}{17324D}
+\color{osstexto}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Only Simple Solutions}
+\fancyhead[R]{\small Licitación TFEP-01/2026}
+\fancyfoot[L]{\raisebox{-0.5\height}{\includegraphics[height=5.5mm]{recursos/logo-azul.pdf}}}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+\titleformat{\section}{\Large\bfseries\color{ossazul}}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries\color{ossclaro}}{}{0pt}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{ossclaro}}{}{0pt}{}
+\hypersetup{colorlinks=true,linkcolor=ossazul,urlcolor=ossazul,citecolor=ossazul}
+\newif\ifosswatermark
+\osswatermarktrue
+\newcommand{\osswatermark}{%
+  \ifosswatermark
+    \AtPageCenter{\makebox(0,0){\includegraphics[width=76mm]{recursos/logo-marca-agua.pdf}}}%
+  \fi
+}
+\AddToShipoutPictureBG{\osswatermark}
+\newcommand{\ossFinalPage}{%
+  \clearpage
+  \osswatermarkfalse
+  \thispagestyle{empty}%
+  \pagecolor{ossazul}%
+  \color{white}%
+  \null\vfill
+  \begin{center}
+    \includegraphics[width=65mm]{recursos/logo-blanco.pdf}
+  \end{center}
+  \vfill\null
+}
+\newcommand{\ossCover}[2]{%
+  \osswatermarkfalse
+  \begin{titlepage}
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[ossazul] (current page.north west) rectangle (current page.south east);
+    \fill[ossclaro]
+      ([yshift=-92mm]current page.north west) --
+      ([xshift=136mm,yshift=-92mm]current page.north west) --
+      ([xshift=136mm,yshift=-213mm]current page.north west) --
+      ([xshift=60mm,yshift=-270mm]current page.north west) --
+      ([yshift=-209mm]current page.north west) -- cycle;
+    \begin{scope}
+      \clip
+        ([xshift=-16mm]current page.north east) --
+        (current page.north east) --
+        (current page.south east) --
+        ([xshift=-44mm]current page.south east) --
+        ([xshift=14mm,yshift=-194mm]current page.north west) -- cycle;
+      \node[anchor=center] at
+        ([xshift=24mm]current page.center)
+        {\includegraphics[height=305mm]{recursos/portada-acuerdo.png}};
+    \end{scope}
+    \fill[black,opacity=.20]
+      ([xshift=27mm,yshift=-108mm]current page.north west) rectangle
+      ([xshift=111mm,yshift=-194mm]current page.north west);
+    \fill[white]
+      ([xshift=24mm,yshift=-105mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-191mm]current page.north west);
+    \draw[ossazul,line width=.55mm]
+      ([xshift=24mm,yshift=-105mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-191mm]current page.north west);
+    \fill[black,opacity=.16]
+      ([xshift=27mm,yshift=-198mm]current page.north west) rectangle
+      ([xshift=111mm,yshift=-231mm]current page.north west);
+    \fill[ossclaro]
+      ([xshift=24mm,yshift=-195mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-228mm]current page.north west);
+    \draw[white,line width=.35mm]
+      ([xshift=24mm,yshift=-195mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-228mm]current page.north west);
+    \fill[black,opacity=.16]
+      ([xshift=27mm,yshift=-232mm]current page.north west) rectangle
+      ([xshift=111mm,yshift=-248mm]current page.north west);
+    \fill[ossverde]
+      ([xshift=24mm,yshift=-229mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-245mm]current page.north west);
+    \draw[white,line width=.35mm]
+      ([xshift=24mm,yshift=-229mm]current page.north west) rectangle
+      ([xshift=108mm,yshift=-245mm]current page.north west);
+    \node[anchor=west,align=left,text=ossazul,
+      font=\fontsize{27}{30}\selectfont\bfseries,text width=78mm]
+      at ([xshift=32mm,yshift=-145mm]current page.north west)
+      {ONLY\\SIMPLE\\SOLUTIONS};
+    \node[anchor=center] at ([xshift=66mm,yshift=-177mm]current page.north west)
+      {\includegraphics[width=25mm]{recursos/logo-original.pdf}};
+    \node[anchor=west,align=left,text=white,
+      font=\fontsize{14}{16}\selectfont\bfseries,text width=73mm]
+      at ([xshift=31mm,yshift=-210mm]current page.north west)
+      {#1};
+    \node[anchor=center,text=white,
+      font=\fontsize{12}{14}\selectfont\bfseries]
+      at ([xshift=66mm,yshift=-237mm]current page.north west)
+      {#2};
+    \node[anchor=west,text=white,
+      font=\fontsize{12}{15}\selectfont]
+      at ([xshift=18mm,yshift=7mm]current page.south west)
+      {Licitación TFEP-01/2026};
+    \node[anchor=west,text=white,
+      font=\fontsize{17}{21}\selectfont\bfseries]
+      at ([xshift=18mm,yshift=19mm]current page.south west)
+      {Propuesta técnica};
+  \end{tikzpicture}%
+  \null
+  \end{titlepage}%
+  \osswatermarktrue
+}

@@ -35,6 +35,20 @@ Cada carpeta tiene su `README.md` con el propósito y las reglas específicas.
 - **Formato:** todo artefacto de contenido se escribe en `.md` (o `.txt`). Los binarios (`.xlsx`, `.docx`, `.pptx`, `.pdf`) solo existen como documento de lectura/entrega para el usuario o como export final.
 - **Nombres:** `sd-NN_sN_titulo.md` para el texto, `adj-`/`diag-`/`form-` para los adjuntos. El orden alfabético coincide con el orden del informe.
 
+## Exportación LaTeX editable
+
+La fuente de redacción continúa en Markdown. Para la edición final existe una copia LaTeX editable en `02_Propuesta/latex_final/`, generada por `05_Gestion/scripts/exportar_latex.py`. El formato común de `oss.sty` se aplica a todos los subdocumentos importados: portada geométrica con la foto de alianza, tarjetas con borde y sombra, marca de agua, logo azul en el pie y página final azul con logo blanco.
+
+Desde la raíz:
+
+```bash
+python3 05_Gestion/scripts/exportar_latex.py importar --parte T7-01
+python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-01
+python3 05_Gestion/scripts/exportar_latex.py compilar --todo --final --trabajadores 4
+```
+
+La importación se realiza una sola vez por subdocumento y no sobrescribe un `.tex` existente. Después de importar, las ediciones finales se hacen en el `.tex`; las figuras se incrustan como imágenes y no se usan bloques Mermaid.
+
 ## Skills de opencode
 
 Las skills están **versionadas en `.opencode/skills/`** y quedan instaladas al clonar (no dependen de la config global de cada máquina). El skill `licitacion-workflow` orquesta qué skill cargar en cada fase de la propuesta.

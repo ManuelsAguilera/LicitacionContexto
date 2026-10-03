@@ -1,0 +1,39 @@
+{
+  "partes": {
+    "T7-01": {
+      "tex": "sd-01.tex",
+      "titulo": "Presentación de la empresa",
+      "origen_sha256": "d32191d5d42e1fdb6d146f135a0a3041987f4859dde710c074a92353cda33c90",
+      "origen": [
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s0_introduccion.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s1_presentacion-de-la-empresa.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s2_estructura-organizacional.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s3_gobierno-interno.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s4_experiencia-y-certificaciones.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s5_estructura-para-proyecto.md",
+        "02_Propuesta/sd-01_presentacion-empresa/sd-01_s6_alianzas.md"
+      ],
+      "figuras": [
+        "figuras/diag-01-02_estructura-corporativa-b3efcbcfb9.png",
+        "figuras/diag-01-05_estructura-proyecto-1d677ea629.png"
+      ],
+      "importado_utc": "2026-10-03T15:36:48.189687+00:00"
+    },
+    "T7-02": {
+      "tex": "sd-02.tex",
+      "titulo": "Resumen Ejecutivo, comprensión del problema y de la necesidad",
+      "origen_sha256": "10b9ceede11c2c0af5cd6fc94a11c34afe7aa898e4267fe86dba0a3632698267",
+      "origen": [
+        "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s1_resumen-ejecutivo-del-problema.md",
+        "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s2_comprension-del-problema-y-de-la-necesidad.md",
+        "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s3_dimensionamiento-del-problema.md",
+        "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s4_actores-y-grupos-de-interes.md",
+        "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s5_requerimientos-supuestos-exclusiones-y-restricciones.md"
+      ],
+      "figuras": [
+        "figuras/figura-d96d9713821d-86e8742392.png"
+      ],
+      "importado_utc": "2026-10-03T18:22:02.908946+00:00"
+    }
+  }
+}
