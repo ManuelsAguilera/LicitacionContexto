@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-09-30  
 **Fuente conservada:** `05_Gestion/migraciones/fuentes/T7-03_Informes4_source.md`  
-**Vista previa:** `05_Gestion/reportes/vistas_previas/T7-03_Informes4_preview.pdf`  
+**PDF de vista previa anterior:** se retiró al unificar la conversión en LaTeX. No usarlo como referencia de formato.
 **Estado de los artefactos:** borrador; requiere revisión humana.
 
 ## Resultado
@@ -11,7 +11,7 @@
 - El mapeo cubrió los 54 bloques del capítulo; no quedaron bloques del capítulo sin destino. Se excluyeron los índices y materiales ajenos al capítulo, incluidas las referencias y la declaración de IA de la fuente.
 - Las 25 tablas del capítulo se transformaron en párrafos con etiquetas descriptivas. El original se conserva intacto para cotejo y trazabilidad.
 - La figura se extrajo del Markdown y quedó como PNG local en `04_Adjuntos/migracion/T7-03/`.
-- El generador creó un PDF de 42 páginas con portada corporativa, encabezado y pie, texto seleccionable y marca de agua **BORRADOR**. El índice de esta vista previa no muestra números de página estimados; no es un PDF de entrega.
+- Una versión anterior del generador Markdown creó un PDF de 42 páginas. Ese archivo se retiró junto con su renderizador para evitar que se confunda con la salida corporativa LaTeX. La revisión del contenido de esta nota sigue siendo válida como observación histórica.
 
 ## Correcciones editoriales aplicadas
 
@@ -29,10 +29,10 @@
 4. **Cierre formal:** todavía faltan el artefacto final de referencias y el registro verificable de uso de IA. Por eso el modo de entrega final sigue bloqueado correctamente; la vista previa omite ambos apartados y no los simula.
 5. **Verificación documental:** `check.py --parte T7-03` no reporta errores estructurales, pero genera avisos por referencias/cifras aún no registradas y pendientes de revisión. Estos avisos requieren cotejo con las bases y con el registro de cifras; no equivalen automáticamente a errores confirmados.
 
-## Comando de generación de prueba
+## Comando para vista previa LaTeX tras completar la migración
 
 ```powershell
-python 05_Gestion/scripts/build.py --parte T7-03 --vista-previa
+python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-03
 ```
 
-La vista previa se guarda en `05_Gestion/reportes/vistas_previas/`, nunca en `07_Entregables/`.
+La ruta anterior de vista previa fue retirada. Una vez que T7-03 tenga secciones materializadas y una fuente `.tex`, compilarlo con `python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-03`; la vista previa LaTeX se guardará en `05_Gestion/reportes/vistas_previas/`.

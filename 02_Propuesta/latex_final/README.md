@@ -13,7 +13,7 @@ python3 05_Gestion/scripts/exportar_latex.py compilar --todo --final --trabajado
 
 `compilar` sin `--final` produce PDF de vista previa en `05_Gestion/reportes/vistas_previas/`. `--final` exige las secciones Referencias y Declaración de uso de IA en el `.tex` y produce los PDF oficiales separados y el consolidado. Los formularios y anexos siguen en archivos aparte.
 
-Esta es la ruta de vista previa del formato corporativo. No debe sustituirse por `05_Gestion/scripts/build.py`, que pertenece al exportador Markdown anterior y conserva una maqueta académica.
+Esta es la única ruta de vista previa del formato corporativo. El renderizador PDF Markdown anterior fue retirado.
 
 Las figuras son imágenes PDF, PNG o JPEG dentro de `figuras/`. Se pueden sustituir y enlazar desde el `.tex` con `\includegraphics`.
 

@@ -1,12 +1,119 @@
 ---
 name: exportar
-description: Exportar una parte aprobada desde Markdown a PDF corporativo y copia de Google Docs.
+description: Importar, editar, compilar y verificar los subdocumentos de la propuesta en el único formato corporativo LaTeX. Usar cuando se solicite generar una vista previa, PDF final, compilar un subdocumento o incorporar figuras al documento final.
 ---
 
-# Exportar
+# Exportar la propuesta corporativa
 
-1. Consulta `05_Gestion/README.md` y la muestra visual en `plantillas/muestra.md`.
-2. Ejecuta `build.py --parte T7-NN --dry-run`; revisa la lista de secciones, cada adjunto, formularios separados y estado de borrador.
-3. Ejecuta la exportación PDF. Pandoc mejora la conversión Markdown cuando está disponible; Edge/Chromium es el renderizador PDF documentado para Windows. El conversor Markdown local sirve de respaldo limitado y debe pasar QA visual.
-4. Para crear Google Docs, prepara DOCX/HTML compatible e importa como documento nativo con el conector Google Drive autenticado. Verifica contenido y formato después de importar; nunca afirmes que el HTML local es un Doc publicado.
-5. Entrega nombres conforme al Comunicado 10; los Docs son copias editables derivadas. Nunca publica los 14 subdocumentos automáticamente.
+## Regla principal
+
+Todos los PDF de la propuesta técnica se generan desde LaTeX con 05_Gestion/scripts/exportar_latex.py. Esta es la única ruta de conversión admitida. No usar build.py, Pandoc a PDF, Chromium/Edge, CSS ni otra plantilla de Markdown: esas rutas producían una segunda composición y fueron retiradas.
+
+La fuente de redacción de trabajo sigue siendo Markdown hasta que un subdocumento se importe. Después de crear 02_Propuesta/latex_final/sd-NN.tex, ese .tex pasa a ser la fuente de edición final. No volver a importarlo ni sobrescribirlo: el importador se niega a hacerlo para proteger cambios manuales.
+
+## Antes de exportar
+
+1. Leer AGENTS.md, 02_Propuesta/latex_final/README.md y esta skill.
+2. Identificar la parte solicitada (T7-01 a T7-14) o confirmar que el pedido abarca todas.
+3. Consultar las fuentes editables:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py estado
+   ~~~
+
+4. Si la parte no tiene .tex, importarla una vez:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py importar --parte T7-01
+   ~~~
+
+   Sustituir T7-01 por la parte seleccionada. Para importar partes disponibles en lote:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py importar --todo
+   ~~~
+
+   La importación sigue la tabla de secciones del maestro 02_Propuesta/sd-NN_*/sd-NN_*.md, preserva el orden numérico y transforma Markdown a LaTeX. Si el archivo .tex ya existe, detenerse y compilarlo; nunca regenerarlo para incorporar cambios de Markdown sin una instrucción explícita del usuario.
+
+## Compilar
+
+Vista previa de una parte:
+
+~~~bash
+python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-01
+~~~
+
+Vista previa consolidada de todas las partes LaTeX disponibles:
+
+~~~bash
+python3 05_Gestion/scripts/exportar_latex.py compilar --todo
+~~~
+
+PDF oficial de una parte o compilación oficial consolidada:
+
+~~~bash
+python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-01 --final
+python3 05_Gestion/scripts/exportar_latex.py compilar --todo --final --trabajadores 4
+~~~
+
+--final exige referencias y declaración de uso de IA y escribe en 07_Entregables/. No afirmar que la propuesta completa está compilada si faltan partes. --todo sin --final compila solo las fuentes presentes e informa cuáles faltan.
+
+## Formato común que debe conservarse
+
+El paquete compartido 02_Propuesta/latex_final/oss.sty aplica automáticamente:
+
+- portada de una página mediante \ossCover{título}{Subdocumento N}, con planos diagonales azul institucional, azul claro, blanco y verde;
+- fotografía de alianza en la cuña derecha, tarjeta blanca más pequeña con ONLY / SIMPLE / SOLUTIONS y logo azul/verde; bordes y sombras;
+- marca de agua azul tenue en las páginas interiores, nunca en portada ni página final;
+- encabezado y logo minimalista azul en el pie de las páginas interiores;
+- página final azul completa y logo blanco mediante \ossFinalPage.
+
+No recrear estos elementos manualmente en cada sd-NN.tex. La macro común y los recursos en recursos/ son la fuente visual. Títulos largos van en la caja de título del subdocumento y deben caber; ajustar la macro compartida solo cuando una prueba revele un fallo, no cambiar el diseño de una sola parte para acomodar el mismo caso.
+
+## Incrustar figuras e imágenes
+
+### Durante la importación desde Markdown
+
+- Usar imágenes locales con sintaxis Markdown: ![Descripción de la figura](ruta/relativa/figura.png).
+- Resolver la ruta desde el archivo .md de sección, no desde la raíz.
+- Formatos admitidos: PDF, PNG, JPG/JPEG y SVG.
+- El importador copia cada imagen a 02_Propuesta/latex_final/figuras/ con un hash en el nombre para evitar colisiones y preservar procedencia. Convierte SVG a PDF con Inkscape para XeLaTeX.
+- Mantener los diagramas como imágenes exportadas en 04_Adjuntos/diagramas/; no usar bloques Mermaid. Si falta la imagen referenciada, corregir o reportar el recurso antes de declarar la importación terminada.
+
+### Edición directa en LaTeX
+
+- Para una figura propia del subdocumento, guardar o copiar el recurso en figuras/ y usar \includegraphics:
+
+  ~~~latex
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\linewidth]{figuras/diagrama-sistema.pdf}
+    \caption{Descripción concreta de la figura.}
+    \label{fig:diagrama-sistema}
+  \end{figure}
+  ~~~
+
+- Para imágenes anchas usar width=\linewidth; para imágenes pequeñas o logos indicar un ancho explícito. No estirar sin conservar proporción.
+- Para imágenes en línea, como marcas de agua, portada y logos, usar recursos del directorio recursos/; están gestionados por oss.sty.
+- Preferir SVG como fuente editable más PDF vectorial para inclusión en XeLaTeX. PNG/JPEG son adecuados para fotografías. No enlazar rutas absolutas fuera del repositorio.
+- Verificar que la imagen aparece en el PDF, que no queda cortada y que su texto/leyenda se lee.
+
+## Verificación y entrega
+
+1. Revisar el mensaje del exportador: debe indicar ruta, páginas y duración.
+2. Abrir o renderizar al menos la portada y una página interior; en una compilación consolidada, revisar también límites entre subdocumentos y hoja final.
+3. Confirmar tamaño carta, texto seleccionable, recursos visibles y ausencia de error de XeLaTeX.
+4. Para PDF oficial, confirmar nombres de archivos en las carpetas de entregables y el consolidado.
+5. Entregar la ruta del PDF al usuario e indicar si fue vista previa o versión oficial.
+
+### Rutas de salida
+
+- Fuente final editable: 02_Propuesta/latex_final/sd-NN.tex
+- Auxiliares ignorados por Git: 02_Propuesta/latex_final/build/
+- Vista previa individual y consolidada: 05_Gestion/reportes/vistas_previas/
+- PDF oficial por subdocumento: 07_Entregables/sobre_2_tecnico/
+- PDF oficial consolidado: 07_Entregables/pdf_final/
+
+## Prompt corto para usuarios
+
+Si el usuario dice “compila con el formato corporativo LaTeX”, usar esta skill y el script indicado arriba. Para una parte nueva, importar solo si no existe su .tex; luego compilar. No pedirle al usuario que recuerde rutas ni comandos.

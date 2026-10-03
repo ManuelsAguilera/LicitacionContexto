@@ -49,7 +49,7 @@ python3 05_Gestion/scripts/exportar_latex.py compilar --todo --final --trabajado
 
 La importación se realiza una sola vez por subdocumento y no sobrescribe un `.tex` existente. Después de importar, las ediciones finales se hacen en el `.tex`; las figuras se incrustan como imágenes y no se usan bloques Mermaid.
 
-Para la vista previa con el formato oficial corporativo se debe usar `exportar_latex.py`. El script `05_Gestion/scripts/build.py` corresponde al flujo Markdown anterior y produce una maqueta académica; no debe usarse para validar la portada ni el formato final LaTeX.
+Para generar cualquier vista previa o PDF oficial se usa `05_Gestion/scripts/exportar_latex.py` y se siguen las instrucciones completas de `.agents/skills/exportar/SKILL.md`. La ruta anterior de generación PDF fue retirada para que no se produzca una segunda composición visual.
 
 ## Skills de opencode
 

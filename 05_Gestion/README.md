@@ -5,22 +5,18 @@ la propuesta.
 
 ## Sistema de artefactos
 
-`convenciones/artefactos.md` define IDs y metadatos; `reportes/` contiene reconocimiento, problemas y contradicciones; `scripts/` en la raíz de esta carpeta contiene importación, validación, estado, contexto y exportación. Ejecutar `python 05_Gestion/scripts/<script>.py --help` para ver opciones. Los comandos de importación y compilación admiten `--dry-run`; los importes requieren un mapa revisado para aplicar.
+`convenciones/artefactos.md` define IDs y metadatos; `reportes/` contiene reconocimiento, problemas y contradicciones; `scripts/` en la raíz de esta carpeta contiene importación, validación, estado, contexto y exportación. Ejecutar `python3 05_Gestion/scripts/<script>.py --help` para ver opciones. Las migraciones tienen modo `--dry-run`; su aplicación requiere un mapa revisado.
 
 ### Flujo operativo
 
 1. Importar un `.docx` (incluida una exportación de Google Docs) o un `.md` completo con `migrar.py --fuente <archivo> --parte T7-NN --dry-run --reporte <json>`. El informe conserva bloques, tablas y referencias detectadas, propone destinos y registra hashes de fuente e índice.
 2. Revisar todas las asignaciones y completar un mapa con esos hashes, `aprobado_por`, `aprobado_el` y `asignaciones` por número de bloque. Solo entonces ejecutar `migrar.py` sin `--dry-run --mapa-aprobado <json>`. Nunca sobrescribe secciones o adjuntos existentes.
 3. Ejecutar `agregar_frontmatter.py --dry-run` antes de aplicarlo; usar `check.py`, `estado.py` y `brief.py` para revisar trazabilidad, faltantes y contexto.
-4. Diseñar desde `plantillas/tema.yml`, `base.css` y los componentes Lua; probar con `build.py --muestra --todo`. Para exportar, ejecutar `build.py --parte T7-NN` o `--todo`.
+4. Para generar PDF de la propuesta técnica, cargar `.agents/skills/exportar/SKILL.md` y usar exclusivamente `scripts/exportar_latex.py`. `scripts/build.py` fue retirado para impedir una segunda versión de formato.
 
-El PDF se imprime con Edge/Chromium en modo sin interfaz, disponible en Windows; Pandoc se utiliza cuando está instalado para convertir Markdown, con un conversor local acotado como fallback. La salida PDF no reemplaza la validación visual ni la revisión del índice obligatorio. La publicación como Google Docs queda como copia derivada y requiere importación nativa y lectura de vuelta; no tratar el HTML como documento publicado.
+El exportador LaTeX usa XeLaTeX y `latexmk`; importa Markdown una vez con Pandoc, incorpora recursos gráficos, aplica el formato común definido en `02_Propuesta/latex_final/oss.sty` y valida tamaño carta y texto seleccionable. La fuente editable, reglas de inclusión de figuras, salidas y QA visual están descritos en `.agents/skills/exportar/SKILL.md` y `02_Propuesta/latex_final/README.md`.
 
-La portada usa sangrado a página completa y el logotipo oficial almacenado en `plantillas/recursos/onlysimplesolutions.png`. La composición de marca se ajusta desde `plantillas/tema.yml` y `plantillas/base.css`.
-
-Cada adjunto no-formulario declarado se exporta como PDF individual cuando existe y su tipo es Markdown, SVG o imagen; los formularios conservan su archivo separado. Si falta un adjunto o su tipo no está soportado, el build se detiene antes de publicar el PDF principal. Los bloques Mermaid requieren `mmdc` y se convierten en SVG antes de la impresión. La verificación final exige `pypdf` para comprobar extracción de texto, marcadores, metadatos y fuentes incrustadas.
-
-Para cerrar un subdocumento, debe existir `sd-NN_referencias.md` dentro de su carpeta, con frontmatter en estado `revisado`/`congelado`. Además, el registro IA debe tener una fila verificada por cada sección, adjunto y formulario declarado. El build incorpora Referencias y genera al final la Declaración de uso de IA; sin estas condiciones no publica un PDF final.
+El modo `--final` exige referencias y declaración de uso de IA en el `.tex`. Los anexos y formularios que deban entregarse por separado permanecen en sus archivos correspondientes.
 
 El piloto T7-03 parte del Informe 1, pero su mapa actual es una **propuesta no aprobada**: las 55 asignaciones requieren revisión humana y todavía no se han materializado archivos de sección a partir de ellas. Las diferencias entre el maestro provisional y el índice del Comunicado 10 deben resolverse a favor de este último. La fase de exportación final y los anexos se validan tras esa migración aprobada.
 

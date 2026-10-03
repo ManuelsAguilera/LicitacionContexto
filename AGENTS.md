@@ -62,7 +62,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 
 **Regla:** todo artefacto de contenido se escribe en **`.md`** (o `.txt` para volcados de datos). Los binarios (`.xlsx`, `.docx`, `.pptx`, `.pdf`) existen **únicamente** como documento de lectura/entrega para el usuario o como export final.
 
-**Consecuencia práctica:** todo capítulo, sección, formulario y cálculo económico se redacta primero en `.md` dentro de `02_Propuesta/`; los `.docx`/`.xlsx` de los sobres se generan al cierre.
+**Consecuencia práctica:** todo capítulo, sección, formulario y cálculo económico se redacta primero en `.md` dentro de `02_Propuesta/`. Excepción para el PDF de propuesta técnica: se importa a `02_Propuesta/latex_final/` y luego el `.tex` se convierte en la fuente de edición final, conforme a `.agents/skills/exportar/SKILL.md`.
 
 **Exentos de la regla:** `*.py`, `*.ps1`, `*.json`, `*.csv` de `05_Gestion/` — son código y datos de máquina que consumen scripts, no documentos.
 
@@ -75,7 +75,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 - El índice obligatorio del Comunicado 10 gobierna la estructura entregable. Los maestros actuales pueden documentar una estructura provisional; no migrar su tabla de secciones como verdad oficial sin cotejarla.
 - La migración desde Google Docs se realiza mediante exportación DOCX; un `.md` completo también puede importarse. El modo `--dry-run` no escribe secciones. Los mapeos ambiguos se revisan antes de aplicar y el contenido fuente se conserva.
 - `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
-- Todo PDF se genera desde los artefactos Markdown y los nombres de entrega siguen el Comunicado 10. Google Docs es copia editable derivada, no fuente de verdad.
+- Los PDF de la propuesta técnica se generan exclusivamente desde LaTeX con `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF.
 - La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
 - Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`; en Windows, `05_Gestion/scripts/link_skills.ps1` las enlaza desde Claude Code y OpenCode. Editar siempre la fuente canónica.
 
@@ -154,7 +154,7 @@ Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detect
 | `legal-risk-assessment` / `risk-assessment` | Evaluación de riesgos contractuales y técnicos |
 | `deep-research` | Investigar lo que el caso no explica (normativa, estándares, mercado) |
 | `technical-writing` | Redacción de documentos técnicos extensos |
-| `mermaid-diagrams` | Diagramas en Markdown (```mermaid```) que GitHub renderiza nativo; ver "Renderizado de diagramas" |
+| `mermaid-diagrams` | No usar para la propuesta; se incrustan diagramas como imágenes |
 | `plantuml-diagrams` | Diagramas UML/C4 formales (.puml) renderizados a PNG/SVG vía Kroki (curl); ver "Renderizado de diagramas" |
 | `jira-workflow` | Integración opcional con Jira Cloud: tomar tareas, marcarlas asignadas/en progreso/completadas, consultar sprint/board y comentar |
 
@@ -204,11 +204,11 @@ Regla de selección:
 
 | Tipo de diagrama | Herramienta | Dónde se ve | Export para `.docx`/`.pdf` |
 | :--- | :--- | :--- | :--- |
-| Flujo, arquitectura, secuencia, ER, C4 de la propuesta | **Mermaid** (bloque ```mermaid``` en el `.md`) | **GitHub renderiza nativo** → todo el equipo lo ve en la web sin tooling | `npx -y @mermaid-js/mermaid-cli` → `mmdc -i archivo.mmd -o archivo.svg/png/pdf` |
+| Diagramas de la propuesta | Imagen PNG/SVG/PDF exportada, enlazada desde Markdown | El repositorio guarda la fuente gráfica y la imagen en `04_Adjuntos/diagramas/` | El importador LaTeX copia la imagen a `02_Propuesta/latex_final/figuras/` |
 | UML/C4 formal, componente, secuencia estricta | **PlantUML** (`.puml`) | GitHub **no** lo renderiza: exportar siempre a imagen | `curl https://kroki.io/plantuml/png -d 'diagram_source=...'` (o kroki docker local) |
 | Diagrama interactivo/animado (presentaciones, sobres) | **`architecture-diagrams`** | HTML en navegador (GitHub no lo muestra) | screenshot del HTML → PNG |
 
-Convención: la **fuente de los diagramas es texto** dentro de los `.md` de la propuesta (versionable y revisable en PR). Los **PNG/SVG/PDF exportados** se guardan en `04_Adjuntos/diagramas/` y de ahí se incrustan en Word (`docx`) y en el PDF final (`pdf-handling`). Usar Mermaid por defecto; reservar PlantUML para UML/C4 formales y `architecture-diagrams` para lo interactivo.
+Convención: los diagramas que se incorporan en la propuesta se entregan como imágenes PNG/SVG/PDF en `04_Adjuntos/diagramas/`; se incrustan en Markdown con rutas relativas y el importador LaTeX los copia a `02_Propuesta/latex_final/figuras/`. No usar bloques Mermaid. Se pueden conservar fuentes editables como `.dot` o `.puml`, pero el documento siempre incluye su exportación como imagen.
 
 ## Graphify
 
