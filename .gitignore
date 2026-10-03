@@ -17,6 +17,9 @@ __pycache__/
 .opencode/skills/cerrar-parte/
 .opencode/skills/exportar/
 
+# Grafo local de Graphify; se genera en cada máquina y puede contener texto extraído.
+graphify-out/
+
 # Secretos: nunca versionar
 .env
 .env.*
@@ -31,3 +34,6 @@ bun.lock
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Informe: snapshots auto-descargados por dispositivo; no se versionan.
+06_Informes/informes/Informe_*.md
