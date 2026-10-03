@@ -5,9 +5,9 @@
 **Fecha:** Septiembre 2026
 **Estado:** Borrador para revisión interna. Cada ficha sigue los **7 elementos del Art. 29** para el Formulario T-19: (1) problema, (2) tecnología/práctica/modelo, (3) madurez, (4) diseño de incorporación, (5) impacto económico, (6) indicador de verificación, (7) riesgo de adopción.
 
-> **Criterio de pertinencia (Cap. 19 del caso):** las cinco innovaciones deben ser pertinentes al comercio minorista y al crédito de casa comercial, y **no** un catálogo de tecnologías de moda. Por eso cada una nace de un dolor concreto de un módulo del negocio (según `Bases/DivisionNegocios.md`) y se traza con la arquitectura, la EDT y el flujo de caja.
+> **Criterio de pertinencia (Cap. 19 del caso):** las cinco innovaciones deben ser pertinentes al comercio minorista y al crédito de casa comercial, y **no** un catálogo de tecnologías de moda. Por eso cada una nace de un dolor concreto de un módulo del negocio (según `00_Bases/DivisionNegocios.md`) y se traza con la arquitectura, la EDT y el flujo de caja.
 >
-> Fuentes citadas en formato APA para las innovaciones de base tecnológica. Ver lista completa en `productos/seccion3_investigacion.md`.
+> Fuentes citadas en formato APA para las innovaciones de base tecnológica. Ver lista completa en `80_Artefactos/seccion3_investigacion.md`.
 
 ---
 

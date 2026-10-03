@@ -1,6 +1,6 @@
 # Pull automático del Informe — Guía de configuración
 
-> **Qué hace (en una frase):** cuando abres una sesión de opencode en **esta máquina**, descarga automáticamente (solo lectura) el Google Doc **"Informes"** (`1RRCVfA6HkCd9vfIrJZAbYhnL7IIVmWsaLEiV8QEHwl0`) como Markdown y lo guarda con marca de tiempo en `Informe Estado/` (ej. `Informe_0309-11:42.md`).
+> **Qué hace (en una frase):** cuando abres una sesión de opencode en **esta máquina**, descarga automáticamente (solo lectura) el Google Doc **"Informes"** (`1RRCVfA6HkCd9vfIrJZAbYhnL7IIVmWsaLEiV8QEHwl0`) como Markdown y lo guarda con marca de tiempo en `06_Informes/informes/` (ej. `Informe_0309-11:42.md`).
 
 ---
 
@@ -14,7 +14,7 @@ flowchart LR
     C -->|solo lectura| G[Google Doc Informes]
     C --> S3[(S3 URL temporal)]
     SH -->|curl| S3
-    SH --> MD[Informe Estado/Informe_DDMMYY-HH:MM.md]
+    SH --> MD[06_Informes/informes/Informe_DDMMYY-HH:MM.md]
     SH --> LOG[~/.config/opencode/informe-pull.log]
 ```
 
@@ -24,7 +24,7 @@ flowchart LR
 3. Solo si la variable de entorno `PULL_INFORME=1` está activa, lanza el script en segundo plano.
 4. El script `pull-informe.sh` exporta el documento como Markdown vía Composio (`GOOGLEDRIVE_DOWNLOAD_FILE` con `mime_type: text/markdown`).
 5. Descarga los bytes desde el S3 URL entregado por Composio.
-6. Guarda la copia en `Informe Estado/Informe_<DDMM>-<HH:MM>.md`.
+6. Guarda la copia en `06_Informes/informes/Informe_<DDMM>-<HH:MM>.md`.
 7. Registra el resultado en `~/.config/opencode/informe-pull.log`.
 
 ---
@@ -98,15 +98,15 @@ Los cambios de configuración y plugins requieren reiniciar opencode para hacer 
 export PULL_INFORME=1
 ~/.config/opencode/scripts/pull-informe.sh /home/manu/Documentos/Licitación
 ```
-Debe crearse un archivo nuevo en `Informe Estado/` y escribirse una línea en `~/.config/opencode/informe-pull.log`:
+Debe crearse un archivo nuevo en `06_Informes/informes/` y escribirse una línea en `~/.config/opencode/informe-pull.log`:
 ```
-[2026-09-03 11:42:01] OK: escribió .../Informe Estado/Informe_0309-11:42.md (203485 bytes)
+[2026-09-03 11:42:01] OK: escribió .../06_Informes/informes/Informe_0309-11:42.md (203485 bytes)
 ```
 
 ### Verificar el plugin
 1. Reinicia opencode en la carpeta del proyecto.
 2. Abre una sesión nueva.
-3. Revisa que aparezca un archivo `Informe_<fecha>.md` nuevo en `Informe Estado/`.
+3. Revisa que aparezca un archivo `Informe_<fecha>.md` nuevo en `06_Informes/informes/`.
 
 ---
 
@@ -138,7 +138,7 @@ El log vive en `~/.config/opencode/informe-pull.log` y es la primera fuente para
 ## 8. Notas de seguridad
 
 - El script solo **lee** de Google Drive (usa `GOOGLEDRIVE_DOWNLOAD_FILE`, que es `readOnlyHint`).
-- Solo **escribe** en `Informe Estado/` del proyecto y en el log local.
+- Solo **escribe** en `06_Informes/informes/` del proyecto y en el log local.
 - El token/credenciales de Composio quedan en `~/.composio/`, **fuera del repositorio** y nunca se versionan.
 - No hay contraseñas ni secretos en el repo; la activación es por variable de entorno de la máquina.
 - Por diseño, los demás integrantes del equipo no reciben nada de esto al clonar el proyecto.
@@ -152,7 +152,7 @@ El log vive en `~/.config/opencode/informe-pull.log` y es la primera fuente para
 #!/usr/bin/env bash
 #
 # pull-informe.sh — Descarga una copia Markdown del Google Doc "Informes"
-# y la guarda con un nombre con marca de tiempo en "Informe Estado/".
+# y la guarda con un nombre con marca de tiempo en "06_Informes/informes/".
 #
 # DISEÑO: mecanismo POR-DISPOSITIVO (vive en ~/.config/opencode/, fuera del
 # repo). No se versiona en el repositorio. Gobierna la variable PULL_INFORME.
@@ -172,8 +172,8 @@ if [[ $# -lt 1 || -z "$1" ]]; then
   exit 1
 fi
 REPO="$1"
-STAGING_DIR="${TMPDIR:-/tmp}/pull-informe"; mkdir -p "$STAGING_DIR" "$REPO/Informe Estado"
-TS="$(date +"%d%m-%H:%M")"; OUT_FILE="$REPO/Informe Estado/Informe_${TS}.md"
+STAGING_DIR="${TMPDIR:-/tmp}/pull-informe"; mkdir -p "$STAGING_DIR" "$REPO/06_Informes/informes"
+TS="$(date +"%d%m-%H:%M")"; OUT_FILE="$REPO/06_Informes/informes/Informe_${TS}.md"
 log(){ echo "[$(date +"%Y-%m-%d %H:%M:%S")] $*" >>"$LOG_FILE"; }
 
 if [[ ! -x "$COMPOSIO_BIN" ]]; then

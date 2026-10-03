@@ -5,7 +5,7 @@
 **Fecha:** Septiembre 2026
 **Estado:** Borrador para revisión interna (4.1 y 4.2). La sección 4.3 (Arquitectura) la desarrolla el equipo de arquitectura.
 
-> **Nota de edición:** este borrador se apoya en `productos/seccion3_investigacion.md` y ordena el negocio según `Bases/DivisionNegocios.md` (módulos R1–R7 retail, F1–F3 financiero, C1–C4 compartidas). Las innovaciones marcadas como **INN-X** se desarrollan formalmente en `productos/seccion3_innovaciones.md` (Art. 28–29).
+> **Nota de edición:** este borrador se apoya en `80_Artefactos/seccion3_investigacion.md` y ordena el negocio según `00_Bases/DivisionNegocios.md` (módulos R1–R7 retail, F1–F3 financiero, C1–C4 compartidas). Las innovaciones marcadas como **INN-X** se desarrollan formalmente en `80_Artefactos/seccion3_innovaciones.md` (Art. 28–29).
 
 ---
 

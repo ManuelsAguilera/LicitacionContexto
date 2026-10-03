@@ -11,7 +11,7 @@
 
 Este documento reúne la investigación que sustenta la **Sección 3 — Descripción Lógica de la Solución (Capítulo 4)**. Sigue el orden que pedimos para entender el caso de verdad: **primero cómo funciona el negocio hoy, después qué le falla y solo al final qué tecnología proponemos** y qué innovaciones se desprenden de esa solución.
 
-Para describir el negocio usamos como columna vertebral el documento `Bases/DivisionNegocios.md`, que ordena a Ancoa en módulos: **R1–R7** para el negocio retail (tienda), **F1–F3** para la filial emisora de crédito (negocio financiero, fiscalizada) y **C1–C4** para las áreas que cruzan la frontera entre ambos (ERP, marketing/fidelización, TI y contraloría). Esas siglas se reutilizan a lo largo de la propuesta para que todo sea trazable (arquitectura → EDT → riesgos → flujo de caja), que es lo que la evaluación premia (Cap. 19, "Consolidación").
+Para describir el negocio usamos como columna vertebral el documento `00_Bases/DivisionNegocios.md`, que ordena a Ancoa en módulos: **R1–R7** para el negocio retail (tienda), **F1–F3** para la filial emisora de crédito (negocio financiero, fiscalizada) y **C1–C4** para las áreas que cruzan la frontera entre ambos (ERP, marketing/fidelización, TI y contraloría). Esas siglas se reutilizan a lo largo de la propuesta para que todo sea trazable (arquitectura → EDT → riesgos → flujo de caja), que es lo que la evaluación premia (Cap. 19, "Consolidación").
 
 Cada tema cierra con una "Implicación para la solución", redactada en lenguaje llano y siempre atada a un dolor de un módulo concreto y a un requisito transversal (RT).
 
@@ -152,7 +152,7 @@ El caso pide estudiar materias que no explica. La Parte B las cubre: inventario 
 
 ## 5. Candidatos de innovación (uno por tipo obligatorio, Art. 28)
 
-Estas se desarrollan a fondo en `productos/seccion3_innovaciones.md`. Se derivan de la solución tecnológica (no de la moda): resuelven un dolor concreto de un módulo del negocio.
+Estas se desarrollan a fondo en `80_Artefactos/seccion3_innovaciones.md`. Se derivan de la solución tecnológica (no de la moda): resuelven un dolor concreto de un módulo del negocio.
 
 | Tipo (Art. 28) | Innovación | Dolor del caso que resuelve | Módulo |
 | :--- | :--- | :--- | :--- |

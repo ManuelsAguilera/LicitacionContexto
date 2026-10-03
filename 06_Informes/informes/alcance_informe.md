@@ -1,6 +1,6 @@
 # Alcance del Informe — Oferta Técnica
 
-**Fuente:** `Informe Estado/Informe020926-8:39.docx` (Capítulo III — Esquema de Solución y Alcance)
+**Fuente:** `06_Informes/informes/Informe020926-8:39.docx` (Capítulo III — Esquema de Solución y Alcance)
 **Caso:** 9 — Multitiendas Ancoa S.A.
 **Proponente:** Only Simple Solutions
 **Fecha de conversión:** Septiembre 2026
@@ -426,4 +426,4 @@ El principio **no se contradice** con mantener el hardware fuera del alcance de 
 
 ---
 
-*Documento generado a partir de `Informe Estado/Informe020926-8:39.docx` (Capítulo III). Para contenido completo de tablas no transcritas (módulos, RF, supuestos), ver el archivo .docx original.*
+*Documento generado a partir de `06_Informes/informes/Informe020926-8:39.docx` (Capítulo III). Para contenido completo de tablas no transcritas (módulos, RF, supuestos), ver el archivo .docx original.*

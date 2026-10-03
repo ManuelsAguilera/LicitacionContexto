@@ -29,6 +29,18 @@ Ningún subdocumento tiene ponderación registrada. La tabla del T-21 en `00_Bas
 
 El Art. 45.º obliga a tres informes y tres presentaciones preparatorias. El `Informe 1`, versionado en `06_Informes/informes/`, cubre los subdocumentos 1 a 5 y el 13. Los subdocumentos 6 a 12 y el 14 se redactarán en los informes 2 y 3.
 
+## Artefactos de trabajo heredados
+
+Los documentos de `80_Artefactos/` se conservan como fuentes de trabajo y no se ensamblan automáticamente. Su relación con los subdocumentos oficiales es:
+
+| Artefacto | Destino de consolidación | Uso actual |
+| :--- | :--- | :--- |
+| `seccion3_borrador.md` | Subdocumentos 3 y 4 | Borrador de descripción lógica y módulos; conciliar con el Informe 1 antes de distribuir en secciones oficiales. |
+| `seccion3_investigacion.md` | Subdocumentos 3, 4 y 13 | Investigación y referencias de apoyo; fuente auxiliar, no texto final íntegro. |
+| `seccion3_innovaciones.md` | Subdocumento 13 | Fichas candidatas INN-1 a INN-5 y trazabilidad; consolidar en las secciones 13.1–13.3 y Formulario T-19. |
+
+La consolidación queda pendiente porque el Informe 1 ya cubre estos capítulos y debe evitarse duplicar o reemplazar contenido sin cotejarlo. Los artefactos mantienen enlaces relativos a las rutas vigentes.
+
 ## Ensamblado del documento final
 
 El documento final se arma concatenando, en orden, los archivos `sd-NN_sN_*.md` de las 14 carpetas:

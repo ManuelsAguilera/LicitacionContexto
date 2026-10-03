@@ -7,6 +7,9 @@
 __pycache__/
 *.pyc
 
+# Grafo local de Graphify; se genera en cada máquina y puede contener texto extraído.
+graphify-out/
+
 # Secretos: nunca versionar
 .env
 .env.*
