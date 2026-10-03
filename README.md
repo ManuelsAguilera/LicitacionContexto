@@ -46,4 +46,36 @@ Las skills están **versionadas en `.opencode/skills/`** y quedan instaladas al 
 | `jira` | Activo en esta máquina | Gestionar el plan de trabajo del proyecto `OSS` |
 | `ragdocs` | `enabled: false` | Búsqueda por significado sobre `00_Bases/`, espejos de requerimientos y `02_Propuesta/` (Qdrant Cloud) |
 
+## Graphify MCP local (Claude Code y Codex)
+
+El archivo `.mcp.json` registra Graphify como servidor MCP local para Claude Code. Requiere `uv` y un grafo generado en `graphify-out/graph.json`:
+
+```bash
+uv tool install "graphifyy[mcp,office,pdf]"
+```
+
+Después, desde Claude Code en la raíz del repositorio, instala la skill del proyecto y genera el grafo:
+
+```bash
+graphify install --project --platform claude
+```
+
+Luego ejecuta `/graphify .` en Claude Code y acepta el permiso de conexión a Graphify cuando lo solicite. La configuración usa `uvx` para iniciar el servidor MCP, así que cada máquina debe tener `uv`; el primer inicio descarga el paquete `graphifyy[mcp]`. Graphify mantiene el grafo local en `graphify-out/`, carpeta ignorada por Git.
+
+**Privacidad:** Graphify procesa código localmente, pero la extracción semántica de Markdown, Word, Excel y PDF puede usar el modelo disponible en Claude Code. Revisa la configuración de extracción y excluye los archivos que no deban enviarse antes de generar el grafo. El MCP solo tendrá un grafo útil después de completar esa generación.
+
+### Codex
+
+En esta máquina se instaló Graphify con `uv`, la skill se instaló para el usuario y el MCP se registró en la configuración de Codex. `.mcp.json` configura Claude Code; Codex necesita su propio registro.
+
+Para preparar otra máquina, desde la raíz del repositorio:
+
+```bash
+uv tool install "graphifyy[mcp,office,pdf]"
+graphify install --platform codex
+codex mcp add graphify -- graphify-mcp "$(pwd)/graphify-out/graph.json"
+```
+
+Reinicia Codex para cargar la skill y el servidor. Luego pide `$graphify .` para generar el grafo o `$graphify . --update` para actualizar los documentos modificados. El registro MCP apunta a una ruta absoluta: si mueves el repositorio o cambias de worktree, actualiza el registro para que consulte el grafo de la nueva carpeta. La configuración de usuario y el grafo se mantienen por máquina.
+
 Ambos son opcionales: quien clone el repo sin cuentas ni claves sigue pudiendo trabajar con normalidad. Ver la sección correspondiente de `AGENTS.md`.
