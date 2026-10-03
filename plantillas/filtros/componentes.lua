@@ -1,6 +1,7 @@
 -- Pandoc Lua filter: normaliza solo componentes corporativos declarados.
 local allowed = { ["callout-info"] = true, ["callout-alerta"] = true,
-  ["kpi"] = true, ["resumen-ejecutivo"] = true }
+  ["kpi"] = true, ["resumen-ejecutivo"] = true,
+  ["estado-completado"] = true }
 
 function Div(el)
   local kept = {}

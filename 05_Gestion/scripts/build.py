@@ -94,11 +94,12 @@ def load_part(part):
 def corporate_css(theme, part, title):
     css=CSS.read_text(encoding="utf-8")
     colors=theme.get("colores",{})
-    for key,original in {"primario":"#102A43","secundario":"#0F766E","acento":"#C58B2A","texto":"#243B53","neutro":"#F0F4F8"}.items():
+    for key,original in {"primario":"#102A43","secundario":"#0F766E","acento":"#C58B2A","texto":"#243B53","neutro":"#F0F4F8","menta":"#85C9AF","menta_suave":"#E8F4F1","texto_calido":"#92521C","alerta_suave":"#FBF1E8"}.items():
         if key in colors: css=css.replace(original,colors[key])
     fonts=theme.get("tipografias",{})
     if fonts.get("cuerpo"): css=css.replace("Arial",fonts["cuerpo"])
     if fonts.get("titulo"): css=css.replace("__TITLE_FONT__",fonts["titulo"])
+    if fonts.get("marca"): css=css.replace("__BRAND_FONT__",fonts["marca"])
     if fonts.get("monospace"): css=css.replace("Consolas",fonts["monospace"])
     brand=str(theme.get("marca","Only Simple Solutions" )).replace('"','\\"')
     css=css.replace('"Only Simple Solutions"', '"'+brand+'"')
@@ -144,14 +145,15 @@ def render_html(part,title,ordered,theme,draft,output,page_numbers=None,front_on
         content.append(f'<section class="section-content" id="{slug}">{rendered}</section>')
         number=(page_numbers or {}).get(slug,"")
         toc.append(f'<li><a href="#{slug}">{title_escaped}</a><span class="page-number">{number}</span></li>')
-    cover=f'<section class="cover"><div class="cover-mark">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</div><h1>{html.escape(title)}</h1><p class="subtitle">Propuesta técnica · Licitación TFEP-01/2026</p><p class="identifier">{part}</p></section>'
     watermark='<div class="draft-watermark">BORRADOR</div>' if draft else ''
+    logo_uri=(ROOT/"plantillas"/"recursos"/"onlysimplesolutions.png").resolve().as_uri()
+    cover=f'<section class="cover"><img class="cover-logo" src="{html.escape(logo_uri,quote=True)}" alt="Logo de Only Simple Solutions"><div class="cover-mark">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</div><h1>{html.escape(title)}</h1><p class="subtitle">Propuesta técnica · Licitación TFEP-01/2026</p><p class="identifier">{part}</p>{watermark}</section>'
     index=f'<nav class="toc"><h1>Índice</h1><ol>{"".join(toc)}</ol></nav>'
     if front_only: body=cover+index
     elif section_only is not None: body=content[section_only]
     else: body=cover+index+"".join(content)
     css=corporate_css(theme,part,title)
-    html_doc=f'<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="author" content="{html.escape(str(theme.get("marca","Only Simple Solutions")),quote=True)}"><meta name="subject" content="Licitación TFEP-01/2026 · {html.escape(part,quote=True)}"><title>{html.escape(metadata)}</title><style>{css}</style></head><body><div class="running-company">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</div>{watermark}{body}</body></html>'
+    html_doc=f'<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="author" content="{html.escape(str(theme.get("marca","Only Simple Solutions")),quote=True)}"><meta name="subject" content="Licitación TFEP-01/2026 · {html.escape(part,quote=True)}"><title>{html.escape(metadata)}</title><style>{css}</style></head><body><div class="running-company">{html.escape(str(theme.get("marca","Only Simple Solutions")))}</div>{body}</body></html>'
     output.write_text(html_doc,encoding="utf-8")
 
 def edge_renderer():
@@ -171,14 +173,14 @@ def print_pdf(edge,html_path,pdf_path,profile):
     if pages<1: raise RuntimeError("No se pudo determinar el número de páginas del PDF")
     return pages
 
-def verify_pdf(pdf_path,title,part):
+def verify_pdf(pdf_path,title,part,allow_pending=False):
     try:
         from pypdf import PdfReader, PdfWriter
     except ImportError as exc:
         raise RuntimeError("Se requiere pypdf para validar texto seleccionable y metadatos del PDF") from exc
     reader=PdfReader(str(pdf_path)); pages=len(reader.pages); content="\n".join(page.extract_text() or "" for page in reader.pages)
     if not content.strip(): raise RuntimeError(f"PDF sin texto seleccionable: {pdf_path.name}")
-    if re.search(r"\bTODO\b|\[VERIFICAR\]",content,re.I): raise RuntimeError(f"PDF contiene marcador pendiente: {pdf_path.name}")
+    if not allow_pending and re.search(r"\bTODO\b|\[VERIFICAR\]",content,re.I): raise RuntimeError(f"PDF contiene marcador pendiente: {pdf_path.name}")
     writer=PdfWriter(); writer.append_pages_from_reader(reader)
     writer.add_metadata({"/Title":title,"/Author":"Only Simple Solutions","/Subject":f"Licitación TFEP-01/2026 · {part}","/Keywords":f"{part}, propuesta técnica, PUCV","/Creator":"Sistema de artefactos verificables"})
     temporary=pdf_path.with_name(pdf_path.stem+".metadata.tmp.pdf")
@@ -251,11 +253,12 @@ def export_annexes(part,fm,title,theme,edge,builddir,profile,outdir,draft):
         html_path.unlink(missing_ok=True); outputs.append((pdf,pages))
     return outputs
 
-def build_one(part,dry):
+def build_one(part,dry,preview=False):
     folder,master,fm,sections=load_part(part); theme=simple_yaml(THEME)
-    title=str(fm.get("titulo",master.stem)); draft=any(sfm.get("estado") not in {"revisado","congelado"} for *_,sfm,body in sections)
-    outdir=ROOT/"07_Entregables"/"sobre_2_tecnico"; filename=f"OnlySimpleSolutions-Subdocumento{int(part[3:])}.pdf"; pdf=outdir/filename
-    html_path=ROOT/"05_Gestion"/"build"/(part+".html")
+    title=str(fm.get("titulo",master.stem)); draft=preview or any(sfm.get("estado") not in {"revisado","congelado"} for *_,sfm,body in sections)
+    outdir=(ROOT/"05_Gestion"/"reportes"/"vistas_previas") if preview else (ROOT/"07_Entregables"/"sobre_2_tecnico")
+    filename=f"{part}_Informes4_preview.pdf" if preview else f"OnlySimpleSolutions-Subdocumento{int(part[3:])}.pdf"; pdf=outdir/filename
+    html_path=ROOT/"05_Gestion"/"build"/((part+".preview.html") if preview else (part+".html"))
     if dry:
         print(f"{part}: {len(sections)} secciones, borrador={'sí' if draft else 'no'}, salida={pdf.relative_to(ROOT)}")
         for _,_,p,*_ in sections: print("  "+str(p.relative_to(ROOT)))
@@ -268,29 +271,32 @@ def build_one(part,dry):
         print(f"  T7-{int(part[3:]):02d}-IA · requiere registro humano por sección/anexo/formulario")
         return 0
     for _,_,p,_,body in sections:
-        if re.search(r"\bTODO\b|\[VERIFICAR\]",body,re.I): raise ValueError(f"Marcador pendiente en {p.relative_to(ROOT)}")
+        if not preview and re.search(r"\bTODO\b|\[VERIFICAR\]",body,re.I): raise ValueError(f"Marcador pendiente en {p.relative_to(ROOT)}")
         if re.search(r"\bstyle\s*=",body,re.I): raise ValueError(f"Estilo inline prohibido en {p.relative_to(ROOT)}")
     html_path.parent.mkdir(parents=True,exist_ok=True); outdir.mkdir(parents=True,exist_ok=True)
     edge=edge_renderer()
     if not edge: raise RuntimeError("No hay Edge/Chrome disponible para PDF")
     builddir=html_path.parent; profile=builddir/"edge-profile"; front_html=builddir/(part+".front.html"); front_pdf=builddir/(part+".front.pdf")
-    annex_records=[r for r in declared_attachments(fm) if not Path(r["nombre"]).name.casefold().startswith("form-")]
+    annex_records=[] if preview else [r for r in declared_attachments(fm) if not Path(r["nombre"]).name.casefold().startswith("form-")]
     missing_annexes=[r["ruta"] for r in annex_records if not (ROOT/r["ruta"]).is_file()]
     if missing_annexes: raise ValueError("Anexos declarados pendientes: "+", ".join(missing_annexes))
     unsupported=[r["ruta"] for r in annex_records if Path(r["ruta"]).suffix.casefold() not in {".md",".svg",".png",".jpg",".jpeg",".webp"}]
     if unsupported: raise ValueError("Formato de anexo sin conversión implementada: "+", ".join(unsupported))
-    references_path=folder/f"sd-{int(part[3:]):02d}_referencias.md"
-    if not references_path.is_file(): raise ValueError(f"Falta la sección final obligatoria Referencias: {references_path.relative_to(ROOT)}")
-    references_fm,references_body=parse_frontmatter(references_path.read_text(encoding="utf-8-sig"))
-    if not references_body.strip(): raise ValueError("La sección obligatoria Referencias no puede estar vacía")
-    if not references_fm.get("id") or references_fm.get("estado") not in {"revisado","congelado"}:
-        raise ValueError("Referencias requiere frontmatter con ID y estado revisado/congelado antes de exportar")
-    if re.search(r"\bTODO\b|\[VERIFICAR\]",references_body,re.I) or re.search(r"\bstyle\s*=",references_body,re.I):
-        raise ValueError("Referencias contiene un marcador pendiente o estilos inline prohibidos")
-    ref_tuple=(len(sections)+1,"Referencias",references_path,references_fm,references_body)
-    ia_tuple=ai_declaration(part,fm,sections,builddir)
-    output_sections=sections+[ref_tuple,ia_tuple]
-    draft=draft or references_fm.get("estado") not in {"revisado","congelado"}
+    if preview:
+        output_sections=sections
+    else:
+        references_path=folder/f"sd-{int(part[3:]):02d}_referencias.md"
+        if not references_path.is_file(): raise ValueError(f"Falta la sección final obligatoria Referencias: {references_path.relative_to(ROOT)}")
+        references_fm,references_body=parse_frontmatter(references_path.read_text(encoding="utf-8-sig"))
+        if not references_body.strip(): raise ValueError("La sección obligatoria Referencias no puede estar vacía")
+        if not references_fm.get("id") or references_fm.get("estado") not in {"revisado","congelado"}:
+            raise ValueError("Referencias requiere frontmatter con ID y estado revisado/congelado antes de exportar")
+        if re.search(r"\bTODO\b|\[VERIFICAR\]",references_body,re.I) or re.search(r"\bstyle\s*=",references_body,re.I):
+            raise ValueError("Referencias contiene un marcador pendiente o estilos inline prohibidos")
+        ref_tuple=(len(sections)+1,"Referencias",references_path,references_fm,references_body)
+        ia_tuple=ai_declaration(part,fm,sections,builddir)
+        output_sections=sections+[ref_tuple,ia_tuple]
+        draft=draft or references_fm.get("estado") not in {"revisado","congelado"}
     render_html(part,title,output_sections,theme,draft,front_html,front_only=True)
     fixed_pages=print_pdf(edge,front_html,front_pdf,profile)
     page_map={}; page_cursor=fixed_pages+1; section_pdfs=[]
@@ -299,22 +305,25 @@ def build_one(part,dry):
         render_html(part,title,output_sections,theme,draft,section_html,section_only=i)
         section_pages=print_pdf(edge,section_html,section_pdf,profile); page_map[f"seccion-{i+1}"]=page_cursor
         page_cursor+=section_pages; section_pdfs.append(section_pdf)
-    render_html(part,title,output_sections,theme,draft,html_path,page_numbers=page_map)
+    render_html(part,title,output_sections,theme,draft,html_path,page_numbers=None if preview else page_map)
     expected_pages=page_cursor-1; pages=print_pdf(edge,html_path,pdf,profile)
     front_html.unlink(missing_ok=True); front_pdf.unlink(missing_ok=True)
     for p in section_pdfs: p.unlink(missing_ok=True)
     for p in builddir.glob(f"{part}.section-*.html"): p.unlink(missing_ok=True)
-    if pages!=expected_pages: raise RuntimeError(f"Paginación cambió tras insertar números del índice: esperado {expected_pages}, obtenido {pages}")
+    if pages!=expected_pages and not preview: raise RuntimeError(f"Paginación cambió tras insertar números del índice: esperado {expected_pages}, obtenido {pages}")
     if pages<1 or pages>200: raise RuntimeError(f"Número de páginas fuera del rango permitido (1-200): {pages}")
-    verify_pdf(pdf,title,part)
+    verify_pdf(pdf,title,part,allow_pending=preview)
     print(f"PDF generado: {pdf.relative_to(ROOT)} ({pages} páginas; {'BORRADOR' if draft else 'revisado'})")
-    for annex_pdf,annex_pages in export_annexes(part,fm,title,theme,edge,builddir,profile,outdir,draft):
-        print(f"Anexo PDF: {annex_pdf.relative_to(ROOT)} ({annex_pages} páginas)")
-    print(f"HTML derivado disponible para importar como Google Docs: {html_path.relative_to(ROOT)}")
+    if not preview:
+        for annex_pdf,annex_pages in export_annexes(part,fm,title,theme,edge,builddir,profile,outdir,draft):
+            print(f"Anexo PDF: {annex_pdf.relative_to(ROOT)} ({annex_pages} páginas)")
+        print(f"HTML derivado disponible para importar como Google Docs: {html_path.relative_to(ROOT)}")
+    else:
+        print(f"Vista previa BORRADOR: {pdf.relative_to(ROOT)} ({pages} páginas); no es un entregable final")
     return 0
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__); group=ap.add_mutually_exclusive_group(required=True); group.add_argument("--parte"); group.add_argument("--todo",action="store_true"); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--muestra",action="store_true",help="Renderiza plantillas/muestra.md en staging para QA visual")
+    ap=argparse.ArgumentParser(description=__doc__); group=ap.add_mutually_exclusive_group(required=True); group.add_argument("--parte"); group.add_argument("--todo",action="store_true"); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--muestra",action="store_true",help="Renderiza plantillas/muestra.md en staging para QA visual"); ap.add_argument("--vista-previa",action="store_true",help="Genera un PDF de borrador aislado en reportes, sin referencias ni declaración final de IA")
     a=ap.parse_args(); parts=[a.parte] if a.parte else [f"T7-{i:02d}" for i in range(1,15)]
     try:
         if a.muestra:
@@ -329,9 +338,10 @@ def main():
                 verify_pdf(pdf,"Muestra visual","T7-00")
                 print(f"Muestra PDF: {pdf.relative_to(ROOT)}")
             return 0
+        if a.vista_previa and a.todo: raise ValueError("--vista-previa requiere --parte; no se ejecuta sobre todas las partes")
         code=0
         for part in parts:
-            try: code=max(code,build_one(part,a.dry_run))
+            try: code=max(code,build_one(part,a.dry_run,preview=a.vista_previa))
             except Exception as exc: print(f"{part}: {exc}",file=sys.stderr); code=1
         return code
     except Exception as exc: print(f"Error: {exc}",file=sys.stderr); return 1

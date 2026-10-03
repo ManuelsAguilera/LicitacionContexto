@@ -1,0 +1,18 @@
+{
+  "parte": "T7-02",
+  "fuente_normativa": "Comunicado 10 - Estructura obligatoria de las Propuestas Preparatorias y Técnica Final",
+  "secciones": [
+    {"id": "T7-02-2.1", "titulo": "Resumen Ejecutivo del problema", "archivo": "sd-02_s1_resumen-ejecutivo-del-problema.md"},
+    {"id": "T7-02-2.2", "titulo": "Comprensión del problema y de la necesidad", "archivo": "sd-02_s2_comprension-del-problema-y-de-la-necesidad.md"},
+    {"id": "T7-02-2.3", "titulo": "Dimensionamiento del problema", "archivo": "sd-02_s3_dimensionamiento-del-problema.md"},
+    {"id": "T7-02-2.4", "titulo": "Actores y Grupos de Interés", "archivo": "sd-02_s4_actores-y-grupos-de-interes.md"},
+    {"id": "T7-02-2.5", "titulo": "Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones", "archivo": "sd-02_s5_requerimientos-supuestos-exclusiones-y-restricciones.md"}
+  ],
+  "reglas_sugeridas": [
+    {"origen": "2.1", "destino": "T7-02-2.1", "motivo": "coincide con el título obligatorio Resumen Ejecutivo del problema"},
+    {"origen": "2.2", "destino": "T7-02-2.2", "motivo": "coincide con el título obligatorio Comprensión del problema y de la necesidad"},
+    {"origen": "2.3", "destino": "T7-02-2.3", "motivo": "coincide con el título obligatorio Dimensionamiento del problema"},
+    {"origen": "2.4", "destino": "T7-02-2.4", "motivo": "coincide con el título obligatorio Actores y Grupos de Interés"},
+    {"origen": "2.5", "destino": "T7-02-2.5", "motivo": "coincide con el título obligatorio Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones"}
+  ]
+}

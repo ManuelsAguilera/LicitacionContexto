@@ -25,9 +25,7 @@ secciones:
   - T7-02-2.3
   - T7-02-2.4
   - T7-02-2.5
-  - T7-02-2.6
-  - T7-02-2.7
-actualizado: 2026-09-29
+actualizado: 2026-10-02
 ---
 # Subdocumento 2 — Resumen Ejecutivo, comprensión del problema y de la necesidad
 
@@ -71,20 +69,15 @@ actualizado: 2026-09-29
 
 | N | Sección | Archivo | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Resumen ejecutivo | `sd-02_s1_resumen-ejecutivo.md` | Desarrollado en el Informe 1 |
-| 2 | Contexto de la industria y de la compañía | `sd-02_s2_contexto-de-la-industria-y-de-la-compania.md` | Desarrollado en el Informe 1 |
-| 3 | La particularidad estructural: dos negocios, un mostrador | `sd-02_s3_la-particularidad-estructural-dos-negocios-un-mostrador.md` | Desarrollado en el Informe 1 |
-| 4 | Dimensionamiento del problema por dominio | `sd-02_s4_dimensionamiento-del-problema-por-dominio.md` | Desarrollado en el Informe 1 |
-| 5 | Mapa de actores y grupos de interés | `sd-02_s5_mapa-de-actores-y-grupos-de-interes.md` | Sin redactar |
-| 6 | Supuestos declarados del análisis | `sd-02_s6_supuestos-declarados-del-analisis.md` | Sin redactar |
-| 7 | Síntesis del problema central | `sd-02_s7_sintesis-del-problema-central.md` | Desarrollado en el Informe 1 |
+| 1 | Resumen Ejecutivo del problema | `sd-02_s1_resumen-ejecutivo-del-problema.md` | Borrador migrado; revisar |
+| 2 | Comprensión del problema y de la necesidad | `sd-02_s2_comprension-del-problema-y-de-la-necesidad.md` | Borrador migrado; revisar |
+| 3 | Dimensionamiento del problema | `sd-02_s3_dimensionamiento-del-problema.md` | Borrador migrado; revisar |
+| 4 | Actores y Grupos de Interés | `sd-02_s4_actores-y-grupos-de-interes.md` | Borrador migrado; revisar |
+| 5 | Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones | `sd-02_s5_requerimientos-supuestos-exclusiones-y-restricciones.md` | Borrador migrado; revisar |
 
-### Notas por sección
+### Nota de migración
 
-- **1. Resumen ejecutivo** - Con 2.1.1 por qué licita, 2.1.2 las cuatro promesas diarias, 2.1.3 doble naturaleza jurídica, 2.1.4 el encargo y sus límites y 2.1.5 lo que se evalúa.
-- **3. La particularidad estructural: dos negocios, un mostrador** - La línea roja del directorio: la frontera retail / filial emisora debe quedar resuelta antes que cualquier vista unificada de cliente.
-- **4. Dimensionamiento del problema por dominio** - Siete dominios (2.4.1 a 2.4.7), cada uno con su dato y el capítulo fuente de las Bases Técnicas. Cada cifra debe derivar de las Bases o de un cálculo mostrado.
-- **6. Supuestos declarados del análisis** - Debe consolidar los supuestos SUP-01 a SUP-25 que el caso deja sin resolver (numeral 16.1).
+La estructura entregable sigue las cuatro secciones obligatorias del Comunicado 10. El contenido importado conserva su procedencia y permanece en estado borrador hasta revisión humana.
 
 ## Trazabilidad con Jira
 

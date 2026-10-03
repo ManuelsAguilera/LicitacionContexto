@@ -8,11 +8,12 @@
     {"id": "T7-03-3.4", "titulo": "Explicación de la Solución", "archivo": "sd-03_s4_explicacion-de-la-solucion.md"}
   ],
   "reglas_sugeridas": [
-    {"origen": "3.1", "destino": "T7-03-3.4", "motivo": "descripción funcional de la solución; el resumen ejecutivo debe redactarse después de validar el alcance"},
-    {"origen": "3.2", "destino": "T7-03-3.4", "motivo": "decisiones funcionales que explican la solución"},
-    {"origen": "3.3", "destino": "T7-03-3.4", "motivo": "descripción de módulos; confirmar nombres con arquitectura"},
+    {"origen": "3", "destino": "T7-03-3.1", "motivo": "introducción del capítulo, integrada al resumen ejecutivo según el Comunicado 10"},
+    {"origen": "3.1", "destino": "T7-03-3.1", "motivo": "coincide con el título oficial Resumen Ejecutivo de la Solución"},
+    {"origen": "3.2", "destino": "T7-03-3.2", "motivo": "coincide con el título oficial Alcance"},
+    {"origen": "3.3", "destino": "T7-03-3.4", "motivo": "módulos funcionales y narrativa de operación para Explicación de la Solución"},
     {"origen": "3.4", "destino": "T7-03-3.3", "motivo": "esquema conceptual e interacción"},
-    {"origen": "3.5", "destino": "T7-03-3.1", "motivo": "objetivos útiles para síntesis; verificar no duplicación"},
+    {"origen": "3.5", "destino": "T7-03-3.2", "motivo": "objetivos y métricas como definición del alcance comprometido"},
     {"origen": "3.6", "destino": "T7-03-3.2", "motivo": "alcance por etapas"},
     {"origen": "3.7", "destino": "T7-03-3.2", "motivo": "exclusiones, supuestos y restricciones"},
     {"origen": "3.8", "destino": "T7-03-3.2", "motivo": "requerimientos funcionales y alcance; evaluar condensación contra T-12"},

@@ -39,6 +39,18 @@ En maestros, `tipo: parte`, `id: T7-NN` y `secciones: [T7-NN-x.y, ...]` en orden
 
 La procedencia se expresa como ruta relativa más título/encabezado o rango identificable del origen. No copiar contenido sin conservar esa referencia cuando sea una migración.
 
+## Política de tablas durante la migración
+
+Las tablas no se convierten a párrafos por defecto. La decisión se toma con tres condiciones acumulativas:
+
+1. la tabla es extensa o difícil de leer por su cantidad de filas, columnas o longitud de celdas;
+2. no compara ni evalúa diferentes dimensiones de un elemento;
+3. la redacción resultante es más corta y comprensible que la tabla.
+
+Solo cuando se cumplen las tres condiciones se convierte a párrafos. Si una tabla extensa compara dimensiones, se conserva y se divide en bloques con encabezados repetidos. Una tabla breve o multidimensional se mantiene como tabla. El importador registra la decisión mediante un comentario Markdown no visible en la exportación.
+
+El parámetro `migrar.py --tablas-a-parrafos` activa esta evaluación selectiva; no fuerza la conversión indiscriminada. `--actualizar-migrados` solo permite regenerar artefactos en estado `borrador` que declaren la misma fuente de procedencia.
+
 ## Declaración de uso de IA
 
 Al final del subdocumento, tras Referencias, insertar `Declaración de uso de IA` con una fila por sección, anexo y formulario asociado. Campos: herramienta, finalidad, nivel de texto, nivel de diagramas y revisión humana (persona y comprobaciones). Escala: Ninguno, Bajo, Medio, Alto conforme al Comunicado 10. No rellenar una revisión humana que no ocurrió. Consolidar las declaraciones en A-6 al preparar ese formulario.

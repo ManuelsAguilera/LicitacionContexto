@@ -16,6 +16,8 @@ la propuesta.
 
 El PDF se imprime con Edge/Chromium en modo sin interfaz, disponible en Windows; Pandoc se utiliza cuando está instalado para convertir Markdown, con un conversor local acotado como fallback. La salida PDF no reemplaza la validación visual ni la revisión del índice obligatorio. La publicación como Google Docs queda como copia derivada y requiere importación nativa y lectura de vuelta; no tratar el HTML como documento publicado.
 
+La portada usa sangrado a página completa y el logotipo oficial almacenado en `plantillas/recursos/onlysimplesolutions.png`. La composición de marca se ajusta desde `plantillas/tema.yml` y `plantillas/base.css`.
+
 Cada adjunto no-formulario declarado se exporta como PDF individual cuando existe y su tipo es Markdown, SVG o imagen; los formularios conservan su archivo separado. Si falta un adjunto o su tipo no está soportado, el build se detiene antes de publicar el PDF principal. Los bloques Mermaid requieren `mmdc` y se convierten en SVG antes de la impresión. La verificación final exige `pypdf` para comprobar extracción de texto, marcadores, metadatos y fuentes incrustadas.
 
 Para cerrar un subdocumento, debe existir `sd-NN_referencias.md` dentro de su carpeta, con frontmatter en estado `revisado`/`congelado`. Además, el registro IA debe tener una fila verificada por cada sección, adjunto y formulario declarado. El build incorpora Referencias y genera al final la Declaración de uso de IA; sin estas condiciones no publica un PDF final.

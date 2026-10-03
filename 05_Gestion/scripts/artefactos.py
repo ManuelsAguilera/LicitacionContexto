@@ -109,14 +109,41 @@ def source_blocks(path):
     if path.suffix.casefold() == ".docx": return docx_blocks(path)
     if path.suffix.casefold() != ".md": raise ValueError("Formato de origen no soportado; use .md o .docx")
     _, text = parse_frontmatter(path.read_text(encoding="utf-8-sig")); blocks = []
+    image_refs = {
+        key.casefold(): f"data:image/{mime};base64,{payload.strip()}"
+        for key, mime, payload in re.findall(
+            r"(?im)^\[([^\]]+)\]:\s*<data:image/([^;]+);base64,([^>]+)>\s*$", text
+        )
+    }
     lines=text.splitlines(); i=0
     while i<len(lines):
         line=lines[i]
         if not line.strip(): i+=1; continue
         heading=re.match(r"^(#{1,6})\s+(.*)$",line)
         figure=re.match(r"^!\[([^]]*)\]\(([^)]+)\)",line.strip())
-        if heading: blocks.append({"kind":"heading","level":str(len(heading.group(1))),"text":heading.group(2).strip()}); i+=1; continue
+        reference_figure=re.match(r"^\*?\s*!\[([^]]*)\]\[([^]]+)\]\s*\*?$",line.strip())
+        if heading:
+            title=heading.group(2).strip()
+            clean_title=re.sub(r"\s*\{#.*\}\s*$","",title).strip()
+            clean_title=re.sub(r"^\*+|\*+$","",clean_title).strip()
+            clean_title=re.sub(r"\*\*(.*?)\*\*",r"\1",clean_title)
+            if re.match(r"^(?:Tabla|Figura)\s+\d",clean_title,re.I):
+                blocks.append({"kind":"paragraph","level":"","text":clean_title})
+            elif title: blocks.append({"kind":"heading","level":str(len(heading.group(1))),"text":title})
+            i+=1; continue
         if figure: blocks.append({"kind":"figure","level":"","text":figure.group(1) or "Figura","media_ref":figure.group(2)}); i+=1; continue
+        if reference_figure:
+            ref=reference_figure.group(2).casefold()
+            alt=reference_figure.group(1) or "Diagrama conceptual de solución e interacción de actores"
+            blocks.append({"kind":"figure","level":"","text":alt,"media_ref":image_refs.get(ref,ref)})
+            i+=1; continue
+        if re.match(r"^\[[^\]]+\]:\s*<data:image/",line.strip(),re.I): i+=1; continue
+        emphasized=re.fullmatch(r"\*\*(.+?)\*\*\s*(\{#.*\})?",line.strip())
+        if emphasized:
+            title=re.sub(r"\s*\{#.*\}$","",emphasized.group(1)).strip()
+            title=re.sub(r"\\([.])",r"\1",title)
+            if not re.match(r"^(?:Tabla|Figura)\s+\d",title,re.I) and (re.match(r"^\d+(?:\.\d+)*\.?\s+",title) or title.casefold() in {"supuestos","referencias","declaración uso ia"}):
+                blocks.append({"kind":"heading","level":"","text":title}); i+=1; continue
         if line.lstrip().startswith("|"):
             rows=[]
             while i<len(lines) and lines[i].lstrip().startswith("|"):

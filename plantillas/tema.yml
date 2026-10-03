@@ -1,15 +1,20 @@
 marca: "Only Simple Solutions"
 colores:
-  primario: "#102A43"
-  secundario: "#0F766E"
-  acento: "#C58B2A"
-  texto: "#243B53"
+  primario: "#196197"
+  secundario: "#277FA8"
+  acento: "#D98B45"
+  menta: "#85C9AF"
+  menta_suave: "#E8F4F1"
+  texto_calido: "#92521C"
+  alerta_suave: "#FBF1E8"
+  texto: "#17324D"
   fondo: "#FFFFFF"
-  neutro: "#F0F4F8"
+  neutro: "#F4F6F8"
 tipografias:
+  marca: "Arial"
   titulo: "Arial"
   cuerpo: "Arial"
   monospace: "Consolas"
-tamano_cuerpo_pt: 11
-tamano_tabla_minimo_pt: 9
+tamano_cuerpo_pt: 12
+tamano_tabla_minimo_pt: 9.5
 pagina: "letter"
