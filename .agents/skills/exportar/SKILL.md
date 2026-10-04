@@ -7,14 +7,14 @@ description: Importar, editar, compilar y verificar los subdocumentos de la prop
 
 ## Regla principal
 
-Todos los PDF de la propuesta técnica se generan desde LaTeX con 05_Gestion/scripts/exportar_latex.py. Esta es la única ruta de conversión admitida. No usar build.py, Pandoc a PDF, Chromium/Edge, CSS ni otra plantilla de Markdown: esas rutas producían una segunda composición y fueron retiradas.
+Todos los subdocumentos T-7 de la propuesta técnica se entregan en el formato corporativo LaTeX: cada uno debe tener una fuente `.tex` editable y un PDF compilado desde esa fuente con `05_Gestion/scripts/exportar_latex.py`. La portada, el estilo interior y la página final son comunes y deben coincidir con la vista previa aprobada. Esta es la única ruta de conversión admitida. No usar build.py, Pandoc a PDF, Chromium/Edge, CSS ni otra plantilla de Markdown: esas rutas producían una segunda composición y fueron retiradas.
 
-La fuente de redacción de trabajo sigue siendo Markdown hasta que un subdocumento se importe. Después de crear 02_Propuesta/latex_final/sd-NN.tex, ese .tex pasa a ser la fuente de edición final. No volver a importarlo ni sobrescribirlo: el importador se niega a hacerlo para proteger cambios manuales.
+La fuente de redacción de trabajo puede seguir siendo Markdown hasta que el subdocumento se importe por primera vez. Todo subdocumento T-7 debe importarse si aún no tiene `.tex`; después, `02_Propuesta/latex_final/sd-NN.tex` es la fuente editable de edición final y su PDF debe compilarse desde ella. No volver a importarlo ni sobrescribirlo: el importador se niega a hacerlo para proteger cambios manuales. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
 
 ## Antes de exportar
 
 1. Leer AGENTS.md, 02_Propuesta/latex_final/README.md y esta skill.
-2. Identificar la parte solicitada (T7-01 a T7-14) o confirmar que el pedido abarca todas.
+2. Identificar la parte solicitada (T7-01 a T7-14). Si el usuario pide generar o actualizar todos los documentos de la propuesta, tratarlo como todos los subdocumentos T-7; no incluir formularios ni informes internos, que tienen sus propios formatos.
 3. Consultar las fuentes editables:
 
    ~~~bash

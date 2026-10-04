@@ -34,6 +34,21 @@
         "figuras/figura-d96d9713821d-86e8742392.png"
       ],
       "importado_utc": "2026-10-03T18:22:02.908946+00:00"
+    },
+    "T7-03": {
+      "tex": "sd-03.tex",
+      "titulo": "Esquema de solución y alcance",
+      "origen_sha256": "989b3be8cafa8566a55d07b912ea66376cf0a47f58bfe6caf6ed5620dc2394f5",
+      "origen": [
+        "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s1_resumen-ejecutivo-de-la-solucion.md",
+        "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s2_alcance.md",
+        "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s3_esquema-de-solucion.md",
+        "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s4_explicacion-de-la-solucion.md"
+      ],
+      "figuras": [
+        "figuras/figura-e0dda3b0ce0d-2dee951c24.png"
+      ],
+      "importado_utc": "2026-10-04T16:24:18.664212+00:00"
     }
   }
 }

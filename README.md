@@ -37,7 +37,7 @@ Cada carpeta tiene su `README.md` con el propósito y las reglas específicas.
 
 ## Exportación LaTeX editable
 
-La fuente de redacción continúa en Markdown. Para la edición final existe una copia LaTeX editable en `02_Propuesta/latex_final/`, generada por `05_Gestion/scripts/exportar_latex.py`. El formato común de `oss.sty` se aplica a todos los subdocumentos importados: portada geométrica con la foto de alianza, tarjetas con borde y sombra, marca de agua, logo azul en el pie y página final azul con logo blanco.
+Cada subdocumento T-7 se entrega en el formato corporativo y editable: su fuente `.tex` vive en `02_Propuesta/latex_final/` y su PDF se compila desde esa fuente con `05_Gestion/scripts/exportar_latex.py`. El formato común de `oss.sty` aplica a todos: portada geométrica con la foto de alianza, tarjetas con borde y sombra, marca de agua, logo azul en el pie y página final azul con logo blanco. Formularios e informes preparatorios mantienen sus formatos propios.
 
 Desde la raíz:
 
@@ -47,7 +47,7 @@ python3 05_Gestion/scripts/exportar_latex.py compilar --parte T7-01
 python3 05_Gestion/scripts/exportar_latex.py compilar --todo --final --trabajadores 4
 ```
 
-La importación se realiza una sola vez por subdocumento y no sobrescribe un `.tex` existente. Después de importar, las ediciones finales se hacen en el `.tex`; las figuras se incrustan como imágenes y no se usan bloques Mermaid.
+La importación se realiza una sola vez por subdocumento y no sobrescribe un `.tex` existente. Después de importar, las ediciones finales se hacen en el `.tex`; compila y comparte la fuente junto con el PDF actualizado. Las figuras se incrustan como imágenes y no se usan bloques Mermaid.
 
 Para generar cualquier vista previa o PDF oficial se usa `05_Gestion/scripts/exportar_latex.py` y se siguen las instrucciones completas de `.agents/skills/exportar/SKILL.md`. La ruta anterior de generación PDF fue retirada para que no se produzca una segunda composición visual.
 
