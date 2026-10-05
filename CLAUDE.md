@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Cómo usar este archivo
 
-El contexto completo del proyecto está en **`AGENTS.md`** (única fuente de verdad). Léelo antes de trabajar: identidad del proponente (Only Simple Solutions), fuentes y precedencia de `00_Bases/`, reglas que condicionan el diseño, carpetas y criterios de verificación.
+El contexto completo del proyecto está en **`AGENTS.md`** (única fuente de verdad), importado aquí para que Claude Code lo cargue al iniciar (Claude Code no lee `AGENTS.md` si existe un `CLAUDE.md`): identidad del proponente (Only Simple Solutions), fuentes y precedencia de `00_Bases/`, regla de exportación, reglas que condicionan el diseño, carpetas y criterios de verificación.
+
+@AGENTS.md
 
 La convención de IDs, estados, metadatos y procedencia está en `05_Gestion/convenciones/artefactos.md`. Los scripts documentales y su uso están descritos en `05_Gestion/README.md`.
 
@@ -31,20 +33,13 @@ python3 -m unittest discover -s 05_Gestion/tests -p test_verificar.py           
 
 ## Notas para Claude Code en Linux
 
-- `link_skills.ps1` es de Windows (junctions). En Linux, enlazar a mano con symlinks: `.agents/skills/<skill>` a `.claude/skills/<skill>`. Editar siempre `.agents/skills/`.
+- Claude Code solo lee skills de `.claude/skills/`. Tras clonar, ejecutar `python3 05_Gestion/scripts/link_skills.py` (symlinks en Linux/macOS, junctions en Windows; `python` en Windows). Editar siempre `.agents/skills/`.
 - Existe `.claude/settings.local.json`; `.env` (copia de `.env.example`) no se versiona.
 
 ## Skills y plugin de opencode
 
-El skill orquestador `licitacion-workflow` y el plugin `activar-skills.ts` que viven en `.opencode/` son **específicos de opencode** (se cargan con la herramienta `skill` y se inyectan en su prompt de sistema). No aplican a Claude Code; ignóralos.
+El skill orquestador `licitacion-workflow` y el plugin `activar-skills.ts` que viven en `.opencode/` son **específicos de opencode**. No aplican a Claude Code; ignóralos. La exportación a PDF no depende de ellos: la regla está en `AGENTS.md` y la skill `exportar`.
 
 ## Skills compartidas
 
-Las skills nuevas del flujo de artefactos se mantienen versionadas en `.agents/skills/`. En Windows, ejecutar `05_Gestion/scripts/link_skills.ps1` para exponerlas a Claude Code (`.claude/skills/`) y OpenCode (`.opencode/skills/`) mediante junctions locales. No editar las copias enlazadas desde una integración: la fuente canónica está en `.agents/skills/`. Las skills preexistentes de OpenCode se conservan sin cambios.
-
-## Diagramas
-
-- Los diagramas de la propuesta se incrustan como imágenes PNG/PDF exportadas en `04_Adjuntos/diagramas/`. **No usar bloques Mermaid**: el importador los rechaza.
-- PlantUML/UML formal: `.puml` → PNG/SVG vía Kroki (`curl https://kroki.io/plantuml/png -d 'diagram_source=...'`) o `plantuml.jar` local; importar siempre la imagen a `04_Adjuntos/diagramas/`.
-
-Nota: cualquier duda de contenido, reglas o precedencia se resuelve en `00_Bases/` y en `AGENTS.md`, no en equivalencias de skills.
+Las skills del flujo de artefactos (`redactar-seccion`, `revisar-seccion`, `cerrar-parte`, `exportar`) viven en `.agents/skills/`, que es la fuente canónica y la que leen Codex y OpenCode. Claude Code las ve solo a través de los enlaces de `.claude/skills/` (`link_skills.py`). No editar las copias enlazadas. Las skills preexistentes de OpenCode (`.opencode/skills/`) se conservan sin cambios.

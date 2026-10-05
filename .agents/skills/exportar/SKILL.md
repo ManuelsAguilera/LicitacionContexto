@@ -19,6 +19,7 @@ Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propu
 - No poner en el cuerpo `\usepackage`, `\documentclass`, `\pagecolor`, `\newgeometry`, `\setmainfont`, `\hypersetup` ni redefinir macros `\oss…`: el formato lo da `oss.sty`.
 - No usar `pdf-handling`, WeasyPrint, Chromium, `docx` ni Mermaid para la propuesta.
 - Si una herramienta falta, ejecutar `doctor`, informar al usuario y detenerse; no improvisar otra ruta.
+- Los comandos usan `python3`; en Windows usar `python` (o `py`). Si uno falla, probar el otro antes de buscar alternativas.
 
 ## Antes de exportar
 

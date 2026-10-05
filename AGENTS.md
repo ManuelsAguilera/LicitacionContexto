@@ -12,6 +12,7 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 - **Fuente de verdad:** tras la importación, `02_Propuesta/latex_final/sd-NN.tex`. Los `.md` de `02_Propuesta/` son **solo contexto** para agentes; editarlos no cambia el subdocumento. Los cambios de contenido se hacen en el `.tex`.
 - El preámbulo de cada `.tex` es la plantilla fija `02_Propuesta/latex_final/plantilla/oss-pandoc.latex` (marcador `% oss-plantilla:` en la línea 1). El formato visual vive en `oss.sty`. `verificar` y `compilar` rechazan cualquier `.tex` que se aparte.
 - **Prohibido:** escribir o editar preámbulos, crear `.tex` a mano, llamar a `pandoc`/`xelatex`/`latexmk` directamente, borrar un `.tex` para reimportarlo, o usar `pdf-handling`, WeasyPrint, `docx` o HTML para la propuesta. `importar --reemplazar` solo con instrucción explícita del usuario (respalda en `latex_final/respaldo/`).
+- Intérprete: usar `python3` (Linux/macOS) o `python` (Windows); si uno falla, probar el otro. No improvisar otro flujo.
 - Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
 
 ## Identidad del proponente
@@ -85,7 +86,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 - `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
 - Todos los subdocumentos T-7 se generan y entregan en el formato corporativo LaTeX, con fuente `.tex` editable y PDF compilado desde ella usando `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF. Formularios e informes preparatorios no forman parte de este alcance.
 - La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
-- Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`; en Windows, `05_Gestion/scripts/link_skills.ps1` las enlaza desde Claude Code y OpenCode. Editar siempre la fuente canónica.
+- Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`. Codex y OpenCode las leen directamente; Claude Code solo lee `.claude/skills/`, que se crea con `python3 05_Gestion/scripts/link_skills.py` (symlinks en Linux/macOS, junctions en Windows). Editar siempre la fuente canónica.
 
 ## Convención de nombres de los artefactos
 
