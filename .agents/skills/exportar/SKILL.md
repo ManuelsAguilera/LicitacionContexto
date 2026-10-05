@@ -1,6 +1,6 @@
 ---
 name: exportar
-description: Importar, editar, compilar y verificar los subdocumentos de la propuesta en el único formato corporativo LaTeX. Usar cuando se solicite generar una vista previa, PDF final, compilar un subdocumento o incorporar figuras al documento final.
+description: Única ruta para convertir, formatear o pasar Markdown (.md) a LaTeX con la plantilla corporativa de Only Simple Solutions y compilar a PDF. Usar siempre que se pida leer un subdocumento y pasarlo a LaTeX, aplicar el formato o la plantilla, generar vista previa o PDF final, compilar un subdocumento (sd-NN, T7-NN), editar un .tex de latex_final o incorporar figuras. Nunca escribir LaTeX ni preámbulos a mano ni llamar a pandoc/xelatex directamente.
 ---
 
 # Exportar la propuesta corporativa
@@ -9,11 +9,25 @@ description: Importar, editar, compilar y verificar los subdocumentos de la prop
 
 Todos los subdocumentos T-7 de la propuesta técnica se entregan en el formato corporativo LaTeX: cada uno debe tener una fuente `.tex` editable y un PDF compilado desde esa fuente con `05_Gestion/scripts/exportar_latex.py`. La portada, el estilo interior y la página final son comunes y deben coincidir con la vista previa aprobada. Esta es la única ruta de conversión admitida. No usar build.py, Pandoc a PDF, Chromium/Edge, CSS ni otra plantilla de Markdown: esas rutas producían una segunda composición y fueron retiradas.
 
-La fuente de redacción de trabajo puede seguir siendo Markdown hasta que el subdocumento se importe por primera vez. Todo subdocumento T-7 debe importarse si aún no tiene `.tex`; después, `02_Propuesta/latex_final/sd-NN.tex` es la fuente editable de edición final y su PDF debe compilarse desde ella. No volver a importarlo ni sobrescribirlo: el importador se niega a hacerlo para proteger cambios manuales. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
+Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propuesta/latex_final/sd-NN.tex` es la **única fuente** del subdocumento; los `.md` de `02_Propuesta/` quedan **solo como contexto** (si el `.md` y el `.tex` difieren, manda el `.tex` y no se reimporta). Los cambios de contenido pedidos por el usuario se escriben directamente en el cuerpo del `.tex`. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
+
+## Qué NO hacer (causas de PDF fuera de plantilla)
+
+- No escribir, copiar ni editar el preámbulo (todo lo anterior a `\begin{document}`). Es la plantilla fija `plantilla/oss-pandoc.latex`; `verificar` lo compara byte a byte.
+- No crear `sd-NN.tex` a mano ni con `pandoc` directo; no llamar a `xelatex`/`latexmk` por fuera del script.
+- No borrar un `.tex` para forzar una reimportación. `importar --reemplazar` existe, pero solo se usa si el usuario lo pide explícitamente; respalda el anterior en `respaldo/`.
+- No poner en el cuerpo `\usepackage`, `\documentclass`, `\pagecolor`, `\newgeometry`, `\setmainfont`, `\hypersetup` ni redefinir macros `\oss…`: el formato lo da `oss.sty`.
+- No usar `pdf-handling`, WeasyPrint, Chromium, `docx` ni Mermaid para la propuesta.
+- Si una herramienta falta, ejecutar `doctor`, informar al usuario y detenerse; no improvisar otra ruta.
 
 ## Antes de exportar
 
-1. Leer AGENTS.md, 02_Propuesta/latex_final/README.md y esta skill.
+1. Leer AGENTS.md ("Regla de exportación"), 02_Propuesta/latex_final/README.md y esta skill. Verificar herramientas:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py doctor
+   ~~~
+
 2. Identificar la parte solicitada (T7-01 a T7-14). Si el usuario pide generar o actualizar todos los documentos de la propuesta, tratarlo como todos los subdocumentos T-7; no incluir formularios ni informes internos, que tienen sus propios formatos.
 3. Consultar las fuentes editables:
 
@@ -33,7 +47,19 @@ La fuente de redacción de trabajo puede seguir siendo Markdown hasta que el sub
    python3 05_Gestion/scripts/exportar_latex.py importar --todo
    ~~~
 
-   La importación sigue la tabla de secciones del maestro 02_Propuesta/sd-NN_*/sd-NN_*.md, preserva el orden numérico y transforma Markdown a LaTeX. Si el archivo .tex ya existe, detenerse y compilarlo; nunca regenerarlo para incorporar cambios de Markdown sin una instrucción explícita del usuario.
+   La importación sigue la tabla de secciones del maestro 02_Propuesta/sd-NN_*/sd-NN_*.md, preserva el orden numérico y transforma Markdown a LaTeX con la plantilla `plantilla/oss-pandoc.latex` y el filtro `plantilla/oss.lua` (normaliza niveles de título, descarta HTML, rechaza Mermaid). Si el archivo .tex ya existe, no reimportar: editar el `.tex` y compilarlo. Solo con instrucción explícita del usuario:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py importar --parte T7-01 --reemplazar
+   ~~~
+
+5. Antes de compilar o entregar:
+
+   ~~~bash
+   python3 05_Gestion/scripts/exportar_latex.py verificar
+   ~~~
+
+   Si informa "FUERA DE PLANTILLA", corregir el `.tex` según el mensaje (normalmente restaurar el preámbulo o quitar comandos de formato del cuerpo). `compilar` se niega a compilar un `.tex` fuera de plantilla.
 
 ## Compilar
 
@@ -100,7 +126,7 @@ No recrear estos elementos manualmente en cada sd-NN.tex. La macro común y los 
 
 ## Verificación y entrega
 
-1. Revisar el mensaje del exportador: debe indicar ruta, páginas y duración.
+1. Revisar el mensaje del exportador: debe indicar ruta, páginas y duración. Si se modificó el exportador o la plantilla, correr `python3 -m unittest discover -s 05_Gestion/tests -v`.
 2. Abrir o renderizar al menos la portada y una página interior; en una compilación consolidada, revisar también límites entre subdocumentos y hoja final.
 3. Confirmar tamaño carta, texto seleccionable, recursos visibles y ausencia de error de XeLaTeX.
 4. Para PDF oficial, confirmar nombres de archivos en las carpetas de entregables y el consolidado.

@@ -14,7 +14,7 @@ Este proyecto produce una propuesta técnico-económica documental (no código).
 - Presentaciones preparatorias (Sobres): \`pptx\`
 - Investigación (lo que el caso no explica): \`deep-research\`
 - Redacción de documentos técnicos: \`technical-writing\`
-- Entrega final / exportación (PDF): \`pdf-handling\`
+- Entrega final / exportación (md a LaTeX corporativo y PDF): skill \`exportar\` y solo \`05_Gestion/scripts/exportar_latex.py\` (ver "Regla de exportación" en AGENTS.md)
 
 Nota: las skills se cargan por decisión del modelo vía la herramienta \`skill\`; este bloque refuerza cuándo hacerlo. Carga también el skill \`licitacion-workflow\` al iniciar cualquier avance de la propuesta.
 `.trim()

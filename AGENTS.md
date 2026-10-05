@@ -6,6 +6,14 @@ Proyecto de universidad (PUCV, Escuela de Informática — Taller de Formulació
 
 Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación). La salida esperada es documentación tipo oferta (arquitectura, servicios, requerimientos, planificación, evaluación de riesgos), no código.
 
+## Regla de exportación (obligatoria, leer antes de tocar LaTeX o PDF)
+
+- Markdown → LaTeX → PDF de los subdocumentos T-7 se hace **solo** con `05_Gestion/scripts/exportar_latex.py`, siguiendo `.agents/skills/exportar/SKILL.md`. Orden: `doctor` → `estado` → `importar` (solo si falta el `.tex`) → editar `.tex` → `verificar` → `compilar`.
+- **Fuente de verdad:** tras la importación, `02_Propuesta/latex_final/sd-NN.tex`. Los `.md` de `02_Propuesta/` son **solo contexto** para agentes; editarlos no cambia el subdocumento. Los cambios de contenido se hacen en el `.tex`.
+- El preámbulo de cada `.tex` es la plantilla fija `02_Propuesta/latex_final/plantilla/oss-pandoc.latex` (marcador `% oss-plantilla:` en la línea 1). El formato visual vive en `oss.sty`. `verificar` y `compilar` rechazan cualquier `.tex` que se aparte.
+- **Prohibido:** escribir o editar preámbulos, crear `.tex` a mano, llamar a `pandoc`/`xelatex`/`latexmk` directamente, borrar un `.tex` para reimportarlo, o usar `pdf-handling`, WeasyPrint, `docx` o HTML para la propuesta. `importar --reemplazar` solo con instrucción explícita del usuario (respalda en `latex_final/respaldo/`).
+- Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
+
 ## Identidad del proponente
 
 - **Empresa proponente:** Only Simple Solutions (usar en columna B de la planilla de consultas, nomenclatura de archivos Art. 43.3, y en todos los documentos/sobres).
@@ -62,7 +70,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 
 **Regla:** todo artefacto de contenido se escribe en **`.md`** (o `.txt` para volcados de datos). Los binarios (`.xlsx`, `.docx`, `.pptx`, `.pdf`) existen **únicamente** como documento de lectura/entrega para el usuario o como export final.
 
-**Consecuencia práctica:** el contenido de trabajo se redacta primero en `.md` dentro de `02_Propuesta/`. Cada subdocumento T-7 debe además contar con una fuente LaTeX editable y un PDF compilado con el formato corporativo. Se importa una sola vez a `02_Propuesta/latex_final/`; desde entonces, el `.tex` es la fuente de edición final y el PDF se compila desde esa versión, conforme a `.agents/skills/exportar/SKILL.md`. Formularios y otros documentos conservan sus formatos propios.
+**Consecuencia práctica:** los subdocumentos sin `.tex` aún se redactan en `.md` dentro de `02_Propuesta/`; una vez importados, el `.tex` manda y el `.md` queda solo como contexto (ver "Regla de exportación"). Cada subdocumento T-7 debe además contar con una fuente LaTeX editable y un PDF compilado con el formato corporativo. Se importa una sola vez a `02_Propuesta/latex_final/`; desde entonces, el `.tex` es la fuente de edición final y el PDF se compila desde esa versión, conforme a `.agents/skills/exportar/SKILL.md`. Formularios y otros documentos conservan sus formatos propios.
 
 **Exentos de la regla:** `*.py`, `*.ps1`, `*.json`, `*.csv` de `05_Gestion/` — son código y datos de máquina que consumen scripts, no documentos.
 
@@ -130,7 +138,7 @@ Regla de uso: consultar **únicamente** para copiar la estructura de cada capít
 
 ## Verificación
 
-No hay build, test ni lint (solo markdown y Excel). La "verificación" del trabajo es la coherencia entre documentos: respetar la precedencia, trazabilidad de requerimientos (requisito RT → módulo → entregable) y consistencia de cifras/plazos con el cronograma obligatorio.
+No hay build ni lint. El exportador LaTeX sí tiene pruebas (`python3 -m unittest discover -s 05_Gestion/tests -v`) y `exportar_latex.py verificar` comprueba que cada `.tex` respete la plantilla. La "verificación" del trabajo es la coherencia entre documentos: respetar la precedencia, trazabilidad de requerimientos (requisito RT → módulo → entregable) y consistencia de cifras/plazos con el cronograma obligatorio.
 
 ## Skills útiles y su activación
 
@@ -146,7 +154,7 @@ Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detect
 | `xlsx` | Requerimientos/volumetría, oferta económica (CLP/UF/USD) y flujo de caja (Excel) |
 | `docx` | Llenar formularios/plantillas oficiales (.docx) de los sobres |
 | `pptx` | Las 3 presentaciones preparatorias |
-| `pdf-handling` | Conformar/exportar la propuesta final en PDF |
+| `exportar` (`.agents/skills/`) | Única ruta para pasar subdocumentos a LaTeX corporativo y PDF (`exportar_latex.py`). `pdf-handling` no se usa para la propuesta |
 | `architecture-diagrams` | Diagramas de arquitectura (lógica/física/datos/seguridad/despliegue) |
 | `cloud-architecture` | Justificar la arquitectura híbrida nube+on-premise (RT-03) |
 | `sre-practices` | Disponibilidad 99,9%, RTO/RPO, SLOs, observabilidad |
@@ -154,7 +162,7 @@ Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detect
 | `legal-risk-assessment` / `risk-assessment` | Evaluación de riesgos contractuales y técnicos |
 | `deep-research` | Investigar lo que el caso no explica (normativa, estándares, mercado) |
 | `technical-writing` | Redacción de documentos técnicos extensos |
-| `mermaid-diagrams` | No usar para la propuesta; se incrustan diagramas como imágenes |
+| `mermaid-diagrams` | No usar para la propuesta: el importador rechaza Mermaid; se incrustan diagramas como imágenes |
 | `plantuml-diagrams` | Diagramas UML/C4 formales (.puml) renderizados a PNG/SVG vía Kroki (curl); ver "Renderizado de diagramas" |
 | `jira-workflow` | Integración opcional con Jira Cloud: tomar tareas, marcarlas asignadas/en progreso/completadas, consultar sprint/board y comentar |
 
