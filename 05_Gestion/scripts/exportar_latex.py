@@ -21,6 +21,16 @@ LATEX = ROOT / "02_Propuesta" / "latex_final"
 FIGURES = LATEX / "figuras"
 MANIFEST = LATEX / "manifiesto.json"
 BUILD = LATEX / "build"
+BACKUPS = LATEX / "respaldo"
+TEMPLATE_DIR = ROOT / "02_Propuesta" / "latex_final" / "plantilla"
+TEMPLATE = TEMPLATE_DIR / "oss-pandoc.latex"
+LUA_FILTER = TEMPLATE_DIR / "oss.lua"
+REQUIRED_MACROS = (r"\ossCover{", r"\tableofcontents", r"\ossFinalPage")
+FORBIDDEN_IN_BODY = re.compile(
+    r"\\(documentclass|usepackage|RequirePackage|pagecolor|newgeometry|geometry\{|setmainfont|"
+    r"AddToShipoutPicture|hypersetup)|\\(re)?newcommand\*?\{?\\oss|\\def\\oss"
+)
+MIN_PANDOC = (3, 1)
 PREVIEWS = ROOT / "05_Gestion" / "reportes" / "vistas_previas"
 OFFICIAL = ROOT / "07_Entregables" / "sobre_2_tecnico"
 CONSOLIDATED = ROOT / "07_Entregables" / "pdf_final"
@@ -91,10 +101,54 @@ def figure_path(raw: str, section: Path, copied: list[str]) -> str:
     return f"figuras/{name}"
 
 
-def import_part(part: str) -> Path:
+def template_preamble() -> str:
+    """Preámbulo obligatorio: todo lo anterior a \\begin{document} en la plantilla fija."""
+    text = TEMPLATE.read_text(encoding="utf-8")
+    return text[: text.index("\\begin{document}")]
+
+
+def template_version() -> str:
+    first = TEMPLATE.read_text(encoding="utf-8").splitlines()[0]
+    return first.removeprefix("% oss-plantilla:").strip()
+
+
+def verify_tex(tex: Path) -> list[str]:
+    """Devuelve los problemas que apartan un sd-NN.tex del formato corporativo (vacía si está bien)."""
+    text = tex.read_text(encoding="utf-8")
+    problems = []
+    if text.count("\\begin{document}") != 1 or text.count("\\end{document}") != 1:
+        return ["debe tener exactamente un \\begin{document} y un \\end{document}"]
+    preamble, body = text.split("\\begin{document}")
+    if not text.startswith(f"% oss-plantilla: {template_version()}\n"):
+        problems.append(f"falta el marcador '% oss-plantilla: {template_version()}' en la línea 1")
+    if preamble != template_preamble():
+        problems.append("el preámbulo no coincide con plantilla/oss-pandoc.latex; no editar el preámbulo a mano")
+    for macro in REQUIRED_MACROS:
+        if macro not in body:
+            problems.append(f"falta {macro.rstrip('{')} en el cuerpo")
+    match = FORBIDDEN_IN_BODY.search(body)
+    if match:
+        line = text[: text.index(body) + match.start()].count("\n") + 1
+        problems.append(f"línea {line}: '{match.group(0)}' no se permite en el cuerpo; el formato lo define oss.sty")
+    tail = body.split("\\end{document}")[0].rstrip()
+    if not tail.endswith("\\ossFinalPage"):
+        problems.append("\\ossFinalPage debe ser lo último antes de \\end{document}")
+    return problems
+
+
+def require_valid(tex: Path) -> None:
+    problems = verify_tex(tex)
+    if problems:
+        raise ValueError(f"{tex.name} está fuera de la plantilla corporativa:\n  - " + "\n  - ".join(problems))
+
+
+def import_part(part: str, replace: bool = False) -> Path:
     output = LATEX / f"sd-{part[-2:]}.tex"
-    if output.exists():
-        raise FileExistsError(f"{output.relative_to(ROOT)} ya existe; no se sobrescribe un LaTeX editable")
+    if output.exists() and not replace:
+        raise FileExistsError(
+            f"{output.relative_to(ROOT)} ya existe; no se sobrescribe un LaTeX editable "
+            "(usar --reemplazar solo por instrucción explícita del usuario)"
+        )
     title, sections = source_for(part)
     copied: list[str] = []
     bodies = []
@@ -118,24 +172,70 @@ def import_part(part: str) -> Path:
     temp_md.write_text(source, encoding="utf-8")
     temp_tex = BUILD / f"{part}.import.tex"
     command = [
-        "pandoc", str(temp_md), "--from=markdown+raw_tex+pipe_tables", "--to=latex",
-        "--standalone", "--include-in-header", str(LATEX / "oss-header.tex"),
-        "--metadata=lang:es-CL", "--variable=geometry:letterpaper,margin=20mm",
-        "--variable=fontsize:11pt", "--variable=mainfont:DejaVu Sans",
-        "--output", str(temp_tex),
+        "pandoc", str(temp_md), "--from=markdown+raw_tex+pipe_tables-yaml_metadata_block", "--to=latex",
+        "--template", str(TEMPLATE), "--lua-filter", str(LUA_FILTER),
+        "--wrap=preserve", "--output", str(temp_tex),
     ]
     result = subprocess.run(command, cwd=LATEX, capture_output=True, text=True)
     if result.returncode:
         raise RuntimeError(f"Pandoc falló: {result.stderr[-1600:]}")
+    require_valid(temp_tex)
+    if output.exists():
+        BACKUPS.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        backup = BACKUPS / f"{output.stem}.{stamp}.tex"
+        shutil.copy2(output, backup)
+        print(f"Respaldo: {backup.relative_to(ROOT)}")
     temp_tex.replace(output)
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {"partes": {}}
     manifest["partes"][part] = {
-        "tex": output.name, "titulo": title, "origen_sha256": digest.hexdigest(),
+        "tex": output.name, "titulo": title, "plantilla": template_version(),
+        "origen_sha256": digest.hexdigest(),
         "origen": [str(p.relative_to(ROOT)) for p in sections],
         "figuras": sorted(set(copied)), "importado_utc": datetime.now(timezone.utc).isoformat(),
     }
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return output
+
+
+def doctor() -> int:
+    """Revisa herramientas requeridas; devuelve la cantidad de faltantes."""
+    missing = 0
+
+    def report(ok: bool, name: str, hint: str) -> None:
+        nonlocal missing
+        missing += not ok
+        print(f"[{'ok' if ok else 'FALTA'}] {name}" + ("" if ok else f" -> {hint}"))
+
+    pandoc = shutil.which("pandoc")
+    version = ()
+    if pandoc:
+        out = subprocess.run([pandoc, "--version"], capture_output=True, text=True).stdout
+        found = re.search(r"pandoc\S*\s+(\d+)\.(\d+)", out)
+        version = (int(found.group(1)), int(found.group(2))) if found else ()
+    report(bool(version) and version >= MIN_PANDOC, f"pandoc >= {'.'.join(map(str, MIN_PANDOC))}",
+           "instalar desde https://pandoc.org/installing.html")
+    report(bool(shutil.which("xelatex")), "xelatex", "instalar TeX Live o MiKTeX con XeLaTeX")
+    report(bool(shutil.which("latexmk")), "latexmk", "instalar latexmk (TeX Live/MiKTeX)")
+    fonts = ""
+    if shutil.which("fc-list"):
+        fonts = subprocess.run(["fc-list"], capture_output=True, text=True).stdout
+    report("DejaVu Sans" in fonts or not shutil.which("fc-list"), "fuente DejaVu Sans", "instalar fonts-dejavu")
+    try:
+        import pypdf  # noqa: F401
+        has_pypdf = True
+    except ImportError:
+        has_pypdf = False
+    report(has_pypdf, "pypdf", "python3 -m pip install -r 05_Gestion/requirements.txt")
+    has_svg = any(
+        target.strip("<> ").lower().endswith(".svg")
+        for md in (ROOT / "02_Propuesta").glob("sd-*/*.md")
+        for _, target, _ in IMAGE.findall(md.read_text(encoding="utf-8-sig"))
+    )
+    if has_svg:
+        report(bool(shutil.which("inkscape")), "inkscape (hay SVG en el repo)", "instalar Inkscape para convertir SVG a PDF")
+    report(TEMPLATE.is_file() and LUA_FILTER.is_file(), "plantilla/oss-pandoc.latex y oss.lua", "restaurar desde git")
+    return missing
 
 
 def check_final(tex: Path) -> None:
@@ -152,6 +252,7 @@ def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
     tex = LATEX / f"sd-{part[-2:]}.tex"
     if not tex.is_file():
         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}; importar primero")
+    require_valid(tex)
     if final:
         check_final(tex)
     start = time.perf_counter()
@@ -218,18 +319,42 @@ def main() -> int:
     imp = sub.add_parser("importar", help="convierte una vez sin sobrescribir el .tex")
     imp.add_argument("--parte", choices=PARTS)
     imp.add_argument("--todo", action="store_true")
+    imp.add_argument("--reemplazar", action="store_true",
+                     help="regenera un .tex existente tras respaldarlo en respaldo/ (solo por orden explícita)")
     comp = sub.add_parser("compilar", help="compila los .tex ya editables")
     comp.add_argument("--parte", choices=PARTS)
     comp.add_argument("--todo", action="store_true")
     comp.add_argument("--final", action="store_true", help="publica en los entregables tras controles mínimos")
     comp.add_argument("--trabajadores", type=int, default=2)
-    sub.add_parser("estado", help="muestra fuentes .tex disponibles")
+    sub.add_parser("estado", help="muestra fuentes .tex disponibles y si respetan la plantilla")
+    ver = sub.add_parser("verificar", help="comprueba que los .tex respeten la plantilla corporativa")
+    ver.add_argument("--parte", choices=PARTS)
+    sub.add_parser("doctor", help="revisa pandoc, XeLaTeX, latexmk, fuentes y dependencias Python")
     args = parser.parse_args()
     try:
         if args.accion == "estado":
             for part in PARTS:
-                print(f"{part}: {'editable' if (LATEX / f'sd-{part[-2:]}.tex').exists() else 'pendiente'}")
+                tex = LATEX / f"sd-{part[-2:]}.tex"
+                if not tex.exists():
+                    print(f"{part}: pendiente")
+                else:
+                    print(f"{part}: editable, {'plantilla ok' if not verify_tex(tex) else 'FUERA DE PLANTILLA (ver verificar)'}")
             return 0
+        if args.accion == "doctor":
+            return 1 if doctor() else 0
+        if args.accion == "verificar":
+            parts = [args.parte] if args.parte else PARTS
+            failed = 0
+            for part in parts:
+                tex = LATEX / f"sd-{part[-2:]}.tex"
+                if not tex.exists():
+                    if args.parte:
+                        raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}")
+                    continue
+                problems = verify_tex(tex)
+                failed += bool(problems)
+                print(f"{part}: " + ("ok" if not problems else "FUERA DE PLANTILLA\n  - " + "\n  - ".join(problems)))
+            return 1 if failed else 0
         if bool(args.parte) == bool(args.todo):
             raise ValueError("Indicar exactamente --parte T7-NN o --todo")
         if args.accion == "importar":
@@ -237,7 +362,7 @@ def main() -> int:
             failures = []
             for part in requested:
                 try:
-                    print(f"Importado: {import_part(part).relative_to(ROOT)}")
+                    print(f"Importado: {import_part(part, args.reemplazar).relative_to(ROOT)}")
                 except (FileNotFoundError, ValueError) as exc:
                     if args.parte:
                         raise
