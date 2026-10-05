@@ -362,6 +362,8 @@ def main() -> int:
     upd = sub.add_parser("actualizar-plantilla", help="cambia solo el preámbulo de los .tex existentes al de la plantilla vigente")
     upd.add_argument("--parte", choices=PARTS)
     upd.add_argument("--todo", action="store_true")
+    red = sub.add_parser("verificar-redaccion", help="revisa las reglas de redacción (RR-NN) en los .tex; solo informa")
+    red.add_argument("--parte", choices=PARTS)
     sub.add_parser("prism-prueba", help="genera los zips de prueba del motor de Prism")
     pkg = sub.add_parser("prism-empaquetar", help="genera sd-NN.zip autocontenido para subir a Prism")
     pkg.add_argument("--parte", choices=PARTS)
@@ -382,6 +384,9 @@ def main() -> int:
                 else:
                     print(f"{part}: editable, {'plantilla ok' if not verify_tex(tex) else 'FUERA DE PLANTILLA (ver verificar)'}")
             return 0
+        if args.accion == "verificar-redaccion":
+            import verificar_redaccion
+            return verificar_redaccion.report([args.parte] if args.parte else PARTS)
         if args.accion == "actualizar-plantilla":
             if bool(args.parte) == bool(args.todo):
                 raise ValueError("Indicar exactamente --parte T7-NN o --todo")
