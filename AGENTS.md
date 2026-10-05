@@ -16,6 +16,12 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 - Intérprete: usar `python3` (Linux/macOS) o `python` (Windows); si uno falla, probar el otro. No improvisar otro flujo.
 - Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
 
+## Reglas de redacción y reglas de plantilla (dos cosas distintas)
+
+- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 (que prevalece). Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
+- **Plantilla (formato):** `05_Gestion/convenciones/reglas-plantilla.md`, IDs `RP-NN`, las cumple `oss.sty`/`plantilla/`. No se replican a mano en un `.tex` ni se cambian fuera del flujo de la plantilla.
+- Política de migración de tablas (`artefactos.md`): solo aplica al importar y no sustituye RR-15 a RR-19.
+
 ## Identidad del proponente
 
 - **Empresa proponente:** Only Simple Solutions (usar en columna B de la planilla de consultas, nomenclatura de archivos Art. 43.3, y en todos los documentos/sobres).

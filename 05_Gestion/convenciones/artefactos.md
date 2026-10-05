@@ -41,6 +41,8 @@ La procedencia se expresa como ruta relativa más título/encabezado o rango ide
 
 ## Política de tablas durante la migración
 
+Este apartado regula **solo la importación** (`migrar.py`). Qué tablas son aceptables en el cuerpo de un subdocumento lo deciden las [reglas de redacción](reglas-redaccion.md) (RR-15 a RR-19, del Comunicado 10 §5), que prevalecen: una tabla «conservada» aquí puede igualmente incumplir RR-16 (celdas con más de una frase) o RR-17 (más de cinco columnas) y debe corregirse al redactar, con criterio humano. El formato de las tablas lo define la [plantilla](reglas-plantilla.md).
+
 Las tablas no se convierten a párrafos por defecto. La decisión se toma con tres condiciones acumulativas:
 
 1. la tabla es extensa o difícil de leer por su cantidad de filas, columnas o longitud de celdas;
