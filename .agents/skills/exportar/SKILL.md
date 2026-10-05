@@ -11,12 +11,25 @@ Todos los subdocumentos T-7 de la propuesta técnica se entregan en el formato c
 
 Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propuesta/latex_final/sd-NN.tex` es la **única fuente** del subdocumento; los `.md` de `02_Propuesta/` quedan **solo como contexto** (si el `.md` y el `.tex` difieren, manda el `.tex` y no se reimporta). Los cambios de contenido pedidos por el usuario se escriben directamente en el cuerpo del `.tex`. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
 
+## Edición colaborativa en Prism
+
+`latex_final/` sigue siendo la fuente de verdad; Prism solo es la superficie de edición (no sincroniza con Git).
+
+~~~bash
+python3 05_Gestion/scripts/exportar_latex.py prism-empaquetar --parte T7-03      # genera 05_Gestion/build/prism/sd-03.zip
+python3 05_Gestion/scripts/exportar_latex.py prism-importar --parte T7-03 --zip <descargado.zip> --dry-run
+python3 05_Gestion/scripts/exportar_latex.py prism-importar --parte T7-03 --zip <descargado.zip>
+~~~
+
+`prism-importar` valida el `.tex` con la plantilla, respalda el anterior, copia solo figuras nuevas e ignora cambios a `oss.sty` y `recursos/`. Si el `.tex` del repositorio cambió después de empaquetar, se niega salvo `--forzar` (solo con instrucción explícita). Para comprobar el motor de Prism: `prism-prueba`.
+
 ## Qué NO hacer (causas de PDF fuera de plantilla)
 
 - No escribir, copiar ni editar el preámbulo (todo lo anterior a `\begin{document}`). Es la plantilla fija `plantilla/oss-pandoc.latex`; `verificar` lo compara byte a byte.
 - No crear `sd-NN.tex` a mano ni con `pandoc` directo; no llamar a `xelatex`/`latexmk` por fuera del script.
 - No borrar un `.tex` para forzar una reimportación. `importar --reemplazar` existe, pero solo se usa si el usuario lo pide explícitamente; respalda el anterior en `respaldo/`.
 - No poner en el cuerpo `\usepackage`, `\documentclass`, `\pagecolor`, `\newgeometry`, `\setmainfont`, `\hypersetup` ni redefinir macros `\oss…`: el formato lo da `oss.sty`.
+- No copiar a mano un `.tex` descargado de Prism: usar `prism-importar`.
 - No usar `pdf-handling`, WeasyPrint, Chromium, `docx` ni Mermaid para la propuesta.
 - Si una herramienta falta, ejecutar `doctor`, informar al usuario y detenerse; no improvisar otra ruta.
 - Los comandos usan `python3`; en Windows usar `python` (o `py`). Si uno falla, probar el otro antes de buscar alternativas.

@@ -12,6 +12,7 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 - **Fuente de verdad:** tras la importación, `02_Propuesta/latex_final/sd-NN.tex`. Los `.md` de `02_Propuesta/` son **solo contexto** para agentes; editarlos no cambia el subdocumento. Los cambios de contenido se hacen en el `.tex`.
 - El preámbulo de cada `.tex` es la plantilla fija `02_Propuesta/latex_final/plantilla/oss-pandoc.latex` (marcador `% oss-plantilla:` en la línea 1). El formato visual vive en `oss.sty`. `verificar` y `compilar` rechazan cualquier `.tex` que se aparte.
 - **Prohibido:** escribir o editar preámbulos, crear `.tex` a mano, llamar a `pandoc`/`xelatex`/`latexmk` directamente, borrar un `.tex` para reimportarlo, o usar `pdf-handling`, WeasyPrint, `docx` o HTML para la propuesta. `importar --reemplazar` solo con instrucción explícita del usuario (respalda en `latex_final/respaldo/`).
+- Edición colaborativa en Prism: los paquetes salen con `exportar_latex.py prism-empaquetar` (zip por subdocumento en `05_Gestion/build/prism/`) y los cambios vuelven **solo** con `prism-importar --parte T7-NN --zip <archivo>` (usar `--dry-run` antes). No copiar `.tex` de Prism a mano ni editar el preámbulo, `oss.sty` o `recursos/` en Prism.
 - Intérprete: usar `python3` (Linux/macOS) o `python` (Windows); si uno falla, probar el otro. No improvisar otro flujo.
 - Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
 
