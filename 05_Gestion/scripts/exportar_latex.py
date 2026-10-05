@@ -335,6 +335,15 @@ def main() -> int:
     sub.add_parser("estado", help="muestra fuentes .tex disponibles y si respetan la plantilla")
     ver = sub.add_parser("verificar", help="comprueba que los .tex respeten la plantilla corporativa")
     ver.add_argument("--parte", choices=PARTS)
+    sub.add_parser("prism-prueba", help="genera los zips de prueba del motor de Prism")
+    pkg = sub.add_parser("prism-empaquetar", help="genera sd-NN.zip autocontenido para subir a Prism")
+    pkg.add_argument("--parte", choices=PARTS)
+    pkg.add_argument("--todo", action="store_true")
+    pimp = sub.add_parser("prism-importar", help="trae al repositorio el .tex editado en Prism (validado con la plantilla)")
+    pimp.add_argument("--parte", choices=PARTS, required=True)
+    pimp.add_argument("--zip", required=True, help="zip descargado de Prism")
+    pimp.add_argument("--dry-run", action="store_true")
+    pimp.add_argument("--forzar", action="store_true", help="reemplaza aunque el .tex del repo haya cambiado desde el empaquetado")
     sub.add_parser("doctor", help="revisa pandoc, XeLaTeX, latexmk, fuentes y dependencias Python")
     args = parser.parse_args()
     try:
@@ -345,6 +354,19 @@ def main() -> int:
                     print(f"{part}: pendiente")
                 else:
                     print(f"{part}: editable, {'plantilla ok' if not verify_tex(tex) else 'FUERA DE PLANTILLA (ver verificar)'}")
+            return 0
+        if args.accion.startswith("prism-"):
+            import prism_paquetes as prism
+            if args.accion == "prism-prueba":
+                print("\n".join(f"Prueba: {path}" for path in prism.package_probe()))
+            elif args.accion == "prism-empaquetar":
+                if bool(args.parte) == bool(args.todo):
+                    raise ValueError("Indicar exactamente --parte T7-NN o --todo")
+                parts = [args.parte] if args.parte else [p for p in PARTS if (LATEX / f"sd-{p[-2:]}.tex").is_file()]
+                for part in parts:
+                    print(f"{part}: {prism.package_part(part)}")
+            else:
+                print("\n".join(prism.import_part(args.parte, Path(args.zip), args.dry_run, args.forzar)))
             return 0
         if args.accion == "doctor":
             return 1 if doctor() else 0
