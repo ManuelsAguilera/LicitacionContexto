@@ -3,7 +3,8 @@
     "T7-01": {
       "tex": "sd-01.tex",
       "titulo": "Presentación de la empresa",
-      "origen_sha256": "d32191d5d42e1fdb6d146f135a0a3041987f4859dde710c074a92353cda33c90",
+      "plantilla": "oss-2026.10",
+      "origen_sha256": "b1bc72c418f3db6b4385316f9d277ab47c0eda1028025aa18f071188a1ab609d",
       "origen": [
         "02_Propuesta/sd-01_presentacion-empresa/sd-01_s0_introduccion.md",
         "02_Propuesta/sd-01_presentacion-empresa/sd-01_s1_presentacion-de-la-empresa.md",
@@ -17,12 +18,13 @@
         "figuras/diag-01-02_estructura-corporativa-b3efcbcfb9.png",
         "figuras/diag-01-05_estructura-proyecto-1d677ea629.png"
       ],
-      "importado_utc": "2026-10-03T15:36:48.189687+00:00"
+      "importado_utc": "2026-10-05T19:42:15.071305+00:00"
     },
     "T7-02": {
       "tex": "sd-02.tex",
       "titulo": "Resumen Ejecutivo, comprensión del problema y de la necesidad",
-      "origen_sha256": "10b9ceede11c2c0af5cd6fc94a11c34afe7aa898e4267fe86dba0a3632698267",
+      "plantilla": "oss-2026.10",
+      "origen_sha256": "68cd9fcd8533d7aa6d8c9c9cf87f06fc1fe6f03776deef64ac7276eda564d5d1",
       "origen": [
         "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s1_resumen-ejecutivo-del-problema.md",
         "02_Propuesta/sd-02_problema-y-necesidad/sd-02_s2_comprension-del-problema-y-de-la-necesidad.md",
@@ -33,12 +35,13 @@
       "figuras": [
         "figuras/figura-d96d9713821d-86e8742392.png"
       ],
-      "importado_utc": "2026-10-03T18:22:02.908946+00:00"
+      "importado_utc": "2026-10-05T19:42:15.393428+00:00"
     },
     "T7-03": {
       "tex": "sd-03.tex",
       "titulo": "Esquema de solución y alcance",
-      "origen_sha256": "989b3be8cafa8566a55d07b912ea66376cf0a47f58bfe6caf6ed5620dc2394f5",
+      "plantilla": "oss-2026.10",
+      "origen_sha256": "bf3a3ec8a871fdf1fc622e7e8abab0dda9925e3bc7863df9a56d9ee972a2e7bb",
       "origen": [
         "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s1_resumen-ejecutivo-de-la-solucion.md",
         "02_Propuesta/sd-03_esquema-de-solucion-y-alcance/sd-03_s2_alcance.md",
@@ -48,7 +51,7 @@
       "figuras": [
         "figuras/figura-e0dda3b0ce0d-2dee951c24.png"
       ],
-      "importado_utc": "2026-10-04T16:24:18.664212+00:00"
+      "importado_utc": "2026-10-05T19:42:15.814290+00:00"
     }
   }
 }
