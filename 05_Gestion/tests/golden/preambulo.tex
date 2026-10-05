@@ -1,15 +1,34 @@
-% oss-plantilla: oss-2026.10
+% oss-plantilla: oss-2026.11
 % Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
 % Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\setmainfont{DejaVu Sans}
-\setsansfont{DejaVu Sans}
-\setmonofont{DejaVu Sans Mono}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
 \usepackage[letterpaper,margin=20mm]{geometry}
 \usepackage{microtype}
 \usepackage{parskip}
@@ -48,8 +67,12 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \providecommand{\passthrough}[1]{#1}
 \setcounter{secnumdepth}{-\maxdimen}
-\usepackage[bidi=default]{babel}
-\babelprovide[main,import]{spanish}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
 \usepackage{bookmark}

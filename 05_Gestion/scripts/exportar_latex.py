@@ -198,6 +198,30 @@ def import_part(part: str, replace: bool = False) -> Path:
     return output
 
 
+def update_template(part: str) -> str:
+    """Reemplaza solo el preámbulo de un .tex existente por el vigente; el cuerpo no se toca."""
+    tex = LATEX / f"sd-{part[-2:]}.tex"
+    if not tex.is_file():
+        raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}")
+    text = tex.read_text(encoding="utf-8")
+    if text.count("\\begin{document}") != 1:
+        raise ValueError(f"{tex.name}: debe tener exactamente un \\begin{{document}}")
+    updated = template_preamble() + "\\begin{document}" + text.split("\\begin{document}", 1)[1]
+    if updated == text:
+        return f"{part}: la plantilla ya está vigente ({template_version()})"
+    BUILD.mkdir(parents=True, exist_ok=True)
+    candidate = BUILD / f"{part}.plantilla.tex"
+    candidate.write_bytes(updated.encode("utf-8"))
+    problems = verify_tex(candidate)
+    if problems:
+        raise ValueError(f"{tex.name}: el cuerpo no cumple la plantilla; no se modifica:\n  - " + "\n  - ".join(problems))
+    BACKUPS.mkdir(parents=True, exist_ok=True)
+    backup = BACKUPS / f"{tex.stem}.{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}.tex"
+    shutil.copy2(tex, backup)
+    tex.write_bytes(updated.encode("utf-8"))
+    return f"{part}: preámbulo actualizado a {template_version()} (respaldo: {backup.relative_to(ROOT)})"
+
+
 def doctor() -> int:
     """Revisa herramientas requeridas; devuelve la cantidad de faltantes."""
     missing = 0
@@ -335,6 +359,9 @@ def main() -> int:
     sub.add_parser("estado", help="muestra fuentes .tex disponibles y si respetan la plantilla")
     ver = sub.add_parser("verificar", help="comprueba que los .tex respeten la plantilla corporativa")
     ver.add_argument("--parte", choices=PARTS)
+    upd = sub.add_parser("actualizar-plantilla", help="cambia solo el preámbulo de los .tex existentes al de la plantilla vigente")
+    upd.add_argument("--parte", choices=PARTS)
+    upd.add_argument("--todo", action="store_true")
     sub.add_parser("prism-prueba", help="genera los zips de prueba del motor de Prism")
     pkg = sub.add_parser("prism-empaquetar", help="genera sd-NN.zip autocontenido para subir a Prism")
     pkg.add_argument("--parte", choices=PARTS)
@@ -354,6 +381,12 @@ def main() -> int:
                     print(f"{part}: pendiente")
                 else:
                     print(f"{part}: editable, {'plantilla ok' if not verify_tex(tex) else 'FUERA DE PLANTILLA (ver verificar)'}")
+            return 0
+        if args.accion == "actualizar-plantilla":
+            if bool(args.parte) == bool(args.todo):
+                raise ValueError("Indicar exactamente --parte T7-NN o --todo")
+            for part in ([args.parte] if args.parte else [p for p in PARTS if (LATEX / f"sd-{p[-2:]}.tex").is_file()]):
+                print(update_template(part))
             return 0
         if args.accion.startswith("prism-"):
             import prism_paquetes as prism
