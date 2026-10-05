@@ -20,7 +20,7 @@ El modo `--final` exige referencias y declaración de uso de IA en el `.tex`. Lo
 
 El piloto T7-03 parte del Informe 1, pero su mapa actual es una **propuesta no aprobada**: las 55 asignaciones requieren revisión humana y todavía no se han materializado archivos de sección a partir de ellas. Las diferencias entre el maestro provisional y el índice del Comunicado 10 deben resolverse a favor de este último. La fase de exportación final y los anexos se validan tras esa migración aprobada.
 
-La fuente de skills compartidas está en `.agents/skills/`. En Windows, ejecutar `05_Gestion/scripts/link_skills.ps1` para crear junctions hacia `.claude/skills/` y `.opencode/skills/`; el script no reemplaza carpetas con contenido.
+La fuente de skills compartidas está en `.agents/skills/`. Codex y OpenCode la leen directamente; para Claude Code ejecutar `python3 05_Gestion/scripts/link_skills.py` (`python` en Windows), que crea symlinks (Linux/macOS) o junctions (Windows) hacia `.claude/skills/`. El script es idempotente y no reemplaza carpetas con contenido; `link_skills.ps1` es solo un envoltorio.
 
 ## `jira/`
 
