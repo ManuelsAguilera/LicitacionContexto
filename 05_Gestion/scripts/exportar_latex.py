@@ -235,6 +235,12 @@ def doctor() -> int:
     if has_svg:
         report(bool(shutil.which("inkscape")), "inkscape (hay SVG en el repo)", "instalar Inkscape para convertir SVG a PDF")
     report(TEMPLATE.is_file() and LUA_FILTER.is_file(), "plantilla/oss-pandoc.latex y oss.lua", "restaurar desde git")
+    report((ROOT / ".agents" / "skills" / "exportar" / "SKILL.md").is_file(), "skill exportar en .agents/skills (Codex, OpenCode)", "restaurar desde git")
+    report((ROOT / ".claude" / "skills" / "exportar" / "SKILL.md").is_file(), "skill exportar visible para Claude Code (.claude/skills)",
+           "ejecutar: python3 05_Gestion/scripts/link_skills.py")
+    claude_md = ROOT / "CLAUDE.md"
+    report(claude_md.is_file() and "@AGENTS.md" in claude_md.read_text(encoding="utf-8"), "CLAUDE.md importa @AGENTS.md", "agregar la línea @AGENTS.md a CLAUDE.md")
+    print(f"Intérprete en uso: {sys.executable}")
     return missing
 
 
