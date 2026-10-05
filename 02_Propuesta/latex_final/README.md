@@ -36,6 +36,14 @@ python3 05_Gestion/scripts/exportar_latex.py prism-empaquetar --parte T7-03   # 
 
 Una persona por subdocumento empaqueta e importa; el resto edita en Prism. Si el `.tex` del repositorio cambia mientras el equipo edita en Prism, `prism-importar` se niega (`--forzar` para reemplazar). `prism-prueba` genera `prueba-A-xelatex.zip` (plantilla real) y `prueba-B-pdflatex.zip` para comprobar qué motor admite Prism. La vista previa de Prism puede diferir en tipografía del PDF oficial.
 
+## Dos motores: XeLaTeX local y pdfLaTeX en Prism
+
+La plantilla (`oss-2026.11`) elige por motor con `iftex`: con XeLaTeX/LuaLaTeX usa DejaVu Sans (PDF oficial local); con pdfLaTeX, que es lo que compila Prism, usa Helvetica (Nimbus Sans) y declara los símbolos Unicode usados (≤, ≥, ●, →, ✓...). Es **un solo preámbulo fijo**, así que `verificar` lo sigue comparando igual. La tipografía de la vista previa de Prism difiere del PDF oficial. Si aparece un carácter Unicode nuevo que pdfLaTeX no reconoce, agregarlo con `\DeclareUnicodeCharacter` en la plantilla, subir la versión, actualizar `tests/golden/preambulo.tex` y ejecutar:
+
+```bash
+python3 05_Gestion/scripts/exportar_latex.py actualizar-plantilla --todo   # solo cambia el preámbulo y respalda; el cuerpo no se toca
+```
+
 ## Plantilla
 
 - `plantilla/oss-pandoc.latex`: preámbulo fijo. Su primera línea `% oss-plantilla: <versión>` se copia a cada `sd-NN.tex`. `verificar` exige que el preámbulo de cada `.tex` sea idéntico. Para cambiar el formato, editar la plantilla u `oss.sty`, subir la versión, actualizar `05_Gestion/tests/golden/preambulo.tex` y regenerar los `.tex` con `--reemplazar` (con respaldo).

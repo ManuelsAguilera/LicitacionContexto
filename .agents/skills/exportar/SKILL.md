@@ -23,6 +23,8 @@ python3 05_Gestion/scripts/exportar_latex.py prism-importar --parte T7-03 --zip 
 
 `prism-importar` valida el `.tex` con la plantilla, respalda el anterior, copia solo figuras nuevas e ignora cambios a `oss.sty` y `recursos/`. Si el `.tex` del repositorio cambió después de empaquetar, se niega salvo `--forzar` (solo con instrucción explícita). Para comprobar el motor de Prism: `prism-prueba`.
 
+Cambios de plantilla: tras editar `plantilla/oss-pandoc.latex` (y subir su versión y el golden), `actualizar-plantilla --todo` reemplaza solo el preámbulo de los `.tex` existentes. La plantilla compila con XeLaTeX (PDF oficial) y pdfLaTeX (Prism).
+
 ## Qué NO hacer (causas de PDF fuera de plantilla)
 
 - No escribir, copiar ni editar el preámbulo (todo lo anterior a `\begin{document}`). Es la plantilla fija `plantilla/oss-pandoc.latex`; `verificar` lo compara byte a byte.
