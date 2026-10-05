@@ -11,6 +11,10 @@ Todos los subdocumentos T-7 de la propuesta técnica se entregan en el formato c
 
 Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propuesta/latex_final/sd-NN.tex` es la **única fuente** del subdocumento; los `.md` de `02_Propuesta/` quedan **solo como contexto** (si el `.md` y el `.tex` difieren, manda el `.tex` y no se reimporta). Los cambios de contenido pedidos por el usuario se escriben directamente en el cuerpo del `.tex`. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
 
+## Reglas de redacción (aparte de la plantilla)
+
+`verificar` y `compilar` comprueban solo el **formato** (reglas RP, `convenciones/reglas-plantilla.md`). El **contenido** se rige por `convenciones/reglas-redaccion.md` (RR-NN, Comunicado 10); su comprobación mecánica es `exportar_latex.py verificar-redaccion [--parte T7-NN]`, que solo informa. No convertir tablas a párrafos ni al revés para "arreglar" un aviso: se decide con criterio humano.
+
 ## Edición colaborativa en Prism
 
 `latex_final/` sigue siendo la fuente de verdad; Prism solo es la superficie de edición (no sincroniza con Git).

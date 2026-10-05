@@ -23,6 +23,7 @@ python3 05_Gestion/scripts/brief.py        # contexto resumido para trabajar una
 python3 05_Gestion/scripts/agregar_frontmatter.py --dry-run
 python3 05_Gestion/scripts/migrar.py --fuente <archivo> --parte T7-NN --dry-run --reporte <json>
 python3 05_Gestion/scripts/exportar_latex.py doctor|estado|verificar|importar|compilar   # único camino a PDF
+python3 05_Gestion/scripts/exportar_latex.py verificar-redaccion [--parte T7-NN]        # reglas de redacción RR-NN (solo informa)
 python3 -m unittest discover -s 05_Gestion/tests -v                                    # pruebas del exportador
 python3 -m unittest discover -s 05_Gestion/tests -p test_verificar.py                 # un solo archivo de pruebas
 ```

@@ -44,6 +44,10 @@ La plantilla (`oss-2026.11`) elige por motor con `iftex`: con XeLaTeX/LuaLaTeX u
 python3 05_Gestion/scripts/exportar_latex.py actualizar-plantilla --todo   # solo cambia el preámbulo y respalda; el cuerpo no se toca
 ```
 
+## Reglas de redacción y de plantilla
+
+El formato (este directorio) y el contenido se rigen por documentos separados: `05_Gestion/convenciones/reglas-plantilla.md` (RP-NN) y `05_Gestion/convenciones/reglas-redaccion.md` (RR-NN, basadas en el Comunicado 10). `verificar-redaccion [--parte T7-NN]` revisa los `.tex` contra las reglas de redacción comprobables y solo informa.
+
 ## Plantilla
 
 - `plantilla/oss-pandoc.latex`: preámbulo fijo. Su primera línea `% oss-plantilla: <versión>` se copia a cada `sd-NN.tex`. `verificar` exige que el preámbulo de cada `.tex` sea idéntico. Para cambiar el formato, editar la plantilla u `oss.sty`, subir la versión, actualizar `05_Gestion/tests/golden/preambulo.tex` y regenerar los `.tex` con `--reemplazar` (con respaldo).
