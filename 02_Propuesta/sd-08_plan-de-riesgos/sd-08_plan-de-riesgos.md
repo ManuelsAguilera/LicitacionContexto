@@ -15,13 +15,11 @@ secciones:
   - T7-08-8.1
   - T7-08-8.2
   - T7-08-8.3
-  - T7-08-8.4
-  - T7-08-8.5
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 8 — Plan de riesgos
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-08_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-08.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -49,19 +47,23 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+En todo el capítulo: los riesgos corresponden a la solución efectivamente propuesta, no a un catálogo genérico.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Identificación y cuantificación de riesgos técnicos, organizacionales, de proyecto, de seguridad y de operación | `sd-08_s1_identificacion-y-cuantificacion-de-riesgos-tecnicos-organi.md` | Sin redactar |
-| 2 | Análisis cualitativo y cuantitativo, con técnicas de análisis de modos de falla, árbol de fallas o simulación | `sd-08_s2_analisis-cualitativo-y-cuantitativo-con-tecnicas-de-analis.md` | Sin redactar |
-| 3 | Estrategias de mitigación basadas en análisis costo-beneficio, con responsable, plazo y disparador | `sd-08_s3_estrategias-de-mitigacion-basadas-en-analisis-costo-benefi.md` | Sin redactar |
-| 4 | Riesgos de obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE | `sd-08_s4_riesgos-de-obsolescencia-tecnologica-bloqueo-por-proveedor.md` | Sin redactar |
-| 5 | Reservas de contingencia y de gestión, y su reflejo en el cronograma y en el flujo de caja | `sd-08_s5_reservas-de-contingencia-y-de-gestion-y-su-reflejo-en-el-c.md` | Sin redactar |
+| 8.1 | Plan de riesgos | Enfoque de gestión, roles, escalas de probabilidad e impacto y ciclo de revisión. | Sin redactar |
+| 8.2 | Identificación y Análisis de Riesgos | RBS y cuantificación de riesgos técnicos, organizacionales, de proyecto, de seguridad y de operación; en particular obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE; análisis cualitativo y cuantitativo (modos de falla, árbol de fallas o simulación). | Sin redactar |
+| 8.3 | Plan de Acción a Riesgos | Mitigación basada en análisis costo-beneficio, con responsable, plazo y disparador; reservas de contingencia y de gestión y su reflejo en el cronograma (valorización en la Oferta Económica, Art. 50.2). | Sin redactar |
 
-### Notas por sección
+Anexos: Formulario T-16.
 
-- **4. Riesgos de obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE** - El soporte del proveedor de la plataforma de crédito (en operación desde 2011) termina en 2029, dentro del período de Operación: es riesgo de calendario, no solo técnico.
+La redacción vive en `02_Propuesta/latex_final/sd-08.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -69,11 +71,11 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-08_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-08.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

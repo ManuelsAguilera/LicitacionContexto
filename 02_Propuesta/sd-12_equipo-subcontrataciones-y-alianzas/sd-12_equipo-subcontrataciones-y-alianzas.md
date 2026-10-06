@@ -15,14 +15,11 @@ secciones:
   - T7-12-12.1
   - T7-12-12.2
   - T7-12-12.3
-  - T7-12-12.4
-  - T7-12-12.5
-  - T7-12-12.6
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 12 — Equipo de trabajo, subcontrataciones y alianzas
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-12_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-12.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -50,16 +47,21 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Estructura organizacional del proyecto, con roles, responsabilidades y matriz de asignación | `sd-12_s1_estructura-organizacional-del-proyecto-con-roles-responsab.md` | Sin redactar |
-| 2 | Equipo clave nominado, con currículo, certificaciones, dedicación y período de participación | `sd-12_s2_equipo-clave-nominado-con-curriculo-certificaciones-dedica.md` | Sin redactar |
-| 3 | Curva de dotación por fase, coherente con la nivelación de recursos del Formulario T-15 | `sd-12_s3_curva-de-dotacion-por-fase-coherente-con-la-nivelacion-de-.md` | Sin redactar |
-| 4 | Decisiones de hacer o comprar, con justificación por capacidades, certificaciones y trayectoria | `sd-12_s4_decisiones-de-hacer-o-comprar-con-justificacion-por-capaci.md` | Sin redactar |
-| 5 | Subcontratistas y socios, su rol, su porcentaje de participación y su régimen de control | `sd-12_s5_subcontratistas-y-socios-su-rol-su-porcentaje-de-participa.md` | Sin redactar |
-| 6 | Estrategia de gestión del conocimiento, retención de talento y continuidad ante rotación | `sd-12_s6_estrategia-de-gestion-del-conocimiento-retencion-de-talent.md` | Sin redactar |
+| 12.1 | Equipo de trabajo | Estructura del proyecto con roles, responsabilidades y matriz de asignación; equipo clave nominado (currículo, certificaciones, dedicación, período); curva de dotación por fase coherente con la nivelación del Formulario T-15; gestión del conocimiento, retención y continuidad ante rotación. | Sin redactar |
+| 12.2 | Subcontrataciones | Decisiones de hacer o comprar con justificación; subcontratistas, rol, porcentaje de participación (Art. 73.º) y régimen de control. | Sin redactar |
+| 12.3 | Alianzas | Socios y alianzas específicas de este proyecto, su rol, porcentaje de participación y régimen de control. | Sin redactar |
+
+Anexos: Formulario T-8.
+
+La redacción vive en `02_Propuesta/latex_final/sd-12.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -67,11 +69,11 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-12_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-12.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

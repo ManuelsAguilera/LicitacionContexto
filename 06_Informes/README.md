@@ -13,23 +13,18 @@ sola que una observación esté resuelta en los archivos actuales.
 
 | Carpeta | Contenido | Nomenclatura |
 | :--- | :--- | :--- |
-| `informes/` | Los tres informes | `informe-N_<descriptor>.docx` |
 | `presentaciones/` | Las tres presentaciones | `presentacion-N_<descriptor>.pptx` |
+
+Los informes **no** se redactan aquí: se arman desde los `.tex` de `02_Propuesta/latex_final/`,
+editados en Prism. Ya no se mantienen borradores `.docx` de los informes.
 
 ## Estado
 
-| N | Artefacto | Estado |
+| N | Informe | Subdocumentos |
 | :--- | :--- | :--- |
-| 1 | `informe-1_oferta-tecnica.docx` | Versado. Cubre los subdocumentos 1 a 5 y el 13 |
-| 2 | - | Pendiente: subdocumentos 6 a 12 y 14 |
-| 3 | - | Pendiente |
-
-## Relación con `02_Propuesta/`
-
-El `Informe 1` está escrito en Word y no tiene fuente `.md`: es un documento de **lectura y
-entrega**, exento de la regla de formato del repositorio (ver `AGENTS.md`). Si hay que modificarlo,
-lo correcto es crear el `.md` fuente por sección en `02_Propuesta/` y regenerar el `.docx`, en lugar
-de editar el Word.
+| 1 | Entregado | 1 a 5 y 13 |
+| 2 | Pendiente | 6 a 12 y 14 |
+| 3 | Pendiente | Consolidación |
 
 ## Presentaciones
 

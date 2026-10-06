@@ -28,12 +28,17 @@ jira:
 cifras: []
 secciones:
   - T7-04-4.1
+  - T7-04-4.1.1
   - T7-04-4.2
-actualizado: 2026-09-29
+  - T7-04-4.2.1
+  - T7-04-4.3
+  - T7-04-4.3.1
+  - T7-04-4.3.2
+actualizado: 2026-10-06
 ---
 # Subdocumento 4 — Arquitectura lógica y física de la solución
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-04_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-04.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -61,28 +66,29 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Contenido exigido por el T-7
+## Estructura obligatoria (Comunicado 10)
 
-- Arquitectura lógica: capas, módulos, límites de contexto, responsabilidades e interfaces.
-- Arquitectura física: emplazamiento de cada componente en nube y on-premise, con justificación por componente conforme al Artículo 16.º.
-- Arquitectura de integración: servicios, contratos, mensajería, versionado y gobierno.
-- Arquitectura de seguridad: modelo Zero Trust, capa expuesta, identidad, cifrado y controles.
-- Arquitectura de despliegue: ambientes, redes, alta disponibilidad, recuperación ante desastres y respaldos.
-- Dimensionamiento y plan de capacidad, con supuestos de volumen, concurrencia y crecimiento.
-- Decisiones de arquitectura registradas, con alternativas evaluadas y criterio de selección.
-- La arquitectura debe ser propia de la solución planteada. No se aceptarán diagramas genéricos.
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
 
-## Secciones
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
 
-| N | Sección | Archivo | Estado |
+En todo el capítulo: la arquitectura es propia de la solución planteada (no se aceptan diagramas genéricos) y cada decisión se registra con las alternativas evaluadas y el criterio de selección.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Arquitectura lógica | `sd-04_s1_arquitectura-logica.md` | Sin redactar |
-| 2 | Arquitectura física | `sd-04_s2_arquitectura-fisica.md` | Sin redactar |
+| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Sin redactar |
+| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Sin redactar |
+| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Sin redactar |
+| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Sin redactar |
+| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Sin redactar |
+| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Sin redactar |
+| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Sin redactar |
 
-### Notas por sección
+Anexos: Formulario T-11.
 
-- **1. Arquitectura lógica** - El Informe 1 marca el encabezado como «(Trabajar)». Subsecciones previstas 4.1.1 a 4.1.6: estilo arquitectónico, límites de contexto, estructura por capas, arquitectura de integración, arquitectura de seguridad y registro de decisiones (ADR).
-- **2. Arquitectura física** - El Informe 1 marca el encabezado como «(Trabajar)». Subsecciones previstas 4.2.1 a 4.2.10: diagrama de infraestructura, emplazamiento componente por componente, nodo de tienda, data centers, topología de red, alta disponibilidad y RPO/RTO, dimensionamiento, stack de software, implementos y ambientes.
+Se sugiere incluir en 4.2 una tabla de mapeo que muestre, para cada componente, su correspondencia entre esquema de solución (3.3), arquitectura lógica (4.1) y componente físico (4.2).
+
+La redacción vive en `02_Propuesta/latex_final/sd-04.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 
@@ -111,7 +117,7 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-04_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-04.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Coherente con el despliegue híbrido obligatorio (Art. 16.º) y con el cronograma de 56 meses (Art. 17.º)
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
@@ -119,4 +125,4 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

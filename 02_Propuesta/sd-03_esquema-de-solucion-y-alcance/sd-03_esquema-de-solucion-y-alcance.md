@@ -26,11 +26,11 @@ secciones:
   - T7-03-3.2
   - T7-03-3.3
   - T7-03-3.4
-actualizado: 2026-09-30
+actualizado: 2026-10-06
 ---
 # Subdocumento 3 — Esquema de solución y alcance
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-03_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-03.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -58,27 +58,22 @@ actualizado: 2026-09-30
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Contenido exigido por el T-7
+## Estructura obligatoria (Comunicado 10)
 
-- Descripción de la solución propuesta y su coherencia con el problema definido.
-- Alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas.
-- Exclusiones explícitas, supuestos y restricciones del alcance.
-- Catálogo de requerimientos funcionales y no funcionales, priorizado y trazable.
-- Estrategia para obtener el apoyo de los grupos de interés clave.
-- Criterios de aceptación del alcance comprometido.
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
 
-## Secciones
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
 
-| N | Sección | Archivo | Estado |
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Resumen Ejecutivo de la Solución | `sd-03_s1_resumen-ejecutivo-de-la-solucion.md` | Borrador migrado; revisar |
-| 2 | Alcance | `sd-03_s2_alcance.md` | Borrador migrado; revisar |
-| 3 | Esquema de solución | `sd-03_s3_esquema-de-solucion.md` | Borrador migrado; revisar |
-| 4 | Explicación de la Solución | `sd-03_s4_explicacion-de-la-solucion.md` | Borrador migrado; revisar |
+| 3.1 | Resumen Ejecutivo de la Solución | Todo el alcance del proyecto: implementación (Etapa 1 y Etapa 2), implantación (marchas blancas y pasos a producción) y operación (36 meses). | Sin redactar |
+| 3.2 | Alcance | Alcance de la solución descompuesto en componentes manejables: alcance de la Etapa 1 y de la Etapa 2 con criterios de asignación; exclusiones, supuestos y restricciones; catálogo de requerimientos funcionales y no funcionales priorizado y trazable (resumen aquí, trazabilidad completa en el Formulario T-12); criterios de aceptación. | Sin redactar |
+| 3.3 | Esquema de solución | Uno o varios esquemas del modelo conceptual de la solución. Cada diagrama se explica en el texto, por partes si es complejo (sección 6 del Comunicado 10). | Sin redactar |
+| 3.4 | Explicación de la Solución | Descripción de la solución según la operación o el negocio y su coherencia con el problema del Capítulo 2. Incluye la estrategia para obtener el apoyo de los grupos de interés clave identificados en 2.4. Mapea al 100 % con la Arquitectura Lógica (4.1): mismos nombres de componentes. | Sin redactar |
 
-### Nota de migración
+Anexos: Formulario T-12.
 
-La estructura entregable sigue las cuatro secciones obligatorias del Comunicado 10. El contenido importado conserva su procedencia y permanece en estado borrador hasta revisión humana.
+La redacción vive en `02_Propuesta/latex_final/sd-03.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 
@@ -101,7 +96,7 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-03_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-03.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] La frontera entre el negocio retail y la filial emisora fiscalizada queda definida antes que cualquier vista unificada
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
@@ -109,4 +104,4 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

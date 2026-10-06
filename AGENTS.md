@@ -20,7 +20,7 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 
 - **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 (que prevalece). Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
 - **Plantilla (formato):** `05_Gestion/convenciones/reglas-plantilla.md`, IDs `RP-NN`, las cumple `oss.sty`/`plantilla/`. No se replican a mano en un `.tex` ni se cambian fuera del flujo de la plantilla.
-- Política de migración de tablas (`artefactos.md`): solo aplica al importar y no sustituye RR-15 a RR-19.
+- Las tablas del cuerpo se rigen por RR-15 a RR-19 (ver `artefactos.md`).
 
 ## Identidad del proponente
 
@@ -29,11 +29,13 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 
 ## Fuentes y precedencia
 
-Los tres documentos de `00_Bases/` son la fuente de verdad. Orden de precedencia estricto (Art. 5° de las Bases Administrativas):
+Los tres documentos de `00_Bases/` son la fuente de verdad del contenido. Orden de precedencia estricto (Art. 5° de las Bases Administrativas):
 
 1. `00_Bases/Bases_Administrativas.md` — reglas del proceso y del contrato: participación, cronograma obligatorio de 56 meses, modelo de despliegue híbrido, hitos, formularios/sobres, evaluación y las 5 innovaciones obligatorias.
 2. `00_Bases/Bases_Transversales.md` — requisitos técnicos comunes a las 13 industrias, codificados como **RT-CC.NN** (Obligatorio / Deseable / Según caso). Deben responderse uno a uno en el **Formulario T-12**.
 3. `00_Bases/Caso_09_Cadena_Multitienda.md` — el caso en sí. **No es una especificación de requerimientos**: traducir su narrativa (dolores, contradicciones, vacíos) en alcance, arquitectura, plan y estrategia es exactamente lo que se evalúa.
+
+**Comunicado 10** (`00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`) — también es base: fija la **estructura obligatoria** de la Propuesta Técnica y de los informes preparatorios (capítulos, títulos, orden, qué contenido del T-7 va en cada título, reglas de redacción). No añade requisitos de contenido: gobierna la forma y la ubicación. Prevalece sobre las convenciones de este repositorio (`05_Gestion/convenciones/`) cuando difieran. El archivo es un correo reenviado sin limpiar; no se edita (inmutable, como el resto de `00_Bases/`).
 
 Regla de precedencia: el caso puede **endurecer** un requisito transversal, nunca **rebajarlo**. Un requisito marcado "Según caso" se completa con la volumetría/valores del documento del caso (si el caso no lo define, rige el valor por defecto del transversal).
 
@@ -66,10 +68,10 @@ Estructura de pipeline: los prefijos numéricos declaran la etapa del flujo.
 | `03_Formularios/` | Formularios oficiales de los sobres: `A/` (A-1..A-6), `B/` (T-6..T-22), `C/` (E-21..E-26). |
 | `04_Adjuntos/` | Derivados que se citan desde la propuesta: `diagramas/` (exports PNG/SVG/PDF), `hardware/` (inventario a proveer), `tablas/` (cálculos de apoyo). |
 | `05_Gestion/` | `jira/` con el plan de trabajo del proyecto `OSS`: `plan/`, `mapeo/`, `scripts/`, `historico/`. |
-| `06_Informes/` | Los 3 informes y las 3 presentaciones preparatorias (Art. 45°): `informes/`, `presentaciones/`. |
+| `06_Informes/` | Presentaciones preparatorias (Art. 45°): `presentaciones/`. Los informes se arman desde los `.tex` (no hay borradores `.docx`). |
 | `07_Entregables/` | Salida final: `sobre_1_administrativo/`, `sobre_2_tecnico/`, `sobre_3_economico/`, `pdf_final/`. |
 | `80_Artefactos/` | Material general del proyecto que no pertenece a una etapa: planilla de consultas al mandante, informes internos. |
-| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo. **Solo referencia de forma.** |
+| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo (**no usar salvo instrucción expresa**, ver más abajo). `clases markdown/`: material de las clases del curso, base para evaluar críticamente las secciones. |
 | `.opencode/` | Skills versionadas, plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` no se versionan. |
 
 Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la carpeta antes de escribir en ella. Las subcarpetas no lo tienen: su propósito está en la tabla de arriba y en un `.gitkeep` comentado mientras están vacías.
@@ -88,8 +90,8 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 
 - La convención de IDs, estados, frontmatter y procedencia vive en `05_Gestion/convenciones/artefactos.md`.
 - El estado `revisado` requiere revisión humana registrada; ningún script o agente lo asigna automáticamente.
-- El índice obligatorio del Comunicado 10 gobierna la estructura entregable. Los maestros actuales pueden documentar una estructura provisional; no migrar su tabla de secciones como verdad oficial sin cotejarla.
-- La migración desde Google Docs se realiza mediante exportación DOCX; un `.md` completo también puede importarse. El modo `--dry-run` no escribe secciones. Los mapeos ambiguos se revisan antes de aplicar y el contenido fuente se conserva.
+- El índice obligatorio del Comunicado 10 gobierna la estructura entregable: cada maestro reproduce sus capítulos y títulos tal cual.
+- **Flujo de trabajo:** el contenido se redacta directamente en el `.tex` de `02_Propuesta/latex_final/` con edición colaborativa en Prism. No hay importación desde Google Docs ni DOCX (la herramienta de migración fue retirada).
 - `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
 - Todos los subdocumentos T-7 se generan y entregan en el formato corporativo LaTeX, con fuente `.tex` editable y PDF compilado desde ella usando `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF. Formularios e informes preparatorios no forman parte de este alcance.
 - La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
@@ -118,11 +120,20 @@ La Propuesta Técnica se estructura en **14 subdocumentos** (Formulario T-7, `00
 
 ### Informes preparatorios (Art. 45°)
 
-Son tres informes y tres presentaciones, no uno. El `Informe 1` (en `06_Informes/informes/`) cubre los subdocumentos 1 a 5 y el 13; los subdocumentos 6 a 12 y el 14 corresponden a los informes 2 y 3.
+Son tres informes y tres presentaciones, no uno. El `Informe 1` cubre los subdocumentos 1 a 5 y el 13; los subdocumentos 6 a 12 y el 14 corresponden a los informes 2 y 3. Los informes se arman desde los `.tex` de `02_Propuesta/latex_final/` (no existen ya borradores `.docx` en `06_Informes/informes/`).
 
-## TrabajosAnteriores: cuándo consultarlos (solo referencia de forma)
+## Clases del profesor: material para evaluar críticamente
 
-Regla de uso: consultar **únicamente** para copiar la estructura de cada capítulo de la propuesta (títulos, orden de secciones, tablas, anexos). **Nunca** trasladar contenido: tecnologías, módulos, volúmenes, cifras ni servicios no aplican al caso actual (Cadena Multitienda). La fuente de verdad del contenido sigue siendo `00_Bases/`.
+`90_Referencia/clases markdown/` contiene las transcripciones de las clases FEP01 a FEP05 y una `Guia_de_Navegacion_FEP01-FEP05.md` que indexa los temas por diapositiva. Es el marco con el que se evalúa cada sección de la propuesta (arquitectura, requisitos y alcance, estimación, riesgos, infraestructura).
+
+- **Úsalo para ser crítico:** al redactar o revisar, contrasta definiciones, criterios y errores comunes con lo que enseña la clase (por ejemplo, el criterio de aceptación con umbral, la regla del 100 % de la EDT, validar vs. controlar el alcance). Cita la diapositiva cuando apoye un juicio.
+- **No es fuente de contenido del caso:** no aporta cifras ni hechos de Ancoa. El contenido sigue rigiéndose por `00_Bases/`.
+- Si algo de la clase contradice las Bases o el Comunicado 10, mandan las Bases y el Comunicado.
+- Empezar por la guía de navegación y abrir solo la transcripción pertinente (son archivos grandes).
+
+## TrabajosAnteriores: no usar salvo instrucción expresa (solo referencia de forma)
+
+**Los agentes no deben consultar `TrabajosAnteriores_DistriProducto/` a menos que el usuario lo indique.** Existe para copiar la estructura de cada capítulo de la propuesta (títulos, orden de secciones, tablas, anexos). **Nunca** trasladar contenido: tecnologías, módulos, volúmenes, cifras ni servicios no aplican al caso actual (Cadena Multitienda). La fuente de verdad del contenido sigue siendo `00_Bases/`.
 
 | Subdocumento | Capítulo (DistriProducto) | Cuándo ir a leerlo |
 | :--- | :--- | :--- |
@@ -142,7 +153,7 @@ Regla de uso: consultar **únicamente** para copiar la estructura de cada capít
 - El plan de trabajo vive en el proyecto Jira `OSS`: **8 agrupadoras → 34 historias → 77 subtareas** (119 incidencias etiquetadas), más `OSS-250` como tarea suelta.
 - Los 62 originales `OSS-105`..`OSS-164` **ya fueron borrados**; `05_Gestion/jira/historico/borrar_manual.txt` está obsoleto a propósito.
 - La taxonomía de secciones del plan de Jira **no coincide** con el índice del Informe 1. Ver las observaciones de `02_Propuesta/indice.md`.
-- Estado de redacción por subdocumento: los subdocumentos 1 a 3 están mayormente desarrollados; el 4 y el 5 tienen solo títulos; el 13 tiene la estructura de fichas sin contenido.
+- Estado de redacción (2026-10-06): el sd-01 y el sd-02 (borrador en `02_Propuesta/sd-02_problema-y-necesidad/subdoc2-enProgreso.md`) están avanzados. El contenido anterior de los sd-03 y siguientes fue retirado a propósito: se redacta de nuevo desde cero. El trabajo previo del sd-03 está en `80_Artefactos/sd-03_contexto/`. El checkpoint anterior a la purga es el tag `checkpoint-pre-purga-sd03`.
 
 ## Verificación
 

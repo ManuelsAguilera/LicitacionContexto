@@ -21,11 +21,12 @@ secciones:
   - T7-13-13.2
   - T7-13-13.3
   - T7-13-13.4
-actualizado: 2026-09-29
+  - T7-13-13.5
+actualizado: 2026-10-06
 ---
 # Subdocumento 13 — Innovaciones
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-13_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-13.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -53,20 +54,25 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+Cada innovación desarrolla los siete elementos del Art. 29.º (problema, tecnología, madurez, diseño de incorporación, impacto económico, indicador de verificación y riesgo de adopción) y su trazabilidad con la arquitectura, la EDT y el flujo de caja. Las de base tecnológica citan fuentes en APA 7.ª. El título se mantiene tal cual («13.1 Innovación 1»); el primer párrafo declara el tipo y el nombre (sección 10 del Comunicado 10).
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Criterio de selección de la cartera | `sd-13_s1_criterio-de-seleccion-de-la-cartera.md` | Sin redactar |
-| 2 | Ficha de innovación | `sd-13_s2_ficha-de-innovacion.md` | Sin redactar |
-| 3 | Trazabilidad de la cartera | `sd-13_s3_trazabilidad-de-la-cartera.md` | Sin redactar |
-| 4 | Declaración de investigación pendiente | `sd-13_s4_declaracion-de-investigacion-pendiente.md` | Sin redactar |
+| 13.1 | Innovación 1 | Tipo: producto o servicio. | Sin redactar |
+| 13.2 | Innovación 2 | Tipo: proceso. | Sin redactar |
+| 13.3 | Innovación 3 | Tipo: tecnológica o de arquitectura. | Sin redactar |
+| 13.4 | Innovación 4 | Tipo: modelo de negocio o de contratación. | Sin redactar |
+| 13.5 | Innovación 5 | Tipo: experiencia de usuario, sostenibilidad o impacto social. | Sin redactar |
 
-### Notas por sección
+Anexos: Formulario T-19.
 
-- **2. Ficha de innovación** - El índice del Informe 1 prevé cinco fichas (6.2 a 6.6), una por cada tipo del Art. 28.º: producto, proceso, arquitectura o tecnología, modelo de negocio y UX o sostenibilidad. El cuerpo actual solo tiene el encabezado 6.2.
-- **3. Trazabilidad de la cartera** - Cada innovación debe trazarse con la arquitectura, la EDT y el flujo de caja.
-- **4. Declaración de investigación pendiente** - Las innovaciones de base tecnológica exigen fuentes citadas en norma APA 7.ª edición (Art. 29.º).
+La redacción vive en `02_Propuesta/latex_final/sd-13.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 
@@ -87,7 +93,7 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-13_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-13.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Cinco innovaciones, una por cada tipo del Art. 28.º, con los siete elementos del Art. 29.º
 - [ ] Cada innovación trazable con la arquitectura, la EDT y el flujo de caja
@@ -96,4 +102,4 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

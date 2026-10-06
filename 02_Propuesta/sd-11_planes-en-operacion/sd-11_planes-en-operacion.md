@@ -13,14 +13,11 @@ cifras: []
 secciones:
   - T7-11-11.1
   - T7-11-11.2
-  - T7-11-11.3
-  - T7-11-11.4
-  - T7-11-11.5
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 11 — Planes en operación
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-11_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-11.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -48,15 +45,18 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Plan de mantención preventiva, correctiva y evolutiva, con criterios de priorización y presupuesto de capacidad | `sd-11_s1_plan-de-mantencion-preventiva-correctiva-y-evolutiva-con-c.md` | Sin redactar |
-| 2 | Estrategia de actualización de dependencias, gestión de deuda técnica y ventana de obsolescencia | `sd-11_s2_estrategia-de-actualizacion-de-dependencias-gestion-de-deu.md` | Sin redactar |
-| 3 | Plan de operación conforme a principios de ingeniería de confiabilidad: presupuesto de error, reducción del trabajo manual y análisis retrospectivo sin culpa | `sd-11_s3_plan-de-operacion-conforme-a-principios-de-ingenieria-de-c.md` | Sin redactar |
-| 4 | Gestión de la capacidad y optimización de costos en nube conforme a prácticas FinOps | `sd-11_s4_gestion-de-la-capacidad-y-optimizacion-de-costos-en-nube-c.md` | Sin redactar |
-| 5 | Plan de pruebas periódicas de recuperación ante desastres y de resiliencia | `sd-11_s5_plan-de-pruebas-periodicas-de-recuperacion-ante-desastres-.md` | Sin redactar |
+| 11.1 | Plan Mantención Preventiva / Evolutiva | Mantención preventiva, correctiva y evolutiva con criterios de priorización y presupuesto de capacidad; actualización de dependencias, deuda técnica y ventana de obsolescencia. | Sin redactar |
+| 11.2 | Plan Servicios de Operación | Operación conforme a ingeniería de confiabilidad (presupuesto de error, reducción del trabajo manual, análisis retrospectivo sin culpa); gestión de la capacidad y FinOps; pruebas periódicas de recuperación ante desastres y de resiliencia. | Sin redactar |
+
+La redacción vive en `02_Propuesta/latex_final/sd-11.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -64,7 +64,7 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-11_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-11.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Coherente con el despliegue híbrido obligatorio (Art. 16.º) y con el cronograma de 56 meses (Art. 17.º)
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
@@ -72,4 +72,4 @@ actualizado: 2026-09-29
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
