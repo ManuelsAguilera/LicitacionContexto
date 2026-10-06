@@ -13,15 +13,11 @@ cifras: []
 secciones:
   - T7-10-10.1
   - T7-10-10.2
-  - T7-10-10.3
-  - T7-10-10.4
-  - T7-10-10.5
-  - T7-10-10.6
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 10 — Servicios de operación y niveles de servicio
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-10_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-10.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -49,20 +45,18 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Modelo de soporte basado en ITIL 4, con estructura de niveles, canales, horarios y escalamiento | `sd-10_s1_modelo-de-soporte-basado-en-itil-4-con-estructura-de-nivel.md` | Sin redactar |
-| 2 | Definición de indicadores, objetivos y acuerdos de nivel de servicio, coherentes con el Art. 78.º | `sd-10_s2_definicion-de-indicadores-objetivos-y-acuerdos-de-nivel-de.md` | Sin redactar |
-| 3 | Dimensionamiento de la mesa de servicio con fundamento cuantitativo (teoría de colas, modelo Erlang C u otro declarado) | `sd-10_s3_dimensionamiento-de-la-mesa-de-servicio-con-fundamento-cua.md` | Sin redactar |
-| 4 | Acuerdos de nivel operacional y contratos de apoyo internos coherentes con los compromisos externos | `sd-10_s4_acuerdos-de-nivel-operacional-y-contratos-de-apoyo-interno.md` | Sin redactar |
-| 5 | Libros de operación, guías de resolución, gestión del conocimiento y automatización progresiva | `sd-10_s5_libros-de-operacion-guias-de-resolucion-gestion-del-conoci.md` | Sin redactar |
-| 6 | Observabilidad de extremo a extremo, correlación de eventos y detección proactiva | `sd-10_s6_observabilidad-de-extremo-a-extremo-correlacion-de-eventos.md` | Sin redactar |
+| 10.1 | Servicios de operación | Modelo de soporte basado en ITIL 4 (niveles, canales, horarios, escalamiento); dimensionamiento de la mesa de servicio con fundamento cuantitativo (teoría de colas, Erlang C u otro); libros de operación, guías de resolución, gestión del conocimiento y automatización progresiva; observabilidad de extremo a extremo, correlación de eventos y detección proactiva. | Sin redactar |
+| 10.2 | Niveles de servicio | Indicadores, objetivos y acuerdos de nivel de servicio coherentes con el Art. 78.º; acuerdos de nivel operacional y contratos de apoyo internos coherentes con los compromisos externos. | Sin redactar |
 
-### Notas por sección
-
-- **1. Modelo de soporte basado en ITIL 4, con estructura de niveles, canales, horarios y escalamiento** - Dimensionar contra la dotación real: 6.400 personas con rotación anual del 62 % y 1.100 repositores externos sin vínculo laboral directo.
+La redacción vive en `02_Propuesta/latex_final/sd-10.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -70,11 +64,11 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-10_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-10.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

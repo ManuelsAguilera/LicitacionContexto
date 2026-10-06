@@ -15,13 +15,11 @@ cifras: []
 secciones:
   - T7-06-6.1
   - T7-06-6.2
-  - T7-06-6.3
-  - T7-06-6.4
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 6 — Metodologías
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-06_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-06.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -49,14 +47,20 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Metodología de gestión del proyecto: PMBOK adaptada a la complejidad, integrando enfoques ágiles donde corresponda; gestión de interesados, comunicaciones, adquisiciones e integración | `sd-06_s1_metodologia-de-gestion-del-proyecto-pmbok-adaptada-a-la-co.md` | Sin redactar |
-| 2 | Metodología de desarrollo: enfoque coherente con la naturaleza del proyecto, con sus implicancias en gestión de requerimientos, arquitectura evolutiva, refactorización, deuda técnica y tiempo de salida al mercado | `sd-06_s2_metodologia-de-desarrollo-enfoque-coherente-con-la-natural.md` | Sin redactar |
-| 3 | Prácticas de DevSecOps, integración y entrega continuas, infraestructura como código y automatización de pruebas | `sd-06_s3_practicas-de-devsecops-integracion-y-entrega-continuas-inf.md` | Sin redactar |
-| 4 | Ceremonias, artefactos, cadencias y mecanismos de decisión | `sd-06_s4_ceremonias-artefactos-cadencias-y-mecanismos-de-decision.md` | Sin redactar |
+| 6.1 | Metodología de Gestión de Proyectos | PMBOK adaptado a la complejidad del proyecto, con enfoques ágiles donde corresponda. Gestión de interesados, comunicaciones, adquisiciones e integración. Mecanismos de decisión y cadencias de gobierno. Anexo: Formulario T-9. | Sin redactar |
+| 6.2 | Metodología de Desarrollo Software | Enfoque coherente con la naturaleza del proyecto (requerimientos, arquitectura evolutiva, refactorización, deuda técnica, tiempo de salida al mercado); DevSecOps, integración y entrega continuas, infraestructura como código, automatización de pruebas; ceremonias, artefactos, cadencias y decisión del desarrollo. Anexo: Formulario T-10. | Sin redactar |
+
+Anexos: Formulario T-9 (6.1); Formulario T-10 (6.2).
+
+La redacción vive en `02_Propuesta/latex_final/sd-06.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -65,11 +69,11 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-06_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-06.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.

@@ -16,13 +16,11 @@ secciones:
   - T7-09-9.1
   - T7-09-9.2
   - T7-09-9.3
-  - T7-09-9.4
-  - T7-09-9.5
-actualizado: 2026-09-29
+actualizado: 2026-10-06
 ---
 # Subdocumento 9 — Plan de calidad
 
-> Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-09_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-09.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -50,15 +48,21 @@ actualizado: 2026-09-29
 > de posición sin contenido. **No hardcodear cifras acá**: dejarlas en blanco hasta que se reparen
 > las tablas de las Bases.
 
-## Secciones
+## Estructura obligatoria (Comunicado 10)
 
-| N | Sección | Archivo | Estado |
+Fuente: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`. Los títulos se reproducen tal cual. Cada título se desarrolla en el apartado indicado y no en otro.
+
+Cada capítulo abre con un texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
+
+| N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 1 | Marco de aseguramiento de calidad basado en ISO/IEC 25010 y en modelos de madurez | `sd-09_s1_marco-de-aseguramiento-de-calidad-basado-en-iso-iec-25010-.md` | Sin redactar |
-| 2 | Métricas de calidad del código, cobertura de pruebas, complejidad y acoplamiento, con umbrales bloqueantes | `sd-09_s2_metricas-de-calidad-del-codigo-cobertura-de-pruebas-comple.md` | Sin redactar |
-| 3 | Puertas de calidad, revisiones por pares, análisis estático y dinámico | `sd-09_s3_puertas-de-calidad-revisiones-por-pares-analisis-estatico-.md` | Sin redactar |
-| 4 | Estrategia de pruebas conforme a ISO/IEC/IEEE 29119: niveles, tipos, ambientes, datos de prueba y automatización | `sd-09_s4_estrategia-de-pruebas-conforme-a-iso-iec-ieee-29119-nivele.md` | Sin redactar |
-| 5 | Verificación, validación y trazabilidad entre requerimiento, diseño, código, prueba y despliegue | `sd-09_s5_verificacion-validacion-y-trazabilidad-entre-requerimiento.md` | Sin redactar |
+| 9.1 | Plan de Calidad | Marco de aseguramiento basado en ISO/IEC 25010 y modelos de madurez. Métricas de calidad del código, cobertura de pruebas, complejidad y acoplamiento, con umbrales bloqueantes. | Sin redactar |
+| 9.2 | Estrategia de Aseguramiento de Calidad | Puertas de calidad, revisiones por pares, análisis estático y dinámico; estrategia de pruebas conforme a ISO/IEC/IEEE 29119; verificación, validación y trazabilidad requerimiento-diseño-código-prueba-despliegue. | Sin redactar |
+| 9.3 | Alineación con Plan de Trabajo | Dónde quedan las actividades de calidad en la EDT y en el cronograma del Capítulo 7. | Sin redactar |
+
+Anexos: Formulario T-13; Formulario T-17.
+
+La redacción vive en `02_Propuesta/latex_final/sd-09.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -67,11 +71,11 @@ actualizado: 2026-09-29
 
 ## Checklist de llenado
 
-- [ ] Cada sección tiene su archivo `sd-09_sN_*.md` con contenido redactado
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-09.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
 
 ---
 
-Fuentes rectores: `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
+Fuentes rectores: `00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md` (estructura), `00_Bases/Bases_Administrativas.md` (Art. 5.º, Formularios T-7 y T-21), `00_Bases/Bases_Transversales.md` (RT-CC.NN) y `00_Bases/Caso_09_Cadena_Multitienda.md`.
