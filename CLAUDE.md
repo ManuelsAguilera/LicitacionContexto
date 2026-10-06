@@ -21,14 +21,13 @@ python3 05_Gestion/scripts/check.py        # verifica trazabilidad/convenciones 
 python3 05_Gestion/scripts/estado.py       # estado de secciones por subdocumento
 python3 05_Gestion/scripts/brief.py        # contexto resumido para trabajar una sección
 python3 05_Gestion/scripts/agregar_frontmatter.py --dry-run
-python3 05_Gestion/scripts/migrar.py --fuente <archivo> --parte T7-NN --dry-run --reporte <json>
 python3 05_Gestion/scripts/exportar_latex.py doctor|estado|verificar|importar|compilar   # único camino a PDF
 python3 05_Gestion/scripts/exportar_latex.py verificar-redaccion [--parte T7-NN]        # reglas de redacción RR-NN (solo informa)
 python3 -m unittest discover -s 05_Gestion/tests -v                                    # pruebas del exportador
 python3 -m unittest discover -s 05_Gestion/tests -p test_verificar.py                 # un solo archivo de pruebas
 ```
 
-- Migración: siempre `--dry-run` primero; aplicar solo con `--mapa-aprobado` revisado por humano. Nunca sobrescribe secciones existentes.
+- Edición: el contenido se redacta en los `.tex` con Prism; no hay importación desde Google Docs ni DOCX.
 - PDF de la propuesta: cumplir la "Regla de exportación" de `AGENTS.md` y `.agents/skills/exportar/SKILL.md`. `sd-NN.tex` manda tras importar; los `.md` son solo contexto. Nunca escribir preámbulos ni llamar a `pandoc`/`xelatex` directamente.
 - Estado `revisado` solo lo asigna un humano, nunca un script o agente.
 

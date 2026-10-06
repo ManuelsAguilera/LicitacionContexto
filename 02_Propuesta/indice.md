@@ -8,7 +8,7 @@ La Propuesta Técnica se estructura en **catorce subdocumentos** (Formulario T-7
 | :--- | :--- | :--- | :--- | :--- |
 | 01 | [Presentación de la empresa](sd-01_presentacion-empresa/) | T-6 | Capítulo I | Desarrollado en el Informe 1 |
 | 02 | [Resumen Ejecutivo, comprensión del problema y de la necesidad](sd-02_problema-y-necesidad/) | - | Capítulo II | Desarrollado en el Informe 1 |
-| 03 | [Esquema de solución y alcance](sd-03_esquema-de-solucion-y-alcance/) | T-12 | Capítulo III | Desarrollado en el Informe 1 |
+| 03 | [Esquema de solución y alcance](sd-03_esquema-de-solucion-y-alcance/) | T-12 | Capítulo III | En redacción (rehecho desde cero) |
 | 04 | [Arquitectura lógica y física de la solución](sd-04_arquitectura-logica-y-fisica/) | T-11 | Capítulo IV | Sin redactar |
 | 05 | [Modelo y gestión de datos](sd-05_modelo-y-gestion-de-datos/) | - | Capítulo V | Sin redactar |
 | 06 | [Metodologías](sd-06_metodologias/) | T-9, T-10 | Informe 2/3 | Sin redactar |
@@ -27,7 +27,7 @@ Ningún subdocumento tiene ponderación registrada. La tabla del T-21 en `00_Bas
 
 ## Cobertura de los informes preparatorios
 
-El Art. 45.º obliga a tres informes y tres presentaciones preparatorias. El `Informe 1`, versionado en `06_Informes/informes/`, cubre los subdocumentos 1 a 5 y el 13. Los subdocumentos 6 a 12 y el 14 se redactarán en los informes 2 y 3.
+El Art. 45.º obliga a tres informes y tres presentaciones preparatorias. El `Informe 1` cubre los subdocumentos 1 a 5 y el 13 (se arma desde los `.tex` de `latex_final/`). Los subdocumentos 6 a 12 y el 14 se redactarán en los informes 2 y 3.
 
 ## Artefactos de trabajo heredados
 
@@ -35,8 +35,6 @@ Los documentos de `80_Artefactos/` se conservan como fuentes de trabajo y no se 
 
 | Artefacto | Destino de consolidación | Uso actual |
 | :--- | :--- | :--- |
-| `seccion3_borrador.md` | Subdocumentos 3 y 4 | Borrador de descripción lógica y módulos; conciliar con el Informe 1 antes de distribuir en secciones oficiales. |
-| `seccion3_investigacion.md` | Subdocumentos 3, 4 y 13 | Investigación y referencias de apoyo; fuente auxiliar, no texto final íntegro. |
 | `seccion3_innovaciones.md` | Subdocumento 13 | Fichas candidatas INN-1 a INN-5 y trazabilidad; consolidar en las secciones 13.1–13.3 y Formulario T-19. |
 
 La consolidación queda pendiente porque el Informe 1 ya cubre estos capítulos y debe evitarse duplicar o reemplazar contenido sin cotejarlo. Los artefactos mantienen enlaces relativos a las rutas vigentes.
