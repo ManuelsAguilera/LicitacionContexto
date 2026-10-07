@@ -144,7 +144,7 @@ Disponibilidad de datos y accesos de Ancoa, volumetrías marcadas "a estimar" en
 
 ## 2b. Responsabilidades del CLIENTE (RC)
 
-Salen de las exclusiones y de las Bases (patrón de los ejemplos de `90_Referencia/Ejemplos-alcance/`: el hospital, AvePoint y Cashnet separan lo que hace cada parte).
+Salen de las exclusiones y de las Bases (patrón de los ejemplos reales de alcance revisados: el hospital, AvePoint y Cashnet separan lo que hace cada parte).
 
 | ID | Responsabilidad del CLIENTE | Fuente |
 | :-- | :-- | :-- |

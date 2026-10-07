@@ -2,7 +2,7 @@
 
 Documento de trabajo. No es entregable. Propuesta pendiente de aprobación; no modifica `entregables_alcance.md` hasta que se apruebe.
 
-Origen: revisión de `90_Referencia/Ejemplos-alcance/` (hospital HE-1, AvePoint, Cashnet, CIS). En esos documentos cada entregable se entiende solo con leer su nombre.
+Origen: revisión de cuatro ejemplos reales de documentos de alcance (hospital HE-1, AvePoint, Cashnet, CIS). En esos documentos cada entregable se entiende solo con leer su nombre.
 
 ## Regla de nombres
 
