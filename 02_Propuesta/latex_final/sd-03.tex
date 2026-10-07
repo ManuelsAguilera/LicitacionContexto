@@ -90,14 +90,257 @@
 % Introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios (T-12).
 
 \section{3.1 Resumen Ejecutivo de la Solución}
-% Todo el alcance del proyecto: implementación (Etapa 1 y Etapa 2), implantación (marchas blancas y pasos a producción) y operación (36 meses).
+
+Multitiendas Ancoa S.A. no necesita reemplazar un sistema. Necesita que nueve plataformas de seis proveedores, unidas por catorce interfaces punto a punto, sostengan cuatro promesas que hoy no puede cumplir ni acreditar: que el producto existe, que el precio cobrado es el exhibido, que el pedido llega en la fecha prometida y que las condiciones del crédito son las informadas. Y necesita que lo hagan respetando que la compañía es, al mismo tiempo, una tienda y un emisor de crédito fiscalizado (Multitiendas Ancoa S.A., 2026b, cap. 5 y cap. 10). Only Simple Solutions responde a ese diagnóstico, desarrollado en el Capítulo 2, con un proyecto de 56 meses que implementa la solución en dos etapas, la implanta mediante marchas blancas en convivencia con la operación vigente y la opera durante 36 meses (Multitiendas Ancoa S.A., 2026a, art. 15 y art. 17).
+
+El proyecto persigue cinco objetivos. El primero es reemplazar por etapas y con convivencia las tres plataformas que originan el problema, es decir, el sistema central de retail de 2009, la plataforma de originación y cobranza de crédito de 2011 y el punto de venta de 2014, y asumir sus responsabilidades en trece servicios. El segundo es conservar e integrar el sistema de gestión empresarial y facturación, el marketplace y el sistema de gestión de almacenes del centro de distribución principal, y evaluar el comercio electrónico y la fidelización antes de decidir si se mantienen. El tercero es implementar una capa de integración que mantenga coherentes las plataformas, con reglas explícitas de acuerdo sobre el estado de la información y sin depender de un único componente que concentre el riesgo de falla. El cuarto es separar el negocio comercial del financiero y auditar cada cruce de datos entre ambos, conforme a la Ley 19.496 de protección de los derechos de los consumidores, a la normativa de la Comisión para el Mercado Financiero y a la Ley 21.719 de protección de datos personales. El quinto es retirar la plataforma de crédito antes del fin de su soporte, anunciado para 2029.
+
+La solución se organiza en trece servicios, cada uno con autoridad sobre sus datos. Nueve pertenecen al negocio de retail: catálogo, precios y promociones; abastecimiento y reposición; inventario, reservas y disponibilidad; pedidos y cumplimiento omnicanal; registro y conciliación de ventas; atribución de ventas y comisiones; integración y gobierno de marketplace; posventa, garantías y devoluciones, y clientes y fidelización Retail. Tres pertenecen al emisor: originación y autorización de crédito; cartera, cobranza y repactaciones, y consentimiento y evidencia financiera. El último es de frontera: el servicio de autorización y auditoría de cruces Retail–Emisor, único camino por el que un negocio puede usar datos del otro. Bajo estos servicios opera una plataforma de integración que reemplaza las interfaces punto a punto. Incluye identidad y gestión de accesos, observabilidad y un catálogo de reglas que fija, para cada dato, qué servicio es su autoridad y cómo se reconcilian sus copias. El despliegue es híbrido: la carga principal corre en nube pública, con un sitio o región secundaria de recuperación ante desastres, y los componentes locales del centro de datos, del centro de distribución principal y de las 22 tiendas permiten seguir operando durante 24 horas sin enlace (Multitiendas Ancoa S.A., 2026a, art. 16 y art. 20; 2026c, RT-03.10).
+
+La implementación se divide en dos etapas con criterios de asignación explícitos. La Etapa 1, con desarrollo en los meses 1 a 12, entrega la plataforma completa (infraestructura híbrida, seguridad, observabilidad e integraciones críticas) y la funcionalidad de primera prioridad (Multitiendas Ancoa S.A., 2026a, art. 15). Esa prioridad se deriva del Caso y no solo del orden de preferencia del comité. Comprende lo que sostiene la exactitud del inventario y del precio, que el comité pidió primero; lo que exigen las dos objeciones registradas, que son definir la frontera de datos antes de cualquier vista unificada de cliente y migrar la cartera antes de 2029, y lo necesario para que la Etapa 1 sea el sistema de registro oficial desde el mes 16 (Multitiendas Ancoa S.A., 2026b, núm. 13.1). Por eso la Etapa 1 incluye los servicios de catálogo, precios y promociones, de inventario, reservas y disponibilidad, y de registro y conciliación de ventas. Incluye también los tres servicios del emisor, con la primera ola de la cartera, el servicio de autorización y auditoría de cruces, y un nuevo punto de venta capaz de operar sin conexión en las 22 tiendas. Adelantar el negocio financiero respecto de la preferencia del comité responde al plazo de 2029 y a la dependencia técnica entre sus servicios, y se fundamenta en la sección 3.2. La Etapa 2, con desarrollo en los meses 13 a 18, agrega sobre la misma plataforma y sin rehacer su arquitectura los servicios de abastecimiento, pedidos, atribución de comisiones, marketplace, posventa y fidelización, junto con la segunda ola de la cartera.
+
+Ningún componente entra en producción sin haber convivido antes con la operación vigente. Cada etapa tiene una marcha blanca, en los meses 13 a 15 y 19 a 20, con plan de reversión activo, medición diaria de indicadores y conciliación con los sistemas actuales. La marcha blanca solo se cierra cuando se cumplen las condiciones copulativas del artículo 17.3 (Multitiendas Ancoa S.A., 2026a, art. 17). El despliegue avanza por tienda, por proceso y por categoría. El punto de venta parte con un piloto en tres tiendas y se extiende a las demás solo después de una compuerta que incluye un corte de enlace de 24 horas y un retorno probado al sistema anterior. El nuevo cálculo de disponibilidad se publica primero en un subconjunto de categorías, midiendo la tasa de cancelación antes y después. La cartera de 620.000 clientes con saldo migra por tramos, con conciliación diaria de saldos y un procedimiento de retorno probado (Multitiendas Ancoa S.A., 2026b, núm. 13.3). Con el inicio previsto en enero de 2027, los pasos a producción de los meses 16 y 21, en abril y septiembre de 2028, quedan fuera de las ventanas de congelamiento que fija el Caso.
+
+La operación se extiende por 36 meses, del mes 21 al 56, bajo los niveles de servicio del artículo 78 (Multitiendas Ancoa S.A., 2026a, art. 17). En ese período se retira la plataforma de crédito de 2011, con fecha objetivo en diciembre de 2028, antes del fin de su soporte, y el sistema central de retail de 2009, una vez migradas sus funciones a los servicios de la Etapa 2. La recuperación ante desastres se prueba dos veces al año mediante conmutación real, con un tiempo de recuperación de hasta cuatro horas y una pérdida máxima de datos de quince minutos (Multitiendas Ancoa S.A., 2026a, art. 20; 2026c, RT-07.07). El servicio incluye además la mesa de ayuda, la mantención correctiva, preventiva y evolutiva, y la gestión de la infraestructura.
+
+El alcance declara también lo que no se hace. No se reemplaza el sistema de gestión empresarial, que sigue siendo el único emisor de documentos tributarios, ni el marketplace ni el sistema de gestión de almacenes del centro de distribución principal. El centro de distribución de Concepción se mantiene como está, y se entrega la evaluación y el costeo de su incorporación a un sistema de gestión de almacenes. Tampoco se abren tarjetas ni se amplían cupos sin conexión. La compañía provee, instala y contrata la infraestructura física (obras, equipos y enlaces), que el proponente especifica, costea, coordina y certifica (Multitiendas Ancoa S.A., 2026b, cap. 11). La sección 3.2 desarrolla la descomposición del alcance, el reparto entre etapas, las exclusiones, los supuestos, las restricciones y los criterios de aceptación. La sección 3.3 presenta el modelo conceptual de la solución y la sección 3.4 la explica desde la operación del negocio. El Capítulo 4 describe la arquitectura lógica y física, y el Formulario T-12 responde a cada requisito técnico.
 
 \section{3.2 Alcance}
-% Alcance expresado con claridad, descomponiendo el problema en componentes manejables. Debe desarrollar:
-% - alcance de la Etapa 1 y de la Etapa 2, con separación explícita y criterios de asignación entre ambas;
-% - exclusiones explícitas, supuestos y restricciones del alcance;
-% - catálogo de requerimientos funcionales y no funcionales, priorizado y trazable (resumen y análisis aquí; trazabilidad completa en el Formulario T-12);
-% - criterios de aceptación del alcance comprometido.
+
+Esta sección delimita lo que Only Simple Solutions se compromete a entregar. Primero descompone el problema descrito en el Capítulo 2 en componentes manejables; luego reparte esos componentes entre las dos etapas del cronograma con criterios explícitos; declara lo que queda fuera del alcance, los supuestos sobre los que descansa y las restricciones que no pueden cambiarse; resume el catálogo de requerimientos y fija cómo se aceptará lo entregado. El modelo conceptual de la solución se presenta en la sección 3.3 y su funcionamiento desde la operación del negocio, en la sección 3.4.
+
+\subsection{3.2.1 Descomposición del alcance}
+
+El alcance no se define a partir de los sistemas que existen hoy, sino de lo que la compañía debe poder cumplir y demostrar. Por eso la descomposición parte de las cuatro promesas que Ancoa hace a sus clientes cada día: que el producto existe y que la disponibilidad publicada considera la calidad real del registro; que el precio exhibido, el publicado y el cobrado coinciden y pueden acreditarse; que el pedido tiene un estado único y llega en la fecha comprometida, y que las condiciones del crédito informadas son las que el cliente acepta y pueden demostrarse ante la autoridad (Multitiendas Ancoa S.A., 2026b, cap. 9).
+
+Cada promesa se sostiene en responsabilidades de negocio. Las del negocio de retail van del catálogo y los precios hasta la posventa y la fidelización; las del emisor son la originación, la cartera y las repactaciones, y hay tres responsabilidades transversales: la separación y el gobierno de los datos entre ambos negocios, la evidencia probatoria y la integración técnica. Esas responsabilidades se asignan a trece servicios, cada uno con autoridad sobre un conjunto definido de datos: nueve del negocio de retail, tres del emisor y uno de frontera. La Tabla 3.1 muestra cómo cada promesa queda cubierta por servicios concretos y con qué evidencia se verifica.
+
+Tabla 3.1: Promesas, servicios que las sostienen y evidencia que las verifica.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3600}}@{}}
+\toprule\noalign{}
+Promesa & Servicios & Evidencia que la verifica \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Existencia & Abastecimiento y reposición; inventario, reservas y disponibilidad; pedidos y cumplimiento omnicanal; integración y gobierno de marketplace & Exactitud por categoría y punto; disponible comprometible; cancelaciones por falta de existencia \\
+Precio & Catálogo, precios y promociones; registro y conciliación de ventas; atribución de ventas y comisiones & Historial del precio publicado por canal; estado de cada etiqueta; venta conciliada \\
+Entrega & Pedidos y cumplimiento omnicanal; inventario, reservas y disponibilidad; abastecimiento y reposición; marketplace; posventa, garantías y devoluciones & Fecha prometida frente a la real; estado único del pedido \\
+Crédito & Originación y autorización de crédito; cartera, cobranza y repactaciones; consentimiento y evidencia financiera; autorización y auditoría de cruces Retail–Emisor & Versión precontractual entregada; consentimiento recuperable; registro de cada cruce entre negocios \\
+\end{longtable}
+
+Fuente: elaboración propia a partir de las Bases Técnicas del caso (Multitiendas Ancoa S.A., 2026b, cap. 7 y cap. 9).
+
+
+La tabla muestra que ninguna promesa depende de un solo servicio y que ningún servicio es dueño de datos que pertenecen a otro. Esa es la condición para que un dato tenga una sola fuente de verdad: cada tipo de dato tiene un servicio autoridad, como el de inventario, reservas y disponibilidad para el disponible comprometible o el de pedidos y cumplimiento omnicanal para el ciclo del pedido, y sus copias en otros sistemas se reconcilian con reglas escritas en un catálogo de reglas de acuerdo. Así se responde a la decisión que el Caso deja abierta sobre la fuente única de verdad de la existencia y a la exigencia de una única fuente de verdad para los datos compartidos por ambas etapas (Multitiendas Ancoa S.A., 2026b, núm. 16.1; Multitiendas Ancoa S.A., 2026a, art. 17.2). Si una autoridad deja de estar disponible, los demás servicios siguen operando con una confianza degradada que se declara, y al volver se reconcilian sin pérdida de transacciones.
+% Figura de descomposición del alcance (D1 en insumos_3.2.md, sección 2): vista general y tres partes. Insertar aquí con su número, título, fuente y párrafo de interpretación.
+
+Debajo de los servicios opera una plataforma común que no es un servicio de negocio: la plataforma de integración, que reemplaza las catorce interfaces punto a punto; el catálogo de reglas de acuerdo por tipo de dato; la identidad y gestión de accesos, y la observabilidad. Sobre esta base se decide el destino de cada una de las nueve plataformas actuales según la responsabilidad que cumple (Multitiendas Ancoa S.A., 2026b, cap. 5). Se conservan e integran el sistema de gestión empresarial y facturación, que sigue siendo el único emisor de documentos tributarios, el marketplace y el sistema de gestión de almacenes del centro de distribución principal. Se reemplazan por etapas el sistema central de retail de 2009, que el Caso describe como el corazón del problema de inventario; la plataforma de originación y cobranza de 2011, cuyo reemplazo decidió el cliente, y el punto de venta de 2014, que tiene tres versiones distintas en las 22 tiendas y no acredita operación sin conexión. El comercio electrónico y la fidelización se evalúan con pruebas de umbral definido y se integran. Las planillas y listas impresas, que el Caso pide que dejen de ser un sistema de registro, se cubren con servicios: los precios de campaña y las etiquetas pasan al servicio de catálogo, precios y promociones; las devoluciones y los reclamos, al de posventa; el control de acceso de los repositores, a la identidad y gestión de accesos, y las existencias del centro de distribución de Concepción, al servicio de inventario. El motor de precios y promociones, que hoy no existe como sistema, nace como una función del servicio de catálogo, precios y promociones.
+% Figura del destino de las nueve plataformas (D5 en insumos_3.2.md, sección 2). Insertar aquí con su número, título, fuente y párrafo de interpretación.
+
+
+\subsection{3.2.2 Alcance de la Etapa 1 y de la Etapa 2}
+
+El cronograma obligatorio fija dos etapas de implementación, pero no dice qué va en cada una (Multitiendas Ancoa S.A., 2026a, art. 15 y art. 17). Esta subsección explica el ciclo de vida que se adopta, los criterios con que se repartió el alcance y el resultado.
+
+El proyecto sigue un ciclo de vida híbrido. El marco contractual es predictivo, como corresponde a un contrato de suma alzada: el alcance se fija en una línea base con dos etapas, hitos y un catálogo de trece servicios, y todo cambio se tramita mediante una solicitud formal con análisis de impacto, aprobada por el Comité Ejecutivo (Multitiendas Ancoa S.A., 2026a, art. 72). Dentro de cada etapa el desarrollo es adaptativo, en iteraciones que permiten validar con los usuarios antes de cada marcha blanca (Project Management Institute [PMI], 2017).
+
+El reparto aplica cinco criterios en este orden: lo que exigen las Bases, las dependencias técnicas entre servicios, el riesgo y los hitos externos, la capacidad de absorción del cliente y, al final, la preferencia del comité. Los cuatro últimos son los que el Caso pide usar para justificar el reparto (Multitiendas Ancoa S.A., 2026b, núm. 17.3), y la preferencia del comité queda al final porque el propio Caso la presenta como una preferencia y no como una definición de alcance (Multitiendas Ancoa S.A., 2026b, núm. 13.1).
+
+Las Bases Administrativas indican que la Etapa 1 contiene la plataforma completa y el alcance funcional de primera prioridad, y que la Etapa 2 agrega un segundo alcance sobre esa plataforma sin rehacer su arquitectura (Multitiendas Ancoa S.A., 2026a, art. 15). La primera prioridad no está definida en un solo lugar del Caso; se deriva de él con cuatro criterios. Un componente es de primera prioridad si sostiene una de las dos prioridades que el comité nombró, la exactitud del inventario con la disponibilidad publicada y el precio con su trazabilidad; si es condición de alguna de las dos objeciones registradas, que exigen definir la frontera de datos entre los negocios antes de cualquier vista unificada de cliente y migrar la cartera de crédito antes de 2029; si es necesario para que la Etapa 1 sea el sistema de registro oficial desde el mes 16, lo que incluye la venta sin enlace y la continuidad del sistema de gestión empresarial como único emisor tributario, o si es dependencia técnica de algún componente que cumple los criterios anteriores (Multitiendas Ancoa S.A., 2026b, núm. 13.1 y cap. 10). La Tabla 3.2 aplica esos criterios a cada servicio.
+
+Tabla 3.2: Criterio de primera prioridad y etapa de cada componente.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1200}}@{}}
+\toprule\noalign{}
+Componente & Criterio que cumple & Etapa \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Plataforma común e infraestructura híbrida & Sistema de registro oficial desde el mes 16 & 1 \\
+Catálogo, precios y promociones & Prioridad del comité (precio); dependencia de otros servicios & 1 \\
+Inventario, reservas y disponibilidad & Prioridad del comité (existencia) & 1 \\
+Registro y conciliación de ventas & Sistema de registro oficial (venta con documento y sin conexión) & 1 \\
+Punto de venta con operación sin conexión & Sistema de registro oficial (la tienda vende sin enlace) & 1 \\
+Autorización y auditoría de cruces Retail–Emisor & Objeción registrada (frontera antes de la vista unificada) & 1 \\
+Consentimiento y evidencia financiera & Dependencia de la originación y de la cartera & 1 \\
+Originación y autorización de crédito & Objeción registrada (2029); sistema de registro oficial & 1 \\
+Cartera, cobranza y repactaciones & Objeción registrada (2029), por olas & 1 y 2 \\
+Abastecimiento y reposición & Ninguno; requiere el inventario estable & 2 \\
+Pedidos y cumplimiento omnicanal & Ninguno; requiere el inventario y la venta & 2 \\
+Atribución de ventas y comisiones; integración y gobierno de marketplace; posventa, garantías y devoluciones & Ninguno; el comité ubica el marketplace al final & 2 \\
+Clientes y fidelización Retail & Ninguno; la frontera se cumple en la Etapa 1 & 2 \\
+\end{longtable}
+
+Fuente: elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15) y del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.1).
+
+
+De la tabla se concluye que la Etapa 1 reúne todo lo que las demás piezas necesitan para funcionar y lo que hace falta para que el sistema sea oficial en el mes 16, mientras la Etapa 2 solo agrega servicios que dependen de la Etapa 1 sin rehacerla. Los servicios de abastecimiento y de pedidos también sostienen las promesas de existencia y de entrega, pero quedan en la segunda etapa porque el comité nombró la exactitud del inventario y la disponibilidad publicada, y no la reposición ni el estado del pedido, y porque ambos requieren que el servicio de inventario esté estable.
+% Figura de dependencias entre servicios y su etapa (D2 en insumos_3.2.md, sección 2). Insertar aquí con su número, título, fuente y párrafo de interpretación.
+
+El reparto se aparta del orden del comité en un solo punto: el negocio financiero se adelanta a la Etapa 1, aunque el comité lo ubicó al final. La razón es triple. El fin de soporte de la plataforma de crédito y el último hito del plan de remediación instruido por la autoridad vencen en 2029 (Multitiendas Ancoa S.A., 2026b, núm. 13.2); el gerente del negocio financiero dejó registrado que migrar una cartera viva de 620.000 clientes con saldo no se hace en un semestre y que, si queda en la Etapa 2, no se llega a tiempo, y el servicio de consentimiento y evidencia financiera es una dependencia técnica de la originación y de la cartera (Multitiendas Ancoa S.A., 2026b, núm. 13.1). La objeción de la contralora se atiende construyendo el servicio de autorización y auditoría de cruces antes que cualquier servicio que combine datos de ambos negocios.
+
+La Etapa 1 incluye además las integraciones críticas que exigen las Bases: aquellas cuya falla rompe una promesa o la separación entre negocios. Son las del punto de venta con los servicios de precio y de venta, la del sistema de gestión de almacenes y la del comercio electrónico con el servicio de inventario, la de la plataforma financiera con los servicios del emisor y la del sistema de gestión empresarial y facturación.
+
+Ningún componente se despliega como un único evento sobre las 22 tiendas, los dos centros de distribución y los cuatro canales (Multitiendas Ancoa S.A., 2026b, núm. 13.3). El punto de venta parte con un piloto en tres tiendas del entorno de Santiago, de volumen medio o bajo y que en conjunto cubren las tres versiones actuales, y excluye a la tienda insignia, que concentra el 17 \% de la venta presencial y tiene un mesón del negocio financiero en cada piso (Multitiendas Ancoa S.A., 2026b, cap. 2). Pasa a las otras diecinueve tiendas, en orden creciente de riesgo y antes del mes 16, solo después de una compuerta que exige cuatro semanas de operación real, los umbrales de desempeño del Caso, un corte de enlace provocado de 24 horas, la prueba del crédito sin conexión y un retorno probado al sistema anterior. La cartera migra por complejidad: en la Etapa 1, los clientes con saldo al día y sin repactación ni cobranza en curso, por tramos crecientes; en la Etapa 2, los clientes con repactaciones, cobranzas o juicios en curso. Cada tramo exige convivencia real, conciliación diaria de saldos, retorno probado y comunicación a los clientes, sin una fecha de corte única. El nuevo cálculo de disponibilidad se publica primero en un subconjunto de categorías del comercio electrónico, midiendo la tasa de cancelación antes y después. El sistema central de 2009 entrega en la Etapa 1 el maestro de artículos, los precios y el inventario, y en la Etapa 2 las órdenes, la recepción y la reposición; su inventario contable queda en el sistema de gestión empresarial.
+
+Con el inicio previsto en enero de 2027, los pasos a producción de los meses 16 y 21, en abril y septiembre de 2028, quedan fuera de las cinco ventanas de congelamiento que fija el Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.2). Las instalaciones del punto de venta se programan en ventanas libres: el piloto en los meses 6 y 7 y el resto de las tiendas entre los meses 8 y 10. Durante la operación, que va del mes 21 al 56, se retira la plataforma de crédito de 2011, con fecha objetivo en diciembre de 2028, y el sistema central de 2009, una vez migradas sus funciones a los servicios de la Etapa 2.
+% Figura del horizonte de 56 meses con etapas, marchas blancas, olas y ventanas de congelamiento (D3 en insumos_3.2.md, sección 2). Insertar aquí con su número, título, fuente y párrafo de interpretación.
+
+
+\subsection{3.2.3 Exclusiones, supuestos y restricciones}
+
+Delimitar el alcance exige decir con la misma claridad qué no se hará, qué se da por supuesto y qué no puede cambiarse. El Caso advierte que lo excluido no puede ignorarse en el diseño, porque la solución debe convivir con ello (Multitiendas Ancoa S.A., 2026b, cap. 11); por eso cada exclusión de la Tabla 3.3 indica también lo que sí se hace.
+
+Tabla 3.3: Exclusiones del alcance y lo que sí se hace en cada caso.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4400}}@{}}
+\toprule\noalign{}
+ID & No se hace & Sí se hace \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+EXC-01 & Reemplazar el sistema de gestión empresarial ni la emisión tributaria & Integrarlo como único emisor tributario \\
+EXC-02 & Instalar etiquetas electrónicas & Evaluar, especificar y costear la alternativa \\
+EXC-03 & Adquirir dispositivos para el personal de venta & Especificar cuántos y con qué características \\
+EXC-04 & Desarrollar la plataforma de vendedores ni operar su logística & Integrarla, medirla y resolver la devolución en tienda \\
+EXC-05 & Gestionar remuneraciones & Calcular la base de comisión entre canales \\
+EXC-06 & Operar la cobranza judicial & Mantener el expediente trazable de cobranza y repactación \\
+EXC-07 & Sustituir a los transportistas de última milla & Integrarlos y trazar el pedido hasta la entrega \\
+EXC-08 & Construir obras, canalizaciones y cableado & Especificarlas y costearlas \\
+EXC-09 & Resolver la relación con los centros comerciales & Vender sin enlace durante 24 horas \\
+EXC-10 & Adquirir hardware de tiendas y centros de distribución & Especificar qué comprar, cuánto y con qué características \\
+EXC-11 & Atender aplicaciones del cliente no provistas & Derivarlas al cliente desde la mesa de ayuda \\
+EXC-12 & Reemplazar el marketplace ni el sistema de almacenes principal & Integrarlos y gobernarlos \\
+EXC-13 & Incorporar Concepción a un sistema de almacenes & Evaluar y costear; registrar sus existencias con confianza declarada \\
+EXC-15 & Reemplazar el comercio electrónico ni la fidelización & Evaluarlos con pruebas de umbral e integrarlos \\
+EXC-16 & Abrir tarjetas o ampliar cupos sin conexión & Autorizar compras con cupo vigente dentro de topes del emisor \\
+EXC-17 & Decidir el surtido ni la política de precios & Rediseñar los procesos operativos que los servicios requieren \\
+EXC-18 & Migrar datos fuera de la lista exigida & Migrar la lista exigida y dejar un repositorio de consulta \\
+EXC-19 & Proveer o instalar equipos, ejecutar obras o contratar enlaces & Especificar, costear, coordinar, certificar y configurar \\
+\end{longtable}
+
+Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 10, cap. 11 y núm. 16.1) y de las Bases Técnicas Transversales (Multitiendas Ancoa S.A., 2026c, cap. 21).
+
+
+Las diez primeras exclusiones las declara el cliente; la undécima se deduce de las Bases Técnicas Transversales, y las demás son decisiones fundadas del proponente. Ninguna libera a la solución de una dependencia: el sistema de gestión empresarial, el marketplace, los transportistas y los centros comerciales siguen siendo parte del diseño, y lo que el cliente adquiere o construye se especifica y se certifica antes de ponerlo en servicio. La numeración conserva el identificador EXC-14, retirado al reconocer que la novena plataforma corresponde a las planillas, que se cubren con servicios.
+
+El alcance descansa en cuatro supuestos del proponente y en dos supuestos del Capítulo 2, que la Tabla 3.4 resume con su consecuencia si no se cumplen.
+
+Tabla 3.4: Supuestos del alcance y su consecuencia si no se cumplen.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}@{}}
+\toprule\noalign{}
+ID & Supuesto & Si no se cumple \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+SP-01 & El sistema central de 2009 no sostiene los objetivos y se reemplaza por etapas & Si el cliente acredita lo contrario, el cambio se tramita por control de cambios \\
+SP-02 & El centro de Concepción se mantiene como está durante el contrato & Su incorporación se tramita por control de cambios a partir de la evaluación \\
+SP-03 & La compra a cuotas con cupo vigente no exige una nueva entrega de información precontractual & La compra con tarjeta propia sin conexión se limita o se declara no disponible \\
+SP-04 & El cliente provee, instala y contrata los equipos, obras y enlaces que el proponente especifica & Si el mandante exige que lo haga el proponente, se tramita por control de cambios \\
+SUP-26 & El proyecto comienza en enero de 2027 & Se recalculan los meses y las ventanas de congelamiento \\
+SUP-27 & Once tiendas se ubican en el entorno de Santiago & Se rehace la selección de las tiendas piloto \\
+\end{longtable}
+
+Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 11 y núm. 16.1) y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 14 y art. 72).
+
+
+De estos supuestos, el que más condiciona la propuesta es el cuarto. El Caso declara que las obras y el hardware los ejecuta y adquiere el cliente, y las Bases Administrativas admiten que el hardware de terreno lo adquiera el cliente con especificación del proponente; se interpreta que esa regla se extiende a los equipos del recinto técnico y de las tiendas (Multitiendas Ancoa S.A., 2026b, cap. 11; Multitiendas Ancoa S.A., 2026a, art. 14.2). El proponente responde por el resultado: especifica qué, dónde y cuánto, coordina la ejecución, certifica la conformidad de cada sitio y configura el software y el firmware. El segundo supuesto se apoya en que el propio Caso admite mantener Concepción como está y exige evaluar y costear su incorporación sin darla por supuesta (Multitiendas Ancoa S.A., 2026b, cap. 10 y núm. 16.1); por esa razón, la referencia del Caso de contar con sistema de almacenes en ambos centros de distribución queda condicionada al resultado de esa evaluación.
+
+El cliente asume responsabilidades que el alcance necesita: entregar el informe interno de 2024 sobre el centro de datos, adquirir e instalar los equipos especificados, ejecutar las obras y contratar los enlaces, mantener la relación con los centros comerciales y los transportistas, aprobar los cambios en el Comité Ejecutivo, validar y firmar las actas mediante su Contraparte Técnica, aportar su equipo de tecnología para coordinar y validar, operar Concepción y entregar sus existencias, y fijar los topes del crédito sin conexión.
+
+Las restricciones no son negociables. Las quince del Caso se agrupan en cinco familias: la separación entre los negocios y la evidencia del crédito; el precio y la continuidad de la venta sin enlace; los sistemas que se conservan y la garantía legal; la migración de la cartera sin pérdida ni divergencia, y las condiciones de calendario, personas y territorio, que incluyen las ventanas de congelamiento, el evento anual de fecha incierta, la falta de dispositivo por vendedor, los repositores externos, la rotación del personal, Concepción y el mapa de integraciones (Multitiendas Ancoa S.A., 2026b, cap. 10). A ellas se suman el despliegue híbrido, el cronograma de 56 meses y el control de cambios de las Bases Administrativas, el vencimiento de 2029 y los requisitos obligatorios de las Bases Técnicas Transversales, que se responden uno a uno en el Formulario T-12.
+
+El crédito sin conexión merece un tratamiento explícito, porque el Caso pide resolverlo y fundamentarlo, y no omitirlo (Multitiendas Ancoa S.A., 2026b, cap. 15). La apertura de una tarjeta o la ampliación de un cupo no se realiza sin conexión: la información precontractual debe entregarse y acreditarse antes de la aceptación sin que pueda posponerse, la apertura exige firma electrónica, y la evaluación y la prevención de lavado de activos dependen de datos del emisor que no residen en la tienda (Multitiendas Ancoa S.A., 2026b, cap. 10, cap. 12 y cap. 15). La compra con un cupo ya aprobado, en cambio, se autoriza contra un registro local que contiene solo un identificador opaco de la tarjeta, un monto máximo, la antigüedad del dato y su estado de bloqueo, sin saldo, mora ni comportamiento de pago, de modo que la frontera entre negocios no se debilita. Los topes los fija el emisor, que es quien asume el riesgo de crédito, y la función se habilita solo si supera una prueba en las tiendas piloto; si no la supera, se declara no disponible. Junto con la apertura y la ampliación de cupo, la repactación y la consulta de saldo también quedan declaradas como funciones no disponibles sin conexión, con su procedimiento alternativo, conforme a lo que exigen las Bases Técnicas Transversales (Multitiendas Ancoa S.A., 2026c, RT-03.13).
+% Figura de la frontera Retail–Emisor y los cruces autorizados (D4 en insumos_3.2.md, sección 2). Insertar aquí con su número, título, fuente y párrafo de interpretación.
+
+
+\subsection{3.2.4 Catálogo de requerimientos}
+
+El alcance se traduce en un catálogo de requerimientos atómicos, verificables uno a uno. El catálogo vigente contiene 226 requerimientos funcionales, 76 no funcionales y 9 obligaciones del proponente; su trazabilidad completa con los requisitos de las Bases Técnicas Transversales se entrega en el Formulario T-12.
+
+Cada requerimiento se asigna a un servicio y hereda de él su etapa. La prioridad usa el mismo criterio que el reparto entre etapas, de modo que alcance y catálogo no se contradicen: es obligatorio de primera prioridad todo requerimiento de un servicio de la Etapa 1, todo requerimiento no funcional, porque se construye con la plataforma y se verifica en ambas marchas blancas, y todo requerimiento que sostiene una restricción no negociable, como la atención de la garantía legal; los requerimientos de los servicios de la Etapa 2 son obligatorios de segunda prioridad. Las mejoras sobre lo exigido y lo excluido se identifican aparte. La mayor parte de los requerimientos funcionales corresponde a los servicios de inventario y de pedidos, que concentran la promesa de existencia y la de entrega.
+
+El Caso pide resolver con un criterio explícito y consistente los enunciados que mezclan lo funcional con lo no funcional (Multitiendas Ancoa S.A., 2026b, núm. 17.2). El criterio adoptado es que un enunciado es funcional si cambia lo que el sistema hace o registra, y no funcional si fija cuán bien, cuán rápido o por cuánto tiempo; si tiene ambos componentes, se divide en dos requerimientos. La Tabla 3.5 lo aplica a los seis casos que el Caso plantea.
+
+Tabla 3.5: Criterio aplicado a los casos limítrofes del Caso.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}@{}}
+\toprule\noalign{}
+Enunciado del Caso & Requerimiento funcional & Requerimiento no funcional \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Evaluación crediticia en ocho segundos & Evaluar y entregar la información antes de la aceptación & Latencia de 8 s o menos \\
+Consentimiento acreditable a diez años & Qué se captura en la aceptación: versión, instante y contenido & Retención por el plazo del crédito más seis años \\
+Separación de datos entre negocios & Qué consulta puede formular cada ámbito y con qué autorización & Segregación técnica auditable \\
+Precio cobrado igual al exhibido & Propagación y registro del precio publicado & Propagación en 5 min o menos; historial de cinco años \\
+Grado de confianza de la existencia & Calcular y mostrar el margen de confianza al vendedor & Consulta en 2 s o menos \\
+Soportar el evento anual & Quién suspende la publicación de una categoría y con qué criterio & Capacidad para el pico de demanda \\
+\end{longtable}
+
+Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, núm. 17.2 y cap. 15).
+
+
+Aplicado de esta forma, el criterio deja cada enunciado dividido en una parte que se verifica con una prueba funcional y otra que se verifica con una medición, y ambas quedan trazadas al mismo servicio en el Formulario T-12.
+
+\subsection{3.2.5 Criterios de aceptación}
+
+Un alcance sin criterio de aceptación no se puede recibir ni rechazar. Lo comprometido se acepta en tres niveles: cada entregable, cada marcha blanca y los resultados de negocio con que el cliente juzgará el proyecto.
+
+En el primer nivel, cada entregable tiene un criterio observable y con umbral. Los servicios se aceptan contra los umbrales que fija el Caso: consulta de disponibilidad en 400 milisegundos o menos, confirmación de un pedido durante el evento anual en tres segundos o menos, venta completa en caja en 25 segundos o menos, evaluación crediticia en ocho segundos o menos, propagación de un cambio de precio en cinco minutos o menos y consulta de existencia desde la sala en dos segundos o menos (Multitiendas Ancoa S.A., 2026b, cap. 15). La disponibilidad publicada se actualiza en 30 segundos o menos tras una venta en cualquier canal, y la tienda sincroniza en 30 minutos o menos al recuperar el enlace, sin perder ninguna venta ni documento (Multitiendas Ancoa S.A., 2026b, cap. 15). La infraestructura que provee el cliente se acepta con un acta de recepción y un certificado de conformidad por sitio. La aceptación de cada entregable la firma la Contraparte Técnica; el equipo del proponente controla la calidad antes de presentarlo.
+
+En el segundo nivel, cada marcha blanca se cierra solo cuando se cumplen a la vez las condiciones de las Bases Administrativas: no hay incidentes críticos ni altos abiertos, se alcanzó el volumen real comprometido durante las cuatro últimas semanas, los indicadores de disponibilidad y respuesta se sostuvieron, la conciliación con el sistema vigente no tiene diferencias sin explicar, el personal está capacitado y certificado y la Contraparte Técnica firmó el acta; si no se cumplen, la marcha blanca se extiende a costo del adjudicatario sin desplazar las fechas siguientes (Multitiendas Ancoa S.A., 2026a, art. 17.3).
+
+En el tercer nivel, el Caso enumera 28 resultados de negocio con los que juzgará si el proyecto fue exitoso y pide comprometerse con ellos, proponer la meta cuando no la fije e indicar cuándo y cómo se medirá cada uno (Multitiendas Ancoa S.A., 2026b, cap. 18). La Tabla 3.6 los agrupa por promesa con su meta, el servicio responsable y el momento en que se alcanzan.
+
+Tabla 3.6: Resultados de negocio del Caso agrupados por promesa.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1400}}@{}}
+\toprule\noalign{}
+Promesa (resultados del Caso) & Meta & Servicios & Momento \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Existencia (1, 2, 3, 4, 5, 25, 27) & Disponible calculado por categoría y punto; cancelaciones bajo 0,3 \% en el año y ninguna en el evento; diferencia de conteo bajo 2 \%; merma bajo 1 \% y separada por causa & Inventario, reservas y disponibilidad; posventa; plataforma & Desde el mes 16; completo en el mes 21 \\
+Precio (6, 7, 8, 9) & Propagación a cajas y canal digital en 5 min o menos; estado de cada etiqueta; precio publicado acreditable; verificación por muestreo propio & Catálogo, precios y promociones; registro y conciliación de ventas & Desde el mes 16 \\
+Entrega (10, 11, 12, 13, 14, 26) & Estado único en tiempo real; despacho por costo total; reconocimiento a la tienda; cumplimiento sobre 97 \% & Pedidos; atribución; marketplace & Desde el mes 21 \\
+Posventa (15) & Garantía legal resuelta en el mesón, sin derivar & Posventa, garantías y devoluciones & Desde el mes 21 \\
+Crédito (16, 17, 18, 19, 20, 28) & Evaluación en 8 s o menos; información precontractual trazable por operación; ninguna repactación sin evidencia; evidencia por el plazo del crédito más seis años & Originación; consentimiento y evidencia; cartera & Desde el mes 16 \\
+Frontera y cumplimiento (21, 22, 23, 24) & Separación implementada y documentada; todo cruce registrado; hitos de remediación antes de 2029; cartera migrada sin divergencia & Autorización y auditoría de cruces; servicios del emisor & Mes 16 y operación \\
+\end{longtable}
+
+Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 7, cap. 15 y cap. 18).
+
+
+La tabla muestra que los resultados de precio, crédito y frontera se alcanzan con la Etapa 1, mientras los de entrega y posventa llegan con la Etapa 2, lo que es coherente con el reparto de la subsección 3.2.2. Tres resultados resumen el caso mejor que cualquier indicador: que la clienta que espera un pedido sepa su estado y sea avisada antes de que se le cobre una unidad inexistente; que la jefa de tienda pueda demostrar qué parte de la diferencia de su tienda es pérdida física y qué parte es error de registro, y que el vendedor abra una tarjeta más rápido mientras el cliente recibe la información completa (Multitiendas Ancoa S.A., 2026b, cap. 18). Los tres dependen de que el proceso impida omitir un paso, y no de la voluntad de quien lo ejecuta; esa es la condición con que se diseñaron los servicios de inventario, de pedidos, de originación y de consentimiento. El momento exacto de cada medición se programa en el plan de trabajo del Capítulo 7.
+
 
 \section{3.3 Esquema de solución}
 % Uno o varios esquemas con el modelo conceptual de la solución. Cada diagrama se explica en el texto; si es grande, por partes.
@@ -110,8 +353,18 @@
 \section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}
 
+Multitiendas Ancoa S.A. (2026a). \textit{Bases administrativas para la preparación de la propuesta} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+Multitiendas Ancoa S.A. (2026b). \textit{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+Multitiendas Ancoa S.A. (2026c). \textit{Bases técnicas transversales} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+Project Management Institute. (2017). \textit{A guide to the project management body of knowledge (PMBOK guide)} (6.ª ed.). Project Management Institute.
+
 \section*{Declaración de uso de IA}
 \addcontentsline{toc}{section}{Declaración de uso de IA}
+
+Las secciones 3.1 y 3.2 se redactaron con asistencia de un modelo de lenguaje (Claude, de Anthropic) a partir de las decisiones de alcance tomadas por el equipo de Only Simple Solutions y de sus documentos de trabajo. El equipo definió los objetivos, las exclusiones, los supuestos y el reparto entre etapas. El modelo propuso la redacción y contrastó las cifras con las Bases. La revisión humana del texto se registra en el Formulario A-6.
 
 \ossFinalPage
 
