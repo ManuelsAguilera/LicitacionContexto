@@ -238,7 +238,7 @@ Para dimensionar cuantitativamente la brecha de cada promesa sobre esta red oper
 |  | Pedidos cancelados en el evento de junio de 2026 | 2,7 % | \= 0  | Sin tolerancia |
 | **2\. El precio es el exhibido** | Productos con precio exhibido distinto del cobrado (muestra de 120\) | 11 % | \> 3% | 3.7 veces |
 | **3\. La entrega llega en la fecha** | Pedidos entregados en la fecha ofrecida | 81 % | \> 97 % | 6,3 veces  |
-| **4.Las condiciones del crédito son las informadas** | Tiempo de evaluación crediticia en el punto de venta | 40 s a 3 min | \< 10 s | 4 a 18 veces |
+| **4.Las condiciones del crédito son las informadas** | Tiempo de evaluación crediticia en el punto de venta | 40 s a 3 min | ≤ 8 s | 5 a 22,5 veces |
 |  | Repactaciones sin evidencia recuperable del consentimiento | 1.240 | 0 | Sin tolerancia |
 |  | Conservación de las grabaciones de originación y repactación | 90 días | Plazo del crédito \+ 6 años | 24,3 veces o más |
 
