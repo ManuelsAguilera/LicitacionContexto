@@ -50,6 +50,7 @@ Qué se escribe y cómo se estructura el texto de cada subdocumento T-7. **No** 
 | RR-21 | El subdocumento termina con dos secciones sin numerar, en este orden: Referencias y Declaración de uso de IA. | C10 §2.5, §6, §7.2 | Auto |
 | RR-22 | El texto no contiene marcadores ni notas de borrador o del asistente (`TODO`, `[VERIFICAR]`, `[INSERTAR…]`, «Anexo ??», «borrador», «pendiente de validar») ni lenguaje de contexto académico (docente, estudiantes, «propuesta académica»). Su detección en el Informe 2 o la Propuesta Final deja el subdocumento como no presentado. | C10 §7.1 d | Auto (ERROR marcadores; AVISO lenguaje académico) |
 | RR-23 | Ningún capítulo se entrega generado íntegramente por IA sin elaboración y revisión humana; el uso se declara en el A-6 y en la Declaración de uso de IA. No se declara una revisión humana que no ocurrió. | C10 §7.1–7.2 | Manual |
+| RR-24 | Todo texto redactado o editado por un agente pasa por la skill `humanizer` antes de la revisión humana, acotada así: solo elimina patrones de escritura de IA (relleno, lenguaje promocional, vaguedad, muletillas, conectores y listas de tres por reflejo). No añade primera persona, opiniones ni «personalidad»; mantiene el registro formal; no altera cifras, IDs (RT, RF, RNF), nombres de componentes (RR-07), citas ni títulos (RR-01). Su uso se declara en la Declaración de uso de IA (RR-23). | Decisión del equipo | Manual |
 
 ## Qué hacer cuando una regla se incumple
 
