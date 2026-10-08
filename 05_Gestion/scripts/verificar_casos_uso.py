@@ -125,6 +125,9 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
     faltan = sorted(todos - servicios)
     if faltan and completo:
         h.append("P3.2 servicios sin casos de uso: " + ", ".join(faltan))
+    # P3.7 actores de la lista sin ningún caso (solo con --completo; antes se informan como pendientes)
+    if completo:
+        h += [f"P3.7 el actor {a} no es actor principal de ningún caso" for a in actores_sin_caso(casos, codigos_actor)]
     # P3.4 nada excluido como trabajo propio
     for c in casos:
         if re.search(VERBOS_EXCLUIDOS, c["nombre"], re.I):
@@ -157,11 +160,17 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
     return h
 
 
-def pendientes(directorio=DIR, anexo_b=ANEXO_B):
+def actores_sin_caso(casos, codigos_actor):
+    return sorted(codigos_actor - {c["actor"] for c in casos})
+
+
+def pendientes(directorio=DIR, anexo_b=ANEXO_B, actores=ACTORES):
     casos, _ = leer_casos(directorio)
     rf_servicio = catalogo_rf(anexo_b)
     hechos = {rf_servicio[r] for c in casos for r in expandir(c["origen"]) if r in rf_servicio}
     out = ["P3.2 servicios aún sin casos de uso: " + ", ".join(sorted(set(rf_servicio.values()) - hechos))]
+    sin = actores_sin_caso(casos, set(re.findall(r"\|\s*(A[HS]-\d+)\s*\|", Path(actores).read_text(encoding="utf-8"))))
+    out.append("P3.7 actores aún sin caso como actor principal: " + (", ".join(sin) or "ninguno"))
     out.append("P3.3 los 28 resultados del Anexo D se rastrean al terminar todos los servicios")
     return out
 
@@ -178,7 +187,7 @@ def main(argv=None):
     for h in hallazgos:
         print(h)
     if not a.completo:
-        for p in pendientes(a.dir, a.anexo_b):
+        for p in pendientes(a.dir, a.anexo_b, a.actores):
             print("(pendiente) " + p)
     print(f"{len(hallazgos)} hallazgo(s)")
     return 1 if hallazgos else 0

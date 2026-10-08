@@ -86,6 +86,11 @@ class TestCasosUso(unittest.TestCase):
         self.assertFalse(any("P3.2" in x for x in correr(casos, trans)))
         self.assertTrue(any("P3.2" in x and "ventas" in x for x in correr(casos, trans, completo=True)))
 
+    def test_actor_sin_caso_solo_en_completo(self):
+        casos, trans = "| CU-EX-01 | R:M-03 | A | AH-03 | 2 | RF-001 a RF-003 | S1 |\n", "| CU-EX-01 | T1 a. T2 b |\n"
+        self.assertFalse(any("P3.7" in x for x in correr(casos, trans)))
+        self.assertTrue(any("P3.7" in x and "AS-14" in x for x in correr(casos, trans, completo=True)))
+
 
 if __name__ == "__main__":
     unittest.main()
