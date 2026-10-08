@@ -27,6 +27,9 @@ def codigos(h):
     return {(x["codigo"], x["tipo"]) for x in h}
 
 
+CORREGIDA = RAIZ / "80_Artefactos" / "sd-07_contexto" / "estimacion" / "14_edt_corregida.md"
+
+
 class TestVerificarEdt(unittest.TestCase):
     def test_edt_limpia(self):
         h = [x for x in correr(edt("Plan de dirección integrado", "Registro de supuestos")) if x["tipo"] == "falta"]
@@ -62,11 +65,33 @@ class TestVerificarEdt(unittest.TestCase):
         self.assertEqual(len([x for x in h if x["codigo"] == "C3"]), 1)
         self.assertFalse(any(x["codigo"] == "C12" and x["tipo"] == "falta" for x in h))
 
+    def test_atributos_no_forman_parte_del_nombre(self):
+        h = correr(edt("Control integrado de cambios {ucp: no; etapa: 1; origen: Art. 72}", "Registro de riesgos {ucp: no; etapa: 1}"))
+        self.assertEqual([x for x in h if x["tipo"] == "falta"], [])
+
+    def test_falta_etapa_o_casos_cuando_hay_atributos(self):
+        h = codigos(correr(edt("Plan {ucp: no; etapa: 1}", "Otro plan {etapa: 1}", "Tercer plan {ucp: no}")))
+        self.assertIn(("C14", "falta"), h)
+
+    def test_rango_de_paquetes_por_nodo_de_servicio(self):
+        texto = "### 1.5 Desarrollo — 2 paquetes\n\n#### 1.5.1 Servicio de prueba — 2 paquetes\n\n- 1.5.1.1 Primer plan\n- 1.5.1.2 Segundo plan\n"
+        self.assertIn(("C12", "falta"), codigos(correr(texto)))
+
+    def test_nombres_que_solo_difieren_en_un_digito_no_son_duplicados(self):
+        h = codigos(correr(edt("Certificación de calidad de la Etapa 1", "Certificación de calidad de la Etapa 2")))
+        self.assertNotIn(("C9", "posible"), h)
+
     @unittest.skipUnless(v.EDT.exists(), "la EDT de Eliseo no está en esta copia de trabajo")
     def test_la_edt_real_se_puede_leer(self):
         ramas, paquetes = v.leer(v.EDT)
         self.assertEqual(len(ramas), 15)
         self.assertEqual(len(paquetes), 110)
+
+    def test_la_edt_corregida_no_tiene_hallazgos_firmes(self):
+        h = [x for x in v.verificar(CORREGIDA) if x["tipo"] == "falta"]
+        self.assertEqual(h, [], "\n".join(f"{x['codigo']} {x['donde']} {x['mensaje']}" for x in h))
+        ramas, paquetes = v.leer(CORREGIDA)
+        self.assertEqual((len(ramas), len(paquetes)), (15, 207))
 
 
 if __name__ == "__main__":

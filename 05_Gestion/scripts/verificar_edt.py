@@ -6,8 +6,10 @@ sin criterio humano: nombres que empiezan con verbo, fechas, hitos y meses, hora
 en el nombre, varios entregables en un solo nombre, fases o actividades como nodos, nombres antiguos de servicios,
 duplicados, cantidad de paquetes por rama y profundidad de los códigos. Solo informa.
 
-Formato esperado: ramas como `### 1.2 Título — N paquetes` y paquetes como `- 1.2.3 Nombre`
-(un código de varios niveles, un espacio y el nombre). Una línea `- 1.10.1 … 1.10.5 texto` cuenta como cinco paquetes.
+Formato esperado: ramas como `### 1.2 Título — N paquetes`, nodos opcionales de servicio como `#### 1.5.1 Título — N paquetes`
+y paquetes como `- 1.2.3 Nombre {atributos}` (un código de varios niveles, un espacio y el nombre). Una línea
+`- 1.10.1 … 1.10.5 texto` cuenta como cinco paquetes. El bloque final `{casos: ...; etapa: ...; origen: ...}` no forma parte del nombre.
+Si algún paquete trae atributos, todos deben traer `etapa:` y `casos:` o `ucp: no`.
 
     python3 05_Gestion/scripts/verificar_edt.py [EDT.md] [--informativo]
 
@@ -25,6 +27,7 @@ EDT = RAIZ / "80_Artefactos" / "sd-07_contexto" / "estimacion" / "[ELISEO]-entre
 MAX_NIVELES = 4
 RANGO_TOTAL = (100, 250)
 MIN_POR_RAMA = 2
+NODO_MIN, NODO_MAX = 3, 8  # paquetes por servicio, acordado el 2026-10-08
 
 NOMBRES_ANTIGUOS = [
     "catálogo, precios y promociones", "abastecimiento y reposición", "inventario, reservas y disponibilidad",
@@ -48,29 +51,56 @@ PATRONES = [  # (código, tipo, regex, mensaje)
 ]
 
 
+ATRIBUTOS = re.compile(r"\s*\{([^{}]*)\}\s*$")
+
+
+def separar_atributos(texto):
+    """(nombre, {clave: valor}) separando el bloque final `{k: v; k: v}`."""
+    m = ATRIBUTOS.search(texto)
+    if not m:
+        return texto.strip(), {}
+    attrs = {}
+    for trozo in m.group(1).split(";"):
+        if ":" in trozo:
+            k, v = trozo.split(":", 1)
+            attrs[k.strip()] = v.strip()
+    return texto[:m.start()].strip(), attrs
+
+
 def leer(ruta):
-    ramas, paquetes, rama = [], [], None
+    ramas, paquetes, rama, nodo = [], [], None, None
     for n, linea in enumerate(Path(ruta).read_text(encoding="utf-8").splitlines(), 1):
+        m = re.match(r"####\s+(\d+(?:\.\d+)+)\s+(.*?)(?:\s+—\s+(\d+)\s+paquetes)?\s*$", linea)
+        if m and rama is not None:
+            nodo = {"codigo": m.group(1), "titulo": m.group(2).strip(), "declarados": int(m.group(3)) if m.group(3) else None,
+                    "linea": n, "paquetes": []}
+            rama.setdefault("nodos", []).append(nodo)
+            continue
         m = re.match(r"###\s+(\d+(?:\.\d+)*)\s+(.*?)(?:\s+—\s+(\d+)\s+paquetes)?\s*$", linea)
         if m:
             rama = {"codigo": m.group(1), "titulo": m.group(2).strip(), "declarados": int(m.group(3)) if m.group(3) else None,
                     "linea": n, "paquetes": []}
             ramas.append(rama)
+            nodo = None
             continue
         m = re.match(r"-\s+(\d+(?:\.\d+)+)\s+…\s+(\d+(?:\.\d+)+)\s+(.*)$", linea)
         if m and rama is not None:
             ini, fin = int(m.group(1).rsplit(".", 1)[1]), int(m.group(2).rsplit(".", 1)[1])
             base = m.group(1).rsplit(".", 1)[0]
             for i in range(ini, fin + 1):
-                p = {"codigo": f"{base}.{i}", "nombre": m.group(3).strip(), "linea": n, "rango": True}
+                nom, attrs = separar_atributos(m.group(3))
+                p = {"codigo": f"{base}.{i}", "nombre": nom, "atributos": attrs, "linea": n, "rango": True}
                 paquetes.append(p)
                 rama["paquetes"].append(p)
             continue
         m = re.match(r"-\s+(\d+(?:\.\d+)+)\s+(.*)$", linea)
         if m and rama is not None:
-            p = {"codigo": m.group(1), "nombre": m.group(2).strip(), "linea": n, "rango": False}
+            nom, attrs = separar_atributos(m.group(2))
+            p = {"codigo": m.group(1), "nombre": nom, "atributos": attrs, "linea": n, "rango": False}
             paquetes.append(p)
             rama["paquetes"].append(p)
+            if nodo is not None and p["codigo"].startswith(nodo["codigo"] + "."):
+                nodo["paquetes"].append(p)
     return ramas, paquetes
 
 
@@ -90,6 +120,12 @@ def verificar(ruta=EDT):
         for cod, tipo, rx, msg in PATRONES[:1]:
             if re.search(rx, r["titulo"]):
                 add(cod, tipo, f"rama {r['codigo']}", msg + f": «{r['titulo']}»")
+        for nd in r.get("nodos", []):
+            k = len(nd["paquetes"])
+            if nd["declarados"] is not None and nd["declarados"] != k:
+                add("C12", "falta", f"nodo {nd['codigo']}", f"declara {nd['declarados']} paquetes y tiene {k}")
+            if not NODO_MIN <= k <= NODO_MAX:
+                add("C12", "falta", f"nodo {nd['codigo']}", f"{k} paquetes (el rango acordado por servicio es {NODO_MIN} a {NODO_MAX})")
         n = len(r["paquetes"])
         if r["declarados"] is not None and r["declarados"] != n:
             add("C12", "falta", f"rama {r['codigo']}", f"declara {r['declarados']} paquetes y tiene {n}")
@@ -98,6 +134,14 @@ def verificar(ruta=EDT):
     total = len(paquetes)
     if not RANGO_TOTAL[0] <= total <= RANGO_TOTAL[1]:
         add("C12", "posible", "EDT", f"{total} paquetes, fuera del rango de control {RANGO_TOTAL[0]} a {RANGO_TOTAL[1]}")
+    con_atributos = any(p["atributos"] for p in paquetes)
+    for p in paquetes:
+        if con_atributos and not p["rango"] or (con_atributos and p["rango"]):
+            a = p["atributos"]
+            if "etapa" not in a:
+                add("C14", "falta", p["codigo"], "falta el atributo etapa")
+            if "casos" not in a and a.get("ucp") != "no":
+                add("C14", "falta", p["codigo"], "falta el atributo casos o ucp: no")
     nombres, lineas_rango = [], set()
     for p in paquetes:
         if p["rango"]:
@@ -129,6 +173,9 @@ def verificar(ruta=EDT):
             add("C13", "falta", donde, "nombre antiguo de un servicio (usar la nomenclatura vigente del sd-03)")
     for i in range(len(nombres)):
         for j in range(i + 1, len(nombres)):
+            solo_difieren_en_digitos = nombres[i][1] != nombres[j][1] and re.sub(r"\d", "#", nombres[i][1]) == re.sub(r"\d", "#", nombres[j][1])
+            if solo_difieren_en_digitos:
+                continue
             if nombres[i][1] and nombres[i][1] == nombres[j][1] or difflib.SequenceMatcher(None, nombres[i][1].lower(), nombres[j][1].lower()).ratio() >= 0.9:
                 if nombres[i][1] != "" and not re.search(r"…|innovación", nombres[i][1]):
                     add("C9", "posible", f"{nombres[i][0]} y {nombres[j][0]}", "nombres casi idénticos (posible duplicado)")
