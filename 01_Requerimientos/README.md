@@ -8,6 +8,7 @@ para poder buscarlos sin abrir Excel.
 | Archivo | Qué es |
 | :--- | :--- |
 | `RequerimientosAtomizados_Depuracion_Alcance.xlsx` | **Catálogo v3.0 depurado y renumerado**: `RF-001`..`RF-226`, `RNF-01`..`RNF-76`, `OP-01`..`OP-09`. Hojas `6_Equivalencia_IDs` (mapeo de IDs viejos a nuevos) y `7_Depuracion_Alcance` (decisiones ELIMINAR / TRASLADAR / CONSOLIDAR / RECLASIFICAR / CONDICIONAR / REVISAR) |
+| `RequerimientosAtomizados_Depuracion_Alcance_v3.1.xlsx` | **Catálogo v3.1 conciliado con el alcance del sd-03** (2026-10-08, borrador por revisar): 308 requerimientos vigentes (227 RF, 72 RNF, 9 OP) con servicio, etapa, prioridad y ámbito; decisiones de depuración, reasignaciones, resumen por fórmula, registro de reglas de negocio y pendientes. Es la fuente del Anexo B del Subdocumento 3. No reemplaza a la v3.0, que se conserva sin cambios hasta que el equipo decida |
 
 ## Histórico
 

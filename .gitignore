@@ -33,3 +33,6 @@ Thumbs.db
 # Informe: snapshots auto-descargados por dispositivo; no se versionan.
 06_Informes/informes/Informe_*.md
 02_Propuesta/latex_final/respaldo/
+
+# Documentos de terceros usados solo como referencia de forma (derechos de autor o confidencialidad desconocidos). El repositorio es público: no versionar.
+90_Referencia/documentos-terceros/

@@ -1,4 +1,8 @@
+> **ARCHIVADO (2026-10-08). No usar como fuente.** Material de trabajo superado por `sd-03.tex`, los Anexos A a D y `ficha_alcance_sd-03.md`. Usa códigos y decisiones antiguas. Se conserva solo por trazabilidad.
+
 # Plan de redacción — 3.2 Alcance (sd-03)
+
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
 
 Documento de trabajo. No es entregable.
 
@@ -9,7 +13,8 @@ Documento de trabajo. No es entregable.
 | Dónde se redacta | Directo en `02_Propuesta/latex_final/sd-03.tex`; luego `prism-empaquetar --parte T7-03`. |
 | Plataformas condicionales | Postura firme: **Escenario B** (renovación ampliada del núcleo: reemplazo por etapas del sistema central de Retail, además de crédito y POS). |
 | Nomenclatura | Servicios R/F/X se conservan. Exclusiones del catálogo (hoja 7) pasan de X-NN a **EXC-NN**. |
-| Reparto Etapa 1 / Etapa 2 | Pendiente: se discute servicio por servicio antes de redactar. |
+| Reparto Etapa 1 / Etapa 2 | Cerrado (2026-10-06): ver `asignacion_etapas.md` (rondas A a F) y `entregables_alcance.md` (columna Etapa; D decidido, S sugerido por confirmar). |
+| Ciclo de vida | Híbrido: marco predictivo (contrato, dos etapas, hitos, 13 servicios, cambios por solicitud formal) y desarrollo adaptativo dentro de cada etapa. Ver `enunciado_alcance.md`, sección 4. |
 
 ## Estructura de 3.2
 
