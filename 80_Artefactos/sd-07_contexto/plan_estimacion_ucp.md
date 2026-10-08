@@ -17,6 +17,7 @@ python3 05_Gestion/scripts/verificar_edt.py 80_Artefactos/sd-07_contexto/estimac
 python3 05_Gestion/scripts/generar_mapa_paquetes.py            # paso 8c: regenera 15_mapa_paquetes_ucp.md
 python3 05_Gestion/scripts/generar_plantilla_tres_valores.py   # paso 8d: regenera 12_plantilla_tres_valores.md
 python3 05_Gestion/scripts/repartir_horas_paquetes.py [A.md B.md]  # paso 9: regenera 16_horas_por_paquete.md
+python3 05_Gestion/scripts/generar_cronograma.py               # paso 10: regenera 17_cronograma_edt.md
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_estimacion.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_casos_uso.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_g4.py' -v
@@ -27,6 +28,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p 'test_comparar_metodos.py' -
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_verificar_edt.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_mapa_paquetes.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_horas_paquetes.py' -v
+python3 -m unittest discover -s 05_Gestion/tests -p 'test_cronograma.py' -v
 ```
 
 Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 mientras existan. Las pruebas de `unittest` prueban los verificadores con textos mínimos y la calculadora con los ejemplos de la clase.
@@ -48,7 +50,7 @@ Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 m
 | 8c | Mapa de paquetes a servicios, casos de uso, RF y etapa | P3.6 (un caso en un solo paquete) | **Hecho.** Los 127 casos y los 227 RF quedan en un paquete; 73 paquetes del UCP y 134 para tres valores | `15_mapa_paquetes_ucp.md` |
 | 8d | Planilla de tres valores por paquete | G7 | **Hecho, vacía.** Una fila por paquete | `12_plantilla_tres_valores.md` |
 | 9 | Horas por paquete y por etapa (T-15), sin calendario ni personas | P8.1 y P8.4 | **Parcial.** Los 73 paquetes del UCP tienen horas (31.850 h); los 134 restantes esperan al paso 7. P8.4 pendiente porque la memoria de capacidad de la 3.4.1 no existe | `16_horas_por_paquete.md` |
-| 10 | Cronograma, ruta crítica y curva de horas por mes | P8.3 | **Diferido.** Se hace después de corregir la EDT; por ahora no hay calendario | |
+| 10 | Cronograma, ruta crítica y curva de horas por mes | P8.3 | **Propuesta hecha, pendiente del visto bueno del equipo.** Ventanas de meses para 202 de los 207 paquetes (las cinco innovaciones quedan por definir), con las anclas del Art. 17 y los congelamientos. La ruta crítica es la cadena de anclas; las holguras de los demás paquetes no se calculan sin duraciones. La curva de horas cubre solo el UCP (31.850 h) | `17_cronograma_edt.md` |
 | 11 | Personas en el pico frente a la dotación | P8.2 | **Diferido.** La dotación es del sd-12, que no forma parte de esta entrega; E7 sigue como supuesto sin respaldo | |
 | 12 | Cierre y revisión humana | Estado «revisado» solo por una persona | **Pendiente** | |
 
@@ -59,7 +61,7 @@ Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 m
 - Lectura B de la clase (E = programación; total = E / 0,40) y regla de Karner para el factor de conversión, con el escenario de 28 h como sensibilidad.
 - Segundo método para el desarrollo: tres valores por paquete de la EDT corregida, con dos estimadores independientes.
 - EDT: la versión corregida va en una copia aparte (el archivo de Eliseo no se toca); el desarrollo de software tiene un nodo por servicio con 3 a 8 paquetes; el paquete de portales y app sale por la Opción A.
-- Cronograma y dotación quedan fuera por ahora.
+- Cronograma: ventanas por paquete, con el mes 1 en enero de 2027; la dotación queda fuera por ahora.
 
 ## Notas de la calculadora
 - La clase redondea el UCP a 127,1 antes de multiplicar y publica 2.542 horas. Con los decimales completos da 2.542,6 (la propia diapositiva 63 pide conservarlos). La diferencia es menor que una hora y las pruebas la aceptan con tolerancia.

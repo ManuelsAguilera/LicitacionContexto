@@ -75,7 +75,7 @@ def informe(filas, total):
     L = ["# Horas por paquete y por etapa para el Formulario T-15 (paso 9)", "",
          "Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/repartir_horas_paquetes.py`; no editar a mano. Fecha: 2026-10-08. "
          "Estado: **parcial**. Los paquetes del UCP tienen horas; los demás esperan las planillas de tres valores del equipo (`12_plantilla_tres_valores.md`) y siguen «por estimar». "
-         "No hay calendario ni personas: la curva por mes (P8.3) y la dotación (P8.2) quedan aparte.", "",
+         "El calendario por paquete y la curva por mes están en `17_cronograma_edt.md`; la dotación (P8.2) queda aparte.", "",
          "## 1. Resumen", "",
          f"- Paquetes: {len(filas)}. Con horas del UCP: {len(ucp)}. Con tres valores: {len(estimados)}. Por estimar: {len(pend)}.",
          f"- Total del UCP (escenario del equipo, lectura B): {h_(total)} h, repartido en proporción al UUCW de los casos de cada paquete.",
@@ -119,7 +119,7 @@ def informe(filas, total):
     L += ["", "## 6. Pruebas de la puerta", "",
           f"- P8.1 (las sumas por paquete, nodo y rama coinciden con el total): {'cumple' if not hall else 'NO cumple: ' + '; '.join(hall)}.",
           "- P8.2 (personas en el pico frente a la dotación): **pendiente**; la dotación es del sd-12, fuera de esta entrega.",
-          "- P8.3 (la curva por etapa cuadra con los meses 1 a 12, 13 a 18 y 21 a 56): **pendiente**; falta el cronograma.",
+          "- P8.3 (la curva por etapa cuadra con los meses 1 a 12, 13 a 18 y 21 a 56): **cumple para las horas del UCP** (`17_cronograma_edt.md`); la curva completa espera las horas de los demás paquetes.",
           "- P8.4 (los totales coinciden con la memoria de capacidad y esfuerzo de la sección 3.4.1): **pendiente**; esa memoria no existe todavía."]
     return "\n".join(L) + "\n"
 
