@@ -4,8 +4,11 @@
 Lee una o más planillas de tres valores (optimista, probable, pesimista, en horas) llenadas por estimadores
 independientes, con el formato de `12_plantilla_tres_valores.md`. Calcula la media de tres valores
 (O + 4P + Pe) / 6 por fila, promedia entre estimadores y compara el desarrollo de software con el total del
-UCP del escenario del equipo (`calcular_esfuerzo.py`), en total y por servicio. Las ramas que el método no cubre
-no se comparan: solo se suman.
+UCP del escenario del equipo (`calcular_esfuerzo.py`), en total, por servicio y por paquete. Los paquetes que el
+método no cubre no se comparan: solo se suman por rama.
+
+Hay dos formatos de fila: por paquete de la EDT corregida (`1.5.1.1`, el vigente) y el anterior por servicio (`S-EX`) y por
+rama (`R-06`), que se conserva para planillas ya llenadas.
 
     python3 05_Gestion/scripts/comparar_metodos.py PLANILLA.md [PLANILLA2.md ...] [--tolerancia 0.25] [--salida RUTA.md]
 
@@ -38,9 +41,9 @@ def leer_planilla(ruta):
         if not linea.startswith("|"):
             continue
         c = [x.strip() for x in linea.strip().strip("|").split("|")]
-        if len(c) < 6 or not re.fullmatch(r"(S-[A-Z]{2}|R-\d{2}[a-z]?)", c[0]):
+        if len(c) < 6 or not re.fullmatch(r"(S-[A-Z]{2}|R-\d{2}[a-z]?|\d+(\.\d+){2,3})", c[0]):
             continue
-        vals = [numero(x) for x in c[3:6]]
+        vals = [numero(x) for x in c[-3:]]
         if all(v is None for v in vals):
             filas[c[0]] = None
         elif any(v is None for v in vals):
@@ -73,7 +76,64 @@ def horas_ucp(entrada=None):
     return total, {"S-" + k: total * v / uucw for k, v in serv.items()}
 
 
+def horas_ucp_por_paquete():
+    """{código de paquete: horas del UCP}, en proporción al UUCW de sus casos, y el total del UCP."""
+    import generar_mapa_paquetes as gm  # noqa: E402
+    paquetes, _ = gm.cargar()
+    total, _ = horas_ucp()
+    uucw = sum(p["uucw"] for p in paquetes)
+    return {p["codigo"]: total * p["uucw"] / uucw for p in paquetes if p["metodo"] == "UCP"}, total, paquetes
+
+
+def comparar_paquetes(planillas, tolerancia=TOLERANCIA):
+    ucp_pk, total_ucp, paquetes = horas_ucp_por_paquete()
+    estimadores, errores = [], []
+    for p in planillas:
+        f, e = leer_planilla(p)
+        estimadores.append(f)
+        errores += [f"{Path(p).name}: {x}" for x in e]
+    codigos = sorted({c for f in estimadores for c in f})
+    filas, vacias = {}, []
+    for c in codigos:
+        medias = [media_pert(f[c]) for f in estimadores if f.get(c)]
+        if not medias:
+            vacias.append(c)
+            continue
+        sds = [desviacion(f[c]) for f in estimadores if f.get(c)]
+        filas[c] = {"media": sum(medias) / len(medias), "sd": sum(sds) / len(sds), "n": len(medias),
+                    "dispersion": (max(medias) - min(medias)) / (sum(medias) / len(medias)) if len(medias) > 1 else None}
+    r = {"modo": "paquetes", "total_ucp": total_ucp, "ucp_por_paquete": ucp_pk, "filas": filas, "vacias": vacias, "errores": errores,
+         "tolerancia": tolerancia, "paquetes": {p["codigo"]: p for p in paquetes}}
+    faltan = sorted(set(ucp_pk) - set(filas))
+    r["faltan"] = faltan
+    por_nodo = {}
+    for c, horas in ucp_pk.items():
+        nodo = r["paquetes"][c]["nodo"]
+        d = por_nodo.setdefault(nodo, {"ucp": 0.0, "segundo": 0.0, "completo": True})
+        d["ucp"] += horas
+        if c in filas:
+            d["segundo"] += filas[c]["media"]
+        else:
+            d["completo"] = False
+    r["por_servicio"] = por_nodo
+    if not faltan:
+        r["total_segundo"] = sum(filas[c]["media"] for c in ucp_pk)
+        r["diferencia"] = r["total_segundo"] / total_ucp - 1
+        r["dentro"] = abs(r["diferencia"]) <= tolerancia
+    r["ramas"] = {}
+    for c, v in filas.items():
+        if c not in ucp_pk:
+            rama = ".".join(c.split(".")[:2])
+            d = r["ramas"].setdefault(rama, {"media": 0.0, "n": 0})
+            d["media"] += v["media"]
+            d["n"] += 1
+    return r
+
+
 def comparar(planillas, tolerancia=TOLERANCIA, entrada=None):
+    for p in planillas:
+        if re.search(r"^\|\s*1\.\d+\.\d+", Path(p).read_text(encoding="utf-8"), re.M):
+            return comparar_paquetes(planillas, tolerancia)
     total_ucp, por_servicio = horas_ucp(entrada)
     estimadores, errores = [], []
     for p in planillas:
@@ -107,7 +167,45 @@ def h(x):
     return f"{x:,.0f}".replace(",", ".")
 
 
+def informe_paquetes(r):
+    L = ["# Comparación del UCP con el segundo método por paquete (paso 7, puerta G7)", "",
+         f"Total del UCP (escenario del equipo): {h(r['total_ucp'])} h. Tolerancia: ±{r['tolerancia']:.0%}. "
+         f"Paquetes del UCP con valores: {len(r['ucp_por_paquete']) - len(r['faltan'])} de {len(r['ucp_por_paquete'])}.", ""]
+    if r["errores"]:
+        L += ["## Errores de la planilla", ""] + [f"- {e}" for e in r["errores"]] + [""]
+    if "total_segundo" in r:
+        L += ["## Total del desarrollo", "", "| Método | Horas |", "| :-- | --: |", f"| UCP | {h(r['total_ucp'])} |",
+              f"| Tres valores por paquete | {h(r['total_segundo'])} |",
+              f"| Diferencia | {r['diferencia']:+.1%} ({'dentro' if r['dentro'] else 'FUERA'} de ±{r['tolerancia']:.0%}) |", ""]
+    else:
+        L += ["No hay valores para todos los paquetes del UCP: no se compara el total.", ""]
+    L += ["## Por servicio", "", "| Servicio | UCP (h) | Tres valores (h) | Diferencia |", "| :-- | --: | --: | --: |"]
+    for nodo, d in r["por_servicio"].items():
+        if d["completo"]:
+            L.append(f"| {nodo} | {h(d['ucp'])} | {h(d['segundo'])} | {d['segundo'] / d['ucp'] - 1:+.1%} |")
+        else:
+            L.append(f"| {nodo} | {h(d['ucp'])} | incompleto | — |")
+    L += ["", "## Por paquete del UCP", "", "| Paquete | UCP (h) | Tres valores (h) | Diferencia | Dispersión entre estimadores |", "| :-- | --: | --: | --: | --: |"]
+    for c, horas in r["ucp_por_paquete"].items():
+        f = r["filas"].get(c)
+        if f:
+            disp = f"{f['dispersion']:.0%}" if f["dispersion"] is not None else "—"
+            L.append(f"| {c} {r['paquetes'][c]['nombre']} | {h(horas)} | {h(f['media'])} | {f['media'] / horas - 1:+.1%} | {disp} |")
+        else:
+            L.append(f"| {c} {r['paquetes'][c]['nombre']} | {h(horas)} | — | — | — |")
+    if r["ramas"]:
+        L += ["", "## Paquetes que el UCP no cubre (solo suma, sin comparación)", "", "| Rama | Paquetes con valores | Horas (media de tres valores) |", "| :-- | --: | --: |"]
+        for rama, d in sorted(r["ramas"].items(), key=lambda kv: [int(x) for x in kv[0].split(".")]):
+            L.append(f"| {rama} | {d['n']} | {h(d['media'])} |")
+        L.append(f"| **Total** | **{sum(d['n'] for d in r['ramas'].values())}** | **{h(sum(d['media'] for d in r['ramas'].values()))}** |")
+    if "total_segundo" in r and not r["dentro"]:
+        L += ["", "La diferencia supera la tolerancia: hay que explicar la causa antes de continuar al paso 9."]
+    return "\n".join(L) + "\n"
+
+
 def informe(r):
+    if r.get("modo") == "paquetes":
+        return informe_paquetes(r)
     L = ["# Comparación del UCP con el segundo método (paso 7, puerta G7)", "",
          f"Total del UCP (escenario del equipo): {h(r['total_ucp'])} h. Tolerancia: ±{r['tolerancia']:.0%}.", ""]
     if r["errores"]:

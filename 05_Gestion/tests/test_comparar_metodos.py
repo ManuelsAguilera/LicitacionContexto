@@ -37,11 +37,18 @@ class TestCompararMetodos(unittest.TestCase):
             self.assertNotIn("total_segundo", r)
             self.assertEqual(cm.main([str(DIR / "12_plantilla_tres_valores.md")]), 2)
 
-    def test_la_plantilla_trae_los_14_servicios_y_las_9_ramas(self):
+    def test_la_plantilla_trae_los_207_paquetes(self):
         f, e = cm.leer_planilla(DIR / "12_plantilla_tres_valores.md")
-        self.assertEqual(sorted(c for c in f if c.startswith("S-")), sorted("S-" + s for s in SERVICIOS))
-        self.assertEqual(len([c for c in f if c.startswith("R-")]), 9)
+        self.assertEqual(len(f), 207)
+        self.assertEqual(len([c for c in f if c.startswith("1.5.")]), 73)
         self.assertEqual(e, [])
+        self.assertTrue(all(v is None for v in f.values()))
+
+    def test_la_plantilla_publicada_esta_actualizada(self):
+        import generar_mapa_paquetes as gm
+        import generar_plantilla_tres_valores as gp
+        paquetes, _ = gm.cargar()
+        self.assertEqual(gp.texto(paquetes), (DIR / "12_plantilla_tres_valores.md").read_text(encoding="utf-8"))
 
     def test_dentro_de_la_tolerancia(self):
         with tempfile.TemporaryDirectory() as d:
@@ -71,6 +78,45 @@ class TestCompararMetodos(unittest.TestCase):
         fila = r["servicios"]["S-EX"]
         self.assertEqual(fila["n"], 2)
         self.assertGreater(fila["dispersion"], 0.5)
+
+    # ---- planillas por paquete
+    def llenar(self, d, nombre, factor, omitir=()):
+        ucp_pk, _, paquetes = cm.horas_ucp_por_paquete()
+        filas = []
+        for p in paquetes:
+            if p["codigo"] in omitir:
+                continue
+            h = ucp_pk.get(p["codigo"], 100.0) * factor
+            filas.append(f"| {p['codigo']} | x | y | z | {int(h * 0.8)} | {int(h)} | {int(h * 1.4)} |\n")
+        ruta = Path(d) / nombre
+        ruta.write_text("| Código | Paquete | Servicio | Unidad | O | P | Pe |\n| :-- | :-- | :-- | :-- | --: | --: | --: |\n" + "".join(filas), encoding="utf-8")
+        return ruta
+
+    def test_paquetes_dentro_de_la_tolerancia(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = cm.comparar([self.llenar(d, "a.md", 1.0)])
+        self.assertEqual(r["modo"], "paquetes")
+        self.assertTrue(r["dentro"])
+        self.assertEqual(r["faltan"], [])
+        self.assertEqual(sum(d["n"] for d in r["ramas"].values()), 134)
+
+    def test_paquetes_fuera_de_la_tolerancia_y_codigo_de_salida(self):
+        with tempfile.TemporaryDirectory() as d:
+            ruta = self.llenar(d, "a.md", 2.0)
+            self.assertEqual(cm.main([str(ruta)]), 1)
+
+    def test_paquetes_incompletos_no_comparan_el_total(self):
+        with tempfile.TemporaryDirectory() as d:
+            ruta = self.llenar(d, "a.md", 1.0, omitir=("1.5.1.1",))
+            r = cm.comparar([ruta])
+            self.assertNotIn("total_segundo", r)
+            self.assertIn("1.5.1.1", r["faltan"])
+            self.assertFalse(r["por_servicio"]["Servicio de oferta comercial"]["completo"])
+            self.assertEqual(cm.main([str(ruta)]), 2)
+
+    def test_las_horas_por_paquete_suman_el_total_del_ucp(self):
+        ucp_pk, total, _ = cm.horas_ucp_por_paquete()
+        self.assertAlmostEqual(sum(ucp_pk.values()), total, places=6)
 
 
 if __name__ == "__main__":
