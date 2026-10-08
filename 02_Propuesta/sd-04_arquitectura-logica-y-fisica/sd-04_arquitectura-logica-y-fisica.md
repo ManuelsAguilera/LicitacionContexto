@@ -34,7 +34,7 @@ secciones:
   - T7-04-4.3
   - T7-04-4.3.1
   - T7-04-4.3.2
-actualizado: 2026-10-06
+actualizado: 2026-10-08
 ---
 # Subdocumento 4 — Arquitectura lógica y física de la solución
 
@@ -49,7 +49,7 @@ actualizado: 2026-10-06
 | Carpeta | `02_Propuesta/sd-04_arquitectura-logica-y-fisica/` |
 | Capítulo en el informe | Capítulo IV |
 | Formularios asociados | T-11 |
-| Estado | Sin redactar |
+| Estado | 4.1 a 4.3.2 en borrador; dimensionamiento e inventario de plataformas pendientes |
 
 ## Ponderación (Formulario T-21)
 
@@ -76,13 +76,13 @@ En todo el capítulo: la arquitectura es propia de la solución planteada (no se
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Sin redactar |
-| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Sin redactar |
-| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Sin redactar |
-| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Sin redactar |
-| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Sin redactar |
-| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Sin redactar |
-| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Sin redactar |
+| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Borrador; validar partición y contratos |
+| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Selección inicial documentada; faltan versiones y T-11 |
+| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Borrador; falta inventario y memoria de capacidad |
+| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Borrador; falta inventario de tienda y T-11 |
+| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Borrador; falta informe de brechas 2024 |
+| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Borrador; falta emplazamiento de legados |
+| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Borrador; falta prueba y validación jurídica |
 
 Anexos: Formulario T-11.
 

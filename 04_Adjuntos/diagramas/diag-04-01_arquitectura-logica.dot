@@ -1,0 +1,32 @@
+digraph arquitectura_logica {
+  graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.36", ranksep="0.48", fontname="DejaVu Sans", fontsize=11];
+  node [shape=box, style="rounded,filled", color="#24527A", fillcolor="#EAF4FA", fontname="DejaVu Sans", fontsize=10, margin="0.14,0.10"];
+  edge [color="#4E687B", arrowsize=0.65, fontname="DejaVu Sans", fontsize=9];
+
+  canales [label="Canales\nPOS nuevo · atención · comercio electrónico*", fillcolor="#DDF5F1"];
+  gateway [label="API gateway\nidentidad · contratos · cuotas", fillcolor="#D7E9F8"];
+  retail [label="Capa de servicios propios Retail\noferta · existencias · pedidos · ventas\nabastecimiento · posventa · clientes Retail\nmódulos extraíbles: comisiones y gobierno marketplace", fillcolor="#DDF5F1"];
+  emisor [label="Microservicios propios Emisor\noriginación · cartera · evidencia", fillcolor="#E9E4F5", color="#69538C"];
+  frontera [label="X-01: gobierno de cruces\npolíticas · mínimos · bitácora\ncontroles aplicados en ambos extremos", fillcolor="#FFF1BF", color="#9B7319"];
+  outbox [label="Salida transaccional por productor\nreintento · confirmación · trazabilidad", fillcolor="#EAF4FA"];
+  broker [label="Broker de eventos por seleccionar\nhechos confirmados · distribución", fillcolor="#EAF4FA"];
+  adaptadores [label="Adaptadores privados / capa anticorrupción\ncontratos · transformación · conciliación", fillcolor="#EDF2F6"];
+  conservados [label="Plataformas conservadas\nERP/DTE · WMS principal · marketplace\ncomercio electrónico y fidelización*\nemplazamiento físico por verificar", fillcolor="#F2F2F2", color="#777777"];
+  edge_local [label="Nodo local de tienda\ndiario durable · sincronización 24 h", fillcolor="#DDF5F1"];
+  analitica [label="Analítica separada\nRetail | Emisor", fillcolor="#EDF2F6"];
+
+  canales -> gateway [label="API conectada"];
+  canales -> edge_local [label="venta sin enlace"];
+  edge_local -> retail [label="sincronización", style=dashed];
+  gateway -> retail [label="solicitud / respuesta"];
+  gateway -> emisor [label="sesión financiera"];
+  retail -> emisor [label="compra autorizada", dir=both, color="#287B78"];
+  retail -> frontera [style=dotted, arrowhead=none];
+  emisor -> frontera [style=dotted, arrowhead=none];
+  retail -> outbox [label="hechos Retail"];
+  emisor -> outbox [label="hechos Emisor", color="#69538C"];
+  outbox -> broker [label="publicación"];
+  broker -> analitica [label="proyecciones separadas"];
+  retail -> adaptadores [label="contratos privados", dir=both];
+  adaptadores -> conservados [label="integración", dir=both];
+}

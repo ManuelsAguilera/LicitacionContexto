@@ -1,0 +1,76 @@
+digraph datos_y_frontera {
+  graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.38", ranksep="0.65", splines=polyline,
+    fontname="DejaVu Sans", fontsize=17, label="Datos y frontera Retail–Filial emisora", labelloc=t];
+  node [shape=box, style="rounded,filled", color="#33566B", penwidth=1.2, fillcolor="#EAF4FA",
+    fontname="DejaVu Sans", fontsize=10, margin="0.16,0.11"];
+  edge [color="#667C8B", penwidth=1.25, arrowsize=0.7, fontname="DejaVu Sans", fontsize=9];
+
+  subgraph cluster_retail {
+    label="RETAIL · autoridad comercial"; labelloc=t; color="#68A894"; style="rounded,filled";
+    fillcolor="#F0FAF6"; fontname="DejaVu Sans"; fontsize=13;
+    ventas [label="R:V-02 · Ventas / POS\nventa y referencia de compra", fillcolor="#D8F1E7"];
+    cliente [label="R:CL-02 · Clientes Retail\nidentidad comercial y preferencias", fillcolor="#D8F1E7"];
+    stock [label="R:M-03 · Existencias\nconteos, ajustes y disponible", fillcolor="#D8F1E7"];
+    datos_r [label="Repositorios Retail\nseparados por autoridad", shape=cylinder, fillcolor="#DDF1E8"];
+    ml_conteo [label="ML · predicción de conteos\ny margen recomendado", fillcolor="#E7F5D9"];
+    ml_merma [label="ML · clasificación de merma\ncausa sugerida con evidencia", fillcolor="#E7F5D9"];
+    lago_r [label="Lago Retail\nconjuntos comerciales autorizados", shape=cylinder, fillcolor="#DDF1E8"];
+    bi_r [label="BI Retail\ntableros por rol", fillcolor="#D8F1E7"];
+    marketing [label="Marketing\nsegmentación comercial", fillcolor="#FFF0DC", color="#B68A45"];
+
+    ventas -> datos_r [label="escribe venta"];
+    cliente -> datos_r [label="escribe perfil"];
+    stock -> datos_r [label="escribe stock"];
+    datos_r -> lago_r [label="proyección de lectura"];
+    lago_r -> bi_r [label="consulta"];
+    lago_r -> ml_conteo [label="historial depurado"];
+    lago_r -> ml_merma [label="conteos y diferencias"];
+    ml_conteo -> stock [label="recomendación; aprobación humana", style=dashed, color="#6A8F39"];
+    ml_merma -> stock [label="sugerencia; sin ajuste automático", style=dashed, color="#6A8F39"];
+    marketing -> cliente [label="preferencias permitidas"];
+  }
+
+  subgraph cluster_frontera {
+    label="FRONTERA · política aplicada en ambos extremos"; labelloc=t; color="#C9A545";
+    style="rounded,filled"; fillcolor="#FFF9E7"; fontname="DejaVu Sans"; fontsize=13;
+    x01 [label="X-01 · Gobierno de cruces\nficha: finalidad, base y mínimos\npolítica, decisión y auditoría", fillcolor="#FFF0B9", color="#AA832A"];
+    contrato [label="Contrato de compra con tarjeta\nsolo referencia, importe y medio →\n← decisión, referencia y vigencia", fillcolor="#FFF2D4", color="#AA832A"];
+    cruce_bi [label="Proyección BI cruzada\nDESHABILITADA por defecto\nsolo conjunto mínimo aprobado", fillcolor="#FFF2D4", color="#AA832A"];
+    bitacora [label="Bitácora de cruces\nseparada de expediente financiero", shape=cylinder, fillcolor="#FFF2D4", color="#AA832A"];
+    x01 -> bitacora [label="registra permiso / rechazo"];
+    x01 -> contrato [label="habilita ficha y política", style=dotted, arrowhead=none];
+    x01 -> cruce_bi [label="solo tras aprobación", style=dotted, arrowhead=none];
+  }
+
+  subgraph cluster_emisor {
+    label="FILIAL EMISORA · autoridad financiera separada"; labelloc=t; color="#8A72AE";
+    style="rounded,filled"; fillcolor="#F7F3FB"; fontname="DejaVu Sans"; fontsize=13;
+    credito [label="F:C-01 · Originación y autorización\nsolicitud, cupo y decisión", fillcolor="#E9E0F4", color="#765C9B"];
+    cartera [label="F:C-02 · Cartera\nsaldo, mora y cobranza", fillcolor="#E9E0F4", color="#765C9B"];
+    evidencia [label="F:C-03 · Evidencia financiera\ninformación, aceptación y firma", fillcolor="#E9E0F4", color="#765C9B"];
+    datos_f [label="Repositorios Emisor\nseparados por autoridad", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    exp_f [label="Expediente financiero\ncustodia y retención propias", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    lago_f [label="Lago Emisor\nconjuntos financieros autorizados", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    bi_f [label="BI Emisor\ntableros por rol", fillcolor="#E9E0F4", color="#765C9B"];
+
+    credito -> datos_f [label="escribe decisión"];
+    cartera -> datos_f [label="escribe cartera"];
+    evidencia -> exp_f [label="custodia prueba"];
+    credito -> evidencia [label="verifica evidencia", style=dashed];
+    datos_f -> lago_f [label="proyección de lectura"];
+    lago_f -> bi_f [label="consulta"];
+  }
+
+  ventas -> contrato [label="compra: datos mínimos", color="#21847B", penwidth=2];
+  contrato -> credito [label="solicitud y respuesta", dir=both, color="#21847B", penwidth=2];
+  ventas -> x01 [label="aplica política Retail", style=dotted, arrowhead=none, constraint=false];
+  credito -> x01 [label="aplica política Emisor", style=dotted, arrowhead=none, constraint=false];
+  marketing -> cartera [label="mora / pago: ACCESO DENEGADO", color="#BC4F4F", fontcolor="#A93636",
+    style=dashed, arrowhead=tee, constraint=false];
+  lago_f -> cruce_bi [label="solo derivado mínimo; sin dato bruto", style=dashed, color="#AA832A", constraint=false];
+  cruce_bi -> bi_r [label="si ficha aprobada; auditable", style=dashed, color="#AA832A", constraint=false];
+
+  leyenda [label="Línea continua: autoridad o consulta propia. Azul verdoso: compra autorizable.\nPunteado: control o flujo condicionado. Rojo: solicitud denegada.\nNo existe repositorio común ni copia libre entre Retail y Emisor.\nML recomienda: una persona aprueba parámetros y ajustes de inventario.", shape=note,
+    fillcolor="#F5F6F7", color="#9FA9B0", fontsize=9];
+  bitacora -> leyenda [style=invis];
+}

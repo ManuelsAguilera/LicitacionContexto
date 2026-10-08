@@ -1,0 +1,65 @@
+digraph flujo_hibrido {
+  graph [rankdir=TB, bgcolor="white", pad="0.35", nodesep="0.38", ranksep="0.72", splines=polyline, fontname="DejaVu Sans", fontsize=16, label="Flujo lógico híbrido: tienda, nube y frontera Retail–Emisor", labelloc=t];
+  node [shape=box, style="rounded,filled", color="#33566B", penwidth=1.3, fillcolor="#EAF4FA", fontname="DejaVu Sans", fontsize=11, margin="0.17,0.12"];
+  edge [color="#456579", penwidth=1.3, arrowsize=0.72, fontname="DejaVu Sans", fontsize=9];
+
+  subgraph cluster_tienda {
+    label="Tienda · operación local durante 24 h"; color="#88B9A9"; style="rounded,filled"; fillcolor="#F3FAF7"; fontname="DejaVu Sans"; fontsize=13;
+    actor [label="AH-04 Cajero\nAH-03 Vendedor", shape=ellipse, fillcolor="white"];
+    pos [label="POS nuevo\ninterfaz Retail", fillcolor="#D9F2E7"];
+    cache [label="Caché local\noferta y existencia vigentes", fillcolor="#D9F2E7"];
+    diario [label="Diario durable\nventa + hecho pendiente", fillcolor="#D9F2E7"];
+    relay [label="Sincronizador\nreintento e idempotencia", fillcolor="#D9F2E7"];
+    fin_actor [label="AH-02 Titular\nAH-10 Ejecutivo", shape=ellipse, fillcolor="white"];
+    fin_ui [label="Sesión financiera\nrol e identidad separados", fillcolor="#E9E1F5", color="#76559A"];
+    actor -> pos [label="operación"];
+    cache -> pos [label="lectura local", constraint=false];
+    pos -> diario [label="sin enlace: registro local", color="#237F68"];
+    diario -> relay [label="pendientes", color="#237F68"];
+    fin_actor -> fin_ui [label="trámite"];
+  }
+
+  subgraph cluster_retail {
+    label="Nube primaria · ámbito Retail"; color="#83BBD6"; style="rounded,filled"; fillcolor="#F3F9FC"; fontname="DejaVu Sans"; fontsize=13;
+    gateway_r [label="Gateway Retail\nAPI y políticas", fillcolor="#D8EAF8"];
+    venta [label="R:V-02 Ventas\nconciliación", fillcolor="#D9F2E7"];
+    stock [label="R:M-03 Existencias\nreserva / disponible", fillcolor="#D9F2E7"];
+    outbox [label="Outbox por productor\nhecho confirmado", fillcolor="#D8EAF8"];
+    broker [label="Servicio central de eventos\nEvent Hubs / alternativa por decidir\nhechos Retail segregados", fillcolor="#D8EAF8"];
+    bi [label="BI / lago Retail\nsolo lectura", fillcolor="#EAF4FA"];
+    ml [label="ML conteo y merma\nrecomendaciones", fillcolor="#EAF4FA"];
+    adapt [label="Adaptadores privados\nconfirmación / conciliación", fillcolor="#EEF1F5"];
+    gateway_r -> stock [label="reserva síncrona"];
+    gateway_r -> venta [label="venta síncrona"];
+    venta -> stock [label="efecto confirmado", style=dotted];
+    venta -> outbox [label="hecho de venta"];
+    stock -> outbox [label="movimiento confirmado"];
+    outbox -> broker [label="publicación/reintento"];
+    broker -> bi [label="proyección", color="#2C8297"];
+    broker -> ml [label="conteos/eventos", color="#2C8297"];
+    venta -> adapt [label="DTE / pagos", style=dashed];
+    stock -> adapt [label="WMS", style=dashed];
+  }
+
+  subgraph cluster_emisor {
+    label="Filial emisora · ámbito lógico separado, no sitio"; color="#A892C3"; style="rounded,filled"; fillcolor="#F8F5FB"; fontname="DejaVu Sans"; fontsize=13;
+    gateway_f [label="Gateway Emisor\nAPI y roles propios", fillcolor="#E9E1F5", color="#76559A"];
+    credito [label="F:C-01 Crédito\noriginación / autorización", fillcolor="#E9E1F5", color="#76559A"];
+    evidencia [label="F:C-03 Evidencia\nexpediente financiero", fillcolor="#E9E1F5", color="#76559A"];
+    x01 [label="X-01 Gobierno de cruces\nficha, mínimos y bitácora\ncontroles en ambos extremos", fillcolor="#FFF0C2", color="#A17E2C"];
+    gateway_f -> credito [label="consulta autorizada", color="#76559A"];
+    credito -> evidencia [label="verificar prueba", color="#76559A"];
+    x01 -> credito [style=dotted, arrowhead=none, color="#A17E2C"];
+  }
+
+  plataformas [label="Plataformas conservadas\nAS-01 ERP/DTE · AS-02 WMS\nubicación por verificar", fillcolor="#F0F0F0", color="#818181"];
+  pos -> gateway_r [label="con enlace", color="#237F68"];
+  relay -> gateway_r [label="al reconectar: entrega confirmada", color="#237F68", minlen=2];
+  fin_ui -> gateway_f [label="solo con enlace", color="#76559A"];
+  venta -> credito [label="autorización por compra\nsolo contrato aprobado", color="#A17E2C", style=dashed, constraint=false];
+  x01 -> venta [style=dotted, arrowhead=none, color="#A17E2C", constraint=false];
+  adapt -> plataformas [label="interfaz por levantar", style=dashed];
+
+  nota [label="Sólida: flujo propuesto · Discontinua: contrato/emplazamiento condicionado · Punteada: política o efecto\nSin enlace no se originan tarjetas ni se amplían cupos; modalidad tributaria local por aprobar.", shape=note, fillcolor="#FFF9E8", color="#C9A954", fontsize=9];
+  plataformas -> nota [style=invis];
+}
