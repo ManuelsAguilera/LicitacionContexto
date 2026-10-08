@@ -354,12 +354,312 @@ Los resultados 26, 27 y 28 resumen el caso mejor que cualquier indicador. La cli
 
 
 \section{3.3 Esquema de solución}
-% Uno o varios esquemas con el modelo conceptual de la solución. Cada diagrama se explica en el texto; si es grande, por partes.
+
+El esquema selecciona el destino del núcleo Retail y delimita la autoridad de los trece servicios. Sus vistas muestran cómo se relacionan los dos negocios y qué intercambios requieren control; 4.1 desarrolla los contratos y mecanismos lógicos de esa separación.
+
+\subsection{3.3.1 Contexto de la solución}
+
+{El diagnóstico de SD-02 identifica registros fragmentados y funciones comerciales concentradas en el sistema central Retail de 2009. Las catorce interfaces no cuentan con un mapa completo, por lo que todavía no puede atribuirse cada discrepancia a un componente. Esta incertidumbre exige definir una solución que pueda verificarse por responsabilidades y resultados, además de levantar las conexiones reales (Caso 09, capítulos 5 y 7).}
+
+{El capítulo 5 del Caso declara nueve plataformas actuales. Ocho son sistemas existentes y la novena corresponde a las planillas de cálculo y listas impresas, con las que hoy se arman los precios y las promociones y opera el centro de distribución de Concepción. Esa novena plataforma deja de ser registro oficial, y la función de precios y promociones se trata como capacidad por construir. El levantamiento documentará las catorce interfaces sin inferir una plataforma adicional.}
+
+{Para delimitar la renovación se mantienen las responsabilidades del sistema de gestión empresarial y emisor de documentos tributarios electrónicos (ERP/DTE), del sistema de gestión de almacenes (WMS) principal y de la plataforma vigente de marketplace. Su conservación permite concentrar el cambio en los registros y procesos que sostienen las promesas comerciales. Ambas alternativas incorporan operación local de tiendas, reemplazan por olas la plataforma financiera de 2011 y mantienen la separación de datos entre Retail y Emisor; esta separación responde a obligaciones distintas aunque ambos negocios compartan el mostrador.}
+
+{La elección del destino del núcleo Retail se evalúa con cinco criterios. La autoridad del dato responde a las discrepancias de existencia y precio; la dependencia futura determina si el núcleo sigue concentrando funciones; la integración responde a los intercambios todavía no levantados; la continuidad exige sostener la operación durante los cambios; y el esfuerzo de transición permite comparar la migración inicial con la conciliación permanente. Los criterios se aplican por igual a las dos alternativas.}
+
+{El escenario A, de continuidad selectiva, mantiene el sistema central como autoridad para artículos, compras, recepción, precios y parte del inventario, e incorpora capacidades nuevas de disponibilidad, reservas e integración. Reduce el esfuerzo inicial de migración y preserva procesos conocidos. Sin embargo, el núcleo continúa como concentrador de varios intercambios y la coherencia entre sus registros y los servicios nuevos depende de sincronización y conciliación permanentes. Su idoneidad requeriría demostrar, en el levantamiento, que esa dependencia puede sostener las metas de oportunidad, exactitud y continuidad del caso.}
+
+{El escenario B, de renovación ampliada, transfiere las funciones de oferta, abastecimiento y existencias del núcleo a servicios con autoridad definida sobre sus registros. La información se publica y concilia según reglas por dato. Esta alternativa permite retirar gradualmente el núcleo, pero requiere migrar funciones y datos, probar la convivencia y demostrar el retorno de cada ola antes del corte.}
+
+{La Tabla 3.5 sintetiza cómo ambas alternativas resuelven los criterios anteriores. Agrupa la autoridad y el papel del núcleo, el esfuerzo de transición, la integración y su dependencia, y la continuidad.}
+
+Tabla 3.5: Comparación de alternativas para el núcleo Retail.
+
+\begin{longtable}{@{}p{0.18\linewidth}p{0.36\linewidth}p{0.36\linewidth}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{Criterio} & {A · Continuidad selectiva} & {B · Renovación ampliada} \\
+{Núcleo y autoridad de datos} & {Permanece como autoridad y concentrador de intercambios.} & {Transfiere catálogo, reposición e inventario; se retira por olas.} \\
+{Esfuerzo de transición} & {Menor migración inicial; conciliación continua.} & {Mayor migración inicial; corte y conciliación por ola.} \\
+{Integración y dependencia} & {Mantiene dependencia y copias conciliadas con el núcleo.} & {Retira la dependencia tras validar cada autoridad y flujo.} \\
+{Continuidad y riesgo} & {Coherencia sujeta a sincronización y calidad del núcleo.} & {Autoridad por dato, conciliación, convivencia y retorno probado.} \\
+\end{longtable}
+
+{Fuente: elaboración propia a partir del Caso 09, capítulo 5, y de SD-02.}
+
+{Only Simple Solutions elige el escenario B porque convierte la dependencia permanente de un núcleo concentrador en una transición que puede verificarse por función y registro. A conserva procesos conocidos y reduce la migración inicial, pero mantiene la necesidad de conciliar continuamente el núcleo con los servicios nuevos. B exige mayor esfuerzo de transferencia; la propuesta acepta ese esfuerzo para asignar autoridades claras y retirar la dependencia una vez probada cada ola. La elección no supone que la antigüedad del sistema explique todas las fallas ni que A incumpla las metas sin una prueba.}
+
+{La Figura 3.1 resume el análisis anterior y vincula la elección de B con las condiciones que deben verificarse durante la transición.}
+
+{Figura 3.1. Secuencia de selección del escenario B y habilitación de etapas.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-1.png}}\end{center}
+
+{Fuente: elaboración propia; diagrama editable en }{Miro}{.}
+
+{La lectura comienza en el diagnóstico y aplica las mismas condiciones y criterios a las alternativas A y B. La elección acepta el esfuerzo de migración para reducir la dependencia permanente del núcleo. Cada avance requiere evidencia y pruebas; si no las supera, se corrige la transición manteniendo la operación vigente.}
+
+{Del escenario elegido se derivan tres frentes: Retail y Filial emisora conservan sus responsabilidades de negocio y datos; Frontera reúne el control de sus intercambios. La descomposición por áreas y servicios se desarrolla a continuación. La plataforma común y los componentes locales habilitan esa operación y su continuidad.}
+
+{Los actores que intercambian información con la solución corresponden a los grupos identificados en 2.4: clientes y titulares de tarjeta; personal de venta, caja, tiendas y centros de distribución; áreas comerciales y financieras; proveedores, vendedores de marketplace y transportistas. Los organismos fiscalizadores reciben los reportes y antecedentes que les corresponden. La participación de una misma persona en procesos comerciales y financieros no altera la separación de sus datos: cada acceso responde al rol y a la finalidad autorizada.}
+
+{Como se delimitó al comparar las alternativas, ERP/DTE, el WMS principal y la plataforma vigente de marketplace conservan sus responsabilidades e interfaces con los nuevos servicios. El centro de distribución de Concepción entrega registros estructurados mientras se evalúa su incorporación a un WMS. Los sistemas conservados se sitúan fuera del límite de los nuevos servicios funcionales porque mantienen responsabilidades propias (Caso 09, capítulo 5).}
+
+{Comercio electrónico y fidelización se conservan e integran inicialmente para sostener sus canales durante la transición. TI y los responsables de canales y clientes Retail evaluarán desempeño, consistencia, interoperabilidad y separación de datos con las pruebas de la primera etapa. SD-06 programará la decisión de conservar, remediar o sustituir cada plataforma antes de la ola que dependa de ella. Así, su evolución utiliza evidencia de operación y no pospone los resultados exigibles de la primera etapa.}
+
+{Durante la transición del escenario B, el sistema central Retail de 2009 continúa operando hasta que se verifica la transferencia de sus funciones y registros. La plataforma financiera de 2011 convive con el Servicio de originación de crédito, el Servicio de cartera de crédito y el Servicio de evidencia financiera durante la migración por olas de la cartera; el punto de venta de 2014 se sustituye tienda por tienda tras acreditar la operación sin conexión y el retorno. La plataforma de integración sostiene los intercambios de cada ola y permite retirar las conexiones antiguas una vez verificado el nuevo flujo.}
+
+\subsection{3.3.2 Servicios de negocio y autoridad de datos}
+
+{La descomposición sigue la secuencia frente, área y servicio. Cada servicio implementa una capacidad de negocio, custodia sus datos y los expone mediante contratos definidos. La plataforma común habilita su operación. Los códigos siguen la forma frente:área-número: R identifica Retail; F, Filial emisora; M, Mercadería; V, Venta; CL, Relación con el cliente; y C, Crédito. Por ejemplo, F:C-03 identifica el Servicio de evidencia financiera. El Servicio de control de cruces conserva X-01, sin área.}
+
+\subsubsection{Frente Retail}
+
+{Los nueve servicios Retail se agrupan en tres áreas. Mercadería administra la oferta, el suministro y las existencias; Venta coordina pedidos, ventas, comisiones y marketplace; Relación con el cliente gestiona la posventa y la identidad comercial.}
+
+{Área Mercadería. Reúne la oferta comercial, el abastecimiento y las existencias.}
+
+{Servicio de oferta comercial. Administra artículos, atributos, precios, promociones, vigencias y el historial de publicación por canal y de actualización de etiquetas. Incorpora la función de precios y promociones que hoy no existe como sistema. Entrega la oferta vigente a los canales, al Servicio de existencias, al Servicio de pedidos, al Servicio de ventas y al Servicio de marketplace; no calcula reservas ni registra ventas.}
+
+{Servicio de abastecimiento. Administra órdenes, transferencias, propuestas de reposición y recepciones para coordinar proveedores, tiendas y centros de distribución. Consulta la disponibilidad del Servicio de existencias y se integra con ERP/DTE y con el sistema de gestión de almacenes principal. La ejecución física de ubicaciones, preparación y despacho continúa en este último; las planillas de Concepción no pasan a ser una autoridad permanente por el solo hecho de integrarse.}
+
+{Servicio de existencias. Consolida existencias y movimientos por nodo, administra reservas y calcula el disponible comprometible con un margen de confianza por categoría y punto. Registra conteos, ajustes y causas de diferencia. Recibe movimientos del sistema de gestión de almacenes, del punto de venta, del Servicio de abastecimiento y del Servicio de posventa; comunica disponibilidad al Servicio de pedidos, Servicio de marketplace y los canales. El sistema de almacenes conserva la autoridad de ejecución física y ERP/DTE, su registro contable. Los resultados de conteo alimentan la revisión del margen, denominado descuento de seguridad en la operación actual, y permiten priorizar nuevos conteos. Una ayuda de clasificación podrá sugerir la causa de una diferencia con su evidencia; la persona responsable confirma la causa antes de cerrar el ajuste.}
+
+{Área Venta. Reúne los pedidos, las ventas, las comisiones y el gobierno de marketplace.}
+
+{Servicio de pedidos. Administra el ciclo y el estado único del pedido, la fecha prometida y el nodo de preparación elegido por costo total de servir. Solicita la reserva al Servicio de existencias y coordina canales, tiendas, centros de distribución y transportistas hasta el retiro o la entrega. Comparte el estado resultante con el Servicio de comisiones, el Servicio de marketplace y el Servicio de posventa; no reemplaza la ejecución física del sistema de almacenes.}
+
+{Servicio de ventas. Registra ventas, pagos, reversas y registros de caja procedentes del punto de venta y del canal digital, incluidas las operaciones realizadas sin enlace que se sincronizan posteriormente. Concilia esos hechos y entrega la venta confirmada al Servicio de comisiones y al Servicio de posventa. Se integra con ERP/DTE para mantener el estado del documento, mientras ERP/DTE permanece como único emisor tributario.}
+
+{Servicio de comisiones. Aplica reglas auditables para atribuir una venta y su base de comisión al canal, vendedor y tienda que corresponden, incluso cuando una tienda abastece un pedido originado en otro canal. Consume pedidos del Servicio de pedidos y ventas del Servicio de ventas; entrega la base calculada al proceso de remuneraciones que conserva el sistema empresarial. No administra remuneraciones.}
+
+{Servicio de marketplace. Relaciona la plataforma vigente con la oferta, disponibilidad, pedidos, devoluciones y liquidaciones que gestiona Ancoa. Administra las reglas de habilitación y desempeño de vendedores externos y comunica a cada parte el estado que le corresponde. Se apoya en el Servicio de oferta comercial, el Servicio de existencias, el Servicio de pedidos y el Servicio de posventa; no sustituye la plataforma de marketplace ni opera la logística propia de cada vendedor.}
+
+{Área Relación con el cliente. Reúne la posventa y la identificación y fidelización comercial.}
+
+{Servicio de posventa. Abre y resuelve los casos de cambio, devolución, retracto y garantía frente al cliente, con registro de recepción, inspección y destino de cada unidad. Consulta la venta en el Servicio de ventas, informa al Servicio de existencias cuándo una unidad puede volver al disponible y coordina las operaciones de marketplace con su servicio responsable y las notas de crédito con ERP/DTE. La atención al consumidor no se supedita a la conciliación posterior con el vendedor o fabricante.}
+
+{Servicio de clientes Retail. Administra la identificación y deduplicación de clientes, puntos, segmentos, campañas y preferencias dentro de Retail. Integra inicialmente la plataforma vigente bajo separación de datos; su integración definitiva o sustitución se decidirá mediante el mecanismo de primera etapa previsto en 3.3.1 y desarrollado en SD-06. Cualquier solicitud de datos del Emisor se somete al Servicio de control de cruces y a una finalidad y fundamento validados. Saldos, mora, cupos y comportamiento de pago no se incorporan por defecto al perfil comercial.}
+
+\subsubsection{Frente Filial emisora}
+
+{El área Crédito agrupa los tres servicios financieros. Mantiene bajo autoridad de la Filial emisora las decisiones crediticias, la cartera y la evidencia contractual. Sus resultados se entregan a Retail conforme a la finalidad y autorización del intercambio.}
+
+{Servicio de originación de crédito. Administra solicitudes, evaluaciones, cupos, decisiones y autorizaciones de crédito iniciadas en los canales habilitados. Antes de confirmar una apertura exige la información y evidencia custodiadas por el Servicio de evidencia financiera y comunica al Servicio de ventas el resultado necesario para la venta. No origina tarjetas nuevas ni amplía cupos durante una pérdida de enlace.}
+
+{Servicio de cartera de crédito. Administra cuentas, saldos, cuotas, pagos, mora, cobranza y modificaciones de condiciones. Consulta al Servicio de evidencia financiera antes de confirmar una repactación y conserva la trazabilidad de su expediente. La cartera de la plataforma actual se transfiere por olas conciliadas, conforme a 3.2; sus saldos no se publican en el Servicio de clientes Retail ni en perfiles comerciales.}
+
+{Servicio de evidencia financiera. Custodia la versión de la información precontractual entregada, la aceptación, el consentimiento y la evidencia de firma vinculados a cada operación. El Servicio de originación de crédito y el Servicio de cartera de crédito consultan este servicio para impedir una originación o repactación sin evidencia suficiente. Asegura integridad, acceso controlado y recuperación durante el plazo exigido; no administra saldos ni decisiones de crédito.}
+
+\subsubsection{Frente Frontera}
+
+{Este frente contiene el Servicio de control de cruces y no se subdivide en áreas. El servicio es responsable de las políticas, las decisiones de autorización y su evidencia. Los datos comerciales y crediticios permanecen bajo autoridad de los servicios que los producen; los controles del intercambio se aplican en sus extremos.}
+
+
+{Servicio de control de cruces. Define y versiona las condiciones de cada intercambio: finalidad, fundamento, solicitante, destinatario y datos mínimos. El ámbito que entrega verifica la política antes de liberar información; el receptor limita su uso a la finalidad aprobada. Ambos extremos registran autorizaciones, denegaciones y versión de política. El servicio se entrega en la primera etapa mediante catálogo de flujos, contratos, reglas aplicadas, bitácora y pruebas de minimización, rechazo y rutas alternativas. No crea un maestro único de clientes ni habilita atributos financieros para Marketing.}
+
+{La plataforma común conecta servicios y sistemas conservados mediante contratos y adaptadores para intercambiar solicitudes, resultados y hechos de negocio. Registra el envío y su resultado para detectar fallas y apoyar la conciliación. La identidad y los permisos distinguen personas, roles y ámbitos; la observabilidad permite a TI detectar retrasos. Estas funciones habilitan las responsabilidades del catálogo y no sustituyen la autoridad del dato ni la autorización de un cruce.}
+
+{La capacidad analítica de la plataforma ofrece tableros e informes de autoservicio sobre registros publicados por sus servicios responsables, sin cargar consultas analíticas sobre las bases transaccionales. Mantiene espacios de datos, modelos de consulta y permisos separados para Retail y la Filial emisora. La consulta de detalle, la exportación y el envío programado respetan esa separación. Un conjunto de datos que requiera información de ambos ámbitos solo podrá incorporarse tras definir y aprobar su finalidad, fundamento, campos mínimos y responsables conforme al Servicio de control de cruces; la existencia de una interfaz común no concede acceso entre ámbitos. El catálogo y el linaje de indicadores permitirán reconstruir qué fuentes y transformaciones respaldan cada resultado. Su diseño físico y sus políticas se precisarán en los subdocumentos de arquitectura y datos.}
+
+{El punto de venta (POS) y los componentes locales mantienen las funciones de tienda durante una pérdida de enlace. Conservan las condiciones vigentes y las operaciones que deberán conciliarse al recuperar la conexión; el Servicio de ventas recibe ese registro. La interfaz del nuevo POS distinguirá la venta Retail de la sesión bajo rol financiero y hará visibles al personal los estados de disponibilidad, precio y sincronización necesarios para atender excepciones. ERP/DTE mantiene la responsabilidad tributaria y el WMS la ejecución física. La continuidad y sus límites se explican en 3.4.5; los mecanismos técnicos se desarrollarán en arquitectura.}
+
+{En la primera etapa se entregan el Servicio de oferta comercial, el Servicio de existencias, el Servicio de ventas, el Servicio de originación de crédito, el Servicio de evidencia financiera y el Servicio de control de cruces, junto con la plataforma común y el nuevo punto de venta. El Servicio de cartera de crédito se migra por olas en ambas etapas; los demás servicios Retail se incorporan en la segunda. Esta distribución conserva los hitos de 3.2.}
+
+\subsubsection{Vistas de contexto y relaciones principales}
+
+{La Figura 3.2 presenta el contexto general del escenario B. Las Figuras 3.3, 3.4 y 3.5 amplían las relaciones de Retail, del Emisor y los escenarios de intercambio. Los rótulos abrevian los nombres del catálogo y omiten el prefijo «Servicio de»; los códigos R/F/X se mantienen en el alcance y los entregables. Las flechas opuestas representan solicitudes y respuestas. Los contratos y mecanismos de transporte se definirán en la arquitectura lógica.}
+
+{Figura 3.2. Contexto de la solución propuesta para Ancoa (escenario B).}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-2.png}}\end{center}
+
+{Fuente: elaboración propia a partir del Caso 09, capítulo 5, y del alcance de SD-03.}
+
+{La Figura 3.2 muestra los tres frentes y el límite de la solución. Retail agrupa nueve servicios en Mercadería, Venta y Relación con el cliente; la Filial emisora reúne tres en Crédito. Frontera contiene el Servicio de control de cruces. Las plataformas externas se conservan o evalúan según el alcance ya expuesto.}
+
+{El Servicio de control de cruces se representa sobre la frontera porque autoriza, minimiza y audita el uso de datos entre los negocios. La plataforma de integración ofrece transporte y adaptadores. Los controles y el registro de las decisiones se aplican en los extremos del intercambio; esta vista no fija un despliegue físico único.}
+
+{Las flechas de la vista general son familias de relación, no contratos implantados. Las vistas siguientes muestran quién solicita información, quién responde y qué datos permanecen bajo autoridad de cada ámbito. El mapa de las catorce interfaces existentes se levantará durante la primera etapa.}
+
+{La Figura 3.3 amplía el ámbito Retail. Muestra los nueve servicios comerciales, sus canales y las plataformas que permanecen integradas. La lectura sigue el ciclo desde la oferta y la disponibilidad hasta el pedido, la venta y la atención posterior.}
+
+{Figura 3.3. Servicios Retail y relaciones con canales y plataformas conservadas.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-3.png}}\end{center}
+
+{Fuente: elaboración propia a partir del Caso 09, capítulos 4 y 5, y del alcance de SD-03.}
+
+{La Figura 3.3 vincula las áreas Retail con sus canales y plataformas. Las conexiones amarillas de las Figuras 3.3 y 3.4 representan la aplicación de la política de cruces en cada ámbito; la compra se desarrolla en la Figura 3.5. Estas relaciones de control no fijan una ruta física única.}
+
+{La Figura 3.4 amplía el ámbito del Emisor. Presenta la evaluación y autorización de crédito, la administración de cartera y la custodia de evidencia financiera, junto con el acceso de titulares y personal autorizado.}
+
+{Figura 3.4. Servicios del Emisor y custodia de decisión y evidencia financiera.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-4.png}}\end{center}
+
+{Fuente: elaboración propia a partir del Caso 09, capítulos 4, 5 y 9, y del alcance de SD-03.}
+
+{La figura separa decisión, administración de deuda y prueba contractual. Originación y repactación consultan la evidencia de la información entregada y aceptada antes de confirmarse. La plataforma financiera de 2011 participa en la migración por olas hasta su retiro; la falta de enlace no autoriza nuevas tarjetas ni aumentos de cupo.}
+
+{La Figura 3.5 reúne operaciones en las que podría cruzarse información entre Retail y Emisor, además de una solicitud que debe rechazarse. Presenta compra con tarjeta propia y reversa con sus respuestas; también muestra una originación iniciada en caja, que puede permanecer íntegramente bajo rol financiero, y la venta local durante desconexión, sin consulta al Emisor.}
+
+{Figura 3.5. Escenarios y límites del intercambio Retail--Emisor.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-5.png}}\end{center}
+
+{Fuente: elaboración propia a partir del Caso 09, 9.10 y 10.1, y del alcance de SD-03.}
+
+{La compra con tarjeta propia devuelve a Retail solo el resultado de esa venta; saldo y mora permanecen en el Emisor. La reversa es una propuesta cuya necesidad y contrato aún deben acreditarse. Marketing recibe una denegación sin datos de pago. La originación en caja exige evidencia precontractual distinta de la autorización de compra; si el canal actúa bajo el rol del Emisor, su ubicación en una tienda no crea un cruce hacia Retail. Durante la desconexión, el POS registra la venta y la concilia al volver el enlace; una compra contra autorización previa exige reglas específicas y no permite originar tarjetas ni ampliar cupos. El control transversal registra la decisión de intercambio y el Servicio de evidencia financiera conserva la prueba contractual.}
+
+\subsubsection{Gobierno de los intercambios Retail--Emisor}
+
+{La Figura 3.5 delimita las operaciones; esta sección define sus condiciones de habilitación. Cada intercambio requiere finalidad, fundamento, responsable, destinatario y datos mínimos registrados en una ficha aprobada. Retail y Emisor aplican la política en sus extremos y conservan evidencia de permitir o denegar. Una aceptación contractual de crédito no autoriza por sí sola el uso comercial de información de deuda.}
+
+{Fundamento y transición normativa. A octubre de 2026 rige la Ley N.º 19.628 en su texto vigente, que exige autorización legal o consentimiento para el tratamiento y limita la comunicación de datos económicos (arts. 4 y 17). La Ley N.º 21.719 modifica ese régimen desde el 1 de diciembre de 2026 e incorpora exigencias expresas de licitud, finalidad, proporcionalidad, seguridad y responsabilidad; el diseño de la etapa operativa deberá cumplirlo. La Ley N.º 19.496 exige información y condiciones claras en los contratos financieros (arts. 17 B y siguientes). La Circular N.º 1 de la CMF para emisores no bancarios establece resguardos de riesgo operacional, continuidad y seguridad de la información. Estas normas no determinan por sí solas que Retail pueda recibir comportamiento de pago ni el plazo de cada bitácora del Servicio de control de cruces.}
+
+{Las Bases del Caso 09 exigen una frontera documentada, implementada y auditable (9.10 y restricción 10.1), describen el cruce indebido de fidelización con pago y fijan retención contractual por categoría en RT-05.10. El Servicio de control de cruces acredita la decisión de compartir y el uso permitido; el Servicio de evidencia financiera custodia por separado la información precontractual, aceptación, firma y grabaciones de originación y repactación. Su evidencia no reemplaza el registro del intercambio ni viceversa.}
+
+{La Tabla 3.6 relaciona separación, licitud, acceso y retención con responsable, control y evidencia.}
+
+Tabla 3.6: Obligación, responsable, control y evidencia del Servicio de control de cruces.
+
+
+\begin{longtable}{@{}p{0.19\linewidth}p{0.20\linewidth}p{0.27\linewidth}p{0.25\linewidth}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{Exigencia / fuente} & {Responsable} & {Control X-01} & {Entregable y prueba} \\
+{Separación auditable; Caso 09, 9.10 y 10.1} & {Retail y Emisor; cumplimiento aprueba} & {Catálogo por finalidad; denegar rutas no inventariadas} & {Matriz, políticas versionadas, prueba de desvío y bitácora} \\
+{Licitud, finalidad y mínimos; Ley 19.628, arts. 4 y 17; Ley 21.719 desde 01-12-2026} & {Responsable del dato en cada entidad; asesoría jurídica valida fundamento} & {Ficha aprobada, campos mínimos y bloqueo de uso secundario} & {Ficha jurídica por flujo, respuesta limitada y pruebas de denegación} \\
+{Acceso y seguridad; Ley 21.719 y Circular 1 CMF; RT-11.11} & {Emisor controla salida; Retail controla recepción; TI opera} & {Identidad, rol, autorización, esquema, cifrado y registro} & {Contratos, controles en ambos extremos y evidencia de acceso} \\
+{Retención; Caso 09 RT-05.10 y plazo jurídico aplicable} & {Dueño del registro; F:C-03 custodia evidencia contractual} & {Separar bitácora de cruce de expediente financiero; calendario aprobado} & {Prueba de recuperación, purga y trazabilidad; crédito: plazo + 6 años según Bases} \\
+\end{longtable}
+
+{Fuente: elaboración propia a partir del Caso 09, 9.10 y RT-05.10; Bases Transversales, RT-11.11; y legislación citada en referencias.}
+
+{La Tabla 3.6 relaciona los controles que deberán aplicarse y probarse en ambos ámbitos. El plazo de la evidencia contractual no se traslada automáticamente a la bitácora de intercambio: esta requiere una regla propia, según su categoría y fundamento.}
+
+{La matriz siguiente distingue compra, reversa y solicitud de Marketing. Cada operación se separa en solicitud y respuesta cuando corresponde. Son intercambios propuestos, no un inventario de las catorce interfaces actuales. La originación en caja puede operar bajo el rol financiero; la venta sin enlace no consulta al Emisor durante la desconexión.}
+
+{La Tabla 3.7 compara los cruces por dirección, finalidad, autoridad, condición y estado. Ventas/POS corresponde al Servicio de ventas y su canal; Crédito, al Servicio de originación de crédito; Cartera, al Servicio de cartera de crédito; y control, al Servicio de control de cruces.}
+
+Tabla 3.7: Escenarios de intercambio Retail--Emisor y condiciones de habilitación.
+
+
+\begin{longtable}{@{}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{Operación / dirección} & {Finalidad y mínimos} & {Autoridad / uso} & {Condición} & {Estado / evidencia} \\
+{Compra: Ventas/POS {[}R:V-02{]} → Crédito {[}F:C-01{]}} & {Autorizar importe; ref., monto, medio} & {Decide Emisor; usa Retail} & {Ficha y contrato aprobados} & {Condicionado; bitácora} \\
+{Compra: Crédito {[}F:C-01{]} → Ventas/POS {[}R:V-02{]}} & {Decisión, referencia y vigencia} & {Emisor decide; Retail cierra venta} & {Misma operación autorizada} & {Condicionado; sin deuda} \\
+{Pago/reversa: Ventas {[}R:V-02{]} → Cartera {[}F:C-02{]}} & {Hecho comercial; ref., monto, fecha} & {Retail origina; Emisor concilia} & {Necesidad y contrato por acreditar} & {Cerrado hasta aprobación} \\
+{Reversa: Cartera {[}F:C-02{]} → Ventas/Posventa {[}R:V-02 / R:CL-01{]}} & {Resultado; referencia y estado} & {Emisor decide; Retail atiende} & {Acceso por transacción} & {Cerrado hasta aprobación} \\
+{Marketing → control de cruces} & {Solicitud de perfil con datos de pago} & {Emisor conserva; Retail no recibe} & {Sin fundamento acreditado} & {Denegado; intento registrado} \\
+\end{longtable}
+
+{Fuente: elaboración propia a partir del Caso 09, capítulos 4 y 9, y del alcance propuesto en SD-03.}
+
+{La Tabla 3.7 delimita los intercambios habilitables y aquellos que permanecen cerrados. La aprobación de la ficha, su contrato y las pruebas de bloqueo preceden a la activación de cada flujo; el registro deberá permitir demostrar que la operación respetó el límite autorizado.}
+
 
 \section{3.4 Explicación de la Solución}
-% Descripción de la solución según la operación o el negocio y su coherencia con el problema del Capítulo 2.
-% Incluye la estrategia de apoyo de los grupos de interés de 2.4.
-% Mapeo al 100 % con la Arquitectura Lógica (4.1): mismos nombres de componentes.
+
+{Los recorridos siguientes responden a las brechas de disponibilidad, precio, trazabilidad de pedidos y crédito identificadas en el capítulo 2. Explican cómo intervienen los servicios representados en las Figuras 3.2 a 3.5 y cómo se comprobarán las metas de 3.2.}
+
+\subsection{3.4.1 La promesa de existencia}
+
+{Hoy un cliente puede comprar una unidad que figura disponible y recibir después una cancelación: el conteo físico, la venta en tienda, las reservas digitales y la preparación en almacén no llegan al mismo registro con la misma oportunidad. Las diferencias en el 12,4 \% de las referencias auditadas y las cancelaciones de 1,9 \% anual y 2,7 \% en el evento (Caso 09, capítulos 4 y 9) exigen distinguir la existencia registrada de las unidades que pueden comprometerse con confianza.}
+
+{Con las autoridades y fuentes de movimiento definidas en 3.3, el Servicio de existencias calcula el disponible comprometible (ATP) por categoría y nodo. El cálculo descuenta reservas y compromisos de la existencia conciliada y aplica un margen de confianza por categoría y nodo, cuya calibración y documentación deben completarse antes de habilitar la publicación comprometible. La reserva solicitada por el Servicio de pedidos se confirma o libera según avance la operación y su vigencia; esta secuencia permite reconstruir qué cantidad respaldó la promesa.}
+
+{El descuento de seguridad que se aplica hoy a la existencia publicada es un número fijo definido en 2019, sin revisión acreditada (Caso 09, capítulo 8). La calibración propuesta partirá del historial depurado de conteos, ventas, movimientos, reservas y quiebres. Un modelo predictivo podrá estimar el riesgo y la magnitud de una discrepancia por referencia, ubicación y período para priorizar conteos y aportar evidencia al margen por categoría y nodo. El valor aplicado seguirá siendo un parámetro aprobado y trazable del Servicio de existencias. Se compararán cancelaciones por falta de existencia y unidades retenidas por el margen frente a la regla de referencia; si el modelo no supera esa regla o no hay datos suficientes, se mantendrá la parametrización supervisada.}
+
+{El conteo registra la diferencia observada y abre su investigación. Una segunda capacidad podrá sugerir la causa probable entre pérdida física, daño no dado de baja, error de recepción, unidad mal ubicada, devolución mal reintegrada y error de digitación, acompañada por las señales que fundamentan la sugerencia. Prevención de Pérdidas o el responsable autorizado verificará la evidencia y confirmará la causa antes del ajuste. La evaluación distinguirá los conteos priorizados de una muestra aleatoria o estratificada, para que la selección por riesgo no distorsione la medición de la exactitud general. Se medirán las diferencias relevantes detectadas por cada cien conteos, el tiempo hasta confirmar una causa y el desempeño de la clasificación por causa; las líneas base y metas se fijarán tras perfilar los registros disponibles.}
+
+{Si falta confirmación de disponibilidad antes del cobro, el canal informa la indisponibilidad y no cobra la unidad, conforme al Caso 09, capítulo 18. Una reserva o pedido abierto no se presenta como entrega confirmada cuando esa comprobación ha fallado. Si la diferencia se detecta después, el responsable de pedidos conserva el historial de la promesa, comunica la incidencia y coordina su resolución con posventa. La regla de resolución deberá precisar la alternativa ofrecida al cliente y el tratamiento del cobro, la reserva y el pedido antes de habilitar ese recorrido.}
+
+{El piloto compara exactitud y cancelaciones antes y después, por categoría y nodo y durante el evento anual. La disponibilidad publicada deberá actualizarse dentro de 30 segundos tras una venta (Caso 09, RT-05.29). La aceptación contrastará además las metas de 3.2: diferencia de inventario inferior al 2 \%, cancelaciones anuales inferiores al 0,3 \% y ninguna cancelación por falta de existencia durante el evento.}
+
+{El esfuerzo del ATP comprende conteos cíclicos, depuración y conciliación de movimientos, reservas, publicación y pruebas de máxima demanda. Un margen mayor reduce el riesgo de prometer unidades inexistentes, pero restringe la venta; su evaluación comparará ambas consecuencias en el piloto. La memoria de capacidad deberá derivar la concurrencia, las transacciones y consultas por segundo, el volumen de datos y su crecimiento de la volumetría del Caso 09, numerales 14.1 y 14.2, distinguiendo el evento digital de la campaña presencial. Relacionará estos resultados con las tareas de la EDT, el personal de conteo y las pruebas en Preproducción a 1,5 veces el peak declarado, además del estrés hasta el punto de quiebre (Bases Transversales, RT-09.06). Sus parámetros y valoración permanecen por completar con la información documentada; los montos corresponden al Sobre Económico.}
+
+\subsection{3.4.2 La promesa de precio}
+
+{Un precio correcto en el sistema no basta si la persona ve otro al pagar. El Servicio de oferta comercial propaga la oferta aprobada a los canales y al proceso de etiquetas. La tienda confirma su exhibición y registra divergencias con caja. Comercial y las jefaturas de tienda deberán definir cómo resolver esas diferencias antes del despliegue, sin retardar la propagación obligatoria.}
+
+{Si una campaña depende de la identificación o de los puntos del cliente, el Servicio de ventas, o el Servicio de pedidos en el canal digital, comprueba la elegibilidad consultando al Servicio de clientes Retail y aplica la versión vigente de la oferta. El registro de la transacción conserva la referencia de la condición comprobada y la versión aplicada. Esto permite explicar el precio concreto de la transacción. La prueba compara precio exhibido, publicado y cobrado, y mide la propagación a las 380 cajas y al canal digital dentro de cinco minutos (Caso 09, RT-05.29 y RT-09.01). La demora actual de etiquetas, de hasta 24 horas, constituye la línea de base.}
+
+\subsection{3.4.3 La promesa de entrega}
+
+{La fragmentación del estado entre canales impide explicar dónde está un pedido y sostener la fecha ofrecida. El Servicio de pedidos aplica el ciclo definido en 3.3: confirma la reserva antes de fijar la fecha, coordina la preparación y comunica cada transición relevante. El almacén y los transportistas confirman la ejecución física que les corresponde. Así, el seguimiento permite contrastar la fecha comprometida con el avance real y detectar una demora antes de que el cliente deba reclamar (Caso 09, capítulo 18).}
+
+{Cuando una tienda prepara el pedido de otro canal, el reconocimiento de su trabajo influye en que esa preparación sea adoptada. Por ello, el Servicio de ventas confirma la operación y el Servicio de comisiones calcula una atribución auditable para el canal, vendedor y tienda que participaron. La prueba recorre pedidos cruzados, devoluciones y reversas hasta el cálculo utilizado por remuneraciones; una discrepancia debe poder explicarse con sus registros.}
+
+{Si el pedido corresponde a un vendedor externo, el Servicio de marketplace mantiene informadas a las partes sobre su avance. Una devolución recibida en tienda abre un caso en el Servicio de posventa: el cliente obtiene constancia y atención, el vendedor recibe el aviso y la unidad conserva un destino registrado. Su reintegro al disponible depende de la confirmación de su condición. La prueba sigue ese caso hasta su resolución y verifica avisos, ajuste tributario con ERP/DTE y destino físico (Caso 09, apartados 9.5 a 9.7). La meta de 3.2 es superar el 97 \% de entregas en la fecha prometida desde el mes 21; se medirá contrastando las fechas registradas y los incumplimientos.}
+
+{La Figura 3.6 integra las promesas de existencia, precio y entrega en un recorrido operativo e identifica las salidas ante falta de disponibilidad o una incidencia de entrega.}
+
+{Figura 3.6. Recorrido Retail desde la oferta hasta la entrega y la devolución.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-6.png}}\end{center}
+
+{Fuente: elaboración propia; diagrama editable en }{Miro}{.}
+
+{El recorrido consulta la oferta y el disponible, reserva y confirma la existencia antes del cobro. Después registra la venta y coordina la preparación y entrega. Las ramas de excepción informan al cliente y derivan la incidencia a posventa; la devolución exige constancia, inspección y ajuste confirmado. Los rótulos abrevian los nombres del catálogo de 3.3.}
+
+\subsection{3.4.4 La promesa de crédito}
+
+{En el mostrador, la solicitud de tarjeta se tramita bajo el rol financiero. El Servicio de originación de crédito confirma la apertura solo cuando el Servicio de evidencia financiera acredita la entrega previa de información, su versión y aceptación, conforme a 3.3. La prueba comprobará el orden de esos actos y la recuperación del expediente, además de una evaluación en ocho segundos o menos (Caso 09, RT-09.01).}
+
+{En una repactación, el Servicio de cartera de crédito consulta la evidencia antes de registrar las nuevas condiciones. Cada ola de migración se acepta cuando los saldos pueden conciliarse y el cobro continúa; una divergencia detiene el avance y activa el retorno ensayado.}
+
+{La compra con tarjeta propia aplica el intercambio condicionado de 3.3. Su prueba deberá demostrar que Retail recibe únicamente el resultado transaccional autorizado y que una solicitud comercial ajena a esa finalidad se deniega y registra. Para aperturas y repactaciones, se comprobará el bloqueo ante evidencia insuficiente y la recuperación de los expedientes autorizados.}
+
+{Las Figuras 3.7 y 3.8 presentan por separado la originación de crédito y la compra con tarjeta. La separación distingue la decisión financiera del control sobre los datos comunicados a Retail.}
+
+{Figura 3.7. Originación de crédito dentro del ámbito del Emisor.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-7.png}}\end{center}
+
+{Fuente: elaboración propia; diagrama editable en }{Miro}{.}
+
+{La solicitud incorpora la información precontractual y su aceptación verificable. La evidencia completa permite al Emisor decidir la elegibilidad y el cupo; su ausencia detiene el trámite hasta subsanarla. Este recorrido conserva la decisión y el expediente en el ámbito financiero.}
+
+{La Figura 3.8 muestra la autorización de una compra concreta y el control del intercambio necesario para responder a Retail.}
+
+{Figura 3.8. Autorización de compra con tarjeta y respuesta limitada a Retail.}
+
+\begin{center}\pandocbounded{\includegraphics{figuras/sd-03_fig-3-8.png}}\end{center}
+
+{Fuente: elaboración propia; diagrama editable en }{Miro}{.}
+
+{Ventas/POS solicita una autorización por importe y referencia. Si el cruce está habilitado para esa finalidad y sus campos, el Emisor autoriza o deniega la transacción y X-01 limita el resultado comunicado; de otro modo, bloquea el cruce y registra el rechazo. La aceptación de crédito no habilita por sí sola el intercambio ni autoriza una compra posterior.}
+
+\subsection{3.4.5 Continuidad y transición}
+
+{Las promesas deben sostenerse durante pérdidas de enlace y durante el reemplazo gradual de plataformas. Durante la desconexión, la tienda completa venta, cobro, aplicación de promociones vigentes y consulta de existencia local; al volver el enlace, el Servicio de ventas concilia los hechos para evitar duplicidades o pérdida. La emisión tributaria sigue bajo autoridad de ERP/DTE y requiere una modalidad de contingencia aprobada y probada antes de comprometer la operación sin enlace. En ese estado no se originan tarjetas nuevas ni se amplían cupos. La modalidad de compra con crédito durante la desconexión requiere decisión de riesgo, pruebas y ruta de contingencia conforme al Caso 09, apartado 16.1. La continuidad local se compromete por 24 horas y se verifica con un corte de esa duración y retorno ensayado en el piloto (Bases Transversales, RT-03.10; 3.2).}
+
+{La continuidad entre etapas se controla mediante convivencia, conciliación y retorno ensayado; sus compuertas e hitos se rigen por 3.2 y el artículo 17 de las Bases Administrativas. Cuando una falla impide recibir una decisión del Emisor, no se confirma una apertura ni una ampliación de cupo. Si falla un intercambio, su estado se conserva para verificar la conciliación antes de reanudar el flujo; la falta de respuesta no se interpreta como autorización. La prueba deberá demostrar ese comportamiento y la recuperación sin duplicar operaciones.}
+
+\subsection{3.4.6 Apoyo de los actores}
+
+{La estrategia aplica el análisis de influencia e interés de 2.4 mediante responsabilidades y resultados observables. La dirección y la Contraparte Técnica recibirán, antes de cada avance, los indicadores de las cuatro promesas, las incidencias y la evidencia de retorno. Su apoyo se buscará mediante decisiones de avance fundamentadas en esos resultados. TI coordinará con los responsables de cada servicio las pruebas de conciliación y recuperación, registrando operaciones sin conciliar, duplicidades y resultados del retorno.}
+
+{Comercial y las jefaturas de tienda revisarán las campañas y el estado de exhibición; comprobarán el tiempo de propagación, las etiquetas confirmadas y las diferencias detectadas por muestreo. Logística e inventario coordinarán conteos y pruebas de reserva; medirán diferencias por categoría y nodo y cancelaciones por falta de existencia. Canales digitales contrastará lo publicado con la reserva y la entrega, utilizando los mismos registros que sostienen esas promesas.}
+
+{Las jefaturas de tienda y el área responsable de capacitación organizarán ejercicios breves y repetibles para vendedores, cajeros y personal temporal, considerando la rotación anual del 62 \% y los aproximadamente 1.100 repositores externos (Caso 09, RT-12.11). La habilitación se comprobará mediante tareas ejecutadas correctamente por rol; los terceros accederán solo a las funciones que les correspondan. Vendedores y responsables de remuneraciones revisarán pedidos entre canales para comprobar la atribución de comisiones y registrar discrepancias que puedan desincentivar la preparación desde tienda.}
+
+{La sustitución del POS se acompañará de pruebas de tareas con cajeros nuevos y experimentados. El prototipo cubrirá la venta ordinaria y la resolución de precio divergente, existencia incierta y venta sin enlace, además del paso autorizado hacia el rol financiero. Los participantes deberán reconocer el estado de cada operación y la acción siguiente sin confundir los datos comerciales con los financieros. Se registrarán tiempo de resolución, errores, intervenciones de supervisión y tiempo de aprendizaje por perfil; el diseño se ajustará con esos resultados antes del despliegue.}
+
+{Atención y posventa coordinarán ejercicios de devolución y garantía; comprobarán constancias entregadas, destino físico de la unidad y avisos a vendedores externos. Los responsables de marketplace y logística acordarán con vendedores y transportistas los estados y avisos exigibles, y medirán su entrega y cumplimiento. El Emisor y la unidad de Contraloría y Cumplimiento evaluarán la integridad de los expedientes y el bloqueo de pasos incompletos. Clientes y titulares participarán en pruebas de comprensión de precios, entrega e información crediticia, verificando que puedan explicar las condiciones recibidas. Estas responsabilidades se proponen para la implantación y sus resultados deberán registrarse antes de afirmar que la adopción fue alcanzada.}
+
+{Antes de aprobar este recorrido se completarán la memoria de capacidad y esfuerzo del disponible y la calibración de su margen; se definirán la resolución de diferencias de stock posteriores a la promesa, la política ante diferencias entre etiqueta y caja, y la alternativa de continuidad si falla la prueba de la plataforma financiera de 2011. La revisión conjunta de esta sección y 4.1 validará los contratos y responsables.}
+
 
 \section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}

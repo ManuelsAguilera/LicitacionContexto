@@ -15,7 +15,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | CU-VE-07 | R:V-02 | Validar las operaciones cursadas sin enlace | AH-10 | 2 | RF-094; EXC-16 | S5 |
 | CU-VE-08 | R:V-02 | Desactivar los medios de pago de mayor fricción | AH-13 | 2 | RF-181 | S7 |
 | CU-VE-09 | R:V-02 | Registrar las ventas del canal digital | AS-04 | 2 | 3.3.2 | S4 |
-| CU-VE-10 | R:V-02 | Emitir documentos tributarios por el ERP/DTE | AS-01 | 2 | RF-100; 3.3.2 | S4 |
+| CU-VE-10 | R:V-02 | Enrutar los documentos tributarios al ERP/DTE | AS-01 | 2 | RF-100; 3.3.2 | S4 |
 | CU-VE-11 | R:V-02 | Cobrar con la tarjeta de la casa | AH-04 | 2 | 3.4.4; Tabla 3.7 | S5, S8 |
 
 Resumen. 11 casos, 10 simples (1 a 3 transacciones) y 1 medio (CU-VE-04). UUCW provisional del servicio = 10 × 5 + 1 × 10 = 60.

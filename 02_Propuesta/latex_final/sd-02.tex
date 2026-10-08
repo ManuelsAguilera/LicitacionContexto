@@ -86,101 +86,225 @@
 \tableofcontents
 \clearpage
 
-\hypertarget{resumen-ejecutivo-del-problema}{%
-\section{2.1 Resumen Ejecutivo del problema}\label{resumen-ejecutivo-del-problema}}
+\section{Capítulo 2 · Introducción}\label{capuxedtulo-2-introducciuxf3n}
 
-\hypertarget{comprensiuxf3n-del-problema-y-la-necesidad}{%
-\subsection{COMPRENSIÓN DEL PROBLEMA Y LA NECESIDAD}\label{comprensiuxf3n-del-problema-y-la-necesidad}}
+El siguiente subdocumento tiene como finalidad sintetizar el problema que origina la licitación de Multitiendas Ancoa S.A., explica el contexto operacional, regulatorio y estacional, dimensionar su magnitud con datos trazables e identifica a los actores. Además resume los requerimientos del negocio, los supuestos del análisis, las exclusiones y las restricciones que condicionan la propuesta. El detalle se encuentra en el anexo correspondiente al subdocumento 2
 
-Multitiendas Ancoa S.A. es una cadena de tiendas por departamento chilena, sociedad anónima cerrada, en operación desde 1972, con ingresos consolidados de \textbf{\$474.000 millones de pesos}, esta se rige bajo la Ley del consumidor N°19.496 (Congreso Nacional de Chile, 2021) . Simultáneamente, se consolida como un emisor de crédito fiscalizado, en donde el negocio financiero se desarrolla a través de una filial emisora de tarjeta de casa comercial, sujeta a la fiscalización de la CMF (Información de Supervisados, s. f.). Ambos dominios están sujetos a la nueva Ley de datos personales. N°21.719 (Congreso Nacional de Chile, 2026) .
+Este capítulo, se conecta con el capítulo 3, que definirá el alcance y explicará la solución, con el capítulo 4 en donde se desarrollará la arquitectura lógica y física de la solución, con los capítulos \ldots\ldots\ldots..y con los formularios T-7 y T-12.
 
-Actualmente, Ancoa enfrenta una brecha entre lo que promete a sus clientes, lo que sus registros permiten conocer y lo que puede acreditar después, la compañía realiza cuatro promesas operacionales, las cuales consisten en que el producto existe, que el precio cobrado coincide con el exhibido, que la entrega llegará en la fecha informada y que las condiciones del crédito son las entregadas y aceptadas. Estas cuatro promesas dependen de información que está fragmentada, no está sincronizada y es no recuperable.
+Texto de introducción: resumen del capítulo y su conexión con los demás capítulos, anexos y formularios.
 
-Esto queda expuesto en tres hechos concretos en donde \textbf{2.840} pedidos fueron cancelados por falta de existencia durante un evento de \textbf{104.000} pedidos, discrepancias de precios en el \textbf{11\%} de 120 productos revisados en cuatro tiendas y \textbf{1.240} repactaciones de 2025 que no tenían evidencia recuperable del consentimiento. En paralelo, el cumplimiento de la fecha de entrega es del \textbf{81\%}, en donde existen nueve plataformas conectadas por catorce interfaces cuyo mapa completo no está disponible y la separación de los datos entre el retail y la filial emisora es parcial y no documentada.
+Este capítulo caracteriza el problema que origina la licitación y la necesidad que debe resolver la propuesta. Primero sitúa a Ancoa en su contexto operativo, regulatorio y estacional; luego dimensiona las brechas asociadas a las cuatro promesas, al cliente y a la atención y garantía legal; después identifica a los actores y sus tensiones; y finalmente consolida los requerimientos, supuestos, exclusiones y restricciones que condicionan el alcance. El diagnóstico se organiza en cinco causas raíz: registro impreciso, integración fragmentada, frontera difusa entre retail y filial financiera, incentivos y capacidad operativa, y territorio y calendario.
 
-El problema afecta a todos los asociados a Ancoa, es decir, cliente, titulares de tarjeta, vendedores, cajeros, jefaturas de tienda, logística, canales digitales, comercial, la filial financiera, TI, vendedores de marketplace, proveedores y autoridades fiscalizadoras. En cuanto a su resolución futura deberá reconocer que Ancoa opera dos negocios ante una misma persona, retail y crédito que comparten marca y puntos de contacto, pero no pueden compartir libremente datos ni obligaciones.
+\section{2.1. Resumen ejecutivo del problema}\label{resumen-ejecutivo-del-problema}
 
-Sumando a esto, se agregan tres situaciones futuras que deben ser abordadas obligatoriamente por en el proyecto. Por una parte, está la migración de la cartera de \textbf{620.000} clientes con saldo desde la plataforma antigua hacía la nueva, proceso que deberá realizarse sin pérdida de información, interrupción del servicio ni discrepancias en los saldos. Por otra parte, está el término en el año 2029 del soporte proporcionado por el fabricante de la plataforma de originación y cobranza de créditos actualmente en operación desde 2011. Finalmente, tenemos el vencimiento, en el año \textbf{2029} del último hito del plan de remediación instruido por la autoridad fiscalizadora. Si estos inconvenientes no son resueltos, Ancoa podría enfrentar interrupciones en la operación financiera, inconsistencias en las cuentas de sus clientes, dependencia de una plataforma sin soporte e incumplimientos ante la autoridad competente.
+Esta sección sintetiza el diagnóstico que sostiene la oferta y anticipa el enfoque con que se abordará. El contexto industrial, el dimensionamiento con datos, los actores y los supuestos se desarrollan en las secciones 2.2 a 2.5; la estrategia de solución se desarrolla en el Subdocumento 3.
 
-\hypertarget{comprensiuxf3n-del-problema-y-de-la-necesidad}{%
-\section{2.2 Comprensión del problema y de la necesidad}\label{comprensiuxf3n-del-problema-y-de-la-necesidad}}
+Ancoa opera bajo dos regímenes sobre el mismo cliente y punto de contacto. Por un lado el comercio minorista (Ley N.º 19.496, 1997) y por otro la emisión de crédito fiscalizada (Comisión para el Mercado Financiero, s. f.), ambos alcanzados por la nueva ley de datos personales (Ley N.º 21.719, 2024).
 
-Esta sección profundiza en las condiciones propias de la industria y de la operación que explican el problema presentado anteriormente. Para ello, se consideran las características del modelo omnicanal, la convivencia entre el retail y el negocio financiero, el marco regulatorio aplicable y la estacionalidad del comercio, sin abordar todavía el dimensionamiento detallado del problema ni las decisiones asociadas a su solución.
+El problema no es la falta de sistemas sino la forma en que el estado se produce y se consume. La disponibilidad se consolida por lote nocturno mientras cuatro canales venden y asignan en línea durante el día, de modo que la vitrina ofrece existencias que la sala ya no tiene y el pico de demanda convierte ese desfase en cancelaciones masivas.
 
-\hypertarget{contexto-de-la-industria}{%
-\subsection{Contexto de la industria}\label{contexto-de-la-industria}}
+El precio vive como atributo replicado sin versión., este se modifica centralmente varias veces al día y se repone a mano en etiquetas durante la noche, sin registro de que quedó efectivamente exhibido, lo que deja a la caja cobrando un valor distinto del publicado. El pedido no tiene un estado único consultable desde todos los puntos de contacto, y la evidencia del consentimiento en crédito existe como evento telefónico con retención corta en lugar de un objeto persistido y recuperable por una década. Cada síntoma apunta a la misma causa, se trata de escrituras concurrentes sobre un estado sin fuente única, propagadas por integraciones punto a punto sin contrato ni mapa.
 
-La operación de Multitiendas Ancoa S.A. combina una red tiendas físicas con un alcance a nivel nacional con canales digitales y un marketplace de terceros. A esta actividad se suma el negocio financiero, desarrollado mediante una filial emisora de tarjeta de casa comercial. De esta forma, Ancoa participa simultáneamente en la industria del comercio minorista y en el sector financiero, actividades que se relacionan directamente en el punto de venta y frente a un mismo cliente.
+Esa causa condiciona la arquitectura y el método. En arquitectura, la primera restricción es la frontera entre el dominio comercial y el financiero, cualquier vista unificada o uso de comportamiento de pago con fin comercial debe pasar por un control explícito de licitud y segregación, ya que un cruce indebido no se detecta en operación sino años después ante la autoridad. La segunda es la concurrencia sobre inventario y precio, que exige fuente de verdad para la existencia, cálculo explícito del disponible para vender y precio versionado con trazabilidad temporal. La tercera es la operación con conectividad parcial y ventanas mínimas de intervención, que obliga a diseñar para degradación controlada. En método, esto ordena la fase inicial a tratar, corresponde levantar el mapa real de integraciones como entrega temprana, planificar el corte de inventario en instalaciones que no cierran y migrar la cartera viva con doble conciliación de saldos.
 
-La compañía mantiene 22 tiendas distribuidas en 11 regiones, de las cuales 14 funcionan dentro de centros comerciales y ocho corresponden a tiendas con acceso a la calle. En conjunto, estas instalaciones suman 96.000 m² de superficie de venta y presentan condiciones operativas distintas entre sí, desde la tienda insignia ubicada en Santiago hasta establecimientos más pequeños y aislados, como el ubicado en Coyhaique, que presentan restricciones de conectividad y abastecimiento.
+La hipótesis que propone Only Simple Solutions es desacoplar antes de reemplazar. Esto significa interponer una puerta de enlace y un bus de eventos entre los consumidores y el tejido actual, concentrar la disponibilidad en un concentrador con actualización en tiempo casi real, separar los dominios comercial y financiero con gobierno de datos y controles propios, y retirar la plataforma de originación y cobranza por estrangulamiento progresivo en lugar de un corte único. El factor diferencial es la secuencia elegida, primero se verifican la frontera y la fuente de verdad, y después se construyen la vista unificada y la escala, de modo que cada compromiso asumido en vitrina, caja, despacho y crédito pueda cumplirse y acreditarse.
 
-El funcionamiento físico de la tienda se complementa con el canal en línea y el marketplace. Su canal digital representa un 19\% de las ventas y procesa aproximadamente 1,9 millones de pedidos al año. A la vez, cerca del 71\% de las referencias del catálogo corresponden a vendedores externos del marketplace, mientras que el 29\% restante corresponde a referencias del catálogo propio. Esto implica que Ancoa no se limita al modelo tradicional de compra y venta en el local, sino que debe coordinar productos, inventario y atención al cliente entre canales propios y de terceros.
+\textbf{Figura 2.1: Causas raíz del problema de Ancoa.}
+
+\begin{figure}
+\centering
+\includegraphics{figuras/image16-479e0cb3c3.png}
+\caption{Figura 2.1: Causas raíz del problema de Ancoa.}
+\end{figure}
+
+Fuente: Elaboración propia.
+
+\section{2.2. Comprensión del problema y de la necesidad}\label{comprensiuxf3n-del-problema-y-de-la-necesidad}
+
+Esta sección explica las condiciones de la industria y de la operación que originan cada causa raíz de la Figura 2.1. Las causas se identifican como C1 (registro impreciso), C2 (tejido de integración), C3 (frontera difusa), C4 (incentivos y capacidad) y C5 (territorio y calendario).
+
+\subsection{2.2.1. Contexto de la industria}\label{contexto-de-la-industria}
+
+La operación de Multitiendas Ancoa S.A. combina una red de tiendas físicas con un alcance a nivel nacional con canales digitales y un marketplace de terceros, a lo que además se le suma el negocio financiero, desarrollado mediante una filial emisora de tarjeta de casa comercial. De esta forma, Ancoa participa simultáneamente en la industria del comercio minorista y en el sector financiero, actividades que se relacionan directamente en el punto de venta y frente a un mismo cliente.
+
+La compañía mantiene 22 tiendas distribuidas en 11 regiones, de las cuales 14 funcionan dentro de centros comerciales y ocho corresponden a tiendas con acceso a la calle. En conjunto, estas instalaciones suman 96.000 m² de superficie de venta, esto es una media de 4.363,6 m² por tienda (96.000 / 22). El promedio esconde la dispersión real, que va desde la tienda insignia de Santiago hasta locales pequeños y aislados como el de Coyhaique, con restricciones de conectividad y abastecimiento. Una misma solución deberá por tanto comportarse de forma distinta según el punto de la red donde opere.
+
+El funcionamiento físico de la tienda se complementa con el canal en línea y el marketplace. Su canal digital representa un 19\% de las ventas y procesa aproximadamente 1,9 millones de pedidos al año, esto es unos 5.205 pedidos diarios en régimen (1.900.000 / 365). A la vez, cerca del 58.5\% de las referencias del catálogo corresponden a vendedores externos del marketplace, mientras que el 41.5\% restante corresponde a referencias del catálogo propio. Ese catálogo exige una jerarquía de maestro de artículos que distinga estilo, talla y color como niveles del SKU, porque la disponibilidad agregada por modelo oculta los quiebres reales por variante. Esto implica que Ancoa no se limita al modelo tradicional de compra y venta en el local, sino que debe coordinar productos, inventario y atención al cliente entre canales propios y de terceros.
 
 Como referencia del sector, la Cámara de Comercio de Santiago estimó que durante 2025 el comercio electrónico representó un 12,6\% de las ventas del comercio minorista en Chile y un 16,1\% en el caso de las tiendas por departamento. Además, las ventas online crecieron un 11,6\% nominal durante ese año. En este contexto, la participación digital de Ancoa, equivalente al 19\% de sus ventas, se encuentra por sobre la referencia informada para las tiendas por departamento y confirma que el canal digital tiene un peso relevante dentro de su operación (Cámara de Comercio de Santiago {[}CCS{]}, 2026a).
 
-Las tiendas tampoco se limitan a participar en la venta presencial. Un 41\% de los pedidos en línea son retirados en tienda, y también despachan a un 17\% de estos. Por esto parte de la infraestructura y del personal de sala participa directamente en el cumplimiento de los pedidos digitales. Las mesas de atención también realizan los cambios, devoluciones y reciben los reclamos de distintos canales. Es por esto que la tienda física, el canal digital y el marketplace funcionan mediante procesos que ocupan, en cierto grado, la misma infraestructura y personal.
+Las tiendas tampoco se limitan a participar en la venta presencial, un 41\% de los pedidos en línea son retirados en tienda, y también despachan a un 17\% de estos. Sumados, el 58\% del fulfillment digital pasa físicamente por la sala o su trastienda, lo que equivale a unos 1.102.000 pedidos al año (58\% de 1,9 millones) y cerca de 3.019 pedidos diarios (1.102.000 / 365) gestionados con personal e infraestructura pensados para vender. Esta doble función exige calcular el disponible comprometible en tiempo real, lo que la literatura de operaciones denomina Available-to-Promise (Chopra \& Meindl, 2016), y costear la tienda como un mini hub logístico mediante el costo total de servir, porque cada pedido preparado en sala compite con la reposición y la atención presencial (Hugos, 2018). Por esto parte de la infraestructura y del personal de sala participa directamente en el cumplimiento de los pedidos digitales, las mesas de atención también realizan los cambios, devoluciones y reciben los reclamos de distintos canales. Es por esto que la tienda física, el canal digital y el marketplace funcionan mediante procesos que ocupan, en cierto grado, la misma infraestructura y personal.
 
-\hypertarget{particularidades-operacionales}{%
-\subsubsection{Particularidades operacionales}\label{particularidades-operacionales}}
+Otra condición sensible es la relación entre el retail y la filial financiera. Ambos comparten centros de datos, red y equipos de tecnologías de la información, mientras que su separación lógica está implementada de manera parcial, y no completamente documentada. Por lo tanto, aunque comparte la infraestructura tecnológica, la información de ambos negocios no puede tratarse sin hacer la distinción necesaria primero.
 
-La principal particularidad del funcionamiento de Ancoa es que las actividades de los sectores de retail y financiero coinciden en el mismo entorno operacional. El negocio financiero funciona mediante una filial distinta, pero comparte con el retail la marca, el cliente y parte de los puntos de atención. Durante una visita a la tienda, la misma persona puede comprar un producto, pagar con su tarjeta propia y realizar gestiones relacionadas al crédito. Es por esta convivencia que procesos de ambos negocios se pueden realizar frente al mismo cliente, y en algunos casos por el mismo personal.
+La operación descrita se sostiene sobre nueve plataformas de seis proveedores, conectadas mediante catorce interfaces punto a punto, mayoritariamente basadas en archivos y procesos por lote nocturnos. La compañía no dispone de un mapa completo de estas integraciones. La Figura 2.2 presenta un mapa preliminar del entorno tecnológico actual, que permite reconocer las dependencias entre sistemas y comprender cómo la fragmentación de la información afecta a los distintos canales y negocios
 
-A esto se suma la naturaleza fragmentada del entorno tecnológico. El negocio funciona gracias a nueve plataformas de seis proveedores, conectadas mediante catorce interfaces punto a punto a lo largo de quince años. Varias de estas plataformas comparten información mediante procesos nocturnos, y Ancoa no cuenta con un mapa completo de todas las conexiones entre sistemas. Esto implica que la información utilizada por el negocio puede encontrarse distribuida entre distintas plataformas, y no actualizarse al mismo tiempo.
+\begin{figure}
+\centering
+\includegraphics{figuras/image14-09afed6ed1.png}
+\caption{Imagen del informe}
+\end{figure}
 
-Otra condición sensible es la relación entre el retail y la filial financiera. Ambos comparten centros de datos, red y equipos de tecnologías de la información, mientras que su separación lógica está implementada de manera parcial, y no completamente documentada. Por lo tanto, aunque comparte la infraestructura tecnológica, la información de ambos negocios no puede tratarse sin hacer la distinción necesaria.
+\textbf{Figura 2.2: Mapa preliminar de plataformas y flujos del sistema actual de Ancoa.}
 
-La fuerza laboral también condiciona la forma en que se ejecutan los procesos. La compañía cuenta con 3.820 vendedores de piso y cajeros, cuya remuneración posee un componente variable asociado a comisiones y cuya rotación anual alcanza el 62\%. La comisión aumenta cuando una venta se paga mediante la tarjeta propia, por lo que el tiempo requerido para completar los procesos comerciales y financieros forma parte de las condiciones habituales de trabajo del vendedor.
+Fuente: Elaboración propia a partir del capítulo 5.
+
+Esta configuración permite comprender que el problema no corresponde al reemplazo de un único sistema. La coexistencia de plataformas, réplicas y procesos por lote contribuye a que la existencia, los precios y los pedidos presenten estados diferentes según el sistema consultado y el momento de la consulta. Además, el negocio financiero participa en una infraestructura compartida, aunque requiere mantener una frontera de datos diferenciada y auditable. Estas dependencias explican por qué una inconsistencia puede extender sus efectos desde la venta hasta el despacho, la atención al cliente y la acreditación de las operaciones.
+
+La fuerza laboral también condiciona la forma en que se ejecutan los procesos, la compañía cuenta con 3.820 vendedores de piso y cajeros, cuya remuneración posee un componente variable asociado a comisiones y cuya rotación anual alcanza el 62\%. La comisión aumenta cuando una venta se paga mediante la tarjeta propia, por lo que el tiempo requerido para completar los procesos comerciales y financieros forma parte de las condiciones habituales de trabajo del vendedor.
 
 En las salas de venta trabajan aproximadamente 1.100 repositores que están contratados por proveedores externos, y no tienen relación laboral directa con Ancoa. A esto se suma que los vendedores comparten 640 terminales móviles para consultar la existencia de productos, las cuales están distribuidas de forma desigual entre las tiendas. Estas condiciones deben considerarse para comprender una operación en la que interactúan personal propio, personal externo, equipos compartidos y procesos presenciales y digitales.
 
-\hypertarget{particularidades-regulatorias}{%
-\subsubsection{Particularidades regulatorias}\label{particularidades-regulatorias}}
+Por encima de estas condiciones, la operación de Ancoa descansa sobre cuatro promesas que la compañía formula y difunde a sus clientes de forma explícita y que hoy no puede cumplir ni acreditar frente a quien las compra: el producto existe, el precio es el exhibido, la entrega llega en la fecha y las condiciones del crédito son las informadas.
 
-La coexistencia de ambos dominios hace que Ancoa se rige por regímenes jurídicos de distinta naturaleza.
+\subsection{2.2.2. Las 5 particularidades operacionales}\label{las-5-particularidades-operacionales}
 
-En lo que respecta al dominio del retail, materia de protección al consumidor, la Ley N.º 19.496 establece obligaciones relacionadas con la información proporcionada al cliente y los precios de los bienes y servicios. Su artículo 30 exige que el precio sea informado de forma claramente visible antes de perfeccionarse el acto de consumo y contempla también la oferta de productos realizada mediante sitios de Internet (Ley N.º 19.496, 1997). Esto es relevante en una operación donde un mismo producto puede tener un precio registrado centralmente, uno publicado en el canal digital y una etiqueta física exhibida en tienda.
+La operación presenta cinco particularidades, cada una asociada a una causa raíz de la Figura 2.1. Aquí se describen.
 
-Por otro lado y dentro del mismo dominio, el canal digital está sujeto al decreto N°6 del 2021, Reglamento del comercio electrónico. Esta normativa establece los deberes de información en las ventas realizadas mediante medios digitales y distingue las obligaciones de los vendedores y operadores de las plataformas electrónicas. (Decreto N.º 6, 2021)
+Registro impreciso (C1): El inventario registrado difiere del físico en el 12,4 \% de las referencias auditadas, por causas conocidas pero de proporción desconocida: sustracción, daño no dado de baja, recepción o ubicación errónea, unidades en probadores y devoluciones mal reintegradas son posibles causas de este problema. La compañía las agrupa en una sola cifra indiferenciada de merma y carece de un programa de conteo cíclico (Hugos, 2018) sistemático para conciliar las discrepancias. A esto se suma la ausencia de auditoría sobre el maestro de artículos, lo que alimenta con datos desfasados a los algoritmos de reposición y provoca la ficción de inventario exacto.
 
-En particular, el reglamento exige informar aspectos como el costo total de la compra, la inexistencia de stock, los plazos de despacho o retiro y los canales de contacto para consultas, cambios o devoluciones. Estas obligaciones resultan especialmente relevantes en operaciones que combinan comercio electrónico, retiro en tienda y marketplace (Servicio Nacional del Consumidor {[}SERNAC{]}, 2022).
+Tejido de integración (C2): Nueve plataformas de seis proveedores, con hasta diecisiete años de antigüedad, se conectan por catorce interfaces punto a punto, en su mayoría por archivo y lote nocturno, del cual nadie conoce el mapa completo. El mesón no ve los pedidos en línea y el vendedor de marketplace no sabe qué ocurrió con los suyos es por eso que los productos, clientes o pedidos tienen estados distintos según la plataforma. Además no existe un motor de precios como sistema, pues las campañas se arman en planillas que se cargan masivamente, y el punto de venta convive en tres versiones.
 
-La filial financiera se encuentra bajo un marco distinto para cada una de sus áreas. Por un lado los emisores de tarjetas de crédito no bancarias forman parte de las entidades reguladas y supervisadas por la Comisión para el Mercado Financiero, mientras que las operaciones de crédito de dinero se encuentran reguladas por la Ley N.º 18.010 (Ley N.º 18.010, 1981). Por lo que, procesos como la originación, modificación de condiciones, repactación y cobranza poseen exigencias distintas a las de una venta de retail.
+El estado actual de los principales sistemas permite observar dónde se origina esta fragmentación:
 
-La diferencia entre ambos dominios también trae consigo responsabilidades distintas respecto al tratamiento de la información. La empresa tiene interés en utilizar los antecedentes de sus clientes del dominio de retail para análisis y campañas, mientras que la información del dominio de la filial ha sido utilizada para finalidades asociadas al crédito. El cruce de información entre ambos ámbitos requiere determinar previamente qué datos pueden utilizarse, con qué finalidad y bajo qué fundamento.
+\begin{itemize}
+\tightlist
+\item
+  El sistema central de retail, implementado en 2009, concentra el catálogo de artículos, las órdenes de compra, la recepción, el inventario contable, los precios y la información utilizada para la reposición.
+\item
+  La plataforma de originación y cobranza de créditos, en operación desde 2011, administra la evaluación, originación, cupos, estados de cuenta, cobranza y repactaciones. Su proveedor anunció el término de soporte para 2029, mientras la plataforma mantiene una cartera activa de 620.000 clientes con saldo.
+\item
+  El punto de venta, implementado en 2014, gestiona cobros, promociones, emisión de documentos y consultas de existencia. Actualmente conviven tres versiones distintas en las 22 tiendas.
+\item
+  La plataforma de comercio electrónico, incorporada en 2019, gestiona catálogo, disponibilidad, carro y pedidos, y publica la existencia utilizando el registro de inventario que presenta las diferencias descritas en C1.
+\item
+  La plataforma de marketplace, incorporada en 2022, administra el catálogo de terceros, los vendedores y la liquidación de comisiones, pero el mesón de atención no dispone de una visión completa de esas operaciones.
+\item
+  El sistema de gestión de almacenes opera en el centro de distribución principal, mientras el centro de distribución de Concepción continúa gestionando parte de su operación mediante planillas.
+\item
+  El sistema de fidelización concentra puntos, segmentos y campañas y constituye uno de los puntos donde actualmente se mezclan datos comerciales y financieros.
+\item
+  El sistema de gestión empresarial y facturación concentra funciones contables y de facturación y es el único emisor de documentos tributarios.
+\item
+  No existe actualmente un motor de precios y promociones como sistema independiente; las campañas se preparan mediante planillas y cargas masivas.
+\end{itemize}
 
-Durante el horizonte del proyecto también deberá considerarse la Ley N.º 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales. La norma fue publicada el 13 de diciembre de 2024 y su entrada en vigencia está fijada para el 1 de diciembre de 2026 (Ley N.º 21.719, 2024). Esto es especialmente relevante por la cantidad y diversidad de información de clientes procesada entre los canales comerciales y el negocio financiero.
+En conjunto, estas plataformas no operan sobre una integración única y sincronizada. Las catorce interfaces punto a punto, en su mayoría basadas en archivos y procesos nocturnos, generan diferencias temporales entre la información disponible en cada sistema. Por ello, la brecha no está concentrada en una plataforma particular, sino en la coordinación y trazabilidad del conjunto.
 
-Por estas razones, una interacción con un cliente está sujeta a restricciones distintas dependiendo del ámbito del negocio con el que esté interactuando. La particularidad regulatoria de Ancoa radica en que estas actividades están estrechamente relacionadas en la operación diaria, aunque no se encuentran sometidas a un único régimen jurídico.
+Frontera difusa (C3): La filial emisora comparte elementos con el retail, el centro de datos, la red y el equipo de TI, con una separación lógica parcial y no documentada. El sistema de fidelización mezcla hoy datos comerciales y financieros, y marketing busca usar el comportamiento de pago para segmentar ofertas. Ese cruce exige una finalidad, una base de licitud y un control técnico que no están escritos.
 
-\hypertarget{particularidades-estacionales}{%
-\subsubsection{Particularidades estacionales}\label{particularidades-estacionales}}
+Incentivos y capacidad (C4): Los 3.820 vendedores y cajeros tienen comisión variable, mayor si la venta se paga con tarjeta propia, y una rotación anual del 62 \%. Ese incentivo compite con cualquier paso que alargue la venta, como entregar la información precontractual completa, y el despacho desde tienda le quita al vendedor unidades y comisión. Además, los vendedores comparten 640 terminales móviles (un ratio crítico de un terminal por cada 5,97 vendedores, o 1 equipo cada 6 trabajadores), cerca de 1.100 repositores externos trabajan en sala sin acceso individualizado, y TI cuenta con 46 personas para nueve plataformas.
+
+Territorio y calendario (C5): Seis de las 14 tiendas en centros comerciales y la de Coyhaique carecen de enlace de respaldo, y los centros comerciales no avisan sus mantenciones. Solo 9 de 22 tiendas tienen redes segmentadas, el alcance de PCI DSS está definido únicamente para el canal digital y el centro de datos de 2011 cumple parcialmente los estándares exigidos. A esto se suman 126 días de congelamiento al año.
+
+\subsection{2.2.3. Particularidades regulatorias}\label{particularidades-regulatorias}
+
+La particularidad regulatoria de Ancoa es que una misma interacción con un cliente queda sujeta a regímenes distintos según el negocio involucrado. La Tabla 2.1 distingue qué obligación recae en cada uno.
+
+\textbf{Tabla 2.1: Marco regulatorio por ámbito de negocio.}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Materia
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Norma
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Retail
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Filial emisora
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Brecha actual que expone
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Información de precios & Ley 19.496, art. 30 & Sí & No & 11 \% de discrepancia en precios auditados sobre una muestra de 120 productos; sin registro histórico de precios promocionales exhibidos \\
+Comercio electrónico y contratación a distancia & Ley 19.496; Decreto N.º 6 (2021) & Sí & No & Pedidos aceptados y cobrados que se cancelan por falta de stock \\
+Garantía legal & Ley 19.496, arts. 20 y 21, modificada por Ley 21.398 (2021) & Sí & No & El mesón deriva al fabricante, al servicio técnico o al vendedor de marketplace \\
+Intermediación de terceros & Decreto N.º 6 (2021) & Sí & No & Sin reglas de atención ni evaluación de 310 vendedores \\
+Información precontractual y costo total del crédito & Ley 19.496 modificada por Ley 20.555 (2011) & No & Sí & Entrega en papel sin registro de versión ni acreditación de recepción previa de la Hoja de Resumen y la Carga Anual Equivalente (CAE). \\
+Operaciones de crédito y tasa máxima convencional & Ley 18.010 & No & Sí & Riesgo de superar la Tasa Máxima Convencional (TMC) en simulaciones, cobro de intereses moratorios y repactaciones por ausencia de validación centralizada. \\
+Repactación y cobranza extrajudicial & Ley 19.496, art. 37; instrucciones de la CMF & No & Sí & 1.240 repactaciones sin consentimiento acreditable \\
+Prevención de lavado de activos & Ley 19.913 & No & Sí & Conocimiento del cliente en la originación \\
+Datos personales & Ley 21.719 & Sí & Sí & Frontera parcial y no documentada; uso del comportamiento de pago \\
+Medios de pago & PCI DSS v4.0.1 & Sí & Sí & Alcance no definido en tiendas \\
+\end{longtable}
+
+Fuente:
+
+Tres puntos merecen énfasis, primero, la garantía legal debe ejercerse ante el vendedor porque derivar al consumidor como condición de atención infringe la Ley 19.496. Segundo, el comportamiento de pago se recogió en un negocio fiscalizado con una finalidad específica, por lo que su uso comercial requiere una base de licitud bajo la Ley 21.719. Tercero, la carga de acreditar el consentimiento recae en el emisor porque un consentimiento que no se puede probar equivale, ante la autoridad, a uno inexistente.
+
+\subsection{2.2.4. Particularidades estacionales}\label{particularidades-estacionales}
 
 Durante el transcurso del año hay períodos en que la demanda aumenta a niveles considerablemente distintos del régimen normal. Entre el 1 de noviembre y el 6 de enero se desarrolla la campaña de navidad, y la posterior liquidación de enero, lo que corresponde al nivel de demanda más alto de las ventas. Durante esta etapa, la dotación aumenta desde aproximadamente 6.400 hasta 8.300 trabajadores mediante la incorporación de cerca de 1.900 personas de temporada.
 
 También existen otros períodos de mayor actividad durante el año. La temporada de vuelta a clases se extiende aproximadamente desde la última semana de enero hasta la primera semana de marzo y concentra la demanda en determinadas categorías. A esto se suma el Día de la Madre durante mayo y otros eventos comerciales de descuentos. Estas variaciones afectan de forma distinta a las categorías de productos y a los canales de venta, por lo que la carga operacional no se distribuye uniformemente durante el año.
 
-En la industria chilena, algunos de los principales eventos promocionales poseen fechas definidas externamente a cada retailer. CyberDay y CyberMonday son organizados por el Comité de Comercio Electrónico de la Cámara de Comercio de Santiago, entidad que anuncia las fechas correspondientes a cada edición. En 2026, CyberDay se realizó entre el 1 y el 3 de junio, mientras que CyberMonday fue fijado entre el 5 y el 7 de octubre (CCS, 2026b, 2026c).
+El principal peak del canal digital corresponde al evento anual de comercio electrónico desarrollado entre mayo y junio. Durante tres días de campaña, el canal procesa un volumen equivalente a 22 días de venta ordinaria: aproximadamente 114.520 pedidos en total (22 x 5.205 pedidos/día), lo que impone una tasa de procesamiento de \textasciitilde38.174 pedidos diarios (114.520 / 3). Esto representa un factor de sobrecarga de 7,33x frente al régimen base. A los tres días del evento se suma la semana previa de estabilización técnica, conformando una ventana de congelamiento de 10 días corridos. Esta concentración estresa de forma simultánea la infraestructura web y sus colas transaccionales, las interfaces batch, los centros de distribución, las tiendas físicas asignadas a preparación y retiro, y la red externa de despacho.
 
-La CCS también organiza una versión oficial de Black Friday. Por ejemplo, la edición de 2025 se realizó entre el 28 de noviembre y el 1 de diciembre. La propia Cámara distingue esta versión oficial de otras iniciativas comerciales que utilizan la denominación Black Friday sin encontrarse vinculadas al gremio (CCS, 2025). Por lo tanto, para los retailers participantes estos eventos constituyen hitos externos del calendario comercial a los que deben adaptar previamente su capacidad operativa, logística y tecnológica.
+Las bases prohíben intervenir los sistemas durante las cinco ventanas del calendario comercial descritas. La Tabla 2.2 consolida el período de cada una y su duración en días corridos.
 
-El principal peak del canal digital corresponde al evento anual de comercio electrónico desarrollado entre mayo y junio. Durante tres días, el canal procesa un volumen equivalente a aproximadamente 22 días de venta normal en línea. Esta concentración afecta simultáneamente al canal digital, los centros de distribución, las tiendas que preparan pedidos, los puntos de retiro y la capacidad de despacho.
+\textbf{Tabla 2.2: Ventanas de congelamiento anual.}
 
-La estacionalidad, por lo tanto, no corresponde únicamente a un aumento temporal de las ventas. Los períodos de mayor demanda modifican la dotación disponible, el volumen de pedidos, la utilización de las tiendas como puntos logísticos y la carga sobre los sistemas que sostienen la operación. Estas condiciones permiten comprender el entorno en que se manifiesta el problema, mientras que sus efectos cuantitativos específicos se desarrollarán posteriormente en el dimensionamiento.
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Ventana
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Período
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Días corridos
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Navidad y liquidación & 1 noviembre a 6 enero & 67 \\
+Vuelta a clases & Última semana de enero a la primera semana de marzo & 42 \\
+Evento anual de comercio electrónico & 3 días + semana previa (mayo o junio) & 10 \\
+Día de la Madre & Segunda semana de mayo & 7 \\
+Evento de descuentos de noviembre & Última semana de noviembre & 7 \\
+Total & 126 (34,5 \%) & \\
+\end{longtable}
 
-\hypertarget{dimensionamiento-del-problema}{%
-\section{2.3 Dimensionamiento del problema}\label{dimensionamiento-del-problema}}
+Fuente: Elaboración propia a partir del numeral 13.2 de las Bases Técnicas del Caso 09.
 
-La siguiente sección establece qué tan grande es el problema descrito y por qué resulta crítico para la compañía. Para ello, se analizan las cuatro promesas que Ancoa realiza diariamente a sus clientes, estas son, que el producto existe, que el precio cobrado es el de la etiqueta, que la entrega llega en la fecha ofrecida y que las condiciones del crédito son las informadas. Cada una de estas promesas se dimensiona con los indicadores que se entregan, correspondientes a los datos obtenidos del año 2025 y al primer semestre de 2026, proveniente de los registros de la propia compañía.
+Las ventanas suman 126 días corridos al año, es decir, el 34,5 \% del calendario, por lo que los sistemas sólo pueden intervenirse durante los 239 días restantes (65,5 \%). El evento anual congela apenas 10 días, pero su fecha depende de un tercero y debe absorberse sin desplazar los hitos contractuales considerándose como crítica por su alta impredictibilidad. A esto se suma que la ventana de navidad coincide con la incorporación de 1.900 personas de temporada, de modo que el personal nuevo debe aprender a operar sistemas que no pueden cambiar en ese período.
 
-Multitiendas Ancoa S.A registró ingresos consolidados de \$474.000 millones de pesos, a
+La estacionalidad, por lo tanto, no corresponde únicamente a un aumento temporal de las ventas. Los períodos de mayor demanda modifican la dotación disponible, el volumen de pedidos, la utilización de las tiendas como puntos logísticos y la carga sobre los sistemas que sostienen la operación y, al mismo tiempo, reducen las oportunidades de intervenirlos. Estas condiciones permiten comprender el entorno en que se manifiesta el problema, mientras que sus efectos cuantitativos específicos se desarrollan en el dimensionamiento.
+
+\section{2.3. Dimensionamiento del problema}\label{dimensionamiento-del-problema}
+
+Las cuatro promesas presentan brechas de entre 1,9 y 36,5 veces el valor tolerable, y su origen no es un único sistema, sino cinco causas raíz que actúan en conjunto. Esta sección presenta primero la red operativa (Figura 2.3) y la brecha de cada promesa (2.3.1 a 2.3.4); luego la obligación transversal de atención (2.3.5) y las condiciones transversales (2.3.6), y cierra con la síntesis causa × promesa (2.3.7).
+
+Como se mencionó en la sección anterior, el problema se desarrolla sobre una operación extensa y compleja, cuyas particularidades técnicas, humanas, estacionales y regulatorias condicionan su funcionamiento. La siguiente figura muestra la distribución de las tiendas identificadas, las ubicadas por supuesto metodológico y los centros logísticos de abastecimiento.
 
 \begin{figure}
 \centering
-\includegraphics{figuras/figura-d96d9713821d-86e8742392.png}
-\caption{Diagrama conceptual de solución e interacción de actores}
+\includegraphics{figuras/image15-04143fb467.png}
+\caption{Imagen del informe}
 \end{figure}
 
-Tabla 2.2:** Indicadores por promesa: valor actual, referencia y brecha.
+\textbf{Figura 2.3: Distribución territorial de tiendas y centros de distribución de Ancoa.}
+
+Fuente: Elaboración propia.
+
+Por un lado tenemos que la región metropolitana concentra un cluster compuesto por la mitad de tiendas, el centro de distribución principal y la tienda insignia, la cual por sí sola concentra el 17\% de la venta presencial, transformando al cluster automáticamente en uno de los puntos de impacto de mayor riesgo en caso de falla. En el resto del país, la dispersión de miles de kilómetros deja a cada tienda como un sitio aislado, que depende de un único enlace, propio o del centro comercial, y de una cadena de abastecimiento larga. Por otro lado tenemos a Aysén con la tienda más pequeña de Ancoa que carece respaldo en el enlace único y la logística más extensa hacen que una interrupción de conexión sea allí la más probable y la más difícil de contener. Esto muestra que el impacto se concentra donde la infraestructura es relativamente más robusta y la probabilidad de falla donde es más frágil, por lo que la autonomía local de cada tienda debe tratarse como una condición estructural de la operación y no como una contingencia excepcional.
+
+Para dimensionar cuantitativamente la brecha de cada promesa sobre esta red operativa, se contrasta el valor actual de indicadores representativos con el criterio de aceptación que Ancoa pretende establecer como estándar. A continuación, se consolidan en la Tabla 2.3 ambos valores y la diferencia entre ellos. Los criterios de aceptación en azul corresponden a los establecidos directamente de las bases, mientras que el criterio en rojo fue propuesto por el proponente justificándolo con un cálculo que se detalla a continuación.
+
+\textbf{Tabla 2.3: Indicadores por promesa: valor actual, referencia y brecha.}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
@@ -196,54 +320,174 @@ Indicador
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Valor actual
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Criterio de aceptación de Ancoa
+Criterio de aceptación
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Diferencia entre el valor actual y el criterio de aceptación
+Brecha
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{1. El producto existe} & Diferencias detectadas en conteo cíclico & 12,4 \% & \textless{} 2 \% & 6,2 veces \\
-& Merma o pérdida desconocida sobre la venta & 1,9 \% & \textless{} 1 \% & 1,9 veces \\
-& Pedidos en línea cancelados por falta de existencia, 2025 & 1,9 \% & \textless{} 0,3 \% & 6,3 veces \\
-& Pedidos cancelados en el evento de junio de 2026 & 2,7 \% & 0 & Sin tolerancia \\
-\textbf{2. El precio es el exhibido} & Productos con precio exhibido distinto del cobrado (muestra de 120) & 11 \% & Sin valor numérico & No calculable \\
-\textbf{3. La entrega llega en la fecha} & Pedidos entregados en la fecha ofrecida & 81 \% & \textgreater{} 97 \% & 6,3 veces (19 \% frente a 3 \% fuera de plazo) \\
-\textbf{4.Las condiciones del crédito son las informadas} & Tiempo de evaluación crediticia en el punto de venta & 40 s a 3 min & $\leq$ 8 s & 5 a 22,5 veces \\
-& Repactaciones sin evidencia recuperable del consentimiento & 1.240 & 0 & Sin tolerancia \\
-& Conservación de las grabaciones de originación y repactación & 90 días & Plazo del crédito + 6 años & 24,3 veces o más \\
+1. El producto existe & Diferencias detectadas en conteo cíclico & 12,4 \% & \textless{} 2 \% & 6,2 veces \\
+Merma o pérdida desconocida sobre la venta & 1,9 \% & \textless{} 1 \% & 1,9 veces & \\
+Pedidos en línea cancelados por falta de existencia, 2025 & 1,9 \% & \textless{} 0,3 \% & 6,3 veces & \\
+Pedidos cancelados en el evento de junio de 2026 & 2,7 \% & = 0 & Sin tolerancia & \\
+2. El precio es el exhibido & Productos con precio exhibido distinto del cobrado (muestra de 120) & 11 \% & \textless{} 3\% & 3.7 veces \\
+3. La entrega llega en la fecha & Pedidos entregados en la fecha ofrecida & 81 \% & \textgreater{} 97 \% & 6,3 veces \\
+4. Las condiciones del crédito son las informadas & Tiempo de evaluación crediticia en el punto de venta & 40 s a 3 min & \textless{} 10 s & 5 a 22,5 veces \\
+Repactaciones sin evidencia recuperable del consentimiento & 1.240 & = 0 & Sin tolerancia & \\
+Conservación de las grabaciones de originación y repactación & 90 días & Plazo del crédito + 6 años & 24,3 veces o más & \\
 \end{longtable}
 
-Como muestra la tabla, ninguna de las cuatro promesas alcanza la referencia definida y en tres de ellas, la compañía tampoco cuenta con un registro que le permita demostrar lo ocurrido.
+Fuente:
 
-\hypertarget{promesa-1-el-producto-existe}{%
-\subsection{Promesa 1: El producto existe}\label{promesa-1-el-producto-existe}}
+Como muestra la tabla, cada una de las cuatro promesas está lejos de alcanzar su criterio de aceptación, con brechas que van desde casi dos hasta más de veinte veces el valor tolerable.
 
-En cuanto a las
+El criterio de 3\% para el precio se obtuvo modelando la proporción de etiquetas desactualizadas \includegraphics{figuras/image1-608c4fa181.png} como el producto entre la frecuencia de cambio de precio por referencia (\includegraphics{figuras/image2-3f1411d7db.png}, en cambios por día) y el tiempo promedio que tarda en corregirse la etiqueta (\includegraphics{figuras/image3-8c1ac936ee.png}, en días), más un error residual de ejecución \includegraphics{figuras/image4-832d580131.png}:
 
-\hypertarget{promesa-2-el-precio-es-el-exhibido}{%
-\subsubsection{Promesa 2: El precio es el exhibido}\label{promesa-2-el-precio-es-el-exhibido}}
+\begin{figure}
+\centering
+\includegraphics{figuras/image5-d8e88bf05b.png}
+\caption{Imagen del informe}
+\end{figure}
 
-En cuanto a las
+El caso indica que el precio cambia una o dos veces por semana, por lo que se adopta \includegraphics{figuras/image6-682d9efd55.png} cambios por día. Como las etiquetas se reemplazan durante la noche con hasta 24 horas de desfase, el tiempo promedio de corrección es de aproximadamente medio día (\includegraphics{figuras/image7-7187521240.png}). Con un error residual supuesto de \includegraphics{figuras/image8-82253783e5.png}, el modelo reproduce un valor cercano al observado en la fiscalización, lo que valida su calibración:
 
-\hypertarget{promesa-3-la-entrega-llega-en-la-fecha}{%
-\subsubsection{Promesa 3: La entrega llega en la fecha}\label{promesa-3-la-entrega-llega-en-la-fecha}}
+\begin{figure}
+\centering
+\includegraphics{figuras/image9-c1fec17abb.png}
+\caption{Imagen del informe}
+\end{figure}
 
-En cuanto a las
+Si las etiquetas se corrigen durante el día mediante oleadas, el desfase baja a 2 a 3 horas (\includegraphics{figuras/image10-3121d3a18f.png}) y la discrepancia resultante es:
 
-\hypertarget{promesa-4-las-condiciones-del-cruxe9dito-son-las-informadas-hola-samira-donde-estashola-samira-donde-estas}{%
-\subsubsection{Promesa 4: Las condiciones del crédito son las informadas** HOLA SAMIRA DONDE ESTASHOLA SAMIRA DONDE ESTAS}\label{promesa-4-las-condiciones-del-cruxe9dito-son-las-informadas-hola-samira-donde-estashola-samira-donde-estas}}
+\begin{figure}
+\centering
+\includegraphics{figuras/image11-2c63c720ab.png}
+\caption{Imagen del informe}
+\end{figure}
 
-En cuanto a las
+Este valor se redondeó a 3\%, y se considera adecuado porque es alcanzable con etiquetado en papel, sin depender de etiquetas electrónicas. A continuación, se profundiza cada una de las promesas que actualmente Ancoa no puede acreditar.
 
-\hypertarget{suxedntesis}{%
-\subsubsection{Síntesis \ldots\ldots\ldots\ldots{}}\label{suxedntesis}}
+\subsection{2.3.1 Promesa 1: El producto existe}\label{promesa-1-el-producto-existe}
 
-En cuanto a las
+Ancoa compromete en sala y en línea existencia que no está físicamente disponible, porque publica sobre un registro con 12,4 \% de diferencias y un descuento de seguridad fijo definido en 2019. Esto también impide distinguir la merma física de los errores de registro.
 
-\hypertarget{actores-y-grupos-de-interuxe9s}{%
-\section{2.4 Actores y Grupos de Interés}\label{actores-y-grupos-de-interuxe9s}}
+La merma alcanza el 1,9 \% de la venta, equivalente a \$7.800 millones anuales. De ahí se deriva la venta base: \$7.800 millones / 0,019 = \$410.526 millones. El criterio de 1 \% equivale a \$4.105 millones anuales, por lo que el exceso atribuible a la falta de control es de \$3.695 millones al año (47 \% de la merma total). Mantenido durante los 36 meses de operación, acumularía \$11.084 millones. Como la compañía no sabe qué parte es pérdida física y qué parte es error de registro, no puede dirigir acciones correctivas.
+
+En atención al cliente, en 2025 se cancelaron 36.100 pedidos en línea por quiebre de stock (1,9 \% de 1,9 millones), cerca de 99 pedidos diarios. El ticket medio se estima así: venta en línea = 19 \% × \$410.526 millones = \$78.000 millones; ticket = \$78.000 millones / 1.900.000 pedidos ≈ \$41.000. Con ese ticket, las cancelaciones comprometen \$1.482 millones anuales. Frente al máximo de 0,3 \% (5.700 pedidos), el exceso es de 30.400 pedidos y \$1.248 millones al año.
+
+El problema se agudiza en los peaks. En el evento de junio de 2026, la tasa de cancelación llegó al 2,7 \%: 2.840 pedidos en tres días, el 7,9 \% de todas las cancelaciones de 2025. Derivaron en 1.900 reclamos formales (dos de cada tres pedidos cancelados) y en un procedimiento abierto por el SERNAC, cuyo resultado puede imponer obligaciones adicionales durante el proyecto.
+
+\subsection{2.3.2. Promesa 2: El precio es el exhibido}\label{promesa-2-el-precio-es-el-exhibido}
+
+El precio cambia centralmente y llega a cajas y canal digital en minutos, pero a la etiqueta física solo de noche, mediante una lista impresa. No existe motor de precios ni registro de qué etiqueta se cambió, cuándo ni quién. Tampoco existe un historial del precio publicado por canal, por lo que la compañía no puede responder un reclamo ni a favor ni en contra.
+
+Un precio modificado a las 11:00 se corrige en sala entre las 02:00 y las 06:00 del día siguiente. Esto deja entre 15 y 19 horas de discrepancia, entre 180 y 228 veces el plazo de 5 minutos con que el cambio llega a cajas y canal digital (RT-09.01), y hasta 288 veces con el desfase máximo de 24 horas. Esa ventana cubre el peak de afluencia presencial de la tarde.
+
+La carga se multiplica en campaña. El caso informa 14 millones de cambios de precio al año, un promedio de 38.356 diarios, y hasta 400.000 en un día de campaña: 10,4 veces el promedio. Cuando la lista nocturna supera la capacidad del personal, se priorizan las góndolas delanteras y el resto queda para la noche siguiente, con un desfase superior a un día.
+
+\subsection{2.3.3. Promesa 3: La entrega llega en la fecha}\label{promesa-3-la-entrega-llega-en-la-fecha}
+
+Solo el 81 \% de los pedidos llega en la fecha ofrecida, y aunque el tiempo medio de 4,2 días cumple con la promesa de 2 a 5 días hábiles, el problema radica en ese 19 \% de incumplimiento. La causa es que las tiendas cumplen pedidos digitales con el mismo espacio y personal de la venta presencial, y sobre un registro de inventario impreciso.
+
+Sobre 1,9 millones de pedidos anuales, el 19 \% de atraso equivale a 361.000 entregas impuntuales al año (cerca de 989 diarias). El máximo admisible al 3 \% es de 57.000, por lo que el exceso es de 304.000 entregas y expone unos \$12.480 millones en ventas con el ticket medio estimado.
+
+El 58 \% de los pedidos depende de una tienda (41 \% retiro y 17 \% despacho), más de 1,1 millones al año y unos 3.000 diarios. Los 323.000 pedidos anuales despachados desde tienda (17 \%) salen de unidades que un vendedor podía vender en sala y por los que no recibe comisión: ese conflicto de incentivos explica por qué esa mercadería a veces no aparece. En el evento anual, el volumen diario sube entre 6,7 veces (104.000 / 3 frente a 5.205 pedidos diarios promedio) y 7,3 veces, y las tiendas deben absorber ambos flujos con los mismos recursos.
+
+\subsection{2.3.4. Promesa 4: Las condiciones del crédito son las informadas}\label{promesa-4-las-condiciones-del-cruxe9dito-son-las-informadas}
+
+La filial debe poder acreditar qué informó al cliente y qué aceptó, y hoy no lo logra. Las 1.240 repactaciones de 2025 sin evidencia recuperable equivalen al 2,7 \% de las 46.000 repactaciones anuales. La política de borrar grabaciones a los 90 días alcanza, por diseño, a todas ellas: la retención es 36,5 veces inferior a la exigida (plazo de 36 meses + 6 años, según el supuesto del aviso inicial).
+
+La originación tiene la misma brecha. Las 520.000 evaluaciones anuales en el punto de venta entregan la información precontractual impresa, sin registro de qué versión se entregó ni de que el cliente la recibió antes de aceptar. Además, la evaluación tarda entre 40 y 180 segundos frente al máximo de 8 segundos (RT-09.01). Eso suma entre 5.778 y 26.000 horas de espera al año (entre 16 y 71 horas diarias), con riesgo de que la venta se pierda o se cierre con otro medio de pago. El caso no cuantifica esa pérdida, por lo que no se estima.
+
+La cartera vigente reúne 1.380.000 tarjetas, de las cuales 620.000 tienen saldo, con \$186.000 millones en colocaciones (saldo promedio de \$300.000 por cliente). Debe migrarse íntegra antes de que terminen, en 2029, el soporte del fabricante y el plan de remediación. Con el supuesto de inicio en enero de 2027 y considerando que los hitos de 2029 deben cumplirse antes del congelamiento de noviembre, hay 1.035 días calendario hasta el 31 de octubre de 2029, de los cuales 317 están congelados. Quedan 718 días, cerca de 23,6 meses intervenibles.
+
+\subsection{2.3.5. Obligación transversal: atención y garantía legal}\label{obligaciuxf3n-transversal-atenciuxf3n-y-garantuxeda-legal}
+
+Ancoa recibe cerca de 620.000 devoluciones al año en todos los canales, de las cuales unas 171.000 provienen del canal en línea (9 \% de 1,9 millones). El reingreso al inventario es manual, lo que agrega diferencias al registro (C1).
+
+El pedido no tiene un estado único y consultable. El mesón de tienda no ve los pedidos en línea, y el vendedor de marketplace no se entera de una devolución hasta que aparece en su liquidación. El caso de una clienta lo ilustra ``Al final puse el reclamo en el organismo del consumidor. No por los veinte mil pesos: porque en ninguna de las cinco veces que hablé con ellos alguien supo decirme qué había pasado con mi compra (Entrevistas de levantamiento, capítulo 8).
+
+En garantía legal, el mesón deriva al consumidor al servicio técnico de la marca o al vendedor de marketplace, práctica que la compañía reconoce como improcedente. Para los productos de terceros no existe una regla escrita de atención ni un acuerdo de nivel de servicio medido con los 310 vendedores.
+
+\subsection{2.3.6. Condiciones transversales}\label{condiciones-transversales}
+
+Las causas raíz también tienen magnitud propia, que condiciona la arquitectura y el plan más allá de cada promesa (Tabla 2.4). La tabla presenta los indicadores críticos; el listado completo está en el Anexo A.5.1.
+
+\textbf{Tabla 2.4: Indicadores de las condiciones transversales.}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Causa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Indicador
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Valor actual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Exigencia
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+C1 Registro impreciso & Centros de distribución con sistema de gestión de almacenes & 1 de 2 & 2 de 2 \\
+C2 Tejido de integración & Personas que conocen el mapa de interfaces & 0 & Mapa levantado y documentado \\
+Interfaces que operan por archivo o lote nocturno & La mayoría de las 14 & Disponibilidad publicada ≤ 30 s tras una venta & \\
+C3 Frontera difusa & Separación de datos entre retail y filial & Parcial, no documentada & Implementada, documentada y auditable \\
+C4 Incentivos y capacidad & Vendedores por terminal móvil & (3.820 / 640) = 6 & Sin un dispositivo por vendedor \\
+Personas a capacitar al año & ≈ 4.268 & Capacitación compatible con la rotación & \\
+Repositores externos con acceso individualizado & 0 de ≈ 1.100 & Patrocinio y registro por proveedor & \\
+C5 Territorio y calendario & Tiendas sin el enlace de respaldo exigido & 7 de 15 & 0 de 15 \\
+Tiendas sin red segmentada & 13 de 22 & 0 de 22 & \\
+Alcance PCI DSS definido & Solo canal digital & Canal digital, 380 cajas y mesones & \\
+Calendario sin intervención & 126 días al año (34,5 \%) & Ningún paso a producción & \\
+\end{longtable}
+
+Fuente:
+
+El lote nocturno expresa con claridad el tejido de integración: la mayoría de las catorce interfaces opera por archivo, mientras RT-05.29 exige que la disponibilidad publicada se actualice a más tardar 30 segundos después de una venta en cualquier canal. Esa diferencia de escala, de lotes diarios a segundos, no se cierra con mejoras locales de inventario. Por su parte, C5 concentra cuatro de los once indicadores, de modo que la resiliencia de tienda y red condiciona el diseño tanto como las promesas.
+
+\subsection{2.3.7 Síntesis}\label{suxedntesis}
+
+El dimensionamiento realizado en las secciones anteriores de este subdocumento muestra que la magnitud relativa de una brecha operacional no necesariamente determina su criticidad. Las mayores diferencias respecto de los criterios de aceptación se concentran en el negocio financiero, particularmente en la conservación de la evidencia y en el tiempo requerido para realizar la evaluación crediticia. A estas brechas les siguen las asociadas a la existencia del producto y al cumplimiento de la fecha de entrega, mientras que la discrepancia de precios y la merma presentan diferencias relativas menores. Sin embargo, comparar únicamente estos valores no permite establecer un orden de prioridad, porque las consecuencias económicas, regulatorias y operacionales de cada incumplimiento son distintas.
+
+La exposición económica estimada muestra esa diferencia entre magnitud relativa e impacto. Según los cálculos de las secciones anteriores, la merma supera en aproximadamente \$3.695 millones anuales la referencia del 1\% de la venta, mientras que las cancelaciones por falta de existencia representan cerca de \$1.248 millones anuales en ventas por encima del umbral de cancelación del 0,3\%. Las entregas tardías que exceden el límite de atraso del 3 \% representan alrededor de \$12.480 millones anuales en ventas expuestas. Estos montos tienen distinta naturaleza y no deben sumarse como una pérdida total: la merma incluye errores de registro cuya proporción se desconoce, las cancelaciones corresponden a ventas no concretadas y las entregas tardías no implican necesariamente ventas perdidas.
+
+El precio, el crédito y la atención presentan consecuencias relevantes aun sin una valorización económica disponible. La fiscalización detectó discrepancias de precio en el 11 \% de los 120 productos revisados; existen 1.240 repactaciones sin evidencia recuperable del consentimiento; y la atención de garantías deriva al consumidor a terceros, pese a la obligación de atenderlo en la compañía. A ello se suman los 1.900 reclamos y el procedimiento abierto por la autoridad de protección del consumidor tras las cancelaciones del evento de junio. En el crédito, el último hito del plan de remediación y el fin de soporte de la plataforma coinciden en 2029, lo que condiciona la migración de los 620.000 clientes con saldo. Estos antecedentes explican la urgencia planteada por el negocio financiero frente al orden de prioridades del comité, desarrollada en la sección 2.4.
+
+Las brechas comparten mecanismos operacionales. El registro impreciso de inventario y artículos (C1) permite ofrecer unidades que no se encuentran físicamente y dificulta su reposición y despacho. La integración fragmentada (C2) mantiene información desactualizada o distinta entre participantes: la disponibilidad se actualiza por lotes, los precios llegan a cajas y al canal digital antes que a las etiquetas físicas, y el mesón de atención no dispone de una visión completa del pedido en línea. Una misma inconsistencia puede afectar la venta, retrasar la entrega y dificultar posteriormente la atención del reclamo.
+
+Los incentivos y la capacidad disponible (C4) refuerzan esas dificultades. El despacho digital compite con la venta presencial por unidades, espacio y personal, sin reconocer una comisión al vendedor de la tienda. Las listas de etiquetas pueden superar la capacidad del turno nocturno, mientras que la presión por cerrar rápidamente una venta con tarjeta compite con la entrega y acreditación de la información precontractual. La pérdida de evidencia del crédito tiene, además, un mecanismo específico: las grabaciones se eliminan a los 90 días y el registro restante no demuestra qué se informó y aceptó. Por ello, mejorar las integraciones o capacitar al personal no basta si se mantienen las mismas prácticas de conservación de evidencia.
+
+La Figura 2.4 reúne las relaciones descritas entre los factores operacionales y las promesas de Ancoa, incluyendo la obligación transversal de atención. Distingue entre mecanismos, que explican cómo se produce o mantiene un incumplimiento, y agravantes, que aumentan su frecuencia, alcance o dificultad de control. Por ejemplo, la actualización de cajas y del canal digital antes que las etiquetas físicas constituye un mecanismo de discrepancia de precios; el aumento de cambios durante una campaña agrava ese desfase al incrementar el trabajo de actualización.
+
+\begin{figure}
+\centering
+\includegraphics{figuras/image12-8fe4e8f904.png}
+\caption{Imagen del informe}
+\end{figure}
+
+\textbf{Figura 2.4. Mecanismos y agravantes asociados a las promesas y la atención.}
+
+Fuente: Elaboración propia a partir de los antecedentes operacionales del caso.
+
+En el mapa, M identifica un mecanismo y A un agravante. Esta distinción describe el tipo de relación, no su gravedad ni su prioridad. Los puntos grises indican que no se representa un vínculo suficientemente sustentado para ese cruce, sin afirmar que no pueda existir. Una misma promesa puede verse afectada por ambos tipos de relación.
+
+El alcance de cada vínculo es específico. En crédito, C4 representa la presión por cerrar rápidamente la venta frente a la necesidad de informar y acreditar la aceptación, pero no explica la eliminación de grabaciones. En atención, C2 representa la falta de visibilidad del pedido, sin abarcar todos los problemas de garantía legal.
+
+La columna se denomina C5 Demanda porque representa solo una parte de la categoría territorio y calendario: los aumentos de actividad comercial que intensifican los problemas de existencia, precio y entrega. La conectividad, las distancias y los congelamientos requieren un análisis separado, pues afectan la continuidad operacional o las posibilidades de intervenir los sistemas. Por su parte, C3 no aparece en el mapa porque la separación parcial y no documentada entre retail y filial financiera se trata como una brecha de control y una condición para diseñar la solución, sin atribuirle un mecanismo específico que explique los incumplimientos representados. Su exclusión no reduce su importancia: esa separación debe implementarse y verificarse antes de construir una vista unificada del cliente.
+
+La frontera entre negocios (C3) y las condiciones territoriales y de calendario (C5) cumplen un papel diferente. La separación parcial y no documentada entre retail y filial financiera constituye una brecha de control que debe resolverse antes de construir una vista unificada del cliente. La conectividad y las distancias condicionan la continuidad de la operación y la logística, mientras que los aumentos de demanda intensifican la carga sobre personas y sistemas. Los congelamientos comerciales, por su parte, limitan las oportunidades de intervención y deben compatibilizarse con los hitos financieros de 2029. Estas condiciones determinan cómo y cuándo pueden corregirse las brechas, aunque no expliquen por sí solas el origen de cada incumplimiento.
+
+Ancoa requiere, por tanto, abordar conjuntamente la confiabilidad de sus registros, la información compartida entre procesos, los incentivos del personal y la acreditación de las operaciones. Las cuatro promesas y la obligación transversal de atención necesitan respuestas coordinadas, pero también medidas específicas para cada problema. La prioridad de esas medidas deberá considerar sus consecuencias económicas y regulatorias, las dependencias entre procesos y los plazos disponibles para implementarlas.
+
+\section{2.4. Actores y grupos de interés}\label{actores-y-grupos-de-interuxe9s}
 
 El problema de Ancoa S.A. involucra actores internos y externos pertenecientes a los dominios comercial, operacional, tecnológico y financiero. No todos estos actores enfrentan los problemas de la misma manera, algunos poseen la capacidad para condicionar decisiones, imponer restricciones o bloquear cambios, mientras otros se encuentran principalmente expuestos a las consecuencias de las inconsistencias de inventario, precios, pedidos y crédito.
 
@@ -251,10 +495,11 @@ Para este análisis, la influencia corresponde a la capacidad de un actor para c
 
 Las distintas áreas de Ancoa enfrentan el problema desde objetivos y responsabilidades diferentes. Mientras algunas buscan maximizar disponibilidad, velocidad de venta o aprovechamiento comercial de la información, otras deben resguardar exactitud operacional, trazabilidad y cumplimiento regulatorio. Estas diferencias generan tensiones que condicionan la operación y la toma de decisiones.
 
-\hypertarget{actores-afectados-y-grupos-de-interuxe9s}{%
-\subsection{Actores afectados y grupos de interés}\label{actores-afectados-y-grupos-de-interuxe9s}}
+\subsection{2.4.1. Actores afectados y grupos de interés}\label{actores-afectados-y-grupos-de-interuxe9s}
 
-Los actores identificados se agrupan según la naturaleza de su participación y su capacidad para incidir en la operación de Ancoa. Esta agrupación permite distinguir a quienes intervienen directamente en las decisiones del negocio, a quienes ejecutan los procesos afectados y a los grupos externos cuya actuación condiciona el funcionamiento de la compañía. La Tabla 2.X sintetiza los principales grupos de interés y su nivel relativo de influencia e interés.
+Los actores identificados se agrupan según la naturaleza de su participación y su capacidad para incidir en la operación de Ancoa. Esta agrupación permite distinguir a quienes intervienen directamente en las decisiones del negocio, a quienes ejecutan los procesos afectados y a los grupos externos cuya actuación condiciona el funcionamiento de la compañía. La tabla 2.5 sintetiza los principales grupos de interés y su nivel relativo de influencia e interés.
+
+\textbf{Tabla 2.5: Grupos de interés según influencia e interés.}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
@@ -275,29 +520,36 @@ Interés
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Dirección y control & Directorio, Gerencia General, Contraloría & Alta & Alta \\
+Dirección y control & Directorio, Gerencia General, Contraloría y Cumplimiento & Alta & Alta \\
 Propiedad & Grupo familiar controlador y fondos de inversión & Alta & Media \\
-Negocios y operación & Comercial, Canales Digitales, Logística, Negocio Financiero & Alta & Alta \\
+Negocios y operación & Comercial, Canales Digitales, Logística (incluye al personal de los centros de distribución), Negocio Financiero & Alta & Alta \\
 Soporte tecnológico y control operacional & TI, Prevención de Pérdidas & Alta & Alta \\
 Operación de tienda & Jefaturas, vendedores, cajeros, reposición y bodega & Media & Alta \\
-Clientes y terceros operacionales & Clientes, titulares de tarjeta, vendedores de marketplace, proveedores tecnológicos y logísticos & Baja -- media & Alta \\
+Clientes y terceros operacionales & Clientes, titulares de tarjeta, vendedores de marketplace, proveedores tecnológicos y logísticos & Baja - media & Alta \\
 Organismos externos & Autoridad financiera, autoridad de protección al consumidor y autoridad tributaria & Alta & Media -- alta \\
 \end{longtable}
 
-Fuente: elaboración propia.
+Fuente: Elaboración propia.
 
 La mayoría de actores con alta influencia e interés se concentran dentro de la misma organización. Esto se debe a la naturaleza transversal del problema, comercial administra surtido, precios y campañas, canales digitales utiliza la disponibilidad registrada para comprometer pedidos, logística depende de esa misma información para abastecer y despachar, el negocio financiero requiere agilidad en la atención y originación, contraloría debe resguardar la acreditación y separación entre ambos negocios, y TI sostiene el conjunto de plataformas e integraciones sobre las cuales operan estos procesos.
 
-Los actores encargados de la operación de la tienda tienen una influencia menor sobre las decisiones corporativas, pero un interés elevado debido a su interacción diaria con los problemas. Ancoa cuenta con \textbf{3.820 vendedores de piso y cajeros}, con una rotación anual del 62 \%, además de personal de reposición, bodega y aproximadamente 1.100 repositores pertenecientes a proveedores externos que trabajan dentro de las salas de venta.
+Los actores encargados de la operación de la tienda tienen una influencia menor sobre las decisiones corporativas, pero un interés elevado debido a su interacción diaria con los problemas. Ancoa cuenta con 3.820 vendedores de piso y cajeros, con una rotación anual del 62 \%, además de personal de reposición, bodega y aproximadamente 1.100 repositores pertenecientes a proveedores externos que trabajan dentro de las salas de venta.
 
 Los clientes, titulares de tarjetas, vendedores del marketplace y proveedores poseen una menor capacidad para influenciar las decisiones internas, pero experimentan directamente las consecuencias de las inconsistencias. Especialmente el cliente, el cual interactúa con la misma marca independiente de si su compra corresponde al canal presencial, digital, marketplace o al uso de la tarjeta propia, por lo que la fragmentación interna se vuelve visible cuando una promesa no puede cumplirse o acreditarse.
 
-\hypertarget{matriz-influencia---interuxe9s}{%
-\subsubsection{Matriz influencia - interés}\label{matriz-influencia---interuxe9s}}
+\subsection{2.4.2. Matriz influencia - interés}\label{matriz-influencia---interuxe9s}
 
-La caracterización anterior permite ubicar a los principales actores y grupos de interés según dos variables, las cuales son, su capacidad para influir en las decisiones y procesos de Ancoa y el grado en que se encuentran afectados por el problema. Esta relación se representa en la Figura 2.X mediante cuatro cuadrantes que permiten diferenciar el nivel de atención requerido para cada grupo.
+La caracterización anterior permite ubicar a los principales actores y grupos de interés según dos variables, las cuales son, su capacidad para influir en las decisiones y procesos de Ancoa y el grado en que se encuentran afectados por el problema. Esta relación se representa en la figura 2.4 mediante cuatro cuadrantes que permiten diferenciar el nivel de atención requerido para cada grupo.
 
-{[}{]}{[}image2{]}Fuente: elaboración propia
+\begin{figure}
+\centering
+\includegraphics{figuras/image13-6e3ac97d9c.png}
+\caption{Imagen del informe}
+\end{figure}
+
+\textbf{Figura 2.5: Matriz de influencia e interés de los grupos de interés.}
+
+Fuente: Elaboración propia
 
 La mayor concentración se encuentra en el cuadrante de alta influencia y alto interés, en este se ubican el directorio y gerencia general, contraloría, comercial, canales digitales, logística, negocio financiero, TI, prevención de pérdidas, y las principales autoridades fiscalizadoras. Estos actores poseen la capacidad para condicionar las decisiones relevantes, y al mismo tiempo, están directamente vinculados con las consecuencias operacionales, comerciales y regulatorias del problema, razón por la cual requieren un involucramiento cercano en el proceso del proyecto.
 
@@ -309,8 +561,7 @@ Finalmente, los administradores de centros comerciales y los repositores externo
 
 Esta distribución evidencia que la gestión de los grupos de interés no puede concentrarse únicamente en los niveles directivos. Los actores con mayor influencia determinan restricciones y decisiones relevantes, mientras que una parte importante de quienes poseen alto interés corresponde a usuarios, clientes y terceros que interactúan diariamente con los procesos afectados. Esta diferencia entre capacidad de decisión y exposición al problema permite anticipar los puntos donde será necesaria una mayor coordinación entre los distintos grupos durante el proyecto.
 
-\hypertarget{tensiones-entre-interesados.}{%
-\subsubsection{Tensiones entre interesados.}\label{tensiones-entre-interesados.}}
+\subsection{2.4.3. Tensiones entre interesados.}\label{tensiones-entre-interesados.}
 
 Las tensiones identificadas surgen de objetivos, incentivos y responsabilidades que no siempre coinciden. Algunas son desacuerdos expresos entre actores; otras son desajustes de coordinación entre quienes prometen, ejecutan y reciben un servicio. Su identificación permite comprender el problema sin anticipar el diseño de la solución.
 
@@ -330,31 +581,32 @@ También existe una diferencia entre las prioridades del comité y la urgencia d
 
 Estas tensiones muestran que el problema no se explica únicamente por limitaciones tecnológicas. También intervienen incentivos comerciales, capacidad de ejecución, distribución de responsabilidades y restricciones del negocio fiscalizado. Comprenderlas es necesario para comprender las condiciones que debe considerar posteriormente la propuesta para cumplir y acreditar las cuatro promesas.
 
-\hypertarget{resumen-de-requerimientos-supuestos-exclusiones-y-restricciones}{%
-\section{2.5 Resumen de Requerimientos, Supuestos, Exclusiones y Restricciones}\label{resumen-de-requerimientos-supuestos-exclusiones-y-restricciones}}
+Estas tensiones se identificaron a partir de las entrevistas de levantamiento del capítulo 8 de las Bases Técnicas del Caso.
+
+\section{2.5. Resumen de requerimientos, supuestos, exclusiones y restricciones}\label{resumen-de-requerimientos-supuestos-exclusiones-y-restricciones}
 
 Esta sección resume y analiza lo que el cliente requiere, los supuestos que el equipo declara para interpretar la información disponible, con su respectivo fundamento, y las exclusiones y restricciones que impone el caso. Su propósito es dejar explícito, antes de describir la solución, qué se debe cumplir, que se da por supuesto y lo que queda fuera de la propuesta.
 
 El detalle de cada elemento con su identificador individual, se encuentra en el archivo de anexos correspondiente a este subdocumento, contiene el listado de requerimientos, el listado de supuestos, exclusiones y restricciones y otros listados de apoyo.
 
-\hypertarget{resumen-de-requerimientos}{%
-\subsection{Resumen de requerimientos}\label{resumen-de-requerimientos}}
+\subsection{2.5.1. Resumen de requerimientos}\label{resumen-de-requerimientos}
 
-Los requerimientos se obtuvieron en base a lo estipulado por el cliente, de modo que exprese una sola condición verificable. Se clasificaron en tres tipos, 223 requerimientos funcionales (RF), que describen lo que el sistema debe hacer, 75 requerimientos no funcionales (RFN), que fijan un umbral medible y su método de verificación, que corresponden a compromisos de la oferta y no a funciones del sistema por lo que no admiten caso de prueba d software.
+El catálogo resumido en la Tabla 2.1 contiene 307 elementos clasificados en tres tipos: 223 requerimientos funcionales (RF), que describen comportamientos que la solución debe ejecutar; 75 requerimientos no funcionales (RNF), que establecen condiciones de calidad, desempeño, disponibilidad, seguridad, cumplimiento u operación y deben contar con un umbral o criterio verificable y un método de verificación; y 9 obligaciones del proponente (OP), que corresponden a entregables o análisis exigidos por la oferta. Las OP también son verificables, pero mediante revisión del entregable o del compromiso, no mediante un caso de prueba funcional del software.
 
-La Tabla 2.1 resume su distribución por categoría.
+La tabla 2.6 resume su distribución por categoría.
 
-Tabla 2.1:** Requerimientos del CLIENTE por tipo y categoría.
-
-\textbf{Tabla --- bloque 1 de 3.}
+\textbf{Tabla 2.6: Requerimientos del cliente por tipo y categoría.}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Tipo y categoría
+Tipo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Categoría
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 N.º
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -364,74 +616,33 @@ Síntesis de lo que exige el CLIENTE
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-RF Pedidos y cumplimiento & 47 & Promesa de entrega confiable, elección del punto de despacho por costo total de servir, y retiro o despacho desde tienda. \\
-RF Inventario y disponibilidad & 38 & Cálculo centralizado del disponible para vender, conteo cíclico por clasificación ABC y clasificación obligatoria de la merma. \\
-RF Crédito y cobranza & 28 & Evaluación y cupo en el punto de venta, evidencia del consentimiento y de la información precontractual, y migración de la cartera. \\
-RF -- Marketplace & 25 & Reglas de desempeño y sanciones para los vendedores externos, gestión de catálogo y devoluciones. \\
-RF -- Operación de tienda & 20 & Continuidad en modo desconectado: venta, cobro, promociones y documento de venta en contingencia. \\
-RF -- Precios y etiquetado & 16 & Coherencia entre el precio exhibido y el cobrado, y evidencia del precio publicado. \\
-RF -- Seguridad y accesos & 14 & Credenciales individuales, sin acceso anónimo ni credenciales compartidas. \\
-RF -- Gobernanza de datos & 12 & Separación de datos entre retail y filial financiera, finalidad declarada e inventario de interfaces. \\
-RF -- Devoluciones y garantía legal & 12 & Atención íntegra en el mesón, sin derivar al cliente, y decisión de aptitud antes de reingresar una unidad al stock. \\
-RF -- Evento de alta concurrencia & 10 & Degradación controlada de servicios y bloqueo de despliegues en las cinco ventanas de congelamiento. \\
+RF & Pedidos y cumplimiento & 47 & Promesa de entrega confiable, elección del punto de despacho por costo total de servir, y retiro o despacho desde tienda. \\
+RF & Inventario y disponibilidad & 38 & Cálculo centralizado del disponible para vender, conteo cíclico por clasificación ABC y clasificación obligatoria de la merma. \\
+RF & Crédito y cobranza & 28 & Evaluación y cupo en el punto de venta, evidencia del consentimiento y de la información precontractual, y migración de la cartera. \\
+RF & Marketplace & 25 & Reglas de desempeño y sanciones para los vendedores externos, gestión de catálogo y devoluciones. \\
+RF & Operación de tienda & 20 & Continuidad en modo desconectado: venta, cobro, promociones y documento de venta en contingencia. \\
+RF & Precios y etiquetado & 16 & Coherencia entre el precio exhibido y el cobrado, y evidencia del precio publicado. \\
+RF & Seguridad y accesos & 14 & Credenciales individuales, sin acceso anónimo ni credenciales compartidas. \\
+RF & Gobernanza de datos & 12 & Separación de datos entre retail y filial financiera, finalidad declarada e inventario de interfaces. \\
+RF & Devoluciones y garantía legal & 12 & Atención íntegra en el mesón, sin derivar al cliente, y decisión de aptitud antes de reingresar una unidad al stock. \\
+RF & Evento de alta concurrencia & 10 & Degradación controlada de servicios y bloqueo de despliegues en las cinco ventanas de congelamiento. \\
+RF & Ventas en tienda & 1 & Prioridad de la venta física sobre una reserva digital temporal. \\
+& Subtotal RF & 223 & \\
+RNF & Seguridad & 16 & Arquitectura segura, segmentación de red en las 22 tiendas, separación acreditada de la filial, tokenización de medios de pago y DevSecOps. \\
+RNF & Desempeño y capacidad & 15 & Tiempos de respuesta (evaluación crediticia ≤ 8 s, confirmación de pedido ≤ 3 s, propagación de precios ≤ 5 min) y soporte del peak del evento anual. \\
+RNF & Cumplimiento y auditabilidad & 13 & Plazos de conservación de la evidencia, base de licitud y registro de actividades de tratamiento de datos. \\
+RNF & Disponibilidad y recuperabilidad & 11 & Operación sin enlace externo (≥ 8 h en tienda), recuperación ante desastres (RTO ≤ 4 h; RPO ≤ 15 min). \\
+RNF & Operabilidad e interoperabilidad & 10 & Notificaciones y avisos oportunos al cliente, y estándares de intercambio con proveedores. \\
+RNF & Migración, portabilidad y escalabilidad & 4 & Migración de 620.000 clientes con saldo sin pérdida, interrupción ni divergencias; apertura de tiendas por parametrización. \\
+RNF & Efectividad de negocio & 3 & Metas sobre la línea base: cancelación \textless{} 0,3 \%, cumplimiento de entrega ≥ 97 \% y diferencia de inventario \textless{} 2 \%. \\
+RNF & Usabilidad & 2 & Operación con capacitación mínima y lenguaje claro en las comunicaciones del crédito. \\
+RNF & Consistencia de datos & 1 & Mismo estado del pedido en todos los canales de consulta. \\
+& Subtotal RNF & 75 & \\
+OP & Obligaciones del proponente & 9 & Alternativa de etiquetas electrónicas, dispositivos móviles por tienda y análisis de hacer o comprar del CD de Concepción. \\
+& Total & 307 & \\
 \end{longtable}
 
-\textbf{Tabla --- bloque 2 de 3.}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tipo y categoría
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-N.º
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Síntesis de lo que exige el CLIENTE
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-RF -- Ventas en tienda & 1 & Prioridad de la venta física sobre una reserva digital temporal. \\
-\textbf{Subtotal RF} & \textbf{223} & \\
-RNF -- Seguridad & 16 & Arquitectura segura, segmentación de red en las 22 tiendas, separación acreditada de la filial, tokenización de medios de pago y DevSecOps. \\
-RNF -- Desempeño y capacidad & 15 & Tiempos de respuesta (evaluación crediticia ≤ 8 s, confirmación de pedido ≤ 3 s, propagación de precios ≤ 5 min) y soporte del peak del evento anual. \\
-RNF -- Cumplimiento y auditabilidad & 13 & Plazos de conservación de la evidencia, base de licitud y registro de actividades de tratamiento de datos. \\
-RNF -- Disponibilidad y recuperabilidad & 11 & Operación sin enlace externo (≥ 8 h en tienda), recuperación ante desastres (RTO ≤ 4 h; RPO ≤ 15 min). \\
-RNF -- Operabilidad e interoperabilidad & 10 & Notificaciones y avisos oportunos al cliente, y estándares de intercambio con proveedores. \\
-RNF -- Migración, portabilidad y escalabilidad & 4 & Migración de 620.000 clientes con saldo sin pérdida, interrupción ni divergencias; apertura de tiendas por parametrización. \\
-RNF -- Efectividad de negocio & 3 & Metas sobre la línea base: cancelación \textless{} 0,3 \%, cumplimiento de entrega ≥ 97 \% y diferencia de inventario \textless{} 2 \%. \\
-RNF -- Usabilidad & 2 & Operación con capacitación mínima y lenguaje claro en las comunicaciones del crédito. \\
-\end{longtable}
-
-\textbf{Tabla --- bloque 3 de 3.}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tipo y categoría
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-N.º
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Síntesis de lo que exige el CLIENTE
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-RNF -- Consistencia de datos & 1 & Mismo estado del pedido en todos los canales de consulta. \\
-\textbf{Subtotal RNF} & \textbf{75} & \\
-OP -- Obligaciones del proponente & 9 & Alternativa de etiquetas electrónicas, dispositivos móviles por tienda y análisis de hacer o comprar del CD de Concepción. \\
-\textbf{Total} & \textbf{307} & \\
-\end{longtable}
-
-\hypertarget{fuente-elaboraciuxf3n-propia-a-partir-de-empresa-subdocumento2-anexos-anexos-a.1-a-a.3.}{%
-\subsubsection{Fuente: Elaboración propia a partir de EMPRESA-Subdocumento2-Anexos, Anexos A.1 a A.3.}\label{fuente-elaboraciuxf3n-propia-a-partir-de-empresa-subdocumento2-anexos-anexos-a.1-a-a.3.}}
+Fuente: Elaboración propia a partir de EMPRESA-Subdocumento2-Anexos, Anexos A.1 a A.3.
 
 La distribución muestra que el 62 \% de los requerimientos funcionales (138 de 223) se concentra en cuatro categorías: pedidos y cumplimiento, inventario y disponibilidad, crédito y cobranza, y marketplace. Esta concentración es coherente con el diagnóstico, porque esas categorías sostienen directamente tres de las cuatro promesas de Ancoa: que el producto existe, que la entrega llegará en la fecha informada y que las condiciones del crédito son aceptadas. La cuarta promesa, que el precio cobrado coincida con el exhibido, se aborda en la categoría de precios y etiquetado, que tiene menos requerimientos, pero un alto impacto regulatorio.
 
@@ -439,42 +650,129 @@ Los requerimientos no funcionales, por su parte, convierten el problema dimensio
 
 A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento, el componente que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Anexo A.5.2.
 
-\hypertarget{resumen-de-supuestos}{%
-\subsubsection{Resumen de supuestos}\label{resumen-de-supuestos}}
+\subsection{2.5.2. Resumen de supuestos}\label{resumen-de-supuestos}
 
-Cuando las Bases describen un problema, pero no definen la regla con la que debe resolverse, el equipo declara un supuesto. Se declararon 25 supuestos (SUP-01 a SUP-25), cada uno con su fundamento en los datos del caso o en la normativa aplicable. Se agrupan en seis temas:
+Se declaran veintisiete supuestos: veinticinco corresponden a decisiones pendientes del cliente y dos establecen escenarios para la planificación y el dimensionamiento. Se resumen en los siguientes ámbitos:
 
-● \textbf{Inventario y disponibilidad (SUP-01, SUP-12, SUP-17, SUP-18 y SUP-20):} el disponible para vender se calcula de forma centralizada con un colchón de seguridad dinámico por categoría y tienda, las reservas del carro digital expiran, todo ajuste de inventario se clasifica según su causa y el CD de Concepción queda fuera del disponible mientras opere con planillas manuales.
+Inventario y disponibilidad (SUP-01, SUP-12, SUP-17, SUP-18 y SUP-20). Se adoptan criterios comunes para calcular disponibilidad, administrar reservas y clasificar diferencias de inventario, considerando la inexactitud del registro y las condiciones del CD de Concepción.
 
-● \textbf{Precios (SUP-08 a SUP-10):} ante una discrepancia prevalece el precio exhibido más bajo, el precio nuevo se activa en caja solo cuando se confirma el cambio de etiqueta y el historial de precios publicados se conserva de forma inalterable.
+Precios y evidencia (SUP-08 a SUP-10). Se establecen criterios para respetar el precio exhibido, verificar su actualización y conservar evidencia histórica, ante el desfase entre los canales y las etiquetas físicas.
 
-● \textbf{Pedidos y logística (SUP-11, SUP-13, SUP-14 y SUP-22):} ante un quiebre se ofrece sustitución, compra a terceros o entrega compensada antes de cobrar; el origen del despacho se elige por costo total de servir; la comisión se atribuye a la tienda que abastece el pedido; y el producto devuelto por retracto se inspecciona antes de reingresar al stock.
+Pedidos e incentivos comerciales (SUP-11, SUP-13 y SUP-14). Se definen criterios de cobro, cumplimiento y reconocimiento de comisiones para evitar comprometer unidades inexistentes y abordar los conflictos entre venta presencial y digital.
 
-● \textbf{Marketplace y postventa (SUP-15, SUP-16 y SUP-21):} las garantías y devoluciones se resuelven en el mesón sin derivar al cliente, y los 310 vendedores externos operan con reglas de desempeño y sanciones automatizadas.
+Marketplace y postventa (SUP-15, SUP-16, SUP-21 y SUP-22). Se consideran reglas comunes para evaluar vendedores externos y atender devoluciones, garantías y retractos, separando la atención al consumidor de la recuperación de costos frente a terceros.
 
-● \textbf{Crédito y datos personales (SUP-03 a SUP-07 y SUP-25):} identidad del cliente en dos capas, frontera de datos entre retail y filial cerrada por defecto, evidencia digital inalterable del consentimiento y de la hoja resumen, venta con crédito en modo desconectado contra un cupo preaprobado, y migración de la cartera por etapas con conciliación diaria y reversión.
+Crédito e identidad (SUP-03 a SUP-07 y SUP-25). Se adoptan criterios para relacionar identidades sin debilitar la separación entre negocios, acreditar las operaciones crediticias y mantener la continuidad durante contingencias y migración.
 
-● \textbf{Tecnología y personas (SUP-02, SUP-19, SUP-23 y SUP-24):} transición gradual sin reemplazo «Big Bang», con el ERP como único emisor tributario; degradación escalonada en eventos de alta demanda; y accesos individuales con altas y bajas automáticas para el personal propio, temporal y externo.
+Transición tecnológica y personas (SUP-02, SUP-19, SUP-23 y SUP-24). Se considera una transición progresiva, preservando el ERP y los controles obligatorios, con accesos individualizados para personal propio, temporal y externo.
 
-En conjunto, los supuestos comparten un mismo criterio: tratar los registros actuales como imperfectos y exigir evidencia verificable de cada promesa. Los más sensibles para la propuesta son SUP-02, SUP-04 y SUP-25, porque condicionan la estrategia de transición, la separación entre ambos negocios y la migración de la cartera financiera; si alguno de ellos no se confirma, cambia el plan de implantación. El listado completo, con el enunciado y el fundamento de cada supuesto, se encuentra en el Anexo A.4.1.
+Calendario y distribución geográfica (SUP-26 y SUP-27). Se supone enero de 2027 como inicio del proyecto, manteniendo los 56 meses contractuales. Para el dimensionamiento se conserva una red de 22 tiendas en 11 regiones, considerando supuestas las ubicaciones de Illapel, Valparaíso, Talca y Frutillar, y la concentración de 11 tiendas en el entorno de Santiago. La fecha y estas ubicaciones deberán validarse con el cliente.
 
-\hypertarget{resumen-de-exclusiones}{%
-\subsubsection{Resumen de exclusiones}\label{resumen-de-exclusiones}}
+Los supuestos afectan la confiabilidad de las promesas comerciales, las responsabilidades entre participantes y la separación de los negocios. Los dos supuestos adicionales permiten realizar cálculos reproducibles, pero sus resultados quedan condicionados a la validación del calendario y de la distribución territorial. Una variación en estos antecedentes exigirá recalcular las ventanas disponibles y las necesidades de cobertura, sin alterar los hitos contractuales
 
-Las exclusiones delimitan lo que la propuesta no asume, ya sea porque las Bases lo dejan fuera del alcance o porque la información disponible no permite sostenerlo. Se identificaron ocho exclusiones (EXC-01 a EXC-08), de dos tipos:
+\subsection{2.5.3. Resumen de exclusiones}\label{resumen-de-exclusiones}
 
-● \textbf{De alcance (EXC-01 a EXC-06):} la adquisición de etiquetas electrónicas, que se especifica y costea por separado sin incluir su compra; el CD de Concepción como origen de la promesa de entrega mientras no acredite su sistema de gestión de almacenes; el reemplazo del ERP heredado como emisor tributario; la sustitución simultánea de las nueve plataformas actuales; la gestión laboral y la capacitación de los repositores externos; y cualquier flujo que derive al cliente a terceros en garantías o devoluciones.
+Se consideran diez exclusiones que delimitan las actividades, adquisiciones y responsabilidades que no forman parte directa del alcance de la propuesta. Sin embargo, que una actividad esté excluida no significa que pueda ignorarse, ya que varias de ellas siguen generando dependencias que deben considerarse en la integración, la implantación y la operación.
 
-● \textbf{Del análisis (EXC-07 y EXC-08):} no se proyecta el 11 \% de discrepancia de precios más allá de la muestra fiscalizada, ni se descompone la merma histórica entre pérdida física y error de registro, porque las Bases no entregan información suficiente para hacerlo.
+En sistemas existentes se establece una exclusión. No se contempla reemplazar el sistema de gestión empresarial ni la emisión de documentos tributarios. El ERP se mantiene como único emisor tributario, por lo que la propuesta debe considerar su integración con los procesos y sistemas que requieran intercambiar información con él.
 
-Declarar estas exclusiones evita comprometer resultados que dependen de decisiones del CLIENTE o de información que hoy no existe. El detalle y el origen de cada exclusión se presentan en el Anexo A.4.2.
+En infraestructura y equipamiento se agrupan cuatro exclusiones. No se contempla instalar etiquetas electrónicas en las 22 tiendas, aunque esta alternativa debe evaluarse, especificarse y costearse frente a otras opciones para resolver la diferencia entre el precio exhibido y el cobrado. No se contempla adquirir dispositivos móviles para el personal de venta, pero sí se deben definir las cantidades y características necesarias. Tampoco corresponde al proponente ejecutar obras de infraestructura, como canalizaciones, instalaciones eléctricas o cableado; estas obras serán ejecutadas por el cliente a partir de las especificaciones y costos definidos en la propuesta. Finalmente, la adquisición del hardware queda a cargo del cliente, incluyendo terminales de caja, dispositivos de sala, lectores, impresoras de etiquetas y equipamiento de red o de los centros de distribución. El proponente debe determinar qué equipos se necesitan, en qué cantidad y con qué características.
 
-\hypertarget{resumen-de-restricciones}{%
-\subsubsection{Resumen de restricciones}\label{resumen-de-restricciones}}
+En servicios de terceros y logística se concentran tres exclusiones. No se contempla desarrollar las plataformas utilizadas por los vendedores de marketplace ni operar su logística. Aun así, estas plataformas deben integrarse con Ancoa y permitir medir su desempeño y gestionar las devoluciones realizadas en tienda. Tampoco se considera reemplazar a las empresas de transporte de última milla, aunque la propuesta debe integrarse con ellas para mantener la trazabilidad del pedido hasta la entrega. No corresponde resolver la relación con los administradores de los centros comerciales. Esta dependencia debe igualmente considerarse, ya que una falla o indisponibilidad de su infraestructura no puede impedir la continuidad de la venta y el cobro en las tiendas.
 
-Las restricciones son condiciones del caso que la solución no puede modificar y dentro de las cuales debe operar. Se identificaron 15 restricciones (RES-01 a RES-15), que la Tabla 2.2 agrupa por tipo junto con su efecto sobre la propuesta.
+En gestión laboral y cobranza se encuentran las dos exclusiones restantes. No se incluye la gestión de remuneraciones, aunque sí debe mantenerse el cálculo de la base de comisión cuando una venta se origina en un canal y se cumple desde otro, debido al efecto que esto tiene sobre los incentivos de vendedores y tiendas. Tampoco se contempla operar la cobranza judicial, pero debe mantenerse la trazabilidad de las operaciones de cobranza y de las repactaciones asociadas a cada cliente.
 
-Tabla 2.2:** Síntesis de restricciones por tipo.
+En conjunto, estas exclusiones muestran que varias responsabilidades permanecen fuera de la ejecución directa del proponente, especialmente las adquisiciones, las obras físicas y ciertas operaciones realizadas por terceros. Sin embargo, la propuesta todavía debe hacerse cargo de las interfaces y dependencias que generan. Por ello, las exclusiones no eliminan la necesidad de especificar, integrar, costear o mantener trazabilidad cuando estas actividades afecten el funcionamiento o la continuidad de la solución.
+
+Las limitaciones utilizadas para realizar el análisis se mantienen separadas de estas exclusiones. Por ejemplo, no se extrapola el 11 \% de discrepancia de precios observado en una muestra a toda la cadena ni se asigna una proporción de la merma a pérdida física o errores de registro cuando no existen antecedentes suficientes para hacerlo. Estas son limitaciones de la información disponible y no actividades excluidas del alcance.
+
+\subsection{2.5.4. Resumen de restricciones}\label{resumen-de-restricciones}
+
+Se consideran quince restricciones no negociables, agrupadas en seis ámbitos según su origen e implicancias para la propuesta. Estas deben considerarse a la hora de definir el alcance y la planificación.
+
+Regulatorias y de información (R1 a R4 y R7): El retail y la filial financiera requieren una separación de datos documentada y auditable. La información precontractual debe acreditarse antes de aceptar el crédito, y sus modificaciones requieren consentimiento recuperable. También deben respetarse el precio exhibido y la atención de garantías sin derivar al consumidor.
+
+Contractuales artículos 16, 17 y 28: Son obligatorios el despliegue híbrido, las cinco innovaciones y el cronograma de 56 meses. La Etapa 1 entra en producción en el mes 16 y la Etapa 2 en el mes 21. La operación comprende los meses 21 a 56.
+
+Temporales y estacionales (R9 y R10): Las intervenciones deben respetar las cinco ventanas de congelamiento comercial. El evento anual se anuncia con aproximadamente seis semanas y debe absorberse sin desplazar hitos. Adicionalmente, el fin de soporte financiero y el último hito de remediación coinciden en 2029.
+
+Operacionales y de migración (R5 y R8): Las tiendas deben seguir vendiendo y cobrando ante desconexión. La cartera de 620.000 clientes con saldo debe migrarse sin pérdida de datos, interrupción del servicio ni divergencias de saldos. Las condiciones de implantación también impiden detener la operación de tiendas y centros de distribución.
+
+Tecnológicas y de infraestructura (R6, R14 y R15): El ERP permanece como único emisor tributario. La incorporación del CD de Concepción debe evaluarse y costearse, sin darse por supuesta. El proponente debe levantar las catorce integraciones existentes, cuyo mapa está incompleto.
+
+Humanas y organizacionales(R11 a R13): No puede asumirse un dispositivo por vendedor: existen 640 terminales compartidas para 3.820 personas. La rotación del 62 \% y las 1.900 incorporaciones de temporada coinciden con congelamientos. A los repositores externos no se les pueden imponer herramientas ni capacitación por la vía laboral.
+
+Estas restricciones se condicionan entre sí: los congelamientos reducen las oportunidades de intervención mientras los hitos permanecen fijos; la continuidad operacional limita las condiciones de migración; y la rotación y los recursos compartidos afectan la disponibilidad de personas para participar y capacitarse. Por ello, la planificación debe considerar conjuntamente estos límites, sin asumir recursos inexistentes ni flexibilizar obligaciones. El detalle de cada restricción y su origen se encuentra en el Anexo A.4.3.
+
+\subsection{2.5.5. Otros listados}\label{otros-listados}
+
+Como apoyo, el Anexo A.5 incluye dos listados adicionales: los indicadores con su línea base y la meta comprometida (Anexo A.5.1), que conectan el dimensionamiento de la sección 2.3 con los requerimientos no funcionales, y la matriz de cumplimiento y trazabilidad (Anexo A.5.2), que relaciona cada requerimiento con el componente que lo satisface y la sección de la propuesta donde se desarrolla.
+
+\section*{Referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+Cámara de Comercio de Santiago. (2025, 23 de octubre). CCS anuncia su Black Friday oficial con cientos de empresas verificadas y descuentos imperdibles. \href{https://www.google.com/url?q=https://www.ccs.cl/2025/10/23/ccs-anuncia-black-friday-oficial-descuentos-imperdibles/&sa=D&source=editors&ust=1791319645253091&usg=AOvVaw30lrO3x2kJr25_tfXrILdg}{https://www.ccs.cl/2025/10/23/ccs-anuncia-black-friday-oficial-descuentos-imperdibles/}
+
+Cámara de Comercio de Santiago. (2026a, 27 de marzo). Comercio electrónico bordeó los US\$ 10 mil millones en 2025. \href{https://www.google.com/url?q=https://www.ccs.cl/ecommerce/comercio-electronico-chile-2025/&sa=D&source=editors&ust=1791319645253399&usg=AOvVaw32O2VfAKg19iUKjr39vyDp}{https://www.ccs.cl/ecommerce/comercio-electronico-ch2ile-2025/}
+
+Cámara de Comercio de Santiago. (2026b, 26 de mayo). CyberDay 2026 incorporará inteligencia artificial para facilitar la experiencia de compra online. \href{https://www.google.com/url?q=https://www.ccs.cl/2026/05/26/cyberday-2026-incorporara-inteligencia-artificial-facilitar-experiencia-compra-online/&sa=D&source=editors&ust=1791319645253794&usg=AOvVaw3U0S7PiQRKbGig5ylgm_TQ}{https://www.ccs.cl/2026/05/26/cyberday-2026-incorporara-inteligencia-artificial-facilitar-experiencia-compra-online/}
+
+Cámara de Comercio de Santiago. (2026c, 29 de septiembre). CyberMonday 2026 marca los 15 años de la industria que transformó el comercio electrónico en Chile. \href{https://www.google.com/url?q=https://www.ccs.cl/2026/09/29/cybermonday-2026-marca-los-15-anos-de-la-industria-que-transformo-el-comercio-electronico-en-chile/&sa=D&source=editors&ust=1791319645254181&usg=AOvVaw0MNK6mdSbwjWfRotpK4q_F}{https://www.ccs.cl/2026/09/29/cybermonday-2026-marca-los-15-anos-de-la-industria-que-transformo-el-comercio-electronico-en-chile/}
+
+Comisión para el Mercado Financiero. (s. f.). Información de supervisados. Recuperado el 29 de septiembre de 2026, de \href{https://www.google.com/url?q=https://www.cmfchile.cl/portal/principal/623/w4-propertyname-900.html&sa=D&source=editors&ust=1791319645254465&usg=AOvVaw1oOBc5ve_tfj1mEOh2p9a3}{https://www.cmfchile.cl/portal/principal/623/w4-propertyname-900.html}
+
+Decreto N.º 6, Aprueba Reglamento de Comercio Electrónico, Diario Oficial de la República de Chile (2021). https://www.bcn.cl/leychile/Navegar?idNorma=1165504 Chilean Congress Library Portal
+
+Ley N.º 18.010, Establece normas para las operaciones de crédito y otras obligaciones de dinero que indica, Diario Oficial de la República de Chile (1981). https://www.bcn.cl/leychile/Navegar?idNorma=29438 Chilean Congress Library Portal
+
+Ley N.º 19.496, Establece normas sobre protección de los derechos de los consumidores, Diario Oficial de la República de Chile (1997). https://www.bcn.cl/leychile/Navegar?idLey=19496 Chilean Congress Library Portal
+
+Ley N.º 21.719, Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, Diario Oficial de la República de Chile (2024). https://www.bcn.cl/leychile/Navegar?idNorma=1209272 Chilean Congress Library Portal
+
+Servicio Nacional del Consumidor. (2022, 5 de abril). Reglamento de comercio electrónico establece nuevas exigencias para las empresas. \href{https://www.google.com/url?q=https://www.sernac.cl/604/w3-article-65050.html&sa=D&source=editors&ust=1791319645255703&usg=AOvVaw0nijDOXQAhOKmAzTsIYO-s}{https://www.sernac.cl/604/w3-article-65050.html}
+
+Chopra, S., \& Meindl, P. (2016). Supply Chain Management: Strategy, Planning, and Operation (6th ed.). Pearson.
+
+Hugos, M. H. (2018). Essentials of Supply Chain Management (4th ed.). Wiley.
+
+\section*{Declaración de uso de IA}
+\addcontentsline{toc}{section}{Declaración de uso de IA}
+
+El equipo declara que el uso de herramientas de inteligencia artificial generativa en este subdocumento se limitó a las actividades indicadas en la siguiente tabla. Todo contenido, dato, cálculo, decisión de diseño, diagrama, conclusión y referencia fue revisado y verificado por las personas identificadas, quienes asumen como propio el resultado final y la responsabilidad íntegra sobre su exactitud, originalidad y coherencia técnica.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Sección
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Herramienta
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Finalidad de uso
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Nivel en texto
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Nivel en diagramas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Revisión humana
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}Sección o capítulo{]} & {[}Herramienta y versión / No aplica{]} & {[}Uso concreto / No se utilizó IA{]} & {[}Seleccione{]} & {[}Seleccione{]} & {[}Nombre y verificación realizada{]} \\
+& & & & & \\
+2.1 & Claude Anthropic Opus 5.5 Alto & Se utilizó para mejorar la resolución del diagrama causa raíz y agregar degradación de color en el centro & & Bajo & Samira Becerra Saa \\
+& & & & & \\
+2.3 & Codex GPT 5.6 Sol medio & Se utilizó para proponer ideas de como mostrar el dimensionamiento de los datos de mejor manera y visual & & Medio & Samira Becerra Saa \\
+\end{longtable}
+
+A continuación, se detalla la escala de niveles para completar la tabla anterior.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
@@ -482,32 +780,21 @@ Tabla 2.2:** Síntesis de restricciones por tipo.
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Tipo
+Nivel
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Restricciones principales
+Texto
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Efecto en la propuesta
+Diagramas
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Regulatoria (RES-01 a RES-05) & Ley N.º 19.496; Decreto N.º 6 de 2021; Ley N.º 18.010 y fiscalización de la CMF; Ley N.º 21.719, vigente desde el 1 de diciembre de 2026; plazos de conservación de la evidencia. & Cada operación debe dejar evidencia verificable y respetar el régimen del negocio al que pertenece. El cruce de datos entre retail y filial queda cerrado por defecto. \\
-Temporal (RES-06 a RES-08) & Fin del soporte de la plataforma de originación y cobranza, y último hito del plan de remediación, en 2029; cinco ventanas anuales de congelamiento; eventos comerciales con fechas fijadas externamente. & El plan de implantación debe calzar entre las ventanas de congelamiento y terminar la migración financiera antes de 2029. \\
-Tecnológica y de infraestructura (RES-09 a RES-11) & Nueve plataformas y catorce interfaces punto a punto sin mapa completo; infraestructura compartida con la filial; 14 tiendas dependientes del enlace del centro comercial y 13 sin segmentación de red. & La transición debe ser gradual, con operación desconectada en tienda y separación acreditada de la filial. \\
-Migración (RES-12) & 620.000 clientes con saldo que deben migrarse sin pérdida de datos, interrupción del cobro ni divergencias de saldo. & Migración por etapas, con coexistencia de plataformas y conciliación diaria de saldos. \\
-Humana y organizacional (RES-13 a RES-15) & 3.820 vendedores y cajeros con rotación anual del 62 \%; 1.900 contrataciones de temporada; 640 terminales compartidos; 1.100 repositores externos; 46 profesionales de TI en el CLIENTE. & Interfaces operables con capacitación mínima, traspaso rápido de sesión en terminales compartidos y una carga de cambio acotada para el equipo del CLIENTE. \\
+Ninguno & Sin uso de IA. & Sin uso de IA. \\
+Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
+Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
+Alto & Texto generado sustancialmente por IA y editado por el grupo. & Diagrama generado sustancialmente por IA. \\
 \end{longtable}
-
-\hypertarget{fuente-elaboraciuxf3n-propia-a-partir-de-empresa-subdocumento2-anexos-anexo-a.4.3.}{%
-\subsubsection{Fuente: Elaboración propia a partir de EMPRESA-Subdocumento2-Anexos, Anexo A.4.3.}\label{fuente-elaboraciuxf3n-propia-a-partir-de-empresa-subdocumento2-anexos-anexo-a.4.3.}}
-
-El análisis de las restricciones muestra que el principal límite del proyecto no es tecnológico, sino regulatorio y temporal: la solución debe separar dos negocios que comparten cliente e infraestructura y, al mismo tiempo, migrar la cartera financiera antes de 2029 sin intervenir la operación durante las ventanas de congelamiento. El detalle de cada restricción y su origen se encuentra en el Anexo A.4.3.
-
-\hypertarget{otros-listados}{%
-\subsubsection{Otros listados}\label{otros-listados}}
-
-Como apoyo, el Anexo A.5 incluye dos listados adicionales: los indicadores con su línea base y la meta comprometida (Anexo A.5.1), que conectan el dimensionamiento de la sección 2.3 con los requerimientos no funcionales, y la matriz de cumplimiento y trazabilidad (Anexo A.5.2), que relaciona cada requerimiento con el componente que lo satisface y la sección de la propuesta donde se desarrolla.
 
 \ossFinalPage
 
