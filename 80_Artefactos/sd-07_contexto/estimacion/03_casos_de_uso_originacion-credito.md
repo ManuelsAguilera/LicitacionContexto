@@ -8,11 +8,11 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | :-- | :-- | :-- | :-- | --: | :-- | :-- |
 | CU-OR-01 | F:C-01 | Evaluar la solicitud y abrir una tarjeta en el mostrador | AH-10 | 3 | RF-220 a RF-223, RF-225; 3.4.4 | S1, S2, S7 |
 | CU-OR-02 | F:C-01 | Ofrecer la tarjeta y consultar el resultado | AH-03 | 2 | RF-224; 3.4.4 | S7 |
-| CU-OR-03 | F:C-01 | Simular el costo total del crédito | AH-01 | 1 | RF-218 | S1 |
+| CU-OR-03 | F:C-01 | Simular el costo total del crédito | AS-04 | 1 | RF-218 | S1 |
 | CU-OR-04 | F:C-01 | Mantener la tasa máxima convencional vigente | AH-10 | 2 | RF-219 | S7 |
 | CU-OR-05 | F:C-01 | Controlar los intentos de evaluación | AH-15 | 2 | RF-226 | S7 |
 | CU-OR-06 | F:C-01 | Parametrizar los topes y la ventana de enfriamiento | AH-10 | 3 | RC-11; EXC-16 | S5 |
-| CU-OR-07 | F:C-01 | Otorgar crédito sin enlace contra el cupo preaprobado | AH-04 | 3 | RF-090 a RF-093; EXC-16 | S3, S4 |
+| CU-OR-07 | F:C-01 | Autorizar compra a cuotas sin enlace contra el cupo preaprobado | AH-04 | 3 | RF-090 a RF-093; EXC-16 | S3, S4 |
 | CU-OR-08 | F:C-01 | Mantener el cupo preaprobado en la tienda | AS-14 | 2 | RF-089; EXC-16 | S3 |
 | CU-OR-09 | F:C-01 | Solicitar la ampliación de un cupo con enlace | AH-10 | 2 | 3.3.2 | S6 |
 
@@ -36,9 +36,9 @@ Resumen. 9 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 | ID | Supuesto |
 | :-- | :-- |
-| S1 | Portal público en la Opción A (D-08 y D-09 de `contexto_sd-04.md`). El contenido financiero se sirve desde la filial emisora. El cliente se conserva como actor por prudencia |
+| S1 | Portal público en la Opción A (D-08 y D-09 de `contexto_sd-04.md`). El contenido financiero se sirve desde la filial emisora. El cliente llega por el sitio y la aplicación de AS-04, que es el actor de CU-OR-03. AH-01 sale del UAW base |
 | S2 | CU-OR-01 T3 depende del Servicio de evidencia financiera. Los casos de la evidencia se cuentan en ese servicio, no aquí |
-| S3 | CU-OR-07 y CU-OR-08 dependen de la factibilidad del crédito sin conexión (EXC-16, RT-03.13). Si la prueba falla, ambos se retiran. Se suman a CU-VE-07 y CU-VE-11 en la sensibilidad |
+| S3 | CU-OR-07 y CU-OR-08 dependen de la factibilidad del crédito sin conexión (EXC-16, RT-03.13). Si la prueba falla, ambos se retiran junto con CU-VE-07 (−15 de UUCW). CU-VE-11 se mantiene, porque EXC-16 permite autorizar la compra con cupo vigente. La tercera transacción de CU-OR-07 es el rechazo de lo que EXC-16 excluye, y no implementa la apertura sin conexión |
 | S4 | CU-OR-07 es la vía desconectada. CU-VE-11 es la vía con enlace. Son casos distintos con objetivos distintos |
 | S5 | CU-OR-06 cita RC-11 (el cliente fija el apetito de riesgo) y no un RF, porque RF-090 y RF-091 describen la aplicación de los topes y no su parametrización |
 | S6 | CU-OR-09 no tiene RF. Sale de «administra solicitudes, evaluaciones, cupos» en 3.3.2 |

@@ -4,7 +4,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de
 
 ## 1. Cuándo importa un traslape
 
-El UUCW depende de la clase del caso (1 a 3 transacciones = 5, 4 a 7 = 10), no del número exacto. Por eso quitar una transacción solo cambia el resultado si el caso baja de 4 a 3. Hoy hay 4 casos medios (CU-EX-04, CU-EX-08, CU-OF-02 y CU-VE-04). Un traslape en un caso simple tiene efecto 0 sobre el UUCW. Se registra igual para que la memoria de cálculo no cuente la misma función dos veces.
+El UUCW depende de la clase del caso (1 a 3 transacciones = 5, 4 a 7 = 10), no del número exacto. Por eso quitar una transacción solo cambia el resultado si el caso baja de 4 a 3. Tras la revisión independiente de G3 quedan 2 casos medios (CU-EX-04 y CU-OF-02). CU-EX-08 y CU-VE-04 se simplificaron. Un traslape en un caso simple tiene efecto 0 sobre el UUCW. Se registra igual para que la memoria de cálculo no cuente la misma función dos veces.
 
 ## 2. Traslapes encontrados
 
@@ -19,8 +19,8 @@ El UUCW depende de la clase del caso (1 a 3 transacciones = 5, 4 a 7 = 10), no d
 | 7 | CU-PE-04 (tercera transacción), CU-VE-09 (primera) | El cobro capturado y el registro de la venta digital | Autoridades distintas: pedidos captura y ventas registra. Se declara | 0 |
 | 8 | CU-PE-08, CU-VE-02 | Anular una preautorización y reversar un pago | Antes de la captura es de pedidos y después es de ventas | 0 |
 | 9 | CU-VE-02 (segunda transacción), CU-VE-10 (primera) | Documento ante el ERP/DTE | VE-10 emite las ventas nuevas. VE-02 solo ajusta el documento de una reversa | 0 |
-| 10 | CU-VE-04 (cuarta transacción), CU-VE-10 (segunda) | Documento en contingencia con folios previos | VE-10 entrega los folios y VE-04 los usa en la venta. Si se funden, VE-04 baja a 3 | −5 si se funde |
-| 11 | CU-VE-04 (tercera), CU-VE-07, CU-OR-07 | Operar y otorgar crédito sin conexión | Es la sensibilidad ya registrada de EXC-16 (−20 de UUCW si se retiran CU-VE-07, CU-VE-11, CU-OR-07 y CU-OR-08) | Ya registrada |
+| 10 | CU-VE-04 (tercera transacción), CU-VE-10 (segunda) | Documento en contingencia con folios previos | VE-10 entrega los folios y VE-04 los usa en la venta. VE-04 ya es simple, así que fundirlos no cambia su clase | 0 |
+| 11 | CU-VE-07, CU-OR-07, CU-OR-08 | Autorizar compra a cuotas sin conexión | Es la sensibilidad de EXC-16: si falla la prueba de factibilidad se retiran los tres casos. CU-VE-11 se mantiene, porque EXC-16 permite autorizar la compra con cupo vigente | −15 si se retiran |
 | 12 | CU-VE-11, CU-CC-01, CU-CC-03 | Autorización de cruce Crédito a Ventas | Se cuenta una sola vez, en CU-VE-11 (supuesto 1 de control de cruces) | 0 |
 | 13 | CU-CA-02, CU-EV-03 (segunda), CU-EV-07 | Compuerta de evidencia para repactar | La consulta de evidencia se cuenta en EV-03. CA-02 y EV-07 solo la usan (resultado 18) | 0 |
 | 14 | CU-OR-01 (tercera), CU-EV-01 (segunda) | Acreditar la evidencia antes de abrir la tarjeta | OR-01 confirma la apertura y EV-01 acredita la entrega de información. Se declara | 0 |
@@ -34,10 +34,12 @@ El UUCW depende de la clase del caso (1 a 3 transacciones = 5, 4 a 7 = 10), no d
 | 22 | CU-PE-10, CU-PE-11, CU-PE-12, CU-MK-03 (primera) | Consulta del estado del pedido | Misma fuente única (resultado 10), con distinto actor y distinto detalle. Se declara | 0 |
 | 23 | CU-MK-08, CU-OF-03, CU-EX-02 | Datos de la ficha de producto y de la compra | Cada uno entrega un dato distinto (vendedor y condiciones, precio, disponibilidad). Se declara | 0 |
 | 24 | CU-BT-13, CU-EX-12, CU-EX-14 | Tableros e informes de existencias | BT-13 es la capacidad común y EX-12 y EX-14 son los informes propios del servicio | 0 |
+| 25 | CU-PE-01 (segunda transacción), CU-PE-03 (primera) | Aceptar el pedido | PE-01 confirma la promesa y PE-03 preautoriza el pago. Son dos idas y vueltas con distinto destino | 0 |
+| 26 | CU-VE-01 (tercera transacción), CU-VE-11 (segunda) | Cerrar la venta | VE-11 cierra la venta con la autorización del Emisor y VE-01 confirma las demás ventas. Se cuenta una sola vez por venta | 0 |
 
 ## 3. Resultado
 
-- Ningún traslape exige corregir un caso. Los 24 quedan declarados con su frontera.
-- Los traslapes 3, 4 y 10 tocan casos medios. Si el equipo decide fundir esas transacciones, el UUCW baja de 660 a 645 como máximo (−15). Es el peor caso y se informa como sensibilidad en el paso 6.
-- El traslape 11 ya estaba registrado (−20 si EXC-16 no resulta factible).
-- Los demás tienen efecto 0 porque los casos involucrados son simples. Cambiarlos por otra agrupación solo modifica el UUCW si cruza el umbral de 4 transacciones.
+- Ningún traslape exige corregir un caso. Los 26 quedan declarados con su frontera.
+- Los traslapes 3 y 4 tocan los dos casos medios que quedan (CU-OF-02 y CU-EX-04). Si el equipo decide fundir esas transacciones, el UUCW baja de 645 a 635 como máximo (−10).
+- El traslape 11 es la sensibilidad de EXC-16 (−15 si no resulta factible).
+- Los demás tienen efecto 0 porque los casos involucrados son simples.

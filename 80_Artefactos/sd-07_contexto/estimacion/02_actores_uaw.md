@@ -6,7 +6,6 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: preguntas 1 
 
 | Código | Actor | Tipo | Justificación |
 | :-- | :-- | :-- | :-- |
-| AH-01 | Cliente | 3 | Usa la interfaz gráfica de los canales y del mesón |
 | AH-02 | Titular de tarjeta | 3 | Acepta información y condiciones en pantalla |
 | AH-03 | Vendedor de piso | 3 | Consulta disponibilidad y ofrece la tarjeta en terminal |
 | AH-04 | Cajero | 3 | Opera el punto de venta |
@@ -39,20 +38,19 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: preguntas 1 
 | AS-09 | Sistema central de retail (2009) | 2 | En retiro, no ofrece interfaz de programación. Solo interfaces de convivencia |
 | AS-10 | Plataforma de originación y cobranza (2011) | 2 | En retiro, opera por archivo. Solo interfaces de convivencia |
 | AS-11 | Sistema de remuneraciones (módulo del ERP) | 1 | Conector para entregar la base de comisión (EXC-05). Interfaz objetivo |
-| AS-12 | Autoridades fiscalizadoras | 2 | Reciben reportes por archivo o portal, sin interfaz de programación |
 | AS-13 | Proveedores de mercadería | 2 | Intercambian órdenes y avisos. Canal por validar. Propuesta |
 | AS-14 | Temporizador de procesos periódicos | 1 | Dispara la conciliación diaria y la sincronización. Actor simple declarado (diap. 31, decisión 5). Propuesta |
 
-Fuera de la lista. El centro de distribución de Concepción no es actor sistema (EXC-13, SP-02, RC-10). Su entrega de existencias es un caso de uso de AH-07. Tampoco son actores los roles de gobierno del proyecto (Contraparte Técnica, Comité Ejecutivo), los grupos de propiedad y el directorio de usuarios del cliente (ninguna fuente lo nombra).
+Fuera de la lista. El cliente (AH-01, por la Opción A) y las autoridades fiscalizadoras (AS-12, por C6) no son actores del UAW base; ver las sensibilidades de la sección 4. El centro de distribución de Concepción no es actor sistema (EXC-13, SP-02, RC-10). Su entrega de existencias es un caso de uso de AH-07. Tampoco son actores los roles de gobierno del proyecto (Contraparte Técnica, Comité Ejecutivo), los grupos de propiedad y el directorio de usuarios del cliente (ninguna fuente lo nombra).
 
 ## 3. Cálculo del UAW
 
 | Tipo | Actores | Peso | Subtotal |
 | :-- | --: | --: | --: |
-| 3 (persona con interfaz gráfica) | 17 | 3 | 51 |
-| 2 (sistema por protocolo o archivo) | 4 | 2 | 8 |
+| 3 (persona con interfaz gráfica) | 16 | 3 | 48 |
+| 2 (sistema por protocolo o archivo) | 3 | 2 | 6 |
 | 1 (sistema por interfaz de programación) | 10 | 1 | 10 |
-| **Total** | **31** | | **UAW = 69** |
+| **Total** | **29** | | **UAW = 64** |
 
 Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y AS-14.
 
@@ -60,12 +58,14 @@ Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y A
 
 | Escenario | UAW |
 | :-- | --: |
-| Base | 69 |
-| Los 8 sistemas externos de tipo 1 (AS-01 a AS-05, AS-07, AS-08, AS-11) pasan a tipo 2, por el archivo actual (C5) | 77 |
-| Se retira AS-13 si el equipo no lo valida | 67 |
-| Se agrega el directorio de usuarios del cliente (tipo 1 o 2) | 70 a 71 |
-| Opción A del portal público: AH-01 se excluye porque el cliente usa el sitio de AS-04 y no una interfaz de la solución | 66 |
-| Opción B del portal público, con portales nuevos de vendedor y proveedor (AH-17 y AS-13 a tipo 3) | 72 |
+| Base | 64 |
+| Los 8 sistemas externos de tipo 1 (AS-01 a AS-05, AS-07, AS-08, AS-11) pasan a tipo 2, por el archivo actual (C5) | 72 |
+| Se retira AS-13 si el equipo no lo valida | 62 |
+| Se agrega el directorio de usuarios del cliente (tipo 1 o 2) | 65 a 66 |
+| Se conserva AH-01 como actor, por prudencia, aunque el cliente use el sitio de AS-04 (Opción A) | 67 |
+| Se agrega AS-12 (autoridades fiscalizadoras, tipo 2) si el equipo la considera actor (C6, pregunta 4) | 66 |
+| AS-11 se unifica con AS-01, porque el módulo de remuneraciones es parte del mismo ERP | 63 |
+| Opción B del portal público, con portales nuevos (se agrega AH-01 como tipo 3, y AH-17 y AS-13 pasan a tipo 3) | 70 |
 
 ## 5. Pruebas de la puerta G2a
 
@@ -81,3 +81,4 @@ Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y A
 6. Portal público en la Opción A. El contenido financiero se sirve desde la filial emisora. El portal del proveedor se resuelve en el sd-04 y AS-13 queda tipo 2. No existe una plataforma de proveedores hoy.
 
 Las decisiones que condicionan el sd-04 están registradas en `80_Artefactos/sd-04_contexto/contexto_sd-04.md`.
+7. Revisión independiente de G3 (2026-10-08, aprobada por el usuario): AH-01 sale del UAW base porque la Opción A firmada hace que el cliente use el sitio de AS-04. AS-12 sale porque las autoridades solo reciben reportes (C6) y se retiró CU-EV-06. El UAW base baja de 69 a 64.
