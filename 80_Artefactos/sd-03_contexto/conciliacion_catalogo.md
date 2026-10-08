@@ -70,7 +70,7 @@ Se confirman sin cambio: RF-035 a RF-037, 039 a 042 y 044 (existencias), RF-085 
 
 ## Autonomía sin enlace: valor único de 24 horas
 
-La revisión del Informe 1 pidió comprometer una sola autonomía. Se fija 24 horas (subsecciones 3.1 y 3.2.3, art. 16.4 de las Bases Administrativas y RT-03.10, «24 horas o el mayor que fije el caso»; el Caso fija mínimos de 8 horas en tienda y 4 horas en el centro de distribución, que quedan por debajo y no prevalecen). Se unifican en el Anexo B: RNF-24 (de 8 a 24), RNF-25 (centro de distribución, de 4 a 24, con nota de consulta al mandante), RNF-26 (30 minutos tras 24 horas) y RNF-28 (se retira la referencia al mínimo de 8 horas). RN-46 conserva su texto del Caso, con una nota en el Anexo C.
+La revisión del Informe 1 pidió comprometer una sola autonomía. Se fija 24 horas (subsecciones 3.1 y 3.2.3, art. 16.4 de las Bases Administrativas y RT-03.10, «24 horas o el mayor que fije el caso»; el Caso fija mínimos de 8 horas en tienda y 4 horas en el centro de distribución, que quedan por debajo y no prevalecen). Se unifican en el Anexo B: RNF-24 (de 8 a 24), RNF-25 (centro de distribución, de 4 a 24, con nota de validación con el cliente), RNF-26 (30 minutos tras 24 horas) y RNF-28 (se retira la referencia al mínimo de 8 horas). RN-46 conserva su texto del Caso, con una nota en el Anexo C.
 
 ## Otras correcciones por la auditoría
 
@@ -88,8 +88,18 @@ La revisión del Informe 1 pidió comprometer una sola autonomía. Se fija 24 ho
 5. El Excel tiene referencias obsoletas: RF-160 y RF-161 citan «RF-058» (hoy RF-158 y RF-159), RF-183 cita «RF-026.1» (hoy RF-177 y RF-178), RNF-22 y RNF-23 citan «NFR-06.x» (hoy RNF-16 a RNF-21).
 6. El capítulo 2 (sd-02, Tabla 2.6, línea 506) dice «≥ 8 h en tienda» y lista RNF-61 a RNF-63 como RNF. Describe lo que exige el cliente; conviene aclarar allí que la propuesta compromete 24 horas.
 7. Requisitos de transición (migración de datos, capacitación, marcha blanca; FEP02 · 18): hoy aparecen como OP y en el plan de trabajo. Verificar que ningún RF de transición quede huérfano.
-8. Los 16 supuestos por umbrales ausentes y los umbrales propuestos por el proponente se validan en el período de consultas.
+8. Los 16 supuestos por umbrales ausentes y los umbrales propuestos por el proponente se validan con el cliente al inicio del proyecto.
 9. Columnas del Caso 17.1 (precondición, resultado esperado y origen en el Caso por requerimiento) y matriz de trazabilidad completa: viven en el Formulario T-12.
+
+## Ajustes tras los agentes sobre la 3.2.4 (2026-10-08)
+
+- **El período de consultas ya cerró.** El art. 43 de las Bases lo limita al 20-08 al 01-09-2026 (Formulario T-20) y el art. 5.4 dice que lo no planteado ahí se asume aceptado al presentar la oferta. La planilla de consultas ya se entregó (`CONSULTAS_ONLYSIMPLESOLUTIONS_20260901.xlsx`). Por eso donde decía «se consultará al mandante» o «se validan en el período de consultas» ahora dice «se validan con el cliente al inicio del proyecto, antes de fijar la línea base» (3.2.3, 3.2.4, Anexos A, B y C, Excel v3.1 y este registro).
+- **Correspondencia con los requisitos transversales (RT).** No se agrega una columna «RT origen» al Anexo B ni al Excel. Esa correspondencia es el trabajo del Formulario T-12. La 3.2.4 dice que los requisitos de las Bases Técnicas Transversales se responden uno a uno en el T-12.
+- **Método de verificación.** La 3.2.4 acota la afirmación: cada RNF tiene umbral y método, los RF se verifican con los criterios de aceptación de la 3.2.5 y las OP con la revisión del entregable.
+- **Regla 4 de atomicidad.** Se reescribe (no se divide) el enunciado que no sigue la estructura canónica. Reglas 1, 2, 3 y 5 dividen.
+- **Comité Ejecutivo.** Pasa a «del contrato» (art. 71: asistencia obligatoria para ambas partes).
+- **Tabla 3.5.** Lenguaje claro y cifras del catálogo: RNF-06 (8 s), RNF-19 (5 min), RNF-44 (3 años), RNF-21 (2 s), RNF-42, 43 y 57 (plazo del crédito más 6 años y recuperación a 10 años) y RNF-22 (104.000 pedidos en 3 días).
+- **Pendientes que se mantienen.** Los siete productos del Caso 17.1 que no viven en esta subsección (mapa de integraciones y registro de vacíos y consultas), y que el sd-02 diga «Tabla 2.1» y «Tabla 2.6» para el mismo catálogo.
 
 ## Cambios que el equipo debe trasladar al Excel oficial
 

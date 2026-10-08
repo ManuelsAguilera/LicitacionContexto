@@ -11,7 +11,7 @@ El identificador RN-07 no se usa en el registro. El catálogo previo citaba cinc
 | ID | Regla | Prioridad | Origen | Criterio de aceptación |
 | :-- | :-- | :-- | :-- | :-- |
 | RN-01 | La compañía debe mantener los datos del retail y los de la filial emisora en dominios separados, lógica y físicamente, en todo momento. | M | Cap. 10, restricción N°1; Cap. 6, fila "Separación del negocio financiero" | Documento de frontera aprobado por la contraloría + prueba de penetración que acredite que un componente del retail no alcanza datos de crédito. |
-| RN-02 | Un dato no puede cruzar entre el ámbito retail y el ámbito fiscalizado si no existe una interfaz declarada, con finalidad, base de licitud, autorización nominada y registro de auditoría. | M | Cap. 16.1, decisión N°4; Cap. 12, Ley 21.719 | Inventario de flujos autorizados; todo intento no declarado queda bloqueado y registrado. Auditoría (ventana por definir en el período de consultas) sobre 100 % de los cruces. |
+| RN-02 | Un dato no puede cruzar entre el ámbito retail y el ámbito fiscalizado si no existe una interfaz declarada, con finalidad, base de licitud, autorización nominada y registro de auditoría. | M | Cap. 16.1, decisión N°4; Cap. 12, Ley 21.719 | Inventario de flujos autorizados; todo intento no declarado queda bloqueado y registrado. Auditoría (ventana por definir con el cliente al inicio del proyecto) sobre 100 % de los cruces. |
 | RN-03 | El área comercial del retail no puede utilizar el comportamiento de pago del cliente (mora, deuda, cupo utilizado) para perfilamiento, segmentación ni campaña. | M | Cap. 12, principio de finalidad, Ley 20.575 | Revisión de los atributos disponibles en el motor de campañas: cero atributos de origen financiero. |
 | RN-04 | La compañía debe identificar a la misma persona con identificadores distintos en cada ámbito, relacionados por una tabla de correspondencia custodiada y no por clave común replicada. | M | Cap. 16.1, decisión N°3 | La clave del ámbito financiero no aparece como columna en ninguna tabla del retail. |
 | RN-05 | Ninguna facilidad comercial puede utilizar datos del ámbito fiscalizado para fines del retail, ni datos del retail para fines crediticios, sin pasar por el control de cruce de RN-02. | M | Cap. 10, restricción N°1; Cap. 6, cierre; Cap. 18, advertencia del directorio | Revisión funcional de toda iniciativa de marketing o CRM: cero variables de origen financiero en el motor de campañas sin registro de cruce autorizado. |
@@ -73,7 +73,7 @@ El identificador RN-07 no se usa en el registro. El catálogo previo citaba cinc
 
 ## Reglas propuestas por el proponente
 
-Derivadas de los requerimientos que las citan. Se validan en el período de consultas.
+Derivadas de los requerimientos que las citan. Se validan con el cliente al inicio del proyecto.
 
 | ID | Regla | Requerimientos |
 | :-- | :-- | :-- |
