@@ -1,0 +1,1078 @@
+{
+ "actores": [
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  2,
+  2,
+  1,
+  2,
+  1
+ ],
+ "casos": [
+  2,
+  3,
+  3,
+  3,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  2,
+  2,
+  2,
+  2,
+  2,
+  3,
+  3,
+  3,
+  3,
+  2,
+  3,
+  1,
+  2,
+  2,
+  3,
+  2,
+  3,
+  2,
+  3,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  1,
+  2,
+  2,
+  3,
+  4,
+  2,
+  2,
+  2,
+  2,
+  2,
+  3,
+  2,
+  2,
+  3,
+  2,
+  3,
+  2,
+  2,
+  3,
+  3,
+  3,
+  2,
+  3,
+  2,
+  2,
+  3,
+  3,
+  3,
+  2,
+  2,
+  2,
+  3,
+  4,
+  1,
+  2,
+  2,
+  2,
+  3,
+  2,
+  2,
+  3,
+  3,
+  2,
+  3,
+  2,
+  1,
+  2,
+  2,
+  3,
+  3,
+  2,
+  2,
+  2,
+  1,
+  2,
+  3,
+  2,
+  2,
+  2,
+  2,
+  1,
+  2,
+  2,
+  2,
+  3,
+  2,
+  3,
+  2,
+  3,
+  2,
+  3,
+  3,
+  3,
+  2,
+  2,
+  3,
+  3,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2
+ ],
+ "actores_detalle": [
+  {
+   "codigo": "AH-02",
+   "nombre": "Titular de tarjeta",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-03",
+   "nombre": "Vendedor de piso",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-04",
+   "nombre": "Cajero",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-05",
+   "nombre": "Jefatura de tienda o de departamento",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-06",
+   "nombre": "Personal de reposición y bodega de tienda",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-07",
+   "nombre": "Personal de centros de distribución",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-08",
+   "nombre": "Repositor externo de proveedor",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-09",
+   "nombre": "Ejecutivo de atención y posventa",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-10",
+   "nombre": "Ejecutivo del negocio financiero",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-11",
+   "nombre": "Comercial y compras",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-12",
+   "nombre": "Planificación de abastecimiento",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-13",
+   "nombre": "Canales digitales y Marketing",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-14",
+   "nombre": "Prevención de pérdidas",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-15",
+   "nombre": "Contraloría y Cumplimiento",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-16",
+   "nombre": "Administrador de sistemas (TI)",
+   "tipo": 3
+  },
+  {
+   "codigo": "AH-17",
+   "nombre": "Vendedor de marketplace (externo)",
+   "tipo": 1
+  },
+  {
+   "codigo": "AH-18",
+   "nombre": "Analista de información",
+   "tipo": 3
+  },
+  {
+   "codigo": "AS-01",
+   "nombre": "Sistema de gestión empresarial y facturación (ERP/DTE)",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-02",
+   "nombre": "Sistema de gestión de almacenes principal (WMS)",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-03",
+   "nombre": "Plataforma de marketplace",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-04",
+   "nombre": "Plataforma de comercio electrónico",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-05",
+   "nombre": "Sistema de fidelización",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-07",
+   "nombre": "Transportistas de última milla",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-08",
+   "nombre": "Medios y terminales de pago",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-09",
+   "nombre": "Sistema central de retail (2009)",
+   "tipo": 2
+  },
+  {
+   "codigo": "AS-10",
+   "nombre": "Plataforma de originación y cobranza (2011)",
+   "tipo": 2
+  },
+  {
+   "codigo": "AS-11",
+   "nombre": "Sistema de remuneraciones (módulo del ERP)",
+   "tipo": 1
+  },
+  {
+   "codigo": "AS-13",
+   "nombre": "Proveedores de mercadería",
+   "tipo": 2
+  },
+  {
+   "codigo": "AS-14",
+   "nombre": "Temporizador de procesos periódicos",
+   "tipo": 1
+  }
+ ],
+ "casos_detalle": [
+  {
+   "codigo": "CU-AB-01",
+   "servicio": "AB",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-AB-02",
+   "servicio": "AB",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-AB-03",
+   "servicio": "AB",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-AB-04",
+   "servicio": "AB",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-AB-05",
+   "servicio": "AB",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-01",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-02",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-03",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-04",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-05",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-06",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-07",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-BT-08",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-BT-09",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-BT-10",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-BT-11",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-BT-12",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-BT-13",
+   "servicio": "BT",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CA-01",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CA-02",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CA-03",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CA-04",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CA-05",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CA-06",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CA-07",
+   "servicio": "CA",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CL-01",
+   "servicio": "CL",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CL-02",
+   "servicio": "CL",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CL-03",
+   "servicio": "CL",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CL-04",
+   "servicio": "CL",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CM-01",
+   "servicio": "CM",
+   "etapa": 2,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-CM-02",
+   "servicio": "CM",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CM-03",
+   "servicio": "CM",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CC-01",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CC-02",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CC-03",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CC-04",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-CC-05",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-CC-06",
+   "servicio": "CC",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-01",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-02",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-03",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-04",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-05",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-07",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EV-08",
+   "servicio": "EV",
+   "etapa": 1,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-EX-01",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-02",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-03",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-EX-04",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 4
+  },
+  {
+   "codigo": "CU-EX-05",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-06",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-07",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-08",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-09",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-10",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-EX-11",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-12",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-13",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-EX-14",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-15",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-EX-16",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-17",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-EX-18",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-EX-19",
+   "servicio": "EX",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-01",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-02",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-MK-03",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-04",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-MK-05",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-MK-06",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-07",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-08",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-MK-09",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-MK-10",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-MK-11",
+   "servicio": "MK",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-01",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OF-02",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 4
+  },
+  {
+   "codigo": "CU-OF-03",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-OF-04",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-05",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-06",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-07",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OF-08",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-09",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OF-10",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OF-11",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OF-12",
+   "servicio": "OF",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OR-01",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OR-02",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OR-03",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-OR-04",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OR-05",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OR-06",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OR-07",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-OR-08",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-OR-09",
+   "servicio": "OR",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-01",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-02",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-PE-03",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-04",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-PE-05",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-06",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-07",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-08",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-09",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 1
+  },
+  {
+   "codigo": "CU-PE-10",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-11",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-12",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-13",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-PE-14",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PE-15",
+   "servicio": "PE",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-PV-01",
+   "servicio": "PV",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PV-02",
+   "servicio": "PV",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-PV-03",
+   "servicio": "PV",
+   "etapa": 2,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-PV-04",
+   "servicio": "PV",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-PV-05",
+   "servicio": "PV",
+   "etapa": 2,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-VE-01",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-VE-02",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-03",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-04",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-VE-05",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 3
+  },
+  {
+   "codigo": "CU-VE-06",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-07",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-08",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-09",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-10",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  },
+  {
+   "codigo": "CU-VE-11",
+   "servicio": "VE",
+   "etapa": 1,
+   "transacciones": 2
+  }
+ ],
+ "resultado": {
+  "UAW": 64,
+  "UUCW": 645,
+  "UUCP": 709
+ }
+}
