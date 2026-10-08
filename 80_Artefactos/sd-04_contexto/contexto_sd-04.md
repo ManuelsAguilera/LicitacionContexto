@@ -1,0 +1,22 @@
+# Contexto para el sd-04 (Arquitectura lógica y física)
+
+Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne decisiones tomadas en otros trabajos (por ahora la estimación por Puntos de Casos de Uso del sd-07) que el sd-04 debe respetar o resolver. Cada fila indica la fuente y la fecha. No es fuente de verdad: manda `sd-03.tex` con sus anexos y, para lo que no esté ahí, el documento de origen citado.
+
+## 1. Decisiones que condicionan el sd-04
+
+| N.º | Decisión | Qué implica para el sd-04 | Origen y fecha |
+| :-- | :-- | :-- | :-- |
+| D-01 | Los sistemas conservados e integrados (ERP/DTE, WMS principal, marketplace, comercio electrónico, fidelización, transportistas, medios de pago y remuneraciones) se tratan como actores con interfaz de programación (tipo 1) | La plataforma de integración debe ofrecer una interfaz de programación hacia cada uno. Si el mapa de las 14 interfaces muestra que alguno solo opera por archivo, se rehace la estimación (sensibilidad: UAW de 69 a 77) | `estimacion/01_reglas_de_conteo.md` (C5) y `02_actores_uaw.md`, firmado por el usuario el 2026-10-08 |
+| D-02 | El sistema central de 2009 y la plataforma de crédito de 2011 son actores de tipo 2 (archivo o protocolo) solo por sus interfaces de convivencia y retiro | El sd-04 diseña adaptadores de convivencia y de retiro. La migración de datos no va en esa estimación (rama 6 de la EDT) | `02_actores_uaw.md`, firmado el 2026-10-08 |
+| D-03 | El vendedor de marketplace es un actor de tipo 1 | Declara existencia y recibe avisos por interfaz de programación, sin pantalla propia en la solución | `02_actores_uaw.md`, firmado el 2026-10-08 |
+| D-04 | Existe un temporizador de procesos periódicos como actor interno (conciliación diaria, sincronización, expiración de reservas) | El sd-04 define el programador de tareas y su observabilidad | `02_actores_uaw.md`, firmado el 2026-10-08 |
+| D-05 | Las autoridades fiscalizadoras reciben reportes por archivo o portal (tipo 2) | Canal de salida de reportes con control de acceso. No hay interfaz de programación | `02_actores_uaw.md` |
+| D-06 | Los proveedores de mercadería intercambian órdenes y avisos (tipo 2). El canal está por validar | Pendiente de definir el canal de abastecimiento con proveedores | `02_actores_uaw.md`, firmado el 2026-10-08 como supuesto |
+| D-07 | Concepción no es actor sistema. Sus existencias las carga su personal en un registro estructurado, sin instalar componentes allí | El sd-04 define un canal de carga con validación y confianza declarada del nodo. Trabajan 100 personas en Concepción y el resto de las 620 personas de los centros de distribución, 520, en el centro principal | EXC-13, SP-02, RC-10; la cifra de 100 personas la informó el usuario el 2026-10-08 y no está en las Bases |
+
+## 2. Pendientes que el sd-04 debe resolver
+
+1. Federación de identidades con el directorio de usuarios del cliente. Hoy queda fuera de la estimación porque ninguna fuente lo nombra. Si el sd-04 lo incorpora, el UAW sube 1 o 2 puntos.
+2. Si los medios y terminales de pago se integran por procesador (hoy por confirmar).
+3. Canal de abastecimiento con proveedores (D-06).
+4. Mapa de las 14 interfaces existentes y su tipo real (D-01).

@@ -1,6 +1,6 @@
 # Actores y UAW de la estimación por Puntos de Casos de Uso (puertas G2a y G2)
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: aprobado en conversación con el usuario, pendiente de la firma del equipo. Parte de `80_Artefactos/maestro_actores.md` y aplica las convenciones C5, C6 y C9 de `01_reglas_de_conteo.md`. Tipos (FEP03, diap. 26): 1 sistema por interfaz de programación (peso 1), 2 sistema por protocolo o archivo (peso 2), 3 persona con interfaz gráfica (peso 3). Los actores son roles, no personas.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: preguntas 1 a 5 firmadas por el usuario el 2026-10-08. Queda la validación del equipo. Parte de `80_Artefactos/maestro_actores.md` y aplica las convenciones C5, C6 y C9 de `01_reglas_de_conteo.md`. Tipos (FEP03, diap. 26): 1 sistema por interfaz de programación (peso 1), 2 sistema por protocolo o archivo (peso 2), 3 persona con interfaz gráfica (peso 3). Los actores son roles, no personas.
 
 ## 1. Personas
 
@@ -69,10 +69,12 @@ Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y A
 
 `python3 05_Gestion/scripts/verificar_actores.py` informa 0 hallazgos. Para P2a.3 se unificó «Contraloría y Cumplimiento» en el sd-02 (Tabla 2.5) y en el sd-03 (3.4.6). Para P2a.4 se asignó AH-07 al grupo Negocios y operación (Logística) y se aclaró en la Tabla 2.5 del sd-02, sin agregar un grupo nuevo, para no inventar influencia ni interés.
 
-## 6. Preguntas para el equipo
+## 6. Decisiones firmadas por el usuario (2026-10-08)
 
-1. ¿Se firma que AH-17 es tipo 1?
-2. ¿Se firman AH-18, AS-13 y AS-14 como actores?
-3. ¿Los sistemas de 2009 y 2011 cuentan como tipo 2 solo por sus interfaces de convivencia?
-4. ¿Se firma que el directorio de usuarios del cliente queda fuera hasta que el sd-04 defina la federación de identidades?
-5. ¿Concepción está dentro de las 620 personas de AH-07? (supuesto)
+1. AH-17 queda tipo 1.
+2. Se firman AH-18, AS-13 y AS-14 como actores.
+3. Los sistemas de 2009 y 2011 son tipo 2 solo por sus interfaces de convivencia.
+4. El directorio de usuarios del cliente queda fuera hasta que el sd-04 defina la federación de identidades.
+5. En Concepción trabajan 100 personas y el resto de las 620 de los centros de distribución, 520, están en el centro principal. Dato informado por el usuario, no está en las Bases.
+
+Las decisiones que condicionan el sd-04 están registradas en `80_Artefactos/sd-04_contexto/contexto_sd-04.md`.

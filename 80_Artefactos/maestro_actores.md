@@ -36,7 +36,7 @@ Convención propuesta para los sistemas externos: se clasifican por la interfaz 
 | AH-04 | Cajero | G-05 | Ventas, originación de crédito, posventa | Caso 2.4; Anexo B (2) |
 | AH-05 | Jefatura de tienda o de departamento | G-05 | Existencias (conteos, informe de merma), oferta comercial (estado de exhibición), posventa | Caso 2.4 y entrevista de jefa de tienda; sd-03 3.4.6 |
 | AH-06 | Personal de reposición y bodega de tienda | G-05 | Existencias (conteo, probador), oferta comercial (cambio de etiquetas), pedidos (preparación) | Caso 2.4 |
-| AH-07 | Personal de centros de distribución (incluye a quien carga las existencias de Concepción, RC-10) | G-03 (Logística) | Abastecimiento, existencias, pedidos | Caso 2.4 (620 personas). Grupo asignado en el sd-02 el 2026-10-08. Por validar que Concepción esté dentro de las 620 |
+| AH-07 | Personal de centros de distribución (incluye a quien carga las existencias de Concepción, RC-10) | G-03 (Logística) | Abastecimiento, existencias, pedidos | Caso 2.4 (620 personas). Grupo asignado en el sd-02 el 2026-10-08. Trabajan 100 personas en Concepción y 520 en el centro principal (dato del usuario, 2026-10-08) |
 | AH-08 | Repositor externo de proveedor | G-06 (sd-02 lo ubica en el cuadrante de menor influencia, fuera de la Tabla 2.5) | Existencias (acceso controlado) | Caso 2.4; sd-02 2.4.2 |
 | AH-09 | Ejecutivo de atención y posventa | G-05 | Posventa, pedidos, marketplace | Anexo B («ejecutivo», 11 menciones); sd-03 3.4.6. Por validar el cargo |
 | AH-10 | Ejecutivo del negocio financiero | G-03 | Originación de crédito, cartera de crédito (repactación y cobranza), evidencia financiera | Caso 2.4 (originación, servicio al cliente, cobranza); sd-03 3.3.2 |

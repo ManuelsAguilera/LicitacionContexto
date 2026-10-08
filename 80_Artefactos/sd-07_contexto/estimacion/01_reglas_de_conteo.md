@@ -1,6 +1,6 @@
 # Reglas de conteo y convenciones de la estimación por Puntos de Casos de Uso (puerta G1)
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: aprobado en conversación con el usuario el 2026-10-08, pendiente de la firma del equipo. Método: clase FEP03 (diapositivas 21 a 52). Las decisiones marcadas «propuesta» son de este trabajo y no vienen de la clase.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: C5, C8 y el umbral de ±25 % firmados por el usuario el 2026-10-08. Queda la validación del equipo. Método: clase FEP03 (diapositivas 21 a 52). Las decisiones marcadas «propuesta» son de este trabajo y no vienen de la clase.
 
 ## 1. Las seis decisiones de la diapositiva 31
 
