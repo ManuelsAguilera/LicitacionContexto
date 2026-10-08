@@ -98,6 +98,19 @@ class TestCasosUso(unittest.TestCase):
             (d / "03_casos_de_uso_x.md").write_text(CAB + casos + CAB_T + trans + "\n| S1 | Actores secundarios: AS-14 en CU-EX-01 |\n", encoding="utf-8")
             self.assertEqual(v.actores_secundarios(d), {"AS-14"})
 
+    def test_trazabilidad_de_resultados(self):
+        casos, trans = "| CU-EX-01 | R:M-03 | A | AH-03 | 2 | RF-001 a RF-003 | S1 |\n", "| CU-EX-01 | T1 a. T2 b |\n"
+        filas = "".join(f"| {n} | R | CU-EX-01 | x |\n" for n in range(1, 28)) + "| 28 | R | CU-ZZ-09 | x |\n"
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "03_casos_de_uso_x.md").write_text(CAB + casos + CAB_T + trans, encoding="utf-8")
+            (d / "04_trazabilidad_resultados.md").write_text("| N.º | Resultado | Casos | Fuera |\n| :-- | :-- | :-- | :-- |\n" + filas, encoding="utf-8")
+            for n, a in (("b.md", ANEXO_B), ("a.md", ANEXO_A), ("act.md", ACTORES)):
+                (d / n).write_text(a, encoding="utf-8")
+            h = v.verificar(d, d / "b.md", d / "a.md", d / "act.md")
+        self.assertTrue(any("resultado 28" in x and "CU-ZZ-09" in x for x in h))
+        self.assertFalse(any("resultado 5 " in x for x in h))
+
 
 if __name__ == "__main__":
     unittest.main()

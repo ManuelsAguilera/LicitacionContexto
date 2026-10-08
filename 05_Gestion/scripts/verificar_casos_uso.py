@@ -125,6 +125,22 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
     faltan = sorted(todos - servicios)
     if faltan and completo:
         h.append("P3.2 servicios sin casos de uso: " + ", ".join(faltan))
+    # P3.3 los 28 resultados del Anexo D se rastrean a casos existentes
+    tr = trazabilidad(directorio)
+    if tr is None:
+        if completo:
+            h.append("P3.3 falta 04_trazabilidad_resultados.md")
+    else:
+        existentes = {c["codigo"] for c in casos}
+        for n in range(1, 29):
+            if not tr.get(n):
+                h.append(f"P3.3 el resultado {n} del Anexo D no cita ningún caso de uso")
+        for n, cs in sorted(tr.items()):
+            if not 1 <= n <= 28:
+                h.append(f"P3.3 el resultado {n} no existe en el Anexo D")
+            for cu in cs:
+                if cu not in existentes:
+                    h.append(f"P3.3 el resultado {n} cita {cu}, que no existe")
     # P3.7 actores de la lista sin ningún caso (solo con --completo; antes se informan como pendientes)
     if completo:
         h += [f"P3.7 el actor {a} no es actor principal ni secundario declarado de ningún caso" for a in actores_sin_caso(casos, codigos_actor, actores_secundarios(directorio))]
@@ -160,6 +176,20 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
     return h
 
 
+def trazabilidad(directorio):
+    """{N.º de resultado: [casos citados]} desde `04_trazabilidad_resultados.md`, o None si no existe."""
+    p = Path(directorio) / "04_trazabilidad_resultados.md"
+    if not p.exists():
+        return None
+    out = {}
+    for cab, filas in tablas(p.read_text(encoding="utf-8")):
+        if cab[:2] == ["N.º", "Resultado"]:
+            for f in filas:
+                if f[0].isdigit():
+                    out[int(f[0])] = re.findall(r"CU-[A-Z]{2}-\d+", f[2])
+    return out
+
+
 def actores_secundarios(directorio):
     """Actores citados en una fila de supuestos «Actores secundarios: ...» de cualquier archivo de casos."""
     out = set()
@@ -181,7 +211,8 @@ def pendientes(directorio=DIR, anexo_b=ANEXO_B, actores=ACTORES):
     out = ["P3.2 servicios aún sin casos de uso: " + ", ".join(sorted(set(rf_servicio.values()) - hechos))]
     sin = actores_sin_caso(casos, set(re.findall(r"\|\s*(A[HS]-\d+)\s*\|", Path(actores).read_text(encoding="utf-8"))), actores_secundarios(directorio))
     out.append("P3.7 actores aún sin caso como actor principal: " + (", ".join(sin) or "ninguno"))
-    out.append("P3.3 los 28 resultados del Anexo D se rastrean al terminar todos los servicios")
+    if trazabilidad(directorio) is None:
+        out.append("P3.3 los 28 resultados del Anexo D se rastrean al terminar todos los servicios")
     return out
 
 
