@@ -17,6 +17,7 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne de
 | D-09 | El contenido financiero del portal (información precontractual con simulador, estado de cuenta y documentos de crédito) se sirve desde el ámbito de la filial emisora, no desde el comercio electrónico de Retail | Interfaces separadas por ámbito detrás de una misma entrada, con sesión por rol y control de cruces (línea roja del Caso, restricción 1) | Decisión del usuario, 2026-10-08 |
 | D-10 | Hoy no existe una plataforma de proveedores. El portal del proveedor (órdenes y recepciones, RT-16.31) se resuelve en el sd-04. Mientras tanto, los proveedores (AS-13) se estiman como tipo 2 | El sd-04 decide entre un portal mínimo nuevo (los proveedores pasarían a tipo 3, UAW +1) o intercambio por archivo con el estándar de órdenes (RT-05.23) | Confirmación y decisión del usuario, 2026-10-08 |
 | D-11 | La vista del vendedor de marketplace (estado de pedidos, devoluciones y evaluación) la entrega la solución por interfaz hacia la plataforma de marketplace, que no se desarrolla (EXC-04) | Interfaz de programación hacia AS-03 con esos tres datos. El vendedor sigue como actor tipo 1 | Decisión del usuario, 2026-10-08 (AH-17 tipo 1) |
+| D-12 | El usuario informó el stack tecnológico previsto (sección 3), con tres alternativas sin decidir: Event Hubs o Kafka, Redis o Valkey, y Elastic Cloud u OpenSearch | El sd-04 decide cada alternativa y fija la pila. La dificultad de herramientas (E8 de la estimación) se valoró en 3 con esta lista | Informado por el usuario, 2026-10-08 |
 
 ## 2. Pendientes que el sd-04 debe resolver
 
@@ -26,3 +27,21 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne de
 4. Mapa de las 14 interfaces existentes y su tipo real (D-01).
 5. Evaluación de la plataforma de comercio electrónico (AS-04) de la Etapa 1: define si se conserva (Opción A, D-08) o si se construye un portal nuevo (Opción B). Cambia los actores de cliente y vendedor y el número de casos de uso de la Etapa 2.
 6. Código del portal público: la tabla del Caso lo rotula RT-16.30, y en las Bases Transversales el portal público es RT-16.31 (RT-16.30 es la auditoría de exportaciones sensibles). Las Bases son inmutables, así que se cita como «RT-16.31, rotulado 16.30 en el Caso».
+7. Decidir las tres alternativas abiertas del stack (D-12): Event Hubs o Kafka, Redis o Valkey, Elastic Cloud u OpenSearch. Mientras no se decidan, la dificultad de herramientas (E8) se mantiene en 3 y puede subir.
+
+## 3. Stack tecnológico informado (D-12)
+
+Informado por el usuario el 2026-10-08. «Uso previsto» es como lo describió; no es una decisión del sd-04.
+
+| Área | Tecnologías mencionadas | Uso previsto |
+| :-- | :-- | :-- |
+| Nube y ejecución | Azure, AKS | Servicios principales del dominio retail |
+| Integración | Azure Event Hubs o Kafka; Kafka Connect, Debezium, Kong, Temporal | Eventos, conexión con plataformas existentes, API y procesos |
+| Datos | PostgreSQL, Cosmos DB, Redis o Valkey, MinIO, ADLS Gen2, Synapse y Spark | Datos transaccionales, perfiles, caché, evidencia y análisis |
+| Búsqueda | Elastic Cloud u OpenSearch | Indexación y consultas |
+| Filial financiera | Kubernetes, Istio, PostgreSQL con Patroni, Keycloak y HSM Thales Luna | Servicios, identidad y protección de datos financieros en infraestructura local |
+| Tiendas | K3s, PostgreSQL local y Valkey | Nodo de tienda y operación durante desconexiones |
+| Aplicaciones | TypeScript, React, Node.js, Go y Java Spring Boot | Interfaces y servicios de aplicación |
+| Operación y seguridad | Argo CD, OpenTofu, Ansible, OpenTelemetry, Prometheus, Loki, Grafana, Wazuh, Semgrep, ZAP, Trivy, Syft y Cosign | Despliegue, observabilidad y controles de seguridad |
+
+Las alianzas vigentes que declara el sd-01 (1.6) son Microsoft (Azure), Fortinet (seguridad de redes) y Dell Technologies (servidores). El stack no menciona productos de Fortinet ni de Dell.
