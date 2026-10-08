@@ -20,11 +20,9 @@ import estimacion_ucp as calc  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parents[2]
 DIR = RAIZ / "80_Artefactos" / "sd-07_contexto" / "estimacion"
-REFERENCIA = "Equipo, E3 en 3"
-ESCENARIOS = [  # E1 a E8. Los tres primeros son los valores informados por el usuario el 2026-10-08 (falta E3); el resto es ilustrativo
-    ("Equipo, E3 en 3", [5, 4, 3, 4, 5, 2, 0, 3]),
-    ("Equipo, E3 en 4", [5, 4, 4, 4, 5, 2, 0, 3]),
-    ("Equipo, E3 en 5", [5, 4, 5, 4, 5, 2, 0, 3]),
+REFERENCIA = "Equipo"
+ESCENARIOS = [  # E1 a E8. «Equipo» son los valores informados por el usuario el 2026-10-08; el resto es ilustrativo
+    ("Equipo", [5, 4, 3, 4, 5, 2, 0, 3]),
     ("Mejor posible", [5, 5, 5, 5, 5, 5, 0, 0]),
     ("Favorable", [4, 4, 4, 4, 4, 4, 1, 2]),
     ("Neutro", [3, 3, 3, 3, 3, 3, 3, 3]),
@@ -87,9 +85,8 @@ def construir(entrada, tcf_v):
     fallas = []
     L += ["# Esfuerzo provisional por UCP (paso 6, puerta G6)", "",
           "Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/calcular_esfuerzo.py`; no editar a mano. "
-          "Fecha: 2026-10-08. Estado: **provisional**. Los factores de ambiente los informó el usuario "
-          "(`09_ef_preguntas.md`, sección 3) salvo E3 (orientación a objetos), que sigue pendiente: se muestran los tres valores posibles 3, 4 y 5. "
-          "Los escenarios restantes son ilustrativos y no son una propuesta.", "",
+          "Fecha: 2026-10-08. Estado: **todos los datos informados; pendiente de la firma del equipo**. Los factores de ambiente los informó el usuario "
+          "(`09_ef_preguntas.md`, sección 3) y están pendientes de la firma del equipo. Los demás escenarios del cuadro 2 son ilustrativos y no son una propuesta.", "",
           "## 1. Entradas", "",
           f"UAW {uaw} + UUCW {uucw} = UUCP {uaw + uucw} (`07_uucw_uucp.md`). TCF {dec(T, '.2f')} (`08_tcf.md`). Lectura B: la fórmula "
           "E = UCP × CF da solo la programación y el total del proyecto es E / 0,40; se usa porque es la lectura que desarrolla la "
@@ -112,8 +109,7 @@ def construir(entrada, tcf_v):
         alt = r1["sensibilidad"]["total_alternativo"]
         L.append(f"| {nombre} | {dec(r1['EF'], '.3f')} | {r1['factores_desfavorables']} | {r1['CF']} | {h(r1['UCP'])} | {h(r1['E'])} | {h(r1['total'])} | {h(alt)} |")
     ref = res[REFERENCIA][0]
-    L += ["", f"Referencia provisional: «{REFERENCIA}». Se elige el valor más bajo posible de E3 (el que da más horas) mientras el equipo no lo informe, "
-          "para no subestimar. Con los valores informados hay un solo factor desfavorable (E6 en 2), así que el CF es 20 con cualquier E3.", "",
+    L += ["", f"Referencia: «{REFERENCIA}», con los valores informados. Hay un solo factor desfavorable (E6 en 2), así que el CF es 20 horas por punto.", "",
           f"## 3. Reparto por actividad ({REFERENCIA})", "",
           "| Actividad | % | Horas (CF 20) | Horas (CF 28) |", "| :-- | --: | --: | --: |"]
     tot20 = ref["total"]
@@ -168,7 +164,7 @@ def construir(entrada, tcf_v):
           "La primera vía es la calculadora `estimacion_ucp.py`. La segunda repite las fórmulas de la clase dentro de este script sin importarla. "
           + ("**Coinciden** en UCP, E, total, EF y TCF de los cinco escenarios (tolerancia 1e-9)." if not fallas else "**NO coinciden**: " + "; ".join(fallas)),
           "", "## 7. Lo que estas cifras no incluyen", "",
-          "- El valor de E3, que falta. Entre E3 en 3 y en 5 el total varía unas 2.500 horas (≈ 8 %); el CF no cambia.",
+          "- La firma del equipo sobre los ocho valores, y el respaldo de los tres extremos (E1 en 5, E5 en 5 y E7 en 0).",
           "- Lo que el método no cubre: migración de datos, infraestructura y licencias, capacitación, marcha blanca y operación. Se estiman aparte (paso 7) y se compara con un segundo método para el desarrollo.",
           "- La sobrecarga del 15 % de la diapositiva 51 ya está en el total (lectura B).",
           "- Las horas por paquete de la EDT (formulario T-15) se reparten en el paso 8."]

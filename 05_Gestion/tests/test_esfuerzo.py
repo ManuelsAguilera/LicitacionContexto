@@ -28,10 +28,10 @@ class TestEsfuerzo(unittest.TestCase):
         self.assertAlmostEqual(r["total"], 41975.0, delta=1.0)
 
     def test_valores_informados_del_equipo(self):
-        for e3, ef in ((3, 0.785), (4, 0.755), (5, 0.725)):
-            r = ce.via2(self.entrada["actores"], self.entrada["casos"], self.tcf, [5, 4, e3, 4, 5, 2, 0, 3])
-            self.assertAlmostEqual(r["EF"], ef, places=6)
-            self.assertEqual((r["mal"], r["CF"]), (1, 20))
+        r = ce.via2(self.entrada["actores"], self.entrada["casos"], self.tcf, [5, 4, 3, 4, 5, 2, 0, 3])
+        self.assertAlmostEqual(r["EF"], 0.785, places=6)
+        self.assertEqual((r["mal"], r["CF"]), (1, 20))
+        self.assertAlmostEqual(r["total"], 33116.0, delta=1.0)
 
     def test_cinco_desfavorables_no_estiman(self):
         r = ce.via2(self.entrada["actores"], self.entrada["casos"], self.tcf, [0] * 6 + [5, 5])

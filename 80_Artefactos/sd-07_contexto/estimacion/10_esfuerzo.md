@@ -1,6 +1,6 @@
 # Esfuerzo provisional por UCP (paso 6, puerta G6)
 
-Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/calcular_esfuerzo.py`; no editar a mano. Fecha: 2026-10-08. Estado: **provisional**. Los factores de ambiente los informó el usuario (`09_ef_preguntas.md`, sección 3) salvo E3 (orientación a objetos), que sigue pendiente: se muestran los tres valores posibles 3, 4 y 5. Los escenarios restantes son ilustrativos y no son una propuesta.
+Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/calcular_esfuerzo.py`; no editar a mano. Fecha: 2026-10-08. Estado: **todos los datos informados; pendiente de la firma del equipo**. Los factores de ambiente los informó el usuario (`09_ef_preguntas.md`, sección 3) y están pendientes de la firma del equipo. Los demás escenarios del cuadro 2 son ilustrativos y no son una propuesta.
 
 ## 1. Entradas
 
@@ -10,18 +10,16 @@ UAW 64 + UUCW 645 = UUCP 709 (`07_uucw_uucp.md`). TCF 1,19 (`08_tcf.md`). Lectur
 
 | Escenario | EF | Desfavorables | CF | UCP | Programación E (h) | Total del proyecto (h) | Total con el otro CF (h) |
 | :-- | --: | --: | --: | --: | --: | --: | --: |
-| Equipo, E3 en 3 | 0,785 | 1 | 20 | 662 | 13.246 | 33.116 | 46.362 |
-| Equipo, E3 en 4 | 0,755 | 1 | 20 | 637 | 12.740 | 31.850 | 44.590 |
-| Equipo, E3 en 5 | 0,725 | 1 | 20 | 612 | 12.234 | 30.584 | 42.818 |
+| Equipo | 0,785 | 1 | 20 | 662 | 13.246 | 33.116 | 46.362 |
 | Mejor posible | 0,425 | 0 | 20 | 359 | 7.172 | 17.929 | 25.100 |
 | Favorable | 0,710 | 0 | 20 | 599 | 11.981 | 29.952 | 41.932 |
 | Neutro | 0,995 | 0 | 20 | 839 | 16.790 | 41.975 | 58.764 |
 | Algo exigente | 1,130 | 3 | 28 | 953 | 26.695 | 66.737 | 47.670 |
 | Peor posible | 1,700 | 8 | no estima | 1.434 | | | |
 
-Referencia provisional: «Equipo, E3 en 3». Se elige el valor más bajo posible de E3 (el que da más horas) mientras el equipo no lo informe, para no subestimar. Con los valores informados hay un solo factor desfavorable (E6 en 2), así que el CF es 20 con cualquier E3.
+Referencia: «Equipo», con los valores informados. Hay un solo factor desfavorable (E6 en 2), así que el CF es 20 horas por punto.
 
-## 3. Reparto por actividad (Equipo, E3 en 3)
+## 3. Reparto por actividad (Equipo)
 
 | Actividad | % | Horas (CF 20) | Horas (CF 28) |
 | :-- | --: | --: | --: |
@@ -32,7 +30,7 @@ Referencia provisional: «Equipo, E3 en 3». Se elige el valor más bajo posible
 | Sobrecarga | 15% | 4.967 | 6.954 |
 | **Total** | 100 % | **33.116** | **46.362** |
 
-## 4. Reparto por etapa y servicio (Equipo, E3 en 3, CF 20)
+## 4. Reparto por etapa y servicio (Equipo, CF 20)
 
 El tamaño de cada servicio es su UUCW. El UAW (64) se asigna a la Etapa 1, porque los actores de la base tecnológica nacen allí; si el equipo prefiere repartirlo por UUCW, las etapas pasan a 66,7 % y 33,3 %.
 
@@ -56,7 +54,7 @@ El tamaño de cada servicio es su UUCW. El UAW (64) se asigna a la Etapa 1, porq
 | 2 | Comisiones | 15 | 2,1% | 701 |
 | **2** | **Subtotal** | **215** | **30,3%** | **10.042** |
 
-## 5. Sensibilidad (Equipo, E3 en 3)
+## 5. Sensibilidad (Equipo)
 
 | Variación | UCP | Total del proyecto (h) | Diferencia |
 | :-- | --: | --: | --: |
@@ -80,7 +78,7 @@ La primera vía es la calculadora `estimacion_ucp.py`. La segunda repite las fó
 
 ## 7. Lo que estas cifras no incluyen
 
-- El valor de E3, que falta. Entre E3 en 3 y en 5 el total varía unas 2.500 horas (≈ 8 %); el CF no cambia.
+- La firma del equipo sobre los ocho valores, y el respaldo de los tres extremos (E1 en 5, E5 en 5 y E7 en 0).
 - Lo que el método no cubre: migración de datos, infraestructura y licencias, capacitación, marcha blanca y operación. Se estiman aparte (paso 7) y se compara con un segundo método para el desarrollo.
 - La sobrecarga del 15 % de la diapositiva 51 ya está en el total (lectura B).
 - Las horas por paquete de la EDT (formulario T-15) se reparten en el paso 8.

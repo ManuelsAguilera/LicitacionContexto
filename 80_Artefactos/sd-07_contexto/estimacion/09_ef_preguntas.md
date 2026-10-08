@@ -1,6 +1,6 @@
 # Factores de ambiente (EF): preguntas para el consenso del equipo (paso 5, puerta G5, parte de ambiente)
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: **valores informados por el usuario el 2026-10-08, salvo E3**, pendientes de la firma del equipo. Los ocho factores describen al equipo y a su contexto, y los asigna el equipo por consenso (FEP03, diapositivas 42 a 45), no el proponente de la estimación. Dependen del sd-04 (pila tecnológica), del sd-06 (metodología) y del sd-12 (equipo), que todavía no están redactados. Este documento deja las preguntas, los valores informados (sección 3), el rango posible y un cuadro de escenarios ilustrativos. Los escenarios ilustrativos no son una propuesta de valores.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: **los ocho valores informados por el usuario el 2026-10-08**, pendientes de la firma del equipo. Los ocho factores describen al equipo y a su contexto, y los asigna el equipo por consenso (FEP03, diapositivas 42 a 45), no el proponente de la estimación. Dependen del sd-04 (pila tecnológica), del sd-06 (metodología) y del sd-12 (equipo), que todavía no están redactados. Este documento deja las preguntas, los valores informados (sección 3), el rango posible y un cuadro de escenarios ilustrativos. Los escenarios ilustrativos no son una propuesta de valores.
 
 ## 1. Cómo funciona
 
@@ -43,21 +43,20 @@ Los valores los dio el usuario. Las frases de justificación son un borrador mí
 | Factor | Peso | Valor | Justificación (borrador) | Estado |
 | :-- | --: | --: | :-- | :-- |
 | E1 Modelo de proyecto | 1,5 | 5 | El equipo tiene experiencia con el modelo de gestión híbrido que usará el proyecto. El modelo se redacta después, en el sd-06 | Extremo: el sd-06 debe respaldarlo |
-| E2 Experiencia en el negocio | 0,5 | 4 | El equipo conoce el negocio (retail, crédito y omnicanal) por los tres proyectos de referencia del sd-01, apartado 1.4 | Confirmar que «conocemos en un 4» es E2 |
-| E3 Orientación a objetos | 1 | pendiente | El stack informado usa Java Spring Boot, TypeScript, Node.js, Go y React | **Falta el valor** |
+| E2 Experiencia en el negocio | 0,5 | 4 | El equipo conoce el negocio (retail, crédito y omnicanal) por los tres proyectos de referencia del sd-01, apartado 1.4 | Interpretado como E2 («conocemos en un 4»); E3 se informó aparte |
+| E3 Orientación a objetos | 1 | 3 | Dominio medio: el stack informado usa Java Spring Boot, TypeScript, Node.js, Go y React | Informado el 2026-10-08 |
 | E4 Capacidad del analista | 0,5 | 4 | El Arquitecto de Solución trabajó como analista en proyectos anteriores | Confirmado |
 | E5 Motivación | 1 | 5 | El equipo está muy motivado. Se refleja en el sd-01 (`80_Artefactos/sd-01_contexto/notas_sd-01.md`, N-01) | Extremo: necesita un hecho comprobable |
 | E6 Estabilidad de requisitos | 2 | 2 | Hay 5 RF por validar, metas del Anexo D por validar con el cliente y decisiones abiertas (pregunta 8) | Coherente con el repositorio |
 | E7 Personal a tiempo parcial | −1 | 0 | Todo el personal asignado es de dedicación exclusiva | Extremo: el sd-12 debe declararlo |
 | E8 Dificultad del lenguaje | −1 | 3 | Lenguajes comunes, pero unas 30 tecnologías y tres alternativas sin decidir (`contexto_sd-04.md`, D-12) | Puede subir si se complica el stack |
 
-**Resultado con los valores informados.** Con E3 en 3, 4 o 5 el EF es 0,785, 0,755 o 0,725. Hay un solo factor desfavorable (E6 en 2), así que el factor de conversión es 20 horas por punto con cualquier E3. La puerta lo permite: ocho valores entre 0 y 5, E7 y E8 con el signo correcto, no todos en 3 ni en 5, EF entre 0,42 y 1,70. El esfuerzo provisional está en `10_esfuerzo.md`.
+**Resultado con los valores informados.** Suma ponderada = 17,5 + 3 = 20,5. **EF = 1,4 − 0,03 × 20,5 = 0,785**: el trabajo cuesta un 21,5 % menos que con un equipo neutro. Hay un solo factor desfavorable (E6 en 2), así que el factor de conversión es **20 horas por punto**. La puerta se cumple: ocho valores entre 0 y 5, E7 y E8 con el signo correcto, no todos en 3 ni en 5, y EF entre 0,42 y 1,70. El esfuerzo está en `10_esfuerzo.md` y la prueba `05_Gestion/tests/test_ef.py` guarda estos valores.
 
-**Lo que queda por cerrar.**
-1. El valor de E3.
-2. Confirmar que «conocemos en un 4» corresponde a E2.
-3. Respaldar los tres extremos (E1 en 5, E5 en 5 y E7 en 0) con hechos comprobables, porque la clase descuenta los extremos sin justificación (diapositivas 40 y 45). E1 depende del sd-06, E7 del sd-12 y E5 del sd-01.
-4. Coherencia de E6 con el plan de riesgos (sd-08): si ese plan dice que el alcance puede cambiar, E6 en 2 es correcto; si dijera que es estable, habría que subirlo.
+**Lo que queda por cerrar (humano).**
+1. Respaldar los tres extremos (E1 en 5, E5 en 5 y E7 en 0) con hechos comprobables, porque la clase descuenta los extremos sin justificación (diapositivas 40 y 45). E1 depende del sd-06, E7 del sd-12 y E5 del sd-01.
+2. Revisar la coherencia de E6 con el plan de riesgos (sd-08) cuando exista: si ese plan dice que el alcance puede cambiar, E6 en 2 es correcto; si dijera que es estable, habría que subirlo.
+3. La firma del equipo sobre los ocho valores. La clase recomienda asignarlos en grupo y anotar los desacuerdos.
 
 ## 4. Rango y escenarios ilustrativos
 
