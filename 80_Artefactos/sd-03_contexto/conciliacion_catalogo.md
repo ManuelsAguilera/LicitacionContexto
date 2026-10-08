@@ -82,7 +82,7 @@ La revisión del Informe 1 pidió comprometer una sola autonomía. Se fija 24 ho
 ## Pendientes declarados (no resueltos por suposición)
 
 1. Abastecimiento (3), comisiones (3) y cartera de crédito (6) tienen pocos requerimientos funcionales.
-2. Huecos de contenido que la auditoría detectó y que no se inventaron: imputación de pagos (RN-42 sin requerimiento), derecho de retracto (Caso 16.1 n.º 22), gastos de cobranza, disponibilidad publicada en 30 s o menos (RT-05.29), hora de corte de las 07:00, exactitud de inventario diaria y enlace de respaldo en 14 tiendas y Coyhaique (RT-03.24). Reglas sin requerimiento: RN-43 a RN-45 (ahora RN-P03 a RN-P05 tienen requerimientos), RN-56 y RN-59 a RN-61.
+2. Huecos de contenido que la auditoría detectó y que no se inventaron: imputación de pagos (RN-42 sin requerimiento), derecho de retracto (Caso 16.1 n.º 22), gastos de cobranza, disponibilidad publicada en 30 s o menos (RT-05.29), hora de corte de las 07:00, exactitud de inventario diaria y enlace de respaldo en 14 tiendas y Coyhaique. Reglas sin requerimiento: RN-43 a RN-45 (ahora RN-P03 a RN-P05 tienen requerimientos), RN-56 y RN-59 a RN-61.
 3. RNF-05 conserva «POR DEFINIR (propuesta: 30 s)» frente al «tiempo real» del Caso.
 4. Resolución de SUP-08 y SUP-09 (criterio S3-03 de la rúbrica): afecta a RF-023, RF-028 y RNF-19.
 5. El Excel tiene referencias obsoletas: RF-160 y RF-161 citan «RF-058» (hoy RF-158 y RF-159), RF-183 cita «RF-026.1» (hoy RF-177 y RF-178), RNF-22 y RNF-23 citan «NFR-06.x» (hoy RNF-16 a RNF-21).
