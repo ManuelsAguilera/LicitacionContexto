@@ -74,11 +74,11 @@ El tamaño de cada servicio es su UUCW. El UAW (64) se asigna a la Etapa 1, porq
 
 ## 6. Dos vías
 
-La primera vía es la calculadora `estimacion_ucp.py`. La segunda repite las fórmulas de la clase dentro de este script sin importarla. **Coinciden** en UCP, E, total, EF y TCF de los cinco escenarios (tolerancia 1e-9).
+La primera vía es la calculadora `estimacion_ucp.py`. La segunda repite las fórmulas de la clase dentro de este script sin importarla. **Coinciden** en UCP, E, total, EF y TCF de todos los escenarios (tolerancia 1e-9).
 
 ## 7. Lo que estas cifras no incluyen
 
-- La firma del equipo sobre los ocho valores, y el respaldo de los tres extremos (E1 en 5, E5 en 5 y E7 en 0).
+- La firma del equipo sobre los ocho valores. E7 en 0 es un supuesto sin respaldo (el sd-12 no existe), E1 en 5 depende del sd-06 y E5 en 5 es una autoevaluación del equipo.
 - Lo que el método no cubre: migración de datos, infraestructura y licencias, capacitación, marcha blanca y operación. Se estiman aparte (paso 7) y se compara con un segundo método para el desarrollo.
 - La sobrecarga del 15 % de la diapositiva 51 ya está en el total (lectura B).
 - Las horas por paquete de la EDT (formulario T-15) se reparten en el paso 8.

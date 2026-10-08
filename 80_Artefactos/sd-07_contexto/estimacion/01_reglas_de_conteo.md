@@ -41,4 +41,4 @@ La diferencia aceptable entre el UCP y el segundo método independiente es de ±
 1. ¿Se firma la convención C5 (tipo 1 para sistemas)?
 2. ¿Se firma el máximo de 12 transacciones por caso (C8)?
 3. ¿Se firma el umbral de ±25 % entre métodos?
-4. ¿Las autoridades fiscalizadoras y el vendedor de marketplace son actores del sistema o solo destinatarios de reportes (C6)?
+4. ¿Las autoridades fiscalizadoras y el vendedor de marketplace son actores del sistema o solo destinatarios de reportes (C6)? Resuelto el 2026-10-08: el vendedor de marketplace (AH-17) es actor de tipo 1 y las autoridades fiscalizadoras (AS-12) salen del UAW base, porque solo reciben reportes. Su inclusión es una sensibilidad (`02_actores_uaw.md`).

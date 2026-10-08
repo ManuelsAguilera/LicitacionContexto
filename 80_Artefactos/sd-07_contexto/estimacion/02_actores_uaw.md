@@ -1,6 +1,6 @@
 # Actores y UAW de la estimación por Puntos de Casos de Uso (puertas G2a y G2)
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: preguntas 1 a 5 firmadas por el usuario el 2026-10-08. Queda la validación del equipo. Parte de `80_Artefactos/maestro_actores.md` y aplica las convenciones C5, C6 y C9 de `01_reglas_de_conteo.md`. Tipos (FEP03, diap. 26): 1 sistema por interfaz de programación (peso 1), 2 sistema por protocolo o archivo (peso 2), 3 persona con interfaz gráfica (peso 3). Los actores son roles, no personas.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: preguntas 1 a 5 firmadas por el usuario el 2026-10-08; la revisión independiente de G3 sacó a AH-01 y a AS-12 del UAW base, que quedó en 64 (decisión 7 de la sección 6). Queda la validación del equipo. Parte de `80_Artefactos/maestro_actores.md` y aplica las convenciones C5, C6 y C9 de `01_reglas_de_conteo.md`. Tipos (FEP03, diap. 26): 1 sistema por interfaz de programación (peso 1), 2 sistema por protocolo o archivo (peso 2), 3 persona con interfaz gráfica (peso 3). Los actores son roles, no personas.
 
 ## 1. Personas
 

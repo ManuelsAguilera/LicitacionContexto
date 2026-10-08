@@ -58,4 +58,4 @@ La sensibilidad por UAW (62 a 72) está en `02_actores_uaw.md`.
 
 ## 6. Efecto en el UCP
 
-El UCP es UUCP × TCF × EF. Entre 605 y 645 de UUCW el UUCP varía entre 669 y 709 (−6 %). El rango completo hasta B (629) es de −11 %. Las cifras definitivas se calculan en el paso 4 con la calculadora.
+El UCP es UUCP × TCF × EF. Entre 605 y 645 de UUCW el UUCP varía entre 669 y 709 (−6 %). El rango completo hasta B (629) es de −11 %. Las cifras definitivas están en `07_uucw_uucp.md` (UUCP 709) y `10_esfuerzo.md` (UCP 637 y 31.850 h con los factores de ambiente del equipo).
