@@ -18,6 +18,7 @@ python3 05_Gestion/scripts/generar_mapa_paquetes.py            # paso 8c: regene
 python3 05_Gestion/scripts/generar_plantilla_tres_valores.py   # paso 8d: regenera 12_plantilla_tres_valores.md
 python3 05_Gestion/scripts/repartir_horas_paquetes.py [A.md B.md]  # paso 9: regenera 16_horas_por_paquete.md
 python3 05_Gestion/scripts/generar_cronograma.py               # paso 10: regenera 17_cronograma_edt.md
+python3 05_Gestion/scripts/generar_diccionario.py [A.md B.md]  # paso 10b: regenera 18_diccionario_edt.md (aplica 19_diccionario_campos_manuales.md)
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_estimacion.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_casos_uso.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_g4.py' -v
@@ -29,6 +30,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p 'test_verificar_edt.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_mapa_paquetes.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_horas_paquetes.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_cronograma.py' -v
+python3 -m unittest discover -s 05_Gestion/tests -p 'test_diccionario.py' -v
 ```
 
 Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 mientras existan. Las pruebas de `unittest` prueban los verificadores con textos mínimos y la calculadora con los ejemplos de la clase.
@@ -51,6 +53,7 @@ Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 m
 | 8d | Planilla de tres valores por paquete | G7 | **Hecho, vacía.** Una fila por paquete | `12_plantilla_tres_valores.md` |
 | 9 | Horas por paquete y por etapa (T-15), sin calendario ni personas | P8.1 y P8.4 | **Parcial.** Los 73 paquetes del UCP tienen horas (31.850 h); los 134 restantes esperan al paso 7. P8.4 pendiente porque la memoria de capacidad de la 3.4.1 no existe | `16_horas_por_paquete.md` |
 | 10 | Cronograma, ruta crítica y curva de horas por mes | P8.3 | **Propuesta hecha, pendiente del visto bueno del equipo.** Ventanas de meses para 202 de los 207 paquetes (las cinco innovaciones quedan por definir), con las anclas del Art. 17 y los congelamientos. La ruta crítica es la cadena de anclas; las holguras de los demás paquetes no se calculan sin duraciones. La curva de horas cubre solo el UCP (31.850 h) | `17_cronograma_edt.md` |
+| 10b | Diccionario de la EDT por paquete (estructura) | Comunicado 10, 7.1: entregable, criterio y responsable | **Estructura hecha.** 207 fichas con los doce campos de la clase; cada valor lleva su estado (derivado, propuesta, manual o por definir). Llenado actual: 728 valores derivados, 202 propuestos y 1.347 por definir. Los valores de las personas van en `19_diccionario_campos_manuales.md` | `18_diccionario_edt.md`, `19_diccionario_campos_manuales.md` |
 | 11 | Personas en el pico frente a la dotación | P8.2 | **Diferido.** La dotación es del sd-12, que no forma parte de esta entrega; E7 sigue como supuesto sin respaldo | |
 | 12 | Cierre y revisión humana | Estado «revisado» solo por una persona | **Pendiente** | |
 
