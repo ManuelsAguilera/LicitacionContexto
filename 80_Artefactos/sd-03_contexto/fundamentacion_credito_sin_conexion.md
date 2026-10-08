@@ -1,6 +1,6 @@
 # Fundamentación del crédito sin conexión (borrador por aprobar)
 
-> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+> **Códigos actualizados (2026-10-08)** a la nomenclatura de `divisiones_negocio_servicios_sd-03.md`.
 
 Documento de contexto, no es entregable. Responde a la decisión pendiente del Caso 09, numeral 16.1 n.º 7, a RT-03.10 y a RT-03.13, y cierra DEC-12 de `auditoria_decisiones.md`. Estado: aprobado por el usuario el 2026-10-06 (opción B2 y topes del Emisor). Aplicado en EXC-16, SP-03, RC-11, 1.10 y la compuerta del POS (condición 9).
 
@@ -40,14 +40,14 @@ Procedimiento manual: el vendedor ofrece otro medio de pago; la apertura o ampli
 | Restricción 5 (seguir vendiendo y cobrando) | Se cobra con otros medios, pero se pierde la venta con tarjeta propia (38 % de la venta de tiendas) durante el corte | Cumple | Cumple |
 | Restricción 1 (separación de datos) | Cumple | Cumple solo si el caché guarda el mínimo (ver 5) | Cumple, y sin datos del cliente |
 | Exposición al riesgo de crédito | Ninguna | Acotada por los topes | Mayor: autoriza a clientes sin considerar su cupo ni su estado |
-| Evidencia (restricción 2 y 3) | No aplica | Registro local de la aceptación, sincronizado con F-03 | Ídem |
+| Evidencia (restricción 2 y 3) | No aplica | Registro local de la aceptación, sincronizado con F:C-03 | Ídem |
 | Complejidad | Baja | Media | Baja |
 
-Recomendación: **B2**, sujeta a la prueba de factibilidad de la sección 7 y a que el Emisor fije los topes (sección 6). Si la prueba falla o los topes no se fijan, rige B1 y la función se declara no disponible (sección 9). Esto es lo que ya decía F-01: "contingencia con cupo ya aprobado sujeta a prueba de factibilidad".
+Recomendación: **B2**, sujeta a la prueba de factibilidad de la sección 7 y a que el Emisor fije los topes (sección 6). Si la prueba falla o los topes no se fijan, rige B1 y la función se declara no disponible (sección 9). Esto es lo que ya decía F:C-01: "contingencia con cupo ya aprobado sujeta a prueba de factibilidad".
 
 ## 5. Qué guarda el caché (mínimo necesario)
 
-Por tarjeta: identificador opaco, monto máximo autorizado sin conexión (el menor entre el cupo disponible y el tope por cliente), antigüedad del dato y estado de bloqueo. **No guarda** saldo, mora ni comportamiento de pago. Se alimenta periódicamente desde F-01 a través de X-01, con el dato mínimo (Caso 16.1 n.º 4; restricción 1). Así el caché no cruza la frontera entre Retail y Emisor.
+Por tarjeta: identificador opaco, monto máximo autorizado sin conexión (el menor entre el cupo disponible y el tope por cliente), antigüedad del dato y estado de bloqueo. **No guarda** saldo, mora ni comportamiento de pago. Se alimenta periódicamente desde F:C-01 a través de X-01, con el dato mínimo (Caso 16.1 n.º 4; restricción 1). Así el caché no cruza la frontera entre Retail y Emisor.
 
 Exposición máxima: por cada cliente, el tope sin conexión multiplicado por el número de tiendas que visite durante el corte, porque las tiendas no pueden coordinarse sin enlace. Por eso el tope por cliente y el tope por transacción los fija el Emisor.
 
@@ -65,9 +65,9 @@ Se agrega como responsabilidad del cliente (RC-11).
 
 Se ejecuta en las tiendas piloto del POS, con el corte provocado de 24 h (condición 5 de la compuerta, `asignacion_etapas.md` D2). Pasa si se cumple todo:
 1. Las compras con cupo del caché se autorizan dentro de los topes fijados por el Emisor, sin pérdida de transacciones.
-2. El 100 % de las compras sin conexión queda con aceptación y versión del texto informado recuperables en F-03 tras la sincronización.
-3. La conciliación al reconectar (R-05, F-01, F-02) termina en 30 minutos o menos y sin diferencias no explicadas.
-4. Los sobrecupos que resulten se registran como excedente y los gestiona F-02; la venta ya hecha no se anula.
+2. El 100 % de las compras sin conexión queda con aceptación y versión del texto informado recuperables en F:C-03 tras la sincronización.
+3. La conciliación al reconectar (R:V-02, F:C-01, F:C-02) termina en 30 minutos o menos y sin diferencias no explicadas.
+4. Los sobrecupos que resulten se registran como excedente y los gestiona F:C-02; la venta ya hecha no se anula.
 
 Regla de reconciliación (RT-03.12): orden por hora local y dispositivo, regla documentada y bitácora auditable.
 
@@ -97,7 +97,7 @@ Las demás funciones de la tienda (promociones, emisión de documentos, consulta
 ## 11. Cambios aplicados
 
 - EXC-16: reescribir con las fuentes de la sección 3 y la remisión a este documento.
-- 1.10 (F-01): criterio de aceptación con la prueba de factibilidad.
+- 1.10 (F:C-01): criterio de aceptación con la prueba de factibilidad.
 - Compuerta del POS (1.16): agregar la condición 9, "prueba de factibilidad del crédito sin conexión".
 - RC-11: fijar los topes y el apetito de riesgo del crédito sin conexión.
 - Nuevo supuesto SP-03 (sección 8) con "Si no se cumple".

@@ -1,6 +1,6 @@
 # Condiciones del Caso 13.3 (estrategia de puesta en producción) y su cobertura
 
-> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+> **Códigos vigentes (2026-10-08)** según `divisiones_negocio_servicios_sd-03.md`.
 
 Documento de contexto, no es entregable. Fuente: `00_Bases/Caso_09_Cadena_Multitienda.md`, numeral 13.3, líneas 706 a 719. El Caso no impone una estrategia, pero declara diez condiciones que cualquiera debe respetar. Actualizado el 2026-10-06.
 

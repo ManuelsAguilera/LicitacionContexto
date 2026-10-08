@@ -1,3 +1,5 @@
+> **ARCHIVADO (2026-10-08). No usar como fuente.** Material de trabajo superado por `sd-03.tex`, los Anexos A a D y `ficha_alcance_sd-03.md`. Usa códigos y decisiones antiguas. Se conserva solo por trazabilidad.
+
 **OnlySimpleSolutions**
 
 # **Análisis de actores, alcance y arquitectura de servicios**

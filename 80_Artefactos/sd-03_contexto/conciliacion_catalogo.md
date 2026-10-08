@@ -109,3 +109,10 @@ La revisión del Informe 1 pidió comprometer una sola autonomía. Se fija 24 ho
 - Agregar columnas de servicio, etapa, prioridad y ámbito (hoy solo están en el Anexo B).
 - Corregir la hoja `0_Lectura` (totales) y las referencias obsoletas del punto 5.
 - Completar el campo «Decisión del equipo» de la hoja 7 con lo anterior.
+
+## Ajustes tras los agentes sobre la 3.2.5 (2026-10-08)
+
+- Anexo D: división solución / cliente en los resultados 2, 4, 9 y 26. Resultado 2 en dos hitos (mes 16 con existencias, mes 21 con pedidos). Evidencia corregida (RF-131, RF-135, RF-047, RF-051, RF-052, RF-076, RF-071). Líneas base agregadas (81 % de entrega, merma de 1,9 %). Metas propias rotuladas (resultados 8, 13, 19). Umbrales propuestos para los resultados 1, 21, 23 y 27. «Antes de 2029» expresado como mes 24 (supuesto SUP-26).
+- Pendiente: RF-138 lista seis componentes de merma y el Caso, RN-12 y el resultado 5 hablan de cinco. Alinear en el catálogo oficial («unidad mal ubicada» frente a los cinco del Caso).
+- Pendiente: el «acta de recepción y certificado de conformidad» por tienda y centro de distribución no figura en las Bases. Se mantiene como compromiso del proponente.
+- Cap. 15 del Caso: RT-05.29, RT-09.01 y RT-16.21 son parámetros del Caso, no el texto de las Bases Transversales.

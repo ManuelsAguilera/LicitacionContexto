@@ -67,7 +67,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
 | 3.1 | Resumen Ejecutivo de la Solución | Todo el alcance del proyecto: implementación (Etapa 1 y Etapa 2), implantación (marchas blancas y pasos a producción) y operación (36 meses). | Redactada (versión compacta en `sd-03.tex`, 2026-10-07; faltan las dos figuras marcadas y la revisión humana) |
-| 3.2 | Alcance | Alcance de la solución descompuesto en componentes manejables: alcance de la Etapa 1 y de la Etapa 2 con criterios de asignación; exclusiones, supuestos y restricciones; catálogo de requerimientos funcionales y no funcionales priorizado y trazable (resumen aquí, trazabilidad completa en el Formulario T-12); criterios de aceptación. | En redacción (2026-10-08). 3.2.1 a 3.2.4 reescritas y evaluadas con los agentes salvo la 3.2.4, que está escrita y sin evaluar; 3.2.5 sin reescribir. Faltan las figuras, los Anexos A, B y C como documento aparte y la revisión humana. Pendientes del catálogo: ver `80_Artefactos/sd-03_contexto/conciliacion_catalogo.md` (RN-07, RNF-05, SUP-08 y SUP-09, ubicación de RF-180 y RF-181, pocos RF en abastecimiento, comisiones y cartera, trasladar las decisiones al Excel) |
+| 3.2 | Alcance | Alcance de la solución descompuesto en componentes manejables: alcance de la Etapa 1 y de la Etapa 2 con criterios de asignación; exclusiones, supuestos y restricciones; catálogo de requerimientos funcionales y no funcionales priorizado y trazable (resumen aquí, trazabilidad completa en el Formulario T-12); criterios de aceptación. | En redacción (2026-10-08). 3.2.1 a 3.2.4 reescritas y evaluadas con los agentes; 3.2.5 reescrita y evaluada en dos rondas con los agentes (2026-10-08), con el Anexo D. Faltan las figuras, los Anexos A a D como documento aparte y la revisión humana. Pendientes del catálogo: ver `80_Artefactos/sd-03_contexto/conciliacion_catalogo.md` (RN-07, RNF-05, SUP-08 y SUP-09, ubicación de RF-180 y RF-181, pocos RF en abastecimiento, comisiones y cartera, trasladar las decisiones al Excel) |
 | 3.3 | Esquema de solución | Uno o varios esquemas del modelo conceptual de la solución. Cada diagrama se explica en el texto, por partes si es complejo (sección 6 del Comunicado 10). | Sin redactar |
 | 3.4 | Explicación de la Solución | Descripción de la solución según la operación o el negocio y su coherencia con el problema del Capítulo 2. Incluye la estrategia para obtener el apoyo de los grupos de interés clave identificados en 2.4. Mapea al 100 % con la Arquitectura Lógica (4.1): mismos nombres de componentes. | Sin redactar |
 
@@ -93,7 +93,7 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 - `form-T-12_matriz-cumplimiento-tecnico.xlsx : formulario oficial, se responde cada RT uno a uno`
 - `diag-03-01_esquema-conceptual-solucion.svg`
-- `OnlySimpleSolutions-Subdocumento3-Anexos`: Anexo A (exclusiones, supuestos, responsabilidades del cliente y restricciones), Anexo B (catálogo de requerimientos clasificado) y Anexo C (registro de reglas de negocio). Fuentes en `04_Adjuntos/tablas/sd-03_s2_anexo-*.md`
+- `OnlySimpleSolutions-Subdocumento3-Anexos`: Anexo A (exclusiones, supuestos, responsabilidades del cliente y restricciones), Anexo B (catálogo de requerimientos clasificado), Anexo C (registro de reglas de negocio) y Anexo D (criterios de aceptación de los 28 resultados de negocio). Fuentes en `04_Adjuntos/tablas/sd-03_s2_anexo-*.md`
 
 ## Checklist de llenado
 

@@ -37,7 +37,7 @@ Solo empieza cuando recibas un mensaje que la pida. Desde ese momento puedes lee
 
 - **Fuentes rectoras:** `00_Bases/` (Caso 09, Bases Transversales, Bases Administrativas y Comunicado 10).
 - **Nomenclatura vigente:** `80_Artefactos/sd-03_contexto/divisiones_negocio_servicios_sd-03.md` (definiciones y nombres de los servicios; manda sobre los nombres anteriores de los demás archivos).
-- **Trabajo del sd-03:** `80_Artefactos/sd-03_contexto/`.
+- **Trabajo del sd-03:** empezar por `80_Artefactos/sd-03_contexto/ficha_alcance_sd-03.md` (índice en el README de la carpeta). No usar `historico/`.
 - **El problema y las reglas:** `02_Propuesta/sd-02_problema-y-necesidad/sd-02.md`, `05_Gestion/convenciones/reglas-redaccion.md` y `AGENTS.md`.
 
 Para cada hallazgo marcado `por verificar` busca la fuente y clasifícalo:

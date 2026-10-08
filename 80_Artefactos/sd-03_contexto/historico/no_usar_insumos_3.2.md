@@ -1,3 +1,5 @@
+> **ARCHIVADO (2026-10-08). No usar como fuente.** Material de trabajo superado por `sd-03.tex`, los Anexos A a D y `ficha_alcance_sd-03.md`. Usa códigos y decisiones antiguas. Se conserva solo por trazabilidad.
+
 # Insumos para redactar 3.2 Alcance (sd-03)
 
 > **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
@@ -363,31 +365,15 @@ El catálogo oficial no tiene hoy ni prioridad, ni servicio, ni etapa. Hay que c
 
 ### 1.6 3.2.5 Criterios de aceptación
 
-**Mensaje central.** El alcance se acepta en tres niveles: cada entregable, cada marcha blanca y los resultados de negocio que el cliente usará para juzgar el proyecto.
+**Estado (2026-10-08, tras dos rondas de agentes).** Ventana de medición: últimos tres meses antes del acta, evento anual como compromiso de operación. Resultados 2 y 25 en dos hitos (mes 16 y mes 21). Resultado 15 compartido. Responsable: proponente, con firma de la Contraparte Técnica. Reescrita en `sd-03.tex` y con fuente del Anexo D en `04_Adjuntos/tablas/sd-03_s2_anexo-d_criterios-aceptacion.md` (hoja `9_Criterios_Aceptacion` del Excel v3.1).
 
-**Texto de caída sugerido:** "Un alcance sin criterio de aceptación no se puede recibir ni rechazar. Esta subsección fija cómo se verifica lo comprometido en tres niveles, desde el entregable individual hasta el resultado de negocio."
+**Mensaje central.** El alcance se acepta en tres niveles encadenados: cada entregable, cada marcha blanca y los 28 resultados de negocio del Caso (cap. 18).
 
-- **Nivel 1, entregable.** Cada uno de los 122 entregables (Anexo B) tiene un criterio con umbral (FEP02, diapositiva 38). La tabla T6 resume por familia de entregables. Ejemplos:
-  - R-03: conteo cíclico con menos de 2 % de discrepancia; cancelaciones bajo 0,3 %; consulta en 400 ms o menos; actualización en 30 s o menos; nodo Concepción con su margen de confianza declarado.
-  - R-01: discrepancia de 3 % o menos (sd-02); propagación en 5 min o menos; historial recuperable por 5 años.
-  - F-01: evaluación en 8 s o menos y prueba del crédito sin conexión.
-  - X-01: 100 % de los cruces con finalidad, autorización y registro.
-  - POS: compuerta de 9 condiciones.
-  - Infraestructura física: acta y certificado de conformidad (1.15.23).
-- **Nivel 2, marcha blanca** (Bases Admin. art. 17.3, condiciones copulativas):
-  - sin incidentes críticos ni altos abiertos;
-  - volumen real comprometido durante las cuatro últimas semanas;
-  - disponibilidad y tiempos de respuesta sostenidos;
-  - conciliación sin diferencias no explicadas;
-  - personal capacitado y certificado;
-  - acta de la Contraparte Técnica.
-
-  Si no se cumplen, la marcha blanca se extiende a costo del adjudicatario, sin mover las fechas siguientes.
-- **Nivel 3, resultado de negocio** (Caso cap. 18).
-  - El Caso dice que estos son "los que el CLIENTE utilizará para juzgar si el PROYECTO fue exitoso". Exige comprometerse con ellos, "proponer la meta cuando este documento no la fije, indicar en qué momento del cronograma se alcanzará cada uno y cómo se medirá".
-  - La tabla T7, con los 28 resultados, cumple esa exigencia. Las metas del Caso salen de su cap. 7; las marcadas (S) son propuestas.
-  - Los resultados 26, 27 y 28 (Doña Paula, Doña Marisol y Don Jonathan) "son los que mejor resumen el caso". Conviene un párrafo propio para ellos.
-- **Validar frente a controlar** (FEP02): el equipo controla la calidad; la Contraparte Técnica valida y firma (entregable 2.14 y RC-08). Los cambios pasan por el Comité Ejecutivo (art. 72).
+- **Nivel 1.** Criterio escrito junto a cada entregable, con hecho observable y umbral. Servicios contra los umbrales no funcionales del Anexo B (RNF-16 400 ms, RNF-18 25 s, RNF-06 8 s, RNF-19 5 min). Infraestructura con acta y certificado de conformidad. Un entregable dependiente no se acepta con el precedente observado.
+- **Nivel 2.** Marcha blanca: condiciones copulativas del art. 17.3 de las Bases Administrativas, más procedimiento de retorno probado (Caso 13.3).
+- **Nivel 3.** Anexo D con línea base, meta, servicio, momento, evidencia y responsabilidad. Tabla 3.6 resume por promesa. Metas no fijadas por el Caso se marcan «propuesta del proponente». Resultados 2, 4, 9 y 26 con responsabilidad compartida. RNF-61, RNF-62 y RNF-63 pasan a criterios (resultados 2, 26 y 4).
+- **Resultado 9.** Meta «0,5 % o menos» es propuesta del proponente. Precio en sala por definir con SUP-08 y SUP-09.
+- **Validar frente a controlar** (FEP02): el equipo controla la calidad, la Contraparte Técnica valida y firma. Cambios por el Comité Ejecutivo (art. 72).
 
 ---
 

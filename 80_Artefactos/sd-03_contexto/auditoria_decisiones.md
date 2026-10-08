@@ -2,6 +2,8 @@
 
 > **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
 
+> **Aviso (2026-10-08).** Historial de decisiones, para consulta puntual. Algunas decisiones fueron superadas (capacidad de absorción, entregables por etapa). Lo vigente está en `ficha_alcance_sd-03.md`. Los archivos que cita (`guia_servicios_R_F_X.md`, `descripcion_alcance_producto.md`, `asignacion_etapas.md`) están en `historico/` con el prefijo `no_usar_`.
+
 Documento de contexto, no es entregable. Fecha: 2026-10-06. No cambia ninguna decisión: evalúa y recomienda. Las decisiones siguen siendo del equipo.
 
 ## 1. Qué se evaluó y cómo
