@@ -76,9 +76,12 @@ Cada RF del servicio aparece en un solo caso: RF-035 a RF-042 (excepto RF-036) e
 
 OP-08 y OP-09 (análisis de Concepción y su impacto sobre RN-15) son entregables de análisis y van a la EDT, no al modelo. La conciliación del inventario contable con el sistema de gestión empresarial no tiene RF. Queda como supuesto: no se cuenta ahora y se pregunta al equipo.
 
-## 6. Preguntas para el equipo
+## 6. Decisiones del usuario (2026-10-08)
 
-1. ¿Se unen CU-EX-08 y CU-EX-10 en un solo caso de parametrización? Sugerencia: no, son objetivos distintos.
-2. ¿El cliente interactúa directo con la solución o siempre por la plataforma del canal (S1)? Sugerencia: mantener el actor directo mientras los RF lo nombren.
-3. ¿Quién verifica la existencia física (S5)? Sugerencia: AH-06 hasta que el sd-03 4.x lo defina.
-4. ¿Se cuenta la conciliación contable con el ERP? Sugerencia: dejarla fuera y registrarla como supuesto.
+1. CU-EX-08 y CU-EX-10 quedan como casos separados.
+2. AH-06 verifica la existencia física (S5) hasta que el sd-03 lo defina.
+
+## 7. Preguntas para el equipo
+
+1. ¿El cliente es actor directo (S1) o siempre llega por la plataforma del canal? Actor directo es el que se comunica con la solución sin pasar por otro sistema que sea actor. Sugerencia: mantenerlo directo mientras los RF-065 y RF-066 nombren al cliente. El UAW no cambia con ninguna de las dos opciones.
+2. ¿Se cuenta la conciliación contable? Es la comprobación periódica de que la cantidad de unidades del Servicio de existencias coincide con el inventario valorizado del ERP/DTE. Ningún RF la pide, y el sd-03 3.3.2 dice que el ERP/DTE es el registro contable. Sugerencia: dejarla fuera de la muestra, y si el equipo la incluye sería un caso con AS-01, de 2 o 3 transacciones y peso 5.
