@@ -1,5 +1,7 @@
 # Entregables del alcance (borrador)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de trabajo. No es entregable.
 
 Fundamento metodológico: PMBOK 6.ª edición, proceso "Definir el alcance" (salida: enunciado del alcance, con entregables y criterios de aceptación) y "Crear la EDT" (descomposición orientada a entregables, regla del 100 %, diccionario). Apoyo de clase: FEP02, diapositivas 37, 38, 52, 55, 56 y 57.
@@ -59,7 +61,7 @@ Etapa 1: desarrollo meses 1 a 12, marcha blanca 13 a 15, producción mes 16. Eta
 | :-- | :-- | :-- | :-- | :-- |
 | 1.16 | POS con operación sin conexión de 24 h instalado en las 22 tiendas | Compuerta de la ola 1 a la 2 (9 condiciones, incluidos el retorno probado y la prueba del crédito sin conexión, ver `asignacion_etapas.md`, D2); 22 tiendas operando; ola 1 en los meses 6 y 7 y ola 2 en los meses 8 a 10, con respaldo hasta el mes 16 (ventanas libres del Caso 13.2) | 1: ola 1 piloto de 3 tiendas, ola 2 las otras 19 antes del mes 16 (D) | R-01, R-05, 1.15.19 |
 | 1.17a | Cartera de 620.000 clientes migrada y conciliada | Cuadre de totales sin diferencias; ola 1 clientes con saldo al día, ola 2 clientes con repactaciones, cobranza o juicios en curso; cada tramo con las condiciones del Caso 13.3.5 (conciliación diaria, retorno probado, comunicación) | 1 ola 1 y 2 ola 2 (D) | F-02, F-03 |
-| 1.17b | Plataforma de originación y cobranza de 2011 retirada | Retiro con conciliación final sin diferencias no explicadas, antes de enero de 2029 | Operación; fecha objetivo diciembre de 2028 (D) | 1.17a ola 2 |
+| 1.17b | Plataforma de originación y cobranza de 2011 retirada | Retiro con conciliación final sin diferencias no explicadas, antes de enero de 2029 | Operación; fecha objetivo octubre de 2028 (D) | 1.17a ola 2 |
 | 1.18a | Conector con el ERP/DTE operando | Intercambio por contrato publicado; ERP/DTE sigue como único emisor tributario | 1 (D, integración crítica) | Capa 0 |
 | 1.18b | Conector con el marketplace operando | Intercambio por contrato publicado | 2 (D) | R-03 |
 | 1.18c | Conector con el WMS principal operando | Intercambio por contrato publicado | 1 (D, integración crítica) | Capa 0, R-03 |
@@ -193,7 +195,7 @@ Asignación por proceso (Ronda F, F4). Las etapas de repetición se indican dond
 | 3.8b | Guía de gestión del cambio | Aprobada | 1 y 2 (C) |
 | 3.9 | Protocolo de aceptación de hitos y de producto final | Entregables, criterios, evidencia, plazos y observaciones definidos | 1 y 2 (D) |
 | 3.10 | Informe de cierre de marcha blanca (uno por etapa) | Condiciones del art. 17.3 | 1 y 2 (D) |
-| 3.11 | Plan de retiro de la plataforma de originación y cobranza de 2011 | Fecha objetivo diciembre de 2028 | 1 (D) |
+| 3.11 | Plan de retiro de la plataforma de originación y cobranza de 2011 | Fecha objetivo octubre de 2028 | 1 (D) |
 | 3.12 | Plan de salida del proveedor de nube | Por aprobar | 1 (C) |
 | 3.13 | Informe de diligencia reforzada del proveedor de nube | Por aprobar | 1 (C) |
 | 3.14 | Registro de proveedores externos y servicios externalizados, en el formato del archivo I28 (condicional) | Por aprobar; depende de la norma de la CMF | 2, condicional: antes de la primera entrega semestral que exija la norma (C) |

@@ -1,5 +1,7 @@
 # Ronda 0: nombres de los entregables
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de trabajo. No es entregable. Propuesta pendiente de aprobación; no modifica `entregables_alcance.md` hasta que se apruebe.
 
 Origen: revisión de cuatro ejemplos reales de documentos de alcance (hospital HE-1, AvePoint, Cashnet, CIS). En esos documentos cada entregable se entiende solo con leer su nombre.

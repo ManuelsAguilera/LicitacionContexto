@@ -1,5 +1,7 @@
 # Fundamentación del crédito sin conexión (borrador por aprobar)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Responde a la decisión pendiente del Caso 09, numeral 16.1 n.º 7, a RT-03.10 y a RT-03.13, y cierra DEC-12 de `auditoria_decisiones.md`. Estado: aprobado por el usuario el 2026-10-06 (opción B2 y topes del Emisor). Aplicado en EXC-16, SP-03, RC-11, 1.10 y la compuerta del POS (condición 9).
 
 ## 1. Qué hay que resolver

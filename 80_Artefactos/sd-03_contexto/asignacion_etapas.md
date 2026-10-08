@@ -1,5 +1,7 @@
 # Asignación de entregables a Etapa 1 y Etapa 2 (borrador de trabajo del sd-03)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Alimenta 3.2.2 y 3.3. Método: seis rondas (A a F); en cada una, sugerencia del asistente, decisión del usuario y justificación por criterio. Criterios en orden: (1) Bases, (2) dependencias técnicas, (3) riesgo e hitos externos, (4) capacidad de absorción del cliente, (5) prioridad del comité. No se redacta riesgo en este documento.
 
 Estado: Rondas A a F cerradas. Falta volcar la asignación a `entregables_alcance.md`, `enunciado_alcance.md` y `plan_3.2.md`.
@@ -97,9 +99,11 @@ F-03, F-01 y la primera ola de F-02 en Etapa 1. Razón: objetivo 5 (retirar la p
 - La proporción de cada ola no está en el Caso (≈ 46.000 repactaciones al año sobre 620.000 clientes es la única referencia). Se declara como supuesto, con su "Si no se cumple": si la ola 2 resulta mayor de lo previsto, se revisa el balance de etapas por control de cambios.
 
 ### Decisión C3. Retiro de la plataforma de 2011
-En Operación, con fecha objetivo diciembre de 2028 (mes 24). Razones: la marcha blanca exige conciliar con el sistema vigente (art. 17.3), por lo que la plataforma vieja debe seguir viva hasta el cierre de la marcha blanca de la Etapa 2 (meses 19 y 20); el paso a producción de la segunda ola es el mes 21. Margen de unos tres meses frente a enero de 2029.
+En Operación, con fecha objetivo octubre de 2028 (mes 22). Razones: la marcha blanca exige conciliar con el sistema vigente (art. 17.3), por lo que la plataforma vieja debe seguir viva hasta el cierre de la marcha blanca de la Etapa 2 (meses 19 y 20); el paso a producción de la segunda ola es el mes 21. Margen de unos tres meses frente a enero de 2029.
 
-Condición del usuario: la fecha se acepta siempre que cumpla con las Bases. Verificado: las Bases no fijan fecha de retiro; piden conciliación sin diferencias no explicadas (art. 17.3) y operación entre los meses 21 y 56 (art. 17). Dependencia: el mes 24 = diciembre de 2028 solo con inicio en enero de 2027; si el inicio cambia, se recalcula.
+**Ajuste del 2026-10-07:** la fecha pasó de diciembre de 2028 (mes 24) a octubre de 2028 (mes 22), porque diciembre cae dentro del congelamiento total del 1 de noviembre al 6 de enero (Caso 13.2).
+
+Condición del usuario: la fecha se acepta siempre que cumpla con las Bases. Verificado: las Bases no fijan fecha de retiro; piden conciliación sin diferencias no explicadas (art. 17.3) y operación entre los meses 21 y 56 (art. 17). Dependencia: el mes 22 = octubre de 2028 solo con inicio en enero de 2027; si el inicio cambia, se recalcula.
 
 ## Ronda D. Capacidad de absorción del cliente (cerrada)
 

@@ -1,5 +1,7 @@
 # Mapeo propuesto de requerimientos a servicio, etapa y prioridad (insumo de 3.2.4)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Generado el 2026-10-06 desde el espejo `01_Requerimientos/md/catalogo-de-requerimientos-depurado-v30.md` (hoja 1_Catalogo_Atomico, espejo del 2026-09-29) con reglas automáticas. **Es una propuesta (S) para revisar y cargar en el Excel oficial** `01_Requerimientos/RequerimientosAtomizados_Depuracion_Alcance.xlsx`, que manda sobre este archivo y sobre el espejo. El espejo cuenta 223 RF, 75 RNF y 9 OP; AGENTS.md menciona RF-001..RF-226 y RNF-01..RNF-76: confirmar los totales en el Excel antes de citarlos.
 
 ## Reglas usadas

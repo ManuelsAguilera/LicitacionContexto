@@ -1,5 +1,7 @@
 # Enunciado del alcance (borrador de trabajo del sd-03)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Alimenta 3.2 de `sd-03.tex`. Se completa por elementos del enunciado PMBOK 6 (descripción del producto, entregables, criterios de aceptación, exclusiones, restricciones, supuestos). Cada exclusión, restricción y supuesto lleva un ID estable para citarlo desde 3.2, 3.3, 3.4 y el resto de los subdocumentos.
 
 Estado de elementos: objetivos (aprobados, falta el general), exclusiones (borrador), descripción del producto (cerrada en `descripcion_alcance_producto.md`), supuestos (parcial), restricciones (lista fuente, sin redactar), entregables y etapas (asignados en `entregables_alcance.md` y `asignacion_etapas.md`; criterios con umbrales por completar).
@@ -179,4 +181,4 @@ Pendiente: asignar RS-01..RS-NN, decidir cuáles pasan a 3.2.3 y cuáles solo se
 
 **Criterios de asignación a etapa, en este orden:** (1) Bases, (2) dependencias técnicas, (3) riesgo e hitos externos, (4) capacidad de absorción del cliente, (5) prioridad del comité.
 
-**Resultado:** matriz en `entregables_alcance.md` (columna Etapa) y justificación por ronda en `asignacion_etapas.md`. Resumen: Etapa 1 = plataforma híbrida completa, integraciones críticas, R-01, R-03, R-05, F-01, F-02 (ola 1), F-03, X-01 y el POS en 22 tiendas (piloto de 3 y luego 19); Etapa 2 = R-02, R-04, R-06, R-07, R-08, R-09 y F-02 (ola 2); retiro de la plataforma de 2011 en Operación (objetivo diciembre de 2028).
+**Resultado:** matriz en `entregables_alcance.md` (columna Etapa) y justificación por ronda en `asignacion_etapas.md`. Resumen: Etapa 1 = plataforma híbrida completa, integraciones críticas, R-01, R-03, R-05, F-01, F-02 (ola 1), F-03, X-01 y el POS en 22 tiendas (piloto de 3 y luego 19); Etapa 2 = R-02, R-04, R-06, R-07, R-08, R-09 y F-02 (ola 2); retiro de la plataforma de 2011 en Operación (objetivo octubre de 2028).

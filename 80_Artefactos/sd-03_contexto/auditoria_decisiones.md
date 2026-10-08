@@ -1,5 +1,7 @@
 # Auditoría de la justificación de las decisiones del sd-03
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Fecha: 2026-10-06. No cambia ninguna decisión: evalúa y recomienda. Las decisiones siguen siendo del equipo.
 
 ## 1. Qué se evaluó y cómo

@@ -1,5 +1,7 @@
 # Descripción del alcance del producto
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de trabajo. No es entregable.
 
 Fuente única: `Análisis de actores, alcance y arquitectura de servicios.md` (en adelante, "el documento de origen"). Todo lo que no consta allí figura como "Pendiente de verificación". Nomenclatura: servicios R/F/X; responsabilidades A/B/C.

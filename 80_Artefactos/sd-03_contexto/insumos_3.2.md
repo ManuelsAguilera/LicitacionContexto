@@ -1,5 +1,7 @@
 # Insumos para redactar 3.2 Alcance (sd-03)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Paquete autocontenido para redactar la sección 3.2 en `02_Propuesta/latex_final/sd-03.tex`: el redactor no necesita abrir otros archivos. Todo dato tiene su fuente (Bases o decisión registrada del equipo). Lo que no está decidido se marca **(S)**: propuesta del asistente, por confirmar. Versión 2, 2026-10-06 (la versión 1 se reemplazó completa).
 
 Contenido: 0. Cómo usarlo · 1. Contenido por subsección (3.2.1 a 3.2.5) · 2. Diagramas · 3. Tablas listas · 4. Cifras con fuente · 5. Puntos abiertos · Anexo A (tablas completas para el anexo del subdocumento) · Anexo B (lista de entregables).
@@ -20,8 +22,8 @@ Título obligatorio: **3.2 Alcance**. "Alcance de la solución expresado con cla
 
 | Subtítulo | Cubre | Diagramas | Tablas (sección 3) |
 | :-- | :-- | :-- | :-- |
-| 3.2.1 Descomposición del alcance | Promesas, responsabilidades, servicios, plataforma, sistemas | D1, D5 | T1 |
-| 3.2.2 Alcance de la Etapa 1 y de la Etapa 2 | Ciclo de vida, criterios, reparto, olas, desviación del comité | D2, D3 | T2, T3 |
+| 3.2.1 Descomposición del alcance | Causas, frentes, áreas, servicios, base tecnológica, destino de las plataformas | D1, D1b, D5 | — |
+| 3.2.2 Alcance de la Etapa 1 y de la Etapa 2 | Criterio en dos pasos, reparto, desviación del comité | D2, D3 | T2 |
 | 3.2.3 Exclusiones, supuestos y restricciones | EXC, SP, RC, RS, crédito sin conexión | D4, D6 | T4 |
 | 3.2.4 Catálogo de requerimientos | Síntesis por servicio, etapa y prioridad | — | T5 |
 | 3.2.5 Criterios de aceptación | Entregable, marcha blanca, resultado de negocio | — | T6, T7 |
@@ -63,6 +65,8 @@ Título obligatorio: **3.2 Alcance**. "Alcance de la solución expresado con cla
 
 ### 1.1 Nombres oficiales (RR-07)
 
+> Esta sección conserva los nombres anteriores de los servicios (R-01 a X-01). Para el texto del `.tex` rigen los nombres y códigos de `divisiones_negocio_servicios_sd-03.md`.
+
 | Código | Nombre | Negocio |
 | :-- | :-- | :-- |
 | R-01 | Catálogo, precios y promociones | Retail |
@@ -87,83 +91,98 @@ La base común no es R, F ni X. Se compone de:
 
 **Texto de caída sugerido para 3.2 (RR-04):** "Esta sección delimita lo que Only Simple Solutions se compromete a entregar. Primero descompone el problema descrito en el Capítulo 2 en componentes manejables. Luego reparte esos componentes entre las dos etapas del cronograma con criterios explícitos, declara lo que queda fuera y bajo qué supuestos, resume el catálogo de requerimientos y fija cómo se aceptará lo entregado."
 
-### 1.2 3.2.1 Descomposición del alcance
+### 1.2 3.2.1 Descomposición del alcance (reescrita el 2026-10-07)
 
-**Mensaje central.** El problema se descompone en una cadena de cuatro eslabones: cuatro promesas, luego las responsabilidades del negocio, luego 13 servicios con autoridad sobre sus datos y, como base, una plataforma común. Las nueve plataformas existentes se conservan, se reemplazan, se evalúan o se cubren con servicios, según la responsabilidad que cumplen.
+Los nombres y códigos de esta subsección son los de `divisiones_negocio_servicios_sd-03.md`, que manda sobre los de `guia_servicios_R_F_X.md` y demás archivos.
 
-**Texto de caída sugerido:** "El alcance no se define a partir de los sistemas que existen, sino de lo que la compañía debe poder cumplir y demostrar. Por eso la descomposición parte de las cuatro promesas y termina en los servicios que las sostienen."
+**Mensaje central.** El problema se descompone de lo general a lo particular, con las causas raíz como base. Cadena: dos negocios bajo un mismo techo con plataformas no coordinadas (desincronización) → no se pueden prometer ni acreditar las cuatro promesas → cinco causas raíz (base de la descomposición, fijan qué debe corregir la solución y permiten comprobar que ninguna queda sin atender) → tres frentes → áreas → trece servicios, sobre una base tecnológica.
 
-**Contenido.**
-- **Cuatro promesas:**
-  - Existencia: el producto existe y la disponibilidad publicada considera la calidad del registro.
-  - Precio: el exhibido, el publicado y el cobrado coinciden y se puede acreditar.
-  - Entrega: el pedido tiene un estado único y llega en la fecha comprometida.
-  - Crédito: las condiciones informadas son las aceptadas y se pueden demostrar ante una autoridad.
+**Definiciones (idénticas a las del `.tex`).**
+- **Frente:** parte del problema que responde a un mismo régimen jurídico y de datos (retail, filial emisora, frontera).
+- **Área:** sección o división del negocio a la que pertenece el servicio. Retail tiene tres (mercadería, venta, relación con el cliente) y la filial emisora una (crédito). La frontera no tiene áreas y se conecta directamente con su servicio.
+- **Servicio:** pieza del sistema que se ocupa de un solo tema del negocio. Es la única autorizada para registrar y corregir su información, y las demás piezas la consultan. «Contratos» e independencia de despliegue se dejan para la 3.3.
+- **Base tecnológica** (antes «plataforma común»): plataforma de integración (que reemplaza las 14 conexiones directas), identidad y gestión de accesos y observabilidad. El despliegue híbrido no es un servicio ni un componente de esa lista: va en la 3.3.
 
-  Fuente: Caso, subtítulo "cuatro promesas diarias" y cap. 9.
-- **Responsabilidades:**
-  - Retail, A1 a A10: catálogo y oferta; precios y promociones; abastecimiento; inventario, reservas y disponibilidad; venta y conciliación; canales digitales; pedidos y cumplimiento; marketplace; posventa, cambios y garantías; clientes y fidelización. A11 es el evento de alta demanda.
-  - Emisor, B1 a B3: originación; cartera y cobranza; repactaciones.
-  - Frontera y controles: C1 separación y gobierno de datos; C2 evidencia probatoria; C3 integración, plataforma y operación técnica.
-  - Al escribir, poner siempre "responsabilidad C3" o "causa C3", porque en el sd-02 las causas también se llaman C1 a C5.
-- **Causas raíz del sd-02:**
-  - causa C1, registro impreciso;
-  - causa C2, tejido de integración;
-  - causa C3, frontera difusa;
-  - causa C4, incentivos y capacidad;
-  - causa C5, territorio y calendario.
+**Jerarquía y códigos** (`frente:área-número`).
 
-  Conviene una frase que muestre que cada causa queda cubierta por algún componente; el detalle va en 3.4.
-- **Destino de las nueve plataformas** (Caso cap. 5, líneas 303 a 321):
-  - **Se conservan e integran:** el sistema de gestión empresarial y facturación (ERP/DTE, único emisor tributario, restricción 6), el marketplace de 2022 y el WMS del centro de distribución principal de 2016.
-  - **Se reemplazan por etapas:**
-    - el sistema central de retail de 2009, "el corazón del problema de inventario" (SP-01);
-    - la plataforma de originación y cobranza de 2011, que el Caso manda reemplazar;
-    - el POS de 2014, con tres versiones en las 22 tiendas y sin operación sin conexión acreditada.
-  - **Se evalúan e integran, sin reemplazo** (EXC-15): el comercio electrónico de 2019 y la fidelización de 2017.
-  - **Se cubren con servicios:** las planillas y listas impresas, que son la novena plataforma y "deben desaparecer como sistema de registro".
-    - Los precios de campaña y las etiquetas pasan a R-01.
-    - Las devoluciones y los reclamos pasan a R-08.
-    - El control de repositores pasa a 1.14c.
-    - Las existencias de Concepción pasan a R-03; la planilla queda solo para la ubicación física (SP-02).
-  - **El motor de precios y promociones**, que "no existe como sistema", nace como función nueva dentro de R-01.
-- **Autoridad por dato.**
-  - Cada dato tiene un servicio autoridad; por ejemplo, R-03 para la disponibilidad comprometible y R-04 para el ciclo del pedido.
-  - Las copias se reconcilian con reglas escritas, en el catálogo 1.14b.
-  - Responde a la decisión pendiente del Caso 16.1 n.º 1 ("cuál es la fuente única de verdad de la existencia") y al art. 17.2, punto 2 ("una única fuente de verdad para los datos compartidos por ambos alcances").
-  - Criterio verificable: si cae una autoridad, los demás servicios siguen operando con confianza degradada declarada y al volver se reconcilian sin pérdida de transacciones.
+| Frente | Área | Código | Servicio |
+| :-- | :-- | :-- | :-- |
+| Retail | Mercadería | R:M-01 a R:M-03 | oferta comercial, abastecimiento, existencias |
+| Retail | Venta | R:V-01 a R:V-04 | pedidos, ventas, comisiones, marketplace |
+| Retail | Relación con el cliente | R:CL-01, R:CL-02 | posventa, clientes Retail |
+| Filial emisora | Crédito | F:C-01 a F:C-03 | originación de crédito, cartera de crédito, evidencia financiera |
+| Frontera | (sin área) | X-01 | control de cruces |
 
-**Tabla:** T1 (sección 3). **Diagramas:** D1 y D5 (sección 2).
+**Cómo queda redactada.** Seis párrafos y tres figuras. 1) Causas (con «que son:» a pedido del usuario). 2) Jerarquía con las definiciones y la afirmación de que es el alcance del producto, no del proyecto (FEP02 · 34), y que el trabajo del proyecto (migración, marchas blancas y operación) se descompone en la EDT del capítulo 7. 3) Áreas con sus servicios y glosas de los servicios de la filial emisora. 4) Figura de cobertura de causas e interpretación (cada causa queda atendida por al menos un servicio, un servicio atiende varias causas, las causas C4 y C5 se mitigan y no se eliminan, la causa C5 se atiende además con componentes locales de las tiendas). 5) Un solo dueño por tipo de dato (Caso 16.1). 6) Base tecnológica y destino de las nueve plataformas.
 
-### 1.3 3.2.2 Alcance de la Etapa 1 y de la Etapa 2
+**La tabla T1 se eliminó.** La cobertura causa → servicio se muestra en una figura (matriz) y no en tabla, porque la tabla era difícil de leer.
 
-**Mensaje central.** El reparto se deriva de criterios trazables al Caso y a las Bases. No repite el orden del comité y documenta su única desviación: el negocio financiero se adelanta.
+**Cobertura de causas** (insumo de la figura; asignaciones del asistente, la tabla de `descripcion_alcance_producto.md` seguía «por validar»).
 
-**Texto de caída sugerido:** "El cronograma obligatorio fija dos etapas, pero no dice qué va en cada una. Esta subsección explica con qué criterios se repartió el alcance y qué resultado producen."
+| Causa | Servicios y componentes que la atienden |
+| :-- | :-- |
+| Causa C1, registro impreciso | oferta comercial (maestro de artículos), abastecimiento, existencias, posventa (devoluciones mal reintegradas) |
+| Causa C2, tejido de integración | oferta comercial (motor de precios), pedidos, ventas, marketplace, plataforma de integración |
+| Causa C3, frontera difusa | clientes Retail, originación de crédito, cartera de crédito, evidencia financiera, control de cruces |
+| Causa C4, incentivos y capacidad | comisiones, pedidos (compensación a la tienda que despacha), originación de crédito, evidencia financiera, identidad y gestión de accesos |
+| Causa C5, territorio y calendario | ventas (venta sin conexión), componentes locales de las tiendas (el detalle va en la 3.3) |
+
+**Destino de las nueve plataformas** (Caso cap. 5, líneas 303 a 321).
+- **Se reemplazan por etapas:** el sistema central de retail de 2009 (SP-01), la plataforma de originación y cobranza de 2011 y el punto de venta de 2014.
+- **Se conservan e integran:** el sistema de gestión empresarial y facturación (único emisor tributario, restricción 6), el marketplace de 2022 (la plataforma se conserva y el servicio de marketplace es la capa nueva que gobierna su relación con los vendedores), el sistema de almacenes del centro de distribución principal de 2016, el comercio electrónico de 2019 y el sistema de fidelización de 2017 (EXC-15). El de fidelización se integra al servicio de clientes Retail, que gobierna sus datos.
+- **La novena plataforma son las planillas y listas impresas.** Dejan de ser el registro oficial. El motor de precios y promociones «no existe como sistema» y nace dentro del servicio de oferta comercial.
+
+**Autoridad por dato.** Cada dato tiene un servicio dueño (existencias para la disponibilidad que se puede prometer, pedidos para el ciclo del pedido). Las copias en otros sistemas se comparan con él y se corrigen según reglas escritas. Responde a la decisión pendiente del Caso 16.1 (primera de 25) sobre cuál es la fuente única de verdad de la existencia, y al art. 17.2. Sin prometer «cero pérdida» ni «confianza declarada»: el detalle técnico va en la 3.3 y 3.4.
+
+**Figuras (marcadores en el `.tex`).** D1: jerarquía (problema, frentes, áreas, servicios, base; la frontera va sin área; es la misma del mapa de la 3.1). D1b: matriz de cobertura de causas (cinco filas, columnas de servicios agrupados por frente y área más la base tecnológica y los componentes locales). D5: destino de las nueve plataformas (año, destino y etapa de cada una, incluidas las planillas).
+
+**Tablas:** ninguna. **Diagramas:** D1, D1b y D5 (sección 2).
+
+### 1.3 3.2.2 Alcance de la Etapa 1 y de la Etapa 2 (reescrita el 2026-10-07)
+
+Los nombres y códigos son los de `divisiones_negocio_servicios_sd-03.md`. Donde el material trasladado de más abajo usa R-01 a X-01, léase con la tabla de equivalencias de ese archivo.
+
+**Mensaje central.** El reparto se hizo en dos pasos declarados antes de la tabla. Paso 1: asignar cada componente con cuatro pruebas de primera prioridad derivadas del Caso. Paso 2: contrastar la asignación con dos condiciones que el Caso pide considerar, los hitos externos y la preferencia del comité. Las dependencias técnicas ya están aplicadas en la cuarta prueba. La capacidad de absorción del cliente se quitó (decisión del usuario, 2026-10-07): la formulación anterior era confusa y no tenía respaldo medible. El Caso 17.3 la menciona; si un evaluador lo señala, hay que incorporarla con un fundamento sólido.
+
+**Paso 1: cuatro pruebas** (Bases art. 15 remite la primera prioridad al Caso; Caso 13.1 y cap. 10). Un componente va a la Etapa 1 si cumple al menos una. Si no cumple ninguna, va a la Etapa 2.
+
+| Prueba | Qué significa | Fuente |
+| :-- | :-- | :-- |
+| Promesa priorizada | Sostiene una de las dos prioridades del comité, que son dos de las cuatro promesas: existencia con disponibilidad publicada, y precio con su trazabilidad | Caso 13.1; episodio de junio; fiscalización de febrero |
+| Objeción registrada | Es condición de la objeción de la contralora (frontera de datos antes de cualquier vista unificada) o de la del gerente del negocio financiero (migrar la cartera antes de 2029) | Caso 13.1, 13.2, 13.3.5 y 13.3.7; restricciones 1 y 8 |
+| Registro oficial | Es necesario para que la Etapa 1 sea el registro oficial de la operación desde el mes 16: la tienda vende sin conexión (restricción 5) y el sistema de gestión empresarial sigue como único emisor tributario (restricción 6) | Bases art. 15 y 17; Caso cap. 10 |
+| Dependencia | Lo requiere otro componente que cumple alguna de las tres anteriores | Capas de dependencia (más abajo) |
+
+**Paso 2: contraste.**
+- **Hitos externos** (Caso 13.2): fechas que Ancoa no controla. Fin de soporte de la plataforma de crédito y último plazo del plan de remediación de la autoridad financiera, ambos en 2029, y las cinco temporadas de venta alta con congelamiento. Efectos: el negocio financiero va en la Etapa 1; la cartera se reparte entre etapas por complejidad; los pasos a producción de los meses 16 y 21 caen fuera de las temporadas de venta alta. El riesgo de incumplir esas fechas se analiza en el capítulo 8 y aquí solo cuenta como razón de ubicación.
+- **Preferencia del comité** (Caso 13.1: «una preferencia del mandante, no una definición de alcance»; repetirla sin análisis se evalúa como falta de criterio). Coincide en inventario y precio en la Etapa 1 y marketplace en la Etapa 2. Se aparta en un solo punto: el negocio financiero se adelanta.
+
+**Desviación respecto del comité (tres razones).** 1) El fin de soporte de la plataforma de crédito y el último hito del plan de remediación vencen en 2029 (Caso 13.2). 2) El gerente financiero dejó registrado que migrar 620.000 clientes con saldo no se hace en un semestre y que, si queda en la Etapa 2, no se llega a tiempo (Caso 13.1). 3) El servicio de evidencia financiera es dependencia de la originación y de la cartera. La objeción de la contralora se atiende construyendo el servicio de control de cruces antes que cualquier servicio que combine datos de ambos negocios.
+
+**Reparto** (tabla T2). Etapa 1: desarrollo en los meses 1 a 12, marcha blanca en los meses 13 a 15, producción en el mes 16. Etapa 2: desarrollo en los meses 13 a 18, marcha blanca en los meses 19 y 20, producción en el mes 21. Operación del mes 21 al 56 (retiros de las plataformas de 2011 y 2009). Estos meses y retiros ya están en la 3.1 y no se repiten en el cuerpo de la 3.2.2.
+
+**Puntos sensibles para el texto.**
+- Abastecimiento y pedidos también sostienen las promesas de existencia y de entrega. Van en la Etapa 2 porque el comité nombra la exactitud del inventario y la disponibilidad publicada, no la reposición ni el estado del pedido, y porque requieren el servicio de existencias estable.
+- La cartera se reparte por complejidad, no por si está activa o cerrada (los 620.000 son clientes con saldo vigente, Caso cap. 2 y restricción 8). Ola 1: saldo al día, sin repactación ni cobranza en curso. Ola 2: repactaciones, cobranzas o juicios en curso.
+- El sistema central de 2009 entrega en la Etapa 1 el maestro de artículos, los precios y el inventario, y en la Etapa 2 las órdenes, la recepción y la reposición.
+
+**Qué sale del cuerpo de la 3.2.2 y adónde va.** El ciclo de vida híbrido va al capítulo 6 (Metodologías). El despliegue por olas del punto de venta, la compuerta, la publicación de la disponibilidad por categorías, las apps de sala y el portal van al capítulo 7 (Plan de trabajo) y, en lo que toca a riesgos, al capítulo 8. La lista de integraciones críticas va a la 3.3 y 3.4; en el cuerpo queda su definición en una frase.
+
+**Figuras.** D2 (dependencias y etapa por servicio). D3 (horizonte de 56 meses; es la misma de la 3.1: reutilizar).
+
+**Decisión del 2026-10-07:** no se agrega tabla de familias de entregables a la 3.2.2. La rúbrica S3-02 la sugiere («separar entregables…»), pero la revisión del Informe 1 solo pide el alcance de cada etapa con criterios de asignación (ya cubierto por la Tabla 3.1) y el plan B del crédito; la palabra «entregables» no aparece en la revisión. La descomposición del trabajo del proyecto va en la EDT del capítulo 7.
+
+**Tablas:** T2 y T3. **Diagramas:** D2 y D3.
+
+---
+
+#### Material trasladado de la versión anterior (para los capítulos 6, 7, 8 y la 3.3)
 
 **Ciclo de vida.**
 - Es híbrido. El marco es predictivo: suma alzada, línea base, dos etapas con hitos y cambios solo por solicitud formal, con análisis de impacto y aprobación del Comité Ejecutivo (Bases Admin. art. 72).
 - El desarrollo es adaptativo, en iteraciones dentro de cada etapa.
 - Apoyo de clase: FEP02, diapositiva 8 ("en una licitación a suma alzada el marco es predictivo… un mismo proyecto puede combinar ambos enfoques: eso es un ciclo de vida híbrido").
 
-**Criterios de asignación, en orden:**
-1. Bases.
-2. Dependencias técnicas.
-3. Riesgo e hitos externos.
-4. Capacidad de absorción del cliente.
-5. Preferencia del comité.
-
-Los criterios 2 a 5 son exactamente los que el Caso 17.3 exige usar ("dependencias técnicas, riesgo, hitos externos del numeral 13.2 y capacidad de absorción del CLIENTE"). Se les antepone el cumplimiento de las Bases y la preferencia del comité queda al final, como dice el propio 13.1: "una preferencia del mandante, no una definición de alcance".
-
-**Primera prioridad (Bases Admin. art. 15: "definido en las Bases Técnicas del caso").** Un componente es de primera prioridad si cumple al menos uno de cuatro criterios:
-- **P1:** sostiene una prioridad del comité (exactitud del inventario y disponibilidad publicada; precio y su trazabilidad). Caso 13.1.
-- **P2:** es condición de una de las dos objeciones registradas:
-  - la frontera de datos antes de cualquier vista unificada (la contralora);
-  - la migración de la cartera antes de 2029 (el gerente del negocio financiero).
-
-  Fuentes: Caso 13.1, 13.3.5 y 13.3.7; restricciones 1 y 8.
-- **P3:** es necesario para que la Etapa 1 sea el sistema de registro oficial desde el mes 16: plataforma híbrida completa, seguridad, observabilidad, integraciones críticas, venta sin enlace (restricción 5) y ERP como único emisor (restricción 6). Bases Admin. art. 15 y art. 17.
-- **P4:** es dependencia técnica de algo que cumple P1 a P3.
 
 **Integraciones críticas.** Son las que, si fallan, rompen una promesa o la separación Retail–Emisor:
 - POS con R-01;
@@ -173,23 +192,6 @@ Los criterios 2 a 5 son exactamente los que el Caso 17.3 exige usar ("dependenci
 - plataforma financiera con F-01, F-02, F-03 y X-01;
 - ERP/DTE.
 
-**Reparto.**
-- **Etapa 1:** desarrollo en los meses 1 a 12, marcha blanca en los meses 13 a 15 y producción en el mes 16. Incluye la plataforma común, la infraestructura híbrida, R-01, R-03, R-05, F-01, F-02 (ola 1), F-03, X-01, el POS en 22 tiendas y las integraciones críticas.
-- **Etapa 2:** desarrollo en los meses 13 a 18, marcha blanca en los meses 19 y 20 y producción en el mes 21. Incluye R-02, R-04, R-06, R-07, R-08, R-09 y F-02 (ola 2).
-- **Operación**, meses 21 a 56:
-  - retiro de la plataforma de 2011, con fecha objetivo en diciembre de 2028 (mes 24 con inicio en enero de 2027);
-  - retiro del sistema central de 2009, al cierre de la marcha blanca de la Etapa 2.
-
-  Fuente: Bases Admin. art. 17.
-
-**Punto sensible para el texto.** R-02 (reposición) y R-04 (pedidos) también sostienen las promesas de existencia y entrega. Quedan en la Etapa 2 porque el comité nombra la exactitud y la disponibilidad publicada, no la reposición ni el estado del pedido, y porque ambos necesitan R-03 estable. Conviene decirlo para anticipar la objeción.
-
-**Desviación respecto del comité.** El negocio financiero va en la Etapa 1, aunque el comité lo pone al final. Tres razones:
-1. El fin de soporte y el último hito de remediación vencen en 2029 (Caso 13.2).
-2. El gerente del negocio financiero lo objetó: "Migrar una cartera viva de seiscientos veinte mil clientes con saldo no se hace en un semestre. Si eso queda en la Etapa 2, no llegamos" (Caso 13.1).
-3. F-03 es dependencia técnica de F-01 y F-02.
-
-La objeción de la contralora ("la frontera entre los datos de los dos negocios hay que definirla antes de construir cualquier vista unificada de cliente") se atiende poniendo X-01 en la capa 1. Todo lo demás coincide con el comité: inventario y precio en la Etapa 1, y marketplace y fidelización (analítica) en la Etapa 2.
 
 **Capas de dependencia.** Son la base del diagrama D2 y de la tabla T3.
 - Capa 0: plataforma, identidad y mapa de las 14 integraciones.
@@ -197,6 +199,7 @@ La objeción de la contralora ("la frontera entre los datos de los dos negocios 
 - Capa 2: R-03, R-05 y F-01.
 - Capa 3: R-02, R-04, F-02 y R-09.
 - Capa 4: R-06, R-07 y R-08.
+
 
 **Despliegue por olas** (Caso 13.3.4: "por tienda, por proceso o por categoría de producto, y no como un único evento").
 - **POS:**
@@ -242,7 +245,21 @@ Con inicio en enero de 2027 (SUP-26 del sd-02), los pasos a producción de los m
 
 **Tablas:** T2 y T3. **Diagramas:** D2 y D3.
 
+
 ### 1.4 3.2.3 Exclusiones, supuestos y restricciones
+
+> **Reescrita el 2026-10-07.** El cuerpo de la 3.2.3 usa una tabla de síntesis de cinco categorías de exclusión (Tabla 3.2) y la tabla de seis supuestos (Tabla 3.3). El listado completo de exclusiones, supuestos, responsabilidades del cliente y restricciones está en el **Anexo A del Subdocumento 3**, que se entrega como documento aparte (`OnlySimpleSolutions-Subdocumento3-Anexos`, según el Comunicado 10) y cuya fuente es `04_Adjuntos/tablas/sd-03_s2_anexo-a_exclusiones-supuestos-restricciones.md`. La dependencia 2 del plan alternativo del crédito (convivencia con la plataforma de 2011) sigue marcada como inferencia del asistente.
+
+> **Ajustes del 2026-10-07 tras los agentes.** Tabla 3.2 sin cambios (se mantienen los códigos EXC). Se agregó: declaración en el cuerpo de que SP-04 se aparta de RT-06.33 y del art. 14.1 en canalizaciones y enlaces (el proponente especifica, costea y certifica; el cliente ejecuta; se consultará al mandante); plan alternativo del crédito en forma general con detalle remitido a los capítulos 7 y 8; criterios del cupo propuestos por el proponente y fijados por la filial emisora antes de la prueba; alimentación del registro local desde la plataforma de 2011 para clientes aún no migrados; prueba en los meses 6 y 7 fuera de la semana previa y de los tres días del evento anual; plazo de SP-04; glosas de Comité Ejecutivo y Contraparte Técnica.
+
+> **Párrafo aprobado para la 3.2.3 (2026-10-07): plan alternativo del crédito (S3-02).** La 3.2.2 remite a él. Base: revisión del Informe 1, líneas 503 a 515 y 582 de `80_Artefactos/revision_informe_1_transcripcion.md`; `fundamentacion_credito_sin_conexion.md` §7 y §10; compuerta del punto de venta (condiciones 5 y 9); Caso 13.3.5. El usuario aprobó el párrafo de la dependencia 1 y pidió incluir la dependencia 2.
+>
+> **Dependencia 1, crédito sin conexión.** La compra con la tarjeta propia durante un corte de enlace se autoriza contra un cupo preaprobado guardado en la tienda, dentro de los topes que fija la filial emisora. Depende de que la filial emisora fije esos topes y de una prueba de factibilidad en las tiendas piloto del punto de venta (meses 6 y 7), con un corte de enlace provocado de 24 horas. Pasa si las compras dentro del tope se autorizan sin perder transacciones, si cada aceptación queda recuperable en el servicio de evidencia financiera y si la conciliación al reconectar termina en 30 minutos o menos sin diferencias sin explicar. Si falla, o los topes no se fijan, la compra con tarjeta propia sin conexión se declara no disponible y la tienda cobra con otro medio de pago. Decide los topes la filial emisora y firma el acta de la prueba la Contraparte Técnica.
+>
+> **Dependencia 2, convivencia con la plataforma de crédito de 2011 (por validar con el usuario).** Mientras migra la cartera, los clientes que aún no pasan al servicio de cartera de crédito mantienen sus datos en la plataforma de 2011, y la integración con ella debe funcionar. La decisión se toma en la compuerta de cada tramo de la cartera, que exige convivencia real, conciliación diaria de saldos y retorno probado (Caso 13.3.5). Si la integración falla, el tramo no avanza y los clientes pendientes siguen evaluándose en la plataforma de 2011 hasta que se corrija. Esta alternativa es una inferencia del asistente a partir de la compuerta del Caso, no está escrita en el trabajo previo.
+>
+> **Para ambas.** La alternativa no altera los 56 meses, porque no agrega trabajo al cronograma: la función se declara no disponible o el tramo espera su compuerta.
+
 
 **Mensaje central.** Cada exclusión dice qué no se hace, qué sí se hace y qué dependencia genera, porque "que algo esté excluido del alcance no significa que pueda ignorarse en el diseño" (Caso cap. 11). Cada supuesto lleva su fundamento y su "Si no se cumple".
 
@@ -252,7 +269,7 @@ Con inicio en enero de 2027 (SUP-26 del sd-02), los pasos a producción de los m
 - **Exclusiones por origen** (tabla T4):
   - 10 del mandante (EXC-01 a EXC-10, Caso cap. 11);
   - 1 de las Transversales (EXC-11);
-  - 8 del equipo (EXC-12, EXC-13 y EXC-15 a EXC-19). EXC-14 está retirada.
+  - 7 del proponente (EXC-12, EXC-13 y EXC-15 a EXC-19). EXC-14 está retirada. Total vigente: 18.
 
   El detalle va en el Anexo A.1.
 - **Supuestos con mayor efecto en el alcance:**
@@ -289,6 +306,8 @@ Con inicio en enero de 2027 (SUP-26 del sd-02), los pasos a producción de los m
 **Tabla:** T4. **Diagramas:** D4 (frontera y caché) y, opcionalmente, D6 (responsabilidades físicas).
 
 ### 1.5 3.2.4 Catálogo de requerimientos
+
+> **Reescrita el 2026-10-08.** El cuerpo de la 3.2.4 narra la metodología en las cuatro actividades de FEP02 · 17 (extraer, analizar, especificar y verificar), la depuración de alcance, la priorización MoSCoW, la trazabilidad y la línea base, el criterio funcional / no funcional (Caso 17.2, Tabla 3.5) y la distribución por etapa (Tabla 3.4). Cifras vigentes: catálogo del capítulo 2 de 307 elementos (223, 75, 9); tras la depuración 303; con cinco requerimientos nuevos para el servicio de clientes Retail (RF-227 a RF-231), **308 (227 RF, 72 RNF, 9 OP)**. Etapas: 142 RF y 61 RNF en la Etapa 1, 4 RF por tramos, 81 RF y 11 RNF en la Etapa 2. Las cifras de esta sección más abajo (140/75/78, mapeo propuesto) quedaron superadas por `conciliacion_catalogo.md` y por el Anexo B (`04_Adjuntos/tablas/sd-03_s2_anexo-b_catalogo-requerimientos.md`). Registro de reglas de negocio en el Anexo C. No se afirma que los saltos de numeración correspondan a requerimientos divididos: son eliminaciones por EXC-02.
 
 **Mensaje central.** El catálogo atomizado se resume por servicio, etapa y prioridad. El criterio de prioridad es el mismo que el de etapa (P1 a P4), así que alcance y catálogo son coherentes. La trazabilidad completa va en el T-12.
 
@@ -383,7 +402,8 @@ El equipo los dibuja; aquí solo se especifican.
 
 | ID | Título sugerido | Subsección | Herramienta |
 | :-- | :-- | :-- | :-- |
-| D1 | Descomposición del alcance: de las promesas a los servicios | 3.2.1 | Graphviz |
+| D1 | Descomposición del alcance: del problema a los servicios (frentes, áreas, servicios y base tecnológica) | 3.2.1 | Graphviz |
+| D1b | Cobertura de las causas raíz por servicio (matriz) | 3.2.1 | Graphviz o tabla ilustrada |
 | D2 | Dependencias entre servicios y etapa de cada uno | 3.2.2 | Graphviz |
 | D3 | Horizonte de 56 meses: etapas, marchas blancas, olas y ventanas | 3.2.2 | PlantUML (Gantt) |
 | D4 | Frontera Retail–Emisor y cruces autorizados | 3.2.3 | Graphviz |
@@ -445,32 +465,27 @@ El equipo los dibuja; aquí solo se especifican.
 
 ## 3. Tablas listas (síntesis para el cuerpo, máximo 5 columnas)
 
-**T1, promesas, responsabilidades, servicios y evidencia (3.2.1).**
+**T1 (eliminada).** La 3.2.1 ya no lleva tabla. La cobertura de causas va en la figura D1b.
 
-| Promesa | Responsabilidades | Servicios | Evidencia que la verifica |
-| :-- | :-- | :-- | :-- |
-| Existencia | A3, A4, A11 | R-02, R-03, R-04, R-07 | Exactitud por categoría y nodo; disponible comprometible; cancelaciones por falta de existencia |
-| Precio | A1, A2, C2 | R-01, R-05, R-06 | Historial de precio publicado; estado de etiqueta; venta conciliada |
-| Entrega | A3, A6, A7, A11 | R-02, R-03, R-04, R-07, R-08 | Fecha prometida; estado único; tasa de cumplimiento |
-| Crédito | B1, B2, B3, C1, C2 | F-01, F-02, F-03, X-01 | Versión precontractual; consentimiento; expediente recuperable; registro de cruces |
+**T2, prueba de primera prioridad y etapa de cada componente (3.2.2).** Tabla 3.1 del `.tex`.
 
-**T2, servicios, criterio y etapa (3.2.2).**
-
-| Servicio o componente | Criterio | Etapa |
+| Componente | Prueba que cumple | Etapa |
 | :-- | :-- | :-- |
-| Plataforma común e infraestructura híbrida | P3 | 1 |
-| R-01 Catálogo, precios y promociones | P1 (precio), P4 | 1 |
-| R-03 Inventario, reservas y disponibilidad | P1 (existencia) | 1 |
-| R-05 Registro y conciliación de ventas | P3 (venta con documento, venta sin conexión), P1 | 1 |
-| POS con operación sin conexión de 24 h | P3 (restricción 5) | 1 |
-| X-01 Autorización y auditoría de cruces | P2 (frontera) | 1 |
-| F-03 Consentimiento y evidencia financiera | P4 (de F-01 y F-02), P2 | 1 |
-| F-01 Originación y autorización de crédito | P2, P3 | 1 |
-| F-02 Cartera, cobranza y repactaciones | P2 (ola 1); ninguno (ola 2) | 1 y 2 |
-| R-02 Abastecimiento y reposición | Ninguno; depende de R-03 | 2 |
-| R-04 Pedidos y cumplimiento omnicanal | Ninguno; depende de R-03 y R-05 | 2 |
-| R-06, R-07, R-08 | Ninguno; el comité pone el marketplace al final | 2 |
-| R-09 Clientes y fidelización Retail | Ninguno; la frontera se cumple con X-01 en la Etapa 1 | 2 |
+| Base tecnológica e infraestructura híbrida | Registro oficial desde el mes 16 | 1 |
+| Servicio de oferta comercial | Promesa priorizada (precio) | 1 |
+| Servicio de existencias | Promesa priorizada (existencia) | 1 |
+| Servicio de ventas | Registro oficial (venta con documento y sin conexión) | 1 |
+| Punto de venta con operación sin conexión | Registro oficial (la tienda vende sin enlace) | 1 |
+| Servicio de control de cruces | Objeción registrada (frontera de datos) | 1 |
+| Servicio de originación de crédito | Objeción registrada (2029) y registro oficial | 1 |
+| Servicio de cartera de crédito | Objeción registrada (2029), por tramos | 1 y 2 |
+| Servicio de evidencia financiera | Dependencia de la originación y de la cartera | 1 |
+| Servicio de abastecimiento | Ninguna, requiere el servicio de existencias estable | 2 |
+| Servicio de pedidos | Ninguna, requiere los servicios de existencias y de ventas | 2 |
+| Servicio de comisiones | Ninguna, requiere los servicios de pedidos y de ventas | 2 |
+| Servicio de marketplace | Ninguna, requiere el servicio de existencias | 2 |
+| Servicio de posventa | Ninguna, requiere los servicios de existencias y de ventas | 2 |
+| Servicio de clientes Retail | Ninguna, requiere los servicios de oferta comercial y de control de cruces | 2 |
 
 **T3, capas de dependencia (3.2.2).**
 
@@ -665,7 +680,7 @@ Esta tabla tiene 5 columnas y 28 filas: supera RR-18, así que en el cuerpo va a
 | RS-16 | Despliegue híbrido obligatorio | Bases Admin. art. 16 | Bloque 1.15.x |
 | RS-17 | Cronograma de 56 meses, sin plazos alternativos | Bases Admin. art. 17 | Reparto de 3.2.2 |
 | RS-18 | Cambios solo por solicitud formal aprobada por el Comité Ejecutivo; límite de 20 % | Bases Admin. art. 72 | RC-07; registro de cambios 2.13 |
-| RS-19 | Fin de soporte de la plataforma de crédito y último hito de remediación en 2029 | Caso 13.2 | Financiero en la Etapa 1; retiro con fecha objetivo diciembre de 2028 |
+| RS-19 | Fin de soporte de la plataforma de crédito y último hito de remediación en 2029 | Caso 13.2 | Financiero en la Etapa 1; retiro con fecha objetivo octubre de 2028 |
 | RS-20 | Requisitos técnicos obligatorios de las Transversales | Bases Transversales | Respuesta uno a uno en el Formulario T-12 |
 
 ---
@@ -695,7 +710,7 @@ Fuente: `entregables_alcance.md`, versión vigente. Marcas: D = decidido con el 
 | 1.14d | Plataforma de observabilidad en producción | 1 (D, Bases art. 15) |
 | 1.16 | POS con operación sin conexión de 24 h instalado en las 22 tiendas | 1: ola 1 piloto de 3 tiendas, ola 2 las otras 19 antes del mes 16 (D) |
 | 1.17a | Cartera de 620.000 clientes migrada y conciliada | 1 ola 1 y 2 ola 2 (D) |
-| 1.17b | Plataforma de originación y cobranza de 2011 retirada | Operación; fecha objetivo diciembre de 2028 (D) |
+| 1.17b | Plataforma de originación y cobranza de 2011 retirada | Operación; fecha objetivo octubre de 2028 (D) |
 | 1.18a | Conector con el ERP/DTE operando | 1 (D, integración crítica) |
 | 1.18b | Conector con el marketplace operando | 2 (D) |
 | 1.18c | Conector con el WMS principal operando | 1 (D, integración crítica) |

@@ -1,5 +1,7 @@
 # Insumos para redactar 3.3 Esquema de solución y 3.4 Explicación de la Solución (sd-03)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Reúne lo necesario para redactar 3.3 y 3.4 en `02_Propuesta/latex_final/sd-03.tex`. Los diagramas se **especifican**: los dibuja el equipo. Todo dato tiene su fuente; lo marcado **(S)** es propuesta del asistente, por confirmar. Fecha: 2026-10-06.
 
 Contenido: 0. Exigencias y reglas · 1. Lista canónica de componentes · 2. Contenido de 3.3 (diagramas E1 a E4) · 3. Contenido de 3.4 · 4. Tabla de mapeo con el sd-04 · 5. Cifras y puntos abiertos.

@@ -1,5 +1,7 @@
 # Plan de redacción — 3.2 Alcance (sd-03)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de trabajo. No es entregable.
 
 ## Decisiones tomadas (2026-10-05)

@@ -1,5 +1,7 @@
 # Guía de los 13 servicios (R-01 a R-09, F-01 a F-03, X-01)
 
+> **Nomenclatura (2026-10-07):** los nombres y códigos de los servicios de este documento (R-01 a X-01) fueron reemplazados. Rige `divisiones_negocio_servicios_sd-03.md`, que contiene la tabla de equivalencias.
+
 Documento de contexto, no es entregable. Explica qué es cada servicio y cómo se conecta con el negocio de Ancoa. Fuente: `descripcion_alcance_producto.md` (secciones 2, 5 y 6) y Caso 09. La capa y la etapa salen de `asignacion_etapas.md` (Rondas B a D).
 
 ## Qué se hizo en este plan
