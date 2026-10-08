@@ -1,3 +1,5 @@
+> **SUPERADO (2026-10-08).** Borrador de septiembre. La cartera vigente de candidatas está en `80_Artefactos/sd-13_contexto/informe_candidatas_innovacion.md`. Este archivo incluye etiquetas electrónicas (excluidas por EXC-02) y otras ideas que no se retomaron. No usar como fuente.
+
 # Innovaciones obligatorias — Fichas (Art. 28–29)
 
 **Licitación N° TFEP-01/2026 — Caso 09: Cadena Multitienda (Multitiendas Ancoa S.A.)**
