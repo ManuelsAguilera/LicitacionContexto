@@ -1,6 +1,6 @@
 # Factores de ambiente (EF): preguntas para el consenso del equipo (paso 5, puerta G5, parte de ambiente)
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: **los ocho valores informados por el usuario el 2026-10-08**, pendientes de la firma del equipo. Los ocho factores describen al equipo y a su contexto, y los asigna el equipo por consenso (FEP03, diapositivas 42 a 45), no el proponente de la estimación. Dependen del sd-04 (pila tecnológica), del sd-06 (metodología) y del sd-12 (equipo), que todavía no están redactados. Este documento deja las preguntas, los valores informados (sección 3), el rango posible y un cuadro de escenarios ilustrativos. Los escenarios ilustrativos no son una propuesta de valores.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: **los ocho valores informados por el usuario el 2026-10-08** (E3 se cambió de 3 a 4), pendientes de la firma del equipo; E7 queda como supuesto sin respaldo. Los ocho factores describen al equipo y a su contexto, y los asigna el equipo por consenso (FEP03, diapositivas 42 a 45), no el proponente de la estimación. Dependen del sd-04 (pila tecnológica), del sd-06 (metodología) y del sd-12 (equipo), que todavía no están redactados. Este documento deja las preguntas, los valores informados (sección 3), el rango posible y un cuadro de escenarios ilustrativos. Los escenarios ilustrativos no son una propuesta de valores.
 
 ## 1. Cómo funciona
 
@@ -42,21 +42,23 @@ Los valores los dio el usuario. Las frases de justificación son un borrador mí
 
 | Factor | Peso | Valor | Justificación (borrador) | Estado |
 | :-- | --: | --: | :-- | :-- |
-| E1 Modelo de proyecto | 1,5 | 5 | El equipo tiene experiencia con el modelo de gestión híbrido que usará el proyecto. El modelo se redacta después, en el sd-06 | Extremo: el sd-06 debe respaldarlo |
+| E1 Modelo de proyecto | 1,5 | 5 | El equipo tiene experiencia con el modelo de gestión híbrido que usará el proyecto (declarado por el usuario). El sd-01, apartado 1.5, describe un gobierno ya definido (PMIS con Jira y SharePoint, comité ejecutivo mensual, comité de proyecto quincenal, comité de arquitectura, comité de operación y seguimiento semanal), y el apartado 1.4 reúne tres proyectos de referencia como contratista principal. El sd-06 debe describir ese modelo híbrido con las mismas instancias | Extremo. Justificación razonable; se sostiene si el sd-06 y la Tabla 1 de credenciales del sd-01 lo confirman. Si no, bajar a 4 (+6,0 % de horas) |
 | E2 Experiencia en el negocio | 0,5 | 4 | El equipo conoce el negocio (retail, crédito y omnicanal) por los tres proyectos de referencia del sd-01, apartado 1.4 | Interpretado como E2 («conocemos en un 4»); E3 se informó aparte |
-| E3 Orientación a objetos | 1 | 3 | Dominio medio: el stack informado usa Java Spring Boot, TypeScript, Node.js, Go y React | Informado el 2026-10-08 |
+| E3 Orientación a objetos | 1 | 4 | Experiencia significativa: el stack informado usa Java Spring Boot, TypeScript, Node.js, Go y React, y la empresa es una fábrica de software a medida (sd-01, 1.1.1) | Informado el 2026-10-08 (cambió de 3 a 4) |
 | E4 Capacidad del analista | 0,5 | 4 | El Arquitecto de Solución trabajó como analista en proyectos anteriores | Confirmado |
-| E5 Motivación | 1 | 5 | El equipo está muy motivado. Se refleja en el sd-01 (`80_Artefactos/sd-01_contexto/notas_sd-01.md`, N-01) | Extremo: necesita un hecho comprobable |
+| E5 Motivación | 1 | 5 | Autoevaluación del equipo (la clase pide asignar E5 en grupo, diapositiva 43): el equipo se declara muy motivado con el proyecto. Indicadores verificables: trabajo sostenido en el repositorio durante 12 días con actividad entre el 2026-09-01 y el 2026-10-08, con aportes de tres integrantes distintos, y una entrega continua de artefactos (subdocumentos, anexos y estimación). Se refleja en el sd-01 (`80_Artefactos/sd-01_contexto/notas_sd-01.md`, N-01) | Extremo. El historial de git no prueba por sí solo la motivación de los siete integrantes; el equipo puede sumar un hecho propio (por ejemplo, asistencia a las reuniones del proyecto) |
 | E6 Estabilidad de requisitos | 2 | 2 | Hay 5 RF por validar, metas del Anexo D por validar con el cliente y decisiones abiertas (pregunta 8) | Coherente con el repositorio |
-| E7 Personal a tiempo parcial | −1 | 0 | Todo el personal asignado es de dedicación exclusiva | Extremo: el sd-12 debe declararlo |
+| E7 Personal a tiempo parcial | −1 | 0 | Supuesto del equipo: todo el personal asignado es de dedicación exclusiva. No se respalda con un hecho porque la dotación y la dedicación son del sd-12, que no forma parte de este avance | Extremo sin respaldo: **supuesto declarado**. Si el sd-12 muestra personal a tiempo parcial, el valor sube (E7 en 3 suma 11,9 % de horas) |
 | E8 Dificultad del lenguaje | −1 | 3 | Lenguajes comunes, pero unas 30 tecnologías y tres alternativas sin decidir (`contexto_sd-04.md`, D-12) | Puede subir si se complica el stack |
 
-**Resultado con los valores informados.** Suma ponderada = 17,5 + 3 = 20,5. **EF = 1,4 − 0,03 × 20,5 = 0,785**: el trabajo cuesta un 21,5 % menos que con un equipo neutro. Hay un solo factor desfavorable (E6 en 2), así que el factor de conversión es **20 horas por punto**. La puerta se cumple: ocho valores entre 0 y 5, E7 y E8 con el signo correcto, no todos en 3 ni en 5, y EF entre 0,42 y 1,70. El esfuerzo está en `10_esfuerzo.md` y la prueba `05_Gestion/tests/test_ef.py` guarda estos valores.
+**Resultado con los valores informados.** Suma ponderada = 17,5 + 4 = 21,5. **EF = 1,4 − 0,03 × 21,5 = 0,755**: el trabajo cuesta un 24,5 % menos que con un equipo neutro. Hay un solo factor desfavorable (E6 en 2), así que el factor de conversión es **20 horas por punto**. La puerta se cumple: ocho valores entre 0 y 5, E7 y E8 con el signo correcto, no todos en 3 ni en 5, y EF entre 0,42 y 1,70. El esfuerzo está en `10_esfuerzo.md` y la prueba `05_Gestion/tests/test_ef.py` guarda estos valores.
 
-**Lo que queda por cerrar (humano).**
-1. Respaldar los tres extremos (E1 en 5, E5 en 5 y E7 en 0) con hechos comprobables, porque la clase descuenta los extremos sin justificación (diapositivas 40 y 45). E1 depende del sd-06, E7 del sd-12 y E5 del sd-01.
-2. Revisar la coherencia de E6 con el plan de riesgos (sd-08) cuando exista: si ese plan dice que el alcance puede cambiar, E6 en 2 es correcto; si dijera que es estable, habría que subirlo.
-3. La firma del equipo sobre los ocho valores. La clase recomienda asignarlos en grupo y anotar los desacuerdos.
+**Lo que queda por cerrar.**
+1. **E1 en 5.** La justificación está redactada con el sd-01; el sd-06 debe describir el modelo híbrido y la Tabla 1 de credenciales del sd-01 (no está en el borrador) debe confirmar las certificaciones de gestión. Si no se sostiene, E1 baja a 4.
+2. **E7 en 0** queda como supuesto declarado, sin respaldo, hasta que exista el sd-12. Debe constar así en la memoria de cálculo.
+3. **E5 en 5.** La justificación es una autoevaluación con indicadores verificables; el equipo puede agregar un hecho propio.
+4. **Coherencia de E6 con el plan de riesgos (sd-08)** cuando exista.
+5. **La firma del equipo** sobre los ocho valores.
 
 ## 4. Rango y escenarios ilustrativos
 

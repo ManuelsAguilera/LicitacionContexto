@@ -10,7 +10,7 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne he
 | N-02 | El Arquitecto de Solución trabajó como analista en proyectos anteriores. Cubre el rol de análisis, porque la dotación de 16 profesionales no tiene un analista de requisitos | 1.2 y 1.5 (rol del Arquitecto de Solución) | Informado por el usuario, 2026-10-08 |
 | N-03 | El equipo tiene experiencia con el modelo de gestión híbrido que usará el proyecto. El modelo se redacta después, en el sd-06 | 1.5 (coordinación y gobierno) y sd-06 | Informado por el usuario, 2026-10-08 |
 | N-04 | El equipo conoce el negocio al que apunta el proyecto (retail, crédito y omnicanal). Apoyarse en los tres proyectos de referencia | 1.4 | Informado por el usuario, 2026-10-08 |
-| N-05 | Todo el personal asignado al proyecto es de dedicación exclusiva (ninguno a tiempo parcial) | 1.2 y 1.5, y sd-12 | Informado por el usuario, 2026-10-08 |
+| N-05 | Supuesto del equipo: todo el personal asignado al proyecto es de dedicación exclusiva (ninguno a tiempo parcial). Sin respaldo hasta que exista el sd-12 | 1.2 y 1.5, y sd-12 | Informado por el usuario, 2026-10-08 |
 
 ## 2. Vacíos del sd-01 que la estimación necesita cerrar
 

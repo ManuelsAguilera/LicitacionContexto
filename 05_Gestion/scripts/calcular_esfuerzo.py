@@ -22,7 +22,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 DIR = RAIZ / "80_Artefactos" / "sd-07_contexto" / "estimacion"
 REFERENCIA = "Equipo"
 ESCENARIOS = [  # E1 a E8. «Equipo» son los valores informados por el usuario el 2026-10-08; el resto es ilustrativo
-    ("Equipo", [5, 4, 3, 4, 5, 2, 0, 3]),
+    ("Equipo", [5, 4, 4, 4, 5, 2, 0, 3]),
     ("Mejor posible", [5, 5, 5, 5, 5, 5, 0, 0]),
     ("Favorable", [4, 4, 4, 4, 4, 4, 1, 2]),
     ("Neutro", [3, 3, 3, 3, 3, 3, 3, 3]),

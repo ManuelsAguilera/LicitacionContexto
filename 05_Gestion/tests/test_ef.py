@@ -41,7 +41,7 @@ class TestEF(unittest.TestCase):
 
     def test_ef_y_factor_de_conversion_documentados(self):
         v = [x for _, _, x, _ in filas()]
-        self.assertAlmostEqual(calc.ef(v), 0.785, places=6)
+        self.assertAlmostEqual(calc.ef(v), 0.755, places=6)
         self.assertEqual(calc.factores_desfavorables(v), 1)
         self.assertEqual(calc.factor_conversion(v), 20)
 
