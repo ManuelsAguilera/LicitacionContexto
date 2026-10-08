@@ -56,7 +56,7 @@ Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX
 
 | ID | Supuesto |
 | :-- | :-- |
-| S1 | RF-065 y RF-066 nombran al cliente no autenticado, por eso es actor directo. La consulta puede pasar por la plataforma de comercio electrónico y eso cambiaría el actor a AS-04 |
+| S1 | RF-065 y RF-066 nombran al cliente no autenticado, por eso el cliente se mantiene como actor del caso. Bajo la Opción A (S12) la consulta llega por el sitio y la aplicación de AS-04. Se conserva a AH-01 como actor por prudencia (sensibilidad en `02_actores_uaw.md`) |
 | S2 | RF-087 es un flujo alternativo que agrega una ida y vuelta contra la existencia local, por eso se cuenta como T2 |
 | S3 | La reserva y la publicación las pide la plataforma de comercio electrónico (AS-04), no el cliente directo, porque el canal digital es una plataforma conservada |
 | S4 | El actor es el temporizador (AS-14). La vigencia reducida del evento anual (RF-042) es un ciclo distinto del normal |
@@ -67,6 +67,7 @@ Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX
 | S9 | El sd-03 no describe este flujo. Las transacciones son propuestas |
 | S10 | RF-183 cita RF-026.1, referencia obsoleta del catálogo |
 | S11 | El personal de Concepción (100 personas) es parte de AH-07. No se instalan componentes allí (EXC-13) y la carga es un registro estructurado |
+| S12 | Portal público en la Opción A (D-08 de `contexto_sd-04.md`): la solución entrega la disponibilidad por interfaz y el sitio y la aplicación existentes la presentan. Si la evaluación de AS-04 de la Etapa 1 exige un portal nuevo (Opción B), CU-EX-02 y CU-EX-01 mantienen su actor y se agregan los casos de presentación |
 
 ## 4. Cobertura de los 48 RF
 
@@ -80,8 +81,8 @@ OP-08 y OP-09 (análisis de Concepción y su impacto sobre RN-15) son entregable
 
 1. CU-EX-08 y CU-EX-10 quedan como casos separados.
 2. AH-06 verifica la existencia física (S5) hasta que el sd-03 lo defina.
+3. Portal público en la Opción A (S12). El contenido financiero se sirve desde la filial emisora. El portal del proveedor se resuelve en el sd-04 y AS-13 queda tipo 2.
 
 ## 7. Preguntas para el equipo
 
-1. ¿El cliente es actor directo (S1) o siempre llega por la plataforma del canal? Actor directo es el que se comunica con la solución sin pasar por otro sistema que sea actor. Sugerencia: mantenerlo directo mientras los RF-065 y RF-066 nombren al cliente. El UAW no cambia con ninguna de las dos opciones.
-2. ¿Se cuenta la conciliación contable? Es la comprobación periódica de que la cantidad de unidades del Servicio de existencias coincide con el inventario valorizado del ERP/DTE. Ningún RF la pide, y el sd-03 3.3.2 dice que el ERP/DTE es el registro contable. Sugerencia: dejarla fuera de la muestra, y si el equipo la incluye sería un caso con AS-01, de 2 o 3 transacciones y peso 5.
+1. ¿Se cuenta la conciliación contable? Es la comprobación periódica de que la cantidad de unidades del Servicio de existencias coincide con el inventario valorizado del ERP/DTE. Ningún RF la pide, y el sd-03 3.3.2 dice que el ERP/DTE es el registro contable. Sugerencia: dejarla fuera de la muestra, y si el equipo la incluye sería un caso con AS-01, de 2 o 3 transacciones y peso 5.

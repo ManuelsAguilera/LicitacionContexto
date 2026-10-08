@@ -64,6 +64,8 @@ Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y A
 | Los 8 sistemas externos de tipo 1 (AS-01 a AS-05, AS-07, AS-08, AS-11) pasan a tipo 2, por el archivo actual (C5) | 77 |
 | Se retira AS-13 si el equipo no lo valida | 67 |
 | Se agrega el directorio de usuarios del cliente (tipo 1 o 2) | 70 a 71 |
+| Opción A del portal público: AH-01 se excluye porque el cliente usa el sitio de AS-04 y no una interfaz de la solución | 66 |
+| Opción B del portal público, con portales nuevos de vendedor y proveedor (AH-17 y AS-13 a tipo 3) | 72 |
 
 ## 5. Pruebas de la puerta G2a
 
@@ -76,5 +78,6 @@ Los 10 de tipo 1 son AH-17 y los sistemas AS-01 a AS-05, AS-07, AS-08, AS-11 y A
 3. Los sistemas de 2009 y 2011 son tipo 2 solo por sus interfaces de convivencia.
 4. El directorio de usuarios del cliente queda fuera hasta que el sd-04 defina la federación de identidades.
 5. En Concepción trabajan 100 personas y el resto de las 620 de los centros de distribución, 520, están en el centro principal. Dato informado por el usuario, no está en las Bases.
+6. Portal público en la Opción A. El contenido financiero se sirve desde la filial emisora. El portal del proveedor se resuelve en el sd-04 y AS-13 queda tipo 2. No existe una plataforma de proveedores hoy.
 
 Las decisiones que condicionan el sd-04 están registradas en `80_Artefactos/sd-04_contexto/contexto_sd-04.md`.
