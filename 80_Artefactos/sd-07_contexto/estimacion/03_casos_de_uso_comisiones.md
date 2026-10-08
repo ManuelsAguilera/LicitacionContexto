@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de comisiones (V-03), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: CM (Servicio de comisiones). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-05) y Anexo B (3 RF del servicio, Etapa 2). Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: CM (Servicio de comisiones). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-05) y Anexo B (3 RF del servicio, Etapa 2). Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -34,8 +34,8 @@ Resumen. 3 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿AH-15 es el actor que revisa la atribución? Sugerencia: sí, es quien audita los registros; si el equipo prefiere a Comercial, solo cambia el actor.
-2. ¿Se agrega un caso para administrar las reglas de atribución? Sugerencia: no por ahora; el catálogo no lo pide. Se anota como vacío para el equipo.
-3. ¿El conector hacia AS-11 se cuenta como una transacción de CU-CM-02? Sugerencia: sí, mientras el conector sea la interfaz objetivo de EXC-05.
+1. ¿AH-15 es el actor que revisa la atribución? Decisión adoptada: sí, es quien audita los registros; si el equipo prefiere a Comercial, solo cambia el actor.
+2. ¿Se agrega un caso para administrar las reglas de atribución? Decisión adoptada: no por ahora; el catálogo no lo pide. Se anota como vacío para el equipo.
+3. ¿El conector hacia AS-11 se cuenta como una transacción de CU-CM-02? Decisión adoptada: sí, mientras el conector sea la interfaz objetivo de EXC-05.

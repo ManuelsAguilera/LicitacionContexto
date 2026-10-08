@@ -91,6 +91,13 @@ class TestCasosUso(unittest.TestCase):
         self.assertFalse(any("P3.7" in x for x in correr(casos, trans)))
         self.assertTrue(any("P3.7" in x and "AS-14" in x for x in correr(casos, trans, completo=True)))
 
+    def test_actor_secundario_declarado_cuenta(self):
+        casos, trans = "| CU-EX-01 | R:M-03 | A | AH-03 | 2 | RF-001 a RF-003 | S1 |\n", "| CU-EX-01 | T1 a. T2 b |\n"
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "03_casos_de_uso_x.md").write_text(CAB + casos + CAB_T + trans + "\n| S1 | Actores secundarios: AS-14 en CU-EX-01 |\n", encoding="utf-8")
+            self.assertEqual(v.actores_secundarios(d), {"AS-14"})
+
 
 if __name__ == "__main__":
     unittest.main()

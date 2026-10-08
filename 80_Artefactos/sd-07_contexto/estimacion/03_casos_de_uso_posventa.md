@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de posventa (CL-01), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: PV (Servicio de posventa). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo B (12 RF del servicio, Etapa 2) y Anexo D (resultado 15). La garantía legal se resuelve en el mesón sin derivar al cliente. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: PV (Servicio de posventa). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo B (12 RF del servicio, Etapa 2) y Anexo D (resultado 15). La garantía legal se resuelve en el mesón sin derivar al cliente. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -40,8 +40,8 @@ Resumen. 5 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿AH-11 parametriza el plazo de garantía? Sugerencia: sí, mientras el catálogo no nombre otro rol; el conteo no cambia.
-2. ¿Se agrega un caso de solicitud de devolución por el cliente en el portal? Sugerencia: no por ahora; no hay RF y depende de la Opción A del portal.
-3. ¿La garantía de un producto de marketplace se atiende aquí (RF-188)? Sugerencia: sí, en el mesón, con la devolución al vendedor registrada en marketplace (CU-MK-07).
+1. ¿AH-11 parametriza el plazo de garantía? Decisión adoptada: sí, mientras el catálogo no nombre otro rol; el conteo no cambia.
+2. ¿Se agrega un caso de solicitud de devolución por el cliente en el portal? Decisión adoptada: no por ahora; no hay RF y depende de la Opción A del portal.
+3. ¿La garantía de un producto de marketplace se atiende aquí (RF-188)? Decisión adoptada: sí, en el mesón, con la devolución al vendedor registrada en marketplace (CU-MK-07).

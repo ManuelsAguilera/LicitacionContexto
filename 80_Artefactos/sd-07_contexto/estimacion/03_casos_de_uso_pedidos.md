@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de pedidos (V-01), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: PE (Servicio de pedidos). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A, Anexo B (31 RF del servicio, Etapa 2) y Anexo D (resultados 3, 10, 11, 26). Bajo la Opción A del portal, el sitio y la app de comercio electrónico existentes (AS-04) presentan al cliente y la solución entrega los datos. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: PE (Servicio de pedidos). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A, Anexo B (31 RF del servicio, Etapa 2) y Anexo D (resultados 3, 10, 11, 26). Bajo la Opción A del portal, el sitio y la app de comercio electrónico existentes (AS-04) presentan al cliente y la solución entrega los datos. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -65,10 +65,10 @@ Resumen. 15 casos, todos simples (1 a 3 transacciones). UUCW provisional del ser
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿AS-04 es el actor principal de las consultas y los cálculos de la promesa bajo la Opción A? Sugerencia: sí, y mantener AH-01 en los casos de consulta (CU-PE-10, 11) por prudencia.
-2. ¿CU-PE-05 y CU-PE-06 usan a AH-07 o a un actor de tienda? Sugerencia: AH-07 como principal y AH-06 como secundario; el conteo no cambia.
-3. ¿Los 15 casos de pedidos son una granularidad aceptable para 31 RF? Sugerencia: sí; agrupar más baja CU y deja casos de más de 12 transacciones (C8).
-4. ¿Se quiere un caso de administración de las reglas del motor de resolución (RF-046)? Sugerencia: no por ahora; no hay RF y entra con la parametrización de RF-063.
-5. ¿El seguimiento con el transportista (CU-PE-15) cuenta como caso del servicio? Sugerencia: sí; EXC-07 pide trazar el pedido hasta la entrega.
+1. ¿AS-04 es el actor principal de las consultas y los cálculos de la promesa bajo la Opción A? Decisión adoptada: sí, y mantener AH-01 en los casos de consulta (CU-PE-10, 11) por prudencia.
+2. ¿CU-PE-05 y CU-PE-06 usan a AH-07 o a un actor de tienda? Decisión adoptada: AH-07 como principal y AH-06 como secundario; el conteo no cambia.
+3. ¿Los 15 casos de pedidos son una granularidad aceptable para 31 RF? Decisión adoptada: sí; agrupar más baja CU y deja casos de más de 12 transacciones (C8).
+4. ¿Se quiere un caso de administración de las reglas del motor de resolución (RF-046)? Decisión adoptada: no por ahora; no hay RF y entra con la parametrización de RF-063.
+5. ¿El seguimiento con el transportista (CU-PE-15) cuenta como caso del servicio? Decisión adoptada: sí; EXC-07 pide trazar el pedido hasta la entrega.

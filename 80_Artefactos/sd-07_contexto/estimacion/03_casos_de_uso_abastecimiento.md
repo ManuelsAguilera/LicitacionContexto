@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de abastecimiento (M-02), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: AB (Servicio de abastecimiento). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A y Anexo B (3 RF del servicio, Etapa 2). El sd-03 describe el servicio como administrador de órdenes, transferencias, propuestas de reposición y recepciones. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: AB (Servicio de abastecimiento). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A y Anexo B (3 RF del servicio, Etapa 2). El sd-03 describe el servicio como administrador de órdenes, transferencias, propuestas de reposición y recepciones. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -40,8 +40,8 @@ Resumen. 5 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿La recepción en tienda la registra AH-06? Sugerencia: sí, es el personal de reposición y bodega de tienda; si la tienda recibe por WMS, el caso baja a 1 transacción y se funde con CU-AB-04.
-2. ¿Las transferencias entre tiendas y centros entran como caso propio (CU-AB-04)? Sugerencia: sí, 3.3.2 las nombra como parte del servicio.
-3. ¿El sistema genera la orden al proveedor o solo la propone al ERP? Sugerencia: que la genere el servicio y la entregue al ERP/DTE, que sigue siendo el registro contable.
+1. ¿La recepción en tienda la registra AH-06? Decisión adoptada: sí, es el personal de reposición y bodega de tienda; si la tienda recibe por WMS, el caso baja a 1 transacción y se funde con CU-AB-04.
+2. ¿Las transferencias entre tiendas y centros entran como caso propio (CU-AB-04)? Decisión adoptada: sí, 3.3.2 las nombra como parte del servicio.
+3. ¿El sistema genera la orden al proveedor o solo la propone al ERP? Decisión adoptada: que la genere el servicio y la entregue al ERP/DTE, que sigue siendo el registro contable.

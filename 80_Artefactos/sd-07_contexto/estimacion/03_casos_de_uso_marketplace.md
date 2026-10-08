@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de marketplace (V-04), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: MK (Servicio de marketplace). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-04, EXC-12), Anexo B (25 RF del servicio, Etapa 2) y Anexo D (resultados 13 y 14). El servicio gobierna la relación con la plataforma vigente (AS-03) y no la reemplaza. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: MK (Servicio de marketplace). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-04, EXC-12), Anexo B (25 RF del servicio, Etapa 2) y Anexo D (resultados 13 y 14). El servicio gobierna la relación con la plataforma vigente (AS-03) y no la reemplaza. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -55,9 +55,9 @@ Resumen. 11 casos, todos simples (1 a 3 transacciones). UUCW provisional del ser
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿Se conserva CU-MK-11 (conciliar liquidaciones)? Sugerencia: sí como propuesta, con la nota del supuesto 10; se retira si el equipo confirma que la liquidación es solo de la plataforma.
-2. ¿AH-13 es el rol nominado de la matriz de escalamiento (RF-122)? Sugerencia: sí, mientras la matriz no nombre otro rol.
-3. ¿El vendedor externo usa una interfaz de programación o un portal? Sugerencia: interfaz de programación (tipo 1), según la decisión ya firmada de AH-17; si es portal, el caso se mantiene y cambia el peso del actor.
-4. ¿RF-106 a RF-108 van en marketplace o en posventa? Sugerencia: marketplace, tal como lo clasifica el Anexo B; posventa solo cubre la garantía de la unidad propia.
+1. ¿Se conserva CU-MK-11 (conciliar liquidaciones)? Decisión adoptada: sí como propuesta, con la nota del supuesto 10; se retira si el equipo confirma que la liquidación es solo de la plataforma.
+2. ¿AH-13 es el rol nominado de la matriz de escalamiento (RF-122)? Decisión adoptada: sí, mientras la matriz no nombre otro rol.
+3. ¿El vendedor externo usa una interfaz de programación o un portal? Decisión adoptada: interfaz de programación (tipo 1), según la decisión ya firmada de AH-17; si es portal, el caso se mantiene y cambia el peso del actor.
+4. ¿RF-106 a RF-108 van en marketplace o en posventa? Decisión adoptada: marketplace, tal como lo clasifica el Anexo B; posventa solo cubre la garantía de la unidad propia.

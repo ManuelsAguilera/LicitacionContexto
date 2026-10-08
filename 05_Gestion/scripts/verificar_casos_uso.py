@@ -127,7 +127,7 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
         h.append("P3.2 servicios sin casos de uso: " + ", ".join(faltan))
     # P3.7 actores de la lista sin ningún caso (solo con --completo; antes se informan como pendientes)
     if completo:
-        h += [f"P3.7 el actor {a} no es actor principal de ningún caso" for a in actores_sin_caso(casos, codigos_actor)]
+        h += [f"P3.7 el actor {a} no es actor principal ni secundario declarado de ningún caso" for a in actores_sin_caso(casos, codigos_actor, actores_secundarios(directorio))]
     # P3.4 nada excluido como trabajo propio
     for c in casos:
         if re.search(VERBOS_EXCLUIDOS, c["nombre"], re.I):
@@ -160,8 +160,18 @@ def verificar(directorio=DIR, anexo_b=ANEXO_B, anexo_a=ANEXO_A, actores=ACTORES,
     return h
 
 
-def actores_sin_caso(casos, codigos_actor):
-    return sorted(codigos_actor - {c["actor"] for c in casos})
+def actores_secundarios(directorio):
+    """Actores citados en una fila de supuestos «Actores secundarios: ...» de cualquier archivo de casos."""
+    out = set()
+    for p in Path(directorio).glob("03_casos_de_uso_*.md"):
+        for linea in p.read_text(encoding="utf-8").splitlines():
+            if re.match(r"\|\s*S\d+\s*\|\s*Actores? secundarios?", linea) or re.search(r"\bes actor secundario\b", linea):
+                out.update(re.findall(r"A[HS]-\d+", linea))
+    return out
+
+
+def actores_sin_caso(casos, codigos_actor, secundarios=frozenset()):
+    return sorted(codigos_actor - {c["actor"] for c in casos} - set(secundarios))
 
 
 def pendientes(directorio=DIR, anexo_b=ANEXO_B, actores=ACTORES):
@@ -169,7 +179,7 @@ def pendientes(directorio=DIR, anexo_b=ANEXO_B, actores=ACTORES):
     rf_servicio = catalogo_rf(anexo_b)
     hechos = {rf_servicio[r] for c in casos for r in expandir(c["origen"]) if r in rf_servicio}
     out = ["P3.2 servicios aún sin casos de uso: " + ", ".join(sorted(set(rf_servicio.values()) - hechos))]
-    sin = actores_sin_caso(casos, set(re.findall(r"\|\s*(A[HS]-\d+)\s*\|", Path(actores).read_text(encoding="utf-8"))))
+    sin = actores_sin_caso(casos, set(re.findall(r"\|\s*(A[HS]-\d+)\s*\|", Path(actores).read_text(encoding="utf-8"))), actores_secundarios(directorio))
     out.append("P3.7 actores aún sin caso como actor principal: " + (", ".join(sin) or "ninguno"))
     out.append("P3.3 los 28 resultados del Anexo D se rastrean al terminar todos los servicios")
     return out

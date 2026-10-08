@@ -1,6 +1,6 @@
 # Casos de uso del Servicio de clientes Retail (CL-02), puerta G3
 
-Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo, pendiente del visto bueno del usuario y de la firma del equipo. Prefijo de casos: CL (Servicio de clientes Retail). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-15), Anexo B (5 RF del servicio, Etapa 2, todos «propuesto por el proponente, por validar») y Anexo D (resultado 21). El servicio gobierna la identidad y la fidelización comerciales y no puede usar atributos financieros. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
+Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de este trabajo. Las dudas se resolvieron el 2026-10-08 adoptando la sugerencia de cada pregunta (sección 5), a pedido del usuario. Pendiente de la firma del equipo. Prefijo de casos: CL (Servicio de clientes Retail). Reglas: `01_reglas_de_conteo.md`. Actores: `02_actores_uaw.md`. Alcance: sd-03 3.3.2, Anexo A (EXC-15), Anexo B (5 RF del servicio, Etapa 2, todos «propuesto por el proponente, por validar») y Anexo D (resultado 21). El servicio gobierna la identidad y la fidelización comerciales y no puede usar atributos financieros. Las transacciones que el sd-03 no describe son propuestas y se declaran en la columna de supuestos.
 
 ## 1. Casos de uso
 
@@ -37,8 +37,8 @@ Resumen. 4 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 Cada RF del servicio está en un solo caso, según la columna Origen. La comprobación mecánica la hace `05_Gestion/scripts/verificar_casos_uso.py`.
 
-## 5. Preguntas abiertas (con sugerencia), pendientes del visto bueno del usuario
+## 5. Decisiones adoptadas por sugerencia (2026-10-08), pendientes de la firma del equipo
 
-1. ¿AH-13 es el actor que consolida duplicados? Sugerencia: sí, o Calidad de datos si el equipo la nombra; el conteo no cambia.
-2. ¿Se agrega un caso de consulta de identidad comercial en la venta? Sugerencia: no por ahora; no hay RF. Se anota como posible vacío.
-3. ¿El equipo valida los cinco RF propuestos (Anexo B)? Sugerencia: sí, antes de cerrar G3; sin ellos, el servicio queda con 0 casos de catálogo.
+1. ¿AH-13 es el actor que consolida duplicados? Decisión adoptada: sí, o Calidad de datos si el equipo la nombra; el conteo no cambia.
+2. ¿Se agrega un caso de consulta de identidad comercial en la venta? Decisión adoptada: no por ahora; no hay RF. Se anota como posible vacío.
+3. ¿El equipo valida los cinco RF propuestos (Anexo B)? Decisión adoptada: sí, antes de cerrar G3; sin ellos, el servicio queda con 0 casos de catálogo.
