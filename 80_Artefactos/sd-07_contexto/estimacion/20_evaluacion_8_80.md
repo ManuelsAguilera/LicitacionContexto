@@ -11,9 +11,9 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/evalua
 | Horas por transacción (296 transacciones) | 108 h |
 | Programación de un caso simple (40 %, diap. 51) | 99 h |
 | Un caso simple con la lectura A (sin el factor ×2,5) | 99 h |
-| Elementos de software y su rango | 73, de 247 a 1.234 h; 0 con 80 h o menos |
+| Elementos de software y su rango | 51, de 247 a 1.481 h; 0 con 80 h o menos |
 | Paquetes que harían falta para 8/80 solo en software | 398 (a 80 h) a 724 (a 44 h, punto medio) |
-| Duración de las ventanas (meses) | 12 de 1; 29 de 2 a 3; 133 de 4 a 12; 28 de más de 12 |
+| Duración de las ventanas (meses) | 9 de 1; 22 de 2 a 3; 96 de 4 a 12; 21 de más de 12 |
 
 Causas, en orden de peso:
 
@@ -30,22 +30,22 @@ Causas, en orden de peso:
 
 | Rama | Elementos | Con horas | Más de 80 h | 8 a 80 h | Menos de 8 h | Sin horas | Más de un mes |
 | :-- | --: | --: | --: | --: | --: | --: | --: |
-| 1.1 Dirección, gobierno y control del proyecto | 13 | 0 | 0 | 0 | 0 | 13 | 12 |
-| 1.2 Levantamiento y línea base de alcance | 9 | 0 | 0 | 0 | 0 | 9 | 9 |
-| 1.3 Arquitectura y diseño | 8 | 0 | 0 | 0 | 0 | 8 | 8 |
-| 1.4 Infraestructura híbrida y plataforma base | 19 | 0 | 0 | 0 | 0 | 19 | 19 |
-| 1.5 Desarrollo de software | 73 | 73 | 73 | 0 | 0 | 0 | 73 |
-| 1.6 Integraciones | 11 | 0 | 0 | 0 | 0 | 11 | 11 |
-| 1.7 Migración y saneamiento de datos | 12 | 0 | 0 | 0 | 0 | 12 | 11 |
-| 1.8 Seguridad, identidad y cumplimiento | 12 | 0 | 0 | 0 | 0 | 12 | 12 |
-| 1.9 Calidad, pruebas y certificación | 10 | 0 | 0 | 0 | 0 | 10 | 8 |
+| 1.1 Dirección, gobierno y control del proyecto | 11 | 0 | 0 | 0 | 0 | 11 | 10 |
+| 1.2 Levantamiento y línea base de alcance | 7 | 0 | 0 | 0 | 0 | 7 | 7 |
+| 1.3 Arquitectura y diseño | 7 | 0 | 0 | 0 | 0 | 7 | 7 |
+| 1.4 Infraestructura híbrida y plataforma base | 13 | 0 | 0 | 0 | 0 | 13 | 13 |
+| 1.5 Desarrollo de software | 51 | 51 | 51 | 0 | 0 | 0 | 51 |
+| 1.6 Integraciones | 6 | 0 | 0 | 0 | 0 | 6 | 6 |
+| 1.7 Migración y saneamiento de datos | 10 | 0 | 0 | 0 | 0 | 10 | 9 |
+| 1.8 Seguridad, identidad y cumplimiento | 8 | 0 | 0 | 0 | 0 | 8 | 8 |
+| 1.9 Calidad, pruebas y certificación | 8 | 0 | 0 | 0 | 0 | 8 | 6 |
 | 1.10 Innovaciones | 5 | 0 | 0 | 0 | 0 | 5 | 0 |
-| 1.11 Implantación y despliegue | 4 | 0 | 0 | 0 | 0 | 4 | 4 |
-| 1.12 Resultados de las marchas blancas y aceptación por etapa | 9 | 0 | 0 | 0 | 0 | 9 | 4 |
+| 1.11 Implantación y despliegue | 3 | 0 | 0 | 0 | 0 | 3 | 3 |
+| 1.12 Resultados de las marchas blancas y aceptación por etapa | 7 | 0 | 0 | 0 | 0 | 7 | 4 |
 | 1.13 Gestión del cambio y capacitación | 4 | 0 | 0 | 0 | 0 | 4 | 4 |
-| 1.14 Documentación, transferencia y reversibilidad | 10 | 0 | 0 | 0 | 0 | 10 | 7 |
-| 1.15 Operación y soporte | 8 | 0 | 0 | 0 | 0 | 8 | 8 |
-| **Total** | **207** | **73** | **73** | **0** | **0** | **134** | **190** |
+| 1.14 Documentación, transferencia y reversibilidad | 7 | 0 | 0 | 0 | 0 | 7 | 5 |
+| 1.15 Operación y soporte | 6 | 0 | 0 | 0 | 0 | 6 | 6 |
+| **Total** | **153** | **51** | **51** | **0** | **0** | **102** | **139** |
 
 ## 3. Cumplimiento por nivel
 
@@ -53,7 +53,7 @@ Las dos reglas se exigen solo a los paquetes de trabajo. Las cuentas de control 
 
 | Nivel | Elementos | Incumplen 8/80 o el período |
 | :-- | --: | --: |
-| sin nivel declarado | 207 | 207 |
+| cuenta de control | 153 | 153 |
 
 Paquetes de trabajo que incumplen: **0**.
 

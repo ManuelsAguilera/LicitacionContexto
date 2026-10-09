@@ -69,6 +69,11 @@ class TestVerificarEdt(unittest.TestCase):
         h = correr(edt("Control integrado de cambios {ucp: no; etapa: 1; origen: Art. 72}", "Registro de riesgos {ucp: no; etapa: 1}"))
         self.assertEqual([x for x in h if x["tipo"] == "falta"], [])
 
+    def test_un_punto_y_coma_dentro_del_origen_no_se_pierde(self):
+        nombre, a = v.separar_atributos("Plan {ucp: no; etapa: 1; origen: Art. 77.2; se actualiza cada año}")
+        self.assertEqual(nombre, "Plan")
+        self.assertEqual(a["origen"], "Art. 77.2; se actualiza cada año")
+
     def test_falta_etapa_o_casos_cuando_hay_atributos(self):
         h = codigos(correr(edt("Plan {ucp: no; etapa: 1}", "Otro plan {etapa: 1}", "Tercer plan {ucp: no}")))
         self.assertIn(("C14", "falta"), h)
@@ -91,7 +96,7 @@ class TestVerificarEdt(unittest.TestCase):
         h = [x for x in v.verificar(CORREGIDA) if x["tipo"] == "falta"]
         self.assertEqual(h, [], "\n".join(f"{x['codigo']} {x['donde']} {x['mensaje']}" for x in h))
         ramas, paquetes = v.leer(CORREGIDA)
-        self.assertEqual((len(ramas), len(paquetes)), (15, 207))
+        self.assertEqual((len(ramas), len(paquetes)), (15, 153))
 
 
 if __name__ == "__main__":

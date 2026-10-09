@@ -51,6 +51,7 @@ PATRONES = [  # (código, tipo, regex, mensaje)
 ]
 
 
+CLAVES_ATRIBUTO = {"casos", "ucp", "nivel", "etapa", "origen"}
 ATRIBUTOS = re.compile(r"\s*\{([^{}]*)\}\s*$")
 
 
@@ -59,24 +60,27 @@ def separar_atributos(texto):
     m = ATRIBUTOS.search(texto)
     if not m:
         return texto.strip(), {}
-    attrs = {}
+    attrs, ultima = {}, None
     for trozo in m.group(1).split(";"):
-        if ":" in trozo:
-            k, v = trozo.split(":", 1)
-            attrs[k.strip()] = v.strip()
+        k = trozo.split(":", 1)[0].strip() if ":" in trozo else None
+        if k in CLAVES_ATRIBUTO:
+            attrs[k] = trozo.split(":", 1)[1].strip()
+            ultima = k
+        elif ultima and trozo.strip():
+            attrs[ultima] += "; " + trozo.strip()  # un «;» dentro del valor, por ejemplo en origen
     return texto[:m.start()].strip(), attrs
 
 
 def leer(ruta):
     ramas, paquetes, rama, nodo = [], [], None, None
     for n, linea in enumerate(Path(ruta).read_text(encoding="utf-8").splitlines(), 1):
-        m = re.match(r"####\s+(\d+(?:\.\d+)+)\s+(.*?)(?:\s+—\s+(\d+)\s+paquetes)?\s*$", linea)
+        m = re.match(r"####\s+(\d+(?:\.\d+)+)\s+(.*?)(?:\s+—\s+(\d+)\s+(?:paquetes|cuentas de control))?\s*$", linea)
         if m and rama is not None:
             nodo = {"codigo": m.group(1), "titulo": m.group(2).strip(), "declarados": int(m.group(3)) if m.group(3) else None,
                     "linea": n, "paquetes": []}
             rama.setdefault("nodos", []).append(nodo)
             continue
-        m = re.match(r"###\s+(\d+(?:\.\d+)*)\s+(.*?)(?:\s+—\s+(\d+)\s+paquetes)?\s*$", linea)
+        m = re.match(r"###\s+(\d+(?:\.\d+)*)\s+(.*?)(?:\s+—\s+(\d+)\s+(?:paquetes|cuentas de control))?\s*$", linea)
         if m:
             rama = {"codigo": m.group(1), "titulo": m.group(2).strip(), "declarados": int(m.group(3)) if m.group(3) else None,
                     "linea": n, "paquetes": []}

@@ -26,7 +26,7 @@ class TestMapaPaquetes(unittest.TestCase):
         ucp = [p for p in paquetes if p["metodo"] == "UCP"]
         self.assertEqual(sum(len(p["casos"]) for p in ucp), 127)
         self.assertEqual(sum(p["uucw"] for p in ucp), 645)
-        self.assertEqual(len(paquetes), 207)
+        self.assertEqual(len(paquetes), 153)
 
     def test_el_mapa_publicado_esta_actualizado(self):
         paquetes, _ = gm.cargar()

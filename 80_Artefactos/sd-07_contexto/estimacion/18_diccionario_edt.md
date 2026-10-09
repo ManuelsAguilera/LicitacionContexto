@@ -6,19 +6,19 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 
 | Campo | Derivado | Propuesta | Manual | Por definir |
 | :-- | --: | --: | --: | --: |
-| Descripción del trabajo | 73 | 0 | 0 | 134 |
-| Queda fuera | 10 | 0 | 0 | 197 |
-| Entregable | 73 | 0 | 0 | 134 |
-| Criterio de aceptación | 36 | 0 | 0 | 171 |
-| Responsable | 0 | 202 | 0 | 5 |
-| Hitos asociados | 100 | 0 | 0 | 107 |
-| Esfuerzo estimado | 73 | 0 | 0 | 134 |
-| Costo estimado | 0 | 0 | 0 | 207 |
-| Recursos requeridos | 0 | 0 | 0 | 207 |
-| Supuestos | 207 | 0 | 0 | 0 |
-| Referencias | 156 | 0 | 0 | 51 |
+| Descripción del trabajo | 51 | 0 | 0 | 102 |
+| Queda fuera | 10 | 0 | 0 | 143 |
+| Entregable | 51 | 0 | 0 | 102 |
+| Criterio de aceptación | 29 | 0 | 0 | 124 |
+| Responsable | 0 | 148 | 0 | 5 |
+| Hitos asociados | 74 | 0 | 0 | 79 |
+| Esfuerzo estimado | 51 | 0 | 0 | 102 |
+| Costo estimado | 0 | 0 | 0 | 153 |
+| Recursos requeridos | 0 | 0 | 0 | 153 |
+| Supuestos | 153 | 0 | 0 | 0 |
+| Referencias | 117 | 0 | 0 | 36 |
 
-Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 36 de 207 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
+Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 29 de 153 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
 
 ## 2. Cómo se completa
 
@@ -63,13 +63,13 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): base de la planificación. [derivado]
 - **Referencias:** Formulario T-14. [derivado]
 
-#### 1.1.3 Control integrado de cambios
+#### 1.1.3 Registro de solicitudes de cambio y su resolución
 
 - **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 56 (contrato)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: sistema operando; falta concretar el artefacto. [por definir]
+- **Entregable:** Por definir. Tipo probable: registro; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Ventana de los meses 1 a 56, fijada por el contrato (Art. 72: todo el contrato). [derivado]
@@ -79,23 +79,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 1 a 56 (contrato): Art. 72: todo el contrato. [derivado]
 - **Referencias:** Art. 72. [derivado]
 
-#### 1.1.4 Registro de riesgos y de lecciones aprendidas
-
-- **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
-- **Ventana:** los meses 1 a 56 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: registro; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 56 (propuesta): continuo. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.1.5 Registro de supuestos y de vacíos y consultas
+#### 1.1.4 Registros de riesgos, lecciones aprendidas, supuestos y consultas
 
 - **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 56 (propuesta)
@@ -127,7 +111,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): se actualiza cada año antes de la campaña de noviembre. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.1.7 Actas de los comités del proyecto
+#### 1.1.7 Actas de los comités e informe mensual de avance
 
 - **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 56 (contrato)
@@ -136,28 +120,12 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Entregable:** Por definir. Tipo probable: acta; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 1 a 56, fijada por el contrato (Art. 71: comités durante todo el contrato). [derivado]
+- **Hitos asociados:** Ventana de los meses 1 a 56, fijada por el contrato (Art. 71: comités durante todo el contrato; RT-19.06: informe mensual). [derivado]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 56 (contrato): Art. 71: comités durante todo el contrato. [derivado]
-- **Referencias:** Art. 71. [derivado]
-
-#### 1.1.8 Informe mensual de avance
-
-- **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
-- **Ventana:** los meses 1 a 56 (contrato)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 1 a 56, fijada por el contrato (RT-19.06: informe mensual). [derivado]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 56 (contrato): RT-19.06: informe mensual. [derivado]
-- **Referencias:** RT-19.06. [derivado]
+- **Supuestos:** Ventana de los meses 1 a 56 (contrato): Art. 71: comités durante todo el contrato; RT-19.06: informe mensual. [derivado]
+- **Referencias:** Art. 71; RT-19.06. [derivado]
 
 #### 1.1.9 Reporte mensual de consumo de nube
 
@@ -173,7 +141,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 4 a 56 (propuesta): desde el primer entorno de nube. [derivado]
-- **Referencias:** Art. 16.3. [derivado]
+- **Referencias:** Art. 16.3; RT-03.06. [derivado]
 
 #### 1.1.10 Actas de aceptación por entrega y habilitación de pagos
 
@@ -189,15 +157,15 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 56 (contrato): Art. 18: cada entrega sujeta a aceptación. [derivado]
-- **Referencias:** Art. 18. [derivado]
+- **Referencias:** Art. 18; E-25. [derivado]
 
-#### 1.1.11 Seguimiento de garantías, seguros y certificados laborales
+#### 1.1.11 Registro de garantías, seguros y certificados laborales vigentes
 
 - **Rama y servicio:** 1.1. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 56 (contrato)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: registro; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Ventana de los meses 1 a 56, fijada por el contrato (Art. 75.3). [derivado]
@@ -237,11 +205,11 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): base de la planificación. [derivado]
-- **Referencias:** Ronda 0: 2.9. [derivado]
+- **Referencias:** Ronda 0: 2.9; los valores viven solo en la oferta económica. [derivado]
 
 ### Rama 1.2
 
-#### 1.2.1 Mapa de las 14 interfaces punto a punto existentes
+#### 1.2.1 Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias
 
 - **Rama y servicio:** 1.2. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 3 (propuesta)
@@ -254,23 +222,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 3 (propuesta): entrega temprana, antes del diseño. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.2.2 Inventario de las 9 plataformas, 6 proveedores y dependencias
-
-- **Rama y servicio:** 1.2. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
-- **Ventana:** los meses 1 a 3 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 3 (propuesta): antes del diseño. [derivado]
+- **Supuestos:** Ventana de los meses 1 a 3 (propuesta): entrega temprana, antes del diseño; antes del diseño. [derivado]
 - **Referencias:** por definir [por definir]
 
 #### 1.2.3 Levantamiento de procesos, reglas de negocio y volumetría declarada
@@ -289,26 +241,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): antes del diseño. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.2.4 Mantención del catálogo de requerimientos trazado al origen
+#### 1.2.4 Catálogo de requerimientos y matriz de trazabilidad
 
 - **Rama y servicio:** 1.2. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 1 a 18 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 18 (propuesta): mientras dura el desarrollo. [derivado]
-- **Referencias:** Anexo B del sd-03. [derivado]
-
-#### 1.2.5 Matriz de trazabilidad de origen, requerimiento, componente, paquete, prueba y criterio
-
-- **Rama y servicio:** 1.2. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
-- **Ventana:** los meses 2 a 4 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
@@ -318,8 +254,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): tras el levantamiento. [derivado]
-- **Referencias:** por definir [por definir]
+- **Supuestos:** Ventana de los meses 1 a 18 (propuesta): mientras dura el desarrollo; tras el levantamiento. [derivado]
+- **Referencias:** Anexo B del sd-03. [derivado]
 
 #### 1.2.6 Línea base de alcance por etapa, con exclusiones y supuestos
 
@@ -387,7 +323,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 
 ### Rama 1.3
 
-#### 1.3.1 Documento de arquitectura con cinco vistas
+#### 1.3.1 Documento de arquitectura con cinco vistas y catálogo de decisiones
 
 - **Rama y servicio:** 1.3. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 2 a 4 (propuesta)
@@ -400,24 +336,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): arquitectura cerrada en el mes 4 (EDT original). [derivado]
+- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): arquitectura cerrada en el mes 4 (EDT original); idem. [derivado]
 - **Referencias:** ISO 42010. [derivado]
-
-#### 1.3.2 Catálogo de decisiones de arquitectura
-
-- **Rama y servicio:** 1.3. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
-- **Ventana:** los meses 2 a 4 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): idem. [derivado]
-- **Referencias:** por definir [por definir]
 
 #### 1.3.3 Arquitectura física con emplazamiento por componente justificado
 
@@ -433,7 +353,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 4 (propuesta): idem. [derivado]
-- **Referencias:** Art. 16.2. [derivado]
+- **Referencias:** Art. 16.2; zonas a nombrar conforme al sd-04. [derivado]
 
 #### 1.3.4 Modelo de datos con dominios segregados Retail y Emisor, frontera documentada y políticas de retención
 
@@ -481,7 +401,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 4 (propuesta): idem. [derivado]
-- **Referencias:** RT-03.10 de las Bases Transversales. [derivado]
+- **Referencias:** RT-03.10 de las Bases Transversales; el código RT-03.13 significa cosas distintas en el Caso y en las Transversales. [derivado]
 
 #### 1.3.7 Modelo de capacidad y dimensionamiento
 
@@ -504,7 +424,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Rama y servicio:** 1.3. **Etapa:** desde el inicio del contrato. **Método:** tres valores.
 - **Ventana:** los meses 3 a 6 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** SP-04: El cliente adquiere, ejecuta y contrata, antes de cada instalación en tienda y centro de distribución, lo físico que el proponente especifica. El proponente provee el centro de datos on-premise con su conectividad, su seguridad y sus canalizaciones. [derivado]
 - **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -513,7 +433,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 6 (propuesta): el cliente necesita plazo para ejecutar las obras. [derivado]
-- **Referencias:** El cliente ejecuta. [derivado]
+- **Referencias:** El cliente ejecuta; el proponente especifica, costea, coordina y certifica (SP-04). [derivado]
 
 ### Rama 1.4
 
@@ -533,12 +453,12 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 3 a 6 (propuesta): plataforma base lista en el mes 6 (EDT original). [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.4.2 Configuración del entorno on-premise de borde por sitio
+#### 1.4.2 Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 6 a 12 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** SP-04: El cliente adquiere, ejecuta y contrata, antes de cada instalación en tienda y centro de distribución, lo físico que el proponente especifica. El proponente provee el centro de datos on-premise con su conectividad, su seguridad y sus canalizaciones. [derivado]
+- **Queda fuera:** SP-04: El cliente adquiere, ejecuta y contrata, antes de cada instalación en tienda y centro de distribución, lo físico que el proponente especifica. El proponente provee el centro de datos on-premise con su conectividad, su seguridad y sus canalizaciones; EXC-19: Proveer o instalar equipamiento físico de tiendas y centros de distribución, ejecutar sus obras ni contratar sus enlaces. [derivado]
 - **Entregable:** por definir [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -546,8 +466,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): antes de la marcha blanca. [derivado]
-- **Referencias:** El hardware lo adquiere el cliente (SP-04). [derivado]
+- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): antes de la marcha blanca; antes del piloto de tiendas. [derivado]
+- **Referencias:** El hardware lo adquiere el cliente (SP-04); El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04); RT-03.24 del Caso. [derivado]
 
 #### 1.4.3 Entorno dedicado del ámbito emisor con segregación física y lógica acreditada
 
@@ -595,7 +515,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 4 a 8 (propuesta): antes de las primeras pruebas. [derivado]
-- **Referencias:** frontera con el UCP: aquí el aprovisionamiento. [derivado]
+- **Referencias:** frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica. [derivado]
 
 #### 1.4.6 Plataforma de integración y entrega continuas con infraestructura como código
 
@@ -611,7 +531,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 5 (propuesta): antes del desarrollo en curso. [derivado]
-- **Referencias:** Antes 1.5.10. [derivado]
+- **Referencias:** Antes 1.5.10; no está en el UCP. [derivado]
 
 #### 1.4.7 Licenciamiento de terceros a nombre del cliente
 
@@ -643,14 +563,14 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 6 (propuesta): el cliente adquiere después. [derivado]
-- **Referencias:** Formulario T-11. [derivado]
+- **Referencias:** Formulario T-11; OP-06, OP-07. [derivado]
 
-#### 1.4.9 Plano de distribución interna y especificación del recinto técnico del centro de datos
+#### 1.4.9 Plano y especificación del recinto técnico del centro de datos y coordinación de su obra civil de separación
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 2 a 4 (propuesta)
+- **Ventana:** los meses 2 a 6 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** RC-04: Ejecutar la obra civil de separación del centro de datos y las obras y enlaces de tiendas y centros de distribución, especificados y costeados. [derivado]
 - **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -658,24 +578,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): RT-06.03. [derivado]
-- **Referencias:** Ronda 0: 1.15.3. [derivado]
-
-#### 1.4.10 Especificación y coordinación de la obra civil de separación del centro de datos
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 3 a 6 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** RC-04: Ejecutar la obra civil de separación del centro de datos y las obras y enlaces de tiendas y centros de distribución, especificados y costeados. [derivado]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 3 a 6 (propuesta): RT-06.06: el cliente ejecuta la obra. [derivado]
-- **Referencias:** El cliente ejecuta la obra (RT-06.06, RC-04). [derivado]
+- **Supuestos:** Ventana de los meses 2 a 6 (propuesta): RT-06.03; RT-06.06: el cliente ejecuta la obra. [derivado]
+- **Referencias:** Ronda 0: 1.15.3; RT-06.03; El cliente ejecuta la obra (RT-06.06, RC-04); incluye la especificación del blindaje (RT-06.02). [derivado]
 
 #### 1.4.11 Plan de cierre de la brecha del centro de datos frente al informe interno de 2024
 
@@ -693,7 +597,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): informe de 2024. [derivado]
 - **Referencias:** Ronda 0: 1.15.4. [derivado]
 
-#### 1.4.12 Sistema de energía ininterrumpida y generación autónoma del centro de datos
+#### 1.4.12 Sistemas de energía y climatización del centro de datos
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 6 a 12 (propuesta)
@@ -706,26 +610,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): listo antes de la marcha blanca. [derivado]
-- **Referencias:** RT-06.07, RT-06.08. [derivado]
+- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): listo antes de la marcha blanca; idem. [derivado]
+- **Referencias:** RT-06.07, RT-06.08; RT-06.13, RT-06.14. [derivado]
 
-#### 1.4.13 Sistema de climatización de precisión con monitoreo ambiental del centro de datos
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 6 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: sistema operando; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): idem. [derivado]
-- **Referencias:** RT-06.13, RT-06.14. [derivado]
-
-#### 1.4.14 Sistema de detección temprana y extinción automática de incendios del centro de datos
+#### 1.4.14 Sistemas de seguridad física del centro de datos y espacio de operación del personal
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 6 a 12 (propuesta)
@@ -739,41 +627,9 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 6 a 12 (propuesta): idem. [derivado]
-- **Referencias:** RT-06.16, RT-06.17. [derivado]
+- **Referencias:** RT-06.16, RT-06.17; RT-06.20 a RT-06.24; Ronda 0: 1.15.11. [derivado]
 
-#### 1.4.15 Control de acceso físico biométrico y videovigilancia del centro de datos
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 6 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: sistema operando; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): idem. [derivado]
-- **Referencias:** RT-06.20 a RT-06.24. [derivado]
-
-#### 1.4.16 Espacio de operación del personal habilitado, separado de la sala de equipos
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 6 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): idem. [derivado]
-- **Referencias:** Ronda 0: 1.15.11. [derivado]
-
-#### 1.4.17 Solución de respaldo en operación
+#### 1.4.17 Solución de respaldo en operación con custodia de medios
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 6 a 12 (propuesta)
@@ -786,106 +642,42 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): RT-07.09. [derivado]
-- **Referencias:** RT-07.09. [derivado]
-
-#### 1.4.18 Servicio de custodia de medios de respaldo del centro de datos
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 8 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: servicio operando; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 8 a 12 (propuesta): RT-06.26. [derivado]
-- **Referencias:** RT-06.26. [derivado]
-
-#### 1.4.19 Configuración y certificación de la red segmentada en las 13 tiendas que no la tienen
-
-- **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 8 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** EXC-19: Proveer o instalar equipamiento físico de tiendas y centros de distribución, ejecutar sus obras ni contratar sus enlaces; SP-04: El cliente adquiere, ejecuta y contrata, antes de cada instalación en tienda y centro de distribución, lo físico que el proponente especifica. El proponente provee el centro de datos on-premise con su conectividad, su seguridad y sus canalizaciones. [derivado]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 8 a 12 (propuesta): antes del piloto de tiendas. [derivado]
-- **Referencias:** El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04). [derivado]
+- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): RT-07.09; RT-06.26. [derivado]
+- **Referencias:** RT-07.09; esquema 3-2-1-1-0; RT-06.26. [derivado]
 
 ### Rama 1.5
 
-#### 1.5.1.1 Cambio y propagación del precio, con su consulta en línea
+#### 1.5.1.1 Precio: cambio, propagación, consulta e historial
 
 - **Rama y servicio:** 1.5, Servicio de oferta comercial. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-01 Cambiar y propagar un precio; CU-OF-02 Entregar la oferta vigente a los canales; CU-OF-03 Consultar el precio vigente en línea. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-01 Cambiar y propagar un precio; CU-OF-02 Entregar la oferta vigente a los canales; CU-OF-03 Consultar el precio vigente en línea; CU-OF-06 Recuperar el precio publicado en un instante. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de oferta comercial» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 6 del Anexo D: 5 minutos o menos en cajas y canal digital (RT-09.01). En sala, por definir con la política de precios en sala. [derivado]
+- **Criterio de aceptación:** Resultado 6 del Anexo D: 5 minutos o menos en cajas y canal digital (RT-09.01). En sala, por definir con la política de precios en sala.; Resultado 8 del Anexo D: Recuperación en 1 minuto o menos sobre una ventana de tres años (propuesta del proponente, RNF-44 y RNF-58). [derivado]
+- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
+- **Esfuerzo estimado:** 1.234 h en total (UCP, escenario del equipo): análisis 123 h, diseño 247 h, programación 494 h, pruebas 185 h y sobrecarga 185 h. Por perfil: por estimar (sd-12). [derivado]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** CU-OF-01 (03_casos_de_uso_oferta-comercial.md): S2, S3, S4; CU-OF-02 (03_casos_de_uso_oferta-comercial.md): S4; CU-OF-03 (03_casos_de_uso_oferta-comercial.md): S1; CU-OF-06 (03_casos_de_uso_oferta-comercial.md): S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-016 a RF-018, RF-021, RF-030, RF-064; casos de uso CU-OF-01, CU-OF-02, CU-OF-03, CU-OF-06; resultados del Anexo D: 6, 8. [derivado]
+
+#### 1.5.1.2 Etiquetas de exhibición y discrepancias de precio
+
+- **Rama y servicio:** 1.5, Servicio de oferta comercial. **Etapa:** 1. **Método:** UCP.
+- **Ventana:** los meses 1 a 12 (contrato)
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-04 Registrar el cambio de etiqueta; CU-OF-05 Consultar el estado de exhibición de la tienda; CU-OF-07 Resolver el precio a cobrar ante diferencia con la etiqueta; CU-OF-08 Revisar los incidentes de discrepancia de precio. [derivado]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Componentes de software de «Servicio de oferta comercial» que resuelven esos casos de uso, desplegados y probados. [derivado]
+- **Criterio de aceptación:** Resultado 7 del Anexo D: 100 % de los puntos con estado registrado (propuesta del proponente).; Resultado 9 del Anexo D: 0,5 % o menos, verificado por muestreo propio (propuesta del proponente). La política de precios en sala está pendiente (supuestos SUP-08 y SUP-09). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
 - **Esfuerzo estimado:** 988 h en total (UCP, escenario del equipo): análisis 99 h, diseño 198 h, programación 395 h, pruebas 148 h y sobrecarga 148 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OF-01 (03_casos_de_uso_oferta-comercial.md): S2, S3, S4; CU-OF-02 (03_casos_de_uso_oferta-comercial.md): S4; CU-OF-03 (03_casos_de_uso_oferta-comercial.md): S1; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-016 a RF-018, RF-030, RF-064; casos de uso CU-OF-01, CU-OF-02, CU-OF-03; resultados del Anexo D: 6. [derivado]
-
-#### 1.5.1.2 Etiquetas de exhibición y estado de exhibición de la tienda
-
-- **Rama y servicio:** 1.5, Servicio de oferta comercial. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-04 Registrar el cambio de etiqueta; CU-OF-05 Consultar el estado de exhibición de la tienda. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de oferta comercial» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 7 del Anexo D: 100 % de los puntos con estado registrado (propuesta del proponente). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OF-04 (03_casos_de_uso_oferta-comercial.md): S6; CU-OF-05 (03_casos_de_uso_oferta-comercial.md): S4; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-019, RF-020, RF-029; casos de uso CU-OF-04, CU-OF-05; resultados del Anexo D: 7. [derivado]
-
-#### 1.5.1.3 Historial del precio publicado
-
-- **Rama y servicio:** 1.5, Servicio de oferta comercial. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-06 Recuperar el precio publicado en un instante. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de oferta comercial» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 8 del Anexo D: Recuperación en 1 minuto o menos sobre una ventana de tres años (propuesta del proponente, RNF-44 y RNF-58). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OF-06 (03_casos_de_uso_oferta-comercial.md): S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-021; casos de uso CU-OF-06; resultados del Anexo D: 8. [derivado]
-
-#### 1.5.1.4 Resolución de discrepancias de precio entre la etiqueta y la caja
-
-- **Rama y servicio:** 1.5, Servicio de oferta comercial. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OF-07 Resolver el precio a cobrar ante diferencia con la etiqueta; CU-OF-08 Revisar los incidentes de discrepancia de precio. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de oferta comercial» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 9 del Anexo D: 0,5 % o menos, verificado por muestreo propio (propuesta del proponente). La política de precios en sala está pendiente (supuestos SUP-08 y SUP-09). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OF-07 (03_casos_de_uso_oferta-comercial.md): S5; CU-OF-08 (03_casos_de_uso_oferta-comercial.md): S5, S8; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-022 a RF-024, RF-028; casos de uso CU-OF-07, CU-OF-08; resultados del Anexo D: 9. [derivado]
+- **Supuestos:** CU-OF-04 (03_casos_de_uso_oferta-comercial.md): S6; CU-OF-05 (03_casos_de_uso_oferta-comercial.md): S4; CU-OF-07 (03_casos_de_uso_oferta-comercial.md): S5; CU-OF-08 (03_casos_de_uso_oferta-comercial.md): S5, S8; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-019, RF-020, RF-022 a RF-024, RF-028, RF-029; casos de uso CU-OF-04, CU-OF-05, CU-OF-07, CU-OF-08; resultados del Anexo D: 7, 9. [derivado]
 
 #### 1.5.1.5 Promociones y su vigencia
 
@@ -951,53 +743,37 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-AB-03 (03_casos_de_uso_abastecimiento.md): S1, S3, S4; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
 - **Referencias:** casos de uso CU-AB-03. [derivado]
 
-#### 1.5.2.3 Transferencias entre tiendas y centros de distribución
+#### 1.5.2.3 Transferencias y recepción de mercadería
 
 - **Rama y servicio:** 1.5, Servicio de abastecimiento. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-AB-04 Gestionar las transferencias entre tiendas y centros de distribución. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-AB-04 Gestionar las transferencias entre tiendas y centros de distribución; CU-AB-05 Registrar la recepción de mercadería en la tienda. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de abastecimiento» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-AB-04 (03_casos_de_uso_abastecimiento.md): S1, S5; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** casos de uso CU-AB-04. [derivado]
+- **Supuestos:** CU-AB-04 (03_casos_de_uso_abastecimiento.md): S1, S5; CU-AB-05 (03_casos_de_uso_abastecimiento.md): S1, S6; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** casos de uso CU-AB-04, CU-AB-05. [derivado]
 
-#### 1.5.2.4 Recepción de mercadería en tienda
-
-- **Rama y servicio:** 1.5, Servicio de abastecimiento. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-AB-05 Registrar la recepción de mercadería en la tienda. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de abastecimiento» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-AB-05 (03_casos_de_uso_abastecimiento.md): S1, S6; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** casos de uso CU-AB-05. [derivado]
-
-#### 1.5.3.1 Cálculo del disponible con colchón de confianza y su traza
+#### 1.5.3.1 Disponible: cálculo, traza y consulta
 
 - **Rama y servicio:** 1.5, Servicio de existencias. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-03 Publicar el disponible a los canales; CU-EX-08 Parametrizar el colchón de confianza y la vigencia de la reserva; CU-EX-09 Consultar la traza del cálculo del disponible. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-03 Publicar el disponible a los canales; CU-EX-08 Parametrizar el colchón de confianza y la vigencia de la reserva; CU-EX-09 Consultar la traza del cálculo del disponible; CU-EX-01 Consultar la disponibilidad para vender en sala; CU-EX-02 Consultar la disponibilidad en línea. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de existencias» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 1 del Anexo D: Cálculo dinámico por categoría y punto (Caso, cap. 7), con tolerancia respecto del conteo por fijar al inicio del proyecto (propuesta del proponente). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 1.234 h en total (UCP, escenario del equipo): análisis 123 h, diseño 247 h, programación 494 h, pruebas 185 h y sobrecarga 185 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-EX-03 (03_casos_de_uso_existencias.md): S3, S7; CU-EX-08 (03_casos_de_uso_existencias.md): S8, S9; CU-EX-09 (03_casos_de_uso_existencias.md): S9; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-036, RF-127 a RF-130, RF-149 a RF-152, RF-157; casos de uso CU-EX-03, CU-EX-08, CU-EX-09; resultados del Anexo D: 1. [derivado]
+- **Supuestos:** CU-EX-03 (03_casos_de_uso_existencias.md): S3, S7; CU-EX-08 (03_casos_de_uso_existencias.md): S8, S9; CU-EX-09 (03_casos_de_uso_existencias.md): S9; CU-EX-01 (03_casos_de_uso_existencias.md): S2, S7; CU-EX-02 (03_casos_de_uso_existencias.md): S1, S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-036, RF-065, RF-066, RF-087, RF-101, RF-127 a RF-130, RF-149 a RF-152, RF-157, RF-160, RF-161; casos de uso CU-EX-03, CU-EX-08, CU-EX-09, CU-EX-01, CU-EX-02; resultados del Anexo D: 1. [derivado]
 
 #### 1.5.3.2 Reservas de existencia para el canal digital
 
@@ -1015,69 +791,21 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-EX-04 (03_casos_de_uso_existencias.md): S3; CU-EX-05 (03_casos_de_uso_existencias.md): S4; CU-EX-06 (03_casos_de_uso_existencias.md): S5; CU-EX-07 (03_casos_de_uso_existencias.md): S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** RF-035, RF-037 a RF-042, RF-044, RF-098; casos de uso CU-EX-04, CU-EX-05, CU-EX-06, CU-EX-07; resultados del Anexo D: 2, 3, 26. [derivado]
 
-#### 1.5.3.3 Consulta de disponibilidad en sala y en línea
+#### 1.5.3.4 Conteo, exactitud del inventario, merma y probador
 
 - **Rama y servicio:** 1.5, Servicio de existencias. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-01 Consultar la disponibilidad para vender en sala; CU-EX-02 Consultar la disponibilidad en línea. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de existencias» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-EX-01 (03_casos_de_uso_existencias.md): S2, S7; CU-EX-02 (03_casos_de_uso_existencias.md): S1, S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-065, RF-066, RF-087, RF-101, RF-160, RF-161; casos de uso CU-EX-01, CU-EX-02. [derivado]
-
-#### 1.5.3.4 Conteo cíclico y medición de la exactitud del inventario
-
-- **Rama y servicio:** 1.5, Servicio de existencias. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-10 Parametrizar el conteo cíclico; CU-EX-11 Ejecutar el conteo cíclico; CU-EX-12 Consultar la exactitud del inventario y recibir alertas. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de existencias» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 4 del Anexo D: Diferencia de conteo bajo 2 % (Caso, cap. 7). Reclasificado desde RNF-63.; Resultado 27 del Anexo D: 100 % de las diferencias de su tienda con causa atribuida (propuesta del proponente). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-EX-10 (03_casos_de_uso_existencias.md): S8, S9; CU-EX-11 (03_casos_de_uso_existencias.md): S9; CU-EX-12 (03_casos_de_uso_existencias.md): S9; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-131 a RF-137, RF-158, RF-159, RF-162; casos de uso CU-EX-10, CU-EX-11, CU-EX-12; resultados del Anexo D: 4, 27. [derivado]
-
-#### 1.5.3.5 Clasificación de diferencias e informe mensual de merma
-
-- **Rama y servicio:** 1.5, Servicio de existencias. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-13 Clasificar las diferencias y cerrar el ajuste; CU-EX-14 Emitir el informe mensual de merma. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-10 Parametrizar el conteo cíclico; CU-EX-11 Ejecutar el conteo cíclico; CU-EX-12 Consultar la exactitud del inventario y recibir alertas; CU-EX-13 Clasificar las diferencias y cerrar el ajuste; CU-EX-14 Emitir el informe mensual de merma; CU-EX-15 Gestionar las unidades en el probador. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de existencias» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 4 del Anexo D: Diferencia de conteo bajo 2 % (Caso, cap. 7). Reclasificado desde RNF-63.; Resultado 5 del Anexo D: 100 % de los ajustes con causa (propuesta del proponente) y merma bajo 1 % (Caso, cap. 7).; Resultado 27 del Anexo D: 100 % de las diferencias de su tienda con causa atribuida (propuesta del proponente). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 1.481 h en total (UCP, escenario del equipo): análisis 148 h, diseño 296 h, programación 593 h, pruebas 222 h y sobrecarga 222 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-EX-13 (03_casos_de_uso_existencias.md): S9; CU-EX-14 (03_casos_de_uso_existencias.md): S9; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-138 a RF-141; casos de uso CU-EX-13, CU-EX-14; resultados del Anexo D: 4, 5, 27. [derivado]
-
-#### 1.5.3.6 Gestión de las unidades en el probador
-
-- **Rama y servicio:** 1.5, Servicio de existencias. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-EX-15 Gestionar las unidades en el probador. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de existencias» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-EX-15 (03_casos_de_uso_existencias.md): S9; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-153 a RF-156; casos de uso CU-EX-15. [derivado]
+- **Supuestos:** CU-EX-10 (03_casos_de_uso_existencias.md): S8, S9; CU-EX-11 (03_casos_de_uso_existencias.md): S9; CU-EX-12 (03_casos_de_uso_existencias.md): S9; CU-EX-13 (03_casos_de_uso_existencias.md): S9; CU-EX-14 (03_casos_de_uso_existencias.md): S9; CU-EX-15 (03_casos_de_uso_existencias.md): S9; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-131 a RF-141, RF-153 a RF-156, RF-158, RF-159, RF-162; casos de uso CU-EX-10, CU-EX-11, CU-EX-12, CU-EX-13, CU-EX-14, CU-EX-15; resultados del Anexo D: 4, 5, 27. [derivado]
 
 #### 1.5.3.7 Suspensión y degradación de la publicación por categoría
 
@@ -1111,21 +839,21 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-EX-18 (03_casos_de_uso_existencias.md): S9; CU-EX-19 (03_casos_de_uso_existencias.md): S9, S11; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** casos de uso CU-EX-18, CU-EX-19. [derivado]
 
-#### 1.5.4.1 Fecha prometida de entrega y punto de despacho por costo total de servir
+#### 1.5.4.1 Promesa de entrega, punto de despacho y elegibilidad del stock
 
 - **Rama y servicio:** 1.5, Servicio de pedidos. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-01 Calcular la fecha prometida de entrega; CU-PE-02 Seleccionar el punto de despacho por costo total de servir. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-01 Calcular la fecha prometida de entrega; CU-PE-02 Seleccionar el punto de despacho por costo total de servir; CU-PE-14 Parametrizar la elegibilidad del stock y el límite por cliente. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de pedidos» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 11 del Anexo D: 100 % de las asignaciones con costo total (propuesta del proponente). [derivado]
+- **Criterio de aceptación:** Resultado 2 del Anexo D: Bajo 0,3 % al año y cero cancelaciones por falta de existencia durante el evento (Caso, cap. 7). Reclasificado desde RNF-61. Mes 16, solo categorías con existencias en producción, medida sin meta de cero. Mes 21, con pedidos, meta completa.; Resultado 11 del Anexo D: 100 % de las asignaciones con costo total (propuesta del proponente).; Resultado 25 del Anexo D: Orden de degradación declarado y probado (propuesta del proponente) y 104.000 pedidos en tres días (RNF-22). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-PE-01 (03_casos_de_uso_pedidos.md): S2, S3; CU-PE-02 (03_casos_de_uso_pedidos.md): S4; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-075 a RF-080; casos de uso CU-PE-01, CU-PE-02; resultados del Anexo D: 11. [derivado]
+- **Supuestos:** CU-PE-01 (03_casos_de_uso_pedidos.md): S2, S3; CU-PE-02 (03_casos_de_uso_pedidos.md): S4; CU-PE-14 (03_casos_de_uso_pedidos.md): S11; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** RF-053, RF-075 a RF-080, RF-180; casos de uso CU-PE-01, CU-PE-02, CU-PE-14; resultados del Anexo D: 2, 11, 25. [derivado]
 
 #### 1.5.4.2 Preautorización, cobro y anulación del pago del pedido
 
@@ -1175,133 +903,53 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-PE-10 (03_casos_de_uso_pedidos.md): S9; CU-PE-11 (03_casos_de_uso_pedidos.md): S9; CU-PE-12 (03_casos_de_uso_pedidos.md): S9; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
 - **Referencias:** RF-052, RF-067, RF-068, RF-072, RF-073; casos de uso CU-PE-10, CU-PE-11, CU-PE-12; resultados del Anexo D: 10, 26. [derivado]
 
-#### 1.5.4.5 Priorización de pedidos por tiempo restante y cumplimiento de la promesa
+#### 1.5.4.5 Seguimiento y cumplimiento de la promesa de entrega
 
 - **Rama y servicio:** 1.5, Servicio de pedidos. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-13 Priorizar los pedidos próximos a vencer su promesa. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de pedidos» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-PE-13 (03_casos_de_uso_pedidos.md): S10; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-062, RF-063, RF-081; casos de uso CU-PE-13. [derivado]
-
-#### 1.5.4.6 Elegibilidad del stock de exhibición y límite de unidades por cliente
-
-- **Rama y servicio:** 1.5, Servicio de pedidos. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-14 Parametrizar la elegibilidad del stock y el límite por cliente. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de pedidos» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 2 del Anexo D: Bajo 0,3 % al año y cero cancelaciones por falta de existencia durante el evento (Caso, cap. 7). Reclasificado desde RNF-61. Mes 16, solo categorías con existencias en producción, medida sin meta de cero. Mes 21, con pedidos, meta completa.; Resultado 25 del Anexo D: Orden de degradación declarado y probado (propuesta del proponente) y 104.000 pedidos en tres días (RNF-22). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-PE-14 (03_casos_de_uso_pedidos.md): S11; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-053, RF-180; casos de uso CU-PE-14; resultados del Anexo D: 2, 25. [derivado]
-
-#### 1.5.4.7 Seguimiento del pedido con el transportista hasta la entrega
-
-- **Rama y servicio:** 1.5, Servicio de pedidos. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-15 Seguir el pedido con el transportista hasta la entrega. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-PE-13 Priorizar los pedidos próximos a vencer su promesa; CU-PE-15 Seguir el pedido con el transportista hasta la entrega. [derivado]
 - **Queda fuera:** EXC-07: Sustituir a los transportistas de última milla. [derivado]
 - **Entregable:** Componentes de software de «Servicio de pedidos» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-PE-15 (03_casos_de_uso_pedidos.md): S1, S12; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** casos de uso CU-PE-15. [derivado]
-
-#### 1.5.5.1 Registro y cobro de ventas, reversas y cierre de caja
-
-- **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-01 Registrar y cobrar una venta; CU-VE-02 Reversar una venta o un pago; CU-VE-03 Cerrar la caja del turno. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 9 del Anexo D: 0,5 % o menos, verificado por muestreo propio (propuesta del proponente). La política de precios en sala está pendiente (supuestos SUP-08 y SUP-09). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-VE-01 (03_casos_de_uso_ventas.md): S1, S3; CU-VE-02 (03_casos_de_uso_ventas.md): S1, S4; CU-VE-03 (03_casos_de_uso_ventas.md): S1, S4; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-001; casos de uso CU-VE-01, CU-VE-02, CU-VE-03; resultados del Anexo D: 9. [derivado]
-
-#### 1.5.5.2 Operación de la tienda sin enlace
-
-- **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-04 Operar la tienda sin enlace. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-VE-04 (03_casos_de_uso_ventas.md): S1, S2, S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-082 a RF-086; casos de uso CU-VE-04. [derivado]
-
-#### 1.5.5.3 Reconciliación de las ventas hechas sin enlace y su informe de excepciones
-
-- **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-05 Reconciliar las ventas hechas sin enlace; CU-VE-06 Revisar el informe de excepciones de la conciliación. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
 - **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-VE-05 (03_casos_de_uso_ventas.md): S6; CU-VE-06 (03_casos_de_uso_ventas.md): S4; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-088, RF-095 a RF-097, RF-099; casos de uso CU-VE-05, CU-VE-06. [derivado]
+- **Supuestos:** CU-PE-13 (03_casos_de_uso_pedidos.md): S10; CU-PE-15 (03_casos_de_uso_pedidos.md): S1, S12; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** RF-062, RF-063, RF-081; casos de uso CU-PE-13, CU-PE-15. [derivado]
 
-#### 1.5.5.4 Validación posterior de las operaciones de crédito cursadas sin enlace
+#### 1.5.5.1 Registro y cobro de ventas, reversas, cierre de caja y medios de pago
 
 - **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-07 Validar las operaciones cursadas sin enlace. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-01 Registrar y cobrar una venta; CU-VE-02 Reversar una venta o un pago; CU-VE-03 Cerrar la caja del turno; CU-VE-08 Desactivar los medios de pago de mayor fricción. [derivado]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
+- **Criterio de aceptación:** Resultado 9 del Anexo D: 0,5 % o menos, verificado por muestreo propio (propuesta del proponente). La política de precios en sala está pendiente (supuestos SUP-08 y SUP-09).; Resultado 25 del Anexo D: Orden de degradación declarado y probado (propuesta del proponente) y 104.000 pedidos en tres días (RNF-22). [derivado]
+- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
+- **Esfuerzo estimado:** 988 h en total (UCP, escenario del equipo): análisis 99 h, diseño 198 h, programación 395 h, pruebas 148 h y sobrecarga 148 h. Por perfil: por estimar (sd-12). [derivado]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** CU-VE-01 (03_casos_de_uso_ventas.md): S1, S3; CU-VE-02 (03_casos_de_uso_ventas.md): S1, S4; CU-VE-03 (03_casos_de_uso_ventas.md): S1, S4; CU-VE-08 (03_casos_de_uso_ventas.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-001, RF-181; casos de uso CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08; resultados del Anexo D: 9, 25. [derivado]
+
+#### 1.5.5.2 Operación sin enlace, reconciliación y validación posterior
+
+- **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
+- **Ventana:** los meses 1 a 12 (contrato)
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-04 Operar la tienda sin enlace; CU-VE-05 Reconciliar las ventas hechas sin enlace; CU-VE-06 Revisar el informe de excepciones de la conciliación; CU-VE-07 Validar las operaciones cursadas sin enlace. [derivado]
 - **Queda fuera:** EXC-16: Abrir tarjetas ni ampliar cupos sin conexión. [derivado]
 - **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 988 h en total (UCP, escenario del equipo): análisis 99 h, diseño 198 h, programación 395 h, pruebas 148 h y sobrecarga 148 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-VE-07 (03_casos_de_uso_ventas.md): S5; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-094; casos de uso CU-VE-07. [derivado]
-
-#### 1.5.5.5 Desactivación de los medios de pago de mayor fricción
-
-- **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-VE-08 Desactivar los medios de pago de mayor fricción. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de ventas» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 25 del Anexo D: Orden de degradación declarado y probado (propuesta del proponente) y 104.000 pedidos en tres días (RNF-22). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-VE-08 (03_casos_de_uso_ventas.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-181; casos de uso CU-VE-08; resultados del Anexo D: 25. [derivado]
+- **Supuestos:** CU-VE-04 (03_casos_de_uso_ventas.md): S1, S2, S6; CU-VE-05 (03_casos_de_uso_ventas.md): S6; CU-VE-06 (03_casos_de_uso_ventas.md): S4; CU-VE-07 (03_casos_de_uso_ventas.md): S5; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-082 a RF-086, RF-088, RF-094 a RF-097, RF-099; casos de uso CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07. [derivado]
 
 #### 1.5.5.6 Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial
 
@@ -1399,92 +1047,44 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-MK-01 (03_casos_de_uso_marketplace.md): S2; CU-MK-02 (03_casos_de_uso_marketplace.md): S3; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
 - **Referencias:** RF-102 a RF-104, RF-109, RF-124; casos de uso CU-MK-01, CU-MK-02. [derivado]
 
-#### 1.5.7.2 Consulta del vendedor sobre pedidos, devoluciones y evaluación
+#### 1.5.7.2 Evaluación de vendedores y su consulta
 
 - **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-03 Consultar los pedidos, las devoluciones y la evaluación. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-03 Consultar los pedidos, las devoluciones y la evaluación; CU-MK-04 Calcular los indicadores de nivel de servicio por vendedor; CU-MK-05 Dar a conocer las reglas de evaluación al vendedor; CU-MK-06 Aplicar la consecuencia escalonada de un incumplimiento. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 14 del Anexo D: 100 % de los vendedores con nivel de servicio medido (propuesta del proponente). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 988 h en total (UCP, escenario del equipo): análisis 99 h, diseño 198 h, programación 395 h, pruebas 148 h y sobrecarga 148 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-03 (03_casos_de_uso_marketplace.md): S2; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-110 a RF-112; casos de uso CU-MK-03; resultados del Anexo D: 14. [derivado]
+- **Supuestos:** CU-MK-03 (03_casos_de_uso_marketplace.md): S2; CU-MK-04 (03_casos_de_uso_marketplace.md): S4; CU-MK-05 (03_casos_de_uso_marketplace.md): S2; CU-MK-06 (03_casos_de_uso_marketplace.md): S5; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** RF-105, RF-110 a RF-112, RF-119 a RF-123; casos de uso CU-MK-03, CU-MK-04, CU-MK-05, CU-MK-06; resultados del Anexo D: 14. [derivado]
 
-#### 1.5.7.3 Evaluación de vendedores y consecuencias escalonadas
+#### 1.5.7.4 Devoluciones, base de comisión y liquidación de marketplace
 
 - **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-04 Calcular los indicadores de nivel de servicio por vendedor; CU-MK-05 Dar a conocer las reglas de evaluación al vendedor; CU-MK-06 Aplicar la consecuencia escalonada de un incumplimiento. [derivado]
-- **Queda fuera:** por definir [por definir]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-07 Gestionar una devolución de producto de marketplace; CU-MK-10 Informar la base de comisión de marketplace al ERP; CU-MK-11 Conciliar la liquidación de un vendedor. [derivado]
+- **Queda fuera:** EXC-04: Desarrollar la plataforma de vendedores del marketplace ni operar su logística. [derivado]
 - **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 14 del Anexo D: 100 % de los vendedores con nivel de servicio medido (propuesta del proponente). [derivado]
+- **Criterio de aceptación:** Resultado 13 del Anexo D: Aviso al vendedor en 15 minutos o menos en cada devolución (propuesta del proponente, RNF-66). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
 - **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-04 (03_casos_de_uso_marketplace.md): S4; CU-MK-05 (03_casos_de_uso_marketplace.md): S2; CU-MK-06 (03_casos_de_uso_marketplace.md): S5; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-105, RF-119 a RF-123; casos de uso CU-MK-04, CU-MK-05, CU-MK-06; resultados del Anexo D: 14. [derivado]
+- **Supuestos:** CU-MK-07 (03_casos_de_uso_marketplace.md): S6; CU-MK-10 (03_casos_de_uso_marketplace.md): S9; CU-MK-11 (03_casos_de_uso_marketplace.md): S1, S10; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** RF-106 a RF-108, RF-125, RF-126; casos de uso CU-MK-07, CU-MK-10, CU-MK-11; resultados del Anexo D: 13. [derivado]
 
-#### 1.5.7.4 Devolución de productos de marketplace
+#### 1.5.7.5 Identificación del vendedor y separación de la existencia propia
 
 - **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
 - **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-07 Gestionar una devolución de producto de marketplace. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-08 Identificar al vendedor y las condiciones en la compra; CU-MK-09 Impedir que un pedido intermediado use existencia propia. [derivado]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 13 del Anexo D: Aviso al vendedor en 15 minutos o menos en cada devolución (propuesta del proponente, RNF-66). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-07 (03_casos_de_uso_marketplace.md): S6; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-106 a RF-108; casos de uso CU-MK-07; resultados del Anexo D: 13. [derivado]
-
-#### 1.5.7.5 Identificación del vendedor y de las condiciones en la compra
-
-- **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-08 Identificar al vendedor y las condiciones en la compra. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-08 (03_casos_de_uso_marketplace.md): S7; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-113 a RF-116; casos de uso CU-MK-08. [derivado]
-
-#### 1.5.7.6 Separación de la existencia propia en pedidos intermediados
-
-- **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-09 Impedir que un pedido intermediado use existencia propia. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 2 (mes 18), marcha blanca de la Etapa 2 (meses 19 y 20) y paso a producción (mes 21) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-09 (03_casos_de_uso_marketplace.md): S8; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-117, RF-118; casos de uso CU-MK-09. [derivado]
-
-#### 1.5.7.7 Base de comisión y liquidación de marketplace
-
-- **Rama y servicio:** 1.5, Servicio de marketplace. **Etapa:** 2. **Método:** UCP.
-- **Ventana:** los meses 13 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-MK-10 Informar la base de comisión de marketplace al ERP; CU-MK-11 Conciliar la liquidación de un vendedor. [derivado]
-- **Queda fuera:** EXC-04: Desarrollar la plataforma de vendedores del marketplace ni operar su logística. [derivado]
 - **Entregable:** Componentes de software de «Servicio de marketplace» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -1492,8 +1092,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-MK-10 (03_casos_de_uso_marketplace.md): S9; CU-MK-11 (03_casos_de_uso_marketplace.md): S1, S10; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
-- **Referencias:** RF-125, RF-126; casos de uso CU-MK-10, CU-MK-11. [derivado]
+- **Supuestos:** CU-MK-08 (03_casos_de_uso_marketplace.md): S7; CU-MK-09 (03_casos_de_uso_marketplace.md): S8; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
+- **Referencias:** RF-113 a RF-118; casos de uso CU-MK-08, CU-MK-09. [derivado]
 
 #### 1.5.8.1 Atención de garantía legal en el mesón, con sus plazos
 
@@ -1591,21 +1191,21 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-CL-03 (03_casos_de_uso_clientes-retail.md): S1, S4; CU-CL-04 (03_casos_de_uso_clientes-retail.md): S1, S5; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
 - **Referencias:** RF-229, RF-230; casos de uso CU-CL-03, CU-CL-04. [derivado]
 
-#### 1.5.10.1 Evaluación crediticia y apertura de tarjeta en el mostrador
+#### 1.5.10.1 Evaluación crediticia, apertura de tarjeta y ampliación de cupo
 
 - **Rama y servicio:** 1.5, Servicio de originación de crédito. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OR-01 Evaluar la solicitud y abrir una tarjeta en el mostrador; CU-OR-02 Ofrecer la tarjeta y consultar el resultado. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OR-01 Evaluar la solicitud y abrir una tarjeta en el mostrador; CU-OR-02 Ofrecer la tarjeta y consultar el resultado; CU-OR-05 Controlar los intentos de evaluación; CU-OR-09 Solicitar la ampliación de un cupo con enlace. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de originación de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 16 del Anexo D: 8 segundos o menos (RT-09.01 y RNF-06).; Resultado 20 del Anexo D: El proceso impide aceptar un crédito sin la información (propuesta del proponente).; Resultado 23 del Anexo D: Cumplidos antes de 2029 (Caso, cap. 7), es decir, a más tardar en el mes 24 del proyecto.; Resultado 28 del Anexo D: 8 segundos o menos en la evaluación y la información obligatoria antes de aceptar. [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 988 h en total (UCP, escenario del equipo): análisis 99 h, diseño 198 h, programación 395 h, pruebas 148 h y sobrecarga 148 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OR-01 (03_casos_de_uso_originacion-credito.md): S1, S2, S7; CU-OR-02 (03_casos_de_uso_originacion-credito.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-220 a RF-225; casos de uso CU-OR-01, CU-OR-02; resultados del Anexo D: 16, 20, 23, 28. [derivado]
+- **Supuestos:** CU-OR-01 (03_casos_de_uso_originacion-credito.md): S1, S2, S7; CU-OR-02 (03_casos_de_uso_originacion-credito.md): S7; CU-OR-05 (03_casos_de_uso_originacion-credito.md): S7; CU-OR-09 (03_casos_de_uso_originacion-credito.md): S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-220 a RF-226; casos de uso CU-OR-01, CU-OR-02, CU-OR-05, CU-OR-09; resultados del Anexo D: 16, 20, 23, 28. [derivado]
 
 #### 1.5.10.2 Simulación del costo total del crédito con la tasa máxima vigente
 
@@ -1623,22 +1223,6 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-OR-03 (03_casos_de_uso_originacion-credito.md): S1; CU-OR-04 (03_casos_de_uso_originacion-credito.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** RF-218, RF-219; casos de uso CU-OR-03, CU-OR-04. [derivado]
 
-#### 1.5.10.3 Control de los intentos de evaluación
-
-- **Rama y servicio:** 1.5, Servicio de originación de crédito. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OR-05 Controlar los intentos de evaluación. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de originación de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OR-05 (03_casos_de_uso_originacion-credito.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-226; casos de uso CU-OR-05. [derivado]
-
 #### 1.5.10.4 Autorización de compra a cuotas sin enlace y sus topes
 
 - **Rama y servicio:** 1.5, Servicio de originación de crédito. **Etapa:** 1. **Método:** UCP.
@@ -1655,85 +1239,37 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-OR-06 (03_casos_de_uso_originacion-credito.md): S5; CU-OR-07 (03_casos_de_uso_originacion-credito.md): S3, S4; CU-OR-08 (03_casos_de_uso_originacion-credito.md): S3; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** RF-089 a RF-093; casos de uso CU-OR-06, CU-OR-07, CU-OR-08. [derivado]
 
-#### 1.5.10.5 Ampliación de cupo con enlace
-
-- **Rama y servicio:** 1.5, Servicio de originación de crédito. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-OR-09 Solicitar la ampliación de un cupo con enlace. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de originación de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-OR-09 (03_casos_de_uso_originacion-credito.md): S6; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** casos de uso CU-OR-09. [derivado]
-
-#### 1.5.11.1 Gestión de cobranza dentro de los límites normativos
+#### 1.5.11.1 Mora y gestión de cobranza
 
 - **Rama y servicio:** 1.5, Servicio de cartera de crédito. **Etapa:** 1 y 2. **Método:** UCP.
 - **Ventana:** los meses 1 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-01 Iniciar y registrar una gestión de cobranza. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-01 Iniciar y registrar una gestión de cobranza; CU-CA-05 Calcular la mora y actualizar las cuentas. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de cartera de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Pasos a producción de la Etapa 1 (mes 16) y de la Etapa 2 (mes 21), con la cartera migrada por tramos [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CA-01 (03_casos_de_uso_cartera-credito.md): S8; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
-- **Referencias:** RF-211 a RF-213; casos de uso CU-CA-01. [derivado]
-
-#### 1.5.11.2 Repactación y registro de pagos
-
-- **Rama y servicio:** 1.5, Servicio de cartera de crédito. **Etapa:** 1 y 2. **Método:** UCP.
-- **Ventana:** los meses 1 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-02 Repactar las condiciones de una deuda; CU-CA-04 Registrar el pago de una cuota. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de cartera de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 18 del Anexo D: Cero repactaciones sin evidencia (Caso, cap. 7).; Resultado 23 del Anexo D: Cumplidos antes de 2029 (Caso, cap. 7), es decir, a más tardar en el mes 24 del proyecto. [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Pasos a producción de la Etapa 1 (mes 16) y de la Etapa 2 (mes 21), con la cartera migrada por tramos [derivado]
 - **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CA-02 (03_casos_de_uso_cartera-credito.md): S1, S2; CU-CA-04 (03_casos_de_uso_cartera-credito.md): S1, S4, S5; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
-- **Referencias:** casos de uso CU-CA-02, CU-CA-04; resultados del Anexo D: 18, 23. [derivado]
+- **Supuestos:** CU-CA-01 (03_casos_de_uso_cartera-credito.md): S8; CU-CA-05 (03_casos_de_uso_cartera-credito.md): S1; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
+- **Referencias:** RF-211 a RF-213; casos de uso CU-CA-01, CU-CA-05. [derivado]
 
-#### 1.5.11.3 Cálculo de la mora y actualización de cuentas
-
-- **Rama y servicio:** 1.5, Servicio de cartera de crédito. **Etapa:** 1 y 2. **Método:** UCP.
-- **Ventana:** los meses 1 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-05 Calcular la mora y actualizar las cuentas. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de cartera de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Pasos a producción de la Etapa 1 (mes 16) y de la Etapa 2 (mes 21), con la cartera migrada por tramos [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CA-05 (03_casos_de_uso_cartera-credito.md): S1; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
-- **Referencias:** casos de uso CU-CA-05. [derivado]
-
-#### 1.5.11.4 Estado de cuenta y documentos para el cliente
+#### 1.5.11.2 Repactación, pagos y estado de cuenta
 
 - **Rama y servicio:** 1.5, Servicio de cartera de crédito. **Etapa:** 1 y 2. **Método:** UCP.
 - **Ventana:** los meses 1 a 18 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-03 Consultar el estado de cuenta y los documentos. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CA-02 Repactar las condiciones de una deuda; CU-CA-04 Registrar el pago de una cuota; CU-CA-03 Consultar el estado de cuenta y los documentos. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de cartera de crédito» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
+- **Criterio de aceptación:** Resultado 18 del Anexo D: Cero repactaciones sin evidencia (Caso, cap. 7).; Resultado 23 del Anexo D: Cumplidos antes de 2029 (Caso, cap. 7), es decir, a más tardar en el mes 24 del proyecto. [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Pasos a producción de la Etapa 1 (mes 16) y de la Etapa 2 (mes 21), con la cartera migrada por tramos [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CA-03 (03_casos_de_uso_cartera-credito.md): S3; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
-- **Referencias:** RF-069, RF-070; casos de uso CU-CA-03. [derivado]
+- **Supuestos:** CU-CA-02 (03_casos_de_uso_cartera-credito.md): S1, S2; CU-CA-04 (03_casos_de_uso_cartera-credito.md): S1, S4, S5; CU-CA-03 (03_casos_de_uso_cartera-credito.md): S3; Ventana de los meses 1 a 18 (contrato): Art. 17 y Anexo D 24: cartera migra en las dos etapas. [derivado]
+- **Referencias:** RF-069, RF-070; casos de uso CU-CA-02, CU-CA-04, CU-CA-03; resultados del Anexo D: 18, 23. [derivado]
 
 #### 1.5.11.5 Conciliación diaria y convivencia con la plataforma de crédito de 2011
 
@@ -1831,75 +1367,27 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-CC-02 (03_casos_de_uso_control-cruces.md): S3, S7; CU-CC-04 (03_casos_de_uso_control-cruces.md): S4, S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** RF-170 a RF-172; casos de uso CU-CC-02, CU-CC-04; resultados del Anexo D: 21. [derivado]
 
-#### 1.5.13.3 Tabla de correspondencia de identificadores
+#### 1.5.13.3 Correspondencia de identificadores y evaluación de impacto sobre la frontera
 
 - **Rama y servicio:** 1.5, Servicio de control de cruces. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CC-05 Resolver la correspondencia de identificadores entre ámbitos. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CC-05 Resolver la correspondencia de identificadores entre ámbitos; CU-CC-06 Evaluar el impacto de una iniciativa sobre la frontera de datos. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Servicio de control de cruces» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 21 del Anexo D: Implementada y documentada (Caso, cap. 7), con cero hallazgos críticos o altos en la prueba de penetración (propuesta del proponente). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CC-05 (03_casos_de_uso_control-cruces.md): S6, S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-173 a RF-175; casos de uso CU-CC-05; resultados del Anexo D: 21. [derivado]
+- **Supuestos:** CU-CC-05 (03_casos_de_uso_control-cruces.md): S6, S7; CU-CC-06 (03_casos_de_uso_control-cruces.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-173 a RF-176; casos de uso CU-CC-05, CU-CC-06; resultados del Anexo D: 21. [derivado]
 
-#### 1.5.13.4 Evaluación de impacto de las iniciativas sobre la frontera de datos
-
-- **Rama y servicio:** 1.5, Servicio de control de cruces. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-CC-06 Evaluar el impacto de una iniciativa sobre la frontera de datos. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Servicio de control de cruces» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** Resultado 21 del Anexo D: Implementada y documentada (Caso, cap. 7), con cero hallazgos críticos o altos en la prueba de penetración (propuesta del proponente). [derivado]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-CC-06 (03_casos_de_uso_control-cruces.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-176; casos de uso CU-CC-06; resultados del Anexo D: 21. [derivado]
-
-#### 1.5.14.1 Identidad individual y sesión en terminales compartidas
+#### 1.5.14.1 Identidad individual y administración de identidades, roles y ámbitos
 
 - **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-01 Ingresar a una terminal compartida con identidad individual. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-01 (03_casos_de_uso_base-tecnologica.md): S10; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-002 a RF-006; casos de uso CU-BT-01. [derivado]
-
-#### 1.5.14.2 Habilitación por capacitación y acceso temporal de externos
-
-- **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-02 Habilitar y revocar funciones según la capacitación normativa; CU-BT-03 Patrocinar el acceso temporal de un repositor externo; CU-BT-04 Operar como repositor externo con identidad individualizada. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 741 h en total (UCP, escenario del equipo): análisis 74 h, diseño 148 h, programación 296 h, pruebas 111 h y sobrecarga 111 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-02 (03_casos_de_uso_base-tecnologica.md): S5, S10; CU-BT-03 (03_casos_de_uso_base-tecnologica.md): S3, S10; CU-BT-04 (03_casos_de_uso_base-tecnologica.md): S3; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-007 a RF-012; casos de uso CU-BT-02, CU-BT-03, CU-BT-04. [derivado]
-
-#### 1.5.14.3 Revocación de accesos y conciliación contra la nómina
-
-- **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-05 Retirar los accesos al término del vínculo; CU-BT-06 Conciliar los accesos contra la nómina activa. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-01 Ingresar a una terminal compartida con identidad individual; CU-BT-12 Administrar identidades, roles y ámbitos. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
@@ -1908,24 +1396,24 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-06 (03_casos_de_uso_base-tecnologica.md): S2, S4; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** RF-013 a RF-015; casos de uso CU-BT-05, CU-BT-06. [derivado]
+- **Supuestos:** CU-BT-01 (03_casos_de_uso_base-tecnologica.md): S10; CU-BT-12 (03_casos_de_uso_base-tecnologica.md): S1, S8; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-002 a RF-006; casos de uso CU-BT-01, CU-BT-12. [derivado]
 
-#### 1.5.14.4 Administración de identidades, roles y ámbitos
+#### 1.5.14.2 Habilitación, revocación y conciliación de accesos
 
 - **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-12 Administrar identidades, roles y ámbitos. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-02 Habilitar y revocar funciones según la capacitación normativa; CU-BT-03 Patrocinar el acceso temporal de un repositor externo; CU-BT-04 Operar como repositor externo con identidad individualizada; CU-BT-05 Retirar los accesos al término del vínculo; CU-BT-06 Conciliar los accesos contra la nómina activa. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 1.234 h en total (UCP, escenario del equipo): análisis 123 h, diseño 247 h, programación 494 h, pruebas 185 h y sobrecarga 185 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-12 (03_casos_de_uso_base-tecnologica.md): S1, S8; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** casos de uso CU-BT-12. [derivado]
+- **Supuestos:** CU-BT-02 (03_casos_de_uso_base-tecnologica.md): S5, S10; CU-BT-03 (03_casos_de_uso_base-tecnologica.md): S3, S10; CU-BT-04 (03_casos_de_uso_base-tecnologica.md): S3; CU-BT-06 (03_casos_de_uso_base-tecnologica.md): S2, S4; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** RF-007 a RF-015; casos de uso CU-BT-02, CU-BT-03, CU-BT-04, CU-BT-05, CU-BT-06. [derivado]
 
 #### 1.5.14.5 Orden de degradación y ventanas de congelamiento
 
@@ -1959,37 +1447,21 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-BT-09 (03_casos_de_uso_base-tecnologica.md): S1, S7; CU-BT-10 (03_casos_de_uso_base-tecnologica.md): S1; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** casos de uso CU-BT-09, CU-BT-10. [derivado]
 
-#### 1.5.14.7 Observabilidad y alertas de la operación
+#### 1.5.14.7 Observabilidad y capacidad analítica
 
 - **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-11 Observar la operación y atender alertas. [derivado]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-11 (03_casos_de_uso_base-tecnologica.md): S1; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** casos de uso CU-BT-11. [derivado]
-
-#### 1.5.14.8 Capacidad analítica y tableros por ámbito
-
-- **Rama y servicio:** 1.5, Base tecnológica. **Etapa:** 1. **Método:** UCP.
-- **Ventana:** los meses 1 a 12 (contrato)
-- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-13 Consultar tableros y exportar informes por ámbito. [derivado]
+- **Descripción del trabajo:** Análisis, diseño, construcción y pruebas de los casos de uso: CU-BT-11 Observar la operación y atender alertas; CU-BT-13 Consultar tableros y exportar informes por ámbito. [derivado]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Componentes de software de «Base tecnológica» que resuelven esos casos de uso, desplegados y probados. [derivado]
 - **Criterio de aceptación:** Resultado 21 del Anexo D: Implementada y documentada (Caso, cap. 7), con cero hallazgos críticos o altos en la prueba de penetración (propuesta del proponente). [derivado]
 - **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Certificación de la Etapa 1 (mes 12), marcha blanca de la Etapa 1 (meses 13 a 15) y paso a producción (mes 16) [derivado]
-- **Esfuerzo estimado:** 247 h en total (UCP, escenario del equipo): análisis 25 h, diseño 49 h, programación 99 h, pruebas 37 h y sobrecarga 37 h. Por perfil: por estimar (sd-12). [derivado]
+- **Esfuerzo estimado:** 494 h en total (UCP, escenario del equipo): análisis 49 h, diseño 99 h, programación 198 h, pruebas 74 h y sobrecarga 74 h. Por perfil: por estimar (sd-12). [derivado]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** CU-BT-13 (03_casos_de_uso_base-tecnologica.md): S1; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
-- **Referencias:** casos de uso CU-BT-13; resultados del Anexo D: 21. [derivado]
+- **Supuestos:** CU-BT-11 (03_casos_de_uso_base-tecnologica.md): S1; CU-BT-13 (03_casos_de_uso_base-tecnologica.md): S1; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
+- **Referencias:** casos de uso CU-BT-11, CU-BT-13; resultados del Anexo D: 21. [derivado]
 
 ### Rama 1.6
 
@@ -2009,71 +1481,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): catálogo de interfaces. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.6.2 Rediseño de las integraciones de precios y existencia hacia los canales
-
-- **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 5 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 5 a 12 (propuesta): interfaces de la Etapa 1. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.6.3 Rediseño de la integración de pedidos
-
-- **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 13 a 18 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 13 a 18 (propuesta): interfaz de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.6.4 Rediseño de la integración del crédito con el sistema de gestión empresarial
-
-- **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 5 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 5 a 12 (propuesta): interfaces de la Etapa 1. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.6.5 Rediseño de la integración con el marketplace
-
-- **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 13 a 18 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 13 a 18 (propuesta): interfaz de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.6.6 Rediseño de la integración de cobranza
+#### 1.6.2 Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas)
 
 - **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 5 a 18 (propuesta)
@@ -2086,10 +1494,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 5 a 18 (propuesta): cartera: Etapa 1 y 2. [derivado]
+- **Supuestos:** Ventana de los meses 5 a 18 (propuesta): interfaces de la Etapa 1; cartera: Etapa 1 y 2; interfaz de la Etapa 1. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.6.7 Rediseño de la integración con el sistema de fidelización
+#### 1.6.3 Rediseño de las integraciones de la Etapa 2 (pedidos, marketplace y fidelización)
 
 - **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 13 a 18 (propuesta)
@@ -2103,22 +1511,6 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 18 (propuesta): interfaz de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.6.8 Rediseño de la integración de prevención de pérdidas
-
-- **Rama y servicio:** 1.6. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 5 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 5 a 12 (propuesta): interfaz de la Etapa 1. [derivado]
 - **Referencias:** por definir [por definir]
 
 #### 1.6.9 Canal de intercambio con los proveedores de mercadería
@@ -2135,7 +1527,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 18 (propuesta): abastecimiento es de la Etapa 2. [derivado]
-- **Referencias:** 940 proveedores. [derivado]
+- **Referencias:** 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP. [derivado]
 
 #### 1.6.10 Entrega de reportes a las autoridades fiscalizadoras
 
@@ -2171,7 +1563,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 
 ### Rama 1.7
 
-#### 1.7.1 Plan de migración con estrategia de corte y de retorno
+#### 1.7.1 Plan de migración con estrategia de corte y de retorno e inventario de datos históricos
 
 - **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 2 a 4 (propuesta)
@@ -2184,24 +1576,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): antes de migrar. [derivado]
-- **Referencias:** RT-05.11. [derivado]
-
-#### 1.7.2 Inventario de datos históricos a migrar
-
-- **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 2 a 4 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): RT-05.15. [derivado]
-- **Referencias:** RT-05.15. [derivado]
+- **Supuestos:** Ventana de los meses 2 a 4 (propuesta): antes de migrar; RT-05.15. [derivado]
+- **Referencias:** RT-05.11; RT-05.15. [derivado]
 
 #### 1.7.3 Maestro de artículos saneado y validado (268.000 referencias)
 
@@ -2267,7 +1643,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 14 a 19 (propuesta): clientes Retail es de la Etapa 2. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.7.7 Migración de la cartera viva (620.000 clientes) con convivencia, conciliación diaria y retorno probado
+#### 1.7.7 Migración de la cartera viva (620.000 clientes) con sus actas de conciliación
 
 - **Rama y servicio:** 1.7. **Etapa:** 1 y 2. **Método:** tres valores.
 - **Ventana:** los meses 10 a 21 (contrato)
@@ -2276,28 +1652,12 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Entregable:** por definir [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 10 a 21, fijada por el contrato (Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21). [derivado]
+- **Hitos asociados:** Ventana de los meses 10 a 21, fijada por el contrato (Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21; acompaña a la migración). [derivado]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 10 a 21 (contrato): Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21. [derivado]
-- **Referencias:** Resultado 24 del Anexo D. [derivado]
-
-#### 1.7.8 Actas de conciliación de la corrida paralela y de cuadratura previa y posterior a la migración
-
-- **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 13 a 21 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: acta; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 13 a 21 (propuesta): acompaña a la migración. [derivado]
-- **Referencias:** por definir [por definir]
+- **Supuestos:** Ventana de los meses 10 a 21 (contrato): Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21; acompaña a la migración. [derivado]
+- **Referencias:** Resultado 24 del Anexo D; fuera del UCP (rama de migración). [derivado]
 
 #### 1.7.9 Repositorio de consulta de datos históricos no migrados
 
@@ -2365,10 +1725,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 
 ### Rama 1.8
 
-#### 1.8.1 Plan de seguridad y matriz de controles
+#### 1.8.1 Plan de seguridad, matriz de controles y modelo de amenazas
 
 - **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 1 a 4 (propuesta)
+- **Ventana:** los meses 1 a 5 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
@@ -2378,26 +1738,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 4 (propuesta): base de la seguridad. [derivado]
+- **Supuestos:** Ventana de los meses 1 a 5 (propuesta): base de la seguridad; tras la arquitectura. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.8.2 Modelo de amenazas
-
-- **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 2 a 5 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Encargado de Seguridad de la Información. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 2 a 5 (propuesta): tras la arquitectura. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.8.3 Declaración de superficie de exposición
+#### 1.8.3 Declaración de superficie de exposición y plan de respuesta a incidentes
 
 - **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 4 a 8 (propuesta)
@@ -2410,23 +1754,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 4 a 8 (propuesta): tras el diseño. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.8.4 Plan de respuesta a incidentes de seguridad
-
-- **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 4 a 8 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Encargado de Seguridad de la Información. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 4 a 8 (propuesta): antes de la marcha blanca. [derivado]
+- **Supuestos:** Ventana de los meses 4 a 8 (propuesta): tras el diseño; antes de la marcha blanca. [derivado]
 - **Referencias:** por definir [por definir]
 
 #### 1.8.5 Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor
@@ -2443,7 +1771,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): tras la arquitectura. [derivado]
-- **Referencias:** frontera con el UCP: aquí el diseño. [derivado]
+- **Referencias:** frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica. [derivado]
 
 #### 1.8.6 Cifrado y tokenización de los medios de pago
 
@@ -2461,7 +1789,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 4 a 10 (propuesta): RNF-33, RNF-34. [derivado]
 - **Referencias:** RNF-33, RNF-34. [derivado]
 
-#### 1.8.7 Protección de datos personales y registro de actividades de tratamiento
+#### 1.8.7 Protección de datos personales y matriz de cumplimiento normativo
 
 - **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 3 a 8 (propuesta)
@@ -2474,24 +1802,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 3 a 8 (propuesta): Ley 21.719. [derivado]
-- **Referencias:** Ley 21.719. [derivado]
-
-#### 1.8.8 Matriz de cumplimiento normativo con control y evidencia
-
-- **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 3 a 8 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Encargado de Seguridad de la Información. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 3 a 8 (propuesta): tras el diseño. [derivado]
-- **Referencias:** Art. 27. [derivado]
+- **Supuestos:** Ventana de los meses 3 a 8 (propuesta): Ley 21.719; tras el diseño. [derivado]
+- **Referencias:** Ley 21.719; RNF-74 a RNF-76; Art. 27. [derivado]
 
 #### 1.8.9 Informe de pruebas de intrusión y plan de remediación
 
@@ -2523,9 +1835,9 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 4 (propuesta): antes de elegir el proveedor de nube. [derivado]
-- **Referencias:** Ronda 0: 3.13. [derivado]
+- **Referencias:** Ronda 0: 3.13; fuente de la norma CMF por verificar. [derivado]
 
-#### 1.8.11 Atestación de la cadena de suministro de software
+#### 1.8.11 Atestación de la cadena de suministro y revisión de la arquitectura de confianza cero
 
 - **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 4 a 12 (propuesta)
@@ -2538,24 +1850,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 4 a 12 (propuesta): RNF-70, RNF-71. [derivado]
-- **Referencias:** RNF-70, RNF-71. [derivado]
-
-#### 1.8.12 Revisión de la arquitectura de confianza cero
-
-- **Rama y servicio:** 1.8. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 4 a 8 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Encargado de Seguridad de la Información. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 4 a 8 (propuesta): RNF-73. [derivado]
-- **Referencias:** RNF-73. [derivado]
+- **Supuestos:** Ventana de los meses 4 a 12 (propuesta): RNF-70, RNF-71; RNF-73. [derivado]
+- **Referencias:** RNF-70, RNF-71; agregado desde el catálogo; RNF-73; agregado desde el catálogo. [derivado]
 
 ### Rama 1.9
 
@@ -2575,21 +1871,21 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 2 a 4 (propuesta): antes de probar. [derivado]
 - **Referencias:** Formulario T-13. [derivado]
 
-#### 1.9.2 Puertas de calidad con análisis estático, cobertura y umbrales
+#### 1.9.2 Estándares de codificación, revisión por pares y puertas de calidad
 
 - **Rama y servicio:** 1.9. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 4 a 6 (propuesta)
+- **Ventana:** los meses 1 a 6 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 4 a 6 (propuesta): antes del desarrollo en curso. [derivado]
-- **Referencias:** ISO 25010. [derivado]
+- **Supuestos:** Ventana de los meses 1 a 6 (propuesta): antes del desarrollo en curso; antes de programar. [derivado]
+- **Referencias:** ISO 25010; Ronda 0: 3.2a. [derivado]
 
 #### 1.9.3 Batería de pruebas funcionales y de requisitos no funcionales
 
@@ -2607,7 +1903,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 5 a 18 (propuesta): durante el desarrollo de las dos etapas. [derivado]
 - **Referencias:** ISO 29119. [derivado]
 
-#### 1.9.4 Batería de pruebas de carga, estrés y resiliencia
+#### 1.9.4 Pruebas de desempeño, resiliencia y recuperación ante desastres
 
 - **Rama y servicio:** 1.9. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 9 a 18 (propuesta)
@@ -2620,24 +1916,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 9 a 18 (propuesta): antes de la certificación de cada etapa. [derivado]
-- **Referencias:** RNF-22, RNF-23. [derivado]
-
-#### 1.9.5 Batería de pruebas de recuperación ante desastres
-
-- **Rama y servicio:** 1.9. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 10 a 18 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: informe de pruebas; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 10 a 18 (propuesta): idem. [derivado]
-- **Referencias:** RNF-32. [derivado]
+- **Supuestos:** Ventana de los meses 9 a 18 (propuesta): antes de la certificación de cada etapa; idem. [derivado]
+- **Referencias:** RNF-22, RNF-23; ensayos a 1,5 veces el peak (RT-09.06); RNF-32. [derivado]
 
 #### 1.9.6 Ensayo de la estrategia de degradación del evento anual
 
@@ -2653,7 +1933,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 14 a 21 (contrato): Anexo D, resultado 25: ensayo del orden de degradación en el mes 16 y prueba de carga completa en el mes 21. [derivado]
-- **Referencias:** Resultado 25 del Anexo D. [derivado]
+- **Referencias:** Resultado 25 del Anexo D; lo cita el servicio y se nombra aquí (guía §6). [derivado]
 
 #### 1.9.7 Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso
 
@@ -2703,22 +1983,6 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de el mes 18 (contrato): Art. 17: cierre del desarrollo de la Etapa 2 en el mes 18. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.9.10 Estándares de codificación y lista de revisión por pares
-
-- **Rama y servicio:** 1.9. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 1 a 3 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 3 (propuesta): antes de programar. [derivado]
-- **Referencias:** Ronda 0: 3.2a. [derivado]
-
 ### Rama 1.10
 
 #### 1.10.1 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
@@ -2735,7 +1999,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana por definir. [derivado]
-- **Referencias:** RT-26.02. [derivado]
+- **Referencias:** RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13). [derivado]
 
 #### 1.10.2 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
 
@@ -2751,7 +2015,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana por definir. [derivado]
-- **Referencias:** RT-26.02. [derivado]
+- **Referencias:** RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13). [derivado]
 
 #### 1.10.3 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
 
@@ -2767,7 +2031,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana por definir. [derivado]
-- **Referencias:** RT-26.02. [derivado]
+- **Referencias:** RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13). [derivado]
 
 #### 1.10.4 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
 
@@ -2783,7 +2047,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana por definir. [derivado]
-- **Referencias:** RT-26.02. [derivado]
+- **Referencias:** RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13). [derivado]
 
 #### 1.10.5 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
 
@@ -2799,14 +2063,14 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana por definir. [derivado]
-- **Referencias:** RT-26.02. [derivado]
+- **Referencias:** RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13). [derivado]
 
 ### Rama 1.11
 
-#### 1.11.1 Plan de implantación y puesta en marcha con criterios de éxito medibles
+#### 1.11.1 Plan de implantación con procedimiento de despliegue gradual y de reversión probado
 
 - **Rama y servicio:** 1.11. **Etapa:** 1 y 2. **Método:** tres valores.
-- **Ventana:** los meses 3 a 6 (propuesta)
+- **Ventana:** los meses 3 a 12 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
@@ -2816,24 +2080,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 3 a 6 (propuesta): T-18; se actualiza. [derivado]
+- **Supuestos:** Ventana de los meses 3 a 12 (propuesta): T-18; se actualiza; antes de la marcha blanca. [derivado]
 - **Referencias:** Formulario T-18. [derivado]
-
-#### 1.11.2 Procedimiento de despliegue gradual y de reversión probado
-
-- **Rama y servicio:** 1.11. **Etapa:** 1 y 2. **Método:** tres valores.
-- **Ventana:** los meses 9 a 12 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Implantación y Gestión del Cambio. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 9 a 12 (propuesta): antes de la marcha blanca. [derivado]
-- **Referencias:** por definir [por definir]
 
 #### 1.11.3 Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda
 
@@ -2885,36 +2133,20 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 10 a 12 (propuesta): antes de la marcha blanca. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.12.2 Informe de resultados de la marcha blanca de la Etapa 1, con medición diaria y conciliación
-
-- **Rama y servicio:** 1.12. **Etapa:** 1. **Método:** tres valores.
-- **Ventana:** el mes 15 (contrato)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Implantación y Gestión del Cambio, con apoyo del Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de el mes 15, fijada por el contrato (Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15). [derivado]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de el mes 15 (contrato): Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.12.3 Evidencia de cierre de la Etapa 1 contra las condiciones del Caso
+#### 1.12.2 Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1
 
 - **Rama y servicio:** 1.12. **Etapa:** 1. **Método:** tres valores.
 - **Ventana:** los meses 15 a 16 (contrato)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Implantación y Gestión del Cambio, con apoyo del Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 15 a 16, fijada por el contrato (Art. 17.3: condiciones de cierre). [derivado]
+- **Hitos asociados:** Ventana de los meses 15 a 16, fijada por el contrato (Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15; Art. 17.3: condiciones de cierre). [derivado]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 15 a 16 (contrato): Art. 17.3: condiciones de cierre. [derivado]
+- **Supuestos:** Ventana de los meses 15 a 16 (contrato): Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15; Art. 17.3: condiciones de cierre. [derivado]
 - **Referencias:** Caso, numeral 17.3. [derivado]
 
 #### 1.12.4 Acta de aceptación de la Etapa 1
@@ -2965,7 +2197,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de el mes 20 (contrato): Art. 17: la marcha blanca de la Etapa 2 termina en el mes 20. [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.12.7 Acta de aceptación final de la implementación
+#### 1.12.7 Acta de aceptación final y garantía de correcto funcionamiento
 
 - **Rama y servicio:** 1.12. **Etapa:** 2. **Método:** tres valores.
 - **Ventana:** el mes 21 (contrato)
@@ -2974,27 +2206,11 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Entregable:** Por definir. Tipo probable: acta; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de el mes 21, fijada por el contrato (Art. 17: aceptación final en el mes 21). [derivado]
+- **Hitos asociados:** Ventana de el mes 21, fijada por el contrato (Art. 17: aceptación final en el mes 21; se activa con la aceptación final). [derivado]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de el mes 21 (contrato): Art. 17: aceptación final en el mes 21. [derivado]
-- **Referencias:** por definir [por definir]
-
-#### 1.12.8 Garantía de correcto funcionamiento
-
-- **Rama y servicio:** 1.12. **Etapa:** 2. **Método:** tres valores.
-- **Ventana:** el mes 21 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de el mes 21 (propuesta): se activa con la aceptación final. [derivado]
+- **Supuestos:** Ventana de el mes 21 (contrato): Art. 17: aceptación final en el mes 21; se activa con la aceptación final. [derivado]
 - **Referencias:** por definir [por definir]
 
 #### 1.12.9 Informe del soporte de estabilización posterior a la puesta en marcha
@@ -3063,13 +2279,13 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 10 a 20 (propuesta): Art. 17.3: la capacitación certificada es condición de cierre de cada marcha blanca (meses 15 y 20). [derivado]
 - **Referencias:** por definir [por definir]
 
-#### 1.13.4 Programa de acompañamiento en puesto para el personal de tienda, temporero y externo
+#### 1.13.4 Informe de acompañamiento en puesto para el personal de tienda, temporero y externo
 
 - **Rama y servicio:** 1.13. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 13 a 24 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Implantación y Gestión del Cambio. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
 - **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
@@ -3081,7 +2297,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 
 ### Rama 1.14
 
-#### 1.14.1 Documentación técnica y funcional por categoría
+#### 1.14.1 Documentación técnica y funcional con inventario de componentes de software
 
 - **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 1 a 56 (propuesta)
@@ -3094,24 +2310,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 1 a 56 (propuesta): continua, versión final al cierre. [derivado]
-- **Referencias:** Art. 91. [derivado]
-
-#### 1.14.2 Inventario de componentes de software por artefacto desplegado
-
-- **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 5 a 56 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 5 a 56 (propuesta): desde el primer artefacto desplegado. [derivado]
-- **Referencias:** RNF-70. [derivado]
+- **Supuestos:** Ventana de los meses 1 a 56 (propuesta): continua, versión final al cierre; desde el primer artefacto desplegado. [derivado]
+- **Referencias:** Art. 91; arquitectura, requerimientos, construcción, pruebas, operación, seguridad, usuario y proyecto; RNF-70. [derivado]
 
 #### 1.14.3 Transferencia tecnológica de código fuente, artefactos de construcción, scripts de infraestructura y procedimientos de despliegue
 
@@ -3129,10 +2329,10 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 48 a 56 (propuesta): Art. 77.1: programa de transferencia hacia el cierre. [derivado]
 - **Referencias:** Art. 77.1. [derivado]
 
-#### 1.14.4 Base de conocimiento de incidentes, problemas, soluciones y decisiones de diseño
+#### 1.14.4 Base de conocimiento y manuales de operación
 
 - **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 13 a 56 (propuesta)
+- **Ventana:** los meses 10 a 56 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
 - **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
@@ -3142,24 +2342,8 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 13 a 56 (propuesta): desde la marcha blanca. [derivado]
-- **Referencias:** Art. 77.1. [derivado]
-
-#### 1.14.5 Manuales de operación, libros de operación y guías de resolución de fallas
-
-- **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 10 a 20 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: documento; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 10 a 20 (propuesta): antes de operar. [derivado]
-- **Referencias:** Art. 77.1. [derivado]
+- **Supuestos:** Ventana de los meses 10 a 56 (propuesta): desde la marcha blanca; antes de operar. [derivado]
+- **Referencias:** Art. 77.1; agregado desde la guía. [derivado]
 
 #### 1.14.6 Plan de Reversibilidad con exportación en formatos abiertos
 
@@ -3175,39 +2359,23 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (contrato): Art. 77.2: dentro de los primeros noventa días; se actualiza cada año. [derivado]
-- **Referencias:** Art. 77.2. [derivado]
+- **Referencias:** Art. 77.2; se entrega dentro de los primeros noventa días y se actualiza cada año. [derivado]
 
-#### 1.14.7 Acompañamiento de reversibilidad posterior al cierre
+#### 1.14.7 Acta de cierre, traspaso final y acompañamiento de reversibilidad
 
 - **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** el mes 56 (contrato)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de el mes 56, fijada por el contrato (Art. 77.2: noventa días después del cierre, fuera de los 56 meses). [derivado]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de el mes 56 (contrato): Art. 77.2: noventa días después del cierre, fuera de los 56 meses. [derivado]
-- **Referencias:** Art. 77.2. [derivado]
-
-#### 1.14.8 Acta de cierre y traspaso final a operaciones
-
-- **Rama y servicio:** 1.14. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** el mes 56 (propuesta)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
 - **Entregable:** Por definir. Tipo probable: acta; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Hitos asociados:** Ventana de el mes 56, fijada por el contrato (Art. 77.2: noventa días después del cierre, fuera de los 56 meses; cierre del contrato). [derivado]
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de el mes 56 (propuesta): cierre del contrato. [derivado]
-- **Referencias:** Art. 87. [derivado]
+- **Supuestos:** Ventana de el mes 56 (contrato): Art. 77.2: noventa días después del cierre, fuera de los 56 meses; cierre del contrato. [derivado]
+- **Referencias:** Art. 77.2; Art. 87. [derivado]
 
 #### 1.14.9 Informe de lecciones aprendidas del proyecto
 
@@ -3239,11 +2407,11 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): antes de la primera aceptación. [derivado]
-- **Referencias:** Formulario T-17. [derivado]
+- **Referencias:** Formulario T-17; base de las actas de aceptación. [derivado]
 
 ### Rama 1.15
 
-#### 1.15.1 Mesa de servicio de tres niveles
+#### 1.15.1 Mesa de servicio de tres niveles en operación
 
 - **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
 - **Ventana:** los meses 21 a 56 (contrato)
@@ -3259,7 +2427,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
 - **Referencias:** Art. 78. [derivado]
 
-#### 1.15.2 Informe mensual de nivel de servicio
+#### 1.15.2 Informes periódicos de nivel de servicio y de certificaciones
 
 - **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
 - **Ventana:** los meses 21 a 56 (contrato)
@@ -3273,7 +2441,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
-- **Referencias:** Art. 79.2. [derivado]
+- **Referencias:** Art. 79.2; Arts. 27, 74.6. [derivado]
 
 #### 1.15.3 Pruebas periódicas de recuperación ante desastres
 
@@ -3291,7 +2459,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): sd-03: la recuperación ante desastres se prueba dos veces al año. [derivado]
 - **Referencias:** el sd-03 las fija dos veces al año. [derivado]
 
-#### 1.15.4 Mantención correctiva
+#### 1.15.4 Mantención correctiva, preventiva y evolutiva
 
 - **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
 - **Ventana:** los meses 21 a 56 (contrato)
@@ -3305,25 +2473,9 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
-- **Referencias:** Agregado desde el sd-03 y las Bases. [derivado]
+- **Referencias:** Agregado desde el sd-03 y las Bases; base del sd-11. [derivado]
 
-#### 1.15.5 Mantención preventiva y evolutiva con mejora continua del nivel de servicio
-
-- **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
-- **Ventana:** los meses 21 a 56 (contrato)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** por definir [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 21 a 56, fijada por el contrato (Art. 17: operación de los meses 21 a 56). [derivado]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
-- **Referencias:** base del sd-11. [derivado]
-
-#### 1.15.6 Gestión de la infraestructura en operación
+#### 1.15.6 Infraestructura en operación con su informe de gestión
 
 - **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
 - **Ventana:** los meses 21 a 56 (contrato)
@@ -3338,22 +2490,6 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
 - **Referencias:** Agregado desde el sd-03. [derivado]
-
-#### 1.15.7 Informe anual de certificaciones y soporte a auditorías e inspecciones
-
-- **Rama y servicio:** 1.15. **Etapa:** operación. **Método:** tres valores.
-- **Ventana:** los meses 21 a 56 (contrato)
-- **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
-- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
-- **Criterio de aceptación:** por definir [por definir]
-- **Responsable:** Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
-- **Hitos asociados:** Ventana de los meses 21 a 56, fijada por el contrato (Art. 17: operación de los meses 21 a 56). [derivado]
-- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
-- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
-- **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 21 a 56 (contrato): Art. 17: operación de los meses 21 a 56. [derivado]
-- **Referencias:** Arts. 27, 74.6. [derivado]
 
 #### 1.15.8 Jornadas anuales de actualización y capacitación de personal nuevo
 

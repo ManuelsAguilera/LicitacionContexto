@@ -37,10 +37,10 @@ class TestCompararMetodos(unittest.TestCase):
             self.assertNotIn("total_segundo", r)
             self.assertEqual(cm.main([str(DIR / "12_plantilla_tres_valores.md")]), 2)
 
-    def test_la_plantilla_trae_los_207_paquetes(self):
+    def test_la_plantilla_trae_las_153_cuentas(self):
         f, e = cm.leer_planilla(DIR / "12_plantilla_tres_valores.md")
-        self.assertEqual(len(f), 207)
-        self.assertEqual(len([c for c in f if c.startswith("1.5.")]), 73)
+        self.assertEqual(len(f), 153)
+        self.assertEqual(len([c for c in f if c.startswith("1.5.")]), 51)
         self.assertEqual(e, [])
         self.assertTrue(all(v is None for v in f.values()))
 
@@ -98,7 +98,7 @@ class TestCompararMetodos(unittest.TestCase):
         self.assertEqual(r["modo"], "paquetes")
         self.assertTrue(r["dentro"])
         self.assertEqual(r["faltan"], [])
-        self.assertEqual(sum(d["n"] for d in r["ramas"].values()), 134)
+        self.assertEqual(sum(d["n"] for d in r["ramas"].values()), 102)
 
     def test_paquetes_fuera_de_la_tolerancia_y_codigo_de_salida(self):
         with tempfile.TemporaryDirectory() as d:

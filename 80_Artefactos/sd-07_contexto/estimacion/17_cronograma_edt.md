@@ -23,7 +23,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 
 No puede haber un paso a producción dentro de un congelamiento. Meses calendario afectados: ene (1 al 6 de enero y última semana), feb (todo el mes), mar (primera semana), may (segunda semana y evento anual posible), jun (evento anual posible), nov (todo el mes), dic (todo el mes). Los pasos a producción caen en abr 2028 y sep 2028, fuera de todos ellos. Cae en congelamiento la marcha blanca de la Etapa 1 (ene 2028 a mar 2028): es operación supervisada, sin cambios en producción, así que se coordina con el plan de la marcha blanca. Con la Etapa 1 ya en producción, el evento anual de comercio electrónico y el Día de la Madre de 2028 (may 2028 y jun 2028) caen en el desarrollo de la Etapa 2: el ensayo de degradación del evento (paquete 1.9.6) debe estar hecho antes.
 
-## 2. Ventanas por paquete
+## 2. Ventanas por cuenta de control
 
 Las barras tienen 56 columnas, una por mes; `█` es un mes activo. El año 1 son las columnas 1 a 12.
 
@@ -38,15 +38,13 @@ mes               1         2         3         4         5
 | :-- | :-- | :-- | :-- | :-- |
 | 1.1.1 | Plan de dirección integrado (ámbito, cronograma, costos, calidad, riesgos, comunicaciones, interesados y adquisiciones) | 1–3 | propuesta | plan inicial; se actualiza durante el contrato |
 | 1.1.2 | EDT y diccionario de paquetes con entregable, criterio de aceptación y responsable | 1–3 | propuesta | base de la planificación |
-| 1.1.3 | Control integrado de cambios | 1–56 | contrato | Art. 72: todo el contrato |
-| 1.1.4 | Registro de riesgos y de lecciones aprendidas | 1–56 | propuesta | continuo |
-| 1.1.5 | Registro de supuestos y de vacíos y consultas | 1–56 | propuesta | continuo |
+| 1.1.3 | Registro de solicitudes de cambio y su resolución | 1–56 | contrato | Art. 72: todo el contrato |
+| 1.1.4 | Registros de riesgos, lecciones aprendidas, supuestos y consultas | 1–56 | propuesta | continuo |
 | 1.1.6 | Calendario de ventanas de congelamiento y de eventos anuales con declaración de impacto por evento | 1–3 | propuesta | se actualiza cada año antes de la campaña de noviembre |
-| 1.1.7 | Actas de los comités del proyecto | 1–56 | contrato | Art. 71: comités durante todo el contrato |
-| 1.1.8 | Informe mensual de avance | 1–56 | contrato | RT-19.06: informe mensual |
+| 1.1.7 | Actas de los comités e informe mensual de avance | 1–56 | contrato | Art. 71: comités durante todo el contrato; RT-19.06: informe mensual |
 | 1.1.9 | Reporte mensual de consumo de nube | 4–56 | propuesta | desde el primer entorno de nube |
 | 1.1.10 | Actas de aceptación por entrega y habilitación de pagos | 1–56 | contrato | Art. 18: cada entrega sujeta a aceptación |
-| 1.1.11 | Seguimiento de garantías, seguros y certificados laborales | 1–56 | contrato | Art. 75.3 |
+| 1.1.11 | Registro de garantías, seguros y certificados laborales vigentes | 1–56 | contrato | Art. 75.3 |
 | 1.1.12 | Acta de constitución del proyecto | 1–1 | propuesta | mes de inicio |
 | 1.1.13 | Línea base de costos y presupuesto | 1–3 | propuesta | base de la planificación |
 
@@ -54,11 +52,9 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.2.1 | Mapa de las 14 interfaces punto a punto existentes | 1–3 | propuesta | entrega temprana, antes del diseño |
-| 1.2.2 | Inventario de las 9 plataformas, 6 proveedores y dependencias | 1–3 | propuesta | antes del diseño |
+| 1.2.1 | Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias | 1–3 | propuesta | entrega temprana, antes del diseño; antes del diseño |
 | 1.2.3 | Levantamiento de procesos, reglas de negocio y volumetría declarada | 1–3 | propuesta | antes del diseño |
-| 1.2.4 | Mantención del catálogo de requerimientos trazado al origen | 1–18 | propuesta | mientras dura el desarrollo |
-| 1.2.5 | Matriz de trazabilidad de origen, requerimiento, componente, paquete, prueba y criterio | 2–4 | propuesta | tras el levantamiento |
+| 1.2.4 | Catálogo de requerimientos y matriz de trazabilidad | 1–18 | propuesta | mientras dura el desarrollo; tras el levantamiento |
 | 1.2.6 | Línea base de alcance por etapa, con exclusiones y supuestos | 3–4 | propuesta | cierra el levantamiento |
 | 1.2.7 | Estudio de decisión con costeo sobre etiquetas electrónicas de precio | 2–5 | propuesta | OP-01 a OP-05 |
 | 1.2.8 | Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | 2–6 | propuesta | OP-08, OP-09 |
@@ -68,8 +64,7 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.3.1 | Documento de arquitectura con cinco vistas | 2–4 | propuesta | arquitectura cerrada en el mes 4 (EDT original) |
-| 1.3.2 | Catálogo de decisiones de arquitectura | 2–4 | propuesta | idem |
+| 1.3.1 | Documento de arquitectura con cinco vistas y catálogo de decisiones | 2–4 | propuesta | arquitectura cerrada en el mes 4 (EDT original); idem |
 | 1.3.3 | Arquitectura física con emplazamiento por componente justificado | 2–4 | propuesta | idem |
 | 1.3.4 | Modelo de datos con dominios segregados Retail y Emisor, frontera documentada y políticas de retención | 2–4 | propuesta | idem |
 | 1.3.5 | Contratos de integración versionados y su gobierno | 3–4 | propuesta | idem |
@@ -82,115 +77,82 @@ mes               1         2         3         4         5
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
 | 1.4.1 | Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos | 3–6 | propuesta | plataforma base lista en el mes 6 (EDT original) |
-| 1.4.2 | Configuración del entorno on-premise de borde por sitio | 6–12 | propuesta | antes de la marcha blanca |
+| 1.4.2 | Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen | 6–12 | propuesta | antes de la marcha blanca; antes del piloto de tiendas |
 | 1.4.3 | Entorno dedicado del ámbito emisor con segregación física y lógica acreditada | 4–8 | propuesta | ámbito emisor |
 | 1.4.4 | Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres | 1–12 | contrato | Art. 17: ambientes habilitados dentro de la Etapa 1 (meses 1 a 12) |
 | 1.4.5 | Plataforma de observabilidad unificada con catálogo de alertas | 4–8 | propuesta | antes de las primeras pruebas |
 | 1.4.6 | Plataforma de integración y entrega continuas con infraestructura como código | 3–5 | propuesta | antes del desarrollo en curso |
 | 1.4.7 | Licenciamiento de terceros a nombre del cliente | 2–6 | propuesta | a nombre del cliente |
 | 1.4.8 | Especificación de hardware y dispositivos de terreno para adquisición del cliente | 3–6 | propuesta | el cliente adquiere después |
-| 1.4.9 | Plano de distribución interna y especificación del recinto técnico del centro de datos | 2–4 | propuesta | RT-06.03 |
-| 1.4.10 | Especificación y coordinación de la obra civil de separación del centro de datos | 3–6 | propuesta | RT-06.06: el cliente ejecuta la obra |
+| 1.4.9 | Plano y especificación del recinto técnico del centro de datos y coordinación de su obra civil de separación | 2–6 | propuesta | RT-06.03; RT-06.06: el cliente ejecuta la obra |
 | 1.4.11 | Plan de cierre de la brecha del centro de datos frente al informe interno de 2024 | 2–5 | propuesta | informe de 2024 |
-| 1.4.12 | Sistema de energía ininterrumpida y generación autónoma del centro de datos | 6–12 | propuesta | listo antes de la marcha blanca |
-| 1.4.13 | Sistema de climatización de precisión con monitoreo ambiental del centro de datos | 6–12 | propuesta | idem |
-| 1.4.14 | Sistema de detección temprana y extinción automática de incendios del centro de datos | 6–12 | propuesta | idem |
-| 1.4.15 | Control de acceso físico biométrico y videovigilancia del centro de datos | 6–12 | propuesta | idem |
-| 1.4.16 | Espacio de operación del personal habilitado, separado de la sala de equipos | 6–12 | propuesta | idem |
-| 1.4.17 | Solución de respaldo en operación | 6–12 | propuesta | RT-07.09 |
-| 1.4.18 | Servicio de custodia de medios de respaldo del centro de datos | 8–12 | propuesta | RT-06.26 |
-| 1.4.19 | Configuración y certificación de la red segmentada en las 13 tiendas que no la tienen | 8–12 | propuesta | antes del piloto de tiendas |
+| 1.4.12 | Sistemas de energía y climatización del centro de datos | 6–12 | propuesta | listo antes de la marcha blanca; idem |
+| 1.4.14 | Sistemas de seguridad física del centro de datos y espacio de operación del personal | 6–12 | propuesta | idem |
+| 1.4.17 | Solución de respaldo en operación con custodia de medios | 6–12 | propuesta | RT-07.09; RT-06.26 |
 
 ### Rama 1.5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.5.1.1 | Cambio y propagación del precio, con su consulta en línea | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.1.2 | Etiquetas de exhibición y estado de exhibición de la tienda | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.1.3 | Historial del precio publicado | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.1.4 | Resolución de discrepancias de precio entre la etiqueta y la caja | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.1.1 | Precio: cambio, propagación, consulta e historial | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.1.2 | Etiquetas de exhibición y discrepancias de precio | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.1.5 | Promociones y su vigencia | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.1.6 | Maestro de artículos y reportes de calidad | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.2.1 | Propuesta diaria de reposición y su ajuste | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.2.2 | Órdenes de reposición a proveedores | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.2.3 | Transferencias entre tiendas y centros de distribución | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.2.4 | Recepción de mercadería en tienda | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.3.1 | Cálculo del disponible con colchón de confianza y su traza | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.2.3 | Transferencias y recepción de mercadería | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.3.1 | Disponible: cálculo, traza y consulta | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.3.2 | Reservas de existencia para el canal digital | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.3.3 | Consulta de disponibilidad en sala y en línea | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.3.4 | Conteo cíclico y medición de la exactitud del inventario | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.3.5 | Clasificación de diferencias e informe mensual de merma | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.3.6 | Gestión de las unidades en el probador | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.3.4 | Conteo, exactitud del inventario, merma y probador | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.3.7 | Suspensión y degradación de la publicación por categoría | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.3.8 | Integración de existencias con el sistema de almacenes y con las planillas de Concepción | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.4.1 | Fecha prometida de entrega y punto de despacho por costo total de servir | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.4.1 | Promesa de entrega, punto de despacho y elegibilidad del stock | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.4.2 | Preautorización, cobro y anulación del pago del pedido | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.4.3 | Resolución de pedidos sin existencia, reasignación y alternativas al cliente | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.4.4 | Estado único del pedido y sus consultas | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.4.5 | Priorización de pedidos por tiempo restante y cumplimiento de la promesa | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.4.6 | Elegibilidad del stock de exhibición y límite de unidades por cliente | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.4.7 | Seguimiento del pedido con el transportista hasta la entrega | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.5.1 | Registro y cobro de ventas, reversas y cierre de caja | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.5.2 | Operación de la tienda sin enlace | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.5.3 | Reconciliación de las ventas hechas sin enlace y su informe de excepciones | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.5.4 | Validación posterior de las operaciones de crédito cursadas sin enlace | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.5.5 | Desactivación de los medios de pago de mayor fricción | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.4.5 | Seguimiento y cumplimiento de la promesa de entrega | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.5.1 | Registro y cobro de ventas, reversas, cierre de caja y medios de pago | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.5.2 | Operación sin enlace, reconciliación y validación posterior | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.5.6 | Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.5.7 | Cobro con la tarjeta de la casa | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.6.1 | Cálculo de la base de comisión | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.6.2 | Entrega de la base de comisión al sistema de remuneraciones | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.6.3 | Revisión de la atribución de comisiones | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.7.1 | Existencia declarada por el vendedor y su publicación | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.2 | Consulta del vendedor sobre pedidos, devoluciones y evaluación | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.3 | Evaluación de vendedores y consecuencias escalonadas | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.4 | Devolución de productos de marketplace | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.5 | Identificación del vendedor y de las condiciones en la compra | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.6 | Separación de la existencia propia en pedidos intermediados | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.7.7 | Base de comisión y liquidación de marketplace | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.7.2 | Evaluación de vendedores y su consulta | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.7.4 | Devoluciones, base de comisión y liquidación de marketplace | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
+| 1.5.7.5 | Identificación del vendedor y separación de la existencia propia | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.8.1 | Atención de garantía legal en el mesón, con sus plazos | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.8.2 | Devolución y aptitud de la unidad devuelta | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.8.3 | Resolución al consumidor y recuperación contra el tercero responsable | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.9.1 | Consolidación de los registros de clientes | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.9.2 | Puntos y sincronización con el sistema de fidelización | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.9.3 | Segmentos y campañas con atributos comerciales | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.10.1 | Evaluación crediticia y apertura de tarjeta en el mostrador | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.10.1 | Evaluación crediticia, apertura de tarjeta y ampliación de cupo | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.10.2 | Simulación del costo total del crédito con la tasa máxima vigente | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.10.3 | Control de los intentos de evaluación | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.10.4 | Autorización de compra a cuotas sin enlace y sus topes | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.10.5 | Ampliación de cupo con enlace | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.11.1 | Gestión de cobranza dentro de los límites normativos | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
-| 1.5.11.2 | Repactación y registro de pagos | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
-| 1.5.11.3 | Cálculo de la mora y actualización de cuentas | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
-| 1.5.11.4 | Estado de cuenta y documentos para el cliente | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
+| 1.5.11.1 | Mora y gestión de cobranza | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
+| 1.5.11.2 | Repactación, pagos y estado de cuenta | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
 | 1.5.11.5 | Conciliación diaria y convivencia con la plataforma de crédito de 2011 | 1–18 | contrato | Art. 17 y Anexo D 24: cartera migra en las dos etapas |
 | 1.5.12.1 | Información precontractual entregada, aceptada y consultable | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.12.2 | Consentimiento de modificaciones de condiciones y su enlace con la cobranza | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.12.3 | Reconstrucción y recuperación de la evidencia del consentimiento | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.13.1 | Inventario de flujos de cruce autorizados y registro de los cruces | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.13.2 | Rechazo de cruces no autorizados entre los ámbitos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.13.3 | Tabla de correspondencia de identificadores | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.13.4 | Evaluación de impacto de las iniciativas sobre la frontera de datos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.1 | Identidad individual y sesión en terminales compartidas | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.2 | Habilitación por capacitación y acceso temporal de externos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.3 | Revocación de accesos y conciliación contra la nómina | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.4 | Administración de identidades, roles y ámbitos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.13.3 | Correspondencia de identificadores y evaluación de impacto sobre la frontera | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.14.1 | Identidad individual y administración de identidades, roles y ámbitos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.14.2 | Habilitación, revocación y conciliación de accesos | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.14.5 | Orden de degradación y ventanas de congelamiento | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.14.6 | Plataforma de integración y convivencia con el sistema central de 2009 | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.7 | Observabilidad y alertas de la operación | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.14.8 | Capacidad analítica y tableros por ámbito | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.14.7 | Observabilidad y capacidad analítica | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 
 ### Rama 1.6
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
 | 1.6.1 | Catálogo de interfaces rediseñadas con contratos y niveles de servicio de integración | 2–5 | propuesta | catálogo de interfaces |
-| 1.6.2 | Rediseño de las integraciones de precios y existencia hacia los canales | 5–12 | propuesta | interfaces de la Etapa 1 |
-| 1.6.3 | Rediseño de la integración de pedidos | 13–18 | propuesta | interfaz de la Etapa 2 |
-| 1.6.4 | Rediseño de la integración del crédito con el sistema de gestión empresarial | 5–12 | propuesta | interfaces de la Etapa 1 |
-| 1.6.5 | Rediseño de la integración con el marketplace | 13–18 | propuesta | interfaz de la Etapa 2 |
-| 1.6.6 | Rediseño de la integración de cobranza | 5–18 | propuesta | cartera: Etapa 1 y 2 |
-| 1.6.7 | Rediseño de la integración con el sistema de fidelización | 13–18 | propuesta | interfaz de la Etapa 2 |
-| 1.6.8 | Rediseño de la integración de prevención de pérdidas | 5–12 | propuesta | interfaz de la Etapa 1 |
+| 1.6.2 | Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas) | 5–18 | propuesta | interfaces de la Etapa 1; cartera: Etapa 1 y 2; interfaz de la Etapa 1 |
+| 1.6.3 | Rediseño de las integraciones de la Etapa 2 (pedidos, marketplace y fidelización) | 13–18 | propuesta | interfaz de la Etapa 2 |
 | 1.6.9 | Canal de intercambio con los proveedores de mercadería | 13–18 | propuesta | abastecimiento es de la Etapa 2 |
 | 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | 8–12 | propuesta | la filial emisora está en la Etapa 1 |
 | 1.6.11 | Certificación de las integraciones con evidencia de conciliación | 10–18 | propuesta | certificación de las dos etapas |
@@ -199,14 +161,12 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.7.1 | Plan de migración con estrategia de corte y de retorno | 2–4 | propuesta | antes de migrar |
-| 1.7.2 | Inventario de datos históricos a migrar | 2–4 | propuesta | RT-05.15 |
+| 1.7.1 | Plan de migración con estrategia de corte y de retorno e inventario de datos históricos | 2–4 | propuesta | antes de migrar; RT-05.15 |
 | 1.7.3 | Maestro de artículos saneado y validado (268.000 referencias) | 4–10 | propuesta | antes de la marcha blanca |
 | 1.7.4 | Corte de inventario en las 24 instalaciones que no cierran | 11–15 | propuesta | corte antes del paso a producción |
 | 1.7.5 | Migración del histórico comercial (ventas y pedidos) | 8–15 | propuesta | antes del paso a producción |
 | 1.7.6 | Migración del padrón de clientes deduplicado, de los vendedores y de las liquidaciones | 14–19 | propuesta | clientes Retail es de la Etapa 2 |
-| 1.7.7 | Migración de la cartera viva (620.000 clientes) con convivencia, conciliación diaria y retorno probado | 10–21 | contrato | Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21 |
-| 1.7.8 | Actas de conciliación de la corrida paralela y de cuadratura previa y posterior a la migración | 13–21 | propuesta | acompaña a la migración |
+| 1.7.7 | Migración de la cartera viva (620.000 clientes) con sus actas de conciliación | 10–21 | contrato | Anexo D, resultado 24: primera parte en el mes 16 y segunda en el mes 21; acompaña a la migración |
 | 1.7.9 | Repositorio de consulta de datos históricos no migrados | 10–16 | propuesta | antes del paso a producción de la Etapa 1 |
 | 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | 14–18 | propuesta | antes del retiro |
 | 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | 22–22 | contrato | sd-03 (operación): fecha objetivo octubre de 2028 = mes 22 |
@@ -216,33 +176,27 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.8.1 | Plan de seguridad y matriz de controles | 1–4 | propuesta | base de la seguridad |
-| 1.8.2 | Modelo de amenazas | 2–5 | propuesta | tras la arquitectura |
-| 1.8.3 | Declaración de superficie de exposición | 4–8 | propuesta | tras el diseño |
-| 1.8.4 | Plan de respuesta a incidentes de seguridad | 4–8 | propuesta | antes de la marcha blanca |
+| 1.8.1 | Plan de seguridad, matriz de controles y modelo de amenazas | 1–5 | propuesta | base de la seguridad; tras la arquitectura |
+| 1.8.3 | Declaración de superficie de exposición y plan de respuesta a incidentes | 4–8 | propuesta | tras el diseño; antes de la marcha blanca |
 | 1.8.5 | Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor | 2–5 | propuesta | tras la arquitectura |
 | 1.8.6 | Cifrado y tokenización de los medios de pago | 4–10 | propuesta | RNF-33, RNF-34 |
-| 1.8.7 | Protección de datos personales y registro de actividades de tratamiento | 3–8 | propuesta | Ley 21.719 |
-| 1.8.8 | Matriz de cumplimiento normativo con control y evidencia | 3–8 | propuesta | tras el diseño |
+| 1.8.7 | Protección de datos personales y matriz de cumplimiento normativo | 3–8 | propuesta | Ley 21.719; tras el diseño |
 | 1.8.9 | Informe de pruebas de intrusión y plan de remediación | 10–18 | propuesta | antes de la certificación de cada etapa |
 | 1.8.10 | Informe de diligencia del proveedor de nube | 2–4 | propuesta | antes de elegir el proveedor de nube |
-| 1.8.11 | Atestación de la cadena de suministro de software | 4–12 | propuesta | RNF-70, RNF-71 |
-| 1.8.12 | Revisión de la arquitectura de confianza cero | 4–8 | propuesta | RNF-73 |
+| 1.8.11 | Atestación de la cadena de suministro y revisión de la arquitectura de confianza cero | 4–12 | propuesta | RNF-70, RNF-71; RNF-73 |
 
 ### Rama 1.9
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
 | 1.9.1 | Plan de pruebas con niveles, tipos, ambientes, datos y calendario | 2–4 | propuesta | antes de probar |
-| 1.9.2 | Puertas de calidad con análisis estático, cobertura y umbrales | 4–6 | propuesta | antes del desarrollo en curso |
+| 1.9.2 | Estándares de codificación, revisión por pares y puertas de calidad | 1–6 | propuesta | antes del desarrollo en curso; antes de programar |
 | 1.9.3 | Batería de pruebas funcionales y de requisitos no funcionales | 5–18 | propuesta | durante el desarrollo de las dos etapas |
-| 1.9.4 | Batería de pruebas de carga, estrés y resiliencia | 9–18 | propuesta | antes de la certificación de cada etapa |
-| 1.9.5 | Batería de pruebas de recuperación ante desastres | 10–18 | propuesta | idem |
+| 1.9.4 | Pruebas de desempeño, resiliencia y recuperación ante desastres | 9–18 | propuesta | antes de la certificación de cada etapa; idem |
 | 1.9.6 | Ensayo de la estrategia de degradación del evento anual | 14–21 | contrato | Anexo D, resultado 25: ensayo del orden de degradación en el mes 16 y prueba de carga completa en el mes 21 |
 | 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | 11–21 | propuesta | aceptación por etapa |
 | 1.9.8 | Certificación de calidad de la Etapa 1 | 12–12 | contrato | Art. 17: la certificación va dentro del desarrollo de la Etapa 1 (meses 1 a 12) |
 | 1.9.9 | Certificación de calidad de la Etapa 2 | 18–18 | contrato | Art. 17: cierre del desarrollo de la Etapa 2 en el mes 18 |
-| 1.9.10 | Estándares de codificación y lista de revisión por pares | 1–3 | propuesta | antes de programar |
 
 ### Rama 1.10
 
@@ -258,8 +212,7 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.11.1 | Plan de implantación y puesta en marcha con criterios de éxito medibles | 3–6 | propuesta | T-18; se actualiza |
-| 1.11.2 | Procedimiento de despliegue gradual y de reversión probado | 9–12 | propuesta | antes de la marcha blanca |
+| 1.11.1 | Plan de implantación con procedimiento de despliegue gradual y de reversión probado | 3–12 | propuesta | T-18; se actualiza; antes de la marcha blanca |
 | 1.11.3 | Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda | 9–18 | propuesta | sitios de la Etapa 1 antes del mes 13 y de la Etapa 2 antes del mes 19 |
 | 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 15–18 | propuesta | Art. 17.2 fija la convivencia en los meses 19 y 20; el plan va antes |
 
@@ -268,13 +221,11 @@ mes               1         2         3         4         5
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
 | 1.12.1 | Plan de la marcha blanca de la Etapa 1 | 10–12 | propuesta | antes de la marcha blanca |
-| 1.12.2 | Informe de resultados de la marcha blanca de la Etapa 1, con medición diaria y conciliación | 15–15 | contrato | Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15 |
-| 1.12.3 | Evidencia de cierre de la Etapa 1 contra las condiciones del Caso | 15–16 | contrato | Art. 17.3: condiciones de cierre |
+| 1.12.2 | Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1 | 15–16 | contrato | Art. 17: la marcha blanca de la Etapa 1 termina en el mes 15; Art. 17.3: condiciones de cierre |
 | 1.12.4 | Acta de aceptación de la Etapa 1 | 16–16 | contrato | Art. 17: paso a producción en el mes 16 |
 | 1.12.5 | Plan de la marcha blanca de la Etapa 2, en convivencia con la Etapa 1 en producción | 16–18 | propuesta | antes de la marcha blanca de la Etapa 2 |
 | 1.12.6 | Informe de resultados de la marcha blanca de la Etapa 2 | 20–20 | contrato | Art. 17: la marcha blanca de la Etapa 2 termina en el mes 20 |
-| 1.12.7 | Acta de aceptación final de la implementación | 21–21 | contrato | Art. 17: aceptación final en el mes 21 |
-| 1.12.8 | Garantía de correcto funcionamiento | 21–21 | propuesta | se activa con la aceptación final |
+| 1.12.7 | Acta de aceptación final y garantía de correcto funcionamiento | 21–21 | contrato | Art. 17: aceptación final en el mes 21; se activa con la aceptación final |
 | 1.12.9 | Informe del soporte de estabilización posterior a la puesta en marcha | 16–24 | propuesta | tras cada paso a producción |
 
 ### Rama 1.13
@@ -284,20 +235,17 @@ mes               1         2         3         4         5
 | 1.13.1 | Plan de gestión del cambio con diagnóstico por perfil y medición de adopción | 3–6 | propuesta | antes de capacitar |
 | 1.13.2 | Plan de capacitación por rol y materiales editables en español | 5–8 | propuesta | antes de capacitar |
 | 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | 10–20 | propuesta | Art. 17.3: la capacitación certificada es condición de cierre de cada marcha blanca (meses 15 y 20) |
-| 1.13.4 | Programa de acompañamiento en puesto para el personal de tienda, temporero y externo | 13–24 | propuesta | tras el paso a producción de cada etapa |
+| 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | 13–24 | propuesta | tras el paso a producción de cada etapa |
 
 ### Rama 1.14
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.14.1 | Documentación técnica y funcional por categoría | 1–56 | propuesta | continua, versión final al cierre |
-| 1.14.2 | Inventario de componentes de software por artefacto desplegado | 5–56 | propuesta | desde el primer artefacto desplegado |
+| 1.14.1 | Documentación técnica y funcional con inventario de componentes de software | 1–56 | propuesta | continua, versión final al cierre; desde el primer artefacto desplegado |
 | 1.14.3 | Transferencia tecnológica de código fuente, artefactos de construcción, scripts de infraestructura y procedimientos de despliegue | 48–56 | propuesta | Art. 77.1: programa de transferencia hacia el cierre |
-| 1.14.4 | Base de conocimiento de incidentes, problemas, soluciones y decisiones de diseño | 13–56 | propuesta | desde la marcha blanca |
-| 1.14.5 | Manuales de operación, libros de operación y guías de resolución de fallas | 10–20 | propuesta | antes de operar |
+| 1.14.4 | Base de conocimiento y manuales de operación | 10–56 | propuesta | desde la marcha blanca; antes de operar |
 | 1.14.6 | Plan de Reversibilidad con exportación en formatos abiertos | 1–3 | contrato | Art. 77.2: dentro de los primeros noventa días; se actualiza cada año |
-| 1.14.7 | Acompañamiento de reversibilidad posterior al cierre | 56–56 | contrato | Art. 77.2: noventa días después del cierre, fuera de los 56 meses |
-| 1.14.8 | Acta de cierre y traspaso final a operaciones | 56–56 | propuesta | cierre del contrato |
+| 1.14.7 | Acta de cierre, traspaso final y acompañamiento de reversibilidad | 56–56 | contrato | Art. 77.2: noventa días después del cierre, fuera de los 56 meses; cierre del contrato |
 | 1.14.9 | Informe de lecciones aprendidas del proyecto | 56–56 | propuesta | cierre del contrato |
 | 1.14.10 | Protocolo de aceptación de entregas y del producto final | 1–3 | propuesta | antes de la primera aceptación |
 
@@ -305,13 +253,11 @@ mes               1         2         3         4         5
 
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
-| 1.15.1 | Mesa de servicio de tres niveles | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
-| 1.15.2 | Informe mensual de nivel de servicio | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
+| 1.15.1 | Mesa de servicio de tres niveles en operación | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
+| 1.15.2 | Informes periódicos de nivel de servicio y de certificaciones | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
 | 1.15.3 | Pruebas periódicas de recuperación ante desastres | 21–56 | contrato | sd-03: la recuperación ante desastres se prueba dos veces al año |
-| 1.15.4 | Mantención correctiva | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
-| 1.15.5 | Mantención preventiva y evolutiva con mejora continua del nivel de servicio | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
-| 1.15.6 | Gestión de la infraestructura en operación | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
-| 1.15.7 | Informe anual de certificaciones y soporte a auditorías e inspecciones | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
+| 1.15.4 | Mantención correctiva, preventiva y evolutiva | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
+| 1.15.6 | Infraestructura en operación con su informe de gestión | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
 | 1.15.8 | Jornadas anuales de actualización y capacitación de personal nuevo | 21–56 | contrato | Art. 17: operación de los meses 21 a 56 |
 
 ## 3. Barras
@@ -321,26 +267,21 @@ mes               1         2         3         4         5
 1.1.2    ███·····················································
 1.1.3    ████████████████████████████████████████████████████████
 1.1.4    ████████████████████████████████████████████████████████
-1.1.5    ████████████████████████████████████████████████████████
 1.1.6    ███·····················································
 1.1.7    ████████████████████████████████████████████████████████
-1.1.8    ████████████████████████████████████████████████████████
 1.1.9    ···█████████████████████████████████████████████████████
 1.1.10   ████████████████████████████████████████████████████████
 1.1.11   ████████████████████████████████████████████████████████
 1.1.12   █·······················································
 1.1.13   ███·····················································
 1.2.1    ███·····················································
-1.2.2    ███·····················································
 1.2.3    ███·····················································
 1.2.4    ██████████████████······································
-1.2.5    ·███····················································
 1.2.6    ··██····················································
 1.2.7    ·████···················································
 1.2.8    ·█████··················································
 1.2.9    ·████···················································
 1.3.1    ·███····················································
-1.3.2    ·███····················································
 1.3.3    ·███····················································
 1.3.4    ·███····················································
 1.3.5    ··██····················································
@@ -355,33 +296,21 @@ mes               1         2         3         4         5
 1.4.6    ··███···················································
 1.4.7    ·█████··················································
 1.4.8    ··████··················································
-1.4.9    ·███····················································
-1.4.10   ··████··················································
+1.4.9    ·█████··················································
 1.4.11   ·████···················································
 1.4.12   ·····███████············································
-1.4.13   ·····███████············································
 1.4.14   ·····███████············································
-1.4.15   ·····███████············································
-1.4.16   ·····███████············································
 1.4.17   ·····███████············································
-1.4.18   ·······█████············································
-1.4.19   ·······█████············································
 1.5.1.1  ████████████············································
 1.5.1.2  ████████████············································
-1.5.1.3  ████████████············································
-1.5.1.4  ████████████············································
 1.5.1.5  ████████████············································
 1.5.1.6  ████████████············································
 1.5.2.1  ············██████······································
 1.5.2.2  ············██████······································
 1.5.2.3  ············██████······································
-1.5.2.4  ············██████······································
 1.5.3.1  ████████████············································
 1.5.3.2  ████████████············································
-1.5.3.3  ████████████············································
 1.5.3.4  ████████████············································
-1.5.3.5  ████████████············································
-1.5.3.6  ████████████············································
 1.5.3.7  ████████████············································
 1.5.3.8  ████████████············································
 1.5.4.1  ············██████······································
@@ -389,13 +318,8 @@ mes               1         2         3         4         5
 1.5.4.3  ············██████······································
 1.5.4.4  ············██████······································
 1.5.4.5  ············██████······································
-1.5.4.6  ············██████······································
-1.5.4.7  ············██████······································
 1.5.5.1  ████████████············································
 1.5.5.2  ████████████············································
-1.5.5.3  ████████████············································
-1.5.5.4  ████████████············································
-1.5.5.5  ████████████············································
 1.5.5.6  ████████████············································
 1.5.5.7  ████████████············································
 1.5.6.1  ············██████······································
@@ -403,11 +327,8 @@ mes               1         2         3         4         5
 1.5.6.3  ············██████······································
 1.5.7.1  ············██████······································
 1.5.7.2  ············██████······································
-1.5.7.3  ············██████······································
 1.5.7.4  ············██████······································
 1.5.7.5  ············██████······································
-1.5.7.6  ············██████······································
-1.5.7.7  ············██████······································
 1.5.8.1  ············██████······································
 1.5.8.2  ············██████······································
 1.5.8.3  ············██████······································
@@ -416,13 +337,9 @@ mes               1         2         3         4         5
 1.5.9.3  ············██████······································
 1.5.10.1 ████████████············································
 1.5.10.2 ████████████············································
-1.5.10.3 ████████████············································
 1.5.10.4 ████████████············································
-1.5.10.5 ████████████············································
 1.5.11.1 ██████████████████······································
 1.5.11.2 ██████████████████······································
-1.5.11.3 ██████████████████······································
-1.5.11.4 ██████████████████······································
 1.5.11.5 ██████████████████······································
 1.5.12.1 ████████████············································
 1.5.12.2 ████████████············································
@@ -430,99 +347,74 @@ mes               1         2         3         4         5
 1.5.13.1 ████████████············································
 1.5.13.2 ████████████············································
 1.5.13.3 ████████████············································
-1.5.13.4 ████████████············································
 1.5.14.1 ████████████············································
 1.5.14.2 ████████████············································
-1.5.14.3 ████████████············································
-1.5.14.4 ████████████············································
 1.5.14.5 ████████████············································
 1.5.14.6 ████████████············································
 1.5.14.7 ████████████············································
-1.5.14.8 ████████████············································
 1.6.1    ·████···················································
-1.6.2    ····████████············································
+1.6.2    ····██████████████······································
 1.6.3    ············██████······································
-1.6.4    ····████████············································
-1.6.5    ············██████······································
-1.6.6    ····██████████████······································
-1.6.7    ············██████······································
-1.6.8    ····████████············································
 1.6.9    ············██████······································
 1.6.10   ·······█████············································
 1.6.11   ·········█████████······································
 1.7.1    ·███····················································
-1.7.2    ·███····················································
 1.7.3    ···███████··············································
 1.7.4    ··········█████·········································
 1.7.5    ·······████████·········································
 1.7.6    ·············██████·····································
 1.7.7    ·········████████████···································
-1.7.8    ············█████████···································
 1.7.9    ·········███████········································
 1.7.10   ·············█████······································
 1.7.11   ·····················█··································
 1.7.12   ····················████████████████████████████████████
-1.8.1    ████····················································
-1.8.2    ·████···················································
+1.8.1    █████···················································
 1.8.3    ···█████················································
-1.8.4    ···█████················································
 1.8.5    ·████···················································
 1.8.6    ···███████··············································
 1.8.7    ··██████················································
-1.8.8    ··██████················································
 1.8.9    ·········█████████······································
 1.8.10   ·███····················································
 1.8.11   ···█████████············································
-1.8.12   ···█████················································
 1.9.1    ·███····················································
-1.9.2    ···███··················································
+1.9.2    ██████··················································
 1.9.3    ····██████████████······································
 1.9.4    ········██████████······································
-1.9.5    ·········█████████······································
 1.9.6    ·············████████···································
 1.9.7    ··········███████████···································
 1.9.8    ···········█············································
 1.9.9    ·················█······································
-1.9.10   ███·····················································
 1.10.1   ························································  por definir
 1.10.2   ························································  por definir
 1.10.3   ························································  por definir
 1.10.4   ························································  por definir
 1.10.5   ························································  por definir
-1.11.1   ··████··················································
-1.11.2   ········████············································
+1.11.1   ··██████████············································
 1.11.3   ········██████████······································
 1.11.4   ··············████······································
 1.12.1   ·········███············································
-1.12.2   ··············█·········································
-1.12.3   ··············██········································
+1.12.2   ··············██········································
 1.12.4   ···············█········································
 1.12.5   ···············███······································
 1.12.6   ···················█····································
 1.12.7   ····················█···································
-1.12.8   ····················█···································
 1.12.9   ···············█████████································
 1.13.1   ··████··················································
 1.13.2   ····████················································
 1.13.3   ·········███████████····································
 1.13.4   ············████████████································
 1.14.1   ████████████████████████████████████████████████████████
-1.14.2   ····████████████████████████████████████████████████████
 1.14.3   ···············································█████████
-1.14.4   ············████████████████████████████████████████████
-1.14.5   ·········███████████····································
+1.14.4   ·········███████████████████████████████████████████████
 1.14.6   ███·····················································
 1.14.7   ·······················································█
-1.14.8   ·······················································█
 1.14.9   ·······················································█
 1.14.10  ███·····················································
 1.15.1   ····················████████████████████████████████████
 1.15.2   ····················████████████████████████████████████
 1.15.3   ····················████████████████████████████████████
 1.15.4   ····················████████████████████████████████████
-1.15.5   ····················████████████████████████████████████
 1.15.6   ····················████████████████████████████████████
-1.15.7   ····················████████████████████████████████████
 1.15.8   ····················████████████████████████████████████
 ```
 

@@ -103,12 +103,37 @@ def mes_calendario(m):
     return (m - 1) % 12 + 1
 
 
+def fusiones(edt=gm.EDT):
+    """{código que queda: [códigos absorbidos]} desde la tabla `| Queda | Absorbe | ... |` de la EDT."""
+    out = {}
+    for cab, filas in gm.vcu.tablas(Path(edt).read_text(encoding="utf-8")):
+        if cab[:2] == ["Queda", "Absorbe"]:
+            for f in filas:
+                out[f[0]] = [x.strip() for x in f[1].split(",") if x.strip()]
+    return out
+
+
+FUSIONES = fusiones()
+
+
 def ventana(p):
-    """(inicio, fin, tipo, fuente) del paquete; para el software, la de su etapa (Art. 17)."""
+    """(inicio, fin, tipo, fuente) del elemento; para el software, la de su etapa (Art. 17).
+    Si el elemento absorbió otros al fusionarse, su ventana es la unión de las ventanas originales."""
     if p["metodo"] == "UCP":
         a, b = ETAPAS[p["etapa"]]
         return a, b, C, f"Art. 17: desarrollo de la etapa {p['etapa']}" if p["etapa"] != "1 y 2" else "Art. 17 y Anexo D 24: cartera migra en las dos etapas"
-    return V.get(p["codigo"])
+    miembros = [p["codigo"]] + FUSIONES.get(p["codigo"], [])
+    vs = [V[c] for c in miembros if V.get(c)]
+    if not vs:
+        return None
+    if len(vs) == 1:
+        return vs[0]
+    fuentes = []
+    for v in vs:
+        if v[3] not in fuentes:
+            fuentes.append(v[3])
+    tipo = vs[0][2] if V.get(p["codigo"]) else vs[0][2]
+    return min(v[0] for v in vs), max(v[1] for v in vs), tipo, "; ".join(fuentes)
 
 
 def asignar(paquetes):
@@ -196,7 +221,7 @@ def texto(items, por_mes, total):
          f"Cae en congelamiento la marcha blanca de la Etapa 1 ({calendario(13)} a {calendario(15)}): es operación supervisada, sin cambios en producción, así que se coordina con el plan de la marcha blanca. "
          f"Con la Etapa 1 ya en producción, el evento anual de comercio electrónico y el Día de la Madre de 2028 ({calendario(17)} y {calendario(18)}) caen en el desarrollo de la Etapa 2: el ensayo de degradación del evento "
          "(paquete 1.9.6) debe estar hecho antes.", "",
-         "## 2. Ventanas por paquete", ""]
+         "## 2. Ventanas por cuenta de control", ""]
     ramas = {}
     for p in items:
         ramas.setdefault(p["rama"], []).append(p)

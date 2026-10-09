@@ -22,7 +22,7 @@ class TestHorasPaquetes(unittest.TestCase):
     def test_lo_que_no_cubre_el_ucp_queda_por_estimar(self):
         filas, _ = rh.calcular()
         pend = [f for f in filas if f["fuente"] == "por estimar"]
-        self.assertEqual(len(pend), 134)
+        self.assertEqual(len(pend), 102)
         self.assertTrue(all(f["horas"] is None for f in pend))
 
     def test_las_horas_de_una_planilla_entran_a_su_paquete(self):

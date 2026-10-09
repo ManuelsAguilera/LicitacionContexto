@@ -23,7 +23,7 @@ class TestDiccionario(unittest.TestCase):
     def test_una_ficha_por_paquete_con_todos_los_campos(self):
         fichas, hall = gd.construir()
         self.assertEqual(hall, [])
-        self.assertEqual(len(fichas), 207)
+        self.assertEqual(len(fichas), 153)
         for f in fichas:
             self.assertEqual(set(f["vals"]), gd.CLAVES, f["paquete"]["codigo"])
             self.assertTrue(all(e in ("derivado", "propuesta", "manual", "por definir") for _, e in f["vals"].values()))
@@ -31,7 +31,7 @@ class TestDiccionario(unittest.TestCase):
     def test_los_paquetes_del_ucp_traen_esfuerzo_referencias_y_criterio(self):
         fichas, _ = gd.construir()
         ucp = [f for f in fichas if f["paquete"]["metodo"] == "UCP"]
-        self.assertEqual(len(ucp), 73)
+        self.assertEqual(len(ucp), 51)
         for f in ucp:
             self.assertEqual(f["vals"]["esfuerzo"][1], "derivado")
             self.assertTrue(f["vals"]["referencias"][0].startswith("RF-") or "casos de uso" in f["vals"]["referencias"][0])

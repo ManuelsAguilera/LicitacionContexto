@@ -56,6 +56,13 @@ class TestCronograma(unittest.TestCase):
         self.assertEqual(v["1.9.9"][:2], (18, 18))
         self.assertTrue(all(p["ventana"][0] >= 21 for p in items if p["rama"] == "1.15"))
 
+    def test_la_ventana_de_una_cuenta_fusionada_es_la_union(self):
+        items, _, _ = cargar()
+        v = {p["codigo"]: p["ventana"] for p in items}
+        self.assertEqual(v["1.6.2"][:2], (5, 18))
+        self.assertEqual(v["1.12.2"][:2], (15, 16))
+        self.assertNotIn("1.6.4", v)
+
     def test_detecta_software_fuera_de_su_etapa(self):
         items, por_mes, total = cargar()
         malo = dict(next(p for p in items if p["metodo"] == "UCP" and p["etapa"] == "1"))
