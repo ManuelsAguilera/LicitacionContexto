@@ -52,10 +52,10 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 
 ### 1.4 Infraestructura híbrida y plataforma base — 13 cuentas de control
 
-- 1.4.1 Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos {ucp: no; nivel: cuenta de control; etapa: por definir}
+- 1.4.1 Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos {ucp: no; nivel: cuenta de control; etapa: por definir; origen: sd-03, 3.1 (despliegue híbrido con la carga principal en nube pública)}
 - 1.4.2 Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen {ucp: no; nivel: cuenta de control; etapa: por definir; origen: El hardware lo adquiere el cliente (SP-04); El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04); RT-03.24 del Caso}
 - 1.4.3 Entorno dedicado del ámbito emisor con segregación física y lógica acreditada {ucp: no; nivel: cuenta de control; etapa: por definir; origen: RNF-14 y RNF-36 (Anexo B): separación física acreditada del ámbito emisor}
-- 1.4.4 Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres {ucp: no; nivel: cuenta de control; etapa: por definir}
+- 1.4.4 Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres {ucp: no; nivel: cuenta de control; etapa: por definir; origen: sd-03, 3.4.1 (pruebas en preproducción a 1,5 veces el peak declarado)}
 - 1.4.5 Plataforma de observabilidad unificada con catálogo de alertas {ucp: no; nivel: cuenta de control; etapa: por definir; origen: frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica; sd-03, 3.2.1 y 3.3.2 (observabilidad de la base tecnológica)}
 - 1.4.6 Plataforma de integración y entrega continuas con infraestructura como código {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Antes 1.5.10; no está en el UCP}
 - 1.4.7 Licenciamiento de terceros a nombre del cliente {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Agregado desde la guía de la EDT, sección 8}
@@ -205,8 +205,8 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.9.4 Pruebas de desempeño, resiliencia y recuperación ante desastres {ucp: no; nivel: cuenta de control; etapa: por definir; origen: RNF-22, RNF-23; ensayos a 1,5 veces el peak (RT-09.06); RNF-32}
 - 1.9.6 Ensayo de la estrategia de degradación del evento anual {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Resultado 25 del Anexo D; lo cita el servicio y se nombra aquí (guía §6)}
 - 1.9.7 Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Anexo D (28 resultados de negocio)}
-- 1.9.8 Certificación de calidad de la Etapa 1 {ucp: no; nivel: cuenta de control; etapa: 1}
-- 1.9.9 Certificación de calidad de la Etapa 2 {ucp: no; nivel: cuenta de control; etapa: 2}
+- 1.9.8 Certificación de calidad de la Etapa 1 {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable)}
+- 1.9.9 Certificación de calidad de la Etapa 2 {ucp: no; nivel: cuenta de control; etapa: 2; origen: sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable)}
 - 1.9.11 Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.3 y 3.4.5; RT-03.10}
 - 1.9.12 Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.3.1; decide si se conservan, remedian o sustituyen antes de la Etapa 2}
 - 1.9.13 Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.4.6; antes del despliegue; RNF-49}

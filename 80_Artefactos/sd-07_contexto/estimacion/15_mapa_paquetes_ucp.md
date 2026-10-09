@@ -91,10 +91,10 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.3.6 | Especificación del modo desconectado de 24 horas y de la sincronización tras la reconexión | desde el inicio del contrato | RT-03.10 de las Bases Transversales; el código RT-03.13 significa cosas distintas en el Caso y en las Transversales |
 | 1.3.7 | Modelo de capacidad y dimensionamiento | desde el inicio del contrato | memoria de capacidad de la sección 3.4.1 del sd-03 |
 | 1.3.8 | Especificación y costeo de las obras de infraestructura del cliente | desde el inicio del contrato | El cliente ejecuta; el proponente especifica, costea, coordina y certifica (SP-04) |
-| 1.4.1 | Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos | por definir | — |
+| 1.4.1 | Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos | por definir | sd-03, 3.1 (despliegue híbrido con la carga principal en nube pública) |
 | 1.4.2 | Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen | por definir | El hardware lo adquiere el cliente (SP-04); El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04); RT-03.24 del Caso |
 | 1.4.3 | Entorno dedicado del ámbito emisor con segregación física y lógica acreditada | por definir | RNF-14 y RNF-36 (Anexo B): separación física acreditada del ámbito emisor |
-| 1.4.4 | Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres | por definir | — |
+| 1.4.4 | Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres | por definir | sd-03, 3.4.1 (pruebas en preproducción a 1,5 veces el peak declarado) |
 | 1.4.5 | Plataforma de observabilidad unificada con catálogo de alertas | por definir | frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica; sd-03, 3.2.1 y 3.3.2 (observabilidad de la base tecnológica) |
 | 1.4.6 | Plataforma de integración y entrega continuas con infraestructura como código | por definir | Antes 1.5.10; no está en el UCP |
 | 1.4.7 | Licenciamiento de terceros a nombre del cliente | por definir | Agregado desde la guía de la EDT, sección 8 |
@@ -137,8 +137,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.9.4 | Pruebas de desempeño, resiliencia y recuperación ante desastres | por definir | RNF-22, RNF-23; ensayos a 1,5 veces el peak (RT-09.06); RNF-32 |
 | 1.9.6 | Ensayo de la estrategia de degradación del evento anual | por definir | Resultado 25 del Anexo D; lo cita el servicio y se nombra aquí (guía §6) |
 | 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | por definir | Anexo D (28 resultados de negocio) |
-| 1.9.8 | Certificación de calidad de la Etapa 1 | 1 | — |
-| 1.9.9 | Certificación de calidad de la Etapa 2 | 2 | — |
+| 1.9.8 | Certificación de calidad de la Etapa 1 | 1 | sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable) |
+| 1.9.9 | Certificación de calidad de la Etapa 2 | 2 | sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable) |
 | 1.9.11 | Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto | 1 | sd-03, 3.2.3 y 3.4.5; RT-03.10 |
 | 1.9.12 | Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 | 1 | sd-03, 3.3.1; decide si se conservan, remedian o sustituyen antes de la Etapa 2 |
 | 1.9.13 | Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados | 1 | sd-03, 3.4.6; antes del despliegue; RNF-49 |

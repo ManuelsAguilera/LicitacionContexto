@@ -16,7 +16,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | Costo estimado | 0 | 0 | 0 | 164 |
 | Recursos requeridos | 0 | 0 | 0 | 164 |
 | Supuestos | 164 | 0 | 0 | 0 |
-| Referencias | 153 | 0 | 0 | 11 |
+| Referencias | 157 | 0 | 0 | 7 |
 
 Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 29 de 164 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
 
@@ -483,7 +483,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 6 (propuesta): plataforma base lista en el mes 6 (EDT original). [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.1 (despliegue híbrido con la carga principal en nube pública). [derivado]
 
 #### 1.4.2 Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen
 
@@ -531,7 +531,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 12 (contrato): Art. 17: ambientes habilitados dentro de la Etapa 1 (meses 1 a 12). [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.4.1 (pruebas en preproducción a 1,5 veces el peak declarado). [derivado]
 
 #### 1.4.5 Plataforma de observabilidad unificada con catálogo de alertas
 
@@ -2045,7 +2045,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 12 (contrato): Art. 17: la certificación va dentro del desarrollo de la Etapa 1 (meses 1 a 12). [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable). [derivado]
 
 #### 1.9.9 Certificación de calidad de la Etapa 2
 
@@ -2061,7 +2061,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 18 (contrato): Art. 17: cierre del desarrollo de la Etapa 2 en el mes 18. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.5 (el equipo del proponente controla la calidad antes de presentar cada entregable). [derivado]
 
 #### 1.9.11 Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto
 
