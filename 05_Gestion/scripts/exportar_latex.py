@@ -274,7 +274,9 @@ def check_final(tex: Path) -> None:
     for heading in required:
         if heading not in body:
             raise ValueError(f"{tex.name}: falta {heading} para la exportación final")
-    if re.search(r"\bTODO\b|\[VERIFICAR\]", body, re.I):
+    # `TODO` es un marcador deliberadamente en mayúsculas. No usar IGNORECASE:
+    # en español, la palabra corriente «todo» aparece naturalmente en el texto.
+    if re.search(r"\bTODO\b", body) or re.search(r"\[VERIFICAR\]", body, re.I):
         raise ValueError(f"{tex.name}: contiene un marcador pendiente")
 
 

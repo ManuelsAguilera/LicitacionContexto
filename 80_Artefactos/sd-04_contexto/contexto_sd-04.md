@@ -29,3 +29,11 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne de
 4. Mapa de las 14 interfaces existentes y su tipo real (D-01).
 5. Evaluación de la plataforma de comercio electrónico (AS-04) de la Etapa 1: define si se conserva (Opción A, D-08) o si se construye un portal nuevo (Opción B). Cambia los actores de cliente y vendedor y el número de casos de uso de la Etapa 2.
 6. Código del portal público: la tabla del Caso lo rotula RT-16.30, y en las Bases Transversales el portal público es RT-16.31 (RT-16.30 es la auditoría de exportaciones sensibles). Las Bases son inmutables, así que se cita como «RT-16.31, rotulado 16.30 en el Caso».
+
+## 3. Avance registrado tras la actualización de `work` (2026-10-09)
+
+El pull de la rama incorporó los commits `3d558a0` y `c5c9c27`, que completan el cuerpo de SD-04, actualizan sus 19 figuras y recompilan la vista previa. La arquitectura queda documentada en `02_Propuesta/latex_final/sd-04.tex`, que es la fuente editable de T7-04; los archivos Markdown siguen siendo contexto.
+
+Se verificó T7-04 contra la plantilla corporativa y contra las reglas mecánicas de redacción: **0 errores y 0 avisos**. La exportación final quedó generada en `07_Entregables/sobre_2_tecnico/OnlySimpleSolutions-Subdocumento4.pdf`, con 43 páginas. El índice de figuras y tecnologías por bloques está en `80_Artefactos/sd-04_contexto/mapa_bloques_y_tecnologias.md`; la revisión de canales y omisiones está en `auditoria_canales_arquitectura_logica.md`.
+
+La selección tecnológica documentada ahora trata Azure Chile Central como región primaria y Brazil South como recuperación, Azure API Management Premium como gateway y Azure Event Hubs Premium como broker, con PostgreSQL Flexible Server, AKS, Entra ID, Key Vault, OpenTelemetry y Azure Monitor como componentes evaluados según el borrador de SD-04. Las vistas históricas que muestran Kong, Kafka, NiFi o Grafana se conservan como material de comparación del MCP y no reemplazan estas decisiones. Quedan sujetos a acreditación contractual el socio de nube del artículo 34, los contratos reales de las 14 interfaces, la residencia del Emisor y las pruebas de capacidad y recuperación.
