@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import generar_cronograma as gc  # noqa: E402
 import generar_mapa_paquetes as gm  # noqa: E402
+import generar_ola as go  # noqa: E402
 import repartir_horas_paquetes as rh  # noqa: E402
 
 SALIDA = gm.DIR / "20_evaluacion_8_80.md"
@@ -89,7 +90,7 @@ def texto(items, total):
          "6. **La clase tira en dos direcciones.** La diapositiva 55 advierte contra dividir de más y la 56 pide 8/80. PMBOK 6 lo reconcilia: el último nivel de la EDT puede ser una **cuenta de control**; "
          "lo lejano se deja como **paquete de planificación** y se descompone en **paquetes de trabajo** cuando se acerca (planificación gradual).", "",
          "**Conclusión.** No es un error de conteo. Exigir 8/80 a cada elemento de una EDT de entregables de este tamaño obligaría a tener entre "
-         f"{h(n['min_80'])} y {h(n['min_44'])} paquetes solo de software, contra la advertencia de la diapositiva 55. La regla se cumple un nivel más abajo, en los paquetes de trabajo de la ola cercana.", "",
+         f"{h(n['min_80'])} y {h(n['min_44'])} paquetes solo de software, contra la advertencia de la diapositiva 55. La regla se cumple un nivel más abajo: en los paquetes de trabajo de la ola cercana y en las actividades del cronograma. En el software, el paquete de trabajo es el entregable de un caso de uso y queda como excepción declarada (sección 5).", "",
          "## 2. Cumplimiento por rama", "",
          "| Rama | Elementos | Con horas | Más de 80 h | 8 a 80 h | Menos de 8 h | Sin horas | Más de un mes |", "| :-- | --: | --: | --: | --: | --: | --: | --: |"]
     ramas = {}
@@ -115,11 +116,21 @@ def texto(items, total):
           "## 4. Decisiones del usuario (2026-10-08)", "",
           "1. Se resuelve con la planificación gradual de PMBOK 6: el último nivel de la EDT son cuentas de control; solo la ola cercana se descompone en paquetes de trabajo de 8 a 80 h y de un mes como máximo; lo lejano queda como paquetes de planificación.",
           "2. Período de reporte mensual (RT-19.06).",
-          "3. Las fusiones de la opción A se aplican a nivel de cuentas de control.", "",
-          "## 5. Regla de descomposición del software para su ola", "",
-          f"Cuando un servicio entra en su ola, cada caso de uso se baja a paquetes de trabajo. Un caso simple ({h(n['simple'])} h) no cabe en 80 h, así que se parte por transacción y fase: "
-          f"análisis y diseño ≈ {h(n['por_transaccion'] * 0.30)} h, construcción ≈ {h(n['por_transaccion'] * 0.40)} h y pruebas ≈ {h(n['por_transaccion'] * 0.15)} h por transacción; "
-          f"la sobrecarga ({h(n['por_transaccion'] * 0.15)} h por transacción) va a la cuenta de gestión. Son unos {h(n['trans'] * 3)} paquetes en todo el proyecto, pero nunca todos a la vez: solo los de la ola en curso.", ""]
+          "3. Las fusiones de la opción A se aplican a nivel de cuentas de control.",
+          "4. **En el software, el paquete de trabajo es el entregable: uno por caso de uso.** Es un subproyecto (diap. 56) y supera las 80 h por una excepción declarada; sus fases son actividades del cronograma de 8 a 80 h, no nodos de la EDT.", "",
+          "## 5. Por qué no se parte el software por fase", ""]
+    cuentas_sw = [x for x in items if x["fuente"] == "UCP"]
+    sw = go.paquetes_software(go.horas_por_caso())
+    act = go.proyeccion(go.horas_por_caso())
+    L += [f"Una primera versión proyectó {sum(n for _, n, _ in act)} «paquetes» de software con una regla de un paquete por caso y fase (análisis, diseño, construcción y pruebas), partido por transacción cuando pasaba de 80 h. Eso era un error de diseño: "
+          "las fases son actividades, no entregables (la guía de la EDT lo prohíbe y la diapositiva 56 dice que el paquete se descompone en actividades fuera de la EDT). La cantidad dependía de esa regla y no de lo que hay que entregar.", "",
+          "| Estructura | Elementos de software | Tamaño medio |", "| :-- | --: | --: |",
+          f"| Regla descartada: caso × fase, partido por transacción | {sum(n for _, n, _ in act)} | {h(n['total'] * 0.85 / sum(k for _, k, _ in act))} h |",
+          f"| Caso × fase, sin partir | {4 * len(sw)} | {h(n['total'] * 0.85 / (4 * len(sw)))} h |",
+          f"| Un entregable por transacción | {n['trans']} | {h(n['por_transaccion'])} h |",
+          f"| **Un entregable por caso de uso (vigente)** | **{len(sw)}** | **{h(sum(x['horas'] for x in sw) / len(sw))} h** |",
+          f"| Cuentas de control de software | {len(cuentas_sw)} | {h(sum(x['horas'] for x in cuentas_sw) / len(cuentas_sw))} h |", "",
+          f"Con el paquete igual al caso de uso, la EDT conserva la traza uno a uno al sd-03 (caso, RF y resultados del Anexo D), y las {sum(k for _, k, _ in act)} actividades por fase quedan en el cronograma, donde cada una cumple 8/80 y un mes.", ""]
     return "\n".join(L)
 
 

@@ -28,6 +28,12 @@ class TestMapaPaquetes(unittest.TestCase):
         self.assertEqual(sum(p["uucw"] for p in ucp), 645)
         self.assertEqual(len(paquetes), 164)
 
+    def test_el_mapa_lista_un_paquete_de_software_por_caso(self):
+        paquetes, _ = gm.cargar()
+        texto = gm.informe(paquetes)
+        self.assertIn("## 4. Paquetes de trabajo de software (uno por caso de uso)", texto)
+        self.assertIn("| **Total** | **127** | | | |", texto)
+
     def test_el_mapa_publicado_esta_actualizado(self):
         paquetes, _ = gm.cargar()
         self.assertEqual(gm.informe(paquetes), (DIR / "15_mapa_paquetes_ucp.md").read_text(encoding="utf-8"))

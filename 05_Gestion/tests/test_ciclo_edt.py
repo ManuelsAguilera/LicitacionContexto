@@ -29,6 +29,11 @@ class TestCicloEdt(unittest.TestCase):
         self.assertEqual(sorted(t["blandas"]), ["S1", "S2", "S3"])
         json.dumps(t)  # serializable
 
+    def test_s1_cuenta_127_paquetes_de_software_y_689_actividades(self):
+        s1 = ce.tablero()["blandas"]["S1"]
+        self.assertEqual(s1["paquetes_software"], 127)
+        self.assertEqual(s1["actividades_software_proyectadas"], 689)
+
     def test_las_metas_de_coherencia_y_de_tamano_pasan_hoy(self):
         d = ce.tablero()["duras"]
         for k in ("H1", "H2", "H3", "H4", "H5", "H7", "H8", "H9"):

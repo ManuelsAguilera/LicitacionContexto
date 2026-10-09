@@ -129,6 +129,18 @@ def informe(paquetes):
     for nodo, (a, b, c) in por.items():
         L.append(f"| {nodo} | {a} | {b} | {c} |")
     L.append(f"| **Total** | **{sum(v[0] for v in por.values())}** | **{sum(v[1] for v in por.values())}** | **{sum(v[2] for v in por.values())}** |")
+    casos = {c["codigo"]: c for c in vcu.leer_casos(DIR)[0]}
+    L += ["", "## 4. Paquetes de trabajo de software (uno por caso de uso)", "",
+          "Decisión del usuario del 2026-10-08: en el software, el paquete de trabajo es el entregable de un caso de uso. Cada cuenta de control de la sección 1 contiene los paquetes de sus casos. "
+          "Son subproyectos y exceden las 80 h por una excepción declarada (FEP02, diapositiva 56). Las horas están en `16_horas_por_paquete.md`.", "",
+          "| Paquete | Caso de uso | Cuenta | RF | Etapa |", "| :-- | :-- | :-- | :-- | :-- |"]
+    n = 0
+    for p in ucp:
+        for i, cid in enumerate(p["casos"], 1):
+            c = casos[cid]
+            L.append(f"| {p['codigo']}.{i} | {c['nombre']} ({cid}) | {p['codigo']} | {rango_rf(vcu.expandir(c['origen'])) or '—'} | {p['etapa']} |")
+            n += 1
+    L.append(f"| **Total** | **{n}** | | | |")
     return "\n".join(L) + "\n"
 
 

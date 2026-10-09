@@ -8,7 +8,7 @@ Las revisiones manuales repetían las mismas comprobaciones y cada vuelta movía
 
 ## Qué significa «cantidad correcta»
 
-No es un número. Es una cadena de trazas: cada cuenta de control y cada paquete cita el elemento del sd-03 de donde viene (caso de uso, RF, resultado del Anexo D, compromiso, obligación, exclusión o sección), y cada elemento del sd-03 tiene al menos un paquete. Si esa cadena está completa y todo paquete de trabajo con horas cumple 8/80 y un mes, la cantidad queda justificada. Para el software, la cantidad la fija la aritmética: 31.850 h con paquetes de hasta 80 h son unos 690 paquetes de trabajo. La EDT tiene dos niveles: cuentas de control (nivel de gestión, hoy 164) y paquetes de trabajo (nivel 8/80, por ola).
+No es un número. Es una cadena de trazas: cada cuenta de control y cada paquete cita el elemento del sd-03 de donde viene (caso de uso, RF, resultado del Anexo D, compromiso, obligación, exclusión o sección), y cada elemento del sd-03 tiene al menos un paquete. Si esa cadena está completa y todo elemento con horas cumple 8/80 y un mes, la cantidad queda justificada. **Decisión del 2026-10-09:** en el software, el paquete de trabajo es el entregable de un caso de uso (127 paquetes de unos 250 h, excepción declarada a 8/80 como subproyectos); sus fases son actividades del cronograma, hoy 689, que sí cumplen 8/80 y un mes. Nunca se convierten las fases en nodos de la EDT. La EDT tiene dos niveles: cuentas de control (nivel de gestión, hoy 164) y paquetes de trabajo (uno por caso en el software; por ola en el resto).
 
 ## El prompt
 
@@ -32,7 +32,7 @@ CADA ITERACIÓN (una sola clase de cambio por vez)
 3. Elige UNA clase de infracción, en este orden fijo:
    a) incoherencia con el sd-03 (H1, H2);
    b) cuenta o paquete sin traza, o elemento del sd-03 sin paquete (H6, H7);
-   c) paquete de trabajo con más de 80 h (H8);
+   c) paquete de trabajo que no es de software con más de 80 h, o actividad por fase con más de 80 h (H8);
    d) paquete con menos de 8 h o de más de un mes (H8);
    e) hallazgos firmes del verificador, mapa o cronograma (H3, H4, H5);
    f) duplicados y nombres con varios entregables (S3).
@@ -52,8 +52,10 @@ LÍMITES
 - Máximo 12 iteraciones. Detente tras 3 iteraciones seguidas sin mejora de la clase elegida.
 - Cada 4 iteraciones detente y muéstrame una tabla con los cambios aceptados y descartados; sigue
   solo si te lo apruebo.
-- Una cuenta de control puede superar 80 h (planificación gradual de PMBOK 6); el paquete de trabajo
-  no. Los paquetes de software se derivan por regla (fase y transacción) y su cantidad es aritmética.
+- Una cuenta de control puede superar 80 h (planificación gradual de PMBOK 6). El paquete de software
+  es el caso de uso y supera 80 h por excepción declarada; sus fases (análisis, diseño, construcción y
+  pruebas) son actividades de 8 a 80 h y de un mes, nunca nodos de la EDT. Los demás paquetes de
+  trabajo sí cumplen 8/80 y un mes.
 - Los paquetes sin horas no se dan por buenos: quedan «pendientes de planilla» y cuentan en S2.
 - No uses más de un cambio estructural por iteración. No regeneres los diccionarios hasta el final.
 - Si una cita del sd-03 no existe, no la inventes: deja la cuenta sin traza y márcala como pregunta.
@@ -68,7 +70,7 @@ descartados, pendientes humanos (planillas, validación del equipo) y decisiones
 1. **Rama dedicada.** `git switch -c loop/edt` antes de empezar; así los commits del loop no se mezclan con los de la rama de trabajo y se pueden descartar enteros.
 2. **Primera iteración esperable.** La clase b (H6): hoy 51 cuentas no citan un elemento del sd-03 (sobre todo gestión, arquitectura, infraestructura e implantación). Algunas se justifican con las Bases y no con el sd-03; en ese caso el loop debe dejarlo escrito como pregunta y no forzar una cita.
 3. **Una clase de cambio por iteración, con orden fijo.** Evita que arreglar 8/80 deshaga la coherencia.
-4. **El software es aritmética.** No esperes que el loop baje los unos 690 paquetes de trabajo del software; lo que mejora es la estructura de las ramas sin horas.
+4. **El software ya está resuelto por regla.** Un paquete por caso de uso (127) y sus 689 actividades por fase en el cronograma; el loop no debe volver a partirlo por fase. Lo que mejora es la estructura de las ramas sin horas.
 5. **Para cerrar 8/80 fuera del software** hacen falta horas: las planillas de tres valores (`12_plantilla_tres_valores.md` y `21_planilla_ola_1.md`). Sin ellas, el loop informa «pendiente de planilla».
 6. **Revisión independiente al final.** Un agente que no vio el loop revisa el tablero y la bitácora, como en G3.
 7. **Costo.** El tablero tarda unos tres segundos; el loop completo son unas 12 corridas dobles. Regenerar los diccionarios y el resto al final.

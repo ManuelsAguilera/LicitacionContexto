@@ -60,15 +60,18 @@ def tablero(edt=gm.EDT):
     horas_min = min(c["horas"] * pct / (1 if c["horas"] * pct <= go.MAX_H else max(c["trans"], -(-int(c["horas"] * pct) // go.MAX_H)))
                     for c in casos.values() for _, pct in go.FASES)
     proy_ok = all(m <= go.MAX_H for _, _, m in pr) and horas_min >= go.MIN_H
-    meta("H8", "8/80 y un mes: paquetes de trabajo con horas (ola 1 y proyección del software)", not fuera and proy_ok,
-         f"{len(fuera)} fuera de rango en la ola; proyección {sum(n for _, n, _ in pr)} paquetes, máximo {max(m for _, _, m in pr):.0f} h y mínimo {horas_min:.0f} h", fuera)
+    meta("H8", "8/80 y un mes: elementos de la ola 1 y actividades por fase del software (los 127 paquetes de software son excepción declarada)", not fuera and proy_ok,
+         f"{len(fuera)} fuera de rango en la ola; {sum(n for _, n, _ in pr)} actividades por fase, máximo {max(m for _, _, m in pr):.0f} h y mínimo {horas_min:.0f} h", fuera)
     filas, tot = rh.calcular()
     ucp = sum(f["horas"] for f in filas if f["fuente"] == "UCP")
-    meta("H9", "Las horas del UCP se conservan", abs(ucp - TOTAL_UCP) <= 1 and abs(tot - TOTAL_UCP) <= 1, f"{ucp:,.0f} h de {TOTAL_UCP:,.0f} h")
+    sw = rh.paquetes_software(filas)
+    sw_h = sum(x["horas"] for x in sw)
+    meta("H9", "Las horas del UCP se conservan (cuentas y paquetes de software)", abs(ucp - TOTAL_UCP) <= 1 and abs(tot - TOTAL_UCP) <= 1 and abs(sw_h - TOTAL_UCP) <= 1,
+         f"{ucp:,.0f} h en las cuentas y {sw_h:,.0f} h en {len(sw)} paquetes, de {TOTAL_UCP:,.0f} h")
     blandas = {
         "S1": {"cuentas": len(paquetes), "cuentas_software": sum(p["metodo"] == "UCP" for p in paquetes),
-               "paquetes_software_proyectados": sum(n for _, n, _ in pr), "paquetes_ola_1": len(ola)},
-        "S2": {"cuentas_sin_horas": sum(f["fuente"] == "por estimar" for f in filas), "paquetes_ola_sin_horas": sum(x["horas"] is None for x in ola)},
+               "paquetes_software": len(sw), "actividades_software_proyectadas": sum(n for _, n, _ in pr), "elementos_ola_1": len(ola)},
+        "S2": {"cuentas_sin_horas": sum(f["fuente"] == "por estimar" for f in filas), "elementos_ola_sin_horas": sum(x["horas"] is None for x in ola)},
         "S3": {"posibles": len([x for x in ve.verificar(edt) if x["tipo"] == "posible"])},
     }
     return {"duras": res, "blandas": blandas, "ok": all(m["ok"] for m in res.values())}
@@ -81,8 +84,8 @@ def texto(t, detalle=False):
         if detalle and m["infractores"]:
             L.append(f"| | | {', '.join(map(str, m['infractores'][:20]))} |")
     b = t["blandas"]
-    L += ["", f"S1 cuentas {b['S1']['cuentas']} ({b['S1']['cuentas_software']} de software); paquetes de software proyectados {b['S1']['paquetes_software_proyectados']}; paquetes de la ola 1 {b['S1']['paquetes_ola_1']}",
-          f"S2 cuentas sin horas {b['S2']['cuentas_sin_horas']}; paquetes de la ola 1 sin horas {b['S2']['paquetes_ola_sin_horas']}",
+    L += ["", f"S1 cuentas {b['S1']['cuentas']} ({b['S1']['cuentas_software']} de software); paquetes de software {b['S1']['paquetes_software']} (uno por caso de uso); actividades por fase proyectadas {b['S1']['actividades_software_proyectadas']}; elementos de la ola 1 {b['S1']['elementos_ola_1']}",
+          f"S2 cuentas sin horas {b['S2']['cuentas_sin_horas']}; elementos de la ola 1 sin horas {b['S2']['elementos_ola_sin_horas']}",
           f"S3 posibles duplicados o varios entregables {b['S3']['posibles']}", "",
           "Metas duras: " + ("todas cumplen" if t["ok"] else "faltan " + ", ".join(k for k, m in t["duras"].items() if not m["ok"]))]
     return "\n".join(L)

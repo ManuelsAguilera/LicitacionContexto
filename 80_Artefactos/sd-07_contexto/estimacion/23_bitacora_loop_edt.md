@@ -45,6 +45,10 @@ Las 13 cuentas siguientes no tienen en `sd-03.tex` ni en sus anexos una frase qu
 | 1.12.9 | Informe del soporte de estabilización | Art. 14.2 de las Bases (implantación, marcha blanca, paso a producción y estabilización) |
 | 1.14.9 | Informe de lecciones aprendidas | Práctica de PMBOK 6 |
 
+## Corrección de la regla de proyección (2026-10-09)
+
+Al cierre se revisó el número de 689 «paquetes de software». Era una proyección de la regla «un paquete por caso y fase (análisis, diseño, construcción y pruebas), partido por transacción», que convertía actividades en nodos de la EDT. El usuario aprobó el cambio: en el software, el paquete de trabajo es el entregable de un caso de uso (127 paquetes de unos 250 h, excepción declarada a 8/80 como subproyectos) y las fases son actividades del cronograma (689, de 25 a 74 h). El tablero ahora cuenta 127 paquetes y 689 actividades (S1) y H8 mide las actividades; H9 comprueba que los 127 paquetes suman las 31.850 h. Ver `20_evaluacion_8_80.md`, sección 5.
+
 ## Cierre del loop (2026-10-08)
 
 Se detiene tras 2 iteraciones aceptadas porque no queda un cambio honesto que mejore una meta dura: las 13 cuentas sin traza no tienen una cita cierta en el sd-03, y las demás clases (más de 80 h, menos de 8 h o más de un mes, hallazgos firmes, duplicados) no tienen infractores que corregir. Lo que falta es una decisión humana, listada arriba.

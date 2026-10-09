@@ -60,6 +60,15 @@ class TestOla(unittest.TestCase):
         self.assertTrue(go.incumple(cambios))
         self.assertTrue(any(x["fuente"] == "por estimar" for x in paquetes))
 
+    def test_el_paquete_de_software_es_el_caso_de_uso_y_el_analisis_es_una_actividad(self):
+        paquetes, _, casos = go.construir()
+        sw = go.paquetes_software(casos)
+        self.assertEqual(len(sw), 127)
+        self.assertAlmostEqual(sum(x["horas"] for x in sw), 31850.0, delta=1.0)
+        self.assertTrue(all(x["horas"] > go.MAX_H for x in sw))  # excepción declarada a 8/80
+        a = [x for x in paquetes if x["grupo"] == "A"]
+        self.assertTrue(all(x["codigo"].endswith("-A") and x["nombre"].startswith("Análisis del caso de uso") for x in a))
+
     def test_proyeccion_cubre_los_127_casos(self):
         _, _, casos = go.construir()
         pr = go.proyeccion(casos)

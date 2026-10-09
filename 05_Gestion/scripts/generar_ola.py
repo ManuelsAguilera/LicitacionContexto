@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Primera ola de paquetes de trabajo (planificación gradual de PMBOK 6): las cuentas de control activas en los meses 1 a 3 se bajan
-a paquetes de trabajo de 8 a 80 horas y de un mes como máximo (regla 8/80 y período de reporte mensual, FEP02 diap. 56).
+"""Primera ola (planificación gradual de PMBOK 6): las cuentas de control activas en los meses 1 a 3 se bajan a elementos de 8 a 80
+horas y de un mes como máximo (regla 8/80 y período de reporte mensual, FEP02 diap. 56).
+
+Decisión del usuario del 2026-10-08: en el software el **paquete de trabajo es el entregable**, uno por caso de uso (127). Es un subproyecto
+(diap. 56) y supera las 80 h por una excepción declarada; sus fases (análisis, diseño, construcción y pruebas) son **actividades** del cronograma,
+no nodos de la EDT, y cada actividad cumple 8/80 y un mes. Por eso el grupo A de la ola son actividades, no paquetes.
 
 Cuatro grupos de cuentas (cada una en uno solo):
-  A. software que empieza en la ola: un paquete de **especificación** por caso de uso (el análisis, 10 % de sus horas del UCP; ver
-     `repartir_horas_paquetes.py`). El diseño, la construcción y las pruebas entran en las olas siguientes.
+  A. software que empieza en la ola: la **actividad de análisis** de cada caso de uso (10 % de sus horas del UCP; ver
+     `repartir_horas_paquetes.py`), dentro del paquete del caso. El diseño, la construcción y las pruebas son actividades de las olas siguientes.
   B. trabajo continuo (ventana de más de 12 meses): un paquete por mes de la ola (por ejemplo, el informe de avance de enero).
   C. cuentas que terminan dentro de la ola: se separan en las partes que su propio nombre enumera (tabla PARTES); si nombran una sola, un paquete.
   D. cuentas que empiezan en la ola y siguen después: su primera entrega, con las partes que el nombre enumera cuando las hay.
@@ -90,8 +94,8 @@ def construir(planillas=()):
         if g == "A":
             for i, cid in enumerate(p["casos"]):
                 c = casos[cid]
-                out.append({"codigo": f"{cod}.{i + 1}", "nombre": f"Especificación del caso de uso «{c['nombre']}» ({cid})", "cuenta": cod, "grupo": g,
-                            "mes": OLA[0] + i % (OLA[1] - OLA[0] + 1), "horas": c["horas"] * FASES[0][1], "fuente": "UCP (análisis, 10 %)"})
+                out.append({"codigo": f"{cod}.{i + 1}-A", "nombre": f"Análisis del caso de uso «{c['nombre']}» ({cid})", "cuenta": cod, "grupo": g,
+                            "mes": OLA[0] + i % (OLA[1] - OLA[0] + 1), "horas": c["horas"] * FASES[0][1], "fuente": "UCP (actividad de análisis, 10 %)"})
         elif g == "B":
             for m in range(OLA[0], OLA[1] + 1):
                 out.append({"codigo": f"{cod}.{m}", "nombre": f"{p['nombre']}, {gc.calendario(m)}", "cuenta": cod, "grupo": g, "mes": m, "horas": medias.get(f"{cod}.{m}"),
@@ -109,8 +113,13 @@ def incumple(x):
     return x["horas"] is not None and not (MIN_H <= x["horas"] <= MAX_H)
 
 
+def paquetes_software(casos):
+    """Los paquetes de trabajo de software: uno por caso de uso, con sus horas totales del UCP (excepción declarada a 8/80)."""
+    return [{"caso": cid, "nombre": c["nombre"], "trans": c["trans"], "horas": c["horas"]} for cid, c in sorted(casos.items())]
+
+
 def proyeccion(casos):
-    """Paquetes de trabajo del software en todo el proyecto según la regla por fase y transacción."""
+    """Actividades del software en todo el proyecto: una por fase y caso, partida por transacción si pasa de 80 h. No son nodos de la EDT."""
     filas = []
     for fase, pct in FASES:
         n, mayor = 0, 0.0
@@ -125,14 +134,15 @@ def proyeccion(casos):
 
 def texto(paquetes, cuentas, casos):
     h = cm.h
-    L = ["# Primera ola de paquetes de trabajo (meses 1 a 3)", "",
+    L = ["# Primera ola de la EDT (meses 1 a 3): paquetes de trabajo y actividades", "",
          "Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/generar_ola.py`; no editar a mano. Fecha: 2026-10-08. Estado: **propuesta**, pendiente del visto bueno del equipo. "
-         "Aplica la planificación gradual de PMBOK 6 aprobada por el usuario: las cuentas de control de `14_edt_corregida.md` activas en los meses 1 a 3 (enero a marzo de 2027) se bajan a paquetes de trabajo de **8 a 80 horas y de un mes como máximo** "
-         "(FEP02, diapositiva 56; período de reporte mensual por RT-19.06). Los códigos de los paquetes tienen un nivel más que los de las cuentas; es una excepción a los cuatro niveles de la guía, porque el paquete de trabajo es el nivel inferior de la EDT. "
-         "Las horas de los paquetes que no son de software no se inventan: esperan la planilla de tres valores (`21_planilla_ola_1.md`).", "",
+         "Aplica la planificación gradual de PMBOK 6 aprobada por el usuario: las cuentas de control de `14_edt_corregida.md` activas en los meses 1 a 3 (enero a marzo de 2027) se bajan a elementos de **8 a 80 horas y de un mes como máximo** "
+         "(FEP02, diapositiva 56; período de reporte mensual por RT-19.06). **Decisión del usuario del 2026-10-08:** en el software el paquete de trabajo es el entregable, uno por caso de uso; es un subproyecto (diap. 56) y supera las 80 h por una excepción declarada. "
+         "Sus fases son **actividades** del cronograma: por eso el grupo A son actividades de análisis y no paquetes. Los grupos B, C y D sí son paquetes de trabajo. Los códigos tienen un nivel más que los de las cuentas; es una excepción a los cuatro niveles de la guía. "
+         "Las horas de B, C y D no se inventan: esperan la planilla de tres valores (`21_planilla_ola_1.md`).", "",
          "## 1. Resumen", "",
-         "| Grupo | Qué es | Cuentas | Paquetes | Con horas |", "| :-- | :-- | --: | --: | --: |"]
-    nombres = {"A": "Software que empieza: especificación de cada caso de uso", "B": "Trabajo continuo: un paquete por mes",
+         "| Grupo | Qué es | Cuentas | Elementos | Con horas |", "| :-- | :-- | --: | --: | --: |"]
+    nombres = {"A": "Actividad de análisis de cada caso de uso (dentro de su paquete de software)", "B": "Trabajo continuo: un paquete por mes",
                "C": "Cuentas que terminan dentro de la ola, separadas en sus partes", "D": "Cuentas que siguen después: su primera entrega"}
     for g in "ABCD":
         pk = [x for x in paquetes if x["grupo"] == g]
@@ -140,29 +150,34 @@ def texto(paquetes, cuentas, casos):
     L.append(f"| **Total** | | **{len(cuentas)}** | **{len(paquetes)}** | **{sum(x['horas'] is not None for x in paquetes)}** |")
     con = [x for x in paquetes if x["horas"] is not None]
     mal = [x for x in paquetes if incumple(x)]
-    L += ["", f"Paquetes con horas: {len(con)} de {len(paquetes)}. Entre 8 y 80 h: {len(con) - len(mal)}. Fuera de rango: **{len(mal)}**." +
+    L += ["", f"Elementos con horas: {len(con)} de {len(paquetes)}. Entre 8 y 80 h: {len(con) - len(mal)}. Fuera de rango: **{len(mal)}**." +
           (" " + ", ".join(x["codigo"] for x in mal) + "." if mal else ""),
-          "Cada paquete tiene un solo mes por construcción. Los de software salen del UCP; el resto queda «por estimar» y se verifica al llenar la planilla.", "",
-          "## 2. Paquetes de trabajo", ""]
+          "Cada elemento tiene un solo mes por construcción. Las actividades de análisis salen del UCP; el resto queda «por estimar» y se verifica al llenar la planilla.", "",
+          "## 2. Elementos de la ola", ""]
     for g in "ABCD":
-        L += [f"### Grupo {g}. {nombres[g]}", "", "| Código | Paquete de trabajo | Cuenta | Mes | Horas | Fuente |", "| :-- | :-- | :-- | :-- | --: | :-- |"]
+        L += [f"### Grupo {g}. {nombres[g]}", "", "| Código | Elemento | Cuenta | Mes | Horas | Fuente |", "| :-- | :-- | :-- | :-- | --: | :-- |"]
         for x in paquetes:
             if x["grupo"] == g:
                 L.append(f"| {x['codigo']} | {x['nombre']} | {x['cuenta']} | {x['mes']} ({gc.calendario(x['mes'])}) | {h(x['horas']) if x['horas'] is not None else 'por estimar'} | {x['fuente']} |")
         L.append("")
-    L += ["## 3. Regla de descomposición del software para las olas siguientes", "",
-          "Cada caso de uso se baja en su ola a un paquete de trabajo por fase: análisis (10 %), diseño (20 %), construcción (40 %) y pruebas (15 %). La sobrecarga (15 %) va a las cuentas de gestión. "
-          "Si una fase de un caso pasa de 80 h, se parte por transacción (o en partes iguales de hasta 80 h si el caso tiene menos transacciones que partes). Con los 127 casos:", "",
-          "| Fase | Paquetes en todo el proyecto | Horas del mayor |", "| :-- | --: | --: |"]
+    sw = paquetes_software(casos)
+    horas_sw = [x["horas"] for x in sw]
+    L += ["## 3. Regla de descomposición del software", "",
+          f"El paquete de trabajo de software es **el entregable que resuelve un caso de uso**: {len(sw)} paquetes, de {h(min(horas_sw))} a {h(max(horas_sw))} h (media {h(sum(horas_sw) / len(sw))} h). "
+          "Ninguno cabe en 80 h, porque el UCP con la lectura B ya trae en cada caso su análisis, diseño, pruebas y sobrecarga. Se declara como excepción a la regla 8/80: cada paquete es un subproyecto con su propia descomposición en actividades (FEP02, diapositiva 56). "
+          "Así cada paquete se traza a un caso de uso, a sus RF y a los resultados del Anexo D, y la EDT no se llena de fases.", "",
+          "Las actividades del cronograma de cada paquete son las cuatro fases de la lectura B: análisis (10 %), diseño (20 %), construcción (40 %) y pruebas (15 %); la sobrecarga (15 %) va a las cuentas de gestión. "
+          "Cada actividad cumple 8/80 y un mes: si pasa de 80 h, se parte por transacción (o en partes iguales de hasta 80 h si el caso tiene menos transacciones que partes). Con los 127 casos:", "",
+          "| Fase | Actividades en todo el proyecto | Horas de la mayor |", "| :-- | --: | --: |"]
     pr = proyeccion(casos)
     for fase, n, mayor in pr:
         L.append(f"| {fase} | {n} | {h(mayor)} |")
     L.append(f"| **Total** | **{sum(n for _, n, _ in pr)}** | |")
-    L += ["", "No son 700 paquetes a la vez: en cada ola se baja solo lo que se ejecuta en ella. La ola 1 tiene los análisis de la Etapa 1 y de la cartera; el diseño y la construcción de la Etapa 1 entran en las olas de los meses 4 en adelante, y los casos de la Etapa 2 en las de los meses 13 en adelante.", "",
+    L += ["", f"Esas {sum(n for _, n, _ in pr)} actividades son del cronograma, no de la EDT, y nunca se ejecutan todas a la vez. En cada ola se programa solo lo que ocurre en ella: la ola 1 tiene los análisis de la Etapa 1 y de la cartera; el diseño y la construcción de la Etapa 1 son actividades de los meses 4 en adelante, y los casos de la Etapa 2 de los meses 13 en adelante.", "",
           "## 4. Qué falta", "",
           "1. La planilla de tres valores de los paquetes de los grupos B, C y D (`21_planilla_ola_1.md`): dos estimadores, sin consultar el UCP.",
           "2. La validación del equipo de las partes de los grupos C y D, que salen del nombre de cada cuenta.",
-          "3. Si se aprueban las cuentas nuevas de `22_coherencia_edt_sd03.md`, las que empiecen en los meses 1 a 3 entran a esta ola.", ""]
+          "3. Si se aprueban cuentas nuevas, las que empiecen en los meses 1 a 3 entran a esta ola.", ""]
     return "\n".join(L)
 
 

@@ -197,3 +197,138 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | Servicio de control de cruces | 3 | 6 | 30 |
 | Base tecnológica | 5 | 13 | 65 |
 | **Total** | **51** | **127** | **645** |
+
+## 4. Paquetes de trabajo de software (uno por caso de uso)
+
+Decisión del usuario del 2026-10-08: en el software, el paquete de trabajo es el entregable de un caso de uso. Cada cuenta de control de la sección 1 contiene los paquetes de sus casos. Son subproyectos y exceden las 80 h por una excepción declarada (FEP02, diapositiva 56). Las horas están en `16_horas_por_paquete.md`.
+
+| Paquete | Caso de uso | Cuenta | RF | Etapa |
+| :-- | :-- | :-- | :-- | :-- |
+| 1.5.1.1.1 | Cambiar y propagar un precio (CU-OF-01) | 1.5.1.1 | RF-016, RF-018, RF-030 | 1 |
+| 1.5.1.1.2 | Entregar la oferta vigente a los canales (CU-OF-02) | 1.5.1.1 | RF-017 | 1 |
+| 1.5.1.1.3 | Consultar el precio vigente en línea (CU-OF-03) | 1.5.1.1 | RF-064 | 1 |
+| 1.5.1.1.4 | Recuperar el precio publicado en un instante (CU-OF-06) | 1.5.1.1 | RF-021 | 1 |
+| 1.5.1.2.1 | Registrar el cambio de etiqueta (CU-OF-04) | 1.5.1.2 | RF-019, RF-020 | 1 |
+| 1.5.1.2.2 | Consultar el estado de exhibición de la tienda (CU-OF-05) | 1.5.1.2 | RF-029 | 1 |
+| 1.5.1.2.3 | Resolver el precio a cobrar ante diferencia con la etiqueta (CU-OF-07) | 1.5.1.2 | RF-022, RF-023, RF-028 | 1 |
+| 1.5.1.2.4 | Revisar los incidentes de discrepancia de precio (CU-OF-08) | 1.5.1.2 | RF-024 | 1 |
+| 1.5.1.5.1 | Aplicar las promociones vigentes en la venta (CU-OF-09) | 1.5.1.5 | RF-032 a RF-034 | 1 |
+| 1.5.1.5.2 | Administrar las promociones y su vigencia (CU-OF-10) | 1.5.1.5 | — | 1 |
+| 1.5.1.6.1 | Mantener el maestro de artículos (CU-OF-11) | 1.5.1.6 | RF-142, RF-143 | 1 |
+| 1.5.1.6.2 | Revisar los reportes de calidad del maestro y de publicación (CU-OF-12) | 1.5.1.6 | RF-147, RF-148 | 1 |
+| 1.5.2.1.1 | Generar la propuesta diaria de reposición (CU-AB-01) | 1.5.2.1 | RF-144 | 2 |
+| 1.5.2.1.2 | Ajustar y confirmar la propuesta de reposición (CU-AB-02) | 1.5.2.1 | RF-145, RF-146 | 2 |
+| 1.5.2.2.1 | Colocar y seguir las órdenes a proveedores (CU-AB-03) | 1.5.2.2 | — | 2 |
+| 1.5.2.3.1 | Gestionar las transferencias entre tiendas y centros de distribución (CU-AB-04) | 1.5.2.3 | — | 2 |
+| 1.5.2.3.2 | Registrar la recepción de mercadería en la tienda (CU-AB-05) | 1.5.2.3 | — | 2 |
+| 1.5.3.1.1 | Publicar el disponible a los canales (CU-EX-03) | 1.5.3.1 | RF-127 a RF-129, RF-157 | 1 |
+| 1.5.3.1.2 | Parametrizar el colchón de confianza y la vigencia de la reserva (CU-EX-08) | 1.5.3.1 | RF-036, RF-149 a RF-152 | 1 |
+| 1.5.3.1.3 | Consultar la traza del cálculo del disponible (CU-EX-09) | 1.5.3.1 | RF-130 | 1 |
+| 1.5.3.1.4 | Consultar la disponibilidad para vender en sala (CU-EX-01) | 1.5.3.1 | RF-087, RF-101, RF-161 | 1 |
+| 1.5.3.1.5 | Consultar la disponibilidad en línea (CU-EX-02) | 1.5.3.1 | RF-065, RF-066, RF-160 | 1 |
+| 1.5.3.2.1 | Reservar una unidad para el canal digital (CU-EX-04) | 1.5.3.2 | RF-035, RF-037, RF-038, RF-041 | 1 |
+| 1.5.3.2.2 | Expirar las reservas vencidas (CU-EX-05) | 1.5.3.2 | RF-039, RF-040, RF-042 | 1 |
+| 1.5.3.2.3 | Verificar la existencia física antes del cobro (CU-EX-06) | 1.5.3.2 | RF-044 | 1 |
+| 1.5.3.2.4 | Resolver el conflicto de existencia comprometida (CU-EX-07) | 1.5.3.2 | RF-098 | 1 |
+| 1.5.3.4.1 | Parametrizar el conteo cíclico (CU-EX-10) | 1.5.3.4 | RF-131 a RF-133 | 1 |
+| 1.5.3.4.2 | Ejecutar el conteo cíclico (CU-EX-11) | 1.5.3.4 | RF-134 a RF-136 | 1 |
+| 1.5.3.4.3 | Consultar la exactitud del inventario y recibir alertas (CU-EX-12) | 1.5.3.4 | RF-137, RF-158, RF-159, RF-162 | 1 |
+| 1.5.3.4.4 | Clasificar las diferencias y cerrar el ajuste (CU-EX-13) | 1.5.3.4 | RF-138, RF-139 | 1 |
+| 1.5.3.4.5 | Emitir el informe mensual de merma (CU-EX-14) | 1.5.3.4 | RF-140, RF-141 | 1 |
+| 1.5.3.4.6 | Gestionar las unidades en el probador (CU-EX-15) | 1.5.3.4 | RF-153 a RF-156 | 1 |
+| 1.5.3.7.1 | Suspender la publicación de una categoría (CU-EX-16) | 1.5.3.7 | RF-163, RF-164 | 1 |
+| 1.5.3.7.2 | Degradar por cancelaciones (CU-EX-17) | 1.5.3.7 | RF-179, RF-182, RF-183 | 1 |
+| 1.5.3.8.1 | Recibir los movimientos del sistema de almacenes (CU-EX-18) | 1.5.3.8 | — | 1 |
+| 1.5.3.8.2 | Cargar las existencias de Concepción (CU-EX-19) | 1.5.3.8 | — | 1 |
+| 1.5.4.1.1 | Calcular la fecha prometida de entrega (CU-PE-01) | 1.5.4.1 | RF-075, RF-079, RF-080 | 2 |
+| 1.5.4.1.2 | Seleccionar el punto de despacho por costo total de servir (CU-PE-02) | 1.5.4.1 | RF-076 a RF-078 | 2 |
+| 1.5.4.1.3 | Parametrizar la elegibilidad del stock y el límite por cliente (CU-PE-14) | 1.5.4.1 | RF-053, RF-180 | 2 |
+| 1.5.4.2.1 | Aceptar el pedido y preautorizar el medio de pago (CU-PE-03) | 1.5.4.2 | RF-043 | 2 |
+| 1.5.4.2.2 | Capturar el cobro al confirmarse la preparación (CU-PE-04) | 1.5.4.2 | RF-045, RF-047, RF-051 | 2 |
+| 1.5.4.2.3 | Cancelar el pedido y anular la preautorización (CU-PE-08) | 1.5.4.2 | RF-048, RF-049 | 2 |
+| 1.5.4.2.4 | Conciliar las preautorizaciones vencidas sin captura (CU-PE-09) | 1.5.4.2 | RF-050 | 2 |
+| 1.5.4.3.1 | Resolver un pedido cuya unidad no existe (CU-PE-05) | 1.5.4.3 | RF-046 | 2 |
+| 1.5.4.3.2 | Reasignar el pedido a otro punto de despacho (CU-PE-06) | 1.5.4.3 | RF-056 a RF-058 | 2 |
+| 1.5.4.3.3 | Ofrecer al cliente las alternativas de resolución (CU-PE-07) | 1.5.4.3 | RF-059 a RF-061, RF-074 | 2 |
+| 1.5.4.4.1 | Consultar el estado único del pedido (CU-PE-10) | 1.5.4.4 | RF-052 | 2 |
+| 1.5.4.4.2 | Consultar las compras y las devoluciones (CU-PE-11) | 1.5.4.4 | RF-067, RF-068 | 2 |
+| 1.5.4.4.3 | Atender en el mesón la consulta de un pedido (CU-PE-12) | 1.5.4.4 | RF-072, RF-073 | 2 |
+| 1.5.4.5.1 | Priorizar los pedidos próximos a vencer su promesa (CU-PE-13) | 1.5.4.5 | RF-062, RF-063, RF-081 | 2 |
+| 1.5.4.5.2 | Seguir el pedido con el transportista hasta la entrega (CU-PE-15) | 1.5.4.5 | — | 2 |
+| 1.5.5.1.1 | Registrar y cobrar una venta (CU-VE-01) | 1.5.5.1 | RF-001 | 1 |
+| 1.5.5.1.2 | Reversar una venta o un pago (CU-VE-02) | 1.5.5.1 | — | 1 |
+| 1.5.5.1.3 | Cerrar la caja del turno (CU-VE-03) | 1.5.5.1 | — | 1 |
+| 1.5.5.1.4 | Desactivar los medios de pago de mayor fricción (CU-VE-08) | 1.5.5.1 | RF-181 | 1 |
+| 1.5.5.2.1 | Operar la tienda sin enlace (CU-VE-04) | 1.5.5.2 | RF-082 a RF-086 | 1 |
+| 1.5.5.2.2 | Reconciliar las ventas hechas sin enlace (CU-VE-05) | 1.5.5.2 | RF-088, RF-095 a RF-097 | 1 |
+| 1.5.5.2.3 | Revisar el informe de excepciones de la conciliación (CU-VE-06) | 1.5.5.2 | RF-099 | 1 |
+| 1.5.5.2.4 | Validar las operaciones cursadas sin enlace (CU-VE-07) | 1.5.5.2 | RF-094 | 1 |
+| 1.5.5.6.1 | Registrar las ventas del canal digital (CU-VE-09) | 1.5.5.6 | — | 1 |
+| 1.5.5.6.2 | Enrutar los documentos tributarios al ERP/DTE (CU-VE-10) | 1.5.5.6 | RF-100 | 1 |
+| 1.5.5.7.1 | Cobrar con la tarjeta de la casa (CU-VE-11) | 1.5.5.7 | — | 1 |
+| 1.5.6.1.1 | Calcular la base de comisión por vendedor, tienda y canal (CU-CM-01) | 1.5.6.1 | RF-054, RF-071 | 2 |
+| 1.5.6.2.1 | Transmitir la base de comisión al sistema de remuneraciones (CU-CM-02) | 1.5.6.2 | RF-055 | 2 |
+| 1.5.6.3.1 | Revisar la atribución de una comisión (CU-CM-03) | 1.5.6.3 | — | 2 |
+| 1.5.7.1.1 | Declarar y actualizar la existencia del vendedor (CU-MK-01) | 1.5.7.1 | RF-102 a RF-104 | 2 |
+| 1.5.7.1.2 | Publicar la existencia vigente y despublicar la vencida (CU-MK-02) | 1.5.7.1 | RF-109, RF-124 | 2 |
+| 1.5.7.2.1 | Consultar los pedidos, las devoluciones y la evaluación (CU-MK-03) | 1.5.7.2 | RF-110 a RF-112 | 2 |
+| 1.5.7.2.2 | Calcular los indicadores de nivel de servicio por vendedor (CU-MK-04) | 1.5.7.2 | RF-105 | 2 |
+| 1.5.7.2.3 | Dar a conocer las reglas de evaluación al vendedor (CU-MK-05) | 1.5.7.2 | RF-119, RF-120 | 2 |
+| 1.5.7.2.4 | Aplicar la consecuencia escalonada de un incumplimiento (CU-MK-06) | 1.5.7.2 | RF-121 a RF-123 | 2 |
+| 1.5.7.4.1 | Gestionar una devolución de producto de marketplace (CU-MK-07) | 1.5.7.4 | RF-106 a RF-108 | 2 |
+| 1.5.7.4.2 | Informar la base de comisión de marketplace al ERP (CU-MK-10) | 1.5.7.4 | RF-125, RF-126 | 2 |
+| 1.5.7.4.3 | Conciliar la liquidación de un vendedor (CU-MK-11) | 1.5.7.4 | — | 2 |
+| 1.5.7.5.1 | Identificar al vendedor y las condiciones en la compra (CU-MK-08) | 1.5.7.5 | RF-113 a RF-116 | 2 |
+| 1.5.7.5.2 | Impedir que un pedido intermediado use existencia propia (CU-MK-09) | 1.5.7.5 | RF-117, RF-118 | 2 |
+| 1.5.8.1.1 | Atender un caso de garantía legal íntegramente en el mesón (CU-PV-01) | 1.5.8.1 | RF-187, RF-188 | 2 |
+| 1.5.8.1.2 | Ofrecer y registrar la opción de garantía legal (CU-PV-02) | 1.5.8.1 | RF-192 a RF-194 | 2 |
+| 1.5.8.1.3 | Parametrizar el plazo de garantía legal por tipo de producto (CU-PV-03) | 1.5.8.1 | RF-195 | 2 |
+| 1.5.8.2.1 | Reingresar una unidad devuelta según su aptitud (CU-PV-04) | 1.5.8.2 | RF-189 a RF-191 | 2 |
+| 1.5.8.3.1 | Seguir la resolución al consumidor y la recuperación contra el tercero (CU-PV-05) | 1.5.8.3 | RF-196 a RF-198 | 2 |
+| 1.5.9.1.1 | Consolidar los registros duplicados de un cliente (CU-CL-01) | 1.5.9.1 | RF-227 | 2 |
+| 1.5.9.2.1 | Mantener los puntos y la fidelización sincronizados (CU-CL-02) | 1.5.9.2 | RF-228, RF-231 | 2 |
+| 1.5.9.3.1 | Construir un segmento con atributos comerciales (CU-CL-03) | 1.5.9.3 | RF-229 | 2 |
+| 1.5.9.3.2 | Ejecutar una campaña sobre un segmento (CU-CL-04) | 1.5.9.3 | RF-230 | 2 |
+| 1.5.10.1.1 | Evaluar la solicitud y abrir una tarjeta en el mostrador (CU-OR-01) | 1.5.10.1 | RF-220 a RF-223, RF-225 | 1 |
+| 1.5.10.1.2 | Ofrecer la tarjeta y consultar el resultado (CU-OR-02) | 1.5.10.1 | RF-224 | 1 |
+| 1.5.10.1.3 | Controlar los intentos de evaluación (CU-OR-05) | 1.5.10.1 | RF-226 | 1 |
+| 1.5.10.1.4 | Solicitar la ampliación de un cupo con enlace (CU-OR-09) | 1.5.10.1 | — | 1 |
+| 1.5.10.2.1 | Simular el costo total del crédito (CU-OR-03) | 1.5.10.2 | RF-218 | 1 |
+| 1.5.10.2.2 | Mantener la tasa máxima convencional vigente (CU-OR-04) | 1.5.10.2 | RF-219 | 1 |
+| 1.5.10.4.1 | Parametrizar los topes y la ventana de enfriamiento (CU-OR-06) | 1.5.10.4 | — | 1 |
+| 1.5.10.4.2 | Autorizar compra a cuotas sin enlace contra el cupo preaprobado (CU-OR-07) | 1.5.10.4 | RF-090 a RF-093 | 1 |
+| 1.5.10.4.3 | Mantener el cupo preaprobado en la tienda (CU-OR-08) | 1.5.10.4 | RF-089 | 1 |
+| 1.5.11.1.1 | Iniciar y registrar una gestión de cobranza (CU-CA-01) | 1.5.11.1 | RF-211 a RF-213 | 1 y 2 |
+| 1.5.11.1.2 | Calcular la mora y actualizar las cuentas (CU-CA-05) | 1.5.11.1 | — | 1 y 2 |
+| 1.5.11.2.1 | Repactar las condiciones de una deuda (CU-CA-02) | 1.5.11.2 | — | 1 y 2 |
+| 1.5.11.2.2 | Registrar el pago de una cuota (CU-CA-04) | 1.5.11.2 | — | 1 y 2 |
+| 1.5.11.2.3 | Consultar el estado de cuenta y los documentos (CU-CA-03) | 1.5.11.2 | RF-069, RF-070 | 1 y 2 |
+| 1.5.11.5.1 | Revisar la conciliación diaria de la migración (CU-CA-06) | 1.5.11.5 | RF-216 | 1 y 2 |
+| 1.5.11.5.2 | Convivir con la plataforma de crédito de 2011 (CU-CA-07) | 1.5.11.5 | — | 1 y 2 |
+| 1.5.12.1.1 | Entregar la información precontractual del crédito (CU-EV-01) | 1.5.12.1 | RF-199 a RF-201, RF-203 | 1 |
+| 1.5.12.1.2 | Aceptar la información precontractual con firma electrónica (CU-EV-02) | 1.5.12.1 | RF-202, RF-204 a RF-206 | 1 |
+| 1.5.12.1.3 | Consultar la información precontractual del crédito (CU-EV-08) | 1.5.12.1 | RF-217 | 1 |
+| 1.5.12.2.1 | Registrar el consentimiento de una modificación de condiciones (CU-EV-03) | 1.5.12.2 | RF-207, RF-208 | 1 |
+| 1.5.12.2.2 | Enlazar la repactación con su cobranza y su consentimiento (CU-EV-07) | 1.5.12.2 | RF-214, RF-215 | 1 |
+| 1.5.12.3.1 | Reconstruir el acto de consentimiento (CU-EV-04) | 1.5.12.3 | RF-209 | 1 |
+| 1.5.12.3.2 | Recuperar los antecedentes de una operación desde el archivo (CU-EV-05) | 1.5.12.3 | RF-210 | 1 |
+| 1.5.13.1.1 | Mantener el inventario de flujos de cruce autorizados (CU-CC-01) | 1.5.13.1 | RF-168, RF-169 | 1 |
+| 1.5.13.1.2 | Revisar los cruces ejecutados y los intentos bloqueados (CU-CC-03) | 1.5.13.1 | RF-165 a RF-167 | 1 |
+| 1.5.13.2.1 | Intentar una campaña con atributos de origen financiero (CU-CC-02) | 1.5.13.2 | RF-170, RF-171 | 1 |
+| 1.5.13.2.2 | Intentar un proceso crediticio con atributos de origen Retail (CU-CC-04) | 1.5.13.2 | RF-172 | 1 |
+| 1.5.13.3.1 | Resolver la correspondencia de identificadores entre ámbitos (CU-CC-05) | 1.5.13.3 | RF-173 a RF-175 | 1 |
+| 1.5.13.3.2 | Evaluar el impacto de una iniciativa sobre la frontera de datos (CU-CC-06) | 1.5.13.3 | RF-176 | 1 |
+| 1.5.14.1.1 | Ingresar a una terminal compartida con identidad individual (CU-BT-01) | 1.5.14.1 | RF-002 a RF-006 | 1 |
+| 1.5.14.1.2 | Administrar identidades, roles y ámbitos (CU-BT-12) | 1.5.14.1 | — | 1 |
+| 1.5.14.2.1 | Habilitar y revocar funciones según la capacitación normativa (CU-BT-02) | 1.5.14.2 | RF-007 a RF-009 | 1 |
+| 1.5.14.2.2 | Patrocinar el acceso temporal de un repositor externo (CU-BT-03) | 1.5.14.2 | RF-010, RF-011 | 1 |
+| 1.5.14.2.3 | Operar como repositor externo con identidad individualizada (CU-BT-04) | 1.5.14.2 | RF-012 | 1 |
+| 1.5.14.2.4 | Retirar los accesos al término del vínculo (CU-BT-05) | 1.5.14.2 | RF-013 | 1 |
+| 1.5.14.2.5 | Conciliar los accesos contra la nómina activa (CU-BT-06) | 1.5.14.2 | RF-014, RF-015 | 1 |
+| 1.5.14.5.1 | Declarar el orden y los criterios de degradación (CU-BT-07) | 1.5.14.5 | RF-177, RF-178 | 1 |
+| 1.5.14.5.2 | Parametrizar las ventanas de congelamiento y bloquear intervenciones (CU-BT-08) | 1.5.14.5 | RF-184 a RF-186 | 1 |
+| 1.5.14.6.1 | Convivir con el sistema central de 2009 (CU-BT-09) | 1.5.14.6 | — | 1 |
+| 1.5.14.6.2 | Administrar la plataforma de integración (CU-BT-10) | 1.5.14.6 | — | 1 |
+| 1.5.14.7.1 | Observar la operación y atender alertas (CU-BT-11) | 1.5.14.7 | — | 1 |
+| 1.5.14.7.2 | Consultar tableros y exportar informes por ámbito (CU-BT-13) | 1.5.14.7 | — | 1 |
+| **Total** | **127** | | | |

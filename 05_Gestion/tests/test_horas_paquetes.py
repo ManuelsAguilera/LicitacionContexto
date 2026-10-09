@@ -35,6 +35,14 @@ class TestHorasPaquetes(unittest.TestCase):
         self.assertEqual(f["fuente"], "tres valores")
         self.assertAlmostEqual(f["horas"], 1300 / 6)
 
+    def test_hay_un_paquete_de_software_por_caso_de_uso_y_suman_el_total(self):
+        filas, total = rh.calcular()
+        sw = rh.paquetes_software(filas)
+        self.assertEqual(len(sw), 127)
+        self.assertEqual(len({x["codigo"] for x in sw}), 127)
+        self.assertAlmostEqual(sum(x["horas"] for x in sw), total, places=6)
+        self.assertEqual(sum(x["trans"] for x in sw), 296)
+
     def test_el_informe_publicado_esta_actualizado(self):
         filas, total = rh.calcular()
         self.assertEqual(rh.informe(filas, total), (DIR / "16_horas_por_paquete.md").read_text(encoding="utf-8"))

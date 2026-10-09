@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import comparar_metodos as cm  # noqa: E402
 import generar_mapa_paquetes as gm  # noqa: E402
+import generar_ola as go  # noqa: E402
 
 SALIDA = gm.DIR / "16_horas_por_paquete.md"
 NOMBRE_RAMA = {"1.1": "Dirección, gobierno y control del proyecto", "1.2": "Levantamiento y línea base de alcance",
@@ -49,10 +50,27 @@ def calcular(planillas=()):
     return filas, total
 
 
+def paquetes_software(filas):
+    """Los paquetes de trabajo de software: uno por caso de uso, con código `cuenta.n` y las horas totales del UCP del caso."""
+    casos = go.horas_por_caso()
+    out = []
+    for f in filas:
+        if f["fuente"] != "UCP":
+            continue
+        for i, cid in enumerate(f["casos"], 1):
+            c = casos[cid]
+            out.append({"codigo": f"{f['codigo']}.{i}", "nombre": f"Componente del caso de uso «{c['nombre']}» ({cid})", "cuenta": f["codigo"],
+                        "servicio": f["nodo"], "etapa": f["etapa"], "trans": c["trans"], "horas": c["horas"]})
+    return out
+
+
 def verificar(filas, total):
     """P8.1: la suma de los paquetes de cada rama y del total coincide con lo que se declara."""
     h = []
     suma_ucp = sum(f["horas"] for f in filas if f["fuente"] == "UCP")
+    suma_pk = sum(x["horas"] for x in paquetes_software(filas))
+    if abs(suma_pk - total) > 1e-6:
+        h.append(f"P8.1 los paquetes de software suman {suma_pk:.2f} h y el total del UCP es {total:.2f} h")
     if abs(suma_ucp - total) > 1e-6:
         h.append(f"P8.1 las horas de los paquetes del UCP suman {suma_ucp:.2f} y el total del UCP es {total:.2f}")
     por_rama = {}
@@ -111,6 +129,15 @@ def informe(filas, total):
     L += ["", "## 4. Por paquete del UCP", "", "| Paquete | Nombre | Servicio | UUCW | Etapa | Horas |", "| :-- | :-- | :-- | --: | :-- | --: |"]
     for f in ucp:
         L.append(f"| {f['codigo']} | {f['nombre']} | {f['nodo']} | {f['uucw']} | {f['etapa']} | {h_(f['horas'])} |")
+    sw = paquetes_software(filas)
+    L += ["", "## 4b. Paquetes de trabajo de software (uno por caso de uso)", "",
+          f"Decisión del usuario del 2026-10-08: el paquete de trabajo de software es el entregable de un caso de uso. Son {len(sw)} paquetes, de {h_(min(x['horas'] for x in sw))} a {h_(max(x['horas'] for x in sw))} h; "
+          "ninguno cabe en 80 h y se declara como excepción a la regla 8/80 (cada uno es un subproyecto con su descomposición en actividades, FEP02 diap. 56). "
+          "Sus fases son actividades del cronograma de 8 a 80 h (`21_ola_1_paquetes_trabajo.md`, sección 3).", "",
+          "| Paquete | Nombre | Cuenta | Etapa | Transacciones | Horas |", "| :-- | :-- | :-- | :-- | --: | --: |"]
+    for x in sw:
+        L.append(f"| {x['codigo']} | {x['nombre']} | {x['cuenta']} | {x['etapa']} | {x['trans']} | {h_(x['horas'])} |")
+    L.append(f"| **Total** | | | | **{sum(x['trans'] for x in sw)}** | **{h_(sum(x['horas'] for x in sw))}** |")
     L += ["", "## 5. Por paquete que el UCP no cubre", "", "| Paquete | Nombre | Etapa | Fuente | Horas |", "| :-- | :-- | :-- | :-- | --: |"]
     for f in filas:
         if f["fuente"] != "UCP":

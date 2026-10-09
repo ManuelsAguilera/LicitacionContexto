@@ -24,7 +24,7 @@ Causas, en orden de peso:
 5. **Trabajo continuo como un solo elemento.** Gestión, documentación y operación son trabajo de nivel de esfuerzo de 24 a 56 meses: nunca caben en 80 h ni en un mes si no se cortan por período.
 6. **La clase tira en dos direcciones.** La diapositiva 55 advierte contra dividir de más y la 56 pide 8/80. PMBOK 6 lo reconcilia: el último nivel de la EDT puede ser una **cuenta de control**; lo lejano se deja como **paquete de planificación** y se descompone en **paquetes de trabajo** cuando se acerca (planificación gradual).
 
-**Conclusión.** No es un error de conteo. Exigir 8/80 a cada elemento de una EDT de entregables de este tamaño obligaría a tener entre 398 y 724 paquetes solo de software, contra la advertencia de la diapositiva 55. La regla se cumple un nivel más abajo, en los paquetes de trabajo de la ola cercana.
+**Conclusión.** No es un error de conteo. Exigir 8/80 a cada elemento de una EDT de entregables de este tamaño obligaría a tener entre 398 y 724 paquetes solo de software, contra la advertencia de la diapositiva 55. La regla se cumple un nivel más abajo: en los paquetes de trabajo de la ola cercana y en las actividades del cronograma. En el software, el paquete de trabajo es el entregable de un caso de uso y queda como excepción declarada (sección 5).
 
 ## 2. Cumplimiento por rama
 
@@ -62,7 +62,18 @@ Paquetes de trabajo que incumplen: **0**.
 1. Se resuelve con la planificación gradual de PMBOK 6: el último nivel de la EDT son cuentas de control; solo la ola cercana se descompone en paquetes de trabajo de 8 a 80 h y de un mes como máximo; lo lejano queda como paquetes de planificación.
 2. Período de reporte mensual (RT-19.06).
 3. Las fusiones de la opción A se aplican a nivel de cuentas de control.
+4. **En el software, el paquete de trabajo es el entregable: uno por caso de uso.** Es un subproyecto (diap. 56) y supera las 80 h por una excepción declarada; sus fases son actividades del cronograma de 8 a 80 h, no nodos de la EDT.
 
-## 5. Regla de descomposición del software para su ola
+## 5. Por qué no se parte el software por fase
 
-Cuando un servicio entra en su ola, cada caso de uso se baja a paquetes de trabajo. Un caso simple (247 h) no cabe en 80 h, así que se parte por transacción y fase: análisis y diseño ≈ 32 h, construcción ≈ 43 h y pruebas ≈ 16 h por transacción; la sobrecarga (16 h por transacción) va a la cuenta de gestión. Son unos 888 paquetes en todo el proyecto, pero nunca todos a la vez: solo los de la ola en curso.
+Una primera versión proyectó 689 «paquetes» de software con una regla de un paquete por caso y fase (análisis, diseño, construcción y pruebas), partido por transacción cuando pasaba de 80 h. Eso era un error de diseño: las fases son actividades, no entregables (la guía de la EDT lo prohíbe y la diapositiva 56 dice que el paquete se descompone en actividades fuera de la EDT). La cantidad dependía de esa regla y no de lo que hay que entregar.
+
+| Estructura | Elementos de software | Tamaño medio |
+| :-- | --: | --: |
+| Regla descartada: caso × fase, partido por transacción | 689 | 39 h |
+| Caso × fase, sin partir | 508 | 53 h |
+| Un entregable por transacción | 296 | 108 h |
+| **Un entregable por caso de uso (vigente)** | **127** | **251 h** |
+| Cuentas de control de software | 51 | 625 h |
+
+Con el paquete igual al caso de uso, la EDT conserva la traza uno a uno al sd-03 (caso, RF y resultados del Anexo D), y las 689 actividades por fase quedan en el cronograma, donde cada una cumple 8/80 y un mes.

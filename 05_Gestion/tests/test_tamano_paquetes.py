@@ -33,6 +33,13 @@ class TestTamanoPaquetes(unittest.TestCase):
         bueno = dict(nivel=et.TRABAJO, codigo="1.1.1.2", mas_80=False, menos_8=False, excede_periodo=False, sin_horas=False)
         self.assertEqual([x["codigo"] for x in et.incumplen([cuenta, trabajo, bueno])], ["1.1.1.1"])
 
+    def test_el_informe_explica_por_que_no_se_parte_el_software_por_fase(self):
+        items, total = et.medir()
+        texto = et.texto(items, total)
+        self.assertIn("## 5. Por qué no se parte el software por fase", texto)
+        self.assertIn("| **Un entregable por caso de uso (vigente)** | **127** |", texto)
+        self.assertIn("| Regla descartada: caso × fase, partido por transacción | 689 |", texto)
+
     def test_el_informe_publicado_esta_actualizado(self):
         items, total = et.medir()
         self.assertEqual(et.texto(items, total), (DIR / "20_evaluacion_8_80.md").read_text(encoding="utf-8"))

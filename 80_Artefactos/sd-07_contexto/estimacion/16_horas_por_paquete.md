@@ -98,6 +98,141 @@ La etapa de los paquetes de software es la de su servicio (sd-03); la cartera de
 | 1.5.14.6 | Plataforma de integración y convivencia con el sistema central de 2009 | Base tecnológica | 10 | 1 | 494 |
 | 1.5.14.7 | Observabilidad y capacidad analítica | Base tecnológica | 10 | 1 | 494 |
 
+## 4b. Paquetes de trabajo de software (uno por caso de uso)
+
+Decisión del usuario del 2026-10-08: el paquete de trabajo de software es el entregable de un caso de uso. Son 127 paquetes, de 247 a 494 h; ninguno cabe en 80 h y se declara como excepción a la regla 8/80 (cada uno es un subproyecto con su descomposición en actividades, FEP02 diap. 56). Sus fases son actividades del cronograma de 8 a 80 h (`21_ola_1_paquetes_trabajo.md`, sección 3).
+
+| Paquete | Nombre | Cuenta | Etapa | Transacciones | Horas |
+| :-- | :-- | :-- | :-- | --: | --: |
+| 1.5.1.1.1 | Componente del caso de uso «Cambiar y propagar un precio» (CU-OF-01) | 1.5.1.1 | 1 | 3 | 247 |
+| 1.5.1.1.2 | Componente del caso de uso «Entregar la oferta vigente a los canales» (CU-OF-02) | 1.5.1.1 | 1 | 4 | 494 |
+| 1.5.1.1.3 | Componente del caso de uso «Consultar el precio vigente en línea» (CU-OF-03) | 1.5.1.1 | 1 | 1 | 247 |
+| 1.5.1.1.4 | Componente del caso de uso «Recuperar el precio publicado en un instante» (CU-OF-06) | 1.5.1.1 | 1 | 2 | 247 |
+| 1.5.1.2.1 | Componente del caso de uso «Registrar el cambio de etiqueta» (CU-OF-04) | 1.5.1.2 | 1 | 2 | 247 |
+| 1.5.1.2.2 | Componente del caso de uso «Consultar el estado de exhibición de la tienda» (CU-OF-05) | 1.5.1.2 | 1 | 2 | 247 |
+| 1.5.1.2.3 | Componente del caso de uso «Resolver el precio a cobrar ante diferencia con la etiqueta» (CU-OF-07) | 1.5.1.2 | 1 | 3 | 247 |
+| 1.5.1.2.4 | Componente del caso de uso «Revisar los incidentes de discrepancia de precio» (CU-OF-08) | 1.5.1.2 | 1 | 2 | 247 |
+| 1.5.1.5.1 | Componente del caso de uso «Aplicar las promociones vigentes en la venta» (CU-OF-09) | 1.5.1.5 | 1 | 2 | 247 |
+| 1.5.1.5.2 | Componente del caso de uso «Administrar las promociones y su vigencia» (CU-OF-10) | 1.5.1.5 | 1 | 3 | 247 |
+| 1.5.1.6.1 | Componente del caso de uso «Mantener el maestro de artículos» (CU-OF-11) | 1.5.1.6 | 1 | 3 | 247 |
+| 1.5.1.6.2 | Componente del caso de uso «Revisar los reportes de calidad del maestro y de publicación» (CU-OF-12) | 1.5.1.6 | 1 | 2 | 247 |
+| 1.5.2.1.1 | Componente del caso de uso «Generar la propuesta diaria de reposición» (CU-AB-01) | 1.5.2.1 | 2 | 2 | 247 |
+| 1.5.2.1.2 | Componente del caso de uso «Ajustar y confirmar la propuesta de reposición» (CU-AB-02) | 1.5.2.1 | 2 | 3 | 247 |
+| 1.5.2.2.1 | Componente del caso de uso «Colocar y seguir las órdenes a proveedores» (CU-AB-03) | 1.5.2.2 | 2 | 3 | 247 |
+| 1.5.2.3.1 | Componente del caso de uso «Gestionar las transferencias entre tiendas y centros de distribución» (CU-AB-04) | 1.5.2.3 | 2 | 3 | 247 |
+| 1.5.2.3.2 | Componente del caso de uso «Registrar la recepción de mercadería en la tienda» (CU-AB-05) | 1.5.2.3 | 2 | 2 | 247 |
+| 1.5.3.1.1 | Componente del caso de uso «Publicar el disponible a los canales» (CU-EX-03) | 1.5.3.1 | 1 | 3 | 247 |
+| 1.5.3.1.2 | Componente del caso de uso «Parametrizar el colchón de confianza y la vigencia de la reserva» (CU-EX-08) | 1.5.3.1 | 1 | 2 | 247 |
+| 1.5.3.1.3 | Componente del caso de uso «Consultar la traza del cálculo del disponible» (CU-EX-09) | 1.5.3.1 | 1 | 2 | 247 |
+| 1.5.3.1.4 | Componente del caso de uso «Consultar la disponibilidad para vender en sala» (CU-EX-01) | 1.5.3.1 | 1 | 2 | 247 |
+| 1.5.3.1.5 | Componente del caso de uso «Consultar la disponibilidad en línea» (CU-EX-02) | 1.5.3.1 | 1 | 2 | 247 |
+| 1.5.3.2.1 | Componente del caso de uso «Reservar una unidad para el canal digital» (CU-EX-04) | 1.5.3.2 | 1 | 4 | 494 |
+| 1.5.3.2.2 | Componente del caso de uso «Expirar las reservas vencidas» (CU-EX-05) | 1.5.3.2 | 1 | 2 | 247 |
+| 1.5.3.2.3 | Componente del caso de uso «Verificar la existencia física antes del cobro» (CU-EX-06) | 1.5.3.2 | 1 | 2 | 247 |
+| 1.5.3.2.4 | Componente del caso de uso «Resolver el conflicto de existencia comprometida» (CU-EX-07) | 1.5.3.2 | 1 | 2 | 247 |
+| 1.5.3.4.1 | Componente del caso de uso «Parametrizar el conteo cíclico» (CU-EX-10) | 1.5.3.4 | 1 | 3 | 247 |
+| 1.5.3.4.2 | Componente del caso de uso «Ejecutar el conteo cíclico» (CU-EX-11) | 1.5.3.4 | 1 | 2 | 247 |
+| 1.5.3.4.3 | Componente del caso de uso «Consultar la exactitud del inventario y recibir alertas» (CU-EX-12) | 1.5.3.4 | 1 | 2 | 247 |
+| 1.5.3.4.4 | Componente del caso de uso «Clasificar las diferencias y cerrar el ajuste» (CU-EX-13) | 1.5.3.4 | 1 | 3 | 247 |
+| 1.5.3.4.5 | Componente del caso de uso «Emitir el informe mensual de merma» (CU-EX-14) | 1.5.3.4 | 1 | 2 | 247 |
+| 1.5.3.4.6 | Componente del caso de uso «Gestionar las unidades en el probador» (CU-EX-15) | 1.5.3.4 | 1 | 3 | 247 |
+| 1.5.3.7.1 | Componente del caso de uso «Suspender la publicación de una categoría» (CU-EX-16) | 1.5.3.7 | 1 | 2 | 247 |
+| 1.5.3.7.2 | Componente del caso de uso «Degradar por cancelaciones» (CU-EX-17) | 1.5.3.7 | 1 | 2 | 247 |
+| 1.5.3.8.1 | Componente del caso de uso «Recibir los movimientos del sistema de almacenes» (CU-EX-18) | 1.5.3.8 | 1 | 3 | 247 |
+| 1.5.3.8.2 | Componente del caso de uso «Cargar las existencias de Concepción» (CU-EX-19) | 1.5.3.8 | 1 | 3 | 247 |
+| 1.5.4.1.1 | Componente del caso de uso «Calcular la fecha prometida de entrega» (CU-PE-01) | 1.5.4.1 | 2 | 2 | 247 |
+| 1.5.4.1.2 | Componente del caso de uso «Seleccionar el punto de despacho por costo total de servir» (CU-PE-02) | 1.5.4.1 | 2 | 1 | 247 |
+| 1.5.4.1.3 | Componente del caso de uso «Parametrizar la elegibilidad del stock y el límite por cliente» (CU-PE-14) | 1.5.4.1 | 2 | 2 | 247 |
+| 1.5.4.2.1 | Componente del caso de uso «Aceptar el pedido y preautorizar el medio de pago» (CU-PE-03) | 1.5.4.2 | 2 | 2 | 247 |
+| 1.5.4.2.2 | Componente del caso de uso «Capturar el cobro al confirmarse la preparación» (CU-PE-04) | 1.5.4.2 | 2 | 3 | 247 |
+| 1.5.4.2.3 | Componente del caso de uso «Cancelar el pedido y anular la preautorización» (CU-PE-08) | 1.5.4.2 | 2 | 2 | 247 |
+| 1.5.4.2.4 | Componente del caso de uso «Conciliar las preautorizaciones vencidas sin captura» (CU-PE-09) | 1.5.4.2 | 2 | 1 | 247 |
+| 1.5.4.3.1 | Componente del caso de uso «Resolver un pedido cuya unidad no existe» (CU-PE-05) | 1.5.4.3 | 2 | 2 | 247 |
+| 1.5.4.3.2 | Componente del caso de uso «Reasignar el pedido a otro punto de despacho» (CU-PE-06) | 1.5.4.3 | 2 | 2 | 247 |
+| 1.5.4.3.3 | Componente del caso de uso «Ofrecer al cliente las alternativas de resolución» (CU-PE-07) | 1.5.4.3 | 2 | 2 | 247 |
+| 1.5.4.4.1 | Componente del caso de uso «Consultar el estado único del pedido» (CU-PE-10) | 1.5.4.4 | 2 | 2 | 247 |
+| 1.5.4.4.2 | Componente del caso de uso «Consultar las compras y las devoluciones» (CU-PE-11) | 1.5.4.4 | 2 | 2 | 247 |
+| 1.5.4.4.3 | Componente del caso de uso «Atender en el mesón la consulta de un pedido» (CU-PE-12) | 1.5.4.4 | 2 | 2 | 247 |
+| 1.5.4.5.1 | Componente del caso de uso «Priorizar los pedidos próximos a vencer su promesa» (CU-PE-13) | 1.5.4.5 | 2 | 3 | 247 |
+| 1.5.4.5.2 | Componente del caso de uso «Seguir el pedido con el transportista hasta la entrega» (CU-PE-15) | 1.5.4.5 | 2 | 3 | 247 |
+| 1.5.5.1.1 | Componente del caso de uso «Registrar y cobrar una venta» (CU-VE-01) | 1.5.5.1 | 1 | 3 | 247 |
+| 1.5.5.1.2 | Componente del caso de uso «Reversar una venta o un pago» (CU-VE-02) | 1.5.5.1 | 1 | 2 | 247 |
+| 1.5.5.1.3 | Componente del caso de uso «Cerrar la caja del turno» (CU-VE-03) | 1.5.5.1 | 1 | 2 | 247 |
+| 1.5.5.1.4 | Componente del caso de uso «Desactivar los medios de pago de mayor fricción» (CU-VE-08) | 1.5.5.1 | 1 | 2 | 247 |
+| 1.5.5.2.1 | Componente del caso de uso «Operar la tienda sin enlace» (CU-VE-04) | 1.5.5.2 | 1 | 3 | 247 |
+| 1.5.5.2.2 | Componente del caso de uso «Reconciliar las ventas hechas sin enlace» (CU-VE-05) | 1.5.5.2 | 1 | 3 | 247 |
+| 1.5.5.2.3 | Componente del caso de uso «Revisar el informe de excepciones de la conciliación» (CU-VE-06) | 1.5.5.2 | 1 | 2 | 247 |
+| 1.5.5.2.4 | Componente del caso de uso «Validar las operaciones cursadas sin enlace» (CU-VE-07) | 1.5.5.2 | 1 | 2 | 247 |
+| 1.5.5.6.1 | Componente del caso de uso «Registrar las ventas del canal digital» (CU-VE-09) | 1.5.5.6 | 1 | 2 | 247 |
+| 1.5.5.6.2 | Componente del caso de uso «Enrutar los documentos tributarios al ERP/DTE» (CU-VE-10) | 1.5.5.6 | 1 | 2 | 247 |
+| 1.5.5.7.1 | Componente del caso de uso «Cobrar con la tarjeta de la casa» (CU-VE-11) | 1.5.5.7 | 1 | 2 | 247 |
+| 1.5.6.1.1 | Componente del caso de uso «Calcular la base de comisión por vendedor, tienda y canal» (CU-CM-01) | 1.5.6.1 | 2 | 1 | 247 |
+| 1.5.6.2.1 | Componente del caso de uso «Transmitir la base de comisión al sistema de remuneraciones» (CU-CM-02) | 1.5.6.2 | 2 | 2 | 247 |
+| 1.5.6.3.1 | Componente del caso de uso «Revisar la atribución de una comisión» (CU-CM-03) | 1.5.6.3 | 2 | 2 | 247 |
+| 1.5.7.1.1 | Componente del caso de uso «Declarar y actualizar la existencia del vendedor» (CU-MK-01) | 1.5.7.1 | 2 | 3 | 247 |
+| 1.5.7.1.2 | Componente del caso de uso «Publicar la existencia vigente y despublicar la vencida» (CU-MK-02) | 1.5.7.1 | 2 | 2 | 247 |
+| 1.5.7.2.1 | Componente del caso de uso «Consultar los pedidos, las devoluciones y la evaluación» (CU-MK-03) | 1.5.7.2 | 2 | 3 | 247 |
+| 1.5.7.2.2 | Componente del caso de uso «Calcular los indicadores de nivel de servicio por vendedor» (CU-MK-04) | 1.5.7.2 | 2 | 2 | 247 |
+| 1.5.7.2.3 | Componente del caso de uso «Dar a conocer las reglas de evaluación al vendedor» (CU-MK-05) | 1.5.7.2 | 2 | 2 | 247 |
+| 1.5.7.2.4 | Componente del caso de uso «Aplicar la consecuencia escalonada de un incumplimiento» (CU-MK-06) | 1.5.7.2 | 2 | 3 | 247 |
+| 1.5.7.4.1 | Componente del caso de uso «Gestionar una devolución de producto de marketplace» (CU-MK-07) | 1.5.7.4 | 2 | 3 | 247 |
+| 1.5.7.4.2 | Componente del caso de uso «Informar la base de comisión de marketplace al ERP» (CU-MK-10) | 1.5.7.4 | 2 | 2 | 247 |
+| 1.5.7.4.3 | Componente del caso de uso «Conciliar la liquidación de un vendedor» (CU-MK-11) | 1.5.7.4 | 2 | 2 | 247 |
+| 1.5.7.5.1 | Componente del caso de uso «Identificar al vendedor y las condiciones en la compra» (CU-MK-08) | 1.5.7.5 | 2 | 3 | 247 |
+| 1.5.7.5.2 | Componente del caso de uso «Impedir que un pedido intermediado use existencia propia» (CU-MK-09) | 1.5.7.5 | 2 | 2 | 247 |
+| 1.5.8.1.1 | Componente del caso de uso «Atender un caso de garantía legal íntegramente en el mesón» (CU-PV-01) | 1.5.8.1 | 2 | 2 | 247 |
+| 1.5.8.1.2 | Componente del caso de uso «Ofrecer y registrar la opción de garantía legal» (CU-PV-02) | 1.5.8.1 | 2 | 3 | 247 |
+| 1.5.8.1.3 | Componente del caso de uso «Parametrizar el plazo de garantía legal por tipo de producto» (CU-PV-03) | 1.5.8.1 | 2 | 2 | 247 |
+| 1.5.8.2.1 | Componente del caso de uso «Reingresar una unidad devuelta según su aptitud» (CU-PV-04) | 1.5.8.2 | 2 | 3 | 247 |
+| 1.5.8.3.1 | Componente del caso de uso «Seguir la resolución al consumidor y la recuperación contra el tercero» (CU-PV-05) | 1.5.8.3 | 2 | 3 | 247 |
+| 1.5.9.1.1 | Componente del caso de uso «Consolidar los registros duplicados de un cliente» (CU-CL-01) | 1.5.9.1 | 2 | 3 | 247 |
+| 1.5.9.2.1 | Componente del caso de uso «Mantener los puntos y la fidelización sincronizados» (CU-CL-02) | 1.5.9.2 | 2 | 3 | 247 |
+| 1.5.9.3.1 | Componente del caso de uso «Construir un segmento con atributos comerciales» (CU-CL-03) | 1.5.9.3 | 2 | 2 | 247 |
+| 1.5.9.3.2 | Componente del caso de uso «Ejecutar una campaña sobre un segmento» (CU-CL-04) | 1.5.9.3 | 2 | 3 | 247 |
+| 1.5.10.1.1 | Componente del caso de uso «Evaluar la solicitud y abrir una tarjeta en el mostrador» (CU-OR-01) | 1.5.10.1 | 1 | 3 | 247 |
+| 1.5.10.1.2 | Componente del caso de uso «Ofrecer la tarjeta y consultar el resultado» (CU-OR-02) | 1.5.10.1 | 1 | 2 | 247 |
+| 1.5.10.1.3 | Componente del caso de uso «Controlar los intentos de evaluación» (CU-OR-05) | 1.5.10.1 | 1 | 2 | 247 |
+| 1.5.10.1.4 | Componente del caso de uso «Solicitar la ampliación de un cupo con enlace» (CU-OR-09) | 1.5.10.1 | 1 | 2 | 247 |
+| 1.5.10.2.1 | Componente del caso de uso «Simular el costo total del crédito» (CU-OR-03) | 1.5.10.2 | 1 | 1 | 247 |
+| 1.5.10.2.2 | Componente del caso de uso «Mantener la tasa máxima convencional vigente» (CU-OR-04) | 1.5.10.2 | 1 | 2 | 247 |
+| 1.5.10.4.1 | Componente del caso de uso «Parametrizar los topes y la ventana de enfriamiento» (CU-OR-06) | 1.5.10.4 | 1 | 3 | 247 |
+| 1.5.10.4.2 | Componente del caso de uso «Autorizar compra a cuotas sin enlace contra el cupo preaprobado» (CU-OR-07) | 1.5.10.4 | 1 | 3 | 247 |
+| 1.5.10.4.3 | Componente del caso de uso «Mantener el cupo preaprobado en la tienda» (CU-OR-08) | 1.5.10.4 | 1 | 2 | 247 |
+| 1.5.11.1.1 | Componente del caso de uso «Iniciar y registrar una gestión de cobranza» (CU-CA-01) | 1.5.11.1 | 1 y 2 | 2 | 247 |
+| 1.5.11.1.2 | Componente del caso de uso «Calcular la mora y actualizar las cuentas» (CU-CA-05) | 1.5.11.1 | 1 y 2 | 2 | 247 |
+| 1.5.11.2.1 | Componente del caso de uso «Repactar las condiciones de una deuda» (CU-CA-02) | 1.5.11.2 | 1 y 2 | 2 | 247 |
+| 1.5.11.2.2 | Componente del caso de uso «Registrar el pago de una cuota» (CU-CA-04) | 1.5.11.2 | 1 y 2 | 2 | 247 |
+| 1.5.11.2.3 | Componente del caso de uso «Consultar el estado de cuenta y los documentos» (CU-CA-03) | 1.5.11.2 | 1 y 2 | 2 | 247 |
+| 1.5.11.5.1 | Componente del caso de uso «Revisar la conciliación diaria de la migración» (CU-CA-06) | 1.5.11.5 | 1 y 2 | 3 | 247 |
+| 1.5.11.5.2 | Componente del caso de uso «Convivir con la plataforma de crédito de 2011» (CU-CA-07) | 1.5.11.5 | 1 y 2 | 3 | 247 |
+| 1.5.12.1.1 | Componente del caso de uso «Entregar la información precontractual del crédito» (CU-EV-01) | 1.5.12.1 | 1 | 2 | 247 |
+| 1.5.12.1.2 | Componente del caso de uso «Aceptar la información precontractual con firma electrónica» (CU-EV-02) | 1.5.12.1 | 1 | 2 | 247 |
+| 1.5.12.1.3 | Componente del caso de uso «Consultar la información precontractual del crédito» (CU-EV-08) | 1.5.12.1 | 1 | 1 | 247 |
+| 1.5.12.2.1 | Componente del caso de uso «Registrar el consentimiento de una modificación de condiciones» (CU-EV-03) | 1.5.12.2 | 1 | 2 | 247 |
+| 1.5.12.2.2 | Componente del caso de uso «Enlazar la repactación con su cobranza y su consentimiento» (CU-EV-07) | 1.5.12.2 | 1 | 2 | 247 |
+| 1.5.12.3.1 | Componente del caso de uso «Reconstruir el acto de consentimiento» (CU-EV-04) | 1.5.12.3 | 1 | 2 | 247 |
+| 1.5.12.3.2 | Componente del caso de uso «Recuperar los antecedentes de una operación desde el archivo» (CU-EV-05) | 1.5.12.3 | 1 | 2 | 247 |
+| 1.5.13.1.1 | Componente del caso de uso «Mantener el inventario de flujos de cruce autorizados» (CU-CC-01) | 1.5.13.1 | 1 | 3 | 247 |
+| 1.5.13.1.2 | Componente del caso de uso «Revisar los cruces ejecutados y los intentos bloqueados» (CU-CC-03) | 1.5.13.1 | 1 | 3 | 247 |
+| 1.5.13.2.1 | Componente del caso de uso «Intentar una campaña con atributos de origen financiero» (CU-CC-02) | 1.5.13.2 | 1 | 2 | 247 |
+| 1.5.13.2.2 | Componente del caso de uso «Intentar un proceso crediticio con atributos de origen Retail» (CU-CC-04) | 1.5.13.2 | 1 | 2 | 247 |
+| 1.5.13.3.1 | Componente del caso de uso «Resolver la correspondencia de identificadores entre ámbitos» (CU-CC-05) | 1.5.13.3 | 1 | 3 | 247 |
+| 1.5.13.3.2 | Componente del caso de uso «Evaluar el impacto de una iniciativa sobre la frontera de datos» (CU-CC-06) | 1.5.13.3 | 1 | 2 | 247 |
+| 1.5.14.1.1 | Componente del caso de uso «Ingresar a una terminal compartida con identidad individual» (CU-BT-01) | 1.5.14.1 | 1 | 2 | 247 |
+| 1.5.14.1.2 | Componente del caso de uso «Administrar identidades, roles y ámbitos» (CU-BT-12) | 1.5.14.1 | 1 | 3 | 247 |
+| 1.5.14.2.1 | Componente del caso de uso «Habilitar y revocar funciones según la capacitación normativa» (CU-BT-02) | 1.5.14.2 | 1 | 2 | 247 |
+| 1.5.14.2.2 | Componente del caso de uso «Patrocinar el acceso temporal de un repositor externo» (CU-BT-03) | 1.5.14.2 | 1 | 2 | 247 |
+| 1.5.14.2.3 | Componente del caso de uso «Operar como repositor externo con identidad individualizada» (CU-BT-04) | 1.5.14.2 | 1 | 2 | 247 |
+| 1.5.14.2.4 | Componente del caso de uso «Retirar los accesos al término del vínculo» (CU-BT-05) | 1.5.14.2 | 1 | 2 | 247 |
+| 1.5.14.2.5 | Componente del caso de uso «Conciliar los accesos contra la nómina activa» (CU-BT-06) | 1.5.14.2 | 1 | 2 | 247 |
+| 1.5.14.5.1 | Componente del caso de uso «Declarar el orden y los criterios de degradación» (CU-BT-07) | 1.5.14.5 | 1 | 2 | 247 |
+| 1.5.14.5.2 | Componente del caso de uso «Parametrizar las ventanas de congelamiento y bloquear intervenciones» (CU-BT-08) | 1.5.14.5 | 1 | 3 | 247 |
+| 1.5.14.6.1 | Componente del caso de uso «Convivir con el sistema central de 2009» (CU-BT-09) | 1.5.14.6 | 1 | 3 | 247 |
+| 1.5.14.6.2 | Componente del caso de uso «Administrar la plataforma de integración» (CU-BT-10) | 1.5.14.6 | 1 | 3 | 247 |
+| 1.5.14.7.1 | Componente del caso de uso «Observar la operación y atender alertas» (CU-BT-11) | 1.5.14.7 | 1 | 3 | 247 |
+| 1.5.14.7.2 | Componente del caso de uso «Consultar tableros y exportar informes por ámbito» (CU-BT-13) | 1.5.14.7 | 1 | 3 | 247 |
+| **Total** | | | | **296** | **31.850** |
+
 ## 5. Por paquete que el UCP no cubre
 
 | Paquete | Nombre | Etapa | Fuente | Horas |
