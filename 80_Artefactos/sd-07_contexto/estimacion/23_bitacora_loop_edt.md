@@ -34,7 +34,7 @@ Las 13 cuentas siguientes no tienen en `sd-03.tex` ni en sus anexos una frase qu
 | 1.1.1 | Plan de dirección integrado | Comunicado 10, 7.1; Formulario T-14 (Bases) |
 | 1.1.12 | Acta de constitución del proyecto | Práctica de PMBOK 6; no está en las Bases ni en el sd-03 |
 | 1.1.13 | Línea base de costos y presupuesto | Oferta económica (Bases) |
-| 1.3.1 | Documento de arquitectura y catálogo de decisiones | Art. 14.2 de las Bases (arquitectura lógica, física, de datos, de integración, de seguridad y de despliegue) |
+| 1.3.1 | Documento de arquitectura y catálogo de decisiones | Art. 19 de las Bases (descripción conforme a ISO/IEC/IEEE 42010 con vistas lógica, de procesos, de despliegue, de datos y de seguridad, y registro de decisiones de arquitectura) |
 | 1.4.6 | Plataforma de integración y entrega continuas | Bases Transversales (RT) |
 | 1.4.7 | Licenciamiento de terceros a nombre del cliente | Art. 14.2 de las Bases (licenciamiento de software de base, de plataforma y de terceros a nombre del cliente) |
 | 1.7.4 | Corte de inventario en las 24 instalaciones | Caso (22 tiendas y 2 centros) |
@@ -45,3 +45,6 @@ Las 13 cuentas siguientes no tienen en `sd-03.tex` ni en sus anexos una frase qu
 | 1.12.9 | Informe del soporte de estabilización | Art. 14.2 de las Bases (implantación, marcha blanca, paso a producción y estabilización) |
 | 1.14.9 | Informe de lecciones aprendidas | Práctica de PMBOK 6 |
 
+## Cierre del loop (2026-10-08)
+
+Se detiene tras 2 iteraciones aceptadas porque no queda un cambio honesto que mejore una meta dura: las 13 cuentas sin traza no tienen una cita cierta en el sd-03, y las demás clases (más de 80 h, menos de 8 h o más de un mes, hallazgos firmes, duplicados) no tienen infractores que corregir. Lo que falta es una decisión humana, listada arriba.
