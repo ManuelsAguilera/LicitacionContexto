@@ -47,6 +47,7 @@ mes               1         2         3         4         5
 | 1.1.11 | Registro de garantías, seguros y certificados laborales vigentes | 1–56 | contrato | Art. 75.3 |
 | 1.1.12 | Acta de constitución del proyecto | 1–1 | propuesta | mes de inicio |
 | 1.1.13 | Línea base de costos y presupuesto | 1–3 | propuesta | base de la planificación |
+| 1.1.14 | Planes alternativos de las dos condiciones del adelanto del negocio financiero | 3–5 | propuesta | sd-03, 3.2.3: antes de la prueba del corte de enlace de los meses 6 y 7 |
 
 ### Rama 1.2
 
@@ -59,6 +60,7 @@ mes               1         2         3         4         5
 | 1.2.7 | Estudio de decisión con costeo sobre etiquetas electrónicas de precio | 2–5 | propuesta | OP-01 a OP-05 |
 | 1.2.8 | Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | 2–6 | propuesta | OP-08, OP-09 |
 | 1.2.9 | Estudio de decisión con costeo sobre el destino de las plataformas | 2–5 | propuesta | decide el destino de las plataformas |
+| 1.2.10 | Propuesta de criterios del cupo preaprobado para la filial emisora | 3–5 | propuesta | sd-03, 3.2.3: la filial emisora fija los criterios antes de la prueba de los meses 6 y 7 |
 
 ### Rama 1.3
 
@@ -77,7 +79,7 @@ mes               1         2         3         4         5
 | Paquete | Nombre | Ventana | Tipo | Fuente o criterio |
 | :-- | :-- | :-- | :-- | :-- |
 | 1.4.1 | Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos | 3–6 | propuesta | plataforma base lista en el mes 6 (EDT original) |
-| 1.4.2 | Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen | 6–12 | propuesta | antes de la marcha blanca; antes del piloto de tiendas |
+| 1.4.2 | Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen | 4–12 | propuesta | primero las tres tiendas del piloto del punto de venta (meses 6 y 7) y después el resto, antes de la marcha blanca; antes del piloto de tiendas |
 | 1.4.3 | Entorno dedicado del ámbito emisor con segregación física y lógica acreditada | 4–8 | propuesta | ámbito emisor |
 | 1.4.4 | Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres | 1–12 | contrato | Art. 17: ambientes habilitados dentro de la Etapa 1 (meses 1 a 12) |
 | 1.4.5 | Plataforma de observabilidad unificada con catálogo de alertas | 4–8 | propuesta | antes de las primeras pruebas |
@@ -111,8 +113,8 @@ mes               1         2         3         4         5
 | 1.5.4.3 | Resolución de pedidos sin existencia, reasignación y alternativas al cliente | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.4.4 | Estado único del pedido y sus consultas | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
 | 1.5.4.5 | Seguimiento y cumplimiento de la promesa de entrega | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
-| 1.5.5.1 | Registro y cobro de ventas, reversas, cierre de caja y medios de pago | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
-| 1.5.5.2 | Operación sin enlace, reconciliación y validación posterior | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.5.1 | Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
+| 1.5.5.2 | Punto de venta con operación sin conexión: reconciliación y validación posterior | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.5.6 | Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.5.7 | Cobro con la tarjeta de la casa | 1–12 | contrato | Art. 17: desarrollo de la etapa 1 |
 | 1.5.6.1 | Cálculo de la base de comisión | 13–18 | contrato | Art. 17: desarrollo de la etapa 2 |
@@ -156,6 +158,7 @@ mes               1         2         3         4         5
 | 1.6.9 | Canal de intercambio con los proveedores de mercadería | 13–18 | propuesta | abastecimiento es de la Etapa 2 |
 | 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | 8–12 | propuesta | la filial emisora está en la Etapa 1 |
 | 1.6.11 | Certificación de las integraciones con evidencia de conciliación | 10–18 | propuesta | certificación de las dos etapas |
+| 1.6.12 | Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE | 4–6 | propuesta | sd-03, 3.4.5: aprobada y probada antes de comprometer la operación sin enlace; antes del piloto |
 
 ### Rama 1.7
 
@@ -171,6 +174,8 @@ mes               1         2         3         4         5
 | 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | 14–18 | propuesta | antes del retiro |
 | 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | 22–22 | contrato | sd-03 (operación): fecha objetivo octubre de 2028 = mes 22 |
 | 1.7.12 | Sistema central de retail de 2009 retirado | 21–56 | contrato | sd-03 (operación): se retira durante la operación; fecha por definir |
+| 1.7.13 | Sustitución del punto de venta de 2014 tienda por tienda y su retiro | 8–16 | propuesta | sd-03, 3.3.1: tienda por tienda tras acreditar la operación sin conexión (piloto de los meses 6 y 7) y antes del paso a producción |
+| 1.7.14 | Actas de compuerta por tramo de la cartera de crédito | 12–21 | propuesta | sd-03, 3.2.3: la compuerta de cada tramo se cierra antes del paso a producción de la etapa (meses 16 y 21) |
 
 ### Rama 1.8
 
@@ -197,6 +202,10 @@ mes               1         2         3         4         5
 | 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | 11–21 | propuesta | aceptación por etapa |
 | 1.9.8 | Certificación de calidad de la Etapa 1 | 12–12 | contrato | Art. 17: la certificación va dentro del desarrollo de la Etapa 1 (meses 1 a 12) |
 | 1.9.9 | Certificación de calidad de la Etapa 2 | 18–18 | contrato | Art. 17: cierre del desarrollo de la Etapa 2 en el mes 18 |
+| 1.9.11 | Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto | 6–7 | contrato | sd-03, 3.2.3: corte de enlace de 24 horas en una tienda del piloto, en los meses 6 y 7 |
+| 1.9.12 | Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 | 9–12 | propuesta | sd-03, 3.3.1: con las pruebas de la primera etapa y antes de la ola que dependa de la plataforma |
+| 1.9.13 | Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados | 5–7 | propuesta | sd-03, 3.4.6: antes del despliegue y del piloto |
+| 1.9.14 | Informe de pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares | 12–20 | propuesta | sd-03, 3.4.6: precios, entrega e información crediticia de las dos etapas |
 
 ### Rama 1.10
 
@@ -215,6 +224,7 @@ mes               1         2         3         4         5
 | 1.11.1 | Plan de implantación con procedimiento de despliegue gradual y de reversión probado | 3–12 | propuesta | T-18; se actualiza; antes de la marcha blanca |
 | 1.11.3 | Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda | 9–18 | propuesta | sitios de la Etapa 1 antes del mes 13 y de la Etapa 2 antes del mes 19 |
 | 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 15–18 | propuesta | Art. 17.2 fija la convivencia en los meses 19 y 20; el plan va antes |
+| 1.11.5 | Piloto del punto de venta en tres tiendas | 6–7 | contrato | sd-03, 3.2.3: el piloto del punto de venta es de los meses 6 y 7 |
 
 ### Rama 1.12
 
@@ -236,6 +246,7 @@ mes               1         2         3         4         5
 | 1.13.2 | Plan de capacitación por rol y materiales editables en español | 5–8 | propuesta | antes de capacitar |
 | 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | 10–20 | propuesta | Art. 17.3: la capacitación certificada es condición de cierre de cada marcha blanca (meses 15 y 20) |
 | 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | 13–24 | propuesta | tras el paso a producción de cada etapa |
+| 1.13.5 | Plan de comunicación a los clientes de la cartera por tramo | 10–21 | propuesta | sd-03, 3.2.3: antes del primer tramo y de cada compuerta |
 
 ### Rama 1.14
 
@@ -274,6 +285,7 @@ mes               1         2         3         4         5
 1.1.11   ████████████████████████████████████████████████████████
 1.1.12   █·······················································
 1.1.13   ███·····················································
+1.1.14   ··███···················································
 1.2.1    ███·····················································
 1.2.3    ███·····················································
 1.2.4    ██████████████████······································
@@ -281,6 +293,7 @@ mes               1         2         3         4         5
 1.2.7    ·████···················································
 1.2.8    ·█████··················································
 1.2.9    ·████···················································
+1.2.10   ··███···················································
 1.3.1    ·███····················································
 1.3.3    ·███····················································
 1.3.4    ·███····················································
@@ -289,7 +302,7 @@ mes               1         2         3         4         5
 1.3.7    ··██····················································
 1.3.8    ··████··················································
 1.4.1    ··████··················································
-1.4.2    ·····███████············································
+1.4.2    ···█████████············································
 1.4.3    ···█████················································
 1.4.4    ████████████············································
 1.4.5    ···█████················································
@@ -358,6 +371,7 @@ mes               1         2         3         4         5
 1.6.9    ············██████······································
 1.6.10   ·······█████············································
 1.6.11   ·········█████████······································
+1.6.12   ···███··················································
 1.7.1    ·███····················································
 1.7.3    ···███████··············································
 1.7.4    ··········█████·········································
@@ -368,6 +382,8 @@ mes               1         2         3         4         5
 1.7.10   ·············█████······································
 1.7.11   ·····················█··································
 1.7.12   ····················████████████████████████████████████
+1.7.13   ·······█████████········································
+1.7.14   ···········██████████···································
 1.8.1    █████···················································
 1.8.3    ···█████················································
 1.8.5    ·████···················································
@@ -384,6 +400,10 @@ mes               1         2         3         4         5
 1.9.7    ··········███████████···································
 1.9.8    ···········█············································
 1.9.9    ·················█······································
+1.9.11   ·····██·················································
+1.9.12   ········████············································
+1.9.13   ····███·················································
+1.9.14   ···········█████████····································
 1.10.1   ························································  por definir
 1.10.2   ························································  por definir
 1.10.3   ························································  por definir
@@ -392,6 +412,7 @@ mes               1         2         3         4         5
 1.11.1   ··██████████············································
 1.11.3   ········██████████······································
 1.11.4   ··············████······································
+1.11.5   ·····██·················································
 1.12.1   ·········███············································
 1.12.2   ··············██········································
 1.12.4   ···············█········································
@@ -403,6 +424,7 @@ mes               1         2         3         4         5
 1.13.2   ····████················································
 1.13.3   ·········███████████····································
 1.13.4   ············████████████································
+1.13.5   ·········████████████···································
 1.14.1   ████████████████████████████████████████████████████████
 1.14.3   ···············································█████████
 1.14.4   ·········███████████████████████████████████████████████

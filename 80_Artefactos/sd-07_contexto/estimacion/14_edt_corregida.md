@@ -2,7 +2,7 @@
 
 Documento de contexto, no es entregable ni fuente de las Bases. Fecha: 2026-10-08. Estado: **propuesta** de este trabajo, pendiente del visto bueno del equipo. Parte de `[ELISEO]-entregables_edt.md`, que no se modifica, y aplica los hallazgos de `13_evaluacion_edt.md` y las tres decisiones del usuario del 2026-10-08: copia corregida aparte, sin el paquete de portales y app (Opción A) y un nodo por servicio en el desarrollo de software. Reglas: `guia_edt.md`. Controles: `python3 05_Gestion/scripts/verificar_edt.py 80_Artefactos/sd-07_contexto/estimacion/14_edt_corregida.md`. Los códigos son provisorios y se re-secuencian al congelar la EDT para el Formulario T-14. No contiene horas, costos, fechas ni dotación: eso viene después.
 
-**Nivel de los elementos (2026-10-08).** El último nivel de esta EDT son **cuentas de control** (PMBOK 6), no paquetes de trabajo. Por su tamaño ninguna cumple la regla 8/80 de la clase (`20_evaluacion_8_80.md`): se aplica la planificación gradual. Cada cuenta se descompone en paquetes de trabajo de 8 a 80 h y de un mes como máximo cuando entra en la ola cercana (`21_ola_1_paquetes_trabajo.md`); mientras tanto funciona como paquete de planificación. El 2026-10-08 se fusionaron 54 elementos en las cuentas de control de la última sección (207 → 153).
+**Nivel de los elementos (2026-10-08).** El último nivel de esta EDT son **cuentas de control** (PMBOK 6), no paquetes de trabajo. Por su tamaño ninguna cumple la regla 8/80 de la clase (`20_evaluacion_8_80.md`): se aplica la planificación gradual. Cada cuenta se descompone en paquetes de trabajo de 8 a 80 h y de un mes como máximo cuando entra en la ola cercana (`21_ola_1_paquetes_trabajo.md`); mientras tanto funciona como paquete de planificación. El 2026-10-08 se fusionaron 54 elementos en las cuentas de control de la última sección (207 → 153) y se agregaron 11 cuentas y se renombraron 2 para cubrir compromisos del sd-03 (153 → 164; ver `22_coherencia_edt_sd03.md`).
 
 ## Cómo leer los atributos
 
@@ -14,7 +14,7 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - `etapa:` Etapa 1, Etapa 2, `1 y 2`, `operación`, `desde el inicio del contrato` o `por definir`. La de los paquetes de software es la del servicio (sd-03); el resto queda `por definir` hasta el cronograma, salvo los que el sd-03 fija.
 - `origen:` fuente contractual o nota de frontera. Los códigos externos (artículos, requisitos y formularios) viven aquí y no en el nombre.
 
-### 1.1 Dirección, gobierno y control del proyecto — 11 cuentas de control
+### 1.1 Dirección, gobierno y control del proyecto — 12 cuentas de control
 
 - 1.1.1 Plan de dirección integrado (ámbito, cronograma, costos, calidad, riesgos, comunicaciones, interesados y adquisiciones) {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato}
 - 1.1.2 EDT y diccionario de paquetes con entregable, criterio de aceptación y responsable {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato; origen: Formulario T-14}
@@ -27,8 +27,9 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.1.11 Registro de garantías, seguros y certificados laborales vigentes {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato; origen: Art. 75.3}
 - 1.1.12 Acta de constitución del proyecto {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato}
 - 1.1.13 Línea base de costos y presupuesto {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato; origen: Ronda 0: 2.9; los valores viven solo en la oferta económica}
+- 1.1.14 Planes alternativos de las dos condiciones del adelanto del negocio financiero {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.3; el detalle se resuelve en el plan de trabajo y en el análisis de riesgos}
 
-### 1.2 Levantamiento y línea base de alcance — 7 cuentas de control
+### 1.2 Levantamiento y línea base de alcance — 8 cuentas de control
 
 - 1.2.1 Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato}
 - 1.2.3 Levantamiento de procesos, reglas de negocio y volumetría declarada {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato}
@@ -37,6 +38,7 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.2.7 Estudio de decisión con costeo sobre etiquetas electrónicas de precio {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato; origen: OP-01 a OP-05}
 - 1.2.8 Estudio de decisión con costeo sobre el sistema de almacenes de Concepción {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato; origen: OP-08, OP-09}
 - 1.2.9 Estudio de decisión con costeo sobre el destino de las plataformas {ucp: no; nivel: cuenta de control; etapa: desde el inicio del contrato}
+- 1.2.10 Propuesta de criterios del cupo preaprobado para la filial emisora {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.3; la filial emisora los fija antes de la prueba (RC-11)}
 
 ### 1.3 Arquitectura y diseño — 7 cuentas de control
 
@@ -97,8 +99,8 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 
 #### 1.5.5 Servicio de ventas — 4 cuentas de control
 
-- 1.5.5.1 Registro y cobro de ventas, reversas, cierre de caja y medios de pago {casos: CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08; nivel: cuenta de control; etapa: 1}
-- 1.5.5.2 Operación sin enlace, reconciliación y validación posterior {casos: CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07; nivel: cuenta de control; etapa: 1}
+- 1.5.5.1 Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago {casos: CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08; nivel: cuenta de control; etapa: 1}
+- 1.5.5.2 Punto de venta con operación sin conexión: reconciliación y validación posterior {casos: CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07; nivel: cuenta de control; etapa: 1}
 - 1.5.5.6 Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial {casos: CU-VE-09, CU-VE-10; nivel: cuenta de control; etapa: 1}
 - 1.5.5.7 Cobro con la tarjeta de la casa {casos: CU-VE-11; nivel: cuenta de control; etapa: 1}
 
@@ -159,7 +161,7 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.5.14.6 Plataforma de integración y convivencia con el sistema central de 2009 {casos: CU-BT-09, CU-BT-10; nivel: cuenta de control; etapa: 1}
 - 1.5.14.7 Observabilidad y capacidad analítica {casos: CU-BT-11, CU-BT-13; nivel: cuenta de control; etapa: 1}
 
-### 1.6 Integraciones (rediseño de las interfaces existentes) — 6 cuentas de control
+### 1.6 Integraciones (rediseño de las interfaces existentes) — 7 cuentas de control
 
 - 1.6.1 Catálogo de interfaces rediseñadas con contratos y niveles de servicio de integración {ucp: no; nivel: cuenta de control; etapa: por definir}
 - 1.6.2 Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas) {ucp: no; nivel: cuenta de control; etapa: por definir}
@@ -167,8 +169,9 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.6.9 Canal de intercambio con los proveedores de mercadería {ucp: no; nivel: cuenta de control; etapa: por definir; origen: 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP}
 - 1.6.10 Entrega de reportes a las autoridades fiscalizadoras {ucp: no; nivel: cuenta de control; etapa: por definir}
 - 1.6.11 Certificación de las integraciones con evidencia de conciliación {ucp: no; nivel: cuenta de control; etapa: por definir}
+- 1.6.12 Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.4.5; antes de comprometer la operación sin enlace}
 
-### 1.7 Migración y saneamiento de datos — 10 cuentas de control
+### 1.7 Migración y saneamiento de datos — 12 cuentas de control
 
 - 1.7.1 Plan de migración con estrategia de corte y de retorno e inventario de datos históricos {ucp: no; nivel: cuenta de control; etapa: por definir; origen: RT-05.11; RT-05.15}
 - 1.7.3 Maestro de artículos saneado y validado (268.000 referencias) {ucp: no; nivel: cuenta de control; etapa: por definir}
@@ -180,6 +183,8 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.7.10 Plan de retiro de la plataforma de originación y cobranza de 2011 {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Ronda 0: 3.11}
 - 1.7.11 Plataforma de originación y cobranza de 2011 fuera de servicio {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Ronda 0: 1.17b}
 - 1.7.12 Sistema central de retail de 2009 retirado {ucp: no; nivel: cuenta de control; etapa: por definir; origen: SP-01 y elección del escenario B en el sd-03}
+- 1.7.13 Sustitución del punto de venta de 2014 tienda por tienda y su retiro {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.3.1; tras acreditar la operación sin conexión y el retorno}
+- 1.7.14 Actas de compuerta por tramo de la cartera de crédito {ucp: no; nivel: cuenta de control; etapa: 1 y 2; origen: sd-03, 3.2.3; las cierran la Contraparte Técnica y la filial emisora}
 
 ### 1.8 Seguridad, identidad y cumplimiento — 8 cuentas de control
 
@@ -192,7 +197,7 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.8.10 Informe de diligencia del proveedor de nube {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Ronda 0: 3.13; fuente de la norma CMF por verificar}
 - 1.8.11 Atestación de la cadena de suministro y revisión de la arquitectura de confianza cero {ucp: no; nivel: cuenta de control; etapa: por definir; origen: RNF-70, RNF-71; agregado desde el catálogo; RNF-73; agregado desde el catálogo}
 
-### 1.9 Calidad, pruebas y certificación — 8 cuentas de control
+### 1.9 Calidad, pruebas y certificación — 12 cuentas de control
 
 - 1.9.1 Plan de pruebas con niveles, tipos, ambientes, datos y calendario {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Formulario T-13}
 - 1.9.2 Estándares de codificación, revisión por pares y puertas de calidad {ucp: no; nivel: cuenta de control; etapa: por definir; origen: ISO 25010; Ronda 0: 3.2a}
@@ -202,16 +207,21 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.9.7 Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso {ucp: no; nivel: cuenta de control; etapa: por definir}
 - 1.9.8 Certificación de calidad de la Etapa 1 {ucp: no; nivel: cuenta de control; etapa: 1}
 - 1.9.9 Certificación de calidad de la Etapa 2 {ucp: no; nivel: cuenta de control; etapa: 2}
+- 1.9.11 Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.3 y 3.4.5; RT-03.10}
+- 1.9.12 Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.3.1; decide si se conservan, remedian o sustituyen antes de la Etapa 2}
+- 1.9.13 Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.4.6; antes del despliegue; RNF-49}
+- 1.9.14 Informe de pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares {ucp: no; nivel: cuenta de control; etapa: 1 y 2; origen: sd-03, 3.4.6}
 
 ### 1.10 Innovaciones — 5 cuentas de control
 
 - 1.10.1 … 1.10.5 Un paquete por innovación, con tipo, indicador, línea base y meta por definir {ucp: no; nivel: cuenta de control; etapa: por definir; origen: RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13)}
 
-### 1.11 Implantación y despliegue — 3 cuentas de control
+### 1.11 Implantación y despliegue — 4 cuentas de control
 
 - 1.11.1 Plan de implantación con procedimiento de despliegue gradual y de reversión probado {ucp: no; nivel: cuenta de control; etapa: 1 y 2; origen: Formulario T-18}
 - 1.11.3 Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda {ucp: no; nivel: cuenta de control; etapa: 1 y 2; origen: El cliente adquiere y ejecuta (EXC-19, SP-04)}
 - 1.11.4 Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad {ucp: no; nivel: cuenta de control; etapa: 2}
+- 1.11.5 Piloto del punto de venta en tres tiendas {ucp: no; nivel: cuenta de control; etapa: 1; origen: sd-03, 3.2.3}
 
 ### 1.12 Resultados de las marchas blancas y aceptación por etapa — 7 cuentas de control
 
@@ -223,12 +233,13 @@ Cada paquete termina con un bloque `{...}` que no forma parte del nombre.
 - 1.12.7 Acta de aceptación final y garantía de correcto funcionamiento {ucp: no; nivel: cuenta de control; etapa: 2}
 - 1.12.9 Informe del soporte de estabilización posterior a la puesta en marcha {ucp: no; nivel: cuenta de control; etapa: 1 y 2}
 
-### 1.13 Gestión del cambio y capacitación — 4 cuentas de control
+### 1.13 Gestión del cambio y capacitación — 5 cuentas de control
 
 - 1.13.1 Plan de gestión del cambio con diagnóstico por perfil y medición de adopción {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Art. 89}
 - 1.13.2 Plan de capacitación por rol y materiales editables en español {ucp: no; nivel: cuenta de control; etapa: por definir; origen: Art. 90}
 - 1.13.3 Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca {ucp: no; nivel: cuenta de control; etapa: por definir}
 - 1.13.4 Informe de acompañamiento en puesto para el personal de tienda, temporero y externo {ucp: no; nivel: cuenta de control; etapa: por definir; origen: 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos}
+- 1.13.5 Plan de comunicación a los clientes de la cartera por tramo {ucp: no; nivel: cuenta de control; etapa: 1 y 2; origen: sd-03, 3.2.3; condición de cada compuerta de tramo}
 
 ### 1.14 Documentación, transferencia y reversibilidad — 7 cuentas de control
 
@@ -353,3 +364,23 @@ Aprobadas por el usuario (opción A). Cada fila deja el código menor del grupo;
 | 1.14.7 | 1.14.8 | Acta de cierre, traspaso final y acompañamiento de reversibilidad |
 | 1.15.2 | 1.15.7 | Informes periódicos de nivel de servicio y de certificaciones |
 | 1.15.4 | 1.15.5 | Mantención correctiva, preventiva y evolutiva |
+
+## Cuentas agregadas por coherencia con el sd-03 (2026-10-08)
+
+El usuario fijó que la coherencia con el subdocumento 3 pesa más que cualquier otra regla. `22_coherencia_edt_sd03.md` encontró 12 compromisos del sd-03 sin entregable; se cubren así:
+
+| Compromiso | Cuenta | Cómo |
+| :-- | :-- | :-- |
+| K1 Punto de venta nuevo con operación sin conexión (Etapa 1, Tabla 3.1) | 1.5.5.1 y 1.5.5.2 | Se renombraron; sus casos de uso ya eran el punto de venta |
+| K2 Sustitución del punto de venta de 2014 tienda por tienda | 1.7.13 | Cuenta nueva |
+| K3 Piloto en tres tiendas | 1.11.5 | Cuenta nueva, meses 6 y 7 |
+| K4 Corte de enlace de 24 horas en el piloto | 1.9.11 | Cuenta nueva, meses 6 y 7 |
+| K5 Contingencia tributaria aprobada y probada | 1.6.12 | Cuenta nueva |
+| K6 Criterios del cupo preaprobado | 1.2.10 | Cuenta nueva |
+| K7 Compuerta por tramo de la cartera | 1.7.14 | Cuenta nueva |
+| K8 Plan de comunicación a los clientes | 1.13.5 | Cuenta nueva |
+| K9 Planes alternativos de las dos condiciones | 1.1.14 | Cuenta nueva |
+| K10 Evaluación de comercio electrónico y fidelización | 1.9.12 | Cuenta nueva |
+| K11 Pruebas de tareas del punto de venta con cajeros | 1.9.13 | Cuenta nueva |
+| K12 Pruebas de comprensión con clientes y titulares | 1.9.14 | Cuenta nueva |
+

@@ -47,7 +47,7 @@ COMPROMISOS = [
     ("K8", "3.2.3", "Plan de comunicación a los clientes en la migración de la cartera",
      r"comunicaci[oó]n a (los )?clientes|comunicaci[oó]n con (los )?clientes|plan de comunicaci[oó]n", None, "A", "Plan de comunicación a los clientes de la cartera por tramo"),
     ("K9", "3.2.3", "Plan alternativo para cada una de las dos condiciones del adelanto del negocio financiero (crédito con corte de enlace y convivencia con la plataforma de 2011)",
-     r"plan alternativo|alternativa de continuidad", None, "A", "Planes alternativos de las dos condiciones del adelanto del negocio financiero"),
+     r"planes? alternativos?|alternativa de continuidad", None, "A", "Planes alternativos de las dos condiciones del adelanto del negocio financiero"),
     ("K10", "3.3.1", "Evaluación de comercio electrónico y fidelización con las pruebas de la primera etapa, y decisión de conservar, remediar o sustituir cada plataforma antes de su ola",
      r"evaluaci[oó]n.*(comercio electr|fideliz)|comercio electr.*evaluaci", None, "M", "Informe de evaluación de comercio electrónico y fidelización"),
     ("K11", "3.4.6", "Pruebas de tareas del punto de venta con cajeros nuevos y experimentados antes del despliegue",

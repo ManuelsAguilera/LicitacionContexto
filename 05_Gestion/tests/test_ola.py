@@ -18,9 +18,9 @@ CAB = "| Código | Paquete | Mes | Unidad | O | P | Pe |\n| :-- | :-- | :-- | :-
 class TestOla(unittest.TestCase):
     def test_grupos_y_cantidades(self):
         paquetes, cuentas, _ = go.construir()
-        self.assertEqual(len(cuentas), 74)
+        self.assertEqual(len(cuentas), 76)
         por = {g: len([x for x in paquetes if x["grupo"] == g]) for g in "ABCD"}
-        self.assertEqual(por, {"A": 84, "B": 21, "C": 25, "D": 36})
+        self.assertEqual(por, {"A": 84, "B": 21, "C": 25, "D": 38})
         self.assertEqual(len({x["codigo"] for x in paquetes}), len(paquetes))
 
     def test_todo_paquete_de_la_ola_cae_en_un_solo_mes_dentro_de_la_ola(self):

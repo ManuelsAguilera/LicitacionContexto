@@ -23,7 +23,7 @@ class TestDiccionario(unittest.TestCase):
     def test_una_ficha_por_paquete_con_todos_los_campos(self):
         fichas, hall = gd.construir()
         self.assertEqual(hall, [])
-        self.assertEqual(len(fichas), 153)
+        self.assertEqual(len(fichas), 164)
         for f in fichas:
             self.assertEqual(set(f["vals"]), gd.CLAVES, f["paquete"]["codigo"])
             self.assertTrue(all(e in ("derivado", "propuesta", "manual", "por definir") for _, e in f["vals"].values()))

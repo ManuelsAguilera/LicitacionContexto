@@ -6,19 +6,19 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 
 | Campo | Derivado | Propuesta | Manual | Por definir |
 | :-- | --: | --: | --: | --: |
-| Descripción del trabajo | 51 | 0 | 0 | 102 |
-| Queda fuera | 10 | 0 | 0 | 143 |
-| Entregable | 51 | 0 | 0 | 102 |
-| Criterio de aceptación | 29 | 0 | 0 | 124 |
-| Responsable | 0 | 148 | 0 | 5 |
-| Hitos asociados | 74 | 0 | 0 | 79 |
-| Esfuerzo estimado | 51 | 0 | 0 | 102 |
-| Costo estimado | 0 | 0 | 0 | 153 |
-| Recursos requeridos | 0 | 0 | 0 | 153 |
-| Supuestos | 153 | 0 | 0 | 0 |
-| Referencias | 117 | 0 | 0 | 36 |
+| Descripción del trabajo | 51 | 0 | 0 | 113 |
+| Queda fuera | 11 | 0 | 0 | 153 |
+| Entregable | 51 | 0 | 0 | 113 |
+| Criterio de aceptación | 29 | 0 | 0 | 135 |
+| Responsable | 0 | 159 | 0 | 5 |
+| Hitos asociados | 76 | 0 | 0 | 88 |
+| Esfuerzo estimado | 51 | 0 | 0 | 113 |
+| Costo estimado | 0 | 0 | 0 | 164 |
+| Recursos requeridos | 0 | 0 | 0 | 164 |
+| Supuestos | 164 | 0 | 0 | 0 |
+| Referencias | 128 | 0 | 0 | 36 |
 
-Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 29 de 153 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
+Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 29 de 164 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
 
 ## 2. Cómo se completa
 
@@ -207,6 +207,22 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): base de la planificación. [derivado]
 - **Referencias:** Ronda 0: 2.9; los valores viven solo en la oferta económica. [derivado]
 
+#### 1.1.14 Planes alternativos de las dos condiciones del adelanto del negocio financiero
+
+- **Rama y servicio:** 1.1. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 3 a 5 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Jefe de Proyecto. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 3 a 5 (propuesta): sd-03, 3.2.3: antes de la prueba del corte de enlace de los meses 6 y 7. [derivado]
+- **Referencias:** sd-03, 3.2.3; el detalle se resuelve en el plan de trabajo y en el análisis de riesgos. [derivado]
+
 ### Rama 1.2
 
 #### 1.2.1 Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias
@@ -320,6 +336,22 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): decide el destino de las plataformas. [derivado]
 - **Referencias:** por definir [por definir]
+
+#### 1.2.10 Propuesta de criterios del cupo preaprobado para la filial emisora
+
+- **Rama y servicio:** 1.2. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 3 a 5 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** RC-11: Fijar el apetito de riesgo del crédito sin conexión (topes, antigüedad del registro local y exclusiones). [derivado]
+- **Entregable:** por definir [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Arquitecto de Solución. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 3 a 5 (propuesta): sd-03, 3.2.3: la filial emisora fija los criterios antes de la prueba de los meses 6 y 7. [derivado]
+- **Referencias:** sd-03, 3.2.3; la filial emisora los fija antes de la prueba (RC-11). [derivado]
 
 ### Rama 1.3
 
@@ -456,7 +488,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 #### 1.4.2 Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen
 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
-- **Ventana:** los meses 6 a 12 (propuesta)
+- **Ventana:** los meses 4 a 12 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
 - **Queda fuera:** SP-04: El cliente adquiere, ejecuta y contrata, antes de cada instalación en tienda y centro de distribución, lo físico que el proponente especifica. El proponente provee el centro de datos on-premise con su conectividad, su seguridad y sus canalizaciones; EXC-19: Proveer o instalar equipamiento físico de tiendas y centros de distribución, ejecutar sus obras ni contratar sus enlaces. [derivado]
 - **Entregable:** por definir [por definir]
@@ -466,7 +498,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
-- **Supuestos:** Ventana de los meses 6 a 12 (propuesta): antes de la marcha blanca; antes del piloto de tiendas. [derivado]
+- **Supuestos:** Ventana de los meses 4 a 12 (propuesta): primero las tres tiendas del piloto del punto de venta (meses 6 y 7) y después el resto, antes de la marcha blanca; antes del piloto de tiendas. [derivado]
 - **Referencias:** El hardware lo adquiere el cliente (SP-04); El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04); RT-03.24 del Caso. [derivado]
 
 #### 1.4.3 Entorno dedicado del ámbito emisor con segregación física y lógica acreditada
@@ -919,7 +951,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-PE-13 (03_casos_de_uso_pedidos.md): S10; CU-PE-15 (03_casos_de_uso_pedidos.md): S1, S12; Ventana de los meses 13 a 18 (contrato): Art. 17: desarrollo de la etapa 2. [derivado]
 - **Referencias:** RF-062, RF-063, RF-081; casos de uso CU-PE-13, CU-PE-15. [derivado]
 
-#### 1.5.5.1 Registro y cobro de ventas, reversas, cierre de caja y medios de pago
+#### 1.5.5.1 Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago
 
 - **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
@@ -935,7 +967,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** CU-VE-01 (03_casos_de_uso_ventas.md): S1, S3; CU-VE-02 (03_casos_de_uso_ventas.md): S1, S4; CU-VE-03 (03_casos_de_uso_ventas.md): S1, S4; CU-VE-08 (03_casos_de_uso_ventas.md): S7; Ventana de los meses 1 a 12 (contrato): Art. 17: desarrollo de la etapa 1. [derivado]
 - **Referencias:** RF-001, RF-181; casos de uso CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08; resultados del Anexo D: 9, 25. [derivado]
 
-#### 1.5.5.2 Operación sin enlace, reconciliación y validación posterior
+#### 1.5.5.2 Punto de venta con operación sin conexión: reconciliación y validación posterior
 
 - **Rama y servicio:** 1.5, Servicio de ventas. **Etapa:** 1. **Método:** UCP.
 - **Ventana:** los meses 1 a 12 (contrato)
@@ -1561,6 +1593,22 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de los meses 10 a 18 (propuesta): certificación de las dos etapas. [derivado]
 - **Referencias:** por definir [por definir]
 
+#### 1.6.12 Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE
+
+- **Rama y servicio:** 1.6. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 4 a 6 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** por definir [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Arquitecto de Solución, con apoyo del Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 4 a 6 (propuesta): sd-03, 3.4.5: aprobada y probada antes de comprometer la operación sin enlace; antes del piloto. [derivado]
+- **Referencias:** sd-03, 3.4.5; antes de comprometer la operación sin enlace. [derivado]
+
 ### Rama 1.7
 
 #### 1.7.1 Plan de migración con estrategia de corte y de retorno e inventario de datos históricos
@@ -1722,6 +1770,38 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 21 a 56 (contrato): sd-03 (operación): se retira durante la operación; fecha por definir. [derivado]
 - **Referencias:** SP-01 y elección del escenario B en el sd-03. [derivado]
+
+#### 1.7.13 Sustitución del punto de venta de 2014 tienda por tienda y su retiro
+
+- **Rama y servicio:** 1.7. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 8 a 16 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** por definir [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Implantación y Gestión del Cambio. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 8 a 16 (propuesta): sd-03, 3.3.1: tienda por tienda tras acreditar la operación sin conexión (piloto de los meses 6 y 7) y antes del paso a producción. [derivado]
+- **Referencias:** sd-03, 3.3.1; tras acreditar la operación sin conexión y el retorno. [derivado]
+
+#### 1.7.14 Actas de compuerta por tramo de la cartera de crédito
+
+- **Rama y servicio:** 1.7. **Etapa:** 1 y 2. **Método:** tres valores.
+- **Ventana:** los meses 12 a 21 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: acta; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 12 a 21 (propuesta): sd-03, 3.2.3: la compuerta de cada tramo se cierra antes del paso a producción de la etapa (meses 16 y 21). [derivado]
+- **Referencias:** sd-03, 3.2.3; las cierran la Contraparte Técnica y la filial emisora. [derivado]
 
 ### Rama 1.8
 
@@ -1983,6 +2063,70 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Supuestos:** Ventana de el mes 18 (contrato): Art. 17: cierre del desarrollo de la Etapa 2 en el mes 18. [derivado]
 - **Referencias:** por definir [por definir]
 
+#### 1.9.11 Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto
+
+- **Rama y servicio:** 1.9. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 6 a 7 (contrato)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Ventana de los meses 6 a 7, fijada por el contrato (sd-03, 3.2.3: corte de enlace de 24 horas en una tienda del piloto, en los meses 6 y 7). [derivado]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 6 a 7 (contrato): sd-03, 3.2.3: corte de enlace de 24 horas en una tienda del piloto, en los meses 6 y 7. [derivado]
+- **Referencias:** sd-03, 3.2.3 y 3.4.5; RT-03.10. [derivado]
+
+#### 1.9.12 Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1
+
+- **Rama y servicio:** 1.9. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 9 a 12 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 9 a 12 (propuesta): sd-03, 3.3.1: con las pruebas de la primera etapa y antes de la ola que dependa de la plataforma. [derivado]
+- **Referencias:** sd-03, 3.3.1; decide si se conservan, remedian o sustituyen antes de la Etapa 2. [derivado]
+
+#### 1.9.13 Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados
+
+- **Rama y servicio:** 1.9. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 5 a 7 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 5 a 7 (propuesta): sd-03, 3.4.6: antes del despliegue y del piloto. [derivado]
+- **Referencias:** sd-03, 3.4.6; antes del despliegue; RNF-49. [derivado]
+
+#### 1.9.14 Informe de pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares
+
+- **Rama y servicio:** 1.9. **Etapa:** 1 y 2. **Método:** tres valores.
+- **Ventana:** los meses 12 a 20 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: informe; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Calidad. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 12 a 20 (propuesta): sd-03, 3.4.6: precios, entrega e información crediticia de las dos etapas. [derivado]
+- **Referencias:** sd-03, 3.4.6. [derivado]
+
 ### Rama 1.10
 
 #### 1.10.1 Un paquete por innovación, con tipo, indicador, línea base y meta por definir
@@ -2114,6 +2258,22 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 15 a 18 (propuesta): Art. 17.2 fija la convivencia en los meses 19 y 20; el plan va antes. [derivado]
 - **Referencias:** por definir [por definir]
+
+#### 1.11.5 Piloto del punto de venta en tres tiendas
+
+- **Rama y servicio:** 1.11. **Etapa:** 1. **Método:** tres valores.
+- **Ventana:** los meses 6 a 7 (contrato)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** por definir [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Implantación y Gestión del Cambio. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Ventana de los meses 6 a 7, fijada por el contrato (sd-03, 3.2.3: el piloto del punto de venta es de los meses 6 y 7). [derivado]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 6 a 7 (contrato): sd-03, 3.2.3: el piloto del punto de venta es de los meses 6 y 7. [derivado]
+- **Referencias:** sd-03, 3.2.3. [derivado]
 
 ### Rama 1.12
 
@@ -2294,6 +2454,22 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 24 (propuesta): tras el paso a producción de cada etapa. [derivado]
 - **Referencias:** 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos. [derivado]
+
+#### 1.13.5 Plan de comunicación a los clientes de la cartera por tramo
+
+- **Rama y servicio:** 1.13. **Etapa:** 1 y 2. **Método:** tres valores.
+- **Ventana:** los meses 10 a 21 (propuesta)
+- **Descripción del trabajo:** por definir [por definir]
+- **Queda fuera:** por definir [por definir]
+- **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
+- **Criterio de aceptación:** por definir [por definir]
+- **Responsable:** Líder de Implantación y Gestión del Cambio. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
+- **Hitos asociados:** Hitos del Formulario E-25: por definir. [por definir]
+- **Esfuerzo estimado:** Por estimar (planilla de tres valores, Formulario T-15). [por definir]
+- **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
+- **Recursos requeridos:** Por definir con el sd-12. [por definir]
+- **Supuestos:** Ventana de los meses 10 a 21 (propuesta): sd-03, 3.2.3: antes del primer tramo y de cada compuerta. [derivado]
+- **Referencias:** sd-03, 3.2.3; condición de cada compuerta de tramo. [derivado]
 
 ### Rama 1.14
 

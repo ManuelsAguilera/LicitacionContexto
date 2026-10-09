@@ -2,7 +2,7 @@
 
 Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/generar_mapa_paquetes.py` a partir de `14_edt_corregida.md`; no editar a mano. Fecha: 2026-10-08. Cada fila es un paquete. «UCP» significa que sus horas salen del modelo de casos de uso; «tres valores» significa que las estima el equipo (`12_plantilla_tres_valores.md`). El UUCW es el peso de sus casos (5 por caso simple y 10 por caso medio).
 
-153 paquetes: 51 cubiertos por el UCP (127 casos, UUCW 645) y 102 para tres valores.
+164 paquetes: 51 cubiertos por el UCP (127 casos, UUCW 645) y 113 para tres valores.
 
 ## 1. Paquetes cubiertos por el UCP
 
@@ -25,8 +25,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.5.4.3 | Resolución de pedidos sin existencia, reasignación y alternativas al cliente | Servicio de pedidos | CU-PE-05, CU-PE-06, CU-PE-07 | RF-046, RF-056 a RF-061, RF-074 | 15 | 2 |
 | 1.5.4.4 | Estado único del pedido y sus consultas | Servicio de pedidos | CU-PE-10, CU-PE-11, CU-PE-12 | RF-052, RF-067, RF-068, RF-072, RF-073 | 15 | 2 |
 | 1.5.4.5 | Seguimiento y cumplimiento de la promesa de entrega | Servicio de pedidos | CU-PE-13, CU-PE-15 | RF-062, RF-063, RF-081 | 10 | 2 |
-| 1.5.5.1 | Registro y cobro de ventas, reversas, cierre de caja y medios de pago | Servicio de ventas | CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08 | RF-001, RF-181 | 20 | 1 |
-| 1.5.5.2 | Operación sin enlace, reconciliación y validación posterior | Servicio de ventas | CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07 | RF-082 a RF-086, RF-088, RF-094 a RF-097, RF-099 | 20 | 1 |
+| 1.5.5.1 | Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago | Servicio de ventas | CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08 | RF-001, RF-181 | 20 | 1 |
+| 1.5.5.2 | Punto de venta con operación sin conexión: reconciliación y validación posterior | Servicio de ventas | CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07 | RF-082 a RF-086, RF-088, RF-094 a RF-097, RF-099 | 20 | 1 |
 | 1.5.5.6 | Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial | Servicio de ventas | CU-VE-09, CU-VE-10 | RF-100 | 10 | 1 |
 | 1.5.5.7 | Cobro con la tarjeta de la casa | Servicio de ventas | CU-VE-11 | — | 5 | 1 |
 | 1.5.6.1 | Cálculo de la base de comisión | Servicio de comisiones | CU-CM-01 | RF-054, RF-071 | 5 | 2 |
@@ -75,6 +75,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.1.11 | Registro de garantías, seguros y certificados laborales vigentes | desde el inicio del contrato | Art. 75.3 |
 | 1.1.12 | Acta de constitución del proyecto | desde el inicio del contrato | — |
 | 1.1.13 | Línea base de costos y presupuesto | desde el inicio del contrato | Ronda 0: 2.9; los valores viven solo en la oferta económica |
+| 1.1.14 | Planes alternativos de las dos condiciones del adelanto del negocio financiero | 1 | sd-03, 3.2.3; el detalle se resuelve en el plan de trabajo y en el análisis de riesgos |
 | 1.2.1 | Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias | desde el inicio del contrato | — |
 | 1.2.3 | Levantamiento de procesos, reglas de negocio y volumetría declarada | desde el inicio del contrato | — |
 | 1.2.4 | Catálogo de requerimientos y matriz de trazabilidad | desde el inicio del contrato | Anexo B del sd-03 |
@@ -82,6 +83,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.2.7 | Estudio de decisión con costeo sobre etiquetas electrónicas de precio | desde el inicio del contrato | OP-01 a OP-05 |
 | 1.2.8 | Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | desde el inicio del contrato | OP-08, OP-09 |
 | 1.2.9 | Estudio de decisión con costeo sobre el destino de las plataformas | desde el inicio del contrato | — |
+| 1.2.10 | Propuesta de criterios del cupo preaprobado para la filial emisora | 1 | sd-03, 3.2.3; la filial emisora los fija antes de la prueba (RC-11) |
 | 1.3.1 | Documento de arquitectura con cinco vistas y catálogo de decisiones | desde el inicio del contrato | ISO 42010 |
 | 1.3.3 | Arquitectura física con emplazamiento por componente justificado | desde el inicio del contrato | Art. 16.2; zonas a nombrar conforme al sd-04 |
 | 1.3.4 | Modelo de datos con dominios segregados Retail y Emisor, frontera documentada y políticas de retención | desde el inicio del contrato | RT-05.10 |
@@ -108,6 +110,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.6.9 | Canal de intercambio con los proveedores de mercadería | por definir | 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP |
 | 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | por definir | — |
 | 1.6.11 | Certificación de las integraciones con evidencia de conciliación | por definir | — |
+| 1.6.12 | Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE | 1 | sd-03, 3.4.5; antes de comprometer la operación sin enlace |
 | 1.7.1 | Plan de migración con estrategia de corte y de retorno e inventario de datos históricos | por definir | RT-05.11; RT-05.15 |
 | 1.7.3 | Maestro de artículos saneado y validado (268.000 referencias) | por definir | — |
 | 1.7.4 | Corte de inventario en las 24 instalaciones que no cierran | por definir | — |
@@ -118,6 +121,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | por definir | Ronda 0: 3.11 |
 | 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | por definir | Ronda 0: 1.17b |
 | 1.7.12 | Sistema central de retail de 2009 retirado | por definir | SP-01 y elección del escenario B en el sd-03 |
+| 1.7.13 | Sustitución del punto de venta de 2014 tienda por tienda y su retiro | 1 | sd-03, 3.3.1; tras acreditar la operación sin conexión y el retorno |
+| 1.7.14 | Actas de compuerta por tramo de la cartera de crédito | 1 y 2 | sd-03, 3.2.3; las cierran la Contraparte Técnica y la filial emisora |
 | 1.8.1 | Plan de seguridad, matriz de controles y modelo de amenazas | por definir | — |
 | 1.8.3 | Declaración de superficie de exposición y plan de respuesta a incidentes | por definir | — |
 | 1.8.5 | Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor | por definir | frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica |
@@ -134,6 +139,10 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | por definir | — |
 | 1.9.8 | Certificación de calidad de la Etapa 1 | 1 | — |
 | 1.9.9 | Certificación de calidad de la Etapa 2 | 2 | — |
+| 1.9.11 | Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto | 1 | sd-03, 3.2.3 y 3.4.5; RT-03.10 |
+| 1.9.12 | Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 | 1 | sd-03, 3.3.1; decide si se conservan, remedian o sustituyen antes de la Etapa 2 |
+| 1.9.13 | Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados | 1 | sd-03, 3.4.6; antes del despliegue; RNF-49 |
+| 1.9.14 | Informe de pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares | 1 y 2 | sd-03, 3.4.6 |
 | 1.10.1 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13) |
 | 1.10.2 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13) |
 | 1.10.3 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13) |
@@ -142,6 +151,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.11.1 | Plan de implantación con procedimiento de despliegue gradual y de reversión probado | 1 y 2 | Formulario T-18 |
 | 1.11.3 | Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda | 1 y 2 | El cliente adquiere y ejecuta (EXC-19, SP-04) |
 | 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 2 | — |
+| 1.11.5 | Piloto del punto de venta en tres tiendas | 1 | sd-03, 3.2.3 |
 | 1.12.1 | Plan de la marcha blanca de la Etapa 1 | 1 | — |
 | 1.12.2 | Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1 | 1 | Caso, numeral 17.3 |
 | 1.12.4 | Acta de aceptación de la Etapa 1 | 1 | — |
@@ -153,6 +163,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.13.2 | Plan de capacitación por rol y materiales editables en español | por definir | Art. 90 |
 | 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | por definir | — |
 | 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | por definir | 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos |
+| 1.13.5 | Plan de comunicación a los clientes de la cartera por tramo | 1 y 2 | sd-03, 3.2.3; condición de cada compuerta de tramo |
 | 1.14.1 | Documentación técnica y funcional con inventario de componentes de software | por definir | Art. 91; arquitectura, requerimientos, construcción, pruebas, operación, seguridad, usuario y proyecto; RNF-70 |
 | 1.14.3 | Transferencia tecnológica de código fuente, artefactos de construcción, scripts de infraestructura y procedimientos de despliegue | por definir | Art. 77.1 |
 | 1.14.4 | Base de conocimiento y manuales de operación | por definir | Art. 77.1; agregado desde la guía |

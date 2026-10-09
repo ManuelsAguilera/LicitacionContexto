@@ -8,7 +8,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 2. **Optimista** es el valor si todo sale bien (casi sin imprevistos). **Probable** es el más realista. **Pesimista** es el valor si salen mal las cosas que sí pueden salir mal. Debe cumplirse optimista ≤ probable ≤ pesimista.
 3. Deja en blanco una fila solo si no puedes estimarla. No inventes: una fila en blanco se informa como pendiente.
 4. Estima por separado y sin consultar al otro estimador. La independencia es lo que da valor a la comparación.
-5. Los **51 paquetes de desarrollo de software** (primera tabla) se comparan con el UCP. Los **102 restantes** (segunda tabla) no los cubre el UCP: se suman por rama.
+5. Los **51 paquetes de desarrollo de software** (primera tabla) se comparan con el UCP. Los **113 restantes** (segunda tabla) no los cubre el UCP: se suman por rama.
 6. Si dos paquetes comparten trabajo, pon las horas en uno solo y anótalo debajo. Los conectores de cada servicio y la administración de la base tecnológica ya están en los paquetes de software; no los repitas en las ramas de integración, infraestructura o seguridad.
 7. Anota en una línea cada supuesto relevante debajo de las tablas.
 
@@ -33,8 +33,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.5.4.3 | Resolución de pedidos sin existencia, reasignación y alternativas al cliente | Servicio de pedidos | 8 RF. Etapa 2 | | | |
 | 1.5.4.4 | Estado único del pedido y sus consultas | Servicio de pedidos | 5 RF. Etapa 2 | | | |
 | 1.5.4.5 | Seguimiento y cumplimiento de la promesa de entrega | Servicio de pedidos | 3 RF. Etapa 2 | | | |
-| 1.5.5.1 | Registro y cobro de ventas, reversas, cierre de caja y medios de pago | Servicio de ventas | 2 RF. Etapa 1 | | | |
-| 1.5.5.2 | Operación sin enlace, reconciliación y validación posterior | Servicio de ventas | 11 RF. Etapa 1 | | | |
+| 1.5.5.1 | Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago | Servicio de ventas | 2 RF. Etapa 1 | | | |
+| 1.5.5.2 | Punto de venta con operación sin conexión: reconciliación y validación posterior | Servicio de ventas | 11 RF. Etapa 1 | | | |
 | 1.5.5.6 | Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial | Servicio de ventas | 1 RF. Etapa 1 | | | |
 | 1.5.5.7 | Cobro con la tarjeta de la casa | Servicio de ventas | 0 RF. Etapa 1 | | | |
 | 1.5.6.1 | Cálculo de la base de comisión | Servicio de comisiones | 2 RF. Etapa 2 | | | |
@@ -83,6 +83,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.1.11 | Registro de garantías, seguros y certificados laborales vigentes | desde el inicio del contrato | 56 meses de contrato; comités mensuales, quincenales y semanales (sd-01, 1.5) | | | |
 | 1.1.12 | Acta de constitución del proyecto | desde el inicio del contrato | 56 meses de contrato; comités mensuales, quincenales y semanales (sd-01, 1.5) | | | |
 | 1.1.13 | Línea base de costos y presupuesto | desde el inicio del contrato | 56 meses de contrato; comités mensuales, quincenales y semanales (sd-01, 1.5) | | | |
+| 1.1.14 | Planes alternativos de las dos condiciones del adelanto del negocio financiero | 1 | 56 meses de contrato; comités mensuales, quincenales y semanales (sd-01, 1.5) | | | |
 | 1.2.1 | Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
 | 1.2.3 | Levantamiento de procesos, reglas de negocio y volumetría declarada | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
 | 1.2.4 | Catálogo de requerimientos y matriz de trazabilidad | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
@@ -90,6 +91,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.2.7 | Estudio de decisión con costeo sobre etiquetas electrónicas de precio | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
 | 1.2.8 | Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
 | 1.2.9 | Estudio de decisión con costeo sobre el destino de las plataformas | desde el inicio del contrato | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
+| 1.2.10 | Propuesta de criterios del cupo preaprobado para la filial emisora | 1 | 14 interfaces entre 9 plataformas de 6 proveedores | | | |
 | 1.3.1 | Documento de arquitectura con cinco vistas y catálogo de decisiones | desde el inicio del contrato | 13 servicios y la base tecnológica; arquitectura híbrida | | | |
 | 1.3.3 | Arquitectura física con emplazamiento por componente justificado | desde el inicio del contrato | 13 servicios y la base tecnológica; arquitectura híbrida | | | |
 | 1.3.4 | Modelo de datos con dominios segregados Retail y Emisor, frontera documentada y políticas de retención | desde el inicio del contrato | 13 servicios y la base tecnológica; arquitectura híbrida | | | |
@@ -116,6 +118,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.6.9 | Canal de intercambio con los proveedores de mercadería | por definir | 14 interfaces existentes; 940 proveedores | | | |
 | 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | por definir | 14 interfaces existentes; 940 proveedores | | | |
 | 1.6.11 | Certificación de las integraciones con evidencia de conciliación | por definir | 14 interfaces existentes; 940 proveedores | | | |
+| 1.6.12 | Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE | 1 | 14 interfaces existentes; 940 proveedores | | | |
 | 1.7.1 | Plan de migración con estrategia de corte y de retorno e inventario de datos históricos | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
 | 1.7.3 | Maestro de artículos saneado y validado (268.000 referencias) | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
 | 1.7.4 | Corte de inventario en las 24 instalaciones que no cierran | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
@@ -126,6 +129,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
 | 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
 | 1.7.12 | Sistema central de retail de 2009 retirado | por definir | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
+| 1.7.13 | Sustitución del punto de venta de 2014 tienda por tienda y su retiro | 1 | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
+| 1.7.14 | Actas de compuerta por tramo de la cartera de crédito | 1 y 2 | 620.000 clientes de la cartera por tramos; 268.000 referencias; 24 instalaciones | | | |
 | 1.8.1 | Plan de seguridad, matriz de controles y modelo de amenazas | por definir | RNF-33 a RNF-38 y RNF-70 a RNF-76 del Anexo B | | | |
 | 1.8.3 | Declaración de superficie de exposición y plan de respuesta a incidentes | por definir | RNF-33 a RNF-38 y RNF-70 a RNF-76 del Anexo B | | | |
 | 1.8.5 | Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor | por definir | RNF-33 a RNF-38 y RNF-70 a RNF-76 del Anexo B | | | |
@@ -142,6 +147,10 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | por definir | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
 | 1.9.8 | Certificación de calidad de la Etapa 1 | 1 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
 | 1.9.9 | Certificación de calidad de la Etapa 2 | 2 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
+| 1.9.11 | Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto | 1 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
+| 1.9.12 | Informe de evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1 | 1 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
+| 1.9.13 | Informe de pruebas de tareas del punto de venta con cajeros nuevos y experimentados | 1 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
+| 1.9.14 | Informe de pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares | 1 y 2 | RNF-22 a RNF-28 y RNF-32 del Anexo B; 28 criterios de aceptación | | | |
 | 1.10.1 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | 5 innovaciones, una por tipo (art. 29) | | | |
 | 1.10.2 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | 5 innovaciones, una por tipo (art. 29) | | | |
 | 1.10.3 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | 5 innovaciones, una por tipo (art. 29) | | | |
@@ -150,6 +159,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.11.1 | Plan de implantación con procedimiento de despliegue gradual y de reversión probado | 1 y 2 | Piloto de 3 tiendas; 22 tiendas y 2 centros; 380 líneas de caja; 640 terminales | | | |
 | 1.11.3 | Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda | 1 y 2 | Piloto de 3 tiendas; 22 tiendas y 2 centros; 380 líneas de caja; 640 terminales | | | |
 | 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 2 | Piloto de 3 tiendas; 22 tiendas y 2 centros; 380 líneas de caja; 640 terminales | | | |
+| 1.11.5 | Piloto del punto de venta en tres tiendas | 1 | Piloto de 3 tiendas; 22 tiendas y 2 centros; 380 líneas de caja; 640 terminales | | | |
 | 1.12.1 | Plan de la marcha blanca de la Etapa 1 | 1 | Dos marchas blancas, una por etapa | | | |
 | 1.12.2 | Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1 | 1 | Dos marchas blancas, una por etapa | | | |
 | 1.12.4 | Acta de aceptación de la Etapa 1 | 1 | Dos marchas blancas, una por etapa | | | |
@@ -161,6 +171,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.13.2 | Plan de capacitación por rol y materiales editables en español | por definir | Unos 1.100 repositores externos; 62 % de rotación; 1.900 incorporaciones de temporada | | | |
 | 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | por definir | Unos 1.100 repositores externos; 62 % de rotación; 1.900 incorporaciones de temporada | | | |
 | 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | por definir | Unos 1.100 repositores externos; 62 % de rotación; 1.900 incorporaciones de temporada | | | |
+| 1.13.5 | Plan de comunicación a los clientes de la cartera por tramo | 1 y 2 | Unos 1.100 repositores externos; 62 % de rotación; 1.900 incorporaciones de temporada | | | |
 | 1.14.1 | Documentación técnica y funcional con inventario de componentes de software | por definir | Documentación del art. 77.1; Plan de Reversibilidad dentro de los primeros 90 días, actualizado cada año | | | |
 | 1.14.3 | Transferencia tecnológica de código fuente, artefactos de construcción, scripts de infraestructura y procedimientos de despliegue | por definir | Documentación del art. 77.1; Plan de Reversibilidad dentro de los primeros 90 días, actualizado cada año | | | |
 | 1.14.4 | Base de conocimiento y manuales de operación | por definir | Documentación del art. 77.1; Plan de Reversibilidad dentro de los primeros 90 días, actualizado cada año | | | |

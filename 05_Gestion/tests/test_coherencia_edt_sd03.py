@@ -35,6 +35,11 @@ class TestCoherenciaEdtSd03(unittest.TestCase):
         for k in ("K13", "K14", "K15", "K16"):
             self.assertTrue(por_id[k]["ok"], k)
 
+    def test_la_edt_corregida_cubre_los_16_compromisos_del_sd03(self):
+        res = vc.comprobar()
+        self.assertEqual([c["id"] for c in res["compromisos"] if not c["ok"]], [])
+        self.assertEqual(vc.hallazgos(res), [])
+
     def test_un_compromiso_con_ventana_incoherente_se_detecta(self):
         with tempfile.TemporaryDirectory() as d:
             edt = Path(d) / "edt.md"

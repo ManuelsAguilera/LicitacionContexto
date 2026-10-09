@@ -9,10 +9,10 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | A | Software que empieza: especificación de cada caso de uso | 30 | 84 | 84 |
 | B | Trabajo continuo: un paquete por mes | 7 | 21 | 0 |
 | C | Cuentas que terminan dentro de la ola, separadas en sus partes | 9 | 25 | 0 |
-| D | Cuentas que siguen después: su primera entrega | 28 | 36 | 0 |
-| **Total** | | **74** | **166** | **84** |
+| D | Cuentas que siguen después: su primera entrega | 30 | 38 | 0 |
+| **Total** | | **76** | **168** | **84** |
 
-Paquetes con horas: 84 de 166. Entre 8 y 80 h: 84. Fuera de rango: **0**.
+Paquetes con horas: 84 de 168. Entre 8 y 80 h: 84. Fuera de rango: **0**.
 Cada paquete tiene un solo mes por construcción. Los de software salen del UCP; el resto queda «por estimar» y se verifica al llenar la planilla.
 
 ## 2. Paquetes de trabajo
@@ -166,10 +166,12 @@ Cada paquete tiene un solo mes por construcción. Los de software salen del UCP;
 
 | Código | Paquete de trabajo | Cuenta | Mes | Horas | Fuente |
 | :-- | :-- | :-- | :-- | --: | :-- |
+| 1.1.14.1 | Primera entrega de: Planes alternativos de las dos condiciones del adelanto del negocio financiero | 1.1.14 | 3 (mar 2027) | por estimar | por estimar |
 | 1.2.6.1 | Primera entrega de: Línea base de alcance por etapa, con exclusiones y supuestos | 1.2.6 | 3 (mar 2027) | por estimar | por estimar |
 | 1.2.7.1 | Primera entrega de: Estudio de decisión con costeo sobre etiquetas electrónicas de precio | 1.2.7 | 2 (feb 2027) | por estimar | por estimar |
 | 1.2.8.1 | Primera entrega de: Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | 1.2.8 | 2 (feb 2027) | por estimar | por estimar |
 | 1.2.9.1 | Primera entrega de: Estudio de decisión con costeo sobre el destino de las plataformas | 1.2.9 | 2 (feb 2027) | por estimar | por estimar |
+| 1.2.10.1 | Primera entrega de: Propuesta de criterios del cupo preaprobado para la filial emisora | 1.2.10 | 3 (mar 2027) | por estimar | por estimar |
 | 1.3.1.1 | Documento de arquitectura | 1.3.1 | 2 (feb 2027) | por estimar | por estimar |
 | 1.3.1.2 | Catálogo de decisiones de arquitectura | 1.3.1 | 2 (feb 2027) | por estimar | por estimar |
 | 1.3.3.1 | Primera entrega de: Arquitectura física con emplazamiento por componente justificado | 1.3.3 | 2 (feb 2027) | por estimar | por estimar |

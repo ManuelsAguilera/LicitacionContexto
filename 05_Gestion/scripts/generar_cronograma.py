@@ -46,7 +46,7 @@ V = {
     "1.3.1": (2, 4, P, "arquitectura cerrada en el mes 4 (EDT original)"), "1.3.2": (2, 4, P, "idem"), "1.3.3": (2, 4, P, "idem"),
     "1.3.4": (2, 4, P, "idem"), "1.3.5": (3, 4, P, "idem"), "1.3.6": (3, 4, P, "idem"), "1.3.7": (3, 4, P, "idem"),
     "1.3.8": (3, 6, P, "el cliente necesita plazo para ejecutar las obras"),
-    "1.4.1": (3, 6, P, "plataforma base lista en el mes 6 (EDT original)"), "1.4.2": (6, 12, P, "antes de la marcha blanca"),
+    "1.4.1": (3, 6, P, "plataforma base lista en el mes 6 (EDT original)"), "1.4.2": (4, 12, P, "primero las tres tiendas del piloto del punto de venta (meses 6 y 7) y después el resto, antes de la marcha blanca"),
     "1.4.3": (4, 8, P, "ámbito emisor"), "1.4.4": (1, 12, C, "Art. 17: ambientes habilitados dentro de la Etapa 1 (meses 1 a 12)"),
     "1.4.5": (4, 8, P, "antes de las primeras pruebas"), "1.4.6": (3, 5, P, "antes del desarrollo en curso"),
     "1.4.7": (2, 6, P, "a nombre del cliente"), "1.4.8": (3, 6, P, "el cliente adquiere después"), "1.4.9": (2, 4, P, "RT-06.03"),
@@ -91,6 +91,19 @@ V = {
     "1.14.7": (56, 56, C, "Art. 77.2: noventa días después del cierre, fuera de los 56 meses"), "1.14.8": (56, 56, P, "cierre del contrato"),
     "1.14.9": (56, 56, P, "cierre del contrato"), "1.14.10": (1, 3, P, "antes de la primera aceptación"),
 }
+V.update({
+    "1.1.14": (3, 5, P, "sd-03, 3.2.3: antes de la prueba del corte de enlace de los meses 6 y 7"),
+    "1.2.10": (3, 5, P, "sd-03, 3.2.3: la filial emisora fija los criterios antes de la prueba de los meses 6 y 7"),
+    "1.6.12": (4, 6, P, "sd-03, 3.4.5: aprobada y probada antes de comprometer la operación sin enlace; antes del piloto"),
+    "1.7.13": (8, 16, P, "sd-03, 3.3.1: tienda por tienda tras acreditar la operación sin conexión (piloto de los meses 6 y 7) y antes del paso a producción"),
+    "1.7.14": (12, 21, P, "sd-03, 3.2.3: la compuerta de cada tramo se cierra antes del paso a producción de la etapa (meses 16 y 21)"),
+    "1.9.11": (6, 7, C, "sd-03, 3.2.3: corte de enlace de 24 horas en una tienda del piloto, en los meses 6 y 7"),
+    "1.9.12": (9, 12, P, "sd-03, 3.3.1: con las pruebas de la primera etapa y antes de la ola que dependa de la plataforma"),
+    "1.9.13": (5, 7, P, "sd-03, 3.4.6: antes del despliegue y del piloto"),
+    "1.9.14": (12, 20, P, "sd-03, 3.4.6: precios, entrega e información crediticia de las dos etapas"),
+    "1.11.5": (6, 7, C, "sd-03, 3.2.3: el piloto del punto de venta es de los meses 6 y 7"),
+    "1.13.5": (10, 21, P, "sd-03, 3.2.3: antes del primer tramo y de cada compuerta"),
+})
 for _c in ("1.15.1", "1.15.2", "1.15.3", "1.15.4", "1.15.5", "1.15.6", "1.15.7", "1.15.8"):
     V[_c] = (21, 56, C, "Art. 17: operación de los meses 21 a 56")
 V["1.15.3"] = (21, 56, C, "sd-03: la recuperación ante desastres se prueba dos veces al año")

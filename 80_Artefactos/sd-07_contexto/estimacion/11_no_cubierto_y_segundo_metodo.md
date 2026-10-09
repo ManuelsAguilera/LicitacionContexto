@@ -25,7 +25,7 @@ Garantías, seguros y costos financieros no son esfuerzo y van a la oferta econ�
 
 ## 2. Segundo método para el desarrollo
 
-- **Hoy:** tres valores (optimista, probable, pesimista) **por paquete** de la EDT corregida, por juicio de expertos. Dos estimadores independientes llenan `12_plantilla_tres_valores.md` sin consultar el UCP. La media de cada fila es (O + 4P + Pe) / 6. Las 51 cuentas de control de software se comparan con el UCP; las 102 restantes se suman por rama (EDT con fusiones del 2026-10-08).
+- **Hoy:** tres valores (optimista, probable, pesimista) **por paquete** de la EDT corregida, por juicio de expertos. Dos estimadores independientes llenan `12_plantilla_tres_valores.md` sin consultar el UCP. La media de cada fila es (O + 4P + Pe) / 6. Las 51 cuentas de control de software se comparan con el UCP; las 113 restantes se suman por rama (EDT con fusiones y cuentas de coherencia del 2026-10-08).
 - **Descomposición ascendente:** ya es posible, porque existe la EDT corregida (propuesta, pendiente de la firma del equipo). Con ella el método de tres valores se aplica a cada paquete, que es el nivel que pide el Formulario T-15.
 - **Descartado:** Punto Función. La clase no da una conversión a horas y habría que importar un parámetro externo sin calibrar.
 - **Comparación:** `python3 05_Gestion/scripts/comparar_metodos.py PLANILLA1.md PLANILLA2.md`. Calcula la media por paquete y la compara con el reparto del UCP por paquete (en proporción al UUCW de sus casos), por servicio y en total (31.850 h). El umbral es de ±25 %, firmado el 2026-10-08: entre 23.888 y 39.813 h. Si lo supera, hay que explicar la causa antes de continuar al paso 9. Las horas por paquete que usa el T-15 salen de `repartir_horas_paquetes.py` (`16_horas_por_paquete.md`).
@@ -49,5 +49,5 @@ Garantías, seguros y costos financieros no son esfuerzo y van a la oferta econ�
 ## 5. Lo que se necesita del equipo
 
 - Dos estimadores para las 51 cuentas de software de la planilla.
-- Un estimador por cada una de las 102 cuentas restantes, con revisión cruzada.
+- Un estimador por cada una de las 113 cuentas restantes, con revisión cruzada.
 - Confirmar el reparto de la capacitación entre las ramas 1.13 y 1.14.

@@ -49,6 +49,7 @@ RESPONSABLE_POR_RAMA = {  # roles del sd-01 (apartado 1.2); asignación propuest
 }
 RESPONSABLE_POR_PAQUETE = {
     "1.12.4": "Jefe de Proyecto", "1.12.7": "Jefe de Proyecto", "1.12.8": "Jefe de Proyecto", "1.14.8": "Jefe de Proyecto",
+    "1.7.13": "Líder de Implantación y Gestión del Cambio", "1.11.5": "Líder de Implantación y Gestión del Cambio",
     "1.4.17": "Líder de Operación", "1.4.18": "Líder de Operación", "1.14.3": "Jefe de Proyecto, con apoyo del Líder de Operación",
     "1.14.4": "Líder de Operación", "1.14.5": "Líder de Operación", "1.14.6": "Jefe de Proyecto",
 }

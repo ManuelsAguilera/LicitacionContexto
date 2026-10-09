@@ -96,7 +96,7 @@ class TestVerificarEdt(unittest.TestCase):
         h = [x for x in v.verificar(CORREGIDA) if x["tipo"] == "falta"]
         self.assertEqual(h, [], "\n".join(f"{x['codigo']} {x['donde']} {x['mensaje']}" for x in h))
         ramas, paquetes = v.leer(CORREGIDA)
-        self.assertEqual((len(ramas), len(paquetes)), (15, 153))
+        self.assertEqual((len(ramas), len(paquetes)), (15, 164))
 
 
 if __name__ == "__main__":

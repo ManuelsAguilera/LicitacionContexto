@@ -34,6 +34,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.1.12.1 | Acta de constitución del proyecto | 1 | 1 mes | | | |
 | 1.1.13.1 | Línea base de costos | 1 | 1 mes | | | |
 | 1.1.13.2 | Presupuesto del proyecto | 2 | 1 mes | | | |
+| 1.1.14.1 | Primera entrega de: Planes alternativos de las dos condiciones del adelanto del negocio financiero | 3 | 1 mes | | | |
 | 1.2.1.1 | Mapa de las 14 interfaces punto a punto existentes | 1 | 1 mes | | | |
 | 1.2.1.2 | Inventario de las 9 plataformas | 2 | 1 mes | | | |
 | 1.2.1.3 | Inventario de los 6 proveedores y sus dependencias | 3 | 1 mes | | | |
@@ -47,6 +48,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.2.7.1 | Primera entrega de: Estudio de decisión con costeo sobre etiquetas electrónicas de precio | 2 | 1 mes | | | |
 | 1.2.8.1 | Primera entrega de: Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | 2 | 1 mes | | | |
 | 1.2.9.1 | Primera entrega de: Estudio de decisión con costeo sobre el destino de las plataformas | 2 | 1 mes | | | |
+| 1.2.10.1 | Primera entrega de: Propuesta de criterios del cupo preaprobado para la filial emisora | 3 | 1 mes | | | |
 | 1.3.1.1 | Documento de arquitectura | 2 | 1 mes | | | |
 | 1.3.1.2 | Catálogo de decisiones de arquitectura | 2 | 1 mes | | | |
 | 1.3.3.1 | Primera entrega de: Arquitectura física con emplazamiento por componente justificado | 2 | 1 mes | | | |
