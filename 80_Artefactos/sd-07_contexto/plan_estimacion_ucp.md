@@ -22,6 +22,7 @@ python3 05_Gestion/scripts/generar_diccionario.py [A.md B.md]  # paso 10b: regen
 python3 05_Gestion/scripts/evaluar_tamano_paquetes.py [A.md]   # paso 10c: regenera 20_evaluacion_8_80.md
 python3 05_Gestion/scripts/verificar_coherencia_edt_sd03.py     # paso 10d: coherencia con el sd-03; regenera 22_coherencia_edt_sd03.md
 python3 05_Gestion/scripts/generar_ola.py [A.md B.md]           # paso 10e: regenera 21_ola_1_paquetes_trabajo.md y la planilla vacía
+python3 05_Gestion/scripts/ciclo_edt.py [--json] [--detalle]    # paso 10f: tablero del loop de la EDT
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_estimacion.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_casos_uso.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_g4.py' -v
@@ -37,6 +38,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p 'test_diccionario.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_tamano_paquetes.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_coherencia_edt_sd03.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_ola.py' -v
+python3 -m unittest discover -s 05_Gestion/tests -p 'test_ciclo_edt.py' -v
 ```
 
 Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 mientras existan. Las pruebas de `unittest` prueban los verificadores con textos mínimos y la calculadora con los ejemplos de la clase.
@@ -63,6 +65,7 @@ Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 m
 | 10c | Evaluación de las reglas 8/80 y del período de reporte | FEP02, diap. 56 | **Hecho.** Ningún elemento de la EDT cumple 8/80: un caso de uso simple ya pesa 247 h y una transacción 108 h. Se resuelve con la planificación gradual de PMBOK 6: el último nivel son 164 cuentas de control y la regla se exige a los paquetes de trabajo de cada ola (período de reporte mensual) | `20_evaluacion_8_80.md` |
 | 10e | Primera ola de paquetes de trabajo (meses 1 a 3) | FEP02, diap. 56: 8/80 y período de reporte | **Propuesta hecha, pendiente del visto bueno del equipo.** 76 cuentas activas bajan a 168 paquetes de trabajo de un mes: 84 especificaciones de casos de uso (con horas del UCP, de 12 a 49 h, todas dentro de 8–80 h), 21 paquetes mensuales de trabajo continuo, 25 partes de cuentas que terminan en la ola y 38 primeras entregas. Los 84 que no son de software esperan la planilla de tres valores. El cronograma pasó a poner el análisis (10 %) en los tres primeros meses de cada cuenta de software | `21_ola_1_paquetes_trabajo.md`, `21_planilla_ola_1.md` |
 | 10d | Coherencia hacia atrás de la EDT con el sd-03 | Tablas 3.1 y 3.4, Anexos A a D y compromisos de 3.2 a 3.4 | **Hecha y cerrada.** Pasan las 7 comprobaciones mecánicas y los 16 compromisos del sd-03 tienen entregable. La evaluación encontró 12 sin entregable (punto de venta nuevo y su sustitución, piloto y corte de enlace de 24 h en los meses 6 y 7, compuertas por tramo, plan de comunicación, planes alternativos, entre otros); se cubrieron con 11 cuentas nuevas y 2 renombres, por orden del usuario (la coherencia con el sd-03 pesa más que cualquier otra regla) | `22_coherencia_edt_sd03.md` |
+| 10f | Loop de mejora de la EDT | Metas duras H1 a H9 del tablero | **Preparado, sin correr.** El tablero `ciclo_edt.py` reúne coherencia con el sd-03, traza, 8/80 y horas del UCP. Hoy pasan H1 a H5 y H7 a H9; falla H6 (51 de 164 cuentas sin traza a un elemento del sd-03). Prioridad del loop: sd-03 > 8/80 > menos paquetes; hasta 12 iteraciones con puntos de control cada 4 | `../prompt_loop_edt.md`, `23_bitacora_loop_edt.md` |
 | 11 | Personas en el pico frente a la dotación | P8.2 | **Diferido.** La dotación es del sd-12, que no forma parte de esta entrega; E7 sigue como supuesto sin respaldo | |
 | 12 | Cierre y revisión humana | Estado «revisado» solo por una persona | **Pendiente** | |
 
