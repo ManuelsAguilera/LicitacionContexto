@@ -41,7 +41,7 @@ def leer_planilla(ruta):
         if not linea.startswith("|"):
             continue
         c = [x.strip() for x in linea.strip().strip("|").split("|")]
-        if len(c) < 6 or not re.fullmatch(r"(S-[A-Z]{2}|R-\d{2}[a-z]?|\d+(\.\d+){2,3})", c[0]):
+        if len(c) < 6 or not re.fullmatch(r"(S-[A-Z]{2}|R-\d{2}[a-z]?|\d+(\.\d+){2,4})", c[0]):
             continue
         vals = [numero(x) for x in c[-3:]]
         if all(v is None for v in vals):

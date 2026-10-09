@@ -46,6 +46,13 @@ class TestCronograma(unittest.TestCase):
         self.assertAlmostEqual(sum(v["1"] for m, v in por_mes.items() if 1 <= m <= 12), sum(v["1"] for v in por_mes.values()), places=6)
         self.assertEqual(sum(sum(v.values()) for m, v in por_mes.items() if m > 18), 0)
 
+    def test_el_analisis_cae_en_los_tres_primeros_meses_de_cada_cuenta(self):
+        _, por_mes, total = cargar()
+        analisis_e1 = sum(v["1"] + v["1 y 2"] for m, v in por_mes.items() if 1 <= m <= 3)
+        # análisis = 10 % de las horas de la Etapa 1 (19.505 h) más 10 % de la cartera (1.728 h)
+        self.assertAlmostEqual(analisis_e1, (19505 + 1728) * 0.10, delta=2)
+        self.assertGreater(por_mes[4]["1"], 2 * por_mes[1]["1"])
+
     def test_anclas_del_contrato(self):
         items, _, _ = cargar()
         v = {p["codigo"]: p["ventana"] for p in items}

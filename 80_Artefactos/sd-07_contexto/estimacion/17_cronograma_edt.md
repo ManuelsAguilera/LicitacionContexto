@@ -440,31 +440,31 @@ Los demás paquetes tienen holgura **sin calcular**: no hay horas ni duraciones 
 
 ## 5. Curva de horas del UCP por mes
 
-Las horas del UCP (31.850 h) se reparten en partes iguales por mes dentro de la ventana de cada paquete. Es un supuesto de distribución: el UCP da el total, no el perfil dentro de la etapa. Las horas de los demás paquetes no están (esperan las planillas), por lo que esta curva es **parcial** y no es todavía la curva de dotación del T-15.
+Las horas del UCP (31.850 h) se reparten así dentro de la ventana de cada cuenta de software: el análisis (10 %, lectura B) en sus tres primeros meses, que es la ola de especificación de `21_ola_1_paquetes_trabajo.md`, y el 90 % restante en partes iguales en los meses siguientes. Es un supuesto de distribución: el UCP da el total, no el perfil dentro de la etapa. Las horas de los demás paquetes no están (esperan las planillas), por lo que esta curva es **parcial** y no es todavía la curva de dotación del T-15.
 
 | Mes | Calendario | Etapa 1 (h) | Etapa 2 (h) | Cartera, etapas 1 y 2 (h) | Total (h) |
 | --: | :-- | --: | --: | --: | --: |
-| 1 | ene 2027 | 1.625 | 0 | 96 | 1.721 |
-| 2 | feb 2027 | 1.625 | 0 | 96 | 1.721 |
-| 3 | mar 2027 | 1.625 | 0 | 96 | 1.721 |
-| 4 | abr 2027 | 1.625 | 0 | 96 | 1.721 |
-| 5 | may 2027 | 1.625 | 0 | 96 | 1.721 |
-| 6 | jun 2027 | 1.625 | 0 | 96 | 1.721 |
-| 7 | jul 2027 | 1.625 | 0 | 96 | 1.721 |
-| 8 | ago 2027 | 1.625 | 0 | 96 | 1.721 |
-| 9 | sep 2027 | 1.625 | 0 | 96 | 1.721 |
-| 10 | oct 2027 | 1.625 | 0 | 96 | 1.721 |
-| 11 | nov 2027 | 1.625 | 0 | 96 | 1.721 |
-| 12 | dic 2027 | 1.625 | 0 | 96 | 1.721 |
-| 13 | ene 2028 | 0 | 1.769 | 96 | 1.865 |
-| 14 | feb 2028 | 0 | 1.769 | 96 | 1.865 |
-| 15 | mar 2028 | 0 | 1.769 | 96 | 1.865 |
-| 16 | abr 2028 | 0 | 1.769 | 96 | 1.865 |
-| 17 | may 2028 | 0 | 1.769 | 96 | 1.865 |
-| 18 | jun 2028 | 0 | 1.769 | 96 | 1.865 |
+| 1 | ene 2027 | 650 | 0 | 58 | 708 |
+| 2 | feb 2027 | 650 | 0 | 58 | 708 |
+| 3 | mar 2027 | 650 | 0 | 58 | 708 |
+| 4 | abr 2027 | 1.951 | 0 | 104 | 2.054 |
+| 5 | may 2027 | 1.951 | 0 | 104 | 2.054 |
+| 6 | jun 2027 | 1.951 | 0 | 104 | 2.054 |
+| 7 | jul 2027 | 1.951 | 0 | 104 | 2.054 |
+| 8 | ago 2027 | 1.951 | 0 | 104 | 2.054 |
+| 9 | sep 2027 | 1.951 | 0 | 104 | 2.054 |
+| 10 | oct 2027 | 1.951 | 0 | 104 | 2.054 |
+| 11 | nov 2027 | 1.951 | 0 | 104 | 2.054 |
+| 12 | dic 2027 | 1.951 | 0 | 104 | 2.054 |
+| 13 | ene 2028 | 0 | 354 | 104 | 458 |
+| 14 | feb 2028 | 0 | 354 | 104 | 458 |
+| 15 | mar 2028 | 0 | 354 | 104 | 458 |
+| 16 | abr 2028 | 0 | 3.185 | 104 | 3.289 |
+| 17 | may 2028 | 0 | 3.185 | 104 | 3.289 |
+| 18 | jun 2028 | 0 | 3.185 | 104 | 3.289 |
 | **Total** | | **19.505** | **10.617** | **1.728** | **31.850** |
 
-Entre los meses 13 y 15 coexisten el desarrollo de la Etapa 2 (1.769 h por mes) y la marcha blanca de la Etapa 1 (sin horas del UCP: son del paso 7). Ahí está el pico que exige el Art. 17.2 y que el T-15 debe demostrar con dotación; sin el sd-12 queda como pregunta.
+Entre los meses 13 y 15 coexisten el análisis de la Etapa 2 (354 h por mes) y la marcha blanca de la Etapa 1 (sin horas del UCP: son del paso 7). El pico del software está en los meses 14 a 16, con 3.289 h por mes, 1.6 veces la carga del mes 8: la Etapa 2 concentra su construcción en los tres últimos meses del desarrollo porque el Art. 17 cierra el desarrollo en el mes 18. Eso, junto con la marcha blanca de la Etapa 1 y su paso a producción en el mes 16, es lo que el T-15 debe demostrar con dotación (Art. 17.2); sin el sd-12 queda como pregunta.
 
 ## 6. Pruebas de la puerta
 

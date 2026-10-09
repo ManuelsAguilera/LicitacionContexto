@@ -21,6 +21,7 @@ python3 05_Gestion/scripts/generar_cronograma.py               # paso 10: regene
 python3 05_Gestion/scripts/generar_diccionario.py [A.md B.md]  # paso 10b: regenera 18_diccionario_edt.md (aplica 19_diccionario_campos_manuales.md)
 python3 05_Gestion/scripts/evaluar_tamano_paquetes.py [A.md]   # paso 10c: regenera 20_evaluacion_8_80.md
 python3 05_Gestion/scripts/verificar_coherencia_edt_sd03.py     # paso 10d: coherencia con el sd-03; regenera 22_coherencia_edt_sd03.md
+python3 05_Gestion/scripts/generar_ola.py [A.md B.md]           # paso 10e: regenera 21_ola_1_paquetes_trabajo.md y la planilla vacía
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_estimacion.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_casos_uso.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_g4.py' -v
@@ -35,6 +36,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p 'test_cronograma.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_diccionario.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_tamano_paquetes.py' -v
 python3 -m unittest discover -s 05_Gestion/tests -p 'test_coherencia_edt_sd03.py' -v
+python3 -m unittest discover -s 05_Gestion/tests -p 'test_ola.py' -v
 ```
 
 Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 mientras existan. Las pruebas de `unittest` prueban los verificadores con textos mínimos y la calculadora con los ejemplos de la clase.
@@ -59,6 +61,7 @@ Los verificadores sobre los documentos reales informan hallazgos y devuelven 1 m
 | 10 | Cronograma, ruta crítica y curva de horas por mes | P8.3 | **Propuesta hecha, pendiente del visto bueno del equipo.** Ventanas de meses para 148 de las 153 cuentas (las cinco innovaciones quedan por definir); la ventana de una cuenta fusionada es la unión de las originales, con las anclas del Art. 17 y los congelamientos. La ruta crítica es la cadena de anclas; las holguras de los demás paquetes no se calculan sin duraciones. La curva de horas cubre solo el UCP (31.850 h) | `17_cronograma_edt.md` |
 | 10b | Diccionario de la EDT por paquete (estructura) | Comunicado 10, 7.1: entregable, criterio y responsable | **Estructura hecha.** 153 fichas con los doce campos de la clase; cada valor lleva su estado (derivado, propuesta, manual o por definir). Llenado actual: 536 valores derivados, 148 propuestos y 999 por definir. Los valores de las personas van en `19_diccionario_campos_manuales.md` | `18_diccionario_edt.md`, `19_diccionario_campos_manuales.md` |
 | 10c | Evaluación de las reglas 8/80 y del período de reporte | FEP02, diap. 56 | **Hecho.** Ningún elemento de la EDT cumple 8/80: un caso de uso simple ya pesa 247 h y una transacción 108 h. Se resuelve con la planificación gradual de PMBOK 6: el último nivel son 153 cuentas de control y la regla se exige a los paquetes de trabajo de cada ola (período de reporte mensual) | `20_evaluacion_8_80.md` |
+| 10e | Primera ola de paquetes de trabajo (meses 1 a 3) | FEP02, diap. 56: 8/80 y período de reporte | **Propuesta hecha, pendiente del visto bueno del equipo.** 74 cuentas activas bajan a 166 paquetes de trabajo de un mes: 84 especificaciones de casos de uso (con horas del UCP, de 12 a 49 h, todas dentro de 8–80 h), 21 paquetes mensuales de trabajo continuo, 25 partes de cuentas que terminan en la ola y 36 primeras entregas. Los 82 que no son de software esperan la planilla de tres valores. El cronograma pasó a poner el análisis (10 %) en los tres primeros meses de cada cuenta de software | `21_ola_1_paquetes_trabajo.md`, `21_planilla_ola_1.md` |
 | 10d | Coherencia hacia atrás de la EDT con el sd-03 | Tablas 3.1 y 3.4, Anexos A a D y compromisos de 3.2 a 3.4 | **Hecha.** Pasan las 7 comprobaciones mecánicas (etapas, RF, obligaciones, 28 resultados y exclusiones). **12 de los 16 compromisos del sd-03 no tienen entregable en la EDT** (punto de venta nuevo y su sustitución, piloto y corte de enlace de 24 h en los meses 6 y 7, compuertas por tramo, plan de comunicación, planes alternativos, entre otros). Pendiente de tu decisión | `22_coherencia_edt_sd03.md` |
 | 11 | Personas en el pico frente a la dotación | P8.2 | **Diferido.** La dotación es del sd-12, que no forma parte de esta entrega; E7 sigue como supuesto sin respaldo | |
 | 12 | Cierre y revisión humana | Estado «revisado» solo por una persona | **Pendiente** | |

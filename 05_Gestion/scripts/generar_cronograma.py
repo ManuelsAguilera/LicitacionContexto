@@ -21,6 +21,8 @@ import generar_mapa_paquetes as gm  # noqa: E402
 
 SALIDA = gm.DIR / "17_cronograma_edt.md"
 MESES = 56
+ANALISIS_MESES = 3  # meses de la primera ola de cada etapa de software
+PCT_ANALISIS = 0.10  # análisis de la lectura B (FEP03, diapositiva 51)
 MES_1 = (2027, 1)  # SUP-26
 NOMBRES_MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
 # Meses calendario con algún congelamiento (Caso, numeral 13.2 y RT-10.05): 1 nov a 6 ene; evento anual y su semana previa (mayo o junio);
@@ -145,15 +147,19 @@ def asignar(paquetes):
 
 
 def curva(items):
-    """Horas del UCP por mes, repartidas en partes iguales dentro de la ventana de cada paquete."""
+    """Horas del UCP por mes. En cada cuenta de software, el análisis (10 %) cae en los primeros ANALISIS_MESES meses de su ventana
+    (la ola de especificación, `generar_ola.py`) y el resto (90 %) se reparte en partes iguales en los meses siguientes. En las demás, parejo."""
     ucp_pk, total, _ = cm.horas_ucp_por_paquete()
     por_mes = {m: {"1": 0.0, "2": 0.0, "1 y 2": 0.0} for m in range(1, MESES + 1)}
     for p in items:
         if p["codigo"] not in ucp_pk:
             continue
         a, b = p["ventana"][0], p["ventana"][1]
-        for m in range(a, b + 1):
-            por_mes[m][p["etapa"]] += ucp_pk[p["codigo"]] / (b - a + 1)
+        k = min(ANALISIS_MESES, b - a)
+        for m in range(a, a + k):
+            por_mes[m][p["etapa"]] += ucp_pk[p["codigo"]] * PCT_ANALISIS / k
+        for m in range(a + k, b + 1):
+            por_mes[m][p["etapa"]] += ucp_pk[p["codigo"]] * (1 - PCT_ANALISIS) / (b - a + 1 - k)
     return por_mes, total
 
 
@@ -261,7 +267,7 @@ def texto(items, por_mes, total):
           "los ambientes antecedan a las pruebas de carga, resiliencia y recuperación; el desarrollo de una etapa antecede a su certificación, la certificación a la marcha blanca y esta al paso a producción; "
           "la capacitación certificada es condición de cierre de cada marcha blanca (Art. 17.3); los servicios de la Etapa 2 dependen de servicios de la Etapa 1 (sd-03, Tabla 3.1), así que ninguno empieza antes del mes 13.", "",
           "## 5. Curva de horas del UCP por mes", "",
-          "Las horas del UCP (31.850 h) se reparten en partes iguales por mes dentro de la ventana de cada paquete. Es un supuesto de distribución: el UCP da el total, no el perfil dentro de la etapa. "
+          "Las horas del UCP (31.850 h) se reparten así dentro de la ventana de cada cuenta de software: el análisis (10 %, lectura B) en sus tres primeros meses, que es la ola de especificación de `21_ola_1_paquetes_trabajo.md`, y el 90 % restante en partes iguales en los meses siguientes. Es un supuesto de distribución: el UCP da el total, no el perfil dentro de la etapa. "
           "Las horas de los demás paquetes no están (esperan las planillas), por lo que esta curva es **parcial** y no es todavía la curva de dotación del T-15.", "",
           "| Mes | Calendario | Etapa 1 (h) | Etapa 2 (h) | Cartera, etapas 1 y 2 (h) | Total (h) |", "| --: | :-- | --: | --: | --: | --: |"]
     for m in range(1, 19):
@@ -269,8 +275,11 @@ def texto(items, por_mes, total):
         L.append(f"| {m} | {calendario(m)} | {h_(v['1'])} | {h_(v['2'])} | {h_(v['1 y 2'])} | {h_(sum(v.values()))} |")
     tot = {k: sum(por_mes[m][k] for m in por_mes) for k in ("1", "2", "1 y 2")}
     L.append(f"| **Total** | | **{h_(tot['1'])}** | **{h_(tot['2'])}** | **{h_(tot['1 y 2'])}** | **{h_(sum(tot.values()))}** |")
-    L += ["", f"Entre los meses 13 y 15 coexisten el desarrollo de la Etapa 2 ({h_(por_mes[13]['2'])} h por mes) y la marcha blanca de la Etapa 1 (sin horas del UCP: son del paso 7). "
-          "Ahí está el pico que exige el Art. 17.2 y que el T-15 debe demostrar con dotación; sin el sd-12 queda como pregunta.", "",
+    pico = max(range(1, 19), key=lambda m: sum(por_mes[m].values()))
+    L += ["", f"Entre los meses 13 y 15 coexisten el análisis de la Etapa 2 ({h_(por_mes[13]['2'])} h por mes) y la marcha blanca de la Etapa 1 (sin horas del UCP: son del paso 7). "
+          f"El pico del software está en los meses {pico - 2} a {pico}, con {h_(sum(por_mes[pico].values()))} h por mes, {sum(por_mes[pico].values()) / sum(por_mes[8].values()):.1f} veces la carga del mes 8: "
+          "la Etapa 2 concentra su construcción en los tres últimos meses del desarrollo porque el Art. 17 cierra el desarrollo en el mes 18. "
+          "Eso, junto con la marcha blanca de la Etapa 1 y su paso a producción en el mes 16, es lo que el T-15 debe demostrar con dotación (Art. 17.2); sin el sd-12 queda como pregunta.", "",
           "## 6. Pruebas de la puerta", "",
           "- P8.3 (la curva por etapa cuadra con los meses 1 a 12, 13 a 18 y 21 a 56): las horas de la Etapa 1 están solo en los meses 1 a 12, las de la Etapa 2 solo en 13 a 18, la cartera en 1 a 18, y no hay horas del UCP en la operación. **Cumple** para las horas del UCP.",
           "- Pasos a producción fuera de los congelamientos: **cumple**.",
