@@ -4,7 +4,7 @@ class AzureMonitor(ApplicationInsights):
 class LocalStore(Server):
     _icon_dir = "resources/generic/storage"
     _icon = "storage.png"
-with Diagram("Ancoa · bloque Mercadería\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.35", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
+with Diagram("Ancoa · bloque Mercadería\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"1.0", "ranksep":"0.35", "pad":"0.3,0.1", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"Arial", "fontsize":"15"}):
     with Cluster("Retail · mercadería", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         comercial = Users("Equipo\ncomercial", width="0.62", height="1.18")
         proveedores = Users("Proveedores", width="0.62", height="0.93")

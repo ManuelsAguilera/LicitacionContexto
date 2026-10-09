@@ -73,6 +73,7 @@ CLUSTER = {
     'retail_fila': '{"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"%s", "fontsize":"19", "penwidth":"1.6", "margin":"16", "rank":"same"}' % FONT,
     'emisor': '{"bgcolor":"#F8F4FB", "color":"#8E73B0", "style":"rounded", "fontname":"%s", "fontsize":"19", "penwidth":"1.6", "margin":"16"}' % FONT,
     'trans': '{"bgcolor":"#F5F7F9", "color":"#9AA9B4", "style":"rounded", "fontname":"%s", "fontsize":"16", "margin":"16"}' % FONT,
+    'fila': '{"style":"invis", "rank":"same", "margin":"0"}',
     'frontera': '{"bgcolor":"#FFF9E6", "color":"#C9A545", "style":"rounded", "fontname":"%s", "fontsize":"16", "margin":"16"}' % FONT,
 }
 
@@ -81,11 +82,11 @@ class Fig:
     """Acumula el DSL de una figura con tamaños de nodo fijados para la legibilidad."""
 
     def __init__(self, title: str, direction: str = 'TB', nodesep: float = 0.88, ranksep: float = 0.35):
-        graph = (f'{{"splines":"spline", "nodesep":"{nodesep}", "ranksep":"{ranksep}", "pad":"0.3", '
+        graph = (f'{{"splines":"spline", "nodesep":"{nodesep}", "ranksep":"{ranksep}", "pad":"0.3,0.1", '
                  f'"bgcolor":"white", "dpi":"220", "fontname":"{FONT}", "fontsize":"17", "labelloc":"t", "newrank":"true"}}')
         node = (f'{{"fontname":"{FONT}", "fontsize":"{FS}", "fixedsize":"true", "imagepos":"tc", '
                 f'"labelloc":"b", "fontcolor":"#263238"}}')
-        edge = f'{{"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"{FONT}", "fontsize":"{FS - 1}"}}'
+        edge = f'{{"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"{FONT}", "fontsize":"{FS - 1}"}}'
         self.lines = PRELUDE.splitlines() + [
             f'with Diagram("{title}", show=False, direction="{direction}", graph_attr={graph}, node_attr={node}, edge_attr={edge}):'
         ]
@@ -114,7 +115,10 @@ class Fig:
             label += '\\nEtapa 1'
         lines = label.count('\\n') + 1
         height = w + 0.05 + lines * FS * 1.15 / 72
-        attrs = {'width': f'{w}', 'height': f'{height:.2f}'} if kind == 'n' else {'width': '0', 'height': '0'}
+        # El recuadro del nodo cubre el rótulo: las aristas terminan fuera del texto.
+        widest = max(len(t) for t in label.split('\\n'))
+        width = w
+        attrs = {'width': f'{width:.2f}', 'height': f'{height:.2f}'} if kind == 'n' else {'width': '0', 'height': '0'}
         attrs.update(STYLE[kind])
         args = ', '.join(f'{k}="{v}"' for k, v in attrs.items())
         self._w(f'{var} = {cls}("{label}", {args})')
@@ -139,41 +143,42 @@ def general(stage: int) -> str:
     e2 = stage == 2
     title = ('Ancoa · arquitectura lógica objetivo · Etapa 2, mes 21' if e2 else
              'Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontinuo: convivencia que se retira')
-    f = Fig(title, ranksep=0.25)
+    f = Fig(title, nodesep=0.72, ranksep=0.12)
     with f.cluster('Retail', 'retail'):
         f.node('pos', 'Client', 'POS nuevo y\\nnodo local')
         f.node('sala', 'Tablet', 'Móviles\\ny mesón')
         f.node('web', 'Server', 'Comercio\\nelectrónico*')
-        f.node('consola', 'Client', 'Consolas CD\\ny comercial' if not e2 else 'Consolas y\\nportal vendedor')
+        f.node('consola', 'Client', 'Consolas CD\\ny comercial' if not e2 else 'Consolas y\\nportal\\nvendedor')
         if e2:
             f.node('portal_p', 'Client', 'Portal proveedor\\npor validar', 'p')
         else:
             f.node('pos14', 'Client', 'POS 2014', 'e1')
             f.node('planillas', 'Document', 'Planillas CD\\nConcepción', 'e1')
         f.node('apim_r', 'APIManagement', 'API Management\\nRetail')
-        if e2:
-            f.node('merc', 'PredefinedProcess', 'Mercadería\\nR:M-01 a 03')
-            f.node('venta', 'PredefinedProcess', 'Venta\\nR:V-01 a 04')
-            f.node('rel', 'PredefinedProcess', 'Relación clientes\\nR:CL-01 y 02')
-        else:
-            f.node('merc', 'PredefinedProcess', 'Oferta R:M-01\\nExistencias\\nR:M-03')
-            f.node('venta', 'PredefinedProcess', 'Ventas\\nR:V-02')
+        with f.cluster('', 'fila'):
+            if e2:
+                f.node('merc', 'PredefinedProcess', 'Mercadería\\nR:M-01 a 03')
+                f.node('rel', 'PredefinedProcess', 'Relación\\nclientes\\nR:CL-01 y 02')
+                f.node('venta', 'PredefinedProcess', 'Venta\\nR:V-01 a 04')
+            else:
+                f.node('merc', 'PredefinedProcess', 'Oferta R:M-01\\nExistencias\\nR:M-03')
+                f.node('venta', 'PredefinedProcess', 'Ventas\\nR:V-02')
         f.node('eh_r', 'EventHubs', 'Event Hubs\\nRetail')
         f.node('pg_r', 'DatabaseForPostgresqlServers', 'PostgreSQL\\nRetail')
         f.node('lake_r', 'DataLakeStorage', 'Data Lake y\\nPower BI')
         f.node('ad_r', 'KubernetesServices', 'Adaptadores\\nen AKS')
         f.node('erp', 'Server', 'ERP/DTE\\ny WMS')
-        f.node('mkp', 'Server', 'Marketplace y\\nfidelización*')
-        f.node('ext', 'Users', 'Pagos y\\ntransportistas', 'p')
+        f.node('mkp', 'Server', 'Marketplace\\ny fidelización*')
+        f.node('ext', 'Users', 'Medios de pago y\\ntransportistas', 'p')
         if not e2:
             f.node('r09', 'Server', 'Núcleo Retail\\n2009', 'e1')
-    f.node('x01', 'Decision', 'X-01\\npolítica en\\nambos extremos')
+    f.node('x01', 'Decision', 'X-01\\npolítica\\nen ambos\\nextremos')
     with f.cluster('Filial emisora', 'emisor'):
         f.node('portal_f', 'Client', 'Portal\\nfinanciero')
-        f.node('meson_f', 'Client', 'Mesón y sesión\\nfinanciera')
+        f.node('meson_f', 'Client', 'Mesón y\\nsesión\\nfinanciera')
         f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
         f.node('orig', 'PredefinedProcess', 'Originación\\nF:C-01')
-        f.node('cart', 'PredefinedProcess', 'Cartera F:C-02' + ('' if e2 else '\\ntramo 1'))
+        f.node('cart', 'PredefinedProcess', 'Cartera\\nF:C-02' + ('' if e2 else '\\ntramo 1'))
         f.node('evid', 'PredefinedProcess', 'Evidencia\\nF:C-03')
         f.node('eh_f', 'EventHubs', 'Event Hubs\\nEmisor')
         f.node('pg_f', 'DatabaseForPostgresqlServers', 'PostgreSQL\\nEmisor')
@@ -199,7 +204,9 @@ def general(stage: int) -> str:
     else:
         f.edge('apim_r', 'pos14', 'e1', extra='dir="back"')
         f.edge('planillas', 'ad_r', 'e1')
-    svc_r = ['merc', 'venta'] + (['rel'] if e2 else [])
+    svc_r = ['merc'] + (['rel'] if e2 else []) + ['venta']
+    for u, v in zip(svc_r, svc_r[1:]):
+        f.edge(u, v, 'inv', extra='tailport="e", headport="w"')
     for s in svc_r:
         f.edge('apim_r', s)
         f.edge(s, 'eh_r')
@@ -226,9 +233,9 @@ def general(stage: int) -> str:
         f.edge('cart', 'ad_f')
         f.edge('ad_f', 'c11', 'e1', 'olas')
     # Frontera: único cruce y política en los dos extremos
-    f.edge('venta', 'apim_f', 'auth', 'autorización compra', 'constraint="false"')
-    f.edge('x01', 'venta', 'x')
-    f.edge('x01', 'orig', 'x')
+    f.edge('venta', 'apim_f', 'auth', 'autorización\\ncompra', 'constraint="false", tailport="e", headport="w"')
+    f.edge('x01', 'venta', 'x', extra='tailport="w", headport="e"')
+    f.edge('x01', 'orig', 'x', extra='tailport="e", headport="w"')
     return f.code()
 
 
@@ -239,7 +246,7 @@ def tiendas() -> str:
         f.node('tiendas', 'Users', 'Tiendas físicas\\n22 tiendas')
         f.node('pos', 'Client', 'POS nuevo')
         f.node('pos14', 'Client', 'POS 2014\\ntienda por tienda', 'e1')
-        f.node('local', 'LocalStore', 'Diario, caché y\\nsincronizador 24 h')
+        f.node('local', 'LocalStore', 'L-01 caché · L-02 diario\\nL-03 sincronizador 24 h')
         f.node('moviles', 'Tablet', 'Terminales\\nmóviles')
         f.node('meson', 'Client', 'Mesón de\\natención')
         f.node('apim', 'APIManagement', 'API Management\\nRetail')
@@ -275,7 +282,7 @@ def tiendas() -> str:
 
 # --------------------------------------------------------------------------- 4.5 Mercadería
 def mercaderia() -> str:
-    f = Fig('Ancoa · bloque Mercadería' + LEGEND_BLOCK)
+    f = Fig('Ancoa · bloque Mercadería' + LEGEND_BLOCK, nodesep=1.0)
     with f.cluster('Retail · mercadería', 'retail'):
         f.node('comercial', 'Users', 'Equipo\\ncomercial')
         f.node('proveedores', 'Users', 'Proveedores')
@@ -320,16 +327,19 @@ def mercaderia() -> str:
 
 # --------------------------------------------------------------------------- 4.6 Venta
 def venta() -> str:
-    f = Fig('Ancoa · bloque Venta y cumplimiento' + LEGEND_BLOCK)
+    f = Fig('Ancoa · bloque Venta y cumplimiento' + LEGEND_BLOCK, nodesep=1.0)
     with f.cluster('Retail · venta y cumplimiento', None):
         f.node('clientes', 'Users', 'Clientes')
         f.node('tiendas', 'Users', 'Tiendas físicas')
-        f.node('web', 'Server', 'Comercio\\nelectrónico 2019*')
+        f.node('web', 'Server', 'Comercio\\nelectrónico\\n2019*')
         f.node('pos', 'Client', 'POS')
         f.node('retiro', 'Tablet', 'Retiro y despacho\\ndesde tienda')
         f.node('apim', 'APIManagement', 'API Management\\nRetail')
         f.node('pedidos', 'PredefinedProcess', 'Pedidos\\nR:V-01')
-        f.node('ventas', 'PredefinedProcess', 'Ventas R:V-02 y\\ncomisiones R:V-03')
+        with f.cluster('', 'fila'):
+            f.node('ventas', 'PredefinedProcess', 'Ventas R:V-02 y\\ncomisiones R:V-03')
+            with f.cluster('Filial emisora', 'emisor'):
+                f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
         f.node('exist', 'PredefinedProcess', 'Existencias\\nR:M-03')
         f.node('mkp_s', 'PredefinedProcess', 'Marketplace\\nR:V-04')
         f.node('eh', 'EventHubs', 'Event Hubs\\nRetail')
@@ -340,8 +350,6 @@ def venta() -> str:
         f.node('mkp', 'Server', 'Marketplace\\n2022')
         f.node('pagos', 'Users', 'Medios de pago y\\ntransportistas', 'p')
         f.node('r09', 'Server', 'Núcleo Retail\\n2009', 'e1')
-    with f.cluster('Filial emisora', 'emisor'):
-        f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
     f.edge('clientes', 'web')
     f.edge('tiendas', 'pos')
     f.edge('tiendas', 'retiro')
@@ -363,7 +371,7 @@ def venta() -> str:
     f.edge('ad', 'mkp')
     f.edge('ad', 'pagos', 'p')
     f.edge('ad', 'r09', 'e1')
-    f.edge('ventas', 'apim_f', 'auth', 'autorización · X-01')
+    f.edge('ventas', 'apim_f', 'auth', 'autorización · X-01', 'tailport="w", headport="e"')
     return f.code()
 
 
@@ -415,17 +423,19 @@ def relacion() -> str:
 
 # --------------------------------------------------------------------------- 4.8 Crédito
 def credito() -> str:
-    f = Fig('Ancoa · bloque Crédito y frontera' + LEGEND_BLOCK)
-    with f.cluster('Retail', 'retail_fila'):
-        f.node('caja', 'Client', 'Caja POS\\ntarjeta propia')
-        f.node('apim_r', 'APIManagement', 'API Management\\nRetail')
-        f.node('ventas', 'PredefinedProcess', 'Ventas\\nR:V-02')
-    with f.cluster('Frontera', 'frontera'):
-        f.node('x01', 'Decision', 'X-01 · ficha\\ny bitácora')
+    f = Fig('Ancoa · bloque Crédito y frontera' + LEGEND_BLOCK, nodesep=1.0)
+    with f.cluster('', 'fila'):
+        with f.cluster('Retail', 'retail'):
+            f.node('caja', 'Client', 'Caja POS\\ntarjeta propia')
+            f.node('apim_r', 'APIManagement', 'API Management\\nRetail')
+            f.node('ventas', 'PredefinedProcess', 'Ventas\\nR:V-02')
+        with f.cluster('Frontera', 'frontera'):
+            f.node('x01', 'Decision', 'X-01 · ficha\\ny bitácora')
     with f.cluster('Filial emisora', 'emisor'):
-        f.node('portal', 'Client', 'Portal de\\ntitulares')
-        f.node('meson', 'Client', 'Mesón y sesión\\nfinanciera POS')
-        f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
+        with f.cluster('', 'fila'):
+            f.node('portal', 'Client', 'Portal de\\ntitulares')
+            f.node('meson', 'Client', 'Mesón y sesión\\nfinanciera POS')
+            f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
         f.node('orig', 'PredefinedProcess', 'Originación y\\nautorización F:C-01')
         f.node('cart', 'PredefinedProcess', 'Cartera\\nF:C-02')
         f.node('evid', 'PredefinedProcess', 'Evidencia\\nF:C-03')
@@ -459,11 +469,11 @@ def credito() -> str:
 
 # --------------------------------------------------------------------------- 4.9 Integración
 def integracion() -> str:
-    f = Fig('Ancoa · bloque Integración transversal' + LEGEND_BLOCK, nodesep=0.62)
+    f = Fig('Ancoa · bloque Integración transversal' + LEGEND_BLOCK, nodesep=0.62, ranksep=0.12)
     with f.cluster('Retail', 'retail'):
         f.node('can_r', 'Client', 'Canales\\nRetail')
         f.node('apim_r', 'APIManagement', 'API Management\\nRetail')
-        f.node('svc_r', 'PredefinedProcess', 'Servicios Retail\\ncon outbox')
+        f.node('svc_r', 'PredefinedProcess', 'Servicios Retail\\ncon registro\\nde salida')
         f.node('eh_r', 'EventHubs', 'Event Hubs\\nRetail')
         f.node('ad_r', 'KubernetesServices', 'Adaptadores\\nRetail en AKS')
         f.node('plat', 'Server', 'ERP/DTE · WMS\\nmarketplace\\nfidelización')
@@ -472,11 +482,11 @@ def integracion() -> str:
         f.node('id_r', 'ActiveDirectory', 'Entra ID\\nroles Retail')
         f.node('kv_r', 'KeyVaults', 'Key Vault\\nRetail')
         f.node('mon_r', 'AzureMonitor', 'Azure Monitor\\nRetail')
-    f.node('x01', 'Decision', 'X-01\\npolítica en\\nambos extremos')
+    f.node('x01', 'Decision', 'X-01\\npolítica\\nen ambos\\nextremos')
     with f.cluster('Filial emisora', 'emisor'):
         f.node('can_f', 'Client', 'Canales\\nEmisor')
         f.node('apim_f', 'APIManagement', 'API Management\\nEmisor')
-        f.node('svc_f', 'PredefinedProcess', 'Servicios Emisor\\ncon outbox')
+        f.node('svc_f', 'PredefinedProcess', 'Servicios Emisor\\ncon registro\\nde salida')
         f.node('eh_f', 'EventHubs', 'Event Hubs\\nEmisor')
         f.node('ad_f', 'KubernetesServices', 'Adaptadores\\nEmisor')
         f.node('ext_f', 'Server', 'Firma y reporte\\nregulatorio', 'p')
@@ -504,13 +514,13 @@ def integracion() -> str:
     f.edge('id_f', 'apim_f', 'tel', 'token')
     f.edge('kv_f', 'ad_f', 'telc', 'secretos')
     f.edge('svc_f', 'mon_f', 'telc', 'trazas')
-    f.edge('svc_r', 'apim_f', 'auth', 'autorización de compra', 'constraint="false"')
+    f.edge('svc_r', 'apim_f', 'auth', 'autorización\\nde compra', 'constraint="false", tailport="e", headport="w"')
     f.edge('x01', 'svc_r', 'xc')
     f.edge('x01', 'apim_f', 'xc')
     return f.code()
 
 
-TEXT_W, TEXT_H = 498.6, 640.0  # pt: carta con márgenes de 20 mm (plantilla), alto útil aproximado
+TEXT_W, TEXT_H = 498.6, 600.0  # pt: carta con márgenes de 20 mm (plantilla), alto útil aproximado
 
 
 def legibility(dot: Path) -> str:
@@ -519,8 +529,8 @@ def legibility(dot: Path) -> str:
     match = re.search(r'bb="0,0,([\d.]+),([\d.]+)"', dot.read_text(encoding='utf-8', errors='ignore'))
     if not match:
         return 'sin bb'
-    width, height = (float(v) + 2 * 0.3 * 72 for v in match.groups())  # incluye pad
-    scale = min(1.0, TEXT_W / width, TEXT_H / height)
+    width, height = (float(v) + 2 * 0.1 * 72 for v in match.groups())  # incluye pad
+    scale = min(1.0, TEXT_W / width, 0.88 * 681 / height)
     land = min(1.0, TEXT_H / width, TEXT_W / height)
     return (f'lienzo {width:.0f}x{height:.0f} pt · rótulo vertical {FS * scale:.1f} pt'
             f' · apaisado {FS * land:.1f} pt')

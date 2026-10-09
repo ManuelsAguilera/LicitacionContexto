@@ -4,12 +4,12 @@ class AzureMonitor(ApplicationInsights):
 class LocalStore(Server):
     _icon_dir = "resources/generic/storage"
     _icon = "storage.png"
-with Diagram("Ancoa · bloque Tiendas físicas\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.35", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
+with Diagram("Ancoa · bloque Tiendas físicas\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.35", "pad":"0.3,0.1", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"Arial", "fontsize":"15"}):
     with Cluster("Retail · tienda", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         tiendas = Users("Tiendas físicas\n22 tiendas", width="0.62", height="1.18")
         pos = Client("POS nuevo", width="0.62", height="0.93")
         pos14 = Client("POS 2014\ntienda por tienda\nEtapa 1", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#EEEEEE", color="#8E8E8E", fontcolor="#5F5F5F", penwidth="1.6", margin="0.12,0.06")
-        local = LocalStore("Diario, caché y\nsincronizador 24 h", width="0.62", height="1.18")
+        local = LocalStore("L-01 caché · L-02 diario\nL-03 sincronizador 24 h", width="0.62", height="1.18")
         moviles = Tablet("Terminales\nmóviles", width="0.62", height="1.18")
         meson = Client("Mesón de\natención", width="0.62", height="1.18")
         apim = APIManagement("API Management\nRetail", width="0.62", height="1.18")

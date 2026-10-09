@@ -42,13 +42,13 @@
     <mxCell id="node8" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;Región en espera&lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=none;fillColor=none;strokeWidth=1;dashed=0;" parent="clust3" vertex="1">
       <mxGeometry x="235.0" y="55.5" width="58.0" height="58.0" as="geometry" />
     </mxCell>
-    <mxCell id="node15" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;8 · Broker&lt;br/&gt;outbox en&lt;br/&gt;productores&lt;br/&gt;y relectura&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
-      <mxGeometry x="769.25" y="942.0900000000001" width="180.5" height="153.04000000000002" as="geometry" />
+    <mxCell id="node15" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;8 · Broker: registro&lt;br/&gt;de salida en&lt;br/&gt;productores&lt;br/&gt;y relectura&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+      <mxGeometry x="769.87" y="942.0900000000001" width="277.2600000000001" height="153.04000000000002" as="geometry" />
     </mxCell>
     <mxCell id="node16" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;5 · Región Chile Central&lt;br/&gt;conmutación activo-pasivo&lt;br/&gt;a Brazil South&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
       <mxGeometry x="558.25" y="1249.1100000000001" width="348.5" height="127.04" as="geometry" />
     </mxCell>
-    <mxCell id="node9" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;1 · Enlace de tienda&lt;br/&gt;diario local y&lt;br/&gt;operación 24 h;&lt;br/&gt;reconciliación al&lt;br/&gt;volver (F-03, F-04)&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
+    <mxCell id="node9" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;1 · Enlace de tienda&lt;br/&gt;diario local y&lt;br/&gt;operación 24 h;&lt;br/&gt;reconciliación al&lt;br/&gt;volver&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
       <mxGeometry x="18.0" y="18.0" width="287.0" height="179.0400000000002" as="geometry" />
     </mxCell>
     <mxCell id="node10" value="&lt;b&gt;&lt;font style='font-size: 26.0px;' face='Arial' color='#2d3436'&gt;2 · Enlace único&lt;br/&gt;de CD-02&lt;br/&gt;captura local durable;&lt;br/&gt;enlace secundario&lt;br/&gt;propuesto&lt;br/&gt; &lt;/font&gt;&lt;/b&gt;" style="verticalAlign=bottom;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#c62828;fillColor=#fdecea;strokeWidth=1;dashed=0;" parent="1" vertex="1">
@@ -181,8 +181,8 @@
     </mxCell>
     <mxCell id="edge13" style="html=1;endArrow=none;dashed=1;endFill=0;startArrow=none;startFill=0;fillColor=#c62828;strokeColor=#c62828;strokeWidth=3;rounded=0;entryX=0.000;entryY=0.500;" parent="1" edge="1" source="node7" target="node15">
       <mxGeometry as="geometry" relative="1">
-        <mxPoint x="740.85" y="1018.61" as="sourcePoint" />
-        <mxPoint x="768.19" y="1018.61" as="targetPoint" />
+        <mxPoint x="740.9" y="1018.61" as="sourcePoint" />
+        <mxPoint x="768.72" y="1018.61" as="targetPoint" />
       </mxGeometry>
     </mxCell>
     <mxCell id="edge14" style="html=1;endArrow=none;dashed=1;endFill=0;startArrow=none;startFill=0;fillColor=#c62828;strokeColor=#c62828;strokeWidth=3;curved=1;exitX=0.628;exitY=1.000;entryX=0.434;entryY=0.000;" parent="1" edge="1" source="node7" target="node16">

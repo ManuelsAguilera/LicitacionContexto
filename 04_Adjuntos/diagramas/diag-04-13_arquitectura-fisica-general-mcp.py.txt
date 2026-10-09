@@ -38,7 +38,7 @@ XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
 ACRED = {"style": "dashed"}
 FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
 INV = {"style": "invis"}
-with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.2", "ranksep": "0.75", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.2", "ranksep": "0.4", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
     ext = N(OP.network.Internet, "EXT-01 · contrapartes externas\nweb, marketplace, fidelización,\npagos, transporte, proveedores")
     with CL("CLD-01 · Azure Chile Central · 3 zonas", "nube"):
         with CL("Ámbito Retail", "retail"):
@@ -61,8 +61,8 @@ with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines
         cd2 = N(GEN.device.Tablet, "CD-02\nConcepción\ncaptura de\nexistencias")
         dc2 = N(GEN.place.Datacenter, "DC-02 · sala\nde respaldo,\nmisma comuna")
         with CL("DC-01 · casa matriz, 140 m²", "cliente"):
-            cred = N(OP.compute.Server, "Crédito 2011\nFilial emisora")
             erp = N(OP.compute.Server, "ERP/DTE y núcleo\nRetail 2009")
+            cred = N(OP.compute.Server, "Crédito 2011\nFilial emisora")
     ext << E("borde público") >> borde
     borde >> appr
     borde >> appe
@@ -81,4 +81,4 @@ with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines
     hub << E("Express-\nRoute\npropuesto", minlen="2", **ACRED) >> erp
     t8 >> E(**INV) >> dc2
     t14 >> E(**INV) >> cred
-    erp << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2
+    erp << E("enlace propuesto", **AMBAR) >> dc2

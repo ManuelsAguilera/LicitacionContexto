@@ -4,17 +4,19 @@ class AzureMonitor(ApplicationInsights):
 class LocalStore(Server):
     _icon_dir = "resources/generic/storage"
     _icon = "storage.png"
-with Diagram("Ancoa · bloque Crédito y frontera\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.35", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
-    with Cluster("Retail", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16", "rank":"same"}):
-        caja = Client("Caja POS\ntarjeta propia", width="0.62", height="1.18")
-        apim_r = APIManagement("API Management\nRetail", width="0.62", height="1.18")
-        ventas = PredefinedProcess("Ventas\nR:V-02", width="0.62", height="1.18")
-    with Cluster("Frontera", graph_attr={"bgcolor":"#FFF9E6", "color":"#C9A545", "style":"rounded", "fontname":"Arial", "fontsize":"16", "margin":"16"}):
-        x01 = Decision("X-01 · ficha\ny bitácora", width="0.62", height="1.18")
+with Diagram("Ancoa · bloque Crédito y frontera\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"1.0", "ranksep":"0.35", "pad":"0.3,0.1", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"Arial", "fontsize":"15"}):
+    with Cluster("", graph_attr={"style":"invis", "rank":"same", "margin":"0"}):
+        with Cluster("Retail", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
+            caja = Client("Caja POS\ntarjeta propia", width="0.62", height="1.18")
+            apim_r = APIManagement("API Management\nRetail", width="0.62", height="1.18")
+            ventas = PredefinedProcess("Ventas\nR:V-02", width="0.62", height="1.18")
+        with Cluster("Frontera", graph_attr={"bgcolor":"#FFF9E6", "color":"#C9A545", "style":"rounded", "fontname":"Arial", "fontsize":"16", "margin":"16"}):
+            x01 = Decision("X-01 · ficha\ny bitácora", width="0.62", height="1.18")
     with Cluster("Filial emisora", graph_attr={"bgcolor":"#F8F4FB", "color":"#8E73B0", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
-        portal = Client("Portal de\ntitulares", width="0.62", height="1.18")
-        meson = Client("Mesón y sesión\nfinanciera POS", width="0.62", height="1.18")
-        apim_f = APIManagement("API Management\nEmisor", width="0.62", height="1.18")
+        with Cluster("", graph_attr={"style":"invis", "rank":"same", "margin":"0"}):
+            portal = Client("Portal de\ntitulares", width="0.62", height="1.18")
+            meson = Client("Mesón y sesión\nfinanciera POS", width="0.62", height="1.18")
+            apim_f = APIManagement("API Management\nEmisor", width="0.62", height="1.18")
         orig = PredefinedProcess("Originación y\nautorización F:C-01", width="0.62", height="1.18")
         cart = PredefinedProcess("Cartera\nF:C-02", width="0.62", height="1.18")
         evid = PredefinedProcess("Evidencia\nF:C-03", width="0.62", height="1.18")

@@ -1,69 +1,96 @@
-// Figura 4.10 de SD-04. Fuente reproducible: dot -Tpdf / -Tsvg (Graphviz).
-// Derivada de diag-04-03_flujo-hibrido.dot (borradores/); misma estructura, rótulos Azure (ADR-06, ADR-07).
+// Figura 4.10 de SD-04. Fuente de rejilla: diag-04-rejilla_layout.py genera el .dot con posiciones, que se dibuja con neato -n.
+// Derivada de diag-04-03_flujo-hibrido.dot (borradores/); rótulos Azure (ADR-06, ADR-07); rótulos de arista abreviados.
 digraph flujo_hibrido {
-  graph [rankdir=TB, newrank=true, bgcolor="white", pad="0.06", nodesep="0.22", ranksep="0.32", splines=polyline, forcelabels=true, fontname="Arial", fontsize=18, label="Flujo lógico híbrido: tienda, nube y frontera Retail–Emisor", labelloc=t];
-  node [shape=box, style="rounded,filled", color="#33566B", penwidth=1.3, fillcolor="#EAF4FA", fontname="Arial", fontsize=15, margin="0.10,0.06"];
-  edge [color="#456579", penwidth=1.3, arrowsize=0.72, fontname="Arial", fontsize=15];
+  graph [gxgaps="1:50", gygaps="1:30,2:62,3:26,4:48,5:34,6:34"];
+  graph [rankdir=TB, newrank=true, bgcolor="white", pad="0.06", nodesep="0.22", ranksep="0.32", splines=true, forcelabels=true, fontname="Arial", fontsize=18, label="Flujo lógico híbrido: tienda, nube y frontera Retail–Emisor", labelloc=t];
+  node [shape=box, style="rounded,filled", color="#33566B", penwidth=1.3, fillcolor="#EAF4FA", fontname="Arial", fontsize=16, margin="0.10,0.06"];
+  edge [color="#456579", penwidth=1.3, arrowsize=0.72, fontname="Arial", fontsize=16];
 
   subgraph cluster_tienda {
     label="Tienda · operación local durante 24 h"; color="#88B9A9"; style="rounded,filled"; fillcolor="#F3FAF7"; fontname="Arial"; fontsize=16;
-    actor [label="AH-04 Cajero\nAH-03 Vendedor", shape=ellipse, fillcolor="white"];
-    pos [label="POS nuevo\ninterfaz Retail", fillcolor="#D9F2E7"];
-    cache [label="Caché local\noferta y existencia vigentes", fillcolor="#D9F2E7"];
-    diario [label="Diario durable\nventa + hecho pendiente", fillcolor="#D9F2E7"];
-    relay [label="Sincronizador\nreintento e idempotencia", fillcolor="#D9F2E7"];
-    fin_actor [label="AH-02 Titular\nAH-10 Ejecutivo", shape=ellipse, fillcolor="white"];
-    fin_ui [label="Sesión financiera\nrol e identidad separados", fillcolor="#E9E1F5", color="#76559A"];
-    actor -> pos [xlabel="operación"];
-    cache -> pos [xlabel="lectura local", constraint=false];
-    pos -> diario [xlabel="sin enlace: registro local", color="#237F68"];
-    diario -> relay [xlabel="pendientes", color="#237F68"];
-    fin_actor -> fin_ui [xlabel="trámite"];
+    actor [gx=1, gy=1, label="AH-04 Cajero\nAH-03\nVendedor", shape=ellipse, fillcolor="white"];
+    pos [gx=1, gy=2, label="POS nuevo\ninterfaz Retail", fillcolor="#D9F2E7"];
+    cache [gx=0, gy=2, label="Caché local\noferta y existencia\nvigentes", fillcolor="#D9F2E7"];
+    diario [gx=1, gy=3, label="Diario durable\nventa + hecho\npendiente", fillcolor="#D9F2E7"];
+    relay [gx=1, gy=4, label="Sincronizador\nreintento e\nidempotencia", fillcolor="#D9F2E7"];
+    fin_actor [gx=0, gy=0, label="AH-02 Titular\nAH-10\nEjecutivo", shape=ellipse, fillcolor="white"];
+    fin_ui [gx=1, gy=0, label="Sesión financiera\nrol e identidad\nseparados", fillcolor="#E9E1F5", color="#76559A"];
+    actor -> pos [label="operación"];
+    cache -> pos [label="lectura", constraint=false];
+    pos -> diario [label="sin enlace", color="#237F68"];
+    diario -> relay [label="pendientes", color="#237F68"];
+    fin_actor -> fin_ui [label="trámite"];
   }
 
   subgraph cluster_retail {
     label="Azure Chile Central · ámbito Retail"; color="#83BBD6"; style="rounded,filled"; fillcolor="#F3F9FC"; fontname="Arial"; fontsize=16;
-    gateway_r [label="API Management Retail\nAPI y políticas", fillcolor="#D8EAF8"];
-    venta [label="R:V-02 Ventas\nconciliación", fillcolor="#D9F2E7"];
-    stock [label="R:M-03 Existencias\nreserva / disponible", fillcolor="#D9F2E7"];
-    outbox [label="Outbox por productor\nhecho confirmado", fillcolor="#D8EAF8"];
-    broker [label="Azure Event Hubs Premium\nhechos Retail segregados", fillcolor="#D8EAF8"];
-    bi [label="Data Lake y Power BI\nRetail · solo lectura", fillcolor="#EAF4FA"];
-    ml [label="ML conteo y merma\nrecomendaciones", fillcolor="#EAF4FA"];
-    adapt [label="Adaptadores en AKS\nconfirmación y\nconciliación", fillcolor="#EEF1F5"];
-    gateway_r -> stock [xlabel="reserva síncrona"];
-    gateway_r -> venta [xlabel="venta síncrona"];
-    venta -> stock [xlabel="efecto confirmado", style=dotted];
-    venta -> outbox [xlabel="hecho de venta"];
-    stock -> outbox [xlabel="movimiento confirmado"];
-    outbox -> broker [xlabel="publicación/reintento"];
-    broker -> bi [xlabel="proyección", color="#2C8297"];
-    broker -> ml [xlabel="conteos/eventos", color="#2C8297"];
-    venta -> adapt [xlabel="DTE / pagos", style=dashed];
-    stock -> adapt [xlabel="WMS", style=dashed];
+    gateway_r [gx=2, gy=3, label="API Management\nRetail: API\ny políticas", fillcolor="#D8EAF8"];
+    venta [gx=3, gy=4, label="R:V-02 Ventas\nconciliación", fillcolor="#D9F2E7"];
+    stock [gx=2, gy=4, label="R:M-03 Existencias\nreserva / disponible", fillcolor="#D9F2E7"];
+    outbox [gx=2, gy=5, label="Registro de salida\npor productor:\nhecho confirmado", fillcolor="#D8EAF8"];
+    broker [gx=2, gy=6, label="Azure Event Hubs\nPremium: hechos\nRetail segregados", fillcolor="#D8EAF8"];
+    bi [gx=2, gy=7, label="Data Lake y\nPower BI Retail\nsolo lectura", fillcolor="#EAF4FA"];
+    ml [gx=3, gy=7, label="ML conteo y merma\nrecomendaciones", fillcolor="#EAF4FA"];
+    adapt [gx=3, gy=5, label="Adaptadores en AKS\nconfirmación y\nconciliación", fillcolor="#EEF1F5"];
+    gateway_r -> stock [label="reserva"];
+    gateway_r -> venta [label="venta"];
+    venta -> stock [label="efecto", style=dotted];
+    venta -> outbox [label="hecho de venta"];
+    stock -> outbox [label="movimiento"];
+    outbox -> broker [label="publicación"];
+    broker -> bi [label="proyección", color="#2C8297"];
+    broker -> ml [label="conteos", color="#2C8297"];
+    venta -> adapt [label="DTE / pagos", style=dashed];
+    stock -> adapt [label="WMS", style=dashed];
   }
 
   subgraph cluster_emisor {
     label="Filial emisora · ámbito lógico separado, no sitio"; color="#A892C3"; style="rounded,filled"; fillcolor="#F8F5FB"; fontname="Arial"; fontsize=16;
-    gateway_f [label="API Management\nEmisor, roles propios", fillcolor="#E9E1F5", color="#76559A"];
-    credito [label="F:C-01 Crédito\noriginación y\nautorización", fillcolor="#E9E1F5", color="#76559A"];
-    evidencia [label="F:C-03 Evidencia\nexpediente\nfinanciero", fillcolor="#E9E1F5", color="#76559A"];
-    x01 [label="X-01 Gobierno de cruces\nficha, mínimos y bitácora\ncontroles en\nambos extremos", fillcolor="#FFF0C2", color="#A17E2C"];
-    gateway_f -> credito [xlabel="consulta autorizada", color="#76559A"];
-    credito -> evidencia [xlabel="verificar prueba", color="#76559A"];
+    gateway_f [gx=2, gy=0, label="API Management\nEmisor,\nroles propios", fillcolor="#E9E1F5", color="#76559A"];
+    credito [gx=2, gy=1, label="F:C-01 Crédito\noriginación y\nautorización", fillcolor="#E9E1F5", color="#76559A"];
+    evidencia [gx=3, gy=0, label="F:C-03 Evidencia\nexpediente\nfinanciero", fillcolor="#E9E1F5", color="#76559A"];
+    x01 [gx=3, gy=1, label="X-01 Gobierno\nde cruces: ficha,\nmínimos y bitácora;\ncontroles en\nambos extremos", fillcolor="#FFF0C2", color="#A17E2C"];
+    gateway_f -> credito [label="consulta", color="#76559A"];
+    credito -> evidencia [label="verificar", color="#76559A"];
     x01 -> credito [style=dotted, arrowhead=none, color="#A17E2C"];
   }
 
-  plataformas [label="Plataformas conservadas\nAS-01 ERP/DTE · AS-02 WMS\nubicación por verificar", fillcolor="#F0F0F0", color="#818181"];
-  pos -> gateway_r [xlabel="con enlace", color="#237F68"];
-  relay -> gateway_r [xlabel="al reconectar: entrega confirmada", color="#237F68", minlen=2];
-  fin_ui -> gateway_f [xlabel="solo con enlace", color="#76559A"];
-  venta -> credito [xlabel="autorización por compra\nsolo contrato aprobado", color="#A17E2C", style=dashed, constraint=false];
+  plataformas [gx=3, gy=6, label="Plataformas\nconservadas AS-01\nERP/DTE · AS-02 WMS\nubicación por verificar", fillcolor="#F0F0F0", color="#818181"];
+  pos -> gateway_r [label="con enlace", color="#237F68"];
+  relay -> gateway_r [label="al reconectar", color="#237F68", minlen=2];
+  fin_ui -> gateway_f [label="solo con enlace", color="#76559A"];
+  venta -> credito [label="autorización por\ncompra, solo contrato\naprobado", color="#A17E2C", style=dashed, constraint=false];
   x01 -> venta [style=dotted, arrowhead=none, color="#A17E2C", constraint=false];
-  adapt -> plataformas [xlabel="interfaz por levantar", style=dashed, constraint=false];
+  adapt -> plataformas [label="interfaz", style=dashed, constraint=false];
 
-  nota [label="Sólida: flujo propuesto\nDiscontinua: contrato o emplazamiento condicionado\nPunteada: política o efecto\nSin enlace no se originan tarjetas ni se amplían cupos;\nmodalidad tributaria local por aprobar.", shape=note, fillcolor="#FFF9E8", color="#C9A954", fontsize=15];
+  nota [gx=0, gy=5, gy2=7, label="Sólida: flujo propuesto\nDiscontinua: contrato o\nemplazamiento\ncondicionado\nPunteada: política o\nefecto\nSin enlace no se\noriginan tarjetas ni se\namplían cupos;\nmodalidad tributaria\nlocal por aprobar.", shape=note, fillcolor="#FFF9E8", color="#C9A954", fontsize=16];
   evidencia -> nota [style=invis];
   nota -> plataformas [style=invis];
-  {rank=same; gateway_r; gateway_f;}
+  
+
+  actor [pos="276.7,-165.0"];
+  pos [pos="276.7,-278.6"];
+  cache [pos="90.1,-278.6"];
+  diario [pos="276.7,-405.5"];
+  relay [pos="276.7,-496.4"];
+  fin_actor [pos="90.1,-45.9"];
+  fin_ui [pos="276.7,-45.9"];
+  gateway_r [pos="483.0,-405.5"];
+  venta [pos="670.7,-496.4"];
+  stock [pos="483.0,-496.4"];
+  outbox [pos="483.0,-609.3"];
+  broker [pos="483.0,-717.5"];
+  bi [pos="483.0,-825.8"];
+  ml [pos="670.7,-825.8"];
+  adapt [pos="670.7,-609.3"];
+  gateway_f [pos="483.0,-45.9"];
+  credito [pos="483.0,-165.0"];
+  evidencia [pos="670.7,-45.9"];
+  x01 [pos="670.7,-165.0"];
+  plataformas [pos="670.7,-717.5"];
+  nota [pos="90.1,-717.5"];
+  subgraph cluster_tienda { bb="8.6,-533.8,360.3,36.0"; }
+  subgraph cluster_retail { bb="400.3,-863.3,757.5,-337.1"; }
+  subgraph cluster_emisor { bb="361.2,-221.2,800.7,22.6"; }
+  graph [margin=0, bb="-6.0,-869.3,806.7,42.0"];
 }

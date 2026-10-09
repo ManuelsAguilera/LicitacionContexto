@@ -1,0 +1,298 @@
+digraph "Ancoa · bloque Tiendas físicas
+sólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar" {
+	graph [bb="0,0,691,870.47",
+		bgcolor=white,
+		dpi=220,
+		fontcolor="#2D3436",
+		fontname=Arial,
+		fontsize=17,
+		label="Ancoa · bloque Tiendas físicas
+sólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar",
+		labelloc=t,
+		lheight=0.54,
+		lp="345.5,846.97",
+		lwidth=9.38,
+		newrank=true,
+		nodesep=0.88,
+		pad="0.3,0.1",
+		rankdir=TB,
+		ranksep=0.35,
+		splines=spline
+	];
+	node [fixedsize=true,
+		fontcolor="#263238",
+		fontname=Arial,
+		fontsize=16,
+		height=1.4,
+		imagepos=tc,
+		imagescale=true,
+		label="\N",
+		labelloc=b,
+		shape=box,
+		style=rounded,
+		width=1.4
+	];
+	edge [arrowsize=0.7,
+		color="#546E7A",
+		fontname=Arial,
+		fontsize=15,
+		headport=n,
+		penwidth=1.3,
+		tailport=s
+	];
+	subgraph "cluster_Retail · tienda" {
+		graph [bb="62.958,8,639.96,815.47",
+			bgcolor="#F3FAF6",
+			color="#5E9E86",
+			fontname=Arial,
+			fontsize=19,
+			label="Retail · tienda",
+			labeljust=l,
+			lheight=0.30,
+			lp="129.46,800.6",
+			lwidth=1.62,
+			margin=16,
+			pencolor="#AEB6BE",
+			penwidth=1.6,
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"65e94af67d684678956fd2a172c0cae6"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\users.png",
+			label="Tiendas físicas
+22 tiendas",
+			pos="280.96,727.24",
+			shape=none,
+			width=0.62];
+		c96cb7ff9bdc470495e9bc162a6d6707	[height=0.93,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\client.png",
+			label="POS nuevo",
+			pos="148.96,615.28",
+			shape=none,
+			width=0.62];
+		"65e94af67d684678956fd2a172c0cae6":s -> c96cb7ff9bdc470495e9bc162a6d6707:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,148.96,649.73 280.96,684.76 280.96,684.76 186.99,659.82 157.62,652.03"];
+		"49a35ecd709a460c9cf5e96fc05ca33b"	[color="#8E8E8E",
+			fillcolor="#EEEEEE",
+			fixedsize=false,
+			fontcolor="#5F5F5F",
+			height=0.90125,
+			label="POS 2014
+tienda por tienda
+Etapa 1",
+			margin="0.12,0.06",
+			penwidth=1.6,
+			pos="338.96,517.32",
+			style="dashed,rounded,filled",
+			width=1.9171];
+		"65e94af67d684678956fd2a172c0cae6":s -> "49a35ecd709a460c9cf5e96fc05ca33b":n	[color="#9E9E9E",
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.4,
+			pos="e,338.96,550.76 280.96,684.76 280.96,675.94 290.98,679.05 295.96,671.76 326.38,627.21 337.71,609.76 338.86,559.78",
+			style=dashed];
+		"092adff213f948339b3371d8ca69921c"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/generic/device\tablet.png",
+			label="Terminales
+móviles",
+			pos="242.96,517.32",
+			shape=none,
+			width=0.62];
+		"65e94af67d684678956fd2a172c0cae6":s -> "092adff213f948339b3371d8ca69921c":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,242.96,559.8 280.96,684.76 280.96,629.77 246.86,618.92 243.26,568.59"];
+		"6aa7fc26623c4dfe84613a73ab537717"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\client.png",
+			label="Mesón de
+atención",
+			pos="413.96,615.28",
+			shape=none,
+			width=0.62];
+		"65e94af67d684678956fd2a172c0cae6":s -> "6aa7fc26623c4dfe84613a73ab537717":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,413.96,657.76 280.96,684.76 280.96,671.8 379.18,672.31 406.81,663.14"];
+		"4934535beca64d72bd5383845bc5fb31"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/generic/storage\storage.png",
+			label="L-01 caché · L-02 diario
+L-03 sincronizador 24 h",
+			pos="165.96,419.36",
+			shape=none,
+			width=0.62];
+		c96cb7ff9bdc470495e9bc162a6d6707:s -> "4934535beca64d72bd5383845bc5fb31":n	[dir=forward,
+			fontcolor="#2D3436",
+			label="sin enlace",
+			lp="155.58,517.32",
+			pos="e,165.96,461.84 148.96,580.83 148.96,565.71 128.82,573.4 122.21,559.8 105.71,525.84 99.628,505.1 122.21,474.84 131.68,462.14 153.06,\
+473.73 161.95,469.74"];
+		"4ca7c41e7d49468692281c9cb92bc042"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/integration\api-management.png",
+			label="API Management
+Retail",
+			pos="251.96,290.4",
+			shape=none,
+			width=0.62];
+		c96cb7ff9bdc470495e9bc162a6d6707:s -> "4ca7c41e7d49468692281c9cb92bc042":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,251.96,332.88 148.96,580.83 148.96,554.25 108.54,581.34 92.958,559.8 37.2,482.71 20.345,415.72 84.958,345.88 95.968,333.98 214.52,\
+347.07 244.9,338.34"];
+		"49a35ecd709a460c9cf5e96fc05ca33b":s -> "4ca7c41e7d49468692281c9cb92bc042":n	[color="#9E9E9E",
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.4,
+			pos="e,251.96,332.88 338.96,483.88 338.96,414.7 309.85,400.15 266.96,345.88 264.22,342.42 260.47,341.37 257.41,340.09",
+			style=dashed];
+		"4934535beca64d72bd5383845bc5fb31":s -> "4ca7c41e7d49468692281c9cb92bc042":n	[dir=forward,
+			fontcolor="#2D3436",
+			label="al reconectar",
+			lp="192.46,354.88",
+			pos="e,251.96,332.88 165.96,376.88 165.96,367.37 153.17,372.41 148.96,363.88 145.41,356.71 143.67,351.88 148.96,345.88 161.95,331.14 \
+227.51,348.81 246.68,340.13"];
+		"092adff213f948339b3371d8ca69921c":s -> "4ca7c41e7d49468692281c9cb92bc042":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,251.96,332.88 242.96,474.84 242.96,414.71 251.1,397.73 251.9,341.81"];
+		"6aa7fc26623c4dfe84613a73ab537717":s -> "4ca7c41e7d49468692281c9cb92bc042":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,251.96,332.88 413.96,572.8 413.96,529.21 424.26,515.66 408.96,474.84 389.52,422.98 371.7,415.44 331.96,376.88 315.31,360.73 310.51,\
+356.65 289.96,345.88 277.85,339.54 262.01,345.75 255.25,341"];
+		"5027b7ebd7364e63b6e197d3f29923db"	[color="#8E8E8E",
+			fillcolor="#EEEEEE",
+			fixedsize=false,
+			fontcolor="#5F5F5F",
+			height=0.90125,
+			label="Núcleo Retail 2009
+mesón en convivencia
+Etapa 1",
+			margin="0.12,0.06",
+			penwidth=1.6,
+			pos="534.96,419.36",
+			style="dashed,rounded,filled",
+			width=2.4796];
+		"6aa7fc26623c4dfe84613a73ab537717":s -> "5027b7ebd7364e63b6e197d3f29923db":n	[color="#9E9E9E",
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.4,
+			pos="e,534.96,452.81 413.96,572.8 413.96,563.64 423.18,565.97 429.96,559.8 476.91,517.05 529.75,519.12 534.6,461.72",
+			style=dashed];
+		c1fbf4aa25094ce69de5e924e5f628b9	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Oferta comercial
+R:M-01",
+			pos="334.96,178.44",
+			shape=none,
+			width=0.62];
+		"4ca7c41e7d49468692281c9cb92bc042":s -> c1fbf4aa25094ce69de5e924e5f628b9:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,334.96,220.92 251.96,247.92 251.96,232.8 268.68,238.88 282.96,233.92 301.77,227.38 325.47,239.34 332.74,229.52"];
+		c12b1d80428148a1a2ede591ba29466d	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Existencias
+R:M-03",
+			pos="118.96,178.44",
+			shape=none,
+			width=0.62];
+		"4ca7c41e7d49468692281c9cb92bc042":s -> c12b1d80428148a1a2ede591ba29466d:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,118.96,220.92 251.96,247.92 251.96,234.96 153.73,235.47 126.11,226.3"];
+		"1db64c2792c143dfb69bfa082d60729f"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Ventas
+R:V-02",
+			pos="226.96,178.44",
+			shape=none,
+			width=0.62];
+		"4ca7c41e7d49468692281c9cb92bc042":s -> "1db64c2792c143dfb69bfa082d60729f":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,226.96,220.92 251.96,247.92 251.96,235.14 236.7,235.83 230.02,228.95"];
+		"21a8d1aed47c4d07b13fb59ed8963010"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Posventa
+R:CL-01",
+			pos="442.96,178.44",
+			shape=none,
+			width=0.62];
+		"4ca7c41e7d49468692281c9cb92bc042":s -> "21a8d1aed47c4d07b13fb59ed8963010":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,442.96,220.92 251.96,247.92 251.96,228.83 403.46,239.33 436.6,226.71"];
+		c1fbf4aa25094ce69de5e924e5f628b9:s -> "4934535beca64d72bd5383845bc5fb31":n	[constraint=false,
+			dir=forward,
+			fontcolor="#2D3436",
+			label="oferta vigente",
+			lp="397.73,290.4",
+			pos="e,165.96,462.8 334.96,135 334.96,130.04 353.85,132.41 357.28,136 383.36,163.28 365.33,184.05 357.28,220.92 345.6,274.4 350.9,301.63 \
+305.96,332.88 273.94,355.14 157.49,317.3 130.96,345.88 125.51,351.74 125.97,357.63 130.96,363.88 147.26,384.29 171.98,356.47 188.28,\
+376.88 211.83,406.37 214.36,434.52 188.28,461.8 186.4,463.76 179.9,465.36 174.4,465.6",
+			style=dashed];
+		"1fc07eca3980481d96ebe01357a509fa"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/database\database-for-postgresql-servers.png",
+			label="PostgreSQL
+Retail",
+			pos="287.96,66.48",
+			shape=none,
+			width=0.62];
+		c1fbf4aa25094ce69de5e924e5f628b9:s -> "1fc07eca3980481d96ebe01357a509fa":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,287.96,108.96 334.96,135.96 334.96,115.63 301.5,127.54 291.04,117.28"];
+		"73518f7f325047a58ac0371e3328c3c4"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/iot\event-hubs.png",
+			label="Event Hubs
+Retail",
+			pos="152.96,66.48",
+			shape=none,
+			width=0.62];
+		c12b1d80428148a1a2ede591ba29466d:s -> "73518f7f325047a58ac0371e3328c3c4":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,152.96,108.96 118.96,135.96 118.96,120.43 140.97,124.91 149.57,117.19"];
+		c12b1d80428148a1a2ede591ba29466d:s -> "1fc07eca3980481d96ebe01357a509fa":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,287.96,108.96 118.96,135.96 118.96,119.25 249.51,125.74 281.12,114.65"];
+		"1db64c2792c143dfb69bfa082d60729f":s -> "73518f7f325047a58ac0371e3328c3c4":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,152.96,108.96 226.96,135.96 226.96,104.51 167.23,136.04 155.09,117.38"];
+		"1db64c2792c143dfb69bfa082d60729f":s -> "1fc07eca3980481d96ebe01357a509fa":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,287.96,108.96 226.96,135.96 226.96,123.92 267.23,123.41 282.33,115.69"];
+		"21a8d1aed47c4d07b13fb59ed8963010":s -> "1fc07eca3980481d96ebe01357a509fa":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,287.96,108.96 442.96,135.96 442.96,120.66 324.29,124.85 294.62,114.42"];
+	}
+}

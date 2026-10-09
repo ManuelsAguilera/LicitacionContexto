@@ -99,7 +99,7 @@ def head(d='TB', s='spline', ns='0.35', rs='0.7'):
 FIGURES = {}
 
 # ---------------------------------------------------------------- Figura 4.13
-FIGURES[13] = ('arquitectura-fisica-general', head('TB', 'spline', '0.2', '0.75') + '''
+FIGURES[13] = ('arquitectura-fisica-general', head('TB', 'spline', '0.2', '0.4') + '''
     ext = N(OP.network.Internet, "EXT-01 · contrapartes externas\\nweb, marketplace, fidelización,\\npagos, transporte, proveedores")
     with CL("CLD-01 · Azure Chile Central · 3 zonas", "nube"):
         with CL("Ámbito Retail", "retail"):
@@ -122,8 +122,8 @@ FIGURES[13] = ('arquitectura-fisica-general', head('TB', 'spline', '0.2', '0.75'
         cd2 = N(GEN.device.Tablet, "CD-02\\nConcepción\\ncaptura de\\nexistencias")
         dc2 = N(GEN.place.Datacenter, "DC-02 · sala\\nde respaldo,\\nmisma comuna")
         with CL("DC-01 · casa matriz, 140 m²", "cliente"):
-            cred = N(OP.compute.Server, "Crédito 2011\\nFilial emisora")
             erp = N(OP.compute.Server, "ERP/DTE y núcleo\\nRetail 2009")
+            cred = N(OP.compute.Server, "Crédito 2011\\nFilial emisora")
     ext << E("borde público") >> borde
     borde >> appr
     borde >> appe
@@ -142,7 +142,7 @@ FIGURES[13] = ('arquitectura-fisica-general', head('TB', 'spline', '0.2', '0.75'
     hub << E("Express-\\nRoute\\npropuesto", minlen="2", **ACRED) >> erp
     t8 >> E(**INV) >> dc2
     t14 >> E(**INV) >> cred
-    erp << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2
+    erp << E("enlace propuesto", **AMBAR) >> dc2
 ''')
 
 # ---------------------------------------------------------------- Figura 4.14
@@ -236,7 +236,7 @@ FIGURES[15] = ('ambientes-y-despliegue', head('TB', 'spline', '0.3', '0.7') + ''
 
 # ---------------------------------------------------------------- Figura 4.16
 FIGURES[16] = ('conexiones-y-contingencia', head('TB', 'spline', '0.3', '0.55') + '''
-    n1 = NOTA("1 · Enlace de tienda\\ndiario local y\\noperación 24 h;\\nreconciliación al\\nvolver (F-03, F-04)", "falla")
+    n1 = NOTA("1 · Enlace de tienda\\ndiario local y\\noperación 24 h;\\nreconciliación al\\nvolver", "falla")
     n2 = NOTA("2 · Enlace único\\nde CD-02\\ncaptura local durable;\\nenlace secundario\\npropuesto", "falla")
     n7 = NOTA("7 · WMS\\nprocedimiento de\\ndegradación\\npor interfaz", "falla")
     n6 = NOTA("6 · ERP/DTE\\nmodalidad fiscal\\nde contingencia\\ny conciliación", "falla")
@@ -251,7 +251,7 @@ FIGURES[16] = ('conexiones-y-contingencia', head('TB', 'spline', '0.3', '0.55') 
         eh = N(AZ.analytics.EventHubs, "Event Hubs Premium")
     n3 = NOTA("3 · ExpressRoute DC-01\\nVPN de respaldo", "falla")
     n4 = NOTA("4 · Zona de\\ndisponibilidad\\nservicios zonales en\\notra zona de\\nChile Central", "falla")
-    n8 = NOTA("8 · Broker\\noutbox en\\nproductores\\ny relectura", "falla")
+    n8 = NOTA("8 · Broker: registro\\nde salida en\\nproductores\\ny relectura", "falla")
     n5 = NOTA("5 · Región Chile Central\\nconmutación activo-pasivo\\na Brazil South", "falla")
     with CL("CLD-02 · Azure Brazil South", "dr"):
         rec = N(AZ.migration.RecoveryServicesVaults, "Región en espera")
@@ -374,7 +374,7 @@ FIGURES[18] = ('data-center-primario', head('TB', 'spline', '0.3', '0.6') + '''
 ''')
 
 # ---------------------------------------------------------------- Figura 4.19
-FIGURES[19] = ('data-center-secundario', head('TB', 'spline', '0.6', '0.55') + '''
+FIGURES[19] = ('data-center-secundario', head('TB', 'spline', '0.9', '0.5') + '''
     fd = N(AZ.network.FrontDoors, "Front Door global")
     with CL("CLD-01 · Chile Central · activo", "nube"):
         apa = N(AZ.integration.APIManagement, "API Management\\nPremium")
@@ -387,7 +387,7 @@ FIGURES[19] = ('data-center-secundario', head('TB', 'spline', '0.6', '0.55') + '
             pgea = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL")
     with CL("CLD-02 · Brazil South · pasivo", "dr"):
         apb = N(AZ.integration.APIManagement, "Gateway APIM\\nadicional")
-        akb = N(AZ.compute.KubernetesServices, "AKS en espera\\no por IaC")
+        akb = N(AZ.compute.KubernetesServices, "AKS por la\\nmisma IaC")
         ehb = N(AZ.analytics.EventHubs, "Event Hubs\\nsecundario")
         with CL("Retail ", "retail"):
             pgrb = N(AZ.database.DatabaseForPostgresqlServers, "Réplica\\nde lectura")
@@ -403,15 +403,16 @@ FIGURES[19] = ('data-center-secundario', head('TB', 'spline', '0.6', '0.55') + '
     fd >> E("activo") >> apa
     fd >> E("conmutación", **ACRED) >> apb
     apa >> E(**INV) >> aka >> E(**INV) >> eha >> E(**INV) >> pgra >> E(**INV) >> sta >> E(**INV) >> pgea
-    apb >> E(**INV) >> akb >> E(**INV) >> ehb >> E(**INV) >> pgrb >> E(**INV) >> stb >> E(**INV) >> pgeb >> E(**INV) >> kvb
-    kvb >> E(**INV) >> bkb
+    apb >> E(**INV) >> akb >> E(**INV) >> ehb >> E(**INV) >> pgrb >> E(**INV) >> stb >> E(**INV) >> pgeb
+    apb >> E(**INV) >> kvb
+    apb >> E(**INV) >> bkb
     aka >> E("misma IaC", constraint="false", **ACRED) >> akb
     eha >> E("geo-replicación\\nretraso < 15 min", constraint="false", **REPLICA) >> ehb
     pgra >> E("réplica entre regiones\\nRPO ≤ 15 min", constraint="false", **REPLICA) >> pgrb
     sta >> E("réplica", constraint="false", **REPLICA) >> stb
     pgea >> E("condicionada a residencia", constraint="false", **REPLICA) >> pgeb
     pgea >> E(**INV) >> dc1
-    dc1 << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2
+    dc1 << E("enlace propuesto", constraint="false", **AMBAR) >> dc2
     pgea >> E(**INV) >> dc2
 ''')
 

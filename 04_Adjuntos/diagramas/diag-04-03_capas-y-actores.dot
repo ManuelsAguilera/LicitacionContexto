@@ -2,13 +2,13 @@
 // Derivada de diag-04-02_capas-y-actores.dot (borradores/); misma estructura,
 // rótulos actualizados a la selección Azure (ADR-06, ADR-07) y reajustados a ≥ 9 pt impresos.
 digraph capas_y_actores {
-  graph [rankdir=TB, bgcolor="white", pad="0.08", nodesep="0.12", ranksep="0.22",
-         splines=polyline, fontname="Arial", fontsize=15, outputorder=edgesfirst, forcelabels=true,
+  graph [rankdir=TB, margin=0, bgcolor="white", pad="0.08", nodesep="0.1", ranksep="0.26",
+         splines=spline, fontname="Arial", fontsize=15, outputorder=edgesfirst, forcelabels=true,
          label="Actores, ocho capas y responsabilidades lógicas (RT-02.01)\nAH/AS son códigos UAW; las flechas son familias de contratos, no rutas físicas",
          labelloc=t, labeljust=l];
   node [shape=box, style="rounded,filled", color="#90A4AE", fillcolor="#F8FAFB",
-        fontname="Arial", fontsize=13, margin="0.10,0.06"];
-  edge [color="#718591", arrowsize=0.6, penwidth=0.9, fontname="Arial", fontsize=13];
+        fontname="Arial", fontsize=14, margin="0.08,0.05"];
+  edge [color="#718591", arrowsize=0.6, penwidth=0.9, fontname="Arial", fontsize=14];
 
   ah [label="ACTORES HUMANOS / ROLES (AH)\nCliente y titular 01–02 · tienda y atención 03–06, 08–09\nCD, comercial y control 07, 10–16, 18 · vendedor 17 (API)",
       fillcolor="#F2F5F7", color="#B6C3CA"];
@@ -41,7 +41,7 @@ digraph capas_y_actores {
   {rank=same; broker; adaptadores;}
   broker -> adaptadores [style=invis, weight=20];
 
-  as [label="ACTORES SISTEMA (AS) · alojamiento por verificar\nPlataformas AS-01–05, 09–11\nContrapartes AS-07–08, 12–13\nAS-14 temporizador; AS-06 sin código",
+  as [label="ACTORES SISTEMA (AS) ·\nalojamiento por verificar\nPlataformas AS-01–05, 09–11\nContrapartes AS-07–08, 12–13\nAS-14 temporizador;\nAS-06 sin código",
       fillcolor="#F2F5F7", color="#B6C3CA"];
 
   datos_r [label="6 · DATOS RETAIL\nPostgreSQL, Data Lake,\nPower BI; ML sugiere\nconteos y merma",
@@ -57,12 +57,12 @@ digraph capas_y_actores {
              fillcolor="#FFF0E0", color="#D1A16C"];
   observabilidad [label="8 · OBSERVABILIDAD\nAzure Monitor y\nOpenTelemetry: nube,\ntienda y centro de datos",
                  fillcolor="#EDF0F5", color="#9BA8B6"];
-  {rank=same; seguridad; observabilidad;}
-  seguridad -> observabilidad [style=invis, weight=20];
+  {rank=same; seguridad; as; observabilidad;}
+  seguridad -> as -> observabilidad [style=invis, weight=20];
 
-  ah -> pres_r [label="operación/consulta"];
+  ah -> pres_r [xlabel="operación/consulta"];
   ah -> pres_f [style=dashed, color="#8874AD"];
-  pres_r -> borde [label="si hay enlace"];
+  pres_r -> borde [xlabel="si hay enlace"];
   pres_f -> borde [color="#8874AD"];
   borde -> gateway;
   gateway -> retail;
@@ -76,11 +76,11 @@ digraph capas_y_actores {
   emisor -> broker [style=dashed, color="#8874AD", minlen=2];
   retail -> adaptadores [dir=both, color="#56A593", minlen=2];
   emisor -> adaptadores [dir=both, color="#8874AD", minlen=2];
-  adaptadores -> as [dir=both, label="contratos"];
-  broker -> datos_r [xlabel="proyección"];
+  adaptadores -> as [dir=both, xlabel="contratos"];
+  broker -> datos_r [headlabel="proyección", labeldistance=4, labelangle=40];
   broker -> datos_f [style=dashed, color="#8874AD"];
-  frontera -> datos_x [color="#B7953E"];
+  frontera -> datos_x [color="#B7953E", weight=3];
   as -> datos_x [style=invis, weight=10];
-  datos_r -> seguridad [style=dotted, arrowhead=none];
-  datos_f -> observabilidad [style=dotted, arrowhead=none];
+  seguridad -> datos_r [style=dotted, arrowhead=none];
+  observabilidad -> datos_f [style=dotted, arrowhead=none];
 }

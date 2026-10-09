@@ -1,0 +1,388 @@
+digraph "Ancoa · bloque Crédito y frontera
+sólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar" {
+	graph [bb="0,0,691,817.73",
+		bgcolor=white,
+		dpi=220,
+		fontcolor="#2D3436",
+		fontname=Arial,
+		fontsize=17,
+		label="Ancoa · bloque Crédito y frontera
+sólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar",
+		labelloc=t,
+		lheight=0.54,
+		lp="345.5,794.23",
+		lwidth=9.38,
+		newrank=true,
+		nodesep=1.0,
+		pad="0.3,0.1",
+		rankdir=TB,
+		ranksep=0.35,
+		splines=spline
+	];
+	node [fixedsize=true,
+		fontcolor="#263238",
+		fontname=Arial,
+		fontsize=16,
+		height=1.4,
+		imagepos=tc,
+		imagescale=true,
+		label="\N",
+		labelloc=b,
+		shape=box,
+		style=rounded,
+		width=1.4
+	];
+	edge [arrowsize=0.7,
+		color="#546E7A",
+		fontname=Arial,
+		fontsize=15,
+		headport=n,
+		penwidth=1.3,
+		tailport=s
+	];
+	subgraph cluster_ {
+		graph [bb="25.5,586.27,665.5,762.73",
+			bgcolor="#E5F5FD",
+			fontname="Sans-Serif",
+			fontsize=12,
+			label="",
+			labeljust=l,
+			margin=0,
+			pencolor="#AEB6BE",
+			rank=same,
+			rankdir=LR,
+			shape=box,
+			style=invis
+		];
+		subgraph cluster_Retail {
+			graph [bb="25.5,586.27,477.5,762.73",
+				bgcolor="#F3FAF6",
+				color="#5E9E86",
+				fontname=Arial,
+				fontsize=19,
+				label=Retail,
+				labeljust=l,
+				lheight=0.30,
+				lp="57.875,747.86",
+				lwidth=0.68,
+				margin=16,
+				pencolor="#AEB6BE",
+				penwidth=1.6,
+				rankdir=LR,
+				shape=box,
+				style=rounded
+			];
+			"090d7eca12f941ba975e97fd870e11a5"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\client.png",
+				label="Caja POS
+tarjeta propia",
+				pos="63.5,644.75",
+				shape=none,
+				width=0.62];
+			"1649d9797f0746799373c15899341d53"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/integration\api-management.png",
+				label="API Management
+Retail",
+				pos="251.5,644.75",
+				shape=none,
+				width=0.62];
+			"090d7eca12f941ba975e97fd870e11a5":s -> "1649d9797f0746799373c15899341d53":n	[dir=forward,
+				fontcolor="#2D3436",
+				fontname="Sans-Serif",
+				fontsize=13,
+				pos="e,251.5,688.12 63.5,601.4 63.5,540.84 96.928,555.13 118.75,566.4 160.33,587.87 139.63,629.73 181.25,651.12 201.21,661.38 228.77,\
+673.54 242.69,681.34"];
+			"53aedbf834b647fa8a7b7f8e0d64e708"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+				label="Ventas
+R:V-02",
+				pos="439.5,644.75",
+				shape=none,
+				width=0.62];
+			"1649d9797f0746799373c15899341d53":s -> "53aedbf834b647fa8a7b7f8e0d64e708":n	[dir=forward,
+				fontcolor="#2D3436",
+				fontname="Sans-Serif",
+				fontsize=13,
+				pos="e,439.5,688.21 251.5,601.38 251.5,534.15 293.36,553.37 321.75,566.38 367.57,587.37 351.28,630 397,651.21 410.26,657.36 428.43,665.9 \
+435.99,677.36"];
+		}
+		subgraph cluster_Frontera {
+			graph [bb="588.5,586.27,665.5,756.73",
+				bgcolor="#FFF9E6",
+				color="#C9A545",
+				fontname=Arial,
+				fontsize=16,
+				label=Frontera,
+				labeljust=l,
+				lheight=0.26,
+				lp="626.88,743.36",
+				lwidth=0.84,
+				margin=16,
+				pencolor="#AEB6BE",
+				rankdir=LR,
+				shape=box,
+				style=rounded
+			];
+			dc6fb261d60847328bb199b3cc610131	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\decision.png",
+				label="X-01 · ficha
+y bitácora",
+				pos="627.5,644.75",
+				shape=none,
+				width=0.62];
+		}
+		dc6fb261d60847328bb199b3cc610131:s -> "53aedbf834b647fa8a7b7f8e0d64e708":n	[arrowhead=none,
+			color="#B08A2E",
+			constraint=false,
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.6,
+			pos="627.5,601.49 627.5,579.6 598.65,594.55 578.25,602.49 525.14,623.15 535.08,666.46 482,687.21 464.4,694.09 439.5,707.1 439.5,688.21",
+			style=dotted];
+	}
+	subgraph "cluster_Filial emisora" {
+		graph [bb="96.5,8,592.5,534.27",
+			bgcolor="#F8F4FB",
+			color="#8E73B0",
+			fontname=Arial,
+			fontsize=19,
+			label="Filial emisora",
+			labeljust=l,
+			lheight=0.30,
+			lp="160.75,519.39",
+			lwidth=1.56,
+			margin=16,
+			pencolor="#AEB6BE",
+			penwidth=1.6,
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		subgraph cluster_ {
+			graph [bb="112.5,373.81,461.5,458.77",
+				bgcolor="#EBF3E7",
+				fontname="Sans-Serif",
+				fontsize=12,
+				label="",
+				labeljust=l,
+				margin=0,
+				pencolor="#AEB6BE",
+				rank=same,
+				rankdir=LR,
+				shape=box,
+				style=invis
+			];
+			"5182cf948e8343c290d430c18bc83a3d"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\client.png",
+				label="Portal de
+titulares",
+				pos="134.5,416.29",
+				shape=none,
+				width=0.62];
+			"3042bb2e6f144dd2ade190c1c8787d0d"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/integration\api-management.png",
+				label="API Management
+Emisor",
+				pos="439.5,416.29",
+				shape=none,
+				width=0.62];
+			"5182cf948e8343c290d430c18bc83a3d":s -> "3042bb2e6f144dd2ade190c1c8787d0d":n	[dir=forward,
+				fontcolor="#2D3436",
+				fontname="Sans-Serif",
+				fontsize=13,
+				pos="e,439.5,459.73 134.5,372.85 134.5,367.89 153.01,370.63 156.82,373.81 213.03,420.63 153.1,473.28 193.5,534.27 204.4,550.72 210.72,\
+554.2 229.5,560.27 325.07,591.17 432.98,564.85 439.22,468.63"];
+			"4a53916886894a478fd0d8a7a62c0cd3"	[height=1.18,
+				image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/aws/general\client.png",
+				label="Mesón y sesión
+financiera POS",
+				pos="251.5,416.29",
+				shape=none,
+				width=0.62];
+			"4a53916886894a478fd0d8a7a62c0cd3":s -> "3042bb2e6f144dd2ade190c1c8787d0d":n	[dir=forward,
+				fontcolor="#2D3436",
+				fontname="Sans-Serif",
+				fontsize=13,
+				pos="e,439.5,459.66 251.5,372.89 251.5,308.17 291.1,323.79 316.12,337.89 354.86,359.72 330.5,400.86 369.25,422.66 388.81,433.67 416.54,\
+445.5 430.6,453.06"];
+		}
+		ffad4a1e07974c668384c4928d7163e9	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Originación y
+autorización F:C-01",
+			pos="366.5,287.33",
+			shape=none,
+			width=0.62];
+		"3042bb2e6f144dd2ade190c1c8787d0d":s -> ffad4a1e07974c668384c4928d7163e9:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,366.5,329.81 439.5,373.81 439.5,343.91 394.93,381.66 373.5,360.81 365.75,353.27 365.76,347.38 366.2,338.7"];
+		"71f6bb834d024920ae8db630611e6e0e"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Cartera
+F:C-02",
+			pos="249.5,287.33",
+			shape=none,
+			width=0.62];
+		"3042bb2e6f144dd2ade190c1c8787d0d":s -> "71f6bb834d024920ae8db630611e6e0e":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,249.5,329.81 439.5,373.81 439.5,353.38 368.42,365.32 348.5,360.81 306.69,351.34 257.05,372.54 250.28,338.51"];
+		"42827cfbf8d84e8797fbf46eabb57e73"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/programming/flowchart\predefined-process.png",
+			label="Evidencia
+F:C-03",
+			pos="554.5,287.33",
+			shape=none,
+			width=0.62];
+		ffad4a1e07974c668384c4928d7163e9:s -> "42827cfbf8d84e8797fbf46eabb57e73":n	[constraint=false,
+			dir=forward,
+			fontcolor="#2D3436",
+			label=verifica,
+			lp="460.5,316.11",
+			pos="e,554.5,330.65 366.5,243.98 366.5,156.65 535.89,396.1 553.09,341.96"];
+		ffaa5cec763f40afada8975e599748e9	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/database\database-for-postgresql-servers.png",
+			label="PostgreSQL
+Emisor",
+			pos="366.5,175.37",
+			shape=none,
+			width=0.62];
+		ffad4a1e07974c668384c4928d7163e9:s -> ffaa5cec763f40afada8975e599748e9:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,366.5,217.85 366.5,244.85 366.5,236.41 366.5,232.42 366.5,226.63"];
+		"71f6bb834d024920ae8db630611e6e0e":s -> "42827cfbf8d84e8797fbf46eabb57e73":n	[constraint=false,
+			dir=forward,
+			fontcolor="#2D3436",
+			label=repactación,
+			lp="418.5,351.81",
+			pos="e,554.5,329.81 249.5,243.89 249.5,238.93 267.72,242.05 271.82,244.85 305.95,268.11 278.36,302.67 309.5,329.81 309.5,329.81 502.14,\
+329.81 545.78,329.81"];
+		"71f6bb834d024920ae8db630611e6e0e":s -> ffaa5cec763f40afada8975e599748e9:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,366.5,217.85 249.5,244.85 249.5,221.4 339.88,238.93 361.77,225.4"];
+		"72b7c3d9c7294546bed58ce401569af0"	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/iot\event-hubs.png",
+			label="Event Hubs
+Emisor",
+			pos="249.5,175.37",
+			shape=none,
+			width=0.62];
+		"71f6bb834d024920ae8db630611e6e0e":s -> "72b7c3d9c7294546bed58ce401569af0":n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,249.5,217.85 249.5,244.85 249.5,236.41 249.5,232.42 249.5,226.63"];
+		"42827cfbf8d84e8797fbf46eabb57e73":s -> ffaa5cec763f40afada8975e599748e9:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,366.5,217.85 554.5,244.85 554.5,226.14 406.68,235.97 373.19,223.73"];
+		d8868b7bd3574638b2537c4b6af8cc9c	[height=1.18,
+			image="C:\Users\manu\AppData\Local\uv\cache\archive-v0\DKCLvf-Nabl8XrFF\Lib\site-packages\resources/azure/compute\kubernetes-services.png",
+			label="Adaptadores
+Emisor",
+			pos="497.5,175.37",
+			shape=none,
+			width=0.62];
+		"42827cfbf8d84e8797fbf46eabb57e73":s -> d8868b7bd3574638b2537c4b6af8cc9c:n	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,497.5,217.85 554.5,244.85 554.5,220.54 511.64,239.17 500.25,226.27"];
+		"72b7c3d9c7294546bed58ce401569af0":s -> d8868b7bd3574638b2537c4b6af8cc9c:n	[constraint=false,
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,497.5,217.85 249.5,131.93 249.5,126.97 267.72,130.09 271.82,132.89 305.95,156.15 279.45,189.51 309.5,217.85 337.64,244.38 474.81,\
+257.6 495.01,226.26"];
+		"23794be777e543d2a9d897770f7d9f5c"	[color="#C77700",
+			fillcolor="#FFF3DF",
+			fixedsize=false,
+			fontcolor="#7A4A00",
+			height=0.64083,
+			label="Firma
+electrónica",
+			margin="0.12,0.06",
+			penwidth=1.6,
+			pos="160.5,56.445",
+			style="dashed,rounded,filled",
+			width=1.3337];
+		d8868b7bd3574638b2537c4b6af8cc9c:s -> "23794be777e543d2a9d897770f7d9f5c":n	[color="#C77700",
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.4,
+			pos="e,160.5,80.515 497.5,132.89 497.5,119.15 388.1,121.86 374.5,119.89 281.97,106.51 168.33,172.59 160.89,89.602",
+			style=dashed];
+		"5d702b166b4040e7998ac4d8338b6c1c"	[color="#C77700",
+			fillcolor="#FFF3DF",
+			fixedsize=false,
+			fontcolor="#7A4A00",
+			height=0.64083,
+			label="Reporte
+regulatorio",
+			margin="0.12,0.06",
+			penwidth=1.6,
+			pos="327.5,56.445",
+			style="dashed,rounded,filled",
+			width=1.3025];
+		d8868b7bd3574638b2537c4b6af8cc9c:s -> "5d702b166b4040e7998ac4d8338b6c1c":n	[color="#C77700",
+			dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			penwidth=1.4,
+			pos="e,327.5,80.515 497.5,132.89 497.5,115.36 363.83,103.28 333.55,86.986",
+			style=dashed];
+		"2cde9947d3fd41b3ab02656634ddb7d2"	[color="#8E8E8E",
+			fillcolor="#EEEEEE",
+			fixedsize=false,
+			fontcolor="#5F5F5F",
+			height=0.90125,
+			label="Crédito 2011
+cartera por olas
+Etapa 1",
+			margin="0.12,0.06",
+			penwidth=1.6,
+			pos="511.5,56.445",
+			style="dashed,rounded,filled",
+			width=1.8025];
+		d8868b7bd3574638b2537c4b6af8cc9c:s -> "2cde9947d3fd41b3ab02656634ddb7d2":n	[color="#9E9E9E",
+			dir=forward,
+			fontcolor="#2D3436",
+			label=olas,
+			lp="522.65,110.89",
+			penwidth=1.4,
+			pos="e,511.5,88.89 497.5,132.89 497.5,115.74 507.28,110.85 510.49,97.727",
+			style=dashed];
+	}
+	"53aedbf834b647fa8a7b7f8e0d64e708":s -> "3042bb2e6f144dd2ade190c1c8787d0d":n	[color="#2F6EA5",
+		dir=forward,
+		fontcolor="#2D3436",
+		label="autorización de compra
+referencia e importe",
+		lp="504.5,560.27",
+		penwidth=2.6,
+		pos="e,439.5,459.73 439.5,601.31 439.5,589.55 429.49,589.64 426.5,578.27 414.01,530.71 435.88,514.99 439.11,470.64"];
+	dc6fb261d60847328bb199b3cc610131:s -> "3042bb2e6f144dd2ade190c1c8787d0d":n	[arrowhead=none,
+		color="#B08A2E",
+		constraint=false,
+		dir=forward,
+		fontcolor="#2D3436",
+		label=política,
+		lp="648.01,560.27",
+		penwidth=1.6,
+		pos="627.5,601.31 627.5,571.67 617.45,563.23 596.5,542.27 540.77,486.51 439.5,538.56 439.5,459.73",
+		style=dotted];
+}

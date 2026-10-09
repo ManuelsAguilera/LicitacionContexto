@@ -4,11 +4,11 @@ class AzureMonitor(ApplicationInsights):
 class LocalStore(Server):
     _icon_dir = "resources/generic/storage"
     _icon = "storage.png"
-with Diagram("Ancoa · bloque Integración transversal\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.62", "ranksep":"0.35", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
+with Diagram("Ancoa · bloque Integración transversal\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.62", "ranksep":"0.12", "pad":"0.3,0.1", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"Arial", "fontsize":"15"}):
     with Cluster("Retail", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         can_r = Client("Canales\nRetail", width="0.62", height="1.18")
         apim_r = APIManagement("API Management\nRetail", width="0.62", height="1.18")
-        svc_r = PredefinedProcess("Servicios Retail\ncon outbox", width="0.62", height="1.18")
+        svc_r = PredefinedProcess("Servicios Retail\ncon registro\nde salida", width="0.62", height="1.44")
         eh_r = EventHubs("Event Hubs\nRetail", width="0.62", height="1.18")
         ad_r = KubernetesServices("Adaptadores\nRetail en AKS", width="0.62", height="1.18")
         plat = Server("ERP/DTE · WMS\nmarketplace\nfidelización", width="0.62", height="1.44")
@@ -17,11 +17,11 @@ with Diagram("Ancoa · bloque Integración transversal\nsólido: objetivo mes 21
         id_r = ActiveDirectory("Entra ID\nroles Retail", width="0.62", height="1.18")
         kv_r = KeyVaults("Key Vault\nRetail", width="0.62", height="1.18")
         mon_r = AzureMonitor("Azure Monitor\nRetail", width="0.62", height="1.18")
-    x01 = Decision("X-01\npolítica en\nambos extremos", width="0.62", height="1.44")
+    x01 = Decision("X-01\npolítica\nen ambos\nextremos", width="0.62", height="1.69")
     with Cluster("Filial emisora", graph_attr={"bgcolor":"#F8F4FB", "color":"#8E73B0", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         can_f = Client("Canales\nEmisor", width="0.62", height="1.18")
         apim_f = APIManagement("API Management\nEmisor", width="0.62", height="1.18")
-        svc_f = PredefinedProcess("Servicios Emisor\ncon outbox", width="0.62", height="1.18")
+        svc_f = PredefinedProcess("Servicios Emisor\ncon registro\nde salida", width="0.62", height="1.44")
         eh_f = EventHubs("Event Hubs\nEmisor", width="0.62", height="1.18")
         ad_f = KubernetesServices("Adaptadores\nEmisor", width="0.62", height="1.18")
         ext_f = Server("Firma y reporte\nregulatorio", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#FFF3DF", color="#C77700", fontcolor="#7A4A00", penwidth="1.6", margin="0.12,0.06")
@@ -49,6 +49,6 @@ with Diagram("Ancoa · bloque Integración transversal\nsólido: objetivo mes 21
     id_f >> Edge(color="#8FA3AE", style="dotted", arrowhead="none", constraint="false", label="token", fontsize="15", fontname="Arial") >> apim_f
     kv_f >> Edge(color="#8FA3AE", style="dotted", arrowhead="none", label="secretos", fontsize="15", fontname="Arial") >> ad_f
     svc_f >> Edge(color="#8FA3AE", style="dotted", arrowhead="none", label="trazas", fontsize="15", fontname="Arial") >> mon_f
-    svc_r >> Edge(color="#2F6EA5", penwidth="2.6", label="autorización de compra", fontsize="15", fontname="Arial", constraint="false") >> apim_f
+    svc_r >> Edge(color="#2F6EA5", penwidth="2.6", label="autorización\nde compra", fontsize="15", fontname="Arial", constraint="false", tailport="e", headport="w") >> apim_f
     x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none") >> svc_r
     x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none") >> apim_f

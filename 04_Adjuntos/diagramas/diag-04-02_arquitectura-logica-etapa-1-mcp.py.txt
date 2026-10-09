@@ -4,7 +4,7 @@ class AzureMonitor(ApplicationInsights):
 class LocalStore(Server):
     _icon_dir = "resources/generic/storage"
     _icon = "storage.png"
-with Diagram("Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontinuo: convivencia que se retira", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.25", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
+with Diagram("Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontinuo: convivencia que se retira", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.72", "ranksep":"0.12", "pad":"0.3,0.1", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "tailport":"s", "headport":"n", "fontname":"Arial", "fontsize":"15"}):
     with Cluster("Retail", graph_attr={"bgcolor":"#F3FAF6", "color":"#5E9E86", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         pos = Client("POS nuevo y\nnodo local", width="0.62", height="1.18")
         sala = Tablet("Móviles\ny mesón", width="0.62", height="1.18")
@@ -13,23 +13,24 @@ with Diagram("Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontin
         pos14 = Client("POS 2014\nEtapa 1", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#EEEEEE", color="#8E8E8E", fontcolor="#5F5F5F", penwidth="1.6", margin="0.12,0.06")
         planillas = Document("Planillas CD\nConcepción\nEtapa 1", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#EEEEEE", color="#8E8E8E", fontcolor="#5F5F5F", penwidth="1.6", margin="0.12,0.06")
         apim_r = APIManagement("API Management\nRetail", width="0.62", height="1.18")
-        merc = PredefinedProcess("Oferta R:M-01\nExistencias\nR:M-03", width="0.62", height="1.44")
-        venta = PredefinedProcess("Ventas\nR:V-02", width="0.62", height="1.18")
+        with Cluster("", graph_attr={"style":"invis", "rank":"same", "margin":"0"}):
+            merc = PredefinedProcess("Oferta R:M-01\nExistencias\nR:M-03", width="0.62", height="1.44")
+            venta = PredefinedProcess("Ventas\nR:V-02", width="0.62", height="1.18")
         eh_r = EventHubs("Event Hubs\nRetail", width="0.62", height="1.18")
         pg_r = DatabaseForPostgresqlServers("PostgreSQL\nRetail", width="0.62", height="1.18")
         lake_r = DataLakeStorage("Data Lake y\nPower BI", width="0.62", height="1.18")
         ad_r = KubernetesServices("Adaptadores\nen AKS", width="0.62", height="1.18")
         erp = Server("ERP/DTE\ny WMS", width="0.62", height="1.18")
-        mkp = Server("Marketplace y\nfidelización*", width="0.62", height="1.18")
-        ext = Users("Pagos y\ntransportistas", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#FFF3DF", color="#C77700", fontcolor="#7A4A00", penwidth="1.6", margin="0.12,0.06")
+        mkp = Server("Marketplace\ny fidelización*", width="0.62", height="1.18")
+        ext = Users("Medios de pago y\ntransportistas", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#FFF3DF", color="#C77700", fontcolor="#7A4A00", penwidth="1.6", margin="0.12,0.06")
         r09 = Server("Núcleo Retail\n2009\nEtapa 1", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#EEEEEE", color="#8E8E8E", fontcolor="#5F5F5F", penwidth="1.6", margin="0.12,0.06")
-    x01 = Decision("X-01\npolítica en\nambos extremos", width="0.62", height="1.44")
+    x01 = Decision("X-01\npolítica\nen ambos\nextremos", width="0.62", height="1.69")
     with Cluster("Filial emisora", graph_attr={"bgcolor":"#F8F4FB", "color":"#8E73B0", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
         portal_f = Client("Portal\nfinanciero", width="0.62", height="1.18")
-        meson_f = Client("Mesón y sesión\nfinanciera", width="0.62", height="1.18")
+        meson_f = Client("Mesón y\nsesión\nfinanciera", width="0.62", height="1.44")
         apim_f = APIManagement("API Management\nEmisor", width="0.62", height="1.18")
         orig = PredefinedProcess("Originación\nF:C-01", width="0.62", height="1.18")
-        cart = PredefinedProcess("Cartera F:C-02\ntramo 1", width="0.62", height="1.18")
+        cart = PredefinedProcess("Cartera\nF:C-02\ntramo 1", width="0.62", height="1.44")
         evid = PredefinedProcess("Evidencia\nF:C-03", width="0.62", height="1.18")
         eh_f = EventHubs("Event Hubs\nEmisor", width="0.62", height="1.18")
         pg_f = DatabaseForPostgresqlServers("PostgreSQL\nEmisor", width="0.62", height="1.18")
@@ -44,6 +45,7 @@ with Diagram("Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontin
     consola >> apim_r
     apim_r >> Edge(color="#9E9E9E", style="dashed", penwidth="1.4", dir="back") >> pos14
     planillas >> Edge(color="#9E9E9E", style="dashed", penwidth="1.4") >> ad_r
+    merc >> Edge(style="invis", tailport="e", headport="w") >> venta
     apim_r >> merc
     merc >> eh_r
     merc >> pg_r
@@ -71,6 +73,6 @@ with Diagram("Ancoa · arquitectura lógica · Etapa 1, mes 16 · gris discontin
     ad_f >> Edge(color="#C77700", style="dashed", penwidth="1.4") >> firma
     cart >> ad_f
     ad_f >> Edge(color="#9E9E9E", style="dashed", penwidth="1.4", label="olas", fontsize="15", fontname="Arial") >> c11
-    venta >> Edge(color="#2F6EA5", penwidth="2.6", label="autorización compra", fontsize="15", fontname="Arial", constraint="false") >> apim_f
-    x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none", constraint="false") >> venta
-    x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none", constraint="false") >> orig
+    venta >> Edge(color="#2F6EA5", penwidth="2.6", label="autorización\ncompra", fontsize="15", fontname="Arial", constraint="false", tailport="e", headport="w") >> apim_f
+    x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none", constraint="false", tailport="w", headport="e") >> venta
+    x01 >> Edge(color="#B08A2E", style="dotted", penwidth="1.6", arrowhead="none", constraint="false", tailport="e", headport="w") >> orig

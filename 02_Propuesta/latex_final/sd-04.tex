@@ -97,17 +97,17 @@ Esta sección desarrolla el escenario B seleccionado en 3.3 mediante las vistas 
 La solución entra en producción en dos momentos. La Etapa 1 queda en producción en el mes 16 con los servicios de oferta, existencias, ventas, control de cruces, originación, evidencia y cartera en su primer tramo, y convive con el POS de 2014, las planillas de Concepción, el núcleo Retail de 2009 y la plataforma de crédito de 2011. La Etapa 2 queda en producción en el mes 21 y completa la vista objetivo, con las plataformas de convivencia retiradas por olas conciliadas. La Figura 4.1 presenta la vista objetivo del mes 21 y la Figura 4.2 la vista de la Etapa 1 del mes 16.
 
 \begin{center}
-  \includegraphics[angle=90,width=\linewidth,height=0.88\textheight,keepaspectratio]{figuras/diag-04-01_arquitectura-logica-objetivo.png}
+  \includegraphics[angle=90,width=\linewidth,height=0.84\textheight,keepaspectratio]{figuras/diag-04-01_arquitectura-logica-objetivo.png}
 \end{center}
 
 Figura 4.1: Arquitectura lógica objetivo en el mes 21. Fuente: elaboración propia a partir de SD-03 y del Caso 09.
 
-La figura sitúa a la izquierda los canales de Retail, en el centro los servicios, el intermediario de eventos, los datos y los adaptadores, y a la derecha la Filial emisora con su propia entrada, sus propios servicios y sus propios repositorios. Cada ámbito tiene su API Management, sus Event Hubs, su PostgreSQL, su Data Lake y su grupo de identidad, secretos y telemetría. El único cruce es la autorización de compra con tarjeta propia, regida por la política X-01 y aplicada en ambos extremos. Las flechas representan familias de interacción lógica, no las catorce interfaces actuales ni rutas físicas. La separación de los dos ámbitos responde a la línea roja del Caso 09 y gobierna todas las decisiones de datos de este capítulo.
+La figura sitúa a la izquierda el ámbito Retail, con sus canales, la entrada API, los servicios agrupados por área (Mercadería, Venta y Relación con clientes), el intermediario de eventos, los datos y los adaptadores, y a la derecha la Filial emisora con su propia entrada, sus propios servicios y sus propios repositorios. X-01 se dibuja entre ambos ámbitos. Cada ámbito tiene su API Management, sus Event Hubs, su PostgreSQL, su Data Lake y su grupo de identidad, secretos y telemetría. El único cruce es la autorización de compra con tarjeta propia, regida por la política X-01 y aplicada en ambos extremos. Las flechas representan familias de interacción lógica, no las catorce interfaces actuales ni rutas físicas. La separación de los dos ámbitos responde a la línea roja del Caso 09 y gobierna todas las decisiones de datos de este capítulo.
 
 La convención gráfica es la misma en toda la sección. El trazo sólido indica un componente de la solución objetivo. El trazo gris discontinuo indica un componente que existe solo en la Etapa 1 y se retira por olas. El trazo ámbar discontinuo indica un componente por acreditar, como el portal de proveedor, los pagos y transportistas, la firma electrónica y el reporte regulatorio. El asterisco señala un destino condicionado a las pruebas de la Etapa 1, como el comercio electrónico y la fidelización.
 
 \begin{center}
-  \includegraphics[angle=90,width=\linewidth,height=0.88\textheight,keepaspectratio]{figuras/diag-04-02_arquitectura-logica-etapa-1.png}
+  \includegraphics[angle=90,width=\linewidth,height=0.84\textheight,keepaspectratio]{figuras/diag-04-02_arquitectura-logica-etapa-1.png}
 \end{center}
 
 Figura 4.2: Arquitectura lógica de la Etapa 1 en el mes 16. Fuente: elaboración propia a partir de SD-03 y del Art. 17 de las Bases Administrativas.
@@ -120,8 +120,9 @@ La vista lógica identifica las ocho capas de RT-02.01 y los límites Retail, Em
 
 La Tabla 4.1 agrupa los treinta y un actores del análisis UAW por entrada y ámbito. Es un mapa de cobertura, no una nueva estimación de puntos de caso de uso. AH-17 utiliza una API por decisión del equipo; AS-11 representa el módulo de remuneraciones de AS-01 y AS-14 un disparador periódico. AS-06 no figura en el catálogo aportado. Una interfaz objetivo no demuestra que la API exista hoy.
 
-Tabla 4.1: Grupos de actores, entrada y destino lógico.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.1: Grupos de actores, entrada y destino lógico.\par\nopagebreak
 \begin{longtable}{@{}p{0.25\linewidth}p{0.31\linewidth}p{0.36\linewidth}@{}}
 \toprule Actores UAW & Canal o contrato & Destino responsable \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -140,7 +141,7 @@ AS-09, AS-10, AS-14 & Archivos de convivencia y temporizador. & Migración Retai
 La tabla conserva todos los códigos AH-01 a AH-18 y AS-01 a AS-14 salvo AS-06, ausente en el registro UAW. El cliente, el titular de tarjeta y el ejecutivo financiero pueden compartir una instalación física sin compartir datos ni permisos. La Figura 4.3 relaciona los actores con las ocho capas de RT-02.01 y con la tecnología Azure de cada capa.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-03_capas-y-actores.pdf}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-03_capas-y-actores.pdf}
 \end{center}
 
 Figura 4.3: Actores, ocho capas y tecnología por capa. Fuente: elaboración propia a partir de SD-03, Bases Transversales RT-02.01 y catálogo UAW aportado.
@@ -159,8 +160,9 @@ La descomposición aplica contextos delimitados del dominio y conserva juntas la
 
 La Tabla 4.2 asigna a cada servicio su registro principal. Los códigos son identificadores de arquitectura para trazar esta vista con 3.3 y 3.4, no sustituyen los identificadores de requisitos del catálogo.
 
-Tabla 4.2: Servicios y autoridad del dato en la arquitectura lógica.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.2: Servicios y autoridad del dato en la arquitectura lógica.\par\nopagebreak
 \begin{longtable}{@{}p{0.15\linewidth}p{0.34\linewidth}p{0.43\linewidth}@{}}
 \toprule Código & Servicio & Autoridad y límite \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -183,8 +185,9 @@ La asignación distingue el registro comercial, el registro financiero y las fun
 
 La Tabla 4.3 traduce los contextos de SD-03 en unidades técnicas candidatas. «Módulo» indica una responsabilidad implementada en el nuevo sistema que aún no necesita un despliegue independiente; «microservicio» indica autoridad y ciclo operativo propios. La partición definitiva se confirma con la latencia, la volumetría y el esfuerzo de operación, sin modificar por ello el catálogo funcional de trece servicios.
 
-Tabla 4.3: Candidatos de despliegue derivados de los servicios de negocio.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.3: Candidatos de despliegue derivados de los servicios de negocio.\par\nopagebreak
 \begin{longtable}{@{}p{0.16\linewidth}p{0.42\linewidth}p{0.34\linewidth}@{}}
 \toprule SD-03 & Unidad técnica candidata & Criterio inicial \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -211,8 +214,9 @@ La presentación incluye comercio electrónico, caja/POS, terminales móviles co
 
 La Tabla 4.4 fija el destino de cada plataforma y su alojamiento actual. El Caso 09 acredita un centro de datos propio de 140 m², sala de respaldo en la misma comuna y uso compartido de centro y red por Retail y Emisor, pero no asigna individualmente cada sistema (Multitiendas Ancoa S.A., 2026b). La columna de alojamiento recoge los supuestos de diseño, que se confirman con el inventario de las catorce interfaces antes de retirar cualquier conexión antigua, conforme a SD-02 2.5.2.
 
-Tabla 4.4: Destino de plataformas actuales y alojamiento supuesto.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.4: Destino de plataformas actuales y alojamiento supuesto.\par\nopagebreak
 \begin{longtable}{@{}p{0.27\linewidth}p{0.39\linewidth}p{0.26\linewidth}@{}}
 \toprule Plataforma & Destino y responsabilidad retenida & Alojamiento supuesto \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -236,37 +240,37 @@ Las solicitudes que necesitan respuesta para continuar, como reserva previa al c
 Los seis bloques siguientes recorren la Figura 4.1 por área funcional. Cada vista conserva los códigos de servicio, la convención gráfica y la separación entre Retail y Emisor. La Figura 4.4 muestra el bloque de tiendas.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-04_bloque-tiendas.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-04_bloque-tiendas.png}
 \end{center}
 
 Figura 4.4: Bloque de tiendas. Fuente: elaboración propia a partir de SD-03 y RT-02/RT-03.
 
-El POS nuevo escribe cada operación en el diario local (L-02), que dispone de caché de oferta (L-01) y de un sincronizador (L-03) capaz de operar 24 horas sin enlace. Los códigos L-01 a L-03 son propios de este capítulo y no figuran en el catálogo de SD-03. Los móviles y el mesón acceden por API Management Retail a los servicios de oferta, existencias, ventas y posventa, que persisten en PostgreSQL y publican hechos en Event Hubs. En gris permanecen el POS de 2014 y el núcleo de 2009 con el mesón en convivencia. La vista concluye que la tienda vende sin depender del enlace y que la nube recibe los hechos al reconectarse.
+El POS nuevo escribe cada operación en el nodo local, que la figura dibuja como un solo elemento y que agrupa el diario local (L-02), la caché de oferta (L-01) y el sincronizador (L-03), capaz de operar 24 horas sin enlace. Los códigos L-01 a L-03 son propios de este capítulo y no figuran en el catálogo de SD-03. Los móviles y el mesón acceden por API Management Retail a los servicios de oferta, existencias, ventas y posventa, que persisten en PostgreSQL y publican hechos en Event Hubs. En gris permanecen el POS de 2014 y el núcleo de 2009 con el mesón en convivencia. La vista concluye que la tienda vende sin depender del enlace y que la nube recibe los hechos al reconectarse.
 
 La Figura 4.5 muestra el bloque de mercadería.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-05_bloque-mercaderia.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-05_bloque-mercaderia.png}
 \end{center}
 
 Figura 4.5: Bloque de mercadería. Fuente: elaboración propia a partir de SD-03 y RT-02.
 
-La consola comercial opera sobre los servicios de oferta, abastecimiento y existencias. Event Hubs distribuye los cambios hacia POS, móviles, comercio electrónico y etiquetas, y la verificación de etiquetas en sala deja constancia de cada actualización. Los adaptadores conectan con el WMS y con ERP/DTE. El portal de proveedor se dibuja en ámbar por estar por acreditar, y las planillas de Concepción y el núcleo de 2009 en gris por ser convivencia de la Etapa 1. El bloque concluye que la oferta tiene una sola autoridad y que los canales solo la consumen.
+La consola comercial opera sobre los servicios de oferta, abastecimiento y existencias. Event Hubs distribuye los cambios de precio y disponible hacia POS, móviles y web (comercio electrónico) y los cambios de precio hacia las etiquetas en tienda, y la verificación de etiquetas en sala deja constancia de cada actualización. Los adaptadores conectan con el WMS y con ERP/DTE. El portal de proveedor se dibuja en ámbar por estar por acreditar, y las planillas de Concepción y el núcleo de 2009 en gris por ser convivencia de la Etapa 1. El bloque concluye que la oferta tiene una sola autoridad y que los canales solo la consumen.
 
 La Figura 4.6 muestra el bloque de venta y cumplimiento.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-06_bloque-venta-y-cumplimiento.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-06_bloque-venta-y-cumplimiento.png}
 \end{center}
 
 Figura 4.6: Bloque de venta y cumplimiento. Fuente: elaboración propia a partir de SD-03 y RT-02/RT-03.
 
-El comercio electrónico, el POS, el retiro y el despacho desde tienda convergen en Pedidos, que reserva existencias antes de prometer entrega, y en Ventas (R:V-02), con comisiones (R:V-03) y marketplace (R:V-04) como apoyo. Los adaptadores conectan con ERP/DTE, WMS y Marketplace 2022. La autorización de una compra con tarjeta propia pasa a API Management Emisor bajo X-01. Los pagos y transportistas se dibujan en ámbar y el núcleo de 2009 en gris. El bloque concluye que ninguna promesa de entrega se emite sin reserva confirmada.
+El comercio electrónico, el POS, el retiro y el despacho desde tienda convergen en Pedidos (R:V-01), que reserva existencias (R:M-03) antes de prometer entrega y coordina con marketplace (R:V-04), y en Ventas (R:V-02), que la figura agrupa con comisiones (R:V-03). Los adaptadores conectan con ERP/DTE, WMS y Marketplace 2022. La autorización de una compra con tarjeta propia pasa a API Management Emisor bajo X-01. Los medios de pago y transportistas se dibujan en ámbar y el núcleo de 2009 en gris. El bloque concluye que ninguna promesa de entrega se emite sin reserva confirmada.
 
 La Figura 4.7 muestra el bloque de relación con clientes.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-07_bloque-relacion-clientes.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-07_bloque-relacion-clientes.png}
 \end{center}
 
 Figura 4.7: Bloque de relación con clientes. Fuente: elaboración propia a partir de SD-03 y RT-02.
@@ -276,7 +280,7 @@ El portal de vendedor, el comercio electrónico y el mesón llegan a Posventa, C
 La Figura 4.8 muestra el bloque de crédito y frontera.
 
 \begin{center}
-  \includegraphics[angle=90,width=\linewidth,height=0.88\textheight,keepaspectratio]{figuras/diag-04-08_bloque-credito-y-frontera.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-08_bloque-credito-y-frontera.png}
 \end{center}
 
 Figura 4.8: Bloque de crédito y frontera. Fuente: elaboración propia a partir de SD-03 y RT-02.
@@ -286,7 +290,7 @@ La caja POS con tarjeta propia consulta API Management Retail, que deriva a Vent
 La Figura 4.9 muestra el bloque de integración.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-09_bloque-integracion.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-09_bloque-integracion.png}
 \end{center}
 
 Figura 4.9: Bloque de integración. Fuente: elaboración propia a partir de SD-03 y RT-02.
@@ -295,10 +299,10 @@ La figura dispone en espejo las columnas de Retail y Emisor. Los canales entran 
 
 \subsubsection{Recorridos y consistencia}
 
-La vista de procesos sigue el hecho desde la persona o sistema que lo origina hasta el registro de autoridad, su salida y el consumidor. La Figura 4.10 distingue operación conectada, diario local durante veinticuatro horas sin enlace, retorno conciliado y cruce autorizado con el Emisor. Las flechas continuas son contratos del diseño; las discontinuas representan publicación diferida o rutas que requieren confirmar el enlace.
+La vista de procesos sigue el hecho desde la persona o sistema que lo origina hasta el registro de autoridad, su salida y el consumidor. La Figura 4.10 distingue operación conectada, diario local durante veinticuatro horas sin enlace, retorno conciliado y cruce autorizado con el Emisor. Las flechas continuas son el flujo propuesto; las discontinuas indican un contrato o un emplazamiento condicionado, y las punteadas una política o un efecto.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-10_flujo-hibrido-tienda.pdf}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-10_flujo-hibrido-tienda.pdf}
 \end{center}
 
 Figura 4.10: Recorrido híbrido de tienda hacia Azure Chile Central. Fuente: elaboración propia a partir de SD-03 y RT-02/RT-03.
@@ -318,7 +322,7 @@ El POS escribe primero la operación y el hecho pendiente en su diario. Event Hu
 La Figura 4.11 separa emplazamientos, autoridades y rutas, y sirve de puente hacia la arquitectura física de 4.2.
 
 \begin{center}
-  \includegraphics[angle=90,width=\linewidth,height=0.88\textheight,keepaspectratio]{figuras/diag-04-11_emplazamientos-logicos.pdf}
+  \includegraphics[angle=90,width=\linewidth,height=0.84\textheight,keepaspectratio]{figuras/diag-04-11_emplazamientos-logicos.pdf}
 \end{center}
 
 Figura 4.11: Emplazamientos lógicos y rutas. Fuente: elaboración propia a partir del Caso 09, RT-03 y SD-03.
@@ -332,10 +336,10 @@ La conectividad de tienda, centros de distribución y centro de datos con la nub
 La Figura 4.12 sitúa el dato comercial, el financiero y sus proyecciones analíticas en dominios separados.
 
 \begin{center}
-  \includegraphics[angle=90,width=\linewidth,height=0.88\textheight,keepaspectratio]{figuras/diag-04-12_datos-y-frontera.pdf}
+  \includegraphics[angle=90,width=\linewidth,height=0.84\textheight,keepaspectratio]{figuras/diag-04-12_datos-y-frontera.pdf}
 \end{center}
 
-Figura 4.12: Autoridades de datos, analítica y frontera Retail--Emisor. Fuente: elaboración propia a partir de SD-03 y RT-02.03.
+Figura 4.12: Autoridades de datos, analítica y frontera Retail--Emisor. Línea continua, autoridad o consulta propia; azul verdoso, compra autorizable; punteado, control o flujo condicionado; rojo, solicitud denegada. No hay repositorio común ni copia libre entre Retail y Emisor, y los modelos de aprendizaje automático recomiendan mientras una persona aprueba los ajustes. Fuente: elaboración propia a partir de SD-03 y RT-02.03.
 
 Cada ámbito tiene su base PostgreSQL con el criterio de una base por autoridad, y sus propios Data Lake y Power BI. Los lagos y espacios BI son de lectura y mantienen control de acceso, linaje y exportación por entidad. R:CL-02 no recibe mora, saldo ni pagos. La compra con tarjeta cruza únicamente referencia, importe, medio y decisión mínima, con ficha de X-01 aprobada y controles aplicados en los dos extremos. Los modelos de conteo predictivo y clasificación de merma consultan datos autorizados de Retail y entregan recomendaciones para revisión humana; no ajustan existencias por sí mismos. Una proyección analítica que mezcle ámbitos permanece deshabilitada hasta justificar finalidad, minimización y permiso jurídico propios.
 
@@ -345,7 +349,7 @@ Retail y Emisor emplean identidades de servicio, permisos y claves segregados. L
 
 El intermediario de eventos separa productores, consumidores, canales, credenciales y permisos de Retail y del Emisor. Un evento financiero no se publica en un canal de Retail; el resultado mínimo de una compra cruza por su contrato aprobado y queda registrado conforme a X-01. Las proyecciones analíticas mantienen espacios de datos y permisos independientes, también para consulta de detalle, exportación e informes programados. La ubicación de cada adaptador frente a un sistema conservado se fija con el alojamiento supuesto de la Tabla 4.4 y la conectividad privada que la prueba de aceptación confirme.
 
-La continuidad local de tienda por 24 horas exige oferta y promociones vigentes, consulta local de existencia, registro durable de ventas y sincronización al restablecer el enlace. El diario local distingue pendiente, enviado, confirmado y en conflicto; registra identificador de operación, tienda y secuencia para que R:V-02 deduplique y reconcilie sin duplicar cobros. La conectividad recuperada no libera una venta pendiente hasta confirmar su recepción y resolver conflictos según una regla documentada. ERP/DTE mantiene la autoridad tributaria, y la emisión durante contingencia requiere una modalidad fiscal aprobada y probada, que se especifica en 4.2 y en el procedimiento operativo. Sin enlace no se originan tarjetas ni se amplían cupos. Las compras con crédito previamente autorizado requieren una decisión de riesgo y contrato específicos antes de habilitarse. El piloto prueba corte, operación de 24 horas, retorno y conciliación.
+La continuidad local de tienda por 24 horas exige oferta y promociones vigentes, consulta local de existencia, registro durable de ventas y sincronización al restablecer el enlace. El diario local distingue pendiente, enviado, confirmado y en conflicto; registra identificador de operación, tienda y secuencia para que R:V-02 deduplique y reconcilie sin duplicar cobros. La conectividad recuperada no libera una venta pendiente hasta confirmar su recepción y resolver conflictos según una regla documentada. ERP/DTE mantiene la autoridad tributaria, y la emisión durante contingencia requiere una modalidad fiscal aprobada y probada, que se acuerda con el Cliente (Tabla 4.9, punto 6) y consta en el procedimiento operativo. Sin enlace no se originan tarjetas ni se amplían cupos. Las compras con crédito previamente autorizado requieren una decisión de riesgo y contrato específicos antes de habilitarse. El piloto prueba corte, operación de 24 horas, retorno y conciliación.
 
 La observabilidad enlaza solicitud, evento y efecto mediante una referencia de correlación sin exponer datos sensibles. Se miden retraso de publicación de disponibilidad y precio, confirmaciones de reserva, pedidos sin avance, eventos en reintento, diferencias de conciliación, decisiones denegadas por X-01, tiempo de evaluación crediticia y recuperación de evidencias. Las alertas apuntan a la promesa afectada y a su responsable. La memoria de capacidad deriva tasas normales y de evento, almacenamiento y crecimiento del Caso 09 antes de fijar cuotas, particiones o SLO técnicos; la aceptación usa las metas y pruebas de 3.2 y 3.4.
 
@@ -353,8 +357,9 @@ La observabilidad enlaza solicitud, evento y efecto mediante una referencia de c
 
 La Tabla 4.5 reúne las decisiones que rigen el diseño y la prueba que sostiene cada una. Las alternativas se contrastan con las mediciones del levantamiento antes de cerrar los ADR.
 
-Tabla 4.5: Decisiones de arquitectura y pruebas de validación.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.5: Decisiones de arquitectura y pruebas de validación.\par\nopagebreak
 \begin{longtable}{@{}p{0.17\linewidth}p{0.47\linewidth}p{0.27\linewidth}@{}}
 \toprule Decisión & Justificación & Verificación \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -367,14 +372,15 @@ ADR-06 Event Hubs y API Management & Event Hubs Premium publica hechos confirmad
 ADR-07 nube Azure & Alianza prevista en SD-01, dos regiones con zonas de disponibilidad y servicios administrados requeridos en Chile Central. & Carta del socio certificado, crear cada recurso en la región desde la suscripción del proyecto y aprobar la residencia de los datos del Emisor. \\
 \end{longtable}
 
-Cada decisión descartó al menos una alternativa. En ADR-01 se descartó el escenario A de SD-03, que deja al núcleo de 2009 como concentrador de intercambios y obliga a conciliarlo de forma permanente. En ADR-02 se descartó un repositorio común con permisos por rol, porque no separa la custodia de los datos ante la línea roja del Caso. En ADR-03 se descartó el uso exclusivo de lotes, que no cumple los plazos de 30 segundos y 5 minutos, y el uso exclusivo de eventos, que no permite bloquear una reserva o una autorización. En ADR-04 se descartó una caja dependiente del enlace, que contradice la continuidad de 24 horas. ADR-05, ADR-06 y ADR-07 se justifican en 4.1.1 frente al despliegue único, a Kafka en AKS o Service Bus, y a Google Cloud. Las siete decisiones se verifican con pruebas de aceptación y no con el diagrama. Antes de cerrar 4.1 se requieren el inventario de las catorce interfaces, la aprobación jurídica de cada cruce, la política de precio exhibido frente a caja, la regla de resolución de falta de stock posterior a la promesa, la modalidad fiscal de contingencia, la decisión de riesgo para crédito sin enlace y la memoria de capacidad. Esas decisiones alimentan 4.2, los contratos y los planes de prueba.
+Cada decisión descartó al menos una alternativa. En ADR-01 se descartó el escenario A de SD-03, que deja al núcleo de 2009 como concentrador de intercambios y obliga a conciliarlo de forma permanente. En ADR-02 se descartó un repositorio común con permisos por rol, porque no separa la custodia de los datos ante la línea roja del Caso. En ADR-03 se descartó el uso exclusivo de lotes, que no cumple los plazos de 30 segundos y 5 minutos, y el uso exclusivo de eventos, que no permite bloquear una reserva o una autorización. En ADR-04 se descartó una caja dependiente del enlace, que contradice la continuidad de 24 horas. ADR-05 se justifica en el apartado de estilo y límites de contexto frente al despliegue único, y ADR-06 y ADR-07 en 4.1.1 frente a Kafka en AKS o Service Bus y a Google Cloud. Las siete decisiones se verifican con pruebas de aceptación y no con el diagrama. Antes de cerrar 4.1 se requieren el inventario de las catorce interfaces, la aprobación jurídica de cada cruce, la política de precio exhibido frente a caja, la regla de resolución de falta de stock posterior a la promesa, la modalidad fiscal de contingencia, la decisión de riesgo para crédito sin enlace y la memoria de capacidad. Esas decisiones alimentan 4.2, los contratos y los planes de prueba.
 
 \subsection{4.1.1 Especificaciones Tecnologías de Software a utilizar}
 
 La Tabla 4.6 presenta las tecnologías de las nuevas capacidades. Microsoft Azure es el proveedor de nube seleccionado (ADR-07), coherente con la alianza prevista en SD-01. El requisito del artículo 34 de las Bases Administrativas se acredita con la carta de compromiso de un socio certificado de Microsoft que participa en el proyecto, incluida entre los antecedentes del Sobre 1. Azure ofrece Chile Central como región primaria en Santiago y Brazil South como región de recuperación, ambas con tres zonas de disponibilidad. Chile Central no tiene región emparejada (Microsoft, 2026f), y su documentación regional registra la base de datos PostgreSQL administrada y Power BI. Se evaluó Google Cloud, con regiones en Santiago y São Paulo. Su ventaja documentada es Apache Kafka administrado en Santiago (Google Cloud, 2026), que no compensa la alianza prevista ni la continuidad de un solo proveedor para identidad, datos y operación; el broker es Azure Event Hubs, compatible con clientes Kafka (ADR-06). Los niveles se eligieron por su soporte de zonas y de recuperación entre regiones. Los niveles v2 de API Management no figuran entre los disponibles en Chile Central (Microsoft, 2026a) y no admiten despliegue multirregión, que solo ofrece el nivel Premium clásico (Microsoft, 2026g). Por eso se adopta este último. La documentación consultada no confirma que Event Hubs Premium, su geo-replicación y API Management Premium clásico estén disponibles en el par de regiones elegido. Por eso la creación efectiva de cada recurso y de cada par de regiones se comprueba en la suscripción del proyecto antes de la construcción. Las plataformas conservadas mantienen su tecnología propia y se integran mediante contratos. La selección final y las versiones que se ofertarán constan en el Formulario T-11; el contrato de 56 meses exige actualizar componentes durante la operación.
 
-Tabla 4.6: Tecnologías seleccionadas y comprobación de aceptación.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.6: Tecnologías seleccionadas y comprobación de aceptación.\par\nopagebreak
 \begin{longtable}{@{}p{0.19\linewidth}p{0.32\linewidth}p{0.41\linewidth}@{}}
 \toprule Capacidad & Selección & Alternativa evaluada y comprobación \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -403,12 +409,12 @@ Se eligió Event Hubs porque en el alcance predominan hechos confirmados que ali
 La arquitectura física implementa el despliegue híbrido del artículo 16 de las Bases Administrativas. La carga principal de la solución nueva se aloja en Microsoft Azure, con Chile Central como región primaria y Brazil South como región de recuperación (ADR-07). En el borde del Cliente permanecen la operación local de las 22 tiendas, los centros de distribución y el centro de datos de casa matriz mientras subsistan las plataformas conservadas. La Figura 4.13 muestra los ocho sitios, los ámbitos de Retail y de la Filial emisora dentro de la nube, la plataforma compartida y el único cruce autorizado entre ambos.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-13_arquitectura-fisica-general.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-13_arquitectura-fisica-general.png}
 \end{center}
 
 Figura 4.13: Arquitectura física general y emplazamiento de los sitios. Fuente: elaboración propia a partir del Caso 09, RT-03 y SD-03.
 
-La figura se lee de izquierda a derecha, desde los sitios del Cliente hacia la nube. SIT-01 agrupa las 22 tiendas. Ocho tiendas en centro comercial cuentan con doble enlace acreditado en el Caso (Multitiendas Ancoa S.A., 2026b). Catorce no tienen respaldo acreditado, seis en centro comercial y ocho a la calle. CD-01 dispone de doble enlace con dos proveedores y CD-02 de un enlace único. DC-01 ocupa 140 m² y DC-02 es su sala de respaldo en la misma comuna. CLD-01 contiene tres ámbitos con datos, identidades, redes y claves propios. Retail y Emisor no comparten base de datos, y la plataforma compartida solo ofrece borde, integración, eventos y red. El único cruce entre ámbitos es la autorización de compra con tarjeta propia bajo la política X-01, aplicada en ambos extremos. Los enlaces ExpressRoute hacia DC-01 y C-16 entre DC-01 y DC-02 figuran como propuestos y no como existentes. La réplica hacia CLD-02 cubre Retail con un objetivo de RPO no superior a quince minutos, que se demuestra en el ensayo de conmutación; la del Emisor queda condicionada a la aprobación de residencia.
+La figura se lee de izquierda a derecha, desde los sitios del Cliente hacia la nube. SIT-01 agrupa las 22 tiendas. Ocho tiendas en centro comercial cuentan con doble enlace acreditado en el Caso (Multitiendas Ancoa S.A., 2026b). Catorce no tienen respaldo acreditado, seis en centro comercial y ocho a la calle. CD-01 dispone de doble enlace con dos proveedores y CD-02 de un enlace único. DC-01 ocupa 140 m² y DC-02 es su sala de respaldo en la misma comuna. CLD-01 contiene tres ámbitos con datos, identidades, redes y claves propios. Retail y Emisor no comparten base de datos, y la plataforma compartida solo ofrece borde, integración, eventos y red. El único cruce entre ámbitos es la autorización de compra con tarjeta propia bajo la política X-01, aplicada en ambos extremos. Los enlaces ExpressRoute hacia DC-01 y el enlace entre DC-01 y DC-02 figuran como propuestos y no como existentes. La réplica hacia CLD-02 cubre Retail con un objetivo de RPO no superior a quince minutos, que se demuestra en el ensayo de conmutación; la del Emisor queda condicionada a la aprobación de residencia.
 
 \subsubsection{Supuestos del emplazamiento}
 
@@ -416,8 +422,9 @@ Se declaran dos supuestos que condicionan este capítulo. El primero es que las 
 
 La Tabla 4.7 ubica cada componente en su sitio sin asignar una ubicación inventada a los sistemas existentes.
 
-Tabla 4.7: Emplazamiento de los componentes de la solución.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.7: Emplazamiento de los componentes de la solución.\par\nopagebreak
 \begin{longtable}{@{}p{0.30\linewidth}p{0.26\linewidth}p{0.36\linewidth}@{}}
 \toprule Componente lógico & Emplazamiento propuesto & Condición de diseño \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -432,8 +439,9 @@ Comercio electrónico y fidelización & Permanecen integrados durante la evaluac
 
 La Tabla 4.7 confirma que solo los componentes nuevos tienen emplazamiento definido. La Tabla 4.8 reúne los nodos y las comprobaciones que deben cumplirse antes de fijar la topología.
 
-Tabla 4.8: Nodos y comprobaciones para el diseño físico.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.8: Nodos y comprobaciones para el diseño físico.\par\nopagebreak
 \begin{longtable}{@{}p{0.14\linewidth}p{0.37\linewidth}p{0.41\linewidth}@{}}
 \toprule Nodo & Función y autoridad & Comprobación antes de fijar topología \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -455,10 +463,10 @@ Los servicios de nube se contratan bajo una suscripción del proyecto por ambien
 
 \subsubsection{Redes y segmentación}
 
-La Figura 4.14 presenta la red en topología de concentrador y radios. El concentrador aloja la puerta de enlace de ExpressRoute y de VPN, Azure Firewall y el DNS privado. Tres radios separados alojan Retail, Emisor y la plataforma compartida, cada uno con subredes de ingreso, de contenedores y de datos con puntos de conexión privados.
+La Figura 4.14 presenta la red en topología de concentrador y radios. El concentrador aloja la puerta de enlace de ExpressRoute y de VPN, Azure Firewall y el DNS privado. Tres radios separados alojan Retail, Emisor y la plataforma compartida, cada uno con subredes de ingreso, de aplicación sobre AKS (de integración y operación en el radio compartido) y de datos con puntos de conexión privados.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-14_red-y-segmentacion.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-14_red-y-segmentacion.png}
 \end{center}
 
 Figura 4.14: Red y segmentación del despliegue en nube y sus conexiones con los sitios. Fuente: elaboración propia a partir de RT-03 y SD-03.
@@ -470,27 +478,28 @@ El tráfico público entra por Front Door y su firewall de aplicaciones, pasa po
 La Figura 4.15 muestra la cadena desde el repositorio hasta producción y el ambiente de recuperación.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-15_ambientes-y-despliegue.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-15_ambientes-y-despliegue.png}
 \end{center}
 
 Figura 4.15: Ambientes y flujo de despliegue. Fuente: elaboración propia a partir de RT-03, RT-07 y SD-03.
 
-El código y la configuración de infraestructura en Terraform residen en un repositorio. Un canal de entrega continua exige revisión y firma, registra las imágenes y despliega en forma sucesiva en Desarrollo, QA y Preproducción. Producción exige una aprobación explícita y se despliega por separado para Retail y para el Emisor. Cada ambiente tiene su propia suscripción y su propio Key Vault, de modo que una credencial no sirve en otro ambiente. El ambiente de Recuperación ante Desastres de ambos ámbitos reside en CLD-02 y se crea con la misma definición de infraestructura, de modo que no deriva de la configuración de producción. Los datos de producción del Emisor no se copian a Preproducción. Preproducción y Recuperación usan las mismas clases de componentes que Producción, con capacidades ajustadas a su finalidad y verificadas en la prueba de carga.
+El código y la configuración de infraestructura en Terraform residen en un repositorio. Un canal de entrega continua exige revisión y firma, registra las imágenes y despliega en forma sucesiva en Desarrollo, QA y Preproducción. Producción exige una aprobación explícita y se despliega por separado para Retail y para el Emisor. Cada ambiente tiene su propia suscripción y su propio Key Vault, de modo que una credencial no sirve en otro ambiente. El ambiente de Recuperación ante Desastres de ambos ámbitos reside en CLD-02, y el del Emisor queda sujeto a la aprobación de residencia. Se crea con la misma definición de infraestructura, de modo que no deriva de la configuración de producción. Los datos de producción del Emisor no se copian a Preproducción. Preproducción y Recuperación usan las mismas clases de componentes que Producción, con capacidades ajustadas a su finalidad y verificadas en la prueba de carga.
 
 \subsubsection{Alta disponibilidad, respaldos, conexiones y puntos de falla}
 
 Los servicios críticos se distribuyen en tres zonas de Chile Central. API Management usa tres unidades, Event Hubs Premium replica cada evento entre zonas y PostgreSQL mantiene un servidor primario y uno en espera en zonas distintas, por ámbito, con replicación síncrona entre ambos (Microsoft, 2026h). Los respaldos de bases, almacenamiento y claves se guardan en una bóveda de respaldo en Chile Central. Como la región no tiene región emparejada, la copia a CLD-02 se configura de forma explícita en lugar de depender de la replicación geográfica automática de Azure (Microsoft, 2026h). La restauración se ensaya como parte de las pruebas de recuperación. La Figura 4.16 identifica ocho puntos de falla y la contingencia de cada uno.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-16_conexiones-y-contingencia.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-16_conexiones-y-contingencia.png}
 \end{center}
 
 Figura 4.16: Conexiones, puntos de falla y contingencias. Fuente: elaboración propia a partir de RT-03, RT-07 y SD-03.
 
 La Tabla 4.9 resume cada punto con su efecto y su contingencia.
 
-Tabla 4.9: Puntos de falla y contingencia.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.9: Puntos de falla y contingencia.\par\nopagebreak
 \begin{longtable}{@{}p{0.04\linewidth}p{0.22\linewidth}p{0.34\linewidth}p{0.32\linewidth}@{}}
 \toprule N.° & Punto de falla & Contingencia & Comprobación \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -510,8 +519,9 @@ La Tabla 4.9 muestra que ninguna falla individual detiene la venta de tienda. La
 
 La Tabla 4.10 relaciona los componentes de la sección 3.3 con su vista lógica en 4.1 y su emplazamiento físico en esta sección, agrupados por familia.
 
-Tabla 4.10: Mapeo de componentes entre 3.3, 4.1 y 4.2.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.10: Mapeo de componentes entre 3.3, 4.1 y 4.2.\par\nopagebreak
 \begin{longtable}{@{}p{0.20\linewidth}p{0.17\linewidth}p{0.18\linewidth}p{0.16\linewidth}p{0.13\linewidth}@{}}
 \toprule Componente 3.3 & Vista 4.1 & Ubicación 4.2 & Datos & Figura \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -524,12 +534,12 @@ R:CL-01, R:CL-02 (posventa y clientes) & Bloque de relación con clientes & AKS 
 F:C-01 (originación) & Bloque de crédito y frontera & AKS en CLD-01, ámbito Emisor & PostgreSQL Emisor & 4.8, 4.18 \\
 F:C-02 (cartera) & Bloque de crédito y frontera & AKS en CLD-01, ámbito Emisor & PostgreSQL Emisor & 4.8 \\
 F:C-03 (evidencia financiera) & Bloque de crédito y frontera & AKS en CLD-01, ámbito Emisor & Almacenamiento del Emisor & 4.8 \\
-X-01 (control de cruces) & Bloque de integración y frontera & Plataforma compartida en CLD-01 y firewall & Ficha y bitácora & 4.9, 4.14 \\
+X-01 (control de cruces) & Bloques de crédito y frontera y de integración & Plataforma compartida en CLD-01 y firewall & Ficha y bitácora & 4.9, 4.14 \\
 L-01, L-02, L-03 (caché, diario y sincronizador) & Bloque de tiendas & Nodo local de SIT-01 & Diario local & 4.4, 4.17 \\
 Event Hubs y adaptadores & Bloque de integración & CLD-01, réplica en CLD-02 & Historial de eventos & 4.9, 4.19 \\
 API Management & Capa de acceso & CLD-01 y gateway en CLD-02 & Sin datos de negocio & 4.14, 4.19 \\
 Analítica (Data Lake y Power BI) & Vista de datos & CLD-01, ámbitos separados & Data Lake por ámbito & 4.12, 4.18 \\
-Identidad, claves y telemetría & Seguridad y observabilidad & CLD-01, uno por ámbito & Secretos y registros & 4.14, 4.18 \\
+Identidad, claves y telemetría & Seguridad y observabilidad & CLD-01, uno por ámbito & Secretos y registros & 4.9, 4.18 \\
 ERP/DTE, WMS, marketplace y fidelización & Plataformas conservadas & Según inventario (supuesto) & Propios del proveedor & 4.11, 4.13 \\
 \end{longtable}
 
@@ -544,17 +554,18 @@ El dimensionamiento se calcula a partir de las cifras del Caso 09, sin valores s
 El proponente provee la solución nueva y la parte de sitio necesaria para operarla. La Figura 4.17 muestra la tienda tipo y separa las redes por función.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-17_tienda-tipo.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-17_tienda-tipo.png}
 \end{center}
 
 Figura 4.17: Tienda tipo y segmentación local. Fuente: elaboración propia a partir del Caso 09, RT-03 y SD-03.
 
-Cada tienda dispone de una red de cajas (POS, impresora fiscal, lector y terminal de pago), una red de administración (terminales compartidas, móviles y mesón de Retail) y dos nodos locales con la caché L-01, el diario L-02 y el sincronizador L-03, uno de ellos como réplica. El mesón financiero opera en una red propia del Emisor con túnel independiente, sin pasar por el nodo de Retail. Las redes de video y de clientes por Wi-Fi quedan aparte. Un conmutador por función conecta con el router y firewall, que enlaza con los radios de nube, y el enlace de respaldo existe donde está acreditado. Esta disposición explica por qué la separación entre Retail y Emisor llega hasta la tienda.
+Cada tienda dispone de una red de cajas (POS, impresora fiscal, lector y terminal de pago), una red de administración (terminales compartidas, móviles y mesón de Retail) y dos nodos locales con la caché L-01, el diario L-02 y el sincronizador L-03, uno de ellos como réplica. El mesón financiero opera en una red propia del Emisor con túnel independiente, sin pasar por el nodo de Retail. Las redes de video y de clientes por Wi-Fi quedan aparte. Un conmutador con una VLAN por función conecta con el router y firewall, que enlaza con los radios de nube, y el enlace de respaldo existe donde está acreditado. Esta disposición explica por qué la separación entre Retail y Emisor llega hasta la tienda.
 
 La Tabla 4.11 distingue lo que provee Only Simple Solutions de lo que conserva el Cliente.
 
-Tabla 4.11: Implementos a cargo del proponente y del Cliente.
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
 
+Tabla 4.11: Implementos a cargo del proponente y del Cliente.\par\nopagebreak
 \begin{longtable}{@{}p{0.26\linewidth}p{0.36\linewidth}p{0.30\linewidth}@{}}
 \toprule Ámbito & Provee Only Simple Solutions & Conserva el Cliente \\
 \midrule\endhead\bottomrule\endlastfoot
@@ -576,7 +587,7 @@ La estrategia de centros de datos combina la nube de Azure para la carga princip
 La Figura 4.18 muestra la región Azure Chile Central (\texttt{chilecentral}), en Santiago, que aloja el servicio de producción.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-18_data-center-primario.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-18_data-center-primario.png}
 \end{center}
 
 Figura 4.18: Centro de datos primario en Azure Chile Central. Fuente: elaboración propia a partir de RT-03, RT-07 y SD-03.
@@ -588,12 +599,12 @@ API Management Premium con tres unidades y Event Hubs Premium zonal atienden la 
 La Figura 4.19 presenta la recuperación en la región Azure Brazil South (\texttt{brazilsouth}), en São Paulo, con tres zonas.
 
 \begin{center}
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/diag-04-19_data-center-secundario.png}
+  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/diag-04-19_data-center-secundario.png}
 \end{center}
 
 Figura 4.19: Centro de datos secundario y conmutación. Fuente: elaboración propia a partir de RT-03, RT-07 y SD-03.
 
-La modalidad es activo-pasivo (RT-07.01). Se prefiere frente a la activo-activo porque el RTO de cuatro horas lo permite, porque cada registro tiene una sola autoridad y la escritura simultánea en dos regiones exigiría resolver conflictos, y porque duplicar la carga activa añade costo y complejidad operacional sin mejorar el cumplimiento de RT-07.04. Las dos regiones están en países distintos, de modo que un evento de fuerza mayor local no las afecta a ambas (RT-07.02). Front Door dirige a API Management, que mantiene un gateway adicional en Brazil South. El plano de administración de API Management permanece en la región primaria, y durante una caída el gateway secundario sirve con la última configuración sincronizada (Microsoft, 2026g). Event Hubs usa geo-replicación con retraso máximo inferior al RPO de quince minutos. PostgreSQL de Retail se replica a la región secundaria mediante una réplica entre regiones, asíncrona. Azure documenta que su retraso típico es de varios minutos y puede ser mayor, de modo que el cumplimiento del RPO de quince minutos se mide, se alerta (RT-07.03) y se demuestra en el ensayo (Microsoft, 2026h). La réplica del Emisor queda condicionada a la aprobación jurídica de la residencia. La réplica promovida no hereda la alta disponibilidad, por lo que esta se habilita en Brazil South como parte del procedimiento. El almacenamiento, las claves y los respaldos se copian a la región secundaria, y AKS se crea con la misma definición de infraestructura. La sala DC-02 y el enlace C-16 con DC-01 son un complemento propuesto, pero DC-02 no basta como única recuperación porque comparte comuna con DC-01.
+La modalidad es activo-pasivo (RT-07.01). Se prefiere frente a la activo-activo porque el RTO de cuatro horas lo permite, porque cada registro tiene una sola autoridad y la escritura simultánea en dos regiones exigiría resolver conflictos, y porque duplicar la carga activa añade costo y complejidad operacional sin mejorar el cumplimiento de RT-07.04. Las dos regiones están en países distintos, de modo que un evento de fuerza mayor local no las afecta a ambas (RT-07.02). Front Door dirige a API Management, que mantiene un gateway adicional en Brazil South. El plano de administración de API Management permanece en la región primaria, y durante una caída el gateway secundario sirve con la última configuración sincronizada (Microsoft, 2026g). Event Hubs usa geo-replicación con retraso máximo inferior al RPO de quince minutos. PostgreSQL de Retail se replica a la región secundaria mediante una réplica entre regiones, asíncrona. Azure documenta que su retraso típico es de varios minutos y puede ser mayor, de modo que el cumplimiento del RPO de quince minutos se mide, se alerta (RT-07.03) y se demuestra en el ensayo (Microsoft, 2026h). La réplica del Emisor queda condicionada a la aprobación jurídica de la residencia. La réplica promovida no hereda la alta disponibilidad, por lo que esta se habilita en Brazil South como parte del procedimiento. El almacenamiento, las claves y los respaldos se copian a la región secundaria, y AKS se crea con la misma definición de infraestructura. La sala DC-02 y el enlace propuesto con DC-01 son un complemento, pero DC-02 no basta como única recuperación porque comparte comuna con DC-01.
 
 El procedimiento de conmutación sigue seis pasos. Primero, el operador declara la contingencia según el criterio acordado con el Cliente. Segundo, se promueve la geo-replicación de Event Hubs. Tercero, se promueve la réplica de PostgreSQL en cada ámbito aprobado y se habilita su alta disponibilidad. Cuarto, se levantan los servicios de AKS con la definición de infraestructura. Quinto, Front Door redirige el tráfico y se valida con una prueba de humo. Sexto, se verifica el estado de las tiendas y se concilian los diarios locales. Las tiendas siguen vendiendo con su diario durante la conmutación. El retorno ocurre con la región primaria restablecida y datos en sincronía, mediante el sentido inverso de la replicación, una ventana acordada y la misma verificación. Para servicios críticos se exige RTO no superior a cuatro horas y RPO no superior a quince minutos (RT-07.04; Multitiendas Ancoa S.A., 2026c), y la conmutación y el retorno se ensayan dos veces por año.
 

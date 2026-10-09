@@ -1,0 +1,76 @@
+// Figura 4.12 de SD-04. Fuente de rejilla: diag-04-rejilla_layout.py genera el .dot con posiciones, que se dibuja con neato -n.
+// Derivada de diag-04-05_datos-y-frontera.dot (borradores/); leyenda trasladada al pie de figura; rótulos de arista abreviados.
+digraph datos_y_frontera {
+  graph [gxgaps="0:55,1:72,2:78,3:50", gygaps=""];
+  graph [rankdir=TB, bgcolor="white", pad="0.06", nodesep="0.16", ranksep="0.16", splines=true, forcelabels=true, newrank=true,
+    fontname="Arial", fontsize=18, label="Datos y frontera Retail–Filial emisora", labelloc=t];
+  node [shape=box, style="rounded,filled", color="#33566B", penwidth=1.2, fillcolor="#EAF4FA",
+    fontname="Arial", fontsize=16, margin="0.10,0.06"];
+  edge [color="#667C8B", penwidth=1.25, arrowsize=0.7, fontname="Arial", fontsize=16];
+
+  subgraph cluster_retail {
+    label="RETAIL · autoridad comercial"; labelloc=t; color="#68A894"; style="rounded,filled";
+    fillcolor="#F0FAF6"; fontname="Arial"; fontsize=16;
+    ventas [gx=1, gy=1, label="R:V-02 · Ventas /\nPOS: venta y referencia\nde compra", fillcolor="#D8F1E7"];
+    cliente [gx=0, gy=1, label="R:CL-02 · Clientes\nRetail: identidad\ncomercial y preferencias", fillcolor="#D8F1E7"];
+    stock [gx=0, gy=4, label="R:M-03 · Existencias\nconteos, ajustes\ny disponible", fillcolor="#D8F1E7"];
+    datos_r [gx=1, gy=2, label="PostgreSQL Retail\nuna base por\nautoridad", shape=cylinder, fillcolor="#DDF1E8"];
+    ml_conteo [gx=0, gy=3, label="ML · predicción\nde conteos y\nmargen recomendado", fillcolor="#E7F5D9"];
+    ml_merma [gx=0, gy=5, label="ML · clasificación\nde merma: causa\ncon evidencia;\nsin ajuste automático", fillcolor="#E7F5D9"];
+    lago_r [gx=1, gy=3, label="Data Lake Retail\nconjuntos\ncomerciales\nautorizados", shape=cylinder, fillcolor="#DDF1E8"];
+    bi_r [gx=1, gy=4, label="Power BI Retail\ntableros por rol", fillcolor="#D8F1E7"];
+    marketing [gx=0, gy=0, label="Marketing\nsegmentación\ncomercial", fillcolor="#FFF0DC", color="#B68A45"];
+
+    ventas -> datos_r [label="escribe venta"];
+    cliente -> datos_r [label="escribe perfil"];
+    stock -> datos_r [label="escribe\nstock"];
+    datos_r -> lago_r [label="proyección"];
+    lago_r -> bi_r [label="consulta"];
+    lago_r -> ml_conteo [label="historial"];
+    lago_r -> ml_merma [label="conteos"];
+    ml_conteo -> stock [label="aprobación humana", style=dashed, color="#6A8F39"];
+    ml_merma -> stock [label="sugerencia", style=dashed, color="#6A8F39"];
+    marketing -> cliente [label="preferencias"];
+  }
+
+  subgraph cluster_frontera {
+    label="FRONTERA · política\naplicada en ambos extremos"; labelloc=t; color="#C9A545";
+    style="rounded,filled"; fillcolor="#FFF9E7"; fontname="Arial"; fontsize=16;
+    x01 [gx=2, gy=2, label="X-01 · Gobierno\nde cruces: ficha:\nfinalidad, base y\nmínimos; política,\ndecisión y auditoría", fillcolor="#FFF0B9", color="#AA832A"];
+    contrato [gx=2, gy=1, label="Contrato de compra\ncon tarjeta: solo\nreferencia, importe\ny medio → ← decisión,\nreferencia y vigencia", fillcolor="#FFF2D4", color="#AA832A"];
+    cruce_bi [gx=2, gy=3, label="Proyección BI\ncruzada DESHABILITADA\npor defecto; solo\nconjunto mínimo\naprobado", fillcolor="#FFF2D4", color="#AA832A"];
+    bitacora [gx=2, gy=4, label="Bitácora de\ncruces separada\ndel expediente\nfinanciero", shape=cylinder, fillcolor="#FFF2D4", color="#AA832A"];
+    x01 -> bitacora [label="registra"];
+    x01 -> contrato [label="habilita ficha", style=dotted, arrowhead=none];
+    x01 -> cruce_bi [label="tras aprobación", style=dotted, arrowhead=none];
+  }
+
+  subgraph cluster_emisor {
+    label="FILIAL EMISORA ·\nautoridad financiera separada"; labelloc=t; color="#8A72AE";
+    style="rounded,filled"; fillcolor="#F7F3FB"; fontname="Arial"; fontsize=16;
+    credito [gx=3, gy=1, label="F:C-01 ·\nOriginación y\nautorización:\nsolicitud, cupo\ny decisión", fillcolor="#E9E0F4", color="#765C9B"];
+    cartera [gx=4, gy=0, label="F:C-02 · Cartera\nsaldo, mora\ny cobranza", fillcolor="#E9E0F4", color="#765C9B"];
+    evidencia [gx=3, gy=2, label="F:C-03 · Evidencia\nfinanciera:\ninformación,\naceptación y firma", fillcolor="#E9E0F4", color="#765C9B"];
+    datos_f [gx=4, gy=2, label="PostgreSQL Emisor\nuna base por\nautoridad", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    exp_f [gx=3, gy=4, label="Expediente\nfinanciero\ncustodia y\nretención propias", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    lago_f [gx=4, gy=3, label="Data Lake Emisor\nconjuntos\nfinancieros\nautorizados", shape=cylinder, fillcolor="#EDE5F6", color="#765C9B"];
+    bi_f [gx=4, gy=4, label="Power BI Emisor\ntableros por rol", fillcolor="#E9E0F4", color="#765C9B"];
+
+    credito -> datos_f [label="escribe decisión"];
+    cartera -> datos_f [label="escribe cartera"];
+    evidencia -> exp_f [label="custodia"];
+    credito -> evidencia [label="verifica", style=dashed];
+    datos_f -> lago_f [label="proyección"];
+    lago_f -> bi_f [label="consulta"];
+  }
+
+  ventas -> contrato [label="datos\nmínimos", color="#21847B", penwidth=2];
+  contrato -> credito [label="solicitud y\nrespuesta", dir=both, color="#21847B", penwidth=2];
+  ventas -> x01 [label="política Retail", style=dotted, arrowhead=none, constraint=false];
+  credito -> x01 [label="política\nEmisor", style=dotted, arrowhead=none, constraint=false];
+  marketing -> cartera [label="mora y pago:\nACCESO DENEGADO", lpf=0.5, labelfontcolor="#A93636", color="#BC4F4F", fontcolor="#A93636",
+    style=dashed, arrowhead=tee, constraint=false];
+  lago_f -> cruce_bi [label="derivado\nmínimo", lpf=0.82, style=dashed, color="#AA832A", constraint=false];
+  cruce_bi -> bi_r [label="ficha aprobada", style=dashed, color="#AA832A", constraint=false];
+
+}

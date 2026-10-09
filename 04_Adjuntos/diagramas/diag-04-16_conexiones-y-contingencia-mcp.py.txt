@@ -39,7 +39,7 @@ ACRED = {"style": "dashed"}
 FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
 INV = {"style": "invis"}
 with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.3", "ranksep": "0.55", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
-    n1 = NOTA("1 · Enlace de tienda\ndiario local y\noperación 24 h;\nreconciliación al\nvolver (F-03, F-04)", "falla")
+    n1 = NOTA("1 · Enlace de tienda\ndiario local y\noperación 24 h;\nreconciliación al\nvolver", "falla")
     n2 = NOTA("2 · Enlace único\nde CD-02\ncaptura local durable;\nenlace secundario\npropuesto", "falla")
     n7 = NOTA("7 · WMS\nprocedimiento de\ndegradación\npor interfaz", "falla")
     n6 = NOTA("6 · ERP/DTE\nmodalidad fiscal\nde contingencia\ny conciliación", "falla")
@@ -54,7 +54,7 @@ with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines
         eh = N(AZ.analytics.EventHubs, "Event Hubs Premium")
     n3 = NOTA("3 · ExpressRoute DC-01\nVPN de respaldo", "falla")
     n4 = NOTA("4 · Zona de\ndisponibilidad\nservicios zonales en\notra zona de\nChile Central", "falla")
-    n8 = NOTA("8 · Broker\noutbox en\nproductores\ny relectura", "falla")
+    n8 = NOTA("8 · Broker: registro\nde salida en\nproductores\ny relectura", "falla")
     n5 = NOTA("5 · Región Chile Central\nconmutación activo-pasivo\na Brazil South", "falla")
     with CL("CLD-02 · Azure Brazil South", "dr"):
         rec = N(AZ.migration.RecoveryServicesVaults, "Región en espera")

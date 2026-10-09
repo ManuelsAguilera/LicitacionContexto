@@ -38,7 +38,7 @@ XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
 ACRED = {"style": "dashed"}
 FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
 INV = {"style": "invis"}
-with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.6", "ranksep": "0.55", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.9", "ranksep": "0.5", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
     fd = N(AZ.network.FrontDoors, "Front Door global")
     with CL("CLD-01 · Chile Central · activo", "nube"):
         apa = N(AZ.integration.APIManagement, "API Management\nPremium")
@@ -51,7 +51,7 @@ with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines
             pgea = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL")
     with CL("CLD-02 · Brazil South · pasivo", "dr"):
         apb = N(AZ.integration.APIManagement, "Gateway APIM\nadicional")
-        akb = N(AZ.compute.KubernetesServices, "AKS en espera\no por IaC")
+        akb = N(AZ.compute.KubernetesServices, "AKS por la\nmisma IaC")
         ehb = N(AZ.analytics.EventHubs, "Event Hubs\nsecundario")
         with CL("Retail ", "retail"):
             pgrb = N(AZ.database.DatabaseForPostgresqlServers, "Réplica\nde lectura")
@@ -67,13 +67,14 @@ with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines
     fd >> E("activo") >> apa
     fd >> E("conmutación", **ACRED) >> apb
     apa >> E(**INV) >> aka >> E(**INV) >> eha >> E(**INV) >> pgra >> E(**INV) >> sta >> E(**INV) >> pgea
-    apb >> E(**INV) >> akb >> E(**INV) >> ehb >> E(**INV) >> pgrb >> E(**INV) >> stb >> E(**INV) >> pgeb >> E(**INV) >> kvb
-    kvb >> E(**INV) >> bkb
+    apb >> E(**INV) >> akb >> E(**INV) >> ehb >> E(**INV) >> pgrb >> E(**INV) >> stb >> E(**INV) >> pgeb
+    apb >> E(**INV) >> kvb
+    apb >> E(**INV) >> bkb
     aka >> E("misma IaC", constraint="false", **ACRED) >> akb
     eha >> E("geo-replicación\nretraso < 15 min", constraint="false", **REPLICA) >> ehb
     pgra >> E("réplica entre regiones\nRPO ≤ 15 min", constraint="false", **REPLICA) >> pgrb
     sta >> E("réplica", constraint="false", **REPLICA) >> stb
     pgea >> E("condicionada a residencia", constraint="false", **REPLICA) >> pgeb
     pgea >> E(**INV) >> dc1
-    dc1 << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2
+    dc1 << E("enlace propuesto", constraint="false", **AMBAR) >> dc2
     pgea >> E(**INV) >> dc2
