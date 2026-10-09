@@ -11,11 +11,10 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | CU-EV-03 | F:C-03 | Registrar el consentimiento de una modificación de condiciones | AH-10 | 2 | RF-207, RF-208; 3.4.4 | S5, S8 |
 | CU-EV-04 | F:C-03 | Reconstruir el acto de consentimiento | AH-15 | 2 | RF-209 | S8 |
 | CU-EV-05 | F:C-03 | Recuperar los antecedentes de una operación desde el archivo | AH-15 | 2 | RF-210 | S8 |
-| CU-EV-06 | F:C-03 | Responder el requerimiento de la autoridad fiscalizadora | AS-12 | 2 | EXC-06; 3.3.1 | S3, S8 |
 | CU-EV-07 | F:C-03 | Enlazar la repactación con su cobranza y su consentimiento | AH-10 | 2 | RF-214, RF-215 | S5, S8 |
-| CU-EV-08 | F:C-03 | Consultar la información precontractual del crédito | AH-01 | 1 | RF-217 | S2 |
+| CU-EV-08 | F:C-03 | Consultar la información precontractual del crédito | AS-04 | 1 | RF-217 | S2 |
 
-Resumen. 8 casos, todos simples (1 a 3 transacciones). UUCW provisional del servicio = 8 × 5 = 40.
+Resumen. 7 casos, todos simples (1 a 3 transacciones). UUCW provisional del servicio = 7 × 5 = 35. El código CU-EV-06 queda sin uso, porque el caso se retiró.
 
 ## 2. Transacciones contadas
 
@@ -26,7 +25,6 @@ Resumen. 8 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 | CU-EV-03 | T1 presentar la modificación y registrar el consentimiento con integridad verificable. T2 confirmar la modificación, con rechazo si falta la evidencia |
 | CU-EV-04 | T1 consultar el acto de consentimiento por operación. T2 verificar la integridad del registro |
 | CU-EV-05 | T1 solicitar la recuperación de una operación. T2 recibir los antecedentes dentro de 5 minutos |
-| CU-EV-06 | T1 entregar el expediente solicitado por la autoridad. T2 entregar el informe de cumplimiento por hito |
 | CU-EV-07 | T1 enlazar el expediente de la repactación con la gestión de cobranza. T2 enlazarlo con la evidencia de consentimiento |
 | CU-EV-08 | T1 consultar la información precontractual del crédito |
 
@@ -36,7 +34,7 @@ Resumen. 8 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 | :-- | :-- |
 | S1 | El titular de tarjeta (AH-02) es el actor de la aceptación, porque firma en pantalla. La firma electrónica es exigible en la apertura (RT-16.14, cita del Caso) |
 | S2 | Portal público en la Opción A (D-08 y D-09 de `contexto_sd-04.md`). El contenido financiero se sirve desde la filial emisora. El cliente se conserva como actor por prudencia |
-| S3 | CU-EV-06 no tiene RF. Se apoya en EXC-06 (mantener el expediente trazable) y en el resultado 23 del Anexo D. La autoridad recibe archivo o portal y no usa una interfaz gráfica de la solución (D-05) |
+| S3 | CU-EV-06 (responder el requerimiento de la autoridad) se retiró el 2026-10-08 por la revisión independiente de G3. La autoridad solo recibe reportes (C6), EXC-06 no respalda el caso y el informe de cumplimiento por hito es un entregable de gestión del proyecto (sd-06). El resultado 23 se traza a otros casos (`04_trazabilidad_resultados.md`) |
 | S4 | CU-EV-01 T2 y CU-EV-02 T2 son las compuertas que usa CU-OR-01 T3 para confirmar la apertura. No se cuentan dos veces |
 | S5 | CU-EV-03 T2 es la compuerta que usan los casos de cartera de crédito en las repactaciones (resultado 18) |
 | S6 | La retención de la evidencia (plazo del crédito más seis años) es un requisito no funcional. Ningún RF administra la retención, así que no se crea un caso. Queda como posible vacío del catálogo y se consulta al cliente |
@@ -50,6 +48,6 @@ RF-199, RF-200, RF-201 y RF-203 en CU-EV-01. RF-202, RF-204, RF-205 y RF-206 en 
 ## 5. Decisiones del usuario (2026-10-08)
 
 1. El titular de tarjeta (AH-02) es el actor de CU-EV-02.
-2. CU-EV-06 entra como propuesta, aunque no tenga RF.
+2. CU-EV-06 se retiró el 2026-10-08 (revisión independiente de G3, aprobada por el usuario).
 3. La retención de la evidencia queda como vacío del catálogo y no se crea un caso (S6).
 4. CU-EV-05 lo hace AH-15.
