@@ -40,7 +40,8 @@ class TestDiccionario(unittest.TestCase):
 
     def test_lo_que_no_tiene_fuente_queda_por_definir(self):
         fichas, _ = gd.construir()
-        f = next(x for x in fichas if x["paquete"]["codigo"] == "1.12.4")
+        # una cuenta sin casos de uso ni origen: el diccionario no puede derivar nada de ella
+        f = next(x for x in fichas if not x["paquete"]["casos"] and not x["paquete"]["origen"] and x["paquete"]["rama"] != "1.10")
         for clave in ("descripcion", "criterio", "costo", "recursos", "referencias"):
             self.assertEqual(f["vals"][clave][1], "por definir", clave)
         self.assertEqual(f["vals"]["responsable"][1], "propuesta")
