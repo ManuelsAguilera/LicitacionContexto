@@ -51,7 +51,7 @@ def cargar(edt=EDT, directorio=DIR, anexo_b=vcu.ANEXO_B):
             nd = nodo_de.get(p["codigo"])
             ids = [x.strip() for x in a.get("casos", "").split(",") if x.strip()]
             item = {"codigo": p["codigo"], "nombre": p["nombre"], "rama": r["codigo"], "nodo": nd["titulo"] if nd else "",
-                    "casos": ids, "etapa": a.get("etapa", ""), "origen": a.get("origen", ""),
+                    "casos": ids, "etapa": a.get("etapa", ""), "origen": a.get("origen", ""), "nivel": a.get("nivel", ""),
                     "metodo": "UCP" if ids else "tres valores", "rf": set(), "uucw": 0, "prefijo": ""}
             prefijos = set()
             for cid in ids:
