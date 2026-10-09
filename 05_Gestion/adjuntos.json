@@ -58,24 +58,152 @@
   {
     "id": "ADJ-008",
     "parte": "T7-04",
-    "nombre": "diag-04-01_arquitectura-logica.svg",
-    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-01_arquitectura-logica.svg",
+    "nombre": "diag-04-01_arquitectura-logica-objetivo.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-01_arquitectura-logica-objetivo.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-027",
+    "parte": "T7-04",
+    "nombre": "diag-04-02_arquitectura-logica-etapa-1.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-02_arquitectura-logica-etapa-1.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-028",
+    "parte": "T7-04",
+    "nombre": "diag-04-03_capas-y-actores.pdf",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-03_capas-y-actores.pdf",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-029",
+    "parte": "T7-04",
+    "nombre": "diag-04-04_bloque-tiendas.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-04_bloque-tiendas.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-030",
+    "parte": "T7-04",
+    "nombre": "diag-04-05_bloque-mercaderia.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-05_bloque-mercaderia.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-031",
+    "parte": "T7-04",
+    "nombre": "diag-04-06_bloque-venta-y-cumplimiento.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-06_bloque-venta-y-cumplimiento.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-032",
+    "parte": "T7-04",
+    "nombre": "diag-04-07_bloque-relacion-clientes.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-07_bloque-relacion-clientes.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-033",
+    "parte": "T7-04",
+    "nombre": "diag-04-08_bloque-credito-y-frontera.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-08_bloque-credito-y-frontera.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-034",
+    "parte": "T7-04",
+    "nombre": "diag-04-09_bloque-integracion.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-09_bloque-integracion.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-035",
+    "parte": "T7-04",
+    "nombre": "diag-04-10_flujo-hibrido-tienda.pdf",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-10_flujo-hibrido-tienda.pdf",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-036",
+    "parte": "T7-04",
+    "nombre": "diag-04-11_emplazamientos-logicos.pdf",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-11_emplazamientos-logicos.pdf",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-037",
+    "parte": "T7-04",
+    "nombre": "diag-04-12_datos-y-frontera.pdf",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-12_datos-y-frontera.pdf",
     "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
     "existe": false
   },
   {
     "id": "ADJ-009",
     "parte": "T7-04",
-    "nombre": "diag-04-02_arquitectura-fisica.svg",
-    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-02_arquitectura-fisica.svg",
+    "nombre": "diag-04-13_arquitectura-fisica-general.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-13_arquitectura-fisica-general.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-038",
+    "parte": "T7-04",
+    "nombre": "diag-04-14_red-y-segmentacion.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-14_red-y-segmentacion.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-039",
+    "parte": "T7-04",
+    "nombre": "diag-04-15_ambientes-y-despliegue.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-15_ambientes-y-despliegue.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-040",
+    "parte": "T7-04",
+    "nombre": "diag-04-16_conexiones-y-contingencia.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-16_conexiones-y-contingencia.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-041",
+    "parte": "T7-04",
+    "nombre": "diag-04-17_tienda-tipo.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-17_tienda-tipo.png",
     "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
     "existe": false
   },
   {
     "id": "ADJ-010",
     "parte": "T7-04",
-    "nombre": "diag-04-03_data-center.svg",
-    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-03_data-center.svg",
+    "nombre": "diag-04-18_data-center-primario.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-18_data-center-primario.png",
+    "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
+    "existe": false
+  },
+  {
+    "id": "ADJ-042",
+    "parte": "T7-04",
+    "nombre": "diag-04-19_data-center-secundario.png",
+    "ruta": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/diag-04-19_data-center-secundario.png",
     "declarado_en": "02_Propuesta/sd-04_arquitectura-logica-y-fisica/sd-04_arquitectura-logica-y-fisica.md",
     "existe": false
   },

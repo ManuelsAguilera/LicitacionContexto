@@ -57,7 +57,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | :--- | :--- | :--- | :--- |
 | 12.1 | Equipo de trabajo | Estructura del proyecto con roles, responsabilidades y matriz de asignación; equipo clave nominado (currículo, certificaciones, dedicación, período); curva de dotación por fase coherente con la nivelación del Formulario T-15; gestión del conocimiento, retención y continuidad ante rotación. | Sin redactar |
 | 12.2 | Subcontrataciones | Decisiones de hacer o comprar con justificación; subcontratistas, rol, porcentaje de participación (Art. 73.º) y régimen de control. | Sin redactar |
-| 12.3 | Alianzas | Socios y alianzas específicas de este proyecto, su rol, porcentaje de participación y régimen de control. | Sin redactar |
+| 12.3 | Alianzas | Socios y alianzas específicas de este proyecto, su rol, porcentaje de participación y régimen de control. Debe incluir al socio certificado de Microsoft que firma la carta de compromiso del art. 34 (plantilla en `03_Formularios/A/form-A-5_anexo-carta-compromiso-socio-nube.md`), con el mismo rol y porcentaje de la carta. | Sin redactar |
 
 Anexos: Formulario T-8.
 

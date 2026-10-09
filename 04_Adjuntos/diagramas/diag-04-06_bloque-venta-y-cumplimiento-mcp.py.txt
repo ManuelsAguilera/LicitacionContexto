@@ -1,0 +1,51 @@
+class AzureMonitor(ApplicationInsights):
+    _icon_dir = "resources/azure/monitor"
+    _icon = "monitor.png"
+class LocalStore(Server):
+    _icon_dir = "resources/generic/storage"
+    _icon = "storage.png"
+with Diagram("Ancoa · bloque Venta y cumplimiento\nsólido: objetivo mes 21 · gris discontinuo: solo Etapa 1 · ámbar discontinuo: por acreditar", show=False, direction="TB", graph_attr={"splines":"spline", "nodesep":"0.88", "ranksep":"0.35", "pad":"0.3", "bgcolor":"white", "dpi":"220", "fontname":"Arial", "fontsize":"17", "labelloc":"t", "newrank":"true"}, node_attr={"fontname":"Arial", "fontsize":"16", "fixedsize":"true", "imagepos":"tc", "labelloc":"b", "fontcolor":"#263238"}, edge_attr={"color":"#546E7A", "arrowsize":"0.7", "penwidth":"1.3", "fontname":"Arial", "fontsize":"15"}):
+    clientes = Users("Clientes", width="0.62", height="0.93")
+    tiendas = Users("Tiendas físicas", width="0.62", height="0.93")
+    web = Server("Comercio\nelectrónico 2019*", width="0.62", height="1.18")
+    pos = Client("POS", width="0.62", height="0.93")
+    retiro = Tablet("Retiro y despacho\ndesde tienda", width="0.62", height="1.18")
+    apim = APIManagement("API Management\nRetail", width="0.62", height="1.18")
+    pedidos = PredefinedProcess("Pedidos\nR:V-01", width="0.62", height="1.18")
+    ventas = PredefinedProcess("Ventas R:V-02 y\ncomisiones R:V-03", width="0.62", height="1.18")
+    exist = PredefinedProcess("Existencias\nR:M-03", width="0.62", height="1.18")
+    mkp_s = PredefinedProcess("Marketplace\nR:V-04", width="0.62", height="1.18")
+    eh = EventHubs("Event Hubs\nRetail", width="0.62", height="1.18")
+    pg = DatabaseForPostgresqlServers("PostgreSQL\nRetail", width="0.62", height="1.18")
+    ad = KubernetesServices("Adaptadores\nen AKS", width="0.62", height="1.18")
+    erp = Server("ERP/DTE", width="0.62", height="0.93")
+    wms = Server("WMS principal", width="0.62", height="0.93")
+    mkp = Server("Marketplace\n2022", width="0.62", height="1.18")
+    pagos = Users("Medios de pago y\ntransportistas", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#FFF3DF", color="#C77700", fontcolor="#7A4A00", penwidth="1.6", margin="0.12,0.06")
+    r09 = Server("Núcleo Retail\n2009\nEtapa 1", width="0", height="0", image="", shape="box", fixedsize="false", style="dashed,rounded,filled", fillcolor="#EEEEEE", color="#8E8E8E", fontcolor="#5F5F5F", penwidth="1.6", margin="0.12,0.06")
+    with Cluster("Filial emisora", graph_attr={"bgcolor":"#F8F4FB", "color":"#8E73B0", "style":"rounded", "fontname":"Arial", "fontsize":"19", "penwidth":"1.6", "margin":"16"}):
+        apim_f = APIManagement("API Management\nEmisor", width="0.62", height="1.18")
+    clientes >> web
+    tiendas >> pos
+    tiendas >> retiro
+    web >> apim
+    pos >> apim
+    retiro >> apim
+    apim >> pedidos
+    apim >> ventas
+    pedidos >> Edge(label="reserva", fontsize="15", fontname="Arial") >> exist
+    pedidos >> mkp_s
+    pedidos >> pg
+    ventas >> pg
+    exist >> pg
+    mkp_s >> pg
+    pedidos >> eh
+    ventas >> eh
+    eh >> ad
+    mkp_s >> ad
+    ad >> Edge(label="DTE", fontsize="15", fontname="Arial") >> erp
+    ad >> Edge(label="preparación", fontsize="15", fontname="Arial") >> wms
+    ad >> mkp
+    ad >> Edge(color="#C77700", style="dashed", penwidth="1.4") >> pagos
+    ad >> Edge(color="#9E9E9E", style="dashed", penwidth="1.4") >> r09
+    ventas >> Edge(color="#2F6EA5", penwidth="2.6", label="autorización · X-01", fontsize="15", fontname="Arial") >> apim_f

@@ -1,0 +1,84 @@
+F = "Arial"
+AZ = diagrams.azure
+GEN = diagrams.generic
+OP = diagrams.onprem
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(diagrams.__file__))).replace("\\", "/")
+PAL = {
+    "retail": ("#1565c0", "#e8f1fb"),
+    "emisor": ("#7b1fa2", "#f6ecf8"),
+    "comun": ("#546e7a", "#f1f4f5"),
+    "nube": ("#0078d4", "#fbfdff"),
+    "dr": ("#2e7d32", "#f1f8f1"),
+    "cliente": ("#6d4c41", "#f8f4f2"),
+    "zona": ("#78909c", "#ffffff"),
+}
+def CL(label, kind="comun"):
+    pen, bg = PAL[kind]
+    return Cluster(label, graph_attr={"fontsize": "28", "fontname": F + " Bold", "fontcolor": pen, "pencolor": pen, "bgcolor": bg, "penwidth": "3", "style": "rounded", "margin": "14"})
+def html(text):
+    lines = text.replace("&", "&amp;").split("\n")
+    return "<B>" + lines[0] + "</B>" + "".join("<BR/>" + line for line in lines[1:])
+def N(cls, text, size=60):
+    img = BASE + "/" + cls._icon_dir.replace("\\", "/") + "/" + cls._icon
+    label = '<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD FIXEDSIZE="TRUE" WIDTH="%d" HEIGHT="%d"><IMG SRC="%s" SCALE="TRUE"/></TD></TR><TR><TD>%s</TD></TR></TABLE>>' % (size, size, img, html(text))
+    return diagrams.Node(label, shape="plain", fixedsize="false", width="0", height="0")
+def NOTA(text, kind="nota"):
+    pen, bg = {"nota": ("#546e7a", "#fffde7"), "falla": ("#c62828", "#fdecea"), "dr": ("#2e7d32", "#f1f8f1")}[kind]
+    return diagrams.Node('<<TABLE BORDER="0" CELLPADDING="2"><TR><TD>' + html(text) + '</TD></TR><TR><TD><FONT POINT-SIZE="10"> </FONT></TD></TR></TABLE>>', shape="box", style="rounded,filled", fixedsize="false", width="0", height="0", margin="0.25,0.16", color=pen, fillcolor=bg, penwidth="2.5")
+def E(label="", **kw):
+    kw.setdefault("fontsize", "26")
+    kw.setdefault("fontname", F)
+    kw.setdefault("penwidth", "2")
+    return Edge(label=label, **kw)
+DOBLE = {"color": "#1565c0:#ffffff:#1565c0", "penwidth": "2.5", "fontcolor": "#1565c0"}
+AMBAR = {"color": "#e69500", "penwidth": "4.5", "fontcolor": "#9a6200"}
+REPLICA = {"color": "#2e7d32", "style": "dashed", "penwidth": "3", "fontcolor": "#2e7d32"}
+BLOQ = {"color": "#c62828", "penwidth": "3", "fontcolor": "#c62828", "arrowhead": "tee"}
+XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
+ACRED = {"style": "dashed"}
+FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
+INV = {"style": "invis"}
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.2", "ranksep": "0.75", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+    ext = N(OP.network.Internet, "EXT-01 · contrapartes externas\nweb, marketplace, fidelización,\npagos, transporte, proveedores")
+    with CL("CLD-01 · Azure Chile Central · 3 zonas", "nube"):
+        with CL("Ámbito Retail", "retail"):
+            appr = N(AZ.network.VirtualNetworks, "Aplicación\nRetail")
+            datr = N(AZ.network.VirtualNetworks, "Datos y\nanalítica Retail")
+        with CL("Plataforma compartida", "comun"):
+            borde = N(AZ.network.VirtualNetworks, "Borde público\nFront Door y APIM")
+            integ = N(AZ.network.VirtualNetworks, "Integración\ny eventos")
+            hub = N(AZ.network.VirtualNetworks, "Hub de red\nVPN y ExpressRoute")
+        with CL("Ámbito Filial emisora", "emisor"):
+            appe = N(AZ.network.VirtualNetworks, "Aplicación\nEmisor")
+            date = N(AZ.network.VirtualNetworks, "Datos y\nanalítica Emisor")
+    with CL("CLD-02 · Azure Brazil South", "dr"):
+        rec = N(AZ.migration.RecoveryServicesVaults, "Recuperación\nde cargas nuevas\nactivo-pasivo")
+    with CL("Sitios del Cliente · on-premise", "cliente"):
+        with CL("SIT-01 · 22 tiendas, 11 regiones", "cliente"):
+            t8 = N(OP.client.Client, "8 tiendas\nen centro\ncomercial,\ncon respaldo")
+            t14 = N(OP.client.Client, "14 tiendas\nsin respaldo:\n6 en centro\ncomercial y\n8 a la calle")
+        cd1 = N(OP.compute.Server, "CD-01\nprincipal\nWMS")
+        cd2 = N(GEN.device.Tablet, "CD-02\nConcepción\ncaptura de\nexistencias")
+        dc2 = N(GEN.place.Datacenter, "DC-02 · sala\nde respaldo,\nmisma comuna")
+        with CL("DC-01 · casa matriz, 140 m²", "cliente"):
+            cred = N(OP.compute.Server, "Crédito 2011\nFilial emisora")
+            erp = N(OP.compute.Server, "ERP/DTE y núcleo\nRetail 2009")
+    ext << E("borde público") >> borde
+    borde >> appr
+    borde >> appe
+    appr << E("solo X-01", constraint="false", **XCONT) >> appe
+    appr >> datr
+    appe >> date
+    borde >> E(**INV) >> integ
+    integ << E() >> hub
+    appr >> E(**INV) >> integ
+    datr >> E("réplica\nRPO ≤ 15 min", **REPLICA) >> rec
+    date >> E("réplica\ncondicionada\na residencia", **REPLICA) >> rec
+    hub << E("doble enlace", **DOBLE) >> t8
+    hub << E("enlace") >> t14
+    hub << E("dos\nproveedores", **DOBLE) >> cd1
+    hub << E("enlace\núnico") >> cd2
+    hub << E("Express-\nRoute\npropuesto", minlen="2", **ACRED) >> erp
+    t8 >> E(**INV) >> dc2
+    t14 >> E(**INV) >> cred
+    erp << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2

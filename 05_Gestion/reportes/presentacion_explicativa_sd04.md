@@ -22,7 +22,7 @@ Ancoa vende productos en 22 tiendas y canales digitales, y una filial distinta e
 
 ## Lámina 2 · La propuesta en una imagen
 
-![Ámbitos y relaciones de la arquitectura lógica](../../04_Adjuntos/diagramas/diag-04-01_arquitectura-logica.svg)
+![Ámbitos y relaciones de la arquitectura lógica](../../04_Adjuntos/diagramas/borradores/diag-04-01_arquitectura-logica.svg)
 
 1. Una persona o un sistema entra por un canal: caja, comercio electrónico, atención, consola interna o API.
 2. El **API gateway** controla las solicitudes autorizadas: identidad, contrato, cuota y trazabilidad.
@@ -30,7 +30,7 @@ Ancoa vende productos en 22 tiendas y canales digitales, y una filial distinta e
 4. Los **adaptadores** traducen contratos de plataformas que continúan operando. Un **broker** distribuye hechos ya confirmados.
 5. La tienda conserva un nodo local para vender durante un corte del enlace. Retail y Emisor mantienen datos separados.
 
-**Por qué:** así se puede cambiar una parte sin sustituir automáticamente ERP/DTE, WMS o marketplace, y se preserva la separación entre comercio y crédito. **Estado:** diseño lógico; el producto del broker y las rutas físicas siguen abiertos. [Fuente editable](../../04_Adjuntos/diagramas/diag-04-01_arquitectura-logica.dot).
+**Por qué:** así se puede cambiar una parte sin sustituir automáticamente ERP/DTE, WMS o marketplace, y se preserva la separación entre comercio y crédito. **Estado:** diseño lógico; el producto del broker y las rutas físicas siguen abiertos. [Fuente editable](../../04_Adjuntos/diagramas/borradores/diag-04-01_arquitectura-logica.dot).
 
 ---
 
@@ -66,7 +66,7 @@ El catálogo UAW aportado registra **31 actores**: 18 personas o roles (`AH-01` 
 
 ## Lámina 5 · Las ocho capas, de arriba hacia abajo
 
-![Actores, ocho capas y servicios por ámbito](../../04_Adjuntos/diagramas/diag-04-02_capas-y-actores.svg)
+![Actores, ocho capas y servicios por ámbito](../../04_Adjuntos/diagramas/borradores/diag-04-02_capas-y-actores.svg)
 
 | Capa | Explicación sencilla | Razón de incluirla |
 | :--- | :--- | :--- |
@@ -79,7 +79,7 @@ El catálogo UAW aportado registra **31 actores**: 18 personas o roles (`AH-01` 
 | 7. Seguridad | Permisos, cifrado y auditoría. | Proteger accesos en todas las capas. |
 | 8. Observabilidad | Métricas, registros y seguimiento de operaciones. | Detectar fallas y reconstruir lo ocurrido. |
 
-**Fundamento:** [RT-02.01](../../00_Bases/Bases_Transversales.md) exige las ocho responsabilidades. Seguridad y observabilidad atraviesan las demás capas; no son pasos adicionales que cada venta deba recorrer. [Fuente editable](../../04_Adjuntos/diagramas/diag-04-02_capas-y-actores.dot).
+**Fundamento:** [RT-02.01](../../00_Bases/Bases_Transversales.md) exige las ocho responsabilidades. Seguridad y observabilidad atraviesan las demás capas; no son pasos adicionales que cada venta deba recorrer. [Fuente editable](../../04_Adjuntos/diagramas/borradores/diag-04-02_capas-y-actores.dot).
 
 ---
 
@@ -112,13 +112,13 @@ El catálogo UAW aportado registra **31 actores**: 18 personas o roles (`AH-01` 
 
 ## Lámina 8 · Cómo se conecta una venta
 
-![Flujo híbrido de tienda, nube y Emisor](../../04_Adjuntos/diagramas/diag-04-03_flujo-hibrido.svg)
+![Flujo híbrido de tienda, nube y Emisor](../../04_Adjuntos/diagramas/borradores/diag-04-03_flujo-hibrido.svg)
 
 **Con enlace:** el cajero consulta la versión vigente del precio y una reserva confirmada de existencias. Ventas registra la operación y el pago; ERP/DTE emite el documento tributario. Solo después se publica el hecho de venta para actualizar vistas y consumidores.
 
 **Sin enlace:** el POS lee oferta y existencia locales y guarda venta y hecho pendiente en un **diario durable**. El broker de nube no puede recibir algo que la tienda aún no logró enviar. Al volver la conexión, un sincronizador entrega con identificador repetible; Ventas concilia, confirma y recién entonces publica el hecho. Las reglas fiscales y de cobro de esta modalidad requieren aprobación y prueba.
 
-**Por qué:** la operación local responde a la continuidad híbrida exigida por [RT-03.10](../../00_Bases/Bases_Transversales.md). El requisito transversal pide **24 horas**; el Caso menciona 8 horas para tienda, pero no puede rebajar el mínimo transversal. El diario evita depender de una WAN disponible y la conciliación evita duplicar ventas al reintentar. El diseño prueba las 24 horas y el retorno. Un broker adicional en tienda solo se justificaría si varios consumidores locales debieran comunicarse sin nube. [Fuente editable](../../04_Adjuntos/diagramas/diag-04-03_flujo-hibrido.dot).
+**Por qué:** la operación local responde a la continuidad híbrida exigida por [RT-03.10](../../00_Bases/Bases_Transversales.md). El requisito transversal pide **24 horas**; el Caso menciona 8 horas para tienda, pero no puede rebajar el mínimo transversal. El diario evita depender de una WAN disponible y la conciliación evita duplicar ventas al reintentar. El diseño prueba las 24 horas y el retorno. Un broker adicional en tienda solo se justificaría si varios consumidores locales debieran comunicarse sin nube. [Fuente editable](../../04_Adjuntos/diagramas/borradores/diag-04-03_flujo-hibrido.dot).
 
 ---
 
@@ -136,13 +136,13 @@ Los eventos se pueden entregar más de una vez. Por eso cada consumidor reconoce
 
 ## Lámina 10 · Cómo se protege la frontera Retail–Emisor
 
-![Autoridades de datos y frontera](../../04_Adjuntos/diagramas/diag-04-05_datos-y-frontera.svg)
+![Autoridades de datos y frontera](../../04_Adjuntos/diagramas/borradores/diag-04-05_datos-y-frontera.svg)
 
 La tienda y la filial emisora pueden compartir edificios y red, pero **no comparten libremente clientes ni bases de datos**. Retail conserva la identidad y preferencias comerciales; el Emisor conserva cupo, saldo, pagos, mora y expediente crediticio. El servicio `X-01` define la finalidad, los campos mínimos, el fundamento y los responsables de cada cruce. Los dos extremos aplican esa política y registran la decisión.
 
 **Ejemplo permitido, condicionado:** para pagar con la tarjeta propia, Ventas comunica referencia, importe y medio mediante un contrato aprobado; el Emisor devuelve una decisión limitada a esa compra. **Ejemplo denegado:** Marketing solicita mora o historial de pagos. La consulta se bloquea y audita. La autorización de compra no se infiere del silencio ni del consentimiento de originación.
 
-**Por qué:** Ancoa reúne un comercio y un emisor fiscalizado con finalidades jurídicas distintas. La separación responde al Caso y a SD-03; las fichas concretas requieren revisión jurídica. [Fuente editable](../../04_Adjuntos/diagramas/diag-04-05_datos-y-frontera.dot).
+**Por qué:** Ancoa reúne un comercio y un emisor fiscalizado con finalidades jurídicas distintas. La separación responde al Caso y a SD-03; las fichas concretas requieren revisión jurídica. [Fuente editable](../../04_Adjuntos/diagramas/borradores/diag-04-05_datos-y-frontera.dot).
 
 ---
 
@@ -161,7 +161,7 @@ Ningún modelo escribe ajustes de inventario ni cambia la disponibilidad prometi
 
 ## Lámina 12 · Dónde ocurre cada cosa
 
-![Emplazamientos lógicos](../../04_Adjuntos/diagramas/diag-04-04_emplazamientos-logicos.svg)
+![Emplazamientos lógicos](../../04_Adjuntos/diagramas/borradores/diag-04-04_emplazamientos-logicos.svg)
 
 | Código | Lugar o grupo | Papel en el diseño |
 | :--- | :--- | :--- |
@@ -171,7 +171,7 @@ Ningún modelo escribe ajustes de inventario ni cambia la disponibilidad prometi
 | `CLD-01` / `CLD-02` | Nube primaria en Santiago / recuperación candidata en São Paulo | Cargas nuevas y recuperación condicionada a residencia y prueba. |
 | `EXT-01` | Contrapartes fuera de la solución nueva | Transportistas, pagos, proveedores y otras plataformas según su ubicación comprobada. |
 
-**Por qué distinguirlos:** un centro de *distribución* mueve productos; un centro de *datos* aloja tecnología. La filial es una entidad jurídica y un dominio de datos, no una nueva sede física. El diagrama no impone una cadena tienda → centro de distribución → centro de datos → nube. Cada enlace se confirmará con el inventario de red. [Fuente editable](../../04_Adjuntos/diagramas/diag-04-04_emplazamientos-logicos.dot).
+**Por qué distinguirlos:** un centro de *distribución* mueve productos; un centro de *datos* aloja tecnología. La filial es una entidad jurídica y un dominio de datos, no una nueva sede física. El diagrama no impone una cadena tienda → centro de distribución → centro de datos → nube. Cada enlace se confirmará con el inventario de red. [Fuente editable](../../04_Adjuntos/diagramas/borradores/diag-04-04_emplazamientos-logicos.dot).
 
 ---
 

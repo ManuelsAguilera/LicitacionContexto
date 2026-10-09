@@ -1,0 +1,85 @@
+F = "Arial"
+AZ = diagrams.azure
+GEN = diagrams.generic
+OP = diagrams.onprem
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(diagrams.__file__))).replace("\\", "/")
+PAL = {
+    "retail": ("#1565c0", "#e8f1fb"),
+    "emisor": ("#7b1fa2", "#f6ecf8"),
+    "comun": ("#546e7a", "#f1f4f5"),
+    "nube": ("#0078d4", "#fbfdff"),
+    "dr": ("#2e7d32", "#f1f8f1"),
+    "cliente": ("#6d4c41", "#f8f4f2"),
+    "zona": ("#78909c", "#ffffff"),
+}
+def CL(label, kind="comun"):
+    pen, bg = PAL[kind]
+    return Cluster(label, graph_attr={"fontsize": "28", "fontname": F + " Bold", "fontcolor": pen, "pencolor": pen, "bgcolor": bg, "penwidth": "3", "style": "rounded", "margin": "14"})
+def html(text):
+    lines = text.replace("&", "&amp;").split("\n")
+    return "<B>" + lines[0] + "</B>" + "".join("<BR/>" + line for line in lines[1:])
+def N(cls, text, size=60):
+    img = BASE + "/" + cls._icon_dir.replace("\\", "/") + "/" + cls._icon
+    label = '<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD FIXEDSIZE="TRUE" WIDTH="%d" HEIGHT="%d"><IMG SRC="%s" SCALE="TRUE"/></TD></TR><TR><TD>%s</TD></TR></TABLE>>' % (size, size, img, html(text))
+    return diagrams.Node(label, shape="plain", fixedsize="false", width="0", height="0")
+def NOTA(text, kind="nota"):
+    pen, bg = {"nota": ("#546e7a", "#fffde7"), "falla": ("#c62828", "#fdecea"), "dr": ("#2e7d32", "#f1f8f1")}[kind]
+    return diagrams.Node('<<TABLE BORDER="0" CELLPADDING="2"><TR><TD>' + html(text) + '</TD></TR><TR><TD><FONT POINT-SIZE="10"> </FONT></TD></TR></TABLE>>', shape="box", style="rounded,filled", fixedsize="false", width="0", height="0", margin="0.25,0.16", color=pen, fillcolor=bg, penwidth="2.5")
+def E(label="", **kw):
+    kw.setdefault("fontsize", "26")
+    kw.setdefault("fontname", F)
+    kw.setdefault("penwidth", "2")
+    return Edge(label=label, **kw)
+DOBLE = {"color": "#1565c0:#ffffff:#1565c0", "penwidth": "2.5", "fontcolor": "#1565c0"}
+AMBAR = {"color": "#e69500", "penwidth": "4.5", "fontcolor": "#9a6200"}
+REPLICA = {"color": "#2e7d32", "style": "dashed", "penwidth": "3", "fontcolor": "#2e7d32"}
+BLOQ = {"color": "#c62828", "penwidth": "3", "fontcolor": "#c62828", "arrowhead": "tee"}
+XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
+ACRED = {"style": "dashed"}
+FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
+INV = {"style": "invis"}
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.3", "ranksep": "0.75", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+    net = N(OP.network.Internet, "Internet\nclientes y EXT-01")
+    with CL("Sitios del Cliente", "cliente"):
+        sit = N(GEN.network.Router, "SIT-01, CD-01, CD-02\nVLAN por función;\nhoy solo 9 tiendas\nlas separan")
+        dc1 = N(GEN.place.Datacenter, "DC-01\ncasa matriz")
+    er = N(AZ.network.ExpressrouteCircuits, "Circuito\nExpressRoute")
+    with CL("CLD-01 · Azure Chile Central", "nube"):
+        with CL("Borde público", "comun"):
+            fd = N(AZ.network.FrontDoors, "Front Door y WAF")
+            apim = N(AZ.integration.APIManagement, "API Management\nPremium")
+        with CL("Hub · red virtual", "comun"):
+            gw = N(AZ.network.VirtualNetworkGateways, "Gateway\nExpressRoute y VPN")
+            fw = N(AZ.network.Firewall, "Azure Firewall")
+            dns = N(AZ.network.DNSPrivateZones, "DNS privado")
+        with CL("Spoke compartido", "comun"):
+            ic = N(AZ.network.Subnets, "Subred ingreso")
+            ac = N(AZ.network.Subnets, "Subred integración\ny operación AKS")
+            dc = N(AZ.network.PrivateEndpoint, "Subred datos\nendpoints privados")
+        with CL("Spoke Retail", "retail"):
+            ir = N(AZ.network.Subnets, "Subred ingreso")
+            ar = N(AZ.network.Subnets, "Subred aplicación\nAKS")
+            dr = N(AZ.network.PrivateEndpoint, "Subred datos\nendpoints privados")
+        with CL("Spoke Filial emisora", "emisor"):
+            ie = N(AZ.network.Subnets, "Subred ingreso")
+            ae = N(AZ.network.Subnets, "Subred aplicación\nAKS")
+            de = N(AZ.network.PrivateEndpoint, "Subred datos\nendpoints privados")
+    net >> fd >> apim
+    apim >> ir
+    apim >> ie
+    apim >> E(**INV) >> ic
+    sit >> E("VPN / SD-WAN\ndoble enlace\ndonde existe") >> gw
+    dc1 >> E("propuesto", **ACRED) >> er
+    er >> E("privado") >> gw
+    dc1 >> E("VPN de\nrespaldo", **ACRED) >> gw
+    gw >> fw
+    gw >> E(**INV) >> dns
+    ir >> ar >> dr
+    ic >> ac >> dc
+    ie >> ae >> de
+    fw >> E(**INV) >> [ic, ir, ie]
+    fw >> ac
+    fw >> E("peering vía\nfirewall") >> ar
+    fw >> ae
+    ar >> E("bloqueado", constraint="false", **BLOQ) >> de
+    ar >> E("solo X-01, vía firewall", constraint="false", **XCONT) >> ae

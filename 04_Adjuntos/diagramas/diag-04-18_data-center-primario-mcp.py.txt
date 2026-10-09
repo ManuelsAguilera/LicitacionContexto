@@ -1,0 +1,94 @@
+F = "Arial"
+AZ = diagrams.azure
+GEN = diagrams.generic
+OP = diagrams.onprem
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(diagrams.__file__))).replace("\\", "/")
+PAL = {
+    "retail": ("#1565c0", "#e8f1fb"),
+    "emisor": ("#7b1fa2", "#f6ecf8"),
+    "comun": ("#546e7a", "#f1f4f5"),
+    "nube": ("#0078d4", "#fbfdff"),
+    "dr": ("#2e7d32", "#f1f8f1"),
+    "cliente": ("#6d4c41", "#f8f4f2"),
+    "zona": ("#78909c", "#ffffff"),
+}
+def CL(label, kind="comun"):
+    pen, bg = PAL[kind]
+    return Cluster(label, graph_attr={"fontsize": "28", "fontname": F + " Bold", "fontcolor": pen, "pencolor": pen, "bgcolor": bg, "penwidth": "3", "style": "rounded", "margin": "14"})
+def html(text):
+    lines = text.replace("&", "&amp;").split("\n")
+    return "<B>" + lines[0] + "</B>" + "".join("<BR/>" + line for line in lines[1:])
+def N(cls, text, size=60):
+    img = BASE + "/" + cls._icon_dir.replace("\\", "/") + "/" + cls._icon
+    label = '<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD FIXEDSIZE="TRUE" WIDTH="%d" HEIGHT="%d"><IMG SRC="%s" SCALE="TRUE"/></TD></TR><TR><TD>%s</TD></TR></TABLE>>' % (size, size, img, html(text))
+    return diagrams.Node(label, shape="plain", fixedsize="false", width="0", height="0")
+def NOTA(text, kind="nota"):
+    pen, bg = {"nota": ("#546e7a", "#fffde7"), "falla": ("#c62828", "#fdecea"), "dr": ("#2e7d32", "#f1f8f1")}[kind]
+    return diagrams.Node('<<TABLE BORDER="0" CELLPADDING="2"><TR><TD>' + html(text) + '</TD></TR><TR><TD><FONT POINT-SIZE="10"> </FONT></TD></TR></TABLE>>', shape="box", style="rounded,filled", fixedsize="false", width="0", height="0", margin="0.25,0.16", color=pen, fillcolor=bg, penwidth="2.5")
+def E(label="", **kw):
+    kw.setdefault("fontsize", "26")
+    kw.setdefault("fontname", F)
+    kw.setdefault("penwidth", "2")
+    return Edge(label=label, **kw)
+DOBLE = {"color": "#1565c0:#ffffff:#1565c0", "penwidth": "2.5", "fontcolor": "#1565c0"}
+AMBAR = {"color": "#e69500", "penwidth": "4.5", "fontcolor": "#9a6200"}
+REPLICA = {"color": "#2e7d32", "style": "dashed", "penwidth": "3", "fontcolor": "#2e7d32"}
+BLOQ = {"color": "#c62828", "penwidth": "3", "fontcolor": "#c62828", "arrowhead": "tee"}
+XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
+ACRED = {"style": "dashed"}
+FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
+INV = {"style": "invis"}
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.3", "ranksep": "0.6", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+    with CL("CLD-01 · Azure Chile Central (chilecentral), Santiago", "nube"):
+        with CL("Borde e integración", "comun"):
+            apim = N(AZ.integration.APIManagement, "API Management Premium\nclásico, 3 unidades,\nuna por zona")
+            eh = N(AZ.analytics.EventHubs, "Event Hubs Premium\nredundante entre zonas")
+        with CL("Zona 1", "zona"):
+            r1 = N(AZ.compute.KubernetesServices, "AKS Retail")
+            e1 = N(AZ.compute.KubernetesServices, "AKS Emisor")
+        with CL("Zona 2", "zona"):
+            r2 = N(AZ.compute.KubernetesServices, "AKS Retail")
+            e2 = N(AZ.compute.KubernetesServices, "AKS Emisor")
+        with CL("Zona 3", "zona"):
+            r3 = N(AZ.compute.KubernetesServices, "AKS Retail")
+            e3 = N(AZ.compute.KubernetesServices, "AKS Emisor")
+        with CL("Retail · datos y claves", "retail"):
+            pgr = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL\nprimario")
+            pgr2 = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL\nen espera")
+            redis = N(AZ.database.CacheForRedis, "Cache\nfor Redis")
+            dlr = N(AZ.storage.DataLakeStorage, "Data Lake\nGen2")
+            kvr = N(AZ.security.KeyVaults, "Key Vault")
+        with CL("Filial emisora · datos y claves", "emisor"):
+            pge = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL\nprimario")
+            pge2 = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL\nen espera")
+            dle = N(AZ.storage.DataLakeStorage, "Data Lake\nGen2")
+            kve = N(AZ.security.KeyVaults, "Key Vault")
+        with CL("Identidad, analítica, observabilidad y respaldo", "comun"):
+            entra = N(AZ.identity.ActiveDirectory, "Entra ID")
+            pbi = N(AZ.analytics.PowerBiEmbedded, "Power BI\npor ámbito")
+            mon = N(diagrams.azure.monitor.Monitor, "Azure\nMonitor")
+            law = N(diagrams.azure.monitor.LogAnalyticsWorkspaces, "Log\nAnalytics")
+            bk = N(AZ.migration.RecoveryServicesVaults, "Copia de\nseguridad")
+    with CL("DC-01 · casa matriz, 140 m² · convivencia", "cliente"):
+        erp = N(OP.compute.Server, "ERP/DTE y núcleo\nRetail 2009")
+        cred = N(OP.compute.Server, "Crédito 2011")
+    apim >> [r1, r2, r3]
+    eh >> E(**INV) >> [e1, e2, e3]
+    r1 >> E("endpoint\nprivado", style="dotted") >> pgr
+    r2 >> E(**INV) >> pgr2
+    e2 >> E(**INV) >> pge
+    e3 >> E("endpoint\nprivado", style="dotted") >> pge2
+    pgr << E("HA entre\nzonas", constraint="false") >> pgr2
+    pge << E("HA entre\nzonas", constraint="false") >> pge2
+    pgr >> E(**INV) >> redis
+    pgr2 >> E(**INV) >> dlr
+    pgr2 >> E(**INV) >> kvr
+    pge >> E(**INV) >> dle
+    pge2 >> E(**INV) >> kve
+    redis >> E(**INV) >> entra
+    dlr >> E(**INV) >> pbi
+    dle >> E(**INV) >> law
+    kve >> E(**INV) >> bk
+    pbi >> E(**INV) >> erp
+    law >> E(**INV) >> cred
+    mon << E("ExpressRoute · por acreditar", ltail="cluster_CLD-01 · Azure Chile Central (chilecentral), Santiago", **ACRED) >> erp

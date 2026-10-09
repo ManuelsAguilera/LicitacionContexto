@@ -1,0 +1,86 @@
+// Figura 4.3 de SD-04. Fuente reproducible: dot -Tpdf / -Tsvg (Graphviz).
+// Derivada de diag-04-02_capas-y-actores.dot (borradores/); misma estructura,
+// rótulos actualizados a la selección Azure (ADR-06, ADR-07) y reajustados a ≥ 9 pt impresos.
+digraph capas_y_actores {
+  graph [rankdir=TB, bgcolor="white", pad="0.08", nodesep="0.12", ranksep="0.22",
+         splines=polyline, fontname="Arial", fontsize=15, outputorder=edgesfirst, forcelabels=true,
+         label="Actores, ocho capas y responsabilidades lógicas (RT-02.01)\nAH/AS son códigos UAW; las flechas son familias de contratos, no rutas físicas",
+         labelloc=t, labeljust=l];
+  node [shape=box, style="rounded,filled", color="#90A4AE", fillcolor="#F8FAFB",
+        fontname="Arial", fontsize=13, margin="0.10,0.06"];
+  edge [color="#718591", arrowsize=0.6, penwidth=0.9, fontname="Arial", fontsize=13];
+
+  ah [label="ACTORES HUMANOS / ROLES (AH)\nCliente y titular 01–02 · tienda y atención 03–06, 08–09\nCD, comercial y control 07, 10–16, 18 · vendedor 17 (API)",
+      fillcolor="#F2F5F7", color="#B6C3CA"];
+
+  pres_r [label="1 · PRESENTACIÓN RETAIL\nPOS y mesón, CD, portal, BI\nTienda: caché y diario local 24 h",
+          fillcolor="#E1F3ED", color="#56A593"];
+  pres_f [label="1 · PRESENTACIÓN EMISOR\nSesión financiera y consulta\nseparadas de Retail",
+          fillcolor="#EEE8F7", color="#8874AD"];
+  {rank=same; pres_r; pres_f;}
+  pres_r -> pres_f [style=invis, weight=20];
+
+  borde [label="2 · BORDE Y EXPOSICIÓN\nDistribución, WAF, protección DDoS y TLS",
+         fillcolor="#E8F1FA", color="#79A9D2"];
+  gateway [label="3 · PUERTA DE ENLACE · Azure API Management Premium\nContratos, identidad, cuotas, versiones y trazas",
+           fillcolor="#E8F1FA", color="#79A9D2"];
+
+  retail [label="4 · SERVICIOS RETAIL (9)\nR:M-01 Oferta · R:M-02 Abastecimiento\nR:M-03 Existencias · R:V-01 Pedidos\nR:V-02 Ventas · R:V-03 Comisiones\nR:V-04 Marketplace · R:CL-01 Posventa\nR:CL-02 Clientes",
+          fillcolor="#DDF1E9", color="#56A593"];
+  emisor [label="4 · SERVICIOS FILIAL EMISORA (3)\nF:C-01 Originación\nF:C-02 Cartera\nF:C-03 Evidencia",
+          fillcolor="#EDE5F7", color="#8874AD"];
+  {rank=same; retail; emisor;}
+  retail -> emisor [style=invis, weight=20];
+  frontera [label="4 · FRONTERA X-01 (1): finalidad, datos mínimos,\nautorización y bitácora; política aplicada\nen Retail y Emisor; sin perfil único",
+            fillcolor="#FFF3CF", color="#B7953E"];
+
+  broker [label="5 · EVENTOS\nAzure Event Hubs Premium\nHechos confirmados; reintento,\nfallidos y deduplicación",
+          fillcolor="#EBF2F7", color="#93AEC1"];
+  adaptadores [label="5 · ADAPTADORES PRIVADOS EN AKS\nERP/DTE, WMS, marketplace,\ncomercio electrónico, fidelización,\nlegados 2009/2011, pagos,\ntransportistas, proveedores",
+              fillcolor="#EBF2F7", color="#93AEC1"];
+  {rank=same; broker; adaptadores;}
+  broker -> adaptadores [style=invis, weight=20];
+
+  as [label="ACTORES SISTEMA (AS) · alojamiento por verificar\nPlataformas AS-01–05, 09–11\nContrapartes AS-07–08, 12–13\nAS-14 temporizador; AS-06 sin código",
+      fillcolor="#F2F5F7", color="#B6C3CA"];
+
+  datos_r [label="6 · DATOS RETAIL\nPostgreSQL, Data Lake,\nPower BI; ML sugiere\nconteos y merma",
+           fillcolor="#E1F3ED", color="#56A593"];
+  datos_x [label="6 · DATOS X-01\nPolíticas y\nauditoría",
+           fillcolor="#FFF3CF", color="#B7953E"];
+  datos_f [label="6 · DATOS EMISOR\nPostgreSQL, evidencia,\nData Lake y Power BI\npermisos propios",
+           fillcolor="#EEE8F7", color="#8874AD"];
+  {rank=same; datos_r; datos_x; datos_f;}
+  datos_r -> datos_x -> datos_f [style=invis, weight=20];
+
+  seguridad [label="7 · SEGURIDAD\nEntra ID por entidad,\nrol y finalidad; Key\nVault y cifrado",
+             fillcolor="#FFF0E0", color="#D1A16C"];
+  observabilidad [label="8 · OBSERVABILIDAD\nAzure Monitor y\nOpenTelemetry: nube,\ntienda y centro de datos",
+                 fillcolor="#EDF0F5", color="#9BA8B6"];
+  {rank=same; seguridad; observabilidad;}
+  seguridad -> observabilidad [style=invis, weight=20];
+
+  ah -> pres_r [label="operación/consulta"];
+  ah -> pres_f [style=dashed, color="#8874AD"];
+  pres_r -> borde [label="si hay enlace"];
+  pres_f -> borde [color="#8874AD"];
+  borde -> gateway;
+  gateway -> retail;
+  gateway -> emisor [color="#8874AD"];
+  retail -> frontera [style=dotted, color="#B7953E"];
+  emisor -> frontera [style=dotted, color="#B7953E"];
+  retail -> emisor [dir=both, style=dashed, color="#8874AD", constraint=false,
+                    label="solo contrato aprobado"];
+  frontera -> broker [style=invis, weight=5];
+  retail -> broker [xlabel="hechos confirmados", minlen=2];
+  emisor -> broker [style=dashed, color="#8874AD", minlen=2];
+  retail -> adaptadores [dir=both, color="#56A593", minlen=2];
+  emisor -> adaptadores [dir=both, color="#8874AD", minlen=2];
+  adaptadores -> as [dir=both, label="contratos"];
+  broker -> datos_r [xlabel="proyección"];
+  broker -> datos_f [style=dashed, color="#8874AD"];
+  frontera -> datos_x [color="#B7953E"];
+  as -> datos_x [style=invis, weight=10];
+  datos_r -> seguridad [style=dotted, arrowhead=none];
+  datos_f -> observabilidad [style=dotted, arrowhead=none];
+}

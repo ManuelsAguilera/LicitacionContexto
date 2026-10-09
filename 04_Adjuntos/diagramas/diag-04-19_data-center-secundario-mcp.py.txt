@@ -1,0 +1,79 @@
+F = "Arial"
+AZ = diagrams.azure
+GEN = diagrams.generic
+OP = diagrams.onprem
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(diagrams.__file__))).replace("\\", "/")
+PAL = {
+    "retail": ("#1565c0", "#e8f1fb"),
+    "emisor": ("#7b1fa2", "#f6ecf8"),
+    "comun": ("#546e7a", "#f1f4f5"),
+    "nube": ("#0078d4", "#fbfdff"),
+    "dr": ("#2e7d32", "#f1f8f1"),
+    "cliente": ("#6d4c41", "#f8f4f2"),
+    "zona": ("#78909c", "#ffffff"),
+}
+def CL(label, kind="comun"):
+    pen, bg = PAL[kind]
+    return Cluster(label, graph_attr={"fontsize": "28", "fontname": F + " Bold", "fontcolor": pen, "pencolor": pen, "bgcolor": bg, "penwidth": "3", "style": "rounded", "margin": "14"})
+def html(text):
+    lines = text.replace("&", "&amp;").split("\n")
+    return "<B>" + lines[0] + "</B>" + "".join("<BR/>" + line for line in lines[1:])
+def N(cls, text, size=60):
+    img = BASE + "/" + cls._icon_dir.replace("\\", "/") + "/" + cls._icon
+    label = '<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD FIXEDSIZE="TRUE" WIDTH="%d" HEIGHT="%d"><IMG SRC="%s" SCALE="TRUE"/></TD></TR><TR><TD>%s</TD></TR></TABLE>>' % (size, size, img, html(text))
+    return diagrams.Node(label, shape="plain", fixedsize="false", width="0", height="0")
+def NOTA(text, kind="nota"):
+    pen, bg = {"nota": ("#546e7a", "#fffde7"), "falla": ("#c62828", "#fdecea"), "dr": ("#2e7d32", "#f1f8f1")}[kind]
+    return diagrams.Node('<<TABLE BORDER="0" CELLPADDING="2"><TR><TD>' + html(text) + '</TD></TR><TR><TD><FONT POINT-SIZE="10"> </FONT></TD></TR></TABLE>>', shape="box", style="rounded,filled", fixedsize="false", width="0", height="0", margin="0.25,0.16", color=pen, fillcolor=bg, penwidth="2.5")
+def E(label="", **kw):
+    kw.setdefault("fontsize", "26")
+    kw.setdefault("fontname", F)
+    kw.setdefault("penwidth", "2")
+    return Edge(label=label, **kw)
+DOBLE = {"color": "#1565c0:#ffffff:#1565c0", "penwidth": "2.5", "fontcolor": "#1565c0"}
+AMBAR = {"color": "#e69500", "penwidth": "4.5", "fontcolor": "#9a6200"}
+REPLICA = {"color": "#2e7d32", "style": "dashed", "penwidth": "3", "fontcolor": "#2e7d32"}
+BLOQ = {"color": "#c62828", "penwidth": "3", "fontcolor": "#c62828", "arrowhead": "tee"}
+XCONT = {"color": "#7b1fa2", "penwidth": "2.5", "fontcolor": "#7b1fa2"}
+ACRED = {"style": "dashed"}
+FALLA = {"color": "#c62828", "style": "dotted", "penwidth": "3", "arrowhead": "none"}
+INV = {"style": "invis"}
+with Diagram("", show=False, direction="TB", graph_attr={"pad": "0.25", "splines": "spline", "nodesep": "0.6", "ranksep": "0.55", "fontname": "Arial", "compound": "true"}, node_attr={"fontname": "Arial", "fontsize": "26"}, edge_attr={"fontname": "Arial", "color": "#546e7a"}):
+    fd = N(AZ.network.FrontDoors, "Front Door global")
+    with CL("CLD-01 · Chile Central · activo", "nube"):
+        apa = N(AZ.integration.APIManagement, "API Management\nPremium")
+        aka = N(AZ.compute.KubernetesServices, "AKS")
+        eha = N(AZ.analytics.EventHubs, "Event Hubs\nprimario")
+        with CL("Retail", "retail"):
+            pgra = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL")
+            sta = N(AZ.storage.DataLakeStorage, "Almacenamiento")
+        with CL("Emisor", "emisor"):
+            pgea = N(AZ.database.DatabaseForPostgresqlServers, "PostgreSQL")
+    with CL("CLD-02 · Brazil South · pasivo", "dr"):
+        apb = N(AZ.integration.APIManagement, "Gateway APIM\nadicional")
+        akb = N(AZ.compute.KubernetesServices, "AKS en espera\no por IaC")
+        ehb = N(AZ.analytics.EventHubs, "Event Hubs\nsecundario")
+        with CL("Retail ", "retail"):
+            pgrb = N(AZ.database.DatabaseForPostgresqlServers, "Réplica\nde lectura")
+            stb = N(AZ.storage.DataLakeStorage, "Almacenamiento\nreplicado")
+        with CL("Emisor ", "emisor"):
+            pgeb = N(AZ.database.DatabaseForPostgresqlServers, "Réplica\nde lectura")
+        kvb = N(AZ.security.KeyVaults, "Key Vault")
+        bkb = N(AZ.migration.RecoveryServicesVaults, "Bóveda de\nrespaldo")
+    with CL("Sitios del Cliente", "cliente"):
+        dc1 = N(GEN.place.Datacenter, "DC-01\ncasa matriz")
+        dc2 = N(GEN.place.Datacenter, "DC-02 · sala\nde respaldo; no\nbasta como única\nrecuperación")
+    obj = NOTA("RTO ≤ 4 h · RPO ≤ 15 min\nservicios críticos (RT-07.04)\nactivo-pasivo; conmutación\nensayada dos veces al año", "dr")
+    fd >> E("activo") >> apa
+    fd >> E("conmutación", **ACRED) >> apb
+    apa >> E(**INV) >> aka >> E(**INV) >> eha >> E(**INV) >> pgra >> E(**INV) >> sta >> E(**INV) >> pgea
+    apb >> E(**INV) >> akb >> E(**INV) >> ehb >> E(**INV) >> pgrb >> E(**INV) >> stb >> E(**INV) >> pgeb >> E(**INV) >> kvb
+    kvb >> E(**INV) >> bkb
+    aka >> E("misma IaC", constraint="false", **ACRED) >> akb
+    eha >> E("geo-replicación\nretraso < 15 min", constraint="false", **REPLICA) >> ehb
+    pgra >> E("réplica entre regiones\nRPO ≤ 15 min", constraint="false", **REPLICA) >> pgrb
+    sta >> E("réplica", constraint="false", **REPLICA) >> stb
+    pgea >> E("condicionada a residencia", constraint="false", **REPLICA) >> pgeb
+    pgea >> E(**INV) >> dc1
+    dc1 << E("C-16 propuesto", constraint="false", **AMBAR) >> dc2
+    pgea >> E(**INV) >> dc2

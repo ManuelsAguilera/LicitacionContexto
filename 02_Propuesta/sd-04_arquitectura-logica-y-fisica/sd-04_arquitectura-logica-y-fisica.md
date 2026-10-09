@@ -9,8 +9,24 @@ requisitos: []
 depende_de: []
 adjuntos:
   - ADJ-008
+  - ADJ-027
+  - ADJ-028
+  - ADJ-029
+  - ADJ-030
+  - ADJ-031
+  - ADJ-032
+  - ADJ-033
+  - ADJ-034
+  - ADJ-035
+  - ADJ-036
+  - ADJ-037
   - ADJ-009
+  - ADJ-038
+  - ADJ-039
+  - ADJ-040
+  - ADJ-041
   - ADJ-010
+  - ADJ-042
   - ADJ-011
   - ADJ-012
 jira:
@@ -34,7 +50,7 @@ secciones:
   - T7-04-4.3
   - T7-04-4.3.1
   - T7-04-4.3.2
-actualizado: 2026-10-08
+actualizado: 2026-10-09
 ---
 # Subdocumento 4 — Arquitectura lógica y física de la solución
 
@@ -49,7 +65,7 @@ actualizado: 2026-10-08
 | Carpeta | `02_Propuesta/sd-04_arquitectura-logica-y-fisica/` |
 | Capítulo en el informe | Capítulo IV |
 | Formularios asociados | T-11 |
-| Estado | 4.1 a 4.3.2 en borrador; dimensionamiento e inventario de plataformas pendientes |
+| Estado | 4.1 a 4.3.2 redactados con 19 figuras (2026-10-09); falta compilar el PDF, revisión humana, inventario de plataformas y dimensionamiento con cifras |
 
 ## Ponderación (Formulario T-21)
 
@@ -76,13 +92,13 @@ En todo el capítulo: la arquitectura es propia de la solución planteada (no se
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Borrador; validar partición y contratos |
-| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Selección inicial documentada; faltan versiones y T-11 |
-| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Borrador; falta inventario y memoria de capacidad |
-| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Borrador; falta inventario de tienda y T-11 |
-| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Borrador; falta informe de brechas 2024 |
-| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Borrador; falta emplazamiento de legados |
-| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Borrador; falta prueba y validación jurídica |
+| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Redactado con figuras; falta compilar y revisión humana |
+| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Redactado con figuras; falta compilar y revisión humana |
+| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Redactado con figuras; falta compilar y revisión humana |
+| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Redactado con figuras; falta compilar y revisión humana |
+| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Redactado con figuras; falta compilar y revisión humana |
+| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Redactado con figuras; falta compilar y revisión humana |
+| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Redactado con figuras; falta compilar y revisión humana |
 
 Anexos: Formulario T-11.
 
@@ -109,9 +125,30 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 
 ## Adjuntos esperados
 
-- `diag-04-01_arquitectura-logica.svg`
-- `diag-04-02_arquitectura-fisica.svg`
-- `diag-04-03_data-center.svg`
+Los diagramas finales viven en `04_Adjuntos/diagramas/` y se copian a `latex_final/figuras/` al insertarlos. El número del archivo coincide con el número de figura del capítulo (`diag-04-13` = Figura 4.13). En 4.1, cada bloque es un solo diagrama: arquitectura objetivo en línea sólida y elementos que solo existen en Etapa 1 en gris discontinuo. La especificación de los diagramas físicos está en `05_Gestion/reportes/especificacion_diagramas_fisicos_sd04.md`.
+
+| Figura | Sección | Archivo | Contenido | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| 4.1 | 4.1 | `diag-04-01_arquitectura-logica-objetivo.png` | Vista general Etapa 2 (objetivo, mes 21) | Insertada en sd-04.tex |
+| 4.2 | 4.1 | `diag-04-02_arquitectura-logica-etapa-1.png` | Vista general Etapa 1 (convivencia, mes 16) | Insertada en sd-04.tex |
+| 4.3 | 4.1 | `diag-04-03_capas-y-actores.pdf` | Ocho capas RT-02.01 y actores | Insertada en sd-04.tex |
+| 4.4 | 4.1 | `diag-04-04_bloque-tiendas.png` | Bloque Tiendas físicas | Insertada en sd-04.tex |
+| 4.5 | 4.1 | `diag-04-05_bloque-mercaderia.png` | Bloque Mercadería | Insertada en sd-04.tex |
+| 4.6 | 4.1 | `diag-04-06_bloque-venta-y-cumplimiento.png` | Bloque Venta y cumplimiento | Insertada en sd-04.tex |
+| 4.7 | 4.1 | `diag-04-07_bloque-relacion-clientes.png` | Bloque Relación con clientes | Insertada en sd-04.tex |
+| 4.8 | 4.1 | `diag-04-08_bloque-credito-y-frontera.png` | Bloque Crédito y frontera | Insertada en sd-04.tex |
+| 4.9 | 4.1 | `diag-04-09_bloque-integracion.png` | Bloque Integración transversal | Insertada en sd-04.tex |
+| 4.10 | 4.1 | `diag-04-10_flujo-hibrido-tienda.pdf` | Recorrido híbrido de tienda | Insertada en sd-04.tex |
+| 4.11 | 4.1 | `diag-04-11_emplazamientos-logicos.pdf` | Emplazamientos lógicos (puente a 4.2) | Insertada en sd-04.tex |
+| 4.12 | 4.1 | `diag-04-12_datos-y-frontera.pdf` | Datos, analítica y frontera | Insertada en sd-04.tex |
+| 4.13 | 4.2 | `diag-04-13_arquitectura-fisica-general.png` | Vista física general híbrida | Insertada en sd-04.tex |
+| 4.14 | 4.2 | `diag-04-14_red-y-segmentacion.png` | Red y segmentación | Insertada en sd-04.tex |
+| 4.15 | 4.2 | `diag-04-15_ambientes-y-despliegue.png` | Ambientes y despliegue | Insertada en sd-04.tex |
+| 4.16 | 4.2 | `diag-04-16_conexiones-y-contingencia.png` | Conexiones y puntos de falla | Insertada en sd-04.tex |
+| 4.17 | 4.2.1 | `diag-04-17_tienda-tipo.png` | Tienda tipo | Insertada en sd-04.tex |
+| 4.18 | 4.3.1 | `diag-04-18_data-center-primario.png` | Data center primario | Insertada en sd-04.tex |
+| 4.19 | 4.3.2 | `diag-04-19_data-center-secundario.png` | Data center secundario | Insertada en sd-04.tex |
+
 - `adj-sd-04_s2_inventario-hardware.xlsx : las Bases exigen la lista de hardware en Excel`
 - `form-T-11_especificaciones-tecnicas-ofertadas.docx`
 
