@@ -7,7 +7,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | Campo | Derivado | Propuesta | Manual | Por definir |
 | :-- | --: | --: | --: | --: |
 | Descripción del trabajo | 51 | 0 | 0 | 113 |
-| Queda fuera | 11 | 0 | 0 | 153 |
+| Queda fuera | 15 | 0 | 0 | 149 |
 | Entregable | 51 | 0 | 0 | 113 |
 | Criterio de aceptación | 29 | 0 | 0 | 135 |
 | Responsable | 0 | 159 | 0 | 5 |
@@ -16,7 +16,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | Costo estimado | 0 | 0 | 0 | 164 |
 | Recursos requeridos | 0 | 0 | 0 | 164 |
 | Supuestos | 164 | 0 | 0 | 0 |
-| Referencias | 128 | 0 | 0 | 36 |
+| Referencias | 153 | 0 | 0 | 11 |
 
 Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación y responsable) tienen valor en 29 de 164 paquetes, contando las propuestas, y valor derivado o manual en 0. Una fila «propuesta» todavía no es una decisión del equipo; el responsable es siempre propuesta hasta que el equipo lo valide.
 
@@ -93,7 +93,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 56 (propuesta): continuo. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.3 (supuestos y Tabla 3.3). [derivado]
 
 #### 1.1.6 Calendario de ventanas de congelamiento y de eventos anuales con declaración de impacto por evento
 
@@ -109,7 +109,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): se actualiza cada año antes de la campaña de noviembre. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.2 y 3.2.3 (ventanas de congelamiento). [derivado]
 
 #### 1.1.7 Actas de los comités e informe mensual de avance
 
@@ -239,7 +239,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): entrega temprana, antes del diseño; antes del diseño. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.3.1 (el levantamiento documenta las catorce interfaces y las nueve plataformas). [derivado]
 
 #### 1.2.3 Levantamiento de procesos, reglas de negocio y volumetría declarada
 
@@ -255,7 +255,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 1 a 3 (propuesta): antes del diseño. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.4 (reglas de negocio) y 3.4.1 (volumetría del Caso). [derivado]
 
 #### 1.2.4 Catálogo de requerimientos y matriz de trazabilidad
 
@@ -287,7 +287,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 4 (propuesta): cierra el levantamiento. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.2 y 3.2.3 (reparto por etapa, exclusiones y supuestos; Tablas 3.1 y 3.3). [derivado]
 
 #### 1.2.7 Estudio de decisión con costeo sobre etiquetas electrónicas de precio
 
@@ -335,7 +335,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): decide el destino de las plataformas. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.1 y 3.3.1 (destino de las nueve plataformas; SD-06 programa la decisión). [derivado]
 
 #### 1.2.10 Propuesta de criterios del cupo preaprobado para la filial emisora
 
@@ -417,7 +417,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 3 a 4 (propuesta): idem. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.3.2 (contratos y adaptadores de la plataforma común). [derivado]
 
 #### 1.3.6 Especificación del modo desconectado de 24 horas y de la sincronización tras la reconexión
 
@@ -515,7 +515,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 4 a 8 (propuesta): ámbito emisor. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** RNF-14 y RNF-36 (Anexo B): separación física acreditada del ámbito emisor. [derivado]
 
 #### 1.4.4 Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres
 
@@ -547,7 +547,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 4 a 8 (propuesta): antes de las primeras pruebas. [derivado]
-- **Referencias:** frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica. [derivado]
+- **Referencias:** frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica; sd-03, 3.2.1 y 3.3.2 (observabilidad de la base tecnológica). [derivado]
 
 #### 1.4.6 Plataforma de integración y entrega continuas con infraestructura como código
 
@@ -618,7 +618,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Rama y servicio:** 1.4. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 2 a 5 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** RC-01: Entregar el informe interno de 2024 sobre la brecha del centro de datos. [derivado]
 - **Entregable:** Por definir. Tipo probable: plan; falta concretar el artefacto. [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Arquitecto de Solución, con apoyo del Líder de Operación. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -627,7 +627,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): informe de 2024. [derivado]
-- **Referencias:** Ronda 0: 1.15.4. [derivado]
+- **Referencias:** Ronda 0: 1.15.4; RC-01 (Anexo A): el cliente entrega el informe de 2024 sobre la brecha del centro de datos. [derivado]
 
 #### 1.4.12 Sistemas de energía y climatización del centro de datos
 
@@ -1511,7 +1511,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): catálogo de interfaces. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.1 y 3.3.1 (la plataforma de integración reemplaza las catorce conexiones directas). [derivado]
 
 #### 1.6.2 Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas)
 
@@ -1527,7 +1527,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 5 a 18 (propuesta): interfaces de la Etapa 1; cartera: Etapa 1 y 2; interfaz de la Etapa 1. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.3.1 (plataforma de integración). [derivado]
 
 #### 1.6.3 Rediseño de las integraciones de la Etapa 2 (pedidos, marketplace y fidelización)
 
@@ -1543,7 +1543,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 18 (propuesta): interfaz de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.3.1 (plataforma de integración). [derivado]
 
 #### 1.6.9 Canal de intercambio con los proveedores de mercadería
 
@@ -1559,7 +1559,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 18 (propuesta): abastecimiento es de la Etapa 2. [derivado]
-- **Referencias:** 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP. [derivado]
+- **Referencias:** 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP; RNF-53 (Anexo B): estándar de intercambio de órdenes y avisos con proveedores. [derivado]
 
 #### 1.6.10 Entrega de reportes a las autoridades fiscalizadoras
 
@@ -1575,7 +1575,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 8 a 12 (propuesta): la filial emisora está en la Etapa 1. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.3.1 (los organismos fiscalizadores reciben los reportes). [derivado]
 
 #### 1.6.11 Certificación de las integraciones con evidencia de conciliación
 
@@ -1591,7 +1591,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 10 a 18 (propuesta): certificación de las dos etapas. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.4.5 (conciliación y retorno ensayado entre sistemas). [derivado]
 
 #### 1.6.12 Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE
 
@@ -1641,7 +1641,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 4 a 10 (propuesta): antes de la marcha blanca. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.1 (causa C1: el maestro de artículos) y 3.3.2. [derivado]
 
 #### 1.7.4 Corte de inventario en las 24 instalaciones que no cierran
 
@@ -1664,7 +1664,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 8 a 15 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** EXC-18: Migrar datos históricos fuera de la lista de RT-05.15. [derivado]
 - **Entregable:** por definir [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -1673,14 +1673,14 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 8 a 15 (propuesta): antes del paso a producción. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** EXC-18 (Anexo A): migrar la lista exigida de datos históricos. [derivado]
 
 #### 1.7.6 Migración del padrón de clientes deduplicado, de los vendedores y de las liquidaciones
 
 - **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 14 a 19 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** EXC-18: Migrar datos históricos fuera de la lista de RT-05.15. [derivado]
 - **Entregable:** por definir [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -1689,7 +1689,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 14 a 19 (propuesta): clientes Retail es de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** EXC-18 (Anexo A): migrar la lista exigida de datos históricos. [derivado]
 
 #### 1.7.7 Migración de la cartera viva (620.000 clientes) con sus actas de conciliación
 
@@ -1712,7 +1712,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Rama y servicio:** 1.7. **Etapa:** por definir. **Método:** tres valores.
 - **Ventana:** los meses 10 a 16 (propuesta)
 - **Descripción del trabajo:** por definir [por definir]
-- **Queda fuera:** por definir [por definir]
+- **Queda fuera:** EXC-18: Migrar datos históricos fuera de la lista de RT-05.15. [derivado]
 - **Entregable:** por definir [por definir]
 - **Criterio de aceptación:** por definir [por definir]
 - **Responsable:** Líder de Datos. Acepta la Contraparte Técnica (Art. 18.1). [propuesta]
@@ -1721,7 +1721,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 10 a 16 (propuesta): antes del paso a producción de la Etapa 1. [derivado]
-- **Referencias:** Ronda 0: 1.30. [derivado]
+- **Referencias:** Ronda 0: 1.30; EXC-18 (Anexo A): dejar un repositorio de consulta de los datos no migrados. [derivado]
 
 #### 1.7.10 Plan de retiro de la plataforma de originación y cobranza de 2011
 
@@ -1737,7 +1737,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 14 a 18 (propuesta): antes del retiro. [derivado]
-- **Referencias:** Ronda 0: 3.11. [derivado]
+- **Referencias:** Ronda 0: 3.11; sd-03, 3.1 y 3.2.3 (retiro de la plataforma de crédito de 2011 en octubre de 2028). [derivado]
 
 #### 1.7.11 Plataforma de originación y cobranza de 2011 fuera de servicio
 
@@ -1753,7 +1753,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 22 (contrato): sd-03 (operación): fecha objetivo octubre de 2028 = mes 22. [derivado]
-- **Referencias:** Ronda 0: 1.17b. [derivado]
+- **Referencias:** Ronda 0: 1.17b; sd-03, 3.1 y 3.2.3 (retiro de la plataforma de crédito de 2011 en octubre de 2028). [derivado]
 
 #### 1.7.12 Sistema central de retail de 2009 retirado
 
@@ -1851,7 +1851,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 2 a 5 (propuesta): tras la arquitectura. [derivado]
-- **Referencias:** frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica. [derivado]
+- **Referencias:** frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica; RNF-37 (Anexo B): segregación de funciones entre originación, aprobación, modificación y cobranza. [derivado]
 
 #### 1.8.6 Cifrado y tokenización de los medios de pago
 
@@ -1899,7 +1899,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 10 a 18 (propuesta): antes de la certificación de cada etapa. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** Anexo D, resultado 21, y RNF-14: informe técnico y prueba de penetración. [derivado]
 
 #### 1.8.10 Informe de diligencia del proveedor de nube
 
@@ -1981,7 +1981,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 5 a 18 (propuesta): durante el desarrollo de las dos etapas. [derivado]
-- **Referencias:** ISO 29119. [derivado]
+- **Referencias:** ISO 29119; Anexo B (requisitos no funcionales con umbral y método de verificación). [derivado]
 
 #### 1.9.4 Pruebas de desempeño, resiliencia y recuperación ante desastres
 
@@ -2029,7 +2029,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 11 a 21 (propuesta): aceptación por etapa. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** Anexo D (28 resultados de negocio). [derivado]
 
 #### 1.9.8 Certificación de calidad de la Etapa 1
 
@@ -2257,7 +2257,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 15 a 18 (propuesta): Art. 17.2 fija la convivencia en los meses 19 y 20; el plan va antes. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.4.5 (continuidad entre etapas por convivencia, conciliación y retorno ensayado). [derivado]
 
 #### 1.11.5 Piloto del punto de venta en tres tiendas
 
@@ -2291,7 +2291,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 10 a 12 (propuesta): antes de la marcha blanca. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20). [derivado]
 
 #### 1.12.2 Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1
 
@@ -2323,7 +2323,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 16 (contrato): Art. 17: paso a producción en el mes 16. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.2 (paso a producción de la Etapa 1 en el mes 16). [derivado]
 
 #### 1.12.5 Plan de la marcha blanca de la Etapa 2, en convivencia con la Etapa 1 en producción
 
@@ -2339,7 +2339,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 16 a 18 (propuesta): antes de la marcha blanca de la Etapa 2. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20). [derivado]
 
 #### 1.12.6 Informe de resultados de la marcha blanca de la Etapa 2
 
@@ -2355,7 +2355,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 20 (contrato): Art. 17: la marcha blanca de la Etapa 2 termina en el mes 20. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20). [derivado]
 
 #### 1.12.7 Acta de aceptación final y garantía de correcto funcionamiento
 
@@ -2371,7 +2371,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de el mes 21 (contrato): Art. 17: aceptación final en el mes 21; se activa con la aceptación final. [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.2.2 (paso a producción de la Etapa 2 en el mes 21). [derivado]
 
 #### 1.12.9 Informe del soporte de estabilización posterior a la puesta en marcha
 
@@ -2437,7 +2437,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 10 a 20 (propuesta): Art. 17.3: la capacitación certificada es condición de cierre de cada marcha blanca (meses 15 y 20). [derivado]
-- **Referencias:** por definir [por definir]
+- **Referencias:** sd-03, 3.4.6 (capacitación por rol) y Art. 17.3 (condición de cierre de la marcha blanca). [derivado]
 
 #### 1.13.4 Informe de acompañamiento en puesto para el personal de tienda, temporero y externo
 
@@ -2453,7 +2453,7 @@ Los tres campos que exige el Comunicado 10 (entregable, criterio de aceptación 
 - **Costo estimado:** Por estimar; los montos viven solo en el Sobre Económico. [por definir]
 - **Recursos requeridos:** Por definir con el sd-12. [por definir]
 - **Supuestos:** Ventana de los meses 13 a 24 (propuesta): tras el paso a producción de cada etapa. [derivado]
-- **Referencias:** 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos. [derivado]
+- **Referencias:** 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos; sd-03, 3.4.6 (rotación anual de 62 % y unos 1.100 repositores externos). [derivado]
 
 #### 1.13.5 Plan de comunicación a los clientes de la cartera por tramo
 

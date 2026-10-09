@@ -22,3 +22,5 @@ Cubrió los 12 compromisos del sd-03 sin entregable con 11 cuentas nuevas y 2 re
 
 | N.º | Clase | Cambio | Justificación (elemento del sd-03) | Metas antes | Metas después | Decisión |
 | --: | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | b (H6, traza directa) | Se agregó a 34 cuentas una cita verificada en `sd-03.tex` o en sus anexos (atributo `origen:`) | Cada cita nombra la sección, la tabla, el RNF, la exclusión o el resultado del sd-03 de donde sale la cuenta; las frases clave se comprobaron con búsqueda en `sd-03.tex` y en los Anexos A, B y D | H6: 51 sin traza; H1 a H5 y H7 a H9 cumplen | H6: 17 sin traza; H1 a H5 y H7 a H9 cumplen | Aceptada |
+

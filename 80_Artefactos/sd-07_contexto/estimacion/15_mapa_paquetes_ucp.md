@@ -67,8 +67,8 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.1.1 | Plan de dirección integrado (ámbito, cronograma, costos, calidad, riesgos, comunicaciones, interesados y adquisiciones) | desde el inicio del contrato | — |
 | 1.1.2 | EDT y diccionario de paquetes con entregable, criterio de aceptación y responsable | desde el inicio del contrato | Formulario T-14 |
 | 1.1.3 | Registro de solicitudes de cambio y su resolución | desde el inicio del contrato | Art. 72 |
-| 1.1.4 | Registros de riesgos, lecciones aprendidas, supuestos y consultas | desde el inicio del contrato | — |
-| 1.1.6 | Calendario de ventanas de congelamiento y de eventos anuales con declaración de impacto por evento | desde el inicio del contrato | — |
+| 1.1.4 | Registros de riesgos, lecciones aprendidas, supuestos y consultas | desde el inicio del contrato | sd-03, 3.2.3 (supuestos y Tabla 3.3) |
+| 1.1.6 | Calendario de ventanas de congelamiento y de eventos anuales con declaración de impacto por evento | desde el inicio del contrato | sd-03, 3.2.2 y 3.2.3 (ventanas de congelamiento) |
 | 1.1.7 | Actas de los comités e informe mensual de avance | desde el inicio del contrato | Art. 71; RT-19.06 |
 | 1.1.9 | Reporte mensual de consumo de nube | desde el inicio del contrato | Art. 16.3; RT-03.06 |
 | 1.1.10 | Actas de aceptación por entrega y habilitación de pagos | desde el inicio del contrato | Art. 18; E-25 |
@@ -76,67 +76,67 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.1.12 | Acta de constitución del proyecto | desde el inicio del contrato | — |
 | 1.1.13 | Línea base de costos y presupuesto | desde el inicio del contrato | Ronda 0: 2.9; los valores viven solo en la oferta económica |
 | 1.1.14 | Planes alternativos de las dos condiciones del adelanto del negocio financiero | 1 | sd-03, 3.2.3; el detalle se resuelve en el plan de trabajo y en el análisis de riesgos |
-| 1.2.1 | Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias | desde el inicio del contrato | — |
-| 1.2.3 | Levantamiento de procesos, reglas de negocio y volumetría declarada | desde el inicio del contrato | — |
+| 1.2.1 | Mapa de las 14 interfaces e inventario de las 9 plataformas, 6 proveedores y dependencias | desde el inicio del contrato | sd-03, 3.3.1 (el levantamiento documenta las catorce interfaces y las nueve plataformas) |
+| 1.2.3 | Levantamiento de procesos, reglas de negocio y volumetría declarada | desde el inicio del contrato | sd-03, 3.2.4 (reglas de negocio) y 3.4.1 (volumetría del Caso) |
 | 1.2.4 | Catálogo de requerimientos y matriz de trazabilidad | desde el inicio del contrato | Anexo B del sd-03 |
-| 1.2.6 | Línea base de alcance por etapa, con exclusiones y supuestos | desde el inicio del contrato | — |
+| 1.2.6 | Línea base de alcance por etapa, con exclusiones y supuestos | desde el inicio del contrato | sd-03, 3.2.2 y 3.2.3 (reparto por etapa, exclusiones y supuestos; Tablas 3.1 y 3.3) |
 | 1.2.7 | Estudio de decisión con costeo sobre etiquetas electrónicas de precio | desde el inicio del contrato | OP-01 a OP-05 |
 | 1.2.8 | Estudio de decisión con costeo sobre el sistema de almacenes de Concepción | desde el inicio del contrato | OP-08, OP-09 |
-| 1.2.9 | Estudio de decisión con costeo sobre el destino de las plataformas | desde el inicio del contrato | — |
+| 1.2.9 | Estudio de decisión con costeo sobre el destino de las plataformas | desde el inicio del contrato | sd-03, 3.2.1 y 3.3.1 (destino de las nueve plataformas; SD-06 programa la decisión) |
 | 1.2.10 | Propuesta de criterios del cupo preaprobado para la filial emisora | 1 | sd-03, 3.2.3; la filial emisora los fija antes de la prueba (RC-11) |
 | 1.3.1 | Documento de arquitectura con cinco vistas y catálogo de decisiones | desde el inicio del contrato | ISO 42010 |
 | 1.3.3 | Arquitectura física con emplazamiento por componente justificado | desde el inicio del contrato | Art. 16.2; zonas a nombrar conforme al sd-04 |
 | 1.3.4 | Modelo de datos con dominios segregados Retail y Emisor, frontera documentada y políticas de retención | desde el inicio del contrato | RT-05.10 |
-| 1.3.5 | Contratos de integración versionados y su gobierno | desde el inicio del contrato | — |
+| 1.3.5 | Contratos de integración versionados y su gobierno | desde el inicio del contrato | sd-03, 3.3.2 (contratos y adaptadores de la plataforma común) |
 | 1.3.6 | Especificación del modo desconectado de 24 horas y de la sincronización tras la reconexión | desde el inicio del contrato | RT-03.10 de las Bases Transversales; el código RT-03.13 significa cosas distintas en el Caso y en las Transversales |
 | 1.3.7 | Modelo de capacidad y dimensionamiento | desde el inicio del contrato | memoria de capacidad de la sección 3.4.1 del sd-03 |
 | 1.3.8 | Especificación y costeo de las obras de infraestructura del cliente | desde el inicio del contrato | El cliente ejecuta; el proponente especifica, costea, coordina y certifica (SP-04) |
 | 1.4.1 | Entorno de nube con infraestructura como código, subredes privadas y etiquetado de costos | por definir | — |
 | 1.4.2 | Configuración del borde por sitio y certificación de la red segmentada en las 13 tiendas que no la tienen | por definir | El hardware lo adquiere el cliente (SP-04); El cliente adquiere el hardware y ejecuta las obras (EXC-19, SP-04); RT-03.24 del Caso |
-| 1.4.3 | Entorno dedicado del ámbito emisor con segregación física y lógica acreditada | por definir | — |
+| 1.4.3 | Entorno dedicado del ámbito emisor con segregación física y lógica acreditada | por definir | RNF-14 y RNF-36 (Anexo B): separación física acreditada del ámbito emisor |
 | 1.4.4 | Ambientes de desarrollo, calidad, preproducción, producción y recuperación ante desastres | por definir | — |
-| 1.4.5 | Plataforma de observabilidad unificada con catálogo de alertas | por definir | frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica |
+| 1.4.5 | Plataforma de observabilidad unificada con catálogo de alertas | por definir | frontera con el UCP: aquí el aprovisionamiento; las funciones al actor están en la base tecnológica; sd-03, 3.2.1 y 3.3.2 (observabilidad de la base tecnológica) |
 | 1.4.6 | Plataforma de integración y entrega continuas con infraestructura como código | por definir | Antes 1.5.10; no está en el UCP |
 | 1.4.7 | Licenciamiento de terceros a nombre del cliente | por definir | Agregado desde la guía de la EDT, sección 8 |
 | 1.4.8 | Especificación de hardware y dispositivos de terreno para adquisición del cliente | por definir | Formulario T-11; OP-06, OP-07 |
 | 1.4.9 | Plano y especificación del recinto técnico del centro de datos y coordinación de su obra civil de separación | por definir | Ronda 0: 1.15.3; RT-06.03; El cliente ejecuta la obra (RT-06.06, RC-04); incluye la especificación del blindaje (RT-06.02) |
-| 1.4.11 | Plan de cierre de la brecha del centro de datos frente al informe interno de 2024 | por definir | Ronda 0: 1.15.4 |
+| 1.4.11 | Plan de cierre de la brecha del centro de datos frente al informe interno de 2024 | por definir | Ronda 0: 1.15.4; RC-01 (Anexo A): el cliente entrega el informe de 2024 sobre la brecha del centro de datos |
 | 1.4.12 | Sistemas de energía y climatización del centro de datos | por definir | RT-06.07, RT-06.08; RT-06.13, RT-06.14 |
 | 1.4.14 | Sistemas de seguridad física del centro de datos y espacio de operación del personal | por definir | RT-06.16, RT-06.17; RT-06.20 a RT-06.24; Ronda 0: 1.15.11 |
 | 1.4.17 | Solución de respaldo en operación con custodia de medios | por definir | RT-07.09; esquema 3-2-1-1-0; RT-06.26 |
-| 1.6.1 | Catálogo de interfaces rediseñadas con contratos y niveles de servicio de integración | por definir | — |
-| 1.6.2 | Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas) | por definir | — |
-| 1.6.3 | Rediseño de las integraciones de la Etapa 2 (pedidos, marketplace y fidelización) | por definir | — |
-| 1.6.9 | Canal de intercambio con los proveedores de mercadería | por definir | 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP |
-| 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | por definir | — |
-| 1.6.11 | Certificación de las integraciones con evidencia de conciliación | por definir | — |
+| 1.6.1 | Catálogo de interfaces rediseñadas con contratos y niveles de servicio de integración | por definir | sd-03, 3.2.1 y 3.3.1 (la plataforma de integración reemplaza las catorce conexiones directas) |
+| 1.6.2 | Rediseño de las integraciones de la Etapa 1 (precios y existencia, crédito con el sistema de gestión empresarial, cobranza y prevención de pérdidas) | por definir | sd-03, 3.3.1 (plataforma de integración) |
+| 1.6.3 | Rediseño de las integraciones de la Etapa 2 (pedidos, marketplace y fidelización) | por definir | sd-03, 3.3.1 (plataforma de integración) |
+| 1.6.9 | Canal de intercambio con los proveedores de mercadería | por definir | 940 proveedores; frontera con el caso de uso de órdenes a proveedores del UCP; RNF-53 (Anexo B): estándar de intercambio de órdenes y avisos con proveedores |
+| 1.6.10 | Entrega de reportes a las autoridades fiscalizadoras | por definir | sd-03, 3.3.1 (los organismos fiscalizadores reciben los reportes) |
+| 1.6.11 | Certificación de las integraciones con evidencia de conciliación | por definir | sd-03, 3.4.5 (conciliación y retorno ensayado entre sistemas) |
 | 1.6.12 | Modalidad de contingencia tributaria aprobada y probada con el ERP/DTE | 1 | sd-03, 3.4.5; antes de comprometer la operación sin enlace |
 | 1.7.1 | Plan de migración con estrategia de corte y de retorno e inventario de datos históricos | por definir | RT-05.11; RT-05.15 |
-| 1.7.3 | Maestro de artículos saneado y validado (268.000 referencias) | por definir | — |
+| 1.7.3 | Maestro de artículos saneado y validado (268.000 referencias) | por definir | sd-03, 3.2.1 (causa C1: el maestro de artículos) y 3.3.2 |
 | 1.7.4 | Corte de inventario en las 24 instalaciones que no cierran | por definir | — |
-| 1.7.5 | Migración del histórico comercial (ventas y pedidos) | por definir | — |
-| 1.7.6 | Migración del padrón de clientes deduplicado, de los vendedores y de las liquidaciones | por definir | — |
+| 1.7.5 | Migración del histórico comercial (ventas y pedidos) | por definir | EXC-18 (Anexo A): migrar la lista exigida de datos históricos |
+| 1.7.6 | Migración del padrón de clientes deduplicado, de los vendedores y de las liquidaciones | por definir | EXC-18 (Anexo A): migrar la lista exigida de datos históricos |
 | 1.7.7 | Migración de la cartera viva (620.000 clientes) con sus actas de conciliación | 1 y 2 | Resultado 24 del Anexo D; fuera del UCP (rama de migración) |
-| 1.7.9 | Repositorio de consulta de datos históricos no migrados | por definir | Ronda 0: 1.30 |
-| 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | por definir | Ronda 0: 3.11 |
-| 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | por definir | Ronda 0: 1.17b |
+| 1.7.9 | Repositorio de consulta de datos históricos no migrados | por definir | Ronda 0: 1.30; EXC-18 (Anexo A): dejar un repositorio de consulta de los datos no migrados |
+| 1.7.10 | Plan de retiro de la plataforma de originación y cobranza de 2011 | por definir | Ronda 0: 3.11; sd-03, 3.1 y 3.2.3 (retiro de la plataforma de crédito de 2011 en octubre de 2028) |
+| 1.7.11 | Plataforma de originación y cobranza de 2011 fuera de servicio | por definir | Ronda 0: 1.17b; sd-03, 3.1 y 3.2.3 (retiro de la plataforma de crédito de 2011 en octubre de 2028) |
 | 1.7.12 | Sistema central de retail de 2009 retirado | por definir | SP-01 y elección del escenario B en el sd-03 |
 | 1.7.13 | Sustitución del punto de venta de 2014 tienda por tienda y su retiro | 1 | sd-03, 3.3.1; tras acreditar la operación sin conexión y el retorno |
 | 1.7.14 | Actas de compuerta por tramo de la cartera de crédito | 1 y 2 | sd-03, 3.2.3; las cierran la Contraparte Técnica y la filial emisora |
 | 1.8.1 | Plan de seguridad, matriz de controles y modelo de amenazas | por definir | — |
 | 1.8.3 | Declaración de superficie de exposición y plan de respuesta a incidentes | por definir | — |
-| 1.8.5 | Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor | por definir | frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica |
+| 1.8.5 | Modelo de identidad, matriz de roles y segregación de funciones, incluido el ámbito emisor | por definir | frontera con el UCP: aquí el diseño; la administración al actor está en la base tecnológica; RNF-37 (Anexo B): segregación de funciones entre originación, aprobación, modificación y cobranza |
 | 1.8.6 | Cifrado y tokenización de los medios de pago | por definir | RNF-33, RNF-34 |
 | 1.8.7 | Protección de datos personales y matriz de cumplimiento normativo | por definir | Ley 21.719; RNF-74 a RNF-76; Art. 27 |
-| 1.8.9 | Informe de pruebas de intrusión y plan de remediación | por definir | — |
+| 1.8.9 | Informe de pruebas de intrusión y plan de remediación | por definir | Anexo D, resultado 21, y RNF-14: informe técnico y prueba de penetración |
 | 1.8.10 | Informe de diligencia del proveedor de nube | por definir | Ronda 0: 3.13; fuente de la norma CMF por verificar |
 | 1.8.11 | Atestación de la cadena de suministro y revisión de la arquitectura de confianza cero | por definir | RNF-70, RNF-71; agregado desde el catálogo; RNF-73; agregado desde el catálogo |
 | 1.9.1 | Plan de pruebas con niveles, tipos, ambientes, datos y calendario | por definir | Formulario T-13 |
 | 1.9.2 | Estándares de codificación, revisión por pares y puertas de calidad | por definir | ISO 25010; Ronda 0: 3.2a |
-| 1.9.3 | Batería de pruebas funcionales y de requisitos no funcionales | por definir | ISO 29119 |
+| 1.9.3 | Batería de pruebas funcionales y de requisitos no funcionales | por definir | ISO 29119; Anexo B (requisitos no funcionales con umbral y método de verificación) |
 | 1.9.4 | Pruebas de desempeño, resiliencia y recuperación ante desastres | por definir | RNF-22, RNF-23; ensayos a 1,5 veces el peak (RT-09.06); RNF-32 |
 | 1.9.6 | Ensayo de la estrategia de degradación del evento anual | por definir | Resultado 25 del Anexo D; lo cita el servicio y se nombra aquí (guía §6) |
-| 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | por definir | — |
+| 1.9.7 | Informes de aceptación por el usuario y de verificación de los 28 criterios de aceptación del caso | por definir | Anexo D (28 resultados de negocio) |
 | 1.9.8 | Certificación de calidad de la Etapa 1 | 1 | — |
 | 1.9.9 | Certificación de calidad de la Etapa 2 | 2 | — |
 | 1.9.11 | Informe de la prueba del corte de enlace provocado de 24 horas con retorno ensayado en el piloto | 1 | sd-03, 3.2.3 y 3.4.5; RT-03.10 |
@@ -150,19 +150,19 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/genera
 | 1.10.5 | Un paquete por innovación, con tipo, indicador, línea base y meta por definir | por definir | RT-26.02; art. 29; candidatas del equipo de innovación por validar (sd-13) |
 | 1.11.1 | Plan de implantación con procedimiento de despliegue gradual y de reversión probado | 1 y 2 | Formulario T-18 |
 | 1.11.3 | Configuración y certificación de los sitios: 22 tiendas, 2 centros de distribución, 380 líneas de caja, 640 terminales y el nodo de borde de cada tienda | 1 y 2 | El cliente adquiere y ejecuta (EXC-19, SP-04) |
-| 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 2 | — |
+| 1.11.4 | Plan de convivencia entre la Etapa 1 y la Etapa 2 con una única fuente de verdad | 2 | sd-03, 3.4.5 (continuidad entre etapas por convivencia, conciliación y retorno ensayado) |
 | 1.11.5 | Piloto del punto de venta en tres tiendas | 1 | sd-03, 3.2.3 |
-| 1.12.1 | Plan de la marcha blanca de la Etapa 1 | 1 | — |
+| 1.12.1 | Plan de la marcha blanca de la Etapa 1 | 1 | sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20) |
 | 1.12.2 | Informe de resultados y evidencia de cierre de la marcha blanca de la Etapa 1 | 1 | Caso, numeral 17.3 |
-| 1.12.4 | Acta de aceptación de la Etapa 1 | 1 | — |
-| 1.12.5 | Plan de la marcha blanca de la Etapa 2, en convivencia con la Etapa 1 en producción | 2 | — |
-| 1.12.6 | Informe de resultados de la marcha blanca de la Etapa 2 | 2 | — |
-| 1.12.7 | Acta de aceptación final y garantía de correcto funcionamiento | 2 | — |
+| 1.12.4 | Acta de aceptación de la Etapa 1 | 1 | sd-03, 3.2.2 (paso a producción de la Etapa 1 en el mes 16) |
+| 1.12.5 | Plan de la marcha blanca de la Etapa 2, en convivencia con la Etapa 1 en producción | 2 | sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20) |
+| 1.12.6 | Informe de resultados de la marcha blanca de la Etapa 2 | 2 | sd-03, 3.1 y 3.2.2 (marchas blancas de los meses 13 a 15 y 19 a 20) |
+| 1.12.7 | Acta de aceptación final y garantía de correcto funcionamiento | 2 | sd-03, 3.2.2 (paso a producción de la Etapa 2 en el mes 21) |
 | 1.12.9 | Informe del soporte de estabilización posterior a la puesta en marcha | 1 y 2 | — |
 | 1.13.1 | Plan de gestión del cambio con diagnóstico por perfil y medición de adopción | por definir | Art. 89 |
 | 1.13.2 | Plan de capacitación por rol y materiales editables en español | por definir | Art. 90 |
-| 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | por definir | — |
-| 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | por definir | 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos |
+| 1.13.3 | Registro de capacitación ejecutada y certificación de administradores y equipo técnico, condición de cierre de cada marcha blanca | por definir | sd-03, 3.4.6 (capacitación por rol) y Art. 17.3 (condición de cierre de la marcha blanca) |
+| 1.13.4 | Informe de acompañamiento en puesto para el personal de tienda, temporero y externo | por definir | 62 % de rotación anual, 1.900 temporeros y unos 1.100 externos; sd-03, 3.4.6 (rotación anual de 62 % y unos 1.100 repositores externos) |
 | 1.13.5 | Plan de comunicación a los clientes de la cartera por tramo | 1 y 2 | sd-03, 3.2.3; condición de cada compuerta de tramo |
 | 1.14.1 | Documentación técnica y funcional con inventario de componentes de software | por definir | Art. 91; arquitectura, requerimientos, construcción, pruebas, operación, seguridad, usuario y proyecto; RNF-70 |
 | 1.14.3 | Transferencia tecnológica de código fuente, artefactos de construcción, scripts de infraestructura y procedimientos de despliegue | por definir | Art. 77.1 |
