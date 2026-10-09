@@ -36,12 +36,12 @@ Las 13 cuentas siguientes no tienen en `sd-03.tex` ni en sus anexos una frase qu
 | 1.1.13 | Línea base de costos y presupuesto | Oferta económica (Bases) |
 | 1.3.1 | Documento de arquitectura y catálogo de decisiones | Art. 14.2 de las Bases (arquitectura lógica, física, de datos, de integración, de seguridad y de despliegue) |
 | 1.4.6 | Plataforma de integración y entrega continuas | Bases Transversales (RT) |
-| 1.4.7 | Licenciamiento de terceros a nombre del cliente | Bases (licenciamiento a nombre del cliente) |
+| 1.4.7 | Licenciamiento de terceros a nombre del cliente | Art. 14.2 de las Bases (licenciamiento de software de base, de plataforma y de terceros a nombre del cliente) |
 | 1.7.4 | Corte de inventario en las 24 instalaciones | Caso (22 tiendas y 2 centros) |
-| 1.8.1 | Plan de seguridad, controles y modelo de amenazas | Art. 27 y 19 de las Bases |
+| 1.8.1 | Plan de seguridad, controles y modelo de amenazas | Art. 19 de las Bases (arquitectura y diseño, incluida la de seguridad); por verificar |
 | 1.8.3 | Superficie de exposición y respuesta a incidentes | Bases Transversales (RT) |
 | 1.8.10 | Informe de diligencia del proveedor de nube | Sin fuente en el repositorio (la norma CMF no aparece en las Bases) |
-| 1.9.2 | Estándares de codificación, revisión por pares y puertas de calidad | Comunicado 10, 9.3; Art. 79 de las Bases |
-| 1.12.9 | Informe del soporte de estabilización | Art. 17 de las Bases (estabilización) |
+| 1.9.2 | Estándares de codificación, revisión por pares y puertas de calidad | Comunicado 10, 9.3 (actividades de calidad) |
+| 1.12.9 | Informe del soporte de estabilización | Art. 14.2 de las Bases (implantación, marcha blanca, paso a producción y estabilización) |
 | 1.14.9 | Informe de lecciones aprendidas | Práctica de PMBOK 6 |
 
