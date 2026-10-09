@@ -1,0 +1,12 @@
+with Diagram("Ancoa · Relación con clientes · Etapa 1", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.55", "ranksep":"0.85", "pad":"0.25", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"12"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    clientes = Users("Clientes")
+    web = Client("Web y app")
+    tiendas = Users("Tiendas Físicas")
+    meson = Client("Mesón atención")
+    gateway = Kong("Gateway Retail")
+    fidelizacion = Server("Fidelización 2017")
+    clientes >> web >> gateway
+    tiendas >> meson >> gateway
+    legado = Document("Registro actual")
+    adaptador = InputOutput("Adaptador legado")
+    gateway >> adaptador >> [legado, fidelizacion]

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="890" viewBox="0 0 1400 890" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura lógica de Ancoa, flujos críticos</title>
+  <desc id="desc">Cuatro recorridos: promesa comercial, compra con tarjeta propia, originación y repactación con evidencia, y venta local durante desconexión.</desc>
+  <!-- Fuente: elaboración propia desde sd-03.tex §§3.3 y 3.4; Bases Transversales RT-02.06-08, RT-03.10, RT-05.16-21. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#60748a"/></marker>
+    <marker id="arrow-gold" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#ad741b"/></marker>
+    <style>
+      text {font-family:DejaVu Sans,Arial,sans-serif;fill:#17324d}
+      .title {font-size:27px;font-weight:700}
+      .head {font-size:20px;font-weight:700}
+      .node {font-size:18px;font-weight:700}
+      .sub {font-size:16px}
+      .note {font-size:17px}
+      .white {fill:#fff}
+      .panel {fill:#fbfcfe;stroke:#d1dce8;stroke-width:1.5}
+      .retail {fill:#e8f7f5;stroke:#137780;stroke-width:2}
+      .emisor {fill:#f1ebf9;stroke:#73558e;stroke-width:2}
+      .cross {fill:#fff4dc;stroke:#aa751e;stroke-width:2}
+      .local {fill:#eaf3fa;stroke:#668fb9;stroke-width:2}
+      .arrow {fill:none;stroke:#60748a;stroke-width:2.2;marker-end:url(#arrow)}
+      .gold {fill:none;stroke:#ad741b;stroke-width:2.5;marker-end:url(#arrow-gold)}
+    </style>
+  </defs>
+  <rect width="1400" height="890" fill="white"/>
+  <text x="40" y="43" class="title">Arquitectura lógica · cuatro recorridos que debe sostener la solución</text>
+  <text x="40" y="70" class="sub">Flechas: contrato o resultado de negocio; las vistas no fijan producto, red ni emplazamiento físico.</text>
+
+  <!-- 1. Promesa Retail. -->
+  <rect x="40" y="94" width="1320" height="166" rx="13" class="panel"/>
+  <text x="61" y="124" class="head">1 · Promesa comercial Retail</text>
+  <rect x="61" y="146" width="240" height="66" rx="10" class="retail"/>
+  <text x="77" y="173" class="node">R:M-01 · Oferta</text><text x="77" y="198" class="sub">precio y vigencia</text>
+  <rect x="326" y="146" width="240" height="66" rx="10" class="retail"/>
+  <text x="342" y="173" class="node">R:M-03 · Existencias</text><text x="342" y="198" class="sub">disponible y reserva</text>
+  <rect x="591" y="146" width="240" height="66" rx="10" class="retail"/>
+  <text x="607" y="173" class="node">R:V-01 · Pedidos</text><text x="607" y="198" class="sub">promesa y estado</text>
+  <rect x="856" y="146" width="240" height="66" rx="10" class="retail"/>
+  <text x="872" y="173" class="node">R:V-02 · Ventas</text><text x="872" y="198" class="sub">cobro y reversa</text>
+  <rect x="1121" y="146" width="218" height="66" rx="10" class="retail"/>
+  <text x="1137" y="173" class="node">R:CL-01 · Posventa</text><text x="1137" y="198" class="sub">devolución</text>
+  <path d="M301 179 H326" class="arrow"/>
+  <path d="M566 179 H591" class="arrow"/>
+  <path d="M831 179 H856" class="arrow"/>
+  <path d="M1096 179 H1121" class="arrow"/>
+  <text x="61" y="242" class="note">WMS aporta movimientos; ERP/DTE emite documentos. Pedido confirma reserva antes de cobrar; posventa reintegra solo tras inspección.</text>
+
+  <!-- 2. Frontera de datos. -->
+  <rect x="40" y="281" width="1320" height="166" rx="13" class="panel"/>
+  <text x="61" y="311" class="head">2 · Compra con tarjeta propia: cruce limitado y auditado</text>
+  <rect x="61" y="332" width="300" height="69" rx="10" class="retail"/>
+  <text x="77" y="360" class="node">Retail · Ventas/POS</text><text x="77" y="385" class="sub">importe y referencia de compra</text>
+  <rect x="426" y="332" width="280" height="69" rx="10" class="cross"/>
+  <text x="442" y="360" class="node">X-01 · Control de cruces</text><text x="442" y="385" class="sub">finalidad, permiso y bitácora</text>
+  <rect x="771" y="332" width="388" height="69" rx="10" class="emisor"/>
+  <text x="787" y="360" class="node">Emisor · Originación de crédito</text><text x="787" y="385" class="sub">autoriza o deniega la operación</text>
+  <path d="M361 365 H426" class="gold"/>
+  <path d="M706 365 H771" class="gold"/>
+  <path d="M771 396 H706" class="gold"/>
+  <path d="M426 396 H361" class="gold"/>
+  <text x="61" y="429" class="note">Vuelve solo el resultado autorizado. Saldo, mora y comportamiento de pago no llegan al perfil comercial; Marketing se deniega.</text>
+
+  <!-- 3. Evidencia contractual dentro del Emisor. -->
+  <rect x="40" y="468" width="1320" height="166" rx="13" class="panel"/>
+  <text x="61" y="498" class="head">3 · Originación y repactación: evidencia antes de confirmar</text>
+  <rect x="61" y="519" width="285" height="69" rx="10" class="local"/>
+  <text x="77" y="547" class="node">Interfaz bajo rol Emisor</text><text x="77" y="572" class="sub">información y aceptación</text>
+  <rect x="421" y="519" width="325" height="69" rx="10" class="emisor"/>
+  <text x="437" y="547" class="node">F:C-03 · Evidencia financiera</text><text x="437" y="572" class="sub">versión, firma y expediente</text>
+  <rect x="821" y="519" width="518" height="69" rx="10" class="emisor"/>
+  <text x="837" y="547" class="node">F:C-01 Originación / F:C-02 Cartera</text>
+  <text x="837" y="572" class="sub">apertura o repactación condicionada a evidencia</text>
+  <path d="M346 553 H421" class="arrow"/>
+  <path d="M746 553 H821" class="arrow"/>
+  <text x="61" y="616" class="note">La decisión y la prueba quedan en el Emisor. Una evidencia ausente o inválida bloquea la operación; no se presume consentimiento.</text>
+
+  <!-- 4. Autonomía y reconciliación. -->
+  <rect x="40" y="655" width="1320" height="193" rx="13" class="panel"/>
+  <text x="61" y="685" class="head">4 · Tienda sin enlace: operar, conservar hechos y reconciliar</text>
+  <rect x="61" y="706" width="265" height="69" rx="10" class="local"/>
+  <text x="77" y="734" class="node">POS local · 24 horas</text><text x="77" y="759" class="sub">venta y oferta vigente</text>
+  <rect x="371" y="706" width="265" height="69" rx="10" class="local"/>
+  <text x="387" y="734" class="node">Registro local duradero</text><text x="387" y="759" class="sub">hechos, folios y claves</text>
+  <rect x="681" y="706" width="305" height="69" rx="10" class="cross"/>
+  <text x="697" y="734" class="node">Integración al reconectar</text><text x="697" y="759" class="sub">drenaje y deduplicación</text>
+  <rect x="1031" y="706" width="308" height="69" rx="10" class="retail"/>
+  <text x="1047" y="734" class="node">R:V-02 · Ventas</text><text x="1047" y="759" class="sub">conciliación con ERP/DTE</text>
+  <path d="M326 740 H371" class="arrow"/>
+  <path d="M636 740 H681" class="arrow"/>
+  <path d="M986 740 H1031" class="arrow"/>
+  <text x="61" y="806" class="note">Durante la desconexión no se abren tarjetas ni se amplían cupos. La modalidad tributaria de contingencia debe aprobarse y probarse.</text>
+  <text x="61" y="830" class="sub">La compra con crédito sin enlace conserva una decisión de riesgo pendiente; no se representa como autorización automática.</text>
+  <text x="40" y="878" class="sub">Fuente: elaboración propia a partir del Caso 09, las Bases Transversales y el alcance vigente de SD-03.</text>
+</svg>

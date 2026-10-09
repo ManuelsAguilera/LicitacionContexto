@@ -1,0 +1,64 @@
+with Diagram("Ancoa · arquitectura lógica · Etapa 2 · mes 21", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.28", "ranksep":"0.50", "pad":"0.16", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"13"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    with Cluster("Retail", graph_attr={"bgcolor":"#f4faf7", "color":"#79a895", "style":"rounded", "fontname":"DejaVu Sans", "fontsize":"17"}):
+        tiendas = Users("Tiendas Físicas")
+        clientes = Users("Clientes")
+        cd = Datacenter("Centros de distribución")
+        pos = Client("POS nuevo")
+        cola = Database("Cola local · 24 h")
+        web = Client("Web y app")
+        atencion = Client("Mesón atención")
+        moviles = Mobile("Móviles sala")
+        operacion = Client("Operación CD")
+        concepcion = Document("Carga Concepción")
+        nube = Internet("Plataforma Retail")
+        api = InputOutput("API síncrona")
+        eventos = MultipleDocuments("Eventos persistentes")
+        lotes = Document("Archivos y lotes")
+        datos_r = Database("BD por servicio")
+        analitica_r = Database("Analítica Retail")
+        erp = Server("ERP/DTE")
+        wms = Server("WMS principal")
+        plataforma_mp = Server("Marketplace 2022")
+        fidelizacion = Server("Fidelización")
+        pagos = Server("Medios de pago")
+        mercaderia = PredefinedProcess("Oferta\nAbastecimiento\nExistencias")
+        operaciones = PredefinedProcess("Pedidos\nVentas\nComisiones\nMarketplace")
+        relacion = PredefinedProcess("Posventa\nClientes Retail")
+    with Cluster("Filial emisora", graph_attr={"bgcolor":"#f9f6fb", "color":"#a791ba", "style":"rounded", "fontname":"DejaVu Sans", "fontsize":"17"}):
+        titulares = Users("Titulares")
+        personal_f = Users("Personal financiero")
+        portal_f = Client("Portal financiero")
+        meson_f = Client("Mesón financiero")
+        terminal_pago = Client("Terminal de pago")
+        nube_f = Internet("Plataforma Emisor")
+        api_f = InputOutput("API · eventos · lotes")
+        originacion = PredefinedProcess("Originación de crédito")
+        cartera = PredefinedProcess("Cartera")
+        evidencia = PredefinedProcess("Evidencia financiera")
+        datos_f = Database("BD Emisor")
+        analitica_f = Database("Analítica Emisor")
+    politica = Firewall("X-01 · cruces")
+    tiendas >> pos >> cola >> nube
+    clientes >> web >> nube
+    tiendas >> atencion >> nube
+    tiendas >> moviles >> nube
+    cd >> operacion >> nube
+    cd >> concepcion >> lotes
+    nube >> api
+    api >> eventos
+    api >> lotes >> [erp, wms, plataforma_mp, fidelizacion]
+    api >> pagos
+    titulares >> portal_f >> nube_f >> api_f
+    personal_f >> meson_f >> nube_f
+    meson_f >> terminal_pago >> nube_f
+    api_f >> [originacion, cartera, evidencia]
+    [originacion, cartera, evidencia] >> datos_f
+    api_f >> analitica_f
+    api >> analitica_r
+    politica >> Edge(color="#b99048", style="dashed", label="política", constraint="false") >> api
+    politica >> Edge(color="#b99048", style="dashed", label="política", constraint="false") >> api_f
+    api >> Edge(color="#4b7ca4", style="dashed", label="autorización", constraint="false") >> api_f
+    api >> operaciones
+    eventos >> mercaderia >> datos_r
+    eventos >> operaciones >> datos_r
+    eventos >> relacion >> datos_r

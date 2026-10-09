@@ -1,0 +1,27 @@
+with Diagram("Ancoa · Crédito y frontera · Etapa 1", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.55", "ranksep":"0.85", "pad":"0.25", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"12"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    titulares = Users("Titulares")
+    portal = Client("Portal financiero")
+    personal = Users("Personal financiero")
+    meson = Client("Mesón financiero")
+    terminal = Client("Terminal financiero")
+    caja = Client("Caja Retail")
+    politica = Firewall("X-01")
+    retail = Kong("Gateway Retail")
+    emisor = Kong("Gateway Emisor")
+    originacion = PredefinedProcess("Originación")
+    evidencia = PredefinedProcess("Evidencia")
+    cartera = PredefinedProcess("Cartera")
+    datos = PostgreSQL("BD Emisor")
+    firma = Server("Firma electrónica")
+    adaptador_firma = InputOutput("Adaptador firma")
+    titulares >> portal >> emisor
+    personal >> meson >> emisor
+    meson >> terminal >> emisor
+    caja >> retail >> Edge(label="autorizar", color="#4b7ca4") >> emisor
+    politica >> Edge(label="política", style="dashed", constraint="false") >> emisor
+    emisor >> originacion >> evidencia >> datos
+    evidencia >> adaptador_firma >> firma
+    emisor >> cartera >> datos
+    cartera >> Edge(style="dashed", label="repactación", constraint="false") >> evidencia
+    legado = Server("Crédito 2011")
+    cartera >> Edge(label="olas") >> legado

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="970" viewBox="0 0 1400 970" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura lógica de Ancoa, vista general</title>
+  <desc id="desc">Ocho capas obligatorias, trece servicios de negocio separados entre Retail, filial emisora y frontera, integración con sistemas conservados y continuidad local de tienda.</desc>
+  <!-- Fuente: elaboración propia desde Bases Transversales RT-02.01 y sd-03.tex, secciones 3.3 y 3.4. -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/></marker>
+    <marker id="arrow-gold" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#aa7119"/></marker>
+    <style>
+      text {font-family:DejaVu Sans,Arial,sans-serif; fill:#183047}
+      .title {font-size:27px;font-weight:700}
+      .subtitle {font-size:16px;fill:#53657a}
+      .layer {font-size:18px;font-weight:700}
+      .body {font-size:17px}
+      .small {font-size:15px}
+      .service {font-size:16px;font-weight:600}
+      .white {fill:#fff}
+      .retail {fill:#f0faf9;stroke:#0d737a;stroke-width:2}
+      .emisor {fill:#f5f0fb;stroke:#70518c;stroke-width:2}
+      .frontera {fill:#fff8e8;stroke:#b8862b;stroke-width:2}
+      .neutral {fill:#f7f9fc;stroke:#95a4b6;stroke-width:1.5}
+      .blue {fill:#eaf1fa;stroke:#6d90bb;stroke-width:1.7}
+      .line {fill:none;stroke:#64748b;stroke-width:2.1;marker-end:url(#arrow)}
+      .cross {fill:none;stroke:#aa7119;stroke-width:2.5;marker-end:url(#arrow-gold)}
+      .dashed {fill:none;stroke:#0d737a;stroke-width:2;stroke-dasharray:7 5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="940" fill="#fff"/>
+  <text x="40" y="43" class="title">Arquitectura lógica · Cadena Multitienda Ancoa</text>
+  <text x="40" y="69" class="subtitle">Vista general · trece servicios, ocho capas y frontera de datos Retail–Emisor</text>
+
+  <!-- Capas 1 a 3. La continuidad local es una capacidad del canal, no una nueva autoridad de datos. -->
+  <rect x="40" y="94" width="905" height="65" rx="11" class="blue"/>
+  <text x="60" y="120" class="layer">1 · PRESENTACIÓN</text>
+  <text x="60" y="145" class="body">Comercio electrónico existente · POS · aplicaciones de tienda · interfaces financieras bajo rol del Emisor</text>
+  <rect x="975" y="94" width="385" height="148" rx="11" class="retail"/>
+  <text x="995" y="121" class="layer">CONTINUIDAD LOCAL · 22 TIENDAS</text>
+  <text x="995" y="150" class="body">POS y componente local: venta</text>
+  <text x="995" y="175" class="body">y condiciones vigentes por 24 h</text>
+  <text x="995" y="205" class="small">Sin nuevas tarjetas ni ampliaciones</text>
+  <text x="995" y="226" class="small">Drenaje y conciliación al reconectar</text>
+
+  <rect x="40" y="181" width="430" height="61" rx="11" class="blue"/>
+  <text x="60" y="207" class="layer">2 · BORDE Y EXPOSICIÓN</text>
+  <text x="60" y="229" class="body">Protección, contenidos y entrada cifrada</text>
+  <rect x="495" y="181" width="450" height="61" rx="11" class="blue"/>
+  <text x="515" y="207" class="layer">3 · PUERTA DE ENLACE</text>
+  <text x="515" y="229" class="body">Rutas, contratos y accesos por ámbito</text>
+  <path d="M255 159 V181" class="line"/>
+  <path d="M470 212 H495" class="line"/>
+  <path d="M690 242 V280 H465 V310" class="line"/>
+  <path d="M725 242 V280 H1185 V310" class="line"/>
+  <path d="M945 126 H975" class="dashed"/>
+
+  <!-- Capa 4. Los paneles son límites de datos distintos, no un dominio común. -->
+  <text x="40" y="289" class="layer">4 · SERVICIOS DE NEGOCIO</text>
+  <rect x="40" y="310" width="720" height="360" rx="13" class="retail"/>
+  <rect x="40" y="310" width="720" height="43" rx="13" fill="#0d737a"/>
+  <rect x="40" y="336" width="720" height="17" fill="#0d737a"/>
+  <text x="60" y="339" class="layer white">RETAIL · nueve servicios</text>
+  <line x1="305" y1="371" x2="305" y2="594" stroke="#9ed3d0" stroke-width="1.5"/>
+  <line x1="540" y1="371" x2="540" y2="594" stroke="#9ed3d0" stroke-width="1.5"/>
+  <text x="57" y="382" class="layer">Mercadería</text>
+  <text x="57" y="423" class="service">R:M-01 · Oferta comercial</text>
+  <text x="57" y="467" class="service">R:M-02 · Abastecimiento</text>
+  <text x="57" y="511" class="service">R:M-03 · Existencias</text>
+  <text x="325" y="382" class="layer">Venta</text>
+  <text x="325" y="423" class="service">R:V-01 · Pedidos</text>
+  <text x="325" y="467" class="service">R:V-02 · Ventas</text>
+  <text x="325" y="511" class="service">R:V-03 · Comisiones</text>
+  <text x="325" y="555" class="service">R:V-04 · Marketplace</text>
+  <text x="555" y="382" class="layer">Cliente</text>
+  <text x="555" y="423" class="service">R:CL-01 · Posventa</text>
+  <text x="555" y="467" class="service">R:CL-02 · Clientes</text>
+  <text x="555" y="491" class="small">Retail</text>
+  <line x1="57" y1="594" x2="743" y2="594" stroke="#9ed3d0"/>
+  <text x="57" y="622" class="small">Oferta → disponible → reserva → pedido → venta → posventa</text>
+  <text x="57" y="646" class="small">ERP/DTE sigue siendo el único emisor tributario</text>
+
+  <rect x="785" y="310" width="195" height="360" rx="13" class="frontera"/>
+  <rect x="785" y="310" width="195" height="43" rx="13" fill="#a76e1d"/>
+  <rect x="785" y="336" width="195" height="17" fill="#a76e1d"/>
+  <text x="802" y="339" class="layer white">FRONTERA</text>
+  <text x="802" y="396" class="service">X-01 · Control</text>
+  <text x="802" y="421" class="service">de cruces</text>
+  <text x="802" y="466" class="body">Finalidad</text>
+  <text x="802" y="493" class="body">Dato mínimo</text>
+  <text x="802" y="520" class="body">Autorización</text>
+  <text x="802" y="547" class="body">Auditoría</text>
+  <text x="802" y="593" class="small">Denegación por</text>
+  <text x="802" y="617" class="small">defecto; control</text>
+  <text x="802" y="641" class="small">en ambos extremos</text>
+
+  <rect x="1005" y="310" width="355" height="360" rx="13" class="emisor"/>
+  <rect x="1005" y="310" width="355" height="43" rx="13" fill="#70518c"/>
+  <rect x="1005" y="336" width="355" height="17" fill="#70518c"/>
+  <text x="1022" y="339" class="layer white">FILIAL EMISORA · tres servicios</text>
+  <text x="1022" y="382" class="layer">Crédito</text>
+  <text x="1022" y="423" class="service">F:C-01 · Originación de crédito</text>
+  <text x="1022" y="467" class="service">F:C-02 · Cartera de crédito</text>
+  <text x="1022" y="511" class="service">F:C-03 · Evidencia financiera</text>
+  <line x1="1022" y1="594" x2="1343" y2="594" stroke="#d0c1df"/>
+  <text x="1022" y="622" class="small">Decisión, saldo y prueba contractual</text>
+  <text x="1022" y="646" class="small">permanecen bajo autoridad del Emisor</text>
+  <path d="M760 480 H785" class="cross"/>
+  <path d="M980 480 H1005" class="cross"/>
+
+  <!-- Capas 5 y 6 y las dependencias externas. -->
+  <rect x="40" y="715" width="905" height="67" rx="11" class="frontera"/>
+  <text x="60" y="741" class="layer">5 · INTEGRACIÓN Y EVENTOS</text>
+  <text x="60" y="766" class="body">API y eventos persistentes · adaptadores · idempotencia · reintentos · cola de fallos · conciliación</text>
+  <rect x="975" y="715" width="385" height="88" rx="11" class="neutral"/>
+  <text x="992" y="741" class="layer">SISTEMAS Y TRANSICIÓN</text>
+  <text x="992" y="766" class="small">ERP/DTE · WMS · marketplace · otros</text>
+  <text x="992" y="790" class="small">Núcleos 2009/2011: retiro por olas</text>
+  <path d="M945 749 H975" class="line"/>
+  <path d="M465 670 V715" class="line"/>
+  <path d="M1185 670 V695 H720 V715" class="line"/>
+
+  <rect x="40" y="806" width="650" height="61" rx="11" class="retail"/>
+  <text x="60" y="832" class="layer">6 · DATOS RETAIL</text>
+  <text x="60" y="854" class="body">Almacén por servicio · analítica separada · sin acceso cruzado</text>
+  <rect x="710" y="806" width="650" height="61" rx="11" class="emisor"/>
+  <text x="730" y="832" class="layer">6 · DATOS DEL EMISOR</text>
+  <text x="730" y="854" class="body">Saldos y evidencia aislados; sin lectura directa desde Retail</text>
+  <path d="M365 670 V806" class="line"/>
+  <path d="M1300 670 V694 H1380 V805 H1130 V806" class="line"/>
+
+  <rect x="40" y="889" width="650" height="37" rx="9" fill="#fceced" stroke="#b96d75" stroke-width="1.5"/>
+  <text x="57" y="913" class="body">7 · SEGURIDAD TRANSVERSAL · Zero Trust, identidad y cifrado</text>
+  <rect x="710" y="889" width="650" height="37" rx="9" fill="#eef1f5" stroke="#8999ad" stroke-width="1.5"/>
+  <text x="727" y="913" class="body">8 · OBSERVABILIDAD TRANSVERSAL · métricas, registros y trazas</text>
+  <text x="40" y="956" class="small">Fuente: elaboración propia a partir de las Bases Transversales y de SD-03, secciones 3.3 y 3.4.</text>
+</svg>

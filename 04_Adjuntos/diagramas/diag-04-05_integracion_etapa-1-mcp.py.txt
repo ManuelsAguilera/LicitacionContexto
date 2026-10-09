@@ -1,0 +1,21 @@
+with Diagram("Ancoa · Integración transversal · Etapa 1", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.55", "ranksep":"0.85", "pad":"0.25", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"12"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    canales = Client("Canales Retail")
+    gateway = Kong("Gateway Retail")
+    eventos = Kafka("Eventos Retail")
+    adaptadores = NiFi("Adaptadores y lotes")
+    retail = PredefinedProcess("Servicios Retail")
+    terceros = Server("ERP · WMS · Marketplace")
+    emisor = Kong("Gateway Emisor")
+    politica = Firewall("X-01")
+    financiera = PredefinedProcess("Servicios Emisor")
+    observabilidad = Grafana("Observabilidad")
+    canales >> gateway >> retail >> eventos
+    eventos >> adaptadores >> terceros
+    gateway >> Edge(constraint="false") >> adaptadores
+    gateway >> Edge(label="autorización", color="#4b7ca4") >> emisor >> financiera
+    politica >> Edge(style="dashed", constraint="false") >> gateway
+    politica >> Edge(style="dashed", constraint="false") >> emisor
+    eventos >> Edge(style="dotted", constraint="false") >> observabilidad
+    emisor >> Edge(style="dotted", constraint="false") >> observabilidad
+    legados = Server("Retail 2009 · Crédito 2011")
+    adaptadores >> legados

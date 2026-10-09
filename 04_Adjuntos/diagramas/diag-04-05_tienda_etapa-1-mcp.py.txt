@@ -1,0 +1,17 @@
+with Diagram("Ancoa · Tiendas Físicas · Etapa 1", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.55", "ranksep":"0.85", "pad":"0.25", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"12"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    tiendas = Users("Tiendas Físicas")
+    pos = Client("POS nuevo")
+    local = Database("Cola local · 24 h")
+    moviles = Mobile("Móviles sala")
+    atencion = Client("Mesón atención")
+    gateway = Kong("Gateway Retail")
+    eventos = Kafka("Eventos Retail")
+    ventas = PredefinedProcess("Ventas")
+    existencias = PredefinedProcess("Existencias")
+    datos = PostgreSQL("BD Ventas")
+    tiendas >> pos >> local >> gateway >> ventas >> datos
+    tiendas >> moviles >> gateway >> existencias
+    tiendas >> atencion >> gateway
+    ventas >> eventos >> existencias
+    pos_antiguo = Client("POS 2014")
+    tiendas >> pos_antiguo >> gateway

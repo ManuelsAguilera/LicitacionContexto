@@ -1,0 +1,22 @@
+with Diagram("Ancoa · Venta y cumplimiento · Etapa 1", show=False, direction="LR", graph_attr={"splines":"spline", "nodesep":"0.55", "ranksep":"0.85", "pad":"0.25", "bgcolor":"white", "fontname":"DejaVu Sans", "fontsize":"18"}, node_attr={"fontname":"DejaVu Sans", "fontsize":"12"}, edge_attr={"color":"#607d8b", "arrowsize":"0.6"}):
+    clientes = Users("Clientes")
+    web = Client("Web y app")
+    tiendas = Users("Tiendas Físicas")
+    pos = Client("POS")
+    gateway = Kong("Gateway Retail")
+    ventas = PredefinedProcess("Ventas")
+    pagos = Server("Medios de pago")
+    erp = Server("ERP/DTE")
+    adaptador_pago = InputOutput("Adaptador pago")
+    adaptador_erp = InputOutput("Adaptador ERP")
+    eventos = Kafka("Eventos Retail")
+    datos = PostgreSQL("BD Ventas")
+    clientes >> web
+    tiendas >> pos >> gateway >> ventas >> datos
+    ventas >> adaptador_pago >> pagos
+    ventas >> adaptador_erp >> erp
+    ventas >> eventos
+    comercio = Server("E-commerce 2019")
+    retail = Server("Retail 2009")
+    adaptador = InputOutput("Adaptador legado")
+    web >> comercio >> gateway >> adaptador >> retail

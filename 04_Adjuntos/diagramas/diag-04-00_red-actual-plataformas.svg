@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1430" viewBox="0 0 2400 1430" role="img" aria-labelledby="title desc">
+<title id="title">Ancoa: red y plataformas, modelo físico provisional</title>
+<desc id="desc">Plataformas agrupadas por sitio supuesto, con enlaces de acceso, conexión al centro de datos y enlace propuesto a la sala de respaldo. El emplazamiento exacto y los contratos se validan en el proyecto.</desc>
+<defs>
+<marker id="arr" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#17806f"/></marker>
+<symbol id="shop" viewBox="0 0 64 64"><path d="M9 26h46l-5-13H14L9 26Zm4 0v27h38V26M26 53V35h12v18M9 26c2 8 9 9 12 2 4 7 10 7 13 0 4 7 10 7 13 0 4 7 9 8 13 0"/></symbol>
+<symbol id="warehouse" viewBox="0 0 64 64"><path d="M6 26 32 11l26 15v30H6V26Zm8 30V34h36v22M22 34v22m10-22v22m10-22v22"/></symbol>
+<symbol id="sheet" viewBox="0 0 64 64"><path d="M14 8h26l10 10v38H14V8Zm26 0v12h10M22 29h20M22 37h20M22 45h14"/></symbol>
+<symbol id="hub" viewBox="0 0 64 64"><circle cx="32" cy="32" r="12"/><circle cx="7" cy="10" r="5"/><circle cx="57" cy="10" r="5"/><circle cx="7" cy="54" r="5"/><circle cx="57" cy="54" r="5"/><path d="M23 23 11 13m30 10 12-10M23 41 11 51m30-10 12 10"/></symbol>
+<symbol id="rack" viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="14" rx="2"/><rect x="12" y="25" width="40" height="14" rx="2"/><rect x="12" y="42" width="40" height="14" rx="2"/><circle cx="19" cy="15" r="1"/><circle cx="19" cy="32" r="1"/><circle cx="19" cy="49" r="1"/></symbol>
+<symbol id="pos" viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="31" rx="3"/><path d="M20 49h24M32 41v8M17 17h30v17H17z"/></symbol>
+<symbol id="cart" viewBox="0 0 64 64"><path d="M7 11h8l7 31h29l6-23H18M23 33h30"/><circle cx="28" cy="51" r="3"/><circle cx="47" cy="51" r="3"/></symbol>
+<symbol id="credit" viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="5"/><path d="M7 25h50M16 39h13"/></symbol>
+<symbol id="doc" viewBox="0 0 64 64"><path d="M15 7h26l9 9v41H15V7Zm26 0v11h9M22 29h20M22 38h20M22 47h12"/></symbol>
+<symbol id="market" viewBox="0 0 64 64"><path d="M9 24h46l-4-12H13L9 24Zm5 0v29h36V24M23 53V36h18v17M10 24c4 8 9 8 13 0 4 8 10 8 14 0 4 8 9 8 13 0"/></symbol>
+<symbol id="star" viewBox="0 0 64 64"><path d="m32 7 7 16 18 2-13 12 4 18-16-9-16 9 4-18L7 25l18-2 7-16Z"/></symbol>
+<style>
+text{font-family:'DejaVu Sans',Arial,sans-serif;fill:#18334b}.title{font-size:46px;font-weight:700}.subtitle{font-size:32px;fill:#516578}.section{font-size:33px;font-weight:700}.name{font-size:32px;font-weight:650}.muted{font-size:32px;fill:#516578}.domain{font-size:32px;font-weight:700;fill:#39586d}
+.white{fill:white;stroke:none}.site{fill:#eef5fb;stroke:#76a4c5;stroke-width:2.4}.app{fill:#fff;stroke:#9db8c7;stroke-width:2.4}.retail{fill:#eff8f5;stroke:#64a697;stroke-width:2.4}.finance{fill:#f4effa;stroke:#aa91c0;stroke-width:2.4}.external{fill:#f5f7f9;stroke:#aabac5;stroke-width:2.4}.datacenter{fill:#f8fafb;stroke:#a7bac7;stroke-width:2.5}.backup{fill:#fff4e7;stroke:#c99c59;stroke-width:2.5}.network{fill:#e8f1f8;stroke:#77a3c4;stroke-width:2.5}
+.icon{fill:none;stroke:#326781;stroke-width:3.3;stroke-linecap:round;stroke-linejoin:round}.wire{fill:none;stroke:#417a9d;stroke-width:4.2;stroke-linejoin:round}.wire2{fill:none;stroke:#417a9d;stroke-width:4.2;stroke-linejoin:round}.business{fill:none;stroke:#17806f;stroke-width:4;marker-end:url(#arr)}.provisional{fill:none;stroke:#bd873a;stroke-width:4;stroke-dasharray:13 8}.separator{fill:none;stroke:#d2dce4;stroke-width:2.2}
+</style></defs>
+<rect x="0" y="0" width="2400" height="1430" rx="0" class="white"/>
+<text x="60" y="65" class="title" text-anchor="start">Red y plataformas · modelo de referencia</text>
+<text x="60" y="110" class="subtitle" text-anchor="start">Ubicaciones y conexiones provisionales para el levantamiento de Etapa 1</text>
+<text x="60" y="185" class="section" text-anchor="start">TIENDAS Y CENTROS DE DISTRIBUCIÓN</text>
+<text x="1990" y="185" class="section" text-anchor="start">EXTERNOS</text>
+<rect x="60" y="210" width="340" height="94" rx="16" class="site"/>
+<use href="#shop" x="80" y="232.0" width="50" height="50" class="icon"/>
+<text x="146" y="268.0" class="name" text-anchor="start">Mall ×8</text>
+<rect x="78" y="326" width="304" height="72" rx="16" class="retail"/>
+<use href="#pos" x="98" y="337.0" width="50" height="50" class="icon"/>
+<text x="164" y="373.0" class="name" text-anchor="start">POS</text>
+<rect x="425" y="210" width="340" height="94" rx="16" class="site"/>
+<use href="#shop" x="445" y="232.0" width="50" height="50" class="icon"/>
+<text x="511" y="268.0" class="name" text-anchor="start">Mall ×6</text>
+<rect x="443" y="326" width="304" height="72" rx="16" class="retail"/>
+<use href="#pos" x="463" y="337.0" width="50" height="50" class="icon"/>
+<text x="529" y="373.0" class="name" text-anchor="start">POS</text>
+<rect x="790" y="210" width="340" height="94" rx="16" class="site"/>
+<use href="#shop" x="810" y="232.0" width="50" height="50" class="icon"/>
+<text x="876" y="268.0" class="name" text-anchor="start">Calle ×8</text>
+<rect x="808" y="326" width="304" height="72" rx="16" class="retail"/>
+<use href="#pos" x="828" y="337.0" width="50" height="50" class="icon"/>
+<text x="894" y="373.0" class="name" text-anchor="start">POS</text>
+<rect x="1125" y="210" width="420" height="94" rx="16" class="site"/>
+<use href="#warehouse" x="1145" y="232.0" width="50" height="50" class="icon"/>
+<text x="1211" y="268.0" class="name" text-anchor="start">CD principal</text>
+<rect x="1157" y="326" width="356" height="72" rx="16" class="retail"/>
+<use href="#warehouse" x="1177" y="337.0" width="50" height="50" class="icon"/>
+<text x="1243" y="373.0" class="name" text-anchor="start">WMS</text>
+<rect x="1570" y="210" width="390" height="94" rx="16" class="site"/>
+<use href="#warehouse" x="1590" y="232.0" width="50" height="50" class="icon"/>
+<text x="1656" y="268.0" class="name" text-anchor="start">CD Concepción</text>
+<rect x="1588" y="326" width="354" height="72" rx="16" class="external"/>
+<use href="#sheet" x="1608" y="337.0" width="50" height="50" class="icon"/>
+<text x="1674" y="373.0" class="name" text-anchor="start">Planillas</text>
+<rect x="1985" y="210" width="355" height="84" rx="16" class="external"/>
+<use href="#cart" x="2005" y="227.0" width="50" height="50" class="icon"/>
+<text x="2071" y="263.0" class="name" text-anchor="start">Comercio web</text>
+<rect x="1985" y="325" width="355" height="84" rx="16" class="external"/>
+<use href="#market" x="2005" y="342.0" width="50" height="50" class="icon"/>
+<text x="2071" y="378.0" class="name" text-anchor="start">Marketplace</text>
+<rect x="1985" y="440" width="355" height="84" rx="16" class="external"/>
+<use href="#star" x="2005" y="457.0" width="50" height="50" class="icon"/>
+<text x="2071" y="493.0" class="name" text-anchor="start">Fidelización</text>
+<path d="M2060 294V316" class="business"/>
+<path d="M2255 325V303" class="business"/>
+<path d="M230 398V582" class="wire"/>
+<path d="M595 398V582" class="wire"/>
+<path d="M960 398V582" class="wire"/>
+<path d="M1335 398V582" class="wire"/>
+<path d="M1765 398V582" class="wire"/>
+<path d="M223 398V582" class="wire2"/>
+<path d="M1328 398V582" class="wire2"/>
+<path d="M2340 252H2365" class="wire"/>
+<path d="M2340 367H2365" class="wire"/>
+<path d="M2340 482H2365" class="wire"/>
+<path d="M2365 252V622" class="wire"/>
+<rect x="60" y="585" width="2310" height="86" rx="16" class="network"/>
+<use href="#hub" x="92" y="603" width="52" height="52" class="icon"/>
+<text x="170" y="641" class="name" text-anchor="start">Red intersitios / Internet</text>
+<text x="920" y="641" class="muted" text-anchor="start">Enlaces y controles según cada contraparte</text>
+<path d="M895 671V775" class="wire"/>
+<text x="60" y="745" class="section" text-anchor="start">CASA MATRIZ</text>
+<rect x="60" y="775" width="1660" height="424" rx="16" class="datacenter"/>
+<use href="#rack" x="92" y="802" width="58" height="58" class="icon"/>
+<text x="170" y="842" class="section" text-anchor="start">Centro de datos principal</text>
+<text x="120" y="922" class="domain" text-anchor="start">RETAIL</text>
+<text x="672" y="922" class="domain" text-anchor="start">FILIAL EMISORA</text>
+<text x="1245" y="922" class="domain" text-anchor="start">GESTIÓN</text>
+<rect x="105" y="950" width="465" height="100" rx="16" class="retail"/>
+<use href="#rack" x="125" y="975.0" width="50" height="50" class="icon"/>
+<text x="191" y="1011.0" class="name" text-anchor="start">Sistema central</text>
+<rect x="625" y="950" width="465" height="100" rx="16" class="finance"/>
+<use href="#credit" x="645" y="975.0" width="50" height="50" class="icon"/>
+<text x="711" y="1011.0" class="name" text-anchor="start">Crédito</text>
+<rect x="1145" y="950" width="465" height="100" rx="16" class="app"/>
+<use href="#doc" x="1165" y="975.0" width="50" height="50" class="icon"/>
+<text x="1231" y="1011.0" class="name" text-anchor="start">ERP / DTE</text>
+<path d="M596 900V1110" class="separator"/>
+<path d="M1118 900V1110" class="separator"/>
+<path d="M1090 1000H1136" class="business"/>
+<text x="1114" y="1078" class="muted" text-anchor="middle">lote</text>
+<path d="M338 1050V1132 M858 1050V1132 M1378 1050V1132 M338 1132H1378" class="wire"/>
+<text x="120" y="1175" class="muted" text-anchor="start">Red local compartida · separación lógica parcial actual</text>
+<rect x="1790" y="820" width="550" height="180" rx="16" class="backup"/>
+<use href="#rack" x="1822" y="866" width="56" height="56" class="icon"/>
+<text x="1900" y="908" class="name" text-anchor="start">Sala de respaldo</text>
+<text x="1900" y="952" class="muted" text-anchor="start">Misma comuna</text>
+<path d="M1720 890H1785" class="provisional"/>
+<path d="M60 1294H155" class="wire"/>
+<text x="175" y="1304" class="muted" text-anchor="start">enlace de sitio</text>
+<path d="M575 1288H670" class="wire"/>
+<path d="M575 1300H670" class="wire2"/>
+<text x="690" y="1304" class="muted" text-anchor="start">respaldo acreditado</text>
+<path d="M1210 1294H1305" class="provisional"/>
+<text x="1325" y="1304" class="muted" text-anchor="start">enlace de respaldo propuesto</text>
+<text x="60" y="1380" class="muted" text-anchor="start">Ubicaciones y modos de integración: supuestos_plataformas_y_conexiones.md</text>
+</svg>

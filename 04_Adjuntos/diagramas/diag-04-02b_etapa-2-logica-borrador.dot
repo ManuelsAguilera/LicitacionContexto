@@ -1,0 +1,577 @@
+digraph "Ancoa | Etapa 2 | arquitectura objetivo" {
+	graph [bb="0,0,1840,1857.9",
+		fontcolor="#2D3436",
+		fontname=Arial,
+		fontsize=22,
+		label="Ancoa | Etapa 2 | arquitectura objetivo",
+		lheight=0.33,
+		lp="920,16",
+		lwidth=5.15,
+		nodesep=0.42,
+		pad=0.35,
+		rankdir=LR,
+		ranksep=0.82,
+		splines=spline
+	];
+	node [fixedsize=true,
+		fontcolor="#2D3436",
+		fontname=Arial,
+		fontsize=11,
+		height=1.4,
+		imagescale=true,
+		label="\N",
+		labelloc=b,
+		shape=box,
+		style=rounded,
+		width=1.4
+	];
+	edge [color="#7B8894",
+		fontname=Arial,
+		fontsize=9
+	];
+	subgraph "cluster_ACTORES Y CANALES" {
+		graph [bb="8,1152.9,287,1528.9",
+			bgcolor="#EAF4FB",
+			color="#4B8DBD",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="ACTORES Y CANALES",
+			labeljust=l,
+			lheight=0.25,
+			lp="94,1515.9",
+			lwidth=2.17,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		c47d8d2c39364e59a7bc3739357339c1	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/aws/general/user.png",
+			label="Clientes y personal",
+			pos="66.5,1425.9",
+			shape=none,
+			width=1.4028];
+		b719119245fc489da3f44fb06bb19bcc	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/aws/mobile/mobile.png",
+			label="POS local
+24 h",
+			pos="228.5,1407.9",
+			shape=none,
+			width=1.4028];
+		c47d8d2c39364e59a7bc3739357339c1 -> b719119245fc489da3f44fb06bb19bcc	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,177.78,1413.5 117.25,1420.3 133.2,1418.5 151.04,1416.5 167.64,1414.6"];
+		"0b0726009175445da11ebce8bf1b1a45"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Web · marketplace
+canales actuales",
+			pos="66.5,1243.9",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph "cluster_BORDE Y ACCESO" {
+		graph [bb="332,1162.9,611,1370.9",
+			bgcolor="#E7F0FA",
+			color="#4276A3",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="BORDE Y ACCESO",
+			labeljust=l,
+			lheight=0.25,
+			lp="406.5,1357.9",
+			lwidth=1.85,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"09d405305c97493dae6c630bfe79fb5f"	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/generic/network/firewall.png",
+			label="Borde protegido",
+			pos="390.5,1253.9",
+			shape=none,
+			width=1.4028];
+		"2f3c9f1fbf404587bce425582aa74a3f"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Gateway
+rutas separadas",
+			pos="552.5,1253.9",
+			shape=none,
+			width=1.4028];
+		"09d405305c97493dae6c630bfe79fb5f" -> "2f3c9f1fbf404587bce425582aa74a3f"	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,501.78,1253.9 441.25,1253.9 457.2,1253.9 475.04,1253.9 491.64,1253.9"];
+	}
+	subgraph "cluster_RETAIL · MERCADERÍA" {
+		graph [bb="1005,600.89,1185,1200.9",
+			bgcolor="#E9F5F0",
+			color="#2D8F79",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="RETAIL · MERCADERÍA",
+			labeljust=l,
+			lheight=0.25,
+			lp="1095,1187.9",
+			lwidth=2.28,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"153e2ff69a7e41a4ad08d2b73fbbe750"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:M-01
+Oferta",
+			pos="1094.5,1083.9",
+			shape=none,
+			width=1.4028];
+		b302c018f6e7495aa451c1272b645213	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:M-02
+Abastecimiento",
+			pos="1094.5,691.89",
+			shape=none,
+			width=1.4028];
+		"263d32ee598d4c7c880d382faa35515e"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:M-03
+Existencias",
+			pos="1094.5,887.89",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph "cluster_RETAIL · VENTA" {
+		graph [bb="650,471.89,779,1267.9",
+			bgcolor="#E9F5F0",
+			color="#2D8F79",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="RETAIL · VENTA",
+			labeljust=l,
+			lheight=0.25,
+			lp="714.5,1254.9",
+			lwidth=1.57,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"2d73e1dae2c84c0d803df3b326958c6c"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:V-01
+Pedidos",
+			pos="714.5,954.89",
+			shape=none,
+			width=1.4028];
+		ae5e0c9447df47b1aa70d65d3f7e7159	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:V-02
+Ventas",
+			pos="714.5,1150.9",
+			shape=none,
+			width=1.4028];
+		"87f612a628b240df9f9ec4d13e467392"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:V-03
+Comisiones",
+			pos="714.5,758.89",
+			shape=none,
+			width=1.4028];
+		"4be03f439c1e423fae4e55447211efbc"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:V-04
+Marketplace",
+			pos="714.5,562.89",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph "cluster_RETAIL · CLIENTE" {
+		graph [bb="1023,134.89,1166,538.89",
+			bgcolor="#E9F5F0",
+			color="#2D8F79",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="RETAIL · CLIENTE",
+			labeljust=l,
+			lheight=0.25,
+			lp="1094.5,525.89",
+			lwidth=1.76,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"1754a1ca2c4f47ba8da011ee9133d50f"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:CL-01
+Posventa",
+			pos="1094.5,225.89",
+			shape=none,
+			width=1.4028];
+		ab48b4745e87400bb77a12cc5bd717c2	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="R:CL-02
+Clientes Retail",
+			pos="1094.5,421.89",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph cluster_FRONTERA {
+		graph [bb="857,1099.9,974,1307.9",
+			bgcolor="#FFF1DC",
+			color="#D99831",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label=FRONTERA,
+			labeljust=l,
+			lheight=0.25,
+			lp="906,1294.9",
+			lwidth=1.14,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"66a2d10d76654c68850840a59db7c576"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="X-01
+Control de cruces",
+			pos="915.5,1190.9",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph "cluster_FILIAL EMISORA" {
+		graph [bb="1036,1445.9,1411,1849.9",
+			bgcolor="#F0ECF8",
+			color="#8366A9",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="FILIAL EMISORA",
+			labeljust=l,
+			lheight=0.25,
+			lp="1104.5,1836.9",
+			lwidth=1.68,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"1158bc934c85469089c4698bddd25658"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="F:C-01
+Originación",
+			pos="1094.5,1732.9",
+			shape=none,
+			width=1.4028];
+		"510f83ec3fd14e5a92854a7e55d8590c"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="F:C-03
+Evidencia",
+			pos="1352.5,1545.9",
+			shape=none,
+			width=1.4028];
+		"1158bc934c85469089c4698bddd25658" -> "510f83ec3fd14e5a92854a7e55d8590c"	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,1302,1582.1 1145.2,1696.6 1187.7,1665.5 1249.1,1620.7 1293.8,1588"];
+		"09fdb5c4bc384949b301eb558a3e7372"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="F:C-02
+Cartera",
+			pos="1094.5,1536.9",
+			shape=none,
+			width=1.4028];
+		"09fdb5c4bc384949b301eb558a3e7372" -> "510f83ec3fd14e5a92854a7e55d8590c"	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,1302,1544.1 1145.2,1538.6 1187.1,1540.1 1247.3,1542.2 1291.9,1543.8"];
+	}
+	subgraph "cluster_MIDDLEWARE MODULAR" {
+		graph [bb="1294,203.89,1586,550.89",
+			bgcolor="#E9F2FA",
+			color="#4183AD",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="MIDDLEWARE MODULAR",
+			labeljust=l,
+			lheight=0.25,
+			lp="1396.5,537.89",
+			lwidth=2.62,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		ea085c9ce26a4568b8fbba3fb2795d3d	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Mediación API",
+			pos="1352.5,447.89",
+			shape=none,
+			width=1.4028];
+		"3c92573f019845feada42e1efd23816e"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Adaptadores
+API · archivo/lote",
+			pos="1527.5,433.89",
+			shape=none,
+			width=1.4028];
+		ea085c9ce26a4568b8fbba3fb2795d3d -> "3c92573f019845feada42e1efd23816e"	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,1476.9,437.9 1403.1,443.87 1423,442.26 1446.1,440.39 1466.9,438.71"];
+		"9c1ad81e94e644b38c5f6acedd70284e"	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Eventos persistentes",
+			pos="1352.5,280.89",
+			shape=none,
+			width=1.4028];
+		"9c1ad81e94e644b38c5f6acedd70284e" -> "3c92573f019845feada42e1efd23816e"	[dir=forward,
+			fontcolor="#2D3436",
+			fontname="Sans-Serif",
+			fontsize=13,
+			pos="e,1476.9,390.04 1403.1,324.73 1423.7,342.98 1447.8,364.27 1469.2,383.19"];
+	}
+	subgraph "cluster_DATOS POR ÁMBITO" {
+		graph [bb="1268,923.89,1438,1437.9",
+			bgcolor="#F6F6F6",
+			color="#8E9AA6",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="DATOS POR ÁMBITO",
+			labeljust=l,
+			lheight=0.25,
+			lp="1353,1424.9",
+			lwidth=2.14,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		ab241640083c4722b9a2273d4f83e4ef	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/generic/database/sql.png",
+			label="Datos Retail",
+			pos="1352.5,1000.9",
+			shape=none,
+			width=1.4028];
+		f342d16a97f94067818cee72d92b937f	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/generic/database/sql.png",
+			label="Datos Emisor",
+			pos="1352.5,1334.9",
+			shape=none,
+			width=1.4028];
+		"903e3500cf6348beb6248f36961b7952"	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/aws/storage/storage.png",
+			label="Cola POS local",
+			pos="1352.5,1167.9",
+			shape=none,
+			width=1.4028];
+	}
+	subgraph "cluster_TERCEROS CONSERVADOS" {
+		graph [bb="1617,160.89,1832,703.89",
+			bgcolor="#F9F1EC",
+			color="#B48566",
+			fontname="Sans-Serif",
+			fontsize=16,
+			label="TERCEROS CONSERVADOS",
+			labeljust=l,
+			lheight=0.25,
+			lp="1724.5,690.89",
+			lwidth=2.76,
+			pencolor="#AEB6BE",
+			rankdir=LR,
+			shape=box,
+			style=rounded
+		];
+		"7a9903facc1647f8862f61043d28fe4c"	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/onprem/compute/server.png",
+			label="ERP/DTE",
+			pos="1724.5,600.89",
+			shape=none,
+			width=1.4028];
+		"275e2cb32a4c4b58b5bb1394cbd03d25"	[height=1.9028,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/onprem/compute/server.png",
+			label="WMS principal",
+			pos="1724.5,433.89",
+			shape=none,
+			width=1.4028];
+		"809c21139c8e4daaa368fa5ca234b728"	[height=2.3056,
+			image="/workspace/.uv-tools/infrastructure-diagram-mcp-server/lib/python3.12/site-packages/resources/programming/flowchart/action.png",
+			label="Market · web
+Fidelización",
+			pos="1724.5,251.89",
+			shape=none,
+			width=1.4028];
+	}
+	b719119245fc489da3f44fb06bb19bcc -> "09d405305c97493dae6c630bfe79fb5f"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,339.78,1301.7 279.25,1360 296.1,1343.8 315.06,1325.5 332.44,1308.8"];
+	b719119245fc489da3f44fb06bb19bcc -> "903e3500cf6348beb6248f36961b7952"	[color="#8E9AA6",
+		dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		label="sin enlace",
+		lp="714.5,1414.9",
+		pos="e,1301.7,1217.9 279.23,1407.9 310.81,1407.9 352.56,1407.9 389.5,1407.9 389.5,1407.9 389.5,1407.9 1095.5,1407.9 1108.8,1407.9 1223.2,\
+1296.1 1294.5,1225.1",
+		style=dashed];
+	"0b0726009175445da11ebce8bf1b1a45" -> "09d405305c97493dae6c630bfe79fb5f"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,339.84,1252.3 117.11,1245.4 174.31,1247.2 268.3,1250.1 329.55,1252"];
+	"2f3c9f1fbf404587bce425582aa74a3f" -> "153e2ff69a7e41a4ad08d2b73fbbe750"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1073.4,1167 603.31,1280 686.52,1319.6 856.24,1383.1 974,1311.9 1022.7,1282.4 1052.5,1225.9 1070.2,1176.5"];
+	"2f3c9f1fbf404587bce425582aa74a3f" -> "2d73e1dae2c84c0d803df3b326958c6c"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,663.96,1029.2 590.61,1170.5 607.67,1133.9 628.79,1090.7 650,1052.9 652.73,1048 655.6,1043.1 658.56,1038.1"];
+	"2f3c9f1fbf404587bce425582aa74a3f" -> ae5e0c9447df47b1aa70d65d3f7e7159	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,663.78,1182.9 603.25,1221.9 619.65,1211.3 638.05,1199.5 655.04,1188.5"];
+	"2f3c9f1fbf404587bce425582aa74a3f" -> "1158bc934c85469089c4698bddd25658"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1043.7,1708.7 589.29,1337 605.08,1367.9 625.64,1402 650,1428.9 765.08,1555.7 942.97,1656.9 1034.6,1704"];
+	"153e2ff69a7e41a4ad08d2b73fbbe750" -> ea085c9ce26a4568b8fbba3fb2795d3d	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1330.4,516.45 1145.2,1037.9 1159.6,1022.5 1174.4,1004.5 1185,985.89 1186.5,983.31 1281.5,675.16 1327.3,526.44"];
+	"153e2ff69a7e41a4ad08d2b73fbbe750" -> ab241640083c4722b9a2273d4f83e4ef	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1302,1016.9 1145.2,1067.8 1187.3,1054.1 1247.8,1034.5 1292.4,1020"];
+	b302c018f6e7495aa451c1272b645213 -> "3c92573f019845feada42e1efd23816e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1497.6,517.23 1145.1,688.88 1218.8,682.01 1358,659.5 1447,585.89 1466.2,570.04 1481.3,548.36 1493,526.34"];
+	"263d32ee598d4c7c880d382faa35515e" -> ab241640083c4722b9a2273d4f83e4ef	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1302,979.03 1145.2,909.81 1187.4,928.44 1248.1,955.23 1292.7,974.93"];
+	"2d73e1dae2c84c0d803df3b326958c6c" -> "263d32ee598d4c7c880d382faa35515e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1043.9,896.68 765.31,946.06 834.52,933.79 959.63,911.61 1033.8,898.47"];
+	"2d73e1dae2c84c0d803df3b326958c6c" -> "3c92573f019845feada42e1efd23816e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1512.6,350.73 765.1,883.44 770.17,874.7 774.94,865.73 779,856.89 927.51,533.56 720.1,302.03 1005,88.886 1163.8,-29.928 1301,53.445 \
+1438,196.89 1475.5,236.19 1497.5,292.86 1510.1,340.93"];
+	"2d73e1dae2c84c0d803df3b326958c6c" -> ab241640083c4722b9a2273d4f83e4ef	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1301.8,1047.9 765.24,956.53 824.16,961.29 920.99,978.52 974,1038.9 1023.5,1095.3 947.26,1156.9 1005,1204.9 1066.5,1256 1114.1,\
+1242 1185,1204.9 1242.4,1174.8 1226.5,1134.7 1268,1084.9 1276.3,1074.9 1285.5,1064.8 1294.8,1055.2"];
+	ae5e0c9447df47b1aa70d65d3f7e7159 -> "66a2d10d76654c68850840a59db7c576"	[color="#D99831",
+		dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		label=tarjeta,
+		lp="815,1180.9",
+		pos="e,864.74,1180.9 765.2,1160.9 792.39,1166.3 826.26,1173.1 854.86,1178.9"];
+	ae5e0c9447df47b1aa70d65d3f7e7159 -> "9c1ad81e94e644b38c5f6acedd70284e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1302,216.49 765.25,1085.9 833.37,992.5 952.29,811.92 997,635.89 1000.5,622.21 994.94,137.79 1005,127.89 1062,71.765 1110.5,98.839 \
+1185,127.89 1227.7,144.51 1266,177.75 1295.1,209.02"];
+	ae5e0c9447df47b1aa70d65d3f7e7159 -> ab241640083c4722b9a2273d4f83e4ef	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1301.6,1039.9 765.18,1117.4 822.03,1083.7 914.88,1043.1 974,1092.9 1026.4,1137 948.69,1204.9 1005,1243.9 1070.8,1289.5 1110.9,\
+1274 1185,1243.9 1228.1,1226.4 1239.9,1212.9 1260,1170.9 1276.6,1136.3 1251.7,1119.7 1268,1084.9 1274.4,1071.1 1284.1,1058.3 1294.6,\
+1047.1"];
+	"4be03f439c1e423fae4e55447211efbc" -> "3c92573f019845feada42e1efd23816e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1477,497.91 765.39,562.89 805.64,562.89 863.71,562.89 914.5,562.89 914.5,562.89 914.5,562.89 1353.5,562.89 1393.5,562.89 1404.8,\
+554.27 1438,531.89 1449.2,524.3 1460,514.99 1469.9,505.15"];
+	"1754a1ca2c4f47ba8da011ee9133d50f" -> "9c1ad81e94e644b38c5f6acedd70284e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1302,270.25 1145.2,236.56 1187.2,245.59 1247.6,258.56 1292.1,268.13"];
+	ab48b4745e87400bb77a12cc5bd717c2 -> ea085c9ce26a4568b8fbba3fb2795d3d	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1302,442.86 1145.2,426.93 1187.1,431.19 1247.3,437.3 1291.9,441.83"];
+	"66a2d10d76654c68850840a59db7c576" -> "1158bc934c85469089c4698bddd25658"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1043.7,1688 919.93,1274.1 926.66,1366.7 946.51,1518.5 1005,1634.9 1013.2,1651.1 1024.8,1666.7 1036.9,1680.5"];
+	"1158bc934c85469089c4698bddd25658" -> f342d16a97f94067818cee72d92b937f	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1301.9,1386.9 1145.1,1686.8 1159.5,1671.4 1174.3,1653.4 1185,1634.9 1190.8,1624.8 1188.6,1620.7 1193,1609.9 1218.1,1548.6 1238.1,\
+1539.3 1260,1476.9 1265.7,1460.6 1260.6,1454.5 1268,1438.9 1275.2,1423.6 1285.2,1408.5 1295.6,1394.8"];
+	"09fdb5c4bc384949b301eb558a3e7372" -> f342d16a97f94067818cee72d92b937f	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1301.8,1391.5 1145.1,1509.1 1178.9,1489.2 1223.9,1460.8 1260,1430.9 1271.8,1421.1 1283.6,1410 1294.7,1398.8"];
+	"510f83ec3fd14e5a92854a7e55d8590c" -> f342d16a97f94067818cee72d92b937f	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1352.5,1403.7 1352.5,1462.9 1352.5,1446.5 1352.5,1430.2 1352.5,1413.9"];
+	"9c1ad81e94e644b38c5f6acedd70284e" -> "263d32ee598d4c7c880d382faa35515e"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1145.4,846.32 1301.8,323.33 1289.4,335.74 1277.2,350 1268,364.89 1212.6,455.03 1212,486.77 1193,590.89 1185.1,634.43 1201.8,748.95 \
+1185,789.89 1177.6,807.85 1165.4,824.61 1152.3,839.01"];
+	"3c92573f019845feada42e1efd23816e" -> "7a9903facc1647f8862f61043d28fe4c"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1673.9,563.85 1578.3,482.73 1590.7,494.48 1604.2,506.83 1617,517.89 1632.4,531.17 1649.7,544.99 1665.7,557.46"];
+	"3c92573f019845feada42e1efd23816e" -> "275e2cb32a4c4b58b5bb1394cbd03d25"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1673.9,433.89 1578.2,433.89 1604.2,433.89 1636.3,433.89 1663.6,433.89"];
+	"3c92573f019845feada42e1efd23816e" -> "809c21139c8e4daaa368fa5ca234b728"	[dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		pos="e,1673.9,297.93 1578.1,387.32 1590.8,375.43 1604.4,362.67 1617,350.89 1632.9,336.01 1650.2,319.9 1666.2,305.08"];
+	"903e3500cf6348beb6248f36961b7952" -> ea085c9ce26a4568b8fbba3fb2795d3d	[color="#4183AD",
+		dir=forward,
+		fontcolor="#2D3436",
+		fontname="Sans-Serif",
+		fontsize=13,
+		label=reconexión,
+		lp="1226.5,974.89",
+		pos="e,1312.1,516.47 1301.6,1122.8 1289.8,1111.1 1277.9,1098.1 1268,1084.9 1236.9,1043.3 1225.6,1032.2 1213,981.89 1172.3,819.08 1252.6,\
+629.09 1307.3,525.32"];
+}

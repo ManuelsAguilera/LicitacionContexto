@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1420" viewBox="0 0 2400 1420" role="img" aria-labelledby="title desc">
+<title id="title">Ancoa: flujos lógicos críticos por etapa</title>
+<desc id="desc">Ocho flujos propuestos con extremos y componentes de mediación. Cinco se habilitan en etapa 1 y tres se agregan en etapa 2. El trazo discontinuo indica protocolo de tercero por validar.</desc>
+<defs>
+<marker id="arr" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#57758a"/></marker>
+<marker id="arr-teal" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#137d78"/></marker>
+<marker id="arr-gold" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto-start-reverse"><path d="M0 0L11 5.5L0 11Z" fill="#aa7524"/></marker>
+<symbol id="pos" viewBox="0 0 64 64"><rect x="10" y="11" width="44" height="29" rx="3"/><path d="M21 50h22M32 40v10M18 18h28v15H18z"/></symbol>
+<symbol id="web" viewBox="0 0 64 64"><rect x="7" y="10" width="50" height="43" rx="3"/><path d="M7 22h50M15 16h2m6 0h2m6 0h2M19 32h26M19 40h17"/></symbol>
+<symbol id="card" viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="5"/><path d="M7 25h50M16 39h13"/></symbol>
+<symbol id="warehouse" viewBox="0 0 64 64"><path d="M6 26 32 11l26 15v30H6V26Zm8 30V34h36v22M22 34v22m10-22v22m10-22v22"/></symbol>
+<symbol id="shop" viewBox="0 0 64 64"><path d="M9 25h46l-5-13H14L9 25Zm4 0v29h38V25M25 54V36h14v18M9 25c3 8 9 8 13 0 3 8 9 8 13 0 3 8 9 8 13 0 3 8 9 8 13 0"/></symbol>
+<symbol id="shield" viewBox="0 0 64 64"><path d="M32 6 54 15v17c0 14-9 22-22 27C19 54 10 46 10 32V15L32 6Zm-9 25 7 7 13-14"/></symbol>
+<symbol id="gateway" viewBox="0 0 64 64"><path d="M9 32h21m4 0h21M30 32l-7-7m7 7-7 7M36 32l7-7m-7 7 7 7M32 9v14m0 18v14"/><circle cx="32" cy="32" r="7"/></symbol>
+<symbol id="hex" viewBox="0 0 64 64"><path d="M19 10h26l13 22-13 22H19L6 32l13-22Z"/><circle cx="32" cy="32" r="7"/></symbol>
+<symbol id="policy" viewBox="0 0 64 64"><path d="M32 6 54 15v17c0 14-9 22-22 27C19 54 10 46 10 32V15L32 6Z"/><path d="M19 32h26m-9-9 9 9-9 9m-8-18-9 9 9 9"/></symbol>
+<symbol id="api" viewBox="0 0 64 64"><rect x="5" y="17" width="21" height="30" rx="3"/><rect x="38" y="17" width="21" height="30" rx="3"/><path d="M26 26h12m-12 12h12m-8-16 8 4-8 4m4 4-8 4 8 4"/></symbol>
+<symbol id="event" viewBox="0 0 64 64"><path d="M8 18h36m-36 14h36M8 46h36M47 14l9 4-9 4m0 6 9 4-9 4m0 14 9 4-9 4"/></symbol>
+<symbol id="file" viewBox="0 0 64 64"><path d="M14 7h27l10 10v40H14V7Zm27 0v11h10M22 29h22M22 38h22M22 47h14"/></symbol>
+<symbol id="sync" viewBox="0 0 64 64"><path d="M48 23a19 19 0 0 0-31-8l-5 5m0-11v11h11M16 41a19 19 0 0 0 31 8l5-5m0 11V44H41"/></symbol>
+<symbol id="data" viewBox="0 0 64 64"><ellipse cx="32" cy="13" rx="23" ry="8"/><path d="M9 13v37c0 5 10 8 23 8s23-3 23-8V13M9 31c0 5 10 8 23 8s23-3 23-8"/></symbol>
+<symbol id="server" viewBox="0 0 64 64"><rect x="10" y="8" width="44" height="13" rx="2"/><rect x="10" y="25" width="44" height="13" rx="2"/><rect x="10" y="42" width="44" height="13" rx="2"/><circle cx="18" cy="14" r="1"/><circle cx="18" cy="31" r="1"/><circle cx="18" cy="48" r="1"/></symbol>
+<symbol id="lock" viewBox="0 0 64 64"><rect x="13" y="27" width="38" height="30" rx="4"/><path d="M21 27V18a11 11 0 0 1 22 0v9M32 37v10"/></symbol>
+<symbol id="eye" viewBox="0 0 64 64"><path d="M5 32c8-12 18-18 27-18s19 6 27 18c-8 12-18 18-27 18S13 44 5 32Z"/><circle cx="32" cy="32" r="8"/></symbol>
+<symbol id="clock" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M32 17v16l12 8"/></symbol>
+<symbol id="tag" viewBox="0 0 64 64"><path d="M8 28 28 8h27v27L35 55 8 28Z"/><circle cx="43" cy="20" r="4"/></symbol>
+<symbol id="boxes" viewBox="0 0 64 64"><path d="M8 11h21v20H8zM35 11h21v20H35zM21 36h22v20H21zM8 21h21m6 0h21M21 46h22"/></symbol>
+<symbol id="cart" viewBox="0 0 64 64"><path d="M7 12h8l7 31h31l5-23H18M26 52h2m19 0h2"/><circle cx="27" cy="52" r="4"/><circle cx="48" cy="52" r="4"/></symbol>
+<symbol id="coins" viewBox="0 0 64 64"><ellipse cx="22" cy="17" rx="13" ry="5"/><path d="M9 17v25c0 4 6 6 13 6s13-2 13-6V17M9 29c0 4 6 6 13 6s13-2 13-6"/><circle cx="45" cy="39" r="13"/><path d="M45 30v18m-5-14h10m-10 10h10"/></symbol>
+<symbol id="return" viewBox="0 0 64 64"><path d="M18 20h26a13 13 0 0 1 0 26H21M18 20l10-10M18 20l10 10"/></symbol>
+<symbol id="people" viewBox="0 0 64 64"><circle cx="23" cy="22" r="8"/><circle cx="44" cy="25" r="7"/><path d="M6 53c0-11 7-18 17-18s17 7 17 18M35 39c9-3 22 3 23 14"/></symbol>
+<symbol id="receipt" viewBox="0 0 64 64"><path d="M14 7h36v50l-8-5-8 5-8-5-8 5-4-5V7ZM21 20h22M21 31h22M21 42h15"/></symbol>
+<symbol id="signature" viewBox="0 0 64 64"><path d="M10 50h44M12 38c10 12 15-19 22-13 4 3-4 17 3 18 4 1 8-5 15-5M38 9l17 13-20 23-9 3 2-10L48 15"/></symbol>
+<symbol id="chart" viewBox="0 0 64 64"><path d="M8 54h49M15 49V34h9v15M29 49V23h9v26M43 49V12h9v37"/></symbol>
+<style>
+text{font-family:'DejaVu Sans',Arial,sans-serif;fill:#18334b}.title{font-size:44px;font-weight:700}.subtitle{font-size:32px;fill:#506478}.layer{font-size:32px;font-weight:700;fill:#365269}.area{font-size:34px;font-weight:700}.name{font-size:32px;font-weight:650}.small{font-size:32px;fill:#526879}.systemname{font-size:32px;fill:#526879}.code{font-size:32px;font-weight:700;fill:#506c77}.white{fill:white}
+.box{fill:white;stroke:#9eb1c0;stroke-width:2}.blue{fill:#ecf4fa;stroke:#7ca6c5;stroke-width:2}.retail{fill:#eff8f5;stroke:#6aa89b;stroke-width:2}.emisor{fill:#f4effa;stroke:#a28ab9;stroke-width:2}.frontier{fill:#fff5e5;stroke:#c99d51;stroke-width:2}.neutral{fill:#f5f7f9;stroke:#aebbc5;stroke-width:2}.outline{fill:none;stroke:#aebbc5;stroke-width:2}.disabled{fill:#f4f4f4;stroke:#b8c0c7;stroke-width:2;stroke-dasharray:8 6}.railred{fill:#fceff1;stroke:#c27b82;stroke-width:2}.railblue{fill:#eef3f8;stroke:#8da5bb;stroke-width:2}
+.ico{fill:none;stroke:#32667d;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.arrow{fill:none;stroke:#57758a;stroke-width:3;marker-end:url(#arr)}.eventline{fill:none;stroke:#137d78;stroke-width:3;marker-end:url(#arr-teal)}.goldline{fill:none;stroke:#aa7524;stroke-width:3;marker-start:url(#arr-gold);marker-end:url(#arr-gold)}.dashline{fill:none;stroke:#9c8e77;stroke-width:2.8;stroke-dasharray:10 7;marker-end:url(#arr-gold)}
+</style></defs>
+<rect width="2400" height="1580" fill="white"/>
+<text x="60" y="58" text-anchor="start" class="title">Arquitectura lógica · flujos críticos</text>
+<text x="60" y="96" text-anchor="start" class="subtitle">Interfaces propuestas · Etapas 1 y 2</text>
+<path d="M60 142H135" class="arrow"/>
+<text x="155" y="150" text-anchor="start" class="small">Solicitud</text>
+<path d="M490 142H565" class="eventline"/>
+<text x="585" y="150" text-anchor="start" class="small">Evento</text>
+<path d="M850 142H925" class="dashline"/>
+<text x="945" y="150" text-anchor="start" class="small">Tercero: por validar</text>
+<path d="M1510 142H1585" class="goldline"/>
+<text x="1605" y="150" text-anchor="start" class="small">Cruce X-01</text>
+<text x="60" y="204" text-anchor="start" class="layer">ETAPA 1 · desde mes 16</text>
+<rect x="60" y="220" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="233" width="595" height="86" rx="13" class="blue"/>
+<use href="#tag" x="100" y="252.0" width="48" height="48" class="ico"/>
+<text x="161" y="284.0" text-anchor="start" class="small">Oferta comercial</text>
+<rect x="835" y="233" width="595" height="86" rx="13" class="box"/>
+<use href="#event" x="850" y="252.0" width="48" height="48" class="ico"/>
+<text x="911" y="284.0" text-anchor="start" class="small">Broker de eventos</text>
+<rect x="1585" y="233" width="710" height="86" rx="13" class="retail"/>
+<use href="#pos" x="1600" y="252.0" width="48" height="48" class="ico"/>
+<text x="1661" y="284.0" text-anchor="start" class="small">POS · Tienda web</text>
+<path d="M680 276H826" class="eventline"/>
+<path d="M1430 276H1576" class="eventline"/>
+<rect x="60" y="353" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="366" width="595" height="86" rx="13" class="blue"/>
+<use href="#receipt" x="100" y="385.0" width="48" height="48" class="ico"/>
+<text x="161" y="417.0" text-anchor="start" class="small">Ventas</text>
+<rect x="835" y="366" width="595" height="86" rx="13" class="box"/>
+<use href="#event" x="850" y="385.0" width="48" height="48" class="ico"/>
+<text x="911" y="417.0" text-anchor="start" class="small">Broker de eventos</text>
+<rect x="1585" y="366" width="710" height="86" rx="13" class="retail"/>
+<use href="#data" x="1600" y="385.0" width="48" height="48" class="ico"/>
+<text x="1661" y="417.0" text-anchor="start" class="small">Existencias</text>
+<path d="M680 409H826" class="eventline"/>
+<path d="M1430 409H1576" class="eventline"/>
+<rect x="60" y="486" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="499" width="595" height="86" rx="13" class="blue"/>
+<use href="#pos" x="100" y="518.0" width="48" height="48" class="ico"/>
+<text x="161" y="550.0" text-anchor="start" class="small">POS local</text>
+<rect x="835" y="499" width="595" height="86" rx="13" class="box"/>
+<use href="#data" x="850" y="518.0" width="48" height="48" class="ico"/>
+<text x="911" y="550.0" text-anchor="start" class="small">Cola POS local</text>
+<rect x="1585" y="499" width="710" height="86" rx="13" class="retail"/>
+<use href="#receipt" x="1600" y="518.0" width="48" height="48" class="ico"/>
+<text x="1661" y="550.0" text-anchor="start" class="small">Ventas</text>
+<path d="M680 542H826" class="eventline"/>
+<path d="M1430 542H1576" class="eventline"/>
+<rect x="60" y="619" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="632" width="595" height="86" rx="13" class="blue"/>
+<use href="#receipt" x="100" y="651.0" width="48" height="48" class="ico"/>
+<text x="161" y="683.0" text-anchor="start" class="small">Ventas</text>
+<rect x="835" y="632" width="595" height="86" rx="13" class="box"/>
+<use href="#policy" x="850" y="651.0" width="48" height="48" class="ico"/>
+<text x="911" y="683.0" text-anchor="start" class="small">X-01 Control de cruces</text>
+<rect x="1585" y="632" width="710" height="86" rx="13" class="emisor"/>
+<use href="#card" x="1600" y="651.0" width="48" height="48" class="ico"/>
+<text x="1661" y="683.0" text-anchor="start" class="small">Originación de crédito</text>
+<path d="M680 675H826" class="goldline"/>
+<path d="M1430 675H1576" class="goldline"/>
+<rect x="60" y="752" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="765" width="595" height="86" rx="13" class="blue"/>
+<use href="#receipt" x="100" y="784.0" width="48" height="48" class="ico"/>
+<text x="161" y="816.0" text-anchor="start" class="small">Ventas</text>
+<rect x="835" y="765" width="595" height="86" rx="13" class="box"/>
+<use href="#file" x="850" y="784.0" width="48" height="48" class="ico"/>
+<text x="911" y="816.0" text-anchor="start" class="small">Adaptador ERP/DTE</text>
+<rect x="1585" y="765" width="710" height="86" rx="13" class="retail"/>
+<use href="#server" x="1600" y="784.0" width="48" height="48" class="ico"/>
+<text x="1661" y="816.0" text-anchor="start" class="small">ERP/DTE</text>
+<path d="M680 808H826" class="dashline"/>
+<path d="M1430 808H1576" class="dashline"/>
+<text x="60" y="938" text-anchor="start" class="layer">ETAPA 2 · desde mes 21</text>
+<rect x="60" y="955" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="968" width="595" height="86" rx="13" class="blue"/>
+<use href="#cart" x="100" y="987.0" width="48" height="48" class="ico"/>
+<text x="161" y="1019.0" text-anchor="start" class="small">Pedidos</text>
+<rect x="835" y="968" width="595" height="86" rx="13" class="box"/>
+<use href="#api" x="850" y="987.0" width="48" height="48" class="ico"/>
+<text x="911" y="1019.0" text-anchor="start" class="small">Mediación API</text>
+<rect x="1585" y="968" width="710" height="86" rx="13" class="retail"/>
+<use href="#data" x="1600" y="987.0" width="48" height="48" class="ico"/>
+<text x="1661" y="1019.0" text-anchor="start" class="small">Existencias</text>
+<path d="M680 1011H826" class="arrow"/>
+<path d="M1430 1011H1576" class="arrow"/>
+<rect x="60" y="1088" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="1101" width="595" height="86" rx="13" class="blue"/>
+<use href="#cart" x="100" y="1120.0" width="48" height="48" class="ico"/>
+<text x="161" y="1152.0" text-anchor="start" class="small">Pedidos</text>
+<rect x="835" y="1101" width="595" height="86" rx="13" class="box"/>
+<use href="#file" x="850" y="1120.0" width="48" height="48" class="ico"/>
+<text x="911" y="1152.0" text-anchor="start" class="small">Adaptador WMS</text>
+<rect x="1585" y="1101" width="710" height="86" rx="13" class="retail"/>
+<use href="#warehouse" x="1600" y="1120.0" width="48" height="48" class="ico"/>
+<text x="1661" y="1152.0" text-anchor="start" class="small">WMS principal</text>
+<path d="M680 1144H826" class="dashline"/>
+<path d="M1430 1144H1576" class="dashline"/>
+<rect x="60" y="1221" width="2260" height="113" rx="13" class="outline"/>
+<rect x="85" y="1234" width="595" height="86" rx="13" class="blue"/>
+<use href="#return" x="100" y="1253.0" width="48" height="48" class="ico"/>
+<text x="161" y="1285.0" text-anchor="start" class="small">Posventa</text>
+<rect x="835" y="1234" width="595" height="86" rx="13" class="box"/>
+<use href="#event" x="850" y="1253.0" width="48" height="48" class="ico"/>
+<text x="911" y="1285.0" text-anchor="start" class="small">Broker de eventos</text>
+<rect x="1585" y="1234" width="710" height="86" rx="13" class="retail"/>
+<use href="#data" x="1600" y="1253" width="45" height="45" class="ico"/>
+<text x="1660" y="1290" text-anchor="start" class="small">Existencias</text>
+<path d="M1932 1245v64" stroke="#6aa89b" stroke-width="2"/>
+<use href="#shop" x="1950" y="1253" width="45" height="45" class="ico"/>
+<text x="2010" y="1290" text-anchor="start" class="small">Marketplace</text>
+<path d="M680 1277H826" class="eventline"/>
+<path d="M1430 1277H1576" class="eventline"/>
+</svg>
