@@ -58,6 +58,9 @@ Patrón general: el sd-02 (sobre todo sus anexos) quedó escrito contra versione
 | EXT-M-10 | Resuelto | A.4 remite a la sección 1.5 para los roles y al Subdocumento 12 y T-8 para nombres y certificaciones; se quitó el nombre del Jefe de Proyecto |
 | EXT-M-11 | Resuelto | Comité de Operación desde el mes 16 (Etapa 1 en producción) |
 | EXT-M-12 | Resuelto | Decisión tomada (sd-03): venta con tarjeta propia en corte contra cupo preaprobado, prueba en los meses 6 y 7. El sd-04 4.1 lo diseña como decisión tomada; solo quedan por fijar los criterios del cupo de la filial emisora |
+| EXT-B-01 | Resuelto | Glosario común en `glosario_nombres_comunes.md` (nombre formal en la primera mención, corto después). Se normalizó el sd-03: «plataforma financiera/de 2011» pasó a «plataforma de crédito de 2011» y «sistema central» a «núcleo Retail». Los portales de proveedor y de vendedor son objetos distintos, no una variante |
+| EXT-B-02 | Resuelto | «Frente» queda para los tres frentes de la solución; el sd-01 usa «áreas de trabajo» |
+| EXT-B-03 | Resuelto | El sd-02 indica que la Ley 21.719 rige desde el 1-dic-2026 y que hasta entonces aplica la Ley 19.628 (agregada a las referencias) |
 | EXT-M-13 | Abierto | Queda por confirmar con la fuente de la matriz |
 
 ---
