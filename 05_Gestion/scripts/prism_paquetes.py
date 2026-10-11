@@ -85,12 +85,12 @@ def write_zip(path: Path, files: dict[str, bytes]) -> None:
 
 def collect_files(part: str) -> tuple[dict[str, bytes], str]:
     number = part[-2:]
-    tex = ex.LATEX / f"sd-{number}.tex"
+    tex = ex.main_tex(part)
     if not tex.is_file():
         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ex.ROOT)}; importar primero")
     ex.require_valid(tex)
     text = tex.read_text(encoding="utf-8")
-    files: dict[str, bytes] = {f"sd-{number}.tex": text.encode("utf-8"), "oss.sty": (ex.LATEX / "oss.sty").read_bytes()}
+    files: dict[str, bytes] = {ex.tex_name(part): text.encode("utf-8"), "oss.sty": (ex.LATEX / "oss.sty").read_bytes()}
     for rel in referenced_resources():
         source = ex.LATEX / rel
         if not source.is_file():
@@ -105,12 +105,12 @@ def collect_files(part: str) -> tuple[dict[str, bytes], str]:
     if ex.MANIFEST.exists():
         manifest_title = json.loads(ex.MANIFEST.read_text(encoding="utf-8")).get("partes", {}).get(part, {}).get("titulo", "")
     files["LEEME-PRISM.txt"] = README_PRISM.format(title=manifest_title or f"Subdocumento {int(number)}", number=int(number), name=f"sd-{number}").encode("utf-8")
-    return files, sha256(files[f"sd-{number}.tex"])
+    return files, sha256(files[ex.tex_name(part)])
 
 
 def update_manifest(part: str, **values: str) -> None:
     manifest = json.loads(ex.MANIFEST.read_text(encoding="utf-8")) if ex.MANIFEST.exists() else {"partes": {}}
-    entry = manifest["partes"].setdefault(part, {"tex": f"sd-{part[-2:]}.tex"})
+    entry = manifest["partes"].setdefault(part, {"tex": ex.tex_name(part)})
     entry.setdefault("prism", {}).update(values)
     ex.MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -152,8 +152,8 @@ def package_probe(part: str = "T7-03") -> list[Path]:
     )
     variants = {
         "prueba-A-xelatex.zip": {
-            **shared, f"sd-{number}.tex": files[f"sd-{number}.tex"],
-            "LEEME.txt": (f"Prueba A: plantilla real. Archivo principal: sd-{number}.tex (XeLaTeX + fontspec, DejaVu Sans).\n" + questions).encode("utf-8"),
+            **shared, ex.tex_name(part): files[ex.tex_name(part)],
+            "LEEME.txt": (f"Prueba A: plantilla real. Archivo principal: {ex.tex_name(part)} (XeLaTeX + fontspec, DejaVu Sans).\n" + questions).encode("utf-8"),
         },
         "prueba-B-pdflatex.zip": {
             **shared, "main.tex": main_b.encode("utf-8"),
@@ -190,7 +190,7 @@ def normalize_names(names: list[str]) -> dict[str, str]:
 
 def import_part(part: str, zip_path: Path, dry_run: bool = False, force: bool = False) -> list[str]:
     number = part[-2:]
-    repo_tex = ex.LATEX / f"sd-{number}.tex"
+    repo_tex = ex.main_tex(part)
     if not repo_tex.is_file():
         raise FileNotFoundError(f"{part}: falta {repo_tex.relative_to(ex.ROOT)}")
     messages: list[str] = []
@@ -203,14 +203,14 @@ def import_part(part: str, zip_path: Path, dry_run: bool = False, force: bool = 
             if Path(norm).suffix.lower() not in ALLOWED_SUFFIXES:
                 raise ValueError(f"Tipo de archivo no admitido en el zip: {norm}")
         by_name = {norm: original for original, norm in mapping.items()}
-        main = next((n for n in (f"sd-{number}.tex", "main.tex") if n in by_name), None)
+        main = next((n for n in (ex.tex_name(part), f"sd-{number}.tex", "main.tex") if n in by_name), None)
         if main is None:
-            raise ValueError(f"El zip no contiene sd-{number}.tex ni main.tex en su raíz")
+            raise ValueError(f"El zip no contiene {ex.tex_name(part)} ni main.tex en su raíz")
         received = archive.read(by_name[main]).decode("utf-8").replace("\r\n", "\n")
         extra = {n: archive.read(o) for n, o in by_name.items() if n != main}
 
     with tempfile.TemporaryDirectory() as tmp:
-        candidate = Path(tmp) / f"sd-{number}.tex"
+        candidate = Path(tmp) / ex.tex_name(part)
         candidate.write_text(received, encoding="utf-8")
         problems = ex.verify_tex(candidate)
     if problems:

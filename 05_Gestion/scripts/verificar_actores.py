@@ -18,8 +18,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 MAESTRO = RAIZ / "80_Artefactos" / "maestro_actores.md"
-SD02 = RAIZ / "02_Propuesta" / "latex_final" / "sd-02.tex"
-SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03.tex"
+SD02 = RAIZ / "02_Propuesta" / "latex_final" / "sd-02" / "OSS-Subdocumento2.tex"
+SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03" / "OSS-Subdocumento3.tex"
 
 # Roles y sistemas que el sd-03 menciona y el maestro debe nombrar (P2a.2). Cada entrada es
 # (patrón en el sd-03, texto que debe aparecer en el maestro).

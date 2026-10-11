@@ -30,7 +30,7 @@ Documento de contexto, no es entregable. Generado por `05_Gestion/scripts/verifi
 | K10 | 3.3.1 | Evaluación de comercio electrónico y fidelización con las pruebas de la primera etapa, y decisión de conservar, remediar o sustituir cada plataforma antes de su ola | M | cubierto | 1.9.12 |
 | K11 | 3.4.6 | Pruebas de tareas del punto de venta con cajeros nuevos y experimentados antes del despliegue | M | cubierto | 1.9.13 |
 | K12 | 3.4.6 | Pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares | B | cubierto | 1.9.14 |
-| K13 | 3.3.1 | Nueve plataformas: la novena (planillas y listas impresas) deja de ser registro oficial; el levantamiento documenta las catorce interfaces | B | cubierto | 1.2.1 |
+| K13 | 3.3.1 | Nueve plataformas: ocho sistemas y el motor de precios y promociones (que se construye); las planillas y listas impresas no son plataforma y dejan de ser registro oficial (invierte DEC-10, 2026-10-11); el levantamiento documenta las catorce interfaces | B | cubierto | 1.2.1 |
 | K14 | 3.2.2 | Retiro de la plataforma de crédito de 2011 en octubre de 2028 (mes 22) | B | cubierto | 1.7.11 |
 | K15 | 3.2.2 | La recuperación ante desastres se prueba dos veces al año en operación | B | cubierto | 1.4.4, 1.9.4, 1.15.3 |
 | K16 | 3.4.1 | Pruebas en preproducción a 1,5 veces el peak declarado y estrés hasta el punto de quiebre | B | cubierto | 1.9.4 |

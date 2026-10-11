@@ -1,0 +1,120 @@
+// D4 · Frontera Retail–Filial emisora y cruces autorizados
+// Only Simple Solutions · Licitación TFEP-01/2026 · Subdocumento 3, subsección 3.2.3
+// Tamaño natural ≈ ancho final (16 cm): las fuentes declaradas son las del PDF final.
+// Exportar:
+//   dot -Tpng -Gdpi=300 d4_frontera.dot -o d4_frontera.png
+//   dot -Tpdf d4_frontera.dot -o d4_frontera.pdf
+
+digraph D4 {
+  graph [rankdir=LR, newrank=true, bgcolor="white", pad=0.05,
+         nodesep=0.26, ranksep=0.42, splines=spline,
+         fontname="Helvetica", fontcolor="#17324D"];
+  node  [shape=plain, fontname="Helvetica", fontsize=9, fontcolor="#17324D"];
+  edge  [fontname="Helvetica", fontsize=9, color="#17324D", fontcolor="#17324D",
+         penwidth=1.4, arrowsize=0.6];
+
+  // ═════════════ RETAIL (columna izquierda) ═════════════
+  retail [label=<
+  <TABLE BORDER="1" COLOR="#17324D" CELLBORDER="0" CELLSPACING="5" CELLPADDING="3" BGCOLOR="white">
+    <TR><TD ALIGN="LEFT" PORT="t"><FONT POINT-SIZE="10.5"><B>Retail</B></FONT></TD></TR>
+    <TR><TD BORDER="1" COLOR="#17324D" PORT="marketing">Marketing</TD></TR>
+    <TR><TD BGCOLOR="#7FC6AA" PORT="clientes" BORDER="3" COLOR="#17324D"><B>Servicio de<BR/>clientes Retail</B><BR/><FONT POINT-SIZE="9">· Etapa 2 ·</FONT></TD></TR>
+    <TR><TD BGCOLOR="#196197" PORT="oferta"><FONT COLOR="white">Servicio de oferta<BR/>comercial<BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></FONT></TD></TR>
+    <TR><TD BGCOLOR="#196197" PORT="existencias"><FONT COLOR="white">Servicio de<BR/>existencias<BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></FONT></TD></TR>
+    <TR><TD BGCOLOR="#196197" PORT="ventas"><FONT COLOR="white">Servicio de ventas<BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></FONT></TD></TR>
+    <TR><TD BGCOLOR="#7FC6AA" PORT="pedidos">Servicio de pedidos<BR/><FONT POINT-SIZE="9">· Etapa 2 ·</FONT></TD></TR>
+  </TABLE>>];
+
+  // ═════════════ FRONTERA (columna central) ═════════════
+  maestro [label=<
+  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR><TD><FONT COLOR="#C0392B" POINT-SIZE="18"><B>✕</B></FONT></TD></TR>
+    <TR><TD><FONT COLOR="#C0392B">Maestro único<BR/>de clientes</FONT></TD></TR>
+  </TABLE>>];
+
+  // Control de cruces + excepción sin conexión (un solo nodo para fijar el conector punteado)
+  control [label=<
+  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR><TD><TABLE PORT="ctl" BORDER="4" COLOR="#277FA8" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4" BGCOLOR="white">
+    <TR><TD BORDER="0"><FONT POINT-SIZE="10"><B>Servicio de control<BR/>de cruces</B></FONT><BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></TD></TR>
+    <TR><TD COLOR="#277FA8">Finalidad declarada</TD></TR>
+    <TR><TD COLOR="#277FA8">Base de autorización</TD></TR>
+    <TR><TD COLOR="#277FA8">Dato mínimo</TD></TR>
+    <TR><TD COLOR="#277FA8" PORT="b">Registro de cada uso</TD></TR>
+  </TABLE></TD></TR>
+    <TR><TD CELLPADDING="1"><FONT POINT-SIZE="13"><B>⋮<BR/>⋮</B></FONT></TD></TR>
+    <TR><TD CELLPADDING="0"><FONT POINT-SIZE="9">▼</FONT></TD></TR>
+    <TR><TD><TABLE BORDER="1" STYLE="dashed" COLOR="#17324D" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3" BGCOLOR="white">
+    <TR><TD><B>Registro local del crédito<BR/>sin conexión (tienda)</B></TD></TR>
+    <TR><TD ALIGN="LEFT" BALIGN="LEFT">Guarda identificador opaco,<BR/>monto máximo sin conexión,<BR/>antigüedad y estado de bloqueo.<BR/>No guarda saldo, mora ni<BR/>comportamiento de pago.</TD></TR>
+  </TABLE></TD></TR>
+  </TABLE>>];
+
+  rotulo [label=<
+  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR><TD><B>⟷</B> Cruce autorizado: solo con<BR/>finalidad, autorización,<BR/>dato mínimo y registro</TD></TR>
+  </TABLE>>];
+
+  // Puntos de rótulo de los flujos prohibidos (van por fuera del control de cruces)
+  p_saldos [label=<
+  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR><TD><FONT COLOR="#C0392B" POINT-SIZE="18"><B>✕</B></FONT></TD></TR>
+    <TR><TD><FONT COLOR="#C0392B">Saldos → Servicio de<BR/>clientes Retail</FONT></TD></TR>
+  </TABLE>>];
+
+  p_atributos [label=<
+  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR><TD><FONT COLOR="#C0392B" POINT-SIZE="18"><B>✕</B></FONT></TD></TR>
+    <TR><TD><FONT COLOR="#C0392B">Atributos financieros<BR/>→ Marketing</FONT></TD></TR>
+  </TABLE>>];
+
+  // ═════════════ FILIAL EMISORA (columna derecha) ═════════════
+  filial [label=<
+  <TABLE BORDER="1" COLOR="#17324D" CELLBORDER="0" CELLSPACING="5" CELLPADDING="3" BGCOLOR="white">
+    <TR><TD ALIGN="RIGHT" PORT="t"><FONT POINT-SIZE="10.5"><B>Filial emisora</B></FONT></TD></TR>
+    <TR><TD BGCOLOR="#196197" PORT="evidencia"><FONT COLOR="white">Servicio de evidencia<BR/>financiera<BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></FONT></TD></TR>
+    <TR><TD PORT="cartera" CELLPADDING="0">
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+        <TR><TD COLSPAN="2" BGCOLOR="#196197"><FONT COLOR="white">Servicio de cartera<BR/>de crédito</FONT></TD></TR>
+        <TR><TD BGCOLOR="#196197"><FONT COLOR="white" POINT-SIZE="9">Etapa 1</FONT></TD>
+            <TD BGCOLOR="#7FC6AA"><FONT POINT-SIZE="9">Etapa 2</FONT></TD></TR>
+        <TR><TD COLSPAN="2" BORDER="1" COLOR="#17324D"><FONT POINT-SIZE="9">migra por tramos</FONT></TD></TR>
+      </TABLE></TD></TR>
+    <TR><TD BGCOLOR="#196197" PORT="originacion"><FONT COLOR="white">Servicio de<BR/>originación de crédito<BR/><FONT POINT-SIZE="9">· Etapa 1 ·</FONT></FONT></TD></TR>
+  </TABLE>>];
+
+  // ═════════════ LEYENDA (bajo la filial emisora) ═════════════
+  leyenda [label=<
+  <TABLE BORDER="1" COLOR="#17324D" CELLBORDER="0" CELLSPACING="1" CELLPADDING="2">
+    <TR><TD BGCOLOR="#196197" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Etapa 1</TD></TR>
+    <TR><TD BGCOLOR="#7FC6AA" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Etapa 2</TD></TR>
+    <TR><TD BORDER="3" COLOR="#277FA8" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Control de cruces</TD></TR>
+    <TR><TD><B>⟷</B></TD><TD ALIGN="LEFT">Autorizado (sólida)</TD></TR>
+    <TR><TD><FONT COLOR="#C0392B"><B>✕</B></FONT></TD><TD ALIGN="LEFT">Prohibido (roja, con ✕)</TD></TR>
+    <TR><TD><B>· · ·</B></TD><TD ALIGN="LEFT">Excepción sin<BR ALIGN="LEFT"/>conexión (punteada)<BR ALIGN="LEFT"/></TD></TR>
+  </TABLE>>];
+
+  // Columnas y orden vertical
+  { rank=same; maestro; p_atributos; p_saldos; rotulo; control; }
+  { rank=same; filial; leyenda; }
+  maestro -> p_atributos -> p_saldos -> rotulo -> control [style=invis];
+  filial -> leyenda [style=invis];
+
+  // ═════════════ FLUJOS AUTORIZADOS: atraviesan el control de cruces ═════════════
+  retail:clientes:e -> control:ctl:w [dir=both];
+  control:ctl:e -> filial:originacion:w [dir=both];
+  control:ctl:e -> filial:cartera:w     [dir=both];
+
+  // ═════════════ EXCEPCIÓN SIN CONEXIÓN: de originación, a través del control ═════════════
+  control:b:e -> filial:originacion:w [dir=back, style=dotted, penwidth=1.8];
+
+  // ═════════════ FLUJOS PROHIBIDOS: rojos, por fuera del control ═════════════
+  retail:t:n -> maestro:w   [dir=none, color="#C0392B", penwidth=1.6];
+  maestro:e  -> filial:t:n  [dir=none, color="#C0392B", penwidth=1.6];
+
+  retail:clientes:e -> p_saldos:w  [dir=back, color="#C0392B", penwidth=1.6];
+  p_saldos:e -> filial:cartera:w   [dir=none, color="#C0392B", penwidth=1.6];
+
+  retail:marketing:e -> p_atributos:w [dir=back, color="#C0392B", penwidth=1.6];
+  p_atributos:e -> filial:evidencia:w [dir=none, color="#C0392B", penwidth=1.6];
+}

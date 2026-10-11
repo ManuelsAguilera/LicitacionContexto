@@ -1,0 +1,141 @@
+// Destino de las nueve plataformas actuales — Only Simple Solutions, Licitación TFEP-01/2026
+// Diseñado a tamaño final (~16 cm de ancho): 1 pt de Graphviz = 1 pt impreso.
+digraph destino_plataformas {
+  graph [bgcolor="white", margin=0, pad=0.05, nodesep=0.15, ranksep=0.12,
+         fontname="Arial"];
+  node  [shape=plaintext, margin=0, fontname="Arial", fontsize=9, fontcolor="#17324D"];
+
+  tabla [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3" COLOR="#17324D">
+
+  <!-- Encabezado -->
+  <TR>
+    <TD WIDTH="100" ALIGN="LEFT" BALIGN="LEFT"><B>Plataforma</B></TD>
+    <TD WIDTH="34"><B>Año</B></TD>
+    <TD WIDTH="76" ALIGN="LEFT" BALIGN="LEFT"><B>Destino</B></TD>
+    <TD WIDTH="118"><B>Etapa en que cambia</B></TD>
+    <TD WIDTH="104" ALIGN="LEFT" BALIGN="LEFT"><B>Qué la sustituye<BR/>o la gobierna</B></TD>
+  </TR>
+
+  <!-- 1. Sistema central de retail -->
+  <TR>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">Sistema central<BR/>de retail</TD>
+    <TD ROWSPAN="3">2009</TD>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">▲ Reemplazo<BR/>por etapas</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1:</B> maestro de<BR/>artículos, precios<BR/>e inventario</FONT></TD>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">Servicios de oferta<BR/>comercial, existencias<BR/>y abastecimiento</TD>
+  </TR>
+  <TR><TD BGCOLOR="#7FC6AA" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="#17324D"><B>Etapa 2:</B> órdenes,<BR/>recepción y reposición</FONT></TD></TR>
+  <TR><TD BGCOLOR="white" ALIGN="LEFT" BALIGN="LEFT">Retiro durante la<BR/>operación</TD></TR>
+
+  <!-- 2. Plataforma de crédito -->
+  <TR>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">Plataforma de crédito</TD>
+    <TD ROWSPAN="3">2011</TD>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">▲ Reemplazo<BR/>por etapas</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1:</B> por tramos</FONT></TD>
+    <TD ROWSPAN="3" ALIGN="LEFT" BALIGN="LEFT">Servicios de<BR/>originación, cartera<BR/>y evidencia financiera</TD>
+  </TR>
+  <TR><TD BGCOLOR="#7FC6AA" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="#17324D"><B>Etapa 2:</B> por tramos</FONT></TD></TR>
+  <TR><TD BGCOLOR="white" ALIGN="LEFT" BALIGN="LEFT">Retiro en octubre de 2028</TD></TR>
+
+  <!-- 3. Punto de venta -->
+  <TR>
+    <TD ALIGN="LEFT" BALIGN="LEFT">Punto de venta</TD>
+    <TD>2014</TD>
+    <TD ALIGN="LEFT" BALIGN="LEFT">▲ Reemplazo</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1</B> (nuevo punto de<BR/>venta sin conexión en las<BR/>22 tiendas)</FONT></TD>
+    <TD ALIGN="LEFT" BALIGN="LEFT">Servicio de ventas</TD>
+  </TR>
+
+  <!-- 4. Sistema de almacenes (se conserva) -->
+  <TR>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Sistema de almacenes<BR/>del centro de<BR/>distribución principal</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed">2016</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">● Se conserva<BR/>e integra</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1</B> <I>(por definir)</I></FONT></TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Servicio de existencias</TD>
+  </TR>
+
+  <!-- 5. Sistema de fidelización (se conserva) -->
+  <TR>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Sistema de<BR/>fidelización</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed">2017</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">● Se conserva<BR/>e integra</TD>
+    <TD BGCOLOR="#7FC6AA" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="#17324D"><B>Etapa 2</B></FONT></TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Servicio de clientes<BR/>Retail</TD>
+  </TR>
+
+  <!-- 6. Comercio electrónico (se conserva) -->
+  <TR>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Comercio electrónico</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed">2019</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">● Se conserva<BR/>e integra</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1</B> <I>(por definir)</I></FONT></TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Publica la existencia<BR/>y el precio de los<BR/>servicios de existencias<BR/>y de oferta comercial</TD>
+  </TR>
+
+  <!-- 7. Marketplace (se conserva) -->
+  <TR>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Marketplace</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed">2022</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">● Se conserva<BR/>e integra</TD>
+    <TD BGCOLOR="#7FC6AA" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="#17324D"><B>Etapa 2</B></FONT></TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Servicio de<BR/>marketplace</TD>
+  </TR>
+
+  <!-- 8. Sistema de gestión empresarial (se conserva) -->
+  <TR>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Sistema de gestión<BR/>empresarial</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed">sin año</TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">● Se conserva<BR/>e integra</TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT"><FONT COLOR="white"><B>Etapa 1</B> (único emisor<BR/>tributario)</FONT></TD>
+    <TD BGCOLOR="#D9D9D9" STYLE="dashed" ALIGN="LEFT" BALIGN="LEFT">Plataforma de<BR/>integración</TD>
+  </TR>
+
+  <!-- 9. Planillas y listas impresas -->
+  <TR>
+    <TD ALIGN="LEFT" BALIGN="LEFT">Planillas y listas<BR/>impresas</TD>
+    <TD>sin año</TD>
+    <TD ALIGN="LEFT" BALIGN="LEFT">✕ Deja de ser<BR/>registro oficial</TD>
+    <TD ALIGN="LEFT" BALIGN="LEFT"><I>Por definir</I></TD>
+    <TD ALIGN="LEFT" BALIGN="LEFT">Servicios que asumen<BR/>cada dato (Concepción<BR/>mantiene sus<BR/>planillas, supuesto<BR/>SP-02)</TD>
+  </TR>
+</TABLE>
+  >];
+
+  leyenda [label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="2">
+  <TR>
+    <TD ALIGN="LEFT"><B>Destino:</B></TD>
+    <TD ALIGN="LEFT">▲ Reemplazo por etapas</TD>
+    <TD ALIGN="LEFT">● Se conserva e integra</TD>
+    <TD ALIGN="LEFT">✕ Deja de ser registro oficial</TD>
+  </TR>
+  <TR>
+    <TD ALIGN="LEFT"><B>Etapa:</B></TD>
+    <TD COLSPAN="3" ALIGN="LEFT" CELLPADDING="0">
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="2">
+        <TR>
+          <TD BGCOLOR="#196197" BORDER="1" COLOR="#17324D"><FONT COLOR="white"><B>Etapa 1</B></FONT></TD>
+          <TD BGCOLOR="#7FC6AA" BORDER="1" COLOR="#17324D"><B>Etapa 2</B></TD>
+          <TD CELLPADDING="0" BORDER="1" COLOR="#17324D">
+            <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1">
+              <TR><TD BGCOLOR="#196197"><FONT COLOR="white">1</FONT></TD><TD BGCOLOR="#7FC6AA">2</TD></TR>
+            </TABLE>
+          </TD>
+          <TD ALIGN="LEFT">Etapas 1 y 2</TD>
+          <TD WIDTH="6"></TD>
+          <TD BORDER="1" STYLE="dashed" COLOR="#17324D" BGCOLOR="#D9D9D9" WIDTH="18"></TD>
+          <TD ALIGN="LEFT">Sistema que se conserva</TD>
+          <TD WIDTH="6"></TD>
+          <TD ALIGN="LEFT"><I>Cursiva</I> = por definir</TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+  >];
+
+  tabla -> leyenda [style=invis];
+}

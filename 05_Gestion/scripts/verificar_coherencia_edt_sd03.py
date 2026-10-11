@@ -23,7 +23,7 @@ import generar_mapa_paquetes as gm  # noqa: E402
 import verificar_casos_uso as vcu  # noqa: E402
 
 RAIZ = vcu.RAIZ
-SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03.tex"
+SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03" / "OSS-Subdocumento3.tex"
 SALIDA = gm.DIR / "22_coherencia_edt_sd03.md"
 NODO_BASE = "Base tecnológica"
 
@@ -54,7 +54,7 @@ COMPROMISOS = [
      r"usabilidad|cajeros", None, "M", "Informe de pruebas de tareas del punto de venta con cajeros"),
     ("K12", "3.4.6", "Pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares",
      r"comprensi[oó]n", None, "B", "Informe de pruebas de comprensión con clientes y titulares"),
-    ("K13", "3.3.1", "Nueve plataformas: la novena (planillas y listas impresas) deja de ser registro oficial; el levantamiento documenta las catorce interfaces",
+    ("K13", "3.3.1", "Nueve plataformas: ocho sistemas y el motor de precios y promociones (que se construye); las planillas y listas impresas no son plataforma y dejan de ser registro oficial (invierte DEC-10, 2026-10-11); el levantamiento documenta las catorce interfaces",
      r"14 interfaces", None, "B", "Mapa de las 14 interfaces"),
     ("K14", "3.2.2", "Retiro de la plataforma de crédito de 2011 en octubre de 2028 (mes 22)",
      r"2011.*fuera de servicio|fuera de servicio.*2011", (22, 22), "B", "Plataforma de originación y cobranza de 2011 fuera de servicio"),

@@ -87,7 +87,7 @@ El centro de distribución de Concepción (código AS-06) no es actor sistema. E
 3. Los repositores externos están en la matriz (2.4.2) pero no en la Tabla 2.5.
 4. El sd-02 nombra a los entrevistados por su nombre (2.4.3). El maestro usa solo roles.
 5. El tipo de interfaz de cada sistema (AS-01 a AS-12) no está documentado: depende del mapa de las 14 interfaces, que el Caso dice que nadie posee.
-6. Recuento de plataformas: resuelto el 2026-10-08. Son nueve (ocho sistemas y las planillas y listas impresas como novena, decisión DEC-10). La sección 3.3.1 de `sd-03.tex` se alineó con la 3.2.1 y el sd-02.
+6. Recuento de plataformas: resuelto el 2026-10-11 (invierte la DEC-10 del 2026-10-08). Son nueve: los ocho sistemas existentes y el motor de precios y promociones, que no existe como sistema y se construye. Las planillas y listas impresas no se cuentan como plataforma: son un registro informal que debe desaparecer. Quedó escrito en los sd-02, sd-03 y sd-04 (EXT-G-04).
 7. Las equivalencias de la sección 4 no se aplican a los `.tex`. El equipo decide en cuál de los dos subdocumentos se corrige cada diferencia.
 
 ## 6. Pendientes de validación
