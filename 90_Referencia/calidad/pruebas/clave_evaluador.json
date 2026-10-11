@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "casos": {
+    "A01": {
+      "clasificacion": "error",
+      "concepto_esperado": "calidad/grado"
+    },
+    "A02": {
+      "clasificacion": "error",
+      "concepto_esperado": "ochoBases/nueve2023;certificación"
+    },
+    "A03": {
+      "clasificacion": "error",
+      "concepto_esperado": "cinco subset7;pedagogía noCMMI"
+    },
+    "A04": {
+      "clasificacion": "error",
+      "concepto_esperado": "QA/QC;aceptaciónCT"
+    },
+    "A05": {
+      "clasificacion": "error",
+      "concepto_esperado": "Pareto noley;Ishikawa no causalidad"
+    },
+    "A06": {
+      "clasificacion": "error",
+      "concepto_esperado": "muestreo convenio y100saldos"
+    },
+    "A07": {
+      "clasificacion": "error",
+      "concepto_esperado": "70bloqueante80objetivo cobertura nodeuda"
+    },
+    "A08": {
+      "clasificacion": "error",
+      "concepto_esperado": "máximo noP95;volumennoTPS"
+    },
+    "A09": {
+      "clasificacion": "error",
+      "concepto_esperado": "heurística15-25 no techo nirecorte"
+    },
+    "A10": {
+      "clasificacion": "error",
+      "concepto_esperado": "Boehm histórico CISQmodelado"
+    },
+    "A11": {
+      "clasificacion": "error",
+      "concepto_esperado": "CT10+10díasdep/pago fuente"
+    },
+    "A12": {
+      "clasificacion": "error",
+      "concepto_esperado": "multasgarantía ámbitojurídico"
+    },
+    "A13": {
+      "clasificacion": "correcto_con_brecha_diseño",
+      "concepto_esperado": "perfil pendiente; no exigirlogs reales"
+    },
+    "A14": {
+      "clasificacion": "correcto",
+      "concepto_esperado": "mapeo ocho/nueve yestadosseparados"
+    }
+  },
+  "regla": "A01-A12 requieren hallazgo;A13 diseño adecuado condicionado perfil;A14 no hallazgo material. No evaluar como ejecución conforme ni aceptación."
+}

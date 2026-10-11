@@ -1,0 +1,2323 @@
+===== PÁGINA PDF 01 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Por qué se dedica tiempo a esto
+ Adquisiciones
+            La calidad nunca es un accidente: siempre es el resultado de un esfuerzo de la inteligencia. En un proyecto se dedica tiempo a
+            gestionarla por tres razones concretas.
+ Contratos
+ Proceso
+              Prevenir               Ahorrar                 Conservar
+ Economía     • Evitarqueloserroresy los • No rehacer trabajo ya hecho • Tener un cliente satisfecho al
+                defectoslleguena existir                       final del proyecto
+                                     • El retrabajo consume tiempo
+ Calidad      • Es siempremásbaratoque y dinero que ningún contrato • En un mercado de
+                detectarlosy muchísimomás paga: sale del margen licitaciones, la referencia del
+ Aseguramiento  baratoquerepararlos                            cliente anterior es el activo
+                                                               comercial
+ Costo
+ Cruce
+
+ Propuesta
+               !  Las tres razones son económicas. La calidad no se gestiona por convicción moral: se gestiona porque no gestionarla cuesta más.
+
+
+                                                                                 67
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 02 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Calidad no es grado
+ Adquisiciones
+            Ésta es la distinción que más confusión evita en toda la sección, y la que más veces se pregunta en un examen.
+ Contratos
+              Grado                              Calidad
+ Proceso
+              • Es la categoríade prestacionesquetieneel • Es el grado en que el producto cumple los
+                producto                           requisitos preestablecidos
+ Economía
+              • Más funcionalidades, máspotencia, másopciones • Se mide contra lo que se prometió, no contra lo
+ Calidad      • Es unadecisiónde diseñoy de precio que existe en el mercado
+              • Un gradobajo no es un problemasifueuna • Es una obligación, no una elección
+ Aseguramiento
+                decisióndeclarada                • Una calidad baja siempre es un problema
+ Costo
+ Cruce
+            En un proyecto, la falta de grado no es un problema; la falta de calidad seguramente lo sea.
+ Propuesta        La pregunta clásica: ¿qué tiene más calidad, una camioneta usada o un deportivo nuevo? Depende del requisito. Si el requisitoes
+               !
+                  «no romperse en caminos pedregosos», gana la camioneta. Si es «superar los 200 km/h», gana el deportivo.
+
+                                                                                 68
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 03 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las dos calidadesde un proyectoTIC
+ Adquisiciones
+            La gestión de la calidad aborda tanto la calidad de la gestión del proyecto como la de sus entregables. Se aplica a todos los
+            proyectos, pero las medidas y las técnicas son específicas del tipo de entregable que se produce.
+ Contratos
+ Proceso                   Calidad del proceso         Calidad del producto
+
+                                                       Que el resultado cumpla los estándares
+ Economía    Qué asegura   Que la forma de trabajar sea eficiente y repetible
+                                                       establecidos
+             Se evalúa con Auditorías, revisiones de proceso, madurez Pruebas, inspecciones, métricas del producto
+ Calidad
+                           Toda historia pasa por revisión de código antes de La página de consulta responde en menos de 2
+             Ejemplo
+ Aseguramiento             integrarse                  segundos con 300 usuarios concurrentes
+             Quién responde El jefe de proyecto y la organización El equipo técnico y el responsable de calidad
+ Costo
+             Norma típica  ISO 9001, CMMI, ISO/IEC 20000-1 ISO/IEC 25010, ISO/IEC/IEEE 29119
+ Cruce                     El producto puede salir bien, pero por casualidad y El productosale mal aunqueel procesose haya
+             Si falla
+                           una sola vez                seguido
+ Propuesta
+                  Un buen proceso no garantiza un buen producto, pero un mal proceso garantiza que el buen producto no se repita en el proyecto
+               !
+                  siguiente.
+                                                                                 69
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 04 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Qué significa calidad cuando el producto es software
+ Adquisiciones
+            Existen muchas definiciones. La que usaremos en el curso es operativa y tiene tres partes, porque las tres se pueden verificar.
+ Contratos
+              Concordancia explícita Concordancia documentada Características implícitas
+ Proceso
+              • Cumplelosrequisitosfuncionales • Cumple los estándares y procesos • Cumple lo que se espera de todo
+                y de rendimientoquefueron de desarrollo que la organización software desarrollado
+ Economía       establecidosporescrito dejó documentados       profesionalmente aunque nadie
+                                                               lo haya escrito
+              • Se verificacontra la especificación • Se verifica con auditorías y
+ Calidad
+                                       revisiones            • Es la parte que produce las
+                                                               discusiones
+ Aseguramiento
+ Costo
+ Cruce
+                  La tercera parte es la peligrosa: nadie escribe «el sistema no debe perder datos», pero todos lo dan por supuesto. En una
+               !
+ Propuesta        licitación, las expectativas implícitas del mandante son riesgo puro.
+
+                                                                                 70
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 05 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El modelode calidadvigente: ISO/IEC 25010:2023
+ Adquisiciones
+            La versión 2023 reemplazó a la de 2011 y pasó de ocho a nueve características. Si su bibliografía habla de «usabilidad» y
+            «portabilidad» como características de primer nivel, está desactualizada.
+ Contratos
+             Característica  Qué evalúa                  Ejemplo de métrica verificable
+ Proceso
+             Adecuación funcional Que haga lo que se pidió, completo y correcto 100% de los casos de uso críticos aprobados
+             Eficiencia de desempeño Tiempos, uso de recursos y capacidad Bajo 2 s en el percentil 95 con 300 usuarios
+ Economía
+             Compatibilidad  Coexistencia e interoperabilidad con otros sistemas Interopera con el servicio del mandante
+ Calidad                     Antes «usabilidad»: aprendizaje y prevención de Un usuario nuevo completa el trámite en 5
+             Capacidad de interacción
+                             errores                     minutos
+ Aseguramiento                                           Disponibilidad mensual de 99,5% en horario
+             Fiabilidad      Madurez, disponibilidad, tolerancia a fallos
+                                                         hábil
+ Costo
+             Seguridad       Confidencialidad, integridad, no repudio, resistencia Sin hallazgos críticos en la prueba de intrusión
+ Cruce       Mantenibilidad  Modularidad, reutilización y capacidad de prueba Cobertura de pruebas unitarias sobre el 70%
+                                                         Escala a 600 usuarios sin cambio de
+             Flexibilidad    Antes «portabilidad»: adaptabilidad y escalabilidad
+ Propuesta                                               arquitectura
+             Seguridad de funcionamiento Nueva: evitardañoa personas, bieneso entorno Degradade forma controladaante fallade red
+            ISO/IEC 25010:2023, publicadael 15 de noviembrede 2023, segundaedición.
+                                                                                 71
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 06 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El modelo histórico de McCall: por qué todavía se enseña
+ Adquisiciones
+            Es anterior a la norma ISO y sigue siendo útil porque cada factor está formulado como una pregunta que un usuario haría en voz
+            alta.
+ Contratos
+             Factor          Qué mide                    La pregunta que responde
+ Proceso
+                             Si satisface la especificación y cumple el objetivo del
+             Corrección                                  ¿Hace lo que quiero?
+                             cliente
+ Economía
+             Fiabilidad      Si ejecuta sus funciones con la precisión requerida ¿Lo hace de forma fiable todo el tiempo?
+ Calidad     Eficiencia      Los recursos de cómputo y de código que necesita ¿Correrá bien en mi hardware?
+             Integridad      Si el acceso al software y a los datos está controlado ¿Es seguro?
+ Aseguramiento
+             Facilidad de uso El esfuerzo de aprenderlo y de operarlo ¿Está diseñado para ser usado?
+ Costo       Facilidad de mantenimiento El esfuerzo de localizar y arreglar un error ¿Se puede corregir con relativa facilidad?
+             Flexibilidad    El esfuerzo de modificar un programa en operación ¿Se puede cambiar con relativa facilidad?
+ Cruce
+             Facilidad de prueba El esfuerzo de probar que hace lo que debe ¿Se puede probar con relativa facilidad?
+             Portabilidad    El esfuerzo de llevarlo aotro entorno ¿Podré usarlo en otra plataforma?
+ Propuesta
+             Reusabilidad    Si sus partes sirven en otras aplicaciones ¿Podré reutilizar alguna parte?
+             Interoperación  El esfuerzo de acoplarlo aotro sistema ¿Podráinteractuarcon otrossistemas?
+                                                                                 72
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 07 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Cómo se escribe un requisito de calidad
+ Adquisiciones
+            Un adjetivo no es un requisito. Un requisito de calidad tiene cinco partes y las cinco se pueden verificar.
+ Contratos
+             Parte      Qué aporta                En el ejemplo
+ Proceso
+                        Qué característica de calidad se Tiempo de respuesta de la consulta de estado del
+             Atributo
+                        compromete                trámite
+ Economía
+                                                  Segundos transcurridos entre la solicitud y la
+             Métrica    Con qué se mide y en qué unidad
+ Calidad                                          respuesta completa
+                        El número comprometido, con su
+ Aseguramiento Valor objetivo                     Menor o igual a 2 segundos en el percentil 95
+                        estadístico
+ Costo                  Bajo qué carga, en qué ambiente y en Con 300 usuarios concurrentes, en ambiente de
+             Condición
+                        qué horario               producción, en horario hábil
+ Cruce
+             Método de  Con qué prueba y con qué instrumento se Pruebade carga con herramientaacordada, informe
+             verificación demuestra               firmadoporambas partes
+ Propuesta
+                  Así no: «el sistema debe ser rápido y amigable». Así sí: las cinco filas de arriba, escritas en una sola frase, en el anexo técnico de la
+               !
+                  oferta.
+                                                                                 73
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 08 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Los principios que ordenan la gestión de calidad
+ Adquisiciones
+                              La satisfaccióndel clientees el criteriofinal. No es lo mismoquedarlela razón: es entenderquénecesitay
+              Enfoque en el cliente
+ Contratos                    comprometerloporescrito.
+ Proceso
+              Liderazgo       Alguien tiene que alinear la visión de calidad en todos los niveles. Si la calidad no tiene dueño, es de nadie.
+ Economía
+
+ Calidad      Compromiso de todos Cada miembro del equipo contribuye. La calidad no es un departamento que revisa al final.
+
+ Aseguramiento
+              Mejora continua El proceso se corrige a sí mismo con la evidencia que va produciendo, no una vez al año.
+ Costo
+
+ Cruce
+              Decisiones basadas en datos Se decide con mediciones, no con impresiones. Ésta es la que más cuesta y la que más diferencia.
+ Propuesta
+                  Los cinco principios se pueden declarar en un párrafo de la propuesta. Sólo valen algo si después aparecen convertidos en
+               !
+                  actividades con horas asignadas en la EDT.
+                                                                                 74
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 09 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las normas que se citan, y qué certifica cada una
+ Adquisiciones
+             Norma           Quécertificaexactamente      Versión vigente
+ Contratos
+                             El sistema de gestión de la calidad de una organización: 2015, con una nueva edición en proceso de
+             ISO 9001
+                             procesos, no productos       publicación durante 2026
+ Proceso
+                             El sistema de gestión de servicios de TI de la
+             ISO/IEC 20000-1                              2018, con enmienda de 2024
+ Economía                    organización
+             ISO/IEC 27001   El sistema de gestión de seguridad de la información 2022, con enmienda de 2024
+ Calidad
+                             No se certifica: es el modelo de calidad del producto de
+             ISO/IEC 25010                                2023
+ Aseguramiento               software
+ Costo                       No se certifica como sistema: define procesos,
+             ISO/IEC/IEEE 29119                           Por partes, entre 2021 y 2022
+                             documentación y técnicas de pruebas
+ Cruce
+                             No es una certificación: es un modelo evaluado
+             CMMI                                         V3.0, de 2023
+                             mediante appraisal, con nivel de madurez de 1 a 5
+ Propuesta
+                  Error frecuente en propuestas: escribir «somos CMMI nivel 3» o «cumplimos ISO 25010». Lo primero requiere un appraisal
+               !
+                  vigente y verificable; lo segundo no existe como certificación.
+                                                                                 75
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 10 =====
+
+
+      RECOMENDACIONES PARA PROFUNDIZAR
+
+      Sección   5  · Calidad
+
+
+                              Revise su propuesta y marque qué compromisos son de grado y cuáles de calidad. Los de grado se pueden
+        1 Separar calidad de grado
+                              negociar; los de calidad, no.
+
+        2 Actualizar el modelo Reemplace cualquier referencia a las ocho características de ISO 25010:2011 por las nueve de la edición 2023.
+
+                              Tome cinco requisitos no funcionales de sus bases y reescríbalos con las cinco partes: atributo, métrica, valor,
+        3 Reescribir cinco requisitos
+                              condición y verificación.
+                              Escriba las cinco expectativas que el mandante no puso por escrito pero que va a dar por supuestas. Ésas son
+        4 Listar lo implícito
+                              riesgo.
+                              Si su empresa ficticia declara una norma o un nivel de madurez, prepare cómo lo acreditaría si se lo piden en la
+        5 Verificar lo que declara
+                              defensa.
+
+
+
+
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 11 =====
+
+
+
+
+      06
+
+
+
+                                                                                 A
+                                                                                 S
+                                                                                 E
+                                                                                 G
+                                                                                 U
+                                                                                 R
+      SECCIÓN 6                                                                  A
+                                                                                 M
+      Cómo      se  planifica      y  se  asegura                                EI
+                                                                                 N
+                                                                                 T
+                                                                                 O
+      • Los tres procesos de calidad del PMBOK y qué produce cada uno
+      • El plan de gestión de la calidad: qué se decide antes de escribir código
+      • Los cinco niveles de gestión de la calidad, del más caro al más barato
+      • Aseguramiento y control: la distinción que casi todos confunden
+      • Las herramientas: causa raíz, Pareto, Ishikawa, muestreo y pruebas
+
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 12 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Los tres procesos de la gestión de la calidad
+ Adquisiciones
+             Proceso         Qué se hace                Qué produce
+ Contratos
+                             Identificar los requisitos y estándares
+             Planificar la gestión de la aplicables al proyecto y a sus entregables, y Plan de gestión de la calidad, métricas de
+ Proceso
+             calidad         documentar cómo se demostrará el calidad, lista de verificación
+                             cumplimiento
+ Economía
+ Calidad                     Convertir el plan en actividades ejecutables
+                                                        Informes de calidad, documentos de
+             Gestionar la calidad e incorporar las prácticas de calidad al
+                                                        prueba, solicitudes de cambio y de mejora
+ Aseguramiento               trabajo diario. Es aseguramiento
+ Costo
+                             Monitorear y registrar los resultados de las
+                                                        Medicionesde control, entregables
+ Cruce       Controlar la calidad actividades para evaluar el desempeño y
+                                                        verificados, informaciónde desempeño
+                             verificar los entregables
+ Propuesta
+                  El primero es de planificación, el segundo de ejecución y el tercero de monitoreo y control. El error habitual es tener sólo el
+               !
+                  tercero: probar al final y llamarlo gestión de calidad.
+                                                                                 78
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 13 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Aseguramiento y control: la diferencia que importa
+ Adquisiciones
+              Aseguramiento · gestionar la calidad Control · controlar la calidad
+ Contratos
+              • Mira el proceso, no el producto  • Mira el producto, no el proceso
+ Proceso      • Es preventivo: busca que el defecto no ocurra • Es detectivo: busca los defectos que ya existen
+
+              • Se hace durante todo el proyecto • Se hace sobre cada entregable
+ Economía
+              • Herramientas: auditorías, revisiones de proceso, • Herramientas: pruebas, inspecciones, mediciones,
+ Calidad        análisis causa raíz                muestreo
+              • Pregunta: ¿estamos trabajando de la forma • Pregunta: ¿este entregable cumple lo
+ Aseguramiento  correcta?                          comprometido?
+ Costo
+
+ Cruce
+               !  Los dos son necesarios y ninguno reemplaza al otro. Sólo controlar es caro; sólo asegurar es ingenuo.
+ Propuesta
+
+
+
+                                                                                 79
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 14 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Qué contiene el plan de gestión de la calidad
+ Adquisiciones
+             Contenido       Quédefine                  Ejemplo escrito
+ Contratos                                              Guía de estilo de código, ISO/IEC 25010 como
+             Estándares aplicables Qué normas y guías rigen el trabajo
+                                                        modelo de atributos
+ Proceso                                                Densidad de defectos menor a 0,5 por punto de
+             Objetivos de calidad Qué se compromete y con qué valor
+                                                        función en aceptación
+ Economía
+                                                        El líder técnico asegura; el ingeniero de QA
+             Roles           Quién asegura, quién controla y quién acepta
+                                                        controla; el mandante acepta
+ Calidad
+                                                        Revisión de código por pares, pruebas
+             Actividades     Qué se hará y en qué momento del ciclo
+                                                        automatizadas, dos auditorías internas
+ Aseguramiento
+                             Qué se mide, cómo, con qué frecuencia y quién Cobertura, defectos abiertos por severidad,
+             Métricas
+                             informa                    cumplimiento de hitos
+ Costo
+                                                        Cero defectos críticos, máximo tres mayores con
+             Criterios de aceptación Cuándo un entregable se da por recibido
+                                                        plan de corrección
+ Cruce
+                                                        Gestor de incidencias, integracióncontinua,
+             Herramientas    Con qué se registra y se rastrea
+                                                        informessemanales
+ Propuesta
+                  Si el plan de calidad no dice quién acepta y con qué criterio, no es un plan: es una declaración de intenciones. Y las intenciones no
+               !
+                  se pueden auditar.
+                                                                                 80
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 15 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Los cinco niveles de gestión de la calidad
+ Adquisiciones
+            Están ordenados de peor a mejor, y también del más caro al más barato. La organización se ubica en uno de ellos, sepa o no que
+            existen.
+ Contratos
+ Proceso      1 · El cliente encuentra los defectos El enfoquemáscaro: problemasde garantía, retiros, pérdidade reputacióny costosde retrabajo.
+
+ Economía
+                                   Control de calidad sobre los entregables. Aparecen costos de evaluación y de fallas internas, pero
+              2 · Se detectan antes de entregar
+                                   no externas.
+ Calidad
+              3 · Se corrige el proceso Aseguramiento: se examina y corrige el proceso en sí mismo y no sólo los defectos particulares.
+ Aseguramiento
+ Costo
+              4 · La calidad se incorpora al diseño La calidad entra en la planificación y en el diseño del proyecto y del producto, no después.
+ Cruce
+                                   Toda la organización está consciente y comprometida con la calidad de los procesos y de los
+              5 · Cultura de calidad
+                                   productos.
+ Propuesta
+               !  Subir de nivel cuesta dinero una vez. Quedarse en el primero cuesta dinero todos los meses, y además cuesta clientes.
+                                                                                 81
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 16 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El ejemplo que se ve en todos los proyectos
+ Adquisiciones
+            Dos decisiones que parecen de gestión del cronograma y en realidad son decisiones de calidad con consecuencias económicas.
+ Contratos
+
+ Proceso      Hacer trabajar horas extras al equipo para cumplir con Apurar las inspecciones de calidad para cumplir el
+              el cliente                         cronograma
+ Economía
+              • Disminuyelas gananciasporel costodel sobretiempo • Deja erroressin detectarquelleganal cliente
+              • Incrementael nivelde riesgogeneral del proyecto • Reduce las gananciasporel retrabajoposterior
+ Calidad
+              • Provocarenunciasenun mercado dondereemplazar • Incrementalosriesgosdespuésde la implantación,
+ Aseguramiento  cuesta meses                       cuandocorregires máscaro
+              • Produce erroresy retrabajo, quees lo quese quería • Destruyela evidenciacon la quese defenderíauna
+ Costo          evitar                             controversia
+ Cruce
+
+ Propuesta
+                  Las dos decisiones se toman por razones de plazo y se pagan en la línea de calidad. Es el mecanismo por el cual un problema de
+               !
+                  estimación se transforma en un problema de calidad.
+                                                                                 82
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 17 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las herramientas de gestión de la calidad
+ Adquisiciones
+             Herramienta    Para quésirve                  Cuándo se usa
+ Contratos
+                            Revisar que se estén cumpliendo los requisitos de calidad
+             Lista de verificación                         En cada entrega y en cada revisión
+                            acordados
+ Proceso
+                            Revisar los reportes que produce el control de calidad y Semanal, sobre los informes de prueba y de
+             Análisis de documentación
+ Economía                   detectar lo que está fuera de control desempeño
+ Calidad                    Examinar problemas potenciales, restricciones y Al cierre de cada etapa, para identificar
+             Análisis del proceso
+                            actividades que no agregan valor mejoras
+ Aseguramiento
+                            Investigar las razones que causan las variaciones, riesgos
+             Análisis causa raíz                           Ante todo defecto grave o recurrente
+ Costo                      o defectos, para resolver el problema y no el síntoma
+ Cruce
+                            Verificar de forma independiente que se sigan los
+             Auditoría de calidad                          Al menosdos vecesduranteel proyecto
+                            estándares y los procesos comprometidos
+ Propuesta
+                  El análisis causa raíz es el que más rendimiento produce: corrige la fuente en vez del síntoma, y por eso reduce la cantidad de
+               !
+                  defectos futuros en vez de sólo la de defectos actuales.
+                                                                                 83
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 18 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las herramientas gráficas clásicas
+ Adquisiciones
+              Diagrama causa-efecto (Ishikawa) Histograma    Diagrama de Pareto
+ Contratos
+              • Identificade forma esquemática • Representa la distribución de • Ordena las causas de falla por
+                las causasposiblesde un frecuencias agrupadas en clases o frecuencia, de mayor a menor
+ Proceso
+                problema               categorías
+                                                             • Permite detectar rápidamente los
+ Economía     • Sirve para estimularideas y • Muestra la forma de la variación: pocos factores que originan la
+                ordenarla discusióndel equipo dónde se concentra y dónde hay mayoría de las fallas
+                                       cola
+ Calidad      • Se organizaporcategorías:                    • Es la herramienta que decide
+                personas, proceso, herramientas, • Útil para tiempos de respuesta y dónde poner el esfuerzo de
+                datos, entorno         para tiempos de resolución corrección
+ Aseguramiento
+ Costo
+ Cruce
+ Propuesta
+                  El orden de uso es siempre el mismo: Pareto para decidir qué problema atacar, Ishikawa para encontrar sus causas, y causa raíz
+               !
+                  para elegir cuál corregir.
+                                                                                 84
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 19 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las pruebas: qué se prueba y en qué orden
+ Adquisiciones
+             Tipo de prueba Quéverifica                 Quién la ejecuta y cuándo
+ Contratos                                              El desarrollador, de forma automatizada y
+             Unitaria     Que cada componente haga lo suyo de forma aislada
+                                                        continua
+ Proceso                  Que los componentes conversen entre sí y con los
+             Integración                                El equipo técnico, al integrar cada incremento
+                          sistemas externos
+ Economía
+                          Que la solución completa cumpla los requisitos
+             Sistema                                    El equipo de QA, antes de entregar
+                          funcionales
+ Calidad
+                          Que cumpla los tiempos y la concurrencia Especialista, sobre ambiente equivalente a
+             Rendimiento y carga
+                          comprometidos                 producción
+ Aseguramiento
+                                                        Tercero independiente, antes de la puesta en
+             Seguridad    Que resista los ataques previsibles y proteja los datos
+                                                        marcha
+ Costo
+                          Que lo que funcionaba siga funcionando después de
+             Regresión                                  Automatizada, en cada integración
+                          cada cambio
+ Cruce
+                                                        El mandante, contra criteriosacordadosde
+             Aceptación (UAT) Que el usuario final confirme que resuelve su necesidad
+                                                        antemano
+ Propuesta
+                  La prueba de aceptación no se diseña al final: se diseña junto con el requisito. Si el criterio de aceptación se escribe recién cuando
+               !
+                  hay que aceptar, se negocia en vez de verificarse.
+                                                                                 85
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 20 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Muestreo de aceptación: cuando no se puede revisar todo
+ Adquisiciones
+            Consiste en inspeccionar una muestra extraída de un lote para aceptar o rechazar el lote completo. Ahorra costo de inspeccióna
+            cambio de aceptar un riesgo estadístico.
+ Contratos
+ Proceso      Aceptación por atributos           Aceptación por variables
+
+ Economía     • Se tomaunamuestraaleatoriay cadaelementose • Se tomaunamuestray a cadaelementose le mideuna
+                calificacomoaceptadoo defectuoso   variable continua
+ Calidad      • Si el porcentajede defectossuperael límite • Con la media y la desviaciónestándarde la muestrase
+                preestablecido, se rechazatodoel lote comparacontra loslímitesacordados
+ Aseguramiento • EjemploTIC: registrosmigradosquese validancomo • EjemploTIC: tiempode respuestamedidosobreuna
+                correctoso incorrectos             muestrade transacciones
+ Costo
+
+ Cruce
+            En proyectos de migración de datos, el muestreo de aceptación es casi siempre la única técnica viable: revisar el 100% de losregistros no es económicamente
+ Propuesta
+            posible.
+                  Los dos riesgos que hay que declarar: aprobar elementos defectuosos que no fueron revisados, y rechazar elementos correctos
+               !
+                  que estaban dentro de un lote rechazado.
+                                                                                 86
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 21 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            La deuda técnica: la parte de la calidad que se paga con interés
+ Adquisiciones
+            Es el trabajo pendiente que se acumula cuando se elige la solución rápida en vez de la correcta. No es un defecto: es una
+            decisión con costo diferido.
+ Contratos
+             Tipo              De dónde viene            Cómo se controla
+ Proceso
+                               Se decide entregar antes y se registra qué quedó
+             Deliberada y documentada                    Se agenda su pago en una iteración futura
+ Economía                      pendiente
+ Calidad
+                                                         No se controla: aparece cuando alguien más
+             Deliberada y no documentada Se toma el atajo y no se anota en ninguna parte
+                                                         toca el código
+ Aseguramiento
+                               Se descubre después que había una forma mejor Se registra al detectarla y se prioriza como
+             Involuntaria
+ Costo                         de hacerlo                cualquier otro trabajo
+ Cruce                                                   Se vigilael ciclode vidade cadadependencia
+             Por obsolescencia El componente de terceros dejó de tener soporte
+                                                         desdeel inicio
+ Propuesta
+                  El informe CISQ de 2022 estima la deuda técnica acumulada en Estados Unidos en US$ 1,52 billones. Es una estimación modelada
+               !
+                  por un consorcio de la industria y así hay que citarla, pero da el orden de magnitud.
+                                                                                 87
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 22 =====
+
+
+      RECOMENDACIONES PARA PROFUNDIZAR
+
+      Sección   6  · Aseguramiento
+
+
+                              Redacte el plan de calidad de su caso con las siete filas de la lámina correspondiente. Sin ellas es una declaración
+        1 Escribir el plan
+                              de intenciones.
+
+        2 Ubicarse en el nivel Determine en qué nivel de gestión de la calidad trabaja hoy su grupo y qué actividad concreta lo sube un escalón.
+
+                              Elija tres métricas de calidad, con instrumento, frecuencia y responsable. Tres bien definidas valen más que quince
+        3 Definir tres métricas
+                              enunciadas.
+        4 Diseñar la aceptación Escriba los criterios de aceptación de sus tres entregables principales antes de construirlos.
+
+
+        5 Dimensionar el muestreo Si su caso incluye migración de datos, defina ahora el tamaño de muestra y el límite de defectos aceptable.
+
+
+
+
+
+
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 23 =====
+
+
+
+
+      07
+
+
+                                                                                 C
+                                                                                 O
+                                                                                 S
+                                                                                 T
+                                                                                 O
+                                                                                 D
+                                                                                 E
+      SECCIÓN 7                                                                  L
+                                                                                 A
+                                                                                 C
+      Cuánto      cuesta     la  calidad                                         A
+                                                                                 L
+                                                                                 DI
+                                                                                 A
+                                                                                 D
+      • Las cuatro categorías del costo de la calidad y cómo se comportan entre sí
+      • El costo óptimo: por qué invertir más deja de convenir en algún punto
+      • El mismo proyecto con y sin prevención, con las cifras completas
+      • La curva del costo del cambio: qué dice de verdad y qué se le atribuye sin fundamento
+      • Qué línea del presupuesto de su oferta representa todo esto
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 24 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Quées el costode la calidad
+ Adquisiciones
+            El costo de la calidad incluye todos los costos incurridos durante la vida del producto por invertir en prevenir la no conformidad,
+            por evaluar la conformidad y por el incumplimiento de los requisitos. Estos últimos también se llaman costos por calidad
+ Contratos
+            deficiente.
+ Proceso
+              Prevención       Evaluación        Fallas internas   Fallas externas
+ Economía
+              Evitar que la calidad Comprobar si lo Las constata el equipo Las constata el cliente
+              deficiente llegue a existir producido cumple antes de entregar
+ Calidad                                                           Garantía, soporte no
+              Estándares, capacitación, Pruebas, inspecciones, Retrabajo, corrección de previsto, multas, pérdida
+              revisiones de diseño, auditorías, mediciones, defectos, repetición de de reputación, retiro del
+ Aseguramiento
+              automatización de revisión de entregables pruebas, reprocesos servicio
+              pruebas, herramientas
+ Costo
+ Cruce
+ Propuesta
+                  Las dos primeras son inversión voluntaria y ocurren temprano. Las dos últimas son consecuencia y ocurren tarde. La suma de las
+               !
+                  cuatro es lo que realmente costó la calidad del proyecto.
+                                                                                 90
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 25 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El costo óptimo de la calidad
+ Adquisiciones
+            Los modelos muestran que existe un costo óptimo: el punto donde invertir más en prevención y evaluación deja de ser
+            beneficioso porque ya no evita costos por fallas equivalentes.
+ Contratos
+             Zona            Quéestápasando            Qué se ve en el proyecto
+ Proceso
+ Economía                    Se ahorra en prevención y evaluación, y las Retrabajo constante, entregas rechazadas,
+             Inversióninsuficiente
+                             fallas crecen más rápido que el ahorro equipo apagando incendios
+ Calidad
+ Aseguramiento               El costo total de la calidad es mínimo: cada
+                                                       Defectos detectados temprano, entregas
+             Zona óptima     peso invertido evita al menos un peso de
+                                                       aceptadas a la primera
+ Costo                       falla
+ Cruce                       Se agrega control que ya no encuentra Procesosquenadieusa, documentaciónque
+             Sobreinversión
+                             defectos suficientes para justificarse nadielee, ceremoniasvacías
+ Propuesta
+                  La zona óptima no es un número universal: depende del costo de la falla en ese negocio. Un sistema de recaudación tributaria y
+               !
+                  una aplicación interna de reservas de sala no se prueban con la misma intensidad.
+                                                                                 91
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 26 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El mismo proyecto, con y sin prevención
+ Adquisiciones
+            Dos proyectos con el mismo alcance y el mismo costo directo de $ 200 millones. El primero invierte en prevención; el segundo la
+            recorta para llegar antes.
+ Contratos
+             Categoría           Proyecto A · previene Proyecto B · recorta Diferencia
+ Proceso
+             Prevención          $ 10.000.000     $ 2.000.000      − 8.000.000
+ Economía
+             Evaluación          $ 18.000.000     $ 6.000.000      − 12.000.000
+ Calidad
+             Fallas internas     $ 14.000.000     $ 26.000.000     + 12.000.000
+ Aseguramiento
+             Fallas externas     $ 6.000.000      $ 44.000.000     + 38.000.000
+ Costo
+             Costo total de la calidad $ 48.000.000 · 24% $ 78.000.000 · 39% + 30.000.000
+ Cruce
+            Cifras ilustrativas y coherentes. Las fallas externas del proyecto B se descomponen en retrabajo en producción, multas contractuales, soporte no presupuestado y
+ Propuesta
+            horas de gerencia dedicadas a la crisis.
+                  El proyecto B ahorró $ 20 millones en prevención y evaluación, y pagó $ 50 millones adicionales en fallas. El saldo son $ 30
+               !
+                  millones de margen que desaparecieron sin que cambiara una línea de alcance.
+                                                                                 92
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 27 =====
+
+
+
+
+
+
+        EL PROBLEMA DE FONDO
+
+        Nadie   descubre      que  ahorró     mal  en  calidad
+
+        mientras     está  ahorrando.
+
+        Se descubre      siempre     después     de  entregar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 28 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            La curva del costo del cambio: qué dice y qué no
+ Adquisiciones
+            Es la cifra más citada de la ingeniería de software y también una de las peor entendidas. Vale la pena usarla, pero citándolapor
+            lo que realmente es.
+ Contratos
+             Etapa en que se detecta Multiplicadorde costo Advertencia
+ Proceso
+                                            El rango proviene de Boehm, 1981, sobre proyectos grandes en cascada
+             Requisitos       1×
+ Economía                                   de los años setenta
+             Diseño           3×a 8×        Son rangos, no un número fijo
+ Calidad
+             Codificación     5×a 20×       La evidencia base es de TRW, con corroboración de IBM, GTE y Bell Labs
+ Aseguramiento
+                                            El propio Boehm revisó el hallazgo en 2001 y encontró curvas mucho más
+             Pruebas de desarrollo 10×a 50×
+                                            planas en equipos ágiles
+ Costo
+             Pruebas de aceptación 30×a 100× La versión popular «1-10-100» es una heurística, no una medición
+ Cruce
+                                            Lo citable es la direccióndel efectoy el rangooriginal, siemprecon
+             Operación        50×a 200×
+                                            atribución
+ Propuesta
+                  Cítela como rango y con fuente. Si en su propuesta escribe «está demostrado que corregir en producción cuesta 100 veces más»,
+               !
+                  un evaluador informado le va a pedir el estudio, y ese estudio no existe con esa precisión.
+                                                                                 94
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 29 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Cuánto se invierte en la práctica
+ Adquisiciones
+                              Entre 15% y 25% del esfuerzototal del proyectoenactividadesde prevencióny evaluación. Es prácticade
+              Regla de partida
+ Contratos                    industria, no norma: úselacomopunto de partiday ajústelacon el riesgodel sistema.
+ Proceso
+                              Sistemas con dinero, con datos personales, con vidas, con integraciones múltiples o con una ventana de
+              Se ajusta hacia arriba
+                              operación crítica.
+ Economía
+                              Sistemas internos, de bajo volumen, sin integración y con usuarios tolerantes al error. Existen, pero son
+ Calidad      Se ajusta hacia abajo
+                              menos de los que uno cree.
+ Aseguramiento
+                              El porcentaje elegido va escrito en la propuesta, con la razón. Un número justificado se defiende; un número
+              Se declara siempre
+                              heredado, no.
+ Costo
+ Cruce                        Si el cronograma se comprime, lo primero que se recorta es la evaluación. Dejarlo comprometido por escrito
+              Se protege por contrato
+                              es la forma de impedirlo.
+ Propuesta
+                  El error más caro no es invertir poco en calidad: es no saber cuánto se está invirtiendo. Si en su presupuesto no hay una línea
+               !
+                  identificable de calidad, el número real es cero.
+                                                                                 95
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 30 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El orden de magnitud del problema, con fuente
+ Adquisiciones
+
+              US$ 2,41 billones      US$ 1,52 billones       19%
+ Contratos
+              Costo estimado de la mala calidad del Deuda técnica acumulada dentro de esa Tasa de fracaso de proyectos considerada
+              software en Estados Unidos en 2022 cifra       en el informe CISQ de 2020
+ Proceso
+              Fuente: CISQ, informe de diciembre de Es el trabajo pendiente que alguien tendrá Coincide en orden de magnitud con otras
+              2022                   que pagar               fuentes, todas discutibles
+ Economía
+              Es una estimación modelada por un El informe anterior, de 2020, estimaba Ninguna de estas cifras es una medición
+              consorcio de la industria, patrocinada por US$ 2,08 billones totales: la tendencia es auditada: son modelos
+ Calidad      un proveedor: se cita atribuyéndola al alza
+ Aseguramiento
+ Costo
+ Cruce
+ Propuesta
+                  La forma correcta de usarlas en una propuesta es como orden de magnitud y con la atribución escrita. La forma incorrecta es
+               !
+                  presentarlas como hechos verificados.
+                                                                                 96
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 31 =====
+
+
+      RECOMENDACIONES PARA PROFUNDIZAR
+
+      Sección   7  · Costo  de  la calidad
+
+
+
+        1 Poner la línea      Cree en su presupuesto una línea explícita de calidad, separada de desarrollo, con horas y responsable.
+
+                              Estime las cuatro categorías para su propio caso. No busque precisión: busque el orden de magnitud y la
+        2 Calcular su COQ
+                              coherencia.
+        3 Justificar el porcentaje Escriba en tres líneas por qué su proyecto invierte el porcentaje que invierte, en función del riesgo del sistema.
+
+
+        4 Revisar sus citas   Busque en su propuesta toda cifra sin fuente. O le pone fuente, o la saca.
+
+
+        5 Blindar la evaluación Identifique qué actividades de calidad se caerían si el cronograma se comprimiera, y protéjalas por contrato.
+
+
+
+
+
+
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 32 =====
+
+
+
+
+      08
+
+
+
+
+                                                                                 C
+                                                                                 R
+      SECCIÓN 8                                                                  U
+                                                                                 C
+                                                                                 E
+      Donde      el  contrato       compra
+      calidad
+      • Por qué las dos materias de esta clase son en realidad una sola
+      • El criterio de aceptación como cláusula contractual y no como buena intención
+      • Niveles de servicio, multas y descuentos: cuando la calidad tiene precio unitario
+      • Recepción provisional, definitiva y período de garantía
+      • La cadena que hay que poder recorrer: requisito, métrica, prueba, hito, pago
+
+
+
+
+                                                                            98
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 33 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Las dos materias son la misma conversación
+ Adquisiciones
+            El contrato es el instrumento con el que se compra calidad. Todo lo que no quedó escrito como obligación verificable es, en la
+            práctica, calidad que nadie compró y que nadie está obligado a entregar.
+ Contratos
+             Concepto de calidad   Dónde vive en el contrato Qué pasa si no está
+ Proceso
+                                                          Se discute al final, con el sistema ya
+             Requisito no funcional Anexo técnico y especificaciones
+ Economía                                                 construido
+             Criterio de aceptación Cláusula de recepción de entregables Acepta quien tenga más poder en la reunión
+ Calidad
+             Métrica de servicio   Acuerdo de nivel de servicio El servicio se evalúa por percepción
+ Aseguramiento
+                                                          No hay consecuencia, o la hay
+             Consecuencia del incumplimiento Cláusula de multas y descuentos
+                                                          desproporcionada
+ Costo
+             Respaldo del cumplimiento Garantías y retenciones El riesgo lo carga íntegramente el comprador
+ Cruce
+                                                          Cada correcciónse negociacomotrabajo
+             Corrección posterior  Período de garantía y soporte
+                                                          nuevo
+ Propuesta
+               !  Regla que resume la sección: una exigencia de calidad que no tiene una cláusula asociada no es una exigencia, es una expectativa.
+                                                                                 99
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 34 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            El criterio de aceptación como cláusula
+ Adquisiciones
+            Un criterio de aceptación bien escrito responde cuatro preguntas y no deja ninguna a la interpretación.
+ Contratos
+                             El entregableconcretoy sualcanceexacto: no «el módulode pagos», sino«el módulode pagoscon las tres
+              ¿Qué se verifica?
+ Proceso                     pasarelasindicadasenel anexo3».
+ Economía
+                             El método, el ambiente, el conjunto de datos y la herramienta. Si el instrumento es del proveedor, el comprador
+              ¿Con qué prueba?
+                             debe tener acceso a él.
+ Calidad
+ Aseguramiento               El umbral numérico y su estadístico: cero defectos críticos, máximo tres mayores con plan de corrección
+              ¿Qué valor se exige?
+                             comprometido.
+ Costo
+                             El plazo de corrección, la consecuencia del incumplimiento reiterado y qué ocurre con el pago asociado a ese
+ Cruce        ¿Qué pasa si no cumple? hito.
+ Propuesta
+                  El plazo de revisión del comprador también es un criterio: si las bases no dicen cuánto tiene el mandante para aceptar o rechazar,
+               !
+                  el proyecto puede quedarse detenido indefinidamente sin culpa del proveedor.
+                                                                                100
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 35 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Multas y descuentos por nivel de servicio
+ Adquisiciones
+            Es el lugar donde una métrica de calidad se convierte en dinero. Hay que leerlo con calculadora, no con optimismo.
+ Contratos
+             Elemento      Qué hay que verificar        Riesgo si se ignora
+ Proceso                   Si la multa se calcula sobre el hito, sobre el mes o sobre Un atraso menor puede castigarse sobre el
+             Base de cálculo
+                           el contrato completo         monto total
+ Economía
+             Unidad de tiempo Si se cuenta por día corrido, día hábil u hora Un fin de semana puede triplicar la multa
+ Calidad                                                Sin tope, el contrato puede llegar a costar más
+             Tope acumulado Cuál es el máximo que pueden sumar todas las multas
+                                                        que su precio
+ Aseguramiento             Qué atrasos no son imputables: demoras del mandante,
+             Causales eximentes                         Se paga por atrasos que no dependían de usted
+                           fuerza mayor, terceros
+ Costo
+             Procedimiento Notificación, plazo de descargos y resolución fundada Multas aplicadas sin posibilidad real de defensa
+ Cruce                     Si se descuenta del estado de pago o se cobra la
+             Forma de cobro                             Impacto directoe inmediatosobrela caja
+                           garantía
+ Propuesta
+                  En Chile no existe un tope legal de multas expresado en porcentaje del contrato: el procedimiento y los montos se fijan en las
+               !
+                  bases de cada licitación, con derecho a descargos del proveedor. Los topes de 10% o 20% que circulan son práctica, no norma.
+                                                                                101
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 36 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Recepción, garantía y el dinero retenido
+ Adquisiciones
+             Momento          Quésignifica               Qué se juega el proveedor
+ Contratos
+                              El mandante acepta que el sistema entró en Se libera un porcentaje del pago; comienza a
+             Recepción provisional
+                              operación, con o sin observaciones correr el plazo de observaciones
+ Proceso
+                              Operación real con soporte reforzado y corrección Es el período donde aparecen las fallas que las
+             Período de marcha blanca
+ Economía                     de observaciones           pruebas no encontraron
+                              Se declaran subsanadas las observaciones y Se libera el saldo retenido y termina la
+ Calidad     Recepción definitiva
+                              cerrado el suministro      exposición principal
+ Aseguramiento                Plazo posterior en que el proveedor corrige Consume horas no facturables que hay que
+             Período de garantía
+                              defectos sin costo adicional haber presupuestado
+ Costo
+             Vigencia de la garantía de fiel El instrumento sigue vigente después del término Capital de trabajoinmovilizadomásalládel
+             cumplimiento     del contrato               cierredel proyecto
+ Cruce
+            Verifique siempre en las bases del caso el porcentaje, el plazo y los instrumentos admitidos: el nuevo reglamento acepta certificados de fianza y formatos
+ Propuesta
+            electrónicos, no sólo boleta bancaria.
+                  La garantía de fiel cumplimiento en compras públicas chilenas se mantiene vigente hasta 60 días hábiles después del término del
+               !
+                  contrato, y sobre ella se pueden hacer efectivas las multas.
+                                                                                102
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 37 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            La cadena que el evaluador recorre
+ Adquisiciones
+            En una defensa, la pregunta que más descoloca es «¿dónde se ve eso?». La respuesta es una cadena de cinco eslabones que se
+            puede recorrer en los dos sentidos.
+ Contratos
+             Eslabón    Documentodondevive   Ejemplo completo
+ Proceso
+                                             La consulta de estado responde en 2 s o menos, percentil 95, con 300
+             Requisito  Anexo técnico de la oferta
+ Economía                                    usuarios concurrentes
+ Calidad                                     Tiempo de respuesta medido con la herramienta acordada sobre
+             Métrica    Plan de gestión de la calidad
+                                             10.000 transacciones
+ Aseguramiento
+                                             Prueba de carga en ambiente equivalente a producción, informe
+             Prueba     Plan de pruebas
+                                             firmado por ambas partes
+ Costo
+             Hito       Carta Gantt y EDT    Hito 4: certificación de desempeño, semana 22
+ Cruce
+             Pago       Cláusula de estados de pago 15% del preciose pagacontra aprobacióndel hito4
+ Propuesta
+                  Si usted puede recorrer esta cadena para sus tres requisitos más críticos, su propuesta está amarrada. Si se corta en algún eslabón,
+               !
+                  ahí es exactamente donde va a aparecer el conflicto.
+                                                                                103
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PÁGINA PDF 38 =====
+
+
+            Contratos, Adquisiciones y Calidad
+
+            Errores frecuentes en el amarre
+ Adquisiciones
+              Del lado del oferente              Del lado del mandante
+ Contratos
+              • Comprometer niveles de servicio que la arquitectura • Escribir requisitos de calidad con adjetivos y sin métrica
+                ofrecida no puede sostener
+ Proceso                                         • No fijar plazo para pronunciarse sobre los entregables
+              • Aceptar criterios de aceptación redactados como opinión
+                                                 • Exigir garantías desproporcionadas que expulsan a las
+ Economía       del mandante                       empresas pequeñas
+              • No declarar exclusiones ni supuestos, y descubrirlos
+                                                 • Fijar multas que superan el margen del contrato y
+ Calidad        durante la ejecución               vuelven irracional ejecutarlo
+              • Presupuestar cero horas de garantía y de administración
+                                                 • No definir quién arbitra una discrepancia técnica
+ Aseguramiento  de contrato
+              • No leer la fórmula de multas antes de fijar el precio
+ Costo
+ Cruce
+                  Los errores de las dos columnas producen el mismo resultado: un proyecto que se ejecuta discutiendo. Y discutir no está
+ Propuesta     !
+                  presupuestado en ninguna de las dos partes.
+                                                                                104
+           Pontificia Universidad Católica de Valparaíso · Escuela de Ingeniería Informática Taller de Formulación y Evaluación de Proyectos · 2026

@@ -18,9 +18,13 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 
 ## Reglas de redacción y reglas de plantilla (dos cosas distintas)
 
-- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 (que prevalece). Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
+- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 y decisiones editoriales del equipo. Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Para seleccionar citas, aplicar `.agents/skills/citas-proyecto/SKILL.md`. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
 - **Plantilla (formato):** `05_Gestion/convenciones/reglas-plantilla.md`, IDs `RP-NN`, las cumple `oss.sty`/`plantilla/`. No se replican a mano en un `.tex` ni se cambian fuera del flujo de la plantilla.
 - Las tablas del cuerpo se rigen por RR-15 a RR-19 (ver `artefactos.md`).
+
+### Citas y páginas de las fuentes
+
+Aplicar [citas-proyecto](.agents/skills/citas-proyecto/SKILL.md) al redactar y revisar la oferta. Citar solo exigencias particulares y contexto o datos del Caso 09, identificando documento, capítulo o numeral y **folio impreso** verificado. No citar bibliográficamente exigencias generales de las Bases Administrativas o Transversales ni indicaciones del profesor; conservar sus contenidos obligatorios e IDs técnicos cuando sirvan para trazabilidad. Las decisiones propias y remisiones internas no generan entradas bibliográficas. El [índice de páginas](90_Referencia/indice_paginas_caso09.md) y el [OCR paginado](90_Referencia/caso09_ocr_paginado.txt) facilitan la búsqueda; comprobar el dato final en el PDF visible. Conservar `00_Bases/Caso_09_Cadena_Multitienda.md` como espejo de lectura.
 
 ## Identidad del proponente
 
@@ -96,6 +100,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 - Todos los subdocumentos T-7 se generan y entregan en el formato corporativo LaTeX, con fuente `.tex` editable y PDF compilado desde ella usando `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF. Formularios e informes preparatorios no forman parte de este alcance.
 - La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
 - Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`. Codex y OpenCode las leen directamente; Claude Code solo lee `.claude/skills/`, que se crea con `python3 05_Gestion/scripts/link_skills.py` (symlinks en Linux/macOS, junctions en Windows). Editar siempre la fuente canónica.
+- Para cualquier trabajo sobre citas y Referencias de la propuesta, cargar `.agents/skills/citas-proyecto/SKILL.md`.
 
 ## Convención de nombres de los artefactos
 
