@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="132.5mm" viewBox="0 0 720 530" role="img" aria-labelledby="title desc">
   <title id="title">Gobernanza y ciclo de calidad de datos</title>
-  <desc id="desc">Retail y Emisor fiscalizado conservan dominios separados. Dueños de datos Ancoa deciden reglas y conformidad; el equipo Datos ejecuta y QA verifica. X-01 controla los cruces autorizados y sus campos mínimos. El ciclo mide, registra hallazgos, remedia, verifica de nuevo y obtiene conformidad. La Contraparte acepta los hitos que le corresponden.</desc>
+  <desc id="desc">Retail de Ancoa y la filial emisora conservan dominios separados. El responsable de negocio de cada dominio decide sus reglas y confirma sus resultados. Datos y QA de Only Simple Solutions ejecutan y verifican los controles. X-01 gobierna los cruces autorizados. La Contraparte acepta los hitos contractuales.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#17324D"/></marker>
     <style>
@@ -21,10 +21,10 @@
   <path d="M369 80 H702 V59 Q702 48 691 48 H380 Q369 48 369 59 Z" fill="#456B37"/>
   <text class="head white" x="184" y="71" text-anchor="middle">DOMINIO RETAIL</text>
   <text class="head white" x="535" y="71" text-anchor="middle">EMISOR FISCALIZADO</text>
-  <text class="body" x="184" y="105" text-anchor="middle">Dueño de dato Ancoa define reglas</text>
-  <text class="body" x="184" y="132" text-anchor="middle">Datos ejecuta · QA verifica</text>
-  <text class="body" x="535" y="105" text-anchor="middle">Dueño de dato Ancoa define reglas</text>
-  <text class="body" x="535" y="132" text-anchor="middle">Datos ejecuta · QA verifica</text>
+  <text class="body" x="184" y="105" text-anchor="middle">Dueño Retail (Ancoa) define reglas</text>
+  <text class="body" x="184" y="132" text-anchor="middle">Datos (OSS) ejecuta · QA (OSS) verifica</text>
+  <text class="body" x="535" y="105" text-anchor="middle">Dueño Emisor (filial) define reglas</text>
+  <text class="body" x="535" y="132" text-anchor="middle">Datos (OSS) ejecuta · QA (OSS) verifica</text>
 
   <!-- Control de cruces X-01 -->
   <rect x="18" y="177" width="684" height="118" rx="11" fill="#FFF8E8" stroke="#9B6A16" stroke-width="1.8"/>
@@ -54,11 +54,11 @@
     <text x="353" y="401">Datos corrige</text>
     <text x="353" y="424">según decisión</text>
     <text x="493" y="374" font-weight="700">Verificación</text>
-    <text x="493" y="401">QA valida</text>
+    <text x="493" y="401">QA verifica</text>
     <text x="493" y="424">resultado</text>
     <text x="637" y="374" font-weight="700">Decisión</text>
-    <text x="637" y="401">Dueño Ancoa</text>
-    <text x="637" y="424">da conformidad</text>
+    <text x="637" y="401">Dueño</text>
+    <text x="637" y="424">confirma resultado</text>
   </g>
   <g fill="none" stroke="#17324D" stroke-width="2" marker-end="url(#arrow)">
     <path d="M139 392 H151"/><path d="M276 392 H288"/><path d="M413 392 H425"/><path d="M556 392 H568"/>

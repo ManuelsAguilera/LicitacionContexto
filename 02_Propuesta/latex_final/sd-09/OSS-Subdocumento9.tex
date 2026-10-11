@@ -127,7 +127,7 @@ La Tabla 9.1 relaciona los ocho títulos del Artículo 24 con medidas y condicio
 Categoría & Medida & Umbral o condición & Evidencia prevista \\
 \midrule
 \endhead
-Funcionalidad & Casos de aceptación de etapa & 100 \% aprobados y firmados & UAT y acta \\
+Funcionalidad & Casos de aceptación de etapa & 100 \% aprobados; aceptación del hito por acta & Resultados UAT y acta de la Contraparte \\
 Desempeño & Tiempo por operación & Máximos Caso y P95 común a 1,5$\times$ peak & Informe de carga \\
 Compatibilidad & Flujos de integración del caso & 100 \% sin error & Contratos y pruebas \\
 Usabilidad & Accesibilidad y tarea por perfil & WCAG 2.2 AA; $\leq$3 interacciones; máximos Caso & Informe manual y automático \\
@@ -166,12 +166,35 @@ La disponibilidad mensual de servicios críticos se calculará desde la telemetr
 
 El Líder de Calidad y Pruebas mantendrá el plan, la matriz de criterios, las métricas y el expediente de cada versión, y asignará a cada criterio un responsable de ejecución y un revisor distinto del autor cuando el riesgo lo requiera. El dueño funcional o técnico propone el criterio a partir de la línea base aprobada; Calidad comprueba que indique método, ambiente, datos, resultado esperado y evidencia, y lo incorpora al T-13 antes de la campaña. Desarrollo ejecuta revisiones por pares y corrige defectos; Arquitectura resuelve criterios estructurales junto con los responsables técnicos; Seguridad verifica controles y hallazgos; Datos valida la integridad técnica de la información; los dueños de negocio de Retail y Emisor confirman las reglas y resultados de sus dominios. Calidad revisa que la evidencia respalde ambas validaciones. Ante una medición no conforme, Calidad registra el criterio, versión, evidencia, severidad y responsable; el dueño corrige y Calidad dispone la repetición del caso y la regresión afectada. La promoción permanece bloqueada cuando no se satisface una puerta aplicable o hay hallazgos críticos o altos abiertos. Los desacuerdos técnicos se elevan al Comité de Arquitectura y los impedimentos de entrega al Comité de Proyecto, con recomendación del Jefe de Proyecto; la Contraparte Técnica coordina pruebas, valida entregables y emite las conformidades de hito. Así se separan el aseguramiento de calidad (QA), que revisa la aplicación del proceso, el control de calidad (QC), que comprueba el producto, y la aceptación contractual, que corresponde al CLIENTE.
 
-Only Simple Solutions asigna al Líder de Calidad y a dos Ingenieros QA la planificación de campañas, la ejecución de pruebas y la trazabilidad entre requisitos, resultados y defectos. El Líder define el método, revisa la suficiencia de la evidencia y decide la recomendación técnica de apertura de cada puerta; los Ingenieros QA preparan datos y casos, ejecutan pruebas, documentan hallazgos y repiten los casos corregidos. El Jefe de Proyecto reserva tiempo y recursos para corregir y volver a probar, coordina a Desarrollo, Arquitectura, Seguridad, Datos, Operación e Implantación y eleva impedimentos. Cada especialista responde por la corrección de su ámbito y entrega registros revisables a QA. La Junta de no conformidades, presidida por el Líder de Calidad, revisa desviaciones semanalmente durante la construcción y mensualmente durante la operación; las mejoras de proceso que trasciendan el contrato pasan al Comité de Calidad y Mejora Continua trimestral. Este reparto desarrolla el equipo y el gobierno interno definidos en el Subdocumento 1, secciones 1.2--1.3.
+Only Simple Solutions asigna al Líder de Calidad y a dos Ingenieros QA la planificación de campañas, la ejecución de pruebas y la trazabilidad entre requisitos, resultados y defectos. El Líder define el método, revisa la suficiencia de la evidencia y recomienda abrir cada puerta; los Ingenieros QA preparan datos y casos, ejecutan pruebas, documentan hallazgos y repiten los casos corregidos. El Jefe de Proyecto reserva tiempo y recursos para corregir y volver a probar, coordina a Desarrollo, Arquitectura, Seguridad, Datos, Operación e Implantación y eleva impedimentos. Cada especialista responde por la corrección de su ámbito y entrega registros revisables a QA. La Junta de no conformidades, presidida por el Líder de Calidad, revisa desviaciones semanalmente durante la construcción y mensualmente durante la operación; las mejoras de proceso que trasciendan el contrato pasan al Comité de Calidad y Mejora Continua trimestral. Este reparto desarrolla el equipo y el gobierno interno definidos en el Subdocumento 1, secciones 1.2--1.3.
+
+\clearpage
+
+La Tabla 9.3 resume quién ejecuta, quién verifica y quién toma cada decisión de calidad. La conformidad de un dueño de negocio valida el resultado de su dominio; no reemplaza la aceptación contractual de la Contraparte Técnica.
+
+\textbf{Tabla 9.3: Responsables y decisiones de aseguramiento de calidad}
+
+\begin{longtable}{p{0.23\linewidth}p{0.27\linewidth}p{0.23\linewidth}p{0.23\linewidth}}
+\toprule
+Control o decisión & Ejecuta & Verifica & Conforma o acepta \\
+\midrule
+\endhead
+Criterio y caso de prueba & Dueño funcional/técnico; QA prepara el caso & Líder de Calidad revisa método y evidencia & Dueño de negocio valida la regla de su dominio \\
+Construcción y cambio & Desarrollo o especialista responsable & Par distinto del autor; QA revisa pruebas & Líder de Calidad recomienda abrir la puerta \\
+Defecto crítico o alto & Responsable técnico corrige & QA repite el caso y la regresión & Se mantiene bloqueado hasta cumplir el criterio; no se exceptúa antes de producción \\
+Conciliación por dominio & Datos prepara y corrige el expediente & QA comprueba recuentos, sumas y diferencias & Dueño de Retail o Emisor confirma su dominio \\
+Hito contractual & Jefe de Proyecto presenta el expediente & QA comprueba integridad y trazabilidad & Contraparte Técnica acepta mediante acta \\
+\bottomrule
+\end{longtable}
+
+\textbf{Fuente:} Elaboración propia a partir de las responsabilidades definidas en este plan.
+
+La tabla distingue la recomendación técnica del equipo, la conformidad de negocio por dominio y la decisión contractual de la Contraparte. El detalle de escenarios, resultados y evidencias se conserva en T-13 y T-17.
 
 Cada medición o prueba conservará requisito relacionado, versión, ambiente, datos y condiciones de ejecución, método, resultado esperado y obtenido, evidencia, defectos y resolución. La matriz interna de SD09 organiza 115 criterios asociados a 28 resultados del Anexo D y obligaciones transversales identificadas. Es una base de trabajo parcial; no representa cobertura total del catálogo RF/RNF/RT ni acredita pruebas ejecutadas. Calidad ampliará la cadena al 100 \% de la línea base aprobada antes del cierre de cada etapa, utilizando el catálogo oficial v3.0 y conciliando cualquier cambio de versión mediante control de cambios, sin asumir la vigencia de un catálogo alternativo. T-13 y T-17 contendrán el detalle verificable y el protocolo de aceptación, respectivamente.
 
 \begin{samepage}
-La Figura 9.1 presenta el circuito de gobierno de calidad de datos. Los dueños de Retail y Emisor de Ancoa deciden las reglas y la conformidad de su dominio; Datos las ejecuta y QA verifica la evidencia. Los intercambios autorizados conservan los controles de X-01, sin reunir los registros de ambos negocios (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 9, p. 25).
+La Figura 9.1 presenta el ciclo de calidad dentro de cada dominio y distingue a los responsables de negocio de Ancoa y de su filial emisora del equipo que ejecuta y verifica los controles. El dueño de cada dominio define sus reglas y confirma sus resultados; Datos de Only Simple Solutions las implementa y QA de Only Simple Solutions verifica la evidencia. La Contraparte Técnica recibe el expediente para aceptar el hito contractual. Los intercambios autorizados conservan los controles de X-01, sin reunir los registros de ambos negocios (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 9, p. 25).
 
 \begin{center}
 \begin{minipage}{\linewidth}
@@ -348,6 +371,27 @@ La alineación asigna productos de calidad a las ramas de trabajo y protege su e
 
 La calidad se programa como trabajo verificable dentro de la EDT y acompaña construcción, migración, marchas blancas, aceptación y operación. La rama 1.9 reúne el plan de pruebas, revisiones, baterías funcionales y no funcionales e informes de certificación de ambas etapas. La rama 1.8 aporta el modelado de amenazas, matriz de controles, segregación de funciones e informes de pruebas de intrusión. La rama 1.7 produce planes, ensayos y actas de migración, incluida la cartera viva del Emisor. La rama 1.12 organiza los planes e informes de marcha blanca y las actas de aceptación por etapa. Los productos y dependencias de estas ramas se coordinan con el cronograma y la EDT del Capítulo 7, sin sustituir el Gantt ni alterar sus hitos contractuales.
 
+La Tabla 9.4 relaciona las ramas de calidad y datos con sus productos, ventanas y responsables. Resume las actividades que deben coordinarse con la EDT y el cronograma del Capítulo 7; no reemplaza el detalle de T-14 ni la nivelación de T-15.
+
+\textbf{Tabla 9.4: Actividades de calidad en la EDT y los hitos}
+
+\begin{longtable}{p{0.12\linewidth}p{0.38\linewidth}p{0.22\linewidth}p{0.22\linewidth}}
+\toprule
+Rama EDT & Producto o evidencia de calidad & Ventana o hito relacionado & Responsable principal \\
+\midrule
+\endhead
+1.7 & Ensayos, conciliación y expediente de migración por dominio & Dos ensayos completos previos a cada migración definitiva & Líder de Datos y dueños de dominio; QA verifica \\
+1.8 & Matriz de controles, remediación e informes de seguridad independiente & Antes de certificación y producción de cada etapa; revisión anual en operación & Seguridad \\
+1.9 & Criterios, casos, resultados y expediente de certificación & Preparación desde el mes 2; certificaciones de meses 12 y 18 & Líder de Calidad y Pruebas \\
+1.12 & Bitácoras, resultados y actas de marcha blanca & Etapa 1: meses 13–15; Etapa 2: meses 19–20 & Implantación y QA \\
+1.15 & Indicadores, regresiones, incidentes y evidencia de versiones & Operación contractual: meses 21–56 & Operaciones/SRE \\
+\bottomrule
+\end{longtable}
+
+\textbf{Fuente:} Elaboración propia a partir de la EDT y el cronograma del Capítulo 7.
+
+Los productos de las ramas 1.7, 1.8, 1.9 y 1.12 integran el expediente del hito que corresponda; no son por sí mismos autorizaciones de producción. Si falta un insumo habilitante, el Jefe de Proyecto debe asignar corrección y repetición de pruebas en el plan integrado. Las fechas contractuales y condiciones de aceptación se conservan.
+
 \begin{samepage}
 La Figura 9.3 ubica las certificaciones y marchas blancas de ambas etapas. La Etapa 2 comienza durante la marcha blanca de la primera y la operación contractual continúa hasta M56.
 
@@ -394,9 +438,9 @@ Todo cambio de requisito aprobado, diseño, datos, interfaz, código, dependenci
 La cadena de recepción vincula requisito, medición, prueba y evidencia con el paquete EDT y el hito de E-25. El acta acredita el cumplimiento del hito para el tratamiento contractual del pago; este capítulo no reproduce porcentajes ni precios. Una aprobación técnica automatizada o un informe del proponente no sustituye el acta. La aceptación mantiene las responsabilidades por defectos posteriores previstas en el Artículo 18.4.
 Para los criterios de disponibilidad digital, evaluación crediticia y migración de cartera, la cadena comienza en el límite o regla fuente; continúa en la ficha de métrica, caso y resultado por versión; y reúne el informe de carga o conciliación con la contribución de la rama 1.9 o 1.7 al expediente de etapa. El expediente se presenta al hito que E-25 define para el entregable correspondiente y termina en el acta de la Contraparte. QA verifica los enlaces en ambos sentidos. La conformidad de cartera incorpora aprobación del dueño del Emisor, mientras los resultados Retail conservan su propio dueño y evidencia. El porcentaje y monto del estado de pago pertenecen a la oferta económica.
 
-Operaciones entregará el informe mensual de niveles de servicio dentro de los primeros cinco días hábiles del mes, con indicadores, incidentes, causas y acciones conforme al Artículo 79. La evidencia estará disponible y será exportable para el CLIENTE. El registro distinguirá ventana aprobada, exceso de ventana, período, transacción, atribución e impacto; una discrepancia de medición se tramitará con sus datos originales y justificación metodológica. La Contraparte y el Administrador del Contrato aplican el procedimiento del Artículo 80 cuando corresponda, incluida notificación fundada, descargos y resolución. Calidad aporta evidencia y seguimiento de corrección, sin crear sanciones ni reconstruir fórmulas o ponderaciones ilegibles de las tablas extraídas.
+Operaciones entregará el informe mensual de niveles de servicio dentro de los primeros cinco días hábiles del mes, con indicadores, incidentes, causas y acciones conforme al Artículo 79. La evidencia estará disponible y será exportable para el CLIENTE. El registro distinguirá ventana aprobada, exceso de ventana, período, transacción, atribución e impacto; una discrepancia de medición se tramitará con sus datos originales y justificación metodológica. La Contraparte y el Administrador del Contrato aplican el procedimiento del Artículo 80 cuando corresponda, incluida notificación fundada, descargos y resolución. Calidad aporta evidencia técnica y seguimiento de las acciones correctivas; la determinación y aplicación de las medidas previstas corresponde a la Contraparte y al Administrador del Contrato, conforme al procedimiento contractual.
 
-La marcha blanca y recepción se rigen por los Artículos 17 y 18 de las Bases Administrativas, y la aceptación final del mes 21 incorpora la Garantía de Correcto Funcionamiento del Artículo 37, con vigencia de veinticuatro meses. Los defectos posteriores imputables a diseño, construcción o implantación se registrarán, corregirán y volverán a verificar con trazabilidad a la versión afectada. El cierre documental no elimina esta responsabilidad. Los procedimientos de soporte, garantía y reversibilidad conservarán los registros necesarios después de la aceptación y durante el período aplicable, sin trasladar a Ancoa una recepción provisional, retención o plazo tomado de ejemplos externos.
+La marcha blanca y recepción se rigen por los Artículos 17 y 18 de las Bases Administrativas, y la aceptación final del mes 21 incorpora la Garantía de Correcto Funcionamiento del Artículo 37, con vigencia de veinticuatro meses. Los defectos posteriores imputables a diseño, construcción o implantación se registrarán, corregirán y volverán a verificar con trazabilidad a la versión afectada. El cierre documental no elimina esta responsabilidad. Los procedimientos de soporte, garantía y reversibilidad conservarán los registros necesarios durante los períodos previstos en las Bases y el contrato.
 
 \subsection{9.3.4 Continuidad del control durante la operación}
 
@@ -410,7 +454,27 @@ Multitiendas Ancoa S.A. (2026). \textit{Caso 09. Cadena Multitienda: Bases Técn
 \section*{Declaración de uso de IA}
 \addcontentsline{toc}{section}{Declaración de uso de IA}
 
-Se utilizó OpenAI Codex para contrastar fuentes, organizar y redactar este capítulo, elaborar sus figuras y revisar su coherencia documental. La intervención en texto y diagramas fue alta. Se aplicó humanizer para eliminar patrones de redacción automatizada, manteniendo el registro formal, cifras, títulos e identificadores. Esta asistencia no acredita ejecución de pruebas, certificación ni aceptación contractual. La elaboración y revisión humana exigidas por el Comunicado 10 deberán registrarse antes de presentar la oferta; no se atribuye aquí una revisión humana realizada. El uso se incorporará al Formulario A-6.
+Se utilizó OpenAI Codex para contrastar fuentes, organizar y redactar este capítulo, elaborar sus figuras y revisar su coherencia documental. La intervención en texto y diagramas fue alta. Se aplicó humanizer para retirar patrones de redacción automatizada sin modificar cifras, títulos ni identificadores. Esta asistencia no acredita pruebas ejecutadas, certificación ni aceptación contractual. No se reporta revisión humana de las secciones en esta versión.
+
+La Tabla 9.5 detalla el uso de herramientas y el estado de la revisión humana por sección y formulario asociado.
+
+\textbf{Tabla 9.5: Registro de uso de inteligencia artificial}
+
+\begin{longtable}{p{0.12\linewidth}p{0.13\linewidth}p{0.22\linewidth}p{0.10\linewidth}p{0.10\linewidth}p{0.25\linewidth}}
+\toprule
+Sección o formulario & Herramienta & Finalidad del uso & Nivel en texto & Nivel en diagramas & Revisión humana (quién y qué verificó) \\
+\midrule
+\endhead
+Introducción & OpenAI Codex & Síntesis y relaciones entre capítulos y formularios & Alto & Ninguno & No realizada en esta versión \\
+9.1 & OpenAI Codex & Plan, criterios, métricas y responsabilidades & Alto & Alto & No realizada en esta versión \\
+9.2 & OpenAI Codex & Estrategia, diseño de pruebas, puertas y aceptación & Alto & Alto & No realizada en esta versión \\
+9.3 & OpenAI Codex & Alineación EDT, hitos, operación y cambios & Alto & Alto & No realizada en esta versión \\
+Formulario T-13 & OpenAI Codex & Diseño de criterios y pruebas descrito en la estrategia & Alto & Ninguno & No realizada \\
+Formulario T-17 & OpenAI Codex & Diseño del protocolo y criterios de aceptación descritos en la estrategia & Alto & Ninguno & No realizada \\
+\bottomrule
+\end{longtable}
+
+La tabla registra asistencia de IA; aún no consigna una revisión humana.
 
 \ossFinalPage
 \end{document}

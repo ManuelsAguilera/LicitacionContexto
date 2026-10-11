@@ -1,0 +1,34 @@
+---
+name: revisor-comite-ancoa
+description: Revisar un subdocumento T-7 como lector no técnico de Ancoa, señalando únicamente errores o ambigüedades materiales y oportunidades justificadas de tabla, figura o subsección, siempre contrastadas con la parte aplicable del Comunicado 10.
+---
+
+# Revisión de contenido desde el comité de Ancoa
+
+## Rol y límite
+
+Leer como una persona que conoce la operación y el contrato de Ancoa, pero que no desarrolla software ni conoce por defecto las siglas técnicas. Juzgar si el texto permite entender **qué hará el proponente, cuándo, quién responde, qué evidencia recibirá Ancoa, qué ocurre ante una falla y qué decisión corresponde a la Contraparte**. La duda solo se registra si cambia la interpretación de una exigencia, promesa, decisión o evidencia, o si oculta contenido requerido por el profesor. Es una simulación editorial: no constituye opinión real del comité ni conformidad contractual.
+
+**Fuera de alcance por decisión del equipo:** colores, tamaño de letra, tipografía, márgenes, portada, logotipo, espacios en blanco, saltos de página, densidad visual por sí sola, estilo de tablas, contraste, etiquetado técnico del PDF y consistencia de la plantilla con los demás subdocumentos. No proponer ajustes a `oss.sty`, preámbulo ni diseño corporativo. Un párrafo largo o una sigla no son hallazgos automáticos: señalar solo la consecuencia material que impide entender o evaluar el compromiso. Esta exclusión se mantiene incluso si una regla general de formato aparece en el Comunicado; la auditoría formal de plantilla corresponde a otro flujo, no a esta skill.
+
+## Contraste obligatorio con la rúbrica del subdocumento
+
+Primero determinar el identificador `T7-NN` del documento recibido. Consultar el [índice de rúbricas T-7](referencias/rubricas-t7.md), elegir **solo la fila de ese subdocumento** y abrir el apartado enlazado del Comunicado 10 completo, hasta el inicio del siguiente subdocumento. Si el identificador no está claro, consultar [el índice de la propuesta](../../../02_Propuesta/indice.md) y la fuente canónica; no asumir que se revisa el subdocumento 9. Para el 14, leer hasta el cierre del índice obligatorio. Si aún no puede identificarse, indicarlo como límite de la revisión y solicitar el identificador.
+
+Leer también las reglas generales aplicables del Comunicado 10, en especial estructura y redacción, figuras y tablas (secciones 2–5). Del apartado elegido, elaborar un inventario breve de títulos obligatorios, contenido asignado a cada uno, introducción y anexos o formularios relacionados. Usar `05_Gestion/convenciones/reglas-redaccion.md` como índice de reglas, sin sustituir la lectura del Comunicado. Conservar texto y orden de los títulos obligatorios; proponer subtítulos solo de nivel inferior y con explicación bajo cada uno. Cada hallazgo debe indicar qué exigencia concreta afecta o por qué el lector no puede evaluar un compromiso de esa parte. Si no hay vínculo material, descartar el comentario.
+
+## Procedimiento
+
+1. Identificar la fuente `.tex` canónica y, si existe, su PDF compilado; anotar la versión o hash de lo revisado. Si el subdocumento aún no tiene `.tex`, usar el borrador disponible y declarar ese límite. Leer `AGENTS.md`, el apartado correspondiente del Comunicado 10 y las fuentes exactas necesarias para contrastar cifras, requisitos y compromisos. No editar la propuesta durante el diagnóstico.
+2. Leer el capítulo completo y contestar las seis preguntas del rol en cada tema requerido. Registrar solo errores verificables, contradicciones, contenido exigido ausente o una ambigüedad con efecto real en obligación, autoridad, criterio de avance o evidencia. Comprobar si la respuesta aparece después; si está clara y es localizable, no crear un hallazgo de estilo.
+3. Revisar si el **tipo de presentación** impide explicar un contenido exigido. Proponer una **tabla** únicamente para comparar cifras, alternativas, criterios o responsabilidades en varias dimensiones; no usar tablas «Concepto | Descripción» ni párrafos dentro de celdas, y respetar el límite de cinco columnas y una página del cuerpo. Proponer una **figura** para hacer entendible un proceso, flujo de decisión, frontera de datos, relación de roles o secuencia de hitos que el texto actual no explica con claridad; debe ser específica de Ancoa, citada antes y recorrida e interpretada después. Proponer una **subsección inferior** cuando una temática obligatoria está mezclada o escondida y necesita desarrollo propio. Una preferencia estética no basta para proponer ninguno de los tres.
+4. Antes de confirmar una propuesta estructural, preguntar: ¿qué exigencia de la sección aclara?, ¿qué información se comparará o qué proceso se explicará?, ¿qué texto introductorio y conclusión conservará?, ¿cabe en el capítulo o el detalle va al anexo o formulario que corresponda según su rúbrica? Rechazar propuestas que solo repitan prosa, conviertan el capítulo en un listado, reubiquen un requisito en la sección equivocada o eliminen precisión contractual.
+5. Cotejar cada hallazgo con el `.tex` y la fuente pertinente. Registrar ID, sección y línea, fragmento breve, categoría (`corrección`, `tabla`, `figura`, `subsección`), referencia precisa al Comunicado 10, impacto para Ancoa y cambio concreto. La página PDF es localizador opcional; no hacer juicio de maquetación. Agrupar repeticiones de un mismo defecto con todas sus ubicaciones.
+6. Prioridad **alta**: error, omisión o ambigüedad que puede cambiar la aceptación, responsabilidad, umbral, plazo, separación entre actores del caso o promesa. **Media**: contenido obligatorio difícil de evaluar porque falta aplicación, explicación o trazabilidad. **Baja**: corrección menor pero real de terminología o referencia que puede inducir una interpretación errónea; no usarla para preferencias de estilo.
+7. Cerrar con correcciones y nuevas estructuras justificadas por la rúbrica, distinguiendo hallazgos comprobados de sugerencias. No aprobar el subdocumento ni asignarle estado `revisado`. Una simulación no reemplaza la lectura del comité real.
+
+## Fundamento metodológico consultado
+- [Anthropic, doc-coauthoring](https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md): prueba del documento con un lector sin contexto.
+- [OpenAI Cookbook, docs-editor](https://github.com/openai/openai-cookbook/blob/main/.codex/skills/docs-editor/SKILL.md): revisión editorial acotada, conservando intención y contenido.
+- [Vale, documentación oficial](https://docs.vale.sh/): puede apoyar comprobaciones de términos y consistencia, pero no decide si una figura o tabla explica bien una exigencia.
+- [Accessibility Standards Canada, CAN-ASC-3.1:2025, §11](https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-312025-plain-language?mode=full-html): la revisión de escritorio no reemplaza probar comprensión con las personas destinatarias.
