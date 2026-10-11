@@ -22,6 +22,7 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 | **Presentaciones preparatorias** | Preparar las 3 presentaciones (Sobres) | `pptx` |
 | **Investigación** (lo que el caso no explica) | Investigar normativa sectorial, estándares, indicadores del mercado retail | `deep-research` |
 | **Redacción de documentos técnicos extensos** | Estructurar y redactar los apartados de la oferta | `technical-writing` |
+| **Citas y Referencias** | Citar exigencias y datos particulares del Caso 09 con folio impreso | `citas-proyecto` (`.agents/skills/citas-proyecto/`) |
 | **Entrega final / exportación** | Convertir/formatear subdocumentos a LaTeX corporativo y compilar PDF, solo con `05_Gestion/scripts/exportar_latex.py` | `exportar` (`.agents/skills/exportar/`) |
 
 ## Recordatorios críticos del proyecto (para no repetir errores)
@@ -33,5 +34,6 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 - **Línea roja del caso**: la compañía es tienda + emisor de crédito fiscalizado (dos regímenes). No tratar como un solo negocio ni mezclar sus datos.
 - **TrabajosAnteriores_DistriProducto/** (en `90_Referencia/`) proviene de un caso distinto (logística WMS/TMS/YMS). Usar SOLO como referencia de formato; no relacionar su contenido.
 - **Formato de los artefactos**: los subdocumentos T-7 ya importados tienen como fuente `02_Propuesta/latex_final/sd-NN.tex`; los `.md` de `02_Propuesta/` quedan solo como contexto. La exportación sigue la regla de `AGENTS.md` ("Regla de exportación").
+- **Citas**: usar `citas-proyecto` y el OCR paginado del Caso 09; confirmar cada folio en el PDF visible.
 - **Tablas incompletas**: la tabla de ponderación del T-21 en `00_Bases/` no se puede reconstruir. No hardcodear porcentajes; dejarlos en blanco con nota de pendiente.
 - **Idioma**: todo en español.

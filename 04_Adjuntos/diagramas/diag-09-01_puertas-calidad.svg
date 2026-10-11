@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.5cm" height="6.2cm" viewBox="0 0 620 248" role="img" aria-labelledby="title desc">
+  <title id="title">Puertas de calidad de una versión</title>
+  <desc id="desc">El equipo conduce una versión por Cambio, CI, QA y Preprod. La Contraparte formaliza el Acta. Después se habilita Producción. Si falla una puerta, se corrige y se repite.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#17324D"/></marker>
+    <marker id="redArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#A33A32"/></marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #17324D; }
+      .title { font-size: 17px; font-weight: 700; }
+      .step { font-size: 15px; font-weight: 700; }
+      .role { font-size: 13px; }
+      .note { font-size: 13px; }
+    </style>
+  </defs>
+  <rect width="620" height="248" fill="white"/>
+  <text class="title" x="310" y="29" text-anchor="middle">Puertas de calidad de una versión</text>
+
+  <g fill="#E8F1F7" stroke="#17324D" stroke-width="1.5">
+    <rect x="18" y="67" width="83" height="55" rx="11"/>
+    <rect x="116" y="67" width="65" height="55" rx="11"/>
+    <rect x="196" y="67" width="65" height="55" rx="11"/>
+    <rect x="276" y="67" width="88" height="55" rx="11"/>
+  </g>
+  <rect x="379" y="67" width="82" height="55" rx="11" fill="#DCE8F2" stroke="#17324D" stroke-width="2"/>
+  <rect x="477" y="67" width="120" height="55" rx="11" fill="#EDF3E8" stroke="#456B37" stroke-width="1.5"/>
+
+  <g class="step" text-anchor="middle">
+    <text x="59.5" y="91">Cambio</text><text class="role" fill="#196197" x="59.5" y="110">Equipo</text>
+    <text x="148.5" y="91">CI</text><text class="role" fill="#196197" x="148.5" y="110">Equipo</text>
+    <text x="228.5" y="91">QA</text><text class="role" fill="#196197" x="228.5" y="110">Equipo</text>
+    <text x="320" y="91">Preprod</text><text class="role" fill="#196197" x="320" y="110">Equipo</text>
+    <text x="420" y="91">Acta</text><text class="role" x="420" y="110">Contraparte</text>
+    <text x="537" y="100">Producción</text>
+  </g>
+  <g stroke="#17324D" stroke-width="1.7" fill="none" marker-end="url(#arrow)">
+    <path d="M101 94 H113"/><path d="M181 94 H193"/><path d="M261 94 H273"/><path d="M364 94 H376"/><path d="M461 94 H474"/>
+  </g>
+
+  <g fill="none" stroke="#A33A32" stroke-width="1.6" stroke-dasharray="5 4">
+    <path d="M59 123 V157"/><path d="M149 123 V157"/><path d="M229 123 V157"/><path d="M320 123 V157"/><path d="M420 123 V157"/>
+    <path d="M59 157 H420"/>
+    <path d="M420 157 V177" marker-end="url(#redArrow)"/>
+  </g>
+  <text class="note" x="239" y="151" text-anchor="middle" fill="#762922">Si falla una puerta</text>
+  <rect x="340" y="180" width="160" height="43" rx="11" fill="#FBE8E6" stroke="#A33A32" stroke-width="1.5"/>
+  <text class="step" x="420" y="207" text-anchor="middle" fill="#762922">Corregir y repetir</text>
+  <path d="M340 201 H13 V95 H15" fill="none" stroke="#A33A32" stroke-width="1.7" marker-end="url(#redArrow)"/>
+</svg>
