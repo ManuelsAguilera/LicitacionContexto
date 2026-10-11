@@ -2569,7 +2569,7 @@ RT-04.03 & El código residirá en un sistema de control de versiones con ramas 
 \addlinespace[2pt]
 RT-04.04 & Existirá trazabilidad completa entre requerimiento, incidencia, cambio de código, prueba ejecutada y despliegue realizado. & Sí & Trazabilidad apoyada en el catálogo de servicios versionado junto con el código & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-04.05 & El flujo de integración continua ejecutará, como mínimo: compilación, pruebas unitarias, análisis estático de código, análisis de composición de software, escaneo de secretos y escaneo de imágenes de contenedor, con criterios de bloqueo automático del despliegue. & Sí & Cadena DevSecOps (Semgrep, ZAP, Trivy, OWASP Dependency-Check, Syft, Cosign) con bloqueo automático & Subdoc.4 §4.1, §4.2 \\
+RT-04.05 & El flujo de integración continua ejecutará, como mínimo: compilación, pruebas unitarias, análisis estático de código, análisis de composición de software, escaneo de secretos y escaneo de imágenes de contenedor, con criterios de bloqueo automático del despliegue. & Sí & Cadena DevSecOps con análisis estático, dinámico, de composición y de imágenes de contenedor, y bloqueo automático (herramientas por fijar en el Subdocumento 4 y el Formulario T-11) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-04.06 & Los despliegues serán automatizados y reproducibles, con reversión automatizada y sin intervención manual en el paso a producción. & Sí & Despliegue automatizado con Terraform y canal de entrega continua hacia CLD-01 y SIT-01; producción con aprobación explícita y despliegue por separado para Retail y para el Emisor & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2577,7 +2577,7 @@ RT-04.07 & La estrategia de despliegue permitirá liberar sin interrupción del 
 \addlinespace[2pt]
 RT-04.08 & Toda configuración estará externalizada del artefacto y gestionada por ambiente. Un mismo artefacto deberá poder promoverse de QA a Preproducción y a Producción sin recompilación. & Sí & Gestor de configuración centralizado por ambiente, separado del artefacto de aplicación & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-04.09 & Los secretos residirán en un gestor de secretos con rotación automática y auditoría de acceso. Queda prohibida toda credencial embebida en código, imágenes o archivos de configuración. & Sí & Azure Key Vault (aplicación) + HSM dedicado (filial), con rotación declarada de claves y credenciales & Subdoc.4 §4.1, §4.2 \\
+RT-04.09 & Los secretos residirán en un gestor de secretos con rotación automática y auditoría de acceso. Queda prohibida toda credencial embebida en código, imágenes o archivos de configuración. & Sí & Azure Key Vault (aplicación) + módulo de seguridad de hardware (HSM) para las claves del Emisor, producto y emplazamiento por definir, con rotación declarada de claves y credenciales & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-04.10 & Las migraciones de esquema de base de datos serán versionadas, reversibles y ejecutadas de forma automatizada, con estrategia de compatibilidad que permita convivir dos versiones de la aplicación durante el despliegue. & Sí & Migraciones de esquema coherentes con la regla de evolución de contratos por adición sin sustracción & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2607,7 +2607,7 @@ RT-05.08 & Los datos personales se tratarán conforme al Artículo 85° de las B
 \addlinespace[2pt]
 RT-05.09 & El PROPONENTE presentará una estrategia de gestión de datos maestros que evite la duplicación de entidades compartidas entre módulos y con sistemas externos. & Sí & Principio de propiedad del dato (Data Ownership) y Servicio de oferta comercial como dueño único de la entidad Catálogo & Subdocumento 5, sección 5.1 \\
 \addlinespace[2pt]
-RT-05.10 & Se valorará la implementación de un catálogo de datos con linaje automatizado, que permita rastrear el origen de cada indicador de negocio hasta su fuente. & Sí & Catálogo de datos con linaje automatizado (origen, transformaciones Spark, consumo por tablero/modelo) & Subdocumento 5, sección 5.11.3 \\
+RT-05.10 & Se valorará la implementación de un catálogo de datos con linaje automatizado, que permita rastrear el origen de cada indicador de negocio hasta su fuente. & Sí & Catálogo de datos con linaje automatizado (origen, transformaciones en Azure Data Lake Storage Gen2, motor analítico por decidir, consumo por tablero/modelo) & Subdocumento 5, sección 5.11.3 \\
 \addlinespace[2pt]
 RT-05.11 & El PROPONENTE presentará un plan de migración con alcance, origen, volumen, reglas de transformación, criterios de calidad, estrategia de ejecución y plan de reversión. & Sí & Estrategia de migración en cuatro fases (extracción, saneamiento, coexistencia/conciliación, corte) con circuit breaker y rollback & Subdocumento 5, sección 5.7 \\
 \addlinespace[2pt]
@@ -2721,9 +2721,9 @@ RT-07.01 & El PROPONENTE declarará la modalidad escogida, activo-activo o activ
 \addlinespace[2pt]
 RT-07.02 & El sitio secundario estará emplazado a una distancia suficiente del principal para no verse afectado por el mismo evento de fuerza mayor. El PROPONENTE declarará la distancia y el análisis de amenazas comunes considerado. & No & - & - \\
 \addlinespace[2pt]
-RT-07.03 & La replicación de datos será continua, con medición y alertamiento del retraso de replicación. & Sí & Replicación continua y asíncrona (Patroni streaming replication) con medición y alertamiento de rezago & Subdoc.4 §4.2 \\
+RT-07.03 & La replicación de datos será continua, con medición y alertamiento del retraso de replicación. & Sí & Replicación continua y asíncrona (réplica de Azure Database for PostgreSQL hacia CLD-02 y geo-replicación de Event Hubs) con medición y alertamiento de rezago & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-07.04 & El objetivo de tiempo de recuperación (RTO) no superará 4 horas y el objetivo de punto de recuperación (RPO) no superará 15 minutos para los servicios críticos, salvo exigencia superior del caso. & Sí & RTO ≤ 4 h y RPO ≤ 15 min comprometidos por componente, con segundo HSM en CLD-02 & Subdoc.4 §4.2 \\
+RT-07.04 & El objetivo de tiempo de recuperación (RTO) no superará 4 horas y el objetivo de punto de recuperación (RPO) no superará 15 minutos para los servicios críticos, salvo exigencia superior del caso. & Sí & RTO ≤ 4 h y RPO ≤ 15 min comprometidos por componente, con copia de las claves del Emisor en CLD-02 & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-07.05 & El procedimiento de conmutación estará documentado, automatizado en la mayor medida posible y ejecutable por el personal del CLIENTE tras la transferencia de conocimiento. & Sí & Procedimiento de conmutación en 8 pasos, con automatización de los pasos técnicos & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2735,7 +2735,7 @@ RT-07.08 & Se valorará que la conmutación sea automática ante la detección d
 \addlinespace[2pt]
 RT-07.09 & La política de respaldo seguirá el esquema 3-2-1-1-0: tres copias, en dos medios distintos, una fuera de sitio, una inmutable o fuera de línea y cero errores de verificación de restauración. & Sí & Política de respaldo 3-2-1-1-0 declarada por dominio de datos & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-07.10 & Los respaldos estarán cifrados en reposo y en tránsito, con clave gestionada de forma independiente de la infraestructura respaldada. & Sí & Respaldos cifrados con clave gestionada de forma independiente (Azure Key Vault / HSM de la filial) & Subdoc.4 §4.2 \\
+RT-07.10 & Los respaldos estarán cifrados en reposo y en tránsito, con clave gestionada de forma independiente de la infraestructura respaldada. & Sí & Respaldos cifrados con clave gestionada de forma independiente (Azure Key Vault / módulo de seguridad de hardware del Emisor) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-07.11 & Las copias inmutables estarán protegidas contra borrado y contra modificación durante su período de retención, incluso frente a credenciales administrativas comprometidas. & Sí & Snapshot con retención bloqueada (object lock); política WORM inmutable por diseño & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2837,11 +2837,11 @@ RT-11.07 & La publicación de servicios se realizará exclusivamente a través d
 \addlinespace[2pt]
 RT-11.08 & El cifrado en tránsito empleará TLS 1.3, con prohibición expresa de TLS 1.0 y 1.1, conjuntos de cifrado modernos, HSTS con precarga y gestión automatizada de certificados con rotación y alerta anticipada de vencimiento. & Sí & TLS 1.3 con prohibición expresa de TLS 1.0/1.1 & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RT-11.09 & La totalidad de los datos en reposo estará cifrada, con claves gestionadas en un servicio de gestión de claves o en un módulo de seguridad de hardware, política de rotación declarada y separación de funciones en la custodia de claves. & Sí & Cifrado en reposo de toda la información persistida; Azure Key Vault (nube) y HSM dedicado (filial), con rotación declarada & Subdoc.4 §4.1 \\
+RT-11.09 & La totalidad de los datos en reposo estará cifrada, con claves gestionadas en un servicio de gestión de claves o en un módulo de seguridad de hardware, política de rotación declarada y separación de funciones en la custodia de claves. & Sí & Cifrado en reposo de toda la información persistida; Azure Key Vault (nube) y módulo de seguridad de hardware (HSM) para las claves del Emisor, producto y emplazamiento por definir, con rotación declarada & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RT-11.10 & Los datos de categoría sensible que el caso identifique se cifrarán adicionalmente a nivel de campo, de modo que el acceso a la base de datos no revele su contenido. & Sí & Cifrado de campo y tokenización de identificación de cliente, cartera, comportamiento de pago y evaluación crediticia & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RT-11.11 & La puerta de enlace de servicios aplicará autenticación, autorización, cuotas, límites de tasa, validación de esquema e inspección de carga útil. & Sí & API Gateway (Kong Gateway) con autenticación, autorización, cuotas y límites de tasa en la Capa 3 & Subdoc.4 §4.1, §4.2 \\
+RT-11.11 & La puerta de enlace de servicios aplicará autenticación, autorización, cuotas, límites de tasa, validación de esquema e inspección de carga útil. & Sí & Azure API Management Premium como puerta de entrada de APIs, con autenticación, autorización, cuotas y límites de tasa en la Capa 3 & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-11.12 & Los puntos de entrada públicos contarán con protección contra bots y abuso automatizado, con reto progresivo que no degrade la accesibilidad ni bloquee a personas usuarias legítimas. & No & - & - \\
 \addlinespace[2pt]
@@ -2849,9 +2849,9 @@ RT-11.13 & El PROPONENTE declarará la superficie de exposición completa de la 
 \addlinespace[2pt]
 RT-11.14 & Los eventos de seguridad se registrarán de forma centralizada e inalterable, con retención mínima de doce meses en línea y veinticuatro meses adicionales en archivo recuperable. & Sí & Registro centralizado e inalterable de eventos de seguridad, 12 meses en línea + 24 en archivo & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RT-11.15 & Los eventos se correlacionarán en una plataforma SIEM, con casos de uso de detección definidos específicamente para el proceso de negocio del caso, y no sólo genéricos de infraestructura. & Sí & SIEM (Wazuh) con casos de uso definidos para el negocio & Subdoc.4 §4.1, §4.2 \\
+RT-11.15 & Los eventos se correlacionarán en una plataforma SIEM, con casos de uso de detección definidos específicamente para el proceso de negocio del caso, y no sólo genéricos de infraestructura. & Sí & SIEM (producto por definir en el Subdocumento 4 y el Formulario T-11) con casos de uso definidos para el negocio & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-11.16 & Se implementará detección y respuesta en puntos finales y en cargas de trabajo, tanto en nube como on-premise. & Sí & Wazuh como detección en puntos finales; EDR en estaciones de trabajo & Subdoc.4 §4.2 \\
+RT-11.16 & Se implementará detección y respuesta en puntos finales y en cargas de trabajo, tanto en nube como on-premise. & Sí & Detección en puntos finales (producto por definir); EDR en estaciones de trabajo & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-11.17 & El PROPONENTE dispondrá de un centro de operaciones de seguridad con cobertura 24x7, propio o subcontratado, y declarará su ubicación, dotación y procedimientos. & Sí & SOC con cobertura 24x7 & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
@@ -2863,11 +2863,11 @@ RT-11.20 & Se ejecutarán pruebas de intrusión por un tercero independiente del
 \addlinespace[2pt]
 RT-11.21 & Se realizarán ejercicios de simulación de incidente con participación del CLIENTE al menos una vez al año durante la Operación. & No & - & - \\
 \addlinespace[2pt]
-RT-11.22 & El flujo de integración continua incorporará análisis estático de código, análisis de composición de software, análisis dinámico y escaneo de imágenes de contenedor, con criterios de bloqueo automático del despliegue ante hallazgos críticos. & Sí & Cadena DevSecOps (Semgrep, ZAP, Trivy, OWASP Dependency-Check) con bloqueo automático & Subdoc.4 §4.1, §4.2 \\
+RT-11.22 & El flujo de integración continua incorporará análisis estático de código, análisis de composición de software, análisis dinámico y escaneo de imágenes de contenedor, con criterios de bloqueo automático del despliegue ante hallazgos críticos. & Sí & Cadena DevSecOps con análisis estático, dinámico, de composición y de imágenes de contenedor, y bloqueo automático (herramientas por fijar en el Subdocumento 4 y el Formulario T-11) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-11.23 & Cada versión liberada se acompañará de su inventario de componentes de software en formato CycloneDX o SPDX, entregado al CLIENTE. & Sí & SBOM en CycloneDX o SPDX (Syft) por versión liberada & Subdoc.4 §4.1, §4.2 \\
+RT-11.23 & Cada versión liberada se acompañará de su inventario de componentes de software en formato CycloneDX o SPDX, entregado al CLIENTE. & Sí & SBOM en CycloneDX o SPDX por versión liberada (herramienta por fijar) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-11.24 & Los artefactos se firmarán y su procedencia se verificará conforme a SLSA nivel 3 o superior. & Sí & Firma y procedencia SLSA nivel 3 (Sigstore Cosign) & Subdoc.4 §4.1, §4.2 \\
+RT-11.24 & Los artefactos se firmarán y su procedencia se verificará conforme a SLSA nivel 3 o superior. & Sí & Firma y procedencia SLSA nivel 3 (herramienta de firma por fijar) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-11.25 & Queda prohibido el uso de datos productivos reales en ambientes no productivos sin anonimización o seudonimización verificable. & Sí & Prohibición de datos productivos reales en ambientes no productivos; datos sintéticos en Desarrollo y QA & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
@@ -3017,7 +3017,7 @@ RT-16.25 & Las notificaciones respetarán la normativa de comunicaciones comerci
 \addlinespace[2pt]
 RT-16.26 & Se valorará la integración con canales conversacionales que permitan a la persona usuaria responder y ejecutar acciones desde el propio canal. & No & - & - \\
 \addlinespace[2pt]
-RT-16.27 & La solución dispondrá de búsqueda global con indexación de texto completo, tolerancia a errores de escritura, filtros facetados y respeto del control de acceso de la persona que busca. & Sí & Motor de búsqueda y catálogo con Elastic Cloud (Elasticsearch/OpenSearch), búsqueda facetada y reindexación incremental & Subdoc.4 §4.1 \\
+RT-16.27 & La solución dispondrá de búsqueda global con indexación de texto completo, tolerancia a errores de escritura, filtros facetados y respeto del control de acceso de la persona que busca. & Sí & Motor de búsqueda y catálogo (producto por definir), búsqueda facetada y reindexación incremental & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RT-16.28 & Los listados serán ordenables, filtrables, paginados y exportables en formatos abiertos, con el filtro aplicado reflejado en la exportación. & No & - & - \\
 \addlinespace[2pt]
