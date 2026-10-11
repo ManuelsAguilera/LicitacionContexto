@@ -309,12 +309,12 @@ Navidad y liquidación & 1 noviembre a 6 enero & 67 \\
 Vuelta a clases & Última semana de enero a la primera semana de marzo & 42 \\
 Evento anual de comercio electrónico & 3 días + semana previa (mayo o junio) & 10 \\
 Día de la Madre & Segunda semana de mayo & 7 \\
-Evento de descuentos de noviembre & Última semana de noviembre & 7 \\
+Evento de descuentos de noviembre & Última semana de noviembre & 7 (incluidos en Navidad y liquidación) \\
 \midrule\noalign{}
 \textbf{Total} & & \textbf{126 (34,5 \%)} \\
 \end{longtable}
 
-Las ventanas suman 126 días corridos al año, es decir, el 34,5 \% del calendario, por lo que los sistemas sólo pueden intervenirse durante los 239 días restantes (65,5 \%). El evento anual congela apenas 10 días, pero su fecha depende de un tercero y debe absorberse sin desplazar los hitos contractuales considerándose como crítica por su alta impredictibilidad. A esto se suma que la ventana de navidad coincide con la incorporación de 1.900 personas de temporada, de modo que el personal nuevo debe aprender a operar sistemas que no pueden cambiar en ese período.
+Las ventanas suman 126 días corridos al año (los 7 días del evento de noviembre caen dentro de la ventana de Navidad y no se suman dos veces), es decir, el 34,5 \% del calendario, por lo que los sistemas sólo pueden intervenirse durante los 239 días restantes (65,5 \%). El evento anual congela apenas 10 días, pero su fecha depende de un tercero y debe absorberse sin desplazar los hitos contractuales considerándose como crítica por su alta impredictibilidad. A esto se suma que la ventana de navidad coincide con la incorporación de 1.900 personas de temporada, de modo que el personal nuevo debe aprender a operar sistemas que no pueden cambiar en ese período.
 
 La estacionalidad, por lo tanto, no corresponde únicamente a un aumento temporal de las ventas. Los períodos de mayor demanda modifican la dotación disponible, el volumen de pedidos, la utilización de las tiendas como puntos logísticos y la carga sobre los sistemas que sostienen la operación y, al mismo tiempo, reducen las oportunidades de intervenirlos. Estas condiciones permiten comprender el entorno en que se manifiesta el problema, mientras que sus efectos cuantitativos específicos se desarrollan en el dimensionamiento.
 
@@ -381,14 +381,14 @@ Para dimensionar cuantitativamente la brecha de cada promesa sobre esta red oper
  & Merma o pérdida desconocida sobre la venta & 1,9 \% & \colorbox{ossCriterioBases}{$<$ 1 \%} & 1,9 veces \\
  & Pedidos en línea cancelados por falta de existencia, 2025 & 1,9 \% & \colorbox{ossCriterioBases}{$<$ 0,3 \%} & 6,3 veces \\
  & Pedidos cancelados en el evento de junio de 2026 & 2,7 \% & \colorbox{ossCriterioBases}{= 0} & Sin tolerancia \\
-\textbf{2. El precio es el exhibido} & Productos con precio exhibido distinto del cobrado (muestra de 120) & 11 \% & \colorbox{ossCriterioPropio}{$<$ 3\%} & 3.7 veces \\
+\textbf{2. El precio es el exhibido} & Productos con precio exhibido distinto del cobrado (muestra de 120) & 11 \% & \colorbox{ossCriterioPropio}{$<$ 3\%} & 3,7 veces \\
 \textbf{3. La entrega llega en la fecha} & Pedidos entregados en la fecha ofrecida & 81 \% & \colorbox{ossCriterioBases}{$>$ 97 \%} & 6,3 veces \\
-\textbf{4. Las condiciones del crédito son las informadas} & Tiempo de evaluación crediticia en el punto de venta & 40 s a 3 min & \colorbox{ossCriterioBases}{$<$ 10 s} & 5 a 22,5 veces \\
+\textbf{4. Las condiciones del crédito son las informadas} & Tiempo de evaluación crediticia en el punto de venta & 40 s a 3 min & \colorbox{ossCriterioBases}{$<$ 8 s} & 5 a 22,5 veces \\
  & Repactaciones sin evidencia recuperable del consentimiento & 1.240 & \colorbox{ossCriterioBases}{= 0} & Sin tolerancia \\
- & Conservación de las grabaciones de originación y repactación & 90 días & \colorbox{ossCriterioBases}{\parbox[t]{\dimexpr\linewidth-2\fboxsep\relax}{\raggedright Plazo del crédito + 6 años}} & 24,3 veces o más \\
+ & Conservación de las grabaciones de originación y repactación & 90 días & \colorbox{ossCriterioBases}{\parbox[t]{\dimexpr\linewidth-2\fboxsep\relax}{\raggedright Plazo del crédito + 6 años}} & 24,3 veces o más (36,5 con un crédito de 36 meses) \\
 \end{longtable}
 
-Como muestra la tabla, cada una de las cuatro promesas está lejos de alcanzar su criterio de aceptación, con brechas que van desde casi dos hasta más de veinte veces el valor tolerable.
+Como muestra la tabla, cada una de las cuatro promesas está lejos de alcanzar su criterio de aceptación, con brechas que van desde casi dos hasta más de veinte veces el valor tolerable. La brecha es el cociente entre el valor actual de la tasa de falla y el valor tolerable; en los indicadores de cumplimiento se usa la tasa complementaria, por lo que el 81 \% de entregas a tiempo equivale a un 19 \% fuera de fecha frente a un 3 \% tolerable. En la evaluación crediticia el Caso da 10 segundos como criterio de negocio (Multitiendas Ancoa S.A., 2026, núm. 7.3) y 8 segundos como umbral técnico (RT-09.01); se adopta el más exigente.
 
 El criterio de 3\% para el precio se obtuvo modelando la proporción de etiquetas desactualizadas $(D)$ como el producto entre la frecuencia de cambio de precio por referencia ($r$, en cambios por día) y el tiempo promedio que tarda en corregirse la etiqueta ($T$, en días), más un error residual de ejecución $(e)$:
 \[
@@ -654,7 +654,7 @@ El detalle de cada elemento, con su identificador individual, se encuentra en el
 
 \subsection{2.5.1. Resumen de requerimientos}\label{resumen-de-requerimientos}
 
-El catálogo resumido en la Tabla 2.1 contiene 307 elementos clasificados en tres tipos: 223 requerimientos funcionales (RF), que describen comportamientos que la solución debe ejecutar; 75 requerimientos no funcionales (RNF), que establecen condiciones de calidad, desempeño, disponibilidad, seguridad, cumplimiento u operación y deben contar con un umbral o criterio verificable y un método de verificación; y 9 obligaciones del proponente (OP), que corresponden a entregables o análisis exigidos por la oferta. Las OP también son verificables, pero mediante revisión del entregable o del compromiso, no mediante un caso de prueba funcional del software. Este es el catálogo levantado en el análisis del problema (versión 3.0). El Subdocumento 3, subsección 3.2.4, lo depura con el alcance de la propuesta y fija la versión vigente 3.1, de 308 elementos (227 funcionales, 72 no funcionales y 9 obligaciones), que es la línea base de requisitos. Los listados de los anexos de este subdocumento corresponden a la versión 3.0.
+El catálogo resumido en la Tabla 2.6 contiene 307 elementos clasificados en tres tipos: 223 requerimientos funcionales (RF), que describen comportamientos que la solución debe ejecutar; 75 requerimientos no funcionales (RNF), que establecen condiciones de calidad, desempeño, disponibilidad, seguridad, cumplimiento u operación y deben contar con un umbral o criterio verificable y un método de verificación; y 9 obligaciones del proponente (OP), que corresponden a entregables o análisis exigidos por la oferta. Las OP también son verificables, pero mediante revisión del entregable o del compromiso, no mediante un caso de prueba funcional del software. Este es el catálogo levantado en el análisis del problema (versión 3.0). El Subdocumento 3, subsección 3.2.4, lo depura con el alcance de la propuesta y fija la versión vigente 3.1, de 308 elementos (227 funcionales, 72 no funcionales y 9 obligaciones), que es la línea base de requisitos. Los listados de los anexos de este subdocumento corresponden a la versión 3.0.
 
 La tabla 2.6 resume su distribución por categoría.
 

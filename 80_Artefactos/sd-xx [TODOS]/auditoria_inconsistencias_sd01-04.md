@@ -61,6 +61,30 @@ Patrón general: el sd-02 (sobre todo sus anexos) quedó escrito contra versione
 | EXT-B-01 | Resuelto | Glosario común en `glosario_nombres_comunes.md` (nombre formal en la primera mención, corto después). Se normalizó el sd-03: «plataforma financiera/de 2011» pasó a «plataforma de crédito de 2011» y «sistema central» a «núcleo Retail». Los portales de proveedor y de vendedor son objetos distintos, no una variante |
 | EXT-B-02 | Resuelto | «Frente» queda para los tres frentes de la solución; el sd-01 usa «áreas de trabajo» |
 | EXT-B-03 | Resuelto | El sd-02 indica que la Ley 21.719 rige desde el 1-dic-2026 y que hasta entonces aplica la Ley 19.628 (agregada a las referencias) |
+| INT-01-M-01 | Resuelto | Las áreas de trabajo son seis (arquitectura, datos, seguridad, calidad, operación y gestión del cambio) en 1.2 y 1.5; la 1.5 dice que usa los roles de jefatura (Jefe de Proyecto y seis líderes) |
+| INT-01-M-02 | Abierto | Falta decidir qué certificaciones tiene OSS y cuáles solo aplica como normas (1.3 frente a 1.4.1) |
+| INT-01-M-03 | Resuelto | La 1.4 remite al Formulario T-6 |
+| INT-01-B-01 | Resuelto | Jefe de Proyecto en singular; el Comité de Calidad lo preside el Líder de Calidad corporativo |
+| INT-01-B-02 | Resuelto | La 1.1 incluye seguros en los sectores |
+| INT-02-M-01 | Resuelto | Tabla 2.3 con 8 s y nota: el Caso da 10 s como criterio de negocio y 8 s en RT-09.01; rige el más exigente |
+| INT-02-M-02 | Resuelto | Brecha «24,3 veces o más (36,5 con un crédito de 36 meses)» |
+| INT-02-M-03 | Resuelto | Los 7 días del evento de noviembre caen dentro de la ventana de Navidad; el total 126 los cuenta una vez |
+| INT-02-M-04 | Resuelto | SUP-27 con Frutillar |
+| INT-02-M-05 | Resuelto | Los indicadores con línea base están en la Tabla 2.4 |
+| INT-02-M-06 | Resuelto | El catálogo está en la Tabla 2.6 |
+| INT-02-B-01 | Resuelto | Los huecos RF-025, RF-026, RF-031 y RNF-01 se explican en la introducción de A.1; RF-183 remite a RF-177 (corregido también en los Excel y los espejos) |
+| INT-02-B-02 | Resuelto | Se define la brecha como cociente de tasas de falla y se unificó la coma decimal |
+| INT-02-B-03 | Resuelto | La introducción de A.1 solo habla de los RF |
+| INT-03-M-01 | Resuelto | Tablas 3.7 (alternativas del núcleo Retail), 3.8 (control de cruces) y 3.9 (intercambios); citas del sd-03 y del sd-04 actualizadas |
+| INT-03-M-02 | Resuelto | En la Etapa 1 la campaña consulta a la plataforma de fidelización vigente; el Servicio de clientes Retail entra en la Etapa 2 |
+| INT-03-B-01 | Resuelto en parte | Leyes 19.496, 19.628 y 21.719 en las referencias del sd-03; falta la referencia de la Circular N.º 1 de la CMF |
+| INT-04-M-01 | Resuelto | Una instancia de API Management y un espacio de Event Hubs por ámbito |
+| INT-04-M-02 | Resuelto | Entra ID, Key Vault, Monitor y Log Analytics por ámbito; suscripción por ambiente y ámbito |
+| INT-04-M-03 | Resuelto | La condición de residencia alcanza solo a la réplica del Emisor |
+| INT-04-M-04 | Resuelto | Las 13 tiendas sin segmentación reciben equipo que el proponente especifica y el Cliente adquiere (Tabla 4.11) |
+| INT-04-B-01 | Resuelto | Redis solo para Retail |
+| INT-04-B-02 | Sin cambio | La Figura 4.18 muestra el despliegue de los servicios por ámbito en las zonas; la referencia es válida |
+| INT-04-B-03 | Resuelto | Las Bases fijan RTO y RPO solo para servicios críticos; los demás se declaran en la memoria de capacidad |
 | EXT-M-13 | Abierto | Queda por confirmar con la fuente de la matriz |
 
 ---
