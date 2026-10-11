@@ -62,7 +62,7 @@ Patrón general: el sd-02 (sobre todo sus anexos) quedó escrito contra versione
 | EXT-B-02 | Resuelto | «Frente» queda para los tres frentes de la solución; el sd-01 usa «áreas de trabajo» |
 | EXT-B-03 | Resuelto | El sd-02 indica que la Ley 21.719 rige desde el 1-dic-2026 y que hasta entonces aplica la Ley 19.628 (agregada a las referencias) |
 | INT-01-M-01 | Resuelto | Las áreas de trabajo son seis (arquitectura, datos, seguridad, calidad, operación y gestión del cambio) en 1.2 y 1.5; la 1.5 dice que usa los roles de jefatura (Jefe de Proyecto y seis líderes) |
-| INT-01-M-02 | Abierto | Falta decidir qué certificaciones tiene OSS y cuáles solo aplica como normas (1.3 frente a 1.4.1) |
+| INT-01-M-02 | Resuelto | Certificadas: ISO 9001, ISO/IEC 27001, ISO 22301 e ISO/IEC 27701. Aplicadas como controles sin certificación: 27002, 27017, 27018, 27031 y PCI DSS. En plan de certificación dentro de los 12 meses: ISO/IEC 20000-1 y 42001 (RT-15 de las Bases Transversales) |
 | INT-01-M-03 | Resuelto | La 1.4 remite al Formulario T-6 |
 | INT-01-B-01 | Resuelto | Jefe de Proyecto en singular; el Comité de Calidad lo preside el Líder de Calidad corporativo |
 | INT-01-B-02 | Resuelto | La 1.1 incluye seguros en los sectores |
@@ -77,7 +77,7 @@ Patrón general: el sd-02 (sobre todo sus anexos) quedó escrito contra versione
 | INT-02-B-03 | Resuelto | La introducción de A.1 solo habla de los RF |
 | INT-03-M-01 | Resuelto | Tablas 3.7 (alternativas del núcleo Retail), 3.8 (control de cruces) y 3.9 (intercambios); citas del sd-03 y del sd-04 actualizadas |
 | INT-03-M-02 | Resuelto | En la Etapa 1 la campaña consulta a la plataforma de fidelización vigente; el Servicio de clientes Retail entra en la Etapa 2 |
-| INT-03-B-01 | Resuelto en parte | Leyes 19.496, 19.628 y 21.719 en las referencias del sd-03; falta la referencia de la Circular N.º 1 de la CMF |
+| INT-03-B-01 | Resuelto | Leyes 19.496, 19.628 y 21.719 y el informe normativo de la CMF (abril de 2026) en las referencias del sd-03. Los archivos de `90_Referencia/CMF` no contienen resguardos de la Circular N.º 1: esa circular fija la información que envían los emisores, y el informe es una propuesta en consulta, así que se corrigió la frase del sd-03 |
 | INT-04-M-01 | Resuelto | Una instancia de API Management y un espacio de Event Hubs por ámbito |
 | INT-04-M-02 | Resuelto | Entra ID, Key Vault, Monitor y Log Analytics por ámbito; suscripción por ambiente y ámbito |
 | INT-04-M-03 | Resuelto | La condición de residencia alcanza solo a la réplica del Emisor |
