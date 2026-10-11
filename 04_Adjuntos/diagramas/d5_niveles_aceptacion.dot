@@ -1,0 +1,72 @@
+// D5 · Tres niveles de aceptación — Only Simple Solutions, Licitación TFEP-01/2026
+// Exportar:  dot -Tpng -Gdpi=300 d5_niveles_aceptacion.dot -o d5_niveles_aceptacion.png
+//            dot -Tpdf d5_niveles_aceptacion.dot -o d5_niveles_aceptacion.pdf
+// Ancho de diseño ≈ 16 cm a escala 1:1 → cuerpo de texto 9 pt al tamaño final.
+digraph D5 {
+  graph [bgcolor="white", pad="0.05", margin="0"];
+  node  [shape=plaintext, fontname="Arial", fontsize=9, fontcolor="white", margin="0"];
+
+  niveles [label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="3">
+  <!-- Encabezados de columna -->
+  <TR>
+    <TD WIDTH="10"></TD><TD WIDTH="10"></TD>
+    <TD WIDTH="64" ALIGN="LEFT" BALIGN="LEFT" VALIGN="BOTTOM" BORDER="1" SIDES="B" COLOR="#17324D"><FONT COLOR="#17324D"><B>Quién<BR ALIGN="LEFT"/>controla la<BR ALIGN="LEFT"/>calidad<BR ALIGN="LEFT"/></B></FONT></TD>
+    <TD WIDTH="74" ALIGN="LEFT" BALIGN="LEFT" VALIGN="BOTTOM" BORDER="1" SIDES="B" COLOR="#17324D"><FONT COLOR="#17324D"><B>Quién valida y<BR ALIGN="LEFT"/>firma<BR ALIGN="LEFT"/></B></FONT></TD>
+    <TD WIDTH="114" ALIGN="LEFT" BALIGN="LEFT" VALIGN="BOTTOM" BORDER="1" SIDES="B" COLOR="#17324D"><FONT COLOR="#17324D"><B>Qué se mide<BR ALIGN="LEFT"/></B></FONT></TD>
+    <TD WIDTH="84" ALIGN="LEFT" BALIGN="LEFT" VALIGN="BOTTOM" BORDER="1" SIDES="B" COLOR="#17324D"><FONT COLOR="#17324D"><B>Si no se cumple<BR ALIGN="LEFT"/></B></FONT></TD>
+    <TD COLSPAN="3" VALIGN="BOTTOM" CELLPADDING="0"><FONT POINT-SIZE="11" COLOR="#17324D">▲</FONT></TD><TD WIDTH="44"></TD>
+  </TR>
+  <!-- Nivel 3 · Resultados de negocio -->
+  <TR>
+    <TD COLSPAN="2"></TD>
+    <TD COLSPAN="4" BGCOLOR="#17324D" ALIGN="LEFT"><B>Nivel 3 · Resultados de negocio</B></TD>
+    <TD ROWSPAN="6" WIDTH="4"></TD><TD ROWSPAN="6" WIDTH="3" CELLPADDING="0" BGCOLOR="#17324D"></TD><TD ROWSPAN="6" WIDTH="4"></TD>
+    <TD ROWSPAN="6" VALIGN="MIDDLE" ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="1"><FONT COLOR="#17324D">Superar<BR ALIGN="LEFT"/>un nivel<BR ALIGN="LEFT"/>no exime<BR ALIGN="LEFT"/>del<BR ALIGN="LEFT"/>siguiente<BR ALIGN="LEFT"/></FONT></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="2"></TD>
+    <TD BGCOLOR="#17324D" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Equipo del<BR ALIGN="LEFT"/>proponente<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#17324D" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">El cliente juzga<BR ALIGN="LEFT"/>el éxito; la<BR ALIGN="LEFT"/>Contraparte<BR ALIGN="LEFT"/>Técnica lo<BR ALIGN="LEFT"/>formaliza en el<BR ALIGN="LEFT"/>acta<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#17324D" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Los 28 resultados de<BR ALIGN="LEFT"/>negocio del Caso<BR ALIGN="LEFT"/>(Anexo D)<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#17324D" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Plan de corrección<BR ALIGN="LEFT"/>con plazo, sin<BR ALIGN="LEFT"/>alterar los<BR ALIGN="LEFT"/>56 meses<BR ALIGN="LEFT"/></TD>
+  </TR>
+  <!-- Nivel 2 · Marcha blanca -->
+  <TR>
+    <TD COLSPAN="1"></TD>
+    <TD COLSPAN="5" BGCOLOR="#184972" ALIGN="LEFT"><B>Nivel 2 · Marcha blanca</B></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="1"></TD>
+    <TD COLSPAN="2" BGCOLOR="#184972" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Equipo del<BR ALIGN="LEFT"/>proponente<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#184972" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Contraparte<BR ALIGN="LEFT"/>Técnica (acta)<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#184972" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Condiciones del art. 17.3<BR ALIGN="LEFT"/>de las Bases:<BR ALIGN="LEFT"/>• Sin incidentes críticos ni<BR ALIGN="LEFT"/>   altos<BR ALIGN="LEFT"/>• Volumen real en las<BR ALIGN="LEFT"/>   cuatro últimas semanas<BR ALIGN="LEFT"/>• Conciliación sin<BR ALIGN="LEFT"/>   diferencias sin explicar<BR ALIGN="LEFT"/>• Personal capacitado<BR ALIGN="LEFT"/>• Posibilidad de volver<BR ALIGN="LEFT"/>   atrás<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#184972" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Extensión de la<BR ALIGN="LEFT"/>marcha blanca a<BR ALIGN="LEFT"/>costo del<BR ALIGN="LEFT"/>proponente.<BR ALIGN="LEFT"/>Si es imputable:<BR ALIGN="LEFT"/>multa de 1 % por<BR ALIGN="LEFT"/>semana, tope de<BR ALIGN="LEFT"/>10 %.<BR ALIGN="LEFT"/></TD>
+  </TR>
+  <!-- Nivel 1 · Entregable -->
+  <TR>
+    <TD COLSPAN="6" BGCOLOR="#196197" ALIGN="LEFT"><B>Nivel 1 · Entregable</B></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="3" BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Equipo del<BR ALIGN="LEFT"/>proponente<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Contraparte<BR ALIGN="LEFT"/>Técnica (acta)<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Criterio con hecho<BR ALIGN="LEFT"/>observable y umbral.<BR ALIGN="LEFT"/>Se presenta con artefacto,<BR ALIGN="LEFT"/>evidencia, trazabilidad y<BR ALIGN="LEFT"/>observaciones resueltas.<BR ALIGN="LEFT"/></TD>
+    <TD BGCOLOR="#196197" ALIGN="LEFT" BALIGN="LEFT" VALIGN="TOP">Nueva<BR ALIGN="LEFT"/>presentación: diez<BR ALIGN="LEFT"/>días hábiles para<BR ALIGN="LEFT"/>subsanar<BR ALIGN="LEFT"/></TD>
+  </TR>
+  <!-- Leyenda -->
+  <TR><TD COLSPAN="10" HEIGHT="6"></TD></TR>
+  <TR><TD COLSPAN="10" ALIGN="LEFT">
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR>
+      <TD WIDTH="12" HEIGHT="12" FIXEDSIZE="TRUE" CELLPADDING="0" BGCOLOR="#196197"><B>1</B></TD>
+      <TD ALIGN="LEFT"><FONT COLOR="#17324D">Entregable</FONT></TD><TD WIDTH="12"></TD>
+      <TD WIDTH="12" HEIGHT="12" FIXEDSIZE="TRUE" CELLPADDING="0" BGCOLOR="#184972"><B>2</B></TD>
+      <TD ALIGN="LEFT"><FONT COLOR="#17324D">Marcha blanca</FONT></TD><TD WIDTH="12"></TD>
+      <TD WIDTH="12" HEIGHT="12" FIXEDSIZE="TRUE" CELLPADDING="0" BGCOLOR="#17324D"><B>3</B></TD>
+      <TD ALIGN="LEFT"><FONT COLOR="#17324D">Resultados de negocio</FONT></TD><TD WIDTH="12"></TD>
+      <TD WIDTH="12" HEIGHT="12" FIXEDSIZE="TRUE" CELLPADDING="0"><FONT COLOR="#17324D">▲</FONT></TD>
+      <TD ALIGN="LEFT"><FONT COLOR="#17324D">Sentido del avance</FONT></TD><TD WIDTH="12"></TD>
+    </TR></TABLE>
+  </TD></TR>
+</TABLE>
+  >];
+}

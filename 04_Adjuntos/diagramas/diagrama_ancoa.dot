@@ -1,0 +1,172 @@
+// Propuesta técnica - Multitiendas Ancoa S.A. - Only Simple Solutions
+// Diagrama jerárquico (Graphviz). Comandos de exportación al final del archivo.
+
+digraph ancoa {
+  graph [rankdir=TB, newrank=true, compound=true, splines=line,
+         outputorder=edgesfirst, bgcolor="white",
+         nodesep=0.08, ranksep=0.26, pad=0.04,
+         fontname="Arial", fontsize=11,
+         size="6.3,10!"];                       // 6,3 in = 16 cm de ancho
+  node  [shape=box, style="rounded,filled", fontname="Arial", fontsize=11,
+         fontcolor="#17324D", color="#17324D", fillcolor="white",
+         penwidth=1.2, margin="0.05,0.04", width=1.2];
+  edge  [color="#17324D", penwidth=1.2, arrowhead=none];
+
+  // ---------- Nivel 0 ----------
+  n0 [label=<<B>Desincronización entre las<BR/>plataformas de Ancoa</B>>,
+      fillcolor="#17324D", fontcolor="white", width=3.0, ordering=out];
+
+  // ---------- Nivel 1: frente Retail (cluster) ----------
+  subgraph cluster_retail {
+    style="rounded"; color="#17324D"; penwidth=1.0; margin=4; label="";
+
+    f_retail [label=<<B>Retail</B>>, width=1.4, ordering=out];
+
+    // Nivel 2: áreas
+    a_merc  [label=<<B>Mercadería</B>>,                  group=g1];
+    a_venta [label=<<B>Venta</B>>,                       group=g2];
+    a_rel   [label=<<B>Relación<BR/>con el cliente</B>>, group=g3];
+
+    // Nivel 3: servicios
+    subgraph cluster_sm {
+      style="rounded"; color="#17324D"; penwidth=0.7; margin=3; label="";
+      s_oferta [group=g1, height=0.8, fillcolor="#196197", fontcolor="white",
+                label=<Servicio de<BR/>oferta<BR/>comercial<BR/><B>Etapa 1</B>>];
+      s_abast  [group=g1, height=0.8, fillcolor="#7FC6AA",
+                label=<Servicio de<BR/>abastecimiento<BR/><B>Etapa 2</B>>];
+      s_exist  [group=g1, height=0.8, fillcolor="#196197", fontcolor="white",
+                label=<Servicio de<BR/>existencias<BR/><B>Etapa 1</B>>];
+      s_oferta -> s_abast -> s_exist [style=invis, weight=100];
+    }
+    subgraph cluster_sv {
+      style="rounded"; color="#17324D"; penwidth=0.7; margin=3; label="";
+      s_pedidos [group=g2, height=0.8, fillcolor="#7FC6AA",
+                 label=<Servicio de<BR/>pedidos<BR/><B>Etapa 2</B>>];
+      s_ventas  [group=g2, height=0.8, fillcolor="#196197", fontcolor="white",
+                 label=<Servicio de<BR/>ventas<BR/><B>Etapa 1</B>>];
+      s_comis   [group=g2, height=0.8, fillcolor="#7FC6AA",
+                 label=<Servicio de<BR/>comisiones<BR/><B>Etapa 2</B>>];
+      s_mkt     [group=g2, height=0.8, fillcolor="#7FC6AA",
+                 label=<Servicio de<BR/>marketplace<BR/><B>Etapa 2</B>>];
+      s_pedidos -> s_ventas -> s_comis -> s_mkt [style=invis, weight=100];
+    }
+    subgraph cluster_sr {
+      style="rounded"; color="#17324D"; penwidth=0.7; margin=3; label="";
+      s_posv [group=g3, height=0.8, fillcolor="#7FC6AA",
+              label=<Servicio de<BR/>posventa<BR/><B>Etapa 2</B>>];
+      s_cli  [group=g3, height=0.8, fillcolor="#7FC6AA",
+              label=<Servicio de<BR/>clientes<BR/>Retail<BR/><B>Etapa 2</B>>];
+      s_posv -> s_cli [style=invis, weight=100];
+    }
+  }
+
+  // ---------- Nivel 1: frente Frontera (entre ambos clusters, sin área) ----------
+  subgraph cluster_frontera {
+    style=invis; margin=4; label="";
+    f_front [label=<<B>Frontera</B>>, width=1.4, color="#277FA8", penwidth=3.5, group=g4];
+    s_control [group=g4, height=0.8, fillcolor="#196197", fontcolor="white",
+               color="#277FA8", penwidth=3.5,
+               label=<Servicio de<BR/>control<BR/>de cruces<BR/><B>Etapa 1</B>>];
+  }
+
+  // ---------- Nivel 1: frente Filial emisora (cluster) ----------
+  subgraph cluster_filial {
+    style="rounded"; color="#17324D"; penwidth=1.0; margin=4; label="";
+
+    f_filial [label=<<B>Filial emisora</B>>, width=1.4, group=g5];
+    a_cred   [label=<<B>Crédito</B>>, group=g5];
+
+    subgraph cluster_sc {
+      style="rounded"; color="#17324D"; penwidth=0.7; margin=3; label="";
+      s_orig [group=g5, height=0.8, fillcolor="#196197", fontcolor="white",
+              label=<Servicio de<BR/>originación<BR/>de crédito<BR/><B>Etapa 1</B>>];
+      // Caja partida en dos mitades (azul / verde) con rótulo "por tramos"
+      s_cart [group=g5, height=0.8, fillcolor="#196197;0.57:#7FC6AA", gradientangle=270,
+              label=<<FONT COLOR="white">Servicio de<BR/>cartera<BR/>de crédito</FONT><BR/><FONT COLOR="#17324D"><B>Etapas 1 y 2</B><BR/>por tramos</FONT>>];
+      s_evid [group=g5, height=0.8, fillcolor="#196197", fontcolor="white",
+              label=<Servicio de<BR/>evidencia<BR/>financiera<BR/><B>Etapa 1</B>>];
+      s_orig -> s_cart -> s_evid [style=invis, weight=100];
+    }
+  }
+
+  // ---------- Nivel 4 (base) + banda gris de sistemas que se conservan ----------
+  // Los espaciadores (TD vacíos) alinean cada sistema bajo su columna.
+  lower [shape=plain, style="", margin=0, label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+      <TR><TD BGCOLOR="#17324D" CELLPADDING="6"><FONT COLOR="white"><B>Base tecnológica:</B><BR/>plataforma de integración · identidad y gestión de accesos · observabilidad<BR/><B>Etapa 1</B></FONT></TD></TR>
+      <TR><TD HEIGHT="7"></TD></TR>
+      <TR><TD>
+        <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"
+               COLOR="#17324D" STYLE="DASHED">
+          <TR><TD HEIGHT="4"></TD></TR>
+          <TR><TD ALIGN="RIGHT"><FONT COLOR="#17324D"><B>Sistemas que se conservan e integran</B></FONT>&#160;&#160;&#160;</TD></TR>
+          <TR><TD HEIGHT="4"></TD></TR>
+          <TR><TD>
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+              <TR>
+                <TD WIDTH="16" BORDER="0"></TD>
+                <TD WIDTH="80" FIXEDSIZE="TRUE" HEIGHT="70" BGCOLOR="#D9D9D9" COLOR="#17324D" STYLE="DASHED">Sistema de<BR/>gestión<BR/>empresarial</TD>
+                <TD WIDTH="16" BORDER="0"></TD>
+                <TD WIDTH="80" FIXEDSIZE="TRUE" HEIGHT="70" BGCOLOR="#D9D9D9" COLOR="#17324D" STYLE="DASHED" PORT="mkt">Marketplace<BR/>(2022)</TD>
+                <TD WIDTH="16" BORDER="0"></TD>
+                <TD WIDTH="80" FIXEDSIZE="TRUE" HEIGHT="70" BGCOLOR="#D9D9D9" COLOR="#17324D" STYLE="DASHED" PORT="fid">Sistema de<BR/>fidelización</TD>
+                <TD WIDTH="33" BORDER="0"></TD>
+                <TD WIDTH="80" FIXEDSIZE="TRUE" HEIGHT="70" BGCOLOR="#D9D9D9" COLOR="#17324D" STYLE="DASHED">Sistema de<BR/>almacenes del<BR/>centro de<BR/>distribución<BR/>principal</TD>
+                <TD WIDTH="38" BORDER="0"></TD>
+                <TD WIDTH="80" FIXEDSIZE="TRUE" HEIGHT="70" BGCOLOR="#D9D9D9" COLOR="#17324D" STYLE="DASHED">Comercio<BR/>electrónico</TD>
+                <TD WIDTH="16" BORDER="0"></TD>
+              </TR>
+            </TABLE>
+          </TD></TR>
+          <TR><TD HEIGHT="6"></TD></TR>
+        </TABLE>
+      </TD></TR>
+    </TABLE>>];
+
+  // ---------- Leyenda ----------
+  legend [shape=plain, style="", margin=0, label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3" CELLPADDING="2">
+      <TR>
+        <TD WIDTH="22" HEIGHT="13" FIXEDSIZE="TRUE" BGCOLOR="#196197" BORDER="1" COLOR="#17324D"></TD><TD ALIGN="LEFT">Etapa 1</TD>
+        <TD WIDTH="22" HEIGHT="13" FIXEDSIZE="TRUE" BGCOLOR="#7FC6AA" BORDER="1" COLOR="#17324D"></TD><TD ALIGN="LEFT">Etapa 2</TD>
+        <TD><TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0" COLOR="#17324D"><TR><TD WIDTH="22" HEIGHT="7" FIXEDSIZE="TRUE" BGCOLOR="#196197"></TD></TR><TR><TD WIDTH="22" HEIGHT="7" FIXEDSIZE="TRUE" BGCOLOR="#7FC6AA"></TD></TR></TABLE></TD><TD ALIGN="LEFT">Etapas 1 y 2 por tramos</TD>
+      </TR>
+      <TR>
+        <TD WIDTH="22" HEIGHT="13" FIXEDSIZE="TRUE" BGCOLOR="#D9D9D9" BORDER="1" COLOR="#17324D" STYLE="DASHED"></TD><TD ALIGN="LEFT">Se conserva e integra</TD>
+        <TD WIDTH="22" HEIGHT="13" FIXEDSIZE="TRUE" BGCOLOR="#17324D" BORDER="1" COLOR="#17324D"></TD><TD ALIGN="LEFT">Base</TD>
+        <TD WIDTH="22" HEIGHT="13" FIXEDSIZE="TRUE" BGCOLOR="white" BORDER="3" COLOR="#277FA8"></TD><TD ALIGN="LEFT">Frontera: control de cruces</TD>
+      </TR>
+      <TR>
+        <TD ALIGN="CENTER">· · · ·</TD><TD ALIGN="LEFT" COLSPAN="5">Conexión con sistema que se conserva</TD>
+      </TR>
+    </TABLE>>];
+
+  // ---------- Relaciones jerárquicas ----------
+  n0 -> f_retail;
+  n0 -> f_front;
+  n0 -> f_filial;
+
+  f_retail -> a_merc;
+  f_retail -> a_venta;
+  f_retail -> a_rel;
+  f_filial -> a_cred;
+
+  a_merc  -> s_oferta  [lhead=cluster_sm, weight=10];
+  a_venta -> s_pedidos [lhead=cluster_sv, weight=10];
+  a_rel   -> s_posv    [lhead=cluster_sr, weight=10];
+  a_cred  -> s_orig    [lhead=cluster_sc, weight=10];
+  f_front -> s_control [minlen=2, weight=10];
+
+  // ---------- Orden horizontal: Retail | Frontera | Filial emisora ----------
+
+  // ---------- Posicionamiento (invisibles) ----------
+  lower     -> legend [style=invis];
+
+  // ---------- Conexiones punteadas (solo estas dos) ----------
+  s_mkt:s -> lower:mkt:n [style=dotted, dir=back, arrowtail=normal, penwidth=1.6];
+  s_cli:s -> lower:fid:n [style=dotted, dir=back, arrowtail=normal, penwidth=1.6];
+}
+
+// Exportación:
+//   dot -Tpng -Gdpi=300 diagrama_ancoa.dot -o diagrama_ancoa.png
+//   dot -Tpdf diagrama_ancoa.dot -o diagrama_ancoa.pdf

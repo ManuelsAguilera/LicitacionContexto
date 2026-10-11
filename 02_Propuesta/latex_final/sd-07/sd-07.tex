@@ -1,0 +1,382 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Plan de trabajo, EDT, cronograma e implantación}{Subdocumento 7}
+\tableofcontents
+\clearpage
+
+\section{Capítulo 7 · Introducción al Plan de trabajo}\label{capuxedtulo-7-introducciuxf3n-al-plan-de-trabajo}
+
+Este capítulo presenta el plan de ejecución del proyecto en tres apartados que se leen en orden. El apartado 7.1 descompone el 100\% del alcance hasta paquetes de trabajo estimables y asignables y resume el diccionario de esa estructura; el apartado 7.2 secuencia y estima esos paquetes en frentes de trabajo; el apartado 7.3 traduce el plan en ruta crítica, carta Gantt y plan de implantación. La descomposición fija qué se entrega, el plan define cómo se organiza y el cronograma fija cuándo ocurre y cómo se pone en marcha: ninguno de los tres apartados se entiende sin los otros dos, y los tres se verifican contra el cronograma de 56 meses del proyecto y contra los hitos del Formulario E-25.
+
+El capítulo aplica las metodologías declaradas en el Capítulo 6 y entrega insumos a otros capítulos: el registro de supuestos, vacíos y restricciones que nace del levantamiento alimenta el plan de riesgos (Capítulo 8); los paquetes de calidad, pruebas y certificación sostienen el plan de calidad (Capítulo 9); y la rama de innovaciones mantiene la trazabilidad que exige el capítulo de innovaciones (Capítulo 13). El equipo que ejecuta esta estructura y su dedicación se declaran en el Capítulo 12 y en el Anexo T-8. Los anexos de este capítulo son el Anexo T-14 (plan de trabajo, EDT y carta Gantt), el Anexo T-15 (nivelación de recursos) y el Anexo T-18 (propuesta de implantación y puesta en marcha controlada).
+
+
+
+\section{7.1 EDT}\label{edt}
+
+Este apartado describe la Estructura de Descomposición del Trabajo (EDT) con la que Only Simple Solutions organiza el trabajo propuesto para Multitiendas Ancoa S.A. El apartado 7.2 secuencia y estima esa estructura en frentes de trabajo, y el apartado 7.3 la traduce en ruta crítica, carta Gantt y plan de implantación dentro del cronograma de 56 meses del proyecto. El diccionario completo, con criterios con umbral, esfuerzos, dependencias, meses y trazas de requisitos, se entrega en el Formulario T-14; aquí se registra su resumen por rama.
+
+\subsection{Criterios de descomposición}
+
+La EDT se construye sobre la metodología híbrida que declara el Capítulo 6. La creación de la estructura, la regla del 100\% del alcance y su diccionario se rigen por la Guía del PMBOK (6.ª edición, Project Management Institute), mientras que la ejecución de los paquetes se organiza con Scrum y Kanban. La descomposición es orientada a entregables y no representa horas, procesos ni organigramas.
+
+La estructura tiene dos niveles de trabajo. El primero son las cuentas de control, cada una con un entregable verificable, un responsable único entre los roles del Capítulo 12 y un ámbito que el equipo puede estimar y aceptar como una unidad. La raíz 1.0 es la solución completa propuesta y se abre en quince ramas que agrupan dominios de entrega coherentes. El segundo nivel son los paquetes de trabajo. En el software, cada paquete de trabajo es el entregable de un caso de uso, y las fases que lo componen son actividades del cronograma y no nodos de la EDT; su tamaño supera las 80 horas y se declara como excepción a la regla 8/80, porque cada uno funciona como un subproyecto con su propia descomposición. Fuera del software, las cuentas de control se descomponen en paquetes de trabajo de forma gradual, cuando la ola de ejecución correspondiente entra en la planificación detallada, conforme a la planificación gradual que el PMBOK recomienda para el trabajo lejano en el tiempo.
+
+Los códigos de la estructura son jerárquicos y permiten incorporar paquetes menores sin renumerar lo ya definido. La rama lleva el formato 1.N, la cuenta de control el formato 1.N.M y, en el software, el paquete de trabajo de un caso de uso el formato 1.5.S.P. Estos códigos son provisorios y se re-secuencian al congelar la EDT para el Formulario T-14. Los paquetes se nombran con un sustantivo breve y autoexplicativo, y los umbrales, cantidades y enumeraciones que los califican viven en el diccionario del Formulario T-14, de modo que el nombre sobreviva a los cambios de especificación. Las cinco innovaciones tienen paquetes propios en la rama 1.10, y las actividades de seguridad, calidad, migración e implantación tienen sus ramas 1.8, 1.9, 1.7 y 1.11, de modo que ninguna quede absorbida como subactividad de un paquete funcional. Los paquetes de desarrollo de software de la rama 1.5 corresponden uno a uno con los servicios de aplicación comprometidos en el apartado 3.2 y conservan allí sus nombres y códigos.
+
+La estructura cubre en su totalidad el alcance propuesto, de modo que lo que no está en la EDT tampoco entra en el plan del apartado 7.2 ni en la estimación. En lo temporal, la rama 1.15 incorpora la operación durante los 36 meses previstos, junto con las ramas de preparación (1.11 a 1.14), y ningún tramo del cronograma queda sin paquetes que lo sustenten. En lo funcional, cada servicio, canal y regla de negocio descritos en los apartados 3.1 y 3.2 tiene paquetes en las ramas 1.2 a 1.6. Las ramas habilitantes, esto es, innovaciones (1.10), seguridad (1.8), calidad (1.9), migración (1.7), implantación (1.11) y marchas blancas y aceptación (1.12), poseen entregables y criterios de aceptación propios y no son partidas de esfuerzo indirecto. Las particularidades de calendario y operación de Ancoa quedan materializadas en paquetes y no en notas al margen. Son ejemplo de ello las cinco ventanas de congelamiento de publicación, el levantamiento y la certificación del mapa de integraciones como entrega temprana de la rama 1.6, el corte de inventario en las 24 instalaciones que no cierran, la migración de la cartera con sus dos plazos y la holgura reservada para la fecha del evento anual.
+
+La EDT cubre exclusivamente el trabajo posterior a la adjudicación. Las actividades de preparación de esta propuesta, como la matriz de cumplimiento técnico (Anexo T-12), el sitio web de presentación, el video y el prototipo interactivo, quedan fuera de la estructura porque corresponden a la oferta y no generan entregables del proyecto.
+
+\subsection{Estructura de la EDT}
+
+La estructura completa se muestra en la Figura 7.1 y su diccionario resumido, rama por rama, en la Tabla 7.1. La lectura de la figura procede de arriba hacia abajo. La raíz 1.0 se abre en quince ramas que van de la dirección del proyecto (1.1) a la operación (1.15), pasando por el levantamiento y la línea base de alcance (1.2), la arquitectura y el diseño (1.3), la infraestructura híbrida y la plataforma base (1.4), el desarrollo de software (1.5), las integraciones (1.6), la migración y el saneamiento de datos (1.7), la seguridad, la identidad y el cumplimiento (1.8), la calidad, las pruebas y la certificación (1.9), las innovaciones (1.10), la implantación y el despliegue (1.11), los resultados de las marchas blancas y la aceptación por etapa (1.12), la gestión del cambio y la capacitación (1.13) y la documentación, la transferencia y la reversibilidad (1.14). El orden de las ramas es de lectura y no de ejecución, y el secuenciamiento real, con sus paralelismos y dependencias, se define en el apartado 7.2.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\ossFigCaption{Figura 7.1: Estructura de descomposición del trabajo, con la raíz, las quince ramas y las cuentas de control.}
+
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/diag-07-01_EDT.png}
+
+\raggedright\textbf{Fuente:} Elaboración propia.
+\end{minipage}
+\end{center}
+
+La figura muestra la jerarquía hasta el primer nivel de cada rama, y el despliegue completo se lee en la Tabla 7.1 y en el Formulario T-14.
+
+Tabla 7.1: Diccionario resumido de la EDT por rama. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.15\linewidth}p{0.09\linewidth}p{0.21\linewidth}p{0.30\linewidth}p{0.17\linewidth}}
+\toprule
+\textbf{Rama} & \textbf{Cuentas de control} & \textbf{Entregable principal} & \textbf{Criterio de aceptación (resumen)} & \textbf{Responsable} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1.1 Dirección, gobierno y control del proyecto & 12 & Plan de dirección integrado & Aprobado por el comité del proyecto y actualizado en cada hito. & Jefe de Proyecto \\
+1.2 Levantamiento y línea base de alcance & 8 & Línea base de alcance & Aprobada por el CLIENTE con el mapa de interfaces y la matriz de trazabilidad. & Líder Funcional \\
+1.3 Arquitectura y diseño & 7 & Documento de arquitectura y catálogo de decisiones & Aprobado por el CLIENTE con la frontera Retail–Emisor segregada en el modelo de datos. & Arquitecto de Solución \\
+1.4 Infraestructura híbrida y plataforma base & 13 & Infraestructura híbrida con ambientes habilitados & Ambientes de Desarrollo, Calidad, Preproducción y Producción operativos con observabilidad. & Arquitecto de Solución \\
+1.5 Desarrollo de software & 51 (127 paquetes) & Software de cada servicio por etapa & Entregable por etapa con calidad aprobada y evidencia de cobertura. & Líder de Desarrollo \\
+1.6 Integraciones & 7 & Catálogo de interfaces y contratos & Interfaces certificadas sin diferencias con el mapa AS-IS aprobado. & Líder de Integración \\
+1.7 Migración y saneamiento de datos & 12 & Datos saneados, migrados y conciliados & Conciliación aprobada por acta y plataformas heredadas retiradas conforme al plan. & Líder de Datos \\
+1.8 Seguridad, identidad y cumplimiento & 8 & Plan de seguridad y matriz de controles & Controles implementados y probados, con la remediación cerrada. & Encargado de Seguridad de la Información \\
+1.9 Calidad, pruebas y certificación & 12 & Certificación de cada etapa & Pruebas de aceptación, carga, resiliencia y seguridad ofensiva aprobadas. & Líder de Calidad y Pruebas \\
+1.10 Innovaciones & 5 & Las cinco innovaciones entregadas & Cada innovación aceptada con trazabilidad a arquitectura, EDT y flujo de caja. & Arquitecto de Solución \\
+1.11 Implantación y despliegue & 4 & Plan de implantación y pipeline de despliegue & Despliegue y reversión probados antes de cada paso a producción. & Líder de Implantación y Gestión del Cambio \\
+1.12 Resultados de las marchas blancas y aceptación por etapa & 7 & Actas de aceptación de la Etapa 1 y de la Etapa 2 & Marcha blanca cerrada conforme a sus indicadores en cada etapa. & Líder de Implantación y Gestión del Cambio \\
+1.13 Gestión del cambio y capacitación & 5 & Personal capacitado y certificado & Asistencia y evaluación aprobadas en las jornadas de capacitación. & Líder de Implantación y Gestión del Cambio \\
+1.14 Documentación, transferencia y reversibilidad & 7 & Documentación técnica y plan de reversibilidad & Entregados y aprobados antes del cierre contractual. & Jefe de Proyecto \\
+1.15 Operación y soporte & 6 & Operación con niveles de servicio cumplidos & Informes de nivel de servicio aceptados y recuperación probada semestralmente. & Líder de Operación / SRE \\
+\end{longtable}
+
+La tabla es un resumen de lectura. Las quince ramas suman 164 cuentas de control y, dentro de la rama 1.5, 127 paquetes de trabajo de software, uno por caso de uso. Cada fila se despliega en el Formulario T-14, que agrega por paquete el criterio de aceptación con umbral verificable, el esfuerzo, las dependencias, el mes, el hito del Anexo E-25 asociado y las trazas de requisitos que el paquete satisface.
+
+
+
+\section{7.2 Plan de trabajo}\label{plan-de-trabajo}
+
+El plan de trabajo traduce la EDT del apartado 7.1 en un orden de ejecución, unos frentes de trabajo y una estimación del esfuerzo. El plan respeta las metodologías del Capítulo 6, el despliegue híbrido del contrato —carga principal en nube pública con componentes on-premise— y el cronograma obligatorio de 56 meses. La nivelación de recursos que acompaña a este plan, con la curva de horas hombre, la dotación y los frentes, se entrega en el Formulario T-15.
+
+\subsection{Secuenciamiento y estimación}
+
+El secuenciamiento respeta las dependencias de entrega que la EDT ya fija. El levantamiento y la línea base de alcance anteceden a la arquitectura; la arquitectura antecede a la plataforma base y a los ambientes; los ambientes anteceden a las pruebas de carga, resiliencia y recuperación; el desarrollo de cada etapa antecede a su certificación de calidad, la certificación antecede a la marcha blanca y esta al paso a producción. La capacitación certificada es condición de cierre de cada marcha blanca. Los servicios de la Etapa 2 dependen de servicios de la Etapa 1, conforme al reparto por etapa del apartado 3.2, de modo que ninguno comienza antes del mes 13.
+
+La estimación del software usa el método de puntos de caso de uso que describe el Capítulo 6. El tamaño del sistema es de 709 puntos de caso de uso sin ajustar, compuestos por 64 puntos de actor y 645 puntos de caso de uso. El factor técnico es 1,19. Con el escenario de ambiente del equipo, cuyo factor de ambiente es 0,755, el sistema resulta en 637 puntos ajustados; a 20 horas por punto, la programación equivale a 12.740 horas y el proyecto completo a 31.850 horas, porque la programación representa el 40\% del total. El reparto por actividad se muestra en la Tabla 7.2.
+
+Tabla 7.2: Reparto del esfuerzo del proyecto por actividad, escenario del equipo. Fuente: Elaboración propia a partir del cálculo de puntos de caso de uso.
+
+\begin{longtable}{p{0.48\linewidth}p{0.24\linewidth}p{0.24\linewidth}}
+\toprule
+\textbf{Actividad} & \textbf{Proporción} & \textbf{Horas} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Análisis & 10\% & 3.185 \\
+Diseño & 20\% & 6.370 \\
+Programación & 40\% & 12.740 \\
+Pruebas & 15\% & 4.778 \\
+Sobrecarga de gestión & 15\% & 4.778 \\
+\textbf{Total} & \textbf{100\%} & \textbf{31.850} \\
+\end{longtable}
+
+La EDT reparte esas 31.850 horas en sus quince ramas. La rama de desarrollo de software concentra el esfuerzo de construcción de los 127 casos de uso, con 12.116 horas, y las ramas restantes reúnen análisis, diseño, pruebas, sobrecarga y las actividades habilitantes y de operación, con 19.734 horas. De las 113 cuentas de control que no son software, 58 se estiman con tres valores (optimista, más probable y pesimista) y las demás con el esfuerzo derivado de su ventana; su valor esperado agregado es de 19.734 horas y su desviación estándar agregada, de 332 horas. La rama de software concentra 12.116 horas frente a las 12.740 de programación del método porque, al repartir el esfuerzo por paquete, parte del análisis, el diseño y las pruebas se contabiliza en las ramas habilitantes; esa nivelación no altera el total del proyecto. El detalle por paquete, por rama y por etapa está en el diccionario del Formulario T-14 y la curva de horas hombre, en el Formulario T-15.
+
+Tabla 7.3: Reparto del esfuerzo de software por etapa. Fuente: Elaboración propia.
+
+\begin{longtable}{p{0.68\linewidth}p{0.28\linewidth}}
+\toprule
+\textbf{Etapa} & \textbf{Horas} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Etapa 1 & 7.416 \\
+Etapa 2 & 4.042 \\
+Cartera de crédito, presente en las dos etapas & 658 \\
+\textbf{Total de software} & \textbf{12.116} \\
+\end{longtable}
+
+\subsection{Frentes de trabajo}
+
+Las cuentas de control y los paquetes de la EDT se agrupan en frentes de trabajo que avanzan en paralelo, comparten un responsable y se sincronizan en los hitos de aceptación. Los frentes agrupan las quince ramas de la EDT y se resumen en la Tabla 7.4.
+
+Tabla 7.4: Frentes de trabajo del proyecto. Fuente: Elaboración propia.
+
+\begin{longtable}{p{0.23\linewidth}p{0.10\linewidth}p{0.35\linewidth}p{0.21\linewidth}}
+\toprule
+\textbf{Frente} & \textbf{Ramas} & \textbf{Responsable principal} & \textbf{Ventana principal} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Dirección y gobierno & 1.1 & Jefe de Proyecto & Meses 1 a 56 \\
+Levantamiento, alcance y arquitectura & 1.2, 1.3 & Líder Funcional y Arquitecto de Solución & Meses 1 a 6 \\
+Plataforma e infraestructura híbrida & 1.4 & Arquitecto de Solución & Meses 1 a 12 \\
+Desarrollo de software & 1.5 & Líder de Desarrollo & Meses 1 a 18 \\
+Integraciones y datos & 1.6, 1.7 & Líder de Integración y Líder de Datos & Meses 2 a 21 \\
+Seguridad y cumplimiento & 1.8 & Encargado de Seguridad de la Información & Meses 1 a 18 \\
+Calidad y certificación & 1.9 & Líder de Calidad y Pruebas & Meses 2 a 21 \\
+Innovaciones & 1.10 & Arquitecto de Solución & Por definir con el Capítulo 13 \\
+Implantación, marchas blancas y cambio & 1.11, 1.12, 1.13 & Líder de Implantación y Gestión del Cambio & Meses 3 a 24 \\
+Documentación y reversibilidad & 1.14 & Jefe de Proyecto & Meses 1 a 56 \\
+Operación y soporte & 1.15 & Líder de Operación / SRE & Meses 21 a 56 \\
+\end{longtable}
+
+El frente de desarrollo de software es el de mayor volumen y organiza sus paquetes por servicio y por etapa. Los servicios de la Etapa 1 se construyen primero, entre los meses 1 y 12, y los de la Etapa 2 entre los meses 13 y 18. Dentro de cada servicio, los paquetes se construyen en iteraciones cortas de dos a cuatro semanas, con entrega continua a preproducción y separación entre el despliegue y la liberación, tal como describe el Capítulo 6. Los frentes habilitantes, esto es, integraciones, datos, seguridad y calidad, acompañan al desarrollo y no se ejecutan al final, porque la certificación de cada etapa depende de que sus entregables estén cerrados antes del paso a producción.
+
+\subsection{Paralelización y sincronización entre etapas}
+
+El cronograma obligatorio exige solapar las dos etapas, y este plan convierte ese requisito en una restricción de recursos. El desarrollo de la Etapa 2 comienza en el mes 13, cuando la Etapa 1 entra en marcha blanca, de modo que entre los meses 13 y 15 el equipo analiza y construye los servicios de la Etapa 2 mientras la Etapa 1 opera en condiciones reales. La marcha blanca es operación supervisada sin cambios en producción, así que puede convivir con el desarrollo y desarrollarse dentro de un congelamiento, siempre que su plan se coordine con el calendario de congelamientos. Ese es el caso de la marcha blanca de la Etapa 1, que se extiende de enero a marzo de 2028.
+
+El solapamiento se da en dos tramos. En el primero, meses 13 a 15, coinciden el cierre de la Etapa 1 —unas 1.007 h de marcha blanca y estabilización— y el desarrollo de la Etapa 2 —unas 2.628 h de construcción—; en el segundo, meses 19 y 20, coincide la Etapa 1 ya en producción con la marcha blanca de la Etapa 2 —unas 267 h—, con el paso a producción conjunto en el mes 21. El mes de mayor carga de la implementación es el mes 3, con 1.918 h, equivalentes a doce personas a jornada completa; el detalle mensual y por frente está en el Formulario T-15.
+
+La plataforma de integración y entrega continuas de la rama 1.4 y la separación entre despliegue y liberación permiten subir cambios de forma gradual durante el solapamiento. El plan de convivencia entre etapas del paquete 1.11.3 mantiene una única fuente de verdad, y la conciliación y el retorno ensayado de la rama 1.6 sostienen la continuidad entre la Etapa 1 y la Etapa 2. La sincronización entre frentes se apoya en los comités que describe el Capítulo 6 y en el informe mensual de avance, que es el período de reporte que exige la RT-19.06.
+
+
+
+\section{7.3 Cronograma e implantación}\label{cronograma-e-implantaciuxf3n}
+
+El apartado 7.3 traduce el plan del apartado 7.2 en un cronograma de 56 meses y en un plan de puesta en servicio. Primero fija el calendario y las anclas del contrato; después expone la ruta crítica y el tratamiento de las holguras con los métodos CPM y PERT; luego relaciona la carta Gantt con los hitos de aceptación; y al final desarrolla el plan de implantación y la marcha blanca de las dos etapas. La carta Gantt completa se entrega en el Formulario T-14 y el plan de implantación, en el Formulario T-18.
+
+\subsection{Calendario y anclas del contrato}
+
+El contrato comienza en enero de 2027 y termina en agosto de 2031. La Tabla 7.5 resume las anclas que el cronograma obligatorio fija y que este plan no puede mover.
+
+Tabla 7.5: Calendario y anclas del contrato. Fuente: Elaboración propia a partir del cronograma obligatorio y del apartado 3.2 del subdocumento 3.
+
+\begin{longtable}{p{0.12\linewidth}p{0.29\linewidth}p{0.53\linewidth}}
+\toprule
+\textbf{Mes} & \textbf{Calendario} & \textbf{Hito} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 & enero 2027 & Inicio del contrato y plan de reversibilidad en los primeros 90 días \\
+1 a 12 & enero a diciembre 2027 & Etapa 1, desarrollo con ambientes habilitados \\
+13 a 15 & enero a marzo 2028 & Etapa 1 en marcha blanca, en paralelo con el desarrollo de la Etapa 2 \\
+13 a 18 & enero a junio 2028 & Etapa 2, desarrollo \\
+16 & abril 2028 & Paso a producción de la Etapa 1 \\
+19 a 20 & julio y agosto 2028 & Marcha blanca de la Etapa 2, con la Etapa 1 en producción \\
+21 & septiembre 2028 & Paso a producción de la Etapa 2, aceptación final e inicio de la operación \\
+22 & octubre 2028 & Retiro objetivo de la plataforma de crédito de 2011 \\
+24 & diciembre 2028 & Cierre del plan de remediación de la autoridad, a más tardar \\
+21 a 56 & septiembre 2028 a agosto 2031 & Operación \\
+56 & agosto 2031 & Cierre del contrato \\
+\end{longtable}
+
+La marcha blanca de la Etapa 1 cae en el período de congelamiento de enero a marzo, y por eso se planifica como operación supervisada sin cambios en producción, coordinada con el calendario de congelamientos del paquete 1.1.5. El evento anual de comercio electrónico y el Día de la Madre de 2028 caen en el desarrollo de la Etapa 2, de modo que el ensayo de degradación del paquete 1.9.5 debe estar terminado antes.
+
+\subsection{Ruta crítica y holguras}
+
+La ruta crítica se obtiene con el método CPM. Sobre la red de dependencias del apartado 7.2 se hace el paso hacia adelante, que da la fecha más temprana de cada actividad, y el paso hacia atrás, que da la más tardía. La holgura total de una actividad es la diferencia entre ambas fechas; las actividades con holgura cero forman la ruta crítica y cualquier atraso en ellas retrasa el cierre del proyecto. Como las duraciones de las anclas son contractuales, la ruta crítica coincide con la cadena de esas anclas y no admite holgura. La Tabla 7.6 lista sus eslabones en orden.
+
+Tabla 7.6: Ruta crítica del proyecto. Fuente: Elaboración propia a partir del cronograma obligatorio.
+
+\begin{longtable}{p{0.11\linewidth}p{0.52\linewidth}p{0.17\linewidth}p{0.09\linewidth}}
+\toprule
+\textbf{Orden} & \textbf{Eslabón} & \textbf{Meses} & \textbf{Holgura} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 & Levantamiento y línea base de alcance & 1 a 4 & 0 \\
+2 & Arquitectura y diseño & 2 a 4 & 0 \\
+3 & Plataforma base y ambientes & 3 a 10 & 0 \\
+4 & Desarrollo de la Etapa 1 & 1 a 12 & 0 \\
+5 & Certificación de calidad de la Etapa 1 & 12 & 0 \\
+6 & Marcha blanca de la Etapa 1 y sus condiciones de cierre & 13 a 15 & 0 \\
+7 & Paso a producción de la Etapa 1 & 16 & 0 \\
+8 & Desarrollo de la Etapa 2, en paralelo con los pasos 6 y 7 & 13 a 18 & 0 \\
+9 & Certificación de calidad de la Etapa 2 & 18 & 0 \\
+10 & Marcha blanca de la Etapa 2 & 19 a 20 & 0 \\
+11 & Paso a producción de la Etapa 2, aceptación final e inicio de la operación & 21 & 0 \\
+\end{longtable}
+
+La ruta crítica se lee así. El levantamiento (paso 1) cierra la línea base de alcance en el mes 4 y, con la arquitectura (paso 2), habilita la plataforma base (paso 3), que entrega los ambientes en el mes 10. Esos ambientes habilitan el desarrollo de la Etapa 1 (paso 4) y su certificación (paso 5) en el mes 12. La certificación abre la marcha blanca de la Etapa 1 (paso 6) y su cierre en el mes 15, que habilita el paso a producción de la Etapa 1 (paso 7) en el mes 16. En paralelo, el desarrollo de la Etapa 2 (paso 8) arranca en el mes 13 y su certificación (paso 9) en el mes 18; su marcha blanca (paso 10) ocupa los meses 19 y 20 y su paso a producción (paso 11), con la aceptación final y el inicio de la operación, ocurre en el mes 21. La rama de la Etapa 2 no tiene holgura porque su paso a producción está anclado al mes 21, y por eso se dibuja como un segundo tramo crítico que corre en paralelo con los pasos 6 y 7.
+
+Las duraciones de los paquetes que la estimación de puntos de caso de uso no cubre se obtienen con tres valores y con la técnica PERT. Para cada uno se toma el valor optimista (O), el más probable (P) y el pesimista (Pe); la duración esperada es $E = (O + 4P + Pe) / 6$ y su dispersión es $\sigma = (Pe - O) / 6$. La varianza agregada de una rama es la suma de las varianzas de sus paquetes, y su desviación estándar es la raíz de esa suma; para las 113 cuentas no cubiertas por los puntos de caso de uso, la desviación estándar agregada es de 332 horas. Con esas duraciones se calcula la holgura de los paquetes que quedan fuera de la ruta crítica.
+
+La holgura total de un paquete es la diferencia entre su inicio tardío y su temprano. Los paquetes de las ramas habilitantes, como seguridad, calidad, migración y documentación, disponen de cierta libertad dentro de su ventana, pero ninguno puede retrasar la certificación de su etapa, porque esa certificación es un eslabón de la ruta crítica. Los paquetes con fecha contractual, como el retiro de la plataforma de 2011 en el mes 22 y el cierre de la remediación en el mes 24, tampoco admiten holgura.
+
+% Insertar la figura exportada: 04_Adjuntos/diagramas/diag-07-03_curva-hh.svg
+
+Figura 7.2: Curva de horas hombre de la implementación por etapa y del total, y de la Operación por separado.
+
+Fuente: Elaboración propia a partir del Formulario T-15.
+
+\subsection{Carta Gantt y relación con los hitos del Anexo E-25}
+
+La carta Gantt se entrega en el Formulario T-14 y su versión gráfica acompaña como adjunto. Cubre los 56 meses, dibuja una barra por cuenta de control y marca los hitos de aceptación. Su forma es coherente con las anclas de la Tabla 7.5 y con el orden de precedencia del apartado 7.2, y su detalle por paquete usa las horas esperadas del Formulario T-14.
+
+% Insertar la figura exportada: 04_Adjuntos/diagramas/diag-07-02_carta-gantt.svg
+
+Figura 7.3: Carta Gantt de los 56 meses, con las barras por cuenta de control, las bandas de cada etapa y los hitos de aceptación.
+
+Fuente: Elaboración propia.
+
+El Anexo E-25 fija los hitos de pago y su aceptación, que está condicionada a la recepción conforme de cada entrega. La Tabla 7.7 relaciona cada hito del Anexo E-25 con su mes y la evidencia que habilita su aceptación.
+
+Tabla 7.7: Hitos del Anexo E-25 y evidencia de aceptación. Fuente: Elaboración propia a partir del Formulario E-25.
+
+\begin{longtable}{p{0.41\linewidth}p{0.09\linewidth}p{0.40\linewidth}}
+\toprule
+\textbf{Hito} & \textbf{Mes} & \textbf{Evidencia de aceptación} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+H1 · Levantamiento, línea base de alcance y matriz de trazabilidad & 2 & Acta de cierre del levantamiento y línea base aprobada \\
+H2 · Arquitectura, plan de seguridad y modelo de datos & 4 & Documento de arquitectura y catálogo de decisiones aprobado \\
+H3 · Infraestructura híbrida y ambientes con observabilidad & 6 & Ambientes operativos con observabilidad y plan de seguridad \\
+H4 · Software de la Etapa 1 para pruebas, QA superado & 10 & Software de la Etapa 1 con cobertura de pruebas \\
+H5 · Certificación de la Etapa 1 & 12 & Certificación de calidad de la Etapa 1 \\
+H6 · Inicio de la marcha blanca de la Etapa 1 & 13 & Inicio de la marcha blanca con reversión activa y usuarios capacitados \\
+H8 · Línea base de alcance y diseño de la Etapa 2 & 14 & Línea base de alcance de la Etapa 2 aprobada \\
+H7 · Paso a producción de la Etapa 1 y cierre de la marcha blanca & 16 & Acta de aceptación de la Etapa 1 \\
+H9 · Software de la Etapa 2 para pruebas, QA superado & 17 & Software de la Etapa 2 con cobertura de pruebas \\
+H10 · Certificación de la Etapa 2 y cierre del desarrollo & 18 & Certificación de calidad de la Etapa 2 \\
+H11 · Inicio de la marcha blanca de la Etapa 2 & 19 & Inicio de la marcha blanca de la Etapa 2 con la Etapa 1 en producción \\
+H12 · Paso a producción de la Etapa 2, aceptación final e inicio de la Operación & 21 & Acta de aceptación final y garantía de correcto funcionamiento \\
+\end{longtable}
+
+Después del H12, la Operación se paga con un hito mensual durante los 36 meses de operación, entre los meses 21 y 56. La ponderación de cada hito se declara en el anexo de ponderaciones y no se fija en este apartado.
+
+Cada una de esas evidencias se entrega al CLIENTE para su aceptación y activa el pago del tramo correspondiente.
+
+\subsection{Plan de implantación}
+
+El plan de implantación se entrega en el Formulario T-18 y ordena la puesta en servicio en oleadas, sin cortes bruscos y con retorno probado. La estrategia de despliegue comienza con el piloto del punto de venta en tres tiendas, en los meses 6 y 7, continúa con la sustitución del punto de venta de 2014 tienda por tienda y termina con los dos pasos a producción, en los meses 16 y 21. El despliegue se separa de la liberación mediante banderas de función y despliegue gradual, de modo que un cambio puede quedar instalado sin estar visible para el usuario hasta que la liberación lo habilita.
+
+Las pruebas que respaldan la implantación incluyen la certificación de calidad de cada etapa, las pruebas de desempeño y estrés a 1,5 veces el peak declarado, las pruebas de resiliencia y recuperación, y la prueba del corte de enlace provocado de 24 horas con retorno ensayado. Los criterios de éxito de la puesta en servicio son los resultados de negocio que el Anexo D enumera para el caso, y la puesta en servicio no se declara lograda hasta que esos resultados se verifican con evidencia.
+
+Cada paso a producción exige que el procedimiento de reversión haya sido probado antes. La reversión se apoya en la separación entre despliegue y liberación, en el respaldo de las bases de datos y en el plan de retorno del Formulario T-18. Una reversión que no se ha ensayado no cuenta como plan.
+
+\subsection{Marcha blanca y criterios de cierre}
+
+La marcha blanca es el período de operación supervisada que antecede al paso a producción de cada etapa. La Etapa 1 la cumple entre los meses 13 y 15, y la Etapa 2, entre los meses 19 y 20, con la Etapa 1 ya en producción. Cada marcha blanca tiene su propio plan en los paquetes 1.12.1 y 1.12.4, se mide contra la línea base del levantamiento y cierra con un informe de resultados.
+
+El cierre de cada marcha blanca exige el cumplimiento de sus indicadores y, además, la capacitación certificada de administradores y equipo técnico, que es condición de cierre y que acredita el registro del paquete 1.13.3. También exige que las integraciones e interfaces estén conciliadas y que exista evidencia de cierre. El paso a producción ocurre solo cuando la marcha blanca cierra conforme a sus indicadores y el acta de aceptación correspondiente está firmada.
+
+Las Tablas 7.5 a 7.7 y los paquetes de los apartados 7.1 y 7.2 comparten un mismo identificador, de modo que cualquier cambio de alcance se rastrea hasta la barra, el hito y la evidencia de aceptación que toca.
+
+
+
+\section*{Referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+
+
+\section*{Declaración de uso de IA}
+\addcontentsline{toc}{section}{Declaración de uso de IA}
+
+
+
+\ossFinalPage
+
+\end{document}
