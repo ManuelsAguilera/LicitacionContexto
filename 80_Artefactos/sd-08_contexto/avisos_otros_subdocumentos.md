@@ -45,3 +45,15 @@ Por decisión del usuario manda la meta del sd-02 (menos de 3 %, la única con c
 ## sd-02 · Anexo A.4 · referencias a subdocumentos aún sin redactar (pendiente, 2026-10-11)
 
 La columna «Sección» de la matriz A.4 se normalizó a las secciones que sí existen del sd-03 (3.3.2) y del sd-04 (4.1, 4.2, 4.3). Siguen citando secciones que dependen de cuando se redacte el sd-05 (secciones 5.5 a 5.11, hoy solo existen 5.1 a 5.4) y el sd-13 (Anexos A.1 a A.5). Hay que revisarlas al cerrar esos subdocumentos.
+
+## sd-06 · Alianzas y marcas (Fortinet, Dell, AWS) · pendiente del responsable, 2026-10-11
+
+**Qué dice el sd-06.** `sd-06/OSS-Subdocumento6.tex` (líneas ~2294, 2403, 2424) y `sd-06/OSS-Formulario-T-9.tex` (~1532-1533) nombran a Fortinet y a Dell Technologies como alianzas o proveedores.
+
+**Qué cambió.** Por EXT-M-09 el sd-01 ya no nombra a Fortinet ni a Dell, porque el fabricante de seguridad de redes y de infraestructura local aún no está decidido; solo declara la alianza con Microsoft Azure. En la matriz A.4 (RT-23.04) se quitó también AWS.
+
+**Qué revisar.** Dejar las marcas del sd-06 y del T-9 como «por definir» o «equivalente justificado» hasta que el sd-04 y el Formulario T-11 cierren la elección. Revisar el espejo `02_Propuesta/sd-01_presentacion-empresa/sd-01_s6_alianzas.md` y la nota 5 de `80_Artefactos/sd-01_contexto/notas_sd-01.md`.
+
+## sd-02 · Anexo A.4 · tecnologías por confirmar con la lista del equipo (2026-10-11)
+
+La columna «Componente» de A.4 adoptó el vocabulario del sd-04 (SIT-01, CD-01/02, DC-01/02, CLD-01/02; Java 25 y Spring Boot 4; Microsoft Entra ID en lugar de Keycloak; OpenTelemetry y Azure Monitor en lugar de Prometheus, Loki y Grafana; Terraform y entrega continua en lugar de Argo CD). Siguen en A.4 tecnologías que el sd-04 no menciona y que dependen de la lista de tecnologías que prepara una compañera del equipo: HSM, tokenización, Zero Trust (NIST SP 800-207), Elastic Cloud (RT-16.27), Semgrep, ZAP, Trivy, Syft y Cosign (RT-11.22 a RT-11.24). Hay que confirmarlas o retirarlas contra esa lista.

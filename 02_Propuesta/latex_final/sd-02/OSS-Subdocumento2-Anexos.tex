@@ -2089,7 +2089,7 @@ RF-102 & El sistema debe permitir al vendedor de marketplace declarar la existen
 \addlinespace[2pt]
 RF-103 & El sistema debe permitir al vendedor de marketplace actualizar la existencia previamente declarada. & Sí & Servicio de marketplace & Subdoc.3 §3.3.2 (Frente Retail); Anexo A.5.1 (SUP-15, SUP-16) \textbar{} Subdoc.4 §4.1 (Tabla 4.2), §4.2 \\
 \addlinespace[2pt]
-RNF-02 & La interfaz de declaración de existencia del vendedor de marketplace debe estar disponible de forma continua. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-02 & La interfaz de declaración de existencia del vendedor de marketplace debe estar disponible de forma continua. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RF-104 & El sistema deberá registrar cada actualización de existencia declarada con su fecha y hora. & Sí & Servicio de marketplace & Subdoc.3 §3.3.2 (Frente Retail); Anexo A.5.1 (SUP-15, SUP-16) \textbar{} Subdoc.4 §4.1 (Tabla 4.2), §4.2 \\
 \addlinespace[2pt]
@@ -2353,13 +2353,13 @@ RNF-09 & La migración de la cartera de crédito viva no debe interrumpir el ser
 \addlinespace[2pt]
 RNF-10 & La migración de la cartera de crédito viva no debe producir divergencia de saldos. & Sí & Servicio de cartera de crédito (olas de coexistencia, circuit breaker) & Subdoc.3 §3.3.2 (Frente Filial emisora); Anexo A.5.1 (SUP-25) \textbar{} Subdoc.4 §4.1 (Tabla 4.2) \\
 \addlinespace[2pt]
-RNF-11 & La separación lógica entre los datos del retail y los del negocio financiero debe estar implementada. & Sí & Límites de Contexto (DDD) + separación física Z3 (ADR-11, ADR-12) & Subdoc.4 §4.1, §4.2 \\
+RNF-11 & La separación lógica entre los datos del retail y los del negocio financiero debe estar implementada. & Sí & Límites de contexto (DDD) y ámbitos Retail y Emisor con datos, identidades, redes y claves propios en CLD-01 (ADR-02 y ADR-05) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RNF-12 & La separación lógica entre ambos ámbitos debe estar documentada. & Sí & Límites de Contexto (DDD) + separación física Z3 (ADR-11, ADR-12) & Subdoc.4 §4.1, §4.2 \\
+RNF-12 & La separación lógica entre ambos ámbitos debe estar documentada. & Sí & Límites de contexto (DDD) y ámbitos Retail y Emisor con datos, identidades, redes y claves propios en CLD-01 (ADR-02 y ADR-05) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RNF-13 & La separación lógica entre ambos ámbitos debe ser verificada por auditoría independiente. & Sí & Límites de Contexto (DDD) + separación física Z3 (ADR-11, ADR-12) & Subdoc.4 §4.1, §4.2 \\
+RNF-13 & La separación lógica entre ambos ámbitos debe ser verificada por auditoría independiente. & Sí & Límites de contexto (DDD) y ámbitos Retail y Emisor con datos, identidades, redes y claves propios en CLD-01 (ADR-02 y ADR-05) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RNF-14 & La separación física entre la infraestructura del retail y la de la filial emisora debe estar implementada y acreditada. & Sí & Límites de Contexto (DDD) + separación física Z3 (ADR-11, ADR-12) & Subdoc.4 §4.1, §4.2 \\
+RNF-14 & La separación física entre la infraestructura del retail y la de la filial emisora debe estar implementada y acreditada. & Sí & Límites de contexto (DDD) y ámbitos Retail y Emisor con datos, identidades, redes y claves propios en CLD-01 (ADR-02 y ADR-05) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RNF-15 & Toda acción relevante ejecutada en el sistema debe quedar registrada indicando usuario individual, acción e instante. & Sí & Servicio de control de cruces (X-01) / Base tecnológica (identidad y gestión de accesos) — registro inalterable de acciones & Subdoc.3 §3.3.2 (Frente Frontera, plataforma común) \textbar{} Subdoc.4 §4.1 (Tabla 4.2) \\
 \addlinespace[2pt]
@@ -2375,37 +2375,37 @@ RNF-20 & El registro de una devolución en el mesón debe completarse dentro del
 \addlinespace[2pt]
 RNF-21 & La consulta de disponibilidad desde una terminal compartida del piso de venta debe responder dentro del umbral definido. & Sí & Arquitectura orientada a eventos con presupuesto de latencia por componente (Servicio de existencias, Servicio de oferta comercial, punto de venta, Servicio de pedidos, canal digital) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RNF-22 & La plataforma debe soportar la concurrencia y el volumen del peak digital del evento anual sin degradar los umbrales de NFR-06.x. & Sí & Escalamiento elástico Z1 (Servicio de existencias, Servicio de pedidos, canal digital) y capacidad fija Z2/Z3 & Subdoc.4 §4.2, §4.3 \\
+RNF-22 & La plataforma debe soportar la concurrencia y el volumen del peak digital del evento anual sin degradar los umbrales de NFR-06.x. & Sí & Escalamiento elástico en CLD-01 (Servicio de existencias, Servicio de pedidos, canal digital) y capacidad fija en SIT-01 y DC-01 & Subdoc.4 §4.2, §4.3 \\
 \addlinespace[2pt]
-RNF-23 & La plataforma debe soportar la concurrencia y el volumen del peak presencial de la campaña de noviembre y diciembre sin degradar los umbrales de NFR-06.x. & Sí & Escalamiento elástico Z1 (Servicio de existencias, Servicio de pedidos, canal digital) y capacidad fija Z2/Z3 & Subdoc.4 §4.2, §4.3 \\
+RNF-23 & La plataforma debe soportar la concurrencia y el volumen del peak presencial de la campaña de noviembre y diciembre sin degradar los umbrales de NFR-06.x. & Sí & Escalamiento elástico en CLD-01 (Servicio de existencias, Servicio de pedidos, canal digital) y capacidad fija en SIT-01 y DC-01 & Subdoc.4 §4.2, §4.3 \\
 \addlinespace[2pt]
-RNF-24 & Una tienda debe poder operar sin enlace externo durante el período mínimo definido. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-24 & Una tienda debe poder operar sin enlace externo durante el período mínimo definido. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-25 & El centro de distribución principal debe poder operar sin enlace externo durante el período mínimo definido. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-25 & El centro de distribución principal debe poder operar sin enlace externo durante el período mínimo definido. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-26 & La sincronización tras la reconexión no debe superar el plazo definido. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-26 & La sincronización tras la reconexión no debe superar el plazo definido. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-27 & La sincronización tras la reconexión no debe producir pérdida de ventas ni de documentos. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-27 & La sincronización tras la reconexión no debe producir pérdida de ventas ni de documentos. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-28 & La operación desconectada autónoma on-premise debe sostenerse durante el período mínimo exigido por las bases técnicas. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-28 & La operación desconectada autónoma on-premise debe sostenerse durante el período mínimo exigido por las bases técnicas. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-29 & La operación de tiendas y centros de distribución debe estar disponible en la ventana horaria definida. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-29 & La operación de tiendas y centros de distribución debe estar disponible en la ventana horaria definida. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-30 & El canal digital debe estar disponible de forma continua. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-30 & El canal digital debe estar disponible de forma continua. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-31 & Los servicios financieros que afectan pagos, estados de cuenta y bloqueo de tarjetas deben estar disponibles de forma continua. & Sí & Nodo de tienda on-premise (Z2) + Nube Multi-AZ (Z1) + Site Principal/Secundario (Z3) & Subdoc.4 §4.2 \\
+RNF-31 & Los servicios financieros que afectan pagos, estados de cuenta y bloqueo de tarjetas deben estar disponibles de forma continua. & Sí & Nodo local de tienda (SIT-01) + Azure Chile Central en tres zonas de disponibilidad (CLD-01) con recuperación en Azure Brazil South (CLD-02) + centro de datos de casa matriz (DC-01) con sala de respaldo (DC-02) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-32 & La solución debe cumplir los objetivos de recuperación ante desastre exigidos. & Sí & Site Principal / Site Secundario (RTO≤4h, RPO≤15min) — Servicio de cartera de crédito: restauración desde archivo frío & Subdoc.4 §4.2 \\
+RNF-32 & La solución debe cumplir los objetivos de recuperación ante desastre exigidos. & Sí & CLD-01 con recuperación en CLD-02 (RTO≤4h, RPO≤15min) — Servicio de cartera de crédito: restauración desde archivo frío & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RNF-33 & Los datos de identificación de clientes, la cartera de crédito, el comportamiento de pago y los antecedentes de evaluación crediticia deben cifrarse a nivel de campo. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-33 & Los datos de identificación de clientes, la cartera de crédito, el comportamiento de pago y los antecedentes de evaluación crediticia deben cifrarse a nivel de campo. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RNF-34 & Los datos de medios de pago no deben almacenarse en claro, sino tokenizarse. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-34 & Los datos de medios de pago no deben almacenarse en claro, sino tokenizarse. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RNF-35 & La red de cajas, la administrativa, la de videovigilancia y la inalámbrica de clientes deben estar segmentadas en las 22 tiendas. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-35 & La red de cajas, la administrativa, la de videovigilancia y la inalámbrica de clientes deben estar segmentadas en las 22 tiendas. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RNF-36 & La red y el ámbito de sistemas de la filial emisora deben estar separados de forma acreditada respecto del retail. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-36 & La red y el ámbito de sistemas de la filial emisora deben estar separados de forma acreditada respecto del retail. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RNF-37 & Debe existir segregación de funciones verificable entre originación, aprobación, modificacion de condiciones y cobranza. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-37 & Debe existir segregación de funciones verificable entre originación, aprobación, modificacion de condiciones y cobranza. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RNF-38 & Debe registrarse todo acceso a la cartera de crédito, al comportamiento de pago y a los antecedentes de evaluación crediticia. & Sí & Servicio de control de cruces (X-01) / Base tecnológica (identidad y gestión de accesos) — registro inalterable de acciones & Subdoc.3 §3.3.2 (Frente Frontera, plataforma común) \textbar{} Subdoc.4 §4.1 (Tabla 4.2) \\
 \addlinespace[2pt]
@@ -2449,7 +2449,7 @@ RNF-57 & La evidencia completa de consentimiento de una operación arbitraria de
 \addlinespace[2pt]
 RNF-58 & La recuperación del precio publicado de una referencia en una fecha, hora y canal arbitrarios debe completarse dentro del plazo objetivo. & Sí & Arquitectura orientada a eventos con presupuesto de latencia por componente (Servicio de existencias, Servicio de oferta comercial, punto de venta, Servicio de pedidos, canal digital) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RNF-59 & La revocación total de accesos de un trabajador debe completarse dentro del plazo máximo de la política interna. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) e base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
+RNF-59 & La revocación total de accesos de un trabajador debe completarse dentro del plazo máximo de la política interna. & Sí & Arquitectura Zero Trust (NIST SP 800-207): Servicio de control de cruces (X-01) y base tecnológica (identidad y gestión de accesos), cifrado de campo, tokenización, HSM & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RNF-60 & El traspaso de sesión nominativa en una terminal compartida debe completarse dentro del plazo objetivo. & Sí & Base tecnológica (identidad y gestión de accesos) — traspaso rápido de sesión (hot-swapping) & Subdoc.3 §3.3.2 (plataforma común); Anexo A.5.1 (SUP-24) \\
 \addlinespace[2pt]
@@ -2467,7 +2467,7 @@ RNF-66 & La latencia entre la recepción física de una devolución en tienda y 
 \addlinespace[2pt]
 RNF-67 & No debe permanecer mercadería de marketplace en bodega sin aviso a su propietario. & Sí & Canal digital (notificaciones transaccionales) / Servicio de marketplace & Subdoc.3 §3.3.2 (Frente Retail) \textbar{} Subdoc.4 §4.1 (Tabla 4.2) \\
 \addlinespace[2pt]
-RNF-68 & La restauración desde archivo frío de una operación de crédito de la cohorte más antigua debe completarse dentro del plazo objetivo. & Sí & Site Principal / Site Secundario (RTO≤4h, RPO≤15min) — Servicio de cartera de crédito: restauración desde archivo frío & Subdoc.4 §4.2 \\
+RNF-68 & La restauración desde archivo frío de una operación de crédito de la cohorte más antigua debe completarse dentro del plazo objetivo. & Sí & CLD-01 con recuperación en CLD-02 (RTO≤4h, RPO≤15min) — Servicio de cartera de crédito: restauración desde archivo frío & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RNF-69 & La atención de garantía legal en mesón no debe derivar al consumidor a un tercero como condición de atención, en ninguna tienda. & Sí & Servicio de evidencia financiera (WORM) / Servicio de posventa (garantía legal) / Servicio de control de cruces (X-01) & Subdoc.4 §4.1 (Tabla 4.2) \\
 \addlinespace[2pt]
@@ -2487,13 +2487,13 @@ RNF-76 & La compañía debe mantener el registro de actividades de tratamiento d
 \addlinespace[2pt]
 RT-02.01 & La solución se organizará en las ocho capas del numeral 2.1. El PROPONENTE presentará el diagrama de la arquitectura lógica identificando cada capa, sus componentes y las interfaces entre ellas. & Sí & Estructura por Capas (8 capas), con módulos Ancoa y emplazamiento híbrido asignado a cada una & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-02.02 & La arquitectura será modular, con límites de contexto explícitos y acoplamiento débil. Se rechazará toda arquitectura monolítica que no permita desplegar de forma independiente sus componentes críticos. & Sí & Arquitectura Modular de Microservicios Sin Estado agrupada en Límites de Contexto (Domain-Driven Design), ADR-01 & Subdoc.4 §4.1 \textbar{} Subdoc.3 §3.3.2 \\
+RT-02.02 & La arquitectura será modular, con límites de contexto explícitos y acoplamiento débil. Se rechazará toda arquitectura monolítica que no permita desplegar de forma independiente sus componentes críticos. & Sí & Arquitectura Modular de Microservicios Sin Estado agrupada en Límites de Contexto (Domain-Driven Design), ADR-05 & Subdoc.4 §4.1 \textbar{} Subdoc.3 §3.3.2 \\
 \addlinespace[2pt]
 RT-02.03 & La descripción de la arquitectura se ajustará a ISO/IEC/IEEE 42010, con vistas lógica, de procesos, de despliegue, de datos y de seguridad. & Sí & Cinco vistas de arquitectura conforme a ISO/IEC/IEEE 42010 (lógica, procesos, despliegue, datos, seguridad) & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-02.04 & El PROPONENTE mantendrá un registro de decisiones de arquitectura (ADR) fechado, con la alternativa escogida, las alternativas descartadas y el criterio de decisión. El registro es entregable contractual y se actualizará durante toda la ejecución. & Sí & Registro de Decisiones de Arquitectura (ADR-01 a ADR-12), fechado, con alternativa descartada y criterio & Subdoc.4 §4.1 \\
+RT-02.04 & El PROPONENTE mantendrá un registro de decisiones de arquitectura (ADR) fechado, con la alternativa escogida, las alternativas descartadas y el criterio de decisión. El registro es entregable contractual y se actualizará durante toda la ejecución. & Sí & Registro de Decisiones de Arquitectura (ADR-01 a ADR-07, Tabla 4.5 del Subdocumento 4), fechado, con alternativa descartada y criterio & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
-RT-02.05 & La capa de servicios de negocio será sin estado. El estado de sesión y el estado de proceso residirán en almacenes externos con alta disponibilidad. & Sí & Servicios de negocio sin estado (Go/Java); estado de sesión externalizado en Azure Cache for Redis & Subdoc.4 §4.1, §4.2 \\
+RT-02.05 & La capa de servicios de negocio será sin estado. El estado de sesión y el estado de proceso residirán en almacenes externos con alta disponibilidad. & Sí & Servicios de negocio sin estado (Java 25 y Spring Boot 4); estado de sesión externalizado en Azure Cache for Redis & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-02.06 & Toda operación de escritura expuesta a reintentos será idempotente, con clave de idempotencia declarada por el cliente y ventana de deduplicación documentada. & Sí & Clave de idempotencia provista por el cliente en el API Gateway; registro de resultado de la primera ejecución & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
@@ -2505,7 +2505,7 @@ RT-02.09 & La solución degradará de forma elegante: ante la indisponibilidad d
 \addlinespace[2pt]
 RT-02.10 & Las capas de aplicación e integración escalarán horizontalmente de forma automática, con umbrales, límites superiores y costo asociado declarados en la oferta. & Sí & Escalamiento automático en AKS con umbral de expansión/contracción y límite superior por servicio & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-02.11 & El PROPONENTE declarará explícitamente los puntos únicos de falla que subsistan en su arquitectura y justificará por qué son aceptables. Omitir esta declaración cuando existan puntos únicos de falla se evaluará como observación grave. & Sí & Declaración de seis puntos únicos de falla (ERP, enlace Coyhaique, Site Principal, firma electrónica, enlace de 14 tiendas, Servicio de control de cruces (X-01)) con justificación y mitigación & Subdoc.4 §4.1, §4.2 \\
+RT-02.11 & El PROPONENTE declarará explícitamente los puntos únicos de falla que subsistan en su arquitectura y justificará por qué son aceptables. Omitir esta declaración cuando existan puntos únicos de falla se evaluará como observación grave. & Sí & Declaración de seis puntos únicos de falla (ERP, enlace Coyhaique, DC-01, firma electrónica, enlace de 14 tiendas, Servicio de control de cruces (X-01)) con justificación y mitigación & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-02.12 & La solución admitirá su replicación a nuevas unidades, sitios, sucursales o filiales del CLIENTE sin rediseño arquitectónico, mediante parametrización o multi-tenencia. & Sí & Nodo de tienda como unidad empaquetada y estandarizada, replicable por aprovisionamiento desde imagen & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
@@ -2515,13 +2515,13 @@ RT-02.14 & Se valorará la aplicación documentada de patrones de arquitectura e
 \addlinespace[2pt]
 RT-03.01 & El PROPONENTE declarará el proveedor de nube pública, la región primaria y la región secundaria utilizadas. El proveedor deberá contar con presencia de región o zona en Chile o en Sudamérica. & No & - & - \\
 \addlinespace[2pt]
-RT-03.02 & Todos los componentes con requisito de alta disponibilidad se desplegarán en al menos dos zonas de disponibilidad. No se aceptará un diseño en una sola zona. & Sí & Despliegue Multi-AZ en Z1 (nube pública) para borde, servicios de negocio retail, bus de eventos y bases de datos & Subdoc.4 §4.1, §4.2 \\
+RT-03.02 & Todos los componentes con requisito de alta disponibilidad se desplegarán en al menos dos zonas de disponibilidad. No se aceptará un diseño en una sola zona. & Sí & Despliegue en tres zonas de disponibilidad en CLD-01 (nube pública) para borde, servicios de negocio retail, bus de eventos y bases de datos & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
 RT-03.03 & La totalidad de la infraestructura se definirá como código, versionada en el repositorio del CLIENTE, revisable y reproducible. No se admite infraestructura creada manualmente por consola, salvo la cuenta raíz inicial, cuya creación deberá documentarse. & Sí & Infraestructura como código con OpenTofu (las tres zonas) y Ansible (nodo de tienda) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-03.04 & La red se segmentará por capas, con subredes privadas para aplicación y datos, y exposición pública restringida a la capa de borde. Ningún componente de datos será alcanzable desde Internet. & Sí & Segmentación de red por zonas (Z1/Z2/Z3), superficie nula declarada para Z2 y Z3; solo la capa de borde publica hacia Internet & Subdoc.4 §4.1, §4.2 \\
+RT-03.04 & La red se segmentará por capas, con subredes privadas para aplicación y datos, y exposición pública restringida a la capa de borde. Ningún componente de datos será alcanzable desde Internet. & Sí & Segmentación de red en concentrador y radios (Retail, Emisor y plataforma compartida), sin publicación de SIT-01 ni de DC-01 hacia Internet; solo la capa de borde (Front Door con firewall de aplicaciones) publica hacia Internet & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-03.05 & El PROPONENTE privilegiará servicios administrados por sobre servicios autoadministrados cuando ello reduzca el riesgo operacional, y justificará cada excepción. & Sí & Criterio de selección N°2: ``servicio gestionado por sobre autoadministrado'', con excepciones justificadas (Z3) & Subdoc.4 §4.2 \\
+RT-03.05 & El PROPONENTE privilegiará servicios administrados por sobre servicios autoadministrados cuando ello reduzca el riesgo operacional, y justificará cada excepción. & Sí & Criterio de selección N°2: ``servicio gestionado por sobre autoadministrado'', con excepciones justificadas (centro de datos DC-01) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-03.06 & Se aplicarán prácticas FinOps: etiquetado obligatorio de todos los recursos por ambiente, módulo y centro de costo; presupuestos con alertas de desviación; y reporte mensual de consumo desglosado entregado al CLIENTE. & No & - & - \\
 \addlinespace[2pt]
@@ -2553,7 +2553,7 @@ RT-03.19 & Se valorará el procesamiento en el borde de las cargas que lo admita
 \addlinespace[2pt]
 RT-03.20 & El PROPONENTE dimensionará el ancho de banda requerido por sitio, en régimen normal y en peak, y lo justificará con el cálculo de volumen de transacciones y de datos. & Sí & Dimensionamiento de ancho de banda por enlace, derivado de la volumetría de sistema & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-03.21 & La conexión entre la red del CLIENTE y la nube se establecerá mediante enlace privado dedicado o red privada virtual con cifrado, según lo que el volumen y la criticidad justifiquen. & Sí & VPN IPsec para tiendas; enlace privado dedicado (Azure ExpressRoute) para Site Principal & Subdoc.4 §4.2 \\
+RT-03.21 & La conexión entre la red del CLIENTE y la nube se establecerá mediante enlace privado dedicado o red privada virtual con cifrado, según lo que el volumen y la criticidad justifiquen. & Sí & VPN IPsec para tiendas; enlace privado dedicado (Azure ExpressRoute) para DC-01 & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-03.22 & El acceso remoto de las personas trabajadoras del CLIENTE, incluido el trabajo desde el hogar, se resolverá con acceso a la red de confianza cero, con verificación de postura del dispositivo. No se admite exponer servicios internos directamente a Internet. & Sí & Acceso a red de confianza cero (ZTNA) con verificación de postura del dispositivo & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
@@ -2571,9 +2571,9 @@ RT-04.04 & Existirá trazabilidad completa entre requerimiento, incidencia, camb
 \addlinespace[2pt]
 RT-04.05 & El flujo de integración continua ejecutará, como mínimo: compilación, pruebas unitarias, análisis estático de código, análisis de composición de software, escaneo de secretos y escaneo de imágenes de contenedor, con criterios de bloqueo automático del despliegue. & Sí & Cadena DevSecOps (Semgrep, ZAP, Trivy, OWASP Dependency-Check, Syft, Cosign) con bloqueo automático & Subdoc.4 §4.1, §4.2 \\
 \addlinespace[2pt]
-RT-04.06 & Los despliegues serán automatizados y reproducibles, con reversión automatizada y sin intervención manual en el paso a producción. & Sí & Despliegue automatizado (Argo CD, GitOps) para Z1/Z2; punto de aprobación manual adicional solo en Z3 (dominio financiero) & Subdoc.4 §4.2 \\
+RT-04.06 & Los despliegues serán automatizados y reproducibles, con reversión automatizada y sin intervención manual en el paso a producción. & Sí & Despliegue automatizado con Terraform y canal de entrega continua hacia CLD-01 y SIT-01; producción con aprobación explícita y despliegue por separado para Retail y para el Emisor & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-04.07 & La estrategia de despliegue permitirá liberar sin interrupción del servicio: azul-verde, canario o despliegue progresivo. Se declarará cuál se emplea y se demostrará en Preproducción antes de cada paso a producción. & Sí & Despliegue azul-verde para Z1/Z2; actualización progresiva de instancias para Z3 & Subdoc.4 §4.2 \\
+RT-04.07 & La estrategia de despliegue permitirá liberar sin interrupción del servicio: azul-verde, canario o despliegue progresivo. Se declarará cuál se emplea y se demostrará en Preproducción antes de cada paso a producción. & Sí & Despliegue azul-verde en CLD-01 y SIT-01; actualización progresiva de instancias en el ámbito Emisor & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-04.08 & Toda configuración estará externalizada del artefacto y gestionada por ambiente. Un mismo artefacto deberá poder promoverse de QA a Preproducción y a Producción sin recompilación. & Sí & Gestor de configuración centralizado por ambiente, separado del artefacto de aplicación & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2587,7 +2587,7 @@ RT-04.12 & El PROPONENTE declarará su frecuencia de despliegue objetivo, su tie
 \addlinespace[2pt]
 RT-04.13 & Los ambientes no productivos se apagarán o reducirán fuera del horario de uso, con el ahorro reflejado en la estructura de costos. & Sí & Desarrollo y QA reducidos fuera de la ventana 08:00–20:00; Preproducción activa solo en ventanas de prueba & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-04.14 & Se valorará la existencia de ambientes efímeros por rama o por incidencia, creados y destruidos automáticamente. & Sí & Ambientes efímeros por rama para los servicios sin estado de Z1, creados/destruidos por la canalización de CI & Subdoc.4 §4.2 \\
+RT-04.14 & Se valorará la existencia de ambientes efímeros por rama o por incidencia, creados y destruidos automáticamente. & Sí & Ambientes efímeros por rama para los servicios sin estado de CLD-01, creados/destruidos por la canalización de CI & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-05.01 & El PROPONENTE entregará el modelo de datos documentado y un diccionario de datos con el nombre, el tipo, el dominio de valores, la obligatoriedad, el propietario y la sensibilidad de cada atributo. & Sí & Modelo de datos por dominio (entidades, dueño, módulo, naturaleza del dato) con ejemplo de atributos versionados del Precio Vigente & Subdocumento 5, secciones 5.1 (Tablas 5.1-5.3) y 5.5 \\
 \addlinespace[2pt]
@@ -2723,11 +2723,11 @@ RT-07.02 & El sitio secundario estará emplazado a una distancia suficiente del 
 \addlinespace[2pt]
 RT-07.03 & La replicación de datos será continua, con medición y alertamiento del retraso de replicación. & Sí & Replicación continua y asíncrona (Patroni streaming replication) con medición y alertamiento de rezago & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-07.04 & El objetivo de tiempo de recuperación (RTO) no superará 4 horas y el objetivo de punto de recuperación (RPO) no superará 15 minutos para los servicios críticos, salvo exigencia superior del caso. & Sí & RTO ≤ 4 h y RPO ≤ 15 min comprometidos por componente, con segundo HSM en Site Secundario & Subdoc.4 §4.2 \\
+RT-07.04 & El objetivo de tiempo de recuperación (RTO) no superará 4 horas y el objetivo de punto de recuperación (RPO) no superará 15 minutos para los servicios críticos, salvo exigencia superior del caso. & Sí & RTO ≤ 4 h y RPO ≤ 15 min comprometidos por componente, con segundo HSM en CLD-02 & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-07.05 & El procedimiento de conmutación estará documentado, automatizado en la mayor medida posible y ejecutable por el personal del CLIENTE tras la transferencia de conocimiento. & Sí & Procedimiento de conmutación en 8 pasos, con automatización de los pasos técnicos & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
-RT-07.06 & Existirá un procedimiento de retorno al sitio principal igualmente documentado y probado, con reconciliación de los datos generados durante la contingencia. & Sí & Procedimiento de retorno al Site Principal con reconciliación por drenaje idempotente & Subdoc.4 §4.2 \\
+RT-07.06 & Existirá un procedimiento de retorno al sitio principal igualmente documentado y probado, con reconciliación de los datos generados durante la contingencia. & Sí & Procedimiento de retorno a CLD-01 con reconciliación por drenaje idempotente & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-07.07 & El plan de recuperación ante desastres se probará al menos dos veces al año mediante conmutación real, con informe de resultados, medición del RTO y del RPO efectivamente alcanzados y plan de corrección de las brechas detectadas. & Sí & Conmutación real dos veces al año, con medición de RTO/RPO efectivos e informe de brechas & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
@@ -2879,7 +2879,7 @@ RT-11.28 & Se aplicará el marco OWASP SAMM o equivalente para medir y mejorar l
 \addlinespace[2pt]
  &  &  &  &  \\
 \addlinespace[2pt]
-RT-12.01 & La gestión de identidad será centralizada, con federación mediante OpenID Connect y OAuth 2.1, o SAML 2.0 cuando la integración con el CLIENTE lo requiera, e integración con el directorio corporativo del CLIENTE por LDAP o su equivalente en la nube. & Sí & Identidad y gestión de accesos (base tecnológica) implementada con Keycloak, dos instancias sin confianza transitiva (Z1 y Z3), con protocolo OIDC y OAuth 2.0 & Subdoc.4 §4.1 \\
+RT-12.01 & La gestión de identidad será centralizada, con federación mediante OpenID Connect y OAuth 2.1, o SAML 2.0 cuando la integración con el CLIENTE lo requiera, e integración con el directorio corporativo del CLIENTE por LDAP o su equivalente en la nube. & Sí & Identidad y gestión de accesos (base tecnológica) implementada con Microsoft Entra ID federado con el directorio del Cliente, con identidades separadas por ámbito (Retail y Emisor) sin confianza transitiva, con protocolo OIDC y OAuth 2.0 & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RT-12.02 & Existirá inicio de sesión único para todos los módulos de la solución, con cierre de sesión propagado a todos ellos. & No & - & - \\
 \addlinespace[2pt]
@@ -2893,7 +2893,7 @@ RT-12.06 & Los accesos privilegiados se gestionarán con elevación temporal a d
 \addlinespace[2pt]
 RT-12.07 & La política de sesión declarará duración máxima, caducidad por inactividad, renovación de la credencial de sesión tras la autenticación, revocación inmediata y control de sesiones concurrentes. & No & - & - \\
 \addlinespace[2pt]
-RT-12.08 & Las credenciales de sesión serán firmadas y de vida breve, con credencial de refresco rotatoria. Queda prohibido transportar identificadores de sesión en la ruta de la dirección web. & Sí & IAM Keycloak con OIDC y OAuth 2.0 ``con credenciales de vida corta'' & Subdoc.4 §4.1 \\
+RT-12.08 & Las credenciales de sesión serán firmadas y de vida breve, con credencial de refresco rotatoria. Queda prohibido transportar identificadores de sesión en la ruta de la dirección web. & Sí & IAM Microsoft Entra ID con OIDC y OAuth 2.0 ``con credenciales de vida corta'' & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RT-12.09 & Se registrará auditoría completa del ciclo de vida de la identidad: creación, modificación, elevación, bloqueo y baja de cuentas, con no repudio y retención declarada. & No & - & - \\
 \addlinespace[2pt]
@@ -2929,7 +2929,7 @@ RT-13.11 & La solución será navegable íntegramente por teclado, con orden de 
 \addlinespace[2pt]
 RT-13.12 & Se valorará el soporte de modo oscuro, de personalización de la interfaz por persona usuaria y de múltiples idiomas cuando el caso lo justifique. & No & - & - \\
 \addlinespace[2pt]
-RT-14.01 & La observabilidad será unificada para nube y on-premise, con métricas, registros y trazas distribuidas correlacionadas por un identificador único de transacción, instrumentadas conforme a OpenTelemetry. & Sí & Observabilidad y degradación controlada (base tecnológica) instrumentada con OpenTelemetry, Prometheus, Loki y Grafana, con Azure Monitor/Application Insights como backend de trazas & Subdoc.4 §4.1 \\
+RT-14.01 & La observabilidad será unificada para nube y on-premise, con métricas, registros y trazas distribuidas correlacionadas por un identificador único de transacción, instrumentadas conforme a OpenTelemetry. & Sí & Observabilidad y degradación controlada (base tecnológica) instrumentada con OpenTelemetry y Azure Monitor & Subdoc.4 §4.1 \\
 \addlinespace[2pt]
 RT-14.02 & El CLIENTE dispondrá de acceso propio y permanente a los tableros operacionales y de negocio, con datos en tiempo real y capacidad de exportación. & No & - & - \\
 \addlinespace[2pt]
@@ -2953,7 +2953,7 @@ RT-15.02 & Los ambientes no productivos se apagarán o reducirán fuera del hora
 \addlinespace[2pt]
 RT-15.03 & El PROPONENTE estimará la huella de carbono anual de la operación de la solución y declarará la metodología empleada. & No & - & - \\
 \addlinespace[2pt]
-RT-15.04 & Se declarará la eficiencia en el uso de la energía (PUE) del recinto on-premise y la intensidad de carbono de la región de nube escogida. & Sí & Cálculo de PUE objetivo de 1,6 para el recinto on-premise (Site Principal) & Subdoc.4 §4.2 \\
+RT-15.04 & Se declarará la eficiencia en el uso de la energía (PUE) del recinto on-premise y la intensidad de carbono de la región de nube escogida. & Sí & Cálculo de PUE objetivo de 1,6 para el recinto on-premise (DC-01) & Subdoc.4 §4.2 \\
 \addlinespace[2pt]
 RT-15.05 & Se valorará la elección de regiones de nube con menor intensidad de carbono cuando la latencia y la regulación lo permitan, con el análisis comparativo correspondiente. & No & - & - \\
 \addlinespace[2pt]
@@ -2961,7 +2961,7 @@ RT-15.06 & Se valorará la definición de metas de reducción del consumo durant
 \addlinespace[2pt]
 RT-15.07 & Las certificaciones se acreditarán con copia del certificado vigente y con el código de verificación del organismo emisor cuando exista. & No & - & - \\
 \addlinespace[2pt]
-RT-15.08 & Las personas certificadas formarán parte del equipo efectivamente asignado al PROYECTO, con dedicación declarada. No se aceptará acreditar personal que no participe. & Sí & Equipo de jefaturas nominado con dedicación exclusiva al proyecto y certificaciones individuales (PMP, Microsoft Certified Azure Solutions Architect Expert, CISSP/CCSP, CDMP, CTAL-TM, Microsoft Certified DevOps Engineer Expert, Prosci Certified Change Practitioner) & Subdocumento 1, sección 1.5 ``Estructura para Proyecto'' \\
+RT-15.08 & Las personas certificadas formarán parte del equipo efectivamente asignado al PROYECTO, con dedicación declarada. No se aceptará acreditar personal que no participe. & Sí & Equipo de jefaturas con dedicación exclusiva al proyecto y certificaciones individuales (PMP, Microsoft Certified Azure Solutions Architect Expert, CISSP/CCSP, CDMP, CTAL-TM, Microsoft Certified DevOps Engineer Expert, Prosci Certified Change Practitioner) & Subdocumento 1, sección 1.5 ``Estructura para Proyecto'' (roles); Subdocumento 12 y Formulario T-8 (nombres, certificaciones y dedicación) \\
 \addlinespace[2pt]
 RT-15.09 & El ADJUDICATARIO mantendrá vigentes estas certificaciones durante todo el período contractual y las repondrá ante la salida de una persona certificada, conforme al Artículo 76° de las Bases Administrativas. & No & - & - \\
 \addlinespace[2pt]
@@ -2971,7 +2971,7 @@ RT-16.02 & Las reglas de negocio parametrizables —umbrales, plazos, montos, to
 \addlinespace[2pt]
 RT-16.03 & Todo cambio de parámetro con impacto operacional requerirá aprobación de un segundo perfil y quedará registrado con su justificación. & No & - & - \\
 \addlinespace[2pt]
-RT-16.04 & El PROPONENTE declarará expresamente qué elementos son parametrizables y cuáles requieren desarrollo. Presentar como parametrizable lo que exige desarrollo se evaluará como observación grave. & Sí & Catálogo atómico de 223 requerimientos funcionales y 75 no funcionales que identifica explícitamente, requerimiento por requerimiento, cuáles son parametrizables & Subdocumento 2, Anexos A.1 y A.2 (listados de requerimientos funcionales y no funcionales) \\
+RT-16.04 & El PROPONENTE declarará expresamente qué elementos son parametrizables y cuáles requieren desarrollo. Presentar como parametrizable lo que exige desarrollo se evaluará como observación grave. & Sí & Catálogo atómico de requerimientos (versión vigente 3.1: 227 funcionales y 72 no funcionales) que identifica explícitamente, requerimiento por requerimiento, cuáles son parametrizables & Subdocumento 2, Anexos A.1 y A.2 (listados de requerimientos funcionales y no funcionales) \\
 \addlinespace[2pt]
 RT-16.05 & Existirá un ambiente de simulación que permita probar el efecto de un cambio de parámetro antes de aplicarlo a producción. & No & - & - \\
 \addlinespace[2pt]
@@ -3071,7 +3071,7 @@ RT-18.10 & Se valorará el uso de automatización robótica de procesos o de age
 \addlinespace[2pt]
 RT-19.01 & El ADJUDICATARIO constituirá una oficina de gestión del proyecto con metodología declarada, basada en el PMBOK del Project Management Institute e integrando prácticas ágiles donde el PROPONENTE lo justifique. & No & - & - \\
 \addlinespace[2pt]
-RT-19.02 & El Jefe de Proyecto tendrá dedicación exclusiva durante toda la fase de implementación y facultades para comprometer al ADJUDICATARIO en materias de ejecución. & Sí & Jefe de Proyecto (Vicente Rosales Miranda, PMP) al frente de un ``equipo experto con dedicación exclusiva al proyecto'' & Subdocumento 1, sección 1.5 ``Estructura para Proyecto'' \\
+RT-19.02 & El Jefe de Proyecto tendrá dedicación exclusiva durante toda la fase de implementación y facultades para comprometer al ADJUDICATARIO en materias de ejecución. & Sí & Jefe de Proyecto con dedicación exclusiva al frente de un ``equipo experto con dedicación exclusiva al proyecto'' & Subdocumento 1, sección 1.5 ``Estructura para Proyecto'' (rol); Subdocumento 12 y Formulario T-8 (nombre, certificación y facultades) \\
 \addlinespace[2pt]
 RT-19.03 & Existirá un procedimiento formal de control de cambios conforme al Artículo 72° de las Bases Administrativas, con registro de cambios, análisis de impacto y aprobación previa a la ejecución. & No & - & - \\
 \addlinespace[2pt]
@@ -3171,9 +3171,9 @@ RT-23.01 & Información institucional: descripción detallada del giro principal
 \addlinespace[2pt]
 RT-23.02 & Experiencia y casos de éxito: portafolio de proyectos similares de los últimos cinco años, casos documentados con métricas verificables, testimonios de clientes con autorización de publicación, industrias atendidas con énfasis en la del caso asignado, y volumen de transacciones o de personas usuarias gestionadas. & Sí & Portafolio de tres proyectos de misión crítica con métricas verificables, declarado como disponible en la plataforma oficial & Subdocumento 1, sección 1.4 ``Experiencia y Certificaciones'' y Anexo A.1 \\
 \addlinespace[2pt]
-RT-23.03 & Equipo profesional: organigrama del equipo directivo, perfiles de socios y directores, currículos resumidos del equipo técnico clave y certificaciones profesionales del personal. & Sí & Tabla de roles estratégicos y credenciales del equipo de jefaturas, declarada como parte de la información disponible en el sitio corporativo & Subdocumento 1, secciones 1.2 y 1.5; Anexo A.1 \\
+RT-23.03 & Equipo profesional: organigrama del equipo directivo, perfiles de socios y directores, currículos resumidos del equipo técnico clave y certificaciones profesionales del personal. & Sí & Organigrama y roles estratégicos del equipo de jefaturas, declarados como parte de la información disponible en el sitio corporativo; currículos y certificaciones del personal en el Formulario T-8 & Subdocumento 1, secciones 1.2 y 1.5; Anexo A.1; Subdocumento 12 \\
 \addlinespace[2pt]
-RT-23.04 & Capacidades técnicas: servicios y soluciones ofrecidas, conjunto tecnológico dominado, alianzas tecnológicas con proveedores de nube y de plataforma, metodologías de trabajo certificadas, e infraestructura y capacidad instalada. & Sí & Capacidades instaladas (fábrica de software, célula de datos, célula de ciberseguridad, mesa de servicio) y alianzas tecnológicas con AWS y Microsoft Azure & Subdocumento 1, secciones 1.2 y 1.5; Anexo A.1 \\
+RT-23.04 & Capacidades técnicas: servicios y soluciones ofrecidas, conjunto tecnológico dominado, alianzas tecnológicas con proveedores de nube y de plataforma, metodologías de trabajo certificadas, e infraestructura y capacidad instalada. & Sí & Capacidades instaladas (fábrica de software, célula de datos, célula de ciberseguridad, mesa de servicio) y alianza tecnológica con Microsoft Azure & Subdocumento 1, secciones 1.2 y 1.5; Anexo A.1 \\
 \addlinespace[2pt]
 RT-23.05 & El sitio será accesible conforme a WCAG 2.2 nivel AA, responsivo y con certificado TLS válido y vigente. & No & - & - \\
 \addlinespace[2pt]
@@ -3324,10 +3324,12 @@ A continuación, se detalla el listado de supuestos propuestos para abordar las 
 \addlinespace[2pt]
 \textbf{SUP-26} & Para el escenario de planificación se considera enero de 2027 como inicio del proyecto, manteniendo los 56 meses contractuales. & Permite ubicar hitos y congelamientos en fechas calendario; la fecha debe confirmarse antes de cerrar la planificación. \\
 \addlinespace[2pt]
-\textbf{SUP-27} & Para el dimensionamiento territorial se consideran supuestas las ubicaciones de Illapel, Valparaíso, Talca y Concepcion, y la concentración de once tiendas en el entorno de Santiago. & Estas localizaciones se utilizan como escenario metodológico y no como información confirmada por el mandante. \\
+\textbf{SUP-27} & Para el dimensionamiento territorial se consideran supuestas las ubicaciones de Illapel, Valparaíso, Talca y Frutillar, y la concentración de once tiendas en el entorno de Santiago. & Estas localizaciones se utilizan como escenario metodológico y no como información confirmada por el mandante. \\
+\addlinespace[2pt]
+\textbf{SUP-28} & Para dimensionar la red se supone que las ocho tiendas a la calle, incluida la de Coyhaique, carecen de enlace de respaldo, de modo que son catorce las tiendas sin respaldo acreditado (seis en centro comercial y ocho a la calle). & El Caso acredita respaldo propio en ocho de las catorce tiendas de centro comercial y afirma la falta de respaldo solo en Coyhaique; el supuesto es conservador y el levantamiento de enlaces por tienda lo confirmará o corregirá antes de dimensionar la conectividad. \\
 \end{longtable}
 
-\textbf{Fuente:} Elaboración propia a partir del numeral 16.1 de las Bases Técnicas del Caso 09. SUP-26 y SUP-27 corresponden a supuestos metodológicos adicionales del proponente.
+\textbf{Fuente:} Elaboración propia a partir del numeral 16.1 de las Bases Técnicas del Caso 09. SUP-26 a SUP-28 corresponden a supuestos metodológicos adicionales del proponente. El Subdocumento 3 conserva estos códigos y agrega cuatro supuestos del proponente sobre el alcance (SP-01 a SP-04), que no forman parte de esta lista.
 
 \subsubsection{A.5.2. Listado de Exclusiones}\label{a-5-2-listado-de-exclusiones}
 
@@ -3361,26 +3363,28 @@ A continuación, se detalla el listado de actividades excluidas del alcance, ind
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{EX-01} & Se excluye el reemplazo del ERP y de la emisión de documentos tributarios. & Integrar la solución con el ERP, manteniéndolo como único emisor tributario. \\
+\textbf{EXC-01} & Se excluye el reemplazo del ERP y de la emisión de documentos tributarios. & Integrar la solución con el ERP, manteniéndolo como único emisor tributario. \\
 \addlinespace[2pt]
-\textbf{EX-02} & No se exige instalar etiquetas electrónicas en las 22 tiendas. & Evaluar, especificar y costear la alternativa frente a otras opciones. \\
+\textbf{EXC-02} & No se exige instalar etiquetas electrónicas en las 22 tiendas. & Evaluar, especificar y costear la alternativa frente a otras opciones. \\
 \addlinespace[2pt]
-\textbf{EX-03} & Se excluye la adquisición de dispositivos móviles para el personal de venta. & Especificar las cantidades y características necesarias, considerando dispositivos compartidos. \\
+\textbf{EXC-03} & Se excluye la adquisición de dispositivos móviles para el personal de venta. & Especificar las cantidades y características necesarias, considerando dispositivos compartidos. \\
 \addlinespace[2pt]
-\textbf{EX-04} & Se excluyen el desarrollo de las plataformas de los vendedores de marketplace y la operación de su logística. & Integrarlas, medir su desempeño y resolver las devoluciones en tienda. \\
+\textbf{EXC-04} & Se excluyen el desarrollo de las plataformas de los vendedores de marketplace y la operación de su logística. & Integrarlas, medir su desempeño y resolver las devoluciones en tienda. \\
 \addlinespace[2pt]
-\textbf{EX-05} & Se excluye la gestión de remuneraciones. & Calcular la base de comisión cuando una venta se origina en un canal y se cumple en otro. \\
+\textbf{EXC-05} & Se excluye la gestión de remuneraciones. & Calcular la base de comisión cuando una venta se origina en un canal y se cumple en otro. \\
 \addlinespace[2pt]
-\textbf{EX-06} & Se excluye la operación de cobranza judicial. & Mantener el expediente trazable de las operaciones de cobranza y repactación. \\
+\textbf{EXC-06} & Se excluye la operación de cobranza judicial. & Mantener el expediente trazable de las operaciones de cobranza y repactación. \\
 \addlinespace[2pt]
-\textbf{EX-07} & Se excluye la sustitución de las empresas de transporte de última milla. & Integrarlas y mantener la trazabilidad del pedido hasta su entrega. \\
+\textbf{EXC-07} & Se excluye la sustitución de las empresas de transporte de última milla. & Integrarlas y mantener la trazabilidad del pedido hasta su entrega. \\
 \addlinespace[2pt]
-\textbf{EX-08} & Se excluye la ejecución de canalizaciones, obras eléctricas y cableado. & Especificar y costear las obras necesarias; su ejecución corresponde al cliente. \\
+\textbf{EXC-08} & Se excluye la ejecución de canalizaciones, obras eléctricas y cableado. & Especificar y costear las obras necesarias; su ejecución corresponde al cliente. \\
 \addlinespace[2pt]
-\textbf{EX-09} & Se excluye resolver la relación contractual con los administradores de centros comerciales. & Diseñar la continuidad de venta y cobro ante la indisponibilidad de sus enlaces. \\
+\textbf{EXC-09} & Se excluye resolver la relación contractual con los administradores de centros comerciales. & Diseñar la continuidad de venta y cobro ante la indisponibilidad de sus enlaces. \\
 \addlinespace[2pt]
-\textbf{EX-10} & Se excluye la adquisición por el proponente del hardware cuya compra corresponde al cliente. & Especificar exactamente los equipos, cantidades y características conforme a las Bases Transversales. \\
+\textbf{EXC-10} & Se excluye la adquisición por el proponente del hardware cuya compra corresponde al cliente. & Especificar exactamente los equipos, cantidades y características conforme a las Bases Transversales. Proveer la infraestructura on-premise del centro de datos (Bases Administrativas, artículo 14.2). \\
 \end{longtable}
+
+\textbf{Fuente:} Elaboración propia a partir del capítulo 11 del Caso 09. Los diez códigos coinciden con EXC-01 a EXC-10 del Subdocumento 3, que agrega las exclusiones EXC-11 a EXC-19 (sin EXC-14, retirado) que decide el proponente; su lista vigente de 18 está en el Anexo A de ese subdocumento.
 
 \subsubsection{A.5.3. Listado de Restricciones}\label{a-5-3-listado-de-restricciones}
 
@@ -3414,46 +3418,48 @@ A continuación, se detalla el listado de restricciones del caso y de condicione
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{RES-01} & La separación de datos entre retail y filial emisora deberá quedar definida, implementada técnicamente, documentada y auditable. & Caso 09, capítulo 10, restricción 1. \\
+\textbf{RS-01} & La separación de datos entre retail y filial emisora deberá quedar definida, implementada técnicamente, documentada y auditable. & Caso 09, capítulo 10, restricción 1. \\
 \addlinespace[2pt]
-\textbf{RES-02} & Ninguna modificación de condiciones del crédito podrá registrarse sin evidencia recuperable del consentimiento informado, conservada durante el plazo del crédito más seis años. & Caso 09, capítulo 10, restricción 2; numeral 15, RT-05.10. \\
+\textbf{RS-02} & Ninguna modificación de condiciones del crédito podrá registrarse sin evidencia recuperable del consentimiento informado, conservada durante el plazo del crédito más seis años. & Caso 09, capítulo 10, restricción 2; numeral 15, RT-05.10. \\
 \addlinespace[2pt]
-\textbf{RES-03} & La información precontractual deberá entregarse antes de aceptar el crédito y su entrega deberá acreditarse de manera estructurada. & Caso 09, capítulo 10, restricción 3. \\
+\textbf{RS-03} & La información precontractual deberá entregarse antes de aceptar el crédito y su entrega deberá acreditarse de manera estructurada. & Caso 09, capítulo 10, restricción 3. \\
 \addlinespace[2pt]
-\textbf{RES-04} & El precio cobrado deberá respetar el precio exhibido y la compañía deberá acreditar el precio publicado en cada canal. & Caso 09, capítulo 10, restricción 4. \\
+\textbf{RS-04} & El precio cobrado deberá respetar el precio exhibido y la compañía deberá acreditar el precio publicado en cada canal. & Caso 09, capítulo 10, restricción 4. \\
 \addlinespace[2pt]
-\textbf{RES-05} & Las tiendas deberán continuar vendiendo y cobrando ante la pérdida del enlace externo, con autonomía local y degradada durante \textbf{≥ 24 horas continuas}. & Caso 09, capítulo 10, restricción 5; Bases Transversales, RT-03.10. \\
+\textbf{RS-05} & Las tiendas deberán continuar vendiendo y cobrando ante la pérdida del enlace externo, con autonomía local y degradada durante \textbf{≥ 24 horas continuas}. & Caso 09, capítulo 10, restricción 5; Bases Transversales, RT-03.10. \\
 \addlinespace[2pt]
-\textbf{RES-06} & El ERP deberá mantenerse como único emisor de documentos tributarios. & Caso 09, capítulo 10, restricción 6. \\
+\textbf{RS-06} & El ERP deberá mantenerse como único emisor de documentos tributarios. & Caso 09, capítulo 10, restricción 6. \\
 \addlinespace[2pt]
-\textbf{RES-07} & La garantía legal deberá atenderse directamente en la compañía, sin derivar al consumidor como condición de atención. & Caso 09, capítulo 10, restricción 7. \\
+\textbf{RS-07} & La garantía legal deberá atenderse directamente en la compañía, sin derivar al consumidor como condición de atención. & Caso 09, capítulo 10, restricción 7. \\
 \addlinespace[2pt]
-\textbf{RES-08} & La migración de los 620.000 clientes con saldo no admitirá pérdida de información, interrupción del servicio ni divergencia de saldos. & Caso 09, capítulo 10, restricción 8. \\
+\textbf{RS-08} & La migración de los 620.000 clientes con saldo no admitirá pérdida de información, interrupción del servicio ni divergencia de saldos. & Caso 09, capítulo 10, restricción 8. \\
 \addlinespace[2pt]
-\textbf{RES-09} & Las intervenciones deberán respetar las cinco ventanas de congelamiento comercial definidas por el caso. & Caso 09, capítulo 10, restricción 9. \\
+\textbf{RS-09} & Las intervenciones deberán respetar las cinco ventanas de congelamiento comercial definidas por el caso. & Caso 09, capítulo 10, restricción 9. \\
 \addlinespace[2pt]
-\textbf{RES-10} & La planificación deberá absorber la fecha del evento anual, anunciada con aproximadamente seis semanas de anticipación, sin desplazar hitos contractuales. & Caso 09, capítulo 10, restricción 10. \\
+\textbf{RS-10} & La planificación deberá absorber la fecha del evento anual, anunciada con aproximadamente seis semanas de anticipación, sin desplazar hitos contractuales. & Caso 09, capítulo 10, restricción 10. \\
 \addlinespace[2pt]
-\textbf{RES-11} & La solución no podrá suponer un dispositivo por vendedor; deberá considerar 640 terminales compartidas para 3.820 personas. & Caso 09, capítulo 10, restricción 11. \\
+\textbf{RS-11} & La solución no podrá suponer un dispositivo por vendedor; deberá considerar 640 terminales compartidas para 3.820 personas. & Caso 09, capítulo 10, restricción 11. \\
 \addlinespace[2pt]
-\textbf{RES-12} & No podrán imponerse herramientas o capacitación a los repositores externos por la vía laboral. & Caso 09, capítulo 10, restricción 12. \\
+\textbf{RS-12} & No podrán imponerse herramientas o capacitación a los repositores externos por la vía laboral. & Caso 09, capítulo 10, restricción 12. \\
 \addlinespace[2pt]
-\textbf{RES-13} & La capacitación y gestión de accesos deberán considerar una rotación anual del 62 \% y 1.900 incorporaciones de temporada durante congelamientos. & Caso 09, capítulo 10, restricción 13. \\
+\textbf{RS-13} & La capacitación y gestión de accesos deberán considerar una rotación anual del 62 \% y 1.900 incorporaciones de temporada durante congelamientos. & Caso 09, capítulo 10, restricción 13. \\
 \addlinespace[2pt]
-\textbf{RES-14} & La incorporación del CD de Concepción a un sistema de gestión de almacenes deberá evaluarse y costearse; no podrá darse por supuesta. & Caso 09, capítulo 10, restricción 14. \\
+\textbf{RS-14} & La incorporación del CD de Concepción a un sistema de gestión de almacenes deberá evaluarse y costearse; no podrá darse por supuesta. & Caso 09, capítulo 10, restricción 14. \\
 \addlinespace[2pt]
-\textbf{RES-15} & El levantamiento de las catorce integraciones será parte del trabajo del proponente y no una entrega previa que deba resolver el CLIENTE. & Caso 09, capítulo 10, restricción 15. \\
+\textbf{RS-15} & El levantamiento de las catorce integraciones será parte del trabajo del proponente y no una entrega previa que deba resolver el CLIENTE. & Caso 09, capítulo 10, restricción 15. \\
 \addlinespace[2pt]
-\textbf{RES-16} & El despliegue deberá ser híbrido, con carga principal en nube pública y componentes on-premise. & Bases Administrativas, artículo 16. \\
+\textbf{RS-16} & El despliegue deberá ser híbrido, con carga principal en nube pública y componentes on-premise. & Bases Administrativas, artículo 16. \\
 \addlinespace[2pt]
-\textbf{RES-17} & El contrato tendrá una duración obligatoria de 56 meses: Etapa 1 en meses 1–15 y producción en el mes 16; Etapa 2 en meses 13–20 y producción en el mes 21; operación en meses 21–56. & Bases Administrativas, artículo 17. \\
+\textbf{RS-17} & El contrato tendrá una duración obligatoria de 56 meses: Etapa 1 en meses 1–15 y producción en el mes 16; Etapa 2 en meses 13–20 y producción en el mes 21; operación en meses 21–56. & Bases Administrativas, artículo 17. \\
 \addlinespace[2pt]
-\textbf{RES-18} & La propuesta deberá incorporar cinco innovaciones obligatorias, una por tipo, trazables con arquitectura, EDT y flujo de caja. & Bases Administrativas, artículo 28 (capítulo 5). \\
+\textbf{RS-18} & La propuesta deberá incorporar cinco innovaciones obligatorias, una por tipo, trazables con arquitectura, EDT y flujo de caja. & Bases Administrativas, artículo 28 (capítulo 5). \\
 \addlinespace[2pt]
-\textbf{RES-19} & La migración de la cartera y los hitos del plan de remediación deberán completarse antes de 2029, año en que vencen el fin de soporte de la plataforma de crédito y el último hito de remediación. & Caso 09, numeral 13.2 y capítulo 18 (resultados 23 y 24). \\
+\textbf{RS-19} & La migración de la cartera y los hitos del plan de remediación deberán completarse antes de 2029, año en que vencen el fin de soporte de la plataforma de crédito y el último hito de remediación. & Caso 09, numeral 13.2 y capítulo 18 (resultados 23 y 24). \\
 \addlinespace[2pt]
-\textbf{RES-20} & La solución deberá cumplir los requisitos técnicos obligatorios de las Bases Técnicas Transversales y los umbrales de transacción del Caso: evaluación crediticia \textbf{≤8 s}, propagación de precios a cajas y canal digital \textbf{≤5 min} y disponibilidad publicada actualizada \textbf{≤30 s} después de una venta. & Bases Técnicas Transversales; Caso 09, numeral 15, RT-09.01 y RT-05.29. \\
+\textbf{RS-20} & La solución deberá cumplir los requisitos técnicos obligatorios de las Bases Técnicas Transversales y los umbrales de transacción del Caso: evaluación crediticia \textbf{≤8 s}, propagación de precios a cajas y canal digital \textbf{≤5 min} y disponibilidad publicada actualizada \textbf{≤30 s} después de una venta. & Bases Técnicas Transversales; Caso 09, numeral 15, RT-09.01 y RT-05.29. \\
 \end{longtable}
+
+\textbf{Fuente:} Elaboración propia a partir del capítulo 10 del Caso 09 (RS-01 a RS-15), de las Bases Administrativas (RS-16 a RS-18) y de las Bases y el Caso (RS-19 y RS-20). El Subdocumento 3 usa los mismos veinte códigos.
 
 \ossFinalPage
 

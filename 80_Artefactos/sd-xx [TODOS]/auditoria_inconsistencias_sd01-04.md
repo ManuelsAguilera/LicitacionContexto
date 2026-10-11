@@ -46,6 +46,19 @@ Patrón general: el sd-02 (sobre todo sus anexos) quedó escrito contra versione
 | EXT-G-05 | Resuelto | Dos identificadores independientes, sin tabla de correspondencia; subsección «Identidad del cliente» en el sd-03, ADR-02 en el sd-04, SUP-03, RF-174 y RN-04 reescritos |
 | INT-02-G-01 | Resuelto | «Veinte restricciones»: 15 del Caso y 5 de las Bases; se unificaron RES-18, RES-19 y RES-20 con el anexo del sd-03 |
 | INT-02-G-02 | Resuelto | Se acotó la frase: A.4 relaciona los requerimientos funcionales, no funcionales y técnicos vigentes; las OP no se trazan. RF-027 sigue fuera porque el catálogo v3.1 lo eliminó (etiquetas electrónicas) |
+| EXT-M-01 | Resuelto | Códigos unificados: EXC-01..EXC-10 (antes EX) y RS-01..RS-20 (antes RES) en el sd-02, iguales a los del sd-03; el sd-02 declara que el sd-03 agrega EXC-11..EXC-19 y SP-01..SP-04. Las diez exclusiones del Caso (cap. 11) se verificaron una a una |
+| EXT-M-02 | Resuelto | El sd-02 declara que su catálogo es el recibido (v3.0) y remite al sd-03 3.2.4 como versión vigente 3.1 de 308 elementos; RT-16.04 de A.4 cita la versión vigente |
+| EXT-M-03 | Resuelto | Reparto único: el proponente provee la infraestructura on-premise del centro de datos (Bases Administrativas art. 14.2, RT-06.33); el cliente adquiere el hardware de tiendas y centros. El sd-01 deja de nombrar a Dell; EXC-10 del sd-02 declara la provisión del centro de datos |
+| EXT-M-04 | Resuelto | Rige el registro de siete ADR del sd-04 (Tabla 4.5). A.4 cita ADR-02 (separación de datos), ADR-05 (partición DDD) y «ADR-01 a ADR-07» |
+| EXT-M-05 | Resuelto en parte | A.4 usa el vocabulario del sd-04 (SIT/CD/DC/CLD, Java 25 y Spring Boot 4, Entra ID, Azure Monitor); quedan HSM, tokenización y otras herramientas por confirmar con la lista de tecnologías del equipo (ver `avisos_otros_subdocumentos.md`) |
+| EXT-M-06 | Resuelto | Tabla 2.6: «≥ 24 h en tienda, que endurece las 8 h del Caso» |
+| EXT-M-07 | Resuelto | Rige 104.000 pedidos en tres días (Caso cap. 1, núm. 14.1); 34.667 pedidos diarios, 6,7 veces el régimen base; proyección de 150.000. Citado en APA 7 como (Multitiendas Ancoa S.A., 2026) y agregado a las referencias del sd-02 |
+| EXT-M-08 | Resuelto | Nuevo SUP-28 en el sd-02 (catorce tiendas sin respaldo, supuesto conservador); el sd-04 lo cita. También se corrigió SUP-27 («Concepcion» por «Frutillar», como en el cuerpo) |
+| EXT-M-09 | Resuelto | El sd-01 declara solo la alianza con Microsoft Azure; las marcas Fortinet y Dell se quitan hasta cerrar la elección; AWS se quita de RT-23.04. Aviso al responsable del sd-06 |
+| EXT-M-10 | Resuelto | A.4 remite a la sección 1.5 para los roles y al Subdocumento 12 y T-8 para nombres y certificaciones; se quitó el nombre del Jefe de Proyecto |
+| EXT-M-11 | Resuelto | Comité de Operación desde el mes 16 (Etapa 1 en producción) |
+| EXT-M-12 | Resuelto | Decisión tomada (sd-03): venta con tarjeta propia en corte contra cupo preaprobado, prueba en los meses 6 y 7. El sd-04 4.1 lo diseña como decisión tomada; solo quedan por fijar los criterios del cupo de la filial emisora |
+| EXT-M-13 | Abierto | Queda por confirmar con la fuente de la matriz |
 
 ---
 
