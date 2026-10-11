@@ -104,7 +104,7 @@ Este capítulo caracteriza el problema que origina la licitación y la necesidad
 
 Este capítulo entrega el diagnóstico sobre el que se construye la propuesta. El Capítulo 3 lo traduce en alcance y solución, el Capítulo 4 en arquitectura lógica y física, el Capítulo 5 en el modelo de datos y el Capítulo 7 en el plan de trabajo; los supuestos y las tensiones entre actores que aquí se describen se retoman en la metodología (Capítulo 6) y en la gestión de riesgos (Capítulo 8).
 
-El detalle que sustenta estos resúmenes se entrega en el archivo de anexos del subdocumento. El Anexo A.1 lista los requerimientos funcionales (RF), el Anexo A.2 los requerimientos no funcionales (RNF) y el Anexo A.3 las obligaciones del proponente (OP); el Anexo A.4 contiene la matriz de trazabilidad y cumplimiento, que relaciona cada requerimiento con el componente que lo satisface y la sección de la propuesta donde se desarrolla; y el Anexo A.5 compila el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
+El detalle que sustenta estos resúmenes se entrega en el archivo de anexos del subdocumento. El Anexo A.1 lista los requerimientos funcionales (RF), el Anexo A.2 los requerimientos no funcionales (RNF) y el Anexo A.3 las obligaciones del proponente (OP); el Anexo A.4 contiene la matriz de trazabilidad y cumplimiento, que relaciona cada requerimiento funcional, no funcional y técnico vigente con el servicio que lo satisface y la sección de la propuesta donde se desarrolla (las obligaciones del proponente son entregables de la oferta y no se asocian a un servicio); y el Anexo A.5 compila el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
 
 \section{2. Comprensión del problema y la necesidad}\label{comprension-del-problema-y-la-necesidad}
 
@@ -202,7 +202,7 @@ El estado actual de los principales sistemas permite observar dónde se origina 
   No existe actualmente un motor de precios y promociones como sistema independiente; las campañas se preparan mediante planillas y cargas masivas.
 \end{itemize}
 
-En conjunto, estas plataformas no operan sobre una integración única y sincronizada. Las catorce interfaces punto a punto, en su mayoría basadas en archivos y procesos nocturnos, generan diferencias temporales entre la información disponible en cada sistema. Por ello, la brecha no está concentrada en una plataforma particular, sino en la coordinación y trazabilidad del conjunto.
+En conjunto, estas plataformas no operan sobre una integración única y sincronizada. Las catorce interfaces punto a punto, en su mayoría basadas en archivos y procesos nocturnos, generan diferencias temporales entre la información disponible en cada sistema. Por ello, la brecha no está concentrada en una plataforma particular, sino en la coordinación y trazabilidad del conjunto. Las nueve plataformas del Caso son los ocho sistemas existentes y el motor de precios y promociones, que no existe como sistema y debe construirse. Las planillas de cálculo y listas impresas no se cuentan como plataforma: son un registro informal que debe desaparecer como sistema de registro.
 
 \textbf{Frontera difusa (C3):} La filial emisora comparte elementos con el retail, el centro de datos, la red y el equipo de TI, con una separación lógica parcial y no documentada. El sistema de fidelización mezcla hoy datos comerciales y financieros, y marketing busca usar el comportamiento de pago para segmentar ofertas. Ese cruce exige una finalidad, una base de licitud y un control técnico que no están escritos.
 
@@ -439,7 +439,7 @@ La filial debe poder acreditar qué informó al cliente y qué aceptó, y hoy no
 
 La originación tiene la misma brecha. Las 520.000 evaluaciones anuales en el punto de venta entregan la información precontractual impresa, sin registro de qué versión se entregó ni de que el cliente la recibió antes de aceptar. Además, la evaluación tarda entre 40 y 180 segundos frente al máximo de 8 segundos (RT-09.01). Eso suma entre 5.778 y 26.000 horas de espera al año (entre 16 y 71 horas diarias), con riesgo de que la venta se pierda o se cierre con otro medio de pago. El caso no cuantifica esa pérdida, por lo que no se estima.
 
-La cartera vigente reúne 1.380.000 tarjetas, de las cuales 620.000 tienen saldo, con \$186.000 millones en colocaciones (saldo promedio de \$300.000 por cliente). Debe migrarse íntegra antes de que terminen, en 2029, el soporte del fabricante y el plan de remediación. Con el supuesto de inicio en enero de 2027 y considerando que los hitos de 2029 deben cumplirse antes del congelamiento de noviembre, hay 1.035 días calendario hasta el 31 de octubre de 2029, de los cuales 317 están congelados. Quedan 718 días, cerca de 23,6 meses intervenibles.
+La cartera vigente reúne 1.380.000 tarjetas, de las cuales 620.000 tienen saldo, con \$186.000 millones en colocaciones (saldo promedio de \$300.000 por cliente). Debe migrarse íntegra antes de 2029, año en que terminan el soporte del fabricante y el plan de remediación, cuyos hitos el Caso exige cumplir antes de ese año. Con el supuesto de inicio en enero de 2027, y como entre el 1 de noviembre y el 6 de enero no se pueden intervenir los sistemas, el último día útil es el 31 de octubre de 2028. Hasta esa fecha hay 670 días calendario, de los cuales 191 están congelados. Quedan 479 días, cerca de 15,7 meses intervenibles. Por la misma razón, ningún paso a producción, ola de cartera, corte, apagado ni mantenimiento programado puede ejecutarse dentro de las cinco ventanas de congelamiento (Multitiendas Ancoa S.A., 2026b, núm. 13.2 y 13.3 y RT-10.05); el desarrollo, las pruebas en preproducción y la conciliación en paralelo, que no cambian producción, sí pueden continuar en ellas.
 
 \subsection{2.3.5. Obligación transversal: atención y garantía legal}\label{obligacion-transversal-atencion-y-garantia-legal}
 
@@ -451,7 +451,7 @@ En garantía legal, el mesón deriva al consumidor al servicio técnico de la ma
 
 \subsection{2.3.6. Condiciones transversales}\label{condiciones-transversales}
 
-Las causas raíz también tienen magnitud propia, que condiciona la arquitectura y el plan más allá de cada promesa (Tabla 2.4). La tabla presenta los indicadores críticos; el listado completo se encuentra en el Anexo A.4.
+Las causas raíz también tienen magnitud propia, que condiciona la arquitectura y el plan más allá de cada promesa (Tabla 2.4). La tabla presenta los indicadores críticos con su línea base y su meta.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}
@@ -724,7 +724,7 @@ La distribución muestra que el 62 \% de los requerimientos funcionales (138 de 
 
 Los requerimientos no funcionales, por su parte, convierten el problema dimensionado en metas verificables. Tres de ellos fijan la mejora esperada respecto de la línea base: reducir la cancelación por falta de existencia a menos de 0,3 \% anual, elevar el cumplimiento de la fecha de entrega desde 81 \% a 97 \% o más, y bajar la diferencia de inventario por categoría desde 12,4 \% a menos de 2 \%. Otros tres exigen que la migración de los 620.000 clientes con saldo se complete sin pérdida de datos, sin interrupción del cobro y sin divergencias de saldo antes de 2029. Las obligaciones del proponente, en cambio, no describen funciones del sistema, sino entregables de la oferta, como el análisis de hacer o comprar del CD de Concepción.
 
-A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento, el componente que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Anexo A.4.
+A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento funcional, no funcional y técnico vigente, el servicio que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Anexo A.4.
 
 \subsection{2.5.2. Resumen de supuestos}\label{resumen-de-supuestos}
 
@@ -738,7 +738,7 @@ Pedidos e incentivos comerciales (SUP-11, SUP-13 y SUP-14). Se definen criterios
 
 Marketplace y postventa (SUP-15, SUP-16, SUP-21 y SUP-22). Se consideran reglas comunes para evaluar vendedores externos y atender devoluciones, garantías y retractos, separando la atención al consumidor de la recuperación de costos frente a terceros.
 
-Crédito e identidad (SUP-03 a SUP-07 y SUP-25). Se adoptan criterios para relacionar identidades sin debilitar la separación entre negocios, acreditar las operaciones crediticias y mantener la continuidad durante contingencias y migración.
+Crédito e identidad (SUP-03 a SUP-07 y SUP-25). Se adopta el criterio de que cada negocio identifique a la persona por separado, sin identificador común, sin debilitar la separación entre negocios, acreditar las operaciones crediticias y mantener la continuidad durante contingencias y migración.
 
 Transición tecnológica y personas (SUP-02, SUP-19, SUP-23 y SUP-24). Se considera una transición progresiva, preservando el ERP y los controles obligatorios, con accesos individualizados para personal propio, temporal y externo.
 
@@ -764,25 +764,25 @@ Las limitaciones utilizadas para realizar el análisis se mantienen separadas de
 
 \subsection{2.5.4. Resumen de restricciones}\label{resumen-de-restricciones}
 
-Se consideran quince restricciones no negociables, agrupadas en seis ámbitos según su origen e implicancias para la propuesta. Estas deben considerarse a la hora de definir el alcance y la planificación.
+Se consideran veinte restricciones no negociables: quince del capítulo 10 del Caso (RES-01 a RES-15) y cinco que fijan las Bases y los parámetros del Caso (RES-16 a RES-20), agrupadas en seis ámbitos según su origen e implicancias para la propuesta. Estas deben considerarse a la hora de definir el alcance y la planificación.
 
-\textbf{Regulatorias y de información (R1 a R4 y R7):} El retail y la filial financiera requieren una separación de datos documentada y auditable. La información precontractual debe acreditarse antes de aceptar el crédito, y sus modificaciones requieren consentimiento recuperable. También deben respetarse el precio exhibido y la atención de garantías sin derivar al consumidor.
+\textbf{Regulatorias y de información (RES-01 a RES-04 y RES-07):} El retail y la filial financiera requieren una separación de datos documentada y auditable. La información precontractual debe acreditarse antes de aceptar el crédito, y sus modificaciones requieren consentimiento recuperable. También deben respetarse el precio exhibido y la atención de garantías sin derivar al consumidor.
 
-\textbf{Contractuales artículos 16, 17 y 28:} Son obligatorios el despliegue híbrido, las cinco innovaciones y el cronograma de 56 meses. La Etapa 1 entra en producción en el mes 16 y la Etapa 2 en el mes 21. La operación comprende los meses 21 a 56.
+\textbf{Contractuales (RES-16 a RES-18; artículos 16, 17 y 28 de las Bases Administrativas):} Son obligatorios el despliegue híbrido, las cinco innovaciones y el cronograma de 56 meses. La Etapa 1 entra en producción en el mes 16 y la Etapa 2 en el mes 21. La operación comprende los meses 21 a 56.
 
-\textbf{Temporales y estacionales (R9 y R10):} Las intervenciones deben respetar las cinco ventanas de congelamiento comercial. El evento anual se anuncia con aproximadamente seis semanas y debe absorberse sin desplazar hitos. Adicionalmente, el fin de soporte financiero y el último hito de remediación coinciden en 2029.
+\textbf{Temporales y estacionales (RES-09, RES-10 y RES-19):} Las intervenciones deben respetar las cinco ventanas de congelamiento comercial. El evento anual se anuncia con aproximadamente seis semanas y debe absorberse sin desplazar hitos. Adicionalmente, el fin de soporte financiero y el último hito de remediación coinciden en 2029, y la migración de la cartera y esos hitos deben completarse antes de ese año.
 
-\textbf{Operacionales y de migración (R5 y R8):} Las tiendas deben seguir vendiendo y cobrando ante desconexión. La cartera de 620.000 clientes con saldo debe migrarse sin pérdida de datos, interrupción del servicio ni divergencias de saldos. Las condiciones de implantación también impiden detener la operación de tiendas y centros de distribución.
+\textbf{Operacionales y de migración (RES-05 y RES-08):} Las tiendas deben seguir vendiendo y cobrando ante desconexión, con una autonomía de al menos 24 horas continuas. La cartera de 620.000 clientes con saldo debe migrarse sin pérdida de datos, interrupción del servicio ni divergencias de saldos. Las condiciones de implantación también impiden detener la operación de tiendas y centros de distribución.
 
-\textbf{Tecnológicas y de infraestructura (R6, R14 y R15):} El ERP permanece como único emisor tributario. La incorporación del CD de Concepción debe evaluarse y costearse, sin darse por supuesta. El proponente debe levantar las catorce integraciones existentes, cuyo mapa está incompleto.
+\textbf{Tecnológicas y de infraestructura (RES-06, RES-14, RES-15 y RES-20):} El ERP permanece como único emisor tributario. La incorporación del CD de Concepción debe evaluarse y costearse, sin darse por supuesta. El proponente debe levantar las catorce integraciones existentes, cuyo mapa está incompleto. La solución debe cumplir además los umbrales de transacción de las Bases: evaluación crediticia en 8 segundos o menos, propagación de precios en 5 minutos o menos y disponibilidad publicada en 30 segundos o menos tras una venta.
 
-\textbf{Humanas y organizacionales (R11 a R13):} No puede asumirse un dispositivo por vendedor: existen 640 terminales compartidas para 3.820 personas. La rotación del 62 \% y las 1.900 incorporaciones de temporada coinciden con congelamientos. A los repositores externos no se les pueden imponer herramientas ni capacitación por la vía laboral.
+\textbf{Humanas y organizacionales (RES-11 a RES-13):} No puede asumirse un dispositivo por vendedor: existen 640 terminales compartidas para 3.820 personas. La rotación del 62 \% y las 1.900 incorporaciones de temporada coinciden con congelamientos. A los repositores externos no se les pueden imponer herramientas ni capacitación por la vía laboral.
 
 Estas restricciones se condicionan entre sí: los congelamientos reducen las oportunidades de intervención mientras los hitos permanecen fijos; la continuidad operacional limita las condiciones de migración; y la rotación y los recursos compartidos afectan la disponibilidad de personas para participar y capacitarse. Por ello, la planificación debe considerar conjuntamente estos límites, sin asumir recursos inexistentes ni flexibilizar obligaciones. El detalle de cada restricción y su origen se encuentra en el Anexo A.5.3. 
 
 \subsection{2.5.5. Otros listados}\label{otros-listados}
 
-Como apoyo, el Anexo A.4 contiene la matriz de cumplimiento y trazabilidad, que relaciona cada requerimiento con el componente que lo satisface y la sección de la propuesta donde se desarrolla e incluye los indicadores con su línea base y la meta comprometida, que conectan el dimensionamiento de la sección 2.3 con los requerimientos no funcionales. El Anexo A.5 reúne el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
+Como apoyo, el Anexo A.4 contiene la matriz de cumplimiento y trazabilidad, que relaciona cada requerimiento funcional, no funcional y técnico vigente con el servicio que lo satisface y la sección de la propuesta donde se desarrolla. Los indicadores con su línea base y la meta comprometida están en la Tabla 2.4, que conecta el dimensionamiento de la sección 2.3 con los requerimientos no funcionales. El Anexo A.5 reúne el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
 
 \section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}
