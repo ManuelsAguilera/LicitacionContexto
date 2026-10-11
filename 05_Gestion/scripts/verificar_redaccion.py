@@ -212,7 +212,7 @@ def report(parts: list[str]) -> int:
     """Imprime los hallazgos por parte; devuelve 1 si hay algún ERROR."""
     errors = 0
     for part in parts:
-        tex = ex.LATEX / f"sd-{part[-2:]}.tex"
+        tex = ex.main_tex(part)
         if not tex.is_file():
             continue
         findings = check_file(tex)

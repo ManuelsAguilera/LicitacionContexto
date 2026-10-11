@@ -34,7 +34,7 @@ class PrismTest(unittest.TestCase):
         self.tmp, self.latex = self.ctx.__enter__()
         self.addCleanup(self.ctx.__exit__, None, None, None)
         ex.import_part("T7-14")
-        self.tex = self.latex / "sd-14.tex"
+        self.tex = self.latex / "sd-14" / "OSS-Subdocumento14.tex"
         self.zip = prism.package_part("T7-14")
         self.work = self.tmp / "trabajo"
         self.work.mkdir()
@@ -46,7 +46,7 @@ class PrismTest(unittest.TestCase):
 
     def test_contenido_del_paquete(self):
         names = set(leer_zip(self.zip))
-        self.assertIn("sd-14.tex", names)
+        self.assertIn("OSS-Subdocumento14.tex", names)
         self.assertIn("oss.sty", names)
         self.assertIn("LEEME-PRISM.txt", names)
         self.assertTrue(any(n.startswith("figuras/figura-") for n in names))
@@ -78,7 +78,7 @@ class PrismTest(unittest.TestCase):
         self.assertEqual(self.tex.read_bytes(), antes)
 
     def test_importa_edicion_del_cuerpo_con_respaldo(self):
-        nuevo = self.modificado(lambda f: f.update({"sd-14.tex": f["sd-14.tex"].replace(b"Primera fila", b"Fila editada en Prism")}))
+        nuevo = self.modificado(lambda f: f.update({"OSS-Subdocumento14.tex": f["OSS-Subdocumento14.tex"].replace(b"Primera fila", b"Fila editada en Prism")}))
         prism.import_part("T7-14", nuevo)
         self.assertIn("Fila editada en Prism", self.tex.read_text(encoding="utf-8"))
         respaldos = list((self.latex / "respaldo").glob("sd-14.*.tex"))
@@ -90,7 +90,7 @@ class PrismTest(unittest.TestCase):
 
     def test_acepta_main_tex_y_carpeta_raiz(self):
         def cambio(files):
-            tex = files.pop("sd-14.tex").replace(b"Primera fila", b"Desde main")
+            tex = files.pop("OSS-Subdocumento14.tex").replace(b"Primera fila", b"Desde main")
             for name in list(files):
                 files[f"proyecto/{name}"] = files.pop(name)
             files["proyecto/main.tex"] = tex
@@ -98,11 +98,11 @@ class PrismTest(unittest.TestCase):
         self.assertIn("Desde main", self.tex.read_text(encoding="utf-8"))
 
     def test_normaliza_saltos_de_linea_windows(self):
-        nuevo = self.modificado(lambda f: f.update({"sd-14.tex": f["sd-14.tex"].replace(b"\n", b"\r\n")}))
+        nuevo = self.modificado(lambda f: f.update({"OSS-Subdocumento14.tex": f["OSS-Subdocumento14.tex"].replace(b"\n", b"\r\n")}))
         self.assertIn("sin cambios", " ".join(prism.import_part("T7-14", nuevo)))
 
     def test_rechaza_preambulo_alterado(self):
-        nuevo = self.modificado(lambda f: f.update({"sd-14.tex": f["sd-14.tex"].replace(b"\\usepackage{oss}", b"\\usepackage{oss}\n\\usepackage{geometry}")}))
+        nuevo = self.modificado(lambda f: f.update({"OSS-Subdocumento14.tex": f["OSS-Subdocumento14.tex"].replace(b"\\usepackage{oss}", b"\\usepackage{oss}\n\\usepackage{geometry}")}))
         antes = self.tex.read_bytes()
         with self.assertRaisesRegex(ValueError, "fuera de la plantilla"):
             prism.import_part("T7-14", nuevo)
@@ -120,11 +120,11 @@ class PrismTest(unittest.TestCase):
 
     def test_rechaza_zip_sin_tex(self):
         with self.assertRaisesRegex(ValueError, "no contiene"):
-            prism.import_part("T7-14", self.modificado(lambda f: f.pop("sd-14.tex")))
+            prism.import_part("T7-14", self.modificado(lambda f: f.pop("OSS-Subdocumento14.tex")))
 
     def test_rechaza_si_el_repo_cambio_desde_el_empaquetado(self):
         self.tex.write_text(self.tex.read_text(encoding="utf-8").replace("Primera fila", "Cambio local"), encoding="utf-8")
-        nuevo = self.modificado(lambda f: f.update({"sd-14.tex": f["sd-14.tex"].replace(b"Segunda fila", b"Cambio Prism")}))
+        nuevo = self.modificado(lambda f: f.update({"OSS-Subdocumento14.tex": f["OSS-Subdocumento14.tex"].replace(b"Segunda fila", b"Cambio Prism")}))
         with self.assertRaisesRegex(ValueError, "cambió en el repositorio"):
             prism.import_part("T7-14", nuevo)
         prism.import_part("T7-14", nuevo, force=True)
@@ -138,7 +138,7 @@ class PrismTest(unittest.TestCase):
             prism.import_part("T7-14", self.zip)
 
     def test_dry_run_no_escribe(self):
-        nuevo = self.modificado(lambda f: f.update({"sd-14.tex": f["sd-14.tex"].replace(b"Primera fila", b"Solo simulado")}))
+        nuevo = self.modificado(lambda f: f.update({"OSS-Subdocumento14.tex": f["OSS-Subdocumento14.tex"].replace(b"Primera fila", b"Solo simulado")}))
         antes = self.tex.read_bytes()
         mensajes = prism.import_part("T7-14", nuevo, dry_run=True)
         self.assertIn("+1 -1", " ".join(mensajes))
@@ -163,7 +163,7 @@ class PrismTest(unittest.TestCase):
 
     def test_zips_de_prueba_del_motor(self):
         a, b = prism.package_probe("T7-14")
-        self.assertEqual(set(leer_zip(a)) & {"sd-14.tex", "oss.sty", "LEEME.txt"}, {"sd-14.tex", "oss.sty", "LEEME.txt"})
+        self.assertEqual(set(leer_zip(a)) & {"OSS-Subdocumento14.tex", "oss.sty", "LEEME.txt"}, {"OSS-Subdocumento14.tex", "oss.sty", "LEEME.txt"})
         archivos_b = leer_zip(b)
         self.assertIn("main.tex", archivos_b)
         self.assertNotIn(b"fontspec", archivos_b["main.tex"])
