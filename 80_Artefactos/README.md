@@ -9,7 +9,7 @@ Material que no pertenece a una etapa del pipeline de la propuesta ni a un subdo
 | `seccion3_innovaciones.md` | Material de apoyo sobre innovaciones (conservado para el capítulo 13) | Antecedente |
 | `sd-01_contexto/` | Notas para el sd-01: hechos sobre la empresa que salieron de otros trabajos y deben reflejarse en la presentación | Borrador |
 | `sd-03_contexto/` | Contexto de trabajo del sd-03: plan de 3.2, análisis de actores y servicios, descripción del alcance del producto y entregables (borradores) | Borrador |
-| `sd-xx [TODOS]/` | Auditorías que cruzan varios subdocumentos. Hoy: `auditoria_inconsistencias_sd01-04.md` (inconsistencias internas y externas de los sd-01 a sd-04, por gravedad) y `glosario_nombres_comunes.md` (nombres idénticos entre subdocumentos) | Borrador |
+| `sd-xx [TODOS]/` | Auditorías que cruzan varios subdocumentos. Hoy: `auditoria_inconsistencias_sd01-04.md` (inconsistencias internas y externas de los sd-01 a sd-04, por gravedad) `auditoria_inconsistencias_sd05-13.md` (lo mismo para los sd-05 a sd-13) y `glosario_nombres_comunes.md` (nombres idénticos entre subdocumentos) | Borrador |
 | `revision_informe_1_transcripcion.md` | Transcripción por página del PDF de retroalimentación del Informe 1; conserva la procedencia y el hash del origen | Fuente de revisión |
 | `revision_informe_1_rubrica_de_cierre.md` | Informe que transforma esa retroalimentación en criterios de cierre por subsección del Comunicado 10 | Contexto prioritario para el siguiente ciclo |
 
