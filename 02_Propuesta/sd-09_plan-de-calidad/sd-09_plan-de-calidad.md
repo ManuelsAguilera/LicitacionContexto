@@ -16,11 +16,11 @@ secciones:
   - T7-09-9.1
   - T7-09-9.2
   - T7-09-9.3
-actualizado: 2026-10-06
+actualizado: 2026-10-11
 ---
 # Subdocumento 9 — Plan de calidad
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-09.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. La fuente editable es `02_Propuesta/latex_final/sd-09/OSS-Subdocumento9.tex`; las figuras editables y exportadas están en `04_Adjuntos/diagramas/`.
 
 ## Identificación
 
@@ -29,9 +29,9 @@ actualizado: 2026-10-06
 | Subdocumento T-7 | 9 de 14 |
 | Título oficial (T-7) | Plan de calidad |
 | Carpeta | `02_Propuesta/sd-09_plan-de-calidad/` |
-| Capítulo en el informe | No cubierto todavía; se redactará en el Informe 2 o 3 |
+| Capítulo en el informe | Borrador del T7-09 preparado; integración al Informe 2 o 3 pendiente |
 | Formularios asociados | T-13, T-17 |
-| Estado | Sin redactar |
+| Estado | Borrador redactado; revisión humana y formularios asociados pendientes |
 
 ## Ponderación (Formulario T-21)
 
@@ -56,13 +56,13 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 9.1 | Plan de Calidad | Marco de aseguramiento basado en ISO/IEC 25010 y modelos de madurez. Métricas de calidad del código, cobertura de pruebas, complejidad y acoplamiento, con umbrales bloqueantes. | Sin redactar |
-| 9.2 | Estrategia de Aseguramiento de Calidad | Puertas de calidad, revisiones por pares, análisis estático y dinámico; estrategia de pruebas conforme a ISO/IEC/IEEE 29119; verificación, validación y trazabilidad requerimiento-diseño-código-prueba-despliegue. | Sin redactar |
-| 9.3 | Alineación con Plan de Trabajo | Dónde quedan las actividades de calidad en la EDT y en el cronograma del Capítulo 7. | Sin redactar |
+| 9.1 | Plan de Calidad | Marco de aseguramiento basado en ISO/IEC 25010 y modelos de madurez. Métricas de calidad del código, cobertura de pruebas, complejidad y acoplamiento, con umbrales bloqueantes. | Borrador integrado; revisión humana pendiente |
+| 9.2 | Estrategia de Aseguramiento de Calidad | Puertas de calidad, revisiones por pares, análisis estático y dinámico; estrategia de pruebas conforme a ISO/IEC/IEEE 29119; verificación, validación y trazabilidad requerimiento-diseño-código-prueba-despliegue. | Borrador integrado; revisión humana pendiente |
+| 9.3 | Alineación con Plan de Trabajo | Dónde quedan las actividades de calidad en la EDT y en el cronograma del Capítulo 7. | Borrador integrado; revisión humana pendiente |
 
 Anexos: Formulario T-13; Formulario T-17.
 
-La redacción vive en `02_Propuesta/latex_final/sd-09.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-09/OSS-Subdocumento9.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad. La [matriz interna](../../80_Artefactos/sd-09_contexto/README.md) conserva cobertura, verificación, aceptación y brechas de diseño.
 
 ## Adjuntos esperados
 
@@ -71,10 +71,11 @@ La redacción vive en `02_Propuesta/latex_final/sd-09.tex` (edición colaborativ
 
 ## Checklist de llenado
 
-- [ ] Cada título del Comunicado 10 está desarrollado en `sd-09.tex`, sin omitir ni mover contenido a otro título
-- [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
+- [x] Los tres títulos del Comunicado 10 están desarrollados en el `.tex` canónico; su suficiencia requiere revisión humana
+- [x] Las cifras citadas se contrastaron con el Caso 09 o con un cálculo mostrado; las citas del Caso incluyen folio impreso
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
-- [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
+- [x] Diagramas con fuente SVG y exportaciones en `04_Adjuntos/diagramas/`, integrados en el `.tex`
+- [ ] Revisión humana del borrador, criterios del T-13 y protocolo del T-17 registrados
 
 ---
 

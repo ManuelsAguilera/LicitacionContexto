@@ -1,0 +1,185 @@
+// D2 · Dependencias entre servicios y su etapa
+// Only Simple Solutions · Licitación TFEP-01/2026 · Subdocumento 3
+//
+// Lectura: flecha = "requiere a" (apunta del servicio que necesita al que provee).
+// Con rankdir=BT, Graphviz pone la COLA de cada arista abajo. Para que las bases
+// queden abajo y la punta apunte al proveedor, cada dependencia se escribe
+// "proveedor -> dependiente" con dir=back (la punta se dibuja en el proveedor).
+//
+// Tamaño: el dibujo se escala a 16 cm de ancho (size). Los textos están en 11 pt
+// y 10,5 pt para que, tras el escalado, ninguno quede bajo 9 pt.
+
+digraph D2 {
+  graph [
+    rankdir=BT, newrank=true, splines=spline,
+    bgcolor="#FFFFFF", fontname="Arial", fontsize=12, fontcolor="#17324D",
+    nodesep=0.06, ranksep=0.36, pad=0.03, size="6.30,20"
+  ];
+  node [
+    shape=box, style="filled", fontname="Arial", fontsize=11.5,
+    penwidth=1, margin="0.03,0.03", width=0.5, height=0.5
+  ];
+  edge [
+    dir=back, arrowtail=normal, arrowsize=0.7,
+    color="#17324D", penwidth=1.1
+  ];
+
+  // Etapa 1: relleno #196197, texto blanco.  Etapa 2: relleno #7FC6AA, texto #17324D.
+  // Cada caja repite su etapa como rótulo: el color nunca es la única señal.
+
+  // ---------- Capa 0: base ----------
+  base [
+    label=<<B>Base tecnológica e infraestructura híbrida</B><BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+    shape=box, style=filled, fillcolor="#17324D", color="#17324D", fontcolor="#FFFFFF",
+    width=7.6, height=0.5, fixedsize=true
+  ];
+
+  // Barra que agrupa la capa 1: origen de la única flecha hacia la base
+  barra [
+    label="", shape=box, style=filled, fillcolor="#17324D", color="#17324D",
+    width=7.6, height=0.035, fixedsize=true, ordering=out
+  ];
+  base -> barra [
+    penwidth=3.5, arrowsize=1.0,
+    label=<<FONT POINT-SIZE="11.5">  Todos los servicios de la capa 1<BR ALIGN="LEFT"/>  requieren a la base tecnológica<BR ALIGN="LEFT"/></FONT>>,
+    fontname="Arial", fontcolor="#17324D"
+  ];
+
+  // ---------- Cluster Retail (izquierda) ----------
+  subgraph cluster_retail {
+    label=<<B>Retail</B>>; labelloc=b; labeljust=l; fontsize=12;
+    style=rounded; color="#17324D"; penwidth=0.8; margin=3;
+
+    // Separadores invisibles de la capa 1 (sin significado; centran la base)
+    sep1 [label="", shape=point, style=invis, width=0.05];
+    sep2 [label="", shape=point, style=invis, width=0.05];
+
+    // Capa 1 [Etapa 1]
+    existencias [label=<Servicio de<BR/>existencias<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+                 fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
+    ventas      [label=<Servicio de<BR/>ventas<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+                 fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
+    oferta      [label=<Servicio de<BR/>oferta<BR/>comercial<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+                 fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
+
+    // Capa 2 [Etapa 2]
+    abastecimiento [label=<Servicio de<BR/>abasteci-<BR/>miento<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+    marketplace    [label=<Servicio de<BR/>marketplace<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+    pedidos        [label=<Servicio de<BR/>pedidos<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+    posventa       [label=<Servicio de<BR/>posventa<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+    clientes       [label=<Servicio de<BR/>clientes<BR/>Retail<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+
+    // Capa 3 [Etapa 2]
+    comisiones     [label=<Servicio de<BR/>comisiones<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+                    fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
+  }
+
+  // ---------- Centro: frontera y punto de venta ----------
+  cruces [
+    label=<Servicio de<BR/>control de<BR/>cruces<BR/><FONT POINT-SIZE="11.5">Etapa 1<BR/>frontera</FONT>>,
+    fillcolor="#196197", color="#277FA8", fontcolor="#FFFFFF", penwidth=4.5
+  ];
+  pdv [
+    label=<Punto de venta<BR/>con operación<BR/>sin conexión<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+    shape=hexagon, style=filled, fillcolor="#196197", color="#196197", fontcolor="#FFFFFF",
+    margin="0,0", width=1.75, height=0.95, fixedsize=true
+  ];
+
+  // ---------- Cluster Filial emisora (derecha) ----------
+  subgraph cluster_filial {
+    label=<<B>Filial emisora</B>>; labelloc=b; labeljust=r; fontsize=12;
+    style=rounded; color="#17324D"; penwidth=0.8; margin=3;
+
+    originacion [label=<Servicio de<BR/>originación<BR/>de crédito<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+                 fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
+
+    // Caja partida: Etapa 1 (azul) | Etapa 2 (verde)
+    cartera [
+      shape=plain, style="", margin=0,
+      label=<
+        <TABLE BORDER="1" COLOR="#17324D" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+          <TR><TD COLSPAN="2" BGCOLOR="#FFFFFF"><FONT COLOR="#17324D">Servicio de<BR/>cartera<BR/>de crédito</FONT></TD></TR>
+          <TR>
+            <TD BGCOLOR="#196197"><FONT COLOR="#FFFFFF" POINT-SIZE="11.5">E1</FONT></TD>
+            <TD BGCOLOR="#7FC6AA"><FONT COLOR="#17324D" POINT-SIZE="11.5">E2</FONT></TD>
+          </TR>
+          <TR><TD COLSPAN="2" BGCOLOR="#FFFFFF"><FONT COLOR="#17324D" POINT-SIZE="11.5"><I>tramos en<BR/>E1 y E2</I></FONT></TD></TR>
+        </TABLE>
+      >
+    ];
+
+    evidencia [label=<Servicio de<BR/>evidencia<BR/>financiera<BR/><FONT POINT-SIZE="11.5">Etapa 1</FONT>>,
+               fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
+  }
+
+  // ---------- Capas ----------
+  { rank=same; barra; }
+  { rank=same; sep1; sep2; existencias; ventas; oferta; cruces; originacion; cartera; }   // capa 1
+  { rank=same; abastecimiento; marketplace; pedidos; posventa; clientes; evidencia; } // capa 2
+  { rank=same; comisiones; pdv; }                                             // capa 3 (y el punto de venta)
+
+  // Posición de la barra y orden horizontal (aristas invisibles, sin significado)
+  // ordering=out en la barra fija el orden izquierda-derecha de la capa 1
+  barra -> sep1 [style=invis, dir=none];  // separadores invisibles: solo centran la barra y la base
+  barra -> sep2 [style=invis, dir=none];
+  barra -> existencias [style=invis, dir=none];
+  barra -> ventas      [style=invis, dir=none];
+  barra -> oferta      [style=invis, dir=none];
+  barra -> cruces      [style=invis, dir=none];
+  barra -> originacion [style=invis, dir=none];
+  barra -> cartera     [style=invis, dir=none];
+  abastecimiento -> marketplace -> pedidos -> posventa -> clientes -> evidencia [style=invis, dir=none];
+  comisiones -> pdv [style=invis, dir=none];
+
+  // ---------- Dependencias "requiere a" (proveedor -> dependiente, dir=back) ----------
+  // Punto de venta con operación sin conexión -> ventas, originación de crédito
+  ventas      -> pdv;
+  originacion -> pdv;
+  // Servicio de evidencia financiera -> originación de crédito, cartera de crédito
+  originacion -> evidencia;
+  cartera     -> evidencia;
+  // Servicio de abastecimiento -> existencias
+  existencias -> abastecimiento;
+  // Servicio de marketplace -> existencias
+  existencias -> marketplace;
+  // Servicio de pedidos -> existencias, ventas
+  existencias -> pedidos;
+  ventas      -> pedidos;
+  // Servicio de posventa -> existencias, ventas
+  existencias -> posventa;
+  ventas      -> posventa;
+  // Servicio de clientes Retail -> oferta comercial, control de cruces
+  oferta      -> clientes;
+  cruces      -> clientes;
+  // Servicio de comisiones -> pedidos, ventas
+  pedidos     -> comisiones;
+  ventas      -> comisiones;
+
+  // ---------- Leyenda (bajo la base) ----------
+  leyenda [
+    shape=plain, style="", fontsize=11.5,
+    label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3" CELLPADDING="1">
+        <TR>
+          <TD BGCOLOR="#196197" WIDTH="20" HEIGHT="12"></TD><TD ALIGN="LEFT"><FONT COLOR="#17324D">Etapa 1</FONT></TD>
+          <TD WIDTH="4"></TD>
+          <TD BGCOLOR="#7FC6AA" WIDTH="20" HEIGHT="12" BORDER="1" COLOR="#17324D"></TD><TD ALIGN="LEFT"><FONT COLOR="#17324D">Etapa 2</FONT></TD>
+          <TD WIDTH="4"></TD>
+          <TD BGCOLOR="#196197" WIDTH="10" HEIGHT="12"></TD><TD BGCOLOR="#7FC6AA" WIDTH="10" HEIGHT="12"></TD>
+          <TD ALIGN="LEFT"><FONT COLOR="#17324D">Etapas 1 y 2 por tramos</FONT></TD>
+          <TD WIDTH="4"></TD>
+          <TD BORDER="3" COLOR="#277FA8" BGCOLOR="#196197" WIDTH="20" HEIGHT="12"></TD>
+          <TD ALIGN="LEFT"><FONT COLOR="#17324D">Frontera</FONT></TD>
+          <TD WIDTH="4"></TD>
+          <TD ALIGN="LEFT"><FONT COLOR="#17324D">→ requiere a</FONT></TD>
+        </TR>
+      </TABLE>
+    >
+  ];
+  leyenda -> base [style=invis, dir=none];
+}

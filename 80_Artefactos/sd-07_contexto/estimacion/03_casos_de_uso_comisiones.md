@@ -6,7 +6,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta de
 
 | Código | Servicio | Caso de uso (objetivo del actor) | Actor principal | Trans. | Origen | Supuestos de flujo |
 | :-- | :-- | :-- | :-- | --: | :-- | :-- |
-| CU-CM-01 | R:V-03 | Calcular la base de comisión por vendedor, tienda y canal | AS-14 | 2 | RF-054, RF-071 | S2 |
+| CU-CM-01 | R:V-03 | Calcular la base de comisión por vendedor, tienda y canal | AS-14 | 1 | RF-054, RF-071 | S2 |
 | CU-CM-02 | R:V-03 | Transmitir la base de comisión al sistema de remuneraciones | AS-11 | 2 | RF-055 | S3 |
 | CU-CM-03 | R:V-03 | Revisar la atribución de una comisión | AH-15 | 2 | 3.3.2 | S1, S4 |
 
@@ -16,7 +16,7 @@ Resumen. 3 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 
 | Código | Transacciones (idas y vueltas completas) |
 | :-- | :-- |
-| CU-CM-01 | T1 calcular la base reconociendo al vendedor y a la tienda de origen de la unidad. T2 recalcular la base considerando el canal de origen y el de cumplimiento cuando difieren |
+| CU-CM-01 | T1 calcular la base reconociendo al vendedor y a la tienda de origen de la unidad, y considerando el canal de origen y el de cumplimiento cuando difieren |
 | CU-CM-02 | T1 verificar el movimiento real de inventario en bodega. T2 transmitir la base de comisión al conector del sistema de remuneraciones |
 | CU-CM-03 | T1 consultar la atribución de una venta y la regla aplicada. T2 registrar una observación o corrección con su motivo |
 
@@ -29,6 +29,7 @@ Resumen. 3 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 | S3 | EXC-05: el servicio no gestiona remuneraciones. Solo entrega la base al conector del sistema empresarial (AS-11, módulo del ERP, tipo 1) |
 | S4 | AH-15 audita las reglas. La administración de las reglas de atribución (altas y cambios) no tiene RF y no se cuenta; queda como posible vacío del catálogo |
 | S5 | Actores secundarios: ventas y pedidos como proveedores de datos, sin ser actores del servicio |
+| S6 | Revisión independiente de G3 (2026-10-08): considerar el canal de cumplimiento (RF-071) es un flujo alternativo del mismo cálculo y no agrega una ida y vuelta, por la decisión 1 de la diapositiva 31 |
 
 ## 4. Cobertura de los RF
 

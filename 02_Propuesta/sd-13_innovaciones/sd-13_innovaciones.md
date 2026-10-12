@@ -4,12 +4,23 @@ tipo: parte
 parte: T7-13
 titulo: Innovaciones
 estado: borrador
-bases: []
-requisitos: []
-depende_de: []
+bases:
+  - "Bases Administrativas, artículos 28 a 30"
+  - "Bases Transversales, capítulos 13, 18 y 26"
+  - "Comunicado 10, capítulo 13"
+requisitos:
+  - RF-131
+  - RF-134
+  - RF-135
+  - RF-136
+  - RF-137
+depende_de:
+  - T7-03
+  - T7-04
+  - T7-05
+  - T7-07
 adjuntos:
   - ADJ-025
-  - ADJ-026
 jira:
   - OSS-102
   - OSS-103
@@ -17,16 +28,20 @@ jira:
   - OSS-172
 cifras: []
 secciones:
+  - T7-13-INTRO
   - T7-13-13.1
   - T7-13-13.2
   - T7-13-13.3
   - T7-13-13.4
   - T7-13-13.5
-actualizado: 2026-10-06
+  - T7-13-REF
+  - T7-13-IA
+origen: "80_Artefactos/sd-13_contexto/investigacion_cinco_innovaciones.md; decision_cartera_equipo.md"
+actualizado: 2026-10-11
 ---
 # Subdocumento 13 — Innovaciones
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-13.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. La fuente inicial está en los archivos de sección enumerados abajo. Tras la primera importación, la fuente final será `02_Propuesta/latex_final/sd-13/OSS-Subdocumento13.tex`. No existe todavía esa importación porque faltan las herramientas de exportación en este entorno.
 
 ## Identificación
 
@@ -37,7 +52,7 @@ actualizado: 2026-10-06
 | Carpeta | `02_Propuesta/sd-13_innovaciones/` |
 | Capítulo en el informe | Capítulo VI |
 | Formularios asociados | T-19 |
-| Estado | Sin redactar |
+| Estado | Borrador redactado; sin revisión humana ni exportación |
 
 ## Ponderación (Formulario T-21)
 
@@ -64,15 +79,32 @@ Cada innovación desarrolla los siete elementos del Art. 29.º (problema, tecnol
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 13.1 | Innovación 1 | Tipo: producto o servicio. | Sin redactar |
-| 13.2 | Innovación 2 | Tipo: proceso. | Sin redactar |
-| 13.3 | Innovación 3 | Tipo: tecnológica o de arquitectura. | Sin redactar |
-| 13.4 | Innovación 4 | Tipo: modelo de negocio o de contratación. | Sin redactar |
-| 13.5 | Innovación 5 | Tipo: experiencia de usuario, sostenibilidad o impacto social. | Sin redactar |
+| 13.1 | Innovación 1 | Lockers Ancoa 24/7, producto o servicio. | Borrador |
+| 13.2 | Innovación 2 | Conteo cíclico predictivo, proceso. | Borrador |
+| 13.3 | Innovación 3 | Búsqueda vectorial multimodal, tecnología. | Borrador |
+| 13.4 | Innovación 4 | Retail Media Network, modelo de negocio. | Borrador |
+| 13.5 | Innovación 5 | Modo Tienda con fila virtual, experiencia de usuario. | Borrador |
 
 Anexos: Formulario T-19.
 
-La redacción vive en `02_Propuesta/latex_final/sd-13.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+## Fuentes para la primera importación
+
+Esta tabla determina el orden de ensamblado del exportador. El número es de ensamblado; los títulos dentro de las fuentes mantienen 13.1 a 13.5 y el cierre sin numeración.
+
+| Orden | Contenido | Archivo | Estado |
+| :--- | :--- | :--- | :--- |
+| 0 | Introducción | `sd-13_s0_introduccion.md` | Borrador |
+| 1 | Innovación 1 | `sd-13_s1_innovacion-1.md` | Borrador |
+| 2 | Innovación 2 | `sd-13_s2_innovacion-2.md` | Borrador |
+| 3 | Innovación 3 | `sd-13_s3_innovacion-3.md` | Borrador |
+| 4 | Innovación 4 | `sd-13_s4_innovacion-4.md` | Borrador |
+| 5 | Innovación 5 | `sd-13_s5_innovacion-5.md` | Borrador |
+| 6 | Referencias | `sd-13_s7_referencias.md` | Borrador |
+| 7 | Declaración de uso de IA | `sd-13_s6_declaracion-ia.md` | Borrador |
+
+La selección de equipos es de referencia. Para cerrar el T-19 deben fijarse configuración, metas numéricas donde no existe línea base, valorización de la Oferta Económica y paquetes detallados del T-14. La escala de madurez distingue componente documentado, integración probada y operación aceptada. Las probabilidades de riesgo son valoraciones iniciales y no frecuencias medidas.
+
+El modo tienda se entrega en el mes 21 para respetar la Etapa 2 del servicio de clientes Retail en el SD-03. Esta asignación precisa la propuesta de piloto temprano del contexto de investigación.
 
 ## Trazabilidad con Jira
 
@@ -89,16 +121,17 @@ La estructura de trabajo vive en el proyecto `OSS` y **no es el índice del info
 ## Adjuntos esperados
 
 - `form-T-19_cartera-innovaciones.docx`
-- `adj-sd-13_s2_referencias-APA7.md`
+- Figura 13.1 en `04_Adjuntos/diagramas/diag-13-00_cartera.png`, con fuente editable `.py`.
+- Referencias incorporadas al cierre, en `sd-13_referencias.md`.
 
 ## Checklist de llenado
 
 - [ ] Cada título del Comunicado 10 está desarrollado en `sd-13.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
-- [ ] Cinco innovaciones, una por cada tipo del Art. 28.º, con los siete elementos del Art. 29.º
+- [x] Cinco innovaciones redactadas, una por cada tipo del Art. 28.º, con apartados para los siete elementos del Art. 29.º
 - [ ] Cada innovación trazable con la arquitectura, la EDT y el flujo de caja
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
-- [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
+- [x] Diagrama citado e interpretado, con fuente editable y export en `04_Adjuntos/diagramas/`
 
 ---
 

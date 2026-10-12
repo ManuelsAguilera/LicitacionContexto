@@ -8,7 +8,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | :-- | :-- | :-- | :-- | --: | :-- | :-- |
 | CU-OF-01 | R:M-01 | Cambiar y propagar un precio | AH-11 | 3 | RF-016, RF-018, RF-030; 3.4.2 | S2, S3, S4 |
 | CU-OF-02 | R:M-01 | Entregar la oferta vigente a los canales | AS-04 | 4 | RF-017; 3.3.2 | S4 |
-| CU-OF-03 | R:M-01 | Consultar el precio vigente en línea | AH-01 | 1 | RF-064 | S1 |
+| CU-OF-03 | R:M-01 | Consultar el precio vigente en línea | AS-04 | 1 | RF-064 | S1 |
 | CU-OF-04 | R:M-01 | Registrar el cambio de etiqueta | AH-06 | 2 | RF-019, RF-020 | S6 |
 | CU-OF-05 | R:M-01 | Consultar el estado de exhibición de la tienda | AH-05 | 2 | RF-029 | S4 |
 | CU-OF-06 | R:M-01 | Recuperar el precio publicado en un instante | AH-15 | 2 | RF-021 | S6 |
@@ -42,7 +42,7 @@ Resumen. 12 casos, 11 simples (1 a 3 transacciones) y 1 medio (CU-OF-02). UUCW p
 
 | ID | Supuesto |
 | :-- | :-- |
-| S1 | Portal público en la Opción A (D-08 de `contexto_sd-04.md`). El cliente llega por el sitio y la aplicación de AS-04 y se conserva a AH-01 como actor por prudencia |
+| S1 | Portal público en la Opción A (D-08 de `contexto_sd-04.md`). El cliente llega por el sitio y la aplicación de AS-04, que es el actor del caso. AH-01 sale del UAW base |
 | S2 | Las cajas son parte de la solución (nuevo punto de venta, sd-03 3.3.2), no un actor sistema |
 | S3 | El «analista comercial» y el comprador se mapean a AH-11 (comercial y compras) |
 | S4 | El sd-03 no describe este flujo en detalle. Las transacciones son propuestas |

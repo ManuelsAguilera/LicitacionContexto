@@ -1,6 +1,14 @@
 # Referencia
 
-Material de otro caso, conservado **solo como referencia de forma**.
+Material de referencia. Las restricciones del caso anterior descritas abajo corresponden exclusivamente a `TrabajosAnteriores_DistriProducto/`.
+
+## Páginas del Caso 09
+
+[Índice de páginas del Caso 09](indice_paginas_caso09.md): relaciona capítulos y folios impresos del PDF original con las páginas del visor. El [OCR paginado](caso09_ocr_paginado.txt) permite buscar una frase con `rg` y obtener su folio sin leer las 51 páginas en el contexto.
+
+## `calidad/`
+
+Material docente proporcionado por el usuario, transcripción Markdown de sus 38 páginas, investigación con fuentes oficiales y guía del agente revisor. Véase [calidad/README.md](calidad/README.md). Complementa la revisión; no reemplaza las Bases ni convierte ejemplos de clase en obligaciones del caso.
 
 ## `TrabajosAnteriores_DistriProducto/`
 

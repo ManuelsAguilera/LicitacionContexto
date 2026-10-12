@@ -7,17 +7,17 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: muestra apro
 | Código | Servicio | Caso de uso (objetivo del actor) | Actor principal | Trans. | Origen | Supuestos de flujo |
 | :-- | :-- | :-- | :-- | --: | :-- | :-- |
 | CU-EX-01 | R:M-03 | Consultar la disponibilidad para vender en sala | AH-03 | 2 | RF-087, RF-101, RF-161 | S2, S7 |
-| CU-EX-02 | R:M-03 | Consultar la disponibilidad en línea | AH-01 | 2 | RF-065, RF-066, RF-160 | S1, S7 |
+| CU-EX-02 | R:M-03 | Consultar la disponibilidad en línea | AS-04 | 2 | RF-065, RF-066, RF-160 | S1, S7 |
 | CU-EX-03 | R:M-03 | Publicar el disponible a los canales | AS-04 | 3 | RF-127 a RF-129, RF-157; 3.4.1 | S3, S7 |
 | CU-EX-04 | R:M-03 | Reservar una unidad para el canal digital | AS-04 | 4 | RF-035, RF-037, RF-038, RF-041; 3.4.1 | S3 |
 | CU-EX-05 | R:M-03 | Expirar las reservas vencidas | AS-14 | 2 | RF-039, RF-040, RF-042 | S4 |
-| CU-EX-06 | R:M-03 | Verificar la existencia física antes del cobro | AH-06 | 3 | RF-044; 3.4.1 | S5 |
+| CU-EX-06 | R:M-03 | Verificar la existencia física antes del cobro | AH-06 | 2 | RF-044; 3.4.1 | S5 |
 | CU-EX-07 | R:M-03 | Resolver el conflicto de existencia comprometida | AH-04 | 2 | RF-098 | S6 |
-| CU-EX-08 | R:M-03 | Parametrizar el colchón de confianza y la vigencia de la reserva | AH-12 | 4 | RF-036, RF-149 a RF-152 | S8, S9 |
+| CU-EX-08 | R:M-03 | Parametrizar el colchón de confianza y la vigencia de la reserva | AH-12 | 2 | RF-036, RF-149 a RF-152 | S8, S9 |
 | CU-EX-09 | R:M-03 | Consultar la traza del cálculo del disponible | AH-15 | 2 | RF-130 | S9 |
 | CU-EX-10 | R:M-03 | Parametrizar el conteo cíclico | AH-12 | 3 | RF-131 a RF-133 | S8, S9 |
-| CU-EX-11 | R:M-03 | Ejecutar el conteo cíclico | AH-06 | 3 | RF-134 a RF-136 | S9 |
-| CU-EX-12 | R:M-03 | Consultar la exactitud del inventario y recibir alertas | AH-05 | 3 | RF-137, RF-158, RF-159, RF-162 | S9 |
+| CU-EX-11 | R:M-03 | Ejecutar el conteo cíclico | AH-06 | 2 | RF-134 a RF-136 | S9 |
+| CU-EX-12 | R:M-03 | Consultar la exactitud del inventario y recibir alertas | AH-05 | 2 | RF-137, RF-158, RF-159, RF-162 | S9 |
 | CU-EX-13 | R:M-03 | Clasificar las diferencias y cerrar el ajuste | AH-14 | 3 | RF-138, RF-139 | S9 |
 | CU-EX-14 | R:M-03 | Emitir el informe mensual de merma | AH-14 | 2 | RF-140, RF-141 | S9 |
 | CU-EX-15 | R:M-03 | Gestionar las unidades en el probador | AH-03 | 3 | RF-153 a RF-156 | S9 |
@@ -26,7 +26,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: muestra apro
 | CU-EX-18 | R:M-03 | Recibir los movimientos del sistema de almacenes | AS-02 | 3 | EXC-12; 3.3.2 | S9 |
 | CU-EX-19 | R:M-03 | Cargar las existencias de Concepción | AH-07 | 3 | EXC-13, SP-02, RC-10 | S9, S11 |
 
-Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX-08). UUCW provisional del servicio = 17 × 5 + 2 × 10 = 105.
+Resumen. 19 casos, 18 simples (1 a 3 transacciones) y 1 medio (CU-EX-04). UUCW provisional del servicio = 18 × 5 + 1 × 10 = 100.
 
 ## 2. Transacciones contadas
 
@@ -37,13 +37,13 @@ Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX
 | CU-EX-03 | T1 recalcular y publicar tras un movimiento. T2 responder la consulta de disponible de un canal. T3 republicar tras reconectarse un canal |
 | CU-EX-04 | T1 crear la reserva o recibir su rechazo por doble compromiso. T2 renovar por actividad. T3 confirmar al comprometerse el pedido. T4 liberar de inmediato |
 | CU-EX-05 | T1 liberar la reserva expirada y devolver la unidad al disponible. T2 aplicar la vigencia reducida del evento anual |
-| CU-EX-06 | T1 solicitar la verificación y confirmar la presencia de la unidad. T2 informar la unidad no encontrada. T3 registrar la diferencia detectada |
+| CU-EX-06 | T1 solicitar la verificación y confirmar la presencia de la unidad o informar que no se encontró. T2 registrar la diferencia detectada |
 | CU-EX-07 | T1 registrar la venta física de una unidad con reserva digital y aplicar la precedencia. T2 consultar el resultado de la resolución |
-| CU-EX-08 | T1 definir el colchón por categoría. T2 definir el colchón por punto. T3 definir la vigencia de la reserva. T4 consultar la sugerencia de referencia y el historial de cambios |
+| CU-EX-08 | T1 definir el colchón (por categoría y por punto) y la vigencia de la reserva. T2 consultar la sugerencia de referencia y el historial de cambios |
 | CU-EX-09 | T1 consultar la traza por referencia y punto. T2 consultar la versión de parámetros aplicada |
 | CU-EX-10 | T1 definir la frecuencia por categoría. T2 definir el método. T3 definir el criterio de gatillo |
-| CU-EX-11 | T1 obtener la programación asignada. T2 registrar el resultado del conteo. T3 recibir la señal de recuento extraordinario |
-| CU-EX-12 | T1 consultar la exactitud por categoría. T2 consultar el error probable por referencia y punto. T3 recibir la alerta bajo el umbral |
+| CU-EX-11 | T1 obtener la programación asignada. T2 registrar el resultado del conteo y recibir la señal de recuento extraordinario si corresponde |
+| CU-EX-12 | T1 consultar la exactitud por categoría. T2 consultar el error probable por referencia y punto y recibir la alerta bajo el umbral si corresponde |
 | CU-EX-13 | T1 registrar la diferencia detectada. T2 clasificarla en un componente de merma. T3 cerrar el ajuste, con rechazo si falta el componente |
 | CU-EX-14 | T1 consultar monto y proporción por componente. T2 emitir el informe mensual |
 | CU-EX-15 | T1 registrar el ingreso al probador. T2 confirmar el reingreso a sala. T3 registrar la venta de la unidad |
@@ -56,7 +56,7 @@ Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX
 
 | ID | Supuesto |
 | :-- | :-- |
-| S1 | RF-065 y RF-066 nombran al cliente no autenticado, por eso el cliente se mantiene como actor del caso. Bajo la Opción A (S12) la consulta llega por el sitio y la aplicación de AS-04. Se conserva a AH-01 como actor por prudencia (sensibilidad en `02_actores_uaw.md`) |
+| S1 | RF-065 y RF-066 nombran al cliente no autenticado, por eso el caso nace del cliente. Bajo la Opción A (S12) la consulta llega por el sitio y la aplicación de AS-04. AS-04 es el actor del caso y el cliente (AH-01) sale del UAW base (sensibilidad en `02_actores_uaw.md`) |
 | S2 | RF-087 es un flujo alternativo que agrega una ida y vuelta contra la existencia local, por eso se cuenta como T2 |
 | S3 | La reserva y la publicación las pide la plataforma de comercio electrónico (AS-04), no el cliente directo, porque el canal digital es una plataforma conservada |
 | S4 | El actor es el temporizador (AS-14). La vigencia reducida del evento anual (RF-042) es un ciclo distinto del normal |
@@ -68,6 +68,7 @@ Resumen. 19 casos, 17 simples (1 a 3 transacciones) y 2 medios (CU-EX-04 y CU-EX
 | S10 | RF-183 cita RF-026.1, referencia obsoleta del catálogo |
 | S11 | El personal de Concepción (100 personas) es parte de AH-07. No se instalan componentes allí (EXC-13) y la carga es un registro estructurado |
 | S12 | Portal público en la Opción A (D-08 de `contexto_sd-04.md`): la solución entrega la disponibilidad por interfaz y el sitio y la aplicación existentes la presentan. Si la evaluación de AS-04 de la Etapa 1 exige un portal nuevo (Opción B), CU-EX-02 y CU-EX-01 mantienen su actor y se agregan los casos de presentación |
+| S13 | Revisión independiente de G3 (2026-10-08): no se cuentan como transacciones los resultados alternativos ni las notificaciones de la misma ida y vuelta. Es el caso de la unidad no encontrada (CU-EX-06), la señal de recuento extraordinario (CU-EX-11) y la alerta bajo el umbral (CU-EX-12) |
 
 ## 4. Cobertura de los 48 RF
 

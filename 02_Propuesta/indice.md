@@ -18,7 +18,7 @@ La Propuesta Técnica se estructura en **catorce subdocumentos** (Formulario T-7
 | 10 | [Servicios de operación y niveles de servicio](sd-10_servicios-de-operacion-y-niveles-de-servicio/) | - | Informe 2/3 | Sin redactar |
 | 11 | [Planes en operación](sd-11_planes-en-operacion/) | - | Informe 2/3 | Sin redactar |
 | 12 | [Equipo de trabajo, subcontrataciones y alianzas](sd-12_equipo-subcontrataciones-y-alianzas/) | T-8 | Informe 2/3 | Sin redactar |
-| 13 | [Innovaciones](sd-13_innovaciones/) | T-19 | Capítulo VI | Sin redactar |
+| 13 | [Innovaciones](sd-13_innovaciones/) | T-19 | Capítulo VI | Borrador redactado; exportación y T-19 sin completar |
 | 14 | [Ventajas, beneficios y consolidación](sd-14_ventajas-beneficios-y-consolidacion/) | - | Informe 2/3 | Sin redactar |
 
 ## Ponderación (Formulario T-21)
@@ -35,7 +35,7 @@ Los documentos de `80_Artefactos/` se conservan como fuentes de trabajo y no se 
 
 | Artefacto | Destino de consolidación | Uso actual |
 | :--- | :--- | :--- |
-| `seccion3_innovaciones.md` | Subdocumento 13 | Fichas candidatas INN-1 a INN-5 y trazabilidad; consolidar en las secciones 13.1–13.3 y Formulario T-19. |
+| `seccion3_innovaciones.md` | Subdocumento 13 | Superado. La cartera elegida está en `80_Artefactos/sd-13_contexto/decision_cartera_equipo.md` y se desarrolla en las secciones 13.1–13.5. |
 
 La consolidación queda pendiente porque el Informe 1 ya cubre estos capítulos y debe evitarse duplicar o reemplazar contenido sin cotejarlo. Los artefactos mantienen enlaces relativos a las rutas vigentes.
 

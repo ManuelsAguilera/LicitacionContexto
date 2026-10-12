@@ -9,7 +9,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | CU-VE-01 | R:V-02 | Registrar y cobrar una venta | AH-04 | 3 | RF-001; 3.3.2 | S1, S3 |
 | CU-VE-02 | R:V-02 | Reversar una venta o un pago | AH-04 | 2 | 3.3.2 | S1, S4 |
 | CU-VE-03 | R:V-02 | Cerrar la caja del turno | AH-04 | 2 | 3.3.2 | S1, S4 |
-| CU-VE-04 | R:V-02 | Operar la tienda sin enlace | AH-04 | 4 | RF-082 a RF-086; 3.4.5 | S1, S2, S6 |
+| CU-VE-04 | R:V-02 | Operar la tienda sin enlace | AH-04 | 3 | RF-082 a RF-086; 3.4.5 | S1, S2, S6 |
 | CU-VE-05 | R:V-02 | Reconciliar las ventas hechas sin enlace | AS-14 | 3 | RF-088, RF-095 a RF-097; 3.4.5 | S6 |
 | CU-VE-06 | R:V-02 | Revisar el informe de excepciones de la conciliación | AH-16 | 2 | RF-099 | S4 |
 | CU-VE-07 | R:V-02 | Validar las operaciones cursadas sin enlace | AH-10 | 2 | RF-094; EXC-16 | S5 |
@@ -18,7 +18,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 | CU-VE-10 | R:V-02 | Enrutar los documentos tributarios al ERP/DTE | AS-01 | 2 | RF-100; 3.3.2 | S4 |
 | CU-VE-11 | R:V-02 | Cobrar con la tarjeta de la casa | AH-04 | 2 | 3.4.4; Tabla 3.7 | S5, S8 |
 
-Resumen. 11 casos, 10 simples (1 a 3 transacciones) y 1 medio (CU-VE-04). UUCW provisional del servicio = 10 × 5 + 1 × 10 = 60.
+Resumen. 11 casos, todos simples (1 a 3 transacciones). UUCW provisional del servicio = 11 × 5 = 55.
 
 ## 2. Transacciones contadas
 
@@ -27,7 +27,7 @@ Resumen. 11 casos, 10 simples (1 a 3 transacciones) y 1 medio (CU-VE-04). UUCW p
 | CU-VE-01 | T1 registrar la venta, aunque la unidad tenga una reserva digital activa. T2 cobrar con el medio de pago elegido. T3 confirmar la venta |
 | CU-VE-02 | T1 registrar la reversa de la venta o del pago. T2 confirmar el ajuste del documento en el ERP/DTE |
 | CU-VE-03 | T1 consultar el resumen de caja del turno. T2 registrar el cierre y las diferencias |
-| CU-VE-04 | T1 consultar el estado del enlace y de la sincronización. T2 registrar la venta en modo desconectado. T3 cobrar en modo desconectado. T4 emitir el documento en contingencia con folios previos |
+| CU-VE-04 | T1 registrar la venta en modo desconectado. T2 cobrar en modo desconectado. T3 emitir el documento en contingencia con folios previos |
 | CU-VE-05 | T1 detectar el restablecimiento del enlace y volver a modo conectado. T2 reconciliar las ventas hacia los sistemas centrales. T3 reconciliar los documentos emitidos con el ERP/DTE |
 | CU-VE-06 | T1 consultar el informe de excepciones. T2 consultar la regla aplicada a un conflicto |
 | CU-VE-07 | T1 consultar las operaciones marcadas como cursadas sin enlace. T2 registrar la validación posterior |
@@ -45,7 +45,7 @@ Resumen. 11 casos, 10 simples (1 a 3 transacciones) y 1 medio (CU-VE-04). UUCW p
 | S3 | RF-001 (vender aunque haya una reserva digital) se cuenta aquí. El conflicto que resuelve el Servicio de existencias (RF-098) está en CU-EX-07, con otro objetivo |
 | S4 | El sd-03 no describe este flujo en detalle o el caso no tiene RF (reversas, registros de caja y ventas del canal digital salen de 3.3.2). Las transacciones son propuestas |
 | S5 | CU-VE-07 y CU-VE-11 dependen del crédito sin conexión (EXC-16, RT-03.13). Si la prueba de factibilidad falla, la función se declara no disponible y ambos casos se retiran. Tabla 3.7: la compra es condicionada |
-| S6 | RF-082 y RF-088 (detectar y conmutar) las ejecuta el sistema. Sus idas y vueltas se cuentan como visibilidad del estado para el actor en CU-VE-04 T1 y CU-VE-05 T1 |
+| S6 | RF-082 y RF-088 (detectar y conmutar) las ejecuta el sistema. Son automáticas y no se cuentan como transacción propia. El cajero ve el estado del enlace dentro de cada operación (revisión independiente de G3, 2026-10-08) |
 | S7 | RF-181 se asigna a AH-13 como «rol facultado» provisional, hasta que el sd-03 lo defina |
 | S8 | Intercambios de la Tabla 3.7. «Compra» (dos filas, una sola operación) en CU-VE-11. «Pago/reversa» y «Reversa» siguen cerrados hasta aprobación y no se cuentan. El rechazo de Marketing es del Servicio de control de cruces |
 

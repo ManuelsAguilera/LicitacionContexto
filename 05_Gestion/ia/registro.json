@@ -9,5 +9,129 @@
     "comprobaciones": ["Comprobación efectivamente realizada"],
     "fecha": "YYYY-MM-DD"
   },
-  "registros": []
+  "procedencia_cartera_T7_13": "El equipo aportó el resumen, las ideas y la retroalimentación y decidió sustituir RFID por conteo predictivo. Los niveles califican la elaboración del texto y los diagramas, no la autoría de las ideas. Codex amplió la investigación, redactó las fichas y adaptó su estructura; no se ha registrado reescritura y verificación humana del texto completo.",
+  "registros": [
+  {
+    "artefacto": "T7-13-INTRO",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Alto",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-13.1",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-13.2",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-13.3",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-13.4",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-13.5",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-REF",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-13-IA",
+    "herramienta": "Codex; humanizer",
+    "finalidad": "Investigación, redacción y revisión editorial formal del SD-13",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [
+      "Contraste de estructura con Comunicado 10 y artículos 28 a 30",
+      "Aplicación de humanizer con restricciones RR-24",
+      "Sin revisión humana del texto completo"
+    ],
+    "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "ADJ-025",
+    "herramienta": "Ninguna",
+    "finalidad": "Formulario no producido; fichas desarrolladas en 13.1 a 13.5",
+    "nivel_texto": "Ninguno",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "pendiente",
+    "comprobaciones": [],
+    "fecha": "2026-10-11"
+  }
+]
 }

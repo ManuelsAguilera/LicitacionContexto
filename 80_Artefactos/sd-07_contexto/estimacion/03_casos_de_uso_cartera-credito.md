@@ -38,7 +38,7 @@ Resumen. 7 casos, todos simples (1 a 3 transacciones). UUCW provisional del serv
 | S4 | Los pagos los registra AH-10 en el mesón financiero. «Pago/reversa» de la Tabla 3.7 sigue cerrado hasta su aprobación, así que el pago en caja con cruce a Retail no se cuenta |
 | S5 | La imputación de pagos (RN-42) es un vacío conocido del catálogo y queda fuera |
 | S6 | La migración de datos de 620.000 clientes va fuera del método (rama 6 de la EDT). Aquí solo cuenta lo funcional: la conciliación y la convivencia |
-| S7 | Los resultados 18, 23 y 24 del Anexo D se rastrean aquí y en evidencia financiera. Los hitos de remediación (resultado 23) se rastrean en CU-EV-06 |
+| S7 | Los resultados 18, 23 y 24 del Anexo D se rastrean aquí y en evidencia financiera. Los hitos de remediación (resultado 23) se rastrean en `04_trazabilidad_resultados.md` |
 | S8 | EXC-06: no se opera la cobranza judicial. Sí se registra el expediente trazable, dentro de CU-CA-01 |
 
 ## 4. Cobertura de los 6 RF

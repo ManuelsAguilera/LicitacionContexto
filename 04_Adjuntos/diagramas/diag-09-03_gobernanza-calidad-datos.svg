@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="132.5mm" viewBox="0 0 720 530" role="img" aria-labelledby="title desc">
+  <title id="title">Gobernanza y ciclo de calidad de datos</title>
+  <desc id="desc">Retail de Ancoa y la filial emisora conservan dominios separados. El responsable de negocio de cada dominio decide sus reglas y confirma sus resultados. Datos y QA de Only Simple Solutions ejecutan y verifican los controles. X-01 gobierna los cruces autorizados. La Contraparte acepta los hitos contractuales.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#17324D"/></marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #17324D; }
+      .title { font-size: 22px; font-weight: 700; }
+      .head { font-size: 19px; font-weight: 700; }
+      .body { font-size: 17px; }
+      .white { fill: #fff; }
+    </style>
+  </defs>
+  <rect width="720" height="530" fill="#fff"/>
+  <text class="title" x="360" y="31" text-anchor="middle">Gobernanza y ciclo de calidad de datos</text>
+
+  <!-- Dominios separados -->
+  <rect x="18" y="48" width="333" height="112" rx="11" fill="#F2F7FA" stroke="#196197" stroke-width="2"/>
+  <rect x="369" y="48" width="333" height="112" rx="11" fill="#F3F7EF" stroke="#456B37" stroke-width="2"/>
+  <path d="M18 80 H351 V59 Q351 48 340 48 H29 Q18 48 18 59 Z" fill="#196197"/>
+  <path d="M369 80 H702 V59 Q702 48 691 48 H380 Q369 48 369 59 Z" fill="#456B37"/>
+  <text class="head white" x="184" y="71" text-anchor="middle">DOMINIO RETAIL</text>
+  <text class="head white" x="535" y="71" text-anchor="middle">EMISOR FISCALIZADO</text>
+  <text class="body" x="184" y="105" text-anchor="middle">Dueño Retail (Ancoa) define reglas</text>
+  <text class="body" x="184" y="132" text-anchor="middle">Datos (OSS) ejecuta · QA (OSS) verifica</text>
+  <text class="body" x="535" y="105" text-anchor="middle">Dueño Emisor (filial) define reglas</text>
+  <text class="body" x="535" y="132" text-anchor="middle">Datos (OSS) ejecuta · QA (OSS) verifica</text>
+
+  <!-- Control de cruces X-01 -->
+  <rect x="18" y="177" width="684" height="118" rx="11" fill="#FFF8E8" stroke="#9B6A16" stroke-width="1.8"/>
+  <text class="head" x="360" y="205" text-anchor="middle">X-01 · cruce solo con autorización</text>
+  <text class="body" x="360" y="236" text-anchor="middle">Finalidad · fundamento · solicitante · destinatario</text>
+  <text class="body" x="360" y="263" text-anchor="middle">Campos mínimos · dueño autorizante · registro de decisión</text>
+  <text class="body" x="360" y="286" text-anchor="middle">Cambio de permisos: Jefe de Proyecto coordina con dueño y Seguridad</text>
+
+  <!-- Medición, tratamiento y decisión -->
+  <text class="head" x="360" y="329" text-anchor="middle">CICLO DE MEDICIÓN Y MEJORA</text>
+  <g stroke-width="1.6">
+    <rect x="18" y="346" width="121" height="92" rx="10" fill="#E8F1F7" stroke="#196197"/>
+    <rect x="155" y="346" width="121" height="92" rx="10" fill="#F3F5F6" stroke="#73818B"/>
+    <rect x="292" y="346" width="121" height="92" rx="10" fill="#FFF8E8" stroke="#9B6A16"/>
+    <rect x="429" y="346" width="127" height="92" rx="10" fill="#E8F1F7" stroke="#196197"/>
+    <rect x="572" y="346" width="130" height="92" rx="10" fill="#EDF3E8" stroke="#456B37"/>
+  </g>
+  <g class="body" text-anchor="middle">
+    <text x="78" y="368" font-weight="700">Métricas</text>
+    <text x="78" y="389">Completitud</text>
+    <text x="78" y="409">Exactitud</text>
+    <text x="78" y="428">Consistencia</text>
+    <text x="215" y="374" font-weight="700">Hallazgo</text>
+    <text x="215" y="401">Causa /</text>
+    <text x="215" y="424">responsable</text>
+    <text x="353" y="374" font-weight="700">Corrección</text>
+    <text x="353" y="401">Datos corrige</text>
+    <text x="353" y="424">según decisión</text>
+    <text x="493" y="374" font-weight="700">Verificación</text>
+    <text x="493" y="401">QA verifica</text>
+    <text x="493" y="424">resultado</text>
+    <text x="637" y="374" font-weight="700">Decisión</text>
+    <text x="637" y="401">Dueño</text>
+    <text x="637" y="424">confirma resultado</text>
+  </g>
+  <g fill="none" stroke="#17324D" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M139 392 H151"/><path d="M276 392 H288"/><path d="M413 392 H425"/><path d="M556 392 H568"/>
+  </g>
+
+  <!-- Responsabilidad sobre los indicadores y aceptación -->
+  <text class="body" x="360" y="467" text-anchor="middle">Conciliación es un control separado de estas tres métricas</text>
+  <rect x="18" y="483" width="333" height="39" rx="8" fill="#F2F7FA" stroke="#196197"/>
+  <rect x="369" y="483" width="333" height="39" rx="8" fill="#EDF3E8" stroke="#456B37"/>
+  <text class="body" x="184" y="509" text-anchor="middle">Evidencia versionada por dominio</text>
+  <text class="body" x="535" y="509" text-anchor="middle">Contraparte acepta el hito</text>
+</svg>

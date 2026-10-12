@@ -1,0 +1,141 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Formulario T-6}{Subdocumento 1}
+\tableofcontents
+\clearpage
+
+\section{Formulario T-6 · Experiencia en proyectos similares}\label{formulario-t-6}
+
+El presente formulario detalla los tres proyectos de referencia ejecutados por Only Simple Solutions como contratista principal, citados en la sección 1.4 del Subdocumento 1.
+
+\renewcommand{\tablename}{Tabla}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2700}}@{}}
+\caption{Experiencia en proyectos similares.}\label{tab:formulario-t6}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Campo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 1}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 2}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 3}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Campo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 1}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 2}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Proyecto 3}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Nombre del proyecto} & Modernización POS y Continuidad Offline & Sistema de Consentimiento Seguro para Emisor Financiero & Motor Omnicanal ATP e Integración de Marketplace \\ \addlinespace
+\textbf{Cliente / mandante} & Multitiendas Prat S.A. & Financiera Solución S.A. & Distribuidora Textil y Calzado Hites \& Cía. \\ \addlinespace
+\textbf{Industria} & Retail / Comercio minorista & Servicios financieros / Emisión de crédito & Retail / E-commerce / Marketplace \\ \addlinespace
+\textbf{Año de inicio y de término} & 2022 -- 2023 & 2024 -- 2024 & 2023 -- 2024 \\ \addlinespace
+\textbf{Monto del contrato (rango)} & \textbf{\$350 -- 500 millones CLP} & \textbf{\$250 -- 350 millones CLP} & \textbf{\$400 -- 600 millones CLP} \\ \addlinespace
+\textbf{Arquitectura (nube / on-premise / híbrida)} & \textbf{Híbrida}: servidores Edge/on-premise en 25 sucursales + servicios centrales en nube & \textbf{Nube}: plataforma transaccional y almacenamiento resiliente con archivado en frío & \textbf{Híbrida}: integración de sistemas de tiendas físicas con servicios centrales/cloud para e-commerce y Marketplace \\ \addlinespace
+\textbf{Nivel de servicio comprometido} & \textbf{SLA 99,5\% de disponibilidad}, más continuidad offline mínima de 12 h & \textbf{SLA 99,9\% de disponibilidad} & \textbf{SLA 99,9\% de disponibilidad} durante operación regular y eventos de alta demanda \\ \addlinespace
+\textbf{Volumen de operación soportado} & 25 sucursales nacionales; operación offline mínima de 12 h; \textbf{hasta 500.000 transacciones/mes} & Cartera activa de \textbf{450.000 deudores}; \textbf{hasta 1.000.000 de operaciones/mes} & 30 tiendas físicas + e-commerce + 200 vendedores externos; \textbf{hasta 150 transacciones/segundo en eventos Cyber} \\ \addlinespace
+\textbf{Rol de la empresa (principal / socio)} & \textbf{Contratista principal} & \textbf{Contratista principal} & \textbf{Contratista principal} \\ \addlinespace
+\textbf{Contraparte de referencia y contacto} & \textbf{Gerente de Tecnología de Multitiendas Prat S.A. -- contacto disponible a solicitud} & \textbf{Gerente de Tecnología / Cumplimiento de Financiera Solución S.A. -- contacto disponible a solicitud} & \textbf{Gerente de Tecnología y Omnicanalidad de Distribuidora Textil y Calzado Hites \& Cía. -- contacto disponible a solicitud} \\
+\end{longtable}
+
+\ossFinalPage
+
+\end{document}

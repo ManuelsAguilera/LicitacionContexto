@@ -22,6 +22,16 @@ FIGURES = LATEX / "figuras"
 MANIFEST = LATEX / "manifiesto.json"
 BUILD = LATEX / "build"
 BACKUPS = LATEX / "respaldo"
+EMPRESA = "OSS"
+
+
+def tex_name(part: str) -> str:
+    """Nombre de archivo del subdocumento según el Comunicado 10, sección 1: EMPRESA-SubdocumentoX."""
+    return f"{EMPRESA}-Subdocumento{int(part[-2:])}.tex"
+
+
+def main_tex(part: str) -> Path:
+    return LATEX / f"sd-{part[-2:]}" / tex_name(part)
 TEMPLATE_DIR = ROOT / "02_Propuesta" / "latex_final" / "plantilla"
 TEMPLATE = TEMPLATE_DIR / "oss-pandoc.latex"
 LUA_FILTER = TEMPLATE_DIR / "oss.lua"
@@ -143,7 +153,7 @@ def require_valid(tex: Path) -> None:
 
 
 def import_part(part: str, replace: bool = False) -> Path:
-    output = LATEX / f"sd-{part[-2:]}.tex"
+    output = main_tex(part)
     if output.exists() and not replace:
         raise FileExistsError(
             f"{output.relative_to(ROOT)} ya existe; no se sobrescribe un LaTeX editable "
@@ -186,6 +196,7 @@ def import_part(part: str, replace: bool = False) -> Path:
         backup = BACKUPS / f"{output.stem}.{stamp}.tex"
         shutil.copy2(output, backup)
         print(f"Respaldo: {backup.relative_to(ROOT)}")
+    output.parent.mkdir(parents=True, exist_ok=True)
     temp_tex.replace(output)
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {"partes": {}}
     manifest["partes"][part] = {
@@ -200,7 +211,7 @@ def import_part(part: str, replace: bool = False) -> Path:
 
 def update_template(part: str) -> str:
     """Reemplaza solo el preámbulo de un .tex existente por el vigente; el cuerpo no se toca."""
-    tex = LATEX / f"sd-{part[-2:]}.tex"
+    tex = main_tex(part)
     if not tex.is_file():
         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}")
     text = tex.read_text(encoding="utf-8")
@@ -281,7 +292,7 @@ def check_final(tex: Path) -> None:
 
 
 def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
-    tex = LATEX / f"sd-{part[-2:]}.tex"
+    tex = main_tex(part)
     if not tex.is_file():
         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}; importar primero")
     require_valid(tex)
@@ -290,7 +301,7 @@ def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
     start = time.perf_counter()
     outdir = BUILD / part
     outdir.mkdir(parents=True, exist_ok=True)
-    command = ["latexmk", "-xelatex", "-interaction=nonstopmode", "-halt-on-error", "-file-line-error", f"-outdir={outdir}", tex.name]
+    command = ["latexmk", "-xelatex", "-interaction=nonstopmode", "-halt-on-error", "-file-line-error", f"-outdir={outdir}", str(tex.relative_to(LATEX))]
     result = subprocess.run(command, cwd=LATEX, capture_output=True, text=True)
     if result.returncode:
         raise RuntimeError(f"{part}: LaTeX falló; registro {outdir / tex.with_suffix('.log').name}\n{(result.stdout + result.stderr)[-1800:]}")
@@ -303,14 +314,14 @@ def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         if abs(width - 612) > 2 or abs(height - 792) > 2:
             raise RuntimeError(f"{part}: tamaño distinto de carta ({width:.1f} × {height:.1f} pt)")
-    dest = (OFFICIAL if final else PREVIEWS) / (f"OnlySimpleSolutions-Subdocumento{int(part[-2:])}.pdf" if final else f"{part}_latex_preview.pdf")
+    dest = (OFFICIAL if final else PREVIEWS) / (f"{EMPRESA}-Subdocumento{int(part[-2:])}.pdf" if final else f"{part}_latex_preview.pdf")
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(pdf, dest)
     return part, dest, time.perf_counter() - start, len(reader.pages)
 
 
 def compile_all(final: bool, workers: int) -> None:
-    missing = [part for part in PARTS if not (LATEX / f"sd-{part[-2:]}.tex").is_file()]
+    missing = [part for part in PARTS if not (main_tex(part)).is_file()]
     available = [part for part in PARTS if part not in missing]
     if missing and final:
         raise FileNotFoundError("Fuentes LaTeX pendientes: " + ", ".join(missing))
@@ -380,7 +391,7 @@ def main() -> int:
     try:
         if args.accion == "estado":
             for part in PARTS:
-                tex = LATEX / f"sd-{part[-2:]}.tex"
+                tex = main_tex(part)
                 if not tex.exists():
                     print(f"{part}: pendiente")
                 else:
@@ -392,7 +403,7 @@ def main() -> int:
         if args.accion == "actualizar-plantilla":
             if bool(args.parte) == bool(args.todo):
                 raise ValueError("Indicar exactamente --parte T7-NN o --todo")
-            for part in ([args.parte] if args.parte else [p for p in PARTS if (LATEX / f"sd-{p[-2:]}.tex").is_file()]):
+            for part in ([args.parte] if args.parte else [p for p in PARTS if (main_tex(p)).is_file()]):
                 print(update_template(part))
             return 0
         if args.accion.startswith("prism-"):
@@ -402,7 +413,7 @@ def main() -> int:
             elif args.accion == "prism-empaquetar":
                 if bool(args.parte) == bool(args.todo):
                     raise ValueError("Indicar exactamente --parte T7-NN o --todo")
-                parts = [args.parte] if args.parte else [p for p in PARTS if (LATEX / f"sd-{p[-2:]}.tex").is_file()]
+                parts = [args.parte] if args.parte else [p for p in PARTS if (main_tex(p)).is_file()]
                 for part in parts:
                     print(f"{part}: {prism.package_part(part)}")
             else:
@@ -414,7 +425,7 @@ def main() -> int:
             parts = [args.parte] if args.parte else PARTS
             failed = 0
             for part in parts:
-                tex = LATEX / f"sd-{part[-2:]}.tex"
+                tex = main_tex(part)
                 if not tex.exists():
                     if args.parte:
                         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}")

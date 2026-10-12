@@ -180,7 +180,7 @@ Columnas: A a E = dimensiones; N = nota.
 | Decisión | Resolución | Nota esperada |
 | :-- | :-- | :-- |
 | DEC-40 olas de la cartera | Opción B: por complejidad, tramos crecientes y condiciones del Caso 13.3.5 como compuerta (`asignacion_etapas.md`, C2). Queda como supuesto la proporción de cada ola | de 2 a 8 |
-| DEC-10 novena plataforma | Son las planillas; EXC-14 retirada; cobertura en `descripcion_alcance_producto.md` §4.2 | de 2 a 8 |
+| DEC-10 novena plataforma | **Invertida el 2026-10-11 (EXT-G-04).** La novena es el motor de precios y promociones; las planillas son un registro informal que desaparece, con sus seis usos asignados a servicios (sd-03 3.3.1). EXC-14 sigue retirada. | de 2 a 8 |
 | DEC-13 EXC-17 | Reformulada con fuente y frontera clara | de 2 a 7 |
 | DEC-46 e-commerce y fidelización | Piloto por categorías (13.3.6) y umbrales agregados | de 4 a 8 |
 | DEC-49 portales | Lectura aceptada: ventanas sobre los servicios; nombres de 1.31 a 1.34 redefinidos. Etapas por discutir | de 4 a 7 (1.31 y apps de sala decididos; faltan 1.32 a 1.35, 1.37 y 1.39) |

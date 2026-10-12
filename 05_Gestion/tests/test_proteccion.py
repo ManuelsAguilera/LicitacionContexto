@@ -23,7 +23,7 @@ class ProteccionTest(unittest.TestCase):
             tex = ex.import_part("T7-14")
             tex.write_text(tex.read_text(encoding="utf-8").replace("Primera fila", "EDITADO A MANO"), encoding="utf-8")
             ex.import_part("T7-14", replace=True)
-            respaldos = list((latex / "respaldo").glob("sd-14.*.tex"))
+            respaldos = list((latex / "respaldo").glob("OSS-Subdocumento14.*.tex"))
             self.assertEqual(len(respaldos), 1)
             self.assertIn("EDITADO A MANO", respaldos[0].read_text(encoding="utf-8"))
             self.assertNotIn("EDITADO A MANO", tex.read_text(encoding="utf-8"))
@@ -33,7 +33,7 @@ class ProteccionTest(unittest.TestCase):
         with proyecto_temporal({"sd-14_s1_introduccion.md": mermaid}) as (_, latex):
             with self.assertRaisesRegex(ValueError, "Mermaid"):
                 ex.import_part("T7-14")
-            self.assertFalse((latex / "sd-14.tex").exists())
+            self.assertFalse((latex / "sd-14" / "OSS-Subdocumento14.tex").exists())
 
     def test_rechaza_imagen_remota(self):
         remota = SECCION_1.replace("figura.png", "https://example.com/x.png")

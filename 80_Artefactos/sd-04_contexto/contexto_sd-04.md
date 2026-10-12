@@ -20,6 +20,7 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne de
 | D-13 | El broker es Azure Event Hubs Premium (redundante entre zonas, geo-replicación asíncrona a Brazil South con retraso máximo menor a 15 min, clientes Kafka). El gateway es API Management Premium clásico (los niveles v2 no están en Chile Central ni admiten multirregión) | ADR-06 cerrado. Kafka en AKS y Service Bus quedan como alternativas evaluadas. Comprobación de niveles: documentación oficial de Microsoft (2026-10-09) y medidores de la API pública de precios para `chilecentral`; la creación efectiva se prueba en la suscripción del proyecto | Decisión del usuario, 2026-10-09 |
 | D-14 | El requisito del art. 34 (capacidad de proveedor de nube) se acredita con la carta de compromiso de un socio certificado de Microsoft que participa en el proyecto, no con la condición de socio propia de Only Simple Solutions | Plantilla con el contenido mínimo en `03_Formularios/A/form-A-5_anexo-carta-compromiso-socio-nube.md`. Pendiente: elegir el socio, acordar rol y porcentaje (SD-12 12.3, T-8) y obtener la carta firmada con su constancia de designación | Decisión del usuario, 2026-10-09 |
 | D-11 | La vista del vendedor de marketplace (estado de pedidos, devoluciones y evaluación) la entrega la solución por interfaz hacia la plataforma de marketplace, que no se desarrolla (EXC-04) | Interfaz de programación hacia AS-03 con esos tres datos. El vendedor sigue como actor tipo 1 | Decisión del usuario, 2026-10-08 (AH-17 tipo 1) |
+| D-15 | El usuario informó el stack tecnológico previsto (sección 4), con tres alternativas sin decidir: Event Hubs o Kafka, Redis o Valkey, y Elastic Cloud u OpenSearch | El sd-04 decide cada alternativa y fija la pila. La dificultad de herramientas (E8 de la estimación) se valoró en 3 con esta lista | Informado por el usuario, 2026-10-08 |
 
 ## 2. Pendientes que el sd-04 debe resolver
 
@@ -29,6 +30,7 @@ Documento de contexto, no es entregable. Se va llenando con el tiempo. Reúne de
 4. Mapa de las 14 interfaces existentes y su tipo real (D-01).
 5. Evaluación de la plataforma de comercio electrónico (AS-04) de la Etapa 1: define si se conserva (Opción A, D-08) o si se construye un portal nuevo (Opción B). Cambia los actores de cliente y vendedor y el número de casos de uso de la Etapa 2.
 6. Código del portal público: la tabla del Caso lo rotula RT-16.30, y en las Bases Transversales el portal público es RT-16.31 (RT-16.30 es la auditoría de exportaciones sensibles). Las Bases son inmutables, así que se cita como «RT-16.31, rotulado 16.30 en el Caso».
+7. Decidir las tres alternativas abiertas del stack (D-15): Event Hubs o Kafka, Redis o Valkey, Elastic Cloud u OpenSearch. Mientras no se decidan, la dificultad de herramientas (E8) se mantiene en 3 y puede subir. Event Hubs ya quedó decidido en D-13.
 
 ## 3. Avance registrado tras la actualización de `work` (2026-10-09)
 
@@ -37,3 +39,20 @@ El pull de la rama incorporó los commits `3d558a0` y `c5c9c27`, que completan e
 Se verificó T7-04 contra la plantilla corporativa y contra las reglas mecánicas de redacción: **0 errores y 0 avisos**. La exportación final quedó generada en `07_Entregables/sobre_2_tecnico/OnlySimpleSolutions-Subdocumento4.pdf`, con 43 páginas. El índice de figuras y tecnologías por bloques está en `80_Artefactos/sd-04_contexto/mapa_bloques_y_tecnologias.md`; la revisión de canales y omisiones está en `auditoria_canales_arquitectura_logica.md`.
 
 La selección tecnológica documentada ahora trata Azure Chile Central como región primaria y Brazil South como recuperación, Azure API Management Premium como gateway y Azure Event Hubs Premium como broker, con PostgreSQL Flexible Server, AKS, Entra ID, Key Vault, OpenTelemetry y Azure Monitor como componentes evaluados según el borrador de SD-04. Las vistas históricas que muestran Kong, Kafka, NiFi o Grafana se conservan como material de comparación del MCP y no reemplazan estas decisiones. Quedan sujetos a acreditación contractual el socio de nube del artículo 34, los contratos reales de las 14 interfaces, la residencia del Emisor y las pruebas de capacidad y recuperación.
+
+## 4. Stack tecnológico informado (D-15)
+
+Informado por el usuario el 2026-10-08. «Uso previsto» es como lo describió; no es una decisión del sd-04.
+
+| Área | Tecnologías mencionadas | Uso previsto |
+| :-- | :-- | :-- |
+| Nube y ejecución | Azure, AKS | Servicios principales del dominio retail |
+| Integración | Azure Event Hubs o Kafka; Kafka Connect, Debezium, Kong, Temporal | Eventos, conexión con plataformas existentes, API y procesos |
+| Datos | PostgreSQL, Cosmos DB, Redis o Valkey, MinIO, ADLS Gen2, Synapse y Spark | Datos transaccionales, perfiles, caché, evidencia y análisis |
+| Búsqueda | Elastic Cloud u OpenSearch | Indexación y consultas |
+| Filial financiera | Kubernetes, Istio, PostgreSQL con Patroni, Keycloak y HSM Thales Luna | Servicios, identidad y protección de datos financieros en infraestructura local |
+| Tiendas | K3s, PostgreSQL local y Valkey | Nodo de tienda y operación durante desconexiones |
+| Aplicaciones | TypeScript, React, Node.js, Go y Java Spring Boot | Interfaces y servicios de aplicación |
+| Operación y seguridad | Argo CD, OpenTofu, Ansible, OpenTelemetry, Prometheus, Loki, Grafana, Wazuh, Semgrep, ZAP, Trivy, Syft y Cosign | Despliegue, observabilidad y controles de seguridad |
+
+Las alianzas vigentes que declara el sd-01 (1.6) son Microsoft (Azure), Fortinet (seguridad de redes) y Dell Technologies (servidores). El stack no menciona productos de Fortinet ni de Dell.

@@ -18,25 +18,25 @@ def tex_antiguo() -> str:
 class ActualizarPlantillaTest(unittest.TestCase):
     def test_cambia_solo_el_preambulo_y_respalda(self):
         with proyecto_temporal() as (_, latex):
-            tex = latex / "sd-14.tex"
-            tex.write_text(tex_antiguo(), encoding="utf-8")
+            tex = latex / "sd-14" / "OSS-Subdocumento14.tex"
+            tex.parent.mkdir(parents=True, exist_ok=True); tex.write_text(tex_antiguo(), encoding="utf-8")
             self.assertTrue(ex.verify_tex(tex))
             ex.update_template("T7-14")
             self.assertEqual(ex.verify_tex(tex), [])
             self.assertIn("Cuerpo editado a mano.", tex.read_text(encoding="utf-8"))
-            self.assertEqual(len(list((latex / "respaldo").glob("sd-14.*.tex"))), 1)
+            self.assertEqual(len(list((latex / "respaldo").glob("OSS-Subdocumento14.*.tex"))), 1)
 
     def test_idempotente(self):
         with proyecto_temporal() as (_, latex):
-            (latex / "sd-14.tex").write_text(tex_valido(), encoding="utf-8")
+            _p = latex / "sd-14" / "OSS-Subdocumento14.tex"; _p.parent.mkdir(parents=True, exist_ok=True); _p.write_text(tex_valido(), encoding="utf-8")
             self.assertIn("ya está vigente", ex.update_template("T7-14"))
             self.assertFalse((latex / "respaldo").exists())
 
     def test_no_modifica_si_el_cuerpo_viola_la_plantilla(self):
         with proyecto_temporal() as (_, latex):
-            tex = latex / "sd-14.tex"
+            tex = latex / "sd-14" / "OSS-Subdocumento14.tex"
             mal = tex_antiguo().replace("Cuerpo editado a mano.", "\\usepackage{tikz}")
-            tex.write_text(mal, encoding="utf-8")
+            tex.parent.mkdir(parents=True, exist_ok=True); tex.write_text(mal, encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "no cumple la plantilla"):
                 ex.update_template("T7-14")
             self.assertEqual(tex.read_text(encoding="utf-8"), mal)

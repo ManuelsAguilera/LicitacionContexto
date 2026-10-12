@@ -2,7 +2,7 @@
 
 Fuente del anexo que acompaña al Subdocumento 3 (Esquema de solución y alcance). Se entrega como documento aparte, `OnlySimpleSolutions-Subdocumento3-Anexos`, según el Comunicado 10. El cuerpo del subdocumento (subsección 3.2.3) resume estas listas y remite a este anexo. Los nombres de los servicios son los vigentes en el cuerpo (ver `80_Artefactos/sd-03_contexto/divisiones_negocio_servicios_sd-03.md`). Fecha: 2026-10-07. Estado: borrador por revisar.
 
-Este anexo reúne el detalle de las 18 exclusiones vigentes (diez del cliente, una deducida de las Bases Técnicas Transversales y siete del proponente), los seis supuestos del alcance, las once responsabilidades del cliente y las veinte restricciones. El identificador EXC-14 se conserva sin uso para no renumerar: se retiró al comprobar que la novena plataforma del Caso corresponde a las planillas y listas impresas, que se cubren con servicios.
+Este anexo reúne el detalle de las 18 exclusiones vigentes (diez del cliente, una deducida de las Bases Técnicas Transversales y siete del proponente), los seis supuestos del alcance, las once responsabilidades del cliente y las veinte restricciones. El identificador EXC-14 se conserva sin uso para no renumerar: se retiró porque las planillas y listas impresas no son una plataforma sino un registro informal que se cubre con servicios; la novena plataforma del Caso es el motor de precios y promociones, que se construye (decisión del 2026-10-11, EXT-G-04).
 
 ## A.1 Exclusiones
 
@@ -50,7 +50,7 @@ El Caso pide declarar como supuesto toda decisión que el proponente tomó por e
 | RC-04 | Ejecutar la obra civil de separación del centro de datos y las obras y enlaces de tiendas y centros de distribución, especificados y costeados | Caso cap. 11; RT-06.06; SP-04 |
 | RC-05 | Operar la cobranza judicial y gestionar las remuneraciones | Caso cap. 11 |
 | RC-06 | Mantener la relación con los administradores de centros comerciales y con los transportistas | Caso cap. 11 |
-| RC-07 | Aprobar los cambios mediante el Comité Ejecutivo | Bases Administrativas art. 72 |
+| RC-07 | Aprobar los cambios mediante el Comité Ejecutivo, con el límite de 20 % que fija el artículo 72 | Bases Administrativas art. 72 |
 | RC-08 | Validar y firmar las actas mediante la Contraparte Técnica | Gestión del proyecto |
 | RC-09 | Aportar el personal de tecnología (46 personas) para coordinar, validar y acompañar | Caso cap. 2 y cap. 14 |
 | RC-10 | Operar Concepción con sus planillas y entregar sus existencias al servicio de existencias | SP-02 |
@@ -77,6 +77,6 @@ El Caso pide declarar como supuesto toda decisión que el proponente tomó por e
 | RS-15 | El mapa de las 14 integraciones lo levanta el proponente | Caso restricción 15 | Mapa de las catorce integraciones como primera entrega |
 | RS-16 | Despliegue híbrido obligatorio | Bases Administrativas art. 16 | Arquitectura del capítulo 4 |
 | RS-17 | Cronograma de 56 meses, sin plazos alternativos | Bases Administrativas art. 17 | Reparto de la subsección 3.2.2 |
-| RS-18 | Cambios solo por solicitud formal aprobada por el Comité Ejecutivo, con límite de 20 % | Bases Administrativas art. 72 | RC-07 y registro de cambios |
-| RS-19 | Fin de soporte de la plataforma de crédito y último hito de remediación en 2029 | Caso núm. 13.2 | Negocio financiero en la Etapa 1 y retiro con fecha objetivo en octubre de 2028 |
-| RS-20 | Requisitos técnicos obligatorios de las Bases Técnicas Transversales | Bases Técnicas Transversales | Respuesta uno a uno en el Formulario T-12 |
+| RS-18 | Cinco innovaciones obligatorias, una por tipo, trazables con la arquitectura, la EDT y el flujo de caja | Bases Administrativas art. 28 (capítulo 5) | Cartera de innovaciones del subdocumento 13 y su traza en los capítulos 4 y 7 |
+| RS-19 | La migración de la cartera y los hitos de remediación se completan antes de 2029, año del fin de soporte y del último hito | Caso núm. 13.2 y cap. 18 (resultados 23 y 24) | Negocio financiero en la Etapa 1; último corte de cartera antes del 15 de octubre de 2028 y plataforma apagada antes del 31 de octubre |
+| RS-20 | Requisitos técnicos obligatorios de las Bases Técnicas Transversales y umbrales de transacción del Caso (evaluación crediticia en 8 s, precio en 5 min, disponibilidad publicada en 30 s) | Bases Técnicas Transversales; Caso RT-09.01 y RT-05.29 | Respuesta uno a uno en el Formulario T-12 |

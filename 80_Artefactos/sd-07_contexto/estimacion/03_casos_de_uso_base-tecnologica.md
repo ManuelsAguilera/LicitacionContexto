@@ -6,9 +6,9 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Estado: propuesta ap
 
 | Código | Servicio | Caso de uso (objetivo del actor) | Actor principal | Trans. | Origen | Supuestos de flujo |
 | :-- | :-- | :-- | :-- | --: | :-- | :-- |
-| CU-BT-01 | BT | Ingresar a una terminal compartida con identidad individual | AH-04 | 3 | RF-002 a RF-006 | |
-| CU-BT-02 | BT | Habilitar y revocar funciones según la capacitación normativa | AH-16 | 3 | RF-007 a RF-009 | S5, S10 |
-| CU-BT-03 | BT | Patrocinar el acceso temporal de un repositor externo | AS-13 | 3 | RF-010, RF-011 | S3, S10 |
+| CU-BT-01 | BT | Ingresar a una terminal compartida con identidad individual | AH-04 | 2 | RF-002 a RF-006 | S10 |
+| CU-BT-02 | BT | Habilitar y revocar funciones según la capacitación normativa | AH-16 | 2 | RF-007 a RF-009 | S5, S10 |
+| CU-BT-03 | BT | Patrocinar el acceso temporal de un repositor externo | AS-13 | 2 | RF-010, RF-011 | S3, S10 |
 | CU-BT-04 | BT | Operar como repositor externo con identidad individualizada | AH-08 | 2 | RF-012 | S3 |
 | CU-BT-05 | BT | Retirar los accesos al término del vínculo | AH-16 | 2 | RF-013 | |
 | CU-BT-06 | BT | Conciliar los accesos contra la nómina activa | AS-14 | 2 | RF-014, RF-015 | S2, S4 |
@@ -26,9 +26,9 @@ Resumen. 13 casos, todos simples (1 a 3 transacciones). UUCW provisional del ser
 
 | Código | Transacciones (idas y vueltas completas) |
 | :-- | :-- |
-| CU-BT-01 | T1 autenticar con credencial individual, con rechazo del acceso anónimo y de la credencial compartida. T2 traspasar la sesión nominativa entre usuarios. T3 cerrar la sesión por inactividad |
-| CU-BT-02 | T1 registrar la acreditación de capacitación y su vigencia. T2 ejecutar originación o repactación y recibir el rechazo si la acreditación falta o venció. T3 revocar la habilitación al vencer la acreditación |
-| CU-BT-03 | T1 patrocinar la habilitación con fecha de término. T2 consultar o retirar el patrocinio. T3 caducar la habilitación al cumplirse la vigencia |
+| CU-BT-01 | T1 autenticar con credencial individual, con rechazo del acceso anónimo y de la credencial compartida. T2 traspasar la sesión nominativa entre usuarios |
+| CU-BT-02 | T1 registrar la acreditación de capacitación y su vigencia. T2 ejecutar originación o repactación y recibir el rechazo si la acreditación falta o venció. |
+| CU-BT-03 | T1 patrocinar la habilitación con fecha de término. T2 consultar o retirar el patrocinio. |
 | CU-BT-04 | T1 ingresar con la habilitación vigente, con rechazo si caducó. T2 operar las funciones permitidas con registro individual |
 | CU-BT-05 | T1 revocar la totalidad de los accesos y credenciales al término del vínculo. T2 consultar el comprobante de revocación |
 | CU-BT-06 | T1 conciliar los accesos vigentes contra la nómina activa. T2 informar al oficial de seguridad los accesos huérfanos |
@@ -53,7 +53,7 @@ Resumen. 13 casos, todos simples (1 a 3 transacciones). UUCW provisional del ser
 | S7 | CU-BT-09 es el único caso de convivencia con AS-09. No se repite en oferta comercial ni en existencias |
 | S8 | La federación de identidades (D-01 de `contexto_sd-04.md`) no cambia los casos. La sensibilidad del UAW por directorio ya está registrada |
 | S9 | Los resultados del Anexo D que tocan la base (accesos, congelamiento, observabilidad) se rastrean en la revisión de P3.3 al cerrar G3 |
-| S10 | La tercera transacción de CU-BT-02 y de CU-BT-03 (revocación o caducidad automática, disparada por el temporizador) se cuenta porque devuelve un resultado verificable. Si el equipo no la cuenta, ambos casos bajan a 2 transacciones |
+| S10 | Revisión independiente de G3 (2026-10-08): el cierre por inactividad (RF-006), la revocación al vencer la acreditación (RF-009) y la caducidad al vencer la vigencia (RF-011) son comportamientos automáticos que dispara el temporizador. Se cubren en CU-BT-01, CU-BT-02 y CU-BT-03 y no se cuentan como transacciones |
 
 ## 4. Cobertura de los 19 RF
 
@@ -64,4 +64,4 @@ RF-002 a RF-006 en CU-BT-01. RF-007 a RF-009 en CU-BT-02. RF-010 y RF-011 en CU-
 1. AS-13 patrocina el acceso del repositor (CU-BT-03).
 2. AH-16 hace de oficial de seguridad.
 3. La capacidad analítica (CU-BT-13) va en la base tecnológica.
-4. Las terceras transacciones de CU-BT-02 y CU-BT-03 se cuentan (S10).
+4. Las terceras transacciones de CU-BT-02 y CU-BT-03 se descontaron el 2026-10-08 (S10), por la revisión independiente de G3.
