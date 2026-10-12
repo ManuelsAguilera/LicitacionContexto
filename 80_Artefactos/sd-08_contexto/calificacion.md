@@ -53,43 +53,45 @@ Las columnas Semanas y Horas solo se completan para zona crítica o alta, y son 
 
 | ID | Estrategia | Acción | Cuenta EDT | Responsable | Disparador | Residual (P×I) | Semanas (est.) | Horas (est.) | Supuesto de la estimación |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| R-01 | Mitigar | Fijar la secuencia de cortes por tramo, con conciliación diaria y criterio de detención por discrepancia acordado con la filial emisora, y reservar el tramo difícil en la marcha blanca de la Etapa 2. | 1.7.1, 1.7.7, 1.7.14, 1.5.11.5 | Líder de Datos y Migración | Divergencia sin conciliar dos días consecutivos en un tramo (umbral por definir con la filial) | P2×I5 = 0,16 | 4 | 960 | Se repite un corte de tramo con 6 personas dedicadas a 40 h por semana. |
-| R-02 | Mitigar | Declarar y cuantificar una reserva en semanas para la fecha del evento, tomando fechas internas más tempranas dentro de las ventanas existentes, y no desplegar servicios nuevos dentro de las ocho semanas previas al evento. | 1.1.6, 1.9.6 | Jefe de Proyecto | Recepción de la fecha del evento con menos de 8 semanas de aviso, o servicio a medio desplegar en esa fecha | P3×I5 = 0,32 | 3 | 600 | Se reordenan entregas con 5 personas durante 3 semanas. |
+| R-01 | Mitigar | Fijar la secuencia de cortes por tramo, con conciliación diaria y criterio de detención por discrepancia acordado con la filial emisora, y reservar el tramo difícil en la marcha blanca de la Etapa 2. | 1.7.1, 1.7.6, 1.7.12, 1.5.40 | Líder de Datos y Migración | Divergencia sin conciliar dos días consecutivos en un tramo (umbral por definir con la filial) | P2×I5 = 0,16 | 4 | 960 | Se repite un corte de tramo con 6 personas dedicadas a 40 h por semana. |
+| R-02 | Mitigar | Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. | 1.1.5, 1.9.5 | Jefe de Proyecto | Recepción de la fecha del evento con menos de 8 semanas de aviso, o servicio a medio desplegar en esa fecha | P3×I5 = 0,32 | 3 | 600 | Se reordenan entregas con 5 personas durante 3 semanas. |
 | R-03 | Evitar | Mantener el Servicio de control de cruces como único camino de datos entre retail y filial emisora, con registro de base legal por cada cruce. | 1.5.13.1, 1.5.13.2, 1.5.13.3, 1.3.4, 1.8.7 | Arquitecto de Soluciones | Un solo cruce sin base o sin registro detectado (umbral cero) | P1×I5 = 0,04 | — | — | — |
 | R-04 | Mitigar | Cerrar el inventario de las 14 interfaces antes de la línea base y certificar cada integración antes de retirar una plataforma. | 1.2.1, 1.6.1, 1.6.11 | Líder de Integración | Inventario no cerrado al mes 4 (abril de 2027) | P2×I3 = 0,04 | — | — | — |
 | R-05 | Mitigar | Hacer de la capacitación condición de cierre de la marcha blanca y repetir la capacitación en el entorno de temporada. | 1.13.2, 1.13.3, 1.13.4, 1.15.8 | Líder de Gestión del Cambio | Personal capacitado bajo el umbral de cierre de marcha blanca (umbral por definir en 1.13.3) | P4×I3 = 0,12 | — | — | — |
-| R-06 | Mitigar | Acordar con la filial emisora la regla de comisión del vendedor antes del mes 13 y simplificar la entrega de información precontractual. | 1.2.11 (propuesta) | Jefe de Proyecto | Acta de comisión sin firma al mes 13 (enero de 2028) | P2×I3 = 0,04 | — | — | — |
+| R-06 | Mitigar | Acordar con la filial emisora la regla de comisión del vendedor antes del mes 13 y simplificar la entrega de información precontractual. | 1.13.1 | Jefe de Proyecto | Acta de comisión sin firma al mes 13 (enero de 2028) | P2×I3 = 0,04 | — | — | — |
 | R-07 | Mitigar | Llevar un calendario de ciclo de vida de los servicios administrados y planificar cada migración con un año de anticipación. | 1.15.4, 1.4.7 | Arquitecto de Soluciones | Servicio a menos de 12 meses de su fin de soporte | P2×I3 = 0,04 | — | — | — |
 | R-08 | Mitigar | Definir la infraestructura como código y el plan de reversibilidad, con clientes Kafka como salida parcial. | 1.4.1, 1.14.6 | Arquitecto de Soluciones | Plan de reversibilidad no aceptado a la fecha de su entrega (por definir en 1.14.6) | P1×I4 = 0,02 | — | — | — |
 | R-09 | Mitigar | Calcular la memoria de capacidad con los datos de 2026, probar a 225.000 pedidos y dimensionar la reserva de existencia y la entrada API. | 1.3.7, 1.9.4, 1.9.6 | Líder de Rendimiento y Calidad | Prueba a 225.000 pedidos en tres días sin cumplir antes del mes 16 | P2×I4 = 0,08 | — | — | — |
 | R-10 | Mitigar | Delimitar con la CMF y la asesoría jurídica el ámbito de medios de pago, segmentar la red de tienda y ejecutar la prueba de penetración. | 1.8.1, 1.8.6, 1.8.9, 1.4.2 | Responsable de Seguridad | Hallazgo crítico en la prueba de penetración (Anexo D 21) | P1×I5 = 0,04 | — | — | — |
-| R-11 | Mitigar | Pactar actas con plazo de diez días hábiles y escalar a la Contraparte Técnica la validación vencida. | 1.1.7, 1.1.10 | Jefe de Proyecto | Acta sin validar al décimo día hábil | P2×I5 = 0,16 | 3 | 360 | Tres personas detenidas tres semanas a 40 h por una validación vencida. |
-| R-12 | Evitar | Certificar la Etapa 1 en Preproducción en el mes 12, desplegar en la ventana libre del 7 al 24 de enero de 2028, corregir en la ventana desde la segunda semana de marzo y limitar el congelamiento a correcciones de emergencia autorizadas por el Comité Ejecutivo. | 1.12.1, 1.1.6 | Jefe de Proyecto | Defectos de severidad alta abiertos al 20 de enero de 2028, o despliegue no terminado al 24 de enero | P2×I5 = 0,16 | 4 | 1.280 | Se pierde la ventana de corrección de 3,5 semanas con 8 personas a 40 h por semana. |
-| R-13 | Evitar | Fijar desde el mes 16 la secuencia de cortes por tramo, con último corte antes del 15 de octubre de 2028, el tramo complejo en la marcha blanca de la Etapa 2 y escalamiento al Comité Ejecutivo. | 1.7.10, 1.7.11, 1.7.14 | Líder de Datos y Migración | Algún tramo sin corte al 15 de septiembre de 2028 | P3×I5 = 0,32 | 6 | 1.920 | Se rehace un corte de tramo y su conciliación con 8 personas durante 6 semanas. |
+| R-11 | Mitigar | Pactar actas con plazo de diez días hábiles y escalar a la Contraparte Técnica la validación vencida. | 1.1.6, 1.1.8 | Jefe de Proyecto | Acta sin validar al décimo día hábil | P2×I5 = 0,16 | 3 | 360 | Tres personas detenidas tres semanas a 40 h por una validación vencida. |
+| R-12 | Evitar | Certificar la Etapa 1 en Preproducción en el mes 12, desplegar en la ventana libre del 7 al 24 de enero de 2028, corregir en la ventana desde la segunda semana de marzo y limitar el congelamiento a correcciones de emergencia autorizadas por el Comité Ejecutivo. | 1.12.1, 1.1.5 | Jefe de Proyecto | Defectos de severidad alta abiertos al 20 de enero de 2028, o despliegue no terminado al 24 de enero | P2×I5 = 0,16 | 4 | 1.280 | Se pierde la ventana de corrección de 3,5 semanas con 8 personas a 40 h por semana. |
+| R-13 | Evitar | Fijar desde el mes 16 la secuencia de cortes por tramo, con último corte antes del 15 de octubre de 2028, el tramo complejo en la marcha blanca de la Etapa 2 y escalamiento al Comité Ejecutivo. | 1.7.8, 1.7.9, 1.7.12 | Líder de Datos y Migración | Algún tramo sin corte al 15 de septiembre de 2028 | P3×I5 = 0,32 | 6 | 1.920 | Se rehace un corte de tramo y su conciliación con 8 personas durante 6 semanas. |
 | R-14 | Mitigar | Fijar con la filial los topes del cupo preaprobado antes del mes 6 y mantener el plan B de otro medio de pago. | 1.1.14, 1.2.10, 1.5.10.4, 1.9.11, 1.11.5 | Arquitecto de Soluciones | Topes sin fijar al mes 6 (junio de 2027), o prueba de corte de 24 h fallida en los meses 6 y 7 | P2×I3 = 0,04 | — | — | — |
 | R-15 | Mitigar | Dimensionar según el inventario de enlaces (entre 7 y 14 tiendas) y probar la sincronización del diario local tras un corte de 24 h. | 1.3.6, 1.5.5.2, 1.9.11 | Arquitecto de Soluciones | Prueba de 24 h con una venta duplicada o perdida | P2×I3 = 0,04 | — | — | — |
-| R-16 | Escalar | Gestionar la aprobación de la modalidad fiscal de contingencia con la autoridad tributaria y escalarla al Comité Ejecutivo si no avanza. | 1.6.12 | Jefe de Proyecto | Modalidad sin aprobar al mes 9 (septiembre de 2027), previo a la certificación del mes 12 | P2×I5 = 0,16 | 4 | 640 | Se rediseña la emisión sin enlace con 4 personas durante 4 semanas. |
+| R-16 | Escalar | Gestionar la aprobación de la modalidad fiscal de contingencia con la autoridad tributaria y escalarla al Comité Ejecutivo si no avanza. | 1.6.7 | Jefe de Proyecto | Modalidad sin aprobar al mes 9 (septiembre de 2027), previo a la certificación del mes 12 | P2×I5 = 0,16 | 4 | 640 | Se rediseña la emisión sin enlace con 4 personas durante 4 semanas. |
 | R-17 | Mitigar | Obtener el pronunciamiento de la asesoría jurídica y de la CMF sobre la residencia de datos y mantener una alternativa de recuperación dentro de Chile. | 1.8.10 | Responsable de Seguridad | Sin pronunciamiento antes de la línea base del mes 4 | P2×I3 = 0,04 | — | — | — |
-| R-18 | Mitigar | Cargar existencias con conteo cíclico y detección de discrepancias, y conciliar las 24 instalaciones antes del corte. | 1.7.3, 1.7.4, 1.5.3.4 | Líder de Datos y Migración | Discrepancia de la carga de prueba sobre el umbral del Anexo D 1 y 4 (umbral por definir) | P3×I3 = 0,08 | 5 | 1.200 | Se repite la carga y conciliación con 6 personas durante 5 semanas. |
+| R-18 | Mitigar | Cargar existencias con conteo cíclico y detección de discrepancias, y conciliar las 24 instalaciones antes del corte. | 1.7.2, 1.7.3, 1.5.10 | Líder de Datos y Migración | Discrepancia de la carga de prueba sobre el umbral del Anexo D 1 y 4 (umbral por definir) | P3×I3 = 0,08 | 5 | 1.200 | Se repite la carga y conciliación con 6 personas durante 5 semanas. |
 | R-19 | Aceptar | Monitorear la reglamentación de la Ley 21.719 y absorber los ajustes en la matriz de cumplimiento. | 1.8.7 | Responsable de Seguridad | Publicación de una norma o reglamento que cambie un control | P3×I3 = 0,08 | — | — | — |
-| R-20 | Transferir | Fijar por contrato las responsabilidades del cliente (hardware, enlaces, obras) con fechas por ola y exigir la certificación de sitio antes de cada ola. | 1.3.8, 1.4.8, 1.11.3 | Líder de Implantación | Certificación de sitio no emitida 8 semanas antes de la ola de una tienda | P3×I3 = 0,08 | 4 | 640 | Se reprograma una ola con 4 personas durante 4 semanas. |
+| R-20 | Transferir | Fijar por contrato las responsabilidades del cliente (hardware, enlaces, obras) con fechas por ola y exigir la certificación de sitio antes de cada ola. | 1.3.7, 1.4.8, 1.11.2 | Líder de Implantación | Certificación de sitio no emitida 8 semanas antes de la ola de una tienda | P3×I3 = 0,08 | 4 | 640 | Se reprograma una ola con 4 personas durante 4 semanas. |
 | R-21 | Evitar | Validar los 25 supuestos y los umbrales con el cliente antes de la línea base del mes 4. | 1.2.6, 1.1.4, 1.1.3 | Jefe de Proyecto | Supuestos sin validar al mes 3 (marzo de 2027) | P2×I3 = 0,04 | — | — | — |
 | R-22 | Mitigar | Asegurar acceso individualizado por proveedor y turnos de terminales compartidas para el conteo y la verificación de etiquetas. | 1.13.4, 1.5.14.2 | Líder de Gestión del Cambio | Conteos incompletos en el piloto (umbral por definir) | P3×I3 = 0,08 | — | — | — |
 | R-23 | Mitigar | Nombrar suplentes de los roles clave, documentar el conocimiento y adelantar la contratación según el plan de recursos. | 1.1.1 | Jefe de Proyecto | Vacante de un rol clave sin cubrir por más de 30 días | P2×I5 = 0,16 | 4 | 480 | Reemplazo y traspaso de un rol clave con tres personas durante cuatro semanas. |
-| R-24 | Mitigar | Ampliar el soporte reforzado entre la producción y el Día de la Madre y el evento anual, y cerrar los defectos de severidad alta antes de abril de 2028. | 1.9.6, 1.12.9 | Líder de Operación | Defectos de severidad alta abiertos a 4 semanas del Día de la Madre | P3×I3 = 0,08 | 3 | 960 | Se corrigen defectos en producción con 8 personas durante 3 semanas. |
-| R-25 | Evitar | Cortar el último tramo antes del 15 de octubre de 2028, conciliar a diario hasta fin de mes y acordar con el Comité Ejecutivo un plan de retorno para el congelamiento. | 1.7.10, 1.7.11 | Líder de Datos y Migración | Algún tramo sin corte al 15 de octubre de 2028 | P2×I5 = 0,16 | 10 | 2.400 | La corrección se bloquea del 1 de noviembre al 7 de enero con 6 personas en espera y ajuste. |
-| R-27 | Mitigar | Firmar con los seis proveedores actuales acuerdos de cooperación y salida, con documentación de interfaces y extracción de datos. | 1.2.12 (propuesta) | Jefe de Proyecto | Documentación de interfaces sin entregar por un proveedor al mes 4 (abril de 2027) | P2×I3 = 0,04 | — | — | — |
-| R-28 | Mitigar | Especificar la retención de grabaciones de repactación y acompañar la decisión del cliente de cambiar su política de 90 días. | 1.7.15 (propuesta) | Arquitecto de Datos | Decisión del cliente sin tomar al mes 6 (junio de 2027) | P2×I3 = 0,04 | — | — | — |
+| R-24 | Mitigar | Ampliar el soporte reforzado entre la producción y el Día de la Madre y el evento anual, y cerrar los defectos de severidad alta antes de abril de 2028. | 1.9.5, 1.12.7 | Líder de Operación | Defectos de severidad alta abiertos a 4 semanas del Día de la Madre | P3×I3 = 0,08 | 3 | 960 | Se corrigen defectos en producción con 8 personas durante 3 semanas. |
+| R-25 | Evitar | Cortar el último tramo antes del 15 de octubre de 2028, conciliar a diario hasta fin de mes y acordar con el Comité Ejecutivo un plan de retorno para el congelamiento. | 1.7.8, 1.7.9 | Líder de Datos y Migración | Algún tramo sin corte al 15 de octubre de 2028 | P2×I5 = 0,16 | 10 | 2.400 | La corrección se bloquea del 1 de noviembre al 7 de enero con 6 personas en espera y ajuste. |
+| R-27 | Mitigar | Firmar con los seis proveedores actuales acuerdos de cooperación y salida, con documentación de interfaces y extracción de datos. | 1.2.1 | Jefe de Proyecto | Documentación de interfaces sin entregar por un proveedor al mes 4 (abril de 2027) | P2×I3 = 0,04 | — | — | — |
+| R-28 | Mitigar | Especificar la retención de grabaciones de repactación y acompañar la decisión del cliente de cambiar su política de 90 días. | 1.8.5 | Arquitecto de Datos | Decisión del cliente sin tomar al mes 6 (junio de 2027) | P2×I3 = 0,04 | — | — | — |
 | R-29 | Aceptar | Gestionar cualquier obligación nueva por el control de cambios y monitorear el procedimiento. | 1.1.3 | Jefe de Proyecto | Notificación de una obligación nueva del SERNAC | P2×I3 = 0,04 | — | — | — |
 | R-30 | Evitar | Probar la creación de cada servicio Premium en Chile Central al inicio del proyecto, antes de construir la plataforma base. | 1.4.1 | Arquitecto de Soluciones | Un servicio no creable en Chile Central en la prueba de recursos | P1×I4 = 0,02 | — | — | — |
 | R-31 | Escalar | Resolver con el Comité Ejecutivo qué parte provee el cliente y qué el proponente (inconsistencia I-02), cerrar la brecha de estándares y definir el respaldo fuera de la comuna. | 1.4.11 | Responsable de Infraestructura | Informe de brecha de 2024 sin entregar al mes 4 (abril de 2027) | P1×I5 = 0,04 | — | — | — |
 | R-32 | Mitigar | Confirmar con el inventario las ubicaciones y las rutas, y acreditar el ExpressRoute antes del diseño final. | 1.2.1, 1.3.3 | Responsable de Infraestructura | Inventario de sitios con cambios sobre el supuesto SUP-27 | P2×I3 = 0,04 | — | — | — |
-| R-33 | Mitigar | Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca de la Etapa 1. | por definir (nivelación T-15) | Jefe de Proyecto | Carga sobre 100 % de un rol clave en los meses 13 a 15 | P2×I5 = 0,16 | 3 | 600 | Cinco personas reasignadas tres semanas entre la marcha blanca y la Etapa 2. |
-| R-34 | Mitigar | Dimensionar las oleadas de cambio de etiquetas para sostener la meta de menos de 3 % y evaluar las etiquetas electrónicas del estudio de decisión. | 1.5.1.2, 1.2.7 | Líder de Operación | Error de precio medido sobre 3 % en el piloto | P3×I3 = 0,08 | 3 | 360 | Se rediseña el proceso de etiquetas con 3 personas durante 3 semanas. |
+| R-33 | Mitigar | Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca de la Etapa 1. | 1.11.3 | Jefe de Proyecto | Carga sobre 100 % de un rol clave en los meses 13 a 15 | P2×I5 = 0,16 | 3 | 600 | Cinco personas reasignadas tres semanas entre la marcha blanca y la Etapa 2. |
+| R-34 | Mitigar | Dimensionar las oleadas de cambio de etiquetas para sostener la meta de menos de 3 % y evaluar las etiquetas electrónicas del estudio de decisión. | 1.5.2, 1.2.5 | Líder de Operación | Error de precio medido sobre 3 % en el piloto | P3×I3 = 0,08 | 3 | 360 | Se rediseña el proceso de etiquetas con 3 personas durante 3 semanas. |
 | R-35 | Mitigar | Revisar los accesos de forma periódica y revocar los de ex trabajadores y temporales. | 1.5.14.1, 1.5.14.2 | Responsable de Seguridad | Una cuenta de ex trabajador activa tras la revisión mensual | P1×I5 = 0,04 | — | — | — |
-| R-36 | Mitigar | Incorporar transportistas y vendedores de marketplace a los contratos de estado con calendario y medición del 97 % de trazabilidad. | 1.6.13 (propuesta) | Por definir con el sd-12 | Transportista sin adoptar los estados a 8 semanas del inicio de pedidos | P2×I3 = 0,04 | — | — | — |
-| R-37 | Evitar | Calendarizar las siete decisiones del cliente antes de la línea base y escalar las vencidas. | 1.2.6, 1.1.4, 1.1.3 | Jefe de Proyecto | Decisiones pendientes al mes 3 (marzo de 2027) | P2×I5 = 0,16 | 3 | 360 | Tres personas de arquitectura detenidas tres semanas por una decisión pendiente. |
+| R-36 | Mitigar | Incorporar transportistas y vendedores de marketplace a los contratos de estado con calendario y medición del 97 % de trazabilidad. | 1.6.3 | Líder de Integración | Transportista sin adoptar los estados a 8 semanas del inicio de pedidos | P2×I3 = 0,04 | — | — | — |
+| R-37 | Evitar | Calendarizar las siete decisiones del cliente antes de la línea base y escalar las vencidas. | 1.2.4, 1.1.4, 1.1.3 | Jefe de Proyecto | Decisiones pendientes al mes 3 (marzo de 2027) | P2×I5 = 0,16 | 3 | 360 | Tres personas de arquitectura detenidas tres semanas por una decisión pendiente. |
 | R-38 | Aceptar | Seleccionar pilotos y olas fuera del clúster de Santiago al inicio y revisar la concentración cada mes. | 1.11.5, 1.11.1 | Líder de Implantación | Piloto con falla en una tienda del clúster de Santiago | P2×I3 = 0,04 | — | — | — |
+
+Nota: las filas medias y bajas que no se listan arriba (R-03, R-04, R-05, R-07 a R-10, R-14, R-15, R-17, R-19, R-21, R-22, R-29 a R-32, R-35, R-38) conservan la numeración anterior de la EDT y deben convertirse con la equivalencia del T-14 vigente (tabla al final de este archivo) antes de usarse.
 
 ## Tabla 3. Oportunidades
 
@@ -127,3 +129,50 @@ Notas para la revisión humana:
 - Las semanas y horas son estimaciones del proponente con el supuesto indicado en la Tabla 2; no hay total de proyecto contra el cual contrastarlas.
 - R-07 y R-13 llevan ambos OB-1 en el registro; solo R-07 describe la obsolescencia del Comunicado 10.
 - Los disparadores con fecha usan SUP-26 (inicio en enero de 2027: mes 4 = abril de 2027, mes 16 = abril de 2028).
+
+## Esfuerzo estimado de las acciones (2026-10-12)
+
+Estimación del proponente, en horas, para el costo-beneficio de las 14 acciones de riesgos críticos y altos. Total de esfuerzo 1.660 h frente a una reducción de 2.808 h (razón 1,7).
+
+| ID | Reducción (h) | Esfuerzo (h) | Razón |
+| :-- | --: | --: | --: |
+| R-02 | 120 | 80 | 1,5 |
+| R-12 | 512 | 160 | 3,2 |
+| R-13 | 384 | 240 | 1,6 |
+| R-01 | 192 | 160 | 1,2 |
+| R-11 | 72 | 40 | 1,8 |
+| R-16 | 128 | 80 | 1,6 |
+| R-18 | 240 | 240 | 1,0 |
+| R-20 | 128 | 80 | 1,6 |
+| R-23 | 96 | 120 | 0,8 |
+| R-24 | 192 | 160 | 1,2 |
+| R-25 | 480 | 120 | 4,0 |
+| R-33 | 120 | 60 | 2,0 |
+| R-34 | 72 | 80 | 0,9 |
+| R-37 | 72 | 40 | 1,8 |
+
+### Equivalencia de códigos de la EDT (antiguo a vigente del T-14)
+
+Sin cambio: 1.1.1, 1.1.3, 1.1.4, 1.4.8, 1.7.1, 1.12.1.
+
+| Código antiguo | Código vigente | Cuenta |
+| :-- | :-- | :-- |
+| 1.1.6 | 1.1.5 | calendario de congelamientos |
+| 1.1.7 | 1.1.6 | actas de comités |
+| 1.1.10 | 1.1.8 | actas de aceptación |
+| 1.2.6 | 1.2.4 | línea base de alcance |
+| 1.2.7 | 1.2.5 | estudio de etiquetas electrónicas |
+| 1.3.8 | 1.3.7 | obras del cliente |
+| 1.5.1.2 | 1.5.2 | etiquetas y discrepancias de precio |
+| 1.5.3.4 | 1.5.10 | conteo e inventario |
+| 1.5.11.5 | 1.5.40 | conciliación diaria con la plataforma de 2011 |
+| 1.6.12 | 1.6.7 | contingencia tributaria |
+| 1.7.3 | 1.7.2 | maestro de artículos |
+| 1.7.4 | 1.7.3 | corte de inventario |
+| 1.7.7 | 1.7.6 | cartera viva |
+| 1.7.10 | 1.7.8 | plan de retiro de 2011 |
+| 1.7.11 | 1.7.9 | 2011 fuera de servicio |
+| 1.7.14 | 1.7.12 | actas de compuerta |
+| 1.9.6 | 1.9.5 | ensayo del evento anual |
+| 1.11.3 | 1.11.2 | configuración y certificación de sitios |
+| 1.12.9 | 1.12.7 | soporte de estabilización |

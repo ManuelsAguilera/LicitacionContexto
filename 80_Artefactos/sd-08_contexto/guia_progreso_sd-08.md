@@ -6,13 +6,13 @@ Documento de contexto, no entregable. Creado el 2026-10-11, tras fusionar `main`
 
 | Pieza | Estado | Comentario |
 | :-- | :-- | :-- |
-| `latex_final/sd-08/OSS-Subdocumento8.tex` | Esqueleto | Solo los cuatro títulos del Comunicado 10, Referencias y Declaración de IA. Plantilla ok (`exportar_latex.py estado`). |
+| `latex_final/sd-08/OSS-Subdocumento8.tex` | Borrador completo, sin revisión humana | Introducción, 8.1 a 8.3 y anexo redactados. |
 | Maestro `02_Propuesta/sd-08_plan-de-riesgos/sd-08_plan-de-riesgos.md` | Desactualizado | Dice «Sin redactar» y apunta a `latex_final/sd-08.tex`, ruta que ya no existe. |
 | F0 · `ficha_sd-08.md` | Hecha | Fases, fuentes, unidades decididas (P en %, impacto en semanas y horas-persona, costo en % sin pesos). |
 | F1 · `registro_candidatos.md` | Hecha, sin validar | 39 candidatos, 36 con las cuatro fusiones. Las cinco preguntas al usuario siguen abiertas. |
 | `trazabilidad_riesgos.md` | Hecha | 21 OK, 2 parciales, 4 huecos en la EDT y 9 riesgos tocados por 8 inconsistencias entre subdocumentos. |
 | `avisos_otros_subdocumentos.md` | Vivo | I-01 aplicado en sd-02; I-04 aplicado en el Anexo D, falta el Excel; I-03 sigue pendiente en el sd-07. |
-| F2 a F6 (8.1, 8.2, 8.3, introducción, T-16, PDF) | Sin empezar | — |
+| F2 a F6 (8.1, 8.2, 8.3, introducción, T-16, PDF) | Hechas como borrador | — |
 | Formulario T-16 | Sin empezar | `03_Formularios/B/` está vacío. |
 
 Plazo según la ficha: **lunes 12-10-2026, 08:00** (Informe 2, que cubre los sd 1 a 9 y el 13; Bases Admin. l. 2444-2450). Confirmar con el equipo si sigue vigente; si lo está, aplicar el plan corto de la sección 6.
@@ -64,8 +64,8 @@ Se toman antes de escribir. Para cada una, la sugerencia está en el documento i
 | D6 | I-02: ¿quién provee el recinto on-premise? | Manda sd-03 y la EDT (lo provee el proponente, RT-06.33 y Art. 16) | **Decidida 2026-10-11: el recinto (DC-01 y DC-02) es del cliente** (Caso l. 330; RT-06.01 y RT-06.31). El cliente ejecuta la obra civil y compra el hardware (RT-06.06; Caso l. 647-649); el proponente especifica, coordina y provee conectividad, seguridad y canalizaciones (RT-06.33) y el espacio del personal (RT-06.29). R-31 = riesgo de contraparte con mitigación; DC-02 se trata como sala de respaldo local y la recuperación real es CLD-02. Cambios pendientes: `cambios_por_D6.md` | `trazabilidad_riesgos.md` §6.1 |
 | D7 | I-05: volumen del peak para R-09 | 225.000 pedidos en tres días (1,5 × 150.000) | **Decidida 2026-10-11, con base en el sd-02 (.tex):** evento de 2026 = 104.000 pedidos en 3 días (dato); proyección = 150.000 (Caso 14.1); prueba de carga = 225.000 (1,5 × proyectado, RT-09.06), que cubre el 120 % (180.000) de RNF-22. El «114.520» solo está en `sd-02.md` (contexto, obsoleto). Antes, cuatro versiones: sd-02 114.520 (l. 276); RNF-22 y Anexo B «al 120 % del peak proyectado»; Anexo D 25 104.000; sd-06 y sd-07 «1,5 veces el peak declarado» sin cifra | idem §3 |
 | D8 | I-06: tiendas sin enlace de respaldo para R-15 | Rango de 7 a 14, peor caso del sd-04 | **Tomada implícitamente: 14** (sd-02 SUP-28, l. 745, y sd-04 l. 417). Queda un residuo: la tabla de sd-02 (l. 497) dice «7 de 15» | idem §3 |
-| D9 | I-07: holgura del evento anual | La reserva de contingencia en semanas del 8.3 la cubre; el sd-07 la cita | **Decidida 2026-10-11: opción A, grado 1** (solo texto: el 8.3 define la reserva; el sd-07 agrega una frase en 7.3 que la cita; sin fechas internas, sin cambios en EDT ni en Tabla 7.6). Antes: sd-07 (l. 277) dice que la ruta crítica «no admite holgura» y no cuantifica ninguna | idem §3 |
-| D10 | Cuatro cuentas nuevas de la EDT (R-06, R-27, R-28, R-36) | Proponerlas al sd-07 y nombrarlas en el 8.3 | **Decidida 2026-10-11: se agregan al sd-07. FALTA HACERLO**, ver `guia_cuentas_nuevas_sd-07.md` (ninguna existe aún en `14_edt_corregida.md` ni en el diccionario) | idem §4 |
+| D9 | I-07: holgura del evento anual | La reserva de contingencia en semanas del 8.3 la cubre; el sd-07 la cita | **Decidida 2026-10-11: opción A, grado 1** (solo texto: el 8.3 define la reserva; el sd-07 agrega una frase en 7.3 que la cita; sin fechas internas, sin cambios en EDT ni en Tabla 7.6). **Cerrada 2026-10-12: la reserva de contingencia es de esfuerzo (3.688 h) y el P80 es exposición en plazo; no se pide ningún cambio al sd-07.** Antes: sd-07 (l. 277) dice que la ruta crítica «no admite holgura» y no cuantifica ninguna | idem §3 |
+| D10 | Cuatro cuentas nuevas de la EDT (R-06, R-27, R-28, R-36) | Proponerlas al sd-07 y nombrarlas en el 8.3 | **Revertida 2026-10-12:** no se agregan cuentas; cada acción se ejecuta en una cuenta existente del T-14 (R-06 1.13.1; R-27 1.2.1; R-28 1.8.5; R-36 1.6.3; R-33 1.11.3) | idem §4 |
 
 ## 4. Plan de trabajo por fases
 

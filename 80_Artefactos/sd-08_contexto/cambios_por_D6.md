@@ -13,7 +13,7 @@ Documento de contexto, no entregable. Líneas leídas el 2026-10-11; si el archi
 | C-3 | sd-04, Tabla 4.11 (`OSS-Subdocumento4.tex`, l. ~575) | Se mantiene que el cliente conserva DC-01 y DC-02. Agregar quién ejecuta la obra (cliente), quién compra (cliente) y quién especifica y coordina (proponente). Citar RT-06.06 |
 | C-4 | sd-04, DC-02 | DC-02 está en la misma comuna que DC-01. Declarar que es sala de respaldo local y no sitio de recuperación ante desastres; el respaldo de las cargas nuevas es CLD-02 (Azure Brazil South). Decisión de arquitectura del sd-04 |
 | C-5 | Planilla de consultas al mandante | Consulta posible: alcance de RT-06.33 («proveerá conectividad, seguridad y canalizaciones») frente al Caso l. 647 (las ejecuta el cliente). Confirmar que «proveer» significa diseñar, especificar y garantizar |
-| C-6 | EDT, obras | Comprobar que existe una cuenta de especificación y coordinación de la obra civil (RT-06.06). Si no existe, sumarla a la guía `guia_cuentas_nuevas_sd-07.md` |
+| C-6 | EDT, obras | Comprobar que existe una cuenta de especificación y coordinación de la obra civil (RT-06.06). Si no existe, sumarla a la guía `guia_cuentas_nuevas_sd-07.md`. En el T-14 vigente existen 1.3.7 (Especificación y costeo de obras del cliente) y 1.4.9 (Recinto técnico y obra civil de separación), por lo que no hace falta cuenta nueva |
 
 ## B. Cambios en el sd-08
 

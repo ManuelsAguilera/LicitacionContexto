@@ -73,3 +73,28 @@ Evaluación de `evaluador-pmbok` (Sonnet) del 2026-10-12. Se corrigieron dos (re
 1. Revisión humana de `calificacion.md` (columna de semanas y horas) y decisión sobre la reserva (hallazgo 1).
 2. Leer el PDF completo, en particular las páginas no revisadas.
 3. Commit y push de `work`.
+
+## 8. Actualización posterior (sd-07)
+
+- Se revisó la rama remota `origin/codex/subdoc7-formularios-entrega` y se tomó como fuente de verdad del sd-07 (decisión del usuario). Se trajeron sus 16 figuras de la EDT y los formularios T-14, T-15 y T-18 como contexto. El sd-07 compila (31 páginas).
+- Las preguntas de integración sd-07 ↔ sd-08 están respondidas en `integracion_sd-07.md`. Cambia el hallazgo 3 de la sección 4 (la contradicción con el sd-07 l. 273 desaparece) y el hallazgo 1 queda abierto: la reserva de 12,5 semanas sigue sin respaldo por eslabón en el sd-07.
+- Los cambios del sd-07 siguen **sin commit** y no están en `main`.
+
+## 9. Cierre de pendientes con el menor cambio (2026-10-12)
+
+- **D10 revertida:** no se agregan cuentas a la EDT; R-06 usa 1.13.1, R-27 1.2.1, R-28 1.8.5, R-36 1.6.3 (Líder de Integración) y R-33 1.11.3. Es la opción de menor cambio y no obliga a tocar la EDT, el T-14 ni el CPM (fuente: rama remota `origin/codex/subdoc7-formularios-entrega`).
+- **Reserva:** deja de ser margen de calendario. El P80 (12,5 / 1,7 / 8,5 semanas en los meses 16, 21 y 22; cota en serie 15,3 / 1,7 / 10,0) es la exposición en plazo; la reserva de contingencia es de esfuerzo, 3.688 horas, para recuperar atrasos agregando capacidad sin mover los hitos. D9 queda cerrada sin pedir cambios al sd-07.
+- **Renumeración:** el T-14 vigente renumeró la EDT; el sd-08 usa los códigos vigentes (equivalencia en `calificacion.md`).
+- **Esfuerzo de las 14 acciones:** 1.660 h frente a una reducción de 2.808 h (razón 1,7); estimación del proponente.
+- **R-02:** la acción pasa a «Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas».
+
+Hallazgos de la sección 4 cerrados: 1 (reserva), 2 (costo de las acciones), 3 (contradicción con el sd-07), 4 (acciones sin cuenta o sin dueño), 5 (regla del FMEA aclarada en el texto) y 6 (riesgos secundarios y reversa añadidos).
+
+Siguen abiertos:
+- Revisión humana de calificaciones y estimaciones.
+- Folios del Caso sin comprobar en el PDF visible.
+- Skill humanizer no aplicada.
+- Peak de personas del T-15 (depende del sd-12).
+- Imágenes del cronograma del sd-07 con títulos internos «FIGURA 7.2 a 7.6» y Gantt ilegible.
+- «Referencias» del sd-07 vacía.
+- Frases largas en celdas de las Tablas A.3, 8.2 y 8.9.

@@ -159,6 +159,7 @@ Son tres informes y tres presentaciones, no uno. El `Informe 1` cubre los subdoc
 - Los 62 originales `OSS-105`..`OSS-164` **ya fueron borrados**; `05_Gestion/jira/historico/borrar_manual.txt` está obsoleto a propósito.
 - La taxonomía de secciones del plan de Jira **no coincide** con el índice del Informe 1. Ver las observaciones de `02_Propuesta/indice.md`.
 - Estado de redacción (2026-10-06): el sd-01 y el sd-02 (borrador en `02_Propuesta/sd-02_problema-y-necesidad/subdoc2-enProgreso.md`) están avanzados. El contenido anterior de los sd-03 y siguientes fue retirado a propósito: se redacta de nuevo desde cero. El trabajo previo del sd-03 está en `80_Artefactos/sd-03_contexto/`. El checkpoint anterior a la purga es el tag `checkpoint-pre-purga-sd03`.
+- Estado de redacción (2026-10-12): el sd-08 (Plan de riesgos) está redactado como borrador completo en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` (37 riesgos y 8 oportunidades; sin revisión humana). El sd-07 tiene como fuente de verdad la rama remota `origin/codex/subdoc7-formularios-entrega` (commit `22a251a`), importada a `latex_final/sd-07/`; sus formularios T-14, T-15 y T-18 están como contexto en `80_Artefactos/entrega-sd07-2026-10-12/`. La integración sd-07 ↔ sd-08 y sus pendientes están en `80_Artefactos/sd-08_contexto/integracion_sd-07.md`; el punto de partida del sd-08 es `relevo_sesion_2026-10-12.md`.
 
 ## Verificación
 
