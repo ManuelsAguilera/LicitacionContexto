@@ -1,0 +1,181 @@
+\section*{Anexo A · Registro de riesgos (Formulario T-16)}
+\addcontentsline{toc}{section}{Anexo A · Registro de riesgos (Formulario T-16)}
+
+Este anexo reúne los 37 riesgos y las 8 oportunidades del registro de Only Simple Solutions para el proyecto de Multitiendas Ancoa S.A. Los campos siguen la práctica de un registro de riesgos, con identificación, análisis y respuesta, y están sujetos a la estructura definitiva del Formulario T-16. La Tabla A.1 identifica cada riesgo, la Tabla A.2 presenta su análisis, la Tabla A.3 define su respuesta y la Tabla A.4 registra las oportunidades.
+
+La Tabla A.1 identifica los 37 riesgos con su enunciado resumido, su rama de la estructura de desglose y la mirada desde la que se observan.
+
+Tabla A.1: Identificación de los riesgos. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.08\linewidth}p{0.54\linewidth}p{0.16\linewidth}p{0.16\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Rama} & \textbf{Mirada} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-01 & Los saldos de la cartera migrados por tramos divergen de la plataforma de 2011 y se incumple la restricción 8. & Técnica & Implantación \\
+R-02 & El evento anual cae con un servicio a medio desplegar o dentro de una marcha blanca. & Proyecto & Implantación \\
+R-03 & Un dato del negocio financiero llega al retail sin base ni registro, y se quiebra la separación de los dos negocios. & Seguridad & Solución \\
+R-04 & Aparece en producción una integración no inventariada entre las 14 interfaces y falla una operación. & Técnica & Desarrollo, Implantación \\
+R-05 & La rotación del 62 \% hace que el personal capacitado se vaya antes o durante la marcha blanca. & Organizacional & Implantación \\
+R-06 & La comisión por canal y la información precontractual alargan la venta con tarjeta y el vendedor deja de ofrecerla. & Organizacional & Solución, Implantación \\
+R-07 & Un servicio administrado llega a fin de soporte durante los 56 meses y exige una migración forzada. & Técnica & Solución \\
+R-08 & El uso de servicios propios de Azure ata a Ancoa a un proveedor y encarece cambiarse. & Técnica & Solución \\
+R-09 & La reserva de existencia o la entrada API se saturan en el peak del evento anual y se cancelan pedidos. & Técnica & Solución \\
+R-10 & Un compromiso de seguridad en tienda o en el emisor produce una fuga de datos de tarjeta y una sanción. & Seguridad & Solución \\
+R-11 & La Contraparte Técnica o la filial no validan dentro de diez días hábiles y se atrasan entregables de la ruta crítica. & Organizacional & Desarrollo \\
+R-12 & La marcha blanca de los meses 13 a 15 cae en los congelamientos y arrastra el paso a producción del mes 16. & Proyecto & Implantación \\
+R-13 & Un tramo de la cartera no alcanza a migrar antes del retiro de la plataforma de 2011 en el mes 22. & Proyecto & Desarrollo, Implantación \\
+R-14 & Sin topes del cupo o con la prueba de corte de 24 h fallida, cae la venta con crédito en contingencia. & Proyecto & Desarrollo \\
+R-15 & La sincronización del diario local tras un corte duplica o pierde ventas en las tiendas sin enlace de respaldo. & Técnica & Solución \\
+R-16 & La autoridad tributaria no aprueba la modalidad fiscal de contingencia y la tienda no puede emitir durante un corte. & Proyecto & Solución \\
+R-17 & La CMF o la asesoría jurídica objetan la recuperación del emisor en Brazil South y obligan a rediseñarla. & Proyecto & Solución \\
+R-18 & La carga inicial de existencias hereda los errores del registro y el disponible publicado no es confiable en el mes 16. & Técnica & Implantación \\
+R-19 & La reglamentación de la Ley 21.719 precisa controles no previstos y exige retrabajo en cruces y evidencia. & Proyecto & Solución \\
+R-20 & El hardware, los enlaces o las obras que provee el cliente no están listos para la ola de una tienda. & Proyecto & Implantación \\
+R-21 & El cliente rechaza un supuesto de los 25 y el alcance cambia después de la línea base del mes 4. & Proyecto & Desarrollo \\
+R-22 & Los repositores externos y las terminales compartidas impiden asegurar acceso y los conteos quedan incompletos. & Operación & Solución, Implantación \\
+R-23 & Sale un rol clave del equipo o la contratación no llega a tiempo, y se atrasa la ruta crítica. & Organizacional & Desarrollo \\
+R-24 & Los servicios de existencias y ventas enfrentan su primer peak con defectos latentes, como en junio de 2026. & Operación & Implantación \\
+R-25 & Una falla posterior al retiro de la plataforma de 2011 queda sin corrección hasta enero de 2029. & Proyecto & Implantación \\
+R-27 & Los seis proveedores actuales no documentan interfaces ni sostienen la convivencia, y se atrasan integración y migración. & Proyecto & Desarrollo \\
+R-28 & Las grabaciones se borran a los 90 días hasta el mes 16 y crece el pasivo de las 1.240 repactaciones sin evidencia. & Proyecto & Desarrollo \\
+R-29 & El procedimiento abierto por el SERNAC impone obligaciones nuevas y cambia el alcance después de la línea base. & Proyecto & Desarrollo \\
+R-30 & Un servicio Premium no puede crearse en Chile Central y obliga a rediseñar o atrasa la plataforma base. & Técnica & Desarrollo \\
+R-31 & Un evento local o una obra no lista en el centro de datos del cliente detiene la emisión tributaria o el crédito. & Operación & Solución \\
+R-32 & El inventario cambia la ubicación de las plataformas y los plazos de los enlaces, y se atrasa la plataforma base. & Proyecto & Desarrollo \\
+R-33 & El mismo equipo sostiene la marcha blanca de la Etapa 1 y construye la Etapa 2 en los meses 13 a 15. & Proyecto & Desarrollo \\
+R-34 & El personal de tienda no alcanza a cambiar las etiquetas de papel y no se cumple la meta de error de precio. & Operación & Solución \\
+R-35 & Quedan accesos de ex trabajadores o temporales sin revocar y se quiebra la segregación. & Seguridad & Solución \\
+R-36 & Transportistas y vendedores de marketplace no adoptan a tiempo los contratos de estado y la meta del 97 \% no se mide. & Proyecto & Implantación \\
+R-37 & Las siete decisiones del cliente se demoran y la arquitectura no cierra con la línea base del mes 4. & Organizacional & Desarrollo \\
+R-38 & Una falla del piloto o de una ola en el clúster de Santiago concentra el impacto en la venta. & Operación & Implantación \\
+\end{longtable}
+
+La tabla muestra que cada rama de la estructura contiene al menos un riesgo y que cada riesgo se observa desde una o más miradas. La Tabla A.2 presenta la calificación de cada uno.
+
+Tabla A.2: Análisis cualitativo de los riesgos. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.12\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.20\linewidth}p{0.20\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Exposición} & \textbf{Zona} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-01 & 0,40 & 0,80 & 0,32 & Alta \\
+R-02 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-03 & 0,20 & 0,80 & 0,16 & Media \\
+R-04 & 0,60 & 0,20 & 0,12 & Media \\
+R-05 & 0,85 & 0,20 & 0,17 & Media \\
+R-06 & 0,40 & 0,20 & 0,08 & Media \\
+R-07 & 0,40 & 0,20 & 0,08 & Media \\
+R-08 & 0,20 & 0,40 & 0,08 & Media \\
+R-09 & 0,40 & 0,40 & 0,16 & Media \\
+R-10 & 0,20 & 0,80 & 0,16 & Media \\
+R-11 & 0,40 & 0,80 & 0,32 & Alta \\
+R-12 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-13 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-14 & 0,40 & 0,20 & 0,08 & Media \\
+R-15 & 0,40 & 0,40 & 0,16 & Media \\
+R-16 & 0,40 & 0,80 & 0,32 & Alta \\
+R-17 & 0,40 & 0,40 & 0,16 & Media \\
+R-18 & 0,60 & 0,40 & 0,24 & Alta \\
+R-19 & 0,40 & 0,20 & 0,08 & Media \\
+R-20 & 0,60 & 0,40 & 0,24 & Alta \\
+R-21 & 0,60 & 0,20 & 0,12 & Media \\
+R-22 & 0,60 & 0,20 & 0,12 & Media \\
+R-23 & 0,40 & 0,80 & 0,32 & Alta \\
+R-24 & 0,60 & 0,40 & 0,24 & Alta \\
+R-25 & 0,40 & 0,80 & 0,32 & Alta \\
+R-27 & 0,40 & 0,40 & 0,16 & Media \\
+R-28 & 0,85 & 0,20 & 0,17 & Media \\
+R-29 & 0,20 & 0,20 & 0,04 & Baja \\
+R-30 & 0,20 & 0,40 & 0,08 & Media \\
+R-31 & 0,20 & 0,80 & 0,16 & Media \\
+R-32 & 0,40 & 0,20 & 0,08 & Media \\
+R-33 & 0,40 & 0,80 & 0,32 & Alta \\
+R-34 & 0,60 & 0,40 & 0,24 & Alta \\
+R-35 & 0,20 & 0,80 & 0,16 & Media \\
+R-36 & 0,40 & 0,20 & 0,08 & Media \\
+R-37 & 0,40 & 0,80 & 0,32 & Alta \\
+R-38 & 0,20 & 0,20 & 0,04 & Baja \\
+\end{longtable}
+
+La exposición es el producto de la probabilidad por el impacto y la zona se determina según el apartado 8.1. La Tabla A.3 define la respuesta a cada riesgo.
+
+Tabla A.3: Respuesta a los riesgos. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.07\linewidth}p{0.11\linewidth}p{0.34\linewidth}p{0.17\linewidth}p{0.31\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Estrategia} & \textbf{Acción} & \textbf{Responsable} & \textbf{Disparador} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-01 & Mitigar & Fijar cortes por tramo con conciliación diaria y criterio de detención acordado con la filial. & Líder de Datos y Migración & Divergencia sin conciliar dos días seguidos en un tramo. \\
+R-02 & Mitigar & Reservar semanas para la fecha del evento y no desplegar servicios nuevos en las ocho semanas previas. & Jefe de Proyecto & Fecha del evento con menos de 8 semanas de aviso. \\
+R-03 & Evitar & Mantener el Servicio de control de cruces como único camino de datos, con base legal por cruce. & Arquitecto de Soluciones & Un solo cruce sin base o sin registro. \\
+R-04 & Mitigar & Cerrar el inventario antes de la línea base y certificar cada integración antes de retirar una plataforma. & Líder de Integración & Inventario no cerrado en el mes 4. \\
+R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Personal capacitado bajo el umbral de cierre. \\
+R-06 & Mitigar & Acordar con la filial la regla de comisión antes del mes 13 y simplificar la información precontractual. & Jefe de Proyecto & Acta de comisión sin firma en el mes 13. \\
+R-07 & Mitigar & Llevar un calendario de ciclo de vida y planificar cada migración con un año de anticipación. & Arquitecto de Soluciones & Servicio a menos de 12 meses de su fin de soporte. \\
+R-08 & Mitigar & Definir la infraestructura como código y un plan de reversibilidad con clientes Kafka. & Arquitecto de Soluciones & Plan de reversibilidad no aceptado en su fecha. \\
+R-09 & Mitigar & Calcular la memoria de capacidad con datos de 2026 y probar a 225.000 pedidos. & Líder de Rendimiento y Calidad & Prueba a 225.000 pedidos sin cumplir antes del mes 16. \\
+R-10 & Mitigar & Delimitar el ámbito de medios de pago, segmentar la red de tienda y ejecutar prueba de penetración. & Responsable de Seguridad & Hallazgo crítico en la prueba de penetración. \\
+R-11 & Mitigar & Pactar actas con plazo de diez días hábiles y escalar la validación vencida. & Jefe de Proyecto & Acta sin validar al décimo día hábil. \\
+R-12 & Evitar & Certificar en el mes 12, desplegar en la ventana libre de enero de 2028 y limitar el congelamiento a emergencias. & Jefe de Proyecto & Defectos altos abiertos al 20 de enero de 2028. \\
+R-13 & Evitar & Fijar la secuencia de cortes por tramo con último corte antes del 15 de octubre de 2028 y escalar al Comité Ejecutivo. & Líder de Datos y Migración & Algún tramo sin corte al 15 de septiembre de 2028. \\
+R-14 & Mitigar & Fijar con la filial los topes antes del mes 6 y mantener otro medio de pago como plan B. & Arquitecto de Soluciones & Topes sin fijar en el mes 6 o prueba de 24 h fallida. \\
+R-15 & Mitigar & Dimensionar según el inventario de enlaces y probar la sincronización tras un corte de 24 h. & Arquitecto de Soluciones & Prueba de 24 h con una venta duplicada o perdida. \\
+R-16 & Escalar & Gestionar la aprobación con la autoridad tributaria y escalar al Comité Ejecutivo si no avanza. & Jefe de Proyecto & Modalidad sin aprobar en el mes 9. \\
+R-17 & Mitigar & Obtener el pronunciamiento jurídico y de la CMF y mantener una alternativa de recuperación en Chile. & Responsable de Seguridad & Sin pronunciamiento antes de la línea base del mes 4. \\
+R-18 & Mitigar & Cargar con conteo cíclico y detección de discrepancias y conciliar las 24 instalaciones antes del corte. & Líder de Datos y Migración & Discrepancia de la carga de prueba sobre el umbral. \\
+R-19 & Aceptar & Monitorear la reglamentación y absorber los ajustes en la matriz de cumplimiento. & Responsable de Seguridad & Publicación de una norma que cambie un control. \\
+R-20 & Transferir & Fijar por contrato las responsabilidades del cliente con fechas por ola y exigir certificación de sitio. & Líder de Implantación & Certificación de sitio no emitida 8 semanas antes de la ola. \\
+R-21 & Evitar & Validar los 25 supuestos y los umbrales con el cliente antes de la línea base. & Jefe de Proyecto & Supuestos sin validar en el mes 3. \\
+R-22 & Mitigar & Asegurar acceso individualizado por proveedor y turnos de terminales compartidas. & Líder de Gestión del Cambio & Conteos incompletos en el piloto. \\
+R-23 & Mitigar & Nombrar suplentes, documentar el conocimiento y adelantar la contratación. & Jefe de Proyecto & Vacante de un rol clave sin cubrir por más de 30 días. \\
+R-24 & Mitigar & Ampliar el soporte reforzado y cerrar los defectos de severidad alta antes de abril de 2028. & Líder de Operación & Defectos altos abiertos a 4 semanas del Día de la Madre. \\
+R-25 & Evitar & Cortar el último tramo antes del 15 de octubre, conciliar a diario y acordar un plan de retorno. & Líder de Datos y Migración & Algún tramo sin corte al 15 de octubre de 2028. \\
+R-27 & Mitigar & Firmar acuerdos de cooperación y salida con documentación de interfaces y extracción de datos. & Jefe de Proyecto & Documentación sin entregar por un proveedor en el mes 4. \\
+R-28 & Mitigar & Especificar la retención de grabaciones y acompañar la decisión del cliente de cambiar su política. & Arquitecto de Datos & Decisión del cliente sin tomar en el mes 6. \\
+R-29 & Aceptar & Gestionar cualquier obligación nueva por el control de cambios y monitorear el procedimiento. & Jefe de Proyecto & Notificación de una obligación nueva. \\
+R-30 & Evitar & Probar la creación de cada servicio Premium al inicio, antes de construir la plataforma base. & Arquitecto de Soluciones & Un servicio no creable en la prueba de recursos. \\
+R-31 & Escalar & Resolver con el Comité Ejecutivo qué provee cada parte, cerrar la brecha de estándares y definir respaldo fuera de la comuna. & Responsable de Infraestructura & Informe de brecha de 2024 sin entregar en el mes 4. \\
+R-32 & Mitigar & Confirmar ubicaciones y rutas con el inventario y acreditar el ExpressRoute antes del diseño final. & Responsable de Infraestructura & Inventario de sitios con cambios sobre el supuesto. \\
+R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca. & Jefe de Proyecto & Carga sobre 100 \% de un rol clave en los meses 13 a 15. \\
+R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Operación & Error de precio sobre 3 \% en el piloto. \\
+R-35 & Mitigar & Revisar los accesos periódicamente y revocar los de ex trabajadores y temporales. & Responsable de Seguridad & Cuenta de ex trabajador activa tras la revisión mensual. \\
+R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Por definir con el sd-12 & Transportista sin adoptar los estados a 8 semanas del inicio. \\
+R-37 & Evitar & Calendarizar las siete decisiones antes de la línea base y escalar las vencidas. & Jefe de Proyecto & Decisiones pendientes en el mes 3. \\
+R-38 & Aceptar & Seleccionar pilotos y olas fuera del clúster de Santiago al inicio y revisar la concentración. & Líder de Implantación & Piloto con falla en una tienda del clúster de Santiago. \\
+\end{longtable}
+
+Las acciones se incorporan a la estructura de desglose del trabajo y los responsables son roles del equipo del proponente. La Tabla A.4 registra las oportunidades, que no se suman a las reservas.
+
+Tabla A.4: Oportunidades. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.08\linewidth}p{0.46\linewidth}p{0.12\linewidth}p{0.14\linewidth}p{0.20\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Oportunidad} & \textbf{Probabilidad} & \textbf{Estrategia} & \textbf{Responsable} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+O-01 & Retirar antes alguna interfaz por archivo al cerrar el inventario de las 14 interfaces. & 0,40 & Explotar & Líder de Integración \\
+O-02 & Adelantar la prueba de corte de 24 h si la filial fija los topes del cupo antes del mes 6. & 0,40 & Mejorar & Jefe de Proyecto \\
+O-03 & Bajar la discrepancia del 12,4 \% antes del corte con el conteo cíclico en la carga inicial. & 0,40 & Explotar & Líder de Datos y Migración \\
+O-04 & Detener el borrado a los 90 días si el Servicio de evidencia financiera entra antes del mes 16. & 0,20 & Mejorar & Arquitecto de Datos \\
+O-05 & Ganar margen de observación si la cartera sin casos difíciles migra completa antes del mes 22. & 0,40 & Mejorar & Líder de Datos y Migración \\
+O-06 & Dimensionar con medición si los datos del evento anual de 2026 calibran la capacidad. & 0,60 & Mejorar & Líder de Rendimiento y Calidad \\
+O-07 & Adelantar la integración si los proveedores actuales entregan temprano la documentación de interfaces. & 0,20 & Compartir & Jefe de Proyecto \\
+O-08 & Adelantar el despliegue si el cliente compra el hardware y contrata los enlaces antes de cada ola. & 0,20 & Compartir & Líder de Implantación \\
+\end{longtable}
+
+Ninguna de las ocho oportunidades se incluye en el cálculo de reservas del apartado 8.3.

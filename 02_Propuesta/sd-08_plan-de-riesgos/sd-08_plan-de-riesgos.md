@@ -15,11 +15,11 @@ secciones:
   - T7-08-8.1
   - T7-08-8.2
   - T7-08-8.3
-actualizado: 2026-10-06
+actualizado: 2026-10-12
 ---
 # Subdocumento 8 — Plan de riesgos
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-08.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -28,9 +28,9 @@ actualizado: 2026-10-06
 | Subdocumento T-7 | 8 de 14 |
 | Título oficial (T-7) | Plan de riesgos |
 | Carpeta | `02_Propuesta/sd-08_plan-de-riesgos/` |
-| Capítulo en el informe | No cubierto todavía; se redactará en el Informe 2 o 3 |
+| Capítulo en el informe | Informe 2 |
 | Formularios asociados | T-16 |
-| Estado | Sin redactar |
+| Estado | Borrador redactado con asistencia de IA, sin revisión humana (2026-10-12) |
 
 ## Ponderación (Formulario T-21)
 
@@ -57,13 +57,13 @@ En todo el capítulo: los riesgos corresponden a la solución efectivamente prop
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 8.1 | Plan de riesgos | Enfoque de gestión, roles, escalas de probabilidad e impacto y ciclo de revisión. | Sin redactar |
-| 8.2 | Identificación y Análisis de Riesgos | RBS y cuantificación de riesgos técnicos, organizacionales, de proyecto, de seguridad y de operación; en particular obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE; análisis cualitativo y cuantitativo (modos de falla, árbol de fallas o simulación). | Sin redactar |
-| 8.3 | Plan de Acción a Riesgos | Mitigación basada en análisis costo-beneficio, con responsable, plazo y disparador; reservas de contingencia y de gestión y su reflejo en el cronograma (valorización en la Oferta Económica, Art. 50.2). | Sin redactar |
+| 8.1 | Plan de riesgos | Enfoque de gestión, roles, escalas de probabilidad e impacto y ciclo de revisión. | Borrador, sin revisión humana |
+| 8.2 | Identificación y Análisis de Riesgos | RBS y cuantificación de riesgos técnicos, organizacionales, de proyecto, de seguridad y de operación; en particular obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE; análisis cualitativo y cuantitativo (modos de falla, árbol de fallas o simulación). | Borrador, sin revisión humana |
+| 8.3 | Plan de Acción a Riesgos | Mitigación basada en análisis costo-beneficio, con responsable, plazo y disparador; reservas de contingencia y de gestión y su reflejo en el cronograma (valorización en la Oferta Económica, Art. 50.2). | Borrador, sin revisión humana |
 
 Anexos: Formulario T-16.
 
-La redacción vive en `02_Propuesta/latex_final/sd-08.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -71,7 +71,7 @@ La redacción vive en `02_Propuesta/latex_final/sd-08.tex` (edición colaborativ
 
 ## Checklist de llenado
 
-- [ ] Cada título del Comunicado 10 está desarrollado en `sd-08.tex`, sin omitir ni mover contenido a otro título
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-08/OSS-Subdocumento8.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
 - [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`

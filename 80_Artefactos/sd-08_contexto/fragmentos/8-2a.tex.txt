@@ -1,0 +1,158 @@
+Este apartado identifica y analiza los riesgos de la solución que Only Simple Solutions propone a Multitiendas Ancoa S.A. Los riesgos provienen de tres fuentes. La primera es el Caso, con sus dolores, sus restricciones y sus fechas. La segunda es la solución descrita en los capítulos 3 y 4, con sus servicios, sus decisiones de arquitectura y su despliegue híbrido. La tercera es el plan del capítulo 7, con el cronograma de 56 meses, los hitos sin holgura y las ventanas de congelamiento. Por esa razón, cada riesgo nace de una causa concreta de esta solución y no de un catálogo genérico. El resultado es un registro de 37 riesgos y 8 oportunidades, cuyo detalle completo se presenta en el anexo del Formulario T-16. El cuerpo del apartado desarrolla los riesgos críticos, los altos y los once que el Caso y las Bases exigen abordar, y deja el análisis cuantitativo y las respuestas para los apartados siguientes.
+
+\subsection{Estructura de desglose de riesgos}
+
+Los 37 riesgos se ordenan en una estructura de desglose de riesgos de cinco ramas, que se muestra en la Figura 8.1. La rama técnica agrupa 8 riesgos de la arquitectura, las plataformas y los datos. La rama organizacional agrupa 5 riesgos de las personas y del cliente. La rama de proyecto agrupa 16 riesgos de plazos, ventanas, supuestos y terceros. La rama de seguridad agrupa 3 riesgos y la rama de operación agrupa 5 riesgos del servicio una vez en producción.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\ossFigCaption{Figura 8.1: Estructura de desglose de riesgos, con las cinco ramas y los 37 riesgos.}
+
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/diag-08-01_rbs.pdf}
+
+\raggedright\textbf{Fuente:} Elaboración propia.
+\end{minipage}
+\end{center}
+
+La figura muestra que la rama de proyecto concentra casi la mitad de los riesgos, lo que es coherente con un cronograma de 56 meses sin holgura en sus hitos y con ventanas de congelamiento que limitan las fechas de despliegue. Nueve de esos 16 riesgos tienen origen externo, ya sea normativo o de terceros. Son R-16 (modalidad fiscal de contingencia sin aprobación de la autoridad tributaria), R-17 (residencia de los datos de recuperación), R-19 (reglamentación de la Ley 21.719), R-20 (hardware, enlaces y obras que provee el cliente), R-27 (cooperación de los seis proveedores actuales), R-28 (retención de grabaciones de repactación), R-29 (procedimiento abierto por el SERNAC), R-32 (ubicación de plataformas y enlaces por tienda) y R-36 (adopción de contratos de estado por transportistas y vendedores de marketplace). Se mantienen dentro de la rama de proyecto y se identifican como externos porque el Caso exige que lo excluido del alcance aparezca en el plan y en el riesgo (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 11, p. 27).
+
+\subsection{Cobertura de los riesgos exigidos}
+
+El Caso espera seis riesgos en el plan, que son la divergencia de saldos en la cartera (R-01), el evento anual con un servicio a medio desplegar (R-02), el cruce indebido de datos entre los dos negocios (R-03), la integración no documentada (R-04), la rotación del 62 \% del personal (R-05) y la comisión del vendedor (R-06) (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 19, p. 46). Además, deben abordarse cinco riesgos adicionales, que son la obsolescencia de los servicios administrados (R-07), el bloqueo por proveedor (R-08), la escalabilidad (R-09), la ciberseguridad (R-10) y las contrapartes del cliente (R-11). El registro cubre los once. Cada riesgo se mira desde la solución, el desarrollo o la implantación, y un mismo riesgo puede tocar más de una mirada. En total, 14 riesgos tocan la solución, 13 el desarrollo y 14 la implantación. La Tabla 8.4 sintetiza los once riesgos exigidos con su rama, su exposición y su zona.
+
+Tabla 8.4: Riesgos exigidos por el Caso y por las Bases. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.10\linewidth}p{0.42\linewidth}p{0.16\linewidth}p{0.14\linewidth}p{0.14\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Rama} & \textbf{Exposición} & \textbf{Zona} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-01 & Divergencia de saldos en la migración de cartera & Técnica & 0,32 & Alta \\
+R-02 & Evento anual con servicio a medio desplegar & Proyecto & 0,48 & Crítica \\
+R-03 & Cruce indebido de datos entre los dos negocios & Seguridad & 0,16 & Media \\
+R-04 & Integración no documentada entre las 14 interfaces & Técnica & 0,12 & Media \\
+R-05 & Rotación del 62 \% del personal & Organizacional & 0,17 & Media \\
+R-06 & Comisión del vendedor y venta con tarjeta & Organizacional & 0,08 & Media \\
+R-07 & Obsolescencia de servicios administrados & Técnica & 0,08 & Media \\
+R-08 & Bloqueo por proveedor de nube & Técnica & 0,08 & Media \\
+R-09 & Escalabilidad en el evento anual & Técnica & 0,16 & Media \\
+R-10 & Ciberseguridad y datos de tarjeta & Seguridad & 0,16 & Media \\
+R-11 & Validaciones tardías del cliente & Organizacional & 0,32 & Alta \\
+\end{longtable}
+
+La tabla muestra que de los once riesgos exigidos uno es crítico, dos son altos y ocho quedan en zona media. Los apartados siguientes explican por qué cada uno recibió esa zona.
+
+\subsection{Análisis cualitativo}
+
+Cada riesgo se calificó con las escalas y zonas del apartado 8.1, y la Figura 8.2 ubica los 37 en la matriz de exposición según su probabilidad y su impacto.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\ossFigCaption{Figura 8.2: Matriz de exposición con los 37 riesgos ubicados por probabilidad e impacto.}
+
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/diag-08-02_matriz-exposicion.pdf}
+
+\raggedright\textbf{Fuente:} Elaboración propia.
+\end{minipage}
+\end{center}
+
+La matriz distribuye los riesgos en 3 críticos, 11 altos, 21 medios y 2 bajos. Los tres críticos (R-02, R-12 y R-13) coinciden en probabilidad 0,60 e impacto 0,80, y los tres afectan un hito contractual sin holgura. Siete de los once altos tienen impacto 0,80 con probabilidad 0,40, y los otros cuatro combinan probabilidad 0,60 con impacto 0,40. Cinco riesgos (R-02, R-11, R-23, R-33 y R-37) alcanzan impacto 0,80 por la regla del hito contractual, ya que atrasan una ruta crítica que no admite holgura. Los dos riesgos bajos son R-29 y R-38. La Tabla 8.5 presenta los 14 riesgos críticos y altos, ordenados por exposición.
+
+Tabla 8.5: Riesgos críticos y altos. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.10\linewidth}p{0.48\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.14\linewidth}}
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{P} & \textbf{I} & \textbf{Exposición} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-02 & Evento anual con servicio a medio desplegar & 0,60 & 0,80 & 0,48 \\
+R-12 & Marcha blanca dentro de los congelamientos & 0,60 & 0,80 & 0,48 \\
+R-13 & Cartera sin migrar al retiro de la plataforma de 2011 & 0,60 & 0,80 & 0,48 \\
+R-01 & Divergencia de saldos en la migración de cartera & 0,40 & 0,80 & 0,32 \\
+R-11 & Validaciones tardías del cliente & 0,40 & 0,80 & 0,32 \\
+R-16 & Modalidad fiscal de contingencia sin aprobar & 0,40 & 0,80 & 0,32 \\
+R-23 & Salida de un rol clave del equipo & 0,40 & 0,80 & 0,32 \\
+R-25 & Falla posterior al retiro, dentro del congelamiento & 0,40 & 0,80 & 0,32 \\
+R-33 & Sobreasignación del equipo en los meses 13 a 15 & 0,40 & 0,80 & 0,32 \\
+R-37 & Decisiones del cliente demoradas antes de la línea base & 0,40 & 0,80 & 0,32 \\
+R-18 & Carga inicial de existencias con errores & 0,60 & 0,40 & 0,24 \\
+R-20 & Hardware y enlaces de tienda no listos para su ola & 0,60 & 0,40 & 0,24 \\
+R-24 & Primer peak con defectos latentes & 0,60 & 0,40 & 0,24 \\
+R-34 & Meta de error de precio con etiquetas en papel & 0,60 & 0,40 & 0,24 \\
+\end{longtable}
+
+La tabla permite ver que los riesgos de mayor exposición se concentran en la migración de la cartera, en las ventanas de congelamiento y en las dependencias del cliente. Los apartados siguientes desarrollan cada uno.
+
+\subsection{Riesgos críticos}
+
+Los tres riesgos críticos tienen exposición 0,48 y, según la regla de acción del apartado 8.1, no se aceptan. Se resuelven cambiando el diseño o el plan, o se escalan al Comité Ejecutivo.
+
+El riesgo R-02 se origina en que la asociación gremial fija la fecha del evento anual con unas seis semanas de aviso (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29). Si el evento cae con un servicio a medio desplegar o dentro de una marcha blanca, la venta digital puede caer o un congelamiento desplaza entre 3 y 6 semanas el trabajo de la ruta crítica. Afecta al paso a producción del mes 16 y se observa desde la mirada de implantación. Se calificó con probabilidad 0,60, porque el evento se repite cada año, e impacto 0,80, porque el plan del capítulo 7 no tiene holgura y rige la regla del hito contractual. La exposición resultante es 0,48.
+
+El riesgo R-12 nace de que, con inicio en enero de 2027, la marcha blanca de la Etapa 1 (meses 13 a 15) cae casi entera en los congelamientos, que rigen hasta el 6 de enero y desde la última semana de enero hasta la primera de marzo (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29). En ese lapso no pueden corregirse defectos, por lo que el cierre se atrasa y arrastra el paso a producción del mes 16, previsto para abril de 2028. El plan del capítulo 7 programa la marcha blanca sin correcciones, y la mirada es de implantación. Se calificó con probabilidad 0,60, porque el calendario ya coincide con las ventanas, e impacto 0,80, porque afecta un hito sin holgura. La exposición es 0,48.
+
+El riesgo R-13 surge porque la plataforma de crédito de 2011 se retira en el mes 22 (octubre de 2028) y la remediación vence en el mes 24, con fin de soporte en 2029 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.3, p. 16). La ventana de migración mide cerca de 197 días intervenibles entre abril y octubre de 2028, con holgura casi nula, y el tramo complejo de la cartera depende de la Etapa 2, que entra en producción en el mes 21. Si un tramo no alcanza a migrar, el atraso cae en el congelamiento y rebasa el plazo anterior a 2029, con soporte vencido o incumplimiento ante la CMF. Las miradas son de desarrollo e implantación. Se calificó con probabilidad 0,60 e impacto 0,80 por el hito del mes 22, de donde resulta una exposición de 0,48.
+
+\subsection{Riesgos altos}
+
+Los once riesgos altos tienen exposición entre 0,24 y 0,32 y exigen una acción de mitigación con plazo dentro del plan. Se agrupan por tema para facilitar su lectura.
+
+Los tres primeros se relacionan con la cartera y los datos que se migran. El riesgo R-01 se origina en que la cartera viva con cuotas, repactaciones y cobranzas migra por tramos, y el tramo difícil lo hace en la Etapa 2 con una sola marcha blanca de dos meses. Una divergencia de saldos incumple la restricción 8 y expone ante la CMF (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 10, restricción 8, p. 26). Tiene probabilidad 0,40 e impacto 0,80 en servicio, con exposición 0,32.
+
+El riesgo R-18 parte de que el registro de inventario tiene 12,4 \% de discrepancia en el conteo cíclico (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.1, p. 15) y de que 24 instalaciones no cierran para el corte (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 19, p. 46). La carga inicial del Servicio de existencias hereda esos errores y el disponible publicado no es confiable en el mes 16. Tiene probabilidad 0,60 e impacto 0,40 en alcance y calidad, con exposición 0,24.
+
+El riesgo R-25 se produce porque el retiro de la plataforma de 2011 ocurre en octubre de 2028, antes del congelamiento de noviembre a enero. Si algo falla después, la corrección o el retorno quedan bloqueados hasta el 7 de enero de 2029, con incumplimiento ante la CMF. La falla requiere que antes falle otro elemento, por lo que la probabilidad es 0,40. Con impacto 0,80 en servicio, la exposición es 0,32.
+
+Los tres siguientes dependen del cliente y de terceros. El riesgo R-11 se origina en que el cliente aporta 46 personas para nueve plataformas (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.2, p. 32) y debe validar cada entregable en diez días hábiles. Cada validación tardía atrasa entre 3 y 6 semanas un entregable de la ruta crítica, por lo que rige la regla del hito contractual. Tiene probabilidad 0,40, impacto 0,80 y exposición 0,32.
+
+El riesgo R-37 nace de que siete decisiones del cliente deben tomarse antes de cerrar el apartado 4.1. Una demora aplaza entre 3 y 6 semanas el cierre de la arquitectura frente a la línea base del mes 4. Por la regla del hito contractual el impacto es 0,80, y con probabilidad 0,40 la exposición es 0,32.
+
+El riesgo R-20 se origina en que el cliente compra el hardware, contrata los enlaces y ejecuta las obras de 14 tiendas (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 11, p. 27). Cada ola de despliegue depende de ello, y el atraso de una ola desplaza el despliegue gradual entre 3 y 6 semanas. Tiene probabilidad 0,60 e impacto 0,40 en plazo, con exposición 0,24.
+
+Los tres siguientes se relacionan con el equipo y con el plan. El riesgo R-23 considera que, entre 85 profesionales y un núcleo de 16, la salida del jefe de proyecto, del arquitecto o del integrador a mitad de la Etapa 1 atrasaría entre 3 y 6 semanas la ruta crítica. Rige la regla del hito contractual, con impacto 0,80, probabilidad 0,40 y exposición 0,32.
+
+El riesgo R-33 se origina en que, entre los meses 13 y 15, el mismo equipo sostiene la marcha blanca de la Etapa 1 y construye la Etapa 2, y la nivelación de recursos del Formulario T-15 cubre ese período solo en parte. La sobreasignación atrasa una de las dos ramas críticas, con hitos en los meses 16 y 21. Tiene probabilidad 0,40, impacto 0,80 y exposición 0,32.
+
+El riesgo R-24 resulta de que la Etapa 1 entra en producción en abril de 2028 y el Día de la Madre y el evento anual llegan entre 4 y 10 semanas después. Los servicios de existencias y ventas enfrentan su primer peak con defectos latentes, con riesgo de repetir el episodio de junio de 2026, que dejó 2.840 cancelaciones (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.1, p. 15). La probabilidad es 0,60, el impacto 0,40 y la exposición 0,24.
+
+Los dos últimos se relacionan con aprobaciones y metas de operación. El riesgo R-16 se origina en que la autoridad tributaria no ha aprobado la modalidad fiscal de contingencia, según la Tabla 4.9 del capítulo 4. Sin ella, un corte de enlace en tienda incumple las restricciones 5 o 6 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 10, restricciones 5 y 6, p. 26). Tiene origen externo, probabilidad 0,40, impacto 0,80 y exposición 0,32.
+
+El riesgo R-34 parte de que la meta de error de precio es menor que 3 \% y de que el papel no baja de 2,6 \% según el capítulo 2, con hasta 400.000 cambios de precio al día en campaña. El margen es estrecho y las oleadas diurnas de cambio de etiquetas dependen del personal de tienda. La probabilidad es 0,60, el impacto 0,40 en alcance y calidad y la exposición 0,24.
+
+\subsection{Riesgos exigidos en zona media}
+
+Ocho de los once riesgos exigidos quedan en zona media. En cada uno, la probabilidad es baja, el efecto se acota con un rodeo o con una salida parcial, o el impacto es moderado, y por eso no alcanzan la zona alta.
+
+El riesgo R-03 tiene impacto 0,80, porque un cruce sin base quiebra la separación de los dos negocios que el Caso declara línea roja (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 19, p. 46). La probabilidad es 0,20, porque el Servicio de control de cruces y el ADR-02 lo bloquean por diseño. La exposición es 0,16.
+
+El riesgo R-04 parte de que nadie conoce hoy el mapa de las 14 interfaces (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.4, p. 17). Su probabilidad es 0,60, pero el inventario del mes 4 acota el efecto a una degradación con rodeo, con impacto 0,20 y exposición 0,12.
+
+El riesgo R-05 tiene probabilidad 0,85, porque la rotación anual del 62 \% (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.4, p. 16) hace casi segura la pérdida de personal capacitado. El efecto es una degradación en caja con rodeos disponibles, con impacto 0,20 y exposición 0,17.
+
+El riesgo R-06 considera que la comisión por canal de origen y la información precontractual alargan la venta con tarjeta desde el mes 16, antes de que el Servicio de comisiones llegue en el mes 21 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 8, entrevista al vendedor de piso, p. 21). Con probabilidad 0,40 e impacto 0,20 sobre áreas funcionales clave, queda en el límite inferior de la zona, con exposición 0,08.
+
+El riesgo R-07 supone que en 56 meses es plausible que API Management Premium clásico, AKS o PostgreSQL lleguen a fin de soporte. La migración forzada costaría entre 1 y 2 \% de las horas, lo que da impacto 0,20. Con probabilidad 0,40, la exposición es 0,08.
+
+El riesgo R-08 reconoce que salir de Event Hubs, API Management y AKS sería costoso, con impacto 0,40. Los clientes Kafka (ADR-06 y ADR-07) y la definición de la infraestructura como código dejan una salida parcial, de modo que la probabilidad es 0,20 y la exposición 0,08.
+
+El riesgo R-09 parte de que el evento de 2026 concentró 104.000 pedidos y se proyectan 150.000 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.1, p. 31), con prueba a 225.000. La memoria de capacidad aún no está calculada y una saturación cancelaría pedidos como en junio. La probabilidad es 0,40, el impacto 0,40 y la exposición 0,16.
+
+El riesgo R-10 tiene impacto 0,80, porque una fuga de datos de tarjeta con sanción es de efecto máximo, y la norma de medios de pago está definida solo para el canal digital (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 6, p. 14). La probabilidad es 0,20, porque el compromiso exige vencer los controles de red de tienda y del emisor y existe prueba de penetración. La exposición es 0,16.
+
+\subsection{Oportunidades}
+
+El registro incluye ocho oportunidades, que se califican con la misma escala de probabilidad y con un impacto positivo. Las cuatro desarrolladas aquí son las de mayor efecto sobre los riesgos críticos y altos. Las otras cuatro (O-01, O-04, O-07 y O-08) se registran en el Formulario T-16. Se refieren al retiro anticipado de interfaces por archivo, a la entrada anticipada del Servicio de evidencia financiera, a la entrega temprana de documentación por los proveedores actuales y a la compra anticipada de hardware por el cliente. Ninguna oportunidad se cuenta en una reserva.
+
+La oportunidad O-02 establece que, si la filial emisora fija los topes del cupo preaprobado antes del mes 6, entonces la prueba de corte de 24 h se adelanta y libera holgura para la migración de cartera. La oportunidad O-03 establece que, si la carga inicial de existencias usa el conteo cíclico y la detección de discrepancias de la segunda innovación, entonces la discrepancia del 12,4 \% baja antes del corte y se liberan horas de conteo en tienda. La oportunidad O-05 establece que, si la cartera sin casos difíciles migra completa antes del mes 22, entonces queda margen de observación antes del congelamiento de noviembre. La oportunidad O-06 establece que, si los datos del evento anual de 2026 y de ediciones previas calibran la memoria de capacidad antes del evento, entonces se dimensiona con medición y no con margen ciego, y luego se libera la capacidad no usada. Las probabilidades son 0,40 para O-02, O-03 y O-05 y 0,60 para O-06.
+
+Los riesgos de adopción de las cinco innovaciones obligatorias no se repiten en este apartado y se tratan en el capítulo 13.
+
+Con los riesgos identificados y calificados, el siguiente apartado presenta el análisis cuantitativo, que traduce esta exposición en semanas y horas de reserva para los riesgos críticos y altos.
