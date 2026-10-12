@@ -189,7 +189,7 @@ ax.text(x29a + 0.1, yc1 + 0.32,
         "Fin de soporte de la plataforma de 2011\n"
         "y último hito del plan de remediación\n(2029)",
         ha="left", va="bottom", fontsize=FS, linespacing=1.05, zorder=4,
-        bbox=dict(boxstyle="square,pad=0.12", facecolor=(1, 1, 1, 0.9),
+        bbox=dict(boxstyle="square,pad=0.12", facecolor=(1, 1, 1, 1.0),
                   edgecolor="none"))
 
 # ---- hitos (rombos); escalonados para que ningún rótulo cruce una guía

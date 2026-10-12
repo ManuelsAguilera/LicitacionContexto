@@ -50,11 +50,6 @@ digraph D4 {
   </TABLE></TD></TR>
   </TABLE>>];
 
-  rotulo [label=<
-  <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
-    <TR><TD><B>⟷</B> Cruce autorizado: solo con<BR/>finalidad, autorización,<BR/>dato mínimo y registro</TD></TR>
-  </TABLE>>];
-
   // Puntos de rótulo de los flujos prohibidos (van por fuera del control de cruces)
   p_saldos [label=<
   <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
@@ -89,15 +84,15 @@ digraph D4 {
     <TR><TD BGCOLOR="#196197" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Etapa 1</TD></TR>
     <TR><TD BGCOLOR="#7FC6AA" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Etapa 2</TD></TR>
     <TR><TD BORDER="3" COLOR="#277FA8" WIDTH="18" HEIGHT="9"></TD><TD ALIGN="LEFT">Control de cruces</TD></TR>
-    <TR><TD><B>⟷</B></TD><TD ALIGN="LEFT">Autorizado (sólida)</TD></TR>
+    <TR><TD><B>⟷</B></TD><TD ALIGN="LEFT">Autorizado (sólida): solo con<BR ALIGN="LEFT"/>finalidad, autorización,<BR ALIGN="LEFT"/>dato mínimo y registro<BR ALIGN="LEFT"/></TD></TR>
     <TR><TD><FONT COLOR="#C0392B"><B>✕</B></FONT></TD><TD ALIGN="LEFT">Prohibido (roja, con ✕)</TD></TR>
     <TR><TD><B>· · ·</B></TD><TD ALIGN="LEFT">Excepción sin<BR ALIGN="LEFT"/>conexión (punteada)<BR ALIGN="LEFT"/></TD></TR>
   </TABLE>>];
 
   // Columnas y orden vertical
-  { rank=same; maestro; p_atributos; p_saldos; rotulo; control; }
+  { rank=same; maestro; p_atributos; p_saldos; control; }
   { rank=same; filial; leyenda; }
-  maestro -> p_atributos -> p_saldos -> rotulo -> control [style=invis];
+  maestro -> p_atributos -> p_saldos -> control [style=invis];
   filial -> leyenda [style=invis];
 
   // ═════════════ FLUJOS AUTORIZADOS: atraviesan el control de cruces ═════════════

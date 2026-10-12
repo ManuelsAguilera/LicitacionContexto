@@ -250,7 +250,8 @@ hito(X(22), Y_2011 - H_BANDA / 2 - 0.12, Y_2011 + H_BANDA / 2 + 0.12)
 hito(X(24), 0.42, 6.32)
 ax.text(X(24) - 0.12, 0.62, "Límite: cartera migrada antes de 2029",
         ha="right", va="center", fontsize=FS, color=AZUL_OSC,
-        fontweight="bold")
+        fontweight="bold", zorder=5,
+        bbox=dict(boxstyle="square,pad=0.15", facecolor=BLANCO, edgecolor="none"))
 
 # ------------------------------------------------------------------
 # Leyenda y notas (abajo)
