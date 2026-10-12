@@ -27,7 +27,7 @@ Las referencias `Sn:L123` son líneas de esos archivos (`S` cuerpo, `A` anexos, 
 
 | Tipo | Graves | Medianas | Bajas |
 | :-- | :-: | :-: | :-: |
-| Externas | 2 (1 resuelta) | 11 | 5 |
+| Externas | 2 (2 resueltas) | 10 | 5 |
 | Internas sd-05 | 0 | 8 | 4 |
 | Internas sd-06 | 0 | 6 | 4 |
 | Internas sd-07 | 0 | 2 | 4 |
@@ -78,9 +78,10 @@ Revisión contra `main` (2026-10-12): las versiones de `main` de los sd-07, sd-0
 
 ## Medianas
 
-### EXT-M-01. Comité de Operación «desde el mes 13» (sd-06, sd-07, sd-08) frente al mes 16 (sd-01)
-- **Dice.** `S6:L335, L1250, L1856, L2820`, `S7:L560` y `S8:L119`: mensual desde el mes 13. El sd-01 (corregido el 2026-10-11) lo fija desde el mes 16, cuando la Etapa 1 entra en producción. Además `S6:L1572-1574` dice «desde el mes 21, el Comité de Operación continuará» y `S6:L2837-2853` que «asumirá el seguimiento ordinario» desde el mes 21.
-- **Sugerencia.** Una sola regla en los cuatro subdocumentos: mes 16 (o mes 13 si se decide que arranca con la marcha blanca; en ese caso hay que volver a corregir el sd-01). La definición de «seguimiento ordinario desde el mes 21» debe quedar como un cambio de alcance (de Etapa 1 a toda la solución), no como un segundo inicio.
+### EXT-M-01. Comité de Operación «desde el mes 13» — **no es una inconsistencia**
+- **Qué pasó.** La auditoría tomó como válido el «mes 16» que se había puesto en el sd-01 y marcó los «desde el mes 13» de los sd-06, sd-07 y sd-08 como errores. Pero el artículo 71 de las Bases Administrativas (Gobierno del proyecto) fija el Comité de Operación como «mensual desde el mes 13». Manda la Base.
+- **Qué se hizo.** El sd-01 se revirtió a «desde el mes 13» (en `main` y en la copia de Prism), y el hallazgo EXT-M-11 de la auditoría anterior quedó anulado. Los sd-06, sd-07, sd-08 y el T-9 estaban bien en este punto.
+- **Pendiente derivado.** El sd-06 (`S6:L1572-1574, L2837-2853`) dice «desde el mes 21, el Comité de Operación continuará… asumirá el seguimiento ordinario»; no contradice a las Bases, pero conviene explicar qué cambia en el mes 21.
 
 ### EXT-M-02. Catálogo de requerimientos v3.0 / 307 (sd-06, sd-09, T-10) frente a v3.1 / 308 (sd-03)
 - **Dice.** `S6:L2959, L3641` (223 RF + 75 RNF + 9 OP = 307), `S9:L194` («catálogo oficial v3.0») y `T10:L238` («v3.0»). El sd-03 fija la versión vigente 3.1, de 308 elementos (227 RF, 72 RNF, 9 OP).
@@ -245,7 +246,7 @@ Revisión contra `main` (2026-10-12): las versiones de `main` de los sd-07, sd-0
 # Orden sugerido de resolución
 
 1. **EXT-G-01** (cartera en el sd-07) y **EXT-M-07** (corte de enlace y piloto): son plazos y alimentan la ruta crítica y las pruebas.
-2. **EXT-M-03** (roles) y **EXT-M-01** (Comité de Operación): se reflejan en los sd-01, sd-06, sd-07, sd-08, sd-09 y en el futuro sd-12.
+2. **EXT-M-03** (roles): se refleja en los sd-01, sd-06, sd-07, sd-08, sd-09 y en el futuro sd-12.
 3. **EXT-M-06, EXT-M-08, EXT-M-10 y EXT-M-11**: promesas de un subdocumento a otro y A.4.
 4. **EXT-M-04 y EXT-M-05**: marcas y herramientas, junto con la definición del sd-04 y el T-11.
 5. **INT-08-M-01 a INT-08-M-05**: cambian horas de reserva, así que conviene fijarlas antes de la oferta económica.
