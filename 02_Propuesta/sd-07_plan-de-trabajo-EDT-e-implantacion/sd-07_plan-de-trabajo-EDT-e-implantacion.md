@@ -18,11 +18,11 @@ secciones:
   - T7-07-7.1
   - T7-07-7.2
   - T7-07-7.3
-actualizado: 2026-10-06
+actualizado: 2026-10-12
 ---
 # Subdocumento 7 — Plan de trabajo, EDT, cronograma e implantación
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-07.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-07/OSS-Subdocumento7.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -31,9 +31,9 @@ actualizado: 2026-10-06
 | Subdocumento T-7 | 7 de 14 |
 | Título oficial (T-7) | Plan de trabajo, EDT, cronograma e implantación |
 | Carpeta | `02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/` |
-| Capítulo en el informe | No cubierto todavía; se redactará en el Informe 2 o 3 |
+| Capítulo en el informe | Informe 2 |
 | Formularios asociados | T-14, T-15, T-18 |
-| Estado | Sin redactar |
+| Estado | Borrador importado desde Prism el 2026-10-12, sin revisión humana. Faltan 16 figuras de la EDT (sd07-edt1.0 a 1.15); el PDF no compila hasta tenerlas |
 
 ## Ponderación (Formulario T-21)
 
@@ -58,13 +58,13 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 7.1 | EDT | EDT con el 100 % del alcance (incluidas innovaciones y actividades de seguridad, calidad, migración e implantación) hasta paquetes de trabajo estimables y asignables. Diccionario de la EDT con entregable, criterio de aceptación y responsable por paquete (resumen aquí, detalle en el Formulario T-14). | Sin redactar |
-| 7.2 | Plan de trabajo | Consistente con las metodologías del Capítulo 6. Secuenciamiento y estimación; frentes de trabajo, paralelización y sincronización, incluido el solapamiento de los meses 13 a 15 y 19 a 20 (detalle en el Formulario T-15). | Sin redactar |
-| 7.3 | Cronograma e implantación | Consistente con el Capítulo 6. Ruta crítica y holguras con PERT y CPM; Gantt alineada con el Art. 17.º y los hitos del Formulario E-25; plan de implantación (estrategia de despliegue, pruebas de aceptación, desempeño y estrés, criterios de éxito medibles, reversión); plan de marcha blanca de la Etapa 1 y de la Etapa 2 con indicadores de cierre (Art. 17.3). | Sin redactar |
+| 7.1 | EDT | EDT con el 100 % del alcance (incluidas innovaciones y actividades de seguridad, calidad, migración e implantación) hasta paquetes de trabajo estimables y asignables. Diccionario de la EDT con entregable, criterio de aceptación y responsable por paquete (resumen aquí, detalle en el Formulario T-14). | Borrador, sin revisión humana |
+| 7.2 | Plan de trabajo | Consistente con las metodologías del Capítulo 6. Secuenciamiento y estimación; frentes de trabajo, paralelización y sincronización, incluido el solapamiento de los meses 13 a 15 y 19 a 20 (detalle en el Formulario T-15). | Borrador, sin revisión humana |
+| 7.3 | Cronograma e implantación | Consistente con el Capítulo 6. Ruta crítica y holguras con PERT y CPM; Gantt alineada con el Art. 17.º y los hitos del Formulario E-25; plan de implantación (estrategia de despliegue, pruebas de aceptación, desempeño y estrés, criterios de éxito medibles, reversión); plan de marcha blanca de la Etapa 1 y de la Etapa 2 con indicadores de cierre (Art. 17.3). | Borrador, sin revisión humana |
 
 Anexos: Formulario T-14; Formulario T-15; Formulario T-18.
 
-La redacción vive en `02_Propuesta/latex_final/sd-07.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-07/OSS-Subdocumento7.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
@@ -75,7 +75,7 @@ La redacción vive en `02_Propuesta/latex_final/sd-07.tex` (edición colaborativ
 
 ## Checklist de llenado
 
-- [ ] Cada título del Comunicado 10 está desarrollado en `sd-07.tex`, sin omitir ni mover contenido a otro título
+- [ ] Cada título del Comunicado 10 está desarrollado en `sd-07/OSS-Subdocumento7.tex`, sin omitir ni mover contenido a otro título
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
 - [ ] Coherente con el despliegue híbrido obligatorio (Art. 16.º) y con el cronograma de 56 meses (Art. 17.º)
 - [ ] Formularios asociados completados y guardados en `03_Formularios/`
