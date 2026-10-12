@@ -19,7 +19,7 @@ actualizado: 2026-10-12
 ---
 # Subdocumento 8 — Plan de riesgos
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. Las fuentes editables son `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` y `02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex`.
 
 ## Identificación
 
@@ -61,20 +61,20 @@ En todo el capítulo: los riesgos corresponden a la solución efectivamente prop
 | 8.2 | Identificación y Análisis de Riesgos | RBS y cuantificación de riesgos técnicos, organizacionales, de proyecto, de seguridad y de operación; en particular obsolescencia tecnológica, bloqueo por proveedor, escalabilidad, ciberseguridad y disponibilidad de contrapartes del CLIENTE; análisis cualitativo y cuantitativo (modos de falla, árbol de fallas o simulación). | Borrador, sin revisión humana |
 | 8.3 | Plan de Acción a Riesgos | Mitigación basada en análisis costo-beneficio, con responsable, plazo y disparador; reservas de contingencia y de gestión y su reflejo en el cronograma (valorización en la Oferta Económica, Art. 50.2). | Borrador, sin revisión humana |
 
-Anexos: Formulario T-16.
+Formulario asociado: T-16, en una fuente LaTeX separada del subdocumento.
 
 La redacción vive en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 
-- `form-T-16_plan-de-riesgos.docx`
+- `02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex` (ADJ-021; fuente editable, pendiente de revisión humana y PDF de entrega)
 
 ## Checklist de llenado
 
-- [ ] Cada título del Comunicado 10 está desarrollado en `sd-08/OSS-Subdocumento8.tex`, sin omitir ni mover contenido a otro título
+- [x] Cada título del Comunicado 10 está desarrollado en `sd-08/OSS-Subdocumento8.tex`, pendiente de revisión humana
 - [ ] Las cifras citadas derivan de `00_Bases/` o de un cálculo mostrado
-- [ ] Formularios asociados completados y guardados en `03_Formularios/`
-- [ ] Diagramas con la fuente en el `.md` y el export en `04_Adjuntos/diagramas/`
+- [x] El registro del Formulario T-16 tiene fuente editable separada en `latex_final/sd-08/`; pendiente de revisión humana y PDF de entrega
+- [x] Las figuras del capítulo tienen fuente editable y exportaciones en `04_Adjuntos/diagramas/`
 
 ---
 

@@ -89,7 +89,7 @@
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-16.\arabic{table}}
 
-\section{Formulario T-16 · Plan de riesgos}\label{formulario-t-16}
+\section{Formulario T-16 — Plan de riesgos}\label{formulario-t-16}
 
 Este formulario adjunta el registro completo que resume el Subdocumento 8, con los 37 riesgos y las 8 oportunidades de Only Simple Solutions para el proyecto de Multitiendas Ancoa S.A. Las escalas de probabilidad e impacto y las zonas de exposición son las del apartado 8.1 del Subdocumento 8. Las cuentas, los responsables y las ventanas provienen de la estructura de desglose del trabajo del Formulario T-14. Los apartados siguientes presentan la identificación, el análisis cualitativo, la respuesta, el enlace con la estructura de desglose y las oportunidades.
 
@@ -97,7 +97,7 @@ Este formulario adjunta el registro completo que resume el Subdocumento 8, con l
 
 La Tabla~\mbox{\ref{tab:t16-1}} identifica cada riesgo con su enunciado resumido, su rama de la estructura de desglose de riesgos y la mirada desde la que se observa.
 
-\begin{longtable}{p{0.070\linewidth}p{0.520\linewidth}p{0.140\linewidth}p{0.180\linewidth}}
+\begin{longtable}{p{0.060\linewidth}p{0.470\linewidth}p{0.140\linewidth}p{0.150\linewidth}}
 \caption{Identificación de los riesgos.}\label{tab:t16-1}\\
 \toprule
 \textbf{ID} & \textbf{Riesgo} & \textbf{Rama} & \textbf{Mirada} \\
@@ -108,7 +108,7 @@ La Tabla~\mbox{\ref{tab:t16-1}} identifica cada riesgo con su enunciado resumido
 \midrule
 \endhead
 \bottomrule
-\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Caso 09.} \\
 \endlastfoot
 R-01 & Los saldos de la cartera migrados por tramos divergen de la plataforma de 2011 y se incumple la restricción 8. & Técnica & Implantación \\
 R-02 & El evento anual cae con un servicio a medio desplegar o dentro de una marcha blanca. & Proyecto & Implantación \\
@@ -149,13 +149,13 @@ R-37 & Las siete decisiones del cliente se demoran y la arquitectura no cierra c
 R-38 & Una falla del piloto o de una ola en el clúster de Santiago concentra el impacto en la venta. & Operación & Implantación \\
 \end{longtable}
 
-Cada rama de la estructura contiene al menos un riesgo y cada riesgo se observa desde una o más miradas.
+Cada rama de la estructura contiene al menos un riesgo y cada riesgo se observa desde una o más miradas. Los eventos y las medidas son inferencias del proponente sobre los antecedentes del Caso 09. Entre los datos de partida se cuentan la rotación del 62 \% (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.4, p. 16), las 14 interfaces (cap. 7, núm. 7.4, pp. 16--17), la discrepancia de inventario del 12,4 \% (cap. 7, núm. 7.1, p. 15), las 24 instalaciones pendientes (cap. 19, p. 46), las 46 personas aportadas por el cliente (cap. 14, núm. 14.2, p. 32) y las dependencias de hardware, enlaces y obras (cap. 11, p. 27). La calificación y la respuesta propuestas en las tablas siguientes no provienen del Caso.
 
 \subsection{T-16.2 Análisis cualitativo}
 
 La Tabla~\mbox{\ref{tab:t16-2}} presenta la calificación de cada riesgo con las escalas del apartado 8.1 del Subdocumento 8.
 
-\begin{longtable}{p{0.120\linewidth}p{0.190\linewidth}p{0.190\linewidth}p{0.200\linewidth}p{0.200\linewidth}}
+\begin{longtable}{p{0.090\linewidth}p{0.160\linewidth}p{0.160\linewidth}p{0.180\linewidth}p{0.200\linewidth}}
 \caption{Análisis cualitativo de los riesgos.}\label{tab:t16-2}\\
 \toprule
 \textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Exposición} & \textbf{Zona} \\
@@ -213,7 +213,7 @@ La exposición es el producto de la probabilidad por el impacto y la zona se det
 
 La Tabla~\mbox{\ref{tab:t16-3}} define la estrategia, la acción, el responsable y el disparador de cada riesgo. Los responsables son los roles que ejercen la cuenta de control correspondiente en el Formulario T-14.
 
-\begin{longtable}{p{0.060\linewidth}p{0.100\linewidth}p{0.330\linewidth}p{0.190\linewidth}p{0.250\linewidth}}
+\begin{longtable}{p{0.060\linewidth}p{0.100\linewidth}p{0.300\linewidth}p{0.170\linewidth}p{0.190\linewidth}}
 \caption{Respuesta a los riesgos.}\label{tab:t16-3}\\
 \toprule
 \textbf{ID} & \textbf{Estrategia} & \textbf{Acción} & \textbf{Responsable} & \textbf{Disparador} \\
@@ -230,7 +230,7 @@ R-01 & Mitigar & Fijar cortes por tramo con conciliación diaria y criterio de d
 R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & Jefe de Proyecto & Fecha del evento con menos de 8 semanas de aviso. \\
 R-03 & Evitar & Mantener el Servicio de control de cruces como único camino de datos, con base legal por cruce. & Líder de Desarrollo & Un solo cruce sin base o sin registro. \\
 R-04 & Mitigar & Cerrar el inventario antes de la línea base y certificar cada integración antes de retirar una plataforma. & Líder de Integración & Inventario no cerrado en el mes 4. \\
-R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Personal capacitado bajo el umbral de cierre. \\
+R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Algún puesto de la ola sin personal capacitado y certificado según el plan aprobado al cierre de la marcha blanca. \\
 R-06 & Mitigar & Acordar con la filial la regla de comisión antes del mes 13 y simplificar la información precontractual. & Líder de Gestión del Cambio & Acta de comisión sin firma en el mes 13. \\
 R-07 & Mitigar & Llevar un calendario de ciclo de vida y planificar cada migración con un año de anticipación. & Líder de Operación / SRE & Servicio a menos de 12 meses de su fin de soporte. \\
 R-08 & Mitigar & Definir la infraestructura como código y un plan de reversibilidad con clientes Kafka. & Arquitecto de Solución & Plan de reversibilidad no aceptado en su fecha. \\
@@ -242,8 +242,8 @@ R-13 & Evitar & Fijar la secuencia de cortes por tramo con último corte antes d
 R-14 & Mitigar & Fijar con la filial los topes antes del mes 6 y mantener otro medio de pago como plan B. & Jefe de Proyecto & Topes sin fijar en el mes 6 o prueba de 24 h fallida. \\
 R-15 & Mitigar & Dimensionar según el inventario de enlaces y probar la sincronización tras un corte de 24 h. & Arquitecto de Solución & Prueba de 24 h con una venta duplicada o perdida. \\
 R-16 & Escalar & Gestionar la aprobación con la autoridad tributaria y escalar al Comité Ejecutivo si no avanza. & Jefe de Proyecto & Modalidad sin aprobar en el mes 9. \\
-R-17 & Mitigar & Obtener el pronunciamiento jurídico y de la CMF y mantener una alternativa de recuperación en Chile. & Encargado de Seguridad de la Información & Sin pronunciamiento antes de la línea base del mes 4. \\
-R-18 & Mitigar & Cargar con conteo cíclico y detección de discrepancias y conciliar las 24 instalaciones antes del corte. & Líder de Datos & Discrepancia de la carga de prueba sobre el umbral. \\
+R-17 & Mitigar & Obtener la decisión sobre residencia antes de la línea base; si se rechaza Brazil South, diseñar y probar una recuperación chilena fuera de la zona de falla común. DC-02 queda solo como respaldo complementario. & Encargado de Seguridad de la Información & Sin decisión al cierre del mes 3 o sin alternativa que demuestre RTO y RPO antes de aprobar el diseño detallado. \\
+R-18 & Mitigar & Cargar con conteo cíclico y detección de discrepancias y conciliar las 24 instalaciones antes del corte. & Líder de Datos & Diferencia de conteo igual o superior a 2 \% en la carga de prueba por categoría. \\
 R-19 & Aceptar & Monitorear la reglamentación y absorber los ajustes en la matriz de cumplimiento. & Encargado de Seguridad de la Información & Publicación de una norma que cambie un control. \\
 R-20 & Transferir & Fijar por contrato las responsabilidades del cliente con fechas por ola y exigir certificación de sitio. & Líder de Implantación & Certificación de sitio no emitida 8 semanas antes de la ola. \\
 R-21 & Evitar & Validar los 25 supuestos y los umbrales con el cliente antes de la línea base. & Jefe de Proyecto & Supuestos sin validar en el mes 3. \\
@@ -255,10 +255,10 @@ R-27 & Mitigar & Firmar acuerdos de cooperación y salida con documentación de 
 R-28 & Mitigar & Especificar la retención de grabaciones y acompañar la decisión del cliente de cambiar su política. & Encargado de Seguridad de la Información & Decisión del cliente sin tomar en el mes 6. \\
 R-29 & Aceptar & Gestionar cualquier obligación nueva por el control de cambios y monitorear el procedimiento. & Jefe de Proyecto & Notificación de una obligación nueva. \\
 R-30 & Evitar & Probar la creación de cada servicio Premium al inicio, antes de construir la plataforma base. & Arquitecto de Solución & Un servicio no creable en la prueba de recursos. \\
-R-31 & Transferir & Exigir por contrato al cliente la obra y el informe de brecha del recinto, especificar y coordinar la obra, y condicionar las pruebas a que el recinto esté listo. & Arquitecto de Solución & Informe de brecha de 2024 sin entregar en el mes 4. \\
+R-31 & Mitigar y transferir dependencia & Exigir al cliente el informe de brecha y la obra civil; el proponente especifica, habilita y certifica el recinto técnico y ensaya la contingencia. No iniciar las pruebas sin ambas entregas. & Arquitecto de Solución & Informe no entregado al mes 4, obra civil o certificación del recinto pendiente al mes 6, o ensayo de contingencia fallido. \\
 R-32 & Mitigar & Confirmar ubicaciones y rutas con el inventario y acreditar el ExpressRoute antes del diseño final. & Líder Funcional & Inventario de sitios con cambios sobre el supuesto. \\
 R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca. & Jefe de Proyecto & Carga sobre 100 \% de un rol clave en los meses 13 a 15. \\
-R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Desarrollo & Error de precio sobre 3 \% en el piloto. \\
+R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Desarrollo & Error de precio igual o superior a 3 \% en el piloto. \\
 R-35 & Mitigar & Revisar los accesos periódicamente y revocar los de ex trabajadores y temporales. & Líder de Desarrollo & Cuenta de ex trabajador activa tras la revisión mensual. \\
 R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Líder de Integración & Transportista sin adoptar los estados a 8 semanas del inicio. \\
 R-37 & Evitar & Calendarizar las siete decisiones antes de la línea base y escalar las vencidas. & Jefe de Proyecto & Decisiones pendientes en el mes 3. \\
@@ -271,7 +271,7 @@ Las acciones se incorporan a la estructura de desglose del trabajo y cada una ti
 
 La Tabla~\mbox{\ref{tab:t16-4}} enlaza cada respuesta con las cuentas del Formulario T-14 que la ejecutan, la primera de las cuales es la cuenta principal. La ventana corresponde a la cuenta principal. El plazo de la acción es la fecha que declara la acción o el disparador y, cuando ninguno la declara, el último mes de esa ventana. La exposición residual es el producto de probabilidad e impacto que resulta tras aplicar la respuesta.
 
-\begin{longtable}{p{0.080\linewidth}p{0.310\linewidth}p{0.140\linewidth}p{0.270\linewidth}p{0.130\linewidth}}
+\begin{longtable}{p{0.060\linewidth}p{0.270\linewidth}p{0.120\linewidth}p{0.250\linewidth}p{0.110\linewidth}}
 \caption{Cuenta de la EDT, plazo y exposición residual.}\label{tab:t16-4}\\
 \toprule
 \textbf{ID} & \textbf{Cuenta del T-14} & \textbf{Ventana (meses)} & \textbf{Plazo de la acción} & \textbf{Exposición residual} \\
@@ -300,8 +300,8 @@ R-13 & 1.7.8, 1.7.9, 1.7.12 & 14-18 & 15 de octubre de 2028 & 0,32 \\
 R-14 & 1.1.12, 1.2.8, 1.5.37, 1.9.9, 1.11.4 & 3-5 & antes del mes 6 & 0,04 \\
 R-15 & 1.3.5, 1.5.19, 1.9.9 & 3-4 & mes 4 & 0,04 \\
 R-16 & 1.6.7 & 4-6 & mes 9 & 0,16 \\
-R-17 & 1.8.7 & 2-4 & antes del mes 4 & 0,04 \\
-R-18 & 1.7.2, 1.7.3, 1.5.10 & 4-10 & mes 10 & 0,08 \\
+R-17 & 1.8.7, 1.4.1 & 2-4 & antes de aprobar el diseño detallado & 0,04 \\
+R-18 & 1.7.2, 1.7.3, 1.5.10 & 4-15 & antes del corte de cada ola (último: mes 15) & 0,08 \\
 R-19 & 1.8.5 & 3-8 & mes 8 & 0,08 \\
 R-20 & 1.3.7, 1.4.8, 1.11.2 & 3-6 & 8 semanas antes de cada ola & 0,08 \\
 R-21 & 1.2.4, 1.1.4, 1.1.3 & 1-2 y 13-14 & mes 3 & 0,04 \\
@@ -313,7 +313,7 @@ R-27 & 1.2.1 & 1-2 & mes 4 & 0,04 \\
 R-28 & 1.8.5 & 3-8 & mes 6 & 0,04 \\
 R-29 & 1.1.3 & 1-56 & mes 56 & 0,04 \\
 R-30 & 1.4.1 & 3-6 & mes 6 & 0,02 \\
-R-31 & 1.4.10 & 2-5 & mes 4 & 0,04 \\
+R-31 & 1.4.9, 1.4.10, 1.4.11, 1.4.12 & 2-6 & mes 6 & 0,04 \\
 R-32 & 1.2.1, 1.3.2 & 1-2 & mes 2 & 0,04 \\
 R-33 & 1.11.3 & 10-12 & antes del mes 13 & 0,16 \\
 R-34 & 1.5.2, 1.2.5 & 1-12 & mes 12 & 0,08 \\
@@ -329,7 +329,7 @@ Cada respuesta tiene una cuenta del Formulario T-14 que la ejecuta, una ventana 
 
 La Tabla~\mbox{\ref{tab:t16-5}} registra las ocho oportunidades con su probabilidad, su estrategia y su responsable. Las oportunidades se califican con la misma escala de probabilidad y no se suman a las reservas.
 
-\begin{longtable}{p{0.070\linewidth}p{0.390\linewidth}p{0.170\linewidth}p{0.120\linewidth}p{0.170\linewidth}}
+\begin{longtable}{p{0.060\linewidth}p{0.340\linewidth}p{0.160\linewidth}p{0.100\linewidth}p{0.160\linewidth}}
 \caption{Oportunidades.}\label{tab:t16-5}\\
 \toprule
 \textbf{ID} & \textbf{Oportunidad} & \textbf{Probabilidad} & \textbf{Estrategia} & \textbf{Responsable} \\

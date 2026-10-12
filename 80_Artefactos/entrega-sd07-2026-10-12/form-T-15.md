@@ -18,7 +18,21 @@ Cada responsable registra por intervalo el equipo y rol, las HH disponibles, las
 
 En M13–15 se distingue estabilización E1 de trabajo E2; en M19–20 se distinguen operación E1 y estabilización E2. El jefe de proyecto revisa semanalmente carga y capacidad, y el Comité de Proyecto trata sus desviaciones cada dos semanas. No se libera la reserva para asumir nuevas historias sin comprobar la demanda de incidencias y registrar la decisión. Si falta capacidad, se reordena trabajo independiente o se asignan recursos con las competencias necesarias mediante el control de cambios aplicable.
 
-La distribución mensual programa 40.946 HH incluidas las innovaciones. Los porcentajes anteriores no generan nuevas HH ni demuestran por sí solos la suficiencia de dotación. La comprobación por equipo y rol requiere las dedicaciones del Subdocumento 12 y la cobertura del Subdocumento 10; el cálculo agregado de este formulario se complementa con la asignación nominal por equipo y rol antes de comprometer la ejecución.
+La distribución mensual programa 40.946 HH de trabajo base, incluidas las innovaciones. Los porcentajes anteriores no generan nuevas HH ni demuestran por sí solos la suficiencia de dotación. La comprobación por equipo y rol requiere las dedicaciones del Subdocumento 12 y la cobertura del Subdocumento 10; el cálculo agregado de este formulario se complementa con la asignación nominal por equipo y rol antes de comprometer la ejecución.
+
+### Contingencia comprometida para riesgos identificados
+
+Only Simple Solutions añade 3.688 HH de capacidad contingente a las 40.946 HH de trabajo base. La oferta compromete así 44.634 HH. Esta bolsa corresponde al valor esperado residual de los catorce riesgos críticos y altos de SD08 y se activa mediante sus disparadores; no forma parte de las cuentas T-14, de la curva mensual de trabajo base ni de las reservas del 15 % para deuda técnica y del 30 % para estabilización. Las 1.660 HH estimadas para las respuestas preventivas se imputan a las cuentas existentes de T-14 dentro del trabajo base y no se cargan de nuevo a la contingencia.
+
+| Frente de contingencia | Riesgos incluidos | HH adicionales | Perfiles a movilizar | Ventana de disponibilidad |
+| --- | --- | ---: | --- | --- |
+| Emisor, cartera y emisión | R-01, R-13, R-16, R-25 | 1.568 | Datos, Integración y Seguridad | M2–22 |
+| Existencias, precio y primer peak | R-18, R-24, R-34 | 1.008 | Datos, Desarrollo y Calidad | M4–18 |
+| Despliegue y dependencias de sitio | R-02, R-12, R-20 | 752 | Implantación, Integración y Calidad | M1–21 |
+| Gobierno y continuidad del equipo | R-11, R-23, R-33, R-37 | 360 | Jefatura de Proyecto y suplentes especializados | M1–21 |
+| **Total de contingencia** | **14 riesgos** | **3.688** |  |  |
+
+La distribución por frente suma las horas esperadas residuales de cada riesgo, no cuatro bolsas independientes. El Jefe de Proyecto programa la disponibilidad de esos perfiles dentro de cada ventana sin disminuir las dedicaciones del trabajo base; cuando se activa un riesgo, registra el consumo en la cuenta afectada y revisa la red de precedencias. La reserva equivale a 23,05 dedicaciones persona-mes de 160 HH, repartidas en las ventanas indicadas; ese cociente no fija la dotación simultánea ni garantiza absorber el P80 de atraso. La asignación nominal y mensual se concilia con Subdocumento 12 antes de presentar la dotación final.
 
 ## Resumen de horas
 
@@ -31,6 +45,8 @@ Tabla 1: Esfuerzo asignado por ámbito. Fuente: T-14 y cálculo mensual reproduc
 | Transversal durante todo el contrato | 2.392,00 |
 | Operación directa | 8.064,05 |
 | Total planificado por cuentas | 40.946,00 |
+| Contingencia adicional SD08 | 3.688,00 |
+| **Total comprometido con contingencia** | **44.634,00** |
 
 Las innovaciones quedan incluidas en E1, E2 y operación según sus paquetes. El conteo predictivo recibe seguimiento desde M16; las otras cuatro, desde M21. Las cargas corresponden al piloto dimensionado y requieren una actualización si se amplía su cobertura.
 

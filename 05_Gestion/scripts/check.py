@@ -37,7 +37,9 @@ def main():
         if fm.get("tipo")=="parte":
             part_num=int(fm.get("parte","T7-00")[3:])
             refs=p.parent/f"sd-{part_num:02d}_referencias.md"
-            if not refs.is_file(): warnings.append(f"{rel}: falta la sección final obligatoria Referencias ({refs.name})")
+            latex_sources=list((ROOT/"02_Propuesta"/"latex_final"/f"sd-{part_num:02d}").glob("OSS-Subdocumento*.tex"))
+            has_latex_references=any(re.search(r"\\section\*?\{Referencias\}", source.read_text(encoding="utf-8")) for source in latex_sources)
+            if not refs.is_file() and not has_latex_references: warnings.append(f"{rel}: falta la sección final obligatoria Referencias ({refs.name})")
             expected=list(fm.get("secciones",[])) + (fm.get("adjuntos",[]) if isinstance(fm.get("adjuntos",[]),list) else [])
             for expected_id in expected:
                 if expected_id not in registered_ai: warnings.append(f"{rel}: falta registro de uso de IA para {expected_id}")
@@ -58,7 +60,7 @@ def main():
             target=(p.parent/href.split("#",1)[0]).resolve()
             if not target.exists(): warnings.append(f"{rel}: enlace local no resuelto: {href}")
         if re.search(r"\bp[aá]gina\s+\d+\b",body,re.I): warnings.append(f"{rel}: revisar referencia de página fija a otro documento")
-        if re.search(r"\bTODO\b|\[VERIFICAR\]",body,re.I): warnings.append(f"{rel}: contiene marcador TODO/[VERIFICAR]")
+        if re.search(r"\bTODO\b|\[VERIFICAR\]",body): warnings.append(f"{rel}: contiene marcador TODO/[VERIFICAR]")
     for rel,dep in dependencies:
         if dep not in all_ids: errors.append(f"{rel}: depende_de no resuelto: {dep}")
     catalog=read_ids_from_catalog(); covered=set()

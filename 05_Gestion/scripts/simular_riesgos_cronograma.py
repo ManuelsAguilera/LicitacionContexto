@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valor esperado y simulación Monte Carlo del atraso de los hitos por los 14 riesgos críticos y altos del sd-08.
+"""Valor esperado de 14 riesgos y simulación del atraso de hitos por los 13 que pueden precederlos.
 
 Cada riesgo es un evento discreto e independiente. Ocurre con su probabilidad P y, si ocurre, aporta un atraso en
 semanas con distribución triangular (mínimo 0,5 x semanas, moda = semanas, máximo 1,5 x semanas) al eslabón de la
@@ -24,7 +24,8 @@ ESLABONES = {"LEV": "Levantamiento y línea base (meses 1 a 4)", "ARQ": "Arquite
              "PLAT": "Plataforma base y ambientes (meses 3 a 10)", "DES1": "Desarrollo de la Etapa 1 (meses 1 a 12)",
              "CERT1": "Certificación de la Etapa 1 (mes 12)", "MB1": "Marcha blanca de la Etapa 1 (meses 13 a 15)",
              "DES2": "Desarrollo de la Etapa 2 (meses 13 a 18)", "MB2": "Marcha blanca de la Etapa 2 (meses 19 y 20)",
-             "MIG": "Migración de cartera y retiro de 2011 (hacia el mes 22)"}
+             "MIG": "Migración de cartera y retiro de 2011 (hacia el mes 22)",
+             "POST16": "Primer peak posterior al paso a producción (sin hito contractual simulado)"}
 CADENAS = {16: ("LEV", "ARQ", "PLAT", "DES1", "CERT1", "MB1"), 21: ("DES2", "MB2"),
            22: ("DES2", "MB2", "MIG")}  # el hito 22 hereda la cadena de la Etapa 2
 AGREGACIONES = ("solapada", "serie")
@@ -40,7 +41,7 @@ RIESGOS = {
     "R-18": (0.60, 0.40, 5, 1200, "DES1", "La carga inicial de existencias debe ser confiable al mes 16."),
     "R-20": (0.60, 0.40, 4, 640, "PLAT", "Las olas por tienda de la Etapa 1 dependen del hardware y los enlaces del cliente."),
     "R-23": (0.40, 0.20, 4, 480, "DES1", "La salida de un rol clave a mitad de la Etapa 1 atrasa la ruta crítica."),
-    "R-24": (0.60, 0.40, 3, 960, "MB1", "Los defectos latentes tras la producción se corrigen antes del primer peak; se cargan al mes 16."),
+    "R-24": (0.60, 0.40, 3, 960, "POST16", "El primer peak ocurre después del paso a producción del mes 16; no retrasa ese hito."),
     "R-25": (0.40, 0.20, 10, 2400, "MIG", "Una falla tras el retiro queda bloqueada por el congelamiento del 1 de noviembre al 7 de enero."),
     "R-33": (0.40, 0.20, 3, 600, "DES2", "La sobreasignación de los meses 13 a 15 atrasa el desarrollo de la Etapa 2."),
     "R-34": (0.60, 0.40, 3, 360, "MB1", "La meta de error de precio se mide en el piloto y la marcha blanca de la Etapa 1."),

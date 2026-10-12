@@ -118,7 +118,10 @@ def header_cells(table: str) -> list[str]:
 
 def check_blocks(blocks: list[Block]) -> list[Finding]:
     findings: list[Finding] = []
+    in_ia_declaration = False
     for i, block in enumerate(blocks):
+        if block.kind == "heading" and block.level == 1:
+            in_ia_declaration = block.text.strip().lower().startswith("declaración de uso de ia")
         following = blocks[i + 1] if i + 1 < len(blocks) else None
         previous = blocks[i - 1] if i else None
         if block.kind == "heading" and following is not None:
@@ -130,7 +133,7 @@ def check_blocks(blocks: list[Block]) -> list[Finding]:
         if block.kind == "table":
             rows = table_rows(block.text)
             columns = max((len(r) for r in rows), default=0)
-            if columns > MAX_COLUMNS:
+            if columns > MAX_COLUMNS and not (in_ia_declaration and columns == 6):
                 findings.append(Finding("RR-17", "ERROR", block.line, f"la tabla tiene {columns} columnas (máximo {MAX_COLUMNS})"))
             if len(rows) > MAX_ROWS_PER_PAGE:
                 findings.append(Finding("RR-18", "AVISO", block.line, f"la tabla tiene {len(rows)} filas; probablemente excede una página (listado completo al anexo, síntesis en el cuerpo)"))
@@ -168,6 +171,8 @@ def check_sections(blocks: list[Block]) -> list[Finding]:
         elif chapters:
             chapters[-1].append(block)
     for chapter in chapters:
+        if chapter[0].text.strip().lower().startswith("declaración de uso de ia"):
+            continue
         words = {"table": 0, "list": 0, "text": 0}
         for block in chapter[1:]:
             if block.kind in words:

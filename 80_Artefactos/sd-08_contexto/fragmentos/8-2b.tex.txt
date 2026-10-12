@@ -72,12 +72,12 @@ Tabla 8.8: Atraso acumulado por hito, sin y con respuestas. Fuente: Elaboración
 \endhead
 \bottomrule
 \endlastfoot
-Mes 16, paso a producción de la Etapa 1 & Sin respuestas & 13,8 & 17,5 & 19,4 \\
-Mes 16, paso a producción de la Etapa 1 & Con respuestas & 8,7 & 12,5 & 14,6 \\
+Mes 16, paso a producción de la Etapa 1 & Sin respuestas & 13,6 & 17,3 & 19,3 \\
+Mes 16, paso a producción de la Etapa 1 & Con respuestas & 8,3 & 12,2 & 14,3 \\
 Mes 21, paso a producción de la Etapa 2 & Sin respuestas & 0,0 & 3,0 & 3,4 \\
 Mes 21, paso a producción de la Etapa 2 & Con respuestas & 0,0 & 1,7 & 3,0 \\
 Mes 22, retiro de la plataforma de 2011 & Sin respuestas & 7,8 & 11,3 & 13,0 \\
 Mes 22, retiro de la plataforma de 2011 & Con respuestas & 4,8 & 8,5 & 10,6 \\
 \end{longtable}
 
-Los hitos son contractuales y no se mueven, de modo que el atraso simulado no es una fecha nueva sino la cantidad de trabajo que el plan debe absorber. Por eso el P80 con respuestas se adopta como reserva de contingencia en semanas, que el apartado 8.3 reparte mediante fechas internas más tempranas. Esa reserva es de 12,5 semanas para el mes 16, 1,7 para el mes 21 y 8,5 para el mes 22. El hito del mes 16 concentra la mayor exposición porque seis eslabones de su cadena están expuestos, y las respuestas reducen su P80 en cerca de 5 semanas. Como cota superior prudente se informa además la suma en serie de todos los atrasos, que eleva el P80 con respuestas a 15,3 semanas en el mes 16 y a 10,0 en el mes 22, y que se interpreta como límite y no como valor esperado de planificación.
+Los hitos son contractuales y no se mueven. El P80 con respuestas estima una exposición en plazo de 12,2 semanas para el mes 16, 1,7 para el mes 21 y 8,5 para el mes 22; no equivale a capacidad reservada. El hito del mes 16 concentra la mayor exposición porque seis eslabones de su cadena están expuestos, y las respuestas reducen su P80 en cerca de 5 semanas. La suma en serie eleva el P80 con respuestas a 13,8 semanas en el mes 16 y a 10,0 en el mes 22. La capacidad de recuperación debe contrastarse con el CPM y el T-15.

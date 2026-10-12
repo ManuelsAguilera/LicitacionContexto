@@ -162,10 +162,10 @@
   {
     "id": "ADJ-021",
     "parte": "T7-08",
-    "nombre": "form-T-16_plan-de-riesgos.docx",
-    "ruta": "02_Propuesta/sd-08_plan-de-riesgos/form-T-16_plan-de-riesgos.docx",
+    "nombre": "OSS-Formulario-T-16.tex",
+    "ruta": "02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex",
     "declarado_en": "02_Propuesta/sd-08_plan-de-riesgos/sd-08_plan-de-riesgos.md",
-    "existe": false
+    "existe": true
   },
   {
     "id": "ADJ-022",

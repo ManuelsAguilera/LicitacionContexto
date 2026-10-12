@@ -46,6 +46,12 @@ class TestSimulacion(unittest.TestCase):
         for h in sim.HITOS:
             self.assertLess(b[h]["media"], a[h]["media"])
 
+    def test_riesgo_posterior_a_produccion_no_atrasa_hitos_previos(self):
+        riesgos = {"R-24": sim.RIESGOS["R-24"]}
+        resultado = sim.simular({"R-24": 1.0}, 100, 7, riesgos=riesgos)
+        for h in sim.HITOS:
+            self.assertEqual(resultado[h], [0.0] * 100)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -61,8 +61,8 @@ Caso base, agregación solapada.
 
 | Hito | Escenario | Media | P50 | P80 | P90 | P(atraso > 0) |
 | :-- | :-- | --: | --: | --: | --: | --: |
-| Mes 16 | Sin respuestas | 13,8 | 13,8 | 17,5 | 19,4 | 100 % |
-| Mes 16 | Con respuestas | 8,9 | 8,7 | 12,5 | 14,6 | 98 % |
+| Mes 16 | Sin respuestas | 13,6 | 13,6 | 17,3 | 19,3 | 100 % |
+| Mes 16 | Con respuestas | 8,5 | 8,3 | 12,2 | 14,3 | 96 % |
 | Mes 21 | Sin respuestas | 1,2 | 0,0 | 3,0 | 3,4 | 39 % |
 | Mes 21 | Con respuestas | 0,6 | 0,0 | 1,7 | 3,0 | 20 % |
 | Mes 22 | Sin respuestas | 7,7 | 7,8 | 11,3 | 13,0 | 91 % |
@@ -72,19 +72,19 @@ Cota superior, agregación en serie.
 
 | Hito | Escenario | Media | P50 | P80 | P90 | P(atraso > 0) |
 | :-- | :-- | --: | --: | --: | --: | --: |
-| Mes 16 | Sin respuestas | 18,9 | 18,9 | 23,8 | 26,6 | 100 % |
-| Mes 16 | Con respuestas | 10,8 | 10,6 | 15,3 | 17,9 | 98 % |
+| Mes 16 | Sin respuestas | 17,1 | 17,1 | 21,9 | 24,5 | 100 % |
+| Mes 16 | Con respuestas | 9,6 | 9,4 | 13,8 | 16,4 | 96 % |
 | Mes 21 | Sin respuestas | 1,2 | 0,0 | 3,0 | 3,4 | 39 % |
 | Mes 21 | Con respuestas | 0,6 | 0,0 | 1,7 | 3,0 | 20 % |
 | Mes 22 | Sin respuestas | 10,4 | 9,7 | 16,5 | 19,6 | 91 % |
 | Mes 22 | Con respuestas | 5,7 | 4,9 | 10,0 | 13,3 | 69 % |
 
-Interpretación: los hitos son contractuales, así que el P80 solapado con respuestas (12,5 / 1,7 / 8,5 semanas) se lee como la reserva de contingencia que el plan debe absorber con fechas internas más tempranas (alimenta el 8.3). El P80 en serie (15,3 / 1,7 / 10,0) es el límite prudente.
+Interpretación: los hitos son contractuales. El P80 solapado con respuestas (12,2 / 1,7 / 8,5 semanas) es una estimación indicativa de exposición en plazo, no una reserva disponible ni una nueva fecha de hito. El P80 en serie (13,8 / 1,7 / 10,0) es la cota superior del modelo resumido. La capacidad para absorber el atraso se comprueba por rol y ventana con el T-15.
 
 ## Limitaciones
 
 - Independencia. Los riesgos no se correlacionan (R-20 y R-31 comparten causa; R-23 y R-33 comparten equipo), lo que subestima la cola y a la vez la suma serial dentro del hito la sobrestima. El efecto neto no se midió.
-- El solape dentro de un eslabón es un supuesto (los atrasos corren en paralelo sobre la misma ventana); la cota en serie lo desactiva. Aun así el P80 del mes 16 (12,5 semanas con respuestas) es alto para una etapa de 15 meses y conviene revisarlo con el equipo antes de comprometerlo.
+- El solape dentro de un eslabón es un supuesto (los atrasos corren en paralelo sobre la misma ventana); la cota en serie lo desactiva. Aun así el P80 del mes 16 (12,2 semanas con respuestas) es alto para una etapa de 15 meses y debe contrastarse con el CPM y la capacidad por rol antes de comprometerlo.
 - Todas las P, semanas, horas, puntajes S/O/D y la asignación a hitos son estimaciones del proponente, no datos del Caso.
 - Red resumida de nueve eslabones y tres hitos, no las 164 cuentas de control ni los 11 eslabones de la Tabla 7.6 con sus holguras.
 - El mes 21 solo recibe R-33 por ser la única amenaza calificada a la rama de la Etapa 2; los riesgos de la Etapa 2 de zona media quedan fuera.
