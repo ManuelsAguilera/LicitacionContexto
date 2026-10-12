@@ -47,8 +47,14 @@ Ya resuelto durante la lectura (cambios fuera del alcance de este informe, dejad
 
 | Hallazgo | Estado | Qué se hizo |
 | :--- | :--- | :--- |
-| EXT-G-01 | Resuelto | sd-07 (L658, L746, L767): último corte de cartera antes del 15-oct-2028 y apagado antes del 31-oct-2028 en lugar de «cierre de migración en M21». Editado en el archivo de Prism sin trackear |
+| EXT-G-01 | Resuelto | sd-07 (L658, L746, L767): último corte de cartera antes del 15-oct-2028 y apagado antes del 31-oct-2028 en lugar de «cierre de migración en M21». Aplicado en `OSS-Subdocumento7.tex` de `main` y en la copia de Prism |
 | EXT-G-02 | Resuelto | RNF-22 a 1,5 veces el peak declarado (RT-09.06) en el sd-02, los dos Excel y los espejos |
+
+
+Revisión contra `main` (2026-10-12): las versiones de `main` de los sd-07, sd-08, sd-09 y sd-06 son prácticamente idénticas a las de Prism (cambian portada, figuras y la declaración de IA). **Ningún hallazgo se resolvió con los commits nuevos de `main`**, con dos matices:
+- INT-08-M-03 queda aclarado: el T-16 (`OSS-Formulario-T-16.tex`) tiene 37 riesgos, de R-01 a R-38 sin R-26; falta explicar el hueco.
+- INT-08-M-01 se confirma: el T-16 también da residual 0,08 (R-18, R-20, R-24, R-34) mientras el capítulo dice que la probabilidad baja solo a 0,40.
+- `main` solo tiene un esqueleto de 107 líneas del sd-05 y no tiene el sd-13: el contenido auditado de ambos solo está en las copias de Prism.
 
 ---
 
