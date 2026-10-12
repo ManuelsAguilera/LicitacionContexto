@@ -65,3 +65,5 @@ Por INT-03-M-01 las tablas del sd-03 se renumeraron: alternativas del núcleo Re
 - **PENDIENTE sd-07 (D10, 2026-10-11):** agregar cuatro cuentas de control a la EDT (R-06, R-27, R-28, R-36). Procedimiento en `guia_cuentas_nuevas_sd-07.md`. Hasta que existan, el 8.3 las nombra como «cuenta nueva propuesta».
 
 - **sd-07 importado (2026-10-12):** el `.tex` nuevo reemplaza al anterior (respaldo en `latex_final/respaldo/sd-07.20261012T035738Z.tex`). Resuelve I-03 (marcha blanca habilitada en la ventana posterior al 6 de enero, 7.3.2.1). Cambia las referencias del sd-08: el CPM está en 7.3.3 (Tabla 7.5) y la estimación pasa a 40.946 HH; hay holgura de 3 meses (Etapa 1) y 1 mes (Etapa 2) en planes de marcha blanca y capacitación, y holgura cero en la cadena principal. Siguen pendientes las cuatro cuentas de D10 (la EDT sigue en 164 cuentas) y las 16 figuras de la EDT.
+
+- **2026-10-12:** el aviso pendiente al sd-07 por las cuatro cuentas de D10 queda sin efecto (D10 se revirtió), y tampoco se pide la frase del 7.3 por D9.

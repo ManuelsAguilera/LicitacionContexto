@@ -1,5 +1,7 @@
 # Guía: agregar cuatro cuentas de control a la EDT del sd-07 (PENDIENTE)
 
+> **OBSOLETA desde el 2026-10-12.** La decisión D10 se revirtió: no se agregan cuentas a la EDT. Se conserva solo como registro. Ver `integracion_sd-07.md`.
+
 Documento de contexto, no entregable. Creado el 2026-10-11. **Estado: falta hacerlo.** Nace de la decisión D10 del sd-08: R-06, R-27, R-28 y R-36 tienen una respuesta sin cuenta de la EDT donde ejecutarla. Hasta que las cuentas existan en el sd-07, el 8.3 no puede nombrarlas. Si esta guía difiere de los archivos que cita, mandan los archivos.
 
 **Quién:** el responsable del sd-07 (el sd-08 no edita otro subdocumento). Avisar antes de tocar.

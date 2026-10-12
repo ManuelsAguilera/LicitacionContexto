@@ -336,7 +336,7 @@ La oportunidad O-02 establece que, si la filial emisora fija los topes del cupo 
 
 Los riesgos de adopción de las cinco innovaciones obligatorias no se repiten en este apartado y se tratan en el capítulo 13.
 
-Con los riesgos identificados y calificados, el siguiente apartado presenta el análisis cuantitativo, que traduce esta exposición en semanas y horas de reserva para los riesgos críticos y altos.
+Con los riesgos identificados y calificados, el siguiente apartado presenta el análisis cuantitativo, que traduce esta exposición en semanas de atraso y en horas de reserva de esfuerzo para los riesgos críticos y altos.
 
 \subsection{Análisis cuantitativo}
 
@@ -376,7 +376,7 @@ El valor esperado suma 29,2 semanas y 6.496 horas. Tres riesgos concentran más 
 
 \subsubsection{Análisis de modos de falla y efectos}
 
-La segunda técnica examina cinco modos de falla de la solución en operación, elegidos porque combinan consecuencias graves con controles ya definidos en el diseño. Cada modo se puntúa de 1 a 10 en severidad (S), ocurrencia (O) y detección (D), donde 10 en detección significa que la falla pasa inadvertida. El número de prioridad de riesgo (NPR) es el producto de los tres puntajes. La severidad sigue al impacto de la calificación y la ocurrencia a su probabilidad. La Tabla 8.7 muestra el resultado.
+La segunda técnica examina cinco modos de falla de la solución en operación, elegidos porque combinan consecuencias graves con controles ya definidos en el diseño. Cada modo se puntúa de 1 a 10 en severidad (S), ocurrencia (O) y detección (D), donde 10 en detección significa que la falla pasa inadvertida. El número de prioridad de riesgo (NPR) es el producto de los tres puntajes. La severidad se puntúa por el efecto sobre la operación de la tienda y del emisor en su propia escala de 1 a 10, por lo que no equivale al nivel de impacto del análisis cualitativo, y la ocurrencia es coherente con la probabilidad calificada. La Tabla 8.7 muestra el resultado.
 
 Tabla 8.7: Análisis de modos de falla y efectos de la solución en operación. Fuente: Elaboración propia.
 
@@ -394,7 +394,7 @@ Cruce indebido de datos (R-03) & Se quiebra la separación entre retail y emisor
 Caída del centro de datos DC-01 (R-31) & Se detienen la emisión tributaria y el crédito. & 9 / 2 / 2 & 36 \\
 \end{longtable}
 
-La emisión en contingencia encabeza la lista porque combina una severidad alta, una ocurrencia moderada mientras la autoridad tributaria no apruebe la modalidad y una detección tardía. El cruce indebido de datos tiene la mayor severidad, pero su ocurrencia y su detección son bajas, porque el servicio de control de cruces lo bloquea por diseño y registra cada cruce; por eso queda bajo los demás en el NPR sin dejar de tener tolerancia cero. La caída de DC-01 se detecta de inmediato y es poco frecuente, aunque su efecto es grave y depende del recinto del cliente. En consecuencia, las pruebas de la sincronización, de la contingencia fiscal y de la capacidad del evento anual reciben la mayor atención de verificación antes del paso a producción.
+La emisión en contingencia encabeza la lista porque combina una severidad alta, una ocurrencia moderada mientras la autoridad tributaria no apruebe la modalidad y una detección que solo ocurre cuando se produce un corte de enlace. El cruce indebido de datos tiene la mayor severidad, pero su ocurrencia y su detección son bajas, porque el servicio de control de cruces lo bloquea por diseño y registra cada cruce; por eso queda bajo los demás en el NPR sin dejar de tener tolerancia cero. La caída de DC-01 se detecta de inmediato y es poco frecuente, aunque su efecto es grave y depende del recinto del cliente. En consecuencia, las pruebas de la sincronización, de la contingencia fiscal y de la capacidad del evento anual reciben la mayor atención de verificación antes del paso a producción.
 
 \subsubsection{Simulación del cronograma}
 
@@ -417,7 +417,7 @@ Mes 22, retiro de la plataforma de 2011 & Sin respuestas & 7,8 & 11,3 & 13,0 \\
 Mes 22, retiro de la plataforma de 2011 & Con respuestas & 4,8 & 8,5 & 10,6 \\
 \end{longtable}
 
-Los hitos son contractuales y no se mueven, de modo que el atraso simulado no es una fecha nueva sino la cantidad de trabajo que el plan debe absorber. Por eso el P80 con respuestas se adopta como reserva de contingencia en semanas, que el apartado 8.3 reparte mediante fechas internas más tempranas. Esa reserva es de 12,5 semanas para el mes 16, 1,7 para el mes 21 y 8,5 para el mes 22. El hito del mes 16 concentra la mayor exposición porque seis eslabones de su cadena están expuestos, y las respuestas reducen su P80 en cerca de 5 semanas. Como cota superior prudente se informa además la suma en serie de todos los atrasos, que eleva el P80 con respuestas a 15,3 semanas en el mes 16 y a 10,0 en el mes 22, y que se interpreta como límite y no como valor esperado de planificación.
+Los hitos son contractuales y no se mueven, de modo que el atraso simulado no es una fecha nueva sino la cantidad de trabajo que el plan debe absorber. Por eso el P80 con respuestas se adopta como medida de la exposición en plazo y no como un margen de calendario. Esa exposición es de 12,5 semanas para el mes 16, 1,7 para el mes 21 y 8,5 para el mes 22, y el apartado 8.3 explica cómo se cubre con la reserva de contingencia en esfuerzo. El hito del mes 16 concentra la mayor exposición porque seis eslabones de su cadena están expuestos, y las respuestas reducen su P80 en cerca de 5 semanas. Como cota superior prudente se informa además la suma en serie de todos los atrasos, que eleva el P80 con respuestas a 15,3 semanas en el mes 16 y a 10,0 en el mes 22, y que se interpreta como límite y no como valor esperado de planificación.
 
 \section{8.3 Plan de Acción a Riesgos}\label{plan-de-acciuxf3n-a-riesgos}
 
@@ -436,27 +436,27 @@ Tabla 8.9: Respuesta a los riesgos críticos y altos. Fuente: Elaboración propi
 \endhead
 \bottomrule
 \endlastfoot
-R-02 & Mitigar & Declarar una reserva en semanas y no desplegar servicios nuevos en las ocho semanas previas al evento. & 1.1.6, 1.9.6 & Jefe de Proyecto \\
-R-12 & Evitar & Certificar en Preproducción y desplegar en la ventana libre de enero de 2028. & 1.12.1, 1.1.6 & Jefe de Proyecto \\
-R-13 & Evitar & Fijar la secuencia de cortes por tramo y cerrar el último antes del 15 de octubre de 2028. & 1.7.10, 1.7.11, 1.7.14 & Líder de Datos y Migración \\
-R-01 & Mitigar & Cortar por tramo con conciliación diaria y criterio de detención acordado con la filial. & 1.7.1, 1.7.7, 1.7.14, 1.5.11.5 & Líder de Datos y Migración \\
-R-11 & Mitigar & Pactar actas con plazo de diez días hábiles y escalar la validación vencida. & 1.1.7, 1.1.10 & Jefe de Proyecto \\
-R-16 & Escalar & Gestionar la aprobación fiscal y escalarla al Comité Ejecutivo si no avanza. & 1.6.12 & Jefe de Proyecto \\
-R-18 & Mitigar & Cargar existencias con conteo cíclico y conciliar las 24 instalaciones antes del corte. & 1.7.3, 1.7.4, 1.5.3.4 & Líder de Datos y Migración \\
-R-20 & Transferir & Fijar por contrato las responsabilidades del cliente y exigir certificación de sitio por ola. & 1.3.8, 1.4.8, 1.11.3 & Líder de Implantación \\
+R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & 1.1.5, 1.9.5 & Jefe de Proyecto \\
+R-12 & Evitar & Certificar en Preproducción y desplegar en la ventana libre de enero de 2028. & 1.12.1, 1.1.5 & Jefe de Proyecto \\
+R-13 & Evitar & Fijar la secuencia de cortes por tramo y cerrar el último antes del 15 de octubre de 2028. & 1.7.8, 1.7.9, 1.7.12 & Líder de Datos y Migración \\
+R-01 & Mitigar & Cortar por tramo con conciliación diaria y criterio de detención acordado con la filial. & 1.7.1, 1.7.6, 1.7.12, 1.5.40 & Líder de Datos y Migración \\
+R-11 & Mitigar & Pactar actas con plazo de diez días hábiles y escalar la validación vencida. & 1.1.6, 1.1.8 & Jefe de Proyecto \\
+R-16 & Escalar & Gestionar la aprobación fiscal y escalarla al Comité Ejecutivo si no avanza. & 1.6.7 & Jefe de Proyecto \\
+R-18 & Mitigar & Cargar existencias con conteo cíclico y conciliar las 24 instalaciones antes del corte. & 1.7.2, 1.7.3, 1.5.10 & Líder de Datos y Migración \\
+R-20 & Transferir & Fijar por contrato las responsabilidades del cliente y exigir certificación de sitio por ola. & 1.3.7, 1.4.8, 1.11.2 & Líder de Implantación \\
 R-23 & Mitigar & Nombrar suplentes, documentar el conocimiento y adelantar la contratación. & 1.1.1 & Jefe de Proyecto \\
-R-24 & Mitigar & Ampliar el soporte reforzado y cerrar los defectos graves antes de abril de 2028. & 1.9.6, 1.12.9 & Líder de Operación \\
-R-25 & Evitar & Cortar el último tramo antes del 15 de octubre y acordar un plan de retorno. & 1.7.10, 1.7.11 & Líder de Datos y Migración \\
-R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo. & Nivelación de recursos (T-15) & Jefe de Proyecto \\
-R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar etiquetas electrónicas. & 1.5.1.2, 1.2.7 & Líder de Operación \\
-R-37 & Evitar & Calendarizar las siete decisiones del cliente antes de la línea base y escalar las vencidas. & 1.2.6, 1.1.4, 1.1.3 & Jefe de Proyecto \\
+R-24 & Mitigar & Ampliar el soporte reforzado y cerrar los defectos graves antes de abril de 2028. & 1.9.5, 1.12.7 & Líder de Operación \\
+R-25 & Evitar & Cortar el último tramo antes del 15 de octubre y acordar un plan de retorno. & 1.7.8, 1.7.9 & Líder de Datos y Migración \\
+R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo. & 1.11.3 & Jefe de Proyecto \\
+R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar etiquetas electrónicas. & 1.5.2, 1.2.5 & Líder de Operación \\
+R-37 & Evitar & Calendarizar las siete decisiones del cliente antes de la línea base y escalar las vencidas. & 1.2.4, 1.1.4, 1.1.3 & Jefe de Proyecto \\
 \end{longtable}
 
 Ocho de las catorce respuestas son mitigaciones, cuatro evitan el riesgo, una lo transfiere y una lo escala. Siete tienen como responsable al Jefe de Proyecto y cuatro al Líder de Datos y Migración, de modo que la ejecución del plan se concentra en los roles que ya sostienen la ruta crítica.
 
 \subsection{Respuesta a los riesgos críticos}
 
-Para R-02, la respuesta consiste en declarar y cuantificar una reserva en semanas para la fecha del evento anual, tomando fechas internas más tempranas dentro de las ventanas existentes, y en no desplegar servicios nuevos dentro de las ocho semanas previas al evento. El disparador es recibir la fecha con menos de ocho semanas de aviso o tener un servicio a medio desplegar en esa fecha. Si la respuesta falla, el Jefe de Proyecto reordena las entregas con cinco personas durante tres semanas, lo que equivale a 600 horas. La respuesta baja la probabilidad de 0,60 a 0,40, pero el impacto se mantiene en 0,80 por la regla del hito contractual, de modo que la exposición residual es 0,32 y el riesgo queda en zona alta, bajo seguimiento del Comité Ejecutivo.
+Para R-02, la respuesta consiste en fijar una ventana de ocho semanas sin despliegues de servicios nuevos antes del evento anual y en programar las entregas previas fuera de ella. El disparador es recibir la fecha con menos de ocho semanas de aviso o tener un servicio a medio desplegar en esa fecha. Si la respuesta falla, el Jefe de Proyecto reordena las entregas con cinco personas durante tres semanas, lo que equivale a 600 horas. La respuesta baja la probabilidad de 0,60 a 0,40, pero el impacto se mantiene en 0,80 por la regla del hito contractual, de modo que la exposición residual es 0,32 y el riesgo queda en zona alta, bajo seguimiento del Comité Ejecutivo.
 
 Para R-12, la respuesta evita el choque con los congelamientos. La certificación de la Etapa 1 se hace en Preproducción en el mes 12, que no es un sistema en producción del cliente. El despliegue que inicia la marcha blanca se ejecuta en la ventana libre del 7 al 24 de enero de 2028, solo con lo certificado, y las correcciones se liberan en la ventana libre que va desde la segunda semana de marzo hasta fines de ese mes, unas tres semanas y media antes del paso a producción de abril. Durante los congelamientos solo se admiten correcciones de emergencia autorizadas por el Comité Ejecutivo. El disparador es tener defectos de severidad alta abiertos al 20 de enero de 2028 o el despliegue sin terminar al 24 de enero. Si la respuesta falla y se pierde la ventana de corrección, el Jefe de Proyecto solicita al Comité Ejecutivo las correcciones de emergencia y reasigna ocho personas durante cuatro semanas, equivalentes a 1.280 horas. La probabilidad residual es 0,20, la exposición 0,16 y la zona media. Las fechas dependen de SUP-26 y se recalculan si cambia.
 
@@ -496,49 +496,51 @@ R-37 & Decisiones pendientes al mes 3. & Reasignar a tres personas de arquitectu
 
 La respuesta reduce la exposición de los once riesgos altos a la mitad o a un tercio y los lleva a zona media. Cada plan de contingencia dimensiona el esfuerzo de recuperación con el mismo supuesto que sostiene la estimación de horas de la Tabla 8.6, de modo que la contingencia y la reserva se calculan con una base común.
 
+Dos respuestas generan riesgos secundarios que se vigilan con el mismo registro. El despliegue de la marcha blanca en la ventana del 7 al 24 de enero de 2028, que responde a R-12, concentra el trabajo en dos semanas y media, de modo que un despliegue incompleto al 24 de enero activa su disparador. Las oleadas de cambio de etiquetas que responden a R-34 aumentan la carga del personal de tienda, lo que agrava R-05 y R-22 en campaña. La reversa de cada paso a producción, con su retorno ensayado, se describe en el Formulario T-18 y este capítulo la usa como plan de contingencia.
+
 \subsection{Costo-beneficio de las respuestas}
 
-El beneficio de cada respuesta se mide como la reducción del valor esperado en horas, esto es, la probabilidad por las horas que costaría el evento, antes y después de la acción. El valor esperado residual usa la probabilidad residual de cada riesgo con las mismas horas. Los antecedentes del plan no estiman el esfuerzo de ejecutar cada acción, por lo que no se calcula una relación entre beneficio y esfuerzo y el beneficio se expresa solo como reducción. La Tabla 8.11 presenta el resultado.
+El beneficio de cada respuesta se mide como la reducción del valor esperado en horas, esto es, la probabilidad por las horas que costaría el evento, antes y después de la acción. El valor esperado residual usa la probabilidad residual de cada riesgo con las mismas horas. El esfuerzo de ejecutar cada acción es una estimación del proponente en horas, y la razón entre la reducción y ese esfuerzo indica cuántas horas de exposición evita cada hora invertida. La Tabla 8.11 presenta el resultado.
 
-Tabla 8.11: Reducción del valor esperado por la respuesta. Fuente: Elaboración propia.
+Tabla 8.11: Costo-beneficio de las respuestas. Fuente: Elaboración propia.
 
-\begin{longtable}{p{0.099\linewidth}p{0.218\linewidth}p{0.218\linewidth}p{0.218\linewidth}p{0.178\linewidth}}
+\begin{longtable}{p{0.099\linewidth}p{0.178\linewidth}p{0.218\linewidth}p{0.258\linewidth}p{0.178\linewidth}}
 \toprule
-\textbf{ID} & \textbf{Antes (horas)} & \textbf{Residual (horas)} & \textbf{Reducción (horas)} & \textbf{Reducción (\%)} \\
+\textbf{ID} & \textbf{Antes (horas)} & \textbf{Reducción (horas)} & \textbf{Esfuerzo de la acción (horas)} & \textbf{Razón} \\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
-R-02 & 360 & 240 & 120 & 33 \\
-R-12 & 768 & 256 & 512 & 67 \\
-R-13 & 1.152 & 768 & 384 & 33 \\
-R-01 & 384 & 192 & 192 & 50 \\
-R-11 & 144 & 72 & 72 & 50 \\
-R-16 & 256 & 128 & 128 & 50 \\
-R-18 & 720 & 480 & 240 & 33 \\
-R-20 & 384 & 256 & 128 & 33 \\
-R-23 & 192 & 96 & 96 & 50 \\
-R-24 & 576 & 384 & 192 & 33 \\
-R-25 & 960 & 480 & 480 & 50 \\
-R-33 & 240 & 120 & 120 & 50 \\
-R-34 & 216 & 144 & 72 & 33 \\
-R-37 & 144 & 72 & 72 & 50 \\
-\textbf{Total} & \textbf{6.496} & \textbf{3.688} & \textbf{2.808} & \textbf{43} \\
+R-02 & 360 & 120 & 80 & 1,5 \\
+R-12 & 768 & 512 & 160 & 3,2 \\
+R-13 & 1.152 & 384 & 240 & 1,6 \\
+R-01 & 384 & 192 & 160 & 1,2 \\
+R-11 & 144 & 72 & 40 & 1,8 \\
+R-16 & 256 & 128 & 80 & 1,6 \\
+R-18 & 720 & 240 & 240 & 1,0 \\
+R-20 & 384 & 128 & 80 & 1,6 \\
+R-23 & 192 & 96 & 120 & 0,8 \\
+R-24 & 576 & 192 & 160 & 1,2 \\
+R-25 & 960 & 480 & 120 & 4,0 \\
+R-33 & 240 & 120 & 60 & 2,0 \\
+R-34 & 216 & 72 & 80 & 0,9 \\
+R-37 & 144 & 72 & 40 & 1,8 \\
+\textbf{Total} & \textbf{6.496} & \textbf{2.808} & \textbf{1.660} & \textbf{1,7} \\
 \end{longtable}
 
-Las respuestas reducen el valor esperado de 6.496 a 3.688 horas, es decir, en 2.808 horas o 43 \% (2.808 dividido por 6.496). Cuatro respuestas aportan 1.616 de esas horas, equivalentes a 58 \% de la reducción. Son la de R-12, con 512 horas, la de R-25, con 480, la de R-13, con 384, y la de R-18, con 240. R-12 rinde más porque cambiar el calendario de despliegue baja su probabilidad de 0,60 a 0,20, y R-25 y R-13 rinden por las horas elevadas que cada evento costaría. Las respuestas de R-02, R-13, R-18, R-20, R-24 y R-34 reducen la probabilidad solo de 0,60 a 0,40, por lo que su reducción es de un tercio y el riesgo conserva un peso relevante. La atención del Comité de Proyecto debe concentrarse en esos seis.
+Las respuestas reducen el valor esperado de 6.496 a 3.688 horas, es decir, en 2.808 horas o 43 \% (2.808 dividido por 6.496). Cuatro respuestas aportan 1.616 de esas horas, equivalentes a 58 \% de la reducción. Son la de R-12, con 512 horas, la de R-25, con 480, la de R-13, con 384, y la de R-18, con 240. R-12 rinde más porque cambiar el calendario de despliegue baja su probabilidad de 0,60 a 0,20, y R-25 y R-13 rinden por las horas elevadas que cada evento costaría. Las respuestas de R-02, R-13, R-18, R-20, R-24 y R-34 reducen la probabilidad solo de 0,60 a 0,40, por lo que su reducción es de un tercio y el riesgo conserva un peso relevante. La atención del Comité de Proyecto debe concentrarse en esos seis. El esfuerzo total de las catorce acciones se estima en 1.660 horas, de modo que cada hora invertida evita 1,7 horas de exposición (2.808 dividido por 1.660). Las respuestas de R-25 y R-12 son las más rentables, con razones de 4,0 y 3,2. Las de R-23 y R-34 tienen una razón menor que uno y se mantienen porque protegen un hito contractual y una meta de aceptación, que no se miden solo en horas.
 
-\subsection{Cuentas de control propuestas al plan de trabajo}
+\subsection{Cuentas de control que ejecutan las respuestas}
 
-Cuatro respuestas no tienen todavía una cuenta de control donde ejecutarse, y por eso se proponen al plan de trabajo del capítulo 7. La cuenta de control propuesta «Acuerdo con la filial emisora sobre la regla de comisión del vendedor» cubre R-06. La cuenta propuesta «Acuerdos de cooperación y salida con los proveedores de las plataformas que se reemplazan» cubre R-27. La cuenta propuesta «Medida transitoria de retención de grabaciones de repactación» cubre R-28, y la cuenta propuesta «Plan de incorporación de transportistas y vendedores de marketplace a los contratos de estado» cubre R-36. Cada una tiene su ventana definida antes del hito en que el riesgo actúa. Ninguna debería integrar la ruta crítica, salvo que el acuerdo con los proveedores demore la línea base del mes 4, caso en que se vigila como parte de R-27.
+Todas las respuestas se ejecutan en cuentas de control que ya existen en la estructura de desglose del trabajo del Formulario T-14, sin agregar cuentas nuevas. Cuatro respuestas de riesgos medios no tenían cuenta asignada y se ubican así. El acuerdo con la filial emisora sobre la regla de comisión del vendedor, que responde a R-06, se ejecuta en la cuenta 1.13.1, Plan de gestión del cambio. Los acuerdos de cooperación y salida con los proveedores de las plataformas que se reemplazan, que responden a R-27, se ejecutan en la cuenta 1.2.1, Mapa de las 14 interfaces e inventario de plataformas. La medida transitoria de retención de grabaciones de repactación, que responde a R-28, se ejecuta en la cuenta 1.8.5, Protección de datos y cumplimiento normativo. El plan de incorporación de transportistas y vendedores de marketplace a los contratos de estado, que responde a R-36, se ejecuta en la cuenta 1.6.3, Rediseño de las integraciones de la Etapa 2. La nivelación de los meses 13 a 15, que responde a R-33, se ejecuta en la cuenta 1.11.3, Plan de convivencia entre etapas. Ninguna de estas acciones integra la ruta crítica.
 
 \subsection{Reserva de contingencia}
 
-La reserva de contingencia cubre los riesgos identificados y se dimensiona con el percentil 80 de la simulación con respuestas, en el caso base solapado de la Tabla 8.8. En plazo, la reserva es de 12,5 semanas antes del hito del mes 16, 1,7 semanas antes del hito del mes 21 y 8,5 semanas antes del hito del mes 22. Como cota superior prudente, la suma en serie eleva esas cifras a 15,3, 1,7 y 10,0 semanas, y se informa para que el Comité de Proyecto conozca el límite.
+La reserva de contingencia cubre los riesgos identificados. La simulación con respuestas, en el caso base solapado de la Tabla 8.8, mide una exposición en plazo de 12,5 semanas antes del hito del mes 16, 1,7 semanas antes del hito del mes 21 y 8,5 semanas antes del hito del mes 22, con una cota superior de 15,3, 1,7 y 10,0 semanas si los atrasos se suman en serie.
 
-Los hitos son contractuales y los eslabones principales de la ruta crítica tienen holgura cero, por lo que la reserva no alarga el plazo. El plan de trabajo ya fija fechas internas anteriores a las anclas, como la versión candidata de la Etapa 1 verificada antes del 1 de noviembre, al terminar el mes 10, y reconoce un margen de tres meses en el plan de marcha blanca y en la capacitación de administradores de la Etapa 1, y de un mes en los de la Etapa 2. Se refleja en el cronograma como fechas internas de término más tempranas, distribuidas por eslabón de la ruta crítica, a saber el levantamiento, la arquitectura, la plataforma base, el desarrollo, la certificación y la marcha blanca. Cada eslabón recibe una parte proporcional al atraso esperado de los riesgos que se le asignaron. Además, la reserva se materializa en ventanas de corrección ya identificadas fuera de los congelamientos, como la de enero de 2028 para el despliegue y la de marzo para las correcciones. Las 12,5 semanas del mes 16 equivalen a 19 \% de los 15 meses de la Etapa 1, que son 65 semanas (15 meses por 52 semanas, dividido por 12 meses; 12,5 dividido por 65). Es una exigencia alta sobre el plan, y por eso se vigila en cada revisión del registro.
+Los hitos son contractuales y los eslabones principales de la ruta crítica tienen holgura cero, por lo que esa exposición no se cubre con un margen de calendario. El plan de trabajo solo dispone de los márgenes que declara el apartado 7.3.3, que son tres meses en el plan de marcha blanca y en la capacitación de administradores de la Etapa 1 y un mes en los de la Etapa 2, además de las ventanas de corrección fuera de los congelamientos, como la de enero de 2028 para el despliegue y la de marzo para las correcciones. En consecuencia, la reserva de contingencia se constituye en esfuerzo. Cuando un disparador se activa, el atraso se recupera agregando capacidad a la actividad afectada dentro de su ventana, sin desplazar el hito.
 
-En esfuerzo, la reserva es la suma del valor esperado residual de los 14 riesgos, esto es, 3.688 horas. La autoriza el Jefe de Proyecto, que informa cada uso al Comité de Proyecto en su siguiente sesión.
+La reserva es la suma del valor esperado residual de los 14 riesgos críticos y altos, esto es, 3.688 horas. La autoriza el Jefe de Proyecto, que informa cada uso al Comité de Proyecto en su siguiente sesión. Si la exposición en plazo de un hito supera lo que esa capacidad puede recuperar, el riesgo se escala al Comité Ejecutivo, como establece el umbral del apartado 8.1.
 
 \subsection{Reserva de gestión}
 
@@ -667,7 +669,7 @@ Tabla A.3: Respuesta a los riesgos. Fuente: Elaboración propia.
 \bottomrule
 \endlastfoot
 R-01 & Mitigar & Fijar cortes por tramo con conciliación diaria y criterio de detención acordado con la filial. & Líder de Datos y Migración & Divergencia sin conciliar dos días seguidos en un tramo. \\
-R-02 & Mitigar & Reservar semanas para la fecha del evento y no desplegar servicios nuevos en las ocho semanas previas. & Jefe de Proyecto & Fecha del evento con menos de 8 semanas de aviso. \\
+R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & Jefe de Proyecto & Fecha del evento con menos de 8 semanas de aviso. \\
 R-03 & Evitar & Mantener el Servicio de control de cruces como único camino de datos, con base legal por cruce. & Arquitecto de Soluciones & Un solo cruce sin base o sin registro. \\
 R-04 & Mitigar & Cerrar el inventario antes de la línea base y certificar cada integración antes de retirar una plataforma. & Líder de Integración & Inventario no cerrado en el mes 4. \\
 R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Personal capacitado bajo el umbral de cierre. \\
@@ -700,7 +702,7 @@ R-32 & Mitigar & Confirmar ubicaciones y rutas con el inventario y acreditar el 
 R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca. & Jefe de Proyecto & Carga sobre 100 \% de un rol clave en los meses 13 a 15. \\
 R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Operación & Error de precio sobre 3 \% en el piloto. \\
 R-35 & Mitigar & Revisar los accesos periódicamente y revocar los de ex trabajadores y temporales. & Responsable de Seguridad & Cuenta de ex trabajador activa tras la revisión mensual. \\
-R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Por definir con el sd-12 & Transportista sin adoptar los estados a 8 semanas del inicio. \\
+R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Líder de Integración & Transportista sin adoptar los estados a 8 semanas del inicio. \\
 R-37 & Evitar & Calendarizar las siete decisiones antes de la línea base y escalar las vencidas. & Jefe de Proyecto & Decisiones pendientes en el mes 3. \\
 R-38 & Aceptar & Seleccionar pilotos y olas fuera del clúster de Santiago al inicio y revisar la concentración. & Líder de Implantación & Piloto con falla en una tienda del clúster de Santiago. \\
 \end{longtable}
