@@ -1,0 +1,93 @@
+Este apartado define las reglas con las que Only Simple Solutions gestionará los riesgos de la solución propuesta para Multitiendas Ancoa S.A. durante los 56 meses del contrato. Establece el enfoque, los roles, las escalas de calificación, las zonas de exposición y los umbrales de escalamiento, de modo que cada riesgo se califique con el mismo criterio. El apartado 8.2 aplica estas reglas a la identificación y al análisis de los riesgos, y el apartado 8.3 define las acciones asociadas a cada uno.
+
+\subsection{Enfoque de gestión}
+
+La gestión de riesgos sigue la norma ISO 31000 y se opera como un proceso continuo y no como un documento que se redacta una sola vez. Los riesgos se identifican, se analizan, se valoran, se tratan, se monitorean y se comunican de manera cíclica, y cada vuelta del ciclo deja evidencia en el registro. El registro es un instrumento vivo, con un identificador, un dueño, una calificación, una estrategia, un disparador y un estado por cada riesgo. Se revisa en cada sesión del Comité de Proyecto, de modo que ningún riesgo permanece sin revisión más de quince días.
+
+El registro se publica en el espacio colaborativo que el proyecto habilita para el CLIENTE, junto con las actas, los entregables y el registro de cambios. Así, la contraparte de Ancoa consulta en cualquier momento el estado de cada riesgo sin solicitarlo al equipo. Además, cada informe mensual de avance incorpora los riesgos del período, con sus cambios de calificación, los riesgos cerrados y los nuevos, junto con las desviaciones y los compromisos del período siguiente. De esta forma, la información de riesgos llega al patrocinador por el mismo canal que el avance físico y financiero.
+
+\subsection{Roles y responsabilidades}
+
+Cada riesgo tiene un dueño, que es el rol del equipo mejor ubicado para actuar sobre su causa. El dueño propone la calificación, ejecuta o supervisa la acción acordada e informa los cambios de estado antes de cada sesión. El Jefe de Proyecto mantiene el registro, consolida las calificaciones, verifica que cada una se justifique con un dato del Caso o del subdocumento fuente y presenta el resumen al Comité de Proyecto.
+
+Tres instancias de gobierno del Capítulo 6 reciben los riesgos según su naturaleza. El Comité de Proyecto, que sesiona quincenalmente con la contraparte técnica, revisa el registro completo y decide sobre los riesgos de zona alta. El Comité de Arquitectura, que sesiona mensualmente con TI y el encargado de seguridad, revisa los riesgos técnicos. El Comité Ejecutivo, que sesiona mensualmente con el patrocinador y el administrador del contrato, recibe los riesgos críticos y decide la liberación de la reserva de gestión. Desde el mes 13, el Comité de Operación, también mensual, incorpora los riesgos de preparación y de operación. Las contrapartes del CLIENTE validan la calificación de los riesgos que afectan su ámbito, y los dueños de producto confirman el impacto sobre la funcionalidad comprometida.
+
+\subsection{Escalas de probabilidad e impacto}
+
+Los riesgos se califican en cinco niveles, desde muy bajo hasta muy alto. La Tabla 8.1 define la probabilidad y los impactos en plazo, esfuerzo y costo, y la Tabla 8.2 define los impactos en alcance y calidad y en servicio.
+
+Tabla 8.1: Escala de probabilidad e impacto en plazo, esfuerzo y costo. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.16\linewidth}p{0.16\linewidth}p{0.22\linewidth}p{0.24\linewidth}p{0.16\linewidth}}
+\toprule
+\textbf{Nivel} & \textbf{Probabilidad} & \textbf{Impacto en plazo} & \textbf{Impacto en esfuerzo} & \textbf{Impacto en costo} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Muy alto (5) & $>$ 70\% & $>$ 6 semanas & $>$ 5\% de las horas del proyecto & $>$ 5\% del contrato \\
+Alto (4) & 51 a 70\% & 3 a 6 semanas & 2 a 5\% de las horas & 2 a 5\% del contrato \\
+Medio (3) & 31 a 50\% & 1 a 3 semanas & 1 a 2\% de las horas & 1 a 2\% del contrato \\
+Bajo (2) & 11 a 30\% & 2 días a 1 semana & 0,5 a 1\% de las horas & 0,5 a 1\% del contrato \\
+Muy bajo (1) & 1 a 10\% & Menos de 2 días & Menos de 0,5\% de las horas & Menos de 0,5\% del contrato \\
+\end{longtable}
+
+El impacto en costo se expresa siempre como porcentaje del contrato, porque el monto corresponde únicamente al Sobre 3. El impacto en esfuerzo se expresa como porcentaje de las horas de la estimación del apartado 7.2.
+
+Tabla 8.2: Escala de impacto en alcance y calidad, y en servicio. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.16\linewidth}p{0.34\linewidth}p{0.42\linewidth}}
+\toprule
+\textbf{Nivel} & \textbf{Impacto en alcance y calidad} & \textbf{Impacto en servicio} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Muy alto (5) & Efecto muy significativo sobre la funcionalidad comprometida. & Incumple una restricción del Caso, la separación de los dos negocios o un umbral con sanción, o pierde datos transaccionales. \\
+Alto (4) & Efecto significativo sobre la funcionalidad comprometida. & Interrumpe más de la autonomía de 24 h en tienda o incumple el RTO o el RPO. \\
+Medio (3) & Efecto sobre áreas funcionales clave. & Degrada de forma visible un servicio crítico, sin pérdida de datos. \\
+Bajo (2) & Efecto menor sobre la funcionalidad general. & Degrada brevemente el servicio, con rodeo disponible. \\
+Muy bajo (1) & Efecto menor sobre funciones secundarias. & No tiene efecto para el cliente final. \\
+\end{longtable}
+
+Para calcular la exposición, cada nivel se traduce a un valor numérico. La probabilidad toma el punto medio de cada rango, es decir, 0,05, 0,20, 0,40, 0,60 y 0,85. El impacto toma los valores 0,05, 0,10, 0,20, 0,40 y 0,80, que son una decisión del proponente y no provienen de las Bases, ya que ISO 31000 deja los criterios de calificación a cada organización. La progresión del impacto es más pronunciada que la de la probabilidad para que los eventos de consecuencia máxima alcancen la zona crítica con una probabilidad moderada.
+
+Cuatro reglas gobiernan la calificación y evitan que dos personas califiquen el mismo riesgo de manera distinta. Primero, si el evento atrasa un hito contractual sin holgura, esto es, el paso a producción del mes 16, el del mes 21, el retiro de la plataforma de 2011 en el mes 22 o el cierre del mes 56, el impacto en plazo es muy alto sin importar las semanas, porque la ruta crítica no admite holgura y las salidas son no negociables. Segundo, todo evento que borre la separación de datos entre el negocio de retail y la filial emisora de crédito es muy alto en servicio, porque el Caso lo declara línea roja. Tercero, se califica el peor de los impactos entre plazo, esfuerzo, costo, alcance y servicio, y la calificación se justifica con un dato del Caso o del subdocumento fuente. Cuarto, las oportunidades se califican con la misma escala de probabilidad y con impacto positivo, y no se suman a las reservas.
+
+\subsection{Matriz de exposición y zonas}
+
+La exposición de cada riesgo es el producto de su probabilidad por su impacto, ambos en valor numérico, y ubica al riesgo en una de cuatro zonas. La Tabla 8.3 define cada zona y lo que obliga.
+
+Tabla 8.3: Zonas de exposición y regla de acción. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.12\linewidth}p{0.20\linewidth}p{0.40\linewidth}p{0.20\linewidth}}
+\toprule
+\textbf{Zona} & \textbf{Exposición (P $\times$ I)} & \textbf{Regla de acción} & \textbf{Reflejo en la oferta} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Crítica & $\geq$ 0,40 & Se cambia el diseño para que el riesgo deje de existir o se escala al Comité Ejecutivo; no se acepta. & Arquitectura, alcance o exclusión explícita. \\
+Alta & 0,20 a menos de 0,40 & Se ejecuta una acción de mitigación con costo y plazo dentro del plan. & EDT y cronograma. \\
+Media & 0,08 a menos de 0,20 & Se acepta activamente, con reserva de contingencia y disparador definido. & Reserva de contingencia. \\
+Baja & $<$ 0,08 & Se acepta pasivamente, con observación y revisión mensual. & Registro, sin costo asociado. \\
+\end{longtable}
+
+Con los valores adoptados, un riesgo de probabilidad 0,60 e impacto 0,80 tiene exposición 0,48 y es crítico, mientras que uno de probabilidad 0,40 e impacto 0,40 tiene exposición 0,16 y es medio. La regla del hito contractual aumenta el número de riesgos que caen en la zona crítica, y esa consecuencia es intencional, porque el cronograma de 56 meses no admite desviaciones.
+
+\subsection{Apetito, tolerancia y umbral de escalamiento}
+
+El apetito de riesgo es bajo en lo contractual y regulatorio, esto es, en los hitos, en la separación de los dos negocios y en el cumplimiento ante la CMF, y es moderado en lo técnico mejorable, como el rendimiento y la adopción, donde se acepta ajustar el diseño mientras no cambie un hito. La tolerancia es cero atraso en los hitos de los meses 16, 21 y 56 y cero cruces de datos sin base, y en el resto llega hasta lo que cubra la reserva de contingencia.
+
+El umbral de escalamiento traduce lo anterior en instancias de decisión. Todo riesgo en zona crítica pasa al Comité Ejecutivo, todo riesgo en zona alta pasa al Comité de Proyecto, y los riesgos técnicos se presentan además al Comité de Arquitectura. La liberación de la reserva de gestión corresponde únicamente al Comité Ejecutivo.
+
+\subsection{Ciclo de revisión}
+
+La revisión se organiza en cuatro ritmos. El registro completo se revisa cada quince días en el Comité de Proyecto, y los riesgos técnicos y los críticos se revisan cada mes en los comités de Arquitectura y Ejecutivo. Además, el registro se revisa en cada hito contractual y antes de cada una de las ventanas de congelamiento de publicación, momentos en que el costo de una sorpresa es mayor. El informe mensual de avance resume el resultado de estas revisiones para el CLIENTE.
+
+La calificación se reevalúa completa cuando cambia un supuesto del que depende. Si se modifica el supuesto SUP-26, que fija el inicio del proyecto en enero de 2027, se recalculan los riesgos de plazo frente a las ventanas de congelamiento y a los hitos de los meses 16 y 21. Si se modifica el supuesto SUP-28, que considera 14 tiendas sin enlace de respaldo, se recalculan los riesgos de continuidad de servicio en tienda.
+
+El apartado 8.2 aplica estas escalas y zonas a los riesgos identificados y justifica cada calificación, y el apartado 8.3 define para cada riesgo la acción, el responsable, el plazo y el disparador.

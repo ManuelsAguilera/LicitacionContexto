@@ -1,0 +1,10 @@
+\noindent\hangindent=1.5em\hangafter=1 International Organization for Standardization. (2018). \textit{Risk management — Guidelines} (ISO 31000:2018).
+
+\noindent\hangindent=1.5em\hangafter=1 Multitiendas Ancoa S.A. (2026). \textit{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+%%% DECLARACION
+Este capítulo se redactó con asistencia de un modelo de inteligencia artificial (Claude, de Anthropic), a partir de decisiones tomadas por el equipo de Only Simple Solutions. Esas decisiones fijan el alcance del registro de riesgos, las escalas de probabilidad e impacto, la fusión de riesgos afines y los criterios de calificación.
+
+El modelo generó con asistencia de IA el registro de riesgos, la calificación de cada riesgo y oportunidad, el análisis cuantitativo y las figuras del capítulo, así como el texto de los apartados y del anexo. Estos contenidos están pendientes de una revisión humana completa, por lo que las calificaciones, las estimaciones de semanas y horas, los umbrales y las fechas de disparador deben considerarse propuestas del equipo hasta que esa revisión se realice.
+
+Las cifras y los hechos del Caso se tomaron de las bases técnicas citadas en Referencias. Las estimaciones y las escalas son decisiones del proponente y no provienen de esas bases.
