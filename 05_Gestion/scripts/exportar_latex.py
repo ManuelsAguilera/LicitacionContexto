@@ -22,7 +22,7 @@ FIGURES = LATEX / "figuras"
 MANIFEST = LATEX / "manifiesto.json"
 BUILD = LATEX / "build"
 BACKUPS = LATEX / "respaldo"
-EMPRESA = "OSS"
+EMPRESA = "OnlySimpleSolutions"
 
 
 def tex_name(part: str) -> str:

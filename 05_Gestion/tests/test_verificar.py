@@ -60,7 +60,7 @@ class VerificarTest(unittest.TestCase):
     def test_compilar_rechaza_tex_fuera_de_plantilla(self):
         from apoyo import proyecto_temporal
         with proyecto_temporal() as (_, latex):
-            t = latex / "sd-14" / "OSS-Subdocumento14.tex"; t.parent.mkdir(parents=True, exist_ok=True); t.write_text(TEX_A_MANO, encoding="utf-8")
+            t = latex / "sd-14" / "OnlySimpleSolutions-Subdocumento14.tex"; t.parent.mkdir(parents=True, exist_ok=True); t.write_text(TEX_A_MANO, encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "fuera de la plantilla"):
                 ex.compile_part("T7-14", final=False)
 

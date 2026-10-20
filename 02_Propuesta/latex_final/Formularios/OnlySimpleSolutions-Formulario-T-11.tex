@@ -1,0 +1,731 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Especificaciones técnicas ofertadas}{Subdocumento 4 · T-11}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t11-1]{Tabla T-11.1: Correspondencia entre el formulario y la propuesta}\dotfill\pageref{tab:t11-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-2]{Tabla T-11.2: Servicios de Azure contratados}\dotfill\pageref{tab:t11-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-3]{Tabla T-11.3: Plataforma y software de la solución}\dotfill\pageref{tab:t11-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-4]{Tabla T-11.4: Herramientas de seguridad, entrega y operación}\dotfill\pageref{tab:t11-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-5]{Tabla T-11.5: Hardware especificado por Only Simple Solutions y adquirido por el Cliente}\dotfill\pageref{tab:t11-5}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-6]{Tabla T-11.6: Especificación de hardware y obras que adquiere el Cliente}\dotfill\pageref{tab:t11-6}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-7]{Tabla T-11.7: Enlaces por sitio}\dotfill\pageref{tab:t11-7}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-8]{Tabla T-11.8: Especificaciones de los centros de datos}\dotfill\pageref{tab:t11-8}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-dc01]{Tabla T-11.9: Equipos y obras del recinto técnico de DC-01 que provee el proponente}\dotfill\pageref{tab:t11-dc01}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-9]{Tabla T-11.10: Plataformas del Cliente y su tratamiento}\dotfill\pageref{tab:t11-9}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-10]{Tabla T-11.11: Componentes de las innovaciones}\dotfill\pageref{tab:t11-10}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-11]{Tabla T-11.12: Licenciamiento por producto}\dotfill\pageref{tab:t11-11}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-12]{Tabla T-11.13: Versión, fin de soporte y plan de actualización}\dotfill\pageref{tab:t11-12}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-13]{Tabla T-11.14: Portabilidad de los componentes}\dotfill\pageref{tab:t11-13}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11-14]{Tabla T-11.15: Comprobaciones que fijan cantidades, niveles y modelos}\dotfill\pageref{tab:t11-14}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-11.\arabic{table}}
+
+\section{Formulario T-11 · Especificaciones técnicas ofertadas}\label{formulario-t-11}
+
+Conforme al Formulario T-11 de las Bases Administrativas, que se incluye en el Formulario T-7, este formulario detalla los componentes de infraestructura, plataforma, licenciamiento y hardware especificado de la solución ofertada a Multitiendas Ancoa S.A., con su ubicación y su justificación. Las secciones 4.1.1, 4.2, 4.2.1 y 4.3 del Subdocumento 4 contienen el resumen y el análisis. Este formulario reúne el listado completo, incluidos los componentes que el Subdocumento 4 menciona en el texto y en las figuras sin incorporarlos a la Tabla 4.6.
+
+El reparto del hardware sigue la Tabla 4.15 del Subdocumento 4. Para el nodo local y la red de las tiendas y de los centros de distribución, Only Simple Solutions especifica, configura y certifica el equipo, y el Cliente lo adquiere, instala y contrata. Para el recinto técnico de DC-01, Only Simple Solutions aporta la especificación, los equipos, la conectividad, la seguridad y las canalizaciones, y el Cliente aporta el espacio, la instalación del recinto y la obra civil de separación. Cuando una cifra depende del levantamiento o de una comprobación, el formulario escribe «por definir» e indica el hito en que se fija.
+
+El formulario usa los códigos de sitio de la Tabla 4.8 del Subdocumento 4. SIT-01 agrupa las 22 tiendas, CD-01 es el centro de distribución principal, CD-02 es el centro de distribución de Concepción, DC-01 es el centro de datos de casa matriz, DC-02 es su sala de respaldo, CLD-01 es la región Azure Chile Central, CLD-02 es la región Azure Brazil South y EXT-01 reúne a las contrapartes externas. Cada componente se atribuye a un ámbito, que puede ser Retail, Emisor o plataforma compartida, porque la separación entre la tienda y la Filial emisora alcanza a la infraestructura. La columna Origen indica el documento de la propuesta que selecciona el componente. Cuando el valor es T-11, este formulario precisa el producto o el nivel de una capacidad que los demás documentos dejaron remitida a él.
+
+La Tabla~\mbox{\ref{tab:t11-1}} indica qué contiene cada apartado y con qué sección de la propuesta se corresponde.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2500}}@{}}
+\caption{Correspondencia entre el formulario y la propuesta.}\label{tab:t11-1}\\
+\toprule\noalign{}
+\textbf{Apartado} & \textbf{Contenido} & \textbf{Sección de la propuesta} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Apartado} & \textbf{Contenido} & \textbf{Sección de la propuesta} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+T-11.1 Servicios de nube contratados & Servicios de Azure por región, nivel, cantidad, ámbito y justificación. & SD-04, 4.1.1 y 4.2 \\ \addlinespace
+T-11.2 Plataforma y software de la solución & Lenguajes, marcos, motores y software propio, con versión. & SD-04, 4.1.1 \\ \addlinespace
+T-11.3 Seguridad, entrega y operación & Cadena de entrega, análisis de seguridad, monitoreo y respuesta. & SD-04, 4.2; SD-06, 6.2; Formulario T-10 \\ \addlinespace
+T-11.4 Nodo local de tienda, hardware especificado por el proponente & Nodos locales de tienda y sus repuestos, que el Cliente adquiere. & SD-04, 4.2.1 y Tabla 4.15 \\ \addlinespace
+T-11.5 Red y equipos de sitio, hardware especificado por el proponente & Especificación de red de sitio, gabinete, energía, estaciones de trabajo, periféricos y terminales, que el Cliente adquiere. & SD-04, 4.2.1 y Tabla 4.15 \\ \addlinespace
+T-11.6 Conectividad & Enlaces por sitio, conexión privada y respaldo. & SD-04, 4.2 y Tablas 4.8 y 4.15 \\ \addlinespace
+T-11.7 Centros de datos & Centro primario, centro secundario, recinto técnico de DC-01 que habilita el proponente e instalaciones del Cliente. & SD-04, 4.3 y Tabla 4.15 \\ \addlinespace
+T-11.8 Plataformas conservadas & Plataformas del Cliente que la solución integra y no oferta. & SD-04, 4.1 y 4.2.1 \\ \addlinespace
+T-11.9 Componentes de las innovaciones & Equipos y plataformas de las cinco innovaciones. & SD-13 \\ \addlinespace
+T-11.10 Licenciamiento & Modalidad, licencia, titular y vigencia por producto. & SD-04, 4.2.1 \\ \addlinespace
+T-11.11 Ciclo de vida y soporte & Versión ofertada, fin de soporte publicado y plan de actualización. & SD-04, 4.1.1; SD-08 \\ \addlinespace
+T-11.12 Portabilidad & Componentes portables y componentes propios del proveedor. & SD-04, 4.2; SD-08 \\ \addlinespace
+T-11.13 Comprobaciones previas a la construcción & Verificaciones que fijan cantidades, modelos y niveles, con su hito. & SD-04, 4.2; SD-07 \\
+\end{longtable}
+
+Este formulario no contiene precios, tarifas ni montos que permitan inferir la Oferta Económica. Las cantidades que declara son las que alimentan esa oferta.
+
+\subsection{T-11.1 Servicios de nube contratados}\label{t-11-1}
+
+Microsoft Azure es el proveedor de nube (ADR-07). Los servicios se contratan bajo una suscripción del proyecto por ambiente y por ámbito, con Chile Central como región primaria y Brazil South como región de recuperación, ambas con tres zonas de disponibilidad. La Tabla~\mbox{\ref{tab:t11-2}} lista cada servicio con su nivel, su cantidad en el ambiente de Producción y la razón de su elección. Los cinco ambientes (Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres) usan las mismas clases de componentes. Preproducción y Recuperación tienen capacidades ajustadas a su finalidad y verificadas en la prueba de carga.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1200}}@{}}
+\caption{Servicios de Azure contratados.}\label{tab:t11-2}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Producto y nivel} & \textbf{Cantidad en Producción} & \textbf{Ubicación y ámbito} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Producto y nivel} & \textbf{Cantidad en Producción} & \textbf{Ubicación y ámbito} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{7}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tablas 4.6, 4.9 y 4.10, y secciones 4.2 y 4.3), de su memoria de capacidad y del Formulario T-10.} \\
+\endlastfoot
+1.1 & Suscripciones & Suscripción de Azure del proyecto, ordenada en grupos de administración Plataforma y Cargas. & 17: Conectividad y Gestión en Plataforma, y una por ambiente (5) para Retail, Emisor y base tecnológica en Cargas. & CLD-01 y CLD-02. Ámbito Retail, Emisor y compartida. & Una credencial o una política no sirve en otro ambiente ni en el otro ámbito, y el Emisor no hereda reglas ni permisos de Retail. & SD-04, 4.2 \\ \addlinespace
+1.2 & Microservicios propios y adaptadores & Azure Kubernetes Service, nivel Standard, con nodos repartidos en tres zonas. & Un clúster por ámbito y un grupo de nodos en la rama de la base tecnológica, que aloja X-01, los adaptadores, los agentes de despliegue y el registro de imágenes. Retail: 6 × D8ds\_v5 (8 vCPU / 32 GiB) de usuario, hasta 12, y 3 × D4ds\_v5 (4 vCPU / 16 GiB) de sistema. Emisor: 3 × D4ds\_v5 de usuario, hasta 6, y 3 × D4ds\_v5 de sistema. Base tecnológica: 3 × D8ds\_v5 de usuario, hasta 6, y 3 × D4ds\_v5 de sistema. Uso máximo de 66 \% en el peak (SD-04, Tabla 4.13). & CLD-01 y se crea en CLD-02 con la misma definición de infraestructura. Ámbito Retail, Emisor y base tecnológica. & Servicio administrado de contenedores con zonas y escalado horizontal; evita operar el plano de control. & SD-04, Tabla 4.6; nivel T-11 \\ \addlinespace
+1.3 & Intermediario de eventos & Azure Event Hubs Premium, zonal, con geo-replicación y clientes del protocolo Kafka. & Un espacio de nombres por ámbito, 2 en total. Retail 2 unidades de procesamiento y Emisor 1, calculadas a partir de 1.333 eventos publicados y 6.667 entregados por segundo en la carga masiva de precios de la memoria de capacidad. & CLD-01, con geo-replicación a CLD-02. Ámbito Retail y Emisor. & Conserva y permite releer el historial de hechos confirmados, con tres copias entre zonas y retención de hasta 90 días. Kafka en AKS exigiría operación propia y Service Bus no conserva historial. & SD-04, Tabla 4.6 y ADR-06 \\ \addlinespace
+1.4 & Entrada de API & Azure API Management Premium clásico. & Una instancia por ámbito, 2 en total; 3 unidades por instancia, una por zona, 6 en total; un gateway adicional por instancia en CLD-02. & CLD-01 y gateway en CLD-02. Ámbito Retail y Emisor. & Único nivel con despliegue multirregión; los niveles v2 no están en Chile Central. Aplica identidad, cuotas, validación de contratos y versionado. & SD-04, Tabla 4.6 y ADR-06 \\ \addlinespace
+1.5 & Datos transaccionales & Azure Database for PostgreSQL Flexible Server, con alta disponibilidad entre zonas. Nivel De uso general. & Un servidor primario y uno en espera por base, 6 nodos en total: Retail D8ds\_v5 (8 vCore / 32 GiB) con 2 TiB y 7.500 IOPS; Emisor D4ds\_v5 (4 vCore / 16 GiB) con 512 GiB y 2.300 IOPS; X-01 D2ds\_v5 (2 vCore / 8 GiB) con 128 GiB y 500 IOPS. Una réplica entre regiones del mismo tamaño por ámbito aprobado. & CLD-01; réplica asíncrona en CLD-02. Ámbito Retail y Emisor. & Una base por autoridad del dato y un repositorio propio por servicio. La replicación síncrona entre zonas protege ante la falla de una zona. & SD-04, Tabla 4.6; nivel T-11 \\ \addlinespace
+1.6 & Caché & Azure Managed Redis, servicio que sucede a Azure Cache for Redis. & Una instancia Balanced B5 (6 GB) con alta disponibilidad entre zonas. & CLD-01. Ámbito Retail. & Guarda solo datos reconstruibles y no almacena autoridad de negocio. La sustitución del producto se explica bajo esta tabla. & SD-04, Tabla 4.6; producto T-11 \\ \addlinespace
+1.7 & Almacenamiento analítico & Azure Data Lake Storage Gen2, con redundancia entre zonas. & Una cuenta por ámbito, 2 en total: Retail 1 TB y Emisor 0,1 TB a tres años. & CLD-01; copia a CLD-02. Ámbito Retail y Emisor. & Separa la lectura analítica del almacenamiento transaccional, con control de acceso, linaje y exportación por entidad. & SD-04, Tabla 4.6 \\ \addlinespace
+1.8 & Autoservicio de análisis & Power BI. & Un entorno por ámbito, 2 en total; licencias según usuarios habilitados. & CLD-01. Ámbito Retail y Emisor. & Espacios de lectura separados por entidad. El motor analítico de Azure se selecciona tras la prueba de permisos y linaje, porque Fabric completo no está disponible en Chile Central. & SD-04, Tabla 4.6 \\ \addlinespace
+1.9 & Evidencia y expediente del Emisor & Azure Blob Storage con política de inmutabilidad y redundancia entre zonas. & Una cuenta, 9 TB al cierre del contrato (1,9 TB por año). & CLD-01; copia a CLD-02 sujeta a la aprobación de residencia. Ámbito Emisor. & Sostiene el Servicio de evidencia financiera (F:C-03) con retención por el plazo del crédito más seis años. & SD-04, Tabla 4.2; producto T-11 \\ \addlinespace
+1.10 & Identidad & Microsoft Entra ID, nivel P2, federado con el directorio del Cliente. & Identidades segregadas por ámbito; usuarios según el Caso (6.400 personas con acceso, 8.300 en período de mayor dotación). & Servicio global administrado desde CLD-01. Ámbito Retail y Emisor. & Identidad centralizada con autenticación multifactor, acceso condicional y elevación de privilegios con vigencia limitada. & SD-04, Tabla 4.6; nivel T-11 \\ \addlinespace
+1.11 & Secretos y claves & Azure Key Vault, nivel Premium. & Una bóveda por ambiente de cada ámbito. & CLD-01 y una bóveda propia en CLD-02, que la definición de infraestructura crea y un proceso de reinyección de secretos puebla. Ámbito Retail y Emisor. & Custodia de claves y secretos con rotación y separación de funciones. Las claves del Emisor tienen bóvedas propias. Las claves y los secretos no se copian entre regiones. El módulo de seguridad de hardware del Emisor consta en la fila 1.24. & SD-04, Tabla 4.6; nivel T-11 \\ \addlinespace
+1.12 & Telemetría & Azure Monitor con OpenTelemetry. & Una configuración por ámbito. & CLD-01. Ámbito Retail y Emisor. & Observabilidad conjunta de nube, centro de datos y tiendas. & SD-04, Tabla 4.6 \\ \addlinespace
+1.13 & Registros & Áreas de trabajo de Log Analytics. & Una por ámbito, 2 en total. & CLD-01. Ámbito Retail y Emisor. & Registro inalterable, separado por entidad. La retención de cada tipo de registro por definir en el hito H2 (mes 4), conforme al plazo de conservación del Subdocumento 5. & SD-04, Tabla 4.9 \\ \addlinespace
+1.14 & Borde público & Azure Front Door, nivel Premium, con firewall de aplicaciones web. & Un perfil, con el origen privado de Chile Central conectado por Private Link desde Brazil South, la región compatible más cercana. & Servicio global. Ámbito Compartido. & Entrada única del tráfico público con protección de aplicación y contra denegación de servicio. En Chile Central no ofrece Private Link, de modo que la conexión privada hacia ese ámbito se crea desde Brazil South, con una latencia adicional que se mide en Preproducción. Redirige a CLD-02 en la conmutación. & SD-04, Tabla 4.9 y 4.2; nivel T-11 \\ \addlinespace
+1.15 & Control de red & Azure Firewall, nivel Premium. & Uno en el concentrador de cada región. & CLD-01 y se crea en CLD-02. Ámbito Compartido. & Bloquea todo acceso de la rama Retail a los datos del Emisor y permite solo el contrato del Servicio de control de cruces (X-01). & SD-04, 4.2; nivel T-11 \\ \addlinespace
+1.16 & Resolución de nombres & DNS privado de Azure. & Zonas privadas por rama. & CLD-01 y CLD-02. Ámbito Compartido. & Resolución interna sin exponer nombres ni direcciones a Internet. & SD-04, 4.2 \\ \addlinespace
+1.17 & Acceso privado a datos & Puntos de conexión privados de Azure Private Link. & Uno por servicio de datos en la subred de datos de cada rama. & CLD-01 y CLD-02. Ámbito Retail, Emisor y compartido. & Ningún servicio de datos es alcanzable desde Internet. & SD-04, 4.2 \\ \addlinespace
+1.18 & Red virtual & Redes virtuales en topología de concentrador y ramas. & Un concentrador y 3 ramas (Retail, Emisor y base tecnológica), en 10.10.0.0/16 (CLD-01) y 10.20.0.0/16 (CLD-02). Retail y Emisor con subredes de entrada, API Management, aplicación y datos, cada subred con su NSG salvo donde Azure no lo admite. & CLD-01; se replica en CLD-02. Ámbito Retail, Emisor y compartido. & Hace efectiva la separación de redes entre las dos entidades. & SD-04, 4.2 \\ \addlinespace
+1.19 & Conexión privada con DC-01 & Circuito y puerta de enlace de Azure ExpressRoute, propuesto y por acreditar. & Un circuito de 200 Mbps y una puerta de enlace ErGw1AZ, solo hacia Chile Central. & Concentrador de CLD-01 y DC-01. Ámbito Compartido. & Convivencia con las plataformas conservadas sin pasar por Internet. & SD-04, 4.3.1 \\ \addlinespace
+1.20 & Respaldo de la conexión y sitios & Puerta de enlace VPN de Azure. & Una puerta de enlace VpnGw2AZ por concentrador, 2 en total. & Concentrador de CLD-01 y de CLD-02. Ámbito Compartido. & Respaldo cifrado del circuito privado y terminación de los túneles de oficinas. DC-01 llega a CLD-02 por un túnel VPN a la puerta de ese concentrador, y otro túnel une los dos concentradores. & SD-04, 4.3.2 \\ \addlinespace
+1.21 & Respaldos & Bóveda de Azure Backup con copia inmutable. & Una bóveda por ámbito en CLD-01 y una segunda en CLD-02. & CLD-01 y CLD-02, con copia entre regiones configurada de forma explícita. Ámbito Retail y Emisor. & Chile Central no tiene región emparejada, de modo que la copia entre regiones no es automática. & SD-04, 4.2 y 4.3.1 \\ \addlinespace
+1.22 & Registro de imágenes & Azure Container Registry, nivel Premium. & Un registro con replicación a CLD-02. & CLD-01 y CLD-02. Ámbito Compartido. & Guarda las imágenes firmadas que despliega el canal de entrega y las mantiene disponibles en la recuperación. & SD-04, Tabla 4.9; nivel T-11 \\ \addlinespace
+1.23 & Cómputo de modelos predictivos & Carga de trabajo separada sobre AKS para entrenamiento e inferencia. & Un grupo de nodos dedicado de 0 a 2 × D8ds\_v5, que escala a cero fuera del entrenamiento. & CLD-01. Ámbito Retail. & Los modelos de conteo y merma recomiendan y no escriben existencias, con trazabilidad y supervisión conforme a RT-18. & SD-04, 4.1.1 \\ \addlinespace
+1.24 & Módulo de seguridad de hardware del Emisor & Azure Managed HSM, por probar. & Una instancia dedicada al Emisor. Si la región no lo admite, el producto se define en el hito H3 (mes 6). & CLD-01, con replicación multirregión a CLD-02 solo si el Cliente aprueba la residencia. Ámbito Emisor. & Caja fuerte de claves dedicada, con las claves separadas de las de Retail. Su uso depende de que Chile Central lo ofrezca. & SD-04, Tablas 4.6 y 4.9 \\ \addlinespace
+1.25 & Puerta privada de cada ámbito & Azure Application Gateway, nivel Standard\_v2. & Uno por ámbito en CLD-01, 2 en total, con 2 a 10 instancias de escalamiento automático entre zonas, y uno por ámbito aprobado en CLD-02. & Subred de entrada de cada ámbito en CLD-01 y de CLD-02. Ámbito Retail y Emisor. & Recibe el tráfico de Front Door por conexión privada y lo entrega a API Management. & SD-04, Tabla 4.9 \\ \addlinespace
+1.26 & Firewall de las tiendas y los centros & Fortinet FortiGate-VM, firewall virtual con SD-WAN. & 2 en zonas distintas en CLD-01 y 2 en CLD-02, 4 en total, cada uno Standard\_F4s\_v2 (4 vCPU / 8 GiB) con licencia VM04, para 240 Mbps cifrados. & Subred SD-WAN del concentrador de CLD-01 y de CLD-02. Ámbito Compartido. & Termina los túneles de las tiendas y de los centros de distribución. Es una capa distinta de Azure Firewall, que revisa el tráfico dentro de Azure. & SD-04, Tabla 4.9 y 4.2 \\ \addlinespace
+1.27 & Rutas entre sitios & Azure Route Server. & Uno en el concentrador de cada región, 2 en total. & CLD-01 y CLD-02. Ámbito Compartido. & Informa a la red qué camino sigue cada sitio. & SD-04, Tabla 4.9 \\ \addlinespace
+1.28 & Administración sin exposición & Azure Bastion y Microsoft Entra Private Access. & Una puerta de administración en el concentrador de cada región, 2 en total. & CLD-01 y CLD-02. Ámbito Compartido. & Única entrada de las personas administradoras a los servidores, con verificación de identidad y del estado del equipo. & SD-04, Tabla 4.9 \\ \addlinespace
+1.29 & Protección y salida de red & Protección DDoS de Azure, NAT Gateway y DNS público de Azure. & Cantidades y niveles por definir en el hito H2 (mes 4). & Concentrador de CLD-01, con copia en CLD-02. Ámbito Compartido. & Protege contra intentos de saturación y controla la salida a Internet. & SD-04, Tabla 4.9 \\ \addlinespace
+1.30 & Gobierno y operación híbrida & Azure Arc, Azure Policy y gestión de costos de Azure. & Cobertura y cantidades por definir en el hito H2 (mes 4). & CLD-01, CLD-02 y sitios del Cliente que se administren por Arc. Ámbito Compartido. & Aplica reglas y controla el gasto en todas las suscripciones. & SD-04, Tabla 4.9 \\ \addlinespace
+1.31 & Búsqueda & Por decidir en la Etapa 1, entre Elastic Cloud y OpenSearch. & Una instancia en el ámbito que la use, por definir. & Subred de datos de ese ámbito en CLD-01. & La decisión sigue a la prueba de permisos, linaje y disponibilidad regional. La búsqueda vectorial del Subdocumento 13 usa pgvector (Tabla~\mbox{\ref{tab:t11-10}}). & SD-04, Tabla 4.6 \\
+\end{longtable}
+}
+
+La Tabla~\mbox{\ref{tab:t11-2}} confirma que cada ámbito dispone de entrada de API, intermediario de eventos, base de datos, almacenamiento analítico, claves y registros propios, y que la plataforma compartida solo aporta borde, red e integración. El único servicio exclusivo de un ámbito por decisión de diseño es la caché, que atiende solo a Retail.
+
+La fila 1.6 declara Azure Managed Redis, como la Tabla 4.6 del Subdocumento 4, porque Microsoft dejó de admitir la creación de instancias de Azure Cache for Redis para clientes nuevos en abril de 2026 y fijó su retiro para el 30 de septiembre de 2028, dentro del período contractual (Microsoft, 2026a). Azure Managed Redis es el servicio que lo reemplaza y cumple la misma función. El Subdocumento 4 lo mantiene «por probar», y Valkey queda como alternativa por evaluar. Su creación en Chile Central se comprueba junto con los demás servicios (Tabla~\mbox{\ref{tab:t11-14}}).
+
+La cantidad de unidades de API Management se deriva de la sección 4.2 del Subdocumento 4, que asigna tres unidades a cada instancia para cubrir las tres zonas. Con dos instancias, una por ámbito, resultan seis unidades en la región primaria. Los nodos de AKS, las unidades de Event Hubs, la clase y el disco de PostgreSQL, el tamaño de la caché y el grupo de nodos predictivos se derivan de la volumetría del Subdocumento 5 (Tablas 5.17 a 5.19), con los supuestos de consumo de la memoria de dimensionamiento del Subdocumento 4 y un uso máximo de 66 \% en el peak por grupo de nodos (Subdocumento 4, Tabla 4.13). La prueba de carga de Preproducción los valida antes del hito H5 (mes 12), y cualquier ajuste se registra en esta tabla bajo control de cambios.
+
+\subsection{T-11.2 Plataforma y software de la solución}\label{t-11-2}
+
+La solución nueva se construye con una pila única para los servicios y otra para las interfaces. La Tabla~\mbox{\ref{tab:t11-3}} lista el software de base y el software propio, con la versión ofertada y el lugar donde se ejecuta.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1300}}@{}}
+\caption{Plataforma y software de la solución.}\label{tab:t11-3}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Producto y versión ofertada} & \textbf{Ubicación y ámbito} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Producto y versión ofertada} & \textbf{Ubicación y ámbito} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{6}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tablas 4.2, 4.4, 4.6, 4.7 y 4.15).} \\
+\endlastfoot
+2.1 & Lenguaje de los servicios & Java 25 LTS, en una distribución OpenJDK con soporte. & AKS en CLD-01 y CLD-02. Ámbito Retail y Emisor. & Versión de soporte prolongado vigente; una sola pila para APIs y lógica transaccional reduce la carga de operación y de competencias. & SD-04, Tabla 4.6 \\ \addlinespace
+2.2 & Marco de los servicios & Spring Boot, línea 4. La versión menor con soporte se fija en el hito H3 (mes 6). & AKS en CLD-01 y CLD-02. Ámbito Retail y Emisor. & Marco compatible con Java 25 para contratos síncronos, eventos y acceso a datos. & SD-04, Tabla 4.6 \\ \addlinespace
+2.3 & Lenguaje y biblioteca de interfaces & TypeScript y React, en sus versiones estables vigentes al inicio de la construcción. & Navegador, portales y vistas del punto de venta. Ámbito Retail y Emisor. & Una sola base de componentes para portales internos, externos y caja. & SD-04, Tabla 4.6 \\ \addlinespace
+2.4 & Orquestación de contenedores & Kubernetes, en una versión admitida por AKS. La versión menor se fija en el hito H3 (mes 6). & CLD-01 y CLD-02. Ámbito Retail y Emisor. & Aislamiento por entidad, escalado y recuperación con la misma definición. & SD-04, Tabla 4.6 \\ \addlinespace
+2.5 & Motor relacional & PostgreSQL, versión mayor 17 o 18, la más reciente que el servicio administrado ofrezca en Chile Central. Se fija en el hito H3 (mes 6). & CLD-01 y CLD-02. Ámbito Retail y Emisor. & Motor abierto, portable y con alta disponibilidad administrada. & SD-04, Tabla 4.6 \\ \addlinespace
+2.6 & Protocolo de mensajería & Clientes del protocolo Kafka contra Event Hubs. & AKS y adaptadores. Ámbito Retail y Emisor. & El código de publicación y consumo no depende de una interfaz propia del proveedor. & SD-04, ADR-06 \\ \addlinespace
+2.7 & Instrumentación & OpenTelemetry. & Todos los servicios y el nodo local. Ámbito Retail y Emisor. & Estándar abierto de métricas, registros y trazas, independiente del destino. & SD-04, Tabla 4.6 \\ \addlinespace
+2.8 & Infraestructura como código & Terraform. & Repositorio y canal de entrega. Ámbito Compartido. & Toda la infraestructura de nube se define en código versionado, lo que permite crear CLD-02 sin derivar de la configuración de producción. & SD-04, Tabla 4.6 \\ \addlinespace
+2.9 & Servicios de negocio & Trece servicios propios: R:M-01 a R:M-03, R:V-01 a R:V-04, R:CL-01, R:CL-02, F:C-01 a F:C-03 y X-01. & AKS en CLD-01, en las ramas de Retail y del Emisor, y X-01 en la rama de la base tecnológica. Ámbito Retail, Emisor y frontera. & Desarrollo propio que implementa la partición de dominios (ADR-05). & SD-04, Tabla 4.2 \\ \addlinespace
+2.10 & Adaptadores & Componentes propios en contenedores. & CLD-01, o DC-01 y CD-01 cuando la interfaz lo exija. Ámbito Retail y Emisor. & Capa anticorrupción hacia cada plataforma conservada; la ruta se fija con el inventario de las catorce interfaces. & SD-04, Tablas 4.6 y 4.7 \\ \addlinespace
+2.11 & Software del punto de venta & Aplicación propia de caja con modo local. & Terminales de caja de SIT-01. Ámbito Retail. & Sustituye el punto de venta de 2014 tienda por tienda (ADR-04). & SD-04, Tabla 4.4 y ADR-04 \\ \addlinespace
+2.12 & Software del nodo local & Caché de oferta (L-01), diario local (L-02) y sincronizador (L-03), desarrollo propio. & Nodos locales de SIT-01. Ámbito Retail. & Sostiene la venta y el cobro durante 24 horas sin enlace y concilia al reconectar. & SD-04, Tablas 4.6 y 4.15 \\ \addlinespace
+2.13 & Registro de salida transaccional & Patrón implementado en cada servicio productor. & AKS en CLD-01. Ámbito Retail y Emisor. & Ningún hecho se publica sin haberse confirmado en la base de su autoridad. & SD-04, 4.1 \\
+\end{longtable}
+}
+
+La Tabla~\mbox{\ref{tab:t11-3}} muestra que los componentes de fabricante se concentran en la plataforma, mientras que los servicios de negocio, los adaptadores, el punto de venta y el nodo local son desarrollo propio cuya propiedad se transfiere al Cliente. El motor y el empaquetado del nodo local, junto con su sistema operativo, se fijan con el inventario de hardware y el ensayo de continuidad de 24 horas (Tabla~\mbox{\ref{tab:t11-14}}), que es la comprobación que la Tabla 4.6 exige antes de comprometerlos.
+
+\subsection{T-11.3 Seguridad, entrega y operación}\label{t-11-3}
+
+La cadena de entrega, el análisis de seguridad y el monitoreo usan las herramientas que declara el Formulario T-10, a las que este formulario agrega el producto de correlación de eventos y el de detección en puntos finales. La Tabla~\mbox{\ref{tab:t11-4}} las reúne con su función y su condición de soporte.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1300}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1300}}@{}}
+\caption{Herramientas de seguridad, entrega y operación.}\label{tab:t11-4}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Función} & \textbf{Producto} & \textbf{Ubicación} & \textbf{Condición de soporte} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Función} & \textbf{Producto} & \textbf{Ubicación} & \textbf{Condición de soporte} & \textbf{Justificación} & \textbf{Origen} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{7}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Formulario T-10 y del Subdocumento 6.} \\
+\endlastfoot
+3.1 & Repositorio y canal de entrega & Azure Pipelines, con agentes de despliegue segregados para el Emisor, y Azure Container Registry para las imágenes. & Servicio en la nube y agentes en la rama de la base tecnológica de CLD-01 & Suscripción del fabricante & Revisión por pares, firma y despliegue auditado. Se reutiliza el canal del Cliente si satisface revisión, firma y trazabilidad. & SD-04, Tablas 4.6 y 4.9; Formulario T-10 \\ \addlinespace
+3.2 & Análisis estático y calidad & SonarQube. & CLD-01 & Suscripción del fabricante & Bloquea el avance de una versión que no cumple los umbrales de calidad. & Formulario T-10 \\ \addlinespace
+3.3 & Composición, imágenes e inventario de componentes & Trivy y Syft. & Canal de entrega & Comunidad, código abierto & Detecta vulnerabilidades en dependencias, imágenes e infraestructura como código, y genera el inventario de componentes. & Formulario T-10 \\ \addlinespace
+3.4 & Firma de artefactos & Cosign. & Canal de entrega & Comunidad, código abierto & Solo se despliegan imágenes firmadas. & Formulario T-10 \\ \addlinespace
+3.5 & Análisis dinámico & OWASP ZAP. & Ambiente de QA & Comunidad, código abierto & Prueba la aplicación en ejecución antes de Preproducción. & Formulario T-10 \\ \addlinespace
+3.6 & Pruebas de contrato, extremo a extremo y carga & Pact, Playwright y k6. & QA y Preproducción & Comunidad, código abierto & Verifican contratos entre servicios, recorridos completos y la carga de 1,5 veces el máximo. & Formulario T-10 \\ \addlinespace
+3.7 & Gestión del proyecto y documentación & Jira, Microsoft SharePoint y Slack. & Servicio en la nube & Suscripción del fabricante, contratada por el proponente & Herramientas de trabajo del proponente. No se transfieren al Cliente. & Formularios T-9 y T-10 \\ \addlinespace
+3.8 & Correlación de eventos de seguridad & Microsoft Sentinel sobre Log Analytics. & CLD-01, un área de trabajo por ámbito & Servicio administrado & Centraliza eventos de nube, centro de datos y tiendas en la misma plataforma de registros, sin operar un producto adicional. & SD-04, Tabla 4.9 \\ \addlinespace
+3.9 & Protección de cargas y de puntos finales & Microsoft Defender for Cloud y Microsoft Defender for Endpoint. & Nube, nodos locales y estaciones de trabajo de la Tabla~\mbox{\ref{tab:t11-6}} & Servicio administrado & Detección y respuesta en nube y en sitio con un solo proveedor de identidad y de registros. & T-11 \\ \addlinespace
+3.10 & Configuración y despliegue local & Herramienta de configuración declarativa del nodo local, seleccionada entre las candidatas del Formulario T-10. & Nodos locales de SIT-01 & Según la herramienta seleccionada & Mantiene los 44 nodos con la misma configuración y permite reconstruir uno desde el repositorio. & Formulario T-10 \\
+\end{longtable}
+}
+
+Los productos de las filas 3.2 a 3.6 son los de referencia del Formulario T-10. El Subdocumento 4 deja las herramientas de seguridad de la entrega como producto por definir, y el producto final se confirma en el diseño del canal de la Etapa 1. La Tabla~\mbox{\ref{tab:t11-4}} cubre los cuatro análisis que la matriz de cumplimiento compromete para el flujo de integración continua, que son el estático, el dinámico, el de composición y el de imágenes. Las filas 3.8 y 3.9 siguen el criterio de ADR-07, que privilegia la continuidad de un solo proveedor para identidad, datos y operación. La herramienta de la fila 3.10 se compromete con el diseño del nodo local, como establece el Formulario T-10.
+
+\subsection{T-11.4 Nodo local de tienda, hardware especificado por el proponente}\label{t-11-4}
+
+Only Simple Solutions especifica, configura y certifica el nodo local de tienda, y el Cliente lo adquiere, lo instala y contrata su soporte, según la Tabla 4.15 del Subdocumento 4. La Tabla~\mbox{\ref{tab:t11-5}} lo especifica con sus repuestos. Los atributos que dependen del modelo de referencia se declaran «por fijar» con el hito que los define, porque el modelo se elige con el ensayo de continuidad de 24 horas (Tabla~\mbox{\ref{tab:t11-14}}).
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}@{}}
+\caption{Hardware especificado por Only Simple Solutions y adquirido por el Cliente.}\label{tab:t11-5}\\
+\toprule\noalign{}
+\textbf{Atributo} & \textbf{4.1 Nodo local de tienda} & \textbf{4.2 Repuestos de nodo local} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Atributo} & \textbf{4.1 Nodo local de tienda} & \textbf{4.2 Repuestos de nodo local} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tabla 4.15 y sección 4.2.1), del Subdocumento 6 y del Caso 09 (capítulo 15, p. 34).} \\
+\endlastfoot
+Quién especifica y quién adquiere & Especifica, configura y certifica Only Simple Solutions. Adquiere e instala el Cliente. & Igual que la fila 4.1. \\ \addlinespace
+Marca y modelo de referencia & Servidor compacto de borde. Marca y modelo de referencia por fijar con el ensayo de continuidad de 24 horas, en los meses 6 y 7. & El mismo modelo de la fila 4.1, con configuración precargada. \\ \addlinespace
+Cantidad & 44, a razón de 2 por tienda en 22 tiendas. & 5 \\ \addlinespace
+Características mínimas & Equipo nuevo con garantía de fábrica. Dos discos de estado sólido en espejo (RAID 1). Doble fuente de alimentación. Administración remota fuera de banda. Cifrado de disco. Configuración endurecida según CIS. Mínimo 4 núcleos, 16 GB de memoria y dos SSD de 480 GB en RAID 1, dimensionados para 24 horas de la tienda de mayor venta (1,34 documentos por segundo, 312,8 MB de ventas y unos 3 GB de oferta en caché); el ensayo confirma el modelo. & Las mismas de la fila 4.1. \\ \addlinespace
+Consumo y accesorios & Consumo por fijar con el modelo de referencia, en los meses 6 y 7. Incluye rieles de montaje en gabinete y cables de alimentación y de red. & Igual que la fila 4.1. \\ \addlinespace
+Margen de crecimiento & El dimensionamiento cubre la proyección a tres años del Caso. El porcentaje de margen sobre esa carga se declara con el modelo, en los meses 6 y 7. & No aplica \\ \addlinespace
+Condiciones de uso y ciclo de vida & Uso en interior, dentro del gabinete de la tienda. Ciclo de vida de 56 meses, con garantía y soporte del fabricante por todo el contrato. & Igual que la fila 4.1. \\ \addlinespace
+Redundancia & Dos nodos por tienda, uno como réplica. Cada nodo tolera la falla de un disco. & No aplica \\ \addlinespace
+Ubicación & Gabinete de cada tienda de SIT-01. & Bodega en Chile, con despacho a cada tienda. \\ \addlinespace
+Soporte & Crítico, 24x7 en sitio con resolución en 4 horas, contratado por el Cliente con el fabricante. & Reemplazo en 4 horas desde el diagnóstico. \\ \addlinespace
+Justificación & La tienda vende y cobra sin enlace durante 24 horas (ADR-04), y la falla de un nodo no detiene la caja. & Existencia de reemplazo del 10 \% del parque de componentes críticos, disponible en Chile (RT-08.4). \\
+\end{longtable}
+
+Las cantidades de la Tabla~\mbox{\ref{tab:t11-5}} se derivan del Caso. Dos nodos en cada una de las 22 tiendas suman 44, y el 10 \% de ese parque equivale a 4,4 unidades, que se redondean a 5. El Caso proyecta hasta 25 tiendas, lo que elevaría el parque a 50 nodos y los repuestos se mantendrían en 5. Se eligió el espejo de dos discos porque tolera la pérdida de un disco, se reconstruye sin detener el nodo y basta para el volumen de un día de operación, mientras que la réplica en el segundo nodo protege ante la pérdida del equipo completo. La capacidad de procesador, memoria y disco se fija con el volumen de datos de una tienda sin enlace, que el Caso entrega al proponente como cifra por estimar, y se confirma en el ensayo de continuidad (Tabla~\mbox{\ref{tab:t11-14}}). El nodo se reconoce como hardware de terreno y se integra a la gestión central de flota (RT-08.14). El costo unitario estimado que pide RT-08.10 consta en la Oferta Económica, porque este formulario no contiene precios.
+
+\subsection{T-11.5 Red y equipos de sitio, hardware especificado por el proponente}\label{t-11-5}
+
+El Caso establece que el hardware de terreno, el equipamiento de red y las obras los adquiere y ejecuta el Cliente, y que el proponente especifica qué comprar, cuánto y con qué características (Multitiendas Ancoa S.A., 2026b, cap. 11, p. 26). La Tabla~\mbox{\ref{tab:t11-6}} entrega esa especificación. Only Simple Solutions configura y certifica cada equipo antes de la ola de despliegue de su tienda, y el Cliente lo adquiere e instala. Donde el Subdocumento 4 no da una cantidad, la tabla escribe «por definir» con el hito del levantamiento. Los modelos de referencia se fijan en el paquete 1.4.8 de la EDT, antes del hito H3 (mes 6).
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1300}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1300}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1100}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1900}}@{}}
+\caption{Especificación de hardware y obras que adquiere el Cliente.}\label{tab:t11-6}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Referencia de marca} & \textbf{Cantidad} & \textbf{Características mínimas} & \textbf{Ubicación} & \textbf{Justificación} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Referencia de marca} & \textbf{Cantidad} & \textbf{Características mínimas} & \textbf{Ubicación} & \textbf{Justificación} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{7}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tabla 4.15, sección 4.2.1 y Figura 4.17) y del Caso 09 (capítulo 6, p. 14, capítulo 11, p. 26, capítulo 14, pp. 31-32 y capítulo 15, pp. 33-36).} \\
+\endlastfoot
+5.1 & Pila de dos switches de tienda & Modelo de referencia por fijar antes del hito H3 (mes 6), entre fabricantes con soporte en Chile. & 26, dos por tienda en las 13 tiendas sin segmentación. En las otras 9, el equipo existente si el inventario confirma que cumple. & Administrable, con seis VLAN (cajas, administración, móviles, video, Wi-Fi de clientes y mesón financiero), alimentación por Ethernet para periféricos, doble fuente y operación como un solo equipo, de modo que si uno falla el otro sostiene la red (RT-08.03). & Las 13 tiendas de SIT-01 sin segmentación & El Caso exige separar esas redes donde hoy no lo están y acreditar la separación de la red del Emisor. \\ \addlinespace
+5.2 & Par de FortiGate de tienda & Fortinet FortiGate. Modelo por fijar antes del hito H3 (mes 6). & 26, un par en modo activo-pasivo por tienda sin segmentación. En las otras 9, el equipo existente si el inventario confirma que cumple. & Cada FortiGate conectado a los dos switches, con SD-WAN para elegir entre dos enlaces de salida, túneles cifrados hacia la nube, túnel independiente para el mesón financiero y gestión centralizada. & Las 13 tiendas de SIT-01 sin segmentación & Enlaza la tienda con las ramas de nube, mantiene el tráfico del Emisor fuera de la red de Retail y evita un punto único de falla (RT-08.03). \\ \addlinespace
+5.3 & Gabinete de tienda & Gabinete cerrado con control de acceso. Modelo por fijar antes del hito H3 (mes 6). & 22, uno por tienda. & Espacio para 2 nodos, la pila de dos switches, el par de FortiGate y la unidad de alimentación. Sensores de temperatura y apertura integrados a la observabilidad. & SIT-01 & El Caso exige un gabinete por tienda dimensionado para sostener la autonomía sin enlace. \\ \addlinespace
+5.4 & Alimentación ininterrumpida del gabinete & Unidad en línea de doble conversión, con gestión por red. Modelo por fijar con el ensayo de 24 horas. & 22, una por gabinete. & Potencia igual a la suma del consumo de los 2 nodos, los 2 switches y los 2 FortiGate, con el margen de crecimiento del gabinete. Autonomía que cubra el paso al respaldo eléctrico de la tienda y el apagado ordenado de los nodos. & SIT-01 & Un corte de energía no debe corromper el diario local ni interrumpir la sincronización. \\ \addlinespace
+5.5 & Puntos de acceso Wi-Fi & Modelo por fijar antes del hito H3 (mes 6). & Dos tipos por tienda, uno corporativo y uno aislado para clientes. Cantidad de puntos por tienda por definir en el levantamiento, meses 3 a 6. & El corporativo solo admite equipos con certificado de identidad y atiende la red de móviles. El de clientes queda aislado de las demás redes. & SIT-01 & Mantiene el Wi-Fi de clientes fuera de la red de cajas y protege los datos de pago y de crédito. \\ \addlinespace
+5.6 & Cámaras y grabador de video & Se conservan los existentes. & Según el inventario por tienda. & Red propia de video y grabador con 30 días de imágenes. Si el inventario muestra que no cumple, se agrega su especificación. & SIT-01 & Mantiene la videovigilancia en su propia red. \\ \addlinespace
+5.7 & Terminales de caja & Se conservan los existentes. Marca y modelo por inventariar. & 380 líneas de caja, 430 en la proyección a tres años. & Compatibilidad con el software del punto de venta nuevo, verificada en el prototipo. & SIT-01 & El punto de venta se sustituye por software, tienda por tienda, sin cambiar el parque de cajas. \\ \addlinespace
+5.8 & Periféricos de caja & Se conservan los existentes. Marca y modelo por inventariar. & Un conjunto por línea de caja, 380. & Impresora fiscal, lector de código y terminal de pago, con controladores verificados en el prototipo. & SIT-01 & La Tabla 4.15 los mantiene a cargo del Cliente. \\ \addlinespace
+5.9 & Terminales móviles de sala & Se conservan los existentes. Marca y modelo por inventariar. & 640, compartidas por 3.820 vendedores. & Sistema operativo vigente o una de sus dos versiones anteriores, gestión remota de flota y operación sin conexión para los perfiles internos. & SIT-01 & El Caso no pide adquirirlas y sí especificar la dotación. La dotación requerida se calcula con el uso por turno medido en las tiendas piloto. \\ \addlinespace
+5.10 & Impresoras de etiqueta & Se conservan las existentes. Marca y modelo por inventariar. & Al menos una por tienda, 22. & Compatibilidad con la confirmación de actualización de precio. & Bodega de cada tienda de SIT-01 & Sostienen el cambio de precio físico mientras no haya etiqueta electrónica, que el Caso excluye de la instalación. \\ \addlinespace
+5.11 & Equipo de red de los centros de distribución & Modelo por fijar antes del hito H3 (mes 6). & Por definir en el levantamiento de CD-01 y CD-02, meses 3 a 6. & Switches y firewall con alta disponibilidad sin punto único de falla (RT-08.03) y túnel cifrado hacia la nube. Lo especifica, configura y certifica el proponente. & CD-01 y CD-02 & Tabla 4.15, fila de los centros de distribución. \\ \addlinespace
+5.12 & Equipamiento de captura de los centros de distribución & Se conserva el existente. & Según el inventario de CD-01 y CD-02. & Lectores y terminales compatibles con el WMS conservado. En CD-02, equipo de captura durable local. & CD-01 y CD-02 & CD-02 opera con enlace único y registra localmente durante un corte. \\ \addlinespace
+5.13 & Estaciones de trabajo de operación y administración & Modelo de referencia por fijar antes del hito H3 (mes 6). & Por definir con el dimensionamiento del equipo de operación, hito H2 (mes 4). & Dos monitores por estación, gestión central, cifrado de disco, control de dispositivos extraíbles y detección y respuesta en el punto final. Ergonomía conforme a la NCh 2527 y certificación de eficiencia energética (RT-08.07 a RT-08.09). & Puestos de operación del proponente y de la Contraparte Técnica & La administración de la plataforma requiere puestos con la protección de la fila 3.9. \\ \addlinespace
+5.14 & Obras de sitio & No aplica. & Según el inventario por tienda. & Canalizaciones, circuitos eléctricos independientes y cableado estructurado certificado para el gabinete. & SIT-01, CD-01 y CD-02 & El Caso asigna la ejecución al Cliente y la especificación al proponente. \\
+\end{longtable}
+}
+
+La Tabla~\mbox{\ref{tab:t11-6}} separa lo que se compra de lo que se conserva. Implican adquisición u obra las filas 5.1 a 5.5, 5.11, 5.13 y 5.14, y las primeras se concentran en las 13 tiendas que hoy carecen de segmentación y en los 22 gabinetes. Las nueve tiendas que ya tienen red segmentada conservan su equipo si el inventario confirma que cumple las características mínimas. Las cantidades finales por tienda se entregan en la especificación de hardware y dispositivos de terreno, que es el paquete 1.4.8 de la EDT (Tabla~\mbox{\ref{tab:t11-14}}).
+
+Los equipos críticos de esta tabla llevan soporte 24x7 con resolución en 4 horas, contratado por el Cliente. El stock de repuestos es el 10 \% del parque de cada componente crítico, redondeado hacia arriba, y se mantiene en Chile con configuración precargada. Resulta en 3 switches, 3 FortiGate y 3 unidades de alimentación ininterrumpida de repuesto para las cifras de las filas 5.1, 5.2 y 5.4. Los repuestos del equipo de los centros de distribución se fijan con su cantidad. El grado de protección, la resistencia a caídas, el ciclo de vida y el consumo de cada equipo nuevo constan en su ficha de modelo, que se entrega al fijar el modelo de referencia. Los terminales móviles y los periféricos de caja, que se conservan, se inventarían con esos atributos.
+
+\subsection{T-11.6 Conectividad}\label{t-11-6}
+
+La conectividad une los sitios del Cliente con la nube por rutas privadas o cifradas. La Tabla~\mbox{\ref{tab:t11-7}} lista los enlaces por sitio y distingue los existentes de los que la propuesta requiere.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2300}}@{}}
+\caption{Enlaces por sitio.}\label{tab:t11-7}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Sitio} & \textbf{Enlace existente} & \textbf{Enlace requerido por la solución} & \textbf{Cantidad nueva} & \textbf{Provee} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Sitio} & \textbf{Enlace existente} & \textbf{Enlace requerido por la solución} & \textbf{Cantidad nueva} & \textbf{Provee} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{6}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (sección 4.2 y Tablas 4.8, 4.11 y 4.15) y del Caso 09 (capítulo 6, p. 14; capítulo 15, p. 34).} \\
+\endlastfoot
+6.1 & 8 tiendas en centro comercial & Infraestructura del centro comercial y enlace propio de respaldo. & Túnel cifrado hacia la nube sobre ambos enlaces. & 0 & Cliente, enlaces; proponente, configuración \\ \addlinespace
+6.2 & 6 tiendas en centro comercial & Infraestructura del centro comercial, sin respaldo propio. & Conexión LTE/5G de otro operador, para que no falle junto con el enlace principal. & 6 & Cliente, enlace. Proponente, especificación y configuración \\ \addlinespace
+6.3 & 8 tiendas a la calle & Enlace propio de un proveedor. & Conexión LTE/5G de otro operador, para que no falle junto con el enlace principal. & 8 & Cliente, enlace. Proponente, especificación y configuración \\ \addlinespace
+6.4 & CD-01 & Doble enlace con dos proveedores. & Túnel cifrado hacia la nube sobre ambos enlaces. & 0 & Cliente, enlaces; proponente, configuración \\ \addlinespace
+6.5 & CD-02 & Enlace único. & Segundo enlace por un proveedor distinto. & 1 & Cliente, enlace. Proponente, especificación y configuración \\ \addlinespace
+6.6 & DC-01 y CLD-01 & Sin conexión privada con la nube. & Circuito ExpressRoute, propuesto y por acreditar, y túnel VPN de respaldo hacia Chile Central. & 1 circuito y 1 túnel & Proponente, circuito, puertas y configuración. El enlace físico del proveedor de conectividad se define en el levantamiento, hito H3 (mes 6) \\ \addlinespace
+6.7 & DC-01 y DC-02 & Sin enlace acreditado entre ambos. & Enlace entre el centro de datos y su sala de respaldo. & 1 & Cliente \\ \addlinespace
+6.8 & Oficinas & Acceso existente. & Túnel cifrado o acceso por red definida por software. & 0 & Cliente, enlaces. Proponente, configuración \\ \addlinespace
+6.9 & DC-01, CLD-02 y entre concentradores & ExpressRoute se propone solo hacia Chile Central. & Túnel VPN de DC-01 a la puerta VPN de CLD-02 y otro túnel entre los dos concentradores. & 2 túneles & Proponente, puertas y configuración \\
+\end{longtable}
+}
+
+La Tabla~\mbox{\ref{tab:t11-7}} suma 14 enlaces de respaldo nuevos en tiendas. El Caso exige respaldo en las 14 tiendas de centro comercial y en Coyhaique, de modo que el mínimo exigible son 7, que corresponden a las 6 tiendas de centro comercial sin respaldo propio y a Coyhaique. Los otros 7 obedecen al supuesto SUP-28 del Subdocumento 2, según el cual ninguna tienda a la calle tiene respaldo. El levantamiento de enlaces por tienda confirma o reduce esa cifra. El ancho de banda de cada enlace, normal y en el máximo, sale del método de dimensionamiento de la sección 4.2.
+
+\subsection{T-11.7 Centros de datos}\label{t-11-7}
+
+La región primaria y la región de recuperación de Azure cumplen el papel de centro de datos principal y secundario de la solución nueva. La Tabla~\mbox{\ref{tab:t11-8}} compara sus especificaciones y agrega las instalaciones del Cliente, que permanecen en convivencia.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}@{}}
+\caption{Especificaciones de los centros de datos.}\label{tab:t11-8}\\
+\toprule\noalign{}
+\textbf{Atributo} & \textbf{Primario, CLD-01} & \textbf{Secundario, CLD-02} & \textbf{Instalaciones del Cliente, DC-01 y DC-02} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Atributo} & \textbf{Primario, CLD-01} & \textbf{Secundario, CLD-02} & \textbf{Instalaciones del Cliente, DC-01 y DC-02} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (sección 4.3 y Tablas 4.8 y 4.15) y del Caso 09 (capítulo 6, p. 14).} \\
+\endlastfoot
+Identificación & Región Azure Chile Central (\texttt{chilecentral}). & Región Azure Brazil South (\texttt{brazilsouth}). & Centro de datos de casa matriz de 140 m² y sala de respaldo. \\ \addlinespace
+Ubicación & Santiago, Chile. & São Paulo, Brasil. & Misma comuna ambos. \\ \addlinespace
+Zonas de disponibilidad & Tres. & Tres. & No aplica. \\ \addlinespace
+Función & Producción de los servicios nuevos. & Recuperación en modalidad activo-pasivo. & Alojamiento de las plataformas conservadas. \\ \addlinespace
+Distancia y amenazas comunes & Países distintos. La distancia exacta se declara con su fuente antes de aprobar el diseño detallado (RT-07.02). & Países distintos. La distancia exacta se declara con su fuente antes de aprobar el diseño detallado (RT-07.02). & Comparten comuna, por lo que DC-02 no basta como única recuperación. \\ \addlinespace
+Componentes & Filas 1.1 a 1.23 de la Tabla~\mbox{\ref{tab:t11-2}}. & Gateway de API Management, geo-réplica de Event Hubs, réplica de PostgreSQL, copia de almacenamiento, claves y respaldos, y AKS creado desde la definición de infraestructura. & DC-01: equipos del recinto técnico que provee el proponente (Tabla~\mbox{\ref{tab:t11-dc01}}) y plataformas conservadas del Cliente. DC-02: sala y equipos del Cliente. En ambos, el proponente aporta software de adaptadores y la conexión privada. \\ \addlinespace
+Replicación & Síncrona entre zonas. & Asíncrona desde CLD-01, con retraso medido y alertado. & Enlace entre ambos recintos requerido (fila 6.7). \\ \addlinespace
+Objetivos de recuperación & No aplica. & RTO no superior a 4 horas y RPO no superior a 15 minutos para servicios críticos. & No sostienen funciones nuevas como única ubicación. \\ \addlinespace
+Ensayo & Falla de zona simulada. & Conmutación y retorno dos veces por año. & Conmutación de ExpressRoute a VPN. \\ \addlinespace
+Energía, climatización y seguridad física & A cargo del proveedor de nube, con certificaciones entregadas cada año. & A cargo del proveedor de nube, con certificaciones entregadas cada año. & DC-01: el proponente habilita energía, climatización y seguridad física del recinto técnico, y el Cliente aporta el espacio, la instalación y la obra civil de separación. DC-02: a cargo del Cliente. El plan de cierre de brecha de DC-01 se entrega en el hito H3 (mes 6). \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-8}} muestra que ningún componente nuevo depende de un recinto del Cliente para recuperarse. Si el inventario de las catorce interfaces obliga a ejecutar un adaptador junto a una plataforma conservada, ese adaptador corre como contenedor sobre equipo del Cliente o sobre un nodo de las mismas características de la fila 4.1. La réplica y el ambiente de recuperación del Emisor en CLD-02 se activan con la aprobación de residencia de sus datos. Mientras tanto, el Emisor se protege con la redundancia entre las tres zonas de CLD-01 y con respaldos inmutables en Chile.
+
+El proponente habilita el recinto técnico de DC-01 con la especificación, los equipos, la conectividad, la seguridad y las canalizaciones de la Tabla~\mbox{\ref{tab:t11-dc01}} (RT-06.33 y Tabla 4.15 del Subdocumento 4). Donde el Subdocumento 4 fija un valor, la tabla lo reproduce. Donde no lo fija, escribe «por definir» con su hito. La carga eléctrica proyectada, la ocupación de cada rack y la brecha respecto de los estándares se declaran con el inventario de plataformas y el informe interno de 2024 del Cliente, y entonces se calcula la capacidad del recinto.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1100}}@{}}
+\caption{Equipos y obras del recinto técnico de DC-01 que provee el proponente.}\label{tab:t11-dc01}\\
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Características mínimas} & \textbf{Cantidad} & \textbf{Referencia de marca} & \textbf{Requisito} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{N.°} & \textbf{Componente} & \textbf{Características mínimas} & \textbf{Cantidad} & \textbf{Referencia de marca} & \textbf{Requisito} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{6}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tabla 4.15 y sección 4.3.1) y de las Bases Técnicas Transversales (capítulo 6).} \\
+\endlastfoot
+7.1 & Firewall del recinto & Par en modo activo-pasivo que une el recinto con Azure y con DC-02, sin punto único de falla. & 2 equipos, un par. & Fortinet FortiGate. Modelo por fijar en el hito H3 (mes 6). & RT-08.03 \\ \addlinespace
+7.2 & Switches de núcleo & Pila de switches con alta disponibilidad, doble fuente y conexión a circuitos eléctricos distintos. & Una pila. Número de equipos por definir en el levantamiento, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-08.03 y RT-08.04 \\ \addlinespace
+7.3 & Racks & Racks de servidores independientes de los de comunicaciones. & Por definir en el levantamiento, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.05 \\ \addlinespace
+7.4 & Almacenamiento en red y respaldo local & Una zona Retail y otra del Emisor, cada una con su almacenamiento en red y su respaldo local, con RAID 1 para el arranque y RAID 10 con un disco de reserva para los datos, en cinco discos SSD iguales de la mitad de la capacidad útil (factor de compra 2,5). & 2 zonas. Capacidad por definir con el inventario de plataformas, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-08.02 y línea roja del Caso \\ \addlinespace
+7.5 & Cinta en custodia & Copia fuera de línea de DC-01, parte de la política de respaldo 3-2-1-1-0. & Por definir con el volumen de respaldo, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & Subdocumento 4, sección 4.2 \\ \addlinespace
+7.6 & Energía ininterrumpida & Autonomía de al menos 30 minutos a plena carga. & Por definir con la carga eléctrica proyectada, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.07 \\ \addlinespace
+7.7 & Generación autónoma & Al menos 24 horas continuas, con combustible y contrato de reabastecimiento. & Por definir con la carga eléctrica proyectada, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.08 \\ \addlinespace
+7.8 & Climatización de precisión & Equipo de reserva (N+1). & Por definir con la carga térmica, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.13 \\ \addlinespace
+7.9 & Detección y extinción de incendio & Detección temprana por aspiración de aire y extinción automática por agente limpio. & Una instalación para el recinto. & Modelo por fijar en el hito H3 (mes 6). & RT-06.16 y RT-06.17 \\ \addlinespace
+7.10 & Control de acceso & Biométrico. & Por definir en el levantamiento, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.20 \\ \addlinespace
+7.11 & Videovigilancia & Imágenes con 30 días de conservación. & Por definir en el levantamiento, hito H2 (mes 4). & Modelo por fijar en el hito H3 (mes 6). & RT-06.24 \\ \addlinespace
+7.12 & Conectividad, seguridad y canalizaciones & Conectividad hacia la nube y DC-02, seguridad física y lógica, y canalizaciones, cañerías o ductos del recinto. & Según el plano de distribución interna que entrega el proponente. & No aplica. & RT-06.03, RT-06.04 y RT-06.33 \\ \addlinespace
+7.13 & Obra civil de separación y espacio & Separación del espacio de operación y de la sala de equipos. La obra y el espacio los aporta el Cliente y el proponente los especifica y coordina. & Una obra, según el informe interno de 2024. & No aplica. & RT-06.06 y RT-06.30 \\
+\end{longtable}
+}
+
+La tipología que se adopta en DC-01 es la de sala técnica principal, a la que se aplican íntegramente RT-06.01 a RT-06.24, con una disponibilidad mensual de 99,95 \% para la energía, la climatización y la red del recinto. En DC-02 y en CD-01 se propone la de sala técnica secundaria o de sitio, y en cada tienda y en CD-02 la de gabinete o borde operacional. Esas dos últimas asignaciones se confirman con el levantamiento de la Etapa 1 (Tabla~\mbox{\ref{tab:t11-14}}). La solución nueva no depende de DC-01 ni de DC-02 como única ubicación. Los equipos de la tabla sostienen las plataformas conservadas y la conexión privada.
+
+\subsection{T-11.8 Plataformas conservadas}\label{t-11-8}
+
+Las plataformas actuales del Cliente no forman parte de lo ofertado. La Tabla~\mbox{\ref{tab:t11-9}} las lista porque la solución se integra con ellas y porque su hardware y sus licencias no se atribuyen a los servicios nuevos.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}@{}}
+\caption{Plataformas del Cliente y su tratamiento.}\label{tab:t11-9}\\
+\toprule\noalign{}
+\textbf{Plataforma} & \textbf{Destino} & \textbf{Alojamiento supuesto} & \textbf{Aporte del proponente} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Plataforma} & \textbf{Destino} & \textbf{Alojamiento supuesto} & \textbf{Aporte del proponente} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tablas 4.4 y 4.15).} \\
+\endlastfoot
+ERP y emisión de documentos tributarios & Se conserva como único emisor tributario. & DC-01 & Adaptador y modalidad fiscal de contingencia. \\ \addlinespace
+WMS del centro de distribución principal & Se conserva; su extensión a Concepción se evalúa. & CD-01 & Adaptador y degradación por interfaz. \\ \addlinespace
+Marketplace de 2022 & Se conserva. & Externo & Adaptador del Servicio de marketplace (R:V-04). \\ \addlinespace
+Comercio electrónico de 2019 & Se integra durante la evaluación de Etapa 1. & Externo & Adaptador y pruebas de conservación o sustitución. \\ \addlinespace
+Fidelización de 2017 & Se integra durante la evaluación de Etapa 1. & Externo & Adaptador y pruebas de conservación o sustitución. \\ \addlinespace
+Núcleo Retail de 2009 & Se reemplaza por olas conciliadas. & DC-01 & Servicios de Retail de la fila 2.9. \\ \addlinespace
+Plataforma de crédito de 2011 & Se reemplaza por olas de cartera y funciones. & DC-01 & Servicios del Emisor de la fila 2.9. \\ \addlinespace
+Punto de venta de 2014 & Se sustituye tienda por tienda. & Terminales de SIT-01 & Filas 2.11 y 2.12. \\ \addlinespace
+Motor de precios y promociones & No existe como sistema; es capacidad nueva. & No aplica & Servicio de oferta comercial (R:M-01). \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-9}} delimita la oferta. El Cliente conserva las licencias y el hardware de las plataformas que se mantienen, y el proponente aporta solo los adaptadores y la integración. El alojamiento de cada plataforma se confirma con el inventario, y un cambio de ubicación modifica la ruta del adaptador respectivo sin alterar los servicios nuevos.
+
+\subsection{T-11.9 Componentes de las innovaciones}\label{t-11-9}
+
+Las cinco innovaciones del Subdocumento 13 agregan equipos y plataformas propios, que entran en producción en el mes 21, salvo el conteo predictivo, que opera desde el mes 16. La Tabla~\mbox{\ref{tab:t11-10}} los reúne para que la arquitectura, el plan y la oferta económica usen la misma lista.
+
+{\footnotesize
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2400}}@{}}
+\caption{Componentes de las innovaciones.}\label{tab:t11-10}\\
+\toprule\noalign{}
+\textbf{Innovación} & \textbf{Componente} & \textbf{Producto de referencia} & \textbf{Ubicación} & \textbf{Cantidad} & \textbf{Justificación} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Innovación} & \textbf{Componente} & \textbf{Producto de referencia} & \textbf{Ubicación} & \textbf{Cantidad} & \textbf{Justificación} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{6}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 13.} \\
+\endlastfoot
+Lockers Ancoa 24/7 & Gabinete electrónico exterior con controlador. & Cleveron 355 u opción técnicamente equivalente. & Tiendas definidas en el Subdocumento 13 & Por fijar en el levantamiento de la Etapa 2 & Documentado para uso a la intemperie y con configuración modular para mercancía voluminosa. \\ \addlinespace
+Conteo cíclico predictivo & Modelo supervisado de árboles con boosting. & scikit-learn, sobre la carga de la fila 1.23. & CLD-01 & Un servicio & No requiere hardware en tienda ni identificación por radiofrecuencia. \\ \addlinespace
+Búsqueda vectorial multimodal & Modelo de representación de imagen y texto. & Jina CLIP v2, con licencia comercial. & CLD-01 & Un servicio & Admite consulta por imagen y por texto en español. \\ \addlinespace
+Búsqueda vectorial multimodal & Índice vectorial. & Extensión pgvector sobre el PostgreSQL de Retail (fila 1.5). & CLD-01 & Una base & Reutiliza el motor transaccional y evita operar un motor adicional. \\ \addlinespace
+Retail Media Network & Plataforma de publicidad en sitio. & Criteo u opción técnicamente equivalente, con adaptador propio. & Servicio externo, EXT-01 & Un servicio & Plataforma especializada frente a un desarrollo propio. \\ \addlinespace
+Modo Tienda con fila virtual de probadores & Tótem de autoservicio. & Zebra KC50 de 22 pulgadas, con Ethernet. & Tiendas definidas en el Subdocumento 13 & Por fijar en el levantamiento de la Etapa 2 & Montaje accesible y administración empresarial; la fila corre en el nodo local durante un corte. \\ \addlinespace
+Modo Tienda con fila virtual de probadores & Impresora de turnos. & Epson TM-T20III Ethernet. & Junto a cada tótem & Uno por tótem & Entrega el turno en papel cuando el flujo lo requiere. \\
+\end{longtable}
+}
+
+La Tabla~\mbox{\ref{tab:t11-10}} agrega dos cargas a componentes ya listados. La fila virtual se ejecuta en el nodo local durante los cortes y entra en su dimensionamiento, y el índice vectorial usa el PostgreSQL de Retail, cuya admisión de la extensión se comprueba en la suscripción.
+
+\subsection{T-11.10 Licenciamiento}\label{t-11-10}
+
+Durante el contrato, el proponente contrata y opera las suscripciones de Azure y los servicios de la solución (Tabla 4.15 del Subdocumento 4) y las herramientas con que construye y entrega. Las licencias de los componentes que el Cliente usa al terminar el contrato se transfieren a su nombre. Todas rigen durante los 56 meses. La Tabla~\mbox{\ref{tab:t11-11}} declara la modalidad y la licencia de cada producto, incluido el software de código abierto y su compatibilidad con el uso previsto.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1100}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3200}}@{}}
+\caption{Licenciamiento por producto.}\label{tab:t11-11}\\
+\toprule\noalign{}
+\textbf{Producto} & \textbf{Modalidad} & \textbf{Licencia} & \textbf{Titular} & \textbf{Compatibilidad con el uso previsto} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Producto} & \textbf{Modalidad} & \textbf{Licencia} & \textbf{Titular} & \textbf{Compatibilidad con el uso previsto} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{5}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+Servicios de Azure de la Tabla~\mbox{\ref{tab:t11-2}} & Suscripción por consumo y por capacidad reservada. & Contrato de servicios en línea de Microsoft. & Proponente durante el contrato. Traspaso al Cliente según el Plan de Reversibilidad. & Uso comercial sin restricción. \\ \addlinespace
+Microsoft Entra ID P2, Power BI, Sentinel y Defender & Suscripción por usuario o por volumen. & Contrato de servicios en línea de Microsoft. & Proponente durante el contrato. Traspaso al Cliente según el Plan de Reversibilidad. & Uso comercial sin restricción. \\ \addlinespace
+Azure Pipelines, SonarQube, Jira, SharePoint y Slack & Suscripción por usuario. & Licencia comercial del fabricante. & Proponente. Herramientas de trabajo que no se transfieren, salvo el canal de entrega si el Cliente lo pide. & Uso comercial sin restricción. \\ \addlinespace
+Java 25, distribución OpenJDK & Código abierto con soporte del distribuidor. & GPL versión 2 con excepción Classpath. & No requiere titular & La excepción permite ejecutar aplicaciones propias sin obligación de liberarlas. \\ \addlinespace
+Spring Boot, TypeScript, Kubernetes, OpenTelemetry, Trivy, Syft, Cosign, OWASP ZAP y Playwright & Código abierto. & Apache 2.0. & No requiere titular & Permisiva; sin obligación de liberar el código propio. \\ \addlinespace
+React y Pact & Código abierto. & MIT. & No requiere titular & Permisiva. \\ \addlinespace
+PostgreSQL y pgvector & Código abierto, dentro del servicio administrado. & Licencia PostgreSQL. & No requiere titular & Permisiva. \\ \addlinespace
+scikit-learn & Código abierto. & BSD de tres cláusulas. & No requiere titular & Permisiva. \\ \addlinespace
+Terraform & Código disponible. & Business Source License 1.1. & No requiere titular & Admite el uso interno para administrar infraestructura propia; no se redistribuye. \\ \addlinespace
+k6 & Código abierto. & AGPL versión 3. & No requiere titular & Se usa como herramienta de prueba, sin modificarla ni ofrecerla como servicio, por lo que no impone obligaciones sobre la solución. \\ \addlinespace
+Jina CLIP v2 & Licencia comercial del modelo. & Licencia comercial. La versión pública es no comercial. & Cliente, desde el suministro & El suministro incluye la licencia comercial. \\ \addlinespace
+Plataforma de publicidad y software de los casilleros & Suscripción o licencia del fabricante. & Licencia comercial del fabricante. & Cliente & Uso comercial sin restricción. \\ \addlinespace
+Servicios de negocio, adaptadores, punto de venta y nodo local & Desarrollo propio. & Propiedad transferida al Cliente. & Cliente & No contiene componentes preexistentes del proponente. \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-11}} muestra que ninguna licencia de código abierto impone la liberación del código de la solución. Las dos licencias que exigen atención son la del modelo multimodal, que se adquiere en su modalidad comercial, y la de la herramienta de carga, que se usa sin modificar. El registro de las licencias que se transfieren al Cliente es el paquete 1.4.7 de la EDT y se completa en el hito H3.
+
+\subsection{T-11.11 Ciclo de vida y soporte}\label{t-11-11}
+
+Todo componente ofertado tiene soporte vigente del fabricante o de su comunidad. La Tabla~\mbox{\ref{tab:t11-12}} declara, para cada componente principal, la versión ofertada, el fin de soporte publicado y el plan de actualización durante el contrato.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3200}}@{}}
+\caption{Versión, fin de soporte y plan de actualización.}\label{tab:t11-12}\\
+\toprule\noalign{}
+\textbf{Componente} & \textbf{Versión ofertada} & \textbf{Fin de soporte publicado} & \textbf{Plan de actualización en el contrato} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Componente} & \textbf{Versión ofertada} & \textbf{Fin de soporte publicado} & \textbf{Plan de actualización en el contrato} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de las referencias citadas, consultadas en octubre de 2026.} \\
+\endlastfoot
+Java & 25 LTS. & Septiembre de 2030 en soporte principal y septiembre de 2033 en soporte extendido (Oracle, 2026). & Migración a la siguiente versión de soporte prolongado durante la operación, antes de septiembre de 2030. \\ \addlinespace
+Spring Boot & Línea 4. Versión menor por fijar en el hito H3 (mes 6). & Cada versión menor recibe soporte comunitario por unos 13 meses; el de la versión 4.0 termina en diciembre de 2026 (Spring, 2026). & Actualización a cada versión menor dentro de su ventana de soporte, al menos una vez por año. \\ \addlinespace
+Kubernetes en AKS & Versión admitida por el servicio, por fijar en el hito H3 (mes 6). & El servicio admite las tres versiones menores más recientes (Microsoft, 2026b). & Actualización programada al menos una vez por año, fuera de las ventanas de congelamiento del Caso. \\ \addlinespace
+PostgreSQL & Versión mayor 17 o 18, por fijar en el hito H3 (mes 6). & El servicio sigue el calendario de la comunidad, que retira la versión 17 en noviembre de 2029 y la 18 en noviembre de 2030 (Microsoft, 2026c; PostgreSQL Global Development Group, 2026). & Una actualización de versión mayor durante la operación, ensayada en Preproducción. \\ \addlinespace
+Azure Managed Redis & Versión administrada por el servicio. & Sin retiro anunciado; reemplaza a Azure Cache for Redis, que se retira el 30 de septiembre de 2028 (Microsoft, 2026a). & Actualización administrada por el proveedor. \\ \addlinespace
+API Management Premium clásico, Event Hubs Premium y demás servicios administrados & Versión administrada por el servicio. & Sin retiro anunciado a la fecha de consulta. & Revisión trimestral de los avisos de retiro del proveedor, con migración planificada con un año de anticipación (riesgo R-07 del Formulario T-16). \\ \addlinespace
+TypeScript y React & Versiones estables vigentes. & Sin calendario fijo; soporte sobre la versión mayor vigente. & Actualización anual de componentes de base. \\ \addlinespace
+Terraform y herramientas de la cadena de entrega, entre ellas Azure Pipelines & Versiones estables vigentes. & Según cada proyecto. & Actualización anual, con las versiones fijadas en el repositorio. \\ \addlinespace
+Nodo local de tienda & Equipo nuevo, modelo por fijar en los meses 6 y 7. & Garantía y soporte del fabricante por los 56 meses, contratados por el Cliente. & Reposición adquirida por el Cliente si el modelo deja de tener soporte antes del mes 56, con especificación, configuración y certificación del reemplazo por el proponente. Borrado seguro certificado y disposición final con gestor autorizado al retiro. \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-12}} identifica tres actualizaciones que ocurrirán con certeza dentro del contrato, que son las versiones menores de Spring Boot, las versiones de Kubernetes y una versión mayor de PostgreSQL, además de la migración de Java antes de 2030. Todas quedan a cargo del proponente como parte de la mantención, se ensayan en Preproducción y respetan las ventanas de congelamiento del Caso. El calendario de ciclo de vida se mantiene en la cuenta 1.15.4 de la EDT.
+
+\subsection{T-11.12 Portabilidad}\label{t-11-12}
+
+La estrategia de reversibilidad distingue los componentes que se trasladan a otro proveedor sin reescritura de los que son propios de Azure. La Tabla~\mbox{\ref{tab:t11-13}} clasifica cada grupo e indica en qué consiste su migración.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5000}}@{}}
+\caption{Portabilidad de los componentes.}\label{tab:t11-13}\\
+\toprule\noalign{}
+\textbf{Componente} & \textbf{Clasificación} & \textbf{Qué implica migrarlo} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Componente} & \textbf{Clasificación} & \textbf{Qué implica migrarlo} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tablas 4.6 y 4.9).} \\
+\endlastfoot
+Servicios de negocio y adaptadores en contenedores & Portable & Desplegar las mismas imágenes en otro Kubernetes. \\ \addlinespace
+PostgreSQL & Portable & Exportar e importar con herramientas estándar del motor. \\ \addlinespace
+Clientes del protocolo Kafka & Portable & Cambiar el punto de conexión hacia un intermediario compatible con Kafka. \\ \addlinespace
+Instrumentación OpenTelemetry & Portable & Cambiar el destino de exportación. \\ \addlinespace
+Datos del lago analítico & Portable & Copiar archivos en formatos abiertos. \\ \addlinespace
+Software del punto de venta y del nodo local & Portable & No depende de la nube elegida. \\ \addlinespace
+Definición de infraestructura en Terraform & Portable en la herramienta & Reescribir los módulos para el proveedor de destino. \\ \addlinespace
+API Management & Propio del proveedor & Traducir políticas, productos y suscripciones a otra puerta de enlace. \\ \addlinespace
+Event Hubs, en su configuración de geo-replicación & Propio del proveedor & Reconfigurar la replicación en el intermediario de destino. \\ \addlinespace
+Front Door, Application Gateway, Azure Firewall y Bastion & Propio del proveedor & Reescribir reglas de borde y de red. \\ \addlinespace
+Key Vault y Managed HSM & Propio del proveedor & Exportar las claves exportables y regenerar las que el hardware no libera. \\ \addlinespace
+Entra ID & Propio del proveedor & Federar con otro proveedor de identidad mediante OIDC y SAML. \\ \addlinespace
+Monitor, Log Analytics, Sentinel y Defender & Propio del proveedor & Exportar registros y reconstruir consultas y alertas. \\ \addlinespace
+Power BI & Propio del proveedor & Reconstruir los informes sobre los mismos datos. \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-13}} muestra que el código de negocio, los datos y el software de tienda son portables, y que la dependencia del proveedor se concentra en el borde, la identidad, las claves y la observabilidad. El esfuerzo de migración de cada componente propio del proveedor se estima en el Plan de Reversibilidad, y el riesgo de bloqueo se trata como R-08 en el Formulario T-16.
+
+\subsection{T-11.13 Comprobaciones previas a la construcción}\label{t-11-13}
+
+El Subdocumento 4 exige una comprobación de aceptación para cada tecnología antes de construir. La Tabla~\mbox{\ref{tab:t11-14}} reúne las comprobaciones que fijan los niveles, las cantidades y los modelos de este formulario, con el paquete de la EDT que las ejecuta y su hito.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1600}}@{}}
+\caption{Comprobaciones que fijan cantidades, niveles y modelos.}\label{tab:t11-14}\\
+\toprule\noalign{}
+\textbf{Comprobación} & \textbf{Qué fija en este formulario} & \textbf{Paquete o instancia} & \textbf{Hito} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\textbf{Comprobación} & \textbf{Qué fija en este formulario} & \textbf{Paquete o instancia} & \textbf{Hito} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}p{\columnwidth}@{}}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Subdocumento 4 (Tablas 4.6, 4.8, 4.9 y 4.15) y del Formulario T-14.} \\
+\endlastfoot
+Creación efectiva de cada recurso en Chile Central y en Brazil South. & Niveles de las filas 1.2 a 1.31, incluidas la admisión de pgvector y la disponibilidad de Managed HSM (fila 1.24) y de Private Link para Front Door (fila 1.14). & Verificación del socio certificado de Microsoft en la suscripción del proyecto. & Antes de H3, mes 6 \\ \addlinespace
+Memoria de capacidad y diseño detallado. & Nodos de AKS, unidades y particiones de Event Hubs, clase de cómputo de PostgreSQL, tamaño de la caché, grupos de nodos predictivos, cantidades de las filas 1.25 a 1.30, estaciones de la fila 5.13 y ancho de banda por enlace. & Dimensionamiento de la sección 4.2. & H2, mes 4 \\ \addlinespace
+Inventario por tienda y levantamiento de enlaces. & Cantidades finales de las filas 5.1 a 5.6, 5.11 y 5.14, modelos de referencia de la red de sitio, y enlaces 6.2 y 6.3. & Paquete 1.4.8 de la EDT. & Meses 3 a 6 \\ \addlinespace
+Inventario de las catorce interfaces y de la ubicación de cada plataforma. & Ubicación de los adaptadores de la fila 2.10 y necesidad del enlace 6.7. & Levantamiento de integración. & Antes de H3, mes 6 \\ \addlinespace
+Prototipo del punto de venta. & Empaquetado de la fila 2.11 y compatibilidad de las filas 5.7 y 5.8. & Prototipo de caja. & Antes del piloto, mes 6 \\ \addlinespace
+Ensayo de continuidad de 24 horas en una tienda piloto. & Modelo de referencia, capacidad, consumo, margen de crecimiento, motor, empaquetado y sistema operativo del nodo local, y potencia de la fila 5.4. & Piloto de corte y reconexión. & Meses 6 y 7 \\ \addlinespace
+Prueba de permisos y linaje. & Motor analítico de la fila 1.8 y búsqueda de la fila 1.31. & Prueba de analítica por ámbito. & Por fijar en la Etapa 1, antes del hito H3 (mes 6) \\ \addlinespace
+Aprobación de residencia de los datos del Emisor. & Réplica y ambiente de recuperación del Emisor en CLD-02. & Decisión del Cliente con su asesoría jurídica. & Antes de H3, mes 6 \\ \addlinespace
+Informe interno de 2024 del centro de datos. & Alcance del plan de cierre de brecha de DC-01 y cantidades de la Tabla~\mbox{\ref{tab:t11-dc01}}. & Paquetes 1.4.9 a 1.4.13 de la EDT. & H3, mes 6 \\
+\end{longtable}
+
+La Tabla~\mbox{\ref{tab:t11-14}} concentra las comprobaciones entre los meses 3 y 7, antes de la primera ola de despliegue en tiendas. Con ellas, el inventario adj-sd-04\_s2\_inventario-hardware.xlsx se completa por tienda y este formulario se actualiza bajo control de cambios, sin modificar la selección de productos ni el reparto de responsabilidades de la Tabla 4.15.
+
+\subsection{Referencias}\label{t11-referencias}
+
+Las siguientes fuentes respaldan los datos del Caso y las fechas de soporte citados en este formulario.
+
+\noindent\hangindent=1.5em\hangafter=1 Microsoft. (2026a). \emph{What's new in Azure Cache for Redis}. \url{https://learn.microsoft.com/azure/azure-cache-for-redis/cache-whats-new}
+
+\noindent\hangindent=1.5em\hangafter=1 Microsoft. (2026b). \emph{Supported Kubernetes versions in Azure Kubernetes Service (AKS)}. \url{https://learn.microsoft.com/azure/aks/supported-kubernetes-versions}
+
+\noindent\hangindent=1.5em\hangafter=1 Microsoft. (2026c). \emph{Azure Database for PostgreSQL versioning policy}. \url{https://learn.microsoft.com/azure/postgresql/configure-maintain/concepts-version-policy}
+
+\noindent\hangindent=1.5em\hangafter=1 Multitiendas Ancoa S.A. (2026b). \emph{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+\noindent\hangindent=1.5em\hangafter=1 Oracle. (2026). \emph{Java SE Support Roadmap}. \url{https://www.oracle.com/java/technologies/java-se-support-roadmap.html}
+
+\noindent\hangindent=1.5em\hangafter=1 PostgreSQL Global Development Group. (2026). \emph{Versioning policy}. \url{https://www.postgresql.org/support/versioning/}
+
+\noindent\hangindent=1.5em\hangafter=1 Spring. (2026). \emph{Spring Boot support}. \url{https://spring.io/projects/spring-boot#support}
+
+\ossFinalPage
+
+\end{document}

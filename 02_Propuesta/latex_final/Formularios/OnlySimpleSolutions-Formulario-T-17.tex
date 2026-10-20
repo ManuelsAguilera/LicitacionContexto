@@ -1,0 +1,366 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-17.\arabic{table}}
+
+\ossCover{Protocolo de aceptación}{Subdocumento 9 · T-17}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t17-1]{Tabla T-17.1: Responsables de la revisión y decisión de aceptación}\dotfill\pageref{tab:t17-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t17-2]{Tabla T-17.2: Modelo de acta de aceptación o de observaciones}\dotfill\pageref{tab:t17-2}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\section{Formulario T-17 · Protocolo de aceptación}\label{t17-formulario-t-17-protocolo-de-aceptaciuxf3n}
+
+\textbf{Licitación:} TFEP-01/2026 · Caso 09 - Cadena Multitienda\\
+\textbf{Proponente:} Only Simple Solutions\\
+\textbf{Estado:} propuesta de protocolo; no acredita entregas, pruebas, aceptaciones ni actas ejecutadas.
+
+\subsection{1. Objeto y reglas de aplicación}\label{t17-objeto-y-reglas-de-aplicaciuxf3n}
+
+Este protocolo establece cómo se presentarán, revisarán y aceptarán los entregables de los hitos H1--H12 del Formulario E-25, los 36 hitos mensuales de Operación y el producto final de implementación. Se aplica junto con los artículos 17 y 18 de las Bases Administrativas, E-25, el plan de pruebas T-13, el plan de implantación T-18 y la línea base de alcance aprobada para cada etapa. Todo requisito y criterio aplicable debe trazarse desde su identificador oficial hasta la prueba, resultado, versión del producto, paquete EDT y hito.
+
+Antes de solicitar la certificación de cada etapa, QA comprobará la trazabilidad del expediente contra el catálogo oficial y la línea base aprobada, documentará inclusiones, exclusiones y cambios, y verificará que cada requisito aplicable tenga criterio y evidencia. Una brecha de cobertura, de criterio objetivo o de evidencia deja el entregable pendiente de aceptación.
+
+Cada expediente se entregará versionado e incluirá: (a) el artefacto contractual; (b) lista de entregables y versiones; (c) matriz de trazabilidad requisito--criterio--prueba--resultado--paquete EDT--hito; (d) evidencia original, reproducible y fechada, con versión, ambiente, configuración, datos, método, denominadores y resultados; (e) registro de defectos y observaciones anteriores con resolución; y (f) declaración de pendientes y desviaciones. Los resultados de Retail y del Emisor se informarán y conciliarán por separado, con accesos y datos autorizados; ninguna agregación compensará diferencias entre dominios.
+
+\subsection{2. Responsables, revisión y decisión}\label{t17-responsables-revisiuxf3n-y-decisiuxf3n}
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\caption[Responsables de la revisión y decisión de aceptación]{Responsables de la revisión y decisión de aceptación. Fuente: Elaboración propia.}\label{tab:t17-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Participante
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Responsabilidad en la aceptación
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Jefe de Proyecto del Only Simple Solutions & Presenta el expediente completo, asegura su trazabilidad, coordina respuestas y subsana observaciones dentro de plazo. \\
+QA del Only Simple Solutions & Comprueba integridad y reproducibilidad de evidencia, cobertura de criterios y cierre de defectos; recomienda aceptar o mantener pendiente. No acepta por el Cliente. \\
+Responsables de negocio de Retail y de la filial emisora & Validan reglas, resultados, conciliaciones y formación de sus respectivos ámbitos; su conformidad no reemplaza el acta contractual. \\
+Contraparte Técnica del Cliente & Coordina pruebas, valida entregables y avances técnicos y, cuando corresponda, suscribe el acta de aceptación. Su firma es condición para tener por cumplido el hito conforme al artículo 18.1. \\
+Administrador del Contrato del Cliente & Supervisa cumplimiento contractual, aprueba estados de pago y gestiona modificaciones y medidas contractuales según sus atribuciones. No sustituye la aceptación técnica de la Contraparte. \\
+\end{longtable}
+
+La revisión y aceptación pertenecen al Cliente. La automatización, el informe del Only Simple Solutions, la recomendación de QA y la conformidad de un dueño de negocio no constituyen aceptación contractual por sí solas.
+
+\subsection{3. Ventanas de revisión y tratamiento de observaciones}\label{t17-ventanas-de-revisiuxf3n-y-tratamiento-de-observaciones}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  El Only Simple Solutions entrega el expediente a la Contraparte Técnica por el canal contractual acordado, con índice, versión y fecha. La Contraparte registra recepción y verifica que estén presentes los componentes mínimos. Si falta un elemento, lo individualiza como observación; no se entenderá aceptado por el mero transcurso del plazo.
+\item
+  El Cliente dispone de \textbf{diez días hábiles} para revisar cada entregable y pronunciarse. Dentro de esa ventana podrá aceptarlo y firmar el acta o emitir observaciones numeradas, vinculadas a criterio, requisito y evidencia, indicando resultado esperado y fundamento. Una revisión parcial no equivale a aceptación del hito completo.
+\item
+  Recibidas observaciones, el Only Simple Solutions dispone de \textbf{diez días hábiles} para subsanarlas y volver a presentar evidencia actualizada, matriz de respuesta observación--acción--resultado y control de versiones. La revisión de la nueva entrega se computa conforme al artículo 18.3 y al contrato.
+\item
+  La segunda presentación con observaciones de la misma naturaleza se considerará atraso imputable al Only Simple Solutions, conforme al artículo 18.3. La Contraparte deja constancia de la naturaleza coincidente y de los antecedentes de ambas rondas. No se presume aceptación tácita ni se altera el cronograma contractual.
+\item
+  QA repite las pruebas afectadas y la regresión necesaria, conservando resultados fallidos y exitosos. Una observación se cierra solo con evidencia verificable y pronunciamiento de la Contraparte. Si persiste una condición de rechazo, el hito queda pendiente y no se firma acta de conformidad.
+\item
+  Con aceptación, la Contraparte suscribe un acta que identifica hito, entregables y versiones, período de revisión, criterios comprobados, evidencia examinada, observaciones resueltas, decisión y fecha. El acta no libera al Only Simple Solutions de defectos posteriores ni convalida incumplimientos detectados después, según artículo 18.4.
+\end{enumerate}
+
+\subsection{4. Criterios comunes de aceptación}\label{t17-criterios-comunes-de-aceptaciuxf3n}
+
+Salvo que un hito establezca controles más específicos, se aplican todos estos criterios:
+
+\begin{itemize}
+\tightlist
+\item
+  El entregable corresponde al alcance, versión y fecha objetivo indicados en E-25 y en la línea base aprobada; su integridad se comprueba contra el índice y sus archivos abren, compilan o ejecutan según corresponda.
+\item
+  Cada requisito aplicable de la línea base se enlaza con criterio medible, caso de prueba, resultado y evidencia. Los cambios aprobados están reflejados en la trazabilidad y las pruebas afectadas se repitieron.
+\item
+  La evidencia identifica versión/hash del candidato, ambiente, configuración, perfil y conjunto de datos autorizado, instrumento, fecha, responsable, resultado esperado y observado, denominador y excepciones.
+\item
+  Los criterios funcionales de aceptación de la etapa están aprobados por sus dueños de negocio y \textbf{100 \% de los casos de aceptación comprometidos para el hito} cumplen su resultado esperado. Los casos fallidos, bloqueados o no ejecutados no se cuentan como aprobados.
+\item
+  No hay incidentes abiertos críticos ni altos atribuibles a la solución en una certificación o cierre de marcha blanca. Se satisfacen los umbrales aplicables de las Bases y criterios específicos aprobados; un promedio no oculta una unidad, destino, tienda, operación o dominio fuera de umbral.
+\item
+  La conciliación de información se presenta separadamente para Retail y Emisor y no muestra diferencias no explicadas cuando el criterio exige conciliación. Las excepciones tienen causa, responsable, evidencia y decisión del dueño competente.
+\item
+  La evidencia de seguridad ofensiva previa a producción proviene de un tercero independiente y el informe íntegro, remediaciones y revalidación demuestran \textbf{cero hallazgos críticos y altos abiertos}.
+\item
+  Se cumplen copulativamente las condiciones de salida de marcha blanca del artículo 17.3: cero incidentes críticos/altos abiertos atribuibles; volumen real comprometido durante al menos las últimas cuatro semanas; indicadores comprometidos de disponibilidad y tiempo de respuesta cumplidos sostenidamente durante ese período; conciliación sin diferencias no explicadas; personal del Cliente capacitado y certificado conforme al plan aprobado; y acta de la Contraparte Técnica. Si no se cumplen, se extiende la marcha blanca a costo del Only Simple Solutions y sin desplazar fechas contractuales, según las Bases.
+\end{itemize}
+
+\subsection{5. Protocolo por hito de implementación}\label{t17-protocolo-por-hito-de-implementaciuxf3n}
+
+Las fechas corresponden a los meses establecidos por E-25 y el cronograma contractual. Las ventanas de revisión y subsanación se planifican antes del hito siguiente; no autorizan desplazar producción de los meses 16 y 21. La Contraparte podrá revisar evidencia durante la ejecución, pero el cumplimiento contractual se acredita con el acta correspondiente.
+
+\subsubsection{\texorpdfstring{\textbf{H1 · mes 2} - cierre del levantamiento y aprobación de líneas base}{H1 · mes 2 - cierre del levantamiento y aprobación de líneas base}}\label{t17-h1-mes-2-cierre-del-levantamiento-y-aprobaciuxf3n-de-luxedneas-base}
+
+\textbf{Entregables:} Levantamiento; línea base de alcance; matriz de trazabilidad E1; supuestos, exclusiones, dependencias y decisiones.
+
+\textbf{Criterios de aceptación:} Catálogo de la etapa con IDs únicos y fuente; cada requisito incluido enlazado a resultado, criterio propuesto y responsable; brechas/exclusiones justificadas y sometidas a decisión; línea base versionada y aprobada; 100 \% de requisitos aplicables trazados.
+
+\textbf{Evidencia requerida:} Línea base aprobada; catálogo conciliado contra Excel oficial; matriz exportable; actas y decisiones; registro de cambios y preguntas pendientes.
+
+\textbf{Responsables:} Jefe de Proyecto coordina la validación separada de Retail y Emisor; Líder de Calidad y Pruebas verifica; Contraparte Técnica se pronunciará mediante acta.
+
+\subsubsection{\texorpdfstring{\textbf{H2 · mes 4} - arquitectura, seguridad y modelo de datos}{H2 · mes 4 - arquitectura, seguridad y modelo de datos}}\label{t17-h2-mes-4-arquitectura-seguridad-y-modelo-de-datos}
+
+\textbf{Entregables:} Arquitectura; plan de seguridad; modelo de datos y catálogo de intercambios Retail/Emisor.
+
+\textbf{Criterios de aceptación:} Documentos completos según alcance; trazabilidad de requisitos; clasificación y propiedad de datos; flujos autorizados con finalidad, campos mínimos, acceso y auditoría; separación Retail/Emisor demostrable; observaciones de diseño cerradas.
+
+\textbf{Evidencia requerida:} Versiones aprobadas; diagramas y decisiones; matriz de controles; modelos; catálogo X-01; revisión de amenazas y observaciones resueltas.
+
+\textbf{Responsables:} Arquitectura, Seguridad y Datos entregan; dueños Retail/Emisor validan; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H3 · mes 6} - infraestructura híbrida y ambientes}{H3 · mes 6 - infraestructura híbrida y ambientes}}\label{t17-h3-mes-6-infraestructura-huxedbrida-y-ambientes}
+
+\textbf{Entregables:} Componentes nube/on-premise; DEV, QA, PREPROD, PROD y Recuperación ante Desastres; observabilidad.
+
+\textbf{Criterios de aceptación:} Despliegue híbrido conforme al Art. 16; cinco ambientes habilitados y operativos; PREPROD equivalente a PROD en topología, versiones y configuración, con diferencias declaradas y justificadas; al menos una señal y una alerta de prueba verificadas por ambiente; accesos y secretos controlados. El piloto de corte de enlace se habilita en M6 y se completa a más tardar en M7 mediante acta separada, sin convertirlo en condición retroactiva del hito H3.
+
+\textbf{Evidencia requerida:} Inventario/topología; configuración/versiones; pruebas de provisión y monitoreo; alertas; control de acceso; acta de habilitación; excepciones aprobadas.
+
+\textbf{Responsables:} Arquitecto de Solución y Líder de Operación entregan; Encargado de Seguridad y Líder de Calidad y Pruebas verifican; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\paragraph{Acta del piloto de venta con tarjeta propia sin enlace, M6--7}
+
+En una de las tres tiendas piloto se ejecuta en preproducción aislada un corte provocado de 24 horas; los sistemas vigentes sostienen las ventas y cobros reales. La filial emisora fija antes del ensayo los topes de cupo preaprobado. La prueba es conforme si las compras de prueba dentro de esos topes se autorizan durante el corte, cada aceptación queda recuperable como evidencia financiera, no hay ventas perdidas ni duplicadas y la conciliación tras restablecer el enlace concluye en 30 minutos o menos sin diferencias no explicadas. El acta consigna ventana, topes, transacciones, evidencia, mediciones y firmas de la filial emisora y la Contraparte Técnica. Se programa fuera de los congelamientos y de la semana previa y los tres días del evento anual. Si faltan topes aprobados o falla el ensayo, la compra con tarjeta propia sin enlace se declara no disponible hasta repetirlo satisfactoriamente.
+
+\subsubsection{\texorpdfstring{\textbf{H4 · mes 10} - software E1 para pruebas}{H4 · mes 10 - software E1 para pruebas}}\label{t17-h4-mes-10-software-e1-para-pruebas}
+
+\textbf{Entregables:} Versión candidata E1; código y artefactos desplegables; documentación; resultados QA y cobertura.
+
+\textbf{Criterios de aceptación:} Paquetes comprometidos identificados; CI aprobada; pruebas planificadas para la entrega ejecutadas; cobertura calculada con denominador explícito; defectos críticos/altos corregidos y repetidos; trazabilidad completa del alcance entregado.
+
+\textbf{Evidencia requerida:} Hash/versión; pipeline; revisión por pares; resultados unitarios, integración y QA; matriz de cobertura/trazabilidad; defectos y resolución.
+
+\textbf{Responsables:} Desarrollo entrega; QA verifica; dueños Retail/Emisor validan flujos; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H5 · mes 12} - certificación de solución E1}{H5 · mes 12 - certificación de solución E1}}\label{t17-h5-mes-12-certificaciuxf3n-de-soluciuxf3n-e1}
+
+\textbf{Entregables:} Expediente E1; UAT, carga, resiliencia y seguridad ofensiva; migración/conciliación aplicable; paquete para marcha blanca.
+
+\textbf{Criterios de aceptación:} 100 \% de casos de aceptación E1 comprometidos aprobados; umbrales aplicables cumplidos y fichados en T-13; cero hallazgos críticos/altos abiertos; conciliación sin diferencias inexplicadas; cobertura del catálogo para la línea base E1 completada. Cada métrica conserva umbral y denominador.
+
+\textbf{Evidencia requerida:} Informe de certificación; UAT; informes de carga/resiliencia/DR; informe íntegro del tercero y retest; conciliaciones por dominio; trazabilidad completa y defectos cerrados.
+
+\textbf{Responsables:} QA compila; Seguridad y Datos aportan; dueños de negocio validan; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H6 · mes 13} - inicio de marcha blanca E1}{H6 · mes 13 - inicio de marcha blanca E1}}\label{t17-h6-mes-13-inicio-de-marcha-blanca-e1}
+
+\textbf{Entregables:} Plan de marcha blanca y convivencia; reversión activa; indicadores diarios; usuarios capacitados; versión de producción controlada.
+
+\textbf{Criterios de aceptación:} Despliegue reversible probado en PREPROD; responsables, umbrales, conciliación diaria, comunicación, soporte y disparadores de retorno definidos; usuarios objetivo capacitados/certificados; volumen comprometido declarado; inicio sin observaciones bloqueantes.
+
+\textbf{Evidencia requerida:} Hash; ensayo de reversión; bitácoras; resultados de capacitación; indicadores; riesgos; autorización de inicio.
+
+\textbf{Responsables:} Implantación/Operación ejecutan; dueños Retail/Emisor confirman preparación; Contraparte Técnica valida y firma.
+
+\subsubsection{\texorpdfstring{\textbf{H7 · mes 16} - producción E1 y cierre de marcha blanca}{H7 · mes 16 - producción E1 y cierre de marcha blanca}}\label{t17-h7-mes-16-producciuxf3n-e1-y-cierre-de-marcha-blanca}
+
+\textbf{Entregables:} Informe de marcha blanca; acta de cierre; evidencia Art. 17.3; versión y registro productivo.
+
+\textbf{Criterios de aceptación:} Cumplimiento copulativo de las seis condiciones del Art. 17.3; paso gradual y reversible; no degradación de otros servicios; medición diaria y conciliaciones conformes; observaciones previas resueltas. Consta el ensayo E1 del orden de degradación del evento anual, incluida la suspensión controlada y restitución de la publicación de una categoría, repetido en M16 si cambió versión, tráfico o configuración desde la campaña M9--10.
+
+\textbf{Evidencia requerida:} Serie diaria por al menos las cuatro últimas semanas; volumen y denominador; indicadores; conciliaciones diarias por dominio; incidentes; certificados de capacitación; bitácoras de despliegue/retorno.
+
+\textbf{Responsables:} Operación/Implantación producen registros; QA comprueba; dueños confirman dominio; Contraparte Técnica decide y firma acta.
+
+\subsubsection{\texorpdfstring{\textbf{H8 · mes 14} - línea base E2 y diseño detallado}{H8 · mes 14 - línea base E2 y diseño detallado}}\label{t17-h8-mes-14-luxednea-base-e2-y-diseuxf1o-detallado}
+
+\textbf{Entregables:} Línea base E2; diseño detallado; impacto en E1; plan de pruebas y migración actualizado.
+
+\textbf{Criterios de aceptación:} Requisitos E2 conciliados y trazados; criterios/dependencias aprobados; integridad de datos compartidos y ausencia de doble digitación demostradas en diseño; impacto sobre disponibilidad, seguridad y operación E1 evaluado con mitigaciones asignadas.
+
+\textbf{Evidencia requerida:} Línea base y matriz; diseño; análisis de impacto; modelo de datos/interfaces; revisión de responsables; plan de regresión y riesgos.
+
+\textbf{Responsables:} Dueños Retail/Emisor validan; Arquitectura, Seguridad, Datos y QA revisan; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H9 · mes 17} - software E2 para pruebas}{H9 · mes 17 - software E2 para pruebas}}\label{t17-h9-mes-17-software-e2-para-pruebas}
+
+\textbf{Entregables:} Versión candidata E2; código/artefactos; documentación; resultados QA y cobertura.
+
+\textbf{Criterios de aceptación:} Entrega íntegra contra línea base E2; CI y QA superados; casos aplicables ejecutados; defectos críticos/altos cerrados y repetidos; trazabilidad completa; E1 protegida por aislamiento de ambientes, cambios y datos.
+
+\textbf{Evidencia requerida:} Hash/versión; pipeline y revisiones por pares; pruebas funcionales, integración y regresión E1; cobertura; defectos y documentación.
+
+\textbf{Responsables:} Desarrollo entrega; QA verifica; dueños de dominio validan; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H10 · mes 18} - certificación E2 y cierre desarrollo}{H10 · mes 18 - certificación E2 y cierre desarrollo}}\label{t17-h10-mes-18-certificaciuxf3n-e2-y-cierre-desarrollo}
+
+\textbf{Entregables:} Expediente E2; UAT, carga, resiliencia, seguridad, migración/conciliación y plan de marcha blanca.
+
+\textbf{Criterios de aceptación:} 100 \% de casos E2 aprobados; umbrales de T-13/Bases cumplidos; cero hallazgos críticos/altos abiertos; conciliación sin diferencias inexplicadas; regresión confirma niveles comprometidos de E1; cobertura completa de la línea base E2. El expediente incluye prueba de 104.000 pedidos en tres días y escenario separado a 1,5 veces el peak del perfil temporal acordado, más ensayo del orden de degradación y suspensión de una categoría.
+
+\textbf{Evidencia requerida:} Certificación; pruebas versionadas; informes de seguridad y retest; conciliaciones/sumas de control; regresión E1; trazabilidad y defectos cerrados.
+
+\textbf{Responsables:} QA integra; Seguridad/Datos entregan; responsables Retail/Emisor confirman; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H11 · mes 19} - inicio marcha blanca E2 con E1 en producción}{H11 · mes 19 - inicio marcha blanca E2 con E1 en producción}}\label{t17-h11-mes-19-inicio-marcha-blanca-e2-con-e1-en-producciuxf3n}
+
+\textbf{Entregables:} Plan de convivencia E1/E2; reversión activa; indicadores; capacitación; artefacto E2 autorizado.
+
+\textbf{Criterios de aceptación:} Preparación E2 aprobada; retorno ensayado; fuente de verdad de datos compartidos verificada; sin doble digitación no declarada; continuidad de E1 comprobada; usuarios formados/certificados según plan.
+
+\textbf{Evidencia requerida:} Hash; ensayo de reversión; matriz de acceso/datos; conciliación inicial; indicadores; capacitación; bitácoras y acta de inicio.
+
+\textbf{Responsables:} Operación protege E1; Implantación/QA acompañan E2; dueños validan; Contraparte Técnica se pronunciará y, si corresponde, suscribirá el acta.
+
+\subsubsection{\texorpdfstring{\textbf{H12 · mes 21} - producción E2 y aceptación final de implementación}{H12 · mes 21 - producción E2 y aceptación final de implementación}}\label{t17-h12-mes-21-producciuxf3n-e2-y-aceptaciuxf3n-final-de-implementaciuxf3n}
+
+\textbf{Entregables:} Informe de marcha blanca E2; acta de cierre; producto integrado E1+E2; documentación, configuración, transferencia y expediente final.
+
+\textbf{Criterios de aceptación:} Cumplimiento copulativo del Art. 17.3; producción E2 no degrada disponibilidad, desempeño o integridad de E1; ambos alcances disponibles al inicio de Operación; criterios y requisitos de ambas líneas base conformes; conciliación por dominio sin diferencias inexplicadas; documentación y transferencia entregadas. La prueba completa del evento de 104.000 pedidos en tres días, el escenario a 1,5 veces el peak y el orden de degradación tienen informe vigente y conforme. Se constituye la Garantía de Correcto Funcionamiento exigida por el artículo 37.1, con vigencia de 24 meses.
+
+\textbf{Evidencia requerida:} Evidencia diaria de las cuatro últimas semanas; volumen/indicadores/conciliaciones; incidentes; retorno; UAT/regresión; informe de carga y degradación del evento anual; documentación y trazabilidad; inventario de versiones/configuración; constancia de la Garantía de Correcto Funcionamiento.
+
+\textbf{Responsables:} Operación/Implantación presentan; QA verifica; dueños Retail/Emisor conforman; Contraparte Técnica suscribe aceptación final.
+
+\subsubsection{Criterios de campañas y cortes}\label{t17-criterios-de-campauxf1as-y-cortes}
+
+Los umbrales particulares de carga, respuesta, disponibilidad, recuperación, accesibilidad, migración y seguridad se tomarán de las Bases, Caso 09 y línea base aprobada, y se detallarán en T-13 antes de cada campaña con unidad, límite, población, condición, instrumento y responsable. Si la fuente establece máximo, cada observación debe cumplirlo; si establece porcentaje, se conserva numerador y denominador; si exige cero diferencias no explicadas, toda diferencia se registra y resuelve con dueño y evidencia. No se rebajan umbrales según capacidad observada ni se inventan cifras cuando una fuente no fija valor: el criterio debe definirse y aprobarse antes de probarse y no sirve para declarar conformidad mientras esté indeterminado.
+
+Las pruebas de continuidad, degradación o desconexión respetarán las restricciones del Caso 09 y la separación legal de Retail y Emisor. Una prueba de venta Retail no acredita una operación de crédito del Emisor; autorización previa, límites y facultades del Emisor se prueban con sus propios datos, reglas y responsables.
+
+La cartera viva se acepta por tramos con dos ensayos completos de migración, retorno probado, recuentos, sumas de control y conciliación diaria separada del Emisor. La primera parte integra H7 y la segunda H12 según la línea base de cada etapa. Si queda un tramo final programado en M22, su aceptación consta en el acta mensual de Operación y no altera el acta de H12: el último corte debe ocurrir antes del 15 de octubre de 2028 y el retiro de la plataforma de crédito de 2011 antes del 31 de octubre de 2028, fuera del congelamiento posterior.
+
+\subsection{6. Producto final y cierre de implementación}\label{t17-producto-final-y-cierre-de-implementaciuxf3n}
+
+La aceptación final del producto de implementación se produce en H12, mes 21, conforme a E-25 y al artículo 17.1. Comprende las capacidades E1 y E2 integradas, infraestructura híbrida, datos y configuraciones aprobados, documentación, pruebas, controles de seguridad, reversibilidad y transferencia incluidos en el alcance. El acta de H12 deja explícito que acepta el producto integrado y cierra implementación; no crea un segundo acto separado ni altera obligaciones de Operación o garantía.
+
+El expediente final demostrará: (1) 100 \% de requisitos de las líneas base E1/E2 vinculados a evidencia aceptada o disposición contractual explícita; (2) pruebas aplicables ejecutadas y defectos bloqueantes cerrados; (3) separación, autorizaciones y trazabilidad de datos Retail/Emisor; (4) condiciones de marcha blanca E2 y protección de E1; (5) documentación, manuales, inventarios, configuraciones, procedimientos de recuperación/reversión y transferencia comprometidos; (6) historial de observaciones, respuestas y actas H1--H11; y (7) constitución de la Garantía de Correcto Funcionamiento del artículo 37.1, vigente por 24 meses. La firma de la Contraparte Técnica en el acta H12 documenta la aceptación final de implementación. No extingue responsabilidad por defectos posteriores ni obligaciones de servicio meses 21--56.
+
+\subsection{7. Aceptación de hitos mensuales de Operación (meses 21--56)}\label{t17-aceptaciuxf3n-de-hitos-mensuales-de-operaciuxf3n-meses-2156}
+
+Cada uno de los 36 hitos mensuales se revisa mediante expediente del período vencido. El informe de nivel de servicio se entrega dentro de los primeros cinco días hábiles de cada mes, conforme al artículo 79.2. Incluirá mediciones y reglas de cálculo, incidentes y cambios, disponibilidad y desempeño por servicio, solicitudes y tiempos de atención, continuidad y seguridad ejecutadas, acciones correctivas y trazabilidad de versiones desplegadas. Cada indicador identificará población, período, exclusiones contractuales y fuente de telemetría. Retail y Emisor conservarán informes separados.
+
+La Contraparte comprueba integridad del informe, cálculo conforme a niveles comprometidos y respaldo de acciones y excepciones. Ante discrepancias se preservan datos originales, fórmula y justificación; prevalece la medición del Cliente salvo error metodológico acreditado, conforme al artículo 79.3. La Contraparte Técnica deja constancia de conformidad técnica u observaciones; el Administrador del Contrato determina y tramita estado de pago y, cuando corresponda, multas o descuentos conforme a Bases y contrato. Este formulario no establece porcentajes ni montos económicos. El acta mensual identifica período, informe, métricas, observaciones y decisión que corresponda; facturación y pago siguen E-25 y el contrato.
+
+Durante operación se actualiza trazabilidad ante cambios y versiones. Las pruebas periódicas de recuperación/resiliencia, seguridad ofensiva y regresión se aceptan con sus informes cuando corresponda al calendario y obligaciones contractuales. La aceptación mensual no anticipa la revisión de meses posteriores.
+
+\subsection{8. Modelo de acta de aceptación o de observaciones}\label{t17-modelo-de-acta-de-aceptaciuxf3n-o-de-observaciones}
+
+Se emitirá un acta por hito sometido a decisión. El modelo siguiente define su contenido obligatorio; la Contraparte Técnica registrará los hechos y suscribirá el acta real después de revisar el expediente. Esta propuesta no representa un acta emitida.
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\caption[Modelo de acta de aceptación o de observaciones]{Modelo de acta de aceptación o de observaciones. Fuente: Elaboración propia.}\label{tab:t17-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Campo del acta
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contenido que se registrará al revisar el hito
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Identificación & Licitación TFEP-01/2026; hito, mes o período de Operación, y número de acta. \\
+Entregable y línea base & Nombre, identificador, versión o hash y fecha de presentación del entregable y su línea base aplicable. \\
+Expediente revisado & Índice y versión del expediente; criterios y requisitos; localización de la evidencia y trazabilidad examinadas. \\
+Revisión & Fechas de recepción y pronunciamiento, plazo contractual aplicable, participantes y responsabilidades. \\
+Resultado por criterio & ID, umbral, evidencia examinada, resultado observado y estado de conformidad por cada criterio aplicable. \\
+Observaciones & ID, descripción, requisito y criterio afectados, evidencia, resultado esperado, fundamento y responsable. \\
+Subsanación y nueva presentación & Fecha, respuesta por observación, evidencia nueva, pruebas repetidas y resultado de la nueva revisión. \\
+Decisión & Pronunciamiento fundado de la Contraparte Técnica: aceptación, observación pendiente de subsanación o rechazo conforme al contrato. \\
+Efectos del acta & Hito tenido por cumplido únicamente si se acepta; remisión al Administrador del Contrato para el trámite que corresponda. \\
+Constancia & Fecha y firmas de la Contraparte Técnica y representantes autorizados al formalizar el acta. \\
+\end{longtable}
+
+La firma de la Contraparte Técnica formaliza la aceptación del hito conforme al artículo 18.1. El modelo define los datos que contendrá el acta futura; no implica presentación de entregables, ejecución de pruebas ni aprobación anticipada. No se incorporan precios ni firmas reales en el Sobre 2.
+
+\ossFinalPage
+
+\end{document}

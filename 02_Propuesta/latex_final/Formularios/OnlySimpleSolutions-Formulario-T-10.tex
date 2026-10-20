@@ -1,0 +1,841 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\ossCover{Metodología para el desarrollo}{Subdocumento 6 · T-10}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t10-indice]{Tabla T-10.1: Correspondencia entre el formulario y la sección 6.2}\dotfill\pageref{tab:t10-indice}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-equipos]{Tabla T-10.2: Equipos de desarrollo y su ámbito}\dotfill\pageref{tab:t10-equipos}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-roles]{Tabla T-10.3: Roles y responsabilidades del desarrollo}\dotfill\pageref{tab:t10-roles}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-ceremonias]{Tabla T-10.4: Detalle de las ceremonias del desarrollo}\dotfill\pageref{tab:t10-ceremonias}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-artefactos]{Tabla T-10.5: Artefactos del desarrollo}\dotfill\pageref{tab:t10-artefactos}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-ambientes]{Tabla T-10.6: Ambientes del proyecto}\dotfill\pageref{tab:t10-ambientes}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-herramientas]{Tabla T-10.7: Cadena de herramientas del desarrollo}\dotfill\pageref{tab:t10-herramientas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-puertas]{Tabla T-10.8: Puertas de calidad y umbrales bloqueantes}\dotfill\pageref{tab:t10-puertas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-reservas]{Tabla T-10.9: Reservas de capacidad de los equipos}\dotfill\pageref{tab:t10-reservas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-etapas]{Tabla T-10.10: Controles del desarrollo en los períodos de convivencia}\dotfill\pageref{tab:t10-etapas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-decisiones]{Tabla T-10.11: Matriz de decisiones del desarrollo}\dotfill\pageref{tab:t10-decisiones}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-indicadores]{Tabla T-10.12: Indicadores del desarrollo}\dotfill\pageref{tab:t10-indicadores}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-adr]{Tabla T-10.13: Plantilla de ADR}\dotfill\pageref{tab:t10-adr}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-10.\arabic{table}}
+
+\section{Formulario T-10 · Metodología para el desarrollo}\label{formulario-t-10}
+
+Conforme al Formulario T-10 y a la letra b del Subdocumento 6 del Formulario T-7, este documento detalla la Metodología de desarrollo de software. La sección 6.2 del Subdocumento 6 contiene el resumen y el análisis; este formulario reúne los listados, las definiciones operativas y los umbrales que la sustentan.
+
+La Tabla~\mbox{\ref{tab:t10-indice}} indica el contenido de cada apartado y la sección del Subdocumento 6 con que se corresponde.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}@{}}
+\caption{Correspondencia entre el formulario y la sección 6.2.}\label{tab:t10-indice}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Apartado}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección del Subdocumento 6}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Apartado}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección del Subdocumento 6}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{T-10.1 Equipos de desarrollo} & Equipos, servicios a cargo y contraparte de Ancoa. & 6.2.6 \\ \addlinespace
+\textbf{T-10.2 Roles del desarrollo} & Roles, responsabilidad y quién los ejerce. & 6.2.6 \\ \addlinespace
+\textbf{T-10.3 Definición de preparado y de terminado} & Condiciones de entrada y de salida de una historia. & 6.2.2 y 6.2.3 \\ \addlinespace
+\textbf{T-10.4 Ceremonias} & Entradas, actividades, salidas y registro. & 6.2.6.1 \\ \addlinespace
+\textbf{T-10.5 Artefactos} & Contenido, responsable y herramienta. & 6.2.6.1 \\ \addlinespace
+\textbf{T-10.6 Ambientes} & Función, datos y acceso de los cinco ambientes. & 6.2.4 \\ \addlinespace
+\textbf{T-10.7 Herramientas y puertas de calidad} & Cadena de herramientas y umbrales bloqueantes. & 6.2.4 y 6.2.5 \\ \addlinespace
+\textbf{T-10.8 Ramas, versiones y liberación} & Política de integración, versionado y liberación progresiva. & 6.2.5 \\ \addlinespace
+\textbf{T-10.9 Deuda técnica y reservas de capacidad} & Reglas de registro, pago y medición de la deuda. & 6.2.3.3 y 6.2.7 \\ \addlinespace
+\textbf{T-10.10 Coordinación entre etapas} & Controles de los períodos de convivencia. & 6.2.7 \\ \addlinespace
+\textbf{T-10.11 Matriz de decisiones} & Quién decide, consulta e informa en el desarrollo. & 6.2.6.2 \\ \addlinespace
+\textbf{T-10.12 Indicadores} & Fórmula, meta, frecuencia y fuente. & 6.2.7 \\ \addlinespace
+\textbf{T-10.13 Plantilla de ADR} & Campos del registro de decisiones de arquitectura. & 6.2.3.1 \\
+\end{longtable}
+
+\subsection{T-10.1 Equipos de desarrollo}\label{t10-1}
+
+Los equipos son estables durante la implementación y se organizan por los dominios de la arquitectura del Subdocumento 4, de modo que cada uno sea dueño de un conjunto de servicios de principio a fin. La Tabla~\mbox{\ref{tab:t10-equipos}} presenta los equipos, los servicios a su cargo y su contraparte de Ancoa.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3000}}@{}}
+\caption{Equipos de desarrollo y su ámbito.}\label{tab:t10-equipos}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Equipo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Servicios a cargo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contexto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contraparte de Ancoa}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Equipo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Servicios a cargo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contexto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contraparte de Ancoa}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Retail · Mercadería} & Servicios R:M de Mercadería. & Retail & Gerencia Comercial (precio y catálogo), Gerencia de Logística y Prevención de Pérdidas. \\ \addlinespace
+\textbf{Retail · Venta} & Servicios R:V-01 a R:V-04: pedidos, ventas, comisiones y marketplace, incluidos los componentes de tienda. & Retail & Gerencia Comercial, jefaturas de tienda y Gerencia de Canales Digitales para pedidos y marketplace. \\ \addlinespace
+\textbf{Retail · Relación con el cliente} & Servicios R:CL-01 posventa y R:CL-02 clientes Retail. & Retail & Contrapartes de atención a clientes y posventa. \\ \addlinespace
+\textbf{Emisor} & F:C-01 originación, F:C-02 cartera y F:C-03 evidencia financiera. & Emisor & Negocio Financiero y Contraloría. \\ \addlinespace
+\textbf{Plataforma} & Integración, identidad, observabilidad, ambientes, flujo de entrega e infraestructura como código; X-01 es el servicio del frente Frontera. & Base tecnológica y Frontera & TI; área de cumplimiento de Ancoa aprueba cada ficha de cruce X-01. \\
+\end{longtable}
+
+Los nueve servicios de Retail se reparten entre los tres equipos de ese dominio; la asignación definitiva de servicios a equipos se confirmará en el mes 1. Los equipos que trabajen sobre un mismo producto comparten su objetivo, su backlog y su dueño de producto. La composición nominal, las dedicaciones y la capacidad se declaran en el Subdocumento 12 y en los Formularios T-8 y T-15. Las solicitudes de habilitación e incidencias siguen el flujo Kanban definido en el Formulario T-9.
+
+X-01 pertenece al frente Frontera y no convierte la base tecnológica en un repositorio común de datos Retail y Emisor. «Líder de Desarrollo» y «Líder de Integración» son funciones de coordinación asignadas al Arquitecto de Solución con apoyo de los especialistas del equipo del SD-01; no constituyen dos personas adicionales. El Jefe de Proyecto tramita solicitudes de cambio y conflictos de dedicación. La acumulación de funciones se comprueba en T-15 antes de aprobar la dotación.
+
+\subsection{T-10.2 Roles del desarrollo}\label{t10-2}
+
+La Tabla~\mbox{\ref{tab:t10-roles}} describe los roles que participan en el desarrollo, su responsabilidad principal y quién los ejerce. Ningún rol ágil tiene atribución para modificar el alcance o las fechas del contrato.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2800}}@{}}
+\caption{Roles y responsabilidades del desarrollo.}\label{tab:t10-roles}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Rol}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Responsabilidad principal}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Lo ejerce}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Rol}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Responsabilidad principal}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Lo ejerce}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Dueño de producto} & Ordena el backlog de su producto dentro del alcance aprobado y valida funcionalmente los incrementos en la revisión del sprint, sin sustituir la aceptación contractual. & Representante designado por la gerencia de Ancoa correspondiente. \\ \addlinespace
+\textbf{Scrum Master} & Facilita los eventos, protege el foco del equipo y gestiona los impedimentos. & Only Simple Solutions, uno por equipo. \\ \addlinespace
+\textbf{Developers} & Diseñan, construyen, prueban y documentan el incremento; deciden cómo hacer el trabajo del sprint. & Only Simple Solutions; TI de Ancoa se integra en plataforma y datos. \\ \addlinespace
+\textbf{Líder de Desarrollo} & Coordina a los equipos, conduce el Scrum de Scrums y la planificación del intervalo. & Only Simple Solutions. \\ \addlinespace
+\textbf{Arquitecto de Solución} & Vela por la coherencia técnica, prepara las ADR y preside técnicamente el Comité de Arquitectura. & Only Simple Solutions. \\ \addlinespace
+\textbf{Líder de Datos} & Evalúa autoridad, integridad y tratamiento de la información en historias de datos, migración y frontera. & Only Simple Solutions. \\ \addlinespace
+\textbf{Líder de Integración} & Publica y versiona los contratos de interfaz y coordina las dependencias con plataformas y terceros. & Only Simple Solutions. \\ \addlinespace
+\textbf{Líder de Calidad y Pruebas} & Define y mantiene las puertas de calidad, la estrategia de pruebas y la matriz de trazabilidad. & Only Simple Solutions. \\ \addlinespace
+\textbf{Encargado de Seguridad de la Información} & Define los controles de seguridad del flujo de entrega, el modelado de amenazas y verifica accesos y segregación en la frontera Retail--Emisor. & Only Simple Solutions. \\ \addlinespace
+\textbf{Líder de Operación / SRE} & Autoriza técnicamente las liberaciones y define los indicadores de servicio que gatillan la reversión. & Only Simple Solutions. \\
+\end{longtable}
+
+\subsection{T-10.3 Definición de preparado y definición de terminado}\label{t10-3}
+
+Una historia entra a un sprint solo si cumple la \textbf{definición de preparado}, cuyas condiciones son las siguientes.
+
+\begin{itemize}
+\tightlist
+\item
+  Está vinculada a un elemento del catálogo de requerimientos v3.1 (308 elementos: 227 RF, 72 RNF y 9 OP) mediante su identificador oficial.
+\item
+  Tiene criterios de aceptación en formato Dado, Cuando, Entonces, acordados con el dueño de producto, incluidos los escenarios de rechazo o error.
+\item
+  Identifica sus dependencias con otros equipos, con terceros o con decisiones pendientes del cliente.
+\item
+  Cuenta con datos de prueba sintéticos o anonimizados o seudonimizados de forma verificable.
+\item
+  Declara su contexto: Retail, Emisor o frontera entre ambos. Si cruza información entre los dos negocios, tiene antes de planificarse la evaluación documentada de datos, de seguridad y de la contraparte de cumplimiento designada por Ancoa, conforme a las políticas de X-01.
+\item
+  Su tamaño permite completarla dentro de un sprint.
+\end{itemize}
+
+Un incremento se considera terminado solo si cumple la \textbf{definición de terminado}, cuyas condiciones son las siguientes.
+
+\begin{itemize}
+\tightlist
+\item
+  El código fue revisado por al menos un par; en el dominio Emisor y en la frontera de datos, por dos.
+\item
+  Superó todas las puertas de calidad del flujo de entrega hasta QA (Tabla~\mbox{\ref{tab:t10-puertas}}).
+\item
+  Los criterios de aceptación tienen pruebas automatizadas que pasan.
+\item
+  El efecto del cambio sobre la duplicación y la complejidad del código que modifica está justificado.
+\item
+  La documentación técnica, las ADR y los contratos de interfaz están actualizados.
+\item
+  La evidencia queda vinculada al requisito en la matriz de trazabilidad.
+\item
+  Fue revisado por el dueño de producto en la revisión del sprint.
+\end{itemize}
+
+Cumplir la definición de terminado no implica la puesta en producción, que sigue los criterios de aceptación, las aprobaciones y las ventanas de congelamiento del proyecto.
+
+\subsection{T-10.4 Ceremonias}\label{t10-4}
+
+Los equipos siguen los eventos de Scrum (Schwaber y Sutherland, 2020) y prácticas seleccionadas de coordinación del intervalo de cuatro sprints, inspiradas en SAFe (Scaled Agile, Inc., 2025). La Tabla~\mbox{\ref{tab:t10-ceremonias}} detalla las entradas, actividades, salidas y registro de cada ceremonia.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}@{}}
+\caption{Detalle de las ceremonias del desarrollo.}\label{tab:t10-ceremonias}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Ceremonia}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Entradas}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Actividades}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Salidas}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Registro}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Ceremonia}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Entradas}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Actividades}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Salidas}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Registro}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de Schwaber y Sutherland (2020) y Scaled Agile, Inc. (2025).} \\
+\endlastfoot
+\textbf{Planificación del intervalo (cada cuatro sprints)} & Backlog priorizado, hitos del Formulario E-25 y capacidad de los equipos. & Presentar la visión del intervalo, planificar por equipo e identificar dependencias y riesgos. & Objetivos del intervalo y tablero de dependencias. & Jira. \\ \addlinespace
+\textbf{Planificación del sprint (cada dos semanas)} & Objetivos del intervalo e historias preparadas. & Definir el objetivo del sprint y seleccionar historias según capacidad. & Backlog del sprint. & Jira. \\ \addlinespace
+\textbf{Daily Scrum (diaria, 15 minutos)} & Tablero del sprint. & Revisar el avance hacia el objetivo e identificar impedimentos. & Plan del día. & Tablero del sprint. \\ \addlinespace
+\textbf{Refinamiento} & Historias candidatas. & Precisar criterios, dividir y estimar historias. & Historias preparadas. & Jira. \\ \addlinespace
+\textbf{Scrum de Scrums} & Tablero de dependencias. & Revisar dependencias e impedimentos entre equipos. & Dependencias resueltas o escaladas. & Tablero de dependencias. \\ \addlinespace
+\textbf{Revisión del sprint y demostración del sistema} & Incremento integrado en QA. & Demostrar el incremento a dueños de producto y usuarios clave y recoger observaciones. & Observaciones en el backlog. & Jira. \\ \addlinespace
+\textbf{Retrospectiva} & Indicadores del sprint. & Analizar la forma de trabajo del equipo. & Acciones de mejora. & Jira. \\ \addlinespace
+\textbf{Inspección y adaptación (cierre del intervalo)} & Indicadores del intervalo y de entrega. & Medir objetivos cumplidos, revisar la deuda técnica y analizar causas. & Acciones de mejora del intervalo. & Acta en SharePoint. \\
+\end{longtable}
+
+Las actividades de planificación, revisión y mejora se incluyen en la capacidad de los equipos. La revisión del sprint no reemplaza la aceptación contractual, que se formaliza en las actas de los hitos. Entre ceremonias, la coordinación cotidiana se realiza por Slack; todo acuerdo que afecte tareas, responsabilidades, dependencias, plazos o decisiones se formaliza en Jira o SharePoint.
+
+\subsection{T-10.5 Artefactos}\label{t10-5}
+
+La Tabla~\mbox{\ref{tab:t10-artefactos}} reúne los artefactos de Scrum con sus compromisos y los artefactos adicionales de coordinación y control, con su responsable y la herramienta en que se mantienen.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}@{}}
+\caption{Artefactos del desarrollo.}\label{tab:t10-artefactos}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Artefacto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Responsable}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Herramienta}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Artefacto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Responsable}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Herramienta}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Backlog del producto} & Épicas e historias de cada producto, ordenadas; compromiso: objetivo del producto. & Dueño de producto & Jira \\ \addlinespace
+\textbf{Backlog del sprint} & Objetivo del sprint e historias seleccionadas con su plan. & Developers & Jira \\ \addlinespace
+\textbf{Incremento} & Software integrado que cumple la definición de terminado. & Equipo Scrum & Repositorio y flujo de entrega \\ \addlinespace
+\textbf{Objetivos del intervalo} & Objetivos comprometidos por equipo para los cuatro sprints. & Líder de Desarrollo & Jira \\ \addlinespace
+\textbf{Tablero de dependencias} & Dependencias entre equipos y con terceros, con fecha requerida. & Líder de Desarrollo & Jira \\ \addlinespace
+\textbf{Registro de ADR} & Decisiones de arquitectura con contexto, alternativas y consecuencias. & Arquitecto de Solución & Repositorio; actas en SharePoint \\ \addlinespace
+\textbf{Registro de deuda técnica} & Ítems de deuda con clase, impacto y fecha de pago. & Líder de Desarrollo & Jira y análisis estático \\ \addlinespace
+\textbf{Matriz de trazabilidad} & Requisito, historia, cambio, prueba, versión y evidencia. & Líder de Calidad y Pruebas & Jira, repositorio y flujo de entrega; versión vigente en SharePoint \\
+\end{longtable}
+
+Jira mantiene el trabajo y sus relaciones; el repositorio, el código y los artefactos técnicos; y SharePoint, las actas y la documentación controlada. La integración entre estas herramientas se comprobará durante la habilitación del flujo de entrega con casos completos, vínculos ausentes y pruebas fallidas, para que la matriz advierta incumplimientos y no solo certifique la existencia de enlaces.
+
+\subsection{T-10.6 Ambientes}\label{t10-6}
+
+El hito H3 (mes 6) entregará los cinco ambientes habilitados y operativos, reconstruibles desde infraestructura como código. El ambiente de recuperación ante desastres es adicional a los cuatro ambientes nombrados en H3 por las Bases. La Tabla~\mbox{\ref{tab:t10-ambientes}} define la función, los datos y el acceso de cada uno.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2200}}@{}}
+\caption{Ambientes del proyecto.}\label{tab:t10-ambientes}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Ambiente}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Función}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Datos}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Acceso}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Ambiente}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Función}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Datos}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Acceso}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Desarrollo} & Construcción e integración diaria de los cambios. & Sintéticos. & Developers del equipo, por dominio. \\ \addlinespace
+\textbf{QA} & Pruebas de contrato, integración, funcionales, de accesibilidad y dinámicas de seguridad. & Sintéticos o anonimizados o seudonimizados de forma verificable. & Equipos y usuarios clave para revisiones. \\ \addlinespace
+\textbf{Preproducción} & Reproduce topología, configuración, versiones y volumen representativo de producción; campañas de carga, autonomía, resiliencia, recuperación, reversión y aceptación. & Anonimizados o seudonimizados de forma verificable, en volumen representativo. & Calidad, operación y usuarios de aceptación. \\ \addlinespace
+\textbf{Producción} & Operación real de Ancoa. & Reales. & Sin acceso interactivo ordinario de developers; acceso excepcional aprobado, temporal, registrado y con sesión grabada. \\ \addlinespace
+\textbf{Recuperación ante Desastres} & Replicación y conmutación con retorno, probadas antes de producción y al menos semestralmente en operación. No es un paso ordinario de promoción de código. & Réplica de producción, con los mismos controles. & Igual que Producción. \\
+\end{longtable}
+
+La sola etiqueta de enmascaramiento no acredita el control de datos en los ambientes no productivos. El dominio Emisor mantiene repositorios, identidades de servicio, permisos y secretos segregados de Retail en todos los ambientes, y la recuperación conserva esos controles en su emplazamiento secundario.
+
+\subsection{T-10.7 Cadena de herramientas y puertas de calidad}\label{t10-7}
+
+La Tabla~\mbox{\ref{tab:t10-herramientas}} presenta la cadena de herramientas propuesta y su condición. Su alineación definitiva con el stack tecnológico del Subdocumento 4 se confirmará en la arquitectura base del hito H2. Jira y SharePoint forman el PMIS del proyecto y Slack es el canal de coordinación cotidiana, conforme al Formulario T-9.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}@{}}
+\caption{Cadena de herramientas del desarrollo.}\label{tab:t10-herramientas}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Herramienta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Uso}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Condición}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Herramienta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Uso}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Condición}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Jira} & Backlog, sprints, tableros, trazabilidad y aprobación de cambios. & Comprometida; servicio en la nube. \\ \addlinespace
+\textbf{Microsoft SharePoint} & Actas, documentación controlada, versiones aprobadas de la matriz y paquetes de aceptación, con permisos por dominio. & Comprometida; servicio en la nube. \\ \addlinespace
+\textbf{Slack} & Coordinación diaria de los equipos; los acuerdos se registran en Jira o SharePoint. & Comprometida; servicio en la nube. \\ \addlinespace
+\textbf{Repositorio y canal CI/CD} & Repositorios, revisión por pares, flujo de entrega y análisis de seguridad del código. & GitHub Enterprise/Actions es candidato; Azure Pipelines figura en SD-04 como alternativa nativa. La decisión se registra en H2 tras probar segregación, firma y trazabilidad, o se reutiliza el canal del Cliente si cumple esas condiciones. \\ \addlinespace
+\textbf{SonarQube} & Calidad del código, cobertura, duplicación y razón de deuda técnica. & Propuesta. \\ \addlinespace
+\textbf{Trivy, Syft y Cosign} & Análisis de imágenes e infraestructura como código, SBOM CycloneDX o SPDX y firma de artefactos. & Propuesta. \\ \addlinespace
+\textbf{OWASP ZAP} & Pruebas dinámicas de seguridad en QA. & Propuesta. \\ \addlinespace
+\textbf{Pact, Playwright y k6} & Pruebas de contrato, de extremo a extremo y de carga. & Propuesta. \\ \addlinespace
+\textbf{Terraform} & Infraestructura como código de los recursos de Azure seleccionados en el Subdocumento 4. & Comprometida. \\ \addlinespace
+\textbf{Ansible, Helm, Argo CD o K3s} & Configuración y despliegue local y GitOps. & Candidatas; se comprometen solo si su selección se justifica en el diseño. \\ \addlinespace
+\textbf{Azure Container Registry} & Registro de imágenes firmadas. & Propuesta. \\ \addlinespace
+\textbf{Azure Key Vault y Azure Managed HSM} & Secretos con rotación automática y auditoría de acceso; Managed HSM para llaves del Emisor, sujeto a prueba y disponibilidad regional. & La elección final depende de clasificación, residencia y separación de funciones (SD-04, Tabla 4.6). \\ \addlinespace
+\textbf{OpenTelemetry y plataforma de observabilidad} & Indicadores de servicio que gatillan la reversión automática. & Propuesta. \\
+\end{longtable}
+
+Cada etapa del flujo de entrega termina en una puerta que la versión debe superar para avanzar. La Tabla~\mbox{\ref{tab:t10-puertas}} fija los controles y sus umbrales bloqueantes.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3300}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000}}@{}}
+\caption{Puertas de calidad y umbrales bloqueantes.}\label{tab:t10-puertas}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Etapa}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Control}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral bloqueante}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Etapa}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Control}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral bloqueante}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Código} & Revisión por pares & Al menos 1 aprobación; 2 en el dominio Emisor y en la frontera de datos. Nadie escribe directamente sobre la rama principal. \\ \addlinespace
+\textbf{Código} & Análisis estático de seguridad y detección de secretos & 0 hallazgos críticos o altos; 0 secretos. \\ \addlinespace
+\textbf{Construcción} & Pruebas unitarias y cobertura & 100 \% aprobadas; cobertura de la lógica de negocio ≥ 70 \%. \\ \addlinespace
+\textbf{Construcción} & Calidad del código & Razón de deuda técnica ≤ 5 \%; duplicación ≤ 3 \%. \\ \addlinespace
+\textbf{Construcción} & Análisis de composición, dependencias e imagen & 0 vulnerabilidades críticas; nuevas dependencias con aprobación registrada de licencia, mantenimiento, vulnerabilidades y procedencia. \\ \addlinespace
+\textbf{Construcción} & Procedencia del artefacto & SBOM generado; artefacto firmado con procedencia SLSA nivel 3 o superior; se construye una vez y se promueve sin recompilar. \\ \addlinespace
+\textbf{QA} & Pruebas de contrato e integración & 100 \% aprobadas. \\ \addlinespace
+\textbf{QA} & Pruebas funcionales de flujos críticos & 100 \% aprobadas en venta con crédito, reservas, precio, conteo, operación sin enlace y conciliación, control de cruces X-01 y migración de cartera. \\ \addlinespace
+\textbf{QA} & Accesibilidad & Sin incumplimientos de nivel AA en las pantallas modificadas. \\ \addlinespace
+\textbf{QA} & Pruebas dinámicas de seguridad & 0 hallazgos críticos o altos abiertos. \\ \addlinespace
+\textbf{Preproducción} & Funciones de aptitud de desempeño & P95 de extremo a extremo: evaluación crediticia ≤ 8 s; confirmación de pedido durante el evento ≤ 3 s; propagación de precios ≤ 5 min. \\ \addlinespace
+\textbf{Preproducción} & Carga y resiliencia & Campaña a 1,5 veces el peak declarado sin degradación de las metas; recuperación sin pérdida de datos. \\ \addlinespace
+\textbf{Preproducción y piloto de tienda} & Operación sin enlace & Corte provocado de 24 h sobre el nodo del POS nuevo en una de las tres tiendas piloto durante M6--7, con los sistemas vigentes sosteniendo la operación real. Tras la reconexión, conciliación en 30 min o menos sin pérdida ni duplicación, con acta de la Contraparte Técnica; fuera de congelamientos y de la semana previa y los tres días del evento anual. \\ \addlinespace
+\textbf{Preproducción} & Reversión & Reversión automatizada ensayada de aplicación, configuración y esquemas compatibles, con recuperación y conciliación de datos cuando el cambio los afecta. \\ \addlinespace
+\textbf{Preproducción} & Prueba de intrusión & Realizada por un tercero independiente antes de cada paso a producción; 0 hallazgos críticos o altos abiertos. \\ \addlinespace
+\textbf{Producción} & Autorización & Autorización humana registrada, conformidad contractual y ausencia de ventana de congelamiento. \\ \addlinespace
+\textbf{Producción} & Observación del canario y de cada ola & Indicadores de servicio dentro de su meta durante el período de observación; si no, se detiene el avance y se ejecuta el retorno. \\
+\end{longtable}
+
+El objetivo de cobertura de al menos 80 \% sobre el código nuevo de lógica de negocio se mide por separado (Tabla~\mbox{\ref{tab:t10-indicadores}}) y no oculta un incumplimiento del mínimo bloqueante. La herramienta y la regla de cobertura identificarán líneas o ramas ejecutables, alcance de medición y exclusiones justificadas. Una aprobación no elimina los resultados obligatorios de las puertas, y una regresión rápida del flujo de entrega no sustituye las campañas en ambientes representativos del Plan de Pruebas del Subdocumento 9 y del Formulario T-13.
+
+\subsection{T-10.8 Política de ramas, versiones y liberación}\label{t10-8}
+
+La política se basa en entrega continua: el software está siempre en condiciones de liberarse, aunque se libere solo cuando el negocio lo decide (Humble, s.f.). Sus reglas son las siguientes.
+
+\begin{itemize}
+\tightlist
+\item
+  Desarrollo basado en tronco: ramas de uno o dos días de vida, integradas a la rama principal por solicitud de cambio, después de la revisión por pares y del flujo de entrega.
+\item
+  Cada commit incluye el identificador de la historia de Jira; esto alimenta la matriz de trazabilidad.
+\item
+  Versionado semántico de servicios y de contratos de interfaz; un cambio incompatible de contrato requiere una nueva versión, pruebas de compatibilidad y una ADR.
+\item
+  Las migraciones de esquema son versionadas, compatibles con la coexistencia de versiones y reversibles de forma automatizada; sus efectos sobre los datos se ensayan antes de producción.
+\item
+  La configuración por ambiente permanece externalizada y ninguna credencial se incorpora a código, imágenes o archivos de configuración.
+\item
+  Las funcionalidades no liberadas se despliegan desactivadas con interruptores de funcionalidad, que se eliminan a más tardar dos sprints después de su activación completa. Su activación con efecto sobre transacciones reales es un cambio productivo.
+\item
+  No se promueven versiones a producción ni se activan interruptores durante las ventanas de congelamiento. La atención de un incidente crítico usa solo el procedimiento de respuesta y reversión autorizado con Ancoa; la urgencia no crea por sí misma autorización.
+\item
+  Servicios de la nube: despliegue azul-verde. Componentes de tienda: piloto controlado de tres tiendas y luego olas, con criterios medidos de avance y detención.
+\item
+  No se libera un cambio sin reversibilidad demostrada en Preproducción.
+\end{itemize}
+
+La estrategia por sitio y sus tiempos se documentan en el plan de implantación y en el Formulario T-18.
+
+\subsection{T-10.9 Política de deuda técnica y reservas de capacidad}\label{t10-9}
+
+La deuda técnica se gestiona como un pasivo visible y se clasifica según los cuadrantes de Fowler (2009). Sus reglas son las siguientes.
+
+\begin{itemize}
+\tightlist
+\item
+  Toda deuda se registra en Jira con la etiqueta de deuda, su origen, su clase, su impacto y su fecha estimada de pago.
+\item
+  La deuda deliberada y prudente requiere una ADR que justifique por qué se asume y cuándo se paga.
+\item
+  La coexistencia planificada con una plataforma conservada se registra como transición y no se presume deuda; la antigüedad de una plataforma no la convierte en deuda que deba retirarse.
+\item
+  El flujo de entrega bloquea versiones con razón de deuda superior a 5 \% o duplicación superior a 3 \%. La razón de deuda se mide como esfuerzo estimado de remediación respecto del esfuerzo de desarrollo del código evaluado, con el método que fija el plan de calidad.
+\item
+  No se libera un cambio con incumplimientos obligatorios de seguridad, segregación o protección de datos.
+\item
+  El estado de la deuda se revisa en cada inspección y adaptación y se informa al Comité de Arquitectura, con responsable y fecha de tratamiento.
+\end{itemize}
+
+La Tabla~\mbox{\ref{tab:t10-reservas}} fija las reservas de capacidad de los equipos. Ambas se planifican en conjunto, sin doble conteo, y se reflejan en el Formulario T-15.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3000}}@{}}
+\caption{Reservas de capacidad de los equipos.}\label{tab:t10-reservas}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Reserva}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Porcentaje}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Cuándo se aplica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Regla}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Reserva}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Porcentaje}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Cuándo se aplica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Regla}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Pago de deuda técnica priorizada} & 15 \% & En cada sprint de construcción ordinaria. & Se aplica a ítems registrados y priorizados. \\ \addlinespace
+\textbf{Estabilización} & 30 \% & En los equipos involucrados en cada marcha blanca. & Durante la marcha blanca absorbe también la deuda técnica, sin sumar ambas reservas. \\
+\end{longtable}
+
+El resto de la capacidad nominal incluye calidad, seguridad, coordinación y soporte, y no se supone que todas las horas nominales sean construcción.
+
+La refactorización se incorpora al backlog cuando un cambio repetido, una función de aptitud fallida, duplicación o acoplamiento impiden modificar con seguridad un servicio. El Líder de Calidad registra la evidencia y el Arquitecto de Solución valida el límite de contexto; el equipo ejecuta la refactorización con pruebas de regresión dentro de la reserva ordinaria de 15 \%, sin modificar el comportamiento aceptado ni el contrato de interfaz sin control de cambios. La arquitectura evoluciona mediante ADR, pruebas de contrato y funciones de aptitud, con decisiones reversibles antes de escalar. El tiempo de salida al mercado se observa con el indicador de tiempo de entrega de T-10.12, desde el commit hasta el despliegue productivo, incluidas las esperas; una reducción del tiempo no dispensa las puertas de calidad.
+
+\subsection{T-10.10 Coordinación entre etapas}\label{t10-10}
+
+El contrato tiene dos períodos en que conviven etapas en distinto estado. La Tabla~\mbox{\ref{tab:t10-etapas}} indica, para cada uno, la situación y los controles del desarrollo.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5400}}@{}}
+\caption{Controles del desarrollo en los períodos de convivencia.}\label{tab:t10-etapas}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Período}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Situación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Controles}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Período}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Situación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Controles}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Meses 13 a 15} & Marcha blanca de la Etapa 1 en paralelo al desarrollo de la Etapa 2. & Reserva de estabilización en los equipos involucrados; verificación de la Etapa 2 en ambientes no productivos con interruptores inactivos, sin ramas paralelas. \\ \addlinespace
+\textbf{Meses 19 y 20} & Etapa 1 en producción y marcha blanca de la Etapa 2. & Contratos, esquemas y versiones compatibles; autoridad única de los datos compartidos; conciliación; gestión de incidentes y retorno. \\ \addlinespace
+\textbf{Mes 21} & Paso a producción de la Etapa 2. & Preservar la disponibilidad, el desempeño y la integridad de la Etapa 1. \\
+\end{longtable}
+
+El calendario se programa hacia atrás desde cada paso contractual y las ventanas disponibles, con fechas y no con una suma de duraciones. La aprobación del detalle y de la línea base de la Etapa 2 sigue el hito H8 y las condiciones del Formulario E-25. Las historias se dimensionan para completarse dentro de un sprint, lo que reduce el riesgo de cada liberación y facilita revertirla.
+
+\subsection{T-10.11 Matriz de decisiones del desarrollo}\label{t10-11}
+
+Las decisiones del desarrollo se toman en el nivel que dispone de información y atribuciones para resolverlas. La Tabla~\mbox{\ref{tab:t10-decisiones}} indica quién decide, a quién se consulta, a quién se informa y dónde queda el registro.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\caption{Matriz de decisiones del desarrollo.}\label{tab:t10-decisiones}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decisión}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decide}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Consulta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Informa a}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Registro}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decisión}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Decide}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Consulta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Informa a}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Registro}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+\textbf{Orden del backlog} & Dueño de producto & Equipo y Líder de Desarrollo & Comité de Proyecto & Jira \\ \addlinespace
+\textbf{Diseño interno de un servicio} & Developers & Arquitecto de Solución & Equipo & Revisión de código \\ \addlinespace
+\textbf{Decisión de arquitectura transversal} & Comité de Arquitectura & Equipos afectados y TI de Ancoa & Comité de Proyecto & ADR; solicitud de cambio si afecta alcance o línea base \\ \addlinespace
+\textbf{Cruce de datos Retail--Emisor} & Área de cumplimiento de Ancoa aprueba la ficha de X-01 & Líder de Datos, Encargado de Seguridad y Comité de Arquitectura & Comité Ejecutivo conoce discrepancias & Ficha aprobada, ADR y bitácora de X-01 \\ \addlinespace
+\textbf{Nueva dependencia de software} & Arquitecto de Solución con el Encargado de Seguridad & Líder de Desarrollo & Equipos & Registro de dependencias en el repositorio \\ \addlinespace
+\textbf{Liberación a producción} & Contraparte técnica (conformidad), con autorización técnica del Líder de Operación / SRE & Líder de Calidad y dueño de producto & Jefaturas de tienda afectadas & Aprobación de cambio en Jira \\ \addlinespace
+\textbf{Reversión de una versión} & Flujo de entrega (automática) o Líder de Operación / SRE & Líder de Desarrollo & Contraparte técnica & Registro de incidentes \\ \addlinespace
+\textbf{Acceso excepcional a producción} & Líder de Operación / SRE & Encargado de Seguridad & Contraparte técnica & Registro de acceso y sesión grabada \\ \addlinespace
+\textbf{Cambio de alcance o de hito} & Comité Ejecutivo & Jefe de Proyecto tramita; Comité de Proyecto evalúa & Equipos & Solicitud de cambio en SharePoint \\
+\end{longtable}
+
+Las decisiones técnicas dentro de los lineamientos vigentes las toman los equipos con autonomía; las que afectan compromisos contractuales, la frontera entre negocios o la operación de Ancoa requieren una instancia formal. Ninguna aprobación de detalle sustituye el control integrado de cambios del Formulario T-9.
+
+\subsection{T-10.12 Indicadores del desarrollo}\label{t10-12}
+
+El desempeño de entrega se mide por servicio con las cuatro métricas de DORA (DORA, s.f.), medidas hasta Producción, y con indicadores complementarios de calidad y de integración. La Tabla~\mbox{\ref{tab:t10-indicadores}} define cada uno.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3200}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1800}}@{}}
+\caption{Indicadores del desarrollo.}\label{tab:t10-indicadores}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Indicador}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fórmula}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Meta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Frecuencia}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fuente}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Indicador}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fórmula}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Meta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Frecuencia}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fuente}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de DORA (s.f.).} \\
+\endlastfoot
+\textbf{Frecuencia de despliegue} & Despliegues reales en Producción por servicio y período. & Fijada por servicio & Por intervalo & Flujo de entrega \\ \addlinespace
+\textbf{Tiempo de entrega} & Tiempo desde el commit hasta el despliegue productivo, incluidas las esperas. & Fijada por servicio & Por versión & Flujo de entrega \\ \addlinespace
+\textbf{Tasa de cambios fallidos} & Despliegues que requieren corrección o reversión / despliegues totales. & ≤ 15 \% & Por intervalo & Registro de cambios \\ \addlinespace
+\textbf{Tiempo de restauración} & Tiempo desde el cambio fallido hasta el servicio restablecido. & ≤ 1 h & Por evento & Registro de incidentes \\ \addlinespace
+\textbf{Integración a QA} & Integraciones a QA por equipo y día hábil. & ≥ 1 & Semanal & Flujo de entrega \\ \addlinespace
+\textbf{Verificación en Preproducción} & Días hábiles desde la integración hasta la verificación en Preproducción. & ≤ 5 & Por versión & Flujo de entrega \\ \addlinespace
+\textbf{Cobertura de la lógica de negocio} & Líneas o ramas ejecutables cubiertas / total, según la regla declarada. & ≥ 70 \% (bloqueante) & Por versión & SonarQube \\ \addlinespace
+\textbf{Cobertura del código nuevo} & Código nuevo de lógica de negocio cubierto / código nuevo de lógica de negocio. & ≥ 80 \% (objetivo) & Por versión & SonarQube \\ \addlinespace
+\textbf{Razón de deuda técnica} & Esfuerzo estimado de remediación / esfuerzo de desarrollo del código evaluado. & ≤ 5 \% & Por versión & SonarQube \\ \addlinespace
+\textbf{Predictibilidad del intervalo} & Objetivos cumplidos / objetivos comprometidos. & ≥ 80 \% & Por intervalo & Jira \\ \addlinespace
+\textbf{Cobertura de trazabilidad} & Requisitos con historia, prueba y evidencia / requisitos de la línea base. & 100 \% al cierre de cada etapa & Mensual & Matriz de trazabilidad \\
+\end{longtable}
+
+La tasa de cambios fallidos, la restauración en hasta una hora, la integración diaria a QA y la verificación en Preproducción en hasta cinco días hábiles son objetivos internos. La restauración de un cambio fallido no sustituye el RTO ni el RPO de recuperación ante desastres, y ninguna meta de frecuencia habilita cambios durante los congelamientos. Los indicadores se revisan por intervalo y en el informe mensual, y se siguen midiendo en la Operación, del mes 21 al 56. Cada resultado conserva versión, servicio, ventana, numerador, denominador y fuente; si no hubo despliegues o fallas en un período, se registra la ausencia de población en lugar de una tasa o un tiempo.
+
+\subsection{T-10.13 Plantilla de registro de decisiones de arquitectura}\label{t10-13}
+
+Toda decisión que afecte a más de un equipo, a la frontera Retail--Emisor o a un requerimiento no funcional se registra como ADR (Nygard, 2011). La Tabla~\mbox{\ref{tab:t10-adr}} define sus campos.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7400}}@{}}
+\caption{Plantilla de ADR.}\label{tab:t10-adr}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Campo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Campo}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Contenido}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{2}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de Nygard (2011).} \\
+\endlastfoot
+\textbf{Código y título} & ADR-NNN y nombre breve de la decisión. \\ \addlinespace
+\textbf{Fecha y estado} & Propuesta, aceptada, reemplazada o rechazada. Una decisión reemplazada se conserva con su relación a la nueva. \\ \addlinespace
+\textbf{Contexto} & Problema, restricciones y requisitos que motivan la decisión. \\ \addlinespace
+\textbf{Alternativas evaluadas} & Opciones consideradas, con sus ventajas y desventajas. \\ \addlinespace
+\textbf{Decisión} & Alternativa elegida y su justificación. \\ \addlinespace
+\textbf{Consecuencias} & Efectos en otros servicios, deuda que se asume y funciones de aptitud asociadas. \\ \addlinespace
+\textbf{Trazabilidad} & Requisitos y servicios afectados y, si corresponde, solicitud de cambio vinculada. \\ \addlinespace
+\textbf{Aprobación} & Instancia que aprueba y fecha del acta. \\
+\end{longtable}
+
+La aprobación técnica de una ADR no reemplaza una solicitud de cambio cuando afecta el alcance, una línea base o una obligación contractual.
+
+\subsection{Referencias}\label{t10-referencias}
+
+Las siguientes fuentes respaldan las prácticas y los umbrales citados en este formulario.
+
+\noindent\hangindent=1.5em\hangafter=1 DORA. (s.f.). \emph{DORA's software delivery performance metrics}. \url{https://dora.dev/guides/dora-metrics/}
+
+\noindent\hangindent=1.5em\hangafter=1 Fowler, M. (2009, 14 de octubre). \emph{Technical debt quadrant}. \url{https://martinfowler.com/bliki/TechnicalDebtQuadrant.html}
+
+\noindent\hangindent=1.5em\hangafter=1 Humble, J. (s.f.). \emph{What is continuous delivery?} Continuous Delivery. \url{https://continuousdelivery.com/}
+
+\noindent\hangindent=1.5em\hangafter=1 Nygard, M. (2011, 15 de noviembre). \emph{Documenting architecture decisions}. Cognitect. \url{https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions}
+
+\noindent\hangindent=1.5em\hangafter=1 Scaled Agile, Inc. (2025, 25 de febrero). \emph{Planning interval}. \url{https://framework.scaledagile.com/planning-interval}
+
+\noindent\hangindent=1.5em\hangafter=1 Schwaber, K., y Sutherland, J. (2020, noviembre). \emph{The Scrum Guide}. Scrum Guides. \url{https://scrumguides.org/scrum-guide.html}
+
+\ossFinalPage
+
+\end{document}

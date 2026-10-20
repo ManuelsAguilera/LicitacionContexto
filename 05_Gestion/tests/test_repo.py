@@ -10,8 +10,8 @@ GOLDEN = REPO / "05_Gestion" / "tests" / "golden" / "preambulo.tex"
 
 class RepoTexTest(unittest.TestCase):
     def test_todos_los_tex_respetan_la_plantilla(self):
-        texs = sorted(REAL_LATEX.glob("sd-[0-9][0-9]/OSS-Subdocumento[0-9]*.tex"))
-        self.assertTrue(texs, "no hay sd-NN/OSS-SubdocumentoN.tex en latex_final/")
+        texs = sorted(REAL_LATEX.glob("sd-[0-9][0-9]/OnlySimpleSolutions-Subdocumento[0-9]*.tex"))
+        self.assertTrue(texs, "no hay sd-NN/OnlySimpleSolutions-SubdocumentoN.tex en latex_final/")
         for tex in texs:
             with self.subTest(tex=tex.name):
                 self.assertEqual(ex.verify_tex(tex), [], f"{tex.name}: ejecutar exportar_latex.py verificar")

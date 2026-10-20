@@ -1,0 +1,912 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Modelo y gestión de datos}{Subdocumento 5}
+\tableofcontents
+\clearpage
+\section*{Lista de figuras}
+\addcontentsline{toc}{section}{Lista de figuras}
+
+\noindent\hangindent=2em\hyperref[fig:c_dom]{Figura 5.1: Dominios de información y frontera de datos}\dotfill\pageref{fig:c_dom}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:c_merc]{Figura 5.2: Modelo conceptual del dominio Mercadería}\dotfill\pageref{fig:c_merc}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:c_venta]{Figura 5.3: Modelo conceptual del dominio Venta}\dotfill\pageref{fig:c_venta}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:c_cli]{Figura 5.4: Modelo conceptual del dominio Cliente Retail}\dotfill\pageref{fig:c_cli}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:c_cred]{Figura 5.5: Modelo conceptual del dominio Crédito}\dotfill\pageref{fig:c_cred}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:c_front]{Figura 5.6: Modelo conceptual del dominio Frontera}\dotfill\pageref{fig:c_front}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:f18]{Figura 5.7: Capas de datos y metas de latencia}\dotfill\pageref{fig:f18}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:f19]{Figura 5.8: Calendario de las migraciones sobre las etapas y los congelamientos}\dotfill\pageref{fig:f19}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:f20]{Figura 5.9: Ruta de una actualización de disponibilidad hasta la consulta del cliente}\dotfill\pageref{fig:f20}\par\vspace{0.4\baselineskip}
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t01]{Tabla 5.1: Códigos que usa el capítulo y lugar donde se definen}\dotfill\pageref{tab:t01}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t_resp]{Tabla 5.2: Responsabilidad y autoridad por dominio}\dotfill\pageref{tab:t_resp}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t_inter]{Tabla 5.3: Intercambios conceptuales entre dominios}\dotfill\pageref{tab:t_inter}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t_ent]{Tabla 5.4: Servicios, dueños y entidades por dominio}\dotfill\pageref{tab:t_ent}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10]{Tabla 5.5: Postura ante un corte de comunicación, por dato}\dotfill\pageref{tab:t10}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t11]{Tabla 5.6: Metas de latencia de las Bases, lugar donde se cumplen y verificación}\dotfill\pageref{tab:t11}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t12]{Tabla 5.7: Características de calidad ISO/IEC 25012 que la solución mide}\dotfill\pageref{tab:t12}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t13]{Tabla 5.8: Protección de los datos personales por grupo}\dotfill\pageref{tab:t13}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t14]{Tabla 5.9: Plazos de retención por dato y lugar de conservación}\dotfill\pageref{tab:t14}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t15]{Tabla 5.10: Estándares sectoriales de intercambio, lugar de aplicación y comprobación}\dotfill\pageref{tab:t15}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16]{Tabla 5.11: Alcance de la migración, cantidad por grupo y origen de la cantidad}\dotfill\pageref{tab:t16}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t17]{Tabla 5.12: Volumen estimado por grupo de datos, tamaño medio supuesto por registro y destino}\dotfill\pageref{tab:t17}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t18]{Tabla 5.13: Tipos de defecto previstos y decisión por defecto}\dotfill\pageref{tab:t18}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t19]{Tabla 5.14: Hitos de migración y ventana libre en que se realizan}\dotfill\pageref{tab:t19}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t20]{Tabla 5.15: Técnicas de conciliación y regla de aceptación}\dotfill\pageref{tab:t20}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t21]{Tabla 5.16: Datos que no se migran, razón de la exclusión y plazo de conservación}\dotfill\pageref{tab:t21}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22]{Tabla 5.17: Supuestos principales de la estimación de carga y criterio de elección}\dotfill\pageref{tab:t22}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t23]{Tabla 5.18: Estimación de carga de operación, dimensiones 1 a 7 del numeral 14.2}\dotfill\pageref{tab:t23}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t24]{Tabla 5.19: Estimación de almacenamiento, migración y red, dimensiones 8 a 15 del numeral 14.2}\dotfill\pageref{tab:t24}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t25]{Tabla 5.20: Estructura de acceso de las entidades de mayor carga}\dotfill\pageref{tab:t25}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t26]{Tabla 5.21: Pruebas de carga y criterio de aceptación}\dotfill\pageref{tab:t26}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:ia]{Tabla 5.22: Declaración de uso de IA}\dotfill\pageref{tab:ia}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:niveles]{Tabla 5.23: Niveles de uso de IA}\dotfill\pageref{tab:niveles}\par\vspace{0.4\baselineskip}
+\clearpage
+
+\section{Capítulo 5 · Introducción al Modelo y gestión de datos}
+
+Multitiendas Ancoa opera 22 tiendas, canales digitales y un marketplace, y financia parte de sus ventas mediante una filial emisora de tarjetas. Su operación registra aproximadamente 31 millones de documentos de venta, 1,9 millones de pedidos en línea y 14 millones de cambios de precio al año, además de 620.000 tarjetas con saldo vigente (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1, p. 31). Este capítulo define el modelo y la gestión de los datos que sostienen la solución de Only Simple Solutions, su migración y las condiciones de desempeño.
+
+El modelo mantiene separados los datos de Retail y del Emisor, conforme a la frontera definida en los Capítulos 3 y 4. Retail gobierna productos, precios, existencias, pedidos, ventas e identidad comercial. El Emisor gobierna titulares, originación, cartera y evidencia financiera. Cada ámbito conserva sus identificadores, repositorios, accesos y claves de cifrado; los intercambios requieren una finalidad aprobada, datos mínimos y evidencia de la decisión. Esta separación responde a los dos negocios y regímenes de Ancoa (Multitiendas Ancoa S.A., 2026b, Caso 09, introducción, p. 3).
+
+La sección 5.1 presenta los dominios de información, sus entidades, relaciones y autoridades. La sección 5.2 desarrolla la persistencia, calidad, trazabilidad, protección, retención e intercambio de datos. La sección 5.3 aborda la migración desde las plataformas actuales y la sección 5.4 desarrolla la estrategia de desempeño a partir de la volumetría de Ancoa.
+
+El Capítulo 1 establece las políticas de seguridad y los responsables técnicos del proponente. El Capítulo 2 identifica las cuatro promesas que los datos deben sostener y los problemas de los registros actuales. El Capítulo 3 define el alcance, las etapas, los servicios y los intercambios permitidos; el Capítulo 4 concreta sus componentes y emplazamiento. Los ensayos de migración y desempeño se articulan con la metodología del Capítulo 6, el cronograma del Capítulo 7 y el Plan de Calidad del Capítulo 9. El Formulario T-12 relaciona los requisitos RT-05 con la evidencia del capítulo y sus anexos.
+
+El Anexo A reúne los diagramas entidad-relación y el diccionario de atributos en A.1, la estrategia de datos maestros en A.2, la memoria de cálculo en A.3 y el plan de perfilado en A.4. El cuerpo explica las decisiones y sus efectos sobre la operación de Ancoa; el anexo documenta las claves, los atributos y las reglas de integridad.
+
+La Tabla 5.1 relaciona los identificadores empleados en el capítulo con su ámbito y su documento de definición.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.1: Códigos que usa el capítulo y lugar donde se definen. Fuente: elaboración propia a partir de los Capítulos 4 y 6 y de las Bases Técnicas.\phantomsection\label{tab:t01}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.18\linewidth}p{0.27\linewidth}p{0.25\linewidth}p{0.20\linewidth}@{}}
+\toprule Familia & Ámbito & Ejemplo & Definición \\
+\midrule
+RE / EM / FR / LO & Retail / Emisor / Frontera / Local & RE-01 Artículo & 5.1 y Anexo A.1 \\
+R:M / R:V / R:CL & Servicios de Retail & R:M-03 Existencias & Capítulos 3 y 4 \\
+F:C / X / L & Emisor / cruces / tienda & F:C-02; X-01; L-02 & Capítulos 3 y 4 \\
+ADR / RT & Decisión / requisito & ADR-02; RT-05.01 & Capítulo 4 / Bases \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+Los códigos de servicios conservan la nomenclatura de los Capítulos 3 y 4. Los códigos de entidades pertenecen al modelo de datos y no sustituyen los de servicios.
+
+Las cifras propias del dimensionamiento se acompañan de sus supuestos y cálculos. Las remisiones al Anexo A permiten comprobar el detalle sin repetirlo en el cuerpo.
+
+
+\section{5.1 Modelo}
+
+El modelo organiza la información en cinco dominios. Mercadería, Venta y Cliente Retail pertenecen al ámbito Retail, que reúne el comercio de tiendas y canales digitales. Crédito pertenece a la filial emisora, a la que en este capítulo se llama Emisor. Frontera gobierna los intercambios autorizados entre ambos ámbitos sin convertirse en dueña de los datos comerciales ni de los financieros. Esta separación conserva la autoridad de cada servicio y evita que una integración técnica se transforme en acceso irrestricto.
+
+Un dominio reúne datos destinados a una capacidad de negocio y gobernados por un área responsable. Cada objeto sobre el que se conserva información, como un artículo, un pedido o una cuota, es una entidad. Esta sección presenta su organización conceptual. El Anexo A.1 declara 51 entidades, 314 campos y 81 relaciones lógicas, junto con el diccionario de datos. Las cajas conceptuales pueden agrupar funciones o representar atributos; no equivalen una a una a tablas. El diseño físico debe completar restricciones, atributos operativos e integridad bajo la autoridad de cada servicio, sin transformar ese recuento en una especificación física cerrada.
+
+\subsection{5.1.1 Criterios de diseño}
+
+La propuesta aplica cinco criterios para que el modelo pueda evolucionar sin perder trazabilidad ni separar artificialmente información que pertenece a una misma capacidad de negocio. El primero es que cada dominio conserva sus entidades y sus reglas bajo una autoridad explícita. Los demás dominios consumen contratos o eventos, no tablas ajenas. Esta regla recoge la autoridad de datos que el Capítulo 3, sección 3.3.2, asigna a cada servicio y que el Capítulo 4, sección 4.1, mantiene en sus componentes.
+
+El segundo criterio es que los identificadores del cliente de Retail y del titular del Emisor son independientes. La solución no mantiene un identificador maestro común ni una correspondencia persistente entre ambos. El tercero es que las relaciones entre autoridades distintas representan referencias de negocio, resultados mínimos o hechos publicados. Los repositorios de cada servicio están segregados dentro del PostgreSQL de su ámbito. Las claves foráneas físicas se aplican dentro de cada repositorio; al atravesar una autoridad, las relaciones del Anexo A.1 son lógicas y su integridad se controla mediante contratos y eventos. Ningún servicio consulta ni modifica tablas ajenas, tampoco dentro de Retail.
+
+El cuarto criterio trata la trazabilidad como dato de negocio. Los precios publicados, los movimientos de inventario, las decisiones de crédito y las autorizaciones de cruce conservan versión, vigencia y evidencia, de modo que se puede explicar qué ocurrió y bajo qué regla. El quinto es que las figuras de esta sección presentan entidades conceptuales. La elección del motor de almacenamiento, la consistencia y el particionamiento corresponden a las secciones 5.2 y 5.4.
+
+\subsection{5.1.2 Mapa de dominios}
+
+La Figura 5.1 muestra la agrupación propuesta y la frontera entre los dos negocios. Las flechas continuas son relaciones dentro de Retail y las discontinuas son intercambios que pasan por Frontera, en los dos sentidos. Representan familias de intercambio que se concretan mediante contratos versionados y reglas de autorización, como establece el Capítulo 4, sección 4.1.
+
+\begin{center}
+  \phantomsection\label{fig:c_dom}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-1-dominios_1.png}
+\end{center}
+
+Figura 5.1: Dominios de información y frontera de datos. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, y del Capítulo 4, sección 4.1.
+
+
+La vista general muestra que Frontera interviene únicamente cuando un proceso necesita información de ambos negocios. Retail le entrega una solicitud mínima, Frontera la traslada autorizada a Crédito, Crédito responde con una decisión mínima y Frontera devuelve a Venta solo el resultado. Mercadería y Venta se intercambian reservas, liberaciones y devoluciones. Mercadería, Venta y Cliente Retail pueden relacionarse dentro de Retail. Crédito mantiene la información financiera bajo autoridad del Emisor. Que un cliente compre con la tarjeta propia no habilita el uso comercial de saldos, mora, cupos ni comportamiento de pago.
+
+La separación en dos ámbitos responde a la decisión ADR-02 del Capítulo 4. Se evaluó y descartó un repositorio común con permisos por rol porque una autorización incorrecta permitiría asociar compras con deuda. Ancoa exige separar sus dos negocios (Multitiendas Ancoa S.A., 2026b, Caso 09, introducción, p. 3). Todo intercambio atraviesa X-01, que comprueba finalidad, limita los campos y registra la decisión.
+
+Cada dato tiene un dueño, la gerencia de Ancoa que define su significado, aprueba sus reglas y responde por su calidad. Only Simple Solutions opera la plataforma durante los 56 meses del contrato, incluidos los 36 meses de operación entre los meses 21 y 56. Su Líder de Operación coordina la transferencia de conocimiento a TI de Ancoa para el término contractual, conforme al Capítulo 1. Las gerencias conservan la autoridad del dato durante todo ese período. La asignación se coordina con los dueños de producto y con la gestión del Capítulo 6. La Tabla 5.2 resume la autoridad de cada dominio.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.2: Responsabilidad y autoridad por dominio. Fuente: elaboración propia a partir del catálogo de servicios del Capítulo 3, sección 3.3.2, y del Capítulo 4, sección 4.1.\phantomsection\label{tab:t_resp}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.104\linewidth}p{0.151\linewidth}p{0.271\linewidth}p{0.375\linewidth}@{}}
+\toprule Ámbito & Dominio & Autoridad principal & Información nuclear \\
+\midrule
+Retail & Mercadería & Oferta comercial, abastecimiento y existencias & Artículos, precios, nodos, existencias, reservas y movimientos \\
+Retail & Venta & Pedidos, ventas, marketplace, comisiones y posventa & Pedidos, ventas, pagos, cumplimiento, devoluciones y liquidaciones \\
+Retail & Cliente Retail & Identidad y preferencias comerciales & Identidad Retail, contacto, preferencias y consentimientos; puntos y segmentos, según la sección 5.1.5 \\
+Emisor & Crédito & Originación, cartera y evidencia financiera & Solicitudes, decisiones, cuentas, cuotas, cobranzas y consentimientos \\
+Transversal & Frontera & Servicio de control de cruces X-01 & Políticas, solicitudes, decisiones, bitácoras y seudónimos de cruce \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.2 asigna una autoridad única a cada conjunto nuclear. Las dependencias entre dominios se resuelven con referencias y eventos. Por ello, una indisponibilidad temporal de un dominio no obliga a copiar su modelo completo en otro ni a debilitar la separación entre Retail y Emisor. Se adopta una regla simple, que cada entidad tiene un solo servicio que la escribe y un solo dueño, y que los demás servicios la consultan o reciben sus eventos, pero no la modifican. Esa regla evita el problema que hoy tiene Ancoa con sus nueve plataformas y 14 interfaces punto a punto, donde un mismo dato se corrige en varios lugares y no coincide (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 5, p. 13).
+
+Las figuras de los cinco dominios que siguen indican la cardinalidad de cada relación. La notación 1:N significa que un elemento del origen se relaciona con varios del destino, N:1 que varios del origen se relacionan con uno del destino, 1:1 que cada elemento tiene exactamente uno asociado y N:M que ambos lados admiten varios. Una relación 1:0..1 indica que el destino puede no existir todavía. Las claves, los campos y las cardinalidades exactas, incluidos los registros en preparación, se documentan en los diagramas del Anexo A.
+
+\subsection{5.1.3 Dominio Mercadería}
+
+Mercadería reúne la oferta comercial, el abastecimiento y las existencias. Su modelo distingue el producto comercial de la unidad vendible, la publicación por canal y la posición de inventario por nodo. Esta separación permite que una referencia tenga atributos, precios y disponibilidad diferentes sin perder su identidad común. Los responsables son la Gerencia Comercial para la oferta y la Gerencia de Logística para el abastecimiento y las existencias.
+
+La Figura 5.2 presenta el modelo conceptual del dominio.
+
+\begin{center}
+  \phantomsection\label{fig:c_merc}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-2-mercaderia_1.png}
+\end{center}
+
+Figura 5.2: Modelo conceptual del dominio Mercadería. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, frente Retail.
+
+
+La figura se lee desde el catálogo hacia la existencia. En esta vista, producto y SKU explican la agrupación comercial y la unidad vendible; en el Anexo A.1 la unidad con GTIN se concreta en RE-01 Artículo, sin una tabla SKU adicional. RE-27 Artículo en oferta registra su publicación y RE-02 Precio publicado conserva versiones y vigencias. Cada cambio agrega una versión, sin sobrescribir la anterior, para reconstruir el precio aplicable a un reclamo. Esta decisión propia permite reconstruir el registro operacional de precios; no presupone un modelo dimensional para la base transaccional. RE-05 Confirmación de etiqueta deja constancia de la correspondencia entre precio exhibido y publicado.
+
+La existencia se define por SKU y nodo logístico, es decir, por el lugar donde hay mercadería, como una tienda o un centro de distribución. Separa lo registrado, lo reservado y lo disponible. Los movimientos, los conteos y los ajustes explican por qué cambia esa posición, y las órdenes y recepciones de abastecimiento originan los movimientos de entrada. Las reservas vinculan Mercadería con los pedidos sin transferir la autoridad sobre el pedido.
+
+El modelo distingue el inventario registrado del disponible comprometible, o ATP (available to promise), que es la cantidad que puede prometerse bajo las reglas de reserva y margen. Ancoa registra 2.840 cancelaciones por falta de existencia en los tres días del evento anual y diferencias en el 12,4 \% de las referencias auditadas (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 7, núm. 7.1, p. 15; cap. 2, núm. 2.3, p. 7). El Capítulo 3 propone investigar seis causas de merma, pérdida física, daño no dado de baja, error de recepción, unidad mal ubicada, devolución mal reintegrada y error de digitación. La causa sugerida se confirma por el responsable autorizado antes del ajuste. Es una clasificación de la solución, no un catálogo cerrado impuesto por Ancoa (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 16, núm. 16.1, decisión 17, p. 37). RE-13 Conteo y diferencia de inventario admitirá esas seis categorías en el diseño físico. Las secciones 5.2 y 5.4 desarrollan las reglas y el desempeño. El dominio conserva las 18 entidades declaradas, incluida la caché local de oferta.
+
+\subsection{5.1.4 Dominio Venta}
+
+Venta administra el ciclo comercial desde la creación de un pedido hasta su cumplimiento y su atención posterior. El pedido mantiene un estado único y una promesa de entrega. La venta representa el hecho económico confirmado y se concilia con pagos, reversas y el estado del documento tributario, sin reemplazar al sistema que lo emite. Responden por este dominio la Gerencia de Canales Digitales, para pedidos, marketplace y posventa, y la Gerencia Comercial, para ventas y comisiones.
+
+La Figura 5.3 presenta el modelo conceptual del dominio.
+
+\begin{center}
+  \phantomsection\label{fig:c_venta}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-3-venta_1.png}
+\end{center}
+
+Figura 5.3: Modelo conceptual del dominio Venta. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, área Venta.
+
+
+En el modelo, la línea de pedido identifica el artículo vendible, la cantidad y la condición comercial. La asignación conceptual de cumplimiento se materializa en las referencias de reserva y nodo de RE-15 y en el retiro o despacho RE-16; no añade otra entidad al Anexo A.1. El retiro o despacho registra hitos y evidencia. Un pedido confirmado origina una o más ventas, aunque una venta de caja puede no tener pedido previo. Cada venta se concilia con pagos y reversas. Comisión, marketplace y posventa dependen de pedidos y ventas confirmados y conservan sus reglas de atribución, liquidación y atención.
+
+Dos decisiones del dominio se aplican. La primera establece que el pago no contiene datos de crédito; si el cliente usa la tarjeta propia, la venta registra el medio y la referencia opaca de la autorización, y no el saldo, la mora ni el titular. La segunda es que la reserva pertenece a Mercadería aunque la origine un pedido, de modo que la autoridad sobre la existencia y la autoridad sobre el pedido nunca se confunden. Cuando una tienda pierde el enlace, un diario local registra cada operación con un identificador único, el número de tienda y una secuencia, para que al volver la conexión no se cobre dos veces (Capítulo 4, sección 4.1). El modelo lógico del Anexo A detalla el dominio en 12 entidades.
+
+\subsection{5.1.5 Dominio Cliente Retail}
+
+Cliente Retail conserva la identidad comercial que utilizan los canales de venta, la fidelización y la atención. La deduplicación ocurre dentro de este dominio y no requiere importar atributos del Emisor. El propósito es disponer de un registro comercial coherente sin convertirlo en una vista financiera de la persona. Responde por él la Gerencia de Canales Digitales.
+
+La Figura 5.4 presenta el modelo conceptual del dominio.
+
+\begin{center}
+  \phantomsection\label{fig:c_cli}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-4-cliente-retail_1.png}
+\end{center}
+
+Figura 5.4: Modelo conceptual del dominio Cliente Retail. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, identidad comercial.
+
+
+El cliente Retail puede vincular identidades de canal, direcciones, datos de contacto, preferencias y permisos comerciales según su finalidad. La Figura 5.4 muestra esas capacidades; RE-23 Cliente Retail contiene el registro mínimo de identidad y contacto del Anexo A.1. Los atributos adicionales deberán materializarse en el diseño físico y en los contratos de los canales conservados, sin afirmar que ya están completos en el diccionario. RE-24 Consentimiento comercial registra cada otorgamiento y revocación con finalidad, versión, medio y fecha. La decisión vigente se obtiene sin borrar la historia, conforme al tratamiento lícito de datos personales (Ley 21.719, 2024).
+
+El dominio no incorpora cupos, saldos, mora ni comportamiento de pago. Una operación que necesite información del Emisor debe pasar por Frontera y recibir solo el resultado mínimo autorizado. En la figura, los elementos en gris, es decir, la cuenta de fidelización, los movimientos de puntos y los segmentos, representan datos que durante la convivencia permanecen en la plataforma de fidelización existente, como establece el Capítulo 4, sección 4.1. Su incorporación al modelo se decide cuando las pruebas de la Etapa 1 acrediten su destino, y hasta entonces no forman parte de las dos entidades que el modelo lógico del Anexo A representa para este dominio, el cliente y sus consentimientos comerciales.
+
+\subsection{5.1.6 Dominio Crédito}
+
+Crédito mantiene separadas la originación, la administración de la cartera y la evidencia financiera. Esta separación permite que una decisión o una modificación contractual dependa de evidencia suficiente sin mezclar saldos, decisiones y soportes en una sola entidad de propósito ambiguo. Todo el dominio pertenece al Emisor y responde por él la gerencia de Negocio Financiero.
+
+La Figura 5.5 presenta el modelo conceptual del dominio.
+
+\begin{center}
+  \phantomsection\label{fig:c_cred}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-5-credito_1.png}
+\end{center}
+
+Figura 5.5: Modelo conceptual del dominio Crédito. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, frente Filial emisora.
+
+
+El modelo sigue la vida de un crédito. El titular tiene un identificador financiero propio. Su solicitud se evalúa y produce una decisión que puede habilitar una cuenta y un cupo. La cuenta administra saldo, cuotas, pagos, estados de cuenta, mora, cobranza, juicios, garantías y repactaciones, y registra cada autorización de compra con su monto, su decisión y una referencia opaca de la operación, sin identificar la venta de Retail. La información precontractual y la evidencia financiera conservan la versión entregada, la aceptación, el consentimiento y el soporte asociado. Originación y repactación deben consultar esa evidencia antes de confirmarse, y la evidencia solo admite agregar versiones, nunca modificarlas ni borrarlas antes de su vencimiento. Los antecedentes del crédito se conservan por el plazo del crédito más seis años (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.10, p. 33), lo que se explica en la sección 5.2.5. En el Anexo A el dominio se detalla en 16 entidades.
+
+\subsection{5.1.7 Dominio Frontera}
+
+Frontera gobierna cada intercambio entre Retail y el Emisor. Su información describe condiciones, decisión y evidencia, sin constituir un maestro común de personas. X-01 administra FR-01 a FR-03 y Contraloría es dueña de sus registros, conforme al Anexo A.1. Negocio Financiero participa en la aprobación de las políticas y decisiones que le competen, sin compartir por ello la propiedad de cada dato.
+
+La Figura 5.6 presenta el modelo conceptual del dominio.
+
+\begin{center}
+  \phantomsection\label{fig:c_front}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/figura-5-6-frontera_1.png}
+\end{center}
+
+Figura 5.6: Modelo conceptual del dominio Frontera. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, y de la regla de gobierno de los intercambios entre Retail y Emisor.
+
+
+La ficha de intercambio FR-01 describe los campos autorizados, su finalidad y su versión. FR-03 conserva la política versionada y FR-02 la decisión de cada cruce. La solicitud, las versiones y la bitácora de la Figura 5.6 representan pasos o atributos de esas tres entidades; no son tablas adicionales. Cada solicitud se resuelve con una política identificable y genera una autorización o denegación durable. FR-02 registra un seudónimo propio del cruce, sin significado personal ni reutilización entre operaciones. Un reintento conserva la identidad de la misma operación para evitar duplicados. La auditoría puede seguir la decisión sin crear una correspondencia persistente entre cliente Retail y titular del Emisor.
+
+El reconocimiento de una persona en un cruce se resuelve cuando esta presenta su identificación. X-01 la usa para tramitar la consulta y registra solo el seudónimo de la operación. ADR-02 del Capítulo 4 descarta el maestro único porque reunir compras y deuda contraviene la separación de los negocios (Multitiendas Ancoa S.A., 2026b, Caso 09, introducción, p. 3). La identificación personal del cruce no se conserva como tabla de correspondencia. La trazabilidad financiera permanece en el Emisor y la de la decisión en Frontera, con correlación limitada a la operación autorizada. Las solicitudes desconocidas también se registran como denegadas. La sección 5.2.5 define la propuesta de retención que deberá aprobar el área jurídica del Cliente.
+
+\subsection{5.1.8 Relaciones entre dominios}
+
+Las relaciones siguientes definen qué información puede atravesar un límite sin trasladar la propiedad del dato. La Tabla 5.3 las resume.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.3: Intercambios conceptuales entre dominios. Fuente: elaboración propia a partir del Capítulo 3, sección 3.3.2, y del Capítulo 4, sección 4.1.\phantomsection\label{tab:t_inter}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.147\linewidth}p{0.147\linewidth}p{0.391\linewidth}p{0.217\linewidth}@{}}
+\toprule Origen & Destino & Intercambio & Condición \\
+\midrule
+Mercadería & Venta & Oferta, disponibilidad, reserva y nodo & Contrato versionado \\
+Venta & Mercadería & Confirmación, liberación, devolución y ajuste & Evento idempotente \\
+Cliente Retail & Venta & Identificador comercial, dirección y preferencias & Finalidad Retail \\
+Venta & Frontera & Solicitud mínima para compra con tarjeta propia & Propósito registrado \\
+Frontera & Crédito & Solicitud autorizada y datos mínimos & Política vigente \\
+Crédito & Frontera & Resultado de autorización o rechazo & Sin saldos ni mora \\
+Frontera & Venta & Referencia, importe, medio y resultado & Respuesta mínima \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+Los intercambios de la Tabla 5.3 son conceptuales y no fijan la tecnología de transporte, que se define en el Capítulo 4. Cada contrato debe definir versión, esquema, identificadores de correlación, reglas de reintento, deduplicación y evidencia. La autoridad permanece en el dominio de origen, aun cuando el dato se copie temporalmente para ejecutar una operación autorizada. Entre Retail y Crédito no existe ninguna clave foránea física; todo intercambio pasa por Frontera y se limita a referencias, importes y resultados, lo que el Capítulo 4 verifica con pruebas de denegación y de ausencia de claves cruzadas.
+
+\subsection{5.1.9 Diccionario de datos y anexos}
+
+El cuerpo de la sección presenta las entidades y relaciones necesarias para comprender la solución. El Anexo A reúne el detalle. En su sección A.1 contiene los diagramas entidad-relación del modelo lógico, uno general y uno por cada grupo de entidades, la matriz de persistencia, y para cada una de las 51 entidades su regla de integridad y sus campos con nombre, tipo lógico, dominio de valores, obligatoriedad, clave, propietario y nivel de sensibilidad. El nivel de sensibilidad tiene tres valores. Interna es la información de la operación que no identifica a personas. Personal es la que identifica a una persona natural y queda bajo la Ley 21.719. Financiera es la que describe una deuda, un saldo o el comportamiento de pago, y solo existe en el Emisor. El mismo anexo documenta las relaciones entre entidades, entre ellas las de la frontera Retail y Emisor, y la estrategia de datos maestros que exigen las Bases (RT-05.09).
+
+El modelo lógico distribuye las 51 entidades entre los cinco dominios según la Tabla 5.4. Sus autoridades conservan los servicios definidos en los Capítulos 3 y 4. Las figuras conceptuales se interpretan con los mapeos de 5.1.3 a 5.1.7; el diccionario y los contratos se verifican de forma cruzada antes de cerrar el diseño físico.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.4: Servicios, dueños y entidades por dominio. Fuente: elaboración propia a partir del Capítulo 4 y del modelo detallado del Anexo A.\phantomsection\label{tab:t_ent}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.280\linewidth}p{0.215\linewidth}p{0.151\linewidth}p{0.065\linewidth}@{}}
+\toprule Dominio & Servicios & Dueño del dato & Entidades & N.° \\
+\midrule
+Mercadería & R:M-01, R:M-02, R:M-03 y L-01 & Gerencias Comercial y de Logística & RE-01 a RE-13, RE-26 a RE-29 y LO-02 & 18 \\
+Venta & R:V-01 a R:V-04, R:CL-01 y L-02 & Gerencias Comercial, de Canales Digitales y de Logística & RE-14 a RE-22, RE-25, RE-30 y LO-01 & 12 \\
+Cliente Retail & R:CL-02 & Gerencia de Canales Digitales & RE-23 y RE-24 & 2 \\
+Crédito & F:C-01, F:C-02 y F:C-03 & Negocio Financiero & EM-01 a EM-16 & 16 \\
+Frontera & X-01 & Contraloría & FR-01 a FR-03 & 3 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.4 suma 51 entidades. Las dos entidades del equipo local de tienda, LO-01 y LO-02, se asignan al dominio con el que operan, el diario de operaciones a Venta y la caché de oferta a Mercadería. Las ampliaciones posteriores del modelo deberán conservar los nombres de entidad aquí usados.
+
+
+\section{5.2 Gestión de datos}
+
+Esta sección explica cómo se gestionan los datos del modelo una vez que la solución está en operación. Responde a seis preguntas. En qué tipo de base se guarda cada dato y qué ocurre con él cuando se corta la comunicación. Cómo se separa la operación diaria de los informes para que un informe no frene una venta. Cómo se mide y se mantiene la calidad. Cómo se reconstruye quién hizo qué y cómo se protegen los datos personales. Cuánto tiempo se conserva cada dato y cómo se elimina. Y cómo se entregan los datos a terceros en formatos que cualquiera pueda abrir. Cada subsección parte de lo que significa para la operación de Ancoa y luego entra en el detalle técnico.
+
+\subsection{5.2.1 Motor y postura ante cortes de comunicación}
+
+La solución usa PostgreSQL porque las reservas, ventas y operaciones financieras requieren transacciones e integridad dentro de su autoridad. Retail y Emisor tienen persistencias separadas; cada microservicio o unidad mantiene su propio repositorio dentro del PostgreSQL de su ámbito. X-01 tiene persistencia propia. El principal y el servidor en espera en zonas distintas de Chile Central siguen el Capítulo 4, sección 4.1.1, sujetos a comprobar disponibilidad regional y nivel de servicio antes de producción. La alternativa no relacional exigiría controles adicionales para estas relaciones y conciliaciones. La elección no implica que otros motores carezcan de transacciones. La sección 5.4 define cargas para acreditar capacidad y holgura con el modelo y los índices definitivos.
+
+En tienda, LO-01 se conserva en PostgreSQL local como diario durable; LO-02 es una copia versionada de oferta persistida localmente y reconstruible desde Retail. Ninguna de estas bases contiene la cartera del Emisor. Los motores restantes tienen una función acotada. Redis, una memoria rápida, guarda solo copias de datos de Retail que se pueden reconstruir en cualquier momento, y nunca información que no exista en otro lugar. Event Hubs, un servicio que transporta eventos, es decir, avisos de que algo ocurrió, retiene hasta 90 días para que un servicio que se cae pueda releer lo que se perdió. El Data Lake, un almacén de archivos para análisis, y Power BI, la herramienta de informes, existen en una versión para cada ámbito. Ante la falla de una zona, el servidor en espera asume la operación. Ante la falla de toda la región, se prevé recuperación en Brazil South, condicionada a aprobación jurídica de residencia y disponibilidad de los servicios del Emisor, según el Capítulo 4. La solución deberá acreditar el paso a esa región con un tiempo de recuperación de 4 horas y una pérdida máxima de datos de 15 minutos, valores que fijan las Bases y que el Capítulo 4 detalla en la sección 4.3.2.
+
+La postura ante un corte de comunicación se define según el dato y la operación. Durante una partición de red, un sistema distribuido no puede garantizar simultáneamente todas estas propiedades, que todos vean el mismo dato (consistencia), que el sistema siempre responda (disponibilidad) y que siga funcionando aunque se pierdan mensajes entre sus partes (tolerancia a la partición). Como los cortes de red ocurren, la elección real es entre consistencia y disponibilidad (Gilbert y Lynch, 2002). Un ejemplo de Ancoa lo aclara. Durante el evento anual, el sitio web y una tienda pierden contacto con el servicio de existencias, y queda una sola unidad de un artículo. Si el sistema prioriza la disponibilidad, ambos canales pueden vender la última unidad, y una de las dos ventas deberá cancelarse. Si prioriza la consistencia, uno de los canales espera o rechaza la venta, pero ninguno promete lo que no tiene. Las Bases exigen justificar esta elección para cada dominio de datos (RT-05.02), y aquí se hace por entidad, porque una misma área puede necesitar posturas distintas. La Tabla 5.5 presenta las decisiones.
+
+\par\vspace{0pt plus 58\baselineskip}\penalty-300\vspace{0pt plus -58\baselineskip}
+
+Tabla 5.5: Postura ante un corte de comunicación, por dato. Fuente: elaboración propia a partir de Gilbert y Lynch (2002), del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:t10}\par\nopagebreak
+\begin{longtable}{@{}p{0.241\linewidth}p{0.106\linewidth}p{0.278\linewidth}p{0.278\linewidth}@{}}
+\toprule Dato & Postura & Con la comunicación cortada & Motivo \\
+\midrule\endhead\bottomrule\endlastfoot
+Reserva y disponible comprometible (RE-11, RE-12) & Consistencia & No se promete ni se reserva lo que no se pudo confirmar. & Evita vender dos veces la misma unidad. \\
+Precio publicado, en su origen (RE-02) & Consistencia & Un precio nuevo se publica solo cuando queda confirmado. & Un precio vigente por artículo, canal y ámbito de nodo, con precedencia explícita. \\
+Copia del precio y la oferta en tienda (LO-02) & Disponibilidad & La caja usa la última versión recibida. & La tienda debe seguir vendiendo hasta 24 horas. \\
+Pedido y su estado (RE-14 a RE-16) & Consistencia & El estado cambia solo si el cambio se confirma. & Cliente, vendedor y transportista ven el mismo estado. \\
+Venta en tienda (RE-17 a RE-19) & Disponibilidad y conciliación & Se vende, se anota en el diario local y se concilia al volver. & La venta no se detiene; el diario evita duplicados. \\
+Autorización con tarjeta propia (EM-03) & Disponibilidad condicionada & Cupo preaprobado, límites por operación y cliente, vigencia y exclusiones; registro financiero segregado. & Habilitación con topes aprobados, prueba de 24 horas y retorno conciliado. \\
+Cartera, planes, cuotas e imputaciones (EM-05 a EM-10, EM-12 a EM-15) & Consistencia & No se operan desde la tienda. & El saldo del titular debe ser único. \\
+Expediente y versiones de evidencia (EM-11, EM-16) & Consistencia con escritura única & No se acepta un expediente que no quedó completo. & Una evidencia parcial no sirve como prueba. \\
+Fichas y políticas de cruce (FR-01, FR-03) & Consistencia & No se activa una regla sin versión aprobada y persistida. & La decisión siempre usa una regla identificable. \\
+Bitácora de cruces (FR-02) & Consistencia & Si el cruce no se puede registrar, no se realiza. & Todo cruce debe quedar registrado. \\
+Caché de consulta y proyecciones (Redis, Data Lake) & Disponibilidad & Se responde con la última copia y se actualiza al volver. & Son copias descartables, no la fuente del dato. \\
+\end{longtable}
+
+
+La Tabla 5.5 distingue operaciones que requieren confirmación de su autoridad y ventas locales que admiten conciliación posterior. El diario de tienda identifica cada operación, detecta reintentos y conserva los conflictos para resolverlos con una regla acordada con Ancoa. La compra con tarjeta propia sin enlace sigue el Capítulo 3, sección 3.2.3. Requiere cupo preaprobado bajo custodia financiera en el nodo local, tope por transacción, tope acumulado por cliente, antigüedad máxima y exclusiones fijados por la filial antes del piloto. No se originan tarjetas ni se amplían cupos. El registro financiero local está segregado por rol y claves del Emisor; no expone saldo, mora ni comportamiento de pago a Retail. Para titulares aún no migrados se alimenta mediante la integración con la plataforma de 2011. Su habilitación exige la prueba de corte de 24 horas de los meses 6 y 7, evidencia recuperable y retorno conciliado conforme al Capítulo 3. Si faltan topes o la prueba falla, la compra con tarjeta propia sin conexión queda deshabilitada y se cobra por otro medio.
+
+\subsection{5.2.2 Separación entre operación y análisis}
+
+La operación diaria y el análisis tienen necesidades opuestas. La operación necesita respuestas inmediatas a consultas pequeñas, como el precio de un artículo. El análisis recorre millones de filas para calcular, por ejemplo, la venta del trimestre por categoría. Si ambos usaran la misma base, un informe pesado podría demorar una venta. Por eso la solución los separa, como piden las Bases (RT-05.05). La Figura 5.7 muestra el recorrido.
+
+\begin{center}
+  \phantomsection\label{fig:f18}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/f6.png}
+\end{center}
+
+Figura 5.7: Capas de datos y metas de latencia. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29, p. 34).
+
+
+En la parte superior de la Figura 5.7, el dato nace en el punto de venta, canal digital, nodo local o sistema conservado, como ERP/DTE y WMS. Cada autoridad confirma su dato y publica el hecho por Event Hubs para alimentar proyecciones analíticas separadas. Los rótulos «por dominio» deben leerse como segregación por ámbito y autoridad de servicio, no como cinco lagos independientes. Retail y Emisor tienen lagos y espacios de informes propios; X-01 conserva su registro segregado. Redis contiene copias de consulta reconstruibles y no transporta eventos. Los informes consumen proyecciones, sin consultar las tablas transaccionales de producción. La parte inferior muestra las metas particulares y la capa que debe acreditarlas.
+
+El Data Lake de cada ámbito se organiza en tres capas. La capa cruda guarda el evento tal como llegó, sin cambios, y permite reconstruir cualquier cálculo. La capa depurada guarda los datos validados, con nombres y formatos uniformes. La capa de consumo guarda tablas ya resumidas, listas para informes. Esa organización permite recorrer el camino inverso. Un indicador del tablero se puede seguir hasta el evento que lo originó, que es el linaje de datos que las Bases valoran. Sobre la capa de consumo, Power BI ofrece a cada ámbito sus tableros con filtros por período, unidad y categoría, la posibilidad de bajar desde el indicador hasta la transacción, un modelo semántico documentado para que el Cliente construya sus propios informes, y la exportación y el envío programado de cualquier informe (RT-05.25 a RT-05.28). Un informe de Retail no puede incluir datos del Emisor ni al revés, porque los dos ámbitos tienen espacios y permisos distintos. Los modelos de aprendizaje automático que sugieren conteos o clasifican la merma leen datos autorizados de Retail y recomiendan, y una persona aprueba cada ajuste (Capítulo 4, sección 4.1).
+
+Las metas de latencia de las Bases fijan cuánto puede demorar un dato en estar disponible (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29, p. 34). La Tabla 5.6 indica dónde se cumple cada una y cómo se comprobará.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.6: Metas de latencia de las Bases, lugar donde se cumplen y verificación. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29, p. 34).\phantomsection\label{tab:t11}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.191\linewidth}p{0.181\linewidth}p{0.313\linewidth}p{0.217\linewidth}@{}}
+\toprule Meta & Valor & Dónde se cumple & Cómo se verifica \\
+\midrule
+Disponibilidad publicada tras una venta & 30 segundos como máximo & Evento de venta, disponible comprometible y caché de consulta (R:M-03) & Prueba de carga con medición de punta a punta \\
+Precio en las 380 cajas y el canal digital & 5 minutos como máximo desde el cambio & Publicación del lote de precios a cada tienda y canal (R:M-01) & Medición del retraso y confirmación de etiqueta \\
+Estado de un pedido & Tiempo real y el mismo en todos los canales & Un solo estado por pedido en R:V-01, consultado por los canales & Consulta simultánea desde cada canal \\
+Exactitud de inventario por categoría & Actualización diaria & Cálculo sobre conteos y ajustes en la capa de consumo & Cierre diario visible en el tablero \\
+Posición consolidada del negocio financiero & Antes de las 07:00 del día siguiente & Proceso nocturno sobre el Data Lake del Emisor & Hora de término del proceso cada noche \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.6 deja ver que las tres primeras metas se cumplen en la capa operacional y no en la analítica, porque exigen segundos o tiempo real, y que las dos últimas se cumplen en el almacén analítico con procesos diarios. La sección 5.4.4 calcula el tiempo disponible para la primera, que es la más exigente.
+
+\subsection{5.2.3 Calidad de los datos}
+
+Un dato de baja calidad hace fallar las promesas al cliente, y Ancoa lo sabe por experiencia. Su registro de inventario difiere del conteo físico en el 12,4 \% de las referencias auditadas (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 2, núm. 2.3, p. 7). Las Bases piden gestionar la calidad conforme a la norma ISO/IEC 25012, con validación en el punto de captura, indicadores de completitud, exactitud y consistencia, y un tablero de calidad disponible para el Cliente. Esa norma define quince características de calidad de un dato, como exactitud, completitud o actualidad (ISO/IEC, 2008). La solución mide ocho, las que se relacionan con las cuatro promesas del Capítulo 2. La Tabla 5.7 indica qué significa cada una en Ancoa y cómo se mide.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.7: Características de calidad ISO/IEC 25012 que la solución mide. Fuente: elaboración propia a partir de ISO/IEC (2008) y de RT-05.04.\phantomsection\label{tab:t12}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.109\linewidth}p{0.202\linewidth}p{0.383\linewidth}p{0.208\linewidth}@{}}
+\toprule Característica & Qué asegura & Indicador & Dónde se mide \\
+\midrule
+Exactitud & El dato refleja la realidad. & Porcentaje de referencias sin diferencia, con línea base calculada de 87,6 \%, complementaria al 12,4 \% con discrepancia. & Conteos RE-13, por categoría \\
+Completitud & No faltan datos obligatorios. & Porcentaje de registros con todos sus campos obligatorios. & Maestro de artículos y entidades de captura \\
+Consistencia & Un dato no contradice a otro. & Diferencias entre precio publicado, exhibido y cobrado. & Conciliaciones diarias \\
+Actualidad & El dato está al día. & Segundos entre una venta y su disponible publicado. & Metas de latencia \\
+Credibilidad & Se confía en su origen. & Porcentaje de datos con origen y dueño registrados. & Linaje del almacén analítico \\
+Trazabilidad & Se sabe quién cambió qué. & Porcentaje de cambios con usuario, hora y valores anterior y posterior. & Registro de auditoría \\
+Disponibilidad & Se puede consultar cuando se necesita. & Tiempo en que cada servicio responde. & Observabilidad (Capítulo 4) \\
+Recuperabilidad & Se puede restaurar tras una falla. & Resultado de la prueba de restauración frente a 4 horas y 15 minutos. & Ensayos de recuperación \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+Las ocho filas de la Tabla 5.7 cubren exactitud, completitud y consistencia y añaden indicadores de actualización, trazabilidad y recuperación. Para inventario se mantiene el compromiso del Capítulo 3, discrepancia inferior al 2 \% por categoría; el 87,6 \% es únicamente el complementario calculado de la línea base inicial. En el primer mes se acuerdan responsables, definiciones y reglas de medición. Las metas adicionales de calidad se calibran con las primeras pasadas del perfilado de los meses 2 a 9 y se confirman antes de los ensayos. Esa calibración no difiere ni reduce la meta de inventario ya comprometida.
+
+La calidad se controla en tres momentos. En la captura, cada pantalla y cada interfaz rechaza el dato inválido antes de guardarlo, por ejemplo un RUT con dígito verificador incorrecto, un código de barras con dígito de control erróneo, un precio menor o igual a cero o un campo obligatorio vacío. En el procesamiento, las conciliaciones comparan lo que dicen dos fuentes, como el total de las ventas del día con el total de los pagos. Y en el análisis, el tablero de calidad muestra cada indicador por dueño, con alertas cuando se sale del umbral. El Cliente accede al tablero sin intervención de Only Simple Solutions, como piden las Bases.
+
+\subsection{5.2.4 Trazabilidad de operaciones y datos personales}
+
+La trazabilidad permite reconstruir, para cualquier registro y en cualquier momento del período de retención, quién hizo una operación, qué hizo, cuándo, desde qué dispositivo y con qué valores antes y después. Para cumplirlo, cada servicio escribe un registro de auditoría en su ámbito cada vez que cambia una entidad (RT-05.03). El registro contiene la identidad del usuario o del servicio, la operación, la fecha y hora, el dispositivo o nodo de origen, el valor anterior y el posterior, y la referencia de correlación que permite seguir una misma operación a través de varios servicios (Capítulo 4, sección 4.1). El acceso a información financiera y cada cruce entre ámbitos también se registran (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-16.09, p. 35). La identidad del actor, la sesión, el origen y la correlación deberán quedar en el registro de auditoría del ámbito, aunque FR-02 conserve solo la decisión mínima de cruce. Los registros de auditoría solo admiten agregar filas, y se conservan durante el mismo plazo que el dato al que se refieren. Los registros operativos no copian saldos ni expedientes completos, para no multiplicar los datos sensibles. En las entidades que ya guardan historia, como los precios y los estados de pedido, esa historia sirve de rastro, y el registro de auditoría cubre el resto.
+
+Los datos personales se tratan conforme al artículo 85 de las Bases Administrativas y a la Ley 19.628, modificada por la Ley 21.719. La reforma entra en vigencia el 1 de diciembre de 2026 (Ley 21.719, 2024; Ley 19.628, 1999). Con el inicio supuesto en enero de 2027, el diseño deberá acreditar desde el primer día el régimen vigente, incluidos finalidad, proporcionalidad, seguridad y atención de los derechos aplicables. Cada persona ejerce sus derechos por separado en Retail y en el Emisor, con su identificación propia y sin una tabla de correspondencia entre ámbitos. La Tabla 5.8 resume las protecciones.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.8: Protección de los datos personales por grupo. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-11.10, p. 34).\phantomsection\label{tab:t13}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.264\linewidth}p{0.098\linewidth}p{0.331\linewidth}p{0.208\linewidth}@{}}
+\toprule Dato & Entidades & Protección & Quién accede \\
+\midrule
+RUT y contacto de clientes, proveedores y vendedores & RE-07, RE-21, RE-23 & Cifrado de campo, con claves del ámbito Retail. & Roles de Retail según su finalidad \\
+Consentimientos comerciales & RE-24 & Solo se agregan registros, con fecha y finalidad. & Canales Digitales y auditoría \\
+Datos del titular, su deuda y su cobranza & EM-01 a EM-10 & Cifrado de campo, con claves propias del Emisor. & Roles del Emisor; ninguno de Retail \\
+Evidencia contractual & EM-11 & Escritura única, cifrado y registro de cada lectura. & Negocio Financiero y auditoría \\
+Bitácora de cruces & FR-02 & Seudónimo por cruce, sin identificadores de persona. & Contraloría \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.8 aplica dos técnicas que las Bases piden para las categorías sensibles (RT-05.08). El cifrado de campo protege cada dato sensible dentro de la base con una clave guardada en Key Vault, un servicio que custodia claves, de modo que quien obtenga una copia de la base no lee el dato sin la clave. La seudonimización reemplaza el dato personal por un código sin significado, como se explicó en la sección 5.1.7. Los medios de pago en RE-19, EM-05 y EM-07 se tokenizan; no se almacenan PAN ni CVV. El cifrado adicional a nivel de campo se aplica a identificación, evaluación, cartera y comportamiento de pago conforme a RT-11.10-C. X-01 mantiene persistencia PostgreSQL propia para sus fichas, políticas y decisiones, con consistencia y denegación si no puede dejar registro durable. Las categorías adicionales se confirman con Ancoa en el primer mes.
+
+\subsection{5.2.5 Retención, archivado y eliminación}
+
+Cada dato se conserva por el plazo aplicable y su eliminación exige verificar el vencimiento, las referencias activas y las suspensiones de conservación. Conservarlo más tiempo aumenta el riesgo de filtración, y eliminarlo antes impide defender a Ancoa en un reclamo. La Tabla 5.9 fija un plazo por dato (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.10, p. 33).
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.9: Plazos de retención por dato y lugar de conservación. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.10, p. 33).\phantomsection\label{tab:t14}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.264\linewidth}p{0.172\linewidth}p{0.106\linewidth}p{0.270\linewidth}p{0.066\linewidth}@{}}
+\toprule Dato & Plazo & Fundamento & Dónde se conserva & Ámbito \\
+\midrule
+Documentos tributarios y antecedentes de venta & 6 años & RT-05.10-C & Base transaccional 12 meses y luego Data Lake & Retail \\
+Movimientos, conteos y ajustes de inventario & 6 años & RT-05.10-C & Base transaccional 12 meses y luego Data Lake & Retail \\
+Precio publicado en cada canal & 3 años & RT-05.10-C & Base transaccional 12 meses y luego Data Lake & Retail \\
+Antecedentes del crédito y evidencia del consentimiento & Plazo del crédito más 6 años & RT-05.10-C & Base del Emisor y almacenamiento de escritura única & Emisor \\
+Antecedentes de prevención de lavado de activos & Conforme a la normativa aplicable & RT-05.10-C & Base del Emisor & Emisor \\
+Datos de fidelización & Mientras dure la relación y 2 años más & RT-05.10-C & Base transaccional de Retail & Retail \\
+Bitácora de cruces & Regla propia, con propuesta de 6 años & Capítulo 4, sección 4.1 & Almacén propio de X-01 & Frontera \\
+Videovigilancia & 30 días & RT-05.10-C & Sistema de videovigilancia, fuera de este capítulo & Retail \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.9 distingue plazos de conservación y ubicación operacional. Retail conserva una ventana inicial de 12 meses en la base y consulta la historia en su Data Lake hasta el vencimiento aplicable. Las referencias de pedidos, devoluciones, reservas y otras operaciones activas pueden exigir prolongar la disponibilidad de sus antecedentes. El crédito se conserva durante su plazo real y seis años adicionales (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.10, p. 33). Para capacidad se supone una duración máxima de 36 meses, coincidente con el Anexo A.3, Tabla A.57; tres años más seis dan nueve y se redondea hacia arriba a diez. Ese supuesto no fija la eliminación ni limita créditos de mayor duración. La evidencia acumulada de referencia a diez años alcanza 18,7 TB según 5.4.1. Para la bitácora de cruces se proponen seis años, sujetos a aprobación jurídica; no se atribuye ese plazo a una exigencia particular.
+
+La eliminación se hace por destrucción de claves. En Retail, donde el plazo se cuenta desde la fecha del hecho, los datos de cada año se cifran con una clave distinta. En el Emisor, donde el plazo se cuenta desde el término del crédito, la clave corresponde al año en que vence la retención de cada expediente, de modo que todo lo que se destruye vence el mismo año y nada vigente queda bajo una clave destruida. Solo después de comprobar vencimiento, ausencia de suspensión y resolución de referencias activas se destruye la clave del grupo, con lo que los datos quedan ilegibles incluso en las copias de seguridad, que de otro modo conservarían información ya vencida. Cada eliminación deja un acta con el recuento de registros antes y después, el nombre de la clave destruida y la prueba de que una lectura posterior falla. El procedimiento cumple la exigencia de eliminación verificable de las Bases (RT-05.07). La evidencia financiera de EM-11 está en un almacén de escritura única, que impide modificar o borrar un archivo antes del vencimiento de su retención. Esa propiedad, conocida como WORM por write once, read many, es la que convierte un expediente en una prueba confiable. Su disponibilidad en Chile Central se confirma en Preproducción, antes del paso a producción de la Etapa 1. La conservación de la evidencia incluye originales, verificación de firmas y formatos legibles. EM-16 registra cada resellado o migración de formato como nueva versión, con huella anterior y cadena de custodia; nunca se reemplaza el original. La prueba de recuperación incluye contenido, firma y cronología, con una meta única de cinco minutos como máximo para recuperar un expediente completo. El diseño de capacidad cubre diez años; la fecha de eliminación se determina por el plazo del crédito más seis años y las suspensiones de eliminación que correspondan. Las excepciones no se eliminan con una clave anual compartida; se conservan con claves y vencimientos separados hasta su liberación.
+
+\subsection{5.2.6 Exportación e intercambio sectorial}
+
+Ancoa debe poder llevarse todos sus datos, en cualquier momento, en formatos abiertos y sin pagar por ello ni depender de Only Simple Solutions (RT-05.06). La solución lo logra con una zona de exportación en el Data Lake de cada ámbito. Un usuario autorizado del Cliente solicita la exportación de una o varias entidades, y el sistema genera los archivos junto con el diccionario de datos que los describe. Los formatos son CSV (Shafranovich, 2005), con UTF-8 elegido por OSS, JSON (Bray, 2017) y Apache Parquet, un formato de columnas pensado para grandes volúmenes (Apache Software Foundation, s. f.). La carga masiva de datos sigue el camino inverso, con validación previa, informe de errores por registro y procesamiento parcial de lo válido (RT-05.22).
+
+Las condiciones de intercambio requieren identificar y justificar estándares sectoriales para proveedores, transportistas, vendedores del marketplace y autoridades (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.23, p. 34). La Tabla 5.10 los nombra y dice dónde se aplican.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.10: Estándares sectoriales de intercambio, lugar de aplicación y comprobación. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.23, p. 34; cap. 14, núm. 14.1, p. 31). Las fuentes de formatos son GS1 (s. f.), ISO/IEC (2024) y Servicio de Impuestos Internos (s. f.).\phantomsection\label{tab:t15}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.248\linewidth}p{0.300\linewidth}p{0.142\linewidth}p{0.212\linewidth}@{}}
+\toprule Necesidad de las Bases & Estándar o formato & Dónde se aplica & Cómo se comprueba \\
+\midrule
+Identificación y catálogo de producto & GS1 GTIN para artículos y GS1 GLN para ubicaciones & RE-01 y catálogo de nodos & Validación del dígito de control en la captura \\
+Órdenes, avisos de despacho y facturación con 940 proveedores & GS1 EANCOM, con mensajes ORDERS, DESADV e INVOIC & RE-06 y RE-08, mediante un adaptador & Pruebas de mensajes con proveedores piloto \\
+Transportistas de última milla & Eventos GS1 EPCIS 2.0 (ISO/IEC 19987) cuando el transportista lo admite & RE-16 & Contrato de interfaz por transportista \\
+Catálogo, existencia y pedido con vendedores del marketplace & API descritas en OpenAPI 3.1 y eventos en AsyncAPI & RE-21, RE-01, RE-12 y RE-14 & Contrato publicado y pruebas de compatibilidad \\
+Boleta y factura electrónica & Formato XML de documentos tributarios del SII & RE-17, a través de ERP/DTE & Validación contra los esquemas del SII \\
+Reportes a la autoridad del mercado financiero & Estructura de archivos que fije la CMF y presentación normalizada del costo total del crédito & EM-01, EM-05 a EM-10 & Catálogo de archivos acordado con el Cliente \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+Cada fila de la Tabla 5.10 se justifica por la necesidad concreta que atiende. GS1 proporciona identificadores de productos y ubicaciones; su aplicación deberá comprobar los códigos y catálogos actuales antes de decidir conversiones (GS1, s. f.). EANCOM define mensajes de pedidos, avisos de despacho y facturas basados en EDIFACT. Se propone un contrato de intercambio común para los 940 proveedores informados (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1, p. 31), cuya compatibilidad se acredita con pruebas y adaptadores por proveedor. A los proveedores que no usen intercambio electrónico se les ofrece el portal del Capítulo 4. EPCIS es el estándar de GS1 para informar eventos de una cadena de suministro, como un despacho o una entrega, y su versión 2.0 está normalizada en ISO/IEC 19987:2024 (ISO/IEC, 2024). Se propone para los transportistas que lo admitan, y para los que no, un adaptador traduce su formato propio. Las API del marketplace se describen en OpenAPI y AsyncAPI, que son los formatos que las Bases ya exigen para las interfaces (RT-05.16). La boleta y la factura electrónicas se emiten con el formato XML que el Servicio de Impuestos Internos publica, con esquemas para documentos tributarios, boletas y libros de guías (Servicio de Impuestos Internos, s. f.). ERP/DTE conserva la emisión, como establece el Capítulo 4, y la solución entrega los datos y guarda el folio y el estado de cada documento.
+
+La última fila es la única que no nombra un estándar, porque los archivos que debe enviar la filial a la Comisión para el Mercado Financiero (CMF) los define la propia autoridad. Only Simple Solutions no inventa un formato. El Cliente entrega al inicio el catálogo vigente de archivos y su calendario, y la solución genera cada archivo desde las entidades del Emisor, con su costo total del crédito calculado en la forma normalizada. La aceptación requiere que el primer archivo se valide con el Cliente antes del paso a producción de la Etapa 1.
+
+
+\section{5.3 Estrategia de migración}
+
+Migrar es trasladar los datos de los sistemas actuales a la solución nueva sin perder información y sin detener la venta. Ancoa parte de nueve plataformas de seis proveedores unidas por 14 interfaces, con un núcleo comercial de 2009 y una plataforma de crédito de 2011. El mapa de integraciones requiere levantamiento porque no está documentado por completo (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 5, p. 13; cap. 10, restricción 15, p. 26). Esta sección explica qué datos se trasladan y cuánto pesan, cómo se detectan y corrigen sus defectos, en qué fechas se hace cada traslado, cómo se comprueba que llegó todo y cómo se vuelve atrás si algo falla, y qué ocurre con los datos que no se trasladan.
+
+\subsection{5.3.1 Alcance y volumen}
+
+El alcance lo fijan las Bases e incluye siete grupos de datos. El maestro completo de artículos, con auditoría y completitud de atributos. El inventario al momento del corte. Seis años de venta. La cartera completa de los 620.000 clientes con saldo, con sus cuotas, repactaciones, garantías, cobranzas y juicios en curso. Tres años de pedidos del canal en línea. El padrón de clientes deduplicado. Y los vendedores del marketplace con su histórico de liquidaciones (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.15, p. 34). El alcance particular identifica 620.000 clientes con saldo, mientras la volumetría informa 620.000 tarjetas con saldo vigente; el perfilado deberá confirmar la cantidad de personas distintas y sus relaciones, conservando todos los expedientes de la cartera (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.15, p. 34; cap. 14, núm. 14.1, p. 31). La Tabla 5.11 presenta cada grupo con su cantidad, indica de dónde proviene cada cantidad y señala la ola de migración en que se traslada. Una cantidad puede ser dada, si Ancoa la informa en las Bases, calculada, si resulta de multiplicar cifras dadas, o supuesta, si Ancoa no la informa y el equipo debió estimarla.
+
+\par\vspace{0pt plus 54\baselineskip}\penalty-300\vspace{0pt plus -54\baselineskip}
+
+Tabla 5.11: Alcance de la migración, cantidad por grupo y origen de la cantidad. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.15, p. 34; cap. 14, núm. 14.1, p. 31).\phantomsection\label{tab:t16}\par\nopagebreak
+\begin{longtable}{@{}p{0.239\linewidth}p{0.260\linewidth}p{0.356\linewidth}p{0.048\linewidth}@{}}
+\toprule Grupo de datos & Cantidad & De dónde viene la cantidad & Ola \\
+\midrule\endhead\bottomrule\endlastfoot
+Maestro de artículos (RE-01 a RE-03) & 268.000 referencias propias y 190.000 de vendedores externos & Dada; las Bases informan ambas cifras & R1 y R2 \\
+Inventario al corte (RE-09) & 458.000 referencias en 24 instalaciones & Calculada; suma de las dos cifras anteriores, en 22 tiendas y 2 centros de distribución; es una cota superior, porque ninguna instalación guarda todas las referencias & R1 \\
+Venta de 6 años (RE-17 a RE-19) & 186 millones de documentos y 426 millones de líneas & Calculada. 31 millones de documentos al año y 71 millones de líneas al año, ambos dados, por 6 años & R1 \\
+Pedidos de 3 años (RE-14 a RE-16) & 5,7 millones de pedidos & Calculada. 1,9 millones de pedidos al año, dado, por 3 años & R2 \\
+Padrón de clientes Retail (RE-23 y RE-24) & 3 millones de clientes digitales & Supuesta; las Bases no informan cuántos clientes tiene el canal digital; se supone que un comprador activo hace 2 pedidos al año, lo que da unos 0,95 millones de compradores, y que quienes se registraron sin comprar o dejaron de comprar son el doble de los activos; la suma, redondeada, es 3 millones, y se reemplaza por la cifra real en el perfilado & R2 \\
+Vendedores y liquidaciones (RE-21 y RE-22) & 310 vendedores & Dada; las Bases informan la cifra & R2 \\
+Cartera de crédito (EM-05 a EM-10, EM-12 y EM-13) & 620.000 tarjetas con saldo vigente y la cartera completa de sus titulares & Dada para tarjetas; personas distintas a confirmar en perfilado & T1 a T3 \\
+Padrón de titulares (EM-04) & Hasta 1,38 millones de titulares como cota supuesta & Calculada desde tarjetas emitidas; confirmar personas distintas en el perfilado & T1 a T3 \\
+\end{longtable}
+
+
+La Tabla 5.11 combina cifras informadas y cálculos con dos supuestos de identidad. Los tres millones de clientes digitales constituyen una estimación a sustituir por el perfilado. Los 1,38 millones corresponden a tarjetas emitidas, no a personas distintas; se usan como cota de cálculo del padrón EM-04 bajo el supuesto de que cada titular tenga al menos una tarjeta. EM-05 admite varias tarjetas o cuentas por titular. La cantidad de titulares y los registros adicionales se medirán antes de dimensionar la carga. Los padrones Retail y Emisor se depuran por separado y nunca se cruzan. Las cantidades históricas de venta y pedidos se recalculan con las tasas anuales y la disponibilidad real de la historia.
+
+El volumen de cada grupo se estima multiplicando cantidad y tamaño medio supuesto del registro. Los tamaños, incluidos índices según el grupo, se derivan del contenido esperado y se redondean hacia arriba. Constituyen una referencia inicial de carga que deberá contrastarse con muestras de origen. No prueban un límite superior de toda la migración. La Tabla 5.12 muestra el alcance incluido en esa estimación.
+
+\par\vspace{0pt plus 48\baselineskip}\penalty-300\vspace{0pt plus -48\baselineskip}
+
+Tabla 5.12: Volumen estimado por grupo de datos, tamaño medio supuesto por registro y destino. Fuente: elaboración propia a partir de la tabla anterior y de los supuestos del Anexo A.\phantomsection\label{tab:t17}\par\nopagebreak
+\begin{longtable}{@{}p{0.108\linewidth}p{0.286\linewidth}p{0.236\linewidth}p{0.052\linewidth}p{0.196\linewidth}@{}}
+\toprule Grupo de datos & Cálculo & Tamaño medio supuesto & Volumen & Destino \\
+\midrule\endhead\bottomrule\endlastfoot
+Maestro de artículos & 458.000 referencias por el tamaño del registro & 3 KB por artículo, con sus atributos y su historia de cambios & 1,4 GB & Base de Retail \\
+Inventario al corte & 458.000 referencias por 24 instalaciones por el tamaño del registro & 100 bytes por existencia & 1,1 GB & Base de Retail \\
+Venta de 6 años & 6 años de 71 millones de líneas y de 31 millones de documentos & 300 bytes por línea y 600 por documento & 239,4 GB & Últimos 12 meses en la base de Retail y el resto en el Data Lake \\
+Pedidos de 3 años & 5,7 millones de pedidos & 2 KB por pedido con sus líneas y su historial & 11,4 GB & Últimos 12 meses en la base de Retail y el resto en el Data Lake \\
+Padrón de clientes Retail & 3 millones de clientes & 1 KB por cliente con sus consentimientos & 3,0 GB & Base de Retail \\
+Vendedores y liquidaciones & 310 vendedores con su histórico & 1 GB como supuesto inicial; perfilado de vendedores y liquidaciones & 1,0 GB & Base de Retail \\
+Cartera de crédito & 620.000 tarjetas con saldo, 12 cuotas supuestas por tarjeta, 6 años de 2,9 millones de gestiones de cobranza al año y hasta 620.000 fichas de titulares como cota supuesta & 150 bytes por cuota, 200 por gestión y 2 KB por ficha & 5,8 GB & Base del Emisor \\
+Padrón de titulares & Cota supuesta de 1,38 millones de titulares & 1 KB por titular & 1,4 GB & Base del Emisor \\
+\end{longtable}
+
+
+Las ocho filas de la Tabla 5.12 suman aproximadamente 264,5 GB. La venta histórica concentra 239,4 GB, cerca del 90 \% del alcance estimado. Algunos recuentos se superponen y otros grupos aún requieren tamaño propio, incluidas auditoría completa de artículos, garantías, juicios, evidencia y liquidaciones. El perfilado deberá incorporarlos antes de fijar la ventana definitiva. En esta referencia se destinan unos 57 GB a persistencia operacional y 207 GB al Data Lake; el reparto se confirma con la retención y las dependencias activas. El crecimiento anual de 5.4.1 no equivale al tamaño inicial de todas las bases. Si los tamaños medios duplicaran el supuesto, los grupos estimados llegarían a unos 529 GB; la duración se volvería a medir, sin omitir los grupos aún no cuantificados.
+
+Dos reglas de transformación gobiernan todas las cargas. La primera es que cada ámbito se carga por su propio canal y con sus propias credenciales, y ningún dato de Retail se carga en el Emisor ni al revés. El padrón de clientes Retail y el de titulares del Emisor se depuran por separado y no se cruzan, de modo que la migración no crea la tabla de correspondencia que el diseño prohíbe. La segunda es que cada registro conserva su identificador de origen en un campo de referencia, para poder rastrearlo hasta el sistema del que vino. Las demás reglas, campo por campo, están en el anexo.
+
+\subsection{5.3.2 Perfilado y saneamiento}
+
+El perfilado es un análisis automático de los datos de origen que mide cuántos registros están incompletos, duplicados, mal formados o contradicen a otros. Se hace antes de migrar, porque trasladar un dato defectuoso solo lo cambia de lugar. Entre los meses 2 y 9 del proyecto se hacen pasadas completas sobre copias de solo lectura de los sistemas de origen, que Ancoa entrega en el primer mes, y se repite una pasada antes de cada ensayo. Cada pasada produce un informe de defectos con el recuento por tipo, ejemplos y la decisión adoptada, como exigen las Bases. La Tabla 5.13 fija las decisiones por tipo de defecto, que se aplican a cada caso que el perfilado encuentre.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.13: Tipos de defecto previstos y decisión por defecto. Fuente: elaboración propia a partir de RT-05.12 y de las Bases Técnicas.\phantomsection\label{tab:t18}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.142\linewidth}p{0.235\linewidth}p{0.379\linewidth}p{0.146\linewidth}@{}}
+\toprule Tipo de defecto & Ejemplo & Decisión & Quién decide \\
+\midrule
+Duplicados de clientes & La misma persona con dos fichas & Se unifican por regla; los casos dudosos los resuelve una persona de Ancoa. & Gerencia de Canales Digitales \\
+Artículos incompletos & Artículo sin categoría o sin código de barras & Se completa en origen; si no es posible, se migra marcado como incompleto y no se publica. & Gerencia Comercial \\
+Registros sin padre & Línea de venta sin documento & No se carga en las tablas activas; pasa al repositorio de consulta con su marca. & Dueño del dato \\
+Saldos que no cuadran & Suma de cuotas distinta del saldo & Se recalcula con la regla contractual; la diferencia queda explicada y aprobada. & Negocio Financiero \\
+Formatos inválidos & RUT sin dígito verificador, fecha imposible & Se corrige con regla; si no es posible, se rechaza y se lista. & Dueño del dato \\
+Existencias incoherentes & Saldo negativo en una tienda & No se traslada; se reemplaza por el conteo del corte. & Gerencia de Logística \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.13 sigue un criterio de prioridad. Un defecto se corrige en el origen siempre que sea posible, porque así queda corregido en el sistema que sigue operando mientras dura la convivencia. Si no se puede, se corrige con una regla de transformación que queda escrita. Si tampoco es posible, el registro no se mezcla con los buenos. Se migra marcado o se deriva al repositorio de consulta de la sección 5.3.5. Ningún defecto se descarta en silencio, y cada uno queda con un responsable. Los tipos que el perfilado encuentre y que no estén en la tabla se agregan al informe con su decisión antes de la siguiente pasada. El plan de perfilado, con las pruebas por entidad, está en el anexo.
+
+\subsection{5.3.3 Olas y ventanas de corte}
+
+Una ola es un grupo de datos que se traslada junto en una fecha acordada. Las fechas no se eligen libremente, porque las Bases prohíben pasar a producción dentro de cualquiera de sus cinco ventanas de congelamiento (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 13, núm. 13.2, p. 29). Son cinco. La campaña de Navidad, del 1 de noviembre al 6 de enero. La última semana de noviembre, por un segundo evento de descuentos de alcance internacional, que cae dentro de la anterior. La vuelta a clases, desde la última semana de enero hasta la primera de marzo. La segunda semana de mayo, por el día de la madre. Y el evento anual de comercio electrónico, de tres días entre mayo y junio, con congelamiento de la semana previa. La fecha del evento la fija la asociación gremial y se anuncia con unas seis semanas de anticipación (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 10, restricción 10, p. 26).
+
+El calendario conserva los 56 meses contractuales y el inicio supuesto en enero de 2027 del Capítulo 2. La Etapa 1 comprende los meses 1 a 15, con marcha blanca del 13 al 15 y producción en el 16, abril de 2028. La Etapa 2 comprende los meses 13 a 20, con marcha blanca en 19 y 20 y producción en el 21, septiembre de 2028. Only Simple Solutions opera durante los meses 21 a 56, hasta agosto de 2031 con ese inicio. La Figura 5.8 ubica los cortes y congelamientos dentro de las etapas; su detalle de transición no representa el término de la operación contractual.
+
+\begin{center}
+  \phantomsection\label{fig:f19}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/f7.png}
+\end{center}
+
+Figura 5.8: Calendario de las migraciones sobre las etapas y los congelamientos. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 13, núm. 13.2, p. 29).
+
+
+En la figura, las barras azules y verdes muestran las etapas y las franjas de color muestran los congelamientos. Para quien la lea sin color, las franjas están rotuladas con su nombre y la de Navidad es la más extensa, de noviembre a comienzos de enero. La franja roja es el congelamiento de Navidad, la naranja la vuelta a clases y el Día de la Madre, y la lila el evento anual, cuya fecha exacta varía cada año. Las olas de datos Retail, R1 y R2, y los tramos de cartera, T1 a T3, quedan siempre fuera de las franjas. Los ensayos E1 y E2 se hacen en el ambiente de Preproducción, que es una réplica de la solución y no el sistema de producción de Ancoa. Por esa razón el ensayo 2 puede hacerse en diciembre, y se entiende que los congelamientos de Ancoa no alcanzan a la Preproducción, lo que se confirma con el Cliente en el primer mes.
+
+Los datos se reparten en dos olas de Retail y tres tramos de cartera. La ola R1 acompaña a la Etapa 1 y lleva el maestro de artículos propios, los precios vigentes, el inventario al corte y los seis años de venta. La ola R2 acompaña a la Etapa 2 y lleva los pedidos, el padrón de clientes Retail, los artículos de vendedores externos, los vendedores del marketplace y sus liquidaciones. La cartera se traslada por tramos, de menor a mayor complejidad. El tramo T1 reúne a los clientes con cuentas al día y se traslada con la Etapa 1. El tramo T2 reúne a quienes tienen repactaciones y se traslada con la Etapa 2. El tramo T3 reúne la cobranza y los juicios en curso y se traslada entre el 1 y el 14 de octubre de 2028, después de la Etapa 2 y antes del congelamiento de Navidad. Trasladar la cartera en tramos evita mover de una vez 620.000 cuentas con situaciones muy distintas, y deja los casos más delicados para cuando el equipo ya conoce la solución. No se asignan volúmenes a cada tramo, porque se obtienen del perfilado. La Tabla 5.14 detalla los hitos.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.14: Hitos de migración y ventana libre en que se realizan. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 13, núm. 13.2–13.3, pp. 29–30).\phantomsection\label{tab:t19}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.108\linewidth}p{0.332\linewidth}p{0.209\linewidth}p{0.253\linewidth}@{}}
+\toprule Hito & Contenido & Fecha o ventana & Por qué es una ventana libre \\
+\midrule
+Ensayo 1 & Ensayo completo de R1 y T1 en Preproducción & Octubre de 2027 & Preproducción, fuera de producción de Ancoa \\
+Ensayo 2 & Segundo ensayo completo, con las correcciones del primero & Diciembre de 2027 & Preproducción; se supone que el congelamiento no lo alcanza \\
+Carga para marcha blanca & R1 y T1 con datos reales, para operar en paralelo & 7 al 23 de enero de 2028 & Entre el fin de Navidad y la vuelta a clases \\
+Corte de R1 y T1 & Diferencias finales, conteo de inventario y paso a producción de la Etapa 1 & 18 al 31 de marzo de 2028; producción en abril & Después de la vuelta a clases y antes del Día de la Madre \\
+Ensayos de R2, T2 y T3 & Dos ensayos completos de la segunda etapa & Mayo y junio de 2028 & Preproducción \\
+Carga para marcha blanca & R2 y T2 con datos reales & Julio de 2028 & Sin congelamiento \\
+Corte de R2 y T2 & Diferencias finales y paso a producción de la Etapa 2 & 18 al 31 de agosto de 2028; producción en septiembre & Sin congelamiento \\
+Corte de T3 & Cartera compleja; cierre y conciliación previos al apagado & Corte del 1 al 14 de octubre de 2028; apagado antes del 31 & Fuera del congelamiento y antes de 2029 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.14 mantiene los cortes de R1/T1 y R2/T2 asociados a las entradas en producción de los meses 16 y 21. T3 deberá completarse antes del 15 de octubre de 2028 y la plataforma de 2011 se apagará antes del 31 de octubre, conforme al Capítulo 3, sección 3.2.3. La reserva de octubre permite corregir y ensayar el retorno dentro de la misma ventana; trasladar T3 a enero incumpliría el compromiso financiero. El primer cierre de T3, su conciliación y la compuerta de apagado se programan y ensayan dentro de octubre. Negocio Financiero deberá fijar el calendario de estados de cuenta antes de autorizar el tramo, manteniendo sus fechas contractuales. Si ese cierre no cabe antes del apagado, el corte de T3 se adelanta dentro de una ventana permitida y se ajusta el ensayo. La conciliación será diaria hasta el apagado y no se habilita un cierre en noviembre como condición de retiro. Las porciones de Retail aún activas conservan su autoridad e integración mientras dure la convivencia.
+
+Con 40 MB/s sostenidos como hipótesis de trabajo, los 264,5 GB estimados de la Tabla 5.12 equivalen a 1,84 horas por pasada y a 7,35 horas para cuatro pasadas de extracción, transformación, carga y validación. La duración efectiva se mide en los ensayos e incluye controles y grupos aún no dimensionados. En el corte se carga el delta de cada ola, no toda su historia. Solo documentos, líneas y pedidos Retail aportan aproximadamente (31 millones × 600 B + 71 millones × 300 B + 1,9 millones × 2.000 B) × 30/365 = 3,59 GB en 30 días. Este subtotal tarda unos 90 segundos de transferencia a 40 MB/s; excluye precios, movimientos, maestros, inventario y cambios del Emisor. Cada ámbito registra y mide su delta por separado. La conciliación, extracción, validación y eventual retorno forman parte de la ventana y no se deducen del tiempo de transferencia.
+
+\subsection{5.3.4 Ensayos, conciliación y reversión}
+
+Se ejecutan dos ensayos completos de migración en Preproducción antes de cada corte definitivo (RT-05.13), con medición del tiempo total y del resultado de la conciliación. Para R1 y T1 son los ensayos 1 y 2 de la Tabla 5.14, y para R2, T2 y T3 los de mayo y junio de 2028. Un ensayo se da por bueno cuando termina dentro de la ventana prevista y todas las diferencias de la conciliación están explicadas. Si no lo logra, se corrige y se repite. El corte no se autoriza hasta completar al menos dos ensayos integrales satisfactorios con los criterios de conciliación y retorno acordados.
+
+La conciliación compara lo extraído con lo cargado. RT-05.14 requiere recuentos, sumas de control y muestreo dirigido; la solución añade muestreo aleatorio. La Tabla 5.15 resume las cuatro técnicas y sus reglas de aceptación.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.15: Técnicas de conciliación y regla de aceptación. Fuente: elaboración propia a partir de RT-05.14 y de las Bases Técnicas.\phantomsection\label{tab:t20}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.098\linewidth}p{0.345\linewidth}p{0.368\linewidth}p{0.090\linewidth}@{}}
+\toprule Técnica & Qué se compara & Regla de aceptación & Cuándo \\
+\midrule
+Recuento & Cantidad de registros por entidad y por mes, entre origen y destino & Coincidencia exacta, o diferencia explicada registro por registro & Tras cada carga \\
+Suma de control & Totales de importes y unidades por mes, y huella de las claves & Capital de cada cuenta exacto; diferencias de redondeo en la unidad monetaria mínima explicadas & Tras cada carga \\
+Muestreo dirigido & Casos de riesgo, como juicios, repactaciones y saldos altos & Revisión de todos los casos en juicio y en repactación del tramo & Ensayo y corte \\
+Muestreo aleatorio & Registros al azar de cada entidad & 300 registros por entidad sin diferencias no explicadas & Ensayo y corte \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.15 define reglas según el dato. El capital de cada cuenta debe coincidir exactamente. En ventas, las diferencias de redondeo se expresan en la unidad monetaria mínima aplicable, se reproducen con la regla acordada y se explican registro por registro. Una diferencia no explicada bloquea el corte. Intereses y gastos se concilian con sus reglas contractuales además del capital. El muestreo aleatorio añadido usa 300 registros por entidad. Bajo selección aleatoria e independencia, una tasa de error del 1 \% da una probabilidad de detección de 1 − 0,99\textsuperscript{300}, aproximadamente 95,1 \%. Una muestra sin errores permite obtener un límite superior estadístico cercano al 1 \% con ese nivel de confianza; no sustituye la revisión integral de saldos y casos dirigidos. El dueño del dato y Only Simple Solutions deberán firmar los informes para la aceptación de cada ola; aquí no se declara esa aceptación realizada.
+
+El inventario requiere una estrategia propia, porque las Bases piden un conteo físico total o una estrategia de corte declarada y fundamentada (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.15, p. 34). Un conteo físico total exigiría detener la venta en 22 tiendas, y el registro de origen está equivocado en el 12,4 \% de las referencias, por lo que cargarlo tal cual sería trasladar el error. La estrategia que se propone tiene tres pasos. Primero, el saldo de apertura de cada tienda se toma del sistema de origen a la hora del corte y se ajusta con las ventas del último día. Segundo, en los dos centros de distribución se hace un conteo físico total durante la ventana del corte, porque son pocas instalaciones con ubicaciones codificadas. Tercero, en las tiendas se hace un conteo cíclico dirigido en las semanas siguientes, que empieza por las categorías de mayor valor y de mayor diferencia histórica. Mientras tanto, el disponible comprometible descuenta un margen de seguridad proporcional a la diferencia medida en cada categoría, de modo que la promesa al cliente tiene en cuenta que el dato es imperfecto. Es la forma de actuar que pide la gerencia de Ancoa, que pide poder hacer promesas sobre un dato que se sabe imperfecto y saber cuánto margen se está dando (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 8, entrevista de Amparo Ganderats Vial, p. 18).
+
+La reversión permite retornar a la autoridad de origen si un corte falla. Antes de producción, el origen conserva la escritura y una carga fallida se descarta en destino. Después del corte, solo la cohorte migrada queda sin escritura en origen; las cohortes aún no migradas continúan operando allí. El retorno transfiere y concilia las operaciones nuevas antes de devolver la autoridad, con el procedimiento ensayado en Preproducción. La conservación operativa de la plataforma de 2011 termina en la compuerta de apagado acordada, después del primer cierre de T3 y su conciliación dentro de octubre, según 5.3.3. Los archivos históricos y las evidencias se preservan en el Emisor. El comité de Ancoa y OSS decide continuidad o retorno con las evidencias de ensayo y conciliación. Negocio Financiero notifica individualmente a los titulares por canales autorizados, informa fechas, continuidad de condiciones, ayuda y consulta de estados de cuenta, registra entrega o fallo y atiende incidencias. La migración no modifica cuotas ni fechas contractuales. La primera facturación y sus incidencias deberán constar en el acta del tramo. El Capítulo 6 coordina las comunicaciones.
+
+\subsection{5.3.5 Datos no migrados}
+
+No todo se traslada. Los datos que quedan fuera de la solución nueva, pero que Ancoa debe conservar por su plazo de retención, quedan accesibles en un repositorio de consulta, como exigen las Bases. Para decidir qué se traslada y qué no, se aplican tres preguntas en este orden. Primero, si las Bases piden expresamente migrarlo, se migra, porque así lo fija RT-05.15-C. Segundo, si no lo piden, se traslada solo si alguna operación diaria de la solución nueva lo necesita, por ejemplo para calcular un saldo o responder un reclamo reciente. Tercero, si ninguna operación lo necesita pero la ley o el contrato obligan a conservarlo, no se traslada y pasa al repositorio de consulta. Un dato que no cumple ninguna de las tres condiciones se destruye con el procedimiento de la sección 5.2.5. El criterio evita cargar en las bases de operación datos que nadie usa a diario, lo que las haría más complejas de consultar y recuperar, sin que Ancoa pierda la capacidad de consultarlos.
+
+La Tabla 5.16 registra los datos que quedan fuera de la migración, la razón de cada exclusión según ese criterio y el plazo durante el que se conservan.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.16: Datos que no se migran, razón de la exclusión y plazo de conservación. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.10, p. 33; RT-05.15, p. 34).\phantomsection\label{tab:t21}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.212\linewidth}p{0.285\linewidth}p{0.285\linewidth}p{0.120\linewidth}@{}}
+\toprule Dato no migrado & Por qué no se migra & Dónde queda y cómo se consulta & Plazo \\
+\midrule
+Pedidos con más de 3 años y hasta 6 & Las Bases piden migrar 3 años de pedidos y ninguna operación diaria usa los anteriores & Repositorio de consulta de Retail, por RUT, folio o número de pedido & 6 años \\
+Créditos cerrados sin saldo de la plataforma de 2011 & Ya no generan cuotas ni cobranza, y no se necesitan para operar & Repositorio de consulta del Emisor, por RUT o número de operación & Plazo del crédito más 6 años \\
+Registros rechazados por el perfilado & Se segregan para corrección; un rechazo no excluye los datos de migración obligatoria & Repositorio de consulta del ámbito de origen, con la razón del rechazo & Hasta aprobar la ola y luego 6 años \\
+Historial de precios anterior al corte & Las Bases piden migrar los precios vigentes y no su historia & Repositorio de consulta de Retail, por artículo y fecha & 3 años \\
+Evidencia histórica de solicitudes y repactaciones & Se preserva sin reescribir; la recuperable se vincula al expediente migrado & Repositorio de consulta del Emisor, tal como salió del sistema de origen & Plazo del crédito más 6 años \\
+Parte del núcleo de 2009 que sigue activa & Sigue operando y se integra con un adaptador, por lo que no hay traslado & No aplica, sus datos se consultan en el sistema que los mantiene & Mientras opere \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.16 aplica el criterio a cada caso. Las filas distinguen consulta histórica, segregación para saneamiento y conservación de evidencia. Todo antecedente obligatorio de cartera deberá quedar cargado o vinculado y conciliado antes de aceptar su tramo; el repositorio de consulta no justifica omitirlo. La quinta considera las evidencias históricas recuperables. Ancoa registra además 1.240 repactaciones sin evidencia recuperable (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 12, p. 27). La solución no crea ni atribuye consentimientos retrospectivos. Registra la ausencia de los soportes y conserva cualquier antecedente recuperable para que Negocio Financiero y su asesoría jurídica determinen el tratamiento de cada expediente. La última fila aplica lo que establece el Capítulo 3, donde una porción del núcleo de 2009 puede seguir activa al término del contrato. Esa porción no se migra y sus datos siguen en el sistema que los mantiene hasta que Ancoa decida retirarla.
+
+El repositorio es de solo lectura y se aloja en el Data Lake de cada ámbito, que es el almacén de archivos descrito en la sección 5.2.2. Guarda los datos tal como salieron del sistema de origen, el diccionario que los describe y un índice por identificador, de modo que una persona autorizada puede buscar por RUT, folio o número de operación y exportar el resultado. Cada dato se destruye al vencer su plazo con el procedimiento de la sección 5.2.5. Con esto, los sistemas de 2009 y 2011 pueden apagarse sin perder la capacidad de responder a un reclamo o a una fiscalización, salvo la porción del núcleo de 2009 que sigue activa. Se conservan los datos, no las plataformas.
+
+
+\section{5.4 Estrategia de desempeño}
+
+El desempeño es la capacidad del sistema para responder con rapidez cuando más se le exige. Para Ancoa, esos momentos son dos. El primero es el evento anual de comercio electrónico. Sus 104.000 pedidos en tres días equivalen, por cálculo, a unos 22 días de la tasa ordinaria de 1,9 millones al año (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1, p. 31). El segundo es un sábado de diciembre, en que las 380 líneas de caja venden a la vez (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 13, núm. 13.2, p. 29; cap. 14, núm. 14.2, p. 32). Esta sección parte de las cifras de las Bases, estima la carga de esos días con supuestos declarados, y decide con ella cómo se indexa, se particiona y se acelera con memoria rápida cada entidad del modelo. Termina con las pruebas que verifican que lo prometido se cumple. Cada cifra se calcula en la memoria de cálculo del anexo, de modo que Ancoa puede rehacerla con sus propios supuestos.
+
+\subsection{5.4.1 Carga de referencia}
+
+El numeral 14.2 exige estimar 17 dimensiones y declarar sus supuestos (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.2, p. 32). Quince corresponden a datos o carga de sistema y se desarrollan aquí. Contactos de mesa de ayuda y dotación operacional se coordinan con el Capítulo 7 y el Formulario T-15; esa remisión no acredita sus cálculos. El método parte de las cifras informadas, añade escenarios propios de carga y comprueba su sensibilidad. Los factores que Ancoa no informa son hipótesis de OSS, que deberán sustituirse o confirmarse mediante medición. Ante varios escenarios se dimensiona para el más exigente que deba soportarse. La Tabla 5.17 declara los principales factores y sus efectos, sin presentarlos como mediciones ni como prácticas externas acreditadas.
+
+\par\vspace{0pt plus 71\baselineskip}\penalty-300\vspace{0pt plus -71\baselineskip}
+
+Tabla 5.17: Supuestos principales de la estimación de carga y criterio de elección. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1, p. 31).\phantomsection\label{tab:t22}\par\nopagebreak
+\begin{longtable}{@{}p{0.199\linewidth}p{0.115\linewidth}p{0.320\linewidth}p{0.268\linewidth}@{}}
+\toprule Supuesto & Valor & Criterio con que se eligió & Qué ocurre si cambia \\
+\midrule\endhead\bottomrule\endlastfoot
+Jornada comercial & 12 horas, 365 días & Supuesto de concentración de venta en 12 horas; no limita las 24 horas de autonomía & Con 10 horas, la carga por segundo sube 20 \% \\
+Hora ordinaria frente al promedio & 2 veces & Factor de diseño de OSS; se confirma con medición de Ancoa & Con 3 veces, la carga de hora ordinaria sube 50 \% \\
+Sábado de diciembre frente al promedio & 6 veces & Factor de diseño de OSS; Ancoa identifica Navidad como pico, sin informar su magnitud & Con 8 veces, el diseño de ventas por segundo sube un tercio \\
+Pedidos del primer día del evento & 50 \% de los 104.000 & Tercer criterio; repartir los tres días por igual daría 33 \%; se elige la mitad porque la apertura concentra la demanda y ese valor da más carga & Con 40 \%, el primer día baja un quinto \\
+Pedidos en la apertura del evento & 10 \% del primer día, en 15 minutos & Tercer criterio; una oferta anunciada a una hora provoca un pico; se supone que una décima parte de los pedidos del día entra en el primer cuarto de hora & Con 20 \%, la carga de la apertura se duplica \\
+Consultas de disponibilidad por pedido & 120 & Supuesto de 40 pantallas por compra y 3 consultas por pantalla; confirmar en medición & Con 240, la carga de apertura se duplica \\
+Tiempo entre consultas de una persona & 20 segundos & Tiempo de lectura supuesto de OSS; determina la concurrencia de referencia & Con 40 segundos, las personas simultáneas se duplican \\
+Movimientos de inventario por línea de venta & 1,5 & Supuesto de una salida y un movimiento adicional en la mitad de los casos & Con 2, los movimientos suben un tercio \\
+Margen de prueba sobre la carga estimada & 1,5 veces & Margen propuesto de OSS frente a crecimientos informados de 1,44 en pedidos y 1,16 en documentos & Con un crecimiento mayor, se amplía la prueba \\
+\end{longtable}
+
+
+La Tabla 5.17 contiene supuestos que el Cliente puede reemplazar por mediciones propias. Los de mayor efecto son las 120 consultas por pedido y la concentración de la apertura, que determinan la carga del evento. Como el resultado es proporcional a cada uno, si el comercio electrónico actual de Ancoa midiera el doble de consultas por pedido, la carga de apertura se duplicaría, y la prueba del 1,5 veces dejaría de ser suficiente. Por eso la medición se pide en el primer mes y se usa para ajustar la prueba antes del paso a producción de la Etapa 1. El margen de 1,5 veces no es arbitrario. Ancoa proyecta para dentro de tres años 150.000 pedidos en los tres días del evento frente a los 104.000 actuales, es decir 1,44 veces, y 36 millones de documentos de venta frente a 31 millones, es decir 1,16 veces (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1, p. 31). Una prueba al 1,5 veces cubre ambos crecimientos.
+
+La Tabla 5.18 presenta el resultado de las siete dimensiones de carga y la Tabla 5.19 el de las ocho de almacenamiento, migración y red.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.18: Estimación de carga de operación, dimensiones 1 a 7 del numeral 14.2. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1–14.2, pp. 31–32).\phantomsection\label{tab:t23}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.303\linewidth}p{0.275\linewidth}p{0.348\linewidth}@{}}
+\toprule Dimensión de las Bases & Resultado & Cómo se obtiene \\
+\midrule
+Transacciones en régimen normal & 2,2 por segundo de promedio y 4,5 en hora ordinaria & 35,1 millones de operaciones al año en 12 horas diarias \\
+Peak del primer día del evento anual & 5,8 pedidos por segundo en los primeros 15 minutos & 104.000 pedidos en 3 días, con 5.200 en la apertura \\
+Consultas de disponibilidad y personas concurrentes & 693 consultas por segundo y 13.867 personas & 5,8 pedidos por segundo, 120 consultas por pedido y 20 segundos entre consultas \\
+Sábado de diciembre con las 380 cajas & 11,8 documentos por segundo, diseño en 12 & Promedio de documentos por 6, verificado con un cálculo desde las cajas \\
+Evaluaciones crediticias en el punto de venta & 0,2 por segundo y 1,6 en curso a la vez & Proporción de evaluaciones sobre ventas en el pico, con el límite de 8 segundos \\
+Carga masiva de precios de campaña & 1.333 eventos por segundo, 3,2 Mbps & Lote supuesto de estrés de 400.000 cambios en 5 minutos \\
+Sincronización de existencia entre 22 tiendas, 2 centros y 4 canales & 40,5 movimientos y 1.135 mensajes por segundo en el pico & 106,5 millones de movimientos al año hacia 28 destinos \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.19: Estimación de almacenamiento, migración y red, dimensiones 8 a 15 del numeral 14.2. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 14, núm. 14.1–14.2, pp. 31–32).\phantomsection\label{tab:t24}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.255\linewidth}p{0.349\linewidth}p{0.322\linewidth}@{}}
+\toprule Dimensión de las Bases & Resultado & Cómo se obtiene \\
+\midrule
+Almacenamiento transaccional anual & 98,8 GB netos; 148,2 GB con índices; 192,6 GB provisionados & Filas por año por su tamaño medio, con índices y 30 \% de holgura \\
+Trazabilidad del precio publicado & 56 millones de filas y 14,0 GB al año & 14 millones de cambios por 4 canales \\
+Grabaciones y evidencia de consentimiento & 566.000 casos y 1,9 TB al año; 18,7 TB en régimen estable & 520.000 evaluaciones y 46.000 repactaciones; horizonte de 10 años \\
+Datos históricos a migrar & 264,5 GB & Sección 5.3.1 \\
+Integraciones y mensajes por integración & Flujos mayores de 11,8 documentos, 40,5 movimientos y 1.333 precios por segundo & Las integraciones las define el Capítulo 4 \\
+Ancho de banda por tienda y centro de distribución & 0,02 Mbps sostenidos por tienda y unos 10 KB por segundo por centro & Pico de diseño de tienda grande; movimientos centrales del pico \\
+Datos de una tienda en 8 horas sin enlace & Promedio 2.574; pico de diseño 38.606 documentos y 69,5 MB & 31 millones/365/22 × 8/12 × 2,5 × 6; 1,8 KB por documento \\
+Sincronización tras 8 horas sin enlace & 209,9 MB; 314,9 MB con margen; 21,0 minutos de transmisión a 2 Mbps & 69,5 MB de ventas y 140,4 MB de bajada supuesta; margen 1,5 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+Las dos tablas se leen de la misma manera. Cada fila responde a una de las dimensiones de las Bases, con su resultado y la forma de obtenerlo, y el anexo muestra la fórmula. Cinco resultados orientan las decisiones de las subsecciones siguientes. La apertura del evento anual exige responder 693 consultas de disponibilidad por segundo, y la prueba se hace con 1.040. La mayor parte de la carga es lectura de disponibilidad y de precio, y no escritura, de modo que la memoria rápida de la sección 5.4.4 es la medida de mayor efecto. La venta de un sábado de diciembre se estima en 11,8 documentos por segundo. Las cajas y los terminales móviles aportan una parte de esa cifra. Con 380 cajas que atienden una venta cada 90 segundos y 640 terminales móviles que atienden una cada 120, generan hasta 9,6 documentos por segundo, y la diferencia corresponde al canal digital y a los pagos por otros medios, que también emiten documentos de venta. El diseño parte de 12 por segundo, por encima de la estimación, y con la proyección de 3 años de Ancoa el pico llega a 13,7 por segundo, que la prueba de 18 cubre. Por último, las evaluaciones de crédito son pocas, 0,2 por segundo, y el desafío no es el volumen sino el límite de 8 segundos que fijan las Bases para una evaluación en el punto de venta (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-09.01, p. 34).
+
+La carga local distingue el escenario de la memoria y el pico de Navidad. Se usan unidades decimales, 1 KB = 1.000 B, 1 MB = 1.000.000 B y 1 GB = 1.000.000.000 B. El promedio de ocho horas es 31 millones/365/22 × 8/12 = 2.574 documentos. La Tabla A.59 aplica tienda grande 2,5 y factor 2, un escenario de dimensionamiento de cinco veces el promedio que obtiene aproximadamente 12.868 documentos, unos 23,2 MB a 1,8 KB por documento. Ese escenario no representa el pico de factor seis. Con tienda grande 2,5 y pico seis resultan aproximadamente 38.606 documentos en ocho horas y 69,5 MB. Para la bajada se propone una carga de prueba de 120 MB de precios (400.000 eventos × 300 B) y 20,4 MB de existencias (68.000 mensajes × 300 B), ambos supuestos de carga por tienda; suman 140,4 MB. Con esa hipótesis, el subtotal es 209,9 MB; con margen 1,5 son 314,9 MB, unos 21,0 minutos de transmisión a 2 Mbps efectivos. La aceptación exige sincronización y conciliación completas en 30 minutos o menos tras ocho horas, no solo transportar bytes (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-03.13, p. 33). El volumen real de bajada se medirá por tienda antes del piloto. Para 24 horas continuas a ese pico se dimensionan 115.816 documentos, 208,5 MB de ventas o 312,8 MB con margen 1,5, más oferta, índices, registros financieros segregados y reservas operativas. La autonomía se prueba durante 24 horas con energía, almacenamiento, crédito habilitado y retorno; no se deduce de una jornada comercial de doce horas. La prueba de ocho horas y la de autonomía de 24 horas tienen objetivos distintos.
+
+El lote de 400.000 precios en cinco minutos es un escenario de estrés de OSS, distinto del máximo diario informado y del requisito de propagación de cada cambio. A 300 B por evento son 120 MB y 3,2 Mbps de carga útil; con margen 1,5, 4,8 Mbps efectivos antes de otros flujos. Los 4 Mbps nominales no acreditan capacidad suficiente para ese escenario. El inventario de conectividad y los tamaños medidos fijarán enlaces y distribución por tienda; enviar solo precios pertinentes requiere un filtro probado y no reduce la meta de cinco minutos. El almacenamiento anual neto de referencia es 98,8 GB, con 148,2 GB incluyendo índices y 192,6 GB provisionados, según el Anexo A.3, Tablas A.58 y A.59. Los subtotales netos son 81,4 GB Retail, 14,2 GB Emisor y 3,2 GB Frontera. Como sensibilidad uniforme de crecimiento 20 \%, son 177,8 GB con índices y 231,1 GB provisionados; ese factor no sustituye las proyecciones por entidad ni cubre por sí solo el horizonte de 56 meses. Maestros vivos, cartera vigente, auditoría, historia retenida y archivos de evidencia se agregan por separado. La capacidad del Emisor y de X-01 acumula sus datos conforme a 5.2.5; no se limita a una anualidad.
+
+\subsection{5.4.2 Indexación}
+
+Un índice es una estructura auxiliar, parecida al índice de un libro, que permite a la base encontrar un registro sin recorrer todos. Acelera las consultas, pero tiene un costo, porque ocupa espacio y se actualiza en cada escritura. La estimación de almacenamiento ya incluye ese costo, con un factor de 1,5 sobre los datos. Por eso la regla es crear un índice solo cuando una consulta documentada lo necesita, y mantener pocos índices en las tablas de mayor escritura, como los movimientos de inventario, las líneas de venta y los precios, que no llevan más de tres. Un índice sin uso durante un trimestre se revisa antes de retirarlo; se conservan los que respaldan unicidad, integridad o consultas estacionales.
+
+Se proponen tres tipos de índice en PostgreSQL según la consulta. El primero es el índice común, que sirve para buscar por identificador o por una combinación de campos. La disponibilidad de un artículo en un nodo se busca por artículo y nodo, y esa consulta se resuelve en un acceso directo. El segundo es el índice parcial, que cubre solo las filas que cumplen una condición. La tabla de precios guarda toda la historia, pero la consulta más frecuente solo necesita el precio vigente, que son 458.000 artículos por 4 canales, es decir 1,83 millones de filas entre los 56 millones que se acumulan por año. Un índice parcial sobre los precios vigentes es más de treinta veces más pequeño que uno sobre toda la tabla, y su tamaño y residencia en memoria se comprobarán bajo carga. El tercero es el índice por rangos de bloques, que describe en qué zona de la tabla están los valores de una columna, y ocupa una fracción del espacio de uno común. Sirve para tablas que solo reciben datos nuevos en orden de fecha, como los movimientos y las líneas de venta, en las que se consulta por intervalo de fechas.
+
+PostgreSQL no ordena automáticamente las filas según un índice. Particionar por fecha reduce el conjunto recorrido; BRIN resume valores por bloques y aprovecha la correlación temporal de las inserciones, sin reordenar filas. La correlación se comprobará en las estadísticas y las pruebas de ejecución. Los índices de texto, para buscar artículos por palabras en el sitio web, no se crean en la base transaccional. Esa búsqueda se atiende desde un servicio de búsqueda del canal digital, para no cargar la base que sostiene las ventas. La elección de cada índice se confirma con las pruebas de la sección 5.4.5, que miden el plan de ejecución de las diez consultas más frecuentes sobre un volumen equivalente a 12 meses de datos.
+
+\subsection{5.4.3 Particionamiento}
+
+El particionamiento divide tablas grandes por rangos de fecha y permite limitar las consultas a los períodos necesarios. También facilita archivar bloques de historia conforme a 5.2.5. Separar y retirar una partición exige que sus dependencias activas estén resueltas y que exista un mecanismo probado de consulta histórica; la antigüedad por sí sola no autoriza borrar antecedentes referenciados.
+
+La clave de partición debe ser estable, por lo que se usa la fecha del hecho y no su estado. Se proponen particiones mensuales para precios publicados, movimientos, líneas y documentos de venta, con aproximadamente 4,7, 8,9, 5,9 y 2,6 millones de filas por mes, respectivamente. La ventana inicial de 12 meses más el mes en curso implica 13 particiones por tabla y 52 en total. Su capacidad se acredita en Preproducción. Cada mes se crea la siguiente partición y se identifica la historia archivable. Solo se separa, copia y retira una partición después de verificar integridad, referencias vigentes, copia legible y conservación aplicable. El diseño físico deberá resolver unicidad con la clave de partición y navegación a referencias históricas, según el Anexo A.1.5. Las líneas de venta aportan unos 1,8 GB mensuales; el tiempo de archivo se medirá, sin prometer que dure segundos. Los 104.000 pedidos del evento no requieren por sí solos una partición especial.
+
+Los pedidos no se particionan. Son 158.333 por mes, 1,9 millones por año, y mantenerlos en una sola tabla se propone como organización inicial, cuyo comportamiento se comprobará con los filtros y volúmenes reales. Tampoco se particionan las tablas del Emisor, que son de menor volumen, con alrededor de 7 millones de cuotas vigentes, calculadas como 620.000 tarjetas con saldo por 12 cuotas supuestas. Si el crecimiento proyectado por Ancoa lo hiciera necesario, la partición de esas tablas se agrega más adelante sin cambiar el modelo.
+
+\subsection{5.4.4 Caché}
+
+Una caché es una copia de un dato que se guarda en una memoria rápida para no pedirlo de nuevo a la base cada vez. En Ancoa guarda el disponible comprometible y el precio vigente de cada artículo según nodo y canal, bajo las metas de actualización aplicables. Se guardan en Redis, del ámbito Retail. No se guardan en caché la reserva de una unidad ni el cobro de una venta, porque ahí el dato debe ser el verdadero. La Figura 5.9 muestra el recorrido de una consulta de disponibilidad desde la venta hasta que el cliente la ve.
+
+\begin{center}
+  \phantomsection\label{fig:f20}\includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{figuras/f8.png}
+\end{center}
+
+Figura 5.9: Ruta de una actualización de disponibilidad hasta la consulta del cliente. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29, p. 34).
+
+
+La Figura 5.9 representa un presupuesto de diseño, no tiempos observados. El evento de venta, el recálculo del disponible y la publicación se estiman en uno, tres y cinco segundos, respectivamente. Suman nueve segundos, aproximadamente diez para planificación. La meta particular exige publicar en 30 segundos como máximo (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29, p. 34). Cada tramo y la duración de punta a punta se medirán bajo carga, retorno y fallas.
+
+La vigencia de cada clave de caché se fija en 15 segundos o hasta una invalidación anterior. La clave distingue artículo, nodo, canal y versión según el dato. La suma del recorrido típico de nueve segundos y el TTL de quince da un presupuesto orientativo de 24 segundos y seis de reserva; no es una cota garantizada porque los tramos no tienen máximos acreditados. El caso de invalidación perdida deberá satisfacer igualmente la meta de 30 segundos. Se medirán límites por tramo y de punta a punta, incluidos reintentos, caducidad y recarga. La caché reduce lecturas por clave mientras esta permanece vigente, pero varios nodos, cambios e invalidaciones pueden causar varias lecturas del mismo artículo; el TTL no fija un máximo universal de consultas a la base.
+
+Cuando caduca una clave con alta demanda, una sola consulta recarga el dato y las demás esperan ese resultado, con límites de espera medidos. Si Redis falla, la base transaccional deberá sostener directamente la carga de prueba de 1.040 consultas por segundo y acreditar los mismos criterios de respuesta en Preproducción. Solo se almacenan copias reconstruibles. La caché local de oferta LO-02 permite operar sin enlace y cambia mediante una versión completa verificada, conservando la anterior hasta confirmar la sustitución.
+
+\subsection{5.4.5 Optimización y verificación}
+
+Las decisiones anteriores se resumen por entidad en la Tabla 5.20, que indica el volumen anual, el índice principal, la partición y el uso de caché de las entidades que concentran la carga.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.20: Estructura de acceso de las entidades de mayor carga. Fuente: elaboración propia a partir de la estimación de la sección 5.4.1.\phantomsection\label{tab:t25}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.210\linewidth}p{0.168\linewidth}p{0.368\linewidth}p{0.076\linewidth}p{0.055\linewidth}@{}}
+\toprule Entidad & Filas por año & Índice principal & Partición & Caché \\
+\midrule
+RE-02 Precio publicado & 56 millones & Parcial sobre precios vigentes por artículo, canal y ámbito de nodo & Mensual & Sí \\
+RE-10 Movimiento de inventario & 106,5 millones & Por rangos de bloques en fecha y común por artículo y nodo & Mensual & No \\
+RE-09 y RE-12 Existencia y disponible & Hasta 11 millones de filas vivas & Común por artículo y nodo & No & Sí \\
+RE-17 y RE-18 Documento y línea de venta & 31 y 71 millones & Por rangos de bloques en fecha y común por tienda y folio & Mensual & No \\
+RE-14 Pedido & 1,9 millones & Común por cliente y parcial por estado no final & No & No \\
+EM-06 Cuota & Cerca de 7 millones vigentes & Común por tarjeta y vencimiento & No & No \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.20 aplica una misma lógica a todas las entidades. Las de mayor volumen y que solo crecen, como los precios, los movimientos y las ventas, se particionan por mes y llevan índices por rangos de bloques. Las que se consultan por identificador, como el disponible, llevan un índice común y se acompañan de caché. Las de volumen menor, como los pedidos y las cuotas, se mantienen sin partición. Ninguna decisión depende de una tecnología distinta de las que el Capítulo 4 ya fijó.
+
+La verificación se ejecuta en Preproducción antes del paso a producción de cada etapa y se repite antes de cada evento anual. Se carga la ventana de 12 meses, aproximadamente 148,2 GB con índices según el Anexo A.3, y se añaden maestros vivos, cartera, auditoría y demás datos retenidos que requieran los escenarios. La carga de prueba es 1,5 veces la estimada, salvo los factores específicos declarados. La Tabla 5.21 resume las metas; todos sus resultados deberán acreditarse mediante medición.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.21: Pruebas de carga y criterio de aceptación. Fuente: elaboración propia (Multitiendas Ancoa S.A., 2026b, Caso 09, cap. 15, RT-05.29 y RT-09.01, p. 34; RT-03.13, p. 33).\phantomsection\label{tab:t26}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.101\linewidth}p{0.272\linewidth}p{0.272\linewidth}p{0.257\linewidth}@{}}
+\toprule Escenario & Carga de prueba & Criterio de aceptación & Cuándo \\
+\midrule
+Apertura del evento anual & 1.040 consultas por segundo y 20.800 personas concurrentes & Disponible publicado en 30 segundos como máximo; consulta de disponibilidad en la ficha en 400 milisegundos o menos y confirmación de pedido en 3 segundos o menos (RT-09.01) & Antes del paso a producción de cada etapa y de cada evento \\
+Sábado de diciembre & 18 documentos por segundo sostenidos & Venta completa en 25 segundos o menos, sin pérdidas ni duplicados & Antes del paso a producción de cada etapa \\
+Carga masiva de precios & 2.000 eventos por segundo & Precio en las cajas y el canal digital en 5 minutos como máximo & Antes del paso a producción de cada etapa y de cada campaña \\
+Consulta desde sala y devolución & Carga concurrente de sábado y 1,5 veces el volumen de posventa & Consulta en 2 segundos o menos con confianza del dato; devolución en 60 segundos o menos & Antes del paso a producción de cada etapa \\
+Evaluación crediticia & 10 evaluaciones simultáneas con el sábado de diciembre, que resultan de 1,6 en curso estimadas, por el margen de 1,5 y una ráfaga de 4 & Respuesta en 8 segundos como máximo & Antes del paso a producción de cada etapa \\
+Tienda sin enlace & Una tienda, 24 horas sin comunicación y retorno & Sin pérdidas ni duplicados; autonomía de 24 horas y sincronización completa en 30 minutos o menos tras 8 horas con carga de pico & Ensayo en una tienda piloto antes del paso a producción de cada etapa, fechado en el cronograma del Capítulo 7 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla 5.21 reúne los escenarios de desempeño de este capítulo. Si una prueba falla, se revisan planes de ejecución, índices, contratos de acceso e invalidación para corregir la causa. Las réplicas, la memoria y los recursos de cómputo se dimensionan según la capacidad necesaria y se amplían cuando esa sea la mejor solución; la secuencia de diagnóstico no impone un recorte económico. Todas las metas se acreditan antes de producción. Durante los meses 21 a 56, la observabilidad del Capítulo 4 vigila latencia, atraso de eventos, aciertos de caché, integridad y particiones. Las reglas de ampliación se acuerdan con el Cliente y conservan segregación y disponibilidad.
+
+
+\section*{Referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+Las obras siguientes se citan por datos y condiciones particulares, o por conceptos y formatos de terceros utilizados en el capítulo.
+
+Apache Software Foundation. (s. f.). \textit{Apache Parquet documentation}. \url{https://parquet.apache.org/docs/}
+
+Bray, T. (Ed.). (2017). \textit{The JavaScript Object Notation (JSON) data interchange format} (RFC 8259). Internet Engineering Task Force. \url{https://www.rfc-editor.org/info/rfc8259}
+
+
+Gilbert, S., y Lynch, N. (2002). Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services. \textit{ACM SIGACT News, 33}(2). \url{https://doi.org/10.1145/564585.564601}
+
+GS1. (s. f.). \textit{Part I EANCOM® \& UN/EDIFACT}. \url{https://www.gs1.org/sites/gs1/files/docs/eancom/ean02s4/part1/part1toc.htm}
+
+ISO/IEC. (2008). \textit{ISO/IEC 25012:2008. Software engineering. Software product quality requirements and evaluation (SQuaRE). Data quality model}. International Organization for Standardization. \url{https://www.iso.org/standard/35736.html}
+
+ISO/IEC. (2024). \textit{ISO/IEC 19987:2024. Information technology. EPC Information Services (EPCIS)}. International Organization for Standardization. \url{https://www.iso.org/standard/85557.html}
+
+
+Ley N.º 19.628, Sobre protección de la vida privada, Diario Oficial de la República de Chile (1999). \url{https://www.bcn.cl/leychile/Navegar?idLey=19628}
+
+Ley N.º 21.719, Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, Diario Oficial de la República de Chile (2024). \url{https://www.bcn.cl/leychile/Navegar?idNorma=1209272}
+
+
+Multitiendas Ancoa S.A. (2026b). \textit{Bases técnicas. Cadena multitienda} (Caso 09) (Licitación N.° TFEP-01/2026, versión 1.0).
+
+
+Servicio de Impuestos Internos. (s. f.). \textit{Formato XML de documentos electrónicos}. \url{https://www.sii.cl/servicios_online/1039-formato_xml-1184.html}
+
+Shafranovich, Y. (2005). \textit{Common format and MIME type for comma-separated values (CSV) files} (RFC 4180). Internet Engineering Task Force. \url{https://www.rfc-editor.org/info/rfc4180}
+
+\section*{Declaración de uso de IA}
+\addcontentsline{toc}{section}{Declaración de uso de IA}
+
+El equipo declara que el uso de herramientas de inteligencia artificial generativa en este subdocumento se limitó a las actividades indicadas en la Tabla 5.22. El equipo asume como propio el resultado final y la responsabilidad íntegra sobre la exactitud, la originalidad y la coherencia técnica de todo contenido, dato, cálculo, decisión de diseño, diagrama, conclusión y referencia.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla 5.22: Declaración de uso de IA. Fuente: elaboración propia conforme a las instrucciones de la licitación para la declaración de uso de IA.\phantomsection\label{tab:ia}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.070\linewidth}p{0.140\linewidth}p{0.310\linewidth}p{0.065\linewidth}p{0.090\linewidth}p{0.180\linewidth}@{}}
+\toprule Sección & Herramienta & Finalidad de uso & Nivel en texto & Nivel en diagramas & Revisión humana \\
+\midrule
+Introducción & Claude Sonnet 5.5 & Se utilizó para redactar la introducción a partir de las Bases y de los capítulos 2 a 4. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+5.1 & Claude Sonnet 5.5, Python, Graphviz y draw.io & Se utilizó para diseñar el modelo de datos, redactar la sección y generar los archivos draw.io de los diagramas del modelo, de sus vistas y de la simbología. & Alto & Alto & Daniel Cepeda y Samira Becerra \\
+5.2 & Claude Sonnet 5.5, Python y matplotlib & Se utilizó para redactar la sección, contrastar los estándares sectoriales y generar la figura de capas de datos. & Alto & Alto & Daniel Cepeda y Samira Becerra \\
+5.3 & Claude Sonnet 5.5, Python y matplotlib & Se utilizó para redactar la sección, calcular los volúmenes y el calendario, y generar la figura del calendario. & Alto & Alto & Daniel Cepeda y Samira Becerra \\
+5.4 & Claude Sonnet 5.5, Python y matplotlib & Se utilizó para redactar la sección, calcular la carga y generar la figura de disponibilidad. & Alto & Alto & Daniel Cepeda y Samira Becerra \\
+Revisión y modelo ER & Codex & Revisión frente a la entrega 1, integración del modelo, actualización de claves, restricciones y vistas. & Alto & Alto & Daniel Cepeda y Samira Becerra \\
+Anexo ER & Codex & Elaboración del diccionario estructural y reglas del modelo integrado. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+Anexo A.1 & Claude Sonnet 5.5 y Python & Se utilizó para generar desde el modelo integrado las tablas de campos, la matriz de persistencia y las relaciones, y redactar su texto. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+Anexo A.2 & Claude Sonnet 5.5 & Se utilizó para redactar la estrategia de datos maestros. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+Anexo A.3 & Claude Sonnet 5.5 y Python & Se utilizó para programar los cálculos y redactar la memoria de cálculo. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+Anexo A.4 & Claude Sonnet 5.5 & Se utilizó para redactar el plan de perfilado. & Alto & Ninguno & Daniel Cepeda y Samira Becerra \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+A continuación, se detalla la escala de niveles para completar la tabla anterior.
+
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
+Ninguno & Sin uso de IA. & Sin uso de IA. \\
+Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
+Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
+
+\ossFinalPage
+
+\end{document}

@@ -1,0 +1,2121 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Anexos}{Subdocumento 5}
+\tableofcontents
+\clearpage
+
+\section{Anexo A · Anexo del Capítulo 5}\label{anexo-5}
+
+Este anexo complementa el Capítulo 5 con el detalle que haría pesada su lectura. Reúne cuatro piezas. El anexo ER documenta las 51 entidades del modelo, sus 314 campos estructurales y sus 81 relaciones. La estrategia de datos maestros fija la fuente única y la regla que evita duplicados. La memoria de cálculo muestra, con sus supuestos, cómo se obtiene cada cifra de las secciones 5.3 y 5.4. El plan de perfilado describe cómo se medirá la calidad de los datos de origen antes de migrarlos.
+
+Para quien lee por primera vez, basta con recorrer la introducción de cada sección del anexo. El detalle está pensado para consulta, y cada tabla indica la entidad o el cálculo del cuerpo del capítulo al que responde.
+
+\section{A.1 Anexo ER del modelo integrado}
+
+Este anexo documenta las 51 entidades del modelo lógico y sus 314 campos estructurales. Las claves y las relaciones son la fuente común de los diagramas de la sección A.1.1 y de los modelos conceptuales de la sección 5.1, de modo que los códigos, los nombres y las cardinalidades no pueden diferir entre el cuerpo y el anexo. Los tipos son de diseño lógico y se confirman en el diseño físico, igual que los catálogos de estados y los límites de texto.
+
+Las relaciones entre servicios dentro de un ámbito se verifican mediante contratos y eventos; una clave foránea lógica no obliga a abrir consultas entre las bases de distintos servicios. Entre Retail y el Emisor no existen claves foráneas. Las claves compuestas opcionales se informan completas o vacías. Las restricciones de sumas y de mínimos por estado se validan en la transacción al confirmar la operación.
+
+La cuenta y tarjeta se mantiene como la abstracción de un contrato y una tarjeta principal, y la repactación se define sobre un plan. Las tarjetas adicionales y las repactaciones que consoliden varios planes ampliarán esas asociaciones en el diseño físico.
+
+\subsection{A.1.1 Diagramas entidad-relación}
+
+Las figuras siguientes presentan el modelo lógico en 19 piezas. Cuatro figuras generales recorren las 51 entidades por ámbito, con su código, su nombre y el color de su ámbito: la Figura A.1 y la Figura A.2 cubren Retail, la Figura A.3 el Emisor y la Figura A.4 la frontera y la persistencia local. Se dividen así para que cada casilla y cada línea se lean sin ampliar la página. Dos entidades de Retail se relacionan con casi todas las demás y dibujarlas con todas sus líneas ocultaría la estructura: el artículo (RE-01) y el nodo logístico (RE-26). En las figuras generales de Retail se omiten esas líneas y cada entidad que se relaciona con ellas lo indica con un círculo A (artículo) o N (nodo); las relaciones completas figuran en las vistas siguientes y en la Tabla A.54. Los nombres completos, el dominio, el servicio y el propietario de cada código están en la Tabla A.1. La Figura A.5 explica la notación común. Las demás figuras son vistas detalladas del mismo modelo: conservan nombres, claves y cardinalidades, y muestran todas las relaciones que existen entre las entidades de cada vista. Que una relación no aparezca en una vista significa que su otra entidad se encuentra fuera de ella. Entre Retail y el Emisor no existe ninguna relación, y las líneas discontinuas con la persistencia local representan copias y sincronización, no claves foráneas entre bases.
+
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
+
+Tabla A.1: Índice de las 51 entidades por dominio. Fuente: elaboración propia a partir del modelo lógico y del Capítulo 4.\phantomsection\label{tab:indice_ent}\par\nopagebreak
+\begin{longtable}{@{}p{0.090\linewidth}p{0.269\linewidth}p{0.143\linewidth}p{0.143\linewidth}p{0.233\linewidth}@{}}
+\toprule Código & Entidad & Dominio & Servicio & Propietario \\
+\midrule\endhead\bottomrule\endlastfoot
+RE-01 & Artículo & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-02 & Precio publicado & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-03 & Oferta o promoción & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-04 & Lote de cambio de precio & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-05 & Confirmación de etiqueta & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-06 & Orden de abastecimiento & Mercadería & R:M-02 & Gerencia de Logística \\
+RE-07 & Proveedor & Mercadería & R:M-02 & Gerencia de Logística \\
+RE-08 & Recepción de mercadería & Mercadería & R:M-02 & Gerencia de Logística \\
+RE-09 & Existencia por nodo & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-10 & Movimiento de inventario & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-11 & Reserva & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-12 & Disponible comprometible ATP & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-13 & Conteo y diferencia de inventario & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-14 & Pedido & Venta & R:V-01 & Gerencia de Canales Digitales \\
+RE-15 & Línea de pedido & Venta & R:V-01 & Gerencia de Canales Digitales \\
+RE-16 & Historial de estado del pedido & Venta & R:V-01 & Gerencia de Canales Digitales \\
+RE-17 & Documento de venta & Venta & R:V-02 & Gerencia Comercial \\
+RE-18 & Línea de venta & Venta & R:V-02 & Gerencia Comercial \\
+RE-19 & Pago de venta & Venta & R:V-02 & Gerencia Comercial \\
+RE-20 & Atribución de comisión & Venta & R:V-03 & Gerencia Comercial \\
+RE-21 & Vendedor de marketplace & Venta & R:V-04 & Gerencia de Canales Digitales \\
+RE-22 & Liquidación a vendedor & Venta & R:V-04 & Gerencia de Canales Digitales \\
+RE-23 & Cliente Retail & Cliente Retail & R:CL-02 & Gerencia de Canales Digitales \\
+RE-24 & Consentimiento comercial & Cliente Retail & R:CL-02 & Gerencia de Canales Digitales \\
+RE-25 & Caso de posventa & Venta & R:CL-01 & Gerencia de Canales Digitales \\
+RE-26 & Nodo logístico & Mercadería & R:M-03 & Gerencia de Logística \\
+RE-27 & Artículo en oferta & Mercadería & R:M-01 & Gerencia Comercial \\
+RE-28 & Línea de abastecimiento & Mercadería & R:M-02 & Gerencia de Logística \\
+RE-29 & Línea de recepción & Mercadería & R:M-02 & Gerencia de Logística \\
+RE-30 & Detalle de liquidación & Venta & R:V-04 & Gerencia de Canales Digitales \\
+EM-01 & Solicitud de crédito & Crédito & F:C-01 & Negocio Financiero \\
+EM-02 & Evaluación crediticia & Crédito & F:C-01 & Negocio Financiero \\
+EM-03 & Autorización de compra & Crédito & F:C-01 & Negocio Financiero \\
+EM-04 & Titular & Crédito & F:C-02 & Negocio Financiero \\
+EM-05 & Tarjeta y cuenta & Crédito & F:C-02 & Negocio Financiero \\
+EM-06 & Cuota & Crédito & F:C-02 & Negocio Financiero \\
+EM-07 & Pago de cuota & Crédito & F:C-02 & Negocio Financiero \\
+EM-08 & Repactación & Crédito & F:C-02 & Negocio Financiero \\
+EM-09 & Gestión de cobranza & Crédito & F:C-02 & Negocio Financiero \\
+EM-10 & Estado de cuenta & Crédito & F:C-02 & Negocio Financiero \\
+EM-11 & Expediente de evidencia & Crédito & F:C-03 & Negocio Financiero \\
+EM-12 & Garantía del crédito & Crédito & F:C-02 & Negocio Financiero \\
+EM-13 & Juicio de cobranza & Crédito & F:C-02 & Negocio Financiero \\
+EM-14 & Plan de crédito & Crédito & F:C-02 & Negocio Financiero \\
+EM-15 & Aplicación de pago & Crédito & F:C-02 & Negocio Financiero \\
+EM-16 & Versión de evidencia & Crédito & F:C-03 & Negocio Financiero \\
+FR-01 & Ficha de intercambio & Frontera & X-01 & Contraloría \\
+FR-02 & Decisión de cruce & Frontera & X-01 & Contraloría \\
+FR-03 & Política de cruce & Frontera & X-01 & Contraloría \\
+LO-01 & Diario local de operaciones & Venta & L-02 & Gerencia de Logística \\
+LO-02 & Caché local de oferta & Mercadería & L-01 & Gerencia Comercial \\
+\end{longtable}
+
+
+
+La Tabla A.1 agrupa las entidades en los cinco dominios de la sección 5.1: 18 de Mercadería, 12 de Venta, 2 de Cliente Retail, 16 de Crédito y 3 de Frontera. El mismo código identifica a la entidad en las figuras, en las fichas de la sección A.1.3 y en las relaciones de la sección A.1.4.
+
+La Figura A.1 presenta las entidades de precio, abastecimiento, recepción e inventario de Retail.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_gen_a}\includegraphics[width=6.93in,height=0.78\textheight,keepaspectratio]{figuras/er_gen_a.png}
+\end{center}
+
+Figura A.1: Modelo entidad-relación general de Retail (1 de 2): precio, abastecimiento e inventario. Fuente: elaboración propia a partir del modelo lógico integrado.
+\end{minipage}\par
+
+
+Lectura de la Figura A.1. Cada casilla es una entidad y cada línea una relación; los extremos indican cuántos registros admite cada lado, según la Figura A.5. La cadena del precio (RE-04, RE-02, RE-05) y la de ofertas (RE-03, RE-27) están en la parte superior. El abastecimiento se lee de derecha a izquierda: un proveedor (RE-07) recibe órdenes (RE-06) y entrega recepciones (RE-08), y cada una se detalla en líneas (RE-28, RE-29). Las líneas de recepción generan los movimientos de inventario (RE-10), que también se ajustan con los conteos (RE-13). La existencia por nodo (RE-09) deriva en el disponible comprometible (RE-12). Los círculos A y N señalan las entidades que además se relacionan con el artículo y con el nodo logístico.
+
+La Figura A.2 presenta las entidades de pedido, venta, marketplace y cliente de Retail.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_gen_b}\includegraphics[width=6.93in,height=0.78\textheight,keepaspectratio]{figuras/er_gen_b.png}
+\end{center}
+
+Figura A.2: Modelo entidad-relación general de Retail (2 de 2): pedido, venta, marketplace y cliente. Fuente: elaboración propia a partir del modelo lógico integrado.
+\end{minipage}\par
+
+
+Lectura de la Figura A.2. Un cliente (RE-23) realiza pedidos (RE-14), que contienen líneas (RE-15), registran su historial (RE-16) y pueden originar documentos de venta (RE-17). Cada documento contiene líneas de venta (RE-18), se paga con uno o más pagos (RE-19) y reparte comisiones (RE-20). La línea de venta descuenta la reserva (RE-11) que respaldaba la línea de pedido. La posventa (RE-25) referencia el documento y su línea. En la parte superior, el vendedor externo (RE-21) recibe liquidaciones (RE-22), que se desglosan en detalles (RE-30) vinculados a las líneas vendidas y a los casos de posventa. El consentimiento (RE-24) cuelga del cliente.
+
+La Figura A.3 presenta las 16 entidades del Emisor.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_gen_c}\includegraphics[width=6.93in,height=0.78\textheight,keepaspectratio]{figuras/er_gen_c.png}
+\end{center}
+
+Figura A.3: Modelo entidad-relación general del Emisor. Fuente: elaboración propia a partir del modelo lógico integrado.
+\end{minipage}\par
+
+
+Lectura de la Figura A.3. La tarjeta y cuenta (EM-05) es el centro del Emisor: pertenece a un titular (EM-04), se abre con una solicitud (EM-01) evaluada en EM-02, autoriza compras (EM-03), recibe pagos (EM-07), se resume en estados de cuenta (EM-10) y da lugar a gestiones de cobranza (EM-09) y a juicios (EM-13). Cada compra autorizada y capturada puede financiarse con un plan de crédito (EM-14), que se divide en cuotas (EM-06), se garantiza (EM-12) y se repacta (EM-08). Los pagos se aplican a las cuotas mediante EM-15. El expediente de evidencia (EM-11) y sus versiones (EM-16) acreditan solicitudes y repactaciones.
+
+La Figura A.4 presenta las entidades de frontera y de persistencia local, con las entidades de Retail con que se sincronizan.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_gen_d}\includegraphics[width=5.15in,height=0.78\textheight,keepaspectratio]{figuras/er_gen_d.png}
+\end{center}
+
+Figura A.4: Frontera y persistencia local. Fuente: elaboración propia a partir del modelo lógico integrado.
+\end{minipage}\par
+
+
+Lectura de la Figura A.4. Las tres entidades de la frontera (FR-01 a FR-03) se relacionan solo entre sí: la decisión de cruce (FR-02) registra cada cruce y se apoya en la ficha de intercambio (FR-01) y en la política vigente (FR-03). No existe ninguna relación con Retail ni con el Emisor. En la parte superior, las casillas de borde discontinuo son entidades de Retail que se muestran solo como referencia: el nodo logístico (RE-26) replica datos al diario local (LO-01) y a la caché local de oferta (LO-02); el documento de venta (RE-17) se sincroniza con el diario y el precio publicado (RE-02), con la caché. Las líneas discontinuas representan copias y sincronización, no claves foráneas.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_simbolos}\includegraphics[width=6.93in,height=0.78\textheight,keepaspectratio]{figuras/er_simbolos.png}
+\end{center}
+
+Figura A.5: Símbolos de los diagramas entidad-relación. Fuente: elaboración propia a partir de la notación de patas de gallo descrita en Elmasri y Navathe (2016).
+\end{minipage}\par
+
+
+La Figura A.5 muestra cómo se lee una entidad con sus campos, qué color corresponde a cada ámbito y qué significa cada extremo de una relación; la cardinalidad se lee desde el extremo marcado hacia el otro lado. Las cardinalidades incluyen registros en preparación. Un pedido aceptado, una orden emitida, una recepción confirmada, una venta emitida y un plan vigente requieren al menos una línea o cuota. Una venta cerrada requiere pagos confirmados que cubran su total. Estas condiciones de estado se validan al confirmar la operación; no se deducen solo de una clave foránea. Los campos se nombran con minúsculas, sin tildes y con guion bajo en lugar de espacios. El prefijo id\_ significa identificador y el resto indica de qué cosa, de modo que id\_articulo es el identificador del artículo y id\_pedido el del pedido.
+
+La Figura A.6 muestra cadena del precio.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_precio}\includegraphics[width=6.69in,height=0.78\textheight,keepaspectratio]{figuras/er_precio.png}
+\end{center}
+
+Figura A.6: Diagrama entidad-relación de la cadena del precio. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.6. Un artículo (RE-01) tiene precios versionados (RE-02) por canal y ámbito de nodo. Cada precio pertenece a un lote (RE-04). La confirmación de etiqueta (RE-05) apunta a la versión exacta de precio y al nodo y punto de exhibición donde se verificó. La relación entre ofertas (RE-03) y artículos se resuelve mediante RE-27 Artículo en oferta; cada par se registra una sola vez. Las vigencias no se solapan dentro del mismo ámbito, y un precio específico de tienda tiene precedencia sobre el nacional.
+
+La Figura A.7 muestra diagrama entidad-relación del abastecimiento y la recepción.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_abast}\includegraphics[width=4.19in,height=0.78\textheight,keepaspectratio]{figuras/er_abast.png}
+\end{center}
+
+Figura A.7: Diagrama entidad-relación del abastecimiento y la recepción. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.7. La orden (RE-06) se dirige a un proveedor y a un nodo de destino, y contiene líneas (RE-28). Cada recepción (RE-08) identifica proveedor y nodo, y contiene líneas recibidas (RE-29). Una línea recibida puede referenciar una línea ordenada, admitir entrega parcial o no tener orden previa. Cada entrada de inventario (RE-10) referencia la línea recibida que la justifica; artículo y nodo deben coincidir. La suma recibida se concilia con lo solicitado.
+
+La Figura A.8 muestra existencia y el disponible comprometible.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_exist}\includegraphics[width=6.53in,height=0.78\textheight,keepaspectratio]{figuras/er_exist.png}
+\end{center}
+
+Figura A.8: Diagrama entidad-relación de la existencia y el disponible comprometible. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.8. La existencia (RE-09) tiene clave compuesta artículo y nodo. Movimientos, reservas y conteos referencian explícitamente ambas entidades maestras. El ATP (RE-12) es una proyección de esa existencia, las reservas activas y el margen de confianza: no una segunda fuente de saldo. Puede no existir mientras falta su cálculo, y hay como máximo un ATP por par artículo y nodo. El saldo cambia por movimientos trazables, incluidos ajustes confirmados a partir de conteos.
+
+La Figura A.9 muestra diagrama entidad-relación del pedido.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_pedido}\includegraphics[width=3.99in,height=0.78\textheight,keepaspectratio]{figuras/er_pedido.png}
+\end{center}
+
+Figura A.9: Diagrama entidad-relación del pedido. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.9. Un cliente identificado puede realizar pedidos; el cliente es opcional para un pedido. Un pedido aceptado tiene una o más líneas (RE-15), cada una con artículo y versión de precio acordado. Su historial (RE-16) guarda las transiciones. Una línea puede respaldarse con varias reservas (RE-11), por ejemplo cuando se distribuye entre tiendas. La reserva referencia la línea mediante id\_pedido y n\_linea\_pedido; no se limita la línea a un único id\_reserva. La vista muestra los vínculos internos de estas entidades; la Figura A.2 incluye además las reservas de venta directa.
+
+La Figura A.10 muestra venta.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_venta}\includegraphics[width=3.79in,height=0.78\textheight,keepaspectratio]{figuras/er_venta.png}
+\end{center}
+
+Figura A.10: Diagrama entidad-relación de la venta. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.10. Un pedido puede originar varios documentos de venta por cumplimiento parcial; una venta puede no tener pedido previo. Cada documento emitido contiene al menos una línea (RE-18). Una línea de venta puede cumplir parte de una línea de pedido y conserva artículo, versión del precio y precio efectivamente cobrado. El caso de posventa (RE-25) referencia el documento y, cuando afecta una unidad concreta, su línea. De esta manera la devolución no puede apuntar a un artículo que no se vendió.
+
+La Figura A.11 muestra diagrama entidad-relación del pago y la comisión de una venta.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_pago}\includegraphics[width=4.72in,height=0.78\textheight,keepaspectratio]{figuras/er_pago.png}
+\end{center}
+
+Figura A.11: Diagrama entidad-relación del pago y la comisión de una venta. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.11. Cada pago de venta (RE-19) pertenece a un documento y tiene clave id\_venta y n\_pago. Una venta cerrada admite uno o varios pagos confirmados cuya suma cubre el total. Cada atribución de comisión (RE-20) pertenece a la venta e identifica rol, beneficiario y regla aplicada; el vendedor de sala no se confunde con el vendedor externo de marketplace. Los medios de pago se representan con tokens; la referencia de autorización de tarjeta propia es opaca y no una clave foránea hacia el Emisor.
+
+La Figura A.12 muestra diagrama entidad-relación del marketplace.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_mkt}\includegraphics[width=3.96in,height=0.78\textheight,keepaspectratio]{figuras/er_mkt.png}
+\end{center}
+
+Figura A.12: Diagrama entidad-relación del marketplace. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.12. Un vendedor externo (RE-21) ofrece artículos y recibe liquidaciones (RE-22). Un artículo propio de Ancoa no tiene vendedor externo. Cada liquidación se desglosa en RE-30 Detalle de liquidación, que identifica las líneas vendidas y los ajustes por casos de posventa. El vendedor de la liquidación debe coincidir con el propietario del artículo de la línea. Así se puede reconstruir el total liquidado y evitar contabilizar dos veces una venta o devolución.
+
+La Figura A.13 muestra diagrama entidad-relación del cliente y su consentimiento.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_cli}\includegraphics[width=4.54in,height=0.78\textheight,keepaspectratio]{figuras/er_cli.png}
+\end{center}
+
+Figura A.13: Diagrama entidad-relación del cliente y su consentimiento. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.13. Un cliente Retail (RE-23) tiene eventos de consentimiento (RE-24) por finalidad. Cada otorgamiento y cada revocación agregan un registro con versión del texto, medio y fecha. El consentimiento vigente se obtiene de la última decisión por finalidad, sin sobrescribir su historia. Los pedidos y las ventas pueden identificar al cliente, pero una operación anónima no obliga a crear una ficha.
+
+La Figura A.14 muestra diagrama entidad-relación del origen del crédito.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_em_orig}\includegraphics[width=3.90in,height=0.78\textheight,keepaspectratio]{figuras/er_em_orig.png}
+\end{center}
+
+Figura A.14: Diagrama entidad-relación del origen del crédito. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.14. Un titular solicita crédito y cada solicitud conserva sus evaluaciones. El expediente (EM-11) pertenece exactamente a una solicitud o a una repactación, mediante dos referencias opcionales mutuamente excluyentes. Hay como máximo un expediente por operación; las sucesivas evidencias y resellados son versiones (EM-16) del expediente. La apertura o repactación efectiva exige información previa entregada, aceptación y firma verificables antes de activar el acuerdo. Una repactación no se vincula artificialmente a la solicitud de apertura.
+
+La Figura A.15 muestra tarjeta y sus compras.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_em_cta}\includegraphics[width=2.81in,height=0.78\textheight,keepaspectratio]{figuras/er_em_cta.png}
+\end{center}
+
+Figura A.15: Diagrama entidad-relación de la tarjeta y sus compras. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.15. Un titular puede tener varias tarjetas y cuentas (EM-05). Cada autorización (EM-03) pertenece a una de ellas y conserva monto, decisión y referencia opaca de operación. Una autorización denegada no genera deuda. La compra autorizada y capturada puede originar un plan (EM-14), del que dependen las cuotas. No se conserva ningún identificador del cliente Retail ni una clave foránea al documento de venta.
+
+La Figura A.16 muestra cartera de crédito.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_em_cart}\includegraphics[width=6.75in,height=0.78\textheight,keepaspectratio]{figuras/er_em_cart.png}
+\end{center}
+
+Figura A.16: Diagrama entidad-relación de la cartera de crédito. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.16. La tarjeta tiene planes de crédito (EM-14) y cada plan vigente contiene cuotas (EM-06). Los pagos (EM-07) pertenecen a la tarjeta y se distribuyen entre cuotas mediante EM-15 Aplicación de pago: un pago puede cubrir varias cuotas y una cuota recibir varios pagos. Cada aplicación exige que pago y cuota correspondan a la misma cuenta. Las garantías respaldan planes identificados; los estados de cuenta conservan el resumen mensual de la tarjeta.
+
+La Figura A.17 muestra repactación y la cobranza.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_em_rec}\includegraphics[width=4.85in,height=0.78\textheight,keepaspectratio]{figuras/er_em_rec.png}
+\end{center}
+
+Figura A.17: Diagrama entidad-relación de la repactación y la cobranza. Fuente: elaboración propia a partir del diccionario de datos del Anexo A.
+\end{minipage}\par
+
+
+Lectura de la Figura A.17. Una repactación (EM-08) referencia la tarjeta y el plan de deuda original, y genera como máximo un nuevo plan. Su efectividad exige el expediente de evidencia (EM-11) y sus versiones inmutables (EM-16). El plan anterior y sus cuotas conservan la historia. La gestión de cobranza (EM-09) pertenece a la tarjeta y puede originar juicios (EM-13); la cuenta de un juicio se obtiene de su gestión. No se duplica una referencia que pudiera identificar otra cuenta.
+
+La Figura A.18 muestra entidades de frontera del modelo.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_frontera}\includegraphics[width=4.49in,height=0.78\textheight,keepaspectratio]{figuras/er_frontera.png}
+\end{center}
+
+Figura A.18: Vista de las entidades de frontera del modelo. Fuente: elaboración propia.
+\end{minipage}\par
+
+
+La Figura A.19 muestra persistencia local y su sincronización con Retail.
+
+\par\vspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}
+\begin{center}
+  \phantomsection\label{fig:er_local}\includegraphics[width=5.14in,height=0.78\textheight,keepaspectratio]{figuras/er_local.png}
+\end{center}
+
+Figura A.19: Vista de la persistencia local y su sincronización con Retail. Fuente: elaboración propia.
+\end{minipage}\par
+
+
+
+\subsection{A.1.2 Matriz de persistencia}
+
+La Tabla A.2 asigna motor y postura ante cortes de comunicación a las 51 entidades, según el Capítulo 4. Los tiempos de recuperación se verifican en los ensayos, de modo que la asignación describe el diseño y no certifica por sí sola la capacidad.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.2: Matriz de persistencia por grupo de entidades. Fuente: elaboración propia a partir del Capítulo 4.\phantomsection\label{tab:matriz}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.171\linewidth}p{0.189\linewidth}p{0.271\linewidth}p{0.271\linewidth}@{}}
+\toprule Entidades & Motor y ámbito & Consistencia ante partición & Copia y recuperación \\
+\midrule
+RE-01 a RE-16 y RE-21 a RE-30 & PostgreSQL Retail en nube & Consistencia para maestros, confirmaciones y operaciones; consulta de ATP con copia declarada y reserva autoritativa & Réplica, respaldo y archivo del ámbito según el Capítulo 4 \\
+RE-17 a RE-20 & PostgreSQL Retail; captura desconectada en LO-01 & Persistencia central consistente; captura local disponible con idempotencia y conciliación & Diario durable por tienda, sincronización y respaldos de Retail \\
+EM-01 a EM-16 & PostgreSQL Emisor; objetos WORM para archivos de EM-11 y EM-16 & Consistencia; las autorizaciones sin conexión requieren política específica y no réplica de cartera & Respaldos y claves propios; originales y cadena de versiones \\
+FR-01 a FR-03 & PostgreSQL propio de X-01 & Consistencia; denegación si no se registra durablemente & Versiones inmutables, respaldo propio y plazo aprobado por Contraloría \\
+LO-01 & PostgreSQL local de tienda & Disponibilidad local con transacción durable y conciliación posterior & Operación y secuencia idempotentes; recuperación local antes de reenviar \\
+LO-02 & Snapshot persistido en tienda & Última copia íntegra; disponibilidad local & Reconstruible; nunca es autoridad del saldo o de la deuda \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla A.2 muestra que solo la captura de ventas en tienda y la caché de oferta priorizan la disponibilidad local; el resto de las entidades prioriza la consistencia, como se explica en la sección 5.2.1.
+
+\subsection{A.1.3 Entidades y reglas}
+
+Cada entidad se presenta con su ámbito, el servicio del Capítulo 4 que la escribe, la gerencia que responde por ella, su regla de integridad y la tabla de sus campos. En la columna del dominio, el paréntesis indica la sensibilidad del campo, que puede ser Interna, Personal o Financiera, según se define en la sección 5.1.5. El rol de cada campo sigue la simbología de la Figura A.5, con A para un atributo que no es clave.
+
+\subsubsection{RE-01 Artículo}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+GTIN único cuando exista. Cada variante talla/color tiene un identificador. Un artículo pertenece a Ancoa o a un vendedor. Los duplicados comerciales se resuelven en MDM sin mezclar propietarios.
+
+La Tabla A.3 define los 6 campos de RE-01 Artículo.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.3: Campos de RE-01 Artículo. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re01}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_articulo & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_vendedor & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+gtin & A & text & No & Código GTIN de 8, 12, 13 o 14 dígitos con dígito verificador GS1 (Interna) \\
+descripcion & A & text & Sí & Texto no vacío de hasta 200 caracteres (Interna) \\
+categoria & A & text & Sí & Código de la jerarquía de categorías comerciales vigente (Interna) \\
+estado & A & text & Sí & Activo, en revisión o descontinuado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-02 Precio publicado}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+UNIQUE artículo, canal, ámbito de nodo y vigencia\_desde. Intervalos [desde,hasta) sin solapamiento en el mismo ámbito; nodo vacío significa precio nacional. Precedencia: precio específico de nodo sobre precio nacional. La identidad UUID se conserva al archivar.
+
+La Tabla A.4 define los 8 campos de RE-02 Precio publicado.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.4: Campos de RE-02 Precio publicado. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re02}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_precio & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_lote & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+canal & A & text & Sí & Tienda, web, móvil o mesón (Interna) \\
+precio & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+vigencia\_desde & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+vigencia\_hasta & A & timestamptz & No & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-03 Oferta o promoción}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+Claves únicas y referencias válidas dentro del ámbito.
+
+La Tabla A.5 define los 6 campos de RE-03 Oferta o promoción.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.5: Campos de RE-03 Oferta o promoción. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re03}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_oferta & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+tipo & A & text & Sí & Descuento porcentual, descuento fijo o combinación de artículos (Interna) \\
+condicion & A & text & Sí & Regla de la promoción: artículos, mínimo de compra y condición de aplicación (Interna) \\
+vigencia\_desde & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+vigencia\_hasta & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Borrador, vigente, vencida o anulada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-04 Lote de cambio de precio}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+Claves únicas y referencias válidas dentro del ámbito.
+
+La Tabla A.6 define los 4 campos de RE-04 Lote de cambio de precio.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.6: Campos de RE-04 Lote de cambio de precio. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re04}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_lote & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+origen & A & text & Sí & Área comercial o campaña que originó el lote (Interna) \\
+fecha\_programada & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Preparado, aprobado, publicado o anulado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-05 Confirmación de etiqueta}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+Identifica la versión exacta de precio y el punto de exhibición. UNIQUE precio, nodo, punto y fecha\_hora. Historial inmutable; no confundir confirmación física con entrega digital a caja.
+
+La Tabla A.7 define los 7 campos de RE-05 Confirmación de etiqueta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.7: Campos de RE-05 Confirmación de etiqueta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re05}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_confirmacion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_precio & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+punto\_exhibicion & A & text & Sí & Identificador del punto de exhibición dentro de la tienda (Interna) \\
+precio\_exhibido & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+id\_usuario & A & uuid & Sí & Identificador del usuario autenticado que verificó la etiqueta (Personal) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 7 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-06 Orden de abastecimiento}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-02. Propietario: Gerencia de Logística.
+
+Una orden emitida contiene al menos una línea. Una orden puede tener varias recepciones parciales.
+
+La Tabla A.8 define los 5 campos de RE-06 Orden de abastecimiento.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.8: Campos de RE-06 Orden de abastecimiento. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re06}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_orden & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_proveedor & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo\_destino & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+fecha\_emision & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Emitida, parcialmente recibida, recibida o anulada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-07 Proveedor}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-02. Propietario: Gerencia de Logística.
+
+RUT validado y único.
+
+La Tabla A.9 define los 4 campos de RE-07 Proveedor.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.9: Campos de RE-07 Proveedor. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re07}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_proveedor & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+rut & A & text & Sí & RUT chileno con dígito verificador válido (Personal) \\
+razon\_social & A & text & Sí & Nombre legal de hasta 120 caracteres (Interna) \\
+estado & A & text & Sí & Activo, suspendido o cerrado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-08 Recepción de mercadería}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-02. Propietario: Gerencia de Logística.
+
+La orden se referencia por línea recibida, para admitir entregas parciales y sin orden. Proveedor y destino deben coincidir con la orden si existe.
+
+La Tabla A.10 define los 6 campos de RE-08 Recepción de mercadería.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.10: Campos de RE-08 Recepción de mercadería. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re08}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_recepcion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_proveedor & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+firma\_conformidad & A & text & Sí & Identificador de la conformidad firmada por quien recibe (Interna) \\
+estado & A & text & Sí & En preparación, confirmada o anulada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-09 Existencia por nodo}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Saldo operacional. Las reservas se suman desde RE-11; no son una segunda autoridad de saldo.
+
+La Tabla A.11 define los 4 campos de RE-09 Existencia por nodo.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.11: Campos de RE-09 Existencia por nodo. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re09}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_articulo & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades\_registradas & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+fecha\_actualizacion & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-10 Movimiento de inventario}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Las unidades\_delta admiten signo. Según tipo se exige el origen adecuado; un origen externo lleva tipo, sistema y referencia validada por adaptador, nunca una FK polimórfica documento\_origen. Artículo/nodo coinciden con el origen. Los traslados tienen dos movimientos correlacionados.
+
+La Tabla A.12 define los 12 campos de RE-10 Movimiento de inventario.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.12: Campos de RE-10 Movimiento de inventario. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re10}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_movimiento & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_linea\_recepcion & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_venta & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_venta & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_conteo & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_caso & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Venta, recepción, devolución, traslado o ajuste (Interna) \\
+unidades\_delta & A & numeric(18,3) & Sí & Cantidad con signo; cambio o diferencia registrada (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+referencia\_externa & A & text & No & Folio de la guía, factura u orden externa que origina el movimiento (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 12 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-11 Reserva}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Cada reserva apunta a exactamente una línea de pedido o de venta (XOR), con pares completos. Una línea puede distribuirse entre nodos y generar varias reservas; cantidad positiva. Al vender un pedido se consume su reserva, sin crear una segunda reserva para las mismas unidades.
+
+La Tabla A.13 define los 10 campos de RE-11 Reserva.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.13: Campos de RE-11 Reserva. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re11}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_reserva & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_pedido & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_pedido & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_venta & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_venta & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+vence\_en & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Activa, consumida, liberada o vencida (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 10 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-12 Disponible comprometible ATP}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Proyección derivada: max(0, existencia conciliada - reservas activas - margen). Como máximo un ATP por existencia; se admite ausencia mientras no se haya calculado. No recibe ajustes independientes.
+
+La Tabla A.14 define los 5 campos de RE-12 Disponible comprometible ATP.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.14: Campos de RE-12 Disponible comprometible ATP. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re12}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_articulo & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades\_comprometibles & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+margen\_confianza & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+fecha\_calculo & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-13 Conteo y diferencia de inventario}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Causa confirmada en: pérdida física, daño no registrado, error de recepción, unidad mal ubicada, devolución mal reintegrada, error de digitación. La causa sugerida la confirma el responsable autorizado antes del ajuste; es una clasificación de la solución y no un catálogo cerrado impuesto por Ancoa. Sin diferencia o pendiente de investigación: causa vacía, con estado de investigación.
+
+La Tabla A.15 define los 7 campos de RE-13 Conteo y diferencia de inventario.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.15: Campos de RE-13 Conteo y diferencia de inventario. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re13}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_conteo & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades\_contadas & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+diferencia & A & numeric(18,3) & Sí & Cantidad con signo; cambio o diferencia registrada (Interna) \\
+causa\_merma & A & text & No & pérdida física; daño no registrado; error de recepción; unidad mal ubicada; devolución mal reintegrada; error de digitación; NULL mientras no se confirme (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-14 Pedido}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-01. Propietario: Gerencia de Canales Digitales.
+
+Pedido aceptado: una o más líneas; borrador puede no tenerlas. Cliente identificado opcional. El estado vigente deriva del último historial.
+
+La Tabla A.16 define los 6 campos de RE-14 Pedido.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.16: Campos de RE-14 Pedido. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re14}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_pedido & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_cliente & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+canal & A & text & Sí & Tienda, web, móvil o mesón (Interna) \\
+modalidad & A & text & Sí & Retiro en tienda, despacho a domicilio o despacho desde tienda (Interna) \\
+estado & A & text & Sí & Aceptado, en preparación, listo, en despacho, entregado o cancelado (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-15 Línea de pedido}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-01. Propietario: Gerencia de Canales Digitales.
+
+Precio y artículo deben coincidir. La suma de reservas activas no excede la cantidad pendiente; no guarda un único id\_reserva.
+
+La Tabla A.17 define los 6 campos de RE-15 Línea de pedido.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.17: Campos de RE-15 Línea de pedido. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re15}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_pedido & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea & PK & integer & Sí & Entero positivo (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_precio & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+precio\_acordado & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-16 Historial de estado del pedido}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-01. Propietario: Gerencia de Canales Digitales.
+
+Secuencia creciente; historial append-only; transición válida en máquina de estados.
+
+La Tabla A.18 define los 6 campos de RE-16 Historial de estado del pedido.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.18: Campos de RE-16 Historial de estado del pedido. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re16}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_pedido & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+secuencia & PK & integer & Sí & Entero positivo (Interna) \\
+estado\_anterior & A & text & No & Valor del catálogo de estados del pedido (RE-14) (Interna) \\
+estado\_nuevo & A & text & Sí & Valor del catálogo de estados del pedido (RE-14) (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+id\_usuario & A & uuid & Sí & Identificador del usuario o del servicio que produjo el cambio (Personal) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 5 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-17 Documento de venta}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-02. Propietario: Gerencia Comercial.
+
+Un pedido origina cero o varios documentos por cumplimiento parcial. Venta emitida: una o más líneas; pago confirmado antes de cerrar. UNIQUE sistema emisor, tipo\_documento y folio (metadatos de DTE). El ERP conserva emisión tributaria.
+
+La Tabla A.19 define los 8 campos de RE-17 Documento de venta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.19: Campos de RE-17 Documento de venta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re17}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_venta & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_pedido & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_cliente & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+caja & A & text & No & Código de caja o terminal, único por tienda (Interna) \\
+folio & A & text & Sí & Folio correlativo que asigna el sistema emisor de documentos tributarios (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Emitida, cerrada o anulada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-18 Línea de venta}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-02. Propietario: Gerencia Comercial.
+
+Par de pedido completo o vacío; mismo pedido que la cabecera, mismo artículo. Precio cobrado queda como evidencia aun si hay corrección por etiqueta; cantidad positiva. Una línea de pedido admite ventas parciales.
+
+La Tabla A.20 define los 8 campos de RE-18 Línea de venta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.20: Campos de RE-18 Línea de venta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re18}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_venta & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea & PK & integer & Sí & Entero positivo (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_precio & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_pedido & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_pedido & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+precio\_cobrado & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-19 Pago de venta}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-02. Propietario: Gerencia Comercial.
+
+Tokens del procesador; no PAN ni CVV. Referencia de autorización opaca, no FK al Emisor. Monto positivo y suma de pagos confirmados igual al total para venta cerrada.
+
+La Tabla A.21 define los 7 campos de RE-19 Pago de venta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.21: Campos de RE-19 Pago de venta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re19}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_venta & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_pago & PK & integer & Sí & Entero positivo (Interna) \\
+medio & A & text & Sí & Efectivo, débito, crédito externo o tarjeta propia (Interna) \\
+monto & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+token\_medio & A & text & No & Token opaco del procesador; nunca PAN/CVV (Personal) \\
+referencia\_autorizacion & A & text & No & Código opaco de autorización del medio de pago; nunca el número de la tarjeta (Interna) \\
+estado & A & text & Sí & Pendiente, confirmado o reversado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 5 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-20 Atribución de comisión}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-03. Propietario: Gerencia Comercial.
+
+Beneficiario de canal/vendedor interno no es RE-21. Regla versionada define distribución, cumplimiento y reversión; suma de porcentajes según la regla.
+
+La Tabla A.22 define los 7 campos de RE-20 Atribución de comisión.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.22: Campos de RE-20 Atribución de comisión. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re20}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_atribucion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_venta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_nodo & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+rol & A & text & Sí & Vendedor de sala, canal o tienda (Interna) \\
+referencia\_beneficiario & A & text & Sí & Identificador del vendedor, canal o tienda que recibe el crédito (Interna) \\
+porcentaje & A & numeric(18,2) & Sí & Entre 0 y 100; suma según regla de atribución (Interna) \\
+version\_regla & A & text & Sí & Número entero de la versión de la regla de comisión aplicada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-21 Vendedor de marketplace}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-04. Propietario: Gerencia de Canales Digitales.
+
+RUT y código de vendedor únicos; distinto del vendedor de sala.
+
+La Tabla A.23 define los 5 campos de RE-21 Vendedor de marketplace.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.23: Campos de RE-21 Vendedor de marketplace. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re21}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_vendedor & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+rut & A & text & Sí & RUT chileno con dígito verificador válido (Personal) \\
+razon\_social & A & text & Sí & Nombre legal de hasta 120 caracteres (Interna) \\
+estado & A & text & Sí & Activo, suspendido o cerrado (Interna) \\
+fecha\_alta & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-22 Liquidación a vendedor}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-04. Propietario: Gerencia de Canales Digitales.
+
+El total deriva de detalles RE-30, incluyendo ajustes por devoluciones. Liquidación emitida tiene al menos un detalle.
+
+La Tabla A.24 define los 5 campos de RE-22 Liquidación a vendedor.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.24: Campos de RE-22 Liquidación a vendedor. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re22}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_liquidacion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_vendedor & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+periodo & A & text & Sí & Mes de facturación AAAA-MM (Interna) \\
+estado & A & text & Sí & Abierta, cerrada o pagada (Interna) \\
+monto\_neto & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-23 Cliente Retail}
+
+Dominio: Cliente Retail. Ámbito: Retail. Servicio: R:CL-02. Propietario: Gerencia de Canales Digitales.
+
+No id\_titular ni saldo ni mora. Identidad verificada se deduplica en Retail; comprador anónimo no obliga a crear una persona.
+
+La Tabla A.25 define los 4 campos de RE-23 Cliente Retail.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.25: Campos de RE-23 Cliente Retail. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re23}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_cliente & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+documento\_identidad & A & text & No & RUT con dígito verificador válido o número de pasaporte (Personal) \\
+contacto & A & text & No & Correo electrónico o teléfono con formato válido (Personal) \\
+estado & A & text & Sí & Activo, inactivo o fusionado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 2 son obligatorios. Contiene 2 campos personales, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-24 Consentimiento comercial}
+
+Dominio: Cliente Retail. Ámbito: Retail. Servicio: R:CL-02. Propietario: Gerencia de Canales Digitales.
+
+Otorgamiento y revocación son eventos nuevos. Vigencia por cliente y finalidad deriva de la última decisión, conservando evidencia.
+
+La Tabla A.26 define los 7 campos de RE-24 Consentimiento comercial.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.26: Campos de RE-24 Consentimiento comercial. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re24}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_consentimiento & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_cliente & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+finalidad & A & text & Sí & Finalidad comercial aprobada por Ancoa, como ofertas por correo, mensaje o teléfono (Interna) \\
+texto\_version & A & text & Sí & Identificador de la versión del texto de consentimiento mostrado (Interna) \\
+tipo & A & text & Sí & Otorgamiento o revocación (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+medio & A & text & Sí & Web, aplicación, tienda o teléfono (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 7 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-25 Caso de posventa}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:CL-01. Propietario: Gerencia de Canales Digitales.
+
+Caso puede afectar documento completo o línea concreta. El artículo se obtiene de la línea; no duplicar id\_articulo discordante. Si implica devolución, exige línea y cantidad; acumulado no supera unidades vendidas.
+
+La Tabla A.27 define los 8 campos de RE-25 Caso de posventa.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.27: Campos de RE-25 Caso de posventa. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re25}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_caso & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_venta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_venta & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Devolución, garantía o retracto (Interna) \\
+unidades & A & numeric(18,3) & No & Mayor o igual a cero; según regla de negocio (Interna) \\
+estado & A & text & Sí & Abierto, en inspección, resuelto o rechazado (Interna) \\
+firma\_constancia & A & text & No & Identificador de la constancia firmada de la devolución, garantía o retracto (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-26 Nodo logístico}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-03. Propietario: Gerencia de Logística.
+
+Maestro explícito de tiendas y centros de distribución. Código único; un nodo puede carecer de existencias de cierto artículo.
+
+La Tabla A.28 define los 6 campos de RE-26 Nodo logístico.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.28: Campos de RE-26 Nodo logístico. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re26}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_nodo & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+codigo & A & text & Sí & Código alfanumérico de 3 a 10 caracteres, único y no reutilizable (Interna) \\
+gln & A & text & No & Código GLN de 13 dígitos con dígito verificador GS1 (Interna) \\
+tipo & A & text & Sí & Tienda o centro de distribución (Interna) \\
+nombre & A & text & Sí & Nombre del nodo de hasta 100 caracteres (Personal) \\
+estado & A & text & Sí & Activo o cerrado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 5 son obligatorios. Contiene 1 campo personal, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{RE-27 Artículo en oferta}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-01. Propietario: Gerencia Comercial.
+
+Resuelve N:M oferta-artículo; no repite el mismo par. Oferta publicada requiere al menos un artículo.
+
+La Tabla A.29 define los 2 campos de RE-27 Artículo en oferta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.29: Campos de RE-27 Artículo en oferta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re27}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_oferta & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_articulo & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 2 campos, 2 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-28 Línea de abastecimiento}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-02. Propietario: Gerencia de Logística.
+
+Cantidad positiva; cada recepción parcial se concilia contra esta línea.
+
+La Tabla A.30 define los 4 campos de RE-28 Línea de abastecimiento.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.30: Campos de RE-28 Línea de abastecimiento. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re28}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_orden & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea & PK & integer & Sí & Entero positivo (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades\_solicitadas & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-29 Línea de recepción}
+
+Dominio: Mercadería. Ámbito: Retail. Servicio: R:M-02. Propietario: Gerencia de Logística.
+
+UNIQUE recepción y n\_linea; orden y línea ambos vacíos o completos; artículo debe coincidir con línea ordenada.
+
+La Tabla A.31 define los 7 campos de RE-29 Línea de recepción.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.31: Campos de RE-29 Línea de recepción. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re29}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_linea\_recepcion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_recepcion & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea & A & integer & Sí & Entero positivo (Interna) \\
+id\_articulo & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_orden & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_orden & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+unidades\_recibidas & A & numeric(18,3) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{RE-30 Detalle de liquidación}
+
+Dominio: Venta. Ámbito: Retail. Servicio: R:V-04. Propietario: Gerencia de Canales Digitales.
+
+Vendedor de liquidación coincide con vendedor del artículo vendido. Ajuste por devolución referencia caso de la misma línea. Cada hecho liquidable se contabiliza una vez; claves de idempotencia por hecho y tipo.
+
+La Tabla A.32 define los 7 campos de RE-30 Detalle de liquidación.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.32: Campos de RE-30 Detalle de liquidación. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_re30}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_detalle & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_liquidacion & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_venta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_linea\_venta & FK & integer & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_caso & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Línea vendida o ajuste por devolución (Interna) \\
+monto & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-01 Solicitud de crédito}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-01. Propietario: Negocio Financiero.
+
+Tarjeta opcional en apertura, obligatoria para ampliación; misma persona que el titular. Cuenta se activa solo tras aprobación y evidencia completa.
+
+La Tabla A.33 define los 7 campos de EM-01 Solicitud de crédito.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.33: Campos de EM-01 Solicitud de crédito. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em01}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_solicitud & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_titular & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_tarjeta & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Apertura de tarjeta o ampliación de cupo (Interna) \\
+canal & A & text & Sí & Mesón financiero, tienda, web o móvil (Interna) \\
+estado & A & text & Sí & Recibida, evaluada, aprobada, rechazada o activada (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 6 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-02 Evaluación crediticia}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-01. Propietario: Negocio Financiero.
+
+Puede haber reevaluaciones. Decisión aplicada debe identificar la evaluación efectiva y conservar historial.
+
+La Tabla A.34 define los 5 campos de EM-02 Evaluación crediticia.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.34: Campos de EM-02 Evaluación crediticia. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em02}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_evaluacion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_solicitud & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+decision & A & text & Sí & Aprobada, aprobada con condiciones o rechazada (Financiera) \\
+cupo & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. Contiene 2 campos financieros, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-03 Autorización de compra}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-01. Propietario: Negocio Financiero.
+
+Referencia opaca por operación; no id\_venta ni id\_cliente Retail. Reintentos idempotentes. Compra autorizada y capturada puede originar plan; denegación no origina deuda.
+
+La Tabla A.35 define los 6 campos de EM-03 Autorización de compra.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.35: Campos de EM-03 Autorización de compra. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em03}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_autorizacion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_tarjeta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+referencia\_operacion & A & text & Sí & Código opaco de la operación; no identifica la venta de Retail (Interna) \\
+monto & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+decision & A & text & Sí & Autorizada o denegada (Financiera) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. Contiene 2 campos financieros, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-04 Titular}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Documento validado y único dentro del Emisor. No identificador Retail.
+
+La Tabla A.36 define los 6 campos de EM-04 Titular.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.36: Campos de EM-04 Titular. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em04}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_titular & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+documento\_identidad & A & text & Sí & RUT con dígito verificador válido o número de pasaporte (Personal) \\
+nombre & A & text & Sí & Nombre completo de hasta 100 caracteres (Personal) \\
+domicilio & A & text & Sí & Dirección de hasta 200 caracteres (Personal) \\
+contacto & A & text & Sí & Correo electrónico o teléfono con formato válido (Personal) \\
+estado & A & text & Sí & Activo, bloqueado o cerrado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. Contiene 4 campos personales, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-05 Tarjeta y cuenta}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Abstracción de un contrato con una tarjeta principal. Si se requieren adicionales, reemplazos o varias tarjetas por cuenta, separar cuenta y tarjeta en diseño detallado. No se presume que 1,38 millones de tarjetas sean 1,38 millones de personas.
+
+La Tabla A.37 define los 6 campos de EM-05 Tarjeta y cuenta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.37: Campos de EM-05 Tarjeta y cuenta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em05}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_tarjeta & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_titular & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+token\_tarjeta & A & text & Sí & Token opaco del procesador; nunca PAN/CVV (Personal) \\
+cupo & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+saldo & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+estado & A & text & Sí & Activa, bloqueada o cerrada (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. Contiene 1 campo personal y 2 campos financieros, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-06 Cuota}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Pertenece a un plan, no a un id\_plan sin padre. Pagos se imputan mediante EM-15. No reescribir cuotas antiguas al repactar.
+
+La Tabla A.38 define los 6 campos de EM-06 Cuota.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.38: Campos de EM-06 Cuota. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em06}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_plan & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_cuota & PK & integer & Sí & Entero positivo (Interna) \\
+vencimiento & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+capital & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+interes & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+saldo & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. Contiene 3 campos financieros, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-07 Pago de cuota}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Abono puede distribuirse entre cuotas; saldo no aplicado se registra hasta su imputación. No contiene una única FK a cuota.
+
+La Tabla A.39 define los 7 campos de EM-07 Pago de cuota.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.39: Campos de EM-07 Pago de cuota. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em07}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_pago & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_tarjeta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+monto & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+medio & A & text & Sí & Caja, transferencia o débito automático (Interna) \\
+token\_medio & A & text & No & Token opaco del procesador; nunca PAN/CVV (Personal) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+estado & A & text & Sí & Aplicado o reversado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 6 son obligatorios. Contiene 1 campo personal y 1 campo financiero, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-08 Repactación}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Repactación efectiva exige expediente completo y genera nuevo plan; no borra deuda ni evidencia anteriores. Supuesto: repacta un plan; consolidación de varios planes requiere asociación adicional en diseño detallado.
+
+La Tabla A.40 define los 6 campos de EM-08 Repactación.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.40: Campos de EM-08 Repactación. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em08}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_repactacion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_tarjeta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_plan\_origen & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+saldo\_repactado & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+estado & A & text & Sí & Propuesta, firmada, vigente o anulada (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 6 son obligatorios. Contiene 1 campo financiero, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-09 Gestión de cobranza}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Conserva acción y evidencia de comunicación; no información accesible a Retail.
+
+La Tabla A.41 define los 5 campos de EM-09 Gestión de cobranza.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.41: Campos de EM-09 Gestión de cobranza. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em09}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_gestion & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_tarjeta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Llamada, mensaje, carta o visita (Interna) \\
+resultado & A & text & Sí & Sin contacto, contactado, compromiso de pago, pago recibido o derivado a juicio (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-10 Estado de cuenta}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Período calendario mensual. Documento emitido e inmutable, con huella y referencia a archivo en metadatos.
+
+La Tabla A.42 define los 5 campos de EM-10 Estado de cuenta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.42: Campos de EM-10 Estado de cuenta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em10}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_tarjeta & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+periodo & PK & text & Sí & Mes de facturación AAAA-MM (Interna) \\
+saldo\_inicial & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+saldo\_final & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+objeto\_documento & A & text & Sí & Referencia del documento del estado de cuenta en el almacén de documentos (Financiera) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. Contiene 3 campos financieros, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-11 Expediente de evidencia}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-03. Propietario: Negocio Financiero.
+
+Exactamente una operación (XOR solicitud o repactación); UNIQUE sobre cada FK no vacía. Estado completo antes de activar apertura/repactación. Entrega de información previa precede aceptación. Versiones y resellados en EM-16; no id\_operacion polimórfico ni ciclo FK inverso.
+
+La Tabla A.43 define los 7 campos de EM-11 Expediente de evidencia.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.43: Campos de EM-11 Expediente de evidencia. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em11}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_expediente & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_solicitud & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_repactacion & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+estado & A & text & Sí & En preparación, completo o sellado (Interna) \\
+fecha\_entrega & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+fecha\_aceptacion & A & timestamptz & No & Instante con zona horaria (Interna) \\
+fecha\_fin\_retencion & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-12 Garantía del crédito}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Garantía respalda una deuda identificada mediante plan. Garante es dato del Emisor con protección personal.
+
+La Tabla A.44 define los 5 campos de EM-12 Garantía del crédito.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.44: Campos de EM-12 Garantía del crédito. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em12}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_garantia & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_plan & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tipo & A & text & Sí & Aval, codeudor o garantía real (Interna) \\
+referencia\_garante & A & text & Sí & Identificador del garante dentro del Emisor (Interna) \\
+fecha\_constitucion & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-13 Juicio de cobranza}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Cuenta se deriva de la gestión; no duplicar id\_tarjeta sin regla de coincidencia. Caso judicial puede tener varias actuaciones en su registro documental.
+
+La Tabla A.45 define los 5 campos de EM-13 Juicio de cobranza.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.45: Campos de EM-13 Juicio de cobranza. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em13}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_juicio & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_gestion & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+tribunal & A & text & Sí & Nombre del tribunal de hasta 100 caracteres (Interna) \\
+rol\_causa & A & text & Sí & Rol de la causa que asigna el tribunal (Interna) \\
+estado & A & text & Sí & Demanda, notificación, sentencia, ejecución o cierre (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 5 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{EM-14 Plan de crédito}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Plan originado en autorización capturada o repactación, con XOR; un plan migrado puede tener ambas vacías con contrato de origen comprobable. Repactación y plan origen pertenecen a misma cuenta. Plan vigente exige una o más cuotas.
+
+La Tabla A.46 define los 6 campos de EM-14 Plan de crédito.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.46: Campos de EM-14 Plan de crédito. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em14}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_plan & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_tarjeta & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_autorizacion & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_repactacion & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+referencia\_contrato & A & text & Sí & Identificador del contrato o de la compra que origina el plan (Financiera) \\
+estado & A & text & Sí & Vigente, pagado, repactado o castigado (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 6 campos, 4 son obligatorios. Contiene 1 campo financiero, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-15 Aplicación de pago}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-02. Propietario: Negocio Financiero.
+
+Resuelve N:M pago-cuota. Monto positivo; pago y plan de misma cuenta; suma aplicada <= monto del pago y <= saldo exigible de cuota. La regla contractual define distribución capital/interés y redondeo.
+
+La Tabla A.47 define los 4 campos de EM-15 Aplicación de pago.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.47: Campos de EM-15 Aplicación de pago. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em15}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_pago & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_plan & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+n\_cuota & PK/FK & integer & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+monto\_aplicado & A & numeric(18,2) & Sí & Mayor o igual a cero; según regla de negocio (Financiera) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. Contiene 1 campo financiero, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{EM-16 Versión de evidencia}
+
+Dominio: Crédito. Ámbito: Emisor. Servicio: F:C-03. Propietario: Negocio Financiero.
+
+Versiones inmutables. Resellado/migración agregan versión con cadena de custodia, conservando original y validación de firma.
+
+La Tabla A.48 define los 8 campos de EM-16 Versión de evidencia.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.48: Campos de EM-16 Versión de evidencia. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_em16}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_expediente & PK/FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+version & PK & integer & Sí & Entero positivo (Interna) \\
+objeto\_documental & A & text & Sí & Clave del objeto inmutable en el almacenamiento de escritura única (Financiera) \\
+huella\_sha256 & A & text & Sí & 64 caracteres hexadecimales (SHA-256) (Interna) \\
+huella\_anterior & A & text & No & 64 caracteres hexadecimales (SHA-256); vacío en la primera versión (Interna) \\
+formato & A & text & Sí & PDF, imagen o audio comprimido (Interna) \\
+fecha\_sellado & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+referencia\_firma & A & text & Sí & Identificador de la firma electrónica del acuerdo (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 7 son obligatorios. Contiene 1 campo financiero, que reciben cifrado a nivel de campo y registro de cada acceso.
+
+\subsubsection{FR-01 Ficha de intercambio}
+
+Dominio: Frontera. Ámbito: Frontera. Servicio: X-01. Propietario: Contraloría.
+
+Versión aprobada; especifica dirección y campos permitidos. No guarda correspondencias de clientes y titulares.
+
+La Tabla A.49 define los 8 campos de FR-01 Ficha de intercambio.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.49: Campos de FR-01 Ficha de intercambio. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_fr01}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_ficha & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+version & PK & integer & Sí & Entero positivo (Interna) \\
+finalidad & A & text & Sí & Compra con tarjeta propia u otra finalidad que X-01 apruebe (Interna) \\
+base\_autorizante & A & text & Sí & Fundamento jurídico del cruce, como el consentimiento o el contrato (Interna) \\
+datos\_permitidos & A & text & Sí & Lista cerrada de los campos que el cruce puede liberar (Interna) \\
+autorizador & A & text & Sí & Cargo que aprueba la ficha, en Contraloría o en Negocio Financiero (Interna) \\
+vigencia\_desde & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+vigencia\_hasta & A & timestamptz & No & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 8 campos, 7 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{FR-02 Decisión de cruce}
+
+Dominio: Frontera. Ámbito: Frontera. Servicio: X-01. Propietario: Contraloría.
+
+Ficha y versión opcionales juntas para solicitudes desconocidas denegadas. Política/version obligatoria incluso para denegación por omisión. No ids personales ni claves de ventas/cuentas. Seudónimo fresco por cruce; misma operación reintentada conserva idempotencia.
+
+La Tabla A.50 define los 9 campos de FR-02 Decisión de cruce.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.50: Campos de FR-02 Decisión de cruce. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_fr02}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_cruce & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_ficha & FK & uuid & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+version\_ficha & FK & integer & No & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+id\_politica & FK & uuid & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+version\_politica & FK & integer & Sí & Clave de la entidad relacionada, en el mismo ámbito (Interna) \\
+seudonimo\_cruce & A & text & Sí & Código sin significado generado para este cruce; no se reutiliza (Interna) \\
+resultado & A & text & Sí & Permitida o denegada (Interna) \\
+campos\_liberados & A & text & Sí & Lista de los campos que se entregaron en el cruce (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 9 campos, 7 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{FR-03 Política de cruce}
+
+Dominio: Frontera. Ámbito: Frontera. Servicio: X-01. Propietario: Contraloría.
+
+Versionada e inmutable una vez aplicada; se conserva política base que deniega solicitudes no previstas.
+
+La Tabla A.51 define los 5 campos de FR-03 Política de cruce.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.51: Campos de FR-03 Política de cruce. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_fr03}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_politica & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+version & PK & integer & Sí & Entero positivo (Interna) \\
+regla & A & text & Sí & Regla de permiso o de denegación, versionada (Interna) \\
+vigencia\_desde & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+vigencia\_hasta & A & timestamptz & No & Instante con zona horaria (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 5 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{LO-01 Diario local de operaciones}
+
+Dominio: Venta. Ámbito: Local. Servicio: L-02. Propietario: Gerencia de Logística.
+
+UNIQUE nodo y secuencia; operación durable e idempotente. Contiene copia de la operación Retail pendiente, nunca cartera. Relación con venta central es sincronización, no FK entre bases.
+
+La Tabla A.52 define los 7 campos de LO-01 Diario local de operaciones.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.52: Campos de LO-01 Diario local de operaciones. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_lo01}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_operacion\_local & PK & uuid & Sí & Identificador único del ámbito (Interna) \\
+id\_nodo & REF & uuid & Sí & Código del nodo logístico (RE-26) de la tienda (Interna) \\
+secuencia & A & integer & Sí & Entero positivo (Interna) \\
+tipo & A & text & Sí & Venta, devolución, pago o ajuste (Interna) \\
+fecha\_hora & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+carga\_operacion & A & text & Sí & Contenido de la operación de la tienda, sin número de tarjeta (Interna) \\
+estado\_sincronizacion & A & text & Sí & Pendiente, enviado, confirmado o en conflicto (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 7 campos, 7 son obligatorios. No contiene datos personales ni financieros.
+
+\subsubsection{LO-02 Caché local de oferta}
+
+Dominio: Mercadería. Ámbito: Local. Servicio: L-01. Propietario: Gerencia Comercial.
+
+Snapshot versionado de precios/ofertas/existencia de tienda. Fuente es Retail; reconstruible; solo última versión íntegra se activa.
+
+La Tabla A.53 define los 4 campos de LO-02 Caché local de oferta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.53: Campos de LO-02 Caché local de oferta. Fuente: elaboración propia a partir del Capítulo 4 y de las Bases Técnicas.\phantomsection\label{tab:d_lo02}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.167\linewidth}p{0.070\linewidth}p{0.079\linewidth}p{0.097\linewidth}p{0.465\linewidth}@{}}
+\toprule Campo & Rol & Tipo & Obligatorio & Dominio y sensibilidad \\
+\midrule
+id\_nodo & PK/REF & uuid & Sí & Código del nodo logístico (RE-26) de la tienda (Interna) \\
+version\_oferta & PK & integer & Sí & Entero positivo (Interna) \\
+fecha\_recepcion & A & timestamptz & Sí & Instante con zona horaria (Interna) \\
+contenido\_oferta & A & text & Sí & Copia completa de los precios, ofertas y existencia local, con su versión (Interna) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+De los 4 campos, 4 son obligatorios. No contiene datos personales ni financieros.
+
+\subsection{A.1.4 Relaciones del modelo}
+
+La Tabla A.54 lista las 81 relaciones del modelo. La cardinalidad se escribe como los padres admitidos por cada registro hijo y los hijos que puede tener un padre. Una relación de copia o de sincronización con la persistencia local no es una clave foránea entre bases.
+
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
+
+Tabla A.54: Relaciones del modelo integrado. Fuente: elaboración propia a partir del modelo lógico.\phantomsection\label{tab:relaciones}\par\nopagebreak
+\begin{longtable}{@{}p{0.215\linewidth}p{0.215\linewidth}p{0.224\linewidth}p{0.103\linewidth}p{0.120\linewidth}@{}}
+\toprule Padre & Hijo & Referencia del hijo hacia el padre & Padres → hijos & Tipo \\
+\midrule\endhead\bottomrule\endlastfoot
+RE-21 Vendedor de marketplace & RE-01 Artículo & id\_vendedor → id\_vendedor & 0..1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-02 Precio publicado & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-04 Lote de cambio de precio & RE-02 Precio publicado & id\_lote → id\_lote & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-02 Precio publicado & id\_nodo → id\_nodo & 0..1 → 0..N & Clave foránea lógica \\
+RE-02 Precio publicado & RE-05 Confirmación de etiqueta & id\_precio → id\_precio & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-05 Confirmación de etiqueta & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-03 Oferta o promoción & RE-27 Artículo en oferta & id\_oferta → id\_oferta & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-27 Artículo en oferta & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-07 Proveedor & RE-06 Orden de abastecimiento & id\_proveedor → id\_proveedor & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-06 Orden de abastecimiento & id\_nodo\_destino → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-06 Orden de abastecimiento & RE-28 Línea de abastecimiento & id\_orden → id\_orden & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-28 Línea de abastecimiento & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-07 Proveedor & RE-08 Recepción de mercadería & id\_proveedor → id\_proveedor & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-08 Recepción de mercadería & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-08 Recepción de mercadería & RE-29 Línea de recepción & id\_recepcion → id\_recepcion & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-29 Línea de recepción & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-28 Línea de abastecimiento & RE-29 Línea de recepción & id\_orden → id\_orden, n\_linea\_orden → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-09 Existencia por nodo & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-09 Existencia por nodo & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-10 Movimiento de inventario & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-10 Movimiento de inventario & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-11 Reserva & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-11 Reserva & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-13 Conteo y diferencia de inventario & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-13 Conteo y diferencia de inventario & id\_nodo → id\_nodo & 1 → 0..N & Clave foránea lógica \\
+RE-09 Existencia por nodo & RE-12 Disponible comprometible ATP & id\_articulo → id\_articulo, id\_nodo → id\_nodo & 1 → 0..1 & Clave foránea lógica \\
+RE-29 Línea de recepción & RE-10 Movimiento de inventario & id\_linea\_recepcion → id\_linea\_recepcion & 0..1 → 0..N & Clave foránea lógica \\
+RE-18 Línea de venta & RE-10 Movimiento de inventario & id\_venta → id\_venta, n\_linea\_venta → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+RE-13 Conteo y diferencia de inventario & RE-10 Movimiento de inventario & id\_conteo → id\_conteo & 0..1 → 0..N & Clave foránea lógica \\
+RE-25 Caso de posventa & RE-10 Movimiento de inventario & id\_caso → id\_caso & 0..1 → 0..N & Clave foránea lógica \\
+RE-23 Cliente Retail & RE-14 Pedido & id\_cliente → id\_cliente & 0..1 → 0..N & Clave foránea lógica \\
+RE-14 Pedido & RE-15 Línea de pedido & id\_pedido → id\_pedido & 1 → 0..N & Clave foránea lógica \\
+RE-14 Pedido & RE-16 Historial de estado del pedido & id\_pedido → id\_pedido & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-15 Línea de pedido & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-02 Precio publicado & RE-15 Línea de pedido & id\_precio → id\_precio & 1 → 0..N & Clave foránea lógica \\
+RE-15 Línea de pedido & RE-11 Reserva & id\_pedido → id\_pedido, n\_linea\_pedido → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+RE-18 Línea de venta & RE-11 Reserva & id\_venta → id\_venta, n\_linea\_venta → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+RE-14 Pedido & RE-17 Documento de venta & id\_pedido → id\_pedido & 0..1 → 0..N & Clave foránea lógica \\
+RE-23 Cliente Retail & RE-17 Documento de venta & id\_cliente → id\_cliente & 0..1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-17 Documento de venta & id\_nodo → id\_nodo & 0..1 → 0..N & Clave foránea lógica \\
+RE-17 Documento de venta & RE-18 Línea de venta & id\_venta → id\_venta & 1 → 0..N & Clave foránea lógica \\
+RE-01 Artículo & RE-18 Línea de venta & id\_articulo → id\_articulo & 1 → 0..N & Clave foránea lógica \\
+RE-02 Precio publicado & RE-18 Línea de venta & id\_precio → id\_precio & 1 → 0..N & Clave foránea lógica \\
+RE-15 Línea de pedido & RE-18 Línea de venta & id\_pedido → id\_pedido, n\_linea\_pedido → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+RE-17 Documento de venta & RE-19 Pago de venta & id\_venta → id\_venta & 1 → 0..N & Clave foránea lógica \\
+RE-17 Documento de venta & RE-20 Atribución de comisión & id\_venta → id\_venta & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & RE-20 Atribución de comisión & id\_nodo → id\_nodo & 0..1 → 0..N & Clave foránea lógica \\
+RE-21 Vendedor de marketplace & RE-22 Liquidación a vendedor & id\_vendedor → id\_vendedor & 1 → 0..N & Clave foránea lógica \\
+RE-22 Liquidación a vendedor & RE-30 Detalle de liquidación & id\_liquidacion → id\_liquidacion & 1 → 0..N & Clave foránea lógica \\
+RE-18 Línea de venta & RE-30 Detalle de liquidación & id\_venta → id\_venta, n\_linea\_venta → n\_linea & 1 → 0..N & Clave foránea lógica \\
+RE-25 Caso de posventa & RE-30 Detalle de liquidación & id\_caso → id\_caso & 0..1 → 0..N & Clave foránea lógica \\
+RE-23 Cliente Retail & RE-24 Consentimiento comercial & id\_cliente → id\_cliente & 1 → 0..N & Clave foránea lógica \\
+RE-17 Documento de venta & RE-25 Caso de posventa & id\_venta → id\_venta & 1 → 0..N & Clave foránea lógica \\
+RE-18 Línea de venta & RE-25 Caso de posventa & id\_venta → id\_venta, n\_linea\_venta → n\_linea & 0..1 → 0..N & Clave foránea lógica \\
+EM-04 Titular & EM-01 Solicitud de crédito & id\_titular → id\_titular & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-01 Solicitud de crédito & id\_tarjeta → id\_tarjeta & 0..1 → 0..N & Clave foránea lógica \\
+EM-01 Solicitud de crédito & EM-02 Evaluación crediticia & id\_solicitud → id\_solicitud & 1 → 0..N & Clave foránea lógica \\
+EM-04 Titular & EM-05 Tarjeta y cuenta & id\_titular → id\_titular & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-03 Autorización de compra & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-14 Plan de crédito & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-03 Autorización de compra & EM-14 Plan de crédito & id\_autorizacion → id\_autorizacion & 0..1 → 0..N & Clave foránea lógica \\
+EM-08 Repactación & EM-14 Plan de crédito & id\_repactacion → id\_repactacion & 0..1 → 0..1 & Clave foránea lógica \\
+EM-14 Plan de crédito & EM-06 Cuota & id\_plan → id\_plan & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-07 Pago de cuota & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-07 Pago de cuota & EM-15 Aplicación de pago & id\_pago → id\_pago & 1 → 0..N & Clave foránea lógica \\
+EM-06 Cuota & EM-15 Aplicación de pago & id\_plan → id\_plan, n\_cuota → n\_cuota & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-08 Repactación & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-14 Plan de crédito & EM-08 Repactación & id\_plan\_origen → id\_plan & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-09 Gestión de cobranza & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-09 Gestión de cobranza & EM-13 Juicio de cobranza & id\_gestion → id\_gestion & 1 → 0..N & Clave foránea lógica \\
+EM-05 Tarjeta y cuenta & EM-10 Estado de cuenta & id\_tarjeta → id\_tarjeta & 1 → 0..N & Clave foránea lógica \\
+EM-14 Plan de crédito & EM-12 Garantía del crédito & id\_plan → id\_plan & 1 → 0..N & Clave foránea lógica \\
+EM-01 Solicitud de crédito & EM-11 Expediente de evidencia & id\_solicitud → id\_solicitud & 0..1 → 0..1 & Clave foránea lógica \\
+EM-08 Repactación & EM-11 Expediente de evidencia & id\_repactacion → id\_repactacion & 0..1 → 0..1 & Clave foránea lógica \\
+EM-11 Expediente de evidencia & EM-16 Versión de evidencia & id\_expediente → id\_expediente & 1 → 0..N & Clave foránea lógica \\
+FR-01 Ficha de intercambio & FR-02 Decisión de cruce & id\_ficha → id\_ficha, version\_ficha → version & 0..1 → 0..N & Clave foránea lógica \\
+FR-03 Política de cruce & FR-02 Decisión de cruce & id\_politica → id\_politica, version\_politica → version & 1 → 0..N & Clave foránea lógica \\
+RE-26 Nodo logístico & LO-01 Diario local de operaciones & id\_nodo → id\_nodo & 1 → 0..N & Copia de referencia \\
+RE-26 Nodo logístico & LO-02 Caché local de oferta & id\_nodo → id\_nodo & 1 → 0..N & Copia de referencia \\
+RE-17 Documento de venta & LO-01 Diario local de operaciones & - & 0..1 → 0..N & Sincronización \\
+RE-02 Precio publicado & LO-02 Caché local de oferta & - & 1 → 0..N & Sincronización \\
+\end{longtable}
+
+
+La Tabla A.54 permite reconstruir cualquier vista del capítulo. Las dos últimas filas son sincronizaciones y las dos anteriores, copias del identificador del nodo; ninguna de las cuatro cruza hacia el Emisor.
+
+\subsection{A.1.5 Fuentes de diseño}
+
+Dos reglas del motor PostgreSQL condicionan el diseño físico. La primera es que las restricciones de clave, de referencia compuesta y de comprobación por fila las garantiza el motor, mientras que las sumas entre varias filas se validan en la transacción de negocio (PostgreSQL Global Development Group, s. f.-a). La segunda es que en una tabla particionada la clave primaria o la restricción de unicidad debe incluir la clave de partición. Con identificadores estables y partición mensual, el diseño físico resuelve esa unicidad y las referencias hacia lo archivado (PostgreSQL Global Development Group, s. f.-b).
+
+\section{A.2 Estrategia de datos maestros}
+
+Un dato maestro es un dato de referencia que casi todos los demás usan, como el catálogo de artículos. La estrategia busca que cada uno tenga una sola fuente, una clave que lo distinga y una regla que evite duplicados. La Tabla A.55 amplía la tabla de la sección 5.1.5 con la regla de calidad de cada dato maestro.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.55: Reglas de calidad de los datos maestros. Fuente: elaboración propia a partir de los requisitos RT-05.04 y RT-05.09 de las Bases Técnicas.\phantomsection\label{tab:maestros_a}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.160\linewidth}p{0.220\linewidth}p{0.261\linewidth}p{0.261\linewidth}@{}}
+\toprule Dato maestro & Clave única & Regla contra duplicados & Quién resuelve un conflicto \\
+\midrule
+Artículo & GTIN o código interno & Dos artículos con el mismo GTIN se fusionan y se conserva el más antiguo. & Gerencia Comercial \\
+Proveedor & RUT con dígito verificador & Un RUT solo puede existir una vez, con varias sucursales. & Gerencia de Logística \\
+Tienda y centro de distribución & Código de nodo & El código no se reutiliza al cerrar un nodo. & Gerencia de Logística \\
+Vendedor de marketplace & RUT y código de vendedor & Un vendedor con dos códigos se unifica por RUT. & Gerencia de Canales Digitales \\
+Cliente Retail & Identificador propio de Retail & El mismo RUT con dos identificadores se fusiona y se registra la fusión. & Gerencia de Canales Digitales \\
+Titular & Identificador propio del Emisor & Nunca se fusiona con el cliente Retail. & Negocio Financiero \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla A.55 muestra que cada regla es verificable con una consulta simple sobre la clave, y que el conflicto lo resuelve siempre la gerencia dueña del dato y no el equipo técnico. La última fila protege la separación entre Retail y Emisor, pues un titular no se asocia con un cliente Retail fuera del cruce autorizado que administra X-01.
+
+\section{A.3 Memoria de cálculo}
+
+La memoria de cálculo reúne los supuestos y las fórmulas con que se obtiene cada cifra derivada de las secciones 5.3 y 5.4. Se presenta en cuatro tablas. La Tabla A.56 lista los datos que entregan las Bases, la Tabla A.57 los supuestos que declara Only Simple Solutions, la Tabla A.58 el almacenamiento anual entidad por entidad y la Tabla A.59 las fórmulas con sus resultados. Si Ancoa dispone de mediciones propias, basta reemplazar los supuestos y recalcular.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.56: Datos de las Bases usados en los cálculos. Fuente: Multitiendas Ancoa S.A. (2026b), sección 14.1.\phantomsection\label{tab:datos_caso}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.424\linewidth}p{0.185\linewidth}p{0.318\linewidth}@{}}
+\toprule Dato & Valor & Unidad \\
+\midrule
+Documentos de venta al año & 31.000.000 & documentos \\
+Líneas de venta al año & 71.000.000 & líneas \\
+Pedidos en línea al año & 1.900.000 & pedidos \\
+Pedidos en los tres días del evento & 104.000 & pedidos \\
+Cambios de precio al año & 14.000.000 & cambios \\
+Cambios de precio en un día de campaña & 400.000 & cambios \\
+Tarjetas con saldo vigente (RT-05.15 las llama clientes con saldo) & 620.000 & tarjetas \\
+Tarjetas emitidas & 1.380.000 & tarjetas \\
+Evaluaciones de crédito al año & 520.000 & evaluaciones \\
+Repactaciones al año & 46.000 & repactaciones \\
+Artículos propios y de marketplace & 268.000 y 190.000 & artículos \\
+Cajas, móviles y tiendas & 380, 640 y 22 & unidades \\
+Gestiones de cobranza al año & 2.900.000 & gestiones \\
+Ventas con tarjeta propia al año & 11.800.000 & ventas \\
+Vendedores de marketplace & 310 & vendedores \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla A.56 contiene solo cifras que las Bases entregan. Todo valor que no figura allí y que no resulta de multiplicar cifras de esa tabla es un supuesto y aparece en la tabla siguiente, con el criterio con que se eligió.
+
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
+
+Tabla A.57: Supuestos declarados por Only Simple Solutions y criterio de elección. Fuente: elaboración propia; los criterios están descritos en la sección 5.4.1.\phantomsection\label{tab:supuestos_a}\par\nopagebreak
+\begin{longtable}{@{}p{0.331\linewidth}p{0.176\linewidth}p{0.419\linewidth}@{}}
+\toprule Supuesto & Valor & Criterio con que se eligió \\
+\midrule\endhead\bottomrule\endlastfoot
+Horas de venta por día & 12 & Horario habitual de atención del comercio y del canal digital. \\
+Factor de la hora más ocupada frente al promedio & 2 & Factor de diseño de OSS, no informado por las Bases; se confirma con medición de Ancoa. \\
+Factor del sábado de diciembre frente al promedio & 6 & Factor de diseño de OSS; las Bases sitúan el peak anual en Navidad sin dar su magnitud. Se sustituye o confirma con medición de Ancoa. \\
+Peso de la apertura del evento & 10 \% de los pedidos del primer día en 15 minutos & Se elige el valor que da más carga cuando hay dudas. \\
+Peso del primer día del evento & 50 \% de los pedidos de tres días & Un reparto por igual daría 33 \%; se elige el valor que da más carga. \\
+Consultas por pedido & 120 & 40 pantallas por compra con 3 consultas cada una; se mide en el primer mes. \\
+Segundos entre consultas de un usuario & 20 & Tiempo de lectura de una ficha; fija los usuarios simultáneos. \\
+Movimientos de inventario por línea de venta & 1,5 & Una salida y, en la mitad de los casos, un movimiento más. \\
+Factor de índices y de holgura de almacenamiento & 1,5 y 1,3 & Supuesto de OSS para dimensionar las bases relacionales; se confirma con el diseño físico. Como sensibilidad propia de crecimiento uniforme de 20 \%, el total con índices pasa de 148,2 a 177,8 GB y el provisionado de 192,6 a 231,1 GB. \\
+Velocidad de carga de la migración & 40 MB/s & Valor conservador para el enlace de la nube; se mide en el primer ensayo. \\
+Pasadas de un ensayo de migración & 4 & Extracción, transformación, carga y validación. \\
+Clientes digitales de Retail & 3 millones & Dos pedidos al año por comprador activo y el doble de inactivos o sin compra; se reemplaza en el perfilado. \\
+Tamaño medio de un registro & 100 B a 3 KB según la entidad & Cuenta de los datos de un registro típico, de 8 a 30 bytes cada uno, redondeada hacia arriba. \\
+Tamaño de un documento de evidencia & 0,3 MB de documento y 3 MB de grabación & Documento escaneado de calidad legible y audio comprimido de unos 5 minutos. \\
+Años de conservación de la evidencia & 10 años & Duración supuesta del crédito de 36 meses más 6 años de retención (RT-05.10-C), 9 años redondeados hacia arriba a 10. No fija la eliminación ni limita créditos de mayor duración. \\
+Segundos entre ventas de una caja y de un móvil en sábado & 90 y 120 & Una venta cada minuto y medio en caja y cada dos minutos en equipo móvil; es la cota física que verifica la carga. \\
+Factor de una tienda grande frente al promedio & 2,5 & Las mayores tiendas venden entre dos y tres veces el promedio de la cadena. \\
+Factor de una jornada completa frente a ocho horas & 2 & Con la tienda grande de 2,5, da un escenario de dimensionamiento de cinco veces el promedio; no representa el pico de factor seis. \\
+Pico de diseño de una tienda grande & 2,5 × 6 = 15 veces el promedio & Combina la tienda grande con el factor del sábado de diciembre; es el escenario de diseño de la sincronización tras ocho horas sin enlace. \\
+Tamaño de un documento de venta y de un mensaje de sincronización & 1,8 KB y 300 B & Supuestos de OSS que se miden antes del piloto. Unidades decimales: 1 KB = 1.000 B y 1 MB = 1.000.000 B. \\
+Bajada hacia una tienda tras ocho horas sin enlace & 140,4 MB & Supuesto de carga de prueba por tienda: 400.000 eventos de precio × 300 B (120 MB) y 68.000 mensajes de existencia × 300 B (20,4 MB). \\
+Margen y velocidad de la sincronización & 1,5 y 2 Mbps efectivos & Supuestos de OSS; la aceptación exige sincronización y conciliación completas en 30 minutos o menos. \\
+Ráfaga de evaluaciones de crédito frente a las estimadas & 4 & Las evaluaciones llegan agrupadas cuando varias cajas ofrecen la tarjeta a la vez; se prueba con 10 simultáneas. \\
+Ventana de carga de precios de campaña & 5 minutos & Escenario de estrés de OSS: los 400.000 cambios de un día de campaña, dato de las Bases, concentrados en cinco minutos. No es el máximo diario informado ni el requisito de propagación de cada cambio. \\
+\end{longtable}
+
+
+La Tabla A.57 permite al lector recalcular cada cifra del capítulo y comprobar qué supuesto la mueve. Los de mayor efecto son las consultas por pedido y el peso de la apertura, como se analiza en la sección 5.4.1.
+
+El almacenamiento transaccional anual se obtiene sumando, para cada entidad que crece cada año, sus filas por su tamaño medio. La Tabla A.58 lo hace para 24 grupos de entidades de los tres ámbitos. Las cifras de volumen que entregan las Bases se marcan en la columna de origen; todo parámetro adicional es un supuesto de Only Simple Solutions y se confirma en el levantamiento de la Etapa 1. Las entidades que no figuran son maestros o registros que se actualizan en su lugar, como el maestro de artículos, el padrón de clientes y de titulares y el catálogo de nodos, que ocupan unos 8 GB en total y no crecen de forma relevante cada año. Los archivos de la evidencia, que son documentos y grabaciones, no se suman aquí, porque se calculan aparte en la tabla de fórmulas.
+
+\par\vspace{0pt plus 10\baselineskip}\penalty-300\vspace{0pt plus -10\baselineskip}
+
+Tabla A.58: Almacenamiento transaccional anual por entidad. Fuente: elaboración propia a partir de la sección 14.1 de las Bases Técnicas y de los supuestos declarados.\phantomsection\label{tab:almacenamiento_a}\par\nopagebreak
+\begin{longtable}{@{}p{0.275\linewidth}p{0.109\linewidth}p{0.085\linewidth}p{0.095\linewidth}p{0.313\linewidth}@{}}
+\toprule Entidades & Filas por año & Bytes por fila & GB netos & Origen de las filas \\
+\midrule\endhead\bottomrule\endlastfoot
+RE-18 Línea de venta & 71.000.000 & 300 & 21,30 & Bases: líneas de venta al año \\
+RE-17 y RE-19 Documento de venta con sus pagos & 31.000.000 & 600 & 18,60 & Bases: documentos al año \\
+RE-14 a RE-16 Pedido, sus líneas y su historial & 1.900.000 & 2.000 & 3,80 & Bases: pedidos en línea al año \\
+RE-02 Precio publicado & 56.000.000 & 250 & 14,00 & 14 millones de cambios por 4 canales \\
+RE-10 Movimiento de inventario & 106.500.000 & 150 & 15,97 & 71 millones de líneas por 1,5 \\
+RE-20 Atribución de comisión & 46.500.000 & 100 & 4,65 & 1,5 atribuciones por documento \\
+RE-13 Conteo y diferencia de inventario & 10.992.000 & 80 & 0,88 & Un conteo al año por referencia y nodo \\
+RE-11 Reserva & 5.434.000 & 120 & 0,65 & 2,2 líneas por pedido y 1,3 reservas por línea \\
+RE-05 Confirmación de etiqueta & 3.720.000 & 100 & 0,37 & 310.000 etiquetas con 12 cambios al año \\
+RE-25 Caso de posventa & 620.000 & 500 & 0,31 & Bases: devoluciones al año \\
+RE-24 Consentimiento comercial & 1.500.000 & 150 & 0,23 & 0,5 eventos al año por cliente digital \\
+RE-28 y RE-29 Líneas de abastecimiento y de recepción & 2.358.400 & 135 & 0,32 & 4 reposiciones por referencia propia y 1,2 recepciones por orden \\
+RE-30 Detalle de liquidación & 1.839.200 & 150 & 0,28 & Líneas en línea, 40 \% de marketplace y 10 \% de ajustes \\
+EM-03 Autorización de compra & 12.980.000 & 150 & 1,95 & Bases: ventas con tarjeta propia y 10 \% de denegadas \\
+EM-14 Plan de crédito & 4.720.000 & 120 & 0,57 & 40 \% de las compras con tarjeta se financian \\
+EM-06 Cuota & 28.320.000 & 150 & 4,25 & 6 cuotas por plan \\
+EM-07 Pago de cuota & 7.440.000 & 120 & 0,89 & Un pago al mes por cuenta con saldo \\
+EM-15 Aplicación de pago & 28.320.000 & 100 & 2,83 & Una aplicación por cuota \\
+EM-10 Estado de cuenta & 7.440.000 & 300 & 2,23 & Bases: 620.000 estados al mes \\
+EM-09 Gestión de cobranza & 2.900.000 & 200 & 0,58 & Bases: gestiones al año \\
+EM-01 y EM-02 Solicitud y evaluación crediticia & 1.040.000 & 400 & 0,42 & Bases: evaluaciones al año, una solicitud por evaluación \\
+EM-08 Repactación & 46.000 & 300 & 0,01 & Bases: repactaciones al año \\
+EM-11 y EM-16 Expediente y versiones de evidencia, sin archivos & 849.000 & 500 & 0,42 & 566.000 casos y 1,5 versiones por caso \\
+FR-02 Decisión de cruce & 12.980.000 & 250 & 3,25 & Un cruce por autorización de compra \\
+Subtotal Retail &  &  & 81,4 &  \\
+Subtotal Emisor &  &  & 14,2 &  \\
+Subtotal frontera &  &  & 3,2 &  \\
+Total neto &  &  & 98,8 & Suma de los tres ámbitos \\
+\end{longtable}
+
+
+La Tabla A.58 muestra que Retail concentra el 82 \% del volumen neto, y que dentro de Retail las líneas de venta, los documentos, los movimientos y los precios publicados suman 70 de los 81 GB. El Emisor y la frontera aportan 17 GB netos, de los cuales las cuotas, sus aplicaciones y la bitácora de cruces son los mayores. Con los índices (×1,5) el total es de 148,2 GB al año, y con la holgura de 30 \% el total provisionado es de 192,6 GB al año, de los que 158,6 GB corresponden a la base de Retail y 33,9 GB a las bases del Emisor y de X-01, que son independientes entre sí.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.59: Fórmulas y resultados de las cifras principales. Fuente: elaboración propia a partir de las tablas anteriores.\phantomsection\label{tab:formulas}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.333\linewidth}p{0.404\linewidth}p{0.190\linewidth}@{}}
+\toprule Cifra & Fórmula & Resultado \\
+\midrule
+Transacciones por año & Documentos + devoluciones + evaluaciones + repactaciones + cobranzas & 35.086.000 \\
+Documentos por segundo, sábado de diciembre & 31 M / (12 h × 365 × 3.600) × 6 & 11,8 por segundo \\
+Cota física de las cajas & 380 cajas / 90 s + 640 móviles / 120 s & 9,56 por segundo \\
+Consultas por segundo en la apertura & 104.000 × 50 \% × 10 \% / 900 s × 120 & 693 por segundo \\
+Usuarios simultáneos en la apertura & Consultas por segundo × 20 s & 13.867 \\
+Cambios de precio por segundo & 400.000 / 300 s & 1.333 por segundo \\
+Movimientos de inventario por segundo en el peak & 71 M × 1,5 / (12 h × 365 × 3.600) × 6 & 40,5 por segundo \\
+Mensajes de sincronización por segundo & Movimientos por segundo × 28 nodos & 1.135 por segundo \\
+Almacenamiento anual neto, con índices y provisionado & Suma de la tabla de almacenamiento; × 1,5; × 1,3 & 98,8; 148,2; 192,6 GB \\
+Evidencia financiera por año & 566.000 casos × 3,3 MB & 1,87 TB \\
+Volumen total a migrar, subtotal de grupos estimados & Suma de siete orígenes & 264,5 GB \\
+Horas de una pasada de carga & Volumen × 1.000 / 40 MB/s / 3.600 & 1,84 h \\
+Documentos de una tienda en 8 horas sin enlace, promedio & 31 M / 365 / 22 × 8 / 12 & 2.574 \\
+Escenario de memoria, factor cinco & Promedio × 2,5 × 2 & 12.868 (23,2 MB) \\
+Pico de diseño, factor quince & Promedio × 2,5 × 6 & 38.606 (69,5 MB) \\
+Sincronización tras 8 horas sin enlace & 69,5 MB de ventas + 140,4 MB de bajada, por 1,5; transmisión a 2 Mbps & 209,9 MB; 314,9 MB con margen; 21,0 min \\
+Autonomía de 24 horas al pico de diseño & Documentos de 8 horas × 3, por 1,8 KB & 115.816 documentos; 208,5 MB (312,8 MB con margen) \\
+Carga masiva de precios, estrés de OSS & 400.000 × 300 B; 120 MB × 8 / 300 s; por 1,5 & 120 MB; 3,2 Mbps; 4,8 Mbps \\
+Delta de 30 días de documentos, líneas y pedidos Retail & (31 M × 600 B + 71 M × 300 B + 1,9 M × 2.000 B) × 30 / 365 & 3,59 GB \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla A.59 deja a la vista que cada cifra del capítulo se obtiene con operaciones aritméticas simples sobre datos de las Bases y supuestos declarados. Los 264,5 GB de la migración son el subtotal de los grupos estimados; faltan componentes e índices, por lo que no son una cota superior acreditada. El perfilado y los ensayos medirán el tamaño y la ventana definitivos, y el padrón de clientes de Retail y el de titulares del Emisor se cuentan por separado.
+
+\section{A.4 Plan de perfilado de los datos de origen}
+
+El perfilado es la medición de la calidad de los datos de origen antes de migrarlos, para saber qué se limpia y qué se descarta. Se hace en dos niveles. El perfilado completo recorre todos los registros de cada origen, como indica la sección 5.3.2, y mide el recuento de cada tipo de defecto. Sobre ese resultado, una muestra de 300 registros por origen se revisa a mano, y detecta, con una probabilidad de 1 $-$ 0,99\textsuperscript{300}, aproximadamente 95,1 \%, un defecto presente en el 1 \% de los registros que el recorrido automático no puede reconocer. La Tabla A.60 indica qué se mide en cada origen y con qué criterio se acepta.
+
+\par\vspace{0.6\baselineskip}\noindent\begin{minipage}{\linewidth}
+Tabla A.60: Plan de perfilado por origen. Fuente: elaboración propia a partir del requisito RT-05.12 de las Bases Técnicas.\phantomsection\label{tab:perfilado}\par\vspace{0.3\baselineskip}
+\begin{tabular}{@{}p{0.275\linewidth}p{0.326\linewidth}p{0.326\linewidth}@{}}
+\toprule Origen & Qué se mide & Criterio de aceptación \\
+\midrule
+Maestro de artículos & Duplicados por GTIN y descripciones vacías & Sin duplicados y descripción completa. \\
+Venta de seis años & Documentos sin líneas y totales que no cuadran & Totales conciliados al peso con redondeo explicado. \\
+Cartera de crédito & Saldos, cuotas y fechas inconsistentes & Capital exacto por cliente. \\
+Padrón de clientes & RUT inválidos y clientes repetidos & RUT válido y un registro por persona. \\
+Pedidos de tres años & Pedidos sin estado final & Estado final asignado o pedido archivado. \\
+Vendedores y liquidaciones & Vendedores sin RUT y liquidaciones abiertas & Toda liquidación cerrada o traspasada. \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par
+
+
+La Tabla A.60 fija un criterio de aceptación para cada origen, de modo que el informe de defectos de la sección 5.3.2 pueda declarar sin ambigüedad qué se corrige, qué se explica y qué se excluye.
+
+\section*{Referencias del anexo}
+\addcontentsline{toc}{section}{Referencias del anexo}
+
+Multitiendas Ancoa S.A. (2026b). \textit{Bases técnicas. Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
+
+PostgreSQL Global Development Group. (s. f.-a). \textit{PostgreSQL documentation. Constraints}. \url{https://www.postgresql.org/docs/current/ddl-constraints.html}
+
+PostgreSQL Global Development Group. (s. f.-b). \textit{PostgreSQL documentation. Table partitioning}. \url{https://www.postgresql.org/docs/current/ddl-partitioning.html}
+
+\ossFinalPage
+
+\end{document}

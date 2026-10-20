@@ -16,11 +16,11 @@ Pipeline numerado: el prefijo declara la etapa del flujo.
 | `03_Formularios/` | Formularios oficiales de los sobres: A-1..A-6, T-6..T-22, E-21..E-26 |
 | `04_Adjuntos/` | Diagramas exportados, inventario de hardware, tablas de apoyo |
 | `05_Gestion/` | Plan de trabajo en Jira (`OSS`): plan, mapeo, scripts |
-| `06_Informes/` | Los 3 informes y las 3 presentaciones preparatorias (Art. 45°) |
+| `06_Informes/` | Presentaciones preparatorias y PDF de los 3 informes (Art. 45°; los PDF no se versionan) |
 | `07_Entregables/` | Salida final: los 3 sobres y el PDF |
-| `80_Artefactos/` | Material general: planilla de consultas al mandante, informes internos |
+| `80_Artefactos/` | Material de trabajo: consultas al mandante, auditorías, contexto por subdocumento |
 | `90_Referencia/` | Fragmentos de un caso previo (DistriProducto): **solo referencia de forma** |
-| `.opencode/` | Skills y plugin de opencode para el flujo de trabajo |
+| `.opencode/`, `.agents/` | Skills y plugin de los agentes (opencode, Codex; Claude Code vía `.claude/skills/`) |
 
 Cada carpeta tiene su `README.md` con el propósito y las reglas específicas.
 

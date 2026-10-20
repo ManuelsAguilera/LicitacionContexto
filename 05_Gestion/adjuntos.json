@@ -162,8 +162,8 @@
   {
     "id": "ADJ-021",
     "parte": "T7-08",
-    "nombre": "OSS-Formulario-T-16.tex",
-    "ruta": "02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex",
+    "nombre": "OnlySimpleSolutions-Formulario-T-16.tex",
+    "ruta": "02_Propuesta/latex_final/Formularios/OnlySimpleSolutions-Formulario-T-16.tex",
     "declarado_en": "02_Propuesta/sd-08_plan-de-riesgos/sd-08_plan-de-riesgos.md",
     "existe": true
   },

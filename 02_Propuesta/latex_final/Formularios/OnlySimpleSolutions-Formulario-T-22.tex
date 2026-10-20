@@ -1,0 +1,523 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Correcciones del Informe 1}{Formulario T-22}
+\tableofcontents
+\clearpage
+\renewcommand{\thetable}{T-22.\arabic{table}}
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t22-1]{Tabla T-22.1: Trazabilidad observación, respuesta y sección modificada: observaciones generales}\dotfill\pageref{tab:t22-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-2]{Tabla T-22.2: Trazabilidad observación, respuesta y sección modificada: Subdocumento 1 · Presentación de la empresa}\dotfill\pageref{tab:t22-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-3]{Tabla T-22.3: Trazabilidad observación, respuesta y sección modificada: Subdocumento 2 · Comprensión del problema y de la necesidad}\dotfill\pageref{tab:t22-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-4]{Tabla T-22.4: Trazabilidad observación, respuesta y sección modificada: Subdocumento 3 · Esquema de solución y alcance}\dotfill\pageref{tab:t22-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-5]{Tabla T-22.5: Trazabilidad observación, respuesta y sección modificada: Subdocumento 4 · Arquitectura lógica (4.1) y tecnologías de software (4.1.1)}\dotfill\pageref{tab:t22-5}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-6]{Tabla T-22.6: Trazabilidad observación, respuesta y sección modificada: Subdocumento 4 · Arquitectura física (4.2) y data center (4.3)}\dotfill\pageref{tab:t22-6}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-7]{Tabla T-22.7: Trazabilidad observación, respuesta y sección modificada: Subdocumento 5 · Modelo y gestión de datos}\dotfill\pageref{tab:t22-7}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t22-8]{Tabla T-22.8: Trazabilidad observación, respuesta y sección modificada: Subdocumento 13 · Innovaciones}\dotfill\pageref{tab:t22-8}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\section{Correcciones del Informe 1 (Formulario T-22)}\label{anexo-correcciones-informe-1}
+
+Conforme al Artículo 46 de las Bases Administrativas y al Formulario T-22, este documento presenta la resolución de las observaciones formuladas al Informe 1 mediante una tabla de trazabilidad observación-respuesta-sección modificada. Cada fila identifica la observación recibida, la corrección incorporada y el lugar de la propuesta donde quedó. La página indicada junto a cada observación corresponde al documento de revisión del Informe 1.
+
+\renewcommand{\tablename}{Tabla}
+
+\subsection{Observaciones generales}\label{t22-1}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: observaciones generales.}\label{tab:t22-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+G-1 & No hay declaración de uso de inteligencia artificial generativa (p. 1). & Se incorporó una sección de declaración de uso de IA, con tabla por sección (herramienta, finalidad, nivel de uso en texto y en diagramas, revisión humana) y la escala de niveles. & Subdocumentos 1, 2, 3, 4, 5 y 13 · sección final «Declaración de uso de IA» \\ \addlinespace
+G-2 & Encabezado de página vacío y portadas sin identificación de la licitación (p. 2). & La plantilla corporativa incorpora un encabezado con el nombre del proponente y «Licitación TFEP-01/2026» en todas las páginas, y la portada identifica la licitación. & Todos los subdocumentos · encabezado y portada \\ \addlinespace
+G-3 & El texto conserva frases del proceso de revisión («por indicación expresa del usuario», «hallazgo H-2», «borrador previo», «versión anterior de esta sección», «Paso 9», «N° 3739») (pp. 2, 25). & Los subdocumentos fueron reescritos y esas frases se eliminaron. & Subdocumentos 1 y 4 · texto completo \\ \addlinespace
+G-4 & El Subdocumento 4 afirma que la sección 3.1 del Subdocumento 3 «aparece sin redactar», cuando sí existe (p. 2). & Se eliminó la nota. El capítulo 4 abre con una introducción coherente con el capítulo 3, que contiene el resumen ejecutivo de la solución. & Subdocumento 4 · introducción del capítulo; Subdocumento 3 · 3.1 Resumen Ejecutivo de la Solución \\ \addlinespace
+G-5 & Referencias a secciones y anexos que no existen: «3.2.7», «Anexo Técnico X», «Anexo A.2», «4.2.10.4», «4.2.9.4.b», «4.2.11.1-bis» (p. 2). & Las remisiones inexistentes se eliminaron. El catálogo y las reglas de negocio se remiten a los Anexos B y C del Subdocumento 3, donde figuran las reglas RN-15, RN-35 y RN-46. & Subdocumento 3 · 3.2.3 a 3.2.5; Subdocumento 4 · 4.1 y 4.1.1 \\ \addlinespace
+G-6 & La numeración interna no cierra: «ADR-01 a ADR-25» frente a 13 decisiones, ADR fechados en octubre en un documento de septiembre, tablas repetidas (p. 2). & Las decisiones de arquitectura quedaron en una sola tabla con siete registros (ADR-01 a ADR-07), sin fechas, cada uno con su alternativa descartada y su prueba de verificación. Las tablas del capítulo 4 son correlativas (4.1 a 4.16). & Subdocumento 4 · 4.1 Arquitectura lógica, Tabla 4.5 \\ \addlinespace
+G-7 & La autonomía sin enlace tiene tres cifras distintas entre subdocumentos (pp. 10, 14, 25). & Se comprometió una sola autonomía de 24 horas para la operación de tienda sin enlace. & Subdocumento 3 · 3.1, 3.2.3 y 3.4.5; Subdocumento 4 · 4.1 y 4.2 \\ \addlinespace
+G-8 & Falta el folio correlativo único del Informe y la media firma (Art. 40) (p. 1). & Pendiente. El folio y la media firma se asignan al ensamblar el Informe 2 y no en cada subdocumento. No están aplicados en los archivos de esta versión. & Informe 2 · ensamblado final \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 1 · Presentación de la empresa}\label{t22-2}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 1 · Presentación de la empresa.}\label{tab:t22-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1-1 & La empresa no tiene datos: «fundada hace 10 años» sin año, sede ni dotación (p. 4). & Se declararon el año de fundación (2016), la ciudad (Santiago), una dotación de 85 profesionales en dos sedes (Santiago y Concepción) y 14 proyectos ejecutados desde 2016. & 1.1 Presentación de la empresa \\ \addlinespace
+1-2 & Capacidades instaladas sin organigrama ni dotación (p. 4). & Se agregó el organigrama de la empresa (Figura 1) y la dotación por área. & 1.2 Estructura Organizacional \\ \addlinespace
+1-3 & Las certificaciones solo se «alinean», «consideran» u «orientan» a las normas; falta política, instancias y responsables (p. 4). & Se redactó el gobierno interno de calidad, seguridad y conocimiento, con política, instancias (comités, juntas y revisiones) y responsables, y se separó lo certificado de lo que se aplica como control. & 1.3 Gobierno interno Calidad, Seguridad y Conocimiento \\ \addlinespace
+1-4 & No hay Formulario T-6: los proyectos van en viñetas, sin monto, SLA, arquitectura ni contraparte (pp. 3, 5). & Se elaboró el Formulario T-6 como archivo propio con los once campos de las Bases, incluido el alcance ejecutado. Cada proyecto declara un cliente ficticio, el período con su estado de finalizado y en operación, el monto en rango, la arquitectura, el nivel de servicio comprometido, el volumen y una contraparte con nombre, cargo, correo y teléfono ficticios. Una nota bajo la tabla indica qué proyectos acreditan la arquitectura híbrida y el nivel de servicio de 99,5 \% o más, y declara la carta de referencia del mandante como adjunto por acreditar (Art. 34.1). La sección 1.4 cita el formulario y repite esos datos. & Formulario T-6; 1.4 Experiencia y Certificaciones \\ \addlinespace
+1-5 & Ninguna certificación institucional se declara obtenida; no hay plan para las pendientes (p. 4). & Se declaran cuatro certificaciones vigentes (ISO/IEC 27001, ISO/IEC 27701, ISO 9001 e ISO 22301) y un plan con hitos a 12 meses para ISO/IEC 20000-1 e ISO/IEC 42001. PCI DSS se presenta como control aplicado y no como certificación. & 1.4.1 Certificaciones \\ \addlinespace
+1-6 & El documento termina en una URL, sin cierre (p. 5). & Se agregó una síntesis de capacidades al cierre de la sección de experiencia y el documento cierra con las secciones de referencias y de declaración de uso de IA. & 1.4 Experiencia y Certificaciones; secciones finales \\ \addlinespace
+1-7 & Falta la estructura de gobierno del proyecto; «siete ingenieros con dedicación exclusiva» sin más detalle (p. 4). & Se agregó la estructura para el proyecto: áreas de trabajo, roles de jefatura, comités con el Cliente y herramientas de coordinación. El equipo nominado se remite al capítulo 12. & 1.5 Estructura para Proyecto; 1.2 Estructura Organizacional \\ \addlinespace
+1-8 & La alianza con el proveedor de nube es genérica y doble (AWS y Microsoft Azure), mientras la arquitectura oferta Azure (p. 4). & Se declara una sola alianza, con Microsoft Azure, coherente con el proveedor de la arquitectura. & 1.6 Alianzas \\ \addlinespace
+1-9 & Sitio web corporativo citado entre corchetes al final del cuerpo (p. 2). & La referencia al sitio se trasladó a un anexo y se corrigió su formato. & Anexo A.1 Presencia digital y web corporativa \\ \addlinespace
+1-10 & Errata «un un grupo» (p. 2). & Corregida al reescribir la sección. & 1.5 Estructura para Proyecto \\ \addlinespace
+1-11 & Uno de los tres clientes del T-6 es una empresa real, y se pide usar nombres ficticios (pp. 3 y 5). & Los tres clientes del T-6 y sus contrapartes se reemplazaron por nombres ficticios, con correos en el dominio .example y teléfonos ficticios. No se atribuye experiencia a ninguna empresa real. La Comisión para el Mercado Financiero y el Servicio Nacional del Consumidor se nombran en el resto de la propuesta porque son autoridades reales citadas en su función normativa. & Formulario T-6 \\ \addlinespace
+1-12 & El proyecto 1 declara 12 horas de operación sin conexión, frente a las 24 horas que se comprometen para Ancoa (p. 5). & El T-6 y la sección 1.4 presentan las 12 horas como una capacidad de al menos 12 horas verificadas en un proyecto pasado. La sección 1.4 explica que para Ancoa se compromete una autonomía de 24 horas, que se demuestra con un corte provocado de 24 horas en una de las tres tiendas piloto, en los meses 6 y 7. & Formulario T-6; 1.4 Experiencia y Certificaciones; Subdocumento 3 · 3.2.3 \\ \addlinespace
+1-13 & El T-6 no indica qué proyecto acredita la arquitectura híbrida ni cuál el nivel de servicio de 99,5 \% o más (p. 5). & Se agregó una nota bajo la tabla. Acreditan la arquitectura híbrida los proyectos 1 y 3, y acreditan el nivel de servicio los tres proyectos. La sección 1.4 repite la afirmación. & Formulario T-6; 1.4 Experiencia y Certificaciones \\ \addlinespace
+1-14 & Falta el Formulario T-8 con los currículos y las certificaciones individuales (ITIL, gobierno de TI y motor de base de datos), y su acreditación (pp. 4 y 5). & Pendiente. El equipo nominado y sus certificaciones se desarrollan en el capítulo 12 y en el Formulario T-8, que no forman parte de esta versión. Esta fila se actualiza cuando se entreguen. & Subdocumento 12 · Formulario T-8 (por entregar); 1.5 Estructura para Proyecto \\ \addlinespace
+1-15 & La alianza con Microsoft no acredita la condición de socio, su nivel ni su identificador (pp. 4 y 5). & Pendiente. La sección 1.6 declara una sola alianza, con Microsoft Azure, y el Subdocumento 4 la cita como alianza prevista en el ADR-07. El nivel y el identificador de socio se consignan cuando se obtenga el documento de respaldo. & 1.6 Alianzas; Subdocumento 4 · 4.1, Tabla 4.5 (ADR-07) \\ \addlinespace
+1-16 & El Subdocumento 1 declara sectores (banca, seguros, logística y telecomunicaciones) que no tienen un proyecto en la experiencia (p. 4). & Pendiente. Los tres proyectos del T-6 son de retail, servicios financieros y comercio electrónico. Los demás sectores de la sección 1.1 se respaldan con los 14 proyectos ejecutados desde 2016, que el T-6 no detalla, y el equipo debe confirmarlos antes de la entrega. & 1.1 Presentación de la empresa; Formulario T-6 \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 2 · Comprensión del problema y de la necesidad}\label{t22-3}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 2 · Comprensión del problema y de la necesidad.}\label{tab:t22-3}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2-1 & El resumen reproduce el caso en lugar de entregar la lectura del proponente; la sección «Lo que se evalúa, en una frase» copia el criterio de evaluación (pp. 6–7). & Se reescribió el resumen como síntesis propia: causas, consecuencias para la arquitectura y el método, la hipótesis «desacoplar antes de reemplazar» y el factor diferencial. Se eliminaron las subsecciones 2.1.1 a 2.1.5 anteriores. & 2.1 Resumen ejecutivo del problema \\ \addlinespace
+2-2 & El resumen no anticipa la hipótesis de solución ni lo que distingue a la oferta (p. 6). & El resumen incorpora la hipótesis de solución y la secuencia de trabajo. & 2.1 Resumen ejecutivo del problema \\ \addlinespace
+2-3 & La investigación de las materias del numeral 16.2 del caso se limita a dos leyes (p. 7). & Se incorporaron al contexto y a la Tabla 2.1 la carga anual equivalente, la tasa máxima convencional, la cobranza, PCI DSS v4.0.1, el maestro de artículos por estilo, talla y color, el disponible para prometer y el costo total de servir, con fuentes. & 2.2.1 y 2.2.3 (Tabla 2.1) \\ \addlinespace
+2-4 & No hay referencias ni citas (pp. 3, 7). & Se agregó la sección de Referencias, con 14 entradas, y citas autor-año en el texto. & Referencias; citas en 2.1, 2.2.1 y 2.3 \\ \addlinespace
+2-5 & Se cita «SVS/CMF», organismo que no existe desde 2018 (p. 7). & Se eliminó «SVS» de la lista de acrónimos y del texto; se cita a la Comisión para el Mercado Financiero. & 2.1; Tabla 2.1; lista de acrónimos; Anexo A.5.1 (SUP-25) \\ \addlinespace
+2-6 & No hay ninguna figura (p. 8). & Se incorporaron cinco figuras con su lista: causas raíz, mapa de plataformas, territorio, mecanismos y agravantes, y matriz influencia-interés. La relación causal entre las cuatro promesas y los registros se explica en el texto. & 2.1 (Figura 2.1); 2.2.1 (Figura 2.2); 2.3 (Figura 2.3); 2.3.7 (Figura 2.4); 2.4.2 (Figura 2.5) \\ \addlinespace
+2-7 & Abuso de tablas: tres tablas ocupan la mitad del cuerpo (p. 8). & Los actores y los supuestos pasaron a prosa; el detalle de los supuestos se trasladó al anexo. & 2.4.1 a 2.4.3; 2.5.2; Anexo A.5.1 \\ \addlinespace
+2-8 & Dimensionamiento sin cálculo propio: falta la exposición de las cancelaciones (p. 7). & Se calculan la venta base, el ticket medio (\$41.000) y la exposición anual de las cancelaciones (\$1.482 millones). & 2.3.1 \\ \addlinespace
+2-9 & Falta dimensionar un día de 400.000 cambios de precio (p. 7). & Se dimensiona la carga (38.356 cambios diarios en promedio; 400.000 equivale a 10,4 veces) y el desfase de actualización (15 a 19 horas, 180 a 228 veces el plazo de 5 minutos). & 2.3.2 \\ \addlinespace
+2-10 & Faltan cálculos propios del problema (p. 7). & Se agregó el modelo de discrepancia de etiquetas con su fórmula y el cálculo de horas de espera de la evaluación crediticia (5.778 a 26.000 horas). & 2.3; 2.3.4 \\ \addlinespace
+2-11 & Distorsión: «11 \% de multas» cuando el caso habla de 11 \% de discrepancia en una muestra de 120 productos (p. 7). & Corregido a «11 \% de discrepancia sobre una muestra de 120 productos». & Tabla 2.1; Tabla 2.3; 2.3.7 \\ \addlinespace
+2-12 & Cifras sin fuente: «entre 12 y 24 horas» de latencia de etiqueta y el riesgo de fraude de SUP-07 (p. 7). & Se usa «hasta 24 horas», que es el dato del caso, y se retiró la cifra de fraude. & 2.3; Anexo A.5.1 (SUP-07) \\ \addlinespace
+2-13 & La sección de contexto transcribe a prosa las tablas del caso (p. 7). & La sección se reorganizó con derivaciones propias (superficie media por tienda, pedidos diarios, documentos diarios por tienda) y referencias sectoriales. & 2.2.1 \\ \addlinespace
+2-14 & El mapa de actores es lectura propia pero no se usa después (pp. 7–8). & Se mantiene el mapa (Tabla 2.5 y Figura 2.5) y se agregó un análisis de tensiones entre interesados. & 2.4.1 a 2.4.3 \\ \addlinespace
+2-15 & SUP-08 adopta «cobrar el menor» sin tratar sus consecuencias (p. 7). & Se reformuló SUP-08 y se declara que su consecuencia económica debe dimensionarse. & Anexo A.5.1 (SUP-08) \\ \addlinespace
+2-16 & SUP-17 enumera seis componentes de merma y el caso da cinco (p. 7). & SUP-17 se alineó con las cinco causas del caso. & Anexo A.5.1 (SUP-17) \\ \addlinespace
+2-17 & SUP-19 se funda en un término inexistente («co-militaridad laboral») (pp. 2, 7). & Se retiró el término; SUP-19 se fundamenta en la ausencia de vínculo laboral. & Anexo A.5.1 (SUP-19) \\ \addlinespace
+2-18 & Errata «reparaciones» por «repactaciones» (pp. 2, 8). & Corregida. & 2.3.4; Tabla 2.3 \\ \addlinespace
+2-19 & Ningún supuesto puede rebajar un requisito obligatorio (pp. 10, 14). & El anexo de supuestos declara expresamente que ningún supuesto reduce los requisitos obligatorios de las Bases. & Anexo A.5.1 \\ \addlinespace
+2-20 & Residuos de redacción: cita entre comillas sin autor, «el proponente específica», dobles puntos (p. 8). & Eliminados al reescribir el capítulo. & Capítulo 2 completo \\ \addlinespace
+2-21 & Falta dar valor a SUP-04, SUP-12 y SUP-16 y a las horas de etiquetado manual (p. 7). & Parcial. Las discrepancias de etiquetas se dimensionan con un modelo propio en la sección 2.3 (fila 2-10). SUP-04 fija el principio de intercambios autorizados, SUP-12 deja parametrizada la duración de las reservas y SUP-16 exige indicadores y umbrales trazables. Los valores numéricos de SUP-12 y SUP-16 no se fijan en esta versión y se definen en el levantamiento de la Etapa 1. & 2.3; Anexo A.5.1 (SUP-04, SUP-12 y SUP-16) \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 3 · Esquema de solución y alcance}\label{t22-4}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 3 · Esquema de solución y alcance.}\label{tab:t22-4}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3-1 & Falta una explicación de la propuesta de solución entendible sin recorrer tablas (pp. 9, 12). & El capítulo se reestructuró según el índice 3.1 a 3.4. El resumen ejecutivo presenta en prosa las cuatro promesas, los cinco objetivos, los trece servicios, el despliegue híbrido, las dos etapas, las marchas blancas (meses 13 a 15 y 19 a 20), los pasos a producción de los meses 16 y 21 y la operación hasta el mes 56. & 3.1 Resumen Ejecutivo de la Solución \\ \addlinespace
+3-2 & El único diagrama es un mapa del estado actual, de fondo negro e ilegible, sin explicación en el texto (p. 9). & Se reemplazó por dieciséis figuras numeradas de la 3.1 a la 3.16. Las figuras 3.1 a 3.8 muestran el mapa de servicios, el horizonte de 56 meses, la cobertura de causas, el destino de las plataformas, las dependencias entre etapas, la migración de la cartera, la frontera con sus cruces y los niveles de aceptación. Las figuras 3.9 a 3.16 muestran la selección del escenario, el contexto con los tres frentes, Retail, el Emisor, los intercambios Retail-Emisor, el recorrido Retail, la originación y la compra con tarjeta. Cada una lleva leyenda, fuente y párrafos de lectura. & 3.1 (Figuras 3.1 y 3.2); 3.2 (Figuras 3.3 a 3.8); 3.3 (Figuras 3.9 a 3.13); 3.4 (Figuras 3.14 a 3.16) \\ \addlinespace
+3-3 & Abuso de tablas: 32 tablas en el cuerpo y 187 de 195 folios tabulares (p. 9). & El cuerpo pasó de 32 a 9 tablas, todas con interpretación en prosa. Los catálogos y la matriz de cumplimiento salieron del cuerpo. & 3.2 a 3.4 \\ \addlinespace
+3-4 & El documento no explica cómo la solución resuelve cada dolor ni cómo se implanta (pp. 9–12). & La explicación de la solución recorre en prosa las cuatro promesas (existencia, precio, entrega y crédito) con su prueba, la continuidad y transición, y el apoyo de los actores. Cada servicio se describe en texto, y se explica el despliegue por tienda y por tramo, con reversión. & 3.4.1 a 3.4.6; 3.3.2; 3.1; 3.2.2 \\ \addlinespace
+3-5 & SUP-09 retiene el precio anterior en caja, contra la propagación en 5 minutos que exige el caso (pp. 10, 12). & Se retiró la retención del precio anterior en caja. El texto compromete la propagación del precio a las 380 cajas y al canal digital en 5 minutos, con prueba de tiempo. & 3.4.2 La promesa de precio; 3.2.3 (Tabla 3.3) \\ \addlinespace
+3-6 & Autonomía sin enlace con tres cifras en el mismo subdocumento (24 h, 8 h y la matriz con 8 h) (pp. 10, 12). & Se compromete una sola autonomía de 24 horas para venta, cobro y consulta local, verificada con un corte de 24 horas y retorno ensayado en el piloto. Desapareció la distinción entre 24 horas de infraestructura y 8 horas de negocio. & 3.1; 3.2.3; 3.4.5 Continuidad y transición \\ \addlinespace
+3-7 & El crédito de la Etapa 1 depende de un supuesto sobre la plataforma de 2011, sin plan alternativo (pp. 10–12). & Se conservó el adelanto de la habilitación del crédito y se definió una prueba (corte de enlace de 24 horas en una tienda del piloto, meses 6 y 7, con criterios de paso y conciliación en 30 minutos) y la alternativa si falla: la compra con tarjeta propia sin conexión queda no disponible y el cliente paga con otro medio. & 3.2.3 Exclusiones, supuestos y restricciones \\ \addlinespace
+3-8 & Se anuncia una sección 3.2.7 que no existe (pp. 9, 12). & Se eliminó la remisión. & 3.1 y 3.2 \\ \addlinespace
+3-9 & De los 28 criterios de aceptación del caso, 14 no se trataban y 4 no tenían momento de medición (p. 11). & La aceptación se organiza en tres niveles y los 28 resultados se tratan uno a uno en el Anexo D, con línea base, meta, servicio, momento, evidencia y responsable. La Tabla 3.6 los agrupa por tipo. & 3.2.5 Criterios de aceptación; Anexo D \\ \addlinespace
+3-10 & Conteos que no cierran en el catálogo de requerimientos; «Anexo Técnico X»; reglas RN-46, RN-35 y RN-15 sin catálogo (pp. 2, 11). & El catálogo se reconstruyó con priorización MoSCoW coherente con el reparto por etapa y una tabla de distribución (227 RF, 72 RNF y 9 OP, versión 3.1). El catálogo pasó al Anexo B y las reglas de negocio al Anexo C. & 3.2.4 Catálogo de requerimientos (Tabla 3.4); Anexos B y C \\ \addlinespace
+3-11 & La decisión 14 no aparece en las tablas de decisiones de 3.2 (p. 10). & Las 25 decisiones se registran en el capítulo 2. El capítulo 3 conserva solo los supuestos de alcance y trata la atribución de comisiones al canal, al vendedor y a la tienda en la promesa de entrega. & 3.2.3 (Tabla 3.3); 3.4.3 La promesa de entrega; Subdocumento 2 · 2.5 \\ \addlinespace
+3-12 & La decisión del disponible para prometer está tomada y fundada, pero no costeada (p. 9). & Se describió el esfuerzo que implica (conteos cíclicos, depuración, conciliación, reservas, publicación y pruebas a 1,5 veces la demanda máxima), el compromiso entre margen de seguridad y venta, y los datos de entrada de la memoria de capacidad. Los montos se remiten a la Oferta Económica. & 3.4.1 La promesa de existencia \\ \addlinespace
+3-13 & La T-12 debe distinguir «cumple», «se entrega en el Informe N», «no aplica» y «no cumple, con desviación fundada», y revisar los 98 «No» y los «Sí» sin evidencia, como RT-05.01 y RT-03.10 (pp. 10 a 12). & El Formulario T-12 se regenera a partir de la matriz de cumplimiento y trazabilidad vigente del Subdocumento 2, con los trece servicios del capítulo 4 y el catálogo versión 3.1. Cada respuesta declara su estado y la sección que la respalda. La leyenda de estados debe verificarse en el formulario antes de entregar. & Formulario T-12; Subdocumento 2 · Anexo A.4; Subdocumento 3 · 3.2.4 \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 4 · Arquitectura lógica (4.1) y tecnologías de software (4.1.1)}\label{t22-5}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 4 · Arquitectura lógica (4.1) y tecnologías de software (4.1.1).}\label{tab:t22-5}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+4-1 & El diagrama lógico muestra 14 de 24 módulos y no muestra el nodo de tienda, el modo desconectado ni las integraciones externas (pp. 12–13, 16). & La arquitectura lógica se rehízo con una vista objetivo, una vista de la Etapa 1, una vista de actores y capas y seis vistas por bloque, que cubren los trece servicios de negocio, el nodo local de tienda, los adaptadores y las contrapartes externas. El modo desconectado y la sincronización tienen su propia figura. & 4.1 Arquitectura lógica, Figuras 4.1 a 4.12 \\ \addlinespace
+4-2 & El diagrama envuelve los dominios retail y financiero en una misma caja, contra la separación que el texto describe (p. 13). & La vista objetivo dibuja el ámbito Retail y la Filial emisora por separado, con el servicio de control de cruces entre ambos y recursos propios en cada ámbito. Una figura adicional muestra las autoridades de datos y una solicitud denegada. & 4.1 Arquitectura lógica, Figuras 4.1, 4.8, 4.9 y 4.12 \\ \addlinespace
+4-3 & Ninguna figura se cita por número ni se explica en el texto (pp. 13, 16). & Las doce figuras de la arquitectura lógica se citan por número y se explican en el texto: qué muestran, su convención gráfica y qué se concluye. & 4.1 Arquitectura lógica \\ \addlinespace
+4-4 & El módulo M-22 «Resolución de Identidad» figura como dueño de la gestión de cobranza (p. 13). & La cobranza quedó asignada al servicio de cartera de crédito. Se eliminó la identidad cruzada: cada ámbito identifica a la persona con su propio identificador (ADR-02). & 4.1 Arquitectura lógica, Tablas 4.2 y 4.3; ADR-02 \\ \addlinespace
+4-5 & Falta explicar las interfaces con contratos, versionado, idempotencia y reacción ante fallas (pp. 2, 13). & Se describen los contratos síncronos (plazo, identificador de operación, idempotencia), los hechos (versión, clave de agregado, correlación) y la entrega al menos una vez con deduplicación, reintento y derivación de errores. Cada adaptador declara autoridad, dirección, frecuencia, versión, confirmación y regla de conciliación. & 4.1 Arquitectura lógica, capas e interfaces (Tabla 4.4) \\ \addlinespace
+4-6 & El mapa de las 14 interfaces es ilegible (pp. 13, 16). & Las interfaces se presentan como familias de interacción en las vistas de la solución. & 4.1 Arquitectura lógica, Figuras 4.1 y 4.9 \\ \addlinespace
+4-7 & Se adoptan 8 horas de autonomía de tienda cuando corresponden 24 (pp. 14–16). & Se comprometen 24 horas de continuidad de tienda en el texto, en la decisión ADR-04 (piloto de 24 horas) y en las tablas de sitios y de tecnologías. & 4.1 Arquitectura lógica (vista de tiendas; seguridad, continuidad y observabilidad; Tabla 4.5); 4.1.1 (Tabla 4.6); 4.2 (Tabla 4.7) \\ \addlinespace
+4-8 & El nodo de tienda no está descrito para operar sin enlace; la fila de UPS conserva un marcador sin resolver (pp. 14, 16). & El nodo local se describe por función (diario transaccional, caché de oferta y sincronizador). Se eliminó el marcador sin resolver. & 4.1 Arquitectura lógica; 4.1.1 (Tabla 4.6, tienda desconectada) \\ \addlinespace
+4-9 & Los umbrales del crédito sin enlace no están definidos (pp. 14, 16). & El crédito sin enlace se autoriza contra un cupo preaprobado guardado en el nodo local, sin saldo, mora ni comportamiento de pago, y se listan los cuatro criterios que lo limitan: tope por transacción, tope acumulado por cliente, antigüedad máxima del registro y exclusiones. & 4.1 Arquitectura lógica, seguridad, continuidad y observabilidad \\ \addlinespace
+4-10 & Tres errores de cálculo: 154 Mbps por 1,2 Gbps, 50 instancias de M-01 y 1,8 TB frente a 500 GB (pp. 13, 16). & Las cifras erróneas se retiraron del subdocumento. & 4.2 Arquitectura física, dimensionamiento y plan de capacidad \\ \addlinespace
+4-11 & Bus de eventos inconsistente: se dimensiona Kafka autoadministrado y se oferta Event Hubs (pp. 14, 16). & Se definió un solo bus: Azure Event Hubs Premium, con un espacio de nombres por ámbito, replicación geográfica a Brazil South y clientes Kafka. Se documentan las alternativas descartadas. & 4.1.1 Tecnologías de Software (Tabla 4.6); ADR-06 \\ \addlinespace
+4-12 & Cosmos DB dimensionado como Cassandra autoadministrado; Cosmos DB documental sin dimensionar (p. 14). & Se retiraron Cassandra y Cosmos DB. El dato transaccional queda en Azure Database for PostgreSQL Flexible Server, con una base por autoridad en cada ámbito. & 4.1.1 Tecnologías de Software (Tabla 4.6) \\ \addlinespace
+4-13 & Tres versiones del motor de búsqueda; Elastic Cloud es un tercero frente al «proveedor único» (p. 14). & Se retiró el motor de búsqueda dedicado. La analítica usa Data Lake Storage Gen2 y Power BI, sin terceros distintos del proveedor de nube. & 4.1.1 Tecnologías de Software (Tabla 4.6) \\ \addlinespace
+4-14 & Caché con tres denominaciones (Redis, Valkey y un servicio inexistente) (p. 14). & Se definió un solo producto, Azure Managed Redis, solo para datos reconstruibles de Retail, porque Azure Cache for Redis se retira el 30 de septiembre de 2028. En tienda, el nodo local lleva su propio diario y caché de oferta, y el motor local se fija tras el inventario del hardware. & 4.1.1 Tecnologías de Software (Tabla 4.6) \\ \addlinespace
+4-15 & Falta una selección tecnológica consistente por función, con alternativas (p. 16). & La Tabla 4.6 reúne catorce capacidades, cada una con la tecnología seleccionada, la alternativa evaluada y la comprobación de aceptación. El texto compara las alternativas con referencias. & 4.1.1 Tecnologías de Software (Tabla 4.6) \\ \addlinespace
+4-16 & Propuesta poco realista para la dotación: numerosos componentes autoadministrados y tres distribuciones de Kubernetes (pp. 14, 16). & Se redujo la operación propia: la plataforma usa servicios administrados de Azure (AKS, Event Hubs, API Management, PostgreSQL Flexible Server, Key Vault, Entra ID y Azure Monitor) y se retiraron Istio, Patroni, MinIO, Keycloak, Kong, Temporal, Debezium, Wazuh, K3s y la pila Prometheus/Loki/Grafana. & 4.1.1 Tecnologías de Software (Tabla 4.6) \\ \addlinespace
+4-17 & Soporte durante los 56 meses declarado sin versiones (pp. 15–16). & Se citan las versiones ofertadas (Java 25 LTS, Spring Boot 4) y se declara la actualización de componentes durante la operación. & 4.1.1 Tecnologías de Software \\ \addlinespace
+4-18 & El centro de distribución de Concepción no aparece en la arquitectura (p. 14). & El centro de distribución de Concepción (CD-02) se incorporó como nodo, con captura durable local y segundo enlace propuesto. & 4.2 Arquitectura física (Tablas 4.7 y 4.8) \\ \addlinespace
+4-19 & El anexo de supuestos salta de SUP-A-04 a SUP-A-06 y se funda en hallazgos que el lector no conoce (pp. 2, 18). & Se eliminó ese anexo. Los supuestos del emplazamiento se declaran en el texto y remiten al registro de supuestos del Subdocumento 2. & 4.2 Arquitectura física, supuestos del emplazamiento \\ \addlinespace
+4-20 & El subdocumento tiene solo dos referencias (p. 3). & La sección de Referencias reúne 26 entradas, citadas en el texto en formato autor-año. & Referencias \\ \addlinespace
+4-32 & Faltan cuatro de las dimensiones del numeral 14.2: datos en la ventana sin enlace, sincronización, ancho de banda por centro de distribución y dotación (pp. 14 a 16). & Parcial. La Tabla 4.14 presenta seis de las diecisiete dimensiones del numeral 14.2, las de carga de transacciones, con su derivación. Las otras once, entre ellas las cuatro observadas, se derivan en el diseño detallado de la Etapa 1 y no tienen cifra en esta versión. & 4.2 Arquitectura física, dimensionamiento y plan de capacidad (Tabla 4.14) \\ \addlinespace
+4-33 & El nodo de tienda no se dimensiona para 24 horas: folios, caché de cupos, GB generados, UPS y tiempo de drenaje (pp. 14 a 16). & Parcial. Se compromete la continuidad de 24 horas con diario durable, oferta vigente y sincronizador, y se prueba en el piloto de corte de 24 horas (meses 6 y 7), con conciliación en 30 minutos o menos. El tamaño de los folios y de la caché de cupos, los GB generados y el tiempo de drenaje se fijan con el inventario de las 22 tiendas y con el ensayo, y no tienen cifra en esta versión. & 4.1 Arquitectura lógica, seguridad, continuidad y observabilidad; 4.2.1 (Tabla 4.15) \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 4 · Arquitectura física (4.2) y data center (4.3)}\label{t22-6}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 4 · Arquitectura física (4.2) y data center (4.3).}\label{tab:t22-6}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+4-21 & El único diagrama de la arquitectura física es un despliegue lógico: las 22 tiendas son una caja y faltan los dos centros de distribución (pp. 17, 19). & Se rehízo el diagrama general con ocho sitios identificados (tiendas, los dos centros de distribución, los dos centros de datos del Cliente, las dos regiones de nube y las contrapartes externas) y se agregó una tienda tipo con segmentación por función. & 4.2 Arquitectura física (Figura 4.13; Tablas 4.7 y 4.8); 4.2.1 (Figura 4.17) \\ \addlinespace
+4-22 & La parte física está llena de tablas y sin un texto que recorra la infraestructura (p. 17). & Las tablas extensas se reemplazaron por una sección breve en que cada figura y cada tabla va acompañada de su lectura en prosa. & 4.2 y 4.3 \\ \addlinespace
+4-23 & No se declaran la región primaria ni la secundaria de la nube (Art. 16.3) (pp. 17, 19). & Se declaran Azure Chile Central (Santiago) como región primaria y Brazil South (São Paulo) como secundaria, con tres zonas de disponibilidad cada una. La elección se fundamenta en la decisión ADR-07 y en la comparación con la alternativa evaluada. & 4.1.1; 4.3.1 Data Center Primaria; 4.3.2 Data Center Secundario; ADR-07 \\ \addlinespace
+4-24 & Sin región no hay residencia de los datos (pp. 17, 19). & Se declara la ubicación de los datos de Retail y del Emisor en Chile Central, con réplica de Retail a Brazil South. & 4.2 Arquitectura física (Tabla 4.7); 4.3.2 \\ \addlinespace
+4-25 & El sitio secundario queda en la misma comuna, aceptado «por indicación expresa del usuario» (pp. 17–19). & La recuperación se trasladó a la región Brazil South. La sala de respaldo de la misma comuna queda como complemento y el texto declara que no basta como única recuperación. Se eliminó la frase observada. & 4.3 Data center; 4.3.2 Data Center Secundario; Tabla 4.16 \\ \addlinespace
+4-26 & Falta especificar la replicación, la conmutación y el retorno (pp. 16–19). & Se describe el esquema activo-pasivo con su justificación, la replicación por servicio, la conmutación en seis pasos, el retorno y ensayos dos veces al año, con RTO de hasta 4 horas y RPO de hasta 15 minutos. & 4.3.2 Data Center Secundario; 4.2, alta disponibilidad (Tabla 4.12) \\ \addlinespace
+4-27 & La autonomía del nodo de tienda es de 8 horas (pp. 18–19). & Se corrigió a 24 horas en todo el texto y se declara un piloto de corte y reconexión con retorno conciliado. & 4.1 (vista de tiendas); 4.2 (Tablas 4.7 y 4.8); 4.2.1 (Tabla 4.15) \\ \addlinespace
+4-28 & No hay detalle de enlaces por tienda ni de los centros de distribución (p. 17). & Se distinguen los enlaces por tienda (8 con doble enlace, 14 sin respaldo), el centro de distribución principal con dos proveedores y el de Concepción con enlace único, y se declara la segmentación de las 13 tiendas que no la tienen. & 4.2 Arquitectura física (supuestos del emplazamiento; Tabla 4.8); 4.2.1 (Figura 4.17); Tabla 4.11 \\ \addlinespace
+4-29 & El centro de datos del Cliente se trata con un supuesto en lugar del informe de brecha de 2024 (p. 18). & El centro de datos de casa matriz dejó de ser el sitio principal de la solución: se declara como sitio en convivencia, sin funciones nuevas que dependan de él como única ubicación. Se eliminó el supuesto. & 4.3 Data center; Tabla 4.16 \\ \addlinespace
+4-30 & Cosmos DB no se declara como componente no portable (p. 18). & La base de datos pasó a PostgreSQL administrado y el bus a Event Hubs con interfaz Kafka. & 4.1.1 Tecnologías de Software \\ \addlinespace
+4-31 & Falta una estrategia conjunta de centro primario y de recuperación (pp. 17–19). & Se agregó una introducción que fija la estrategia: nube para la carga principal, centros del Cliente para la continuidad local, y la región primaria y la de recuperación como centros de datos principal y secundario. & 4.3 Data center \\ \addlinespace
+4-34 & Falta el Formulario T-11 completo, con componente, marca y modelo, ubicación, cantidad, justificación y la UPS del gabinete (pp. 17 a 19). & Se elaboró el Formulario T-11 con los servicios de nube, la plataforma, la seguridad, el hardware que especifica el proponente, el que adquiere el Cliente, la conectividad, los centros de datos y las plataformas conservadas. Cada componente indica ubicación, cantidad y justificación. Los modelos que dependen del inventario de las tiendas y la UPS del gabinete se fijan con el ensayo de 24 horas. & Formulario T-11; 4.2.1 (Tabla 4.15) \\ \addlinespace
+4-35 & Falta acreditar la condición de socio de Microsoft (Art. 34.1) (p. 19). & Pendiente. La alianza se declara en la sección 1.6 y se cita como alianza prevista en el ADR-07. El nivel y el identificador de socio se consignan con el documento de respaldo (fila 1-15). & 1.6 Alianzas; Subdocumento 4 · Tabla 4.5 (ADR-07) \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 5 · Modelo y gestión de datos}\label{t22-7}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 5 · Modelo y gestión de datos.}\label{tab:t22-7}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+5-1 & No hay diccionario de datos, modelo con atributos ni ninguna figura (RT-05.01) (pp. 20–22). & Se incorporaron seis figuras del modelo conceptual, con la cardinalidad de cada relación: el mapa de dominios y un modelo por dominio (Mercadería, Venta, Cliente Retail, Crédito y Frontera). El capítulo remite al Anexo A.1, que reúne los diagramas entidad-relación del modelo lógico, la matriz de persistencia y el diccionario de 51 entidades, 314 campos y 81 relaciones, con nombre, tipo lógico, dominio de valores, obligatoriedad, clave, propietario y nivel de sensibilidad de cada campo. & 5.1.2 a 5.1.9 (Figuras 5.1 a 5.6; Tabla 5.4); Anexo A.1 \\ \addlinespace
+5-2 & Las dos entidades que materializan la frontera entre negocios no tienen motor ni postura ante particiones (pp. 20–21). & Se definió el dominio Frontera con tres entidades: ficha de intercambio (FR-01), decisión de cada cruce con seudónimo propio de la operación (FR-02) y política versionada (FR-03). El servicio de control de cruces tiene persistencia PostgreSQL propia, con postura de consistencia: si el cruce no se puede registrar, no se realiza. No se mantiene una correspondencia permanente entre el cliente de Retail y el titular del Emisor. & 5.1.7 Dominio Frontera (Figura 5.6); 5.2.1 (Tabla 5.5) \\ \addlinespace
+5-3 & El perfil del cliente se declara regido por la Ley 19.496, cuando corresponde la ley de datos personales (p. 21). & Los datos personales se tratan conforme a la Ley 19.628, modificada por la Ley 21.719, con su entrada en vigencia del 1 de diciembre de 2026. Cada persona ejerce sus derechos por separado en Retail y en el Emisor. & 5.2.4 Trazabilidad de operaciones y datos personales \\ \addlinespace
+5-4 & Dos tecnologías para el mismo rol (Redis y Valkey); se pide motor y postura por entidad (pp. 19–21). & Se definió PostgreSQL con persistencias separadas para Retail y el Emisor, un motor local para el diario de tienda (PostgreSQL en el modelo de datos, con el producto confirmado en la sección 4.1.1 del Subdocumento 4) y Redis solo para copias reconstruibles. La Tabla 5.5 fija la postura ante un corte de comunicación para cada dato, con su comportamiento y su motivo. & 5.2.1 Motor y postura ante cortes de comunicación (Tabla 5.5) \\ \addlinespace
+5-5 & Separación entre almacenamiento transaccional y analítico (p. 19). & Cada ámbito tiene su propio Data Lake, organizado en tres capas (cruda, depurada y de consumo) y alimentado por hechos publicados. Se indica dónde se cumple cada meta de latencia y cómo se comprueba. & 5.2.2 Separación entre operación y análisis (Figura 5.7; Tabla 5.6) \\ \addlinespace
+5-6 & La merma tiene tres listas distintas e incluye un «ajuste administrativo» que oculta el error de registro (pp. 20–22, 25). & Se retiraron el «ajuste administrativo», el «vencimiento» y el «quiebre operativo». La clasificación contiene las cinco causas del caso (pérdida física, daño, error de recepción, devolución mal reintegrada y error de digitación) y una sexta, la unidad mal ubicada; la causa la confirma el responsable autorizado antes del ajuste. & 5.1.3 Dominio Mercadería \\ \addlinespace
+5-7 & La retención del precio se cita con el requisito equivocado; «C-02» no está definido; se reinterpreta el plazo de 5 minutos como «exclusivamente vitrina» (pp. 20–22). & La retención de tres años del precio publicado se cita con RT-05.10-C. Se eliminaron el código «C-02» y la reinterpretación: la meta es de 5 minutos como máximo en las 380 cajas y en el canal digital, con su prueba de carga. & 5.2.2 (Tabla 5.6); 5.2.5 (Tabla 5.9); 5.4.5 (Tabla 5.21) \\ \addlinespace
+5-8 & El expediente de consentimiento tiene dos horizontes de retención (10 años y plazo del crédito más 6) (pp. 21–22, 25). & Se fijó un solo plazo: los antecedentes del crédito y la evidencia del consentimiento se conservan por el plazo del crédito más seis años, en la base del Emisor y en almacenamiento de escritura única. La evidencia solo admite agregar versiones. & 5.1.6 Dominio Crédito; 5.2.5 Retención, archivado y eliminación (Tabla 5.9) \\ \addlinespace
+5-9 & No se trata el cifrado a nivel de campo ni la tokenización (RT-11.10-C) (pp. 20, 22). & Se agregó la tabla de protecciones por categoría de dato: cifrado de campo con claves propias de cada ámbito, seudonimización y tokenización de los medios de pago, sin almacenar el número ni el código de la tarjeta. & 5.2.4 Trazabilidad de operaciones y datos personales (Tabla 5.8) \\ \addlinespace
+5-10 & Inconsistencias de retención: documentos tributarios a 5 años, inventario sin plazo, videovigilancia retenida aunque está fuera del alcance (p. 21). & Una sola tabla fija el plazo por dato: seis años para documentos tributarios y para movimientos, conteos y ajustes de inventario; la videovigilancia se declara fuera del capítulo. La eliminación se hace por destrucción de claves. & 5.2.5 Retención, archivado y eliminación (Tabla 5.9) \\ \addlinespace
+5-11 & La migración no tiene volumetría (pp. 20, 22). & Se dimensionó el alcance de la migración por grupo de datos, con sus supuestos y tamaño por registro: 264,5 GB en total, incluidos seis años de venta y la cartera de 620.000 clientes con saldo. & 5.3.1 Alcance y volumen \\ \addlinespace
+5-12 & Faltan los dos ensayos completos de migración (RT-05.13) (pp. 20, 22). & Se ejecutan dos ensayos completos en Preproducción antes de cada corte definitivo, con fecha y ventana: octubre y diciembre de 2027 para la primera etapa, mayo y junio de 2028 para la segunda. & 5.3.3 Olas y ventanas de corte (Tabla 5.14); 5.3.4 Ensayos, conciliación y reversión \\ \addlinespace
+5-13 & Un umbral de conciliación de \$0 detiene la ola ante cualquier diferencia de redondeo (pp. 20, 22). & Se definieron cuatro técnicas de conciliación con su regla de aceptación: el capital de cada cuenta debe coincidir exactamente y las diferencias de redondeo se expresan en la unidad monetaria mínima y se explican registro por registro; solo una diferencia no explicada bloquea el corte. Se describe la reversión. & 5.3.4 Ensayos, conciliación y reversión (Tabla 5.15) \\ \addlinespace
+5-14 & La estrategia de desempeño no parte de la volumetría ni explica la caché local tras operar sin enlace (pp. 19–22). & Se desarrolló la carga de referencia a partir de las dimensiones del numeral 14.2 del caso, los índices, el particionamiento por entidad y la caché (vigencia de 15 segundos y comportamiento ante falla). Las pruebas de carga tienen criterio de aceptación, incluida una tienda con 24 horas sin enlace y su retorno. & 5.4.1 a 5.4.5 (Tablas 5.17, 5.20 y 5.21; Figura 5.9) \\ \addlinespace
+5-15 & Sin referencias; citas rotas a secciones inexistentes y a una clasificación no definida (p. 21). & Se eliminaron las citas rotas. El capítulo cierra con la sección de Referencias y con la declaración de uso de IA. & Referencias; Declaración de uso de IA \\ \addlinespace
+5-16 & Falta el plan de comunicación a los 620.000 clientes, el re-sellado de firmas y la migración de formato a diez años del expediente de consentimiento (p. 22). & Pendiente. La migración de la cartera por tramos y la conservación de la evidencia por el plazo del crédito más seis años están en el capítulo, pero el plan de comunicación a los clientes y el re-sellado de las firmas no están redactados en esta versión. & 5.3.3 y 5.3.4; 5.2.5 (Tabla 5.9) \\ \addlinespace
+\end{longtable}
+
+\subsection{Subdocumento 13 · Innovaciones}\label{t22-8}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2900}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2600}}@{}}
+\caption{Trazabilidad observación, respuesta y sección modificada: Subdocumento 13 · Innovaciones.}\label{tab:t22-8}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{N.º}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Observación}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Respuesta}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sección modificada}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+13-1 & Las cinco innovaciones son decisiones de arquitectura que las Bases y el caso ya exigen (p. 23). & Se reemplazó la cartera completa por cinco capacidades adicionales al alcance base. La introducción declara qué obligaciones del caso no se cuentan como innovación. & 13 Introducción \\ \addlinespace
+13-2 & Innovación 1 (cliente único federado): es una respuesta obligatoria del caso (p. 23). & Se reemplazó por «Lockers Ancoa 24/7»: punto de retiro autónomo fuera de horario para pedidos preparados y pagados, con su aporte respecto del retiro en mesón, la línea base y las variables a medir. & 13.1 Innovación 1 \\ \addlinespace
+13-3 & Innovación 2 (patrón estrangulador): es el método de implantación exigido (p. 23). & Se reemplazó por «Conteo cíclico predictivo»: priorización de conteos por riesgo de discrepancia, con aprobación humana, comparación contra la programación vigente y muestra independiente. & 13.2 Innovación 2 \\ \addlinespace
+13-4 & Innovación 3 (teorema CAP del precio): es requisito y lee mal el caso, pues los 310.000 puntos son etiquetas físicas (p. 23). & Se reemplazó por «Búsqueda vectorial multimodal»: consulta por foto o por intención combinada con búsqueda léxica, comparada contra el buscador base exigido. & 13.3 Innovación 3 \\ \addlinespace
+13-5 & Innovación 4 (nube híbrida por dominio): es exigencia del Art. 16 y no un modelo distinto (pp. 22–23). & Se reemplazó por «Retail Media Network»: ingreso publicitario de proveedores por campañas en el canal digital, con separación explícita de los datos de la filial emisora. & 13.4 Innovación 4 \\ \addlinespace
+13-6 & Innovación 5 (borde con 8 horas y satélite): es el umbral mínimo del caso y no tiene experiencia de usuario medible (pp. 23–24). & Se reemplazó por «Modo Tienda con fila virtual de probadores», con indicadores de espera, éxito de solicitud y abandono, acceso asistido y prueba de accesibilidad WCAG 2.2 AA. & 13.5 Innovación 5 \\ \addlinespace
+13-7 & Diez de los diecisiete campos de cada ficha dicen «Pendiente (Informe 2-3)» (p. 24). & Cada innovación desarrolla el paquete de la EDT, el mes del cronograma, los componentes de inversión y de costo operacional, el beneficio, el indicador con su línea base, el momento de medición, los riesgos, la mitigación y la contingencia, sin montos. & 13.1 a 13.5 \\ \addlinespace
+13-8 & El TRL declarado no fundamenta la madurez (p. 24). & Se reemplazó el TRL por una escala de evidencia en tres estados: componente documentado, integración probada y operación aceptada. & 13.1 a 13.5, tecnología y madurez \\ \addlinespace
+13-9 & Se citan códigos de arquitectura que el Subdocumento 4 no usa (N-02, T-08, T-11, P-01 a P-12) (p. 24). & Se eliminaron esos códigos. Cada innovación se vincula por nombre con los servicios del capítulo 3, las capas del capítulo 4 y la rama 1.10 de la EDT. & 13 Introducción; 13.1 a 13.5 \\ \addlinespace
+13-10 & Lectura errónea del caso: 310.000 puntos «digitales», el sistema de 2009 como emisor tributario, el fin de soporte de 2029 (p. 23). & Esas afirmaciones se eliminaron junto con las innovaciones 2 y 3 anteriores. & 13.2 y 13.3 \\ \addlinespace
+13-11 & Dos cifras sin fuente: «15 \% y 20 \%» y «reduciendo a cero» (p. 23). & Se retiraron. La introducción declara que no se trasladan porcentajes de desempeño de fabricantes. & 13 Introducción; 13.2 \\ \addlinespace
+13-12 & La promesa de modelos de aprendizaje automático debe cumplirse o retirarse (p. 24). & La innovación 2 desarrolla un modelo de aprendizaje automático, con sus variables, la métrica de comparación y el control de deriva. & 13.2 Innovación 2 \\ \addlinespace
+13-13 & Erratas: «Subdocuemtno 4», «Riesgos e adopción», «Tabla 13.5» duplicada, «capítulo 30°» (pp. 2, 24). & Corregidas al reescribir el capítulo. & Capítulo 13 \\ \addlinespace
+13-14 & El cuerpo y las fichas repiten el mismo texto; frase de relleno repetida cinco veces (p. 24). & Se eliminaron la duplicación y el relleno: cada innovación se desarrolla en una sola sección con los siete elementos del Art. 29. & 13.1 a 13.5 \\ \addlinespace
+13-15 & Fuentes en APA para las innovaciones de base tecnológica. & Las referencias se reescribieron en formato APA, con fabricantes, bibliotecas, normas y legislación aplicable. & Referencias \\ \addlinespace
+\end{longtable}
+
+\ossFinalPage
+
+\end{document}

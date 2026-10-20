@@ -27,6 +27,13 @@ Formularios exigidos por las Bases Administrativas, agrupados según el sobre en
 
 `form-<ID>_titulo.<ext>`, por ejemplo `form-T-12_matriz-cumplimiento-tecnico.xlsx`.
 
+## Dónde viven hoy los formularios del Sobre 2
+
+Los formularios técnicos T-6 a T-22 se redactan como `.tex` con Prism y viven en
+`02_Propuesta/latex_final/Formularios/` (`OnlySimpleSolutions-Formulario-T-N.tex`). Se compilan con
+`exportar_latex.py` y el PDF va en `06_Informes/informes/Informe N/`. Las carpetas `A/`, `B/` y `C/`
+de aquí quedan para los formularios que se completen en otros formatos (por ejemplo `.docx` o `.xlsx`).
+
 ## Estado
 
-Vacío. Los formularios se completan cuando el subdocumento que los alimenta tenga contenido.
+`A/`, `B/` y `C/` vacías. Los formularios del Sobre 2 están en `latex_final/Formularios/`.

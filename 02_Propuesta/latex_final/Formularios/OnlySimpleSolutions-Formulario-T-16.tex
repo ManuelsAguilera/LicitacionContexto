@@ -1,0 +1,369 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\ossCover{Plan de riesgos}{Subdocumento 8 · T-16}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t16-1]{Tabla T-16.1: Identificación de los riesgos}\dotfill\pageref{tab:t16-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-2]{Tabla T-16.2: Análisis cualitativo de los riesgos}\dotfill\pageref{tab:t16-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-3]{Tabla T-16.3: Respuesta a los riesgos}\dotfill\pageref{tab:t16-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-4]{Tabla T-16.4: Cuenta de la EDT, plazo y exposición residual}\dotfill\pageref{tab:t16-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-5]{Tabla T-16.5: Oportunidades}\dotfill\pageref{tab:t16-5}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-16.\arabic{table}}
+
+\section{Formulario T-16 · Plan de riesgos}\label{formulario-t-16}
+
+Este formulario adjunta el registro completo que resume el Subdocumento 8, con los 37 riesgos y las 8 oportunidades de Only Simple Solutions (R-26 no está asignado; la serie llega a R-38) para el proyecto de Multitiendas Ancoa S.A. Las escalas de probabilidad e impacto y las zonas de exposición son las del apartado 8.1 del Subdocumento 8. Las cuentas, los responsables y las ventanas provienen de la estructura de desglose del trabajo del Formulario T-14. Los apartados siguientes presentan la identificación, el análisis cualitativo, la respuesta, el enlace con la estructura de desglose y las oportunidades.
+
+\subsection{T-16.1 Identificación}
+
+La Tabla~\mbox{\ref{tab:t16-1}} identifica cada riesgo con su enunciado resumido, su rama de la estructura de desglose de riesgos y la mirada desde la que se observa.
+
+\begin{longtable}{p{0.060\linewidth}p{0.470\linewidth}p{0.140\linewidth}p{0.150\linewidth}}
+\caption{Identificación de los riesgos.}\label{tab:t16-1}\\
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Rama} & \textbf{Mirada} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Rama} & \textbf{Mirada} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Caso 09.} \\
+\endlastfoot
+R-01 & Los saldos de la cartera migrados por tramos divergen de la plataforma de 2011 y se incumple la restricción 8. & Técnica & Implantación \\
+R-02 & El evento anual cae con un servicio a medio desplegar o dentro de una marcha blanca. & Proyecto & Implantación \\
+R-03 & Un dato del negocio financiero llega al retail sin base ni registro, y se quiebra la separación de los dos negocios. & Seguridad & Solución \\
+R-04 & Aparece en producción una integración no inventariada entre las 14 interfaces y falla una operación. & Técnica & Desarrollo, Implantación \\
+R-05 & La rotación del 62 \% hace que el personal capacitado se vaya antes o durante la marcha blanca. & Organizacional & Implantación \\
+R-06 & La comisión por canal y la información precontractual alargan la venta con tarjeta y el vendedor deja de ofrecerla. & Organizacional & Solución, Implantación \\
+R-07 & Un servicio administrado llega a fin de soporte durante los 56 meses y exige una migración forzada. & Técnica & Solución \\
+R-08 & El uso de servicios propios de Azure ata a Ancoa a un proveedor y encarece cambiarse. & Técnica & Solución \\
+R-09 & La reserva de existencia o la entrada API se saturan en el peak del evento anual y se cancelan pedidos. & Técnica & Solución \\
+R-10 & Un compromiso de seguridad en tienda o en el emisor produce una fuga de datos de tarjeta y una sanción. & Seguridad & Solución \\
+R-11 & La Contraparte Técnica o la filial no validan dentro de diez días hábiles y se atrasan entregables de la ruta crítica. & Organizacional & Desarrollo \\
+R-12 & La marcha blanca de los meses 13 a 15 cae en los congelamientos y arrastra el paso a producción del mes 16. & Proyecto & Implantación \\
+R-13 & Un tramo de la cartera no alcanza a migrar antes del retiro de la plataforma de 2011 en el mes 22. & Proyecto & Desarrollo, Implantación \\
+R-14 & Sin topes del cupo o con la prueba de corte de 24 h fallida, cae la venta con crédito en contingencia. & Proyecto & Desarrollo \\
+R-15 & La sincronización del diario local tras un corte duplica o pierde ventas en las tiendas sin enlace de respaldo. & Técnica & Solución \\
+R-16 & La autoridad tributaria no aprueba la modalidad fiscal de contingencia y la tienda no puede emitir durante un corte. & Proyecto & Solución \\
+R-17 & La CMF o la asesoría jurídica objetan la recuperación del emisor en Brazil South y obligan a rediseñarla. & Proyecto & Solución \\
+R-18 & La carga inicial de existencias hereda los errores del registro y el disponible publicado no es confiable en el mes 16. & Técnica & Implantación \\
+R-19 & La reglamentación de la Ley 21.719 precisa controles no previstos y exige retrabajo en cruces y evidencia. & Proyecto & Solución \\
+R-20 & El hardware, los enlaces o las obras que provee el cliente no están listos para la ola de una tienda. & Proyecto & Implantación \\
+R-21 & El cliente rechaza un supuesto de los 25 y el alcance cambia después de la línea base del mes 4. & Proyecto & Desarrollo \\
+R-22 & Los repositores externos y las terminales compartidas impiden asegurar acceso y los conteos quedan incompletos. & Operación & Solución, Implantación \\
+R-23 & Sale un rol clave del equipo o la contratación no llega a tiempo, y se atrasa la ruta crítica. & Organizacional & Desarrollo \\
+R-24 & Los servicios de existencias y ventas enfrentan su primer peak con defectos latentes, como en junio de 2026. & Operación & Implantación \\
+R-25 & Una falla posterior al retiro de la plataforma de 2011 queda sin corrección hasta enero de 2029. & Proyecto & Implantación \\
+R-27 & Los seis proveedores actuales no documentan interfaces ni sostienen la convivencia, y se atrasan integración y migración. & Proyecto & Desarrollo \\
+R-28 & Las grabaciones se borran a los 90 días hasta el mes 16 y crece el pasivo de las 1.240 repactaciones sin evidencia. & Proyecto & Desarrollo \\
+R-29 & El procedimiento abierto por el SERNAC impone obligaciones nuevas y cambia el alcance después de la línea base. & Proyecto & Desarrollo \\
+R-30 & Un servicio Premium no puede crearse en Chile Central y obliga a rediseñar o atrasa la plataforma base. & Técnica & Desarrollo \\
+R-31 & Un evento local o una obra no lista en el centro de datos del cliente detiene la emisión tributaria o el crédito. & Operación & Solución \\
+R-32 & El inventario cambia la ubicación de las plataformas y los plazos de los enlaces, y se atrasa la plataforma base. & Proyecto & Desarrollo \\
+R-33 & El mismo equipo sostiene la marcha blanca de la Etapa 1 y construye la Etapa 2 en los meses 13 a 15. & Proyecto & Desarrollo \\
+R-34 & El personal de tienda no alcanza a cambiar las etiquetas de papel y no se cumple la meta de discrepancia de precio. & Operación & Solución \\
+R-35 & Quedan accesos de ex trabajadores o temporales sin revocar y se quiebra la segregación. & Seguridad & Solución \\
+R-36 & Transportistas y vendedores de marketplace no adoptan a tiempo los contratos de estado y la meta del 97 \% no se mide. & Proyecto & Implantación \\
+R-37 & Las siete decisiones del cliente se demoran y la arquitectura no cierra con la línea base del mes 4. & Organizacional & Desarrollo \\
+R-38 & Una falla del piloto o de una ola en el clúster de Santiago concentra el impacto en la venta. & Operación & Implantación \\
+\end{longtable}
+
+Cada rama de la estructura contiene al menos un riesgo y cada riesgo se observa desde una o más miradas. Los eventos y las medidas son inferencias del proponente sobre los antecedentes del Caso 09. Entre los datos de partida se cuentan la rotación del 62 \% (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 7, núm. 7.4, p. 16), las 14 interfaces (cap. 7, núm. 7.4, pp. 16--17), la discrepancia de inventario del 12,4 \% (cap. 7, núm. 7.1, p. 15), las 24 instalaciones pendientes (cap. 19, p. 46), las 46 personas aportadas por el cliente (cap. 14, núm. 14.2, p. 32) y las dependencias de hardware, enlaces y obras (cap. 11, p. 27). La calificación y la respuesta propuestas en las tablas siguientes no provienen del Caso.
+
+\subsection{T-16.2 Análisis cualitativo}
+
+La Tabla~\mbox{\ref{tab:t16-2}} presenta la calificación de cada riesgo con las escalas del apartado 8.1 del Subdocumento 8.
+
+\begin{longtable}{p{0.090\linewidth}p{0.160\linewidth}p{0.160\linewidth}p{0.180\linewidth}p{0.200\linewidth}}
+\caption{Análisis cualitativo de los riesgos.}\label{tab:t16-2}\\
+\toprule
+\textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Exposición} & \textbf{Zona} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Exposición} & \textbf{Zona} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+R-01 & 0,40 & 0,80 & 0,32 & Alta \\
+R-02 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-03 & 0,20 & 0,80 & 0,16 & Media \\
+R-04 & 0,60 & 0,20 & 0,12 & Media \\
+R-05 & 0,85 & 0,20 & 0,17 & Media \\
+R-06 & 0,40 & 0,20 & 0,08 & Media \\
+R-07 & 0,40 & 0,20 & 0,08 & Media \\
+R-08 & 0,20 & 0,40 & 0,08 & Media \\
+R-09 & 0,40 & 0,40 & 0,16 & Media \\
+R-10 & 0,20 & 0,80 & 0,16 & Media \\
+R-11 & 0,40 & 0,80 & 0,32 & Alta \\
+R-12 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-13 & 0,60 & 0,80 & 0,48 & Crítica \\
+R-14 & 0,40 & 0,20 & 0,08 & Media \\
+R-15 & 0,40 & 0,40 & 0,16 & Media \\
+R-16 & 0,40 & 0,80 & 0,32 & Alta \\
+R-17 & 0,40 & 0,40 & 0,16 & Media \\
+R-18 & 0,60 & 0,40 & 0,24 & Alta \\
+R-19 & 0,40 & 0,20 & 0,08 & Media \\
+R-20 & 0,60 & 0,40 & 0,24 & Alta \\
+R-21 & 0,60 & 0,20 & 0,12 & Media \\
+R-22 & 0,60 & 0,20 & 0,12 & Media \\
+R-23 & 0,40 & 0,80 & 0,32 & Alta \\
+R-24 & 0,60 & 0,40 & 0,24 & Alta \\
+R-25 & 0,40 & 0,80 & 0,32 & Alta \\
+R-27 & 0,40 & 0,40 & 0,16 & Media \\
+R-28 & 0,85 & 0,20 & 0,17 & Media \\
+R-29 & 0,20 & 0,20 & 0,04 & Baja \\
+R-30 & 0,20 & 0,40 & 0,08 & Media \\
+R-31 & 0,20 & 0,80 & 0,16 & Media \\
+R-32 & 0,40 & 0,20 & 0,08 & Media \\
+R-33 & 0,40 & 0,80 & 0,32 & Alta \\
+R-34 & 0,60 & 0,40 & 0,24 & Alta \\
+R-35 & 0,20 & 0,80 & 0,16 & Media \\
+R-36 & 0,40 & 0,20 & 0,08 & Media \\
+R-37 & 0,40 & 0,80 & 0,32 & Alta \\
+R-38 & 0,20 & 0,20 & 0,04 & Baja \\
+\end{longtable}
+
+La exposición es el producto de la probabilidad por el impacto y la zona se determina según el apartado 8.1 del Subdocumento 8.
+
+\subsection{T-16.3 Respuesta}
+
+La Tabla~\mbox{\ref{tab:t16-3}} define la estrategia, la acción, el responsable y el disparador de cada riesgo. Los responsables son los roles que ejercen la cuenta de control correspondiente en el Formulario T-14.
+
+\begin{longtable}{p{0.060\linewidth}p{0.100\linewidth}p{0.300\linewidth}p{0.170\linewidth}p{0.190\linewidth}}
+\caption{Respuesta a los riesgos.}\label{tab:t16-3}\\
+\toprule
+\textbf{ID} & \textbf{Estrategia} & \textbf{Acción} & \textbf{Responsable} & \textbf{Disparador} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Estrategia} & \textbf{Acción} & \textbf{Responsable} & \textbf{Disparador} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+R-01 & Mitigar & Fijar cortes por tramo con conciliación diaria y criterio de detención acordado con la filial. & Líder de Datos & Divergencia sin conciliar dos días seguidos en un tramo. \\
+R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & Jefe de Proyecto & Fecha del evento con menos de seis semanas de aviso o servicio a medio desplegar en esa fecha. \\
+R-03 & Evitar & Mantener el Servicio de control de cruces como único camino de datos, con base legal por cruce. & Líder de Desarrollo & Un solo cruce sin base o sin registro. \\
+R-04 & Mitigar & Cerrar el inventario antes de la línea base y certificar cada integración antes de retirar una plataforma. & Líder de Integración & Inventario no cerrado en el mes 4. \\
+R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Algún puesto de la ola sin personal capacitado y certificado según el plan aprobado al cierre de la marcha blanca. \\
+R-06 & Mitigar & Acordar con la filial la regla de comisión antes del mes 13 y simplificar la información precontractual. & Líder de Gestión del Cambio & Acta de comisión sin firma en el mes 13. \\
+R-07 & Mitigar & Llevar un calendario de ciclo de vida y planificar cada migración con un año de anticipación. & Líder de Operación / SRE & Servicio a menos de 12 meses de su fin de soporte. \\
+R-08 & Mitigar & Definir la infraestructura como código y un plan de reversibilidad con clientes Kafka. & Arquitecto de Solución & Plan de reversibilidad no aceptado en su fecha. \\
+R-09 & Mitigar & Calcular la memoria de capacidad con datos de 2026 y probar a 225.000 pedidos. & Arquitecto de Solución & Prueba a 225.000 pedidos sin cumplir antes del mes 16. \\
+R-10 & Mitigar & Delimitar el ámbito de medios de pago, segmentar la red de tienda y ejecutar prueba de penetración. & Encargado de Seguridad de la Información & Hallazgo crítico en la prueba de penetración. \\
+R-11 & Mitigar & Pactar actas con plazo de diez días hábiles y escalar la validación vencida. & Jefe de Proyecto & Acta sin validar al décimo día hábil. \\
+R-12 & Evitar & Certificar en el mes 12, desplegar en la ventana libre de enero de 2028 y limitar el congelamiento a emergencias. & Jefe de Proyecto & Defectos altos abiertos al 20 de enero de 2028. \\
+R-13 & Evitar & Fijar la secuencia de cortes por tramo con último corte antes del 15 de octubre de 2028 y escalar al Comité Ejecutivo. & Líder de Datos & Algún tramo sin corte al 15 de septiembre de 2028. \\
+R-14 & Mitigar & Fijar con la filial los topes antes del mes 6 y mantener otro medio de pago como plan B. & Jefe de Proyecto & Topes sin fijar en el mes 6 o prueba de 24 h fallida. \\
+R-15 & Mitigar & Dimensionar según el inventario de enlaces y probar la sincronización tras un corte de 24 h. & Arquitecto de Solución & Prueba de 24 h con una venta duplicada o perdida. \\
+R-16 & Escalar & Gestionar la aprobación con la autoridad tributaria y escalar al Comité Ejecutivo si no avanza. & Jefe de Proyecto & Modalidad sin aprobar en el mes 9. \\
+R-17 & Mitigar & Obtener la decisión sobre residencia antes de la línea base; si se rechaza Brazil South, diseñar y probar una recuperación chilena fuera de la zona de falla común. DC-02 queda solo como respaldo complementario. & Encargado de Seguridad de la Información & Sin decisión al cierre del mes 3 o sin alternativa que demuestre RTO y RPO antes de aprobar el diseño detallado. \\
+R-18 & Mitigar & Cargar con conteo cíclico y detección de discrepancias y conciliar las 24 instalaciones antes del corte. & Líder de Datos & Diferencia de conteo igual o superior a 2 \% en la carga de prueba por categoría. \\
+R-19 & Aceptar & Monitorear la reglamentación y absorber los ajustes en la matriz de cumplimiento. & Encargado de Seguridad de la Información & Publicación de una norma que cambie un control. \\
+R-20 & Transferir & Fijar por contrato las responsabilidades del cliente con fechas por ola y exigir certificación de sitio. & Líder de Implantación & Certificación de sitio no emitida 8 semanas antes de la ola. \\
+R-21 & Evitar & Validar los 25 supuestos y los umbrales con el cliente antes de la línea base. & Jefe de Proyecto & Supuestos sin validar en el mes 3. \\
+R-22 & Mitigar & Asegurar acceso individualizado por proveedor y turnos de terminales compartidas. & Líder de Gestión del Cambio & Conteos incompletos en el piloto. \\
+R-23 & Mitigar & Nombrar suplentes, documentar el conocimiento y adelantar la contratación. & Jefe de Proyecto & Vacante de un rol clave sin cubrir por más de 30 días. \\
+R-24 & Mitigar & Ampliar el soporte reforzado y cerrar los defectos de severidad alta antes de abril de 2028. & Líder de Calidad y Pruebas & Defectos altos abiertos a 4 semanas del Día de la Madre. \\
+R-25 & Evitar & Cortar el último tramo antes del 15 de octubre, conciliar a diario y acordar un plan de retorno. & Líder de Datos & Algún tramo sin corte al 15 de octubre de 2028. \\
+R-27 & Mitigar & Firmar acuerdos de cooperación y salida con documentación de interfaces y extracción de datos. & Jefe de Proyecto & Documentación sin entregar por un proveedor en el mes 4. \\
+R-28 & Mitigar & Especificar la retención de grabaciones y acompañar la decisión del cliente de cambiar su política. & Encargado de Seguridad de la Información & Decisión del cliente sin tomar en el mes 6. \\
+R-29 & Aceptar & Gestionar cualquier obligación nueva por el control de cambios y monitorear el procedimiento. & Jefe de Proyecto & Notificación de una obligación nueva. \\
+R-30 & Evitar & Probar la creación de cada servicio Premium al inicio, antes de construir la plataforma base. & Arquitecto de Solución & Un servicio no creable en la prueba de recursos. \\
+R-31 & Mitigar y transferir dependencia & Exigir al cliente el informe de brecha y la obra civil; el proponente especifica, habilita y certifica el recinto técnico y ensaya la contingencia. No iniciar las pruebas sin ambas entregas. & Arquitecto de Solución & Informe no entregado al mes 4, obra civil o certificación del recinto pendiente al mes 6, o ensayo de contingencia fallido. \\
+R-32 & Mitigar & Confirmar ubicaciones y rutas con el inventario y acreditar el ExpressRoute antes del diseño final. & Líder Funcional & Inventario de sitios con cambios sobre el supuesto. \\
+R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca. & Jefe de Proyecto & Carga sobre 100 \% de un rol clave en los meses 13 a 15. \\
+R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Desarrollo & Discrepancia de precio igual o superior a 3 \% en el piloto. \\
+R-35 & Mitigar & Revisar los accesos periódicamente y revocar los de ex trabajadores y temporales. & Líder de Desarrollo & Cuenta de ex trabajador activa tras la revisión mensual. \\
+R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Líder de Integración & Transportista sin adoptar los estados a 8 semanas del inicio. \\
+R-37 & Evitar & Calendarizar las siete decisiones antes de la línea base y escalar las vencidas. & Jefe de Proyecto & Decisiones pendientes en el mes 3. \\
+R-38 & Aceptar & Seleccionar pilotos y olas fuera del clúster de Santiago al inicio y revisar la concentración. & Líder de Implantación & Piloto con falla en una tienda del clúster de Santiago. \\
+\end{longtable}
+
+Las acciones se incorporan a la estructura de desglose del trabajo y cada una tiene un responsable que existe en el Formulario T-14.
+
+\subsection{T-16.4 Cuenta de la EDT, plazo y exposición residual}
+
+La Tabla~\mbox{\ref{tab:t16-4}} enlaza cada respuesta con las cuentas del Formulario T-14 que la ejecutan, la primera de las cuales es la cuenta principal. La ventana corresponde a la cuenta principal. El plazo de la acción es la fecha que declara la acción o el disparador y, cuando ninguno la declara, el último mes de esa ventana. La exposición residual es el producto de probabilidad e impacto que resulta tras aplicar la respuesta.
+
+\begin{longtable}{p{0.060\linewidth}p{0.270\linewidth}p{0.120\linewidth}p{0.250\linewidth}p{0.110\linewidth}}
+\caption{Cuenta de la EDT, plazo y exposición residual.}\label{tab:t16-4}\\
+\toprule
+\textbf{ID} & \textbf{Cuenta del T-14} & \textbf{Ventana (meses)} & \textbf{Plazo de la acción} & \textbf{Exposición residual} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Cuenta del T-14} & \textbf{Ventana (meses)} & \textbf{Plazo de la acción} & \textbf{Exposición residual} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+R-01 & 1.7.1, 1.7.6, 1.7.12, 1.5.40 & 2-4 & mes 4 & 0,16 \\
+R-02 & 1.1.5, 1.9.5 & 1-3 & mes 3 & 0,32 \\
+R-03 & 1.5.44, 1.5.45, 1.5.46, 1.3.3, 1.8.5 & 1-12 & mes 12 & 0,04 \\
+R-04 & 1.2.1, 1.6.1, 1.6.6 & 1-2 & mes 4 & 0,04 \\
+R-05 & 1.13.2, 1.13.3, 1.13.4, 1.15.6 & 5-8 & mes 8 & 0,12 \\
+R-06 & 1.13.1 & 3-6 & antes del mes 13 & 0,04 \\
+R-07 & 1.15.4, 1.4.7 & 21-56 & mes 56 & 0,04 \\
+R-08 & 1.4.1, 1.14.4 & 3-6 & mes 6 & 0,02 \\
+R-09 & 1.3.6, 1.9.4, 1.9.5 & 3-4 & antes del mes 16 & 0,08 \\
+R-10 & 1.8.1, 1.8.4, 1.8.6, 1.4.2 & 1-4 & mes 4 & 0,04 \\
+R-11 & 1.1.6, 1.1.8 & 1-56 & diez días hábiles por acta & 0,16 \\
+R-12 & 1.12.1, 1.1.5 & 8-9 & 24 de enero de 2028 & 0,16 \\
+R-13 & 1.7.8, 1.7.9, 1.7.12 & 14-18 & 15 de octubre de 2028 & 0,32 \\
+R-14 & 1.1.12, 1.2.8, 1.5.37, 1.9.9, 1.11.4 & 3-5 & antes del mes 6 & 0,04 \\
+R-15 & 1.3.5, 1.5.19, 1.9.9 & 3-4 & mes 4 & 0,04 \\
+R-16 & 1.6.7 & 4-6 & mes 9 & 0,16 \\
+R-17 & 1.8.7, 1.4.1 & 2-4 & antes de aprobar el diseño detallado & 0,04 \\
+R-18 & 1.7.2, 1.7.3, 1.5.10 & 4-15 & antes del corte de cada ola (último: mes 15) & 0,16 \\
+R-19 & 1.8.5 & 3-8 & mes 8 & 0,08 \\
+R-20 & 1.3.7, 1.4.8, 1.11.2 & 3-6 & 8 semanas antes de cada ola & 0,16 \\
+R-21 & 1.2.4, 1.1.4, 1.1.3 & 1-2 y 13-14 & mes 3 & 0,04 \\
+R-22 & 1.13.4, 1.5.48 & 13-24 & mes 24 & 0,08 \\
+R-23 & 1.1.1 & 1-3 & mes 3 & 0,16 \\
+R-24 & 1.9.5, 1.12.7 & 9-10 y 16-16 y 18-18 & abril de 2028 & 0,16 \\
+R-25 & 1.7.8, 1.7.9 & 14-18 & 15 de octubre de 2028 & 0,16 \\
+R-27 & 1.2.1 & 1-2 & mes 4 & 0,04 \\
+R-28 & 1.8.5 & 3-8 & mes 6 & 0,04 \\
+R-29 & 1.1.3 & 1-56 & mes 56 & 0,04 \\
+R-30 & 1.4.1 & 3-6 & mes 6 & 0,02 \\
+R-31 & 1.4.9, 1.4.10, 1.4.11, 1.4.12 & 2-6 & mes 6 & 0,04 \\
+R-32 & 1.2.1, 1.3.2 & 1-2 & mes 2 & 0,04 \\
+R-33 & 1.11.3 & 10-12 & antes del mes 13 & 0,16 \\
+R-34 & 1.5.2, 1.2.5 & 1-12 & mes 12 & 0,16 \\
+R-35 & 1.5.47, 1.5.48 & 1-12 & mes 12 & 0,04 \\
+R-36 & 1.6.3 & 13-18 & 8 semanas antes del inicio de pedidos & 0,04 \\
+R-37 & 1.2.4, 1.1.4, 1.1.3 & 1-2 y 13-14 & mes 3 & 0,16 \\
+R-38 & 1.11.4, 1.11.1 & 6-7 & mes 7 & 0,04 \\
+\end{longtable}
+
+Cada respuesta tiene una cuenta del Formulario T-14 que la ejecuta, una ventana y un plazo, de modo que el avance de las acciones se sigue con el mismo cronograma del plan de trabajo.
+
+\subsection{T-16.5 Oportunidades}
+
+La Tabla~\mbox{\ref{tab:t16-5}} registra las ocho oportunidades con su probabilidad, su estrategia y su responsable. Las oportunidades se califican con la misma escala de probabilidad y no se suman a las reservas.
+
+\begin{longtable}{p{0.060\linewidth}p{0.340\linewidth}p{0.160\linewidth}p{0.100\linewidth}p{0.160\linewidth}}
+\caption{Oportunidades.}\label{tab:t16-5}\\
+\toprule
+\textbf{ID} & \textbf{Oportunidad} & \textbf{Probabilidad} & \textbf{Estrategia} & \textbf{Responsable} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Oportunidad} & \textbf{Probabilidad} & \textbf{Estrategia} & \textbf{Responsable} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+O-01 & Retirar antes alguna interfaz por archivo al cerrar el inventario de las 14 interfaces. & 0,40 & Explotar & Líder de Integración \\
+O-02 & Adelantar la prueba de corte de 24 h si la filial fija los topes del cupo antes del mes 6. & 0,40 & Mejorar & Jefe de Proyecto \\
+O-03 & Bajar la discrepancia del 12,4 \% antes del corte con el conteo cíclico en la carga inicial. & 0,40 & Explotar & Líder de Datos \\
+O-04 & Detener el borrado a los 90 días si el Servicio de evidencia financiera entra antes del mes 16. & 0,20 & Mejorar & Encargado de Seguridad de la Información \\
+O-05 & Ganar margen de observación si la cartera sin casos difíciles migra completa antes del mes 22. & 0,40 & Mejorar & Líder de Datos \\
+O-06 & Dimensionar con medición si los datos del evento anual de 2026 calibran la capacidad. & 0,60 & Mejorar & Arquitecto de Solución \\
+O-07 & Adelantar la integración si los proveedores actuales entregan temprano la documentación de interfaces. & 0,20 & Compartir & Jefe de Proyecto \\
+O-08 & Adelantar el despliegue si el cliente compra el hardware y contrata los enlaces antes de cada ola. & 0,20 & Compartir & Líder de Implantación \\
+\end{longtable}
+
+Ninguna de las ocho oportunidades se incluye en el cálculo de reservas del apartado 8.3 del Subdocumento 8.
+
+\ossFinalPage
+
+\end{document}
