@@ -14,6 +14,7 @@ sola que una observación esté resuelta en los archivos actuales.
 | Carpeta | Contenido | Nomenclatura |
 | :--- | :--- | :--- |
 | `presentaciones/` | Las tres presentaciones | `presentacion-N_<descriptor>.pptx` |
+| `informes/Informe N/` | PDF compilados de cada informe (salida de `exportar_latex.py` o descargados de Prism). **No se versionan**: `.gitignore` excluye `informes/**/*.pdf`; se entregan por Drive | `OnlySimpleSolutions-SubdocumentoN.pdf`, `OnlySimpleSolutions-Formulario-T-N.pdf` |
 
 Los informes **no** se redactan aquí: se arman desde los `.tex` de `02_Propuesta/latex_final/`,
 editados en Prism. Ya no se mantienen borradores `.docx` de los informes.

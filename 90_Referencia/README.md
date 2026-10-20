@@ -10,6 +10,12 @@ Material de referencia. Las restricciones del caso anterior descritas abajo corr
 
 Material docente proporcionado por el usuario, transcripción Markdown de sus 38 páginas, investigación con fuentes oficiales y guía del agente revisor. Véase [calidad/README.md](calidad/README.md). Complementa la revisión; no reemplaza las Bases ni convierte ejemplos de clase en obligaciones del caso.
 
+## Otros contenidos
+
+- `clases markdown/`: transcripciones de las clases FEP01 a FEP05 y su guía de navegación (marco crítico, no fuente de contenido; ver `AGENTS.md`).
+- `CMF/`: documentos regulatorios de terceros. **No se versionan** (`.gitignore`, repo público): se conservan solo en disco.
+- `calidad/`, `caso09_ocr_paginado.txt`, `indice_paginas_caso09.md`: apoyo de lectura del caso.
+
 ## `TrabajosAnteriores_DistriProducto/`
 
 Diez subdocumentos de una propuesta previa del **caso DistriProducto** (industria de logística y
