@@ -82,15 +82,24 @@
 \usepackage{oss}
 \begin{document}
 
-\ossCover{Formulario T-6}{Subdocumento 1}
+\hypersetup{pageanchor=false}
+\ossCover{Experiencia en proyectos similares}{Subdocumento 1 · T-6}
+\hypersetup{pageanchor=true}
 \tableofcontents
 \clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:formulario-t6]{Tabla T-6.1: Experiencia en proyectos similares}\dotfill\pageref{tab:formulario-t6}\par\vspace{0.4\baselineskip}
+\clearpage
+
 
 \section{Formulario T-6 · Experiencia en proyectos similares}\label{formulario-t-6}
 
-El presente formulario detalla los tres proyectos de referencia ejecutados por Only Simple Solutions como contratista principal, citados en la sección 1.4 del Subdocumento 1.
+El presente formulario detalla los tres proyectos de software de misión crítica ejecutados por Only Simple Solutions como contratista principal, citados en la sección 1.4 del Subdocumento 1. Los tres están finalizados y en operación, y su ejecución cae dentro de los últimos cinco años. Los clientes y las contrapartes son ficticios, conforme a la simulación de esta licitación (art. 93), y lo mismo vale para sus correos y teléfonos.
 
 \renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-6.\arabic{table}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1900}}
@@ -125,16 +134,21 @@ El presente formulario detalla los tres proyectos de referencia ejecutados por O
 \bottomrule\noalign{}
 \endlastfoot
 \textbf{Nombre del proyecto} & Modernización POS y Continuidad Offline & Sistema de Consentimiento Seguro para Emisor Financiero & Motor Omnicanal ATP e Integración de Marketplace \\ \addlinespace
-\textbf{Cliente / mandante} & Multitiendas Prat S.A. & Financiera Solución S.A. & Distribuidora Textil y Calzado Hites \& Cía. \\ \addlinespace
+\textbf{Cliente / mandante} & Tiendas Aurora del Sur S.A. (empresa ficticia) & Financiera Cóndor Austral S.A. (empresa ficticia) & Almacenes Altamira Digital S.A. (empresa ficticia) \\ \addlinespace
 \textbf{Industria} & Retail / Comercio minorista & Servicios financieros / Emisión de crédito & Retail / E-commerce / Marketplace \\ \addlinespace
-\textbf{Año de inicio y de término} & 2022 -- 2023 & 2024 -- 2024 & 2023 -- 2024 \\ \addlinespace
+\textbf{Año de inicio y de término} & Marzo de 2022 a junio de 2023. Finalizado y en operación. & Enero a noviembre de 2024. Finalizado y en operación. & Agosto de 2023 a octubre de 2024. Finalizado y en operación. \\ \addlinespace
 \textbf{Monto del contrato (rango)} & \textbf{\$350 -- 500 millones CLP} & \textbf{\$250 -- 350 millones CLP} & \textbf{\$400 -- 600 millones CLP} \\ \addlinespace
+\textbf{Alcance ejecutado} & Reemplazo del punto de venta de las 25 sucursales por un POS con operación sin conexión. Cada sucursal tiene un servidor local que guarda las ventas y las sincroniza con los servicios centrales al volver el enlace. Incluye el cobro y el crédito propio de contingencia sin conexión. & Plataforma de consentimiento para un emisor de tarjeta fiscalizado. Registra el consentimiento de los deudores, conserva su evidencia con trazabilidad de cada operación y la deja disponible para consulta, con archivado en frío. & Motor ATP omnicanal que calcula el disponible para prometer entre las tiendas físicas, el comercio electrónico y el marketplace. Integra a 200 vendedores externos con los pedidos y el inventario, y opera en eventos de alta demanda. \\ \addlinespace
 \textbf{Arquitectura (nube / on-premise / híbrida)} & \textbf{Híbrida}: servidores Edge/on-premise en 25 sucursales + servicios centrales en nube & \textbf{Nube}: plataforma transaccional y almacenamiento resiliente con archivado en frío & \textbf{Híbrida}: integración de sistemas de tiendas físicas con servicios centrales/cloud para e-commerce y Marketplace \\ \addlinespace
-\textbf{Nivel de servicio comprometido} & \textbf{SLA 99,5\% de disponibilidad}, más continuidad offline mínima de 12 h & \textbf{SLA 99,9\% de disponibilidad} & \textbf{SLA 99,9\% de disponibilidad} durante operación regular y eventos de alta demanda \\ \addlinespace
-\textbf{Volumen de operación soportado} & 25 sucursales nacionales; operación offline mínima de 12 h; \textbf{hasta 500.000 transacciones/mes} & Cartera activa de \textbf{450.000 deudores}; \textbf{hasta 1.000.000 de operaciones/mes} & 30 tiendas físicas + e-commerce + 200 vendedores externos; \textbf{hasta 150 transacciones/segundo en eventos Cyber} \\ \addlinespace
+\textbf{Nivel de servicio comprometido} & \textbf{SLA 99,5\% de disponibilidad}, más una continuidad sin conexión de al menos 12 h verificadas & \textbf{SLA 99,9\% de disponibilidad} & \textbf{SLA 99,9\% de disponibilidad} durante operación regular y eventos de alta demanda \\ \addlinespace
+\textbf{Volumen de operación soportado} & 25 sucursales nacionales; operación sin conexión de al menos 12 h verificadas; \textbf{hasta 500.000 transacciones/mes} & Cartera activa de \textbf{450.000 deudores}; \textbf{hasta 1.000.000 de operaciones/mes} & 30 tiendas físicas + e-commerce + 200 vendedores externos; \textbf{hasta 150 transacciones/segundo en eventos Cyber} \\ \addlinespace
 \textbf{Rol de la empresa (principal / socio)} & \textbf{Contratista principal} & \textbf{Contratista principal} & \textbf{Contratista principal} \\ \addlinespace
-\textbf{Contraparte de referencia y contacto} & \textbf{Gerente de Tecnología de Multitiendas Prat S.A. -- contacto disponible a solicitud} & \textbf{Gerente de Tecnología / Cumplimiento de Financiera Solución S.A. -- contacto disponible a solicitud} & \textbf{Gerente de Tecnología y Omnicanalidad de Distribuidora Textil y Calzado Hites \& Cía. -- contacto disponible a solicitud} \\
+\textbf{Contraparte de referencia y contacto} & Ignacia Valdivieso Rojas, Gerente de Tecnología de Tiendas Aurora del Sur S.A. Correo ivaldivieso@aurora-sur.example. Teléfono +56 9 5550 0101. & Tomás Echeverría Lagos, Gerente de Tecnología y Cumplimiento de Financiera Cóndor Austral S.A. Correo techeverria@condor-austral.example. Teléfono +56 9 5550 0102. & Constanza Ibarra Pinto, Gerente de Tecnología y Omnicanalidad de Almacenes Altamira Digital S.A. Correo cibarra@altamira-digital.example. Teléfono +56 9 5550 0103. \\
 \end{longtable}
+
+Acreditan la arquitectura híbrida (nube más on-premise) los proyectos 1 y 3. Acreditan un acuerdo de nivel de servicio de disponibilidad igual o superior a 99,5 \% los tres proyectos, con 99,5 \% en el proyecto 1 y 99,9 \% en los proyectos 2 y 3.
+
+La carta de referencia del mandante de cada proyecto, que exige el artículo 34.1 de las Bases Administrativas junto con este formulario, es un adjunto por acreditar. Se entregará con la oferta, firmada por la contraparte indicada en la última fila de la tabla.
 
 \ossFinalPage
 

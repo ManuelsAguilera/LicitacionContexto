@@ -31,7 +31,7 @@ class ImportarTest(unittest.TestCase):
         self.assertTrue(body.split("\\end{document}")[0].rstrip().endswith("\\ossFinalPage"))
 
     def test_verificar_acepta_lo_importado(self):
-        self.assertEqual(ex.verify_tex(self.latex / "sd-14" / "OSS-Subdocumento14.tex"), [])
+        self.assertEqual(ex.verify_tex(self.latex / "sd-14" / "OnlySimpleSolutions-Subdocumento14.tex"), [])
 
     def test_tabla_como_longtable(self):
         self.assertIn("\\begin{longtable}", self.tex)

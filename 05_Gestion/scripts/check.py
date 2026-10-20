@@ -37,7 +37,7 @@ def main():
         if fm.get("tipo")=="parte":
             part_num=int(fm.get("parte","T7-00")[3:])
             refs=p.parent/f"sd-{part_num:02d}_referencias.md"
-            latex_sources=list((ROOT/"02_Propuesta"/"latex_final"/f"sd-{part_num:02d}").glob("OSS-Subdocumento*.tex"))
+            latex_sources=list((ROOT/"02_Propuesta"/"latex_final"/f"sd-{part_num:02d}").glob("OnlySimpleSolutions-Subdocumento*.tex"))
             has_latex_references=any(re.search(r"\\section\*?\{Referencias\}", source.read_text(encoding="utf-8")) for source in latex_sources)
             if not refs.is_file() and not has_latex_references: warnings.append(f"{rel}: falta la sección final obligatoria Referencias ({refs.name})")
             expected=list(fm.get("secciones",[])) + (fm.get("adjuntos",[]) if isinstance(fm.get("adjuntos",[]),list) else [])

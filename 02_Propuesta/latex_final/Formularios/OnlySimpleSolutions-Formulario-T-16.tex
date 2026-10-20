@@ -82,16 +82,26 @@
 \usepackage{oss}
 \begin{document}
 
-\ossCover{Formulario T-16}{Subdocumento 8}
+\ossCover{Plan de riesgos}{Subdocumento 8 · T-16}
 \tableofcontents
 \clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t16-1]{Tabla T-16.1: Identificación de los riesgos}\dotfill\pageref{tab:t16-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-2]{Tabla T-16.2: Análisis cualitativo de los riesgos}\dotfill\pageref{tab:t16-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-3]{Tabla T-16.3: Respuesta a los riesgos}\dotfill\pageref{tab:t16-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-4]{Tabla T-16.4: Cuenta de la EDT, plazo y exposición residual}\dotfill\pageref{tab:t16-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t16-5]{Tabla T-16.5: Oportunidades}\dotfill\pageref{tab:t16-5}\par\vspace{0.4\baselineskip}
+\clearpage
+
 
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-16.\arabic{table}}
 
-\section{Formulario T-16 — Plan de riesgos}\label{formulario-t-16}
+\section{Formulario T-16 · Plan de riesgos}\label{formulario-t-16}
 
-Este formulario adjunta el registro completo que resume el Subdocumento 8, con los 37 riesgos y las 8 oportunidades de Only Simple Solutions para el proyecto de Multitiendas Ancoa S.A. Las escalas de probabilidad e impacto y las zonas de exposición son las del apartado 8.1 del Subdocumento 8. Las cuentas, los responsables y las ventanas provienen de la estructura de desglose del trabajo del Formulario T-14. Los apartados siguientes presentan la identificación, el análisis cualitativo, la respuesta, el enlace con la estructura de desglose y las oportunidades.
+Este formulario adjunta el registro completo que resume el Subdocumento 8, con los 37 riesgos y las 8 oportunidades de Only Simple Solutions (R-26 no está asignado; la serie llega a R-38) para el proyecto de Multitiendas Ancoa S.A. Las escalas de probabilidad e impacto y las zonas de exposición son las del apartado 8.1 del Subdocumento 8. Las cuentas, los responsables y las ventanas provienen de la estructura de desglose del trabajo del Formulario T-14. Los apartados siguientes presentan la identificación, el análisis cualitativo, la respuesta, el enlace con la estructura de desglose y las oportunidades.
 
 \subsection{T-16.1 Identificación}
 
@@ -142,7 +152,7 @@ R-30 & Un servicio Premium no puede crearse en Chile Central y obliga a rediseñ
 R-31 & Un evento local o una obra no lista en el centro de datos del cliente detiene la emisión tributaria o el crédito. & Operación & Solución \\
 R-32 & El inventario cambia la ubicación de las plataformas y los plazos de los enlaces, y se atrasa la plataforma base. & Proyecto & Desarrollo \\
 R-33 & El mismo equipo sostiene la marcha blanca de la Etapa 1 y construye la Etapa 2 en los meses 13 a 15. & Proyecto & Desarrollo \\
-R-34 & El personal de tienda no alcanza a cambiar las etiquetas de papel y no se cumple la meta de error de precio. & Operación & Solución \\
+R-34 & El personal de tienda no alcanza a cambiar las etiquetas de papel y no se cumple la meta de discrepancia de precio. & Operación & Solución \\
 R-35 & Quedan accesos de ex trabajadores o temporales sin revocar y se quiebra la segregación. & Seguridad & Solución \\
 R-36 & Transportistas y vendedores de marketplace no adoptan a tiempo los contratos de estado y la meta del 97 \% no se mide. & Proyecto & Implantación \\
 R-37 & Las siete decisiones del cliente se demoran y la arquitectura no cierra con la línea base del mes 4. & Organizacional & Desarrollo \\
@@ -227,7 +237,7 @@ La Tabla~\mbox{\ref{tab:t16-3}} define la estrategia, la acción, el responsable
 \multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
 \endlastfoot
 R-01 & Mitigar & Fijar cortes por tramo con conciliación diaria y criterio de detención acordado con la filial. & Líder de Datos & Divergencia sin conciliar dos días seguidos en un tramo. \\
-R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & Jefe de Proyecto & Fecha del evento con menos de 8 semanas de aviso. \\
+R-02 & Mitigar & Fijar ocho semanas sin despliegues antes del evento anual y programar las entregas previas fuera de ellas. & Jefe de Proyecto & Fecha del evento con menos de seis semanas de aviso o servicio a medio desplegar en esa fecha. \\
 R-03 & Evitar & Mantener el Servicio de control de cruces como único camino de datos, con base legal por cruce. & Líder de Desarrollo & Un solo cruce sin base o sin registro. \\
 R-04 & Mitigar & Cerrar el inventario antes de la línea base y certificar cada integración antes de retirar una plataforma. & Líder de Integración & Inventario no cerrado en el mes 4. \\
 R-05 & Mitigar & Exigir la capacitación como condición de cierre de la marcha blanca y repetirla en temporada. & Líder de Gestión del Cambio & Algún puesto de la ola sin personal capacitado y certificado según el plan aprobado al cierre de la marcha blanca. \\
@@ -258,7 +268,7 @@ R-30 & Evitar & Probar la creación de cada servicio Premium al inicio, antes de
 R-31 & Mitigar y transferir dependencia & Exigir al cliente el informe de brecha y la obra civil; el proponente especifica, habilita y certifica el recinto técnico y ensaya la contingencia. No iniciar las pruebas sin ambas entregas. & Arquitecto de Solución & Informe no entregado al mes 4, obra civil o certificación del recinto pendiente al mes 6, o ensayo de contingencia fallido. \\
 R-32 & Mitigar & Confirmar ubicaciones y rutas con el inventario y acreditar el ExpressRoute antes del diseño final. & Líder Funcional & Inventario de sitios con cambios sobre el supuesto. \\
 R-33 & Mitigar & Nivelar los recursos de los meses 13 a 15 y reforzar el equipo antes de la marcha blanca. & Jefe de Proyecto & Carga sobre 100 \% de un rol clave en los meses 13 a 15. \\
-R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Desarrollo & Error de precio igual o superior a 3 \% en el piloto. \\
+R-34 & Mitigar & Dimensionar las oleadas de cambio de etiquetas y evaluar las etiquetas electrónicas. & Líder de Desarrollo & Discrepancia de precio igual o superior a 3 \% en el piloto. \\
 R-35 & Mitigar & Revisar los accesos periódicamente y revocar los de ex trabajadores y temporales. & Líder de Desarrollo & Cuenta de ex trabajador activa tras la revisión mensual. \\
 R-36 & Mitigar & Incorporar transportistas y vendedores a los contratos de estado con calendario y medición. & Líder de Integración & Transportista sin adoptar los estados a 8 semanas del inicio. \\
 R-37 & Evitar & Calendarizar las siete decisiones antes de la línea base y escalar las vencidas. & Jefe de Proyecto & Decisiones pendientes en el mes 3. \\
@@ -301,13 +311,13 @@ R-14 & 1.1.12, 1.2.8, 1.5.37, 1.9.9, 1.11.4 & 3-5 & antes del mes 6 & 0,04 \\
 R-15 & 1.3.5, 1.5.19, 1.9.9 & 3-4 & mes 4 & 0,04 \\
 R-16 & 1.6.7 & 4-6 & mes 9 & 0,16 \\
 R-17 & 1.8.7, 1.4.1 & 2-4 & antes de aprobar el diseño detallado & 0,04 \\
-R-18 & 1.7.2, 1.7.3, 1.5.10 & 4-15 & antes del corte de cada ola (último: mes 15) & 0,08 \\
+R-18 & 1.7.2, 1.7.3, 1.5.10 & 4-15 & antes del corte de cada ola (último: mes 15) & 0,16 \\
 R-19 & 1.8.5 & 3-8 & mes 8 & 0,08 \\
-R-20 & 1.3.7, 1.4.8, 1.11.2 & 3-6 & 8 semanas antes de cada ola & 0,08 \\
+R-20 & 1.3.7, 1.4.8, 1.11.2 & 3-6 & 8 semanas antes de cada ola & 0,16 \\
 R-21 & 1.2.4, 1.1.4, 1.1.3 & 1-2 y 13-14 & mes 3 & 0,04 \\
 R-22 & 1.13.4, 1.5.48 & 13-24 & mes 24 & 0,08 \\
 R-23 & 1.1.1 & 1-3 & mes 3 & 0,16 \\
-R-24 & 1.9.5, 1.12.7 & 9-10 y 16-16 y 18-18 & abril de 2028 & 0,08 \\
+R-24 & 1.9.5, 1.12.7 & 9-10 y 16-16 y 18-18 & abril de 2028 & 0,16 \\
 R-25 & 1.7.8, 1.7.9 & 14-18 & 15 de octubre de 2028 & 0,16 \\
 R-27 & 1.2.1 & 1-2 & mes 4 & 0,04 \\
 R-28 & 1.8.5 & 3-8 & mes 6 & 0,04 \\
@@ -316,7 +326,7 @@ R-30 & 1.4.1 & 3-6 & mes 6 & 0,02 \\
 R-31 & 1.4.9, 1.4.10, 1.4.11, 1.4.12 & 2-6 & mes 6 & 0,04 \\
 R-32 & 1.2.1, 1.3.2 & 1-2 & mes 2 & 0,04 \\
 R-33 & 1.11.3 & 10-12 & antes del mes 13 & 0,16 \\
-R-34 & 1.5.2, 1.2.5 & 1-12 & mes 12 & 0,08 \\
+R-34 & 1.5.2, 1.2.5 & 1-12 & mes 12 & 0,16 \\
 R-35 & 1.5.47, 1.5.48 & 1-12 & mes 12 & 0,04 \\
 R-36 & 1.6.3 & 13-18 & 8 semanas antes del inicio de pedidos & 0,04 \\
 R-37 & 1.2.4, 1.1.4, 1.1.3 & 1-2 y 13-14 & mes 3 & 0,16 \\

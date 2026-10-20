@@ -1,0 +1,662 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-19.\arabic{table}}
+
+\hypersetup{pageanchor=false}
+\ossCover{Cartera de innovaciones}{Subdocumento 13 · T-19}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t19-1]{Tabla T-19.1: Ficha 1: Lockers Ancoa 24/7}\dotfill\pageref{tab:t19-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t19-2]{Tabla T-19.2: Ficha 2: Conteo cíclico predictivo}\dotfill\pageref{tab:t19-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t19-3]{Tabla T-19.3: Ficha 3: Búsqueda vectorial multimodal}\dotfill\pageref{tab:t19-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t19-4]{Tabla T-19.4: Ficha 4: Retail Media Network}\dotfill\pageref{tab:t19-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t19-5]{Tabla T-19.5: Ficha 5: Modo Tienda con fila virtual de probadores}\dotfill\pageref{tab:t19-5}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\section*{Formulario T-19: Cartera de innovaciones}\label{formulario-t-19-cartera-de-innovaciones}
+\addcontentsline{toc}{section}{Formulario T-19: Cartera de innovaciones}
+
+Only Simple Solutions presenta cinco fichas para Multitiendas Ancoa S.A., Caso 09, Licitación N° TFEP-01/2026. Cada ficha conserva los 17 campos del formulario de las Bases Administrativas y corresponde a un tipo distinto del artículo 28. El subdocumento 13 desarrolla la justificación; este archivo reúne los datos de incorporación, verificación y contingencia.
+
+\subsection*{Ficha 1 - Innovación 1}\label{ficha-1-innovaciuxf3n-1}
+\addcontentsline{toc}{subsection}{Ficha 1 - Innovación 1}
+
+Esta ficha corresponde al apartado 13.1 del subdocumento 13.
+
+\subsection*{Ficha 1 - Innovación 1}\label{ficha-1-innovaciuxf3n-1}
+\addcontentsline{toc}{subsection}{Ficha 1 - Innovación 1}
+
+Esta ficha corresponde al apartado 13.1 del subdocumento 13.
+
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
+\caption[Ficha 1: Lockers Ancoa 24/7]{Ficha 1: Lockers Ancoa 24/7. Fuente: Elaboración propia.}\label{tab:t19-1}\\
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación (continuación)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\emph{Continúa en la página siguiente}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{1. Tipo de innovación (1 a 5)}\label{tipo-de-innovaciuxf3n-1-a-5} &
+1. Producto o servicio.
+\\
+\midrule
+\textbf{2. Nombre de la innovación}\label{nombre-de-la-innovaciuxf3n} &
+Lockers Ancoa 24/7.
+\\
+\midrule
+\textbf{3. Problema u oportunidad del caso que resuelve}\label{problema-u-oportunidad-del-caso-que-resuelve} &
+El caso describe dificultades de coordinación y cumplimiento de pedidos entre tiendas y canal digital, en sus capítulos 7 a 9. El retiro autónomo agrega entrega de pedidos preparados y pagados fuera del horario del mesón. La operación actual no aporta tiempos de retiro, demanda fuera de horario ni distribución de tamaños. El locker actúa después de confirmar disponibilidad y preparar el pedido; no corrige por sí mismo el stock.
+\\
+\midrule
+\textbf{4. Tecnología, práctica o modelo que la sustenta}\label{tecnologuxeda-pruxe1ctica-o-modelo-que-la-sustenta} &
+Gabinete electrónico exterior con controlador, identificación de puertas y registro de apertura y cierre. Cleveron 355 es la referencia para mercancía voluminosa; Cleveron 302, de uso interior, no respalda un emplazamiento exterior. La configuración para paquetes pequeños requiere dimensionamiento propio. El adaptador usa el contrato del fabricante seleccionado. La API de Bloq.it constituye una alternativa documentada, no una interfaz acreditada para hardware Cleveron.
+\\
+\midrule
+\textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada} &
+Escala de evidencia del SD-13 con tres estados sucesivos. Componente documentado exige documentación comercial o técnica; integración probada exige un ensayo reproducible del conjunto; operación aceptada exige piloto y acta de aceptación en Ancoa. El gabinete cuenta con evidencia del primer estado. No se declara integración probada ni operación aceptada, ni se asigna un TRL sin evidencia.
+\\
+\midrule
+\textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.} &
+Cleveron. (s. f.-a). \emph{Cleveron 302}. \url{https://cleveron.com/products/cleveron-302/}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Cleveron. (s. f.-b). \emph{Cleveron 355}. \url{https://cleveron.com/products/cleveron-355/}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Bloq.it. (s. f.). \emph{Partner API}. \url{https://docs.api.bloq.it/}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Cleveron. (s. f.-c). \emph{Cleveron 402}. \url{https://cleveron.com/products/cleveron-402/}
+\\
+
+\midrule
+\textbf{7. Dónde se inserta en la arquitectura}\label{duxf3nde-se-inserta-en-la-arquitectura} &
+Capa de integración Retail, mediante un adaptador entre el controlador local del locker y R:V-01, Servicio de pedidos. R:M-03, Servicio de existencias, confirma disponibilidad antes de preparar. La nube Retail en CLD-01 registra estados de reserva, carga, disponibilidad, retiro, vencimiento y bloqueo. La confirmación de carga y cierre habilita el aviso. El equipo local exige una ubicación con acceso público continuo; SIT-01 es el emplazamiento de tienda de la arquitectura, no la prueba de que su exterior permita acceso 24/7. No se habilita acceso a bases del Emisor.
+\\
+\midrule
+\textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan} &
+Rama 1.10 Innovaciones del SD-07, paquete denominado «Lockers Ancoa 24/7». Entregables de selección, emplazamiento, integración, ensayo y capacitación. Intervienen las ramas 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Marchas blancas y aceptación y 1.13 Gestión del cambio y capacitación. La rama está documentada; el código detallado del paquete debe conciliarse con el T-14.
+\\
+\midrule
+\textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa} &
+Marcha blanca y aceptación en los meses 19--20 de la Etapa 2. Habilitación operativa desde el mes 21, exclusivamente en emplazamientos aceptados y para bultos compatibles.
+\\
+\midrule
+\textbf{10. Inversión requerida}\label{inversiuxf3n-requerida} &
+Gabinetes, instalación exterior, alimentación, comunicaciones, integración con pedidos y pruebas de seguridad y recuperación. El dimensionamiento por tienda sustenta la valorización de la Oferta Económica; el T-19 técnico no incorpora montos.
+\\
+\midrule
+\textbf{11. Efecto en el costo operacional}\label{efecto-en-el-costo-operacional} &
+Agrega soporte, repuestos, conectividad, licencias y asistencia. Reduce atención de entrega en mesón cuando el retiro resulta autónomo, pero conserva carga, recuperación de bultos y manejo de excepciones. El efecto neto exige medir ambos trabajos.
+\\
+\midrule
+\textbf{12. Beneficio esperado y su cuantificación}\label{beneficio-esperado-y-su-cuantificaciuxf3n} &
+Retiro fuera de horario y reducción de minutos de personal por entrega. Horas liberadas = entregas comparables × diferencia de minutos de personal por entrega / 60. La diferencia incluye carga y excepciones. Los pedidos adicionales atribuibles al horario ampliado se estiman con comparación y su margen se valoriza solo en la Oferta Económica. No se suma el beneficio del inventario.
+\\
+\midrule
+\textbf{13. Indicador de verificación, línea base y meta}\label{indicador-de-verificaciuxf3n-luxednea-base-y-meta} &
+Indicadores de tiempo total de retiro, minutos de personal por entrega, proporción de retiros sin asistencia y retiros autorizados fuera del horario del mesón. Línea base del proceso de retiro en mesón, en franjas y categorías comparables; el caso no contiene su medición. Meta funcional de completar retiros autorizados fuera de horario, sin entregas no autorizadas en las pruebas. Meta temporal de reducir minutos de atención respecto del proceso base.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Línea base de minutos de personal por entrega. B1 es el promedio de minutos totales de personal del retiro actual por entrega compatible, incluyendo preparación equivalente, carga, atención y excepciones; el Caso no contiene ese valor. Referencia normalizada de 100 puntos cuando B1 \textgreater{} 0.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Meta cuantitativa propuesta. Reducir al menos 20 \% el promedio total de minutos de personal por entrega, equivalente a un índice ≤80 o a un tiempo ≤0,80 × B1. Es un umbral de diseño para comprobar beneficio neto, no un ahorro publicado para Ancoa. Cleveron documenta carga de 100 paquetes en 20 minutos para el 355, equivalente a 0,20 minutos por paquete en esa comparación, pero ese valor no incluye todo el trabajo ni mide el retiro del cliente. La dispensación de 10 segundos del 402 no se atribuye al 355 (Cleveron, s. f.-b, s. f.-c). Se mantienen las pruebas de retiro fuera de horario y ausencia de entrega no autorizada.
+\\
+\midrule
+\textbf{14. Momento de medición}\label{momento-de-mediciuxf3n} &
+Línea base antes del piloto, con cuatro semanas iniciales de observación de franjas comparables, ampliables si falta precisión. Ensayo durante los meses 19--20 y seguimiento operativo desde el mes 21. El protocolo fija muestra y criterio de aceptación antes de ejecutar la comparación; el 20 \% es una propuesta que requiere revisión humana previa al compromiso.
+\\
+\midrule
+\textbf{15. Riesgo de adopción, probabilidad e impacto}\label{riesgo-de-adopciuxf3n-probabilidad-e-impacto} &
+Incompatibilidad de bultos o acceso restringido, probabilidad inicial media e impacto alto. Fallo de autorización o conectividad, probabilidad inicial media e impacto alto. Son valoraciones cualitativas del SD-13, no frecuencias medidas ni puntajes definitivos del T-16.
+\\
+\midrule
+\textbf{16. Estrategia de mitigación}\label{estrategia-de-mitigaciuxf3n} &
+Dimensionamiento por categoría, comprobación del acceso nocturno y ensayo con bultos reales. Pruebas de vigencia y consumo único de credenciales, reinicio y reconciliación. Validación de repuestos, soporte e integración antes de aprobar suministro; conectividad de respaldo conforme al plan de continuidad.
+\\
+\midrule
+\textbf{17. Plan de contingencia si no rinde lo esperado}\label{plan-de-contingencia-si-no-rinde-lo-esperado} &
+Retiro convencional para bultos incompatibles y recuperación al mesón ante fallas. Si no es posible verificar autorización, el controlador suspende apertura automática y activa asistencia. Se limita la promesa de horario al acceso efectivamente aceptado.
+\\
+\end{longtable}
+
+\subsection*{Ficha 2 - Innovación 2}\label{ficha-2-innovaciuxf3n-2}
+\addcontentsline{toc}{subsection}{Ficha 2 - Innovación 2}
+
+Esta ficha corresponde al apartado 13.2 del subdocumento 13.
+
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
+\caption[Ficha 2: Conteo cíclico predictivo]{Ficha 2: Conteo cíclico predictivo. Fuente: Elaboración propia.}\label{tab:t19-2}\\
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación (continuación)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\emph{Continúa en la página siguiente}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{1. Tipo de innovación (1 a 5)}\label{tipo-de-innovaciuxf3n-1-a-5-1} &
+2. Proceso.
+\\
+\midrule
+\textbf{2. Nombre de la innovación}\label{nombre-de-la-innovaciuxf3n-1} &
+Conteo cíclico predictivo.
+\\
+\midrule
+\textbf{3. Problema u oportunidad del caso que resuelve}\label{problema-u-oportunidad-del-caso-que-resuelve-1} &
+El caso registra discrepancias en el 12,4 \% de las referencias auditadas y ausencia de desglose por categoría y punto. Su meta global es bajar de 2 \% (Caso 09, indicadores actuales y objetivos). La programación basada en riesgo busca detectar diferencias relevantes con las horas disponibles. El aporte incremental es la priorización predictiva; conteo sin cierre, registro de diferencias, recuento y programación parametrizada ya pertenecen al alcance obligatorio de RF-131 y RF-134 a RF-137.
+\\
+\midrule
+\textbf{4. Tecnología, práctica o modelo que la sustenta}\label{tecnologuxeda-pruxe1ctica-o-modelo-que-la-sustenta-1} &
+Comparación de programación vigente, reglas de prioridad y modelos supervisados de árboles con boosting. HistGradientBoostingClassifier es la referencia para probabilidad de discrepancia; se evalúa además la magnitud esperada. Las variables utilizan historia anterior al conteo. La etiqueta corresponde a discrepancia física confirmada y conciliada, sin utilizar el resultado futuro como entrada. La lista requiere aprobación humana y no modifica saldos ni califica una diferencia como hurto.
+\\
+\midrule
+\textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada-1} &
+Escala de evidencia de componente documentado, integración probada y operación aceptada. La biblioteca tiene documentación técnica; no equivale a un modelo de Ancoa validado. El modelo necesita evaluación temporal retrospectiva, prueba entre tiendas, operación en sombra y aceptación con evidencia. No se atribuye un TRL al conjunto.
+\\
+\midrule
+\textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.-1} &
+Scikit-learn developers. (s. f.-a). \emph{HistGradientBoostingClassifier}. \url{https://scikit-learn.org/1.6/modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Scikit-learn developers. (s. f.-b). \emph{TimeSeriesSplit}. \url{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Tabassi, E. (2023). \emph{Artificial Intelligence Risk Management Framework (AI RMF 1.0)}. National Institute of Standards and Technology. \url{https://doi.org/10.6028/NIST.AI.100-1}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+International Organization for Standardization. (2023). \emph{ISO/IEC 42001:2023. Information technology - Artificial intelligence - Management system}. \url{https://www.iso.org/standard/42001}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Vaccari, L., Balugani, E., Lolli, F., \& Gamberini, R. (2026). A machine learning and multi-criteria decision-making approach to cycle counting. \emph{Logistics, 10}(1), artículo 10. \url{https://doi.org/10.3390/logistics10010010}
+\\
+
+\midrule
+\textbf{7. Dónde se inserta en la arquitectura}\label{duxf3nde-se-inserta-en-la-arquitectura-1} &
+Procesador de apoyo en aplicación Retail, CLD-01, para R:M-03, Servicio de existencias. Consume historia autorizada mediante contratos de datos y produce una lista ordenada para la aplicación de conteo. Entrenamiento e inferencia permanecen separados de la escritura transaccional del inventario. Se versionan conjuntos, modelo, entradas, recomendación y decisión humana. La analítica utiliza únicamente el ámbito Retail; RT-18 gobierna el componente de IA.
+\\
+\midrule
+\textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-1} &
+Rama 1.10, paquete «Conteo cíclico predictivo», con preparación de datos, comparación, integración y ensayo. Participan 1.7 Migración y saneamiento, 1.8 Seguridad, 1.9 Calidad, 1.12 Marchas blancas y aceptación y 1.13 Capacitación. R:M-03 conserva su paquete funcional en 1.5; el esfuerzo predictivo no se confunde con el conteo obligatorio. El código detallado requiere conciliación con el T-14.
+\\
+\midrule
+\textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-1} &
+Evaluación en sombra durante los meses 13--15 y uso operativo desde el mes 16, sujeto a aceptación del modelo. El conteo obligatorio funciona aunque el modelo no supere su evaluación.
+\\
+\midrule
+\textbf{10. Inversión requerida}\label{inversiuxf3n-requerida-1} &
+Perfilado, depuración e historia versionada; desarrollo, validación e integración del priorizador. Su valorización separa el incremento predictivo del servicio obligatorio de conteo y se incorpora a la Oferta Económica.
+\\
+\midrule
+\textbf{11. Efecto en el costo operacional}\label{efecto-en-el-costo-operacional-1} &
+Agrega cómputo, seguimiento, revisión y reentrenamiento. Puede aumentar discrepancias relevantes detectadas con igual capacidad o reducir horas para una cobertura equivalente; no se presuponen ambas mejoras simultáneamente.
+\\
+\midrule
+\textbf{12. Beneficio esperado y su cuantificación}\label{beneficio-esperado-y-su-cuantificaciuxf3n-1} &
+Discrepancias relevantes por hora = discrepancias confirmadas que superan el criterio de relevancia / horas de conteo. Mejora relativa = (rendimiento predictivo − rendimiento base) / rendimiento base, cuando el denominador es positivo. El beneficio por horas se calcula para una misma cobertura. Pérdida evitada requiere atribución adicional y no se deduce directamente de una diferencia detectada.
+\\
+\midrule
+\textbf{13. Indicador de verificación, línea base y meta}\label{indicador-de-verificaciuxf3n-luxednea-base-y-meta-1} &
+Indicador principal de discrepancias relevantes detectadas por hora, con la programación vigente como comparación. El caso no aporta este rendimiento. Meta de mejora frente al proceso base con iguales horas, manteniendo frecuencias y cobertura. Se conserva una muestra aleatoria o estratificada independiente para medir discrepancia general. El 12,4 \% y la meta bajo 2 \% corresponden al resultado global de inventario, no al rendimiento por hora ni a un efecto atribuible exclusivamente al modelo.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Línea base de discrepancias relevantes por hora. B2 = discrepancias relevantes confirmadas por la programación vigente / horas totales de trabajo, incluyendo conteo, revisión y gestión de la programación. Su valor absoluto debe medirse. Índice de referencia 100 cuando B2 \textgreater{} 0; el 12,4 \% no permite deducir B2.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Meta cuantitativa propuesta. Rendimiento ≥1,20 × B2, equivalente a un índice ≥120 o una mejora ≥20 \%, con cobertura y frecuencias equivalentes. También se compara con reglas de prioridad sin ML. El 20 \% es un umbral práctico de selección, no un resultado extrapolado de literatura. Vaccari et al.~(2026) justifican comparar políticas y costos, pero estudian manufactura y no prueban esa mejora por hora para Ancoa. Se conserva la muestra independiente y el seguimiento de la meta global bajo 2 \%. Si B2 = 0, no se acepta la desigualdad como prueba de mejora; se revisan muestra y criterio de relevancia y se fija un objetivo absoluto justificado antes del ensayo.
+\\
+\midrule
+\textbf{14. Momento de medición}\label{momento-de-mediciuxf3n-1} &
+Evaluación retrospectiva y cuatro semanas iniciales de medición base antes del piloto. Medición en sombra durante los meses 13--15, que permite verificar el beneficio antes del mes 16 conforme a RT-26.08. Seguimiento de deriva y cobertura desde el mes 16. Se define relevancia, muestra y aceptación antes del ensayo. La recomendación en sombra no demuestra rendimiento operacional por sí sola; el ensayo debe incluir conteos comparables ejecutados bajo el protocolo supervisado, sin ajustes automáticos.
+\\
+\midrule
+\textbf{15. Riesgo de adopción, probabilidad e impacto}\label{riesgo-de-adopciuxf3n-probabilidad-e-impacto-1} &
+Historia insuficiente o sesgada, probabilidad inicial alta e impacto alto. Deriva por temporada o tienda, probabilidad inicial media e impacto alto. Las valoraciones proceden del SD-13 y se contrastan en T-16 tras el perfilado.
+\\
+\midrule
+\textbf{16. Estrategia de mitigación}\label{estrategia-de-mitigaciuxf3n-1} &
+Depurar discrepancias confirmadas, particionar por tiempo y revisar transferencia entre tiendas. Conservar muestreo independiente, cobertura y frecuencias mínimas. Comparar rendimiento real con la programación base y exigir aprobación humana de listas y ajustes.
+\\
+\midrule
+\textbf{17. Plan de contingencia si no rinde lo esperado}\label{plan-de-contingencia-si-no-rinde-lo-esperado-1} &
+Usar reglas y programación parametrizada mientras falte historia suficiente. Desactivar el priorizador si no mejora rendimiento o incumple cobertura y volver a RF-134. El registro de conteos y las reglas de ajuste permanecen activos.
+\\
+\end{longtable}
+
+\subsection*{Ficha 3 - Innovación 3}\label{ficha-3-innovaciuxf3n-3}
+\addcontentsline{toc}{subsection}{Ficha 3 - Innovación 3}
+
+Esta ficha corresponde al apartado 13.3 del subdocumento 13.
+
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
+\caption[Ficha 3: Búsqueda vectorial multimodal]{Ficha 3: Búsqueda vectorial multimodal. Fuente: Elaboración propia.}\label{tab:t19-3}\\
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación (continuación)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\emph{Continúa en la página siguiente}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{1. Tipo de innovación (1 a 5)}\label{tipo-de-innovaciuxf3n-1-a-5-2} &
+3. Tecnológica o de arquitectura.
+\\
+\midrule
+\textbf{2. Nombre de la innovación}\label{nombre-de-la-innovaciuxf3n-2} &
+Búsqueda vectorial multimodal.
+\\
+\midrule
+\textbf{3. Problema u oportunidad del caso que resuelve}\label{problema-u-oportunidad-del-caso-que-resuelve-2} &
+El catálogo y la operación omnicanal requieren encontrar productos y mostrar disponibilidad consistente (Caso 09, caps. 7--9). La innovación añade consulta por fotografía e intención en español. Búsqueda tolerante a errores, filtros y permisos ya son obligatorios por RT-16.27. El caso no cuantifica búsquedas fallidas ni éxito de tarea; el levantamiento debe medirlos sin suponer que el buscador actual solo reconoce nombres exactos.
+\\
+\midrule
+\textbf{4. Tecnología, práctica o modelo que la sustenta}\label{tecnologuxeda-pruxe1ctica-o-modelo-que-la-sustenta-2} &
+Codificador multimodal y recuperación híbrida léxica y vectorial. Jina CLIP v2 es referencia de evaluación frente a OpenCLIP; su versión descargable con licencia no comercial no habilita por sí sola uso comercial. PostgreSQL con pgvector e HNSW es referencia para similitud. Se ensayan filtros, escaneos iterativos, relevancia y carga. La fotografía devuelve semejanza, no identificación exacta garantizada. El servicio de existencias conserva la autoridad sobre disponibilidad.
+\\
+\midrule
+\textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada-2} &
+Escala de componente documentado, integración probada y operación aceptada. Hay documentación de los componentes, pero no pruebas realizadas para el catálogo de Ancoa. La integración exige consultas, fotografías y juicios de relevancia en español; la aceptación añade piloto y carga. No se declara madurez operacional por la sola documentación del modelo.
+\\
+\midrule
+\textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.-2} &
+Jina AI. (s. f.). \emph{Jina CLIP v2. Model card and license}. \url{https://huggingface.co/jinaai/jina-clip-v2}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+ML Foundations. (s. f.). \emph{OpenCLIP}. \url{https://github.com/mlfoundations/open_clip}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Pgvector contributors. (s. f.). \emph{pgvector}. \url{https://github.com/pgvector/pgvector}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Zhu, X., Huang, M., Ding, H., Yang, J., Chen, K., Zhou, T., Neiman, T., Xie, O., Tran, S., Yao, B., Gray, D., Bindal, A., \& Dhua, A. (2024). \emph{Bringing multimodality to Amazon visual search system}. Amazon Science, KDD 2024. \url{https://www.amazon.science/publications/bringing-multimodality-to-amazon-visual-search-system}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Tabassi, E. (2023). \emph{Artificial Intelligence Risk Management Framework (AI RMF 1.0)}. National Institute of Standards and Technology. \url{https://doi.org/10.6028/NIST.AI.100-1}
+\\
+
+\midrule
+\textbf{7. Dónde se inserta en la arquitectura}\label{duxf3nde-se-inserta-en-la-arquitectura-2} &
+Aplicación Retail en CLD-01. Un trabajador asíncrono actualiza representaciones a partir de R:M-01, Servicio de oferta comercial. El comercio electrónico AH-01 consulta el recuperador, que combina ranking, filtros y permisos; R:M-03 verifica disponibilidad al mostrar y comprar. Fotografías y metadatos se tratan con minimización, acceso restringido y retención definida por finalidad. El proveedor no entrena con datos de Ancoa sin autorización; aplica RT-18. El índice no accede al dominio Emisor.
+\\
+\midrule
+\textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-2} &
+Rama 1.10, paquete «Búsqueda vectorial multimodal», con conjunto de prueba, selección y licencia de modelo, indexación, integración y evaluación. Apoyo de 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Marchas blancas y aceptación. El código detallado se concilia con el T-14 sin crear numeración ajena a la EDT vigente.
+\\
+\midrule
+\textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-2} &
+Desarrollo y pruebas en la Etapa 2, aceptación durante los meses 19--20 y operación desde el mes 21.
+\\
+\midrule
+\textbf{10. Inversión requerida}\label{inversiuxf3n-requerida-2} &
+Preparación de catálogo y conjunto de prueba, licencia comercial cuando corresponda, integración y pruebas de relevancia y capacidad. La memoria de capacidad y el suministro elegido sustentan su valorización en la Oferta Económica.
+\\
+\midrule
+\textbf{11. Efecto en el costo operacional}\label{efecto-en-el-costo-operacional-2} &
+Agrega inferencia, almacenamiento vectorial, actualización de representaciones y evaluación de cambios. El costo depende de carga, tamaño del catálogo, modelo y frecuencia de actualización, no fijados por el formulario.
+\\
+\midrule
+\textbf{12. Beneficio esperado y su cuantificación}\label{beneficio-esperado-y-su-cuantificaciuxf3n-2} &
+Mejor éxito de búsqueda y margen incremental atribuible. Éxito de tarea = tareas de búsqueda completadas / tareas evaluadas bajo el mismo protocolo. El incremento comercial se estima mediante comparación controlada entre buscador base y multimodal. La Oferta Económica descuenta costos y evita duplicar conversiones atribuidas a publicidad o mejora de inventario.
+\\
+\midrule
+\textbf{13. Indicador de verificación, línea base y meta}\label{indicador-de-verificaciuxf3n-luxednea-base-y-meta-2} &
+Éxito de tarea, relevancia en primeras posiciones, reformulación y latencia de extremo a extremo. Línea base del buscador obligatorio con consultas y categorías comparables, sin medición disponible en el caso. Meta de mejora de relevancia y éxito, manteniendo permisos, disponibilidad y límites de respuesta del canal. Las pruebas verifican que los resultados remitan al catálogo autorizado y que desactivar el componente conserve búsqueda base.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Línea base de éxito de tarea. B3 = tareas completadas con el buscador base / tareas evaluadas bajo un protocolo previamente fijado. F3 = 1 − B3 es la tasa de fallo y tiene índice de referencia 100 si F3 \textgreater{} 0. No existe una medición de B3 en el Caso.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Meta cuantitativa propuesta. Reducir al menos 10 \% la tasa de tareas fallidas, con F3 piloto ≤0,90 × F3 base. Equivale a éxito piloto ≥B3 + 0,10 × (1 − B3), sin superar el 100 \%. El umbral es de diseño, no un resultado de Amazon. Zhu et al.~(2024) reportan mejora relativa de 4,95 \% en CTR de image matching, métrica distinta de éxito de tarea. No se traslada ese porcentaje a Ancoa ni al modelo de referencia. Si F3 base = 0, se exige no degradación y se fija antes del ensayo un conjunto representativo que permita evaluar tareas exigentes.
+\\
+\midrule
+\textbf{14. Momento de medición}\label{momento-de-mediciuxf3n-2} &
+Línea base y protocolo antes de la comparación, con cuatro semanas iniciales de consultas representativas o evaluación controlada equivalente. Relevancia y carga durante la marcha blanca de los meses 19--20; seguimiento desde el mes 21. El tamaño muestral depende del fallo base y del efecto propuesto; cuatro semanas no garantizan suficiencia. La latencia distingue subida de foto, inferencia y consulta.
+\\
+\midrule
+\textbf{15. Riesgo de adopción, probabilidad e impacto}\label{riesgo-de-adopciuxf3n-probabilidad-e-impacto-2} &
+Recuperación poco pertinente o catálogo desigual, probabilidad inicial media e impacto alto. Incompatibilidad de licencia o tratamiento de datos, probabilidad inicial media e impacto alto. T-16 consolida las valoraciones tras las pruebas y la revisión contractual.
+\\
+\midrule
+\textbf{16. Estrategia de mitigación}\label{estrategia-de-mitigaciuxf3n-2} &
+Evaluación por categoría, filtros y revisión de fichas e imágenes. Pruebas de carga real. Verificar derechos de uso, ubicación del procesamiento y condiciones de tratamiento antes de producción. Versionar modelo y datos y registrar límites de la recomendación.
+\\
+\midrule
+\textbf{17. Plan de contingencia si no rinde lo esperado}\label{plan-de-contingencia-si-no-rinde-lo-esperado-2} &
+Informar falta de coincidencias suficientes y ofrecer búsqueda textual. Sustituir el modelo no apto por una alternativa que supere el mismo conjunto de prueba. Mantener el buscador base durante sustitución o indisponibilidad.
+\\
+\end{longtable}
+
+\subsection*{Ficha 4 - Innovación 4}\label{ficha-4-innovaciuxf3n-4}
+\addcontentsline{toc}{subsection}{Ficha 4 - Innovación 4}
+
+Esta ficha corresponde al apartado 13.4 del subdocumento 13.
+
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
+\caption[Ficha 4: Retail Media Network]{Ficha 4: Retail Media Network. Fuente: Elaboración propia.}\label{tab:t19-4}\\
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación (continuación)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\emph{Continúa en la página siguiente}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{1. Tipo de innovación (1 a 5)}\label{tipo-de-innovaciuxf3n-1-a-5-3} &
+4. Modelo de negocio o de contratación.
+\\
+\midrule
+\textbf{2. Nombre de la innovación}\label{nombre-de-la-innovaciuxf3n-3} &
+Retail Media Network.
+\\
+\midrule
+\textbf{3. Problema u oportunidad del caso que resuelve}\label{problema-u-oportunidad-del-caso-que-resuelve-3} &
+Crear un servicio de productos patrocinados para marcas y proveedores del retail. Ancoa comercializa espacios identificados en su canal digital y mide campañas. El caso no acredita anunciantes comprometidos, demanda ni ingresos publicitarios actuales. La oportunidad no modifica el negocio fiscalizado de crédito ni permite utilizar saldos, mora, cupos, puntajes o comportamiento de pago.
+\\
+\midrule
+\textbf{4. Tecnología, práctica o modelo que la sustenta}\label{tecnologuxeda-pruxe1ctica-o-modelo-que-la-sustenta-3} &
+Modelo de venta de campañas contextuales por consulta o categoría, con productos elegibles, medición y conciliación de eventos facturables. Criteo es referencia comercial para productos patrocinados; se compara desarrollo propio por control, privacidad, integración y soporte. Marketing de Ancoa capta y aprueba anunciantes; la plataforma administra campañas y reportes. El piloto valida publicación, medición y conciliación, no solo inserción de anuncios. No se altera por este modelo el esquema de pago al adjudicatario.
+\\
+\midrule
+\textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada-3} &
+Escala de componente documentado, integración probada y operación aceptada. La documentación comercial acredita disponibilidad de una plataforma, no demanda en Ancoa. La integración exige una campaña de prueba conciliada; operación aceptada requiere campaña contratada, aprobación comercial y registro de resultados. No hay evidencia de esos dos estados en el repositorio.
+\\
+\midrule
+\textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.-3} &
+Criteo. (s. f.-a). \emph{Create an onsite sponsored products campaign}. \url{https://help.retailmedia.criteo.com/kb/guide/en/create-an-onsite-sponsored-products-campaign-f6bd9kseBQ/Steps/1017658}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Criteo. (s. f.-b). \emph{Getting started with onsite sponsored products}. \url{https://help.retailmedia.criteo.com/kb/guide/en/getting-started-with-onsite-sponsored-products-sWZEhIFFWh/Steps/2786463}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Criteo. (2024, 26 de marzo). \emph{David Jones selects Criteo as its retail media partner}. \url{https://www.criteo.com/news/press-releases/2024/03/david-jones-selects-criteo-as-its-retail-media-partner/}
+\\
+\midrule
+\textbf{7. Dónde se inserta en la arquitectura}\label{duxf3nde-se-inserta-en-la-arquitectura-3} &
+Adaptador en integración Retail entre R:M-01, Servicio de oferta comercial, plataforma publicitaria y AH-01, comercio electrónico. R:M-03 verifica disponibilidad. El canal identifica patrocinados y mantiene compra y resultados orgánicos si falla el proveedor. El contrato restringe el tratamiento a la finalidad aprobada. Se excluyen bases del Emisor y consultas financieras; personalización individual no forma parte del alcance contextual inicial.
+\\
+\midrule
+\textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-3} &
+Rama 1.10, paquete «Retail Media Network», con modelo comercial, selección, integración, conciliación y piloto. Apoyo de 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Aceptación. El plan comercial identifica a Ancoa como responsable de captación; el T-14 debe consolidar código y límites del paquete.
+\\
+\midrule
+\textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-3} &
+Capacidad técnica disponible desde el mes 21, después de la marcha blanca de Etapa 2. Activación comercial con anunciantes aprobados; no se promete ingreso desde ese mes sin campañas contratadas.
+\\
+\midrule
+\textbf{10. Inversión requerida}\label{inversiuxf3n-requerida-3} &
+Selección e integración de plataforma, configuración, medición, privacidad y conciliación. La Oferta Económica valoriza el paquete técnico sin asumir financiamiento por anunciantes no comprometidos.
+\\
+\midrule
+\textbf{11. Efecto en el costo operacional}\label{efecto-en-el-costo-operacional-3} &
+Agrega licencia o comisión de plataforma, soporte, gestión comercial y conciliación. El flujo de caja considera escenario sin anunciantes y no transforma automáticamente el ingreso de Ancoa en ingreso del adjudicatario.
+\\
+\midrule
+\textbf{12. Beneficio esperado y su cuantificación}\label{beneficio-esperado-y-su-cuantificaciuxf3n-3} &
+Ingreso publicitario neto incremental. Se determina a partir de eventos válidos del producto contratado, condiciones económicas, descuentos, devoluciones y costos, con valorización fuera del Sobre 2. Se separan ingresos nuevos de acuerdos trasladados. Ventas atribuidas a una campaña no equivalen a ventas adicionales sin comparación controlada.
+\\
+\midrule
+\textbf{13. Indicador de verificación, línea base y meta}\label{indicador-de-verificaciuxf3n-luxednea-base-y-meta-3} &
+Campañas contratadas conciliadas, anunciantes activos, repetición e ingreso neto incremental. Línea base del nuevo servicio sin campañas activadas; los acuerdos publicitarios existentes requieren levantamiento. Meta funcional de completar una campaña contratada desde publicación hasta reporte y facturación con trazabilidad de eventos, sin utilizar información financiera. Las metas de captación e ingreso pertenecen al plan comercial y su valorización económica.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Línea base de acuerdos e ingreso publicitario existente. No determinada en el Caso; Marketing debe levantar acuerdos, anunciantes e ingresos anteriores para separar incremento y traslado. El nuevo módulo parte sin campañas activadas en su puesta en servicio; ese estado no significa que Ancoa carezca de otros acuerdos publicitarios.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Meta cuantitativa propuesta. Tres anunciantes independientes con al menos una campaña contratada y conciliada por anunciante, cubriendo tres categorías de catálogo durante los meses 21--23. Tres es el alcance propuesto del piloto, derivado de probar una campaña por cada una de tres categorías; no es una previsión de demanda ni una cifra publicada por Criteo. La experiencia David Jones--Criteo respalda el modelo de productos patrocinados en una tienda por departamentos, no la captación de Ancoa (Criteo, 2024). Marketing debe revisar viabilidad antes de comprometer la meta; los ingresos solo se registran cuando se realizan.
+\\
+\midrule
+\textbf{14. Momento de medición}\label{momento-de-mediciuxf3n-3} &
+Ensayo técnico durante la marcha blanca de Etapa 2. Medición comercial desde el mes 21 cuando exista campaña contratada y evaluación del piloto al cierre del mes 23. Se distingue capacidad disponible de ingresos realizados. Si no existen anunciantes, la capacidad técnica se verifica, pero la meta comercial no se declara cumplida y se aplica la contingencia.
+\\
+\midrule
+\textbf{15. Riesgo de adopción, probabilidad e impacto}\label{riesgo-de-adopciuxf3n-probabilidad-e-impacto-3} &
+Baja captación de anunciantes, probabilidad inicial alta e impacto alto sobre ingreso. Uso indebido de datos y cobros inválidos, probabilidad inicial media e impacto alto. Son valoraciones del SD-13, sujetas a consolidación en T-16.
+\\
+\midrule
+\textbf{16. Estrategia de mitigación}\label{estrategia-de-mitigaciuxf3n-3} &
+Validar demanda y compromisos comerciales antes de escalar. Mantener segmentación contextual, permisos separados y contrato de tratamiento aprobado. Conciliar presupuesto, eventos y reporte antes de facturar; evaluar efecto de densidad publicitaria sobre búsqueda y compra.
+\\
+\midrule
+\textbf{17. Plan de contingencia si no rinde lo esperado}\label{plan-de-contingencia-si-no-rinde-lo-esperado-3} &
+Mantener resultados orgánicos si no hay demanda o falla la plataforma, sin atribuir ingresos inexistentes. Suspender campañas que incumplen finalidad o elegibilidad y conservar evidencia. Retener conciliación de cobros cuestionados y corregir antes de facturación.
+\\
+\end{longtable}
+
+\subsection*{Ficha 5 - Innovación 5}\label{ficha-5-innovaciuxf3n-5}
+\addcontentsline{toc}{subsection}{Ficha 5 - Innovación 5}
+
+Esta ficha corresponde al apartado 13.5 del subdocumento 13.
+
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
+\caption[Ficha 5: Modo Tienda con fila virtual de probadores]{Ficha 5: Modo Tienda con fila virtual de probadores. Fuente: Elaboración propia.}\label{tab:t19-5}\\
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo del formulario T-19} & \textbf{Contenido de la innovación (continuación)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\emph{Continúa en la página siguiente}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\textbf{1. Tipo de innovación (1 a 5)}\label{tipo-de-innovaciuxf3n-1-a-5-4} &
+5. Experiencia de usuario, sostenibilidad o impacto social; la dimensión desarrollada es experiencia de usuario y acceso asistido.
+\\
+\midrule
+\textbf{2. Nombre de la innovación}\label{nombre-de-la-innovaciuxf3n-4} &
+Modo Tienda con fila virtual de probadores.
+\\
+\midrule
+\textbf{3. Problema u oportunidad del caso que resuelve}\label{problema-u-oportunidad-del-caso-que-resuelve-4} &
+El caso identifica probadores como punto de pérdida de visibilidad y retorno irregular de mercadería (caps. 6--7). La fila virtual mejora acceso y espera del cliente, pero no identifica prendas ni reemplaza inventario. El caso no mide afluencia, espera o abandono en probadores. La innovación permite continuar recorriendo tienda mientras se espera turno y mantiene acceso para quien no utiliza smartphone.
+\\
+\midrule
+\textbf{4. Tecnología, práctica o modelo que la sustenta}\label{tecnologuxeda-pruxe1ctica-o-modelo-que-la-sustenta-4} &
+Servicio de fila con solicitud desde móvil, QR, tótem o atención asistida. Referencia de hardware Zebra KC50 de 22 pulgadas, montaje accesible y Ethernet; impresora Epson TM-T20III Ethernet cuando el flujo requiere papel, sin hacerla condición de atención. Estado persistente de turnos y cubículos y asignación transaccional. Selección explícita de tienda y QR permiten acceso sin geolocalización. Geovallas o BLE son opcionales y no garantizan navegación interior precisa.
+\\
+\midrule
+\textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada-4} &
+Escala de componente documentado, integración probada y operación aceptada. La documentación comercial acredita el hardware, no la accesibilidad del conjunto ni la fila. Integración probada exige ensayo de turnos, notificaciones, reinicio y desconexión. Operación aceptada requiere usuarios y evidencia de espera y acceso equivalente.
+\\
+\midrule
+\textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.-4} &
+Zebra Technologies. (s. f.). \emph{KC50 Android kiosk computer. Specification sheet}. \url{https://www.zebra.com/gb/en/products/spec-sheets/interactive-kiosks/kc50.html}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Epson. (s. f.). \emph{TM-T20III thermal receipt printer}. \url{https://epson.com/For-Work/Printers/POS/TM-T20III-Thermal-Receipt-Printer/p/C31CH51A9972}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Google. (s. f.). \emph{Create and monitor geofences}. \url{https://developer.android.com/develop/sensors-and-location/location/geofencing}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Apple. (s. f.). \emph{Monitoring the user's proximity to geographic regions}. \url{https://developer.apple.com/documentation/corelocation/monitoring-the-user-s-proximity-to-geographic-regions}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Qmatic. (s. f.-a). \emph{Swedish retailer Stadium enhances the customer and staff experience with innovative solutions}. \url{https://www.qmatic.com/customer-stories/stadium}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Qmatic. (s. f.-b). \emph{Virtual queuing solutions}. \url{https://www.qmatic.com/solutions/virtual-queuing-system}
+\\
+\textbf{6. Fuentes citadas (APA 7.ª ed.)} \emph{(continuación)} &
+Qmatic. (2024, 4 de marzo). \emph{Introducing estimated wait time in Qmatic Mobile Ticket}. \url{https://www.qmatic.com/product-updates/introducing-estimated-wait-time-in-mobile-ticket}
+\\
+\midrule
+\textbf{7. Dónde se inserta en la arquitectura}\label{duxf3nde-se-inserta-en-la-arquitectura-4} &
+Ámbito Retail, vinculado a R:CL-02, Servicio de clientes Retail, y al canal móvil. El nuevo componente local de fila se instala en SIT-01; la nube CLD-01 consolida indicadores y configuración. Es un componente de la innovación, sin atribuirle los códigos L-01 a L-03, que corresponden a caché, diario y sincronizador de ventas. El tótem continúa con la fila local durante cortes del enlace; móviles sin comunicación con ese componente reciben aviso y alternativa asistida. No requiere cuenta ni datos del Emisor.
+\\
+\midrule
+\textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-4} &
+Rama 1.10, paquete «Modo Tienda con fila virtual de probadores», con levantamiento, interfaz, instalación, integración y pruebas con usuarios. Apoyo de 1.4 Infraestructura, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Aceptación y 1.13 Capacitación. El código detallado y el componente local nuevo deben conciliarse con T-14 y SD-04.
+\\
+\midrule
+\textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-4} &
+Aceptación integrada durante los meses 19--20 y habilitación desde el mes 21, alineada con la Etapa 2 de clientes Retail y canal móvil. El levantamiento y ensayo de interfaz pueden comenzar antes, sin prometer producción integrada en el mes 16.
+\\
+\midrule
+\textbf{10. Inversión requerida}\label{inversiuxf3n-requerida-4} &
+Tótem, montaje, instalación, aplicación de fila, integración y pruebas de accesibilidad con usuarios. Impresora solo si el flujo validado la requiere. Cantidades y configuración sustentan la valorización en la Oferta Económica.
+\\
+\midrule
+\textbf{11. Efecto en el costo operacional}\label{efecto-en-el-costo-operacional-4} &
+Agrega soporte, mantenimiento y consumibles cuando existe impresión. La atención asistida permanece. El ahorro de horas no se supone por la mera digitalización de turnos y debe medirse junto con las excepciones.
+\\
+\midrule
+\textbf{12. Beneficio esperado y su cuantificación}\label{beneficio-esperado-y-su-cuantificaciuxf3n-4} &
+Menor espera física y abandono, con solicitud accesible. Mejora relativa de espera física = (espera física base − espera física con fila) / espera física base, para una base positiva. Abandono = turnos abandonados / turnos solicitados, según reglas de observación fijadas antes del piloto. No se atribuye aumento de capacidad de cubículos. Conversión adicional se valoriza solo si hay evidencia de atribución sin duplicar búsqueda o publicidad.
+\\
+\midrule
+\textbf{13. Indicador de verificación, línea base y meta}\label{indicador-de-verificaciuxf3n-luxednea-base-y-meta-4} &
+Tiempo de espera física, tiempo total solicitud--acceso, éxito de solicitud y abandono por franja y perfil. Línea base del acceso actual, no medida en el caso. Meta de menor espera física y ausencia de asignaciones duplicadas en las pruebas; el tiempo total debe respetar el criterio acordado. Verificación de WCAG 2.2 AA y acceso equivalente desde móvil, tótem y asistencia conforme a RT-13.01, RT-13.03 y RT-13.07.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Línea base de espera física y tiempo total. B5f es el promedio de espera física y B5t el promedio de espera solicitud--acceso del proceso actual, por franjas y perfiles comparables. Ambos deben medirse; sus índices de referencia son 100 cuando las bases son positivas. Se registra además abandono desde la solicitud, para no ocultar usuarios perjudicados.
+\\
+\textbf{13. Indicador de verificación, línea base y meta} \emph{(continuación)} &
+Meta cuantitativa propuesta. Espera física promedio ≤0,70 × B5f, reducción ≥30 \%; espera total promedio ≤B5t, sin deterioro respecto de la base; cero asignaciones duplicadas en las pruebas. Los índices correspondientes son ≤70 y ≤100. El 30 \% es un umbral propuesto, no un resultado publicado para Stadium. Qmatic (s. f.-a, s. f.-b; 2024) sustenta medir la fila y permitir espera fuera de ella, pero no prueba mayor capacidad de cubículos ni entrega un máximo universal de minutos. Abandono no debe aumentar respecto del control; se conserva acceso asistido, tótem y verificación de accesibilidad. Bases iguales a cero exigen no degradación, no una reducción porcentual ficticia.
+\\
+\midrule
+\textbf{14. Momento de medición}\label{momento-de-mediciuxf3n-4} &
+Medición base por franja y perfil antes del piloto, con cuatro semanas iniciales de observación ampliables por precisión o cobertura. Ensayo de flujos durante los meses 19--20; seguimiento de abandono, ausencias, espera y disponibilidad desde el mes 21. Reglas de gracia, reingreso y prioridades se aprueban antes de evaluar; el umbral se decide antes de ver los resultados.
+\\
+\midrule
+\textbf{15. Riesgo de adopción, probabilidad e impacto}\label{riesgo-de-adopciuxf3n-probabilidad-e-impacto-4} &
+Ausencias después del llamado o baja comprensión, probabilidad inicial media e impacto medio. Fallo de enlace o reinicio, probabilidad inicial media e impacto alto. Son valoraciones iniciales del SD-13 que se consolidan en T-16.
+\\
+\midrule
+\textbf{16. Estrategia de mitigación}\label{estrategia-de-mitigaciuxf3n-4} &
+Estado visible, reglas de reingreso y pruebas con usuarios. Ensayar cortes, reinicios, persistencia y ausencia de doble asignación. Probar accesibilidad del montaje y de la aplicación; no asumir recepción por emitir una notificación sonora o móvil.
+\\
+\midrule
+\textbf{17. Plan de contingencia si no rinde lo esperado}\label{plan-de-contingencia-si-no-rinde-lo-esperado-4} &
+Atención y fila asistida si el componente local no opera, con comunicación de indisponibilidad. El cliente consulta el llamado en tótem o con personal. La desactivación de la fila digital no impide vender ni gestionar inventario.
+\\
+\end{longtable}
+
+
+
+\ossFinalPage
+
+\end{document}

@@ -82,6 +82,8 @@
 \usepackage{oss}
 \begin{document}
 \renewcommand{\tablename}{Tabla}
+\renewcommand{\thefigure}{1.\arabic{figure}}
+\renewcommand{\thetable}{1.\arabic{table}}
 
 \ossCover{Presentación de la empresa}{Subdocumento 1}
 \tableofcontents
@@ -276,7 +278,7 @@ Only Simple Solutions cuenta con experiencia en soluciones para el comercio mino
   Integración omnicanal y alta demanda. La implementación de un motor ATP e integración de marketplace aportó experiencia en la coordinación de inventario y pedidos entre tiendas físicas, comercio electrónico y vendedores externos. Esta experiencia fortalece nuestra capacidad para integrar sistemas y dimensionar plataformas sujetas a variaciones de carga.
 \end{itemize}
 
-En los tres proyectos, especificados en el Formulario T-6, Only Simple Solutions participó como contratista principal. En conjunto, estos antecedentes muestran experiencia en soluciones distribuidas que combinan continuidad operacional, gestión de información sensible e integración entre sistemas.
+En los tres proyectos, especificados en el Formulario T-6, Only Simple Solutions participó como contratista principal. Los tres están finalizados y en operación. Los proyectos 1 y 3 acreditan la arquitectura híbrida y los tres acreditan un nivel de servicio de disponibilidad igual o superior a 99,5 \%. El proyecto 1 verificó una continuidad sin conexión de al menos 12 horas. Para Ancoa se compromete una autonomía de 24 horas, que se demuestra con un corte provocado de 24 horas en una de las tres tiendas piloto, en los meses 6 y 7 (sección 3.2.3 del Subdocumento 3). La carta de referencia del mandante de cada proyecto, que exige el artículo 34.1 de las Bases, es un adjunto del Formulario T-6 y está por acreditar. En conjunto, estos antecedentes muestran experiencia en soluciones distribuidas que combinan continuidad operacional, gestión de información sensible e integración entre sistemas.
 
 \subsection{1.4.1 Certificaciones}\label{certificaciones}
 
@@ -413,31 +415,17 @@ Revisión humana
 Anexo A.1 & Codex GPT 5.6 Sol & Fue utilizado para la creación de la página web & Ninguno & Ninguno & Manuel Aguilera \\
 Formulario T-6 & Codex GPT 5.6 Sol & Creación de proyectos ficticios de la compañía. & Alto & Ninguno & Alex Alfaro \\
 \end{longtable}
-
 A continuación, se detalla la escala de niveles para completar la tabla anterior.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\caption{Niveles de uso de IA}\label{tab:niveles-uso-ia}\\
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Nivel
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Texto
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Diagramas
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
 Ninguno & Sin uso de IA. & Sin uso de IA. \\
 Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
 Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
-Alto & Texto generado sustancialmente por IA y editado por el grupo. & Diagrama generado sustancialmente por IA. \\
-\end{longtable}
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
 
 \ossFinalPage
 

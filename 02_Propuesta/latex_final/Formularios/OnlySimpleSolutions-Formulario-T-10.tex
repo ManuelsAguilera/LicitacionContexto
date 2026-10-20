@@ -82,16 +82,36 @@
 \usepackage{oss}
 \begin{document}
 
-\ossCover{Formulario T-10}{Subdocumento 6}
+\hypersetup{pageanchor=false}
+\ossCover{Metodología para el desarrollo}{Subdocumento 6 · T-10}
+\hypersetup{pageanchor=true}
 \tableofcontents
 \clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t10-indice]{Tabla T-10.1: Correspondencia entre el formulario y la sección 6.2}\dotfill\pageref{tab:t10-indice}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-equipos]{Tabla T-10.2: Equipos de desarrollo y su ámbito}\dotfill\pageref{tab:t10-equipos}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-roles]{Tabla T-10.3: Roles y responsabilidades del desarrollo}\dotfill\pageref{tab:t10-roles}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-ceremonias]{Tabla T-10.4: Detalle de las ceremonias del desarrollo}\dotfill\pageref{tab:t10-ceremonias}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-artefactos]{Tabla T-10.5: Artefactos del desarrollo}\dotfill\pageref{tab:t10-artefactos}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-ambientes]{Tabla T-10.6: Ambientes del proyecto}\dotfill\pageref{tab:t10-ambientes}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-herramientas]{Tabla T-10.7: Cadena de herramientas del desarrollo}\dotfill\pageref{tab:t10-herramientas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-puertas]{Tabla T-10.8: Puertas de calidad y umbrales bloqueantes}\dotfill\pageref{tab:t10-puertas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-reservas]{Tabla T-10.9: Reservas de capacidad de los equipos}\dotfill\pageref{tab:t10-reservas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-etapas]{Tabla T-10.10: Controles del desarrollo en los períodos de convivencia}\dotfill\pageref{tab:t10-etapas}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-decisiones]{Tabla T-10.11: Matriz de decisiones del desarrollo}\dotfill\pageref{tab:t10-decisiones}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-indicadores]{Tabla T-10.12: Indicadores del desarrollo}\dotfill\pageref{tab:t10-indicadores}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t10-adr]{Tabla T-10.13: Plantilla de ADR}\dotfill\pageref{tab:t10-adr}\par\vspace{0.4\baselineskip}
+\clearpage
+
 
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-10.\arabic{table}}
 
 \section{Formulario T-10 · Metodología para el desarrollo}\label{formulario-t-10}
 
-Conforme al Formulario T-7 y al Formulario T-21 de las Bases Administrativas, este formulario adjunta el detalle de la información solicitada en el Subdocumento 6, letra b, Metodología de desarrollo de software. La sección 6.2 del Subdocumento 6 contiene el resumen y el análisis; este formulario reúne los listados, las definiciones operativas y los umbrales que la sustentan.
+Conforme al Formulario T-10 y a la letra b del Subdocumento 6 del Formulario T-7, este documento detalla la Metodología de desarrollo de software. La sección 6.2 del Subdocumento 6 contiene el resumen y el análisis; este formulario reúne los listados, las definiciones operativas y los umbrales que la sustentan.
 
 La Tabla~\mbox{\ref{tab:t10-indice}} indica el contenido de cada apartado y la sección del Subdocumento 6 con que se corresponde.
 
@@ -176,13 +196,15 @@ Los equipos son estables durante la implementación y se organizan por los domin
 \multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
 \endlastfoot
 \textbf{Retail · Mercadería} & Servicios R:M de Mercadería. & Retail & Gerencia Comercial (precio y catálogo), Gerencia de Logística y Prevención de Pérdidas. \\ \addlinespace
-\textbf{Retail · Venta} & Servicios R:V de Venta, incluidos los componentes de tienda. & Retail & Gerencia Comercial y jefaturas de tienda. \\ \addlinespace
-\textbf{Retail · Relación con el cliente} & Servicios R:CL de Relación con el cliente y pedidos. & Retail & Gerencia de Canales Digitales. \\ \addlinespace
+\textbf{Retail · Venta} & Servicios R:V-01 a R:V-04: pedidos, ventas, comisiones y marketplace, incluidos los componentes de tienda. & Retail & Gerencia Comercial, jefaturas de tienda y Gerencia de Canales Digitales para pedidos y marketplace. \\ \addlinespace
+\textbf{Retail · Relación con el cliente} & Servicios R:CL-01 posventa y R:CL-02 clientes Retail. & Retail & Contrapartes de atención a clientes y posventa. \\ \addlinespace
 \textbf{Emisor} & F:C-01 originación, F:C-02 cartera y F:C-03 evidencia financiera. & Emisor & Negocio Financiero y Contraloría. \\ \addlinespace
-\textbf{Plataforma} & Integración, identidad, observabilidad, ambientes, flujo de entrega, infraestructura como código y control de cruces X-01. & Plataforma compartida & TI; Contraloría y Negocio Financiero en las validaciones de X-01. \\
+\textbf{Plataforma} & Integración, identidad, observabilidad, ambientes, flujo de entrega e infraestructura como código; X-01 es el servicio del frente Frontera. & Base tecnológica y Frontera & TI; área de cumplimiento de Ancoa aprueba cada ficha de cruce X-01. \\
 \end{longtable}
 
 Los nueve servicios de Retail se reparten entre los tres equipos de ese dominio; la asignación definitiva de servicios a equipos se confirmará en el mes 1. Los equipos que trabajen sobre un mismo producto comparten su objetivo, su backlog y su dueño de producto. La composición nominal, las dedicaciones y la capacidad se declaran en el Subdocumento 12 y en los Formularios T-8 y T-15. Las solicitudes de habilitación e incidencias siguen el flujo Kanban definido en el Formulario T-9.
+
+X-01 pertenece al frente Frontera y no convierte la base tecnológica en un repositorio común de datos Retail y Emisor. «Líder de Desarrollo» y «Líder de Integración» son funciones de coordinación asignadas al Arquitecto de Solución con apoyo de los especialistas del equipo del SD-01; no constituyen dos personas adicionales. El Jefe de Proyecto tramita solicitudes de cambio y conflictos de dedicación. La acumulación de funciones se comprueba en T-15 antes de aprobar la dotación.
 
 \subsection{T-10.2 Roles del desarrollo}\label{t10-2}
 
@@ -235,7 +257,7 @@ Una historia entra a un sprint solo si cumple la \textbf{definición de preparad
 \begin{itemize}
 \tightlist
 \item
-  Está vinculada a un elemento del catálogo de requerimientos v3.0 mediante su identificador oficial.
+  Está vinculada a un elemento del catálogo de requerimientos v3.1 (308 elementos: 227 RF, 72 RNF y 9 OP) mediante su identificador oficial.
 \item
   Tiene criterios de aceptación en formato Dado, Cuando, Entonces, acordados con el dueño de producto, incluidos los escenarios de rechazo o error.
 \item
@@ -375,7 +397,7 @@ Jira mantiene el trabajo y sus relaciones; el repositorio, el código y los arte
 
 \subsection{T-10.6 Ambientes}\label{t10-6}
 
-El hito H3 entregará los cinco ambientes habilitados y operativos, reconstruibles desde infraestructura como código. La Tabla~\mbox{\ref{tab:t10-ambientes}} define la función, los datos y el acceso de cada uno.
+El hito H3 (mes 6) entregará los cinco ambientes habilitados y operativos, reconstruibles desde infraestructura como código. El ambiente de recuperación ante desastres es adicional a los cuatro ambientes nombrados en H3 por las Bases. La Tabla~\mbox{\ref{tab:t10-ambientes}} define la función, los datos y el acceso de cada uno.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
@@ -454,7 +476,7 @@ La Tabla~\mbox{\ref{tab:t10-herramientas}} presenta la cadena de herramientas pr
 \textbf{Jira} & Backlog, sprints, tableros, trazabilidad y aprobación de cambios. & Comprometida; servicio en la nube. \\ \addlinespace
 \textbf{Microsoft SharePoint} & Actas, documentación controlada, versiones aprobadas de la matriz y paquetes de aceptación, con permisos por dominio. & Comprometida; servicio en la nube. \\ \addlinespace
 \textbf{Slack} & Coordinación diaria de los equipos; los acuerdos se registran en Jira o SharePoint. & Comprometida; servicio en la nube. \\ \addlinespace
-\textbf{GitHub Enterprise y GitHub Actions} & Repositorios, revisión por pares, flujo de entrega y análisis de seguridad del código. & Propuesta; ejecutores segregados para el dominio Emisor. \\ \addlinespace
+\textbf{Repositorio y canal CI/CD} & Repositorios, revisión por pares, flujo de entrega y análisis de seguridad del código. & GitHub Enterprise/Actions es candidato; Azure Pipelines figura en SD-04 como alternativa nativa. La decisión se registra en H2 tras probar segregación, firma y trazabilidad, o se reutiliza el canal del Cliente si cumple esas condiciones. \\ \addlinespace
 \textbf{SonarQube} & Calidad del código, cobertura, duplicación y razón de deuda técnica. & Propuesta. \\ \addlinespace
 \textbf{Trivy, Syft y Cosign} & Análisis de imágenes e infraestructura como código, SBOM CycloneDX o SPDX y firma de artefactos. & Propuesta. \\ \addlinespace
 \textbf{OWASP ZAP} & Pruebas dinámicas de seguridad en QA. & Propuesta. \\ \addlinespace
@@ -462,7 +484,7 @@ La Tabla~\mbox{\ref{tab:t10-herramientas}} presenta la cadena de herramientas pr
 \textbf{Terraform} & Infraestructura como código de los recursos de Azure seleccionados en el Subdocumento 4. & Comprometida. \\ \addlinespace
 \textbf{Ansible, Helm, Argo CD o K3s} & Configuración y despliegue local y GitOps. & Candidatas; se comprometen solo si su selección se justifica en el diseño. \\ \addlinespace
 \textbf{Azure Container Registry} & Registro de imágenes firmadas. & Propuesta. \\ \addlinespace
-\textbf{Azure Key Vault y HSM} & Secretos con rotación automática y auditoría de acceso; HSM para las llaves del Emisor cuando corresponda. & Según clasificación, residencia y separación de funciones. \\ \addlinespace
+\textbf{Azure Key Vault y Azure Managed HSM} & Secretos con rotación automática y auditoría de acceso; Managed HSM para llaves del Emisor, sujeto a prueba y disponibilidad regional. & La elección final depende de clasificación, residencia y separación de funciones (SD-04, Tabla 4.6). \\ \addlinespace
 \textbf{OpenTelemetry y plataforma de observabilidad} & Indicadores de servicio que gatillan la reversión automática. & Propuesta. \\
 \end{longtable}
 
@@ -508,7 +530,7 @@ Cada etapa del flujo de entrega termina en una puerta que la versión debe super
 \textbf{QA} & Pruebas dinámicas de seguridad & 0 hallazgos críticos o altos abiertos. \\ \addlinespace
 \textbf{Preproducción} & Funciones de aptitud de desempeño & P95 de extremo a extremo: evaluación crediticia ≤ 8 s; confirmación de pedido durante el evento ≤ 3 s; propagación de precios ≤ 5 min. \\ \addlinespace
 \textbf{Preproducción} & Carga y resiliencia & Campaña a 1,5 veces el peak declarado sin degradación de las metas; recuperación sin pérdida de datos. \\ \addlinespace
-\textbf{Preproducción} & Operación sin enlace & Componentes on-premise con al menos 24 h continuas de autonomía degradada; tras el escenario de 8 h sin enlace, sincronización automática en ≤ 30 min, sin pérdida de ventas o documentos y con resolución determinista. \\ \addlinespace
+\textbf{Preproducción y piloto de tienda} & Operación sin enlace & Corte provocado de 24 h sobre el nodo del POS nuevo en una de las tres tiendas piloto durante M6--7, con los sistemas vigentes sosteniendo la operación real. Tras la reconexión, conciliación en 30 min o menos sin pérdida ni duplicación, con acta de la Contraparte Técnica; fuera de congelamientos y de la semana previa y los tres días del evento anual. \\ \addlinespace
 \textbf{Preproducción} & Reversión & Reversión automatizada ensayada de aplicación, configuración y esquemas compatibles, con recuperación y conciliación de datos cuando el cambio los afecta. \\ \addlinespace
 \textbf{Preproducción} & Prueba de intrusión & Realizada por un tercero independiente antes de cada paso a producción; 0 hallazgos críticos o altos abiertos. \\ \addlinespace
 \textbf{Producción} & Autorización & Autorización humana registrada, conformidad contractual y ausencia de ventana de congelamiento. \\ \addlinespace
@@ -606,6 +628,8 @@ La Tabla~\mbox{\ref{tab:t10-reservas}} fija las reservas de capacidad de los equ
 
 El resto de la capacidad nominal incluye calidad, seguridad, coordinación y soporte, y no se supone que todas las horas nominales sean construcción.
 
+La refactorización se incorpora al backlog cuando un cambio repetido, una función de aptitud fallida, duplicación o acoplamiento impiden modificar con seguridad un servicio. El Líder de Calidad registra la evidencia y el Arquitecto de Solución valida el límite de contexto; el equipo ejecuta la refactorización con pruebas de regresión dentro de la reserva ordinaria de 15 \%, sin modificar el comportamiento aceptado ni el contrato de interfaz sin control de cambios. La arquitectura evoluciona mediante ADR, pruebas de contrato y funciones de aptitud, con decisiones reversibles antes de escalar. El tiempo de salida al mercado se observa con el indicador de tiempo de entrega de T-10.12, desde el commit hasta el despliegue productivo, incluidas las esperas; una reducción del tiempo no dispensa las puertas de calidad.
+
 \subsection{T-10.10 Coordinación entre etapas}\label{t10-10}
 
 El contrato tiene dos períodos en que conviven etapas en distinto estado. La Tabla~\mbox{\ref{tab:t10-etapas}} indica, para cada uno, la situación y los controles del desarrollo.
@@ -690,12 +714,12 @@ Las decisiones del desarrollo se toman en el nivel que dispone de información y
 \textbf{Orden del backlog} & Dueño de producto & Equipo y Líder de Desarrollo & Comité de Proyecto & Jira \\ \addlinespace
 \textbf{Diseño interno de un servicio} & Developers & Arquitecto de Solución & Equipo & Revisión de código \\ \addlinespace
 \textbf{Decisión de arquitectura transversal} & Comité de Arquitectura & Equipos afectados y TI de Ancoa & Comité de Proyecto & ADR; solicitud de cambio si afecta alcance o línea base \\ \addlinespace
-\textbf{Cruce de datos Retail--Emisor} & Instancia competente, con las evaluaciones documentadas & Líder de Datos, Encargado de Seguridad y contraparte de cumplimiento de Ancoa & Comité Ejecutivo & ADR y bitácora de frontera X-01 \\ \addlinespace
+\textbf{Cruce de datos Retail--Emisor} & Área de cumplimiento de Ancoa aprueba la ficha de X-01 & Líder de Datos, Encargado de Seguridad y Comité de Arquitectura & Comité Ejecutivo conoce discrepancias & Ficha aprobada, ADR y bitácora de X-01 \\ \addlinespace
 \textbf{Nueva dependencia de software} & Arquitecto de Solución con el Encargado de Seguridad & Líder de Desarrollo & Equipos & Registro de dependencias en el repositorio \\ \addlinespace
 \textbf{Liberación a producción} & Contraparte técnica (conformidad), con autorización técnica del Líder de Operación / SRE & Líder de Calidad y dueño de producto & Jefaturas de tienda afectadas & Aprobación de cambio en Jira \\ \addlinespace
 \textbf{Reversión de una versión} & Flujo de entrega (automática) o Líder de Operación / SRE & Líder de Desarrollo & Contraparte técnica & Registro de incidentes \\ \addlinespace
 \textbf{Acceso excepcional a producción} & Líder de Operación / SRE & Encargado de Seguridad & Contraparte técnica & Registro de acceso y sesión grabada \\ \addlinespace
-\textbf{Cambio de alcance o de hito} & Comité Ejecutivo & Comité de Proyecto & Equipos & Solicitud de cambio en SharePoint \\
+\textbf{Cambio de alcance o de hito} & Comité Ejecutivo & Jefe de Proyecto tramita; Comité de Proyecto evalúa & Equipos & Solicitud de cambio en SharePoint \\
 \end{longtable}
 
 Las decisiones técnicas dentro de los lineamientos vigentes las toman los equipos con autonomía; las que afectan compromisos contractuales, la frontera entre negocios o la operación de Ancoa requieren una instancia formal. Ninguna aprobación de detalle sustituye el control integrado de cambios del Formulario T-9.

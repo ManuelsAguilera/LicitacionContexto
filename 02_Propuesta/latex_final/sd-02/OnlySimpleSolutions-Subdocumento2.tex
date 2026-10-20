@@ -83,8 +83,8 @@
 \begin{document}
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
-\renewcommand{\thetable}{\arabic{table}}
-\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{2.\arabic{table}}
+\renewcommand{\thefigure}{2.\arabic{figure}}
 \definecolor{ossCriterioBases}{HTML}{C9DAF8}
 \definecolor{ossCriterioPropio}{HTML}{F4CCCC}
 
@@ -104,7 +104,7 @@ Este capítulo caracteriza el problema que origina la licitación y la necesidad
 
 Este capítulo entrega el diagnóstico sobre el que se construye la propuesta. El Capítulo 3 lo traduce en alcance y solución, el Capítulo 4 en arquitectura lógica y física, el Capítulo 5 en el modelo de datos y el Capítulo 7 en el plan de trabajo; los supuestos y las tensiones entre actores que aquí se describen se retoman en la metodología (Capítulo 6) y en la gestión de riesgos (Capítulo 8).
 
-El detalle que sustenta estos resúmenes se entrega en el archivo de anexos del subdocumento. El Anexo A.1 lista los requerimientos funcionales (RF), el Anexo A.2 los requerimientos no funcionales (RNF) y el Anexo A.3 las obligaciones del proponente (OP); el Anexo A.4 contiene la matriz de trazabilidad y cumplimiento, que relaciona cada requerimiento funcional, no funcional y técnico vigente con el servicio que lo satisface y la sección de la propuesta donde se desarrolla (las obligaciones del proponente son entregables de la oferta y no se asocian a un servicio); y el Anexo A.5 compila el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
+El detalle que sustenta estos resúmenes se entrega en el archivo de anexos del subdocumento. El Anexo A.1 lista los requerimientos funcionales (RF), el Anexo A.2 los requerimientos no funcionales (RNF) y el Anexo A.3 las obligaciones del proponente (OP); y el Anexo A.4 compila el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
 
 \section{2. Comprensión del problema y la necesidad}\label{comprension-del-problema-y-la-necesidad}
 
@@ -650,7 +650,7 @@ Estas tensiones se identificaron a partir de las entrevistas de levantamiento de
 
 Esta sección resume y analiza lo que el cliente requiere, los supuestos que el equipo declara para interpretar la información disponible, con su respectivo fundamento, y las exclusiones y restricciones que impone el caso. Su propósito es dejar explícito, antes de describir la solución, qué se debe cumplir, que se da por supuesto y lo que queda fuera de la propuesta. 
 
-El detalle de cada elemento, con su identificador individual, se encuentra en el archivo de anexos correspondiente a este subdocumento: el listado de requerimientos en los Anexos A.1 a A.3, la matriz de cumplimiento y trazabilidad en el Anexo A.4 y el listado de supuestos, exclusiones y restricciones en el Anexo A.5.
+El detalle de cada elemento, con su identificador individual, se encuentra en el archivo de anexos correspondiente a este subdocumento: el listado de requerimientos en los Anexos A.1 a A.3, y el listado de supuestos, exclusiones y restricciones en el Anexo A.4.
 
 \subsection{2.5.1. Resumen de requerimientos}\label{resumen-de-requerimientos}
 
@@ -724,7 +724,7 @@ La distribución muestra que el 62 \% de los requerimientos funcionales (138 de 
 
 Los requerimientos no funcionales, por su parte, convierten el problema dimensionado en metas verificables. Tres de ellos fijan la mejora esperada respecto de la línea base: reducir la cancelación por falta de existencia a menos de 0,3 \% anual, elevar el cumplimiento de la fecha de entrega desde 81 \% a 97 \% o más, y bajar la diferencia de inventario por categoría desde 12,4 \% a menos de 2 \%. Otros tres exigen que la migración de los 620.000 clientes con saldo se complete sin pérdida de datos, sin interrupción del cobro y sin divergencias de saldo antes de 2029. Las obligaciones del proponente, en cambio, no describen funciones del sistema, sino entregables de la oferta, como el análisis de hacer o comprar del CD de Concepción.
 
-A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento funcional, no funcional y técnico vigente, el servicio que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Anexo A.4.
+A estos requerimientos se suman los 374 requisitos técnicos (RT) de las Bases. La relación entre cada requerimiento funcional, no funcional y técnico vigente, el servicio que lo satisface y la sección de la propuesta donde se desarrolla se presenta en la matriz de cumplimiento y trazabilidad del Formulario T-12.
 
 \subsection{2.5.2. Resumen de supuestos}\label{resumen-de-supuestos}
 
@@ -782,7 +782,7 @@ Estas restricciones se condicionan entre sí: los congelamientos reducen las opo
 
 \subsection{2.5.5. Otros listados}\label{otros-listados}
 
-Como apoyo, el Anexo A.4 contiene la matriz de cumplimiento y trazabilidad, que relaciona cada requerimiento funcional, no funcional y técnico vigente con el servicio que lo satisface y la sección de la propuesta donde se desarrolla. Los indicadores con su línea base y la meta comprometida están en la Tabla 2.4, que conecta el dimensionamiento de la sección 2.3 con los requerimientos no funcionales. El Anexo A.5 reúne el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
+Como apoyo, el Anexo A.4 reúne el listado completo de supuestos, exclusiones y restricciones, con su enunciado, fundamento y origen.
 
 \section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}
@@ -871,33 +871,19 @@ Anexo A.1 & Claude sonnet 5.5 & Se utilizó para obtener los datos de las bases 
 Anexo A.2 & Claude sonnet 5.5 & Se utilizó para obtener los datos de las bases y el caso. Fueron editados mediante prompts posteriores bajo los criterios de atomización determinados por el grupo. & Alto & Ninguno & Vicente Rosales \\
 Anexo A.3 & Claude sonnet 5.5 & Se utilizó para obtener los datos de las bases y el caso. Fueron editados mediante prompts posteriores bajo los criterios de atomización determinados por el grupo. & Alto & Ninguno & Manuel Aguilera \\
 Anexo A.4 & Claude sonnet 5.5 & Se utilizó para obtener los datos de las bases y el caso. Fueron editados mediante prompts posteriores bajo los criterios de atomización determinados por el grupo. & Alto & Ninguno & Manuel Aguilera \\
-Anexo A.5 & Claude sonnet 5.5 & Se utilizó para obtener los datos de las bases y el caso. Fueron editados mediante prompts posteriores bajo los criterios de atomización determinados por el grupo. & Alto & Ninguno & Manuel Aguilera \\
 \end{longtable}
 
 A continuación, se detalla la escala de niveles para completar la tabla anterior.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\caption{Niveles de uso de IA}\label{tab:niveles-uso-ia}\\
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Nivel
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Texto
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Diagramas
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
 Ninguno & Sin uso de IA. & Sin uso de IA. \\
 Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
 Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
-Alto & Texto generado sustancialmente por IA y editado por el grupo. & Diagrama generado sustancialmente por IA. \\
-\end{longtable}
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
 
 \ossFinalPage
 
