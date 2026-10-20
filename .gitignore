@@ -36,3 +36,24 @@ Thumbs.db
 
 # Documentos de terceros usados solo como referencia de forma (derechos de autor o confidencialidad desconocidos). El repositorio es público: no versionar.
 90_Referencia/documentos-terceros/
+
+# PDF compilados de los informes preparatorios (se entregan por Drive; ver 06_Informes/README.md)
+06_Informes/informes/**/*.pdf
+
+# Descargas de Prism: no se versionan (los cambios vuelven solo con prism-importar)
+*.zip
+02_Propuesta/latex_final/Informe*/
+02_Propuesta/latex_final/OSS-Informe*/
+* (1).tex
+*(1).tex
+*(2).tex
+
+# Lock de tareas programadas de Claude Code
+.claude/scheduled_tasks.lock
+
+# Locks de LibreOffice
+.~lock.*#
+
+# Derivados regenerables y documentos de terceros
+05_Gestion/reportes/vistas_previas/
+90_Referencia/CMF/
