@@ -12,10 +12,12 @@ Las Bases Administrativas, las Bases Transversales y el Caso 09 siguen gobernand
 
 La recopilación se apoya en los siguientes archivos locales. Las referencias a líneas del texto son localizadores de la copia revisada, no folios de las Bases.
 
+**Nota de integración en main.** El contraste y los 25 cambios se prepararon sobre la copia de `work` del commit `768a1ca`, cuyos archivos tenían prefijo `OSS-`. Se conservan las copias exactas de [SD-03](fuentes-contraste-2026-10-22/sd-03-contraste.txt) y [SD-04](fuentes-contraste-2026-10-22/sd-04-contraste.txt), con [procedencia y hashes](fuentes-contraste-2026-10-22/procedencia.json). Los enlaces de la tabla siguiente apuntan a los editables de `main`, renombrados a `OnlySimpleSolutions-`. Sus textos y líneas pueden haber cambiado; la futura edición debe localizar cada hallazgo por título y contenido y comprobarlo de nuevo. La integración conserva íntegros esos editables y no presenta la revisión de `work` como una revisión completa de la versión posterior de `main`.
+
 | Fuente de trabajo | Uso en esta recopilación |
 | --- | --- |
-| [SD-03 editable](../../02_Propuesta/latex_final/sd-03/OSS-Subdocumento3.tex) | Alcance, trece servicios, etapas, plataformas conservadas y restricciones de operación sin enlace. |
-| [SD-04 editable](../../02_Propuesta/latex_final/sd-04/OSS-Subdocumento4.tex) | Texto vigente contrastado y localización de cambios de 4.1, 4.1.1 y sus consecuencias físicas. |
+| [SD-03 editable](../../02_Propuesta/latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex) | Alcance, trece servicios, etapas, plataformas conservadas y restricciones de operación sin enlace. |
+| [SD-04 editable](../../02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex) | Texto vigente contrastado y localización de cambios de 4.1, 4.1.1 y sus consecuencias físicas. |
 | [Registro recibido D-01–D-56](decisiones-2026-10-22/registro-recibido.md) | Antecedente de selección por capas, confirmaciones y pendientes históricos. |
 | [Especificación recibida de capa 4](integracion-capa4-2026-10-22/especificacion-recibida.md) | Autoridades de los servicios, atributos A/C/E/P y propuestas de capacidades comunes. |
 | [Registro de Datos](capa-datos_decisiones-y-precisiones_2026-10-22.md) | Selección posterior de almacenamiento, procesamiento, búsqueda, gobierno y modelos. |
@@ -24,7 +26,7 @@ La recopilación se apoya en los siguientes archivos locales. Las referencias a 
 | [Asociaciones y contratos](composicion-compacta-2026-10-22/asociaciones-y-contratos.json) | Correspondencia entre relaciones detalladas y agrupaciones de la figura compacta. |
 | [Pendientes y pruebas](actualizacion-datos-transversales-2026-10-22/pendientes-y-pruebas.md) | Trabajo de ingeniería y aceptación que la figura no resuelve. |
 
-La fuente editable real de SD-04 es `02_Propuesta/latex_final/sd-04/OSS-Subdocumento4.tex`. El maestro Markdown todavía menciona una ruta anterior `latex_final/sd-04.tex`; esa remisión también necesita corregirse cuando se actualice el estado del subdocumento. Editar su Markdown de contexto no cambia la oferta compilada.
+Tras la reorganización de `main`, la fuente editable de SD-04 es `02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex`. El maestro Markdown todavía menciona una ruta anterior `latex_final/sd-04.tex`; esa remisión también necesita corregirse cuando se actualice el estado del subdocumento. Editar su Markdown de contexto no cambia la oferta compilada.
 
 ### 1.1 Qué prevalece cuando los antecedentes discrepan
 
@@ -213,7 +215,7 @@ Los almacenes, tableros, credenciales y eventos de seguridad son propios por ám
 
 ## 8. Cambios concretos que necesita SD-04
 
-Los localizadores siguientes se comprobaron en `OSS-Subdocumento4.tex` el 22-10-2026. Los títulos y frases permiten reencontrarlos si cambian las líneas. El trabajo debe realizarse sobre el `.tex` vigente mediante el flujo de exportación del proyecto.
+Los localizadores siguientes se comprobaron en `OSS-Subdocumento4.tex` de `work` el 22-10-2026, conservado en la copia de contraste indicada en la sección 1. Los títulos y frases permiten reencontrarlos si cambian las líneas. El trabajo debe realizarse sobre el `.tex` vigente mediante el flujo de exportación del proyecto.
 
 ### 8.1 Cambios en 4.1 Arquitectura lógica
 

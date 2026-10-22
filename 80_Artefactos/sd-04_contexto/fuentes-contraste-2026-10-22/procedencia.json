@@ -1,0 +1,18 @@
+{
+  "commit_origen": "768a1cae35ba07a437f32509e4d21e5b308f05fb",
+  "motivo": "Conservar la evidencia exacta del contraste anterior a la reorganización de main.",
+  "fuentes": [
+    {
+      "ruta_original": "02_Propuesta/latex_final/sd-03/OSS-Subdocumento3.tex",
+      "ruta_actual_main": "02_Propuesta/latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex",
+      "copia_lectura": "sd-03-contraste.txt",
+      "sha256": "e1d66da850523e659fe8dd46f085bf2887d44919db7a0a04c2b8069969febeed"
+    },
+    {
+      "ruta_original": "02_Propuesta/latex_final/sd-04/OSS-Subdocumento4.tex",
+      "ruta_actual_main": "02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex",
+      "copia_lectura": "sd-04-contraste.txt",
+      "sha256": "3a085a7504a947c7e74328f93d202e6c9b67383d1c147d2aa0ae49437ed9c895"
+    }
+  ]
+}
