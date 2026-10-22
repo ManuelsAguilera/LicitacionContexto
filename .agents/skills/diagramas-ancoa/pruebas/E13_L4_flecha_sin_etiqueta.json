@@ -1,0 +1,33 @@
+{
+ "estilo": "L4",
+ "titulo": "Venta sin enlace",
+ "fuente": "x",
+ "grupos": [
+  {
+   "id": "t",
+   "etiqueta": "Tienda",
+   "frente": "retail"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "a",
+   "etiqueta": "AH-04 Cajero",
+   "tipo": "actor",
+   "grupo": "t"
+  },
+  {
+   "id": "b",
+   "etiqueta": "POS nuevo",
+   "tipo": "caja",
+   "grupo": "t"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "a",
+   "a": "b",
+   "semantica": "flujo"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+  "validacion_mcp": "válida sin avisos",
+  "simbolos_unicos": [
+    "Front Door",
+    "Application Gateway",
+    "API Management",
+    "API Center",
+    "Private Link"
+  ],
+  "servicios": 13,
+  "innovaciones": 5,
+  "sd03_sd04_intactos": true,
+  "antes": {
+    "conectores": 87,
+    "codos": 234,
+    "longitud": 61606.382
+  },
+  "despues": {
+    "conectores": 58,
+    "codos": 60,
+    "longitud": 35203.244999999995
+  },
+  "pruebas": [
+    "Anclajes calculados coinciden con bordes de tarjetas y áreas en draw.io",
+    "Conectores al contorno de áreas solo en composición autorizada",
+    "Cruce de datos Retail–Filial rechazado incluso entre áreas",
+    "Continuidad expresada sin equipos ni VM",
+    "Instancias de productos conservadas por ámbito según registro"
+  ]
+}

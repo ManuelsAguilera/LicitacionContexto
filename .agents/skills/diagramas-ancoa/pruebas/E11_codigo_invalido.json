@@ -1,0 +1,216 @@
+{
+ "estilo": "L3",
+ "figura": "4.4",
+ "titulo": "Bloque de tiendas",
+ "encabezado": "Ancoa · bloque Tiendas físicas",
+ "fuente": "elaboración propia a partir de Subdocumento 3 y RT-02/RT-03.",
+ "grupos": [
+  {
+   "id": "tienda",
+   "etiqueta": "Retail · tienda",
+   "frente": "retail"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "tiendas",
+   "etiqueta": "Tiendas físicas\n22 tiendas",
+   "tipo": "persona",
+   "grupo": "tienda"
+  },
+  {
+   "id": "pos",
+   "etiqueta": "POS nuevo",
+   "tipo": "canal_pc",
+   "grupo": "tienda"
+  },
+  {
+   "id": "moviles",
+   "etiqueta": "Terminales móviles",
+   "tipo": "canal_movil",
+   "grupo": "tienda"
+  },
+  {
+   "id": "meson",
+   "etiqueta": "Mesón de atención",
+   "tipo": "canal_pc",
+   "grupo": "tienda"
+  },
+  {
+   "id": "pos2014",
+   "etiqueta": "POS 2014\ntienda por tienda",
+   "tipo": "caja",
+   "estado": "convivencia",
+   "grupo": "tienda"
+  },
+  {
+   "id": "nucleo",
+   "etiqueta": "Núcleo Retail 2009\nmesón en convivencia",
+   "tipo": "caja",
+   "estado": "convivencia",
+   "grupo": "tienda"
+  },
+  {
+   "id": "local",
+   "etiqueta": "L-01 caché · L-02 diario\nL-03 sincronizador 24 h",
+   "tipo": "nodo_local",
+   "grupo": "tienda"
+  },
+  {
+   "id": "apim",
+   "etiqueta": "API Management\nRetail",
+   "tipo": "entrada_api",
+   "grupo": "tienda"
+  },
+  {
+   "id": "exist",
+   "etiqueta": "Existencias",
+   "codigo": "SVC-EXIST",
+   "tipo": "servicio",
+   "grupo": "tienda"
+  },
+  {
+   "id": "ventas",
+   "etiqueta": "Ventas",
+   "codigo": "R:V-02",
+   "tipo": "servicio",
+   "grupo": "tienda"
+  },
+  {
+   "id": "oferta",
+   "etiqueta": "Oferta comercial",
+   "codigo": "R:M-01",
+   "tipo": "servicio",
+   "grupo": "tienda"
+  },
+  {
+   "id": "posventa",
+   "etiqueta": "Posventa",
+   "codigo": "R:CL-01",
+   "tipo": "servicio",
+   "grupo": "tienda"
+  },
+  {
+   "id": "eh",
+   "etiqueta": "Event Hubs\nRetail",
+   "tipo": "eventos",
+   "grupo": "tienda"
+  },
+  {
+   "id": "pg",
+   "etiqueta": "PostgreSQL\nRetail",
+   "tipo": "base_datos",
+   "grupo": "tienda"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "tiendas",
+   "a": "pos",
+   "semantica": "flujo"
+  },
+  {
+   "de": "tiendas",
+   "a": "moviles",
+   "semantica": "flujo"
+  },
+  {
+   "de": "tiendas",
+   "a": "meson",
+   "semantica": "flujo"
+  },
+  {
+   "de": "tiendas",
+   "a": "pos2014",
+   "semantica": "convivencia"
+  },
+  {
+   "de": "meson",
+   "a": "nucleo",
+   "semantica": "convivencia"
+  },
+  {
+   "de": "pos",
+   "a": "local",
+   "semantica": "flujo",
+   "etiqueta": "sin enlace"
+  },
+  {
+   "de": "local",
+   "a": "apim",
+   "semantica": "condicionado",
+   "etiqueta": "al reconectar"
+  },
+  {
+   "de": "pos",
+   "a": "apim",
+   "semantica": "flujo"
+  },
+  {
+   "de": "moviles",
+   "a": "apim",
+   "semantica": "flujo"
+  },
+  {
+   "de": "meson",
+   "a": "apim",
+   "semantica": "flujo"
+  },
+  {
+   "de": "apim",
+   "a": "exist",
+   "semantica": "flujo"
+  },
+  {
+   "de": "apim",
+   "a": "ventas",
+   "semantica": "flujo"
+  },
+  {
+   "de": "apim",
+   "a": "oferta",
+   "semantica": "flujo"
+  },
+  {
+   "de": "apim",
+   "a": "posventa",
+   "semantica": "flujo"
+  },
+  {
+   "de": "oferta",
+   "a": "local",
+   "semantica": "condicionado",
+   "etiqueta": "oferta vigente"
+  },
+  {
+   "de": "exist",
+   "a": "eh",
+   "semantica": "flujo"
+  },
+  {
+   "de": "ventas",
+   "a": "eh",
+   "semantica": "flujo"
+  },
+  {
+   "de": "exist",
+   "a": "pg",
+   "semantica": "flujo"
+  },
+  {
+   "de": "ventas",
+   "a": "pg",
+   "semantica": "flujo"
+  },
+  {
+   "de": "oferta",
+   "a": "pg",
+   "semantica": "flujo"
+  },
+  {
+   "de": "posventa",
+   "a": "pg",
+   "semantica": "flujo"
+  }
+ ]
+}

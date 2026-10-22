@@ -1,0 +1,682 @@
+{
+  "estilo": "L2",
+  "composicion": "bandas_horizontales",
+  "figura": "4.34",
+  "titulo": "Detalle lógico de Datos · alimentación, gobierno y modelos",
+  "fuente": "Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.",
+  "grupos": [
+    {
+      "id": "presentacion_r",
+      "etiqueta": "presentacion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "borde_r",
+      "etiqueta": "borde_r",
+      "frente": "retail"
+    },
+    {
+      "id": "api_r",
+      "etiqueta": "api_r",
+      "frente": "retail"
+    },
+    {
+      "id": "contratos_r",
+      "etiqueta": "contratos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "servicios_r",
+      "etiqueta": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "innovaciones",
+      "etiqueta": "innovaciones",
+      "frente": "retail"
+    },
+    {
+      "id": "datos_r",
+      "etiqueta": "datos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "frontera",
+      "etiqueta": "frontera",
+      "frente": "frontera"
+    },
+    {
+      "id": "datos_x",
+      "etiqueta": "datos_x",
+      "frente": "frontera"
+    },
+    {
+      "id": "presentacion_e",
+      "etiqueta": "presentacion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_e",
+      "etiqueta": "borde_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "api_e",
+      "etiqueta": "api_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "servicios_e",
+      "etiqueta": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "datos_e",
+      "etiqueta": "datos_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "integracion_r",
+      "etiqueta": "integracion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "integracion_e",
+      "etiqueta": "integracion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "externos",
+      "etiqueta": "externos",
+      "frente": "externo"
+    },
+    {
+      "id": "seguridad",
+      "etiqueta": "seguridad",
+      "frente": "transversal"
+    },
+    {
+      "id": "observabilidad",
+      "etiqueta": "observabilidad",
+      "frente": "transversal"
+    },
+    {
+      "id": "tecnologias",
+      "etiqueta": "tecnologias",
+      "frente": "transversal"
+    },
+    {
+      "id": "actores_r",
+      "etiqueta": "actores_r",
+      "frente": "retail"
+    },
+    {
+      "id": "actores_e",
+      "etiqueta": "actores_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_comun",
+      "etiqueta": "Borde (símbolos por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "api_comun",
+      "etiqueta": "API Management (símbolo por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "area_mercaderia",
+      "etiqueta": "Mercadería",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_venta",
+      "etiqueta": "Venta",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_clientes",
+      "etiqueta": "Relación con el cliente",
+      "frente": "retail",
+      "padre": "servicios_r"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "x01",
+      "etiqueta": "X-01 · control de cruces\nBitácora mínima propia",
+      "tipo": "politica_x01",
+      "grupo": "frontera",
+      "codigo": "X-01"
+    },
+    {
+      "id": "bitacora_x",
+      "etiqueta": "PostgreSQL de X-01\nBitácora mínima de cruces · sin perfil unificado",
+      "tipo": "base_datos",
+      "grupo": "datos_x"
+    },
+    {
+      "id": "services_r",
+      "etiqueta": "Servicios y APIs propietarias\nTransacción y outbox por contexto\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r"
+    },
+    {
+      "id": "oper_r",
+      "etiqueta": "Azure PostgreSQL Flexible Server\nRepositorios operacionales propios\nRetail",
+      "tipo": "base_datos",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "bus_r",
+      "etiqueta": "Azure Service Bus Premium\nHechos confirmados · reintentos\nRetail",
+      "tipo": "service_bus",
+      "grupo": "integracion_r"
+    },
+    {
+      "id": "adf_r",
+      "etiqueta": "Azure Data Factory\nOrquestación · corte · manifiestos\nRetail",
+      "tipo": "data_factory",
+      "grupo": "integracion_r"
+    },
+    {
+      "id": "workers_r",
+      "etiqueta": "Java / Spring en AKS\nIngesta, calidad y proyecciones\nRetail",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r"
+    },
+    {
+      "id": "lake_r",
+      "etiqueta": "ADLS Gen2\nLanding / curados · versionado\nRetail",
+      "tipo": "lago_analitica",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "mart_r",
+      "etiqueta": "Azure PostgreSQL Flexible Server\nModelos analíticos dedicados\nRetail",
+      "tipo": "base_datos",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "bi_r",
+      "etiqueta": "Microsoft Power BI\nModelos, permisos y conexión privada\nRetail",
+      "tipo": "power_bi",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "search_r",
+      "etiqueta": "OpenSearch autogestionado\nBúsqueda global · índice derivado\nRetail",
+      "tipo": "opensearch",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "search_api_r",
+      "etiqueta": "API de búsqueda global\nIdentidad y filtros por documento\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r"
+    },
+    {
+      "id": "metadata_r",
+      "etiqueta": "OpenMetadata autogestionado\nCatálogo, calidad y linaje por API\nRetail",
+      "tipo": "openmetadata",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "metadata_pg_r",
+      "etiqueta": "PostgreSQL de OpenMetadata\nMetadatos propios, sin muestreo libre\nRetail",
+      "tipo": "base_datos",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "metadata_idx_r",
+      "etiqueta": "Buscador compatible de OpenMetadata\nDependencia dedicada · versión por validar\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "datos_r",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "blob_r",
+      "etiqueta": "Azure Blob Storage\nDocumentos y evidencia vigente\nRetail",
+      "tipo": "blob",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "archive_r",
+      "etiqueta": "Azure Blob Storage WORM\nArchivo y evidencia retenida\nRetail",
+      "tipo": "blob",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "backup_r",
+      "etiqueta": "Azure Backup / PostgreSQL PITR\nCobertura y recuperación por recurso\nRetail",
+      "tipo": "backup_vault",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "services_e",
+      "etiqueta": "Servicios y APIs propietarias\nTransacción y outbox por contexto\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_e"
+    },
+    {
+      "id": "oper_e",
+      "etiqueta": "Azure PostgreSQL Flexible Server\nRepositorios operacionales propios\nFilial",
+      "tipo": "base_datos",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "bus_e",
+      "etiqueta": "Azure Service Bus Premium\nHechos confirmados · reintentos\nFilial",
+      "tipo": "service_bus",
+      "grupo": "integracion_e"
+    },
+    {
+      "id": "adf_e",
+      "etiqueta": "Azure Data Factory\nOrquestación · corte · manifiestos\nFilial",
+      "tipo": "data_factory",
+      "grupo": "integracion_e"
+    },
+    {
+      "id": "workers_e",
+      "etiqueta": "Java / Spring en AKS\nIngesta, calidad y proyecciones\nFilial",
+      "tipo": "adaptadores",
+      "grupo": "integracion_e"
+    },
+    {
+      "id": "lake_e",
+      "etiqueta": "ADLS Gen2\nLanding / curados · versionado\nFilial",
+      "tipo": "lago_analitica",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "mart_e",
+      "etiqueta": "Azure PostgreSQL Flexible Server\nModelos analíticos dedicados\nFilial",
+      "tipo": "base_datos",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "bi_e",
+      "etiqueta": "Microsoft Power BI\nModelos, permisos y conexión privada\nFilial",
+      "tipo": "power_bi",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "search_e",
+      "etiqueta": "OpenSearch autogestionado\nBúsqueda global · índice derivado\nFilial",
+      "tipo": "opensearch",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "search_api_e",
+      "etiqueta": "API de búsqueda global\nIdentidad y filtros por documento\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_e"
+    },
+    {
+      "id": "metadata_e",
+      "etiqueta": "OpenMetadata autogestionado\nCatálogo, calidad y linaje por API\nFilial",
+      "tipo": "openmetadata",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "metadata_pg_e",
+      "etiqueta": "PostgreSQL de OpenMetadata\nMetadatos propios, sin muestreo libre\nFilial",
+      "tipo": "base_datos",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "metadata_idx_e",
+      "etiqueta": "Buscador compatible de OpenMetadata\nDependencia dedicada · versión por validar\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "datos_e",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "blob_e",
+      "etiqueta": "Azure Blob Storage\nDocumentos y evidencia vigente\nFilial",
+      "tipo": "blob",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "archive_e",
+      "etiqueta": "Azure Blob Storage WORM\nArchivo y evidencia retenida\nFilial",
+      "tipo": "blob",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "backup_e",
+      "etiqueta": "Azure Backup / PostgreSQL PITR\nCobertura y recuperación por recurso\nFilial",
+      "tipo": "backup_vault",
+      "grupo": "datos_e"
+    },
+    {
+      "id": "vector",
+      "etiqueta": "PostgreSQL / pgvector\nOferta: índice multimodal derivado",
+      "tipo": "base_datos",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "embeddings",
+      "etiqueta": "Trabajador de representaciones · AKS\nModelo multimodal por seleccionar",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "training",
+      "etiqueta": "Python / scikit-learn · AKS\nConteo: evaluación temporal e inferencia",
+      "tipo": "python",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "mlflow",
+      "etiqueta": "MLflow autogestionado · Retail\nExperimentos y versiones de modelos",
+      "tipo": "mlflow",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "mlflow_pg",
+      "etiqueta": "PostgreSQL de MLflow · Retail\nMetadatos de experimentos y modelos",
+      "tipo": "base_datos",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "mlflow_blob",
+      "etiqueta": "Azure Blob Storage · Retail\nArtefactos de modelos de MLflow",
+      "tipo": "blob",
+      "grupo": "datos_r"
+    },
+    {
+      "id": "recommendations",
+      "etiqueta": "Existencias · recomendaciones de conteo\nPromoción humana · fallback · sin ajuste de stock",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "x01",
+      "a": "bitacora_x",
+      "semantica": "persistencia",
+      "etiqueta": "Repositorio propio de X-01; no alimenta lago ni modelo analítico conjunto."
+    },
+    {
+      "de": "services_r",
+      "a": "oper_r",
+      "semantica": "persistencia",
+      "etiqueta": "Cada servicio escribe únicamente su contexto; únicamente Retail"
+    },
+    {
+      "de": "services_r",
+      "a": "bus_r",
+      "semantica": "publicacion",
+      "etiqueta": "Publicar desde outbox durable, no desde una escritura no confirmada; únicamente Retail"
+    },
+    {
+      "de": "bus_r",
+      "a": "workers_r",
+      "semantica": "consumo",
+      "etiqueta": "Deduplicar y aplicar versiones; manejar mensajes fallidos y desorden; únicamente Retail"
+    },
+    {
+      "de": "oper_r",
+      "a": "workers_r",
+      "semantica": "flujo",
+      "etiqueta": "Exportación autorizada con corte; cargas históricas, no consultas BI; únicamente Retail"
+    },
+    {
+      "de": "adf_r",
+      "a": "workers_r",
+      "semantica": "politica",
+      "etiqueta": "Coordinar cargas y dependencias; factory y runtime con ubicación propia; únicamente Retail"
+    },
+    {
+      "de": "workers_r",
+      "a": "lake_r",
+      "semantica": "persistencia",
+      "etiqueta": "Escribir landing, validar y producir curados definidos por finalidad; únicamente Retail"
+    },
+    {
+      "de": "lake_r",
+      "a": "workers_r",
+      "semantica": "flujo",
+      "etiqueta": "Reconstrucción desde conjuntos y manifiestos; sin retención infinita de mensajes; únicamente Retail"
+    },
+    {
+      "de": "workers_r",
+      "a": "mart_r",
+      "semantica": "persistencia",
+      "etiqueta": "Mantener modelos de lectura, indicadores, punto aplicado y trazabilidad; únicamente Retail"
+    },
+    {
+      "de": "bi_r",
+      "a": "mart_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar solo modelo analítico: DirectQuery o Import; únicamente Retail"
+    },
+    {
+      "de": "workers_r",
+      "a": "search_r",
+      "semantica": "persistencia",
+      "etiqueta": "Actualizar índice y revocar permisos con la fuente; únicamente Retail"
+    },
+    {
+      "de": "search_api_r",
+      "a": "search_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consulta con autorización por documento y campo; únicamente Retail"
+    },
+    {
+      "de": "workers_r",
+      "a": "metadata_r",
+      "semantica": "politica",
+      "etiqueta": "Publicar linaje de ejecuciones y resultados durables de calidad por API; únicamente Retail"
+    },
+    {
+      "de": "metadata_r",
+      "a": "metadata_pg_r",
+      "semantica": "persistencia",
+      "etiqueta": "Persistir catálogo y configuración propia; únicamente Retail"
+    },
+    {
+      "de": "metadata_r",
+      "a": "metadata_idx_r",
+      "semantica": "solicitud",
+      "etiqueta": "Índice dedicado soportado por la versión; sin reutilizar búsqueda de negocio; únicamente Retail"
+    },
+    {
+      "de": "services_r",
+      "a": "blob_r",
+      "semantica": "persistencia",
+      "etiqueta": "Documentos bajo autoridad del servicio; C-03 verifica completitud; únicamente Retail"
+    },
+    {
+      "de": "workers_r",
+      "a": "archive_r",
+      "semantica": "persistencia",
+      "etiqueta": "Copiar, verificar y registrar evidencia/archivo por clase de retención; únicamente Retail"
+    },
+    {
+      "de": "backup_r",
+      "a": "oper_r",
+      "semantica": "politica",
+      "etiqueta": "Cobertura de respaldo por recurso y restauración probada con claves; únicamente Retail"
+    },
+    {
+      "de": "backup_r",
+      "a": "mart_r",
+      "semantica": "politica",
+      "etiqueta": "Política por recurso; respaldo no equivale a archivo legal; únicamente Retail"
+    },
+    {
+      "de": "services_e",
+      "a": "oper_e",
+      "semantica": "persistencia",
+      "etiqueta": "Cada servicio escribe únicamente su contexto; únicamente Filial"
+    },
+    {
+      "de": "services_e",
+      "a": "bus_e",
+      "semantica": "publicacion",
+      "etiqueta": "Publicar desde outbox durable, no desde una escritura no confirmada; únicamente Filial"
+    },
+    {
+      "de": "bus_e",
+      "a": "workers_e",
+      "semantica": "consumo",
+      "etiqueta": "Deduplicar y aplicar versiones; manejar mensajes fallidos y desorden; únicamente Filial"
+    },
+    {
+      "de": "oper_e",
+      "a": "workers_e",
+      "semantica": "flujo",
+      "etiqueta": "Exportación autorizada con corte; cargas históricas, no consultas BI; únicamente Filial"
+    },
+    {
+      "de": "adf_e",
+      "a": "workers_e",
+      "semantica": "politica",
+      "etiqueta": "Coordinar cargas y dependencias; factory y runtime con ubicación propia; únicamente Filial"
+    },
+    {
+      "de": "workers_e",
+      "a": "lake_e",
+      "semantica": "persistencia",
+      "etiqueta": "Escribir landing, validar y producir curados definidos por finalidad; únicamente Filial"
+    },
+    {
+      "de": "lake_e",
+      "a": "workers_e",
+      "semantica": "flujo",
+      "etiqueta": "Reconstrucción desde conjuntos y manifiestos; sin retención infinita de mensajes; únicamente Filial"
+    },
+    {
+      "de": "workers_e",
+      "a": "mart_e",
+      "semantica": "persistencia",
+      "etiqueta": "Mantener modelos de lectura, indicadores, punto aplicado y trazabilidad; únicamente Filial"
+    },
+    {
+      "de": "bi_e",
+      "a": "mart_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar solo modelo analítico: DirectQuery o Import; únicamente Filial"
+    },
+    {
+      "de": "workers_e",
+      "a": "search_e",
+      "semantica": "persistencia",
+      "etiqueta": "Actualizar índice y revocar permisos con la fuente; únicamente Filial"
+    },
+    {
+      "de": "search_api_e",
+      "a": "search_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consulta con autorización por documento y campo; únicamente Filial"
+    },
+    {
+      "de": "workers_e",
+      "a": "metadata_e",
+      "semantica": "politica",
+      "etiqueta": "Publicar linaje de ejecuciones y resultados durables de calidad por API; únicamente Filial"
+    },
+    {
+      "de": "metadata_e",
+      "a": "metadata_pg_e",
+      "semantica": "persistencia",
+      "etiqueta": "Persistir catálogo y configuración propia; únicamente Filial"
+    },
+    {
+      "de": "metadata_e",
+      "a": "metadata_idx_e",
+      "semantica": "solicitud",
+      "etiqueta": "Índice dedicado soportado por la versión; sin reutilizar búsqueda de negocio; únicamente Filial"
+    },
+    {
+      "de": "services_e",
+      "a": "blob_e",
+      "semantica": "persistencia",
+      "etiqueta": "Documentos bajo autoridad del servicio; C-03 verifica completitud; únicamente Filial"
+    },
+    {
+      "de": "workers_e",
+      "a": "archive_e",
+      "semantica": "persistencia",
+      "etiqueta": "Copiar, verificar y registrar evidencia/archivo por clase de retención; únicamente Filial"
+    },
+    {
+      "de": "backup_e",
+      "a": "oper_e",
+      "semantica": "politica",
+      "etiqueta": "Cobertura de respaldo por recurso y restauración probada con claves; únicamente Filial"
+    },
+    {
+      "de": "backup_e",
+      "a": "mart_e",
+      "semantica": "politica",
+      "etiqueta": "Política por recurso; respaldo no equivale a archivo legal; únicamente Filial"
+    },
+    {
+      "de": "services_r",
+      "a": "embeddings",
+      "semantica": "flujo",
+      "etiqueta": "Solo Oferta e imágenes autorizadas"
+    },
+    {
+      "de": "embeddings",
+      "a": "vector",
+      "semantica": "persistencia",
+      "etiqueta": "Representaciones y versión del modelo; reconstrucción"
+    },
+    {
+      "de": "services_r",
+      "a": "vector",
+      "semantica": "solicitud",
+      "etiqueta": "Solo Oferta consulta; confirma precio y disponible con su autoridad"
+    },
+    {
+      "de": "lake_r",
+      "a": "training",
+      "semantica": "flujo",
+      "etiqueta": "Conjunto autorizado versionado y manifiesto de Retail"
+    },
+    {
+      "de": "training",
+      "a": "mlflow",
+      "semantica": "persistencia",
+      "etiqueta": "Registrar código, parámetros, métricas, modelo y referencia al conjunto"
+    },
+    {
+      "de": "mlflow",
+      "a": "mlflow_pg",
+      "semantica": "persistencia",
+      "etiqueta": "Metadatos propios de MLflow"
+    },
+    {
+      "de": "mlflow",
+      "a": "mlflow_blob",
+      "semantica": "persistencia",
+      "etiqueta": "Artefactos versionados; distintos de conjuntos de entrenamiento"
+    },
+    {
+      "de": "mlflow",
+      "a": "training",
+      "semantica": "flujo",
+      "etiqueta": "Modelo promovido con aprobación humana; deriva y fallback en trabajadores"
+    },
+    {
+      "de": "training",
+      "a": "recommendations",
+      "semantica": "flujo",
+      "etiqueta": "Inferencia controlada; sin ajuste automático de stock"
+    }
+  ],
+  "notas": [
+    "Ámbitos independientes: sin pipelines, catálogos, índices, BI ni credenciales comunes. X-01 se muestra como referencia a la vista principal; su bitácora no es una fuente analítica conjunta.",
+    "MLflow y scikit-learn únicamente en Retail. Índice de negocio OpenSearch distinto de dependencia de catálogo.",
+    "La operación inmediata no depende de carga del lago ni de Power BI; frescura y restauración deben medirse de extremo a extremo."
+  ]
+}

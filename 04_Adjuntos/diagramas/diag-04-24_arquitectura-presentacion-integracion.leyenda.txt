@@ -1,0 +1,8 @@
+Figura 4.24: Arquitectura lógica por capas e integración
+Fuente: elaboración propia desde SD-03, SD-04, SD-13, T-11 y T-14 de main@1e097c2, RT-02.01 y decisiones aceptadas; composición basada en referencia visual del usuario, 21-10-2026.
+
+Columnas: Presentación, Negocios, Servicios, Integración y Eventos, Datos.
+Capas RT: 1 Presentación; 2 Borde; 3 Puerta de enlace; 4 Servicios; 5 Integración; 6 Datos; 7 Seguridad; 8 Observabilidad.
+Verde: Retail. Lila: Emisor. Gris azulado: controles separados por ámbito. Flechas: azul API; verde persistencia; naranja publicación; violeta consumo; celeste contratos externos.
+Borde discontinuo y *: selección por verificar, conservando el icono del producto de referencia.
+Las conexiones resumen contratos lógicos; los cruces no dibujados permanecen denegados.

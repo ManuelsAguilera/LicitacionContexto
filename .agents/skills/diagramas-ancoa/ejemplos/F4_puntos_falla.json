@@ -1,0 +1,44 @@
+{
+  "estilo": "F4",
+  "figura": "4.16",
+  "titulo": "Conexiones, puntos de falla y contingencias",
+  "fuente": "elaboración propia a partir de RT-03, RT-07 y Subdocumento 3.",
+  "grupos": [
+    {"id": "sitios", "etiqueta": "Sitios del Cliente", "tipo": "sitio_cliente", "disposicion": "columna"},
+    {"id": "conexiones", "etiqueta": "Conexiones", "tipo": "seccion", "disposicion": "columna"},
+    {"id": "cld01", "etiqueta": "CLD-01 Chile Central", "tipo": "nube_azure", "disposicion": "columna"},
+    {"id": "zonas", "etiqueta": "", "tipo": "seccion", "padre": "cld01", "disposicion": "fila"},
+    {"id": "z1", "etiqueta": "Zona 1", "tipo": "zona", "padre": "zonas"},
+    {"id": "z2", "etiqueta": "Zona 2", "tipo": "zona", "padre": "zonas"},
+    {"id": "z3", "etiqueta": "Zona 3", "tipo": "zona", "padre": "zonas"},
+    {"id": "datos", "etiqueta": "Datos y eventos", "tipo": "ambito", "padre": "cld01", "disposicion": "fila"},
+    {"id": "cld02", "etiqueta": "CLD-02 Brazil South", "tipo": "nube_azure", "disposicion": "columna"}
+  ],
+  "nodos": [
+    {"id": "sit01", "etiqueta": "SIT-01\ntiendas", "icono": "sitio", "grupo": "sitios", "insignia": 1},
+    {"id": "cd01", "etiqueta": "CD-01\nWMS", "icono": "sitio", "grupo": "sitios", "insignia": 7},
+    {"id": "cd02", "etiqueta": "CD-02\nConcepción", "icono": "sitio", "grupo": "sitios", "insignia": 2},
+    {"id": "dc01", "etiqueta": "DC-01\nERP/DTE", "icono": "centro_datos", "grupo": "sitios", "insignia": 6},
+    {"id": "inet", "etiqueta": "Internet\n(SD-WAN)", "icono": "internet", "grupo": "conexiones"},
+    {"id": "lte", "etiqueta": "Respaldo\nLTE/5G", "icono": "antena_lte", "grupo": "conexiones"},
+    {"id": "er", "etiqueta": "ExpressRoute", "icono": "expressroute", "estado": "propuesto", "grupo": "conexiones", "insignia": 3},
+    {"id": "vpn", "etiqueta": "VPN de\nrespaldo", "icono": "vpn_gateway", "grupo": "conexiones"},
+    {"id": "aks1", "etiqueta": "Servicios\n(AKS)", "icono": "aks", "grupo": "z1", "insignia": 4},
+    {"id": "aks2", "etiqueta": "Servicios\n(AKS)", "icono": "aks", "grupo": "z2"},
+    {"id": "aks3", "etiqueta": "Servicios\n(AKS)", "icono": "aks", "grupo": "z3"},
+    {"id": "eh1", "etiqueta": "Event Hubs\n(entre zonas)", "icono": "event_hubs", "grupo": "datos", "insignia": 8},
+    {"id": "pg1", "etiqueta": "PostgreSQL\nprimario y\nen espera", "icono": "postgresql", "grupo": "datos"},
+    {"id": "aksdr", "etiqueta": "AKS por IaC\n(en espera)", "icono": "aks", "grupo": "cld02", "insignia": 5},
+    {"id": "ehdr", "etiqueta": "Event Hubs\n(réplica)", "icono": "event_hubs", "grupo": "cld02"},
+    {"id": "pgdr", "etiqueta": "PostgreSQL\n(réplica)", "icono": "postgresql", "grupo": "cld02"}
+  ],
+  "enlaces": [
+    {"de": "sit01", "a": "inet", "semantica": "enlace"},
+    {"de": "cd01", "a": "lte", "semantica": "respaldo", "etiqueta": "respaldo"},
+    {"de": "cd02", "a": "er", "semantica": "enlace_propuesto", "etiqueta": "propuesto"},
+    {"de": "dc01", "a": "vpn", "semantica": "vpn", "etiqueta": "VPN"},
+    {"de": "inet", "a": "aks1", "semantica": "enlace"},
+    {"de": "eh1", "a": "ehdr", "semantica": "replica", "etiqueta": "réplica"},
+    {"de": "pg1", "a": "pgdr", "semantica": "replica", "etiqueta": "réplica asíncrona"}
+  ]
+}

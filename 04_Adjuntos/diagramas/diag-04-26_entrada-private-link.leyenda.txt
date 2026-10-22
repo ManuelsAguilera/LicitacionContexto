@@ -1,0 +1,12 @@
+Figura 4.26: Arquitectura lógica por capas y servicios de plataforma
+Fuente: elaboración propia desde SD-03, SD-04, SD-13, T-11 y T-14 de main@1e097c2, RT-02.01 y decisiones aceptadas; composición basada en referencia visual del usuario, 21-10-2026.
+
+Actores fuera de las ocho capas. Columnas 1 Presentación, 2 Borde, 3 Puerta de enlace, 4 Servicios, 5 Integración, 6 Datos. Bandas 7 Seguridad y 8 Observabilidad.
+Franjas verticales: alcance de capas lógicas 1–6; franjas horizontales: capas 7–8. No representan perímetros de red.
+Separación de red implícita en las bandas Retail y Emisor, con red y suscripción propias. Sin bloque final ni rangos CIDR visibles.
+Icono y nombre de producto según SD-04; no se acreditan despliegues ni disponibilidad regional. * Por verificar. Sin códigos visibles ni franja amarilla.
+Front Door Premium → conexión Azure Private Link/Private Endpoint → API Management, sin Application Gateway. Endpoint administrado por Front Door: conectividad, no otro gateway.
+Nivel/modo APIM, acceso privado a AKS y recuperación regional pendientes de validar; no se afirma compatibilidad del Premium clásico interno. Managed HSM usa icono de familia Key Vault.
+Verde Retail, lila Emisor, gris control transversal. Flechas: azul API, verde persistencia, naranja publicación, violeta consumo, celeste contratos externos.
+Puertos de borde y rutas ortogonales; el canal de eventos no reemplaza la persistencia directa. Datos agrupados por contexto, con autoridad por servicio.
+OpenTelemetry: icono oficial CNCF, https://github.com/cncf/artwork; otros iconos desde el catálogo local diagrams.

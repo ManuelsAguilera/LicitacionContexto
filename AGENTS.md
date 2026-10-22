@@ -256,6 +256,18 @@ Regla de selección:
 
 Convención: los diagramas que se incorporan en la propuesta se entregan como imágenes PNG/SVG/PDF en `04_Adjuntos/diagramas/`; se incrustan en Markdown con rutas relativas y el importador LaTeX los copia a `02_Propuesta/latex_final/figuras/`. No usar bloques Mermaid. Se pueden conservar fuentes editables como `.dot` o `.puml`, pero el documento siempre incluye su exportación como imagen.
 
+## Guía de diagramación Ancoa
+
+Para crear, editar o revisar diagramas de arquitectura de esta propuesta, cargar
+`.agents/skills/diagramas-ancoa/SKILL.md`. La guía instalada define los estilos lógicos L1–L6
+y físicos F1–F5 y exige validar la especificación JSON antes de renderizar.
+Su procedimiento específico rige sobre las recomendaciones generales de herramientas de diagramación
+de este archivo. Los ejemplos de la guía no son decisiones de alcance ni fuentes de requisitos.
+
+El MCP local `diagramas-ancoa` expone catálogo, validación y renderizado. La instalación y las pruebas
+están en `.agents/skills/diagramas-ancoa/references/instalacion-mcp.md`.
+La revisión del contenido sigue contrastándose con las Bases y los subdocumentos vigentes.
+
 ## Graphify
 
 La copia de trabajo tiene un grafo local en `graphify-out/graph.json`. Por ahora indexa únicamente scripts; no incluye el contenido de la propuesta ni de las Bases. Para consultas sobre relaciones entre scripts, usar `graphify query`, `graphify path` o `graphify explain` y confirmar los resultados en los archivos originales. Para contenido documental, rigen las fuentes y la precedencia definidas arriba.

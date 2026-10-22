@@ -1,0 +1,28 @@
+{
+  "estilo": "L4",
+  "figura": "4.10",
+  "titulo": "Recorrido híbrido de tienda hacia Azure Chile Central",
+  "encabezado": "Flujo lógico híbrido: venta con corte de enlace y reconexión",
+  "fuente": "elaboración propia a partir de Subdocumento 3 y RT-02/RT-03.",
+  "grupos": [
+    {"id": "tienda", "etiqueta": "Tienda · operación local durante 24 h", "frente": "retail"},
+    {"id": "azure", "etiqueta": "Azure Chile Central · ámbito Retail", "frente": "azure"}
+  ],
+  "nodos": [
+    {"id": "cajero", "etiqueta": "AH-04 Cajero\nAH-03 Vendedor", "tipo": "actor", "grupo": "tienda"},
+    {"id": "pos", "etiqueta": "POS nuevo\ninterfaz Retail", "tipo": "caja", "grupo": "tienda"},
+    {"id": "diario", "etiqueta": "Diario durable\nventa + hecho pendiente", "codigo": "L-02", "tipo": "almacen", "grupo": "tienda"},
+    {"id": "sinc", "etiqueta": "Sincronizador\nreintento e idempotencia", "codigo": "L-03", "tipo": "caja", "grupo": "tienda"},
+    {"id": "apim", "etiqueta": "API Management Retail\nAPI y políticas", "tipo": "caja", "grupo": "azure"},
+    {"id": "ventas", "etiqueta": "Ventas: conciliación", "codigo": "R:V-02", "tipo": "caja", "grupo": "azure"},
+    {"id": "eh", "etiqueta": "Azure Event Hubs Premium\nhechos Retail", "tipo": "almacen", "grupo": "azure"}
+  ],
+  "enlaces": [
+    {"de": "cajero", "a": "pos", "semantica": "flujo", "etiqueta": "registra venta", "paso": 1},
+    {"de": "pos", "a": "diario", "semantica": "flujo", "etiqueta": "escribe sin enlace", "paso": 2},
+    {"de": "diario", "a": "sinc", "semantica": "flujo", "etiqueta": "pendientes", "paso": 3},
+    {"de": "sinc", "a": "apim", "semantica": "condicionado", "etiqueta": "al reconectar", "paso": 4},
+    {"de": "apim", "a": "ventas", "semantica": "flujo", "etiqueta": "venta con clave idempotente", "paso": 5},
+    {"de": "ventas", "a": "eh", "semantica": "flujo", "etiqueta": "publica hecho confirmado", "paso": 6}
+  ]
+}

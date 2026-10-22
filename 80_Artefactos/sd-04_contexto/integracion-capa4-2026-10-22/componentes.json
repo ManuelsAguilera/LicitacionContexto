@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "web",
+    "nombre": "Portal y app de la tienda · React / React Native",
+    "codigo": "",
+    "responsabilidad": "D-06, D-09",
+    "productores": [],
+    "consumidores": [
+      "front_door"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "pos",
+    "nombre": "Caja y mesón · React web servido desde tienda",
+    "codigo": "",
+    "responsabilidad": "D-09",
+    "productores": [],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "operacion",
+    "nombre": "App interna de tienda · 4 perfiles · RN / SQLite / DataWedge · QR + PIN en vista previa",
+    "codigo": "",
+    "responsabilidad": "D-07, D-09, D-42",
+    "productores": [],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "logistica",
+    "nombre": "Vista logística · WMS del CD conservado",
+    "codigo": "",
+    "responsabilidad": "D-14",
+    "productores": [],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "movil",
+    "nombre": "Consola comercial y de atención",
+    "codigo": "",
+    "responsabilidad": "D-06",
+    "productores": [],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "portal_f",
+    "nombre": "Portal y app de la tarjeta · Código propio · simulador CAE",
+    "codigo": "",
+    "responsabilidad": "D-06, D-09, D-10",
+    "productores": [],
+    "consumidores": [
+      "front_door"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "meson_f",
+    "nombre": "Mesón financiero · Sesión y permisos de la Filial",
+    "codigo": "",
+    "responsabilidad": "D-06, D-44",
+    "productores": [],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "dns",
+    "nombre": "Azure DNS · Zonas y registros por ámbito",
+    "codigo": "",
+    "responsabilidad": "D-11, D-15",
+    "productores": [],
+    "consumidores": [
+      "front_door"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "aks_r",
+    "nombre": "Azure Kubernetes Service · Ejecución aislada por ámbito · Premium / LTS por acreditar",
+    "codigo": "",
+    "responsabilidad": "D-28; verificar disponibilidad y versiones",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "oferta",
+    "nombre": "Oferta comercial · Artículos, precios y promociones · E1 · despliegue por decidir",
+    "codigo": "R:M-01",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Artículos, precios y promociones. E1 · despliegue por decidir",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "abastecimiento",
+    "nombre": "Abastecimiento · Órdenes, transferencias y recepción · E2 · microservicio",
+    "codigo": "R:M-02",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Órdenes, transferencias y recepción. E2 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "existencias",
+    "nombre": "Existencias · Movimientos, reservas y disponible · E1 · microservicio",
+    "codigo": "R:M-03",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Movimientos, reservas y disponible. E1 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "pedidos",
+    "nombre": "Pedidos · Promesa, asignación y estado único · E2 · microservicio",
+    "codigo": "R:V-01",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Promesa, asignación y estado único. E2 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "ventas",
+    "nombre": "Ventas · Venta, pago, reversa y conciliación · E1 · microservicio",
+    "codigo": "R:V-02",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Venta, pago, reversa y conciliación. E1 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "comisiones",
+    "nombre": "Comisiones · Regla y base de atribución · E2 · módulo extraíble",
+    "codigo": "R:V-03",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Regla y base de atribución. E2 · módulo extraíble",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "market",
+    "nombre": "Marketplace · Reglas de vendedores y coordinación · E2 · módulo extraíble",
+    "codigo": "R:V-04",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Reglas de vendedores y coordinación. E2 · módulo extraíble",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "posventa",
+    "nombre": "Posventa · Caso, inspección y destino de devolución · E2 · microservicio",
+    "codigo": "R:CL-01",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Caso, inspección y destino de devolución. E2 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "clientes",
+    "nombre": "Clientes Retail · Identificación, preferencias y fidelización · E2 · microservicio",
+    "codigo": "R:CL-02",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Identificación, preferencias y fidelización. E2 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "originacion",
+    "nombre": "Originación de crédito · Solicitud, evaluación, cupo y autorización · E1 · microservicio",
+    "codigo": "F:C-01",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Solicitud, evaluación, cupo y autorización. E1 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "cartera",
+    "nombre": "Cartera de crédito · Cuenta, saldo, pago, mora y cobranza · E1/E2 · microservicio",
+    "codigo": "F:C-02",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Cuenta, saldo, pago, mora y cobranza. E1/E2 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "evidencia",
+    "nombre": "Evidencia financiera · Precontrato, aceptación, firma y expediente · E1 · microservicio",
+    "codigo": "F:C-03",
+    "responsabilidad": "Responsabilidad según especificación recibida; A/C/E/P: auditoría, control de acceso, exportación y parámetros como patrón de diseño propuesto, no cumplimiento acreditado. Precontrato, aceptación, firma y expediente. E1 · microservicio",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "x01",
+    "nombre": "Control de cruces",
+    "codigo": "X-01",
+    "responsabilidad": "Fichas, políticas, decisiones y bitácora; A/C/E/P propuestos; E1, microservicio. Sin perfil único de clientes.",
+    "productores": [
+      "area_venta"
+    ],
+    "consumidores": [
+      "api_management",
+      "bitacora"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "conteo",
+    "nombre": "Conteo cíclico predictivo · Existencias · proceso",
+    "codigo": "",
+    "responsabilidad": "Existencias: historial autorizado → conjunto versionado → entrenamiento/validación → recomendación revisada por una persona. Sin ajuste automático de stock.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "lockers",
+    "nombre": "Lockers Ancoa 24/7 · Pedidos · producto",
+    "codigo": "",
+    "responsabilidad": "D-54; innovación dentro del servicio responsable",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "busqueda",
+    "nombre": "Búsqueda vectorial multimodal · Oferta · tecnología",
+    "codigo": "",
+    "responsabilidad": "Oferta: catálogo e imágenes autorizados → trabajador de representaciones → pgvector; consulta híbrida y verificación de disponible con Existencias.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "media",
+    "nombre": "Retail Media Network · Oferta · modelo de negocio",
+    "codigo": "",
+    "responsabilidad": "D-54; innovación dentro del servicio responsable",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "fila",
+    "nombre": "Modo Tienda y fila virtual · Clientes · experiencia",
+    "codigo": "",
+    "responsabilidad": "D-54; innovación dentro del servicio responsable",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "bus_r",
+    "nombre": "Azure Service Bus Premium · Retail · outbox / reintentos",
+    "codigo": "",
+    "responsabilidad": "D-29, D-33; contratos y rendimiento por validar",
+    "productores": [
+      "area_mercaderia",
+      "area_venta",
+      "area_clientes"
+    ],
+    "consumidores": [
+      "comercio",
+      "canales",
+      "socios",
+      "area_clientes",
+      "local_sync",
+      "proy_r",
+      "common_notif"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "bus_e",
+    "nombre": "Azure Service Bus Premium · Filial · outbox / reintentos",
+    "codigo": "",
+    "responsabilidad": "D-29, D-33; contratos y rendimiento por validar",
+    "productores": [
+      "servicios_e"
+    ],
+    "consumidores": [
+      "credito",
+      "proy_e",
+      "common_notif"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "comercio",
+    "nombre": "Comercio · ERP/DTE y WMS",
+    "codigo": "",
+    "responsabilidad": "D-30, D-34; cargas/descargas masivas incluidas",
+    "productores": [
+      "bus_r"
+    ],
+    "consumidores": [
+      "ext_comercio",
+      "archivo_r"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "canales",
+    "nombre": "Canales · e-commerce / marketplace / fidelización",
+    "codigo": "",
+    "responsabilidad": "D-30, D-34; cargas/descargas masivas incluidas",
+    "productores": [
+      "bus_r"
+    ],
+    "consumidores": [
+      "ext_canales"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "socios",
+    "nombre": "Socios · pagos / proveedores / transportistas",
+    "codigo": "",
+    "responsabilidad": "D-30, D-34; cargas/descargas masivas incluidas",
+    "productores": [
+      "bus_r"
+    ],
+    "consumidores": [
+      "ext_socios"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "credito",
+    "nombre": "Crédito · legado 2011 / CMF / firma",
+    "codigo": "",
+    "responsabilidad": "D-30, D-34; cargas/descargas masivas incluidas",
+    "productores": [
+      "bus_e"
+    ],
+    "consumidores": [
+      "ext_credito"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "local_serv",
+    "nombre": "Operación sin enlace · Venta y consulta de oferta vigente",
+    "codigo": "",
+    "responsabilidad": "D-05, D-09; caché de oferta local L-01 dentro de este componente, sin renumerar SD-04",
+    "productores": [
+      "area_venta"
+    ],
+    "consumidores": [
+      "local_sync",
+      "local_data"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "local_sync",
+    "nombre": "Sincronización de operaciones · Reintentos y conciliación",
+    "codigo": "L-03",
+    "responsabilidad": "D-05, D-51",
+    "productores": [
+      "local_serv",
+      "local_data",
+      "bus_r"
+    ],
+    "consumidores": [
+      "entrada_privada"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_merc",
+    "nombre": "PostgreSQL · Retail · Oferta / Abastecimiento / Existencias",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "area_mercaderia"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_venta",
+    "nombre": "PostgreSQL · Retail · Pedidos / Ventas / Comisiones / Marketplace",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "area_venta"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_clientes",
+    "nombre": "PostgreSQL · Retail · Posventa / Clientes",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "area_clientes"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "bitacora",
+    "nombre": "Bitácora · de cruces",
+    "codigo": "",
+    "responsabilidad": "PostgreSQL propio de X-01: ficha, política y seudónimo del cruce; no es un perfil unificado.",
+    "productores": [
+      "x01"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_orig",
+    "nombre": "PostgreSQL · Filial · Originación / evidencia financiera · Repositorios por servicio",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "servicios_e"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_cartera",
+    "nombre": "PostgreSQL · Filial · Cartera y estado de procesos",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "servicios_e"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "datos_evid",
+    "nombre": "Azure Blob Storage · Filial · Evidencia y consentimiento vigentes",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "servicios_e"
+    ],
+    "consumidores": [
+      "archivo_e"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "archivo_r",
+    "nombre": "Azure Blob Storage · Retail · Documentos, retención y conjuntos versionados",
+    "codigo": "",
+    "responsabilidad": "Contenedores separados: documentos/DTE, exportaciones temporales autorizadas, conjuntos de entrenamiento y archivo retenido. Política e identidades por finalidad.",
+    "productores": [
+      "proy_r",
+      "comercio",
+      "common_docs",
+      "mart_r"
+    ],
+    "consumidores": [
+      "area_mercaderia"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "archivo_e",
+    "nombre": "Azure Blob Storage · Filial · Archivo retenido y consulta autorizada",
+    "codigo": "",
+    "responsabilidad": "Archivo propio de la Filial. Exportación verificable de evidencia y auditoría; consulta jurídica autorizada, retención y restauración por política del caso.",
+    "productores": [
+      "datos_evid",
+      "common_docs",
+      "mart_e"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "redis",
+    "nombre": "Azure Managed Redis · Retail · Caché de oferta ≤ 30 s",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "area_mercaderia"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "historial",
+    "nombre": "PostgreSQL · Retail · Historial de precios append-only",
+    "codigo": "",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "area_mercaderia"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "powerbi",
+    "nombre": "Microsoft Power BI · Modelos semánticos y espacios separados por ámbito · DirectQuery / Import sobre repositorios analíticos",
+    "codigo": "",
+    "responsabilidad": "Solo lee modelos analíticos dedicados. Acceso privado mediante conexión de datos propia de cada ámbito; no consulta repositorios transaccionales. Región, capacidad y actualización pendientes de acreditar.",
+    "productores": [
+      "mart_r",
+      "mart_e"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "local_data",
+    "nombre": "Diario de operaciones pendientes · Persistencia durable Retail",
+    "codigo": "L-02",
+    "responsabilidad": "D-05, D-35–D-44",
+    "productores": [
+      "local_serv"
+    ],
+    "consumidores": [
+      "local_sync"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "cupo_local",
+    "nombre": "Cupo preautorizado sin enlace · Datos mínimos de Filial · vigencia pendiente",
+    "codigo": "",
+    "responsabilidad": "Provisión bajo autoridad F:C-01 Originación; custodia y red de Filial. Caducidad, topes y factibilidad pendientes; no saldo/mora ni apertura o ampliación offline.",
+    "productores": [
+      "servicios_e"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "ext_comercio",
+    "nombre": "ERP/DTE y WMS conservados",
+    "codigo": "",
+    "responsabilidad": "D-30; agrupación D-56",
+    "productores": [
+      "comercio"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "ext_canales",
+    "nombre": "E-commerce, marketplace y fidelización",
+    "codigo": "",
+    "responsabilidad": "D-30; agrupación D-56",
+    "productores": [
+      "canales"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "ext_socios",
+    "nombre": "Pagos, proveedores y transportistas · Lockers y publicidad: interfaz por precisar",
+    "codigo": "",
+    "responsabilidad": "D-30; agrupación D-56",
+    "productores": [
+      "socios"
+    ],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "ext_credito",
+    "nombre": "Crédito 2011 (convivencia) · Reportes CMF y firma por interfaz",
+    "codigo": "",
+    "responsabilidad": "D-30; agrupación D-56",
+    "productores": [
+      "credito"
+    ],
+    "consumidores": [],
+    "estado": "convivencia",
+    "relacion": "explícita"
+  },
+  {
+    "id": "entra",
+    "nombre": "Microsoft Entra ID P2 · Tenant Filial separado: confirmar",
+    "codigo": "",
+    "responsabilidad": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "externalid",
+    "nombre": "Microsoft Entra External ID · Tenant externo por negocio",
+    "codigo": "",
+    "responsabilidad": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "kv",
+    "nombre": "Azure Key Vault / Managed HSM · Claves y cifrado de campo por ámbito",
+    "codigo": "",
+    "responsabilidad": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "sentinel",
+    "nombre": "Microsoft Sentinel y Defender · SOC: solo incidentes agregados",
+    "codigo": "",
+    "responsabilidad": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "privado",
+    "nombre": "PIM / Bastion / Private Access · Administración y acceso remoto",
+    "codigo": "",
+    "responsabilidad": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "otel",
+    "nombre": "OpenTelemetry Collector · Por clúster y tienda · cola local 24 h",
+    "codigo": "",
+    "responsabilidad": "D-47–D-53",
+    "productores": [],
+    "consumidores": [
+      "monitor"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "monitor",
+    "nombre": "Azure Monitor / Log Analytics · Registros, trazas y alertas por ámbito",
+    "codigo": "",
+    "responsabilidad": "D-47–D-53",
+    "productores": [
+      "otel"
+    ],
+    "consumidores": [
+      "grafana"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "grafana",
+    "nombre": "Prometheus / Azure Managed Grafana · Métricas, SLO e indicadores de entrega",
+    "codigo": "",
+    "responsabilidad": "Métricas de aplicación, salud y entrega. No almacena trazas/documentos de negocio; espacios y acceso por ámbito.",
+    "productores": [
+      "monitor"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "rum",
+    "nombre": "Pruebas sintéticas y experiencia real · TLS y herramienta móvil pendientes",
+    "codigo": "",
+    "responsabilidad": "D-47–D-53",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "front_door",
+    "nombre": "Azure Front Door Premium · Retail / Filial: perfiles separados · WAF propio por ámbito · TLS 1.3 objetivo",
+    "codigo": "",
+    "responsabilidad": "Última instrucción: no duplicar Front Door. Un único símbolo gráfico representa los dos perfiles separados aprobados en D-11. No constituye un perfil compartido ni autoriza cruce de rutas entre ámbitos.",
+    "productores": [
+      "dns",
+      "web",
+      "portal_f"
+    ],
+    "consumidores": [
+      "private_link"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "application_gateway",
+    "nombre": "Application Gateway v2 · Instancias Retail / Filial separadas",
+    "codigo": "",
+    "responsabilidad": "D-13; un símbolo gráfico, una instancia por ámbito según el registro.",
+    "productores": [
+      "private_link",
+      "entrada_privada"
+    ],
+    "consumidores": [
+      "api_management"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "api_management",
+    "nombre": "Azure API Management Premium clásico · Instancias, productos y contratos separados por ámbito",
+    "codigo": "",
+    "responsabilidad": "D-16–D-21; un símbolo gráfico, una instancia por ámbito. Solo el contrato de X-01 puede acceder desde Retail a la puerta de Filial.",
+    "productores": [
+      "application_gateway",
+      "api_center",
+      "x01",
+      "common_admin"
+    ],
+    "consumidores": [
+      "area_mercaderia",
+      "area_venta",
+      "area_clientes",
+      "servicios_e",
+      "search_r",
+      "search_e",
+      "common_flujos",
+      "common_docs"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "api_center",
+    "nombre": "Azure API Center · Catálogos Retail / Filial separados",
+    "codigo": "",
+    "responsabilidad": "Gobierno de contratos: OpenAPI 3.1 por ámbito; derivación 3.0.3 hacia APIM mediante pipeline. Anotación lateral, fuera del tráfico de negocio.",
+    "productores": [],
+    "consumidores": [
+      "api_management"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "private_link",
+    "nombre": "Azure Private Link",
+    "codigo": "",
+    "responsabilidad": "Conexiones privadas a los orígenes de cada ámbito. Un símbolo no fusiona endpoints ni perfiles.",
+    "productores": [
+      "front_door"
+    ],
+    "consumidores": [
+      "application_gateway"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "proy_r",
+    "nombre": "Procesadores de proyecciones · Retail · Deduplicación, versión y conciliación",
+    "codigo": "",
+    "responsabilidad": "Proyectores del ámbito alimentan modelos analíticos e índices derivados con deduplicación; exportación asíncrona sigue patrón común, sin producto nuevo elegido.",
+    "productores": [
+      "bus_r"
+    ],
+    "consumidores": [
+      "mart_r",
+      "archivo_r",
+      "search_r"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "mart_r",
+    "nombre": "PostgreSQL Flexible Server · Retail · Repositorio analítico dedicado · Indicadores, agregaciones y linaje",
+    "codigo": "",
+    "responsabilidad": "Instancia analítica separada de las transaccionales y del otro ámbito. No es una réplica operacional usada directamente como BI. Capacidad y latencias se verificarán con cargas y consultas del caso.",
+    "productores": [
+      "proy_r"
+    ],
+    "consumidores": [
+      "powerbi",
+      "archivo_r"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "proy_e",
+    "nombre": "Procesadores de proyecciones · Filial · Deduplicación, versión y conciliación",
+    "codigo": "",
+    "responsabilidad": "Proyectores del ámbito alimentan modelos analíticos e índices derivados con deduplicación; exportación asíncrona sigue patrón común, sin producto nuevo elegido.",
+    "productores": [
+      "bus_e"
+    ],
+    "consumidores": [
+      "mart_e",
+      "search_e"
+    ],
+    "estado": "objetivo",
+    "relacion": "explícita"
+  },
+  {
+    "id": "mart_e",
+    "nombre": "PostgreSQL Flexible Server · Filial · Repositorio analítico dedicado · Indicadores, agregaciones y linaje",
+    "codigo": "",
+    "responsabilidad": "Instancia analítica separada de las transaccionales y del otro ámbito. No es una réplica operacional usada directamente como BI. Capacidad y latencias se verificarán con cargas y consultas del caso.",
+    "productores": [
+      "proy_e"
+    ],
+    "consumidores": [
+      "powerbi",
+      "archivo_e"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "vector",
+    "nombre": "PostgreSQL / pgvector · Oferta · Búsqueda léxica/vectorial del catálogo · Índice derivado; confirma disponible",
+    "codigo": "",
+    "responsabilidad": "Índice derivado de Oferta. Reconstruible desde catálogo, imágenes y versión del modelo; no sustituye autoridad de precio o disponible.",
+    "productores": [
+      "area_mercaderia"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "tech_ui",
+    "nombre": "React / React Native · TypeScript · canales separados",
+    "codigo": "",
+    "responsabilidad": "Tecnologías de presentación; no constituye otro canal o servicio.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "tech_java",
+    "nombre": "Java 25 LTS · APIs y trabajadores propios",
+    "codigo": "",
+    "responsabilidad": "Lenguaje seleccionado en SD-04; soporte y versiones se acreditan en T-11.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "tech_spring",
+    "nombre": "Spring Boot 4 · Contratos y lógica de servicios",
+    "codigo": "",
+    "responsabilidad": "Marco de servicios de aplicación seleccionado; no es un servicio adicional.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "objetivo",
+    "relacion": "pertenencia de área o banda transversal/tecnología"
+  },
+  {
+    "id": "common_admin",
+    "nombre": "Administración y parámetros · Consolas por ámbito · Auditoría · versiones · Aprobación · simulación · Maestro: dueño pendiente",
+    "codigo": "",
+    "responsabilidad": "Administración y parámetros\nConsola y consulta de auditoría\nInstancias Retail / Filial separadas\nVersiones · segundo aprobador · simulación\nMaestro de ubicaciones: dueño pendiente",
+    "productores": [],
+    "consumidores": [
+      "api_management"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "common_flujos",
+    "nombre": "Flujos y tareas humanas · Bandeja por ámbito · Plazos y delegación · Estado durable propio · Producto pendiente",
+    "codigo": "",
+    "responsabilidad": "Flujos y bandeja de tareas\nTareas humanas, plazos y delegación\nInstancias por ámbito · producto pendiente\nEstado durable fuera del proceso\nDistinto de la coordinación automática Consumidores propuestos: ajustes de inventario, sanciones Marketplace, reasignaciones de Pedidos, inspecciones Posventa y repactaciones de Cartera. Tareas humanas separadas de la coordinación automática.",
+    "productores": [
+      "api_management"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "common_docs",
+    "nombre": "Documentos y firma · Capacidad por ámbito · Recepción / devolución · Evidencia propia Filial · Prestador pendiente",
+    "codigo": "",
+    "responsabilidad": "Documentos, plantillas y firma\nCapacidad propia de cada ámbito\nRetail: recepción y devolución\nFilial: C-03 conserva la autoridad\nPrestador de firma por precisar Consumidores: Abastecimiento para conformidad de recepción, Posventa para constancia de devolución y C-03 para evidencia Filial; APIs por ámbito, autoridad en el servicio propietario.",
+    "productores": [
+      "api_management"
+    ],
+    "consumidores": [
+      "archivo_r",
+      "archivo_e",
+      "ext_comunes"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "common_notif",
+    "nombre": "Notificaciones · Correo · app · SMS/IM · Plantillas y preferencias · Reintentos y entrega · Proveedor pendiente",
+    "codigo": "",
+    "responsabilidad": "Notificaciones\nInstancias y preferencias por ámbito\nCorreo · app · mensajería / SMS\nPlantillas, reintentos y deduplicación\nRegistro de entrega · proveedor pendiente",
+    "productores": [
+      "bus_r",
+      "bus_e"
+    ],
+    "consumidores": [
+      "ext_comunes"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "search_r",
+    "nombre": "Búsqueda global · Retail · API de consulta + índice derivado · Permisos y facetas · producto pendiente",
+    "codigo": "",
+    "responsabilidad": "Búsqueda global · Retail · API de consulta + índice derivado · Permisos y facetas · producto pendiente",
+    "productores": [
+      "proy_r",
+      "api_management"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "search_e",
+    "nombre": "Búsqueda global · Filial · API de consulta + índice derivado · Permisos y facetas · producto pendiente",
+    "codigo": "",
+    "responsabilidad": "Búsqueda global · Filial · API de consulta + índice derivado · Permisos y facetas · producto pendiente",
+    "productores": [
+      "proy_e",
+      "api_management"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "regulatorio",
+    "nombre": "Control regulatorio · CANDIDATO · Reportes y prevención de lavado · Alcance, RF y etapa por aprobar",
+    "codigo": "F:C-04",
+    "responsabilidad": "No es un servicio vigente ni un alcance aprobado. Conservar expediente propio y aislamiento si se aprueba; contratos potenciales, sin conexiones operacionales inventadas. A/C/E/P como diseño candidato.",
+    "productores": [],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "candidato sin contratos"
+  },
+  {
+    "id": "entrada_privada",
+    "nombre": "Acceso privado corporativo · SD-WAN / VPN · ExpressRoute propuesto · Rutas y permisos propios por ámbito",
+    "codigo": "",
+    "responsabilidad": "Entrada lógica de la conectividad corporativa; no toda tienda tiene un circuito ExpressRoute. SD-04 red de sitios y DC-01. Medios físicos en vista de red; no un segundo API Gateway.",
+    "productores": [
+      "pos",
+      "operacion",
+      "logistica",
+      "movil",
+      "meson_f",
+      "local_sync"
+    ],
+    "consumidores": [
+      "application_gateway"
+    ],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  },
+  {
+    "id": "ext_comunes",
+    "nombre": "Prestadores de firma y de mensajería · Contrapartes y contratos por precisar · Credenciales separadas por ámbito",
+    "codigo": "",
+    "responsabilidad": "Prestadores de firma y de mensajería · Contrapartes y contratos por precisar · Credenciales separadas por ámbito",
+    "productores": [
+      "common_docs",
+      "common_notif"
+    ],
+    "consumidores": [],
+    "estado": "por_acreditar",
+    "relacion": "explícita"
+  }
+]

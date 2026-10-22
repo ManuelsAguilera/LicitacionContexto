@@ -1,0 +1,105 @@
+{
+ "estilo": "L5",
+ "figura": "4.12",
+ "titulo": "Autoridades de datos, analítica y frontera Retail–Emisor",
+ "encabezado": "Datos y frontera Retail–Filial emisora",
+ "fuente": "elaboración propia a partir de Subdocumento 3 (Tabla 3.9 y 3.4.4) y RT-02.03.",
+ "grupos": [
+  {
+   "id": "retail",
+   "etiqueta": "RETAIL · autoridad comercial",
+   "frente": "retail"
+  },
+  {
+   "id": "emisor",
+   "etiqueta": "FILIAL EMISORA · autoridad financiera separada",
+   "frente": "emisor"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "ventas",
+   "etiqueta": "Ventas / POS: venta y\nreferencia de compra",
+   "codigo": "R:V-02",
+   "tipo": "caja",
+   "grupo": "retail"
+  },
+  {
+   "id": "clientes",
+   "etiqueta": "Clientes Retail: identidad\ncomercial y preferencias",
+   "codigo": "R:CL-02",
+   "tipo": "caja",
+   "grupo": "retail"
+  },
+  {
+   "id": "pgr",
+   "etiqueta": "PostgreSQL Retail\nuna base por autoridad",
+   "tipo": "almacen",
+   "grupo": "retail"
+  },
+  {
+   "id": "dlr",
+   "etiqueta": "Data Lake Retail\nconjuntos comerciales\nautorizados",
+   "tipo": "almacen",
+   "grupo": "retail"
+  },
+  {
+   "id": "orig",
+   "etiqueta": "Originación y autorización:\nsolicitud, cupo y decisión",
+   "codigo": "F:C-01",
+   "tipo": "caja",
+   "grupo": "emisor"
+  },
+  {
+   "id": "cartera",
+   "etiqueta": "Cartera: saldo,\nmora y cobranza",
+   "codigo": "F:C-02",
+   "tipo": "caja",
+   "grupo": "emisor"
+  },
+  {
+   "id": "pge",
+   "etiqueta": "PostgreSQL Emisor\nuna base por autoridad",
+   "tipo": "almacen",
+   "grupo": "emisor"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "ventas",
+   "a": "pgr",
+   "semantica": "flujo",
+   "etiqueta": "escribe venta"
+  },
+  {
+   "de": "clientes",
+   "a": "pgr",
+   "semantica": "flujo",
+   "etiqueta": "escribe perfil"
+  },
+  {
+   "de": "pgr",
+   "a": "dlr",
+   "semantica": "flujo",
+   "etiqueta": "proyección"
+  },
+  {
+   "de": "orig",
+   "a": "pge",
+   "semantica": "flujo",
+   "etiqueta": "escribe decisión"
+  },
+  {
+   "de": "cartera",
+   "a": "pge",
+   "semantica": "flujo",
+   "etiqueta": "escribe cartera"
+  },
+  {
+   "de": "clientes",
+   "a": "cartera",
+   "semantica": "denegado",
+   "etiqueta": "mora y pago: ACCESO DENEGADO"
+  }
+ ]
+}

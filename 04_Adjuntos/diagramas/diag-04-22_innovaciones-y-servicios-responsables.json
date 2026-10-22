@@ -1,0 +1,117 @@
+{
+  "estilo": "L3",
+  "figura": "4.22",
+  "titulo": "Componentes de las cinco innovaciones y servicios responsables",
+  "encabezado": "Figura 4.22 · Innovaciones Retail y responsabilidades",
+  "fuente": "elaboración propia a partir de SD-03, SD-13, T-11 y T-14 de main@1e097c2 y decisiones aceptadas por el usuario el 21-10-2026; SD-03 sin modificar.",
+  "grupos": [
+    {
+      "id": "retail",
+      "etiqueta": "RETAIL · las innovaciones no acceden a datos del Emisor",
+      "frente": "retail"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "existencias",
+      "etiqueta": "Existencias",
+      "tipo": "servicio",
+      "grupo": "retail",
+      "codigo": "R:M-03"
+    },
+    {
+      "id": "oferta",
+      "etiqueta": "Oferta comercial",
+      "tipo": "servicio",
+      "grupo": "retail",
+      "codigo": "R:M-01"
+    },
+    {
+      "id": "pedidos",
+      "etiqueta": "Pedidos",
+      "tipo": "servicio",
+      "grupo": "retail",
+      "codigo": "R:V-01"
+    },
+    {
+      "id": "clientes",
+      "etiqueta": "Clientes Retail",
+      "tipo": "servicio",
+      "grupo": "retail",
+      "codigo": "R:CL-02"
+    },
+    {
+      "id": "conteo",
+      "etiqueta": "1.10.2 · Conteo cíclico predictivo · M16\nPreparación, entrenamiento e inferencia en Retail\nHistoria versionada; aprobación humana\nNo ajusta saldos ni determina hurto",
+      "tipo": "caja",
+      "grupo": "retail"
+    },
+    {
+      "id": "busqueda",
+      "etiqueta": "1.10.3 · Búsqueda multimodal · M21\nCodificador + índice de lectura aislado\nDisponibilidad consultada a su autoridad\nBúsqueda base disponible ante falla",
+      "tipo": "caja",
+      "grupo": "retail"
+    },
+    {
+      "id": "media",
+      "etiqueta": "1.10.4 · Retail Media Network · M21\nAdaptador a plataforma publicitaria externa\nCampañas contextuales y conciliación\nLa compra continúa si falla publicidad",
+      "tipo": "caja",
+      "grupo": "retail"
+    },
+    {
+      "id": "lockers",
+      "etiqueta": "1.10.1 · Lockers Ancoa 24/7 · M21\nAdaptador + controlador y gabinetes en sitio\nPedido listo/pagado; credencial de uso único\nSin autorización verificable, no abre",
+      "tipo": "caja",
+      "grupo": "retail"
+    },
+    {
+      "id": "fila",
+      "etiqueta": "1.10.5 · Fila virtual de probadores · M21\nTótem + cola transaccional local\nConfiguración e indicadores en nube\nSin enlace, atención local y asistida",
+      "tipo": "caja",
+      "grupo": "retail"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "existencias",
+      "a": "conteo",
+      "etiqueta": "historia autorizada / prioridad supervisada",
+      "semantica": "flujo"
+    },
+    {
+      "de": "oferta",
+      "a": "busqueda",
+      "etiqueta": "catálogo autorizado",
+      "semantica": "flujo"
+    },
+    {
+      "de": "existencias",
+      "a": "busqueda",
+      "etiqueta": "consulta de disponibilidad",
+      "semantica": "flujo"
+    },
+    {
+      "de": "oferta",
+      "a": "media",
+      "etiqueta": "oferta y elegibilidad contextual",
+      "semantica": "flujo"
+    },
+    {
+      "de": "pedidos",
+      "a": "lockers",
+      "etiqueta": "estado del pedido / prueba de entrega",
+      "semantica": "flujo"
+    },
+    {
+      "de": "clientes",
+      "a": "fila",
+      "etiqueta": "configuración e indicadores de atención",
+      "semantica": "flujo"
+    }
+  ],
+  "notas": [
+    "Los enlaces resumen contratos de entrada y resultados; no conceden escritura sobre saldos ni acceso al Emisor.",
+    "Los productos de referencia no fijan una compra ni una capacidad regional no verificada.",
+    "Las cinco innovaciones no se contabilizan como nuevos servicios funcionales de SD-03."
+  ]
+}

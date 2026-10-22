@@ -1,0 +1,5636 @@
+[
+  {
+    "enlace": {
+      "de": "a_cliente",
+      "a": "web",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        455.0
+      ],
+      [
+        307,
+        455.0
+      ],
+      [
+        307,
+        460.0
+      ],
+      [
+        362,
+        460.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        455.0
+      ],
+      "stub": [
+        307,
+        455.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        460.0
+      ],
+      "stub": [
+        353,
+        460.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_tienda",
+      "a": "pos",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        702.163
+      ],
+      [
+        307,
+        702.163
+      ],
+      [
+        307,
+        630.0
+      ],
+      [
+        362,
+        630.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        702.163
+      ],
+      "stub": [
+        307,
+        702.163
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        630.0
+      ],
+      "stub": [
+        353,
+        630.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_tienda",
+      "a": "operacion",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        727.837
+      ],
+      [
+        307,
+        727.837
+      ],
+      [
+        307,
+        800.0
+      ],
+      [
+        362,
+        800.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        727.837
+      ],
+      "stub": [
+        307,
+        727.837
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        800.0
+      ],
+      "stub": [
+        353,
+        800.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_cd",
+      "a": "logistica",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        965.0
+      ],
+      [
+        307,
+        965.0
+      ],
+      [
+        307,
+        970.0
+      ],
+      [
+        362,
+        970.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        965.0
+      ],
+      "stub": [
+        307,
+        965.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        970.0
+      ],
+      "stub": [
+        353,
+        970.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_comercial",
+      "a": "movil",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        1135.0
+      ],
+      [
+        307,
+        1135.0
+      ],
+      [
+        307,
+        1140.0
+      ],
+      [
+        362,
+        1140.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        1135.0
+      ],
+      "stub": [
+        307,
+        1135.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        1140.0
+      ],
+      "stub": [
+        353,
+        1140.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_emisor",
+      "a": "portal_f",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        1382.163
+      ],
+      [
+        307,
+        1382.163
+      ],
+      [
+        307,
+        1310.0
+      ],
+      [
+        362,
+        1310.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        1382.163
+      ],
+      "stub": [
+        307,
+        1382.163
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        1310.0
+      ],
+      "stub": [
+        353,
+        1310.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "a_emisor",
+      "a": "meson_f",
+      "etiqueta": "Canal del perfil autorizado",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        298,
+        1407.837
+      ],
+      [
+        307,
+        1407.837
+      ],
+      [
+        307,
+        1480.0
+      ],
+      [
+        362,
+        1480.0
+      ]
+    ],
+    "source": {
+      "point": [
+        298,
+        1407.837
+      ],
+      "stub": [
+        307,
+        1407.837
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        362,
+        1480.0
+      ],
+      "stub": [
+        353,
+        1480.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "dns",
+      "a": "front_door",
+      "etiqueta": "Retail: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1068,
+        309.497
+      ],
+      [
+        1077,
+        309.497
+      ],
+      [
+        1077,
+        440
+      ],
+      [
+        1025,
+        440
+      ],
+      [
+        1025,
+        844
+      ],
+      [
+        1077,
+        844
+      ],
+      [
+        1077,
+        902.2
+      ],
+      [
+        1068,
+        902.2
+      ]
+    ],
+    "source": {
+      "point": [
+        1068,
+        309.497
+      ],
+      "stub": [
+        1077,
+        309.497
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1068,
+        902.2
+      ],
+      "stub": [
+        1077,
+        902.2
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "dns",
+      "a": "front_door",
+      "etiqueta": "Filial: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1068,
+        330.503
+      ],
+      [
+        1077,
+        330.503
+      ],
+      [
+        1077,
+        440
+      ],
+      [
+        1025,
+        440
+      ],
+      [
+        1025,
+        683.918
+      ],
+      [
+        1077,
+        683.918
+      ],
+      [
+        1077,
+        927.4
+      ],
+      [
+        1068,
+        927.4
+      ]
+    ],
+    "source": {
+      "point": [
+        1068,
+        330.503
+      ],
+      "stub": [
+        1077,
+        330.503
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1068,
+        927.4
+      ],
+      "stub": [
+        1077,
+        927.4
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "front_door",
+      "a": "pl_r",
+      "etiqueta": "Retail: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        1068,
+        952.6
+      ],
+      [
+        1077,
+        952.6
+      ],
+      [
+        1077,
+        563.0
+      ],
+      [
+        1084,
+        563.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1068,
+        952.6
+      ],
+      "stub": [
+        1077,
+        952.6
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1084,
+        563.0
+      ],
+      "stub": [
+        1075,
+        563.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "appgw_r",
+      "a": "apim_r",
+      "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1132,
+        530.0
+      ],
+      [
+        1123,
+        530.0
+      ],
+      [
+        1123,
+        783.245
+      ],
+      [
+        1132,
+        783.245
+      ]
+    ],
+    "source": {
+      "point": [
+        1132,
+        530.0
+      ],
+      "stub": [
+        1123,
+        530.0
+      ],
+      "anchor": [
+        0,
+        0.25
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        783.245
+      ],
+      "stub": [
+        1123,
+        783.245
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apic_r",
+      "a": "apim_r",
+      "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1132,
+        1027.5
+      ],
+      [
+        1123,
+        1027.5
+      ],
+      [
+        1123,
+        821.755
+      ],
+      [
+        1132,
+        821.755
+      ]
+    ],
+    "source": {
+      "point": [
+        1132,
+        1027.5
+      ],
+      "stub": [
+        1123,
+        1027.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        821.755
+      ],
+      "stub": [
+        1123,
+        821.755
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "front_door",
+      "a": "pl_e",
+      "etiqueta": "Filial: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        1068,
+        977.8
+      ],
+      [
+        1077,
+        977.8
+      ],
+      [
+        1077,
+        1190
+      ],
+      [
+        1025,
+        1190
+      ],
+      [
+        1025,
+        1313.0
+      ],
+      [
+        1084,
+        1313.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1068,
+        977.8
+      ],
+      "stub": [
+        1077,
+        977.8
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1084,
+        1313.0
+      ],
+      "stub": [
+        1075,
+        1313.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "appgw_e",
+      "a": "apim_e",
+      "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1132,
+        1289.0
+      ],
+      [
+        1123,
+        1289.0
+      ],
+      [
+        1123,
+        1533.245
+      ],
+      [
+        1132,
+        1533.245
+      ]
+    ],
+    "source": {
+      "point": [
+        1132,
+        1289.0
+      ],
+      "stub": [
+        1123,
+        1289.0
+      ],
+      "anchor": [
+        0,
+        0.325
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        1533.245
+      ],
+      "stub": [
+        1123,
+        1533.245
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apic_e",
+      "a": "apim_e",
+      "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1132,
+        1777.5
+      ],
+      [
+        1123,
+        1777.5
+      ],
+      [
+        1123,
+        1571.755
+      ],
+      [
+        1132,
+        1571.755
+      ]
+    ],
+    "source": {
+      "point": [
+        1132,
+        1777.5
+      ],
+      "stub": [
+        1123,
+        1777.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        1571.755
+      ],
+      "stub": [
+        1123,
+        1571.755
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "web",
+      "a": "front_door",
+      "etiqueta": "Retail: host y perfil propios. API pública Retail",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        460.0
+      ],
+      [
+        717,
+        460.0
+      ],
+      [
+        717,
+        918.994
+      ],
+      [
+        772,
+        918.994
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        460.0
+      ],
+      "stub": [
+        717,
+        460.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        772,
+        918.994
+      ],
+      "stub": [
+        763,
+        918.994
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "portal_f",
+      "a": "front_door",
+      "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        1310.0
+      ],
+      [
+        717,
+        1310.0
+      ],
+      [
+        717,
+        961.006
+      ],
+      [
+        772,
+        961.006
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        1310.0
+      ],
+      "stub": [
+        717,
+        1310.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        772,
+        961.006
+      ],
+      "stub": [
+        763,
+        961.006
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pos",
+      "a": "appgw_r",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        615.996
+      ],
+      [
+        717,
+        615.996
+      ],
+      [
+        717,
+        542.0
+      ],
+      [
+        1132,
+        542.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        615.996
+      ],
+      "stub": [
+        717,
+        615.996
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        542.0
+      ],
+      "stub": [
+        1123,
+        542.0
+      ],
+      "anchor": [
+        0,
+        0.35
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "operacion",
+      "a": "appgw_r",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        800.0
+      ],
+      [
+        1123,
+        800.0
+      ],
+      [
+        1123,
+        554
+      ],
+      [
+        1132,
+        554.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        800.0
+      ],
+      "stub": [
+        717,
+        800.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        554.0
+      ],
+      "stub": [
+        1123,
+        554.0
+      ],
+      "anchor": [
+        0,
+        0.45
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "logistica",
+      "a": "appgw_r",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        970.0
+      ],
+      [
+        717,
+        970.0
+      ],
+      [
+        717,
+        582
+      ],
+      [
+        1123,
+        582
+      ],
+      [
+        1123,
+        566.0
+      ],
+      [
+        1132,
+        566.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        970.0
+      ],
+      "stub": [
+        717,
+        970.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        566.0
+      ],
+      "stub": [
+        1123,
+        566.0
+      ],
+      "anchor": [
+        0,
+        0.55
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "movil",
+      "a": "appgw_r",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        1140.0
+      ],
+      [
+        1123,
+        1140.0
+      ],
+      [
+        1123,
+        578.0
+      ],
+      [
+        1132,
+        578.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        1140.0
+      ],
+      "stub": [
+        717,
+        1140.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        578.0
+      ],
+      "stub": [
+        1123,
+        578.0
+      ],
+      "anchor": [
+        0,
+        0.65
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "meson_f",
+      "a": "appgw_e",
+      "etiqueta": "Red privada del mesón financiero; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        1465.996
+      ],
+      [
+        1123,
+        1465.996
+      ],
+      [
+        1123,
+        1310.0
+      ],
+      [
+        1132,
+        1310.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        1465.996
+      ],
+      "stub": [
+        717,
+        1465.996
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        1310.0
+      ],
+      "stub": [
+        1123,
+        1310.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "oferta",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        756.3
+      ],
+      [
+        1467,
+        756.3
+      ],
+      [
+        1467,
+        467.5
+      ],
+      [
+        1532,
+        467.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        756.3
+      ],
+      "stub": [
+        1467,
+        756.3
+      ],
+      "anchor": [
+        1,
+        0.22
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1532,
+        467.5
+      ],
+      "stub": [
+        1523,
+        467.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "abastecimiento",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        767.85
+      ],
+      [
+        1467,
+        767.85
+      ],
+      [
+        1467,
+        537.5
+      ],
+      [
+        1532,
+        537.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        767.85
+      ],
+      "stub": [
+        1467,
+        767.85
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1532,
+        537.5
+      ],
+      "stub": [
+        1523,
+        537.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "existencias",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        779.4
+      ],
+      [
+        1467,
+        779.4
+      ],
+      [
+        1467,
+        607.5
+      ],
+      [
+        1532,
+        607.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        779.4
+      ],
+      "stub": [
+        1467,
+        779.4
+      ],
+      "anchor": [
+        1,
+        0.36
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1532,
+        607.5
+      ],
+      "stub": [
+        1523,
+        607.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "pedidos",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        790.95
+      ],
+      [
+        1467,
+        790.95
+      ],
+      [
+        1467,
+        501
+      ],
+      [
+        1838,
+        501
+      ],
+      [
+        1838,
+        467.5
+      ],
+      [
+        1847,
+        467.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        790.95
+      ],
+      "stub": [
+        1467,
+        790.95
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1847,
+        467.5
+      ],
+      "stub": [
+        1838,
+        467.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "ventas",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        802.5
+      ],
+      [
+        1467,
+        802.5
+      ],
+      [
+        1467,
+        571
+      ],
+      [
+        1838,
+        571
+      ],
+      [
+        1838,
+        537.5
+      ],
+      [
+        1847,
+        537.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        802.5
+      ],
+      "stub": [
+        1467,
+        802.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1847,
+        537.5
+      ],
+      "stub": [
+        1838,
+        537.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "comisiones",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        814.05
+      ],
+      [
+        1467,
+        814.05
+      ],
+      [
+        1467,
+        663
+      ],
+      [
+        1838,
+        663
+      ],
+      [
+        1838,
+        607.5
+      ],
+      [
+        1847,
+        607.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        814.05
+      ],
+      "stub": [
+        1467,
+        814.05
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1847,
+        607.5
+      ],
+      "stub": [
+        1838,
+        607.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "market",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        825.6
+      ],
+      [
+        1467,
+        825.6
+      ],
+      [
+        1467,
+        751
+      ],
+      [
+        1838,
+        751
+      ],
+      [
+        1838,
+        677.5
+      ],
+      [
+        1847,
+        677.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        825.6
+      ],
+      "stub": [
+        1467,
+        825.6
+      ],
+      "anchor": [
+        1,
+        0.64
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1847,
+        677.5
+      ],
+      "stub": [
+        1838,
+        677.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "posventa",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        837.15
+      ],
+      [
+        1467,
+        837.15
+      ],
+      [
+        1467,
+        501
+      ],
+      [
+        2153,
+        501
+      ],
+      [
+        2153,
+        467.5
+      ],
+      [
+        2162,
+        467.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        837.15
+      ],
+      "stub": [
+        1467,
+        837.15
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2162,
+        467.5
+      ],
+      "stub": [
+        2153,
+        467.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_r",
+      "a": "clientes",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        848.7
+      ],
+      [
+        1467,
+        848.7
+      ],
+      [
+        1467,
+        571
+      ],
+      [
+        2153,
+        571
+      ],
+      [
+        2153,
+        537.5
+      ],
+      [
+        2162,
+        537.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        848.7
+      ],
+      "stub": [
+        1467,
+        848.7
+      ],
+      "anchor": [
+        1,
+        0.78
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2162,
+        537.5
+      ],
+      "stub": [
+        2153,
+        537.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_e",
+      "a": "originacion",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        1517.85
+      ],
+      [
+        1467,
+        1517.85
+      ],
+      [
+        1467,
+        1191
+      ],
+      [
+        2038,
+        1191
+      ],
+      [
+        2038,
+        1107.5
+      ],
+      [
+        2047,
+        1107.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        1517.85
+      ],
+      "stub": [
+        1467,
+        1517.85
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2047,
+        1107.5
+      ],
+      "stub": [
+        2038,
+        1107.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_e",
+      "a": "cartera",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        1540.95
+      ],
+      [
+        1467,
+        1540.95
+      ],
+      [
+        1467,
+        1191
+      ],
+      [
+        2038,
+        1191
+      ],
+      [
+        2038,
+        1182.5
+      ],
+      [
+        2047,
+        1182.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        1540.95
+      ],
+      "stub": [
+        1467,
+        1540.95
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2047,
+        1182.5
+      ],
+      "stub": [
+        2038,
+        1182.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "apim_e",
+      "a": "evidencia",
+      "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1458,
+        1564.05
+      ],
+      [
+        1467,
+        1564.05
+      ],
+      [
+        1467,
+        1257.5
+      ],
+      [
+        2047,
+        1257.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1458,
+        1564.05
+      ],
+      "stub": [
+        1467,
+        1564.05
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2047,
+        1257.5
+      ],
+      "stub": [
+        2038,
+        1257.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "ventas",
+      "a": "x01",
+      "etiqueta": "Compra con tarjeta propia: solicitud mínima de autorización",
+      "semantica": "compra_autorizable"
+    },
+    "points": [
+      [
+        2123,
+        527.875
+      ],
+      [
+        2132,
+        527.875
+      ],
+      [
+        2132,
+        1010
+      ],
+      [
+        1987,
+        1010
+      ],
+      [
+        1987,
+        1138.747
+      ],
+      [
+        1978,
+        1138.747
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        527.875
+      ],
+      "stub": [
+        2132,
+        527.875
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1978,
+        1138.747
+      ],
+      "stub": [
+        1987,
+        1138.747
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "apim_e",
+      "etiqueta": "Única identidad de Retail admitida por la puerta de la Filial; nuevo correlativo",
+      "semantica": "compra_autorizable"
+    },
+    "points": [
+      [
+        1532,
+        1147.5
+      ],
+      [
+        1467,
+        1147.5
+      ],
+      [
+        1467,
+        1587.15
+      ],
+      [
+        1458,
+        1587.15
+      ]
+    ],
+    "source": {
+      "point": [
+        1532,
+        1147.5
+      ],
+      "stub": [
+        1523,
+        1147.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1458,
+        1587.15
+      ],
+      "stub": [
+        1467,
+        1587.15
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "existencias",
+      "a": "conteo",
+      "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1808,
+        597.875
+      ],
+      [
+        1817,
+        597.875
+      ],
+      [
+        1817,
+        712.5
+      ],
+      [
+        1808,
+        712.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        597.875
+      ],
+      "stub": [
+        1817,
+        597.875
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1808,
+        712.5
+      ],
+      "stub": [
+        1817,
+        712.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pedidos",
+      "a": "lockers",
+      "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        2123,
+        457.875
+      ],
+      [
+        2132,
+        457.875
+      ],
+      [
+        2132,
+        822.5
+      ],
+      [
+        2123,
+        822.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        457.875
+      ],
+      "stub": [
+        2132,
+        457.875
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2123,
+        822.5
+      ],
+      "stub": [
+        2132,
+        822.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "busqueda",
+      "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1808,
+        453.75
+      ],
+      [
+        1817,
+        453.75
+      ],
+      [
+        1817,
+        792.5
+      ],
+      [
+        1808,
+        792.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        453.75
+      ],
+      "stub": [
+        1817,
+        453.75
+      ],
+      "anchor": [
+        1,
+        0.25
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1808,
+        792.5
+      ],
+      "stub": [
+        1817,
+        792.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "media",
+      "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        1808,
+        459.25
+      ],
+      [
+        1817,
+        459.25
+      ],
+      [
+        1817,
+        872.5
+      ],
+      [
+        1808,
+        872.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        459.25
+      ],
+      "stub": [
+        1817,
+        459.25
+      ],
+      "anchor": [
+        1,
+        0.35
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1808,
+        872.5
+      ],
+      "stub": [
+        1817,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "clientes",
+      "a": "fila",
+      "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        2438,
+        527.875
+      ],
+      [
+        2447,
+        527.875
+      ],
+      [
+        2447,
+        712.5
+      ],
+      [
+        2438,
+        712.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2438,
+        527.875
+      ],
+      "stub": [
+        2447,
+        527.875
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        712.5
+      ],
+      "stub": [
+        2447,
+        712.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "comercio",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2978,
+        1150.45
+      ],
+      [
+        2987,
+        1150.45
+      ],
+      [
+        2987,
+        1487.5
+      ],
+      [
+        2978,
+        1487.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2978,
+        1150.45
+      ],
+      "stub": [
+        2987,
+        1150.45
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        1487.5
+      ],
+      "stub": [
+        2987,
+        1487.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "canales",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2978,
+        1165.15
+      ],
+      [
+        2987,
+        1165.15
+      ],
+      [
+        2987,
+        1597.5
+      ],
+      [
+        2978,
+        1597.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2978,
+        1165.15
+      ],
+      "stub": [
+        2987,
+        1165.15
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        1597.5
+      ],
+      "stub": [
+        2987,
+        1597.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "socios",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2978,
+        1179.85
+      ],
+      [
+        2987,
+        1179.85
+      ],
+      [
+        2987,
+        1707.5
+      ],
+      [
+        2978,
+        1707.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2978,
+        1179.85
+      ],
+      "stub": [
+        2987,
+        1179.85
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        1707.5
+      ],
+      "stub": [
+        2987,
+        1707.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_e",
+      "a": "credito",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2978,
+        1322.5
+      ],
+      [
+        2987,
+        1322.5
+      ],
+      [
+        2987,
+        1817.5
+      ],
+      [
+        2978,
+        1817.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2978,
+        1322.5
+      ],
+      "stub": [
+        2987,
+        1322.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        1817.5
+      ],
+      "stub": [
+        2987,
+        1817.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "bus_r",
+      "etiqueta": "Hechos del productor vía outbox transaccional",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        1808,
+        464.75
+      ],
+      [
+        1817,
+        464.75
+      ],
+      [
+        1817,
+        1074
+      ],
+      [
+        2493,
+        1074
+      ],
+      [
+        2493,
+        1146.25
+      ],
+      [
+        2502,
+        1146.25
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        464.75
+      ],
+      "stub": [
+        1817,
+        464.75
+      ],
+      "anchor": [
+        1,
+        0.45
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1146.25
+      ],
+      "stub": [
+        2493,
+        1146.25
+      ],
+      "anchor": [
+        0,
+        0.25
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "existencias",
+      "a": "bus_r",
+      "etiqueta": "Hechos del productor vía outbox transaccional",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        1808,
+        607.5
+      ],
+      [
+        1817,
+        607.5
+      ],
+      [
+        1817,
+        1074
+      ],
+      [
+        2493,
+        1074
+      ],
+      [
+        2493,
+        1156.75
+      ],
+      [
+        2502,
+        1156.75
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        607.5
+      ],
+      "stub": [
+        1817,
+        607.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1156.75
+      ],
+      "stub": [
+        2493,
+        1156.75
+      ],
+      "anchor": [
+        0,
+        0.35
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pedidos",
+      "a": "bus_r",
+      "etiqueta": "Hechos del productor vía outbox transaccional",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2123,
+        467.5
+      ],
+      [
+        2132,
+        467.5
+      ],
+      [
+        2132,
+        1010
+      ],
+      [
+        2493,
+        1010
+      ],
+      [
+        2493,
+        1167.25
+      ],
+      [
+        2502,
+        1167.25
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        467.5
+      ],
+      "stub": [
+        2132,
+        467.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1167.25
+      ],
+      "stub": [
+        2493,
+        1167.25
+      ],
+      "anchor": [
+        0,
+        0.45
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "ventas",
+      "a": "bus_r",
+      "etiqueta": "Hechos del productor vía outbox transaccional",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2123,
+        537.5
+      ],
+      [
+        2132,
+        537.5
+      ],
+      [
+        2132,
+        1010
+      ],
+      [
+        2493,
+        1010
+      ],
+      [
+        2493,
+        1177.75
+      ],
+      [
+        2502,
+        1177.75
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        537.5
+      ],
+      "stub": [
+        2132,
+        537.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1177.75
+      ],
+      "stub": [
+        2493,
+        1177.75
+      ],
+      "anchor": [
+        0,
+        0.55
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "market",
+      "a": "bus_r",
+      "etiqueta": "Hechos del productor vía outbox transaccional",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2123,
+        671.082
+      ],
+      [
+        2493,
+        671.082
+      ],
+      [
+        2493,
+        1188.25
+      ],
+      [
+        2502,
+        1188.25
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        671.082
+      ],
+      "stub": [
+        2132,
+        671.082
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1188.25
+      ],
+      "stub": [
+        2493,
+        1188.25
+      ],
+      "anchor": [
+        0,
+        0.65
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "originacion",
+      "a": "bus_e",
+      "etiqueta": "Hechos del lado receptor, sin bus compartido",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2423,
+        1101.082
+      ],
+      [
+        2432,
+        1101.082
+      ],
+      [
+        2432,
+        1304.125
+      ],
+      [
+        2502,
+        1304.125
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1101.082
+      ],
+      "stub": [
+        2432,
+        1101.082
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1304.125
+      ],
+      "stub": [
+        2493,
+        1304.125
+      ],
+      "anchor": [
+        0,
+        0.325
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cartera",
+      "a": "bus_e",
+      "etiqueta": "Hechos del lado receptor, sin bus compartido",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2423,
+        1172.875
+      ],
+      [
+        2432,
+        1172.875
+      ],
+      [
+        2432,
+        1322.5
+      ],
+      [
+        2502,
+        1322.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1172.875
+      ],
+      "stub": [
+        2432,
+        1172.875
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1322.5
+      ],
+      "stub": [
+        2493,
+        1322.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "evidencia",
+      "a": "bus_e",
+      "etiqueta": "Hechos del lado receptor, sin bus compartido",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2423,
+        1251.082
+      ],
+      [
+        2493,
+        1251.082
+      ],
+      [
+        2493,
+        1340.875
+      ],
+      [
+        2502,
+        1340.875
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1251.082
+      ],
+      "stub": [
+        2432,
+        1251.082
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        1340.875
+      ],
+      "stub": [
+        2493,
+        1340.875
+      ],
+      "anchor": [
+        0,
+        0.675
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "clientes",
+      "etiqueta": "Consumo para la fila virtual; contrato por detallar",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2502,
+        1198.75
+      ],
+      [
+        2493,
+        1198.75
+      ],
+      [
+        2493,
+        537.5
+      ],
+      [
+        2438,
+        537.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        1198.75
+      ],
+      "stub": [
+        2493,
+        1198.75
+      ],
+      "anchor": [
+        0,
+        0.75
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        537.5
+      ],
+      "stub": [
+        2447,
+        537.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pos",
+      "a": "local_serv",
+      "etiqueta": "Operación local cuando no hay enlace",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        708,
+        644.004
+      ],
+      [
+        717,
+        644.004
+      ],
+      [
+        717,
+        2065.0
+      ],
+      [
+        1522,
+        2065.0
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        644.004
+      ],
+      "stub": [
+        717,
+        644.004
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1522,
+        2065.0
+      ],
+      "stub": [
+        1513,
+        2065.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_serv",
+      "a": "local_sync",
+      "etiqueta": "Entrega de operaciones para reconciliar",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2438,
+        2052.163
+      ],
+      [
+        2447,
+        2052.163
+      ],
+      [
+        2447,
+        2099.914
+      ],
+      [
+        2502,
+        2099.914
+      ]
+    ],
+    "source": {
+      "point": [
+        2438,
+        2052.163
+      ],
+      "stub": [
+        2447,
+        2052.163
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2502,
+        2099.914
+      ],
+      "stub": [
+        2493,
+        2099.914
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_sync",
+      "a": "appgw_r",
+      "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        2502,
+        2115.086
+      ],
+      [
+        2493,
+        2115.086
+      ],
+      [
+        2493,
+        1995
+      ],
+      [
+        1467,
+        1995
+      ],
+      [
+        1467,
+        560.0
+      ],
+      [
+        1458,
+        560.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        2115.086
+      ],
+      "stub": [
+        2493,
+        2115.086
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1458,
+        560.0
+      ],
+      "stub": [
+        1467,
+        560.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "datos_merc",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1808,
+        470.25
+      ],
+      [
+        1817,
+        470.25
+      ],
+      [
+        1817,
+        434
+      ],
+      [
+        3033,
+        434
+      ],
+      [
+        3033,
+        437.375
+      ],
+      [
+        3042,
+        437.375
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        470.25
+      ],
+      "stub": [
+        1817,
+        470.25
+      ],
+      "anchor": [
+        1,
+        0.55
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        437.375
+      ],
+      "stub": [
+        3033,
+        437.375
+      ],
+      "anchor": [
+        0,
+        0.325
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "abastecimiento",
+      "a": "datos_merc",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1808,
+        537.5
+      ],
+      [
+        1817,
+        537.5
+      ],
+      [
+        1817,
+        501
+      ],
+      [
+        3033,
+        501
+      ],
+      [
+        3033,
+        457.5
+      ],
+      [
+        3042,
+        457.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        537.5
+      ],
+      "stub": [
+        1817,
+        537.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        457.5
+      ],
+      "stub": [
+        3033,
+        457.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "existencias",
+      "a": "datos_merc",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1808,
+        617.125
+      ],
+      [
+        1817,
+        617.125
+      ],
+      [
+        1817,
+        501
+      ],
+      [
+        3033,
+        501
+      ],
+      [
+        3033,
+        477.625
+      ],
+      [
+        3042,
+        477.625
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        617.125
+      ],
+      "stub": [
+        1817,
+        617.125
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        477.625
+      ],
+      "stub": [
+        3033,
+        477.625
+      ],
+      "anchor": [
+        0,
+        0.675
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pedidos",
+      "a": "datos_venta",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2123,
+        477.125
+      ],
+      [
+        2132,
+        477.125
+      ],
+      [
+        2132,
+        593.35
+      ],
+      [
+        3042,
+        593.35
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        477.125
+      ],
+      "stub": [
+        2132,
+        477.125
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        593.35
+      ],
+      "stub": [
+        3033,
+        593.35
+      ],
+      "anchor": [
+        0,
+        0.29
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "ventas",
+      "a": "datos_venta",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2123,
+        547.125
+      ],
+      [
+        2132,
+        547.125
+      ],
+      [
+        2132,
+        609.45
+      ],
+      [
+        3042,
+        609.45
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        547.125
+      ],
+      "stub": [
+        2132,
+        547.125
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        609.45
+      ],
+      "stub": [
+        3033,
+        609.45
+      ],
+      "anchor": [
+        0,
+        0.43
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "comisiones",
+      "a": "datos_venta",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2123,
+        607.5
+      ],
+      [
+        2132,
+        607.5
+      ],
+      [
+        2132,
+        625.55
+      ],
+      [
+        3042,
+        625.55
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        607.5
+      ],
+      "stub": [
+        2132,
+        607.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        625.55
+      ],
+      "stub": [
+        3033,
+        625.55
+      ],
+      "anchor": [
+        0,
+        0.57
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "market",
+      "a": "datos_venta",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2123,
+        683.918
+      ],
+      [
+        2132,
+        683.918
+      ],
+      [
+        2132,
+        663
+      ],
+      [
+        3033,
+        663
+      ],
+      [
+        3033,
+        641.65
+      ],
+      [
+        3042,
+        641.65
+      ]
+    ],
+    "source": {
+      "point": [
+        2123,
+        683.918
+      ],
+      "stub": [
+        2132,
+        683.918
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        641.65
+      ],
+      "stub": [
+        3033,
+        641.65
+      ],
+      "anchor": [
+        0,
+        0.71
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "posventa",
+      "a": "datos_clientes",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2438,
+        467.5
+      ],
+      [
+        2447,
+        467.5
+      ],
+      [
+        2447,
+        764.08
+      ],
+      [
+        3042,
+        764.08
+      ]
+    ],
+    "source": {
+      "point": [
+        2438,
+        467.5
+      ],
+      "stub": [
+        2447,
+        467.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        764.08
+      ],
+      "stub": [
+        3033,
+        764.08
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "clientes",
+      "a": "datos_clientes",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2438,
+        547.125
+      ],
+      [
+        2447,
+        547.125
+      ],
+      [
+        2447,
+        790.92
+      ],
+      [
+        3042,
+        790.92
+      ]
+    ],
+    "source": {
+      "point": [
+        2438,
+        547.125
+      ],
+      "stub": [
+        2447,
+        547.125
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        790.92
+      ],
+      "stub": [
+        3033,
+        790.92
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "bitacora",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1978,
+        1156.253
+      ],
+      [
+        1987,
+        1156.253
+      ],
+      [
+        1987,
+        912.5
+      ],
+      [
+        3042,
+        912.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1978,
+        1156.253
+      ],
+      "stub": [
+        1987,
+        1156.253
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        912.5
+      ],
+      "stub": [
+        3033,
+        912.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "originacion",
+      "a": "datos_orig",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2423,
+        1113.918
+      ],
+      [
+        3033,
+        1113.918
+      ],
+      [
+        3033,
+        1022.5
+      ],
+      [
+        3042,
+        1022.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1113.918
+      ],
+      "stub": [
+        2432,
+        1113.918
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        1022.5
+      ],
+      "stub": [
+        3033,
+        1022.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cartera",
+      "a": "datos_cartera",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2423,
+        1182.5
+      ],
+      [
+        2432,
+        1182.5
+      ],
+      [
+        2432,
+        1112.5
+      ],
+      [
+        3042,
+        1112.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1182.5
+      ],
+      "stub": [
+        2432,
+        1182.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        1112.5
+      ],
+      "stub": [
+        3033,
+        1112.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "evidencia",
+      "a": "datos_evid",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2423,
+        1263.918
+      ],
+      [
+        3033,
+        1263.918
+      ],
+      [
+        3033,
+        1202.5
+      ],
+      [
+        3042,
+        1202.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1263.918
+      ],
+      "stub": [
+        2432,
+        1263.918
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        1202.5
+      ],
+      "stub": [
+        3033,
+        1202.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "redis",
+      "etiqueta": "Publicación/consulta de oferta operacional; frescura por verificar",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1808,
+        475.75
+      ],
+      [
+        1817,
+        475.75
+      ],
+      [
+        1817,
+        1074
+      ],
+      [
+        3033,
+        1074
+      ],
+      [
+        3033,
+        1631.0
+      ],
+      [
+        3042,
+        1631.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        475.75
+      ],
+      "stub": [
+        1817,
+        475.75
+      ],
+      "anchor": [
+        1,
+        0.65
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        1631.0
+      ],
+      "stub": [
+        3033,
+        1631.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oferta",
+      "a": "historial",
+      "etiqueta": "Registro de precios publicados; solo anexado",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1808,
+        481.25
+      ],
+      [
+        1817,
+        481.25
+      ],
+      [
+        1817,
+        1074
+      ],
+      [
+        3033,
+        1074
+      ],
+      [
+        3033,
+        1716.0
+      ],
+      [
+        3042,
+        1716.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1808,
+        481.25
+      ],
+      "stub": [
+        1817,
+        481.25
+      ],
+      "anchor": [
+        1,
+        0.75
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        1716.0
+      ],
+      "stub": [
+        3033,
+        1716.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "lago_r",
+      "a": "powerbi",
+      "etiqueta": "Consulta analítica Retail; sin mezcla de modelos",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        3678,
+        1461.0
+      ],
+      [
+        3687,
+        1461.0
+      ],
+      [
+        3687,
+        1793.765
+      ],
+      [
+        3678,
+        1793.765
+      ]
+    ],
+    "source": {
+      "point": [
+        3678,
+        1461.0
+      ],
+      "stub": [
+        3687,
+        1461.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3678,
+        1793.765
+      ],
+      "stub": [
+        3687,
+        1793.765
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "lago_e",
+      "a": "powerbi",
+      "etiqueta": "Consulta analítica Filial; espacios separados",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        3678,
+        1546.0
+      ],
+      [
+        3687,
+        1546.0
+      ],
+      [
+        3687,
+        1808.235
+      ],
+      [
+        3678,
+        1808.235
+      ]
+    ],
+    "source": {
+      "point": [
+        3678,
+        1546.0
+      ],
+      "stub": [
+        3687,
+        1546.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3678,
+        1808.235
+      ],
+      "stub": [
+        3687,
+        1808.235
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_serv",
+      "a": "local_data",
+      "etiqueta": "Diario transaccional local Retail",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2438,
+        2077.837
+      ],
+      [
+        2447,
+        2077.837
+      ],
+      [
+        2447,
+        2056
+      ],
+      [
+        3033,
+        2056
+      ],
+      [
+        3033,
+        2032.998
+      ],
+      [
+        3042,
+        2032.998
+      ]
+    ],
+    "source": {
+      "point": [
+        2438,
+        2077.837
+      ],
+      "stub": [
+        2447,
+        2077.837
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        2032.998
+      ],
+      "stub": [
+        3033,
+        2032.998
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_data",
+      "a": "local_sync",
+      "etiqueta": "Operaciones pendientes del diario",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        3042,
+        2047.002
+      ],
+      [
+        3033,
+        2047.002
+      ],
+      [
+        3033,
+        2099.914
+      ],
+      [
+        2978,
+        2099.914
+      ]
+    ],
+    "source": {
+      "point": [
+        3042,
+        2047.002
+      ],
+      "stub": [
+        3033,
+        2047.002
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        2099.914
+      ],
+      "stub": [
+        2987,
+        2099.914
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cartera",
+      "a": "cupo_local",
+      "etiqueta": "Provisionar referencia seudonimizada, cupo y vigencia; ruta y caducidad pendientes",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        2423,
+        1192.125
+      ],
+      [
+        2432,
+        1192.125
+      ],
+      [
+        2432,
+        1254
+      ],
+      [
+        3690,
+        1254
+      ],
+      [
+        3690,
+        2084
+      ],
+      [
+        3033,
+        2084
+      ],
+      [
+        3033,
+        2112.998
+      ],
+      [
+        3042,
+        2112.998
+      ]
+    ],
+    "source": {
+      "point": [
+        2423,
+        1192.125
+      ],
+      "stub": [
+        2432,
+        1192.125
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        2112.998
+      ],
+      "stub": [
+        3033,
+        2112.998
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "meson_f",
+      "a": "cupo_local",
+      "etiqueta": "Consulta local en red del mesón; política offline pendiente",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        708,
+        1494.004
+      ],
+      [
+        717,
+        1494.004
+      ],
+      [
+        717,
+        2146
+      ],
+      [
+        3033,
+        2146
+      ],
+      [
+        3033,
+        2127.002
+      ],
+      [
+        3042,
+        2127.002
+      ]
+    ],
+    "source": {
+      "point": [
+        708,
+        1494.004
+      ],
+      "stub": [
+        717,
+        1494.004
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3042,
+        2127.002
+      ],
+      "stub": [
+        3033,
+        2127.002
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "comercio",
+      "a": "ext_comercio",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        2502,
+        1487.5
+      ],
+      [
+        2493,
+        1487.5
+      ],
+      [
+        2493,
+        1552.5
+      ],
+      [
+        2438,
+        1552.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        1487.5
+      ],
+      "stub": [
+        2493,
+        1487.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        1552.5
+      ],
+      "stub": [
+        2447,
+        1552.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "canales",
+      "a": "ext_canales",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        2502,
+        1597.5
+      ],
+      [
+        2493,
+        1597.5
+      ],
+      [
+        2493,
+        1662.5
+      ],
+      [
+        2438,
+        1662.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        1597.5
+      ],
+      "stub": [
+        2493,
+        1597.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        1662.5
+      ],
+      "stub": [
+        2447,
+        1662.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "socios",
+      "a": "ext_socios",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        2502,
+        1707.5
+      ],
+      [
+        2493,
+        1707.5
+      ],
+      [
+        2493,
+        1772.5
+      ],
+      [
+        2438,
+        1772.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        1707.5
+      ],
+      "stub": [
+        2493,
+        1707.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        1772.5
+      ],
+      "stub": [
+        2447,
+        1772.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "credito",
+      "a": "ext_credito",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        2502,
+        1817.5
+      ],
+      [
+        2493,
+        1817.5
+      ],
+      [
+        2493,
+        1882.5
+      ],
+      [
+        2438,
+        1882.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2502,
+        1817.5
+      ],
+      "stub": [
+        2493,
+        1817.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2438,
+        1882.5
+      ],
+      "stub": [
+        2447,
+        1882.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel",
+      "a": "monitor",
+      "etiqueta": "OTLP por colector del ámbito; exportador pendiente",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        1003,
+        2457.5
+      ],
+      [
+        1030,
+        2457.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1003,
+        2457.5
+      ],
+      "stub": [
+        1012,
+        2457.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1030,
+        2457.5
+      ],
+      "stub": [
+        1021,
+        2457.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "monitor",
+      "a": "grafana",
+      "etiqueta": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        1671,
+        2457.5
+      ],
+      [
+        1698,
+        2457.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1671,
+        2457.5
+      ],
+      "stub": [
+        1680,
+        2457.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1698,
+        2457.5
+      ],
+      "stub": [
+        1689,
+        2457.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pl_r",
+      "a": "appgw_r",
+      "semantica": "condicionado",
+      "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+    },
+    "points": [
+      [
+        1116,
+        563.0
+      ],
+      [
+        1125,
+        563.0
+      ],
+      [
+        1125,
+        590.0
+      ],
+      [
+        1132,
+        590.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1116,
+        563.0
+      ],
+      "stub": [
+        1125,
+        563.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        590.0
+      ],
+      "stub": [
+        1123,
+        590.0
+      ],
+      "anchor": [
+        0,
+        0.75
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pl_e",
+      "a": "appgw_e",
+      "semantica": "condicionado",
+      "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+    },
+    "points": [
+      [
+        1116,
+        1313.0
+      ],
+      [
+        1125,
+        1313.0
+      ],
+      [
+        1125,
+        1331.0
+      ],
+      [
+        1132,
+        1331.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1116,
+        1313.0
+      ],
+      "stub": [
+        1125,
+        1313.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1132,
+        1331.0
+      ],
+      "stub": [
+        1123,
+        1331.0
+      ],
+      "anchor": [
+        0,
+        0.675
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "local_sync",
+      "semantica": "consumo",
+      "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+    },
+    "points": [
+      [
+        2978,
+        1194.55
+      ],
+      [
+        2987,
+        1194.55
+      ],
+      [
+        2987,
+        1962
+      ],
+      [
+        3690,
+        1962
+      ],
+      [
+        3690,
+        2084
+      ],
+      [
+        2987,
+        2084
+      ],
+      [
+        2987,
+        2115.086
+      ],
+      [
+        2978,
+        2115.086
+      ]
+    ],
+    "source": {
+      "point": [
+        2978,
+        1194.55
+      ],
+      "stub": [
+        2987,
+        1194.55
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2978,
+        2115.086
+      ],
+      "stub": [
+        2987,
+        2115.086
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  }
+]
