@@ -63,7 +63,7 @@ digraph D2 {
                  fillcolor="#196197", color="#196197", fontcolor="#FFFFFF"];
 
     // Capa 2 [Etapa 2]
-    abastecimiento [label=<Servicio de<BR/>abasteci-<BR/>miento<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
+    abastecimiento [label=<Servicio de<BR/>abastecimiento<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
                     fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
     marketplace    [label=<Servicio de<BR/>marketplace<BR/><FONT POINT-SIZE="11.5">Etapa 2</FONT>>,
                     fillcolor="#7FC6AA", color="#17324D", fontcolor="#17324D"];
