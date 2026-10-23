@@ -64,6 +64,13 @@
         "empaquetado_sha256": "275b6584172d650505bcb82ae852ad7357994ee31b2bb37b837ba51c064117d8",
         "empaquetado_utc": "2026-10-05T22:41:00.497557+00:00"
       }
+    },
+    "T7-07": {
+      "tex": "OSS-Subdocumento7.tex",
+      "prism": {
+        "empaquetado_sha256": "974f4b4240be1b7cd4845b8488438ec2dbc2272f5e55bb4986a053fa59f534cf",
+        "importado_utc": "2026-10-12T03:57:38.095158+00:00"
+      }
     }
   }
 }

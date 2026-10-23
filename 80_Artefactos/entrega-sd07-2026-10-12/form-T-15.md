@@ -1,0 +1,551 @@
+# Formulario T-15 — Nivelación de recursos
+
+Only Simple Solutions · Licitación N.° TFEP-01/2026
+
+## Base y método
+
+Las 159 cuentas ajenas a innovación suman 31.058 HH y las cinco cuentas de innovación, 9.888 HH. Las 164 cuentas totalizan 40.946 HH, distribuidas en sus ventanas de ejecución. El esfuerzo de innovaciones se obtiene mediante el método de tres valores de su anexo; no se atribuye al cálculo de puntos de caso de uso.
+
+Salvo el acompañamiento final 1.14.5, las cuentas ajenas a innovación reparten sus horas uniformemente entre sus meses activos, incluidos los tramos discontinuos. Las cinco innovaciones se distribuyen por las ventanas de sus 40 paquetes, no uniformemente por toda la vida de la cuenta. El acompañamiento final conserva 64 HH: 16 en M54, 16 en M55 y 32 en M56 (48 HH de acompañamiento y 16 HH de cierre). Su inicio efectivo debe permitir al menos 90 días antes del término. La distribución uniforme es una hipótesis de nivelación, no una medición de productividad. Se conserva precisión racional en el cálculo y se muestran dos decimales; las diferencias de centésimas se deben a la presentación, no a horas agregadas o eliminadas.
+
+La imputación separa E1, E2, transversal y operación directa. No se asigna esfuerzo E2 antes de M13. Gobierno y documentación permanecen transversales; desde M21 se suman a la curva de operación para representar su carga completa y no duplicarlos en implementación. El acta H12 de M21 pertenece a implementación. La estabilización posterior, el acompañamiento y los retiros se imputan a operación desde M21. Las cuentas compartidas se distribuyen por tramo temporal, con distribución por rol que debe conciliarse con las dedicaciones del Subdocumento 12. Los trabajos E1 de inventario, histórico, repositorio y sustitución permanecen en E1 durante su ventana. La revalidación 1.9.5 de M16 se imputa a E1. El acompañamiento 1.13.4 se asigna a E1 en M13-18, por mitades a E1 y E2 en M19-20 y a operación desde M21; esta división es una hipótesis explícita de nivelación.
+
+## Reservas de capacidad y coordinación con el Subdocumento 6
+
+La planificación de cada equipo usa su capacidad efectiva del intervalo, descontando ausencias y obligaciones ya asignadas. El 15 % se reserva para deuda técnica, conforme a 6.2.3.3. Cuando el equipo participa en una marcha blanca, reserva además el 30 % para estabilización, conforme a 6.2.7. Ambos porcentajes se calculan sobre la misma capacidad efectiva; queda hasta un 55 % para otras historias durante esa coincidencia y hasta un 85 % fuera de ella. No se aplican estos porcentajes a las horas de todo el contrato ni a equipos ajenos a esas obligaciones.
+
+Cada responsable registra por intervalo el equipo y rol, las HH disponibles, las HH de deuda, las HH de estabilización y las HH de las restantes actividades. Cada tarea se vincula a una sola cuenta del T-14 y se imputa una sola vez. Una corrección de incidente se registra como estabilización, aunque además reduzca deuda; no ocupa dos veces la capacidad. Las pruebas y revisiones se incluyen en las tareas que las requieren.
+
+En M13–15 se distingue estabilización E1 de trabajo E2; en M19–20 se distinguen operación E1 y estabilización E2. El jefe de proyecto revisa semanalmente carga y capacidad, y el Comité de Proyecto trata sus desviaciones cada dos semanas. No se libera la reserva para asumir nuevas historias sin comprobar la demanda de incidencias y registrar la decisión. Si falta capacidad, se reordena trabajo independiente o se asignan recursos con las competencias necesarias mediante el control de cambios aplicable.
+
+La distribución mensual programa 40.946 HH de trabajo base, incluidas las innovaciones. Los porcentajes anteriores no generan nuevas HH ni demuestran por sí solos la suficiencia de dotación. La comprobación por equipo y rol requiere las dedicaciones del Subdocumento 12 y la cobertura del Subdocumento 10; el cálculo agregado de este formulario se complementa con la asignación nominal por equipo y rol antes de comprometer la ejecución.
+
+### Contingencia comprometida para riesgos identificados
+
+Only Simple Solutions añade 3.688 HH de capacidad contingente a las 40.946 HH de trabajo base. La oferta compromete así 44.634 HH. Esta bolsa corresponde al valor esperado residual de los catorce riesgos críticos y altos de SD08 y se activa mediante sus disparadores; no forma parte de las cuentas T-14, de la curva mensual de trabajo base ni de las reservas del 15 % para deuda técnica y del 30 % para estabilización. Las 1.660 HH estimadas para las respuestas preventivas se imputan a las cuentas existentes de T-14 dentro del trabajo base y no se cargan de nuevo a la contingencia.
+
+| Frente de contingencia | Riesgos incluidos | HH adicionales | Perfiles a movilizar | Ventana de disponibilidad |
+| --- | --- | ---: | --- | --- |
+| Emisor, cartera y emisión | R-01, R-13, R-16, R-25 | 1.568 | Datos, Integración y Seguridad | M2–22 |
+| Existencias, precio y primer peak | R-18, R-24, R-34 | 1.008 | Datos, Desarrollo y Calidad | M4–18 |
+| Despliegue y dependencias de sitio | R-02, R-12, R-20 | 752 | Implantación, Integración y Calidad | M1–21 |
+| Gobierno y continuidad del equipo | R-11, R-23, R-33, R-37 | 360 | Jefatura de Proyecto y suplentes especializados | M1–21 |
+| **Total de contingencia** | **14 riesgos** | **3.688** |  |  |
+
+La distribución por frente suma las horas esperadas residuales de cada riesgo, no cuatro bolsas independientes. El Jefe de Proyecto programa la disponibilidad de esos perfiles dentro de cada ventana sin disminuir las dedicaciones del trabajo base; cuando se activa un riesgo, registra el consumo en la cuenta afectada y revisa la red de precedencias. La reserva equivale a 23,05 dedicaciones persona-mes de 160 HH, repartidas en las ventanas indicadas; ese cociente no fija la dotación simultánea ni garantiza absorber el P80 de atraso. La asignación nominal y mensual se concilia con Subdocumento 12 antes de presentar la dotación final.
+
+## Resumen de horas
+
+Tabla 1: Esfuerzo asignado por ámbito. Fuente: T-14 y cálculo mensual reproducible.
+
+| **Ámbito** | **HH** |
+| --- | --- |
+| Etapa 1 | 18.074,92 |
+| Etapa 2 | 12.415,03 |
+| Transversal durante todo el contrato | 2.392,00 |
+| Operación directa | 8.064,05 |
+| Total planificado por cuentas | 40.946,00 |
+| Contingencia adicional SD08 | 3.688,00 |
+| **Total comprometido con contingencia** | **44.634,00** |
+
+Las innovaciones quedan incluidas en E1, E2 y operación según sus paquetes. El conteo predictivo recibe seguimiento desde M16; las otras cuatro, desde M21. Las cargas corresponden al piloto dimensionado y requieren una actualización si se amplía su cobertura.
+
+## Resumen por etapa y dotación
+
+La tabla presenta los cinco tramos del Formulario T-15. Las HH de cada etapa incluyen las actividades de sus cuentas durante la ventana indicada, no solo programación de software. La dotación nominal máxima por roles y turnos está pendiente de conciliación con el Subdocumento 12; no se sustituye por el cociente HH/160. Los frentes compartidos se identifican en el apartado de frentes y solapamientos.
+
+| Etapa | HH totales | Personas (peak) | Frentes | Meses |
+| --- | --- | --- | --- | --- |
+| Etapa 1 — Desarrollo | 17.080,06 | Por definir por rol | Ver detalle | 1–12 |
+| Etapa 1 — Marcha blanca | 606,32 | Por definir por rol | Ver detalle | 13–15 |
+| Etapa 2 — Desarrollo | 11.403,46 | Por definir por rol | Ver detalle | 13–18 |
+| Etapa 2 — Marcha blanca | 975,57 | Por definir por rol | Ver detalle | 19–20 |
+| Operación | 9.342,86 | Por definir por rol | Ver detalle | 21–56 |
+
+Para conciliar los cinco tramos con las 40.946 HH se añaden 388,55 HH de E1 en M16–20, 36,00 HH del acta H12 en M21 y 1.113,19 HH transversales de M1–20. Las HH transversales desde M21 ya están incluidas en operación. Las filas no duplican esas cargas.
+
+#### Capacidad equivalente por tramo
+
+Etapa 1 — Desarrollo: máximo mensual de 1.926,41 HH, equivalente a 12,04 dedicaciones de 160 HH mensuales.
+
+Etapa 1 — Marcha blanca: máximo mensual de 202,11 HH, equivalente a 1,26 dedicaciones de 160 HH mensuales.
+
+Etapa 2 — Desarrollo: máximo mensual de 2.288,24 HH, equivalente a 14,30 dedicaciones de 160 HH mensuales.
+
+Etapa 2 — Marcha blanca: máximo mensual de 511,28 HH, equivalente a 3,20 dedicaciones de 160 HH mensuales.
+
+Operación: máximo mensual de 364,63 HH, equivalente a 2,28 dedicaciones de 160 HH mensuales.
+
+## Horas por rama y paquete
+
+La cuenta es la unidad de conciliación; las 127 asignaciones de paquetes de software suman exactamente las 12.116 HH de su rama tras distribuir los restos de redondeo dentro de cada cuenta.
+
+Tabla 2: Suma de horas por rama.
+
+| **Rama** | **HH** |
+| --- | --- |
+| 1.1 · Dirección, gobierno y control del proyecto | 1.423 |
+| 1.2 · Levantamiento y línea base de alcance | 1.087 |
+| 1.3 · Arquitectura y diseño | 863 |
+| 1.4 · Infraestructura híbrida y plataforma base | 1.622 |
+| 1.5 · Desarrollo de software | 12.116 |
+| 1.6 · Integraciones | 1.068 |
+| 1.7 · Migración y saneamiento de datos | 1.973 |
+| 1.8 · Seguridad, identidad y cumplimiento | 949 |
+| 1.9 · Calidad, pruebas y certificación | 1.539 |
+| 1.10 · Innovaciones | 9.888 |
+| 1.11 · Implantación y despliegue | 795 |
+| 1.12 · Marchas blancas y aceptación por etapa | 532 |
+| 1.13 · Gestión del cambio y capacitación | 916 |
+| 1.14 · Documentación, transferencia y reversibilidad | 969 |
+| 1.15 · Operación y soporte | 5.206 |
+| Total | 40.946 |
+
+### Paquetes de trabajo de software (127 casos de uso)
+
+Cada caso de uso es un paquete de trabajo. Su entregable es la implementación comprobada del caso de uso indicado. Su aceptación exige superar los escenarios acordados de ese caso, las pruebas de integración y seguridad aplicables, y los umbrales de su cuenta de control, identificada explícitamente en la misma fila. Incluye código revisado, documentación y evidencia trazable. El Líder de Desarrollo responde por cada paquete y el Líder de Calidad verifica su evidencia; la Contraparte Técnica conserva la aceptación contractual. Las horas de los paquetes se concilian con su cuenta mediante los pesos relativos de la estimación, usando el método del mayor resto a la hora entera. No se modifica el esfuerzo aprobado de ninguna cuenta. La cuenta es la unidad mínima utilizada para la curva mensual.
+
+Tabla: Paquetes de trabajo de software. Fuente: Elaboración propia.
+
+| **Paquete** | **Caso de uso** | **Cuenta** | **HH asignadas (h)** | **Responsable** |
+| --- | --- | --- | --- | --- |
+| 1.5.1.1 | «Cambiar y propagar un precio» (CU-OF-01) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.1.2 | «Entregar la oferta vigente a los canales» (CU-OF-02) | 1.5.1 | 184 | Líder de Desarrollo |
+| 1.5.1.3 | «Consultar el precio vigente en línea» (CU-OF-03) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.1.4 | «Recuperar el precio publicado en un instante» (CU-OF-06) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.2.1 | «Registrar el cambio de etiqueta» (CU-OF-04) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.2 | «Consultar el estado de exhibición de la tienda» (CU-OF-05) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.3 | «Resolver el precio a cobrar ante diferencia con la etiqueta» (CU-OF-07) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.4 | «Revisar los incidentes de discrepancia de precio» (CU-OF-08) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.3.1 | «Aplicar las promociones vigentes en la venta» (CU-OF-09) | 1.5.3 | 94 | Líder de Desarrollo |
+| 1.5.3.2 | «Administrar las promociones y su vigencia» (CU-OF-10) | 1.5.3 | 94 | Líder de Desarrollo |
+| 1.5.4.1 | «Mantener el maestro de artículos» (CU-OF-11) | 1.5.4 | 94 | Líder de Desarrollo |
+| 1.5.4.2 | «Revisar los reportes de calidad del maestro y de publicación» (CU-OF-12) | 1.5.4 | 94 | Líder de Desarrollo |
+| 1.5.5.1 | «Generar la propuesta diaria de reposición» (CU-AB-01) | 1.5.5 | 94 | Líder de Desarrollo |
+| 1.5.5.2 | «Ajustar y confirmar la propuesta de reposición» (CU-AB-02) | 1.5.5 | 94 | Líder de Desarrollo |
+| 1.5.6.1 | «Colocar y seguir las órdenes a proveedores» (CU-AB-03) | 1.5.6 | 94 | Líder de Desarrollo |
+| 1.5.7.1 | «Gestionar las transferencias entre tiendas y centros de distribución» (CU-AB-04) | 1.5.7 | 94 | Líder de Desarrollo |
+| 1.5.7.2 | «Registrar la recepción de mercadería en la tienda» (CU-AB-05) | 1.5.7 | 94 | Líder de Desarrollo |
+| 1.5.8.1 | «Publicar el disponible a los canales» (CU-EX-03) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.2 | «Parametrizar el colchón de confianza y la vigencia de la reserva» (CU-EX-08) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.3 | «Consultar la traza del cálculo del disponible» (CU-EX-09) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.4 | «Consultar la disponibilidad para vender en sala» (CU-EX-01) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.5 | «Consultar la disponibilidad en línea» (CU-EX-02) | 1.5.8 | 93 | Líder de Desarrollo |
+| 1.5.9.1 | «Reservar una unidad para el canal digital» (CU-EX-04) | 1.5.9 | 184 | Líder de Desarrollo |
+| 1.5.9.2 | «Expirar las reservas vencidas» (CU-EX-05) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.9.3 | «Verificar la existencia física antes del cobro» (CU-EX-06) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.9.4 | «Resolver el conflicto de existencia comprometida» (CU-EX-07) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.10.1 | «Parametrizar el conteo cíclico» (CU-EX-10) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.2 | «Ejecutar el conteo cíclico» (CU-EX-11) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.3 | «Consultar la exactitud del inventario y recibir alertas» (CU-EX-12) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.4 | «Clasificar las diferencias y cerrar el ajuste» (CU-EX-13) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.5 | «Emitir el informe mensual de merma» (CU-EX-14) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.6 | «Gestionar las unidades en el probador» (CU-EX-15) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.11.1 | «Suspender la publicación de una categoría» (CU-EX-16) | 1.5.11 | 94 | Líder de Desarrollo |
+| 1.5.11.2 | «Degradar por cancelaciones» (CU-EX-17) | 1.5.11 | 94 | Líder de Desarrollo |
+| 1.5.12.1 | «Recibir los movimientos del sistema de almacenes» (CU-EX-18) | 1.5.12 | 94 | Líder de Desarrollo |
+| 1.5.12.2 | «Cargar las existencias de Concepción» (CU-EX-19) | 1.5.12 | 94 | Líder de Desarrollo |
+| 1.5.13.1 | «Calcular la fecha prometida de entrega» (CU-PE-01) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.13.2 | «Seleccionar el punto de despacho por costo total de servir» (CU-PE-02) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.13.3 | «Parametrizar la elegibilidad del stock y el límite por cliente» (CU-PE-14) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.14.1 | «Aceptar el pedido y preautorizar el medio de pago» (CU-PE-03) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.2 | «Capturar el cobro al confirmarse la preparación» (CU-PE-04) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.3 | «Cancelar el pedido y anular la preautorización» (CU-PE-08) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.4 | «Conciliar las preautorizaciones vencidas sin captura» (CU-PE-09) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.15.1 | «Resolver un pedido cuya unidad no existe» (CU-PE-05) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.15.2 | «Reasignar el pedido a otro punto de despacho» (CU-PE-06) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.15.3 | «Ofrecer al cliente las alternativas de resolución» (CU-PE-07) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.16.1 | «Consultar el estado único del pedido» (CU-PE-10) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.16.2 | «Consultar las compras y las devoluciones» (CU-PE-11) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.16.3 | «Atender en el mesón la consulta de un pedido» (CU-PE-12) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.17.1 | «Priorizar los pedidos próximos a vencer su promesa» (CU-PE-13) | 1.5.17 | 94 | Líder de Desarrollo |
+| 1.5.17.2 | «Seguir el pedido con el transportista hasta la entrega» (CU-PE-15) | 1.5.17 | 94 | Líder de Desarrollo |
+| 1.5.18.1 | «Registrar y cobrar una venta» (CU-VE-01) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.2 | «Reversar una venta o un pago» (CU-VE-02) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.3 | «Cerrar la caja del turno» (CU-VE-03) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.4 | «Desactivar los medios de pago de mayor fricción» (CU-VE-08) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.19.1 | «Operar la tienda sin enlace» (CU-VE-04) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.2 | «Reconciliar las ventas hechas sin enlace» (CU-VE-05) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.3 | «Revisar el informe de excepciones de la conciliación» (CU-VE-06) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.4 | «Validar las operaciones cursadas sin enlace» (CU-VE-07) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.20.1 | «Registrar las ventas del canal digital» (CU-VE-09) | 1.5.20 | 94 | Líder de Desarrollo |
+| 1.5.20.2 | «Enrutar los documentos tributarios al ERP/DTE» (CU-VE-10) | 1.5.20 | 94 | Líder de Desarrollo |
+| 1.5.21.1 | «Cobrar con la tarjeta de la casa» (CU-VE-11) | 1.5.21 | 94 | Líder de Desarrollo |
+| 1.5.22.1 | «Calcular la base de comisión por vendedor, tienda y canal» (CU-CM-01) | 1.5.22 | 94 | Líder de Desarrollo |
+| 1.5.23.1 | «Transmitir la base de comisión al sistema de remuneraciones» (CU-CM-02) | 1.5.23 | 94 | Líder de Desarrollo |
+| 1.5.24.1 | «Revisar la atribución de una comisión» (CU-CM-03) | 1.5.24 | 94 | Líder de Desarrollo |
+| 1.5.25.1 | «Declarar y actualizar la existencia del vendedor» (CU-MK-01) | 1.5.25 | 94 | Líder de Desarrollo |
+| 1.5.25.2 | «Publicar la existencia vigente y despublicar la vencida» (CU-MK-02) | 1.5.25 | 94 | Líder de Desarrollo |
+| 1.5.26.1 | «Consultar los pedidos, las devoluciones y la evaluación» (CU-MK-03) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.2 | «Calcular los indicadores de nivel de servicio por vendedor» (CU-MK-04) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.3 | «Dar a conocer las reglas de evaluación al vendedor» (CU-MK-05) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.4 | «Aplicar la consecuencia escalonada de un incumplimiento» (CU-MK-06) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.27.1 | «Gestionar una devolución de producto de marketplace» (CU-MK-07) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.27.2 | «Informar la base de comisión de marketplace al ERP» (CU-MK-10) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.27.3 | «Conciliar la liquidación de un vendedor» (CU-MK-11) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.28.1 | «Identificar al vendedor y las condiciones en la compra» (CU-MK-08) | 1.5.28 | 94 | Líder de Desarrollo |
+| 1.5.28.2 | «Impedir que un pedido intermediado use existencia propia» (CU-MK-09) | 1.5.28 | 94 | Líder de Desarrollo |
+| 1.5.29.1 | «Atender un caso de garantía legal íntegramente en el mesón» (CU-PV-01) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.29.2 | «Ofrecer y registrar la opción de garantía legal» (CU-PV-02) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.29.3 | «Parametrizar el plazo de garantía legal por tipo de producto» (CU-PV-03) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.30.1 | «Reingresar una unidad devuelta según su aptitud» (CU-PV-04) | 1.5.30 | 94 | Líder de Desarrollo |
+| 1.5.31.1 | «Seguir la resolución al consumidor y la recuperación contra el tercero» (CU-PV-05) | 1.5.31 | 94 | Líder de Desarrollo |
+| 1.5.32.1 | «Consolidar los registros duplicados de un cliente» (CU-CL-01) | 1.5.32 | 94 | Líder de Desarrollo |
+| 1.5.33.1 | «Mantener los puntos y la fidelización sincronizados» (CU-CL-02) | 1.5.33 | 94 | Líder de Desarrollo |
+| 1.5.34.1 | «Construir un segmento con atributos comerciales» (CU-CL-03) | 1.5.34 | 94 | Líder de Desarrollo |
+| 1.5.34.2 | «Ejecutar una campaña sobre un segmento» (CU-CL-04) | 1.5.34 | 94 | Líder de Desarrollo |
+| 1.5.35.1 | «Evaluar la solicitud y abrir una tarjeta en el mostrador» (CU-OR-01) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.2 | «Ofrecer la tarjeta y consultar el resultado» (CU-OR-02) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.3 | «Controlar los intentos de evaluación» (CU-OR-05) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.4 | «Solicitar la ampliación de un cupo con enlace» (CU-OR-09) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.36.1 | «Simular el costo total del crédito» (CU-OR-03) | 1.5.36 | 94 | Líder de Desarrollo |
+| 1.5.36.2 | «Mantener la tasa máxima convencional vigente» (CU-OR-04) | 1.5.36 | 94 | Líder de Desarrollo |
+| 1.5.37.1 | «Parametrizar los topes y la ventana de enfriamiento» (CU-OR-06) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.37.2 | «Autorizar compra a cuotas sin enlace contra el cupo preaprobado» (CU-OR-07) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.37.3 | «Mantener el cupo preaprobado en la tienda» (CU-OR-08) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.38.1 | «Iniciar y registrar una gestión de cobranza» (CU-CA-01) | 1.5.38 | 94 | Líder de Desarrollo |
+| 1.5.38.2 | «Calcular la mora y actualizar las cuentas» (CU-CA-05) | 1.5.38 | 94 | Líder de Desarrollo |
+| 1.5.39.1 | «Repactar las condiciones de una deuda» (CU-CA-02) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.39.2 | «Registrar el pago de una cuota» (CU-CA-04) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.39.3 | «Consultar el estado de cuenta y los documentos» (CU-CA-03) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.40.1 | «Revisar la conciliación diaria de la migración» (CU-CA-06) | 1.5.40 | 94 | Líder de Desarrollo |
+| 1.5.40.2 | «Convivir con la plataforma de crédito de 2011» (CU-CA-07) | 1.5.40 | 94 | Líder de Desarrollo |
+| 1.5.41.1 | «Entregar la información precontractual del crédito» (CU-EV-01) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.41.2 | «Aceptar la información precontractual con firma electrónica» (CU-EV-02) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.41.3 | «Consultar la información precontractual del crédito» (CU-EV-08) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.42.1 | «Registrar el consentimiento de una modificación de condiciones» (CU-EV-03) | 1.5.42 | 94 | Líder de Desarrollo |
+| 1.5.42.2 | «Enlazar la repactación con su cobranza y su consentimiento» (CU-EV-07) | 1.5.42 | 94 | Líder de Desarrollo |
+| 1.5.43.1 | «Reconstruir el acto de consentimiento» (CU-EV-04) | 1.5.43 | 94 | Líder de Desarrollo |
+| 1.5.43.2 | «Recuperar los antecedentes de una operación desde el archivo» (CU-EV-05) | 1.5.43 | 94 | Líder de Desarrollo |
+| 1.5.44.1 | «Mantener el inventario de flujos de cruce autorizados» (CU-CC-01) | 1.5.44 | 94 | Líder de Desarrollo |
+| 1.5.44.2 | «Revisar los cruces ejecutados y los intentos bloqueados» (CU-CC-03) | 1.5.44 | 94 | Líder de Desarrollo |
+| 1.5.45.1 | «Intentar una campaña con atributos de origen financiero» (CU-CC-02) | 1.5.45 | 94 | Líder de Desarrollo |
+| 1.5.45.2 | «Intentar un proceso crediticio con atributos de origen Retail» (CU-CC-04) | 1.5.45 | 94 | Líder de Desarrollo |
+| 1.5.46.1 | «Resolver la correspondencia de identificadores entre ámbitos» (CU-CC-05) | 1.5.46 | 94 | Líder de Desarrollo |
+| 1.5.46.2 | «Evaluar el impacto de una iniciativa sobre la frontera de datos» (CU-CC-06) | 1.5.46 | 94 | Líder de Desarrollo |
+| 1.5.47.1 | «Ingresar a una terminal compartida con identidad individual» (CU-BT-01) | 1.5.47 | 94 | Líder de Desarrollo |
+| 1.5.47.2 | «Administrar identidades, roles y ámbitos» (CU-BT-12) | 1.5.47 | 94 | Líder de Desarrollo |
+| 1.5.48.1 | «Habilitar y revocar funciones según la capacitación normativa» (CU-BT-02) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.2 | «Patrocinar el acceso temporal de un repositor externo» (CU-BT-03) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.3 | «Operar como repositor externo con identidad individualizada» (CU-BT-04) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.4 | «Retirar los accesos al término del vínculo» (CU-BT-05) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.5 | «Conciliar los accesos contra la nómina activa» (CU-BT-06) | 1.5.48 | 93 | Líder de Desarrollo |
+| 1.5.49.1 | «Declarar el orden y los criterios de degradación» (CU-BT-07) | 1.5.49 | 94 | Líder de Desarrollo |
+| 1.5.49.2 | «Parametrizar las ventanas de congelamiento y bloquear intervenciones» (CU-BT-08) | 1.5.49 | 94 | Líder de Desarrollo |
+| 1.5.50.1 | «Convivir con el sistema central de 2009» (CU-BT-09) | 1.5.50 | 94 | Líder de Desarrollo |
+| 1.5.50.2 | «Administrar la plataforma de integración» (CU-BT-10) | 1.5.50 | 94 | Líder de Desarrollo |
+| 1.5.51.1 | «Observar la operación y atender alertas» (CU-BT-11) | 1.5.51 | 94 | Líder de Desarrollo |
+| 1.5.51.2 | «Consultar tableros y exportar informes por ámbito» (CU-BT-13) | 1.5.51 | 94 | Líder de Desarrollo |
+
+### Paquetes de trabajo de las innovaciones
+
+El anexo de estimación de innovaciones detalla 40 paquetes, ocho por cuenta, con entregable, responsable, aceptación, tres escenarios de esfuerzo y meses activos. Se suman a los 127 paquetes de software existentes sin cambiar sus códigos ni sus HH. Cada cuenta 1.10 integra construcción, aceptación y seguimiento específico; su barra extendida no representa desarrollo continuo hasta M56. La instalación supone tres sitios piloto por solución física y deja la ampliación parametrizada por unidad.
+
+## Curva mensual
+
+La Figura 7.2 muestra la implementación por etapa y total, y la operación en un panel separado. Las franjas indican los solapamientos M13-15 y M19-20.
+
+![Figura](figuras/sd07-figuras/sd07-73-curva-hh.png)
+
+Figura 7.2: Curva mensual de implementación y operación. Fuente: cálculo desde las cuentas y tramos del T-14.
+
+El máximo de implementación es 2.492,78 HH en M16; el de operación, incluidos gobierno y documentación, es 364,63 HH en M22. Son cargas de la planificación actualizada, no certificaciones de suficiencia de personal.
+
+Tabla 3: Curva mensual por ámbito. Fuente: cálculo exacto; visualización a dos decimales.
+
+| **Mes** | **Etapa 1 (h)** | **Etapa 2 (h)** | **Transversal (h)** | **Operación directa (h)** |
+| --- | --- | --- | --- | --- |
+| 1 | 964,36 | 0,00 | 220,50 | 0,00 |
+| 2 | 1.418,53 | 0,00 | 196,50 | 0,00 |
+| 3 | 1.564,94 | 0,00 | 217,83 | 0,00 |
+| 4 | 1.926,41 | 0,00 | 44,31 | 0,00 |
+| 5 | 1.751,73 | 0,00 | 44,31 | 0,00 |
+| 6 | 1.766,57 | 0,00 | 22,97 | 0,00 |
+| 7 | 1.315,40 | 0,00 | 22,97 | 0,00 |
+| 8 | 1.298,59 | 0,00 | 22,97 | 0,00 |
+| 9 | 1.364,49 | 0,00 | 22,97 | 0,00 |
+| 10 | 1.354,15 | 0,00 | 27,08 | 0,00 |
+| 11 | 1.108,70 | 0,00 | 27,08 | 0,00 |
+| 12 | 1.246,18 | 0,00 | 27,08 | 0,00 |
+| 13 | 202,11 | 1.283,98 | 27,08 | 0,00 |
+| 14 | 202,11 | 1.554,38 | 27,08 | 0,00 |
+| 15 | 202,11 | 2.120,74 | 27,08 | 0,00 |
+| 16 | 177,46 | 2.288,24 | 27,08 | 0,00 |
+| 17 | 59,25 | 2.188,24 | 27,08 | 0,00 |
+| 18 | 59,25 | 1.967,88 | 27,08 | 0,00 |
+| 19 | 46,29 | 511,28 | 27,08 | 0,00 |
+| 20 | 46,29 | 464,28 | 27,08 | 0,00 |
+| 21 | 0,00 | 36,00 | 27,08 | 319,60 |
+| 22 | 0,00 | 0,00 | 27,08 | 337,56 |
+| 23 | 0,00 | 0,00 | 27,08 | 258,56 |
+| 24 | 0,00 | 0,00 | 27,08 | 258,56 |
+| 25 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 26 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 27 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 28 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 29 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 30 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 31 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 32 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 33 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 34 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 35 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 36 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 37 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 38 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 39 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 40 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 41 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 42 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 43 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 44 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 45 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 46 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 47 | 0,00 | 0,00 | 27,08 | 215,31 |
+| 48 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 49 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 50 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 51 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 52 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 53 | 0,00 | 0,00 | 48,52 | 215,31 |
+| 54 | 0,00 | 0,00 | 64,52 | 215,31 |
+| 55 | 0,00 | 0,00 | 64,52 | 215,31 |
+| 56 | 0,00 | 0,00 | 127,52 | 215,31 |
+
+| **Mes** | **Total (h)** |
+| --- | --- |
+| 1 | 1.184,86 |
+| 2 | 1.615,03 |
+| 3 | 1.782,78 |
+| 4 | 1.970,71 |
+| 5 | 1.796,04 |
+| 6 | 1.789,54 |
+| 7 | 1.338,37 |
+| 8 | 1.321,56 |
+| 9 | 1.387,46 |
+| 10 | 1.381,23 |
+| 11 | 1.135,78 |
+| 12 | 1.273,26 |
+| 13 | 1.513,16 |
+| 14 | 1.783,56 |
+| 15 | 2.349,92 |
+| 16 | 2.492,78 |
+| 17 | 2.274,57 |
+| 18 | 2.054,21 |
+| 19 | 584,65 |
+| 20 | 537,65 |
+| 21 | 382,68 |
+| 22 | 364,63 |
+| 23 | 285,63 |
+| 24 | 285,63 |
+| 25 | 242,38 |
+| 26 | 242,38 |
+| 27 | 242,38 |
+| 28 | 242,38 |
+| 29 | 242,38 |
+| 30 | 242,38 |
+| 31 | 242,38 |
+| 32 | 242,38 |
+| 33 | 242,38 |
+| 34 | 242,38 |
+| 35 | 242,38 |
+| 36 | 242,38 |
+| 37 | 242,38 |
+| 38 | 242,38 |
+| 39 | 242,38 |
+| 40 | 242,38 |
+| 41 | 242,38 |
+| 42 | 242,38 |
+| 43 | 242,38 |
+| 44 | 242,38 |
+| 45 | 242,38 |
+| 46 | 242,38 |
+| 47 | 242,38 |
+| 48 | 263,83 |
+| 49 | 263,83 |
+| 50 | 263,83 |
+| 51 | 263,83 |
+| 52 | 263,83 |
+| 53 | 263,83 |
+| 54 | 279,83 |
+| 55 | 279,83 |
+| 56 | 342,83 |
+
+## Equivalentes de dedicación y dotación
+
+Se usa 160 HH por persona-mes como hipótesis de conversión. La razón HH/160 expresa equivalentes de dedicación; redondearla hacia arriba solo da capacidad mensual agregada. No determina cuántas personas distintas cubren turnos, especialidades, guardias, reemplazos ni tareas simultáneas.
+
+El pico equivale a 15,58 personas equivalentes de implementación y 2,28 de operación. Los techos aritméticos son 16 y 3 respectivamente. La dotación nominal se establece por rol y cobertura en SD-12 y debe sostener los SLA de SD-10; no se afirma que esos techos basten para un servicio continuo.
+
+## Frentes y solapamientos
+
+Se conservan once frentes de trabajo, agrupando las quince ramas del T-14. E1 y E2 necesitan responsables y capacidad concurrentes durante M13-15; en M19-20 la operación del alcance E1 continúa mientras E2 cumple marcha blanca. La fuente de verdad se mantiene por dominio autorizado, preservando la separación Retail–Emisor.
+
+Los once frentes son dirección y gobierno; levantamiento y arquitectura; infraestructura; software; integraciones y datos; seguridad; calidad; innovaciones; implantación, marchas blancas y cambio; documentación y reversibilidad; y operación y soporte.
+
+En M1–12 hay un máximo de 10 frentes simultáneos con cuentas programadas. El conteo incluye los frentes compartidos entre etapas y no debe sumarse entre ventanas superpuestas.
+
+En M13–15 hay un máximo de 9 frentes simultáneos con cuentas programadas. El conteo incluye los frentes compartidos entre etapas y no debe sumarse entre ventanas superpuestas.
+
+En M13–18 hay un máximo de 9 frentes simultáneos con cuentas programadas. El conteo incluye los frentes compartidos entre etapas y no debe sumarse entre ventanas superpuestas.
+
+En M19–20 hay un máximo de 6 frentes simultáneos con cuentas programadas. El conteo incluye los frentes compartidos entre etapas y no debe sumarse entre ventanas superpuestas.
+
+En M21–56 hay un máximo de 7 frentes simultáneos con cuentas programadas. El conteo incluye los frentes compartidos entre etapas y no debe sumarse entre ventanas superpuestas.
+
+Tabla 4: Carga durante los solapamientos.
+
+| **Tramo** | **E1 (HH)** | **E2 (HH)** | **Transversal (HH)** | **Total (HH)** |
+| --- | --- | --- | --- | --- |
+| M13-15 | 606,32 | 4.959,10 | 81,23 | 5.646,65 |
+| M19-20 | 92,58 | 975,57 | 54,16 | 1.122,31 |
+
+### Ruta crítica (CPM) y holguras
+
+#### Alcance y resultado
+
+La red contiene 57 nodos y 120 relaciones. Integra los 18 nodos del modelo inicial, los 35 paquetes de implementación de las cinco innovaciones, la compuerta de conciliación final de cartera y tres actividades de retiro y transferencia. Los cinco paquetes de seguimiento de innovaciones y las cuentas de servicio recurrente se controlan por cobertura y frecuencia, no como tareas libremente desplazables. El análisis calcula las tareas discretas y clasifica la cobertura periódica de los trabajos de implementación, transición y operación; Su alcance no equivale a una red de detalle de las 164 cuentas ni a una asignación de capacidad por persona.
+
+Se mantienen H7 al inicio de M16, H12 al inicio de M21 y el cierre al terminar M56. Los 35 paquetes de implementación de innovación tienen holgura total cero con las duraciones y dependencias propuestas. Este resultado expresa que el plan ocupa el tiempo disponible; no acredita que la productividad, los suministros o la dotación sean suficientes. Las duraciones son supuestos de programación, no mediciones históricas.
+
+#### Convenciones y relaciones
+
+El tiempo t=0 es el inicio de M1. Una actividad con ES=12 y EF=14 ocupa M13–14. H7 ocurre en t=15, H12 en t=20 y Z en t=56. Las puertas intermedias del E-25 se sitúan al final del mes respectivo por convención de cálculo. Las fechas mantienen los hitos del Formulario E-25 y la duración contractual de 56 meses.
+
+FS significa fin–inicio; SS, inicio–inicio; FF, fin–fin. El desfase se expresa en meses. Por ejemplo, SS+1 permite comenzar el segundo trabajo un mes después del inicio del primero, porque existe una entrega parcial verificable. FF exige que el sucesor no termine antes del resultado completo del precedente. Estas relaciones permiten probar e integrar incrementos conforme al Capítulo 6 sin convertir el calendario en una secuencia de tareas completas que esperan unas por otras.
+
+Las entregas parciales son condiciones de ejecución que deben cumplirse y registrarse. Los diseños de E2 se desarrollan junto con G y se aprueban con H8, en lugar de esperar H8 para comenzar. La configuración y capacitación de M18 pueden prepararse con una candidata, pero su cierre exige pruebas satisfactorias. Si el proveedor, los datos o la candidata no permiten ese solapamiento, debe cambiarse la red y recalcularse el efecto. Los suministros y obras físicas no tienen una duración validada en esta red; su disponibilidad es un supuesto y un riesgo de adquisición.
+
+#### Método de cálculo
+
+Cada relación impone inicio(j) $≥$ inicio(i)+w. Para FS, w=duración(i)+desfase; para SS, w=desfase; para FF, w=duración(i)-duración(j)+desfase. Se ordena la red topológicamente y se rechazan ciclos.
+
+El recorrido hacia adelante calcula ES(j)=máximo entre su liberación y ES(i)+w para todas sus predecesoras; EF=ES+duración. El recorrido inverso calcula LS(i)=mínimo entre LS(j)-w y su límite propio menos duración; LF=LS+duración. La holgura total es HT=LS-ES. El margen restante desde el programa es MR=LS-inicio programado. La holgura libre mide cuánto puede desplazarse el inicio sin cambiar el inicio temprano de ninguna sucesora, conservando las duraciones.
+
+Una holgura cero no significa que cualquier aumento de duración deba producir el mismo atraso. Con SS y FF importa qué entrega se retrasa. El efecto se comprueba modificando la duración o relación afectada y recalculando la red. Tampoco pueden sumarse las holguras de actividades sucesivas como si fueran reservas independientes.
+
+#### Resultados del núcleo contractual
+
+| **ID** | **Actividad** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| A | Línea base inicial E1 | 0–2 | 0–2 | 0 / 0 |
+| B | Arquitectura integrada E1 | 2–4 | 2–4 | 0 / 0 |
+| C | Plataforma híbrida y ambientes integrados | 4–6 | 4–6 | 0 / 0 |
+| P1 | Plan de marcha blanca E1 | 7–9 | 10–12 | 3 / 3 |
+| T1 | Capacitación certificada de administradores E1 | 9–12 | 12–15 | 3 / 3 |
+| D | Construcción e integración final E1 | 6–10 | 6–10 | 0 / 0 |
+| E | Pruebas de cierre y certificación E1 | 10–12 | 10–12 | 0 / 0 |
+| F | Marcha blanca E1 | 12–15 | 12–15 | 0 / 0 |
+| G | Línea base y diseño E2 | 12–14 | 12–14 | 0 / 0 |
+| H | Construcción e integración E2 | 14–17 | 14–17 | 0 / 0 |
+| P2 | Plan de marcha blanca E2 | 15–17 | 16–18 | 1 / 1 |
+| T2 | Capacitación certificada de administradores E2 | 17–19 | 18–20 | 1 / 1 |
+| H7 | Aceptación y paso a producción E1 | 15–15 | 15–15 | 0 / 0 |
+| I | Certificación E2 | 17–18 | 17–18 | 0 / 0 |
+| J | Marcha blanca E2 | 18–20 | 18–20 | 0 / 0 |
+| H12 | Aceptación final e inicio de operación | 20–20 | 20–20 | 0 / 0 |
+| K | Operación contractual | 20–56 | 20–56 | 0 / 0 |
+| Z | Cierre del contrato | 56–56 | 56–56 | 0 / 0 |
+
+Las cadenas base A–B–C–D–E–F–H7 y A–B–C–D–E–G–H–I–J–H12 siguen siendo críticas. Las ramas de innovación añaden caminos concurrentes que condicionan D/E, I y las aceptaciones. P1 y T1 conservan tres meses; P2 y T2, uno. La habilitación de usuarios para entrar en marcha blanca sigue siendo previa a su participación y no utiliza la holgura de certificación de administradores.
+
+#### Innovación 1.10.1
+
+| **Paquete** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| 1.10.1.1 | 2 | 12–14 | 12–14 | 0 / 0 |
+| 1.10.1.2 | 2 | 14–16 | 14–16 | 0 / 0 |
+| 1.10.1.3 | 3 | 14–17 | 14–17 | 0 / 0 |
+| 1.10.1.4 | 2 | 16–18 | 16–18 | 0 / 0 |
+| 1.10.1.5 | 5 | 12–17 | 12–17 | 0 / 0 |
+| 1.10.1.6 | 1 | 17–18 | 17–18 | 0 / 0 |
+| 1.10.1.7 | 2 | 18–20 | 18–20 | 0 / 0 |
+
+#### Innovación 1.10.2
+
+| **Paquete** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| 1.10.2.1 | 2 | 4–6 | 4–6 | 0 / 0 |
+| 1.10.2.2 | 3 | 5–8 | 5–8 | 0 / 0 |
+| 1.10.2.3 | 3 | 6–9 | 6–9 | 0 / 0 |
+| 1.10.2.4 | 2 | 8–10 | 8–10 | 0 / 0 |
+| 1.10.2.5 | 2 | 8–10 | 8–10 | 0 / 0 |
+| 1.10.2.6 | 2 | 10–12 | 10–12 | 0 / 0 |
+| 1.10.2.7 | 3 | 12–15 | 12–15 | 0 / 0 |
+
+#### Innovación 1.10.3
+
+| **Paquete** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| 1.10.3.1 | 2 | 12–14 | 12–14 | 0 / 0 |
+| 1.10.3.2 | 2 | 13–15 | 13–15 | 0 / 0 |
+| 1.10.3.3 | 2 | 14–16 | 14–16 | 0 / 0 |
+| 1.10.3.4 | 2 | 15–17 | 15–17 | 0 / 0 |
+| 1.10.3.5 | 2 | 16–18 | 16–18 | 0 / 0 |
+| 1.10.3.6 | 2 | 16–18 | 16–18 | 0 / 0 |
+| 1.10.3.7 | 2 | 18–20 | 18–20 | 0 / 0 |
+
+#### Innovación 1.10.4
+
+| **Paquete** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| 1.10.4.1 | 2 | 12–14 | 12–14 | 0 / 0 |
+| 1.10.4.2 | 2 | 13–15 | 13–15 | 0 / 0 |
+| 1.10.4.3 | 3 | 14–17 | 14–17 | 0 / 0 |
+| 1.10.4.4 | 2 | 15–17 | 15–17 | 0 / 0 |
+| 1.10.4.5 | 2 | 16–18 | 16–18 | 0 / 0 |
+| 1.10.4.6 | 1 | 17–18 | 17–18 | 0 / 0 |
+| 1.10.4.7 | 2 | 18–20 | 18–20 | 0 / 0 |
+
+#### Innovación 1.10.5
+
+| **Paquete** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR (meses)** |
+| --- | --- | --- | --- | --- |
+| 1.10.5.1 | 2 | 12–14 | 12–14 | 0 / 0 |
+| 1.10.5.2 | 2 | 14–16 | 14–16 | 0 / 0 |
+| 1.10.5.3 | 3 | 14–17 | 14–17 | 0 / 0 |
+| 1.10.5.4 | 2 | 15–17 | 15–17 | 0 / 0 |
+| 1.10.5.5 | 2 | 16–18 | 16–18 | 0 / 0 |
+| 1.10.5.6 | 1 | 17–18 | 17–18 | 0 / 0 |
+| 1.10.5.7 | 2 | 18–20 | 18–20 | 0 / 0 |
+
+#### Retiro, transferencia y cierre
+
+| **ID / cuenta** | **Duración** | **ES–EF** | **LS–LF** | **HT / MR** |
+| --- | --- | --- | --- | --- |
+| MG / 1.7.6 / 1.7.12 | 0 | 21–21 | 21–21 | 0 / 0 |
+| RET / 1.7.9 | 1 | 21–22 | 21–22 | 0 / 0 |
+| TR / 1.14.2 | 9 | 20–29 | 47–56 | 27 / 0 |
+| CI / 1.14.5 | 1 | 28–29 | 55–56 | 27 / 0 |
+
+MG toma como condición de entrada la conclusión de la migración y sus actas al final de M21, según las ventanas de 1.7.6 y 1.7.12. El retiro dura un mes y termina en M22, con margen cero frente a ese objetivo interno. La fecha exacta del vencimiento externo de 2029 no está disponible; no se calcula holgura respecto de ella. MG es una compuerta externa declarada, no un cálculo detallado de la migración.
+
+TR puede prepararse desde H12, con final temprano en M29. Su programación elegida M48–56 coincide con las fechas tardías, de modo que su HT de 27 meses ya está consumida por esa elección y MR=0. Esta holgura no autoriza retener el código fuente, que se deposita en cada liberación y se mantiene actualizado conforme a las Bases, artículo 84. CI representa la preparación del acta y traspaso; se programa en M56, termina junto con TR y la firma formal ocurre al cierre Z.
+
+El acompañamiento de reversibilidad es una obligación de al menos 90 días, conforme al artículo 77.2. Se programa M54–56, comprobando que la fecha real de inicio sea a más tardar 90 días antes del cierre. No se asume que cualquier conjunto de tres meses equivalga a 90 días. Las 64 HH de 1.14.5 se distribuyen en 48 HH de acompañamiento y 16 HH para la preparación del acta, sin cambiar su total.
+
+#### Obligaciones recurrentes
+
+Mesa de servicio, informes, mantenimiento, infraestructura, documentación y gobierno se cumplen durante su período comprometido. La estabilización se mantiene en M16–24; el seguimiento predictivo, en M16–56; los otros seguimientos, en M21–56. Las pruebas de recuperación y la capacitación tienen frecuencias propias. Su control se realiza mediante niveles de servicio, frecuencias y fechas comprometidas; no constituyen reservas para retrasar la atención.
+
+El calendario operativo descompone cada prueba y jornada cuando se conoce la fecha exacta. Esa precisión no puede deducirse de una barra de 36 meses ni de sus HH. La frecuencia de recuperación se conserva al menos semestral; la capacitación se rige por las Bases y el plan de operación.
+
+#### Alcance de los resultados
+
+Las tablas presentan las duraciones, relaciones de precedencia y fechas tempranas y tardías que sustentan el cálculo. Se comprueba la ausencia de ciclos, el cumplimiento de límites y el margen restante desde las fechas programadas.
+
+El PERT del anexo de innovaciones estima esfuerzo. No se interpreta como distribución de duración ni como probabilidad de cumplir M16/M21. Una evaluación probabilística de plazo necesita tres estimaciones de duración y sus dependencias de riesgo. La red actual es determinista y supone capacidad suficiente; T-15 debe contrastarla con perfiles y dedicaciones.
+
+#### Sensibilidad de las entregas parciales
+
+HT=0 significa que no se puede desplazar íntegramente la actividad con su duración fija. Con relaciones SS y FF, una extensión de duración puede conservar el hito si no cambia la entrega parcial comprometida. Como comprobación, ampliar 1.10.3.2 de dos a tres meses conserva H12 en t=20; retrasar su inicio un mes lleva H12 a t=21. Antes de actualizar un pronóstico se revisa qué entrega se retrasa.
+
+Las relaciones de precedencia se detallan en el apartado de secuenciamiento del T-14. El jefe de proyecto recalcula la red ante cambios de duración, entregas parciales o disponibilidad de recursos y comprueba los límites M16, M21 y M56.
+
+## Capacidad específica de innovaciones
+
+El anexo de estimación distingue construcción y servicio recurrente. El mantenimiento mensual específico suma 68 HH desde M21, repartidas entre modelos, índice, conciliación y componentes de tienda. No incluye de nuevo la mesa de servicio general ni las plataformas base. El máximo de implementación pasa a M16; el jefe de proyecto debe comprobar capacidad por especialidad durante el solapamiento, aplicando las reservas del Capítulo 6 a los equipos que correspondan. La suma mensual es demanda de esfuerzo y no demuestra por sí sola dotación suficiente.
+
+## Declaración de uso de IA
+
+Se utilizó Codex para apoyar la organización del contenido, la comprobación de cálculos y la revisión de redacción. Se aplicaron las pautas de humanizer para conservar un registro formal y retirar expresiones de relleno. La asistencia automatizada no sustituye la aprobación técnica y contractual del proponente.

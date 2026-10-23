@@ -1,0 +1,610 @@
+[
+  {
+    "id": 1,
+    "origen": "dns",
+    "destino": "front_door",
+    "semantica": "politica",
+    "intencion": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 2,
+    "origen": "front_door",
+    "destino": "private_link",
+    "semantica": "condicionado",
+    "intencion": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada",
+    "familia_evidencia": "publico"
+  },
+  {
+    "id": 3,
+    "origen": "application_gateway",
+    "destino": "api_management",
+    "semantica": "solicitud",
+    "intencion": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 4,
+    "origen": "api_center",
+    "destino": "api_management",
+    "semantica": "politica",
+    "intencion": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 5,
+    "origen": "web",
+    "destino": "front_door",
+    "semantica": "solicitud",
+    "intencion": "Retail: host y perfil propios. API pública Retail",
+    "familia_evidencia": "publico"
+  },
+  {
+    "id": 6,
+    "origen": "portal_f",
+    "destino": "front_door",
+    "semantica": "solicitud",
+    "intencion": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+    "familia_evidencia": "publico"
+  },
+  {
+    "id": 7,
+    "origen": "pos",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 8,
+    "origen": "operacion",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 9,
+    "origen": "logistica",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 10,
+    "origen": "movil",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 11,
+    "origen": "meson_f",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Red privada del mesón financiero; omite Front Door",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 12,
+    "origen": "api_management",
+    "destino": "area_mercaderia",
+    "semantica": "solicitud",
+    "intencion": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 13,
+    "origen": "api_management",
+    "destino": "area_venta",
+    "semantica": "solicitud",
+    "intencion": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 14,
+    "origen": "api_management",
+    "destino": "area_clientes",
+    "semantica": "solicitud",
+    "intencion": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 15,
+    "origen": "api_management",
+    "destino": "servicios_e",
+    "semantica": "solicitud",
+    "intencion": "APIs Filial del área; operaciones, contratos y permisos propios por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "entrada"
+  },
+  {
+    "id": 16,
+    "origen": "area_venta",
+    "destino": "x01",
+    "semantica": "compra_autorizable",
+    "intencion": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01",
+    "familia_evidencia": "x01"
+  },
+  {
+    "id": 17,
+    "origen": "x01",
+    "destino": "api_management",
+    "semantica": "compra_autorizable",
+    "intencion": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio",
+    "familia_evidencia": "x01"
+  },
+  {
+    "id": 18,
+    "origen": "bus_r",
+    "destino": "comercio",
+    "semantica": "consumo",
+    "intencion": "Consumo de hechos propios; traducción y deduplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 19,
+    "origen": "bus_r",
+    "destino": "canales",
+    "semantica": "consumo",
+    "intencion": "Consumo de hechos propios; traducción y deduplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 20,
+    "origen": "bus_r",
+    "destino": "socios",
+    "semantica": "consumo",
+    "intencion": "Consumo de hechos propios; traducción y deduplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 21,
+    "origen": "bus_e",
+    "destino": "credito",
+    "semantica": "consumo",
+    "intencion": "Consumo de hechos propios; traducción y deduplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 22,
+    "origen": "area_mercaderia",
+    "destino": "bus_r",
+    "semantica": "publicacion",
+    "intencion": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 23,
+    "origen": "area_venta",
+    "destino": "bus_r",
+    "semantica": "publicacion",
+    "intencion": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 24,
+    "origen": "servicios_e",
+    "destino": "bus_e",
+    "semantica": "publicacion",
+    "intencion": "Hechos confirmados por productores del área; outbox y contratos por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 25,
+    "origen": "bus_r",
+    "destino": "area_clientes",
+    "semantica": "consumo",
+    "intencion": "Clientes Retail: consumo para fila virtual; contrato por cerrar",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 26,
+    "origen": "local_serv",
+    "destino": "local_sync",
+    "semantica": "publicacion",
+    "intencion": "Entrega de operaciones para reconciliar",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 27,
+    "origen": "local_sync",
+    "destino": "entrada_privada",
+    "semantica": "solicitud",
+    "intencion": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 28,
+    "origen": "area_mercaderia",
+    "destino": "datos_merc",
+    "semantica": "persistencia",
+    "intencion": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 29,
+    "origen": "area_venta",
+    "destino": "datos_venta",
+    "semantica": "persistencia",
+    "intencion": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 30,
+    "origen": "area_clientes",
+    "destino": "datos_clientes",
+    "semantica": "persistencia",
+    "intencion": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 31,
+    "origen": "x01",
+    "destino": "bitacora",
+    "semantica": "persistencia",
+    "intencion": "Persistencia directa propia por contexto; no pasa por el bus",
+    "familia_evidencia": "x01"
+  },
+  {
+    "id": 32,
+    "origen": "servicios_e",
+    "destino": "datos_orig",
+    "semantica": "persistencia",
+    "intencion": "originacion: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 33,
+    "origen": "servicios_e",
+    "destino": "datos_cartera",
+    "semantica": "persistencia",
+    "intencion": "cartera: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 34,
+    "origen": "servicios_e",
+    "destino": "datos_evid",
+    "semantica": "persistencia",
+    "intencion": "evidencia: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 35,
+    "origen": "area_mercaderia",
+    "destino": "redis",
+    "semantica": "persistencia",
+    "intencion": "oferta: Publicación/consulta de oferta operacional; frescura por verificar",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 36,
+    "origen": "area_mercaderia",
+    "destino": "historial",
+    "semantica": "persistencia",
+    "intencion": "oferta: Registro de precios publicados; solo anexado",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 37,
+    "origen": "local_serv",
+    "destino": "local_data",
+    "semantica": "persistencia",
+    "intencion": "Diario transaccional local Retail",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 38,
+    "origen": "local_data",
+    "destino": "local_sync",
+    "semantica": "flujo",
+    "intencion": "Operaciones pendientes del diario",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 39,
+    "origen": "servicios_e",
+    "destino": "cupo_local",
+    "semantica": "condicionado",
+    "intencion": "Originación F:C-01: provisión de cupo preautorizado; límites y autorización propios de Filial; política, caducidad y factibilidad pendientes. La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 40,
+    "origen": "comercio",
+    "destino": "ext_comercio",
+    "semantica": "adaptacion",
+    "intencion": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+    "familia_evidencia": "externo"
+  },
+  {
+    "id": 41,
+    "origen": "canales",
+    "destino": "ext_canales",
+    "semantica": "adaptacion",
+    "intencion": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+    "familia_evidencia": "externo"
+  },
+  {
+    "id": 42,
+    "origen": "socios",
+    "destino": "ext_socios",
+    "semantica": "adaptacion",
+    "intencion": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+    "familia_evidencia": "externo"
+  },
+  {
+    "id": 43,
+    "origen": "credito",
+    "destino": "ext_credito",
+    "semantica": "adaptacion",
+    "intencion": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+    "familia_evidencia": "externo"
+  },
+  {
+    "id": 44,
+    "origen": "otel",
+    "destino": "monitor",
+    "semantica": "condicionado",
+    "intencion": "OTLP por colector del ámbito; exportador pendiente",
+    "familia_evidencia": "observabilidad"
+  },
+  {
+    "id": 45,
+    "origen": "monitor",
+    "destino": "grafana",
+    "semantica": "condicionado",
+    "intencion": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+    "familia_evidencia": "observabilidad"
+  },
+  {
+    "id": 46,
+    "origen": "private_link",
+    "destino": "application_gateway",
+    "semantica": "condicionado",
+    "intencion": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas",
+    "familia_evidencia": "publico"
+  },
+  {
+    "id": 47,
+    "origen": "bus_r",
+    "destino": "local_sync",
+    "semantica": "consumo",
+    "intencion": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 48,
+    "origen": "bus_r",
+    "destino": "proy_r",
+    "semantica": "consumo",
+    "intencion": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 49,
+    "origen": "proy_r",
+    "destino": "mart_r",
+    "semantica": "persistencia",
+    "intencion": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 50,
+    "origen": "mart_r",
+    "destino": "powerbi",
+    "semantica": "flujo",
+    "intencion": "Lectura analítica Retail por conexión privada de datos; modelos y permisos propios",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 51,
+    "origen": "bus_e",
+    "destino": "proy_e",
+    "semantica": "consumo",
+    "intencion": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 52,
+    "origen": "proy_e",
+    "destino": "mart_e",
+    "semantica": "persistencia",
+    "intencion": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 53,
+    "origen": "mart_e",
+    "destino": "powerbi",
+    "semantica": "flujo",
+    "intencion": "Lectura analítica Filial por conexión privada de datos; modelos y permisos propios",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 54,
+    "origen": "area_mercaderia",
+    "destino": "vector",
+    "semantica": "persistencia",
+    "intencion": "Oferta/Búsqueda: actualizar y consultar el índice derivado; Existencias confirma disponible",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 55,
+    "origen": "proy_r",
+    "destino": "archivo_r",
+    "semantica": "flujo",
+    "intencion": "Exportar conjuntos de entrenamiento versionados y manifiestos; contenedor Retail propio",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 56,
+    "origen": "archivo_r",
+    "destino": "area_mercaderia",
+    "semantica": "flujo",
+    "intencion": "Existencias: lectura del conjunto autorizado para conteo predictivo; Oferta: imágenes autorizadas",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 57,
+    "origen": "comercio",
+    "destino": "archivo_r",
+    "semantica": "adaptacion",
+    "intencion": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 58,
+    "origen": "datos_evid",
+    "destino": "archivo_e",
+    "semantica": "flujo",
+    "intencion": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus",
+    "familia_evidencia": "dato"
+  },
+  {
+    "id": 59,
+    "origen": "area_clientes",
+    "destino": "bus_r",
+    "semantica": "publicacion",
+    "intencion": "Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección",
+    "familia_evidencia": "evento"
+  },
+  {
+    "id": 60,
+    "origen": "common_admin",
+    "destino": "api_management",
+    "semantica": "solicitud",
+    "intencion": "Consola del ámbito → APIM propio → APIs de parámetros y consulta/exportación de auditoría; permisos y filtros del solicitante. No escritura en repositorios ajenos.",
+    "familia_evidencia": "comun"
+  },
+  {
+    "id": 61,
+    "origen": "common_docs",
+    "destino": "archivo_r",
+    "semantica": "persistencia",
+    "intencion": "Solo instancia documental Retail → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido.",
+    "familia_evidencia": "documento"
+  },
+  {
+    "id": 62,
+    "origen": "bus_r",
+    "destino": "common_notif",
+    "semantica": "consumo",
+    "intencion": "Solo instancia de notificaciones Retail: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega.",
+    "familia_evidencia": "aviso"
+  },
+  {
+    "id": 63,
+    "origen": "proy_r",
+    "destino": "search_r",
+    "semantica": "persistencia",
+    "intencion": "Proyector Retail mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices.",
+    "familia_evidencia": "busqueda"
+  },
+  {
+    "id": 64,
+    "origen": "api_management",
+    "destino": "search_r",
+    "semantica": "condicionado",
+    "intencion": "API de consulta de búsqueda del propio ámbito; filtros de permiso en la capacidad, sin acceso directo del cliente al índice.",
+    "familia_evidencia": "busqueda"
+  },
+  {
+    "id": 65,
+    "origen": "mart_r",
+    "destino": "archivo_r",
+    "semantica": "flujo",
+    "intencion": "Trabajo de exportación Retail: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional.",
+    "familia_evidencia": "exportacion"
+  },
+  {
+    "id": 66,
+    "origen": "common_docs",
+    "destino": "archivo_e",
+    "semantica": "persistencia",
+    "intencion": "Solo instancia documental Filial → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido.",
+    "familia_evidencia": "documento"
+  },
+  {
+    "id": 67,
+    "origen": "bus_e",
+    "destino": "common_notif",
+    "semantica": "consumo",
+    "intencion": "Solo instancia de notificaciones Filial: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega.",
+    "familia_evidencia": "aviso"
+  },
+  {
+    "id": 68,
+    "origen": "proy_e",
+    "destino": "search_e",
+    "semantica": "persistencia",
+    "intencion": "Proyector Filial mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices.",
+    "familia_evidencia": "busqueda"
+  },
+  {
+    "id": 69,
+    "origen": "api_management",
+    "destino": "search_e",
+    "semantica": "condicionado",
+    "intencion": "API de consulta de búsqueda del propio ámbito; filtros de permiso en la capacidad, sin acceso directo del cliente al índice.",
+    "familia_evidencia": "busqueda"
+  },
+  {
+    "id": 70,
+    "origen": "mart_e",
+    "destino": "archivo_e",
+    "semantica": "flujo",
+    "intencion": "Trabajo de exportación Filial: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional.",
+    "familia_evidencia": "exportacion"
+  },
+  {
+    "id": 71,
+    "origen": "area_venta",
+    "destino": "local_serv",
+    "semantica": "condicionado",
+    "intencion": "Ventas ejecuta operación sin enlace; solo reglas y condiciones previamente sincronizadas.",
+    "familia_evidencia": "continuidad"
+  },
+  {
+    "id": 72,
+    "origen": "entrada_privada",
+    "destino": "application_gateway",
+    "semantica": "solicitud",
+    "intencion": "Entrada privada del ámbito → Application Gateway propio, sin Front Door público.",
+    "familia_evidencia": "privado"
+  },
+  {
+    "id": 73,
+    "origen": "common_docs",
+    "destino": "ext_comunes",
+    "semantica": "adaptacion",
+    "intencion": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos.",
+    "familia_evidencia": "documento"
+  },
+  {
+    "id": 74,
+    "origen": "common_notif",
+    "destino": "ext_comunes",
+    "semantica": "adaptacion",
+    "intencion": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos.",
+    "familia_evidencia": "aviso"
+  },
+  {
+    "id": 75,
+    "origen": "api_management",
+    "destino": "common_flujos",
+    "semantica": "condicionado",
+    "intencion": "Familia de APIs de tareas humanas y aprobaciones del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas.",
+    "familia_evidencia": "comun"
+  },
+  {
+    "id": 76,
+    "origen": "api_management",
+    "destino": "common_docs",
+    "semantica": "condicionado",
+    "intencion": "Familia de APIs de documentos, plantillas y firma del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas.",
+    "familia_evidencia": "documento"
+  }
+]

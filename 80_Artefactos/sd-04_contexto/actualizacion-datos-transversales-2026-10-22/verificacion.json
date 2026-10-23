@@ -1,0 +1,43 @@
+{
+  "vistas": [
+    {
+      "vista": "diag-04-33_arquitectura-datos-transversales",
+      "nodos": 85,
+      "conectores": 88,
+      "errores_validacion": 0,
+      "avisos": 0,
+      "solapamientos_tarjetas": 0,
+      "tarjetas_atravesadas": 0,
+      "rutas_svg_drawio_coinciden": true
+    },
+    {
+      "vista": "diag-04-34_detalle-datos",
+      "nodos": 41,
+      "conectores": 46,
+      "errores_validacion": 0,
+      "avisos": 0,
+      "solapamientos_tarjetas": 0,
+      "tarjetas_atravesadas": 0,
+      "rutas_svg_drawio_coinciden": true
+    },
+    {
+      "vista": "diag-04-35_detalle-transversales",
+      "nodos": 59,
+      "conectores": 86,
+      "errores_validacion": 0,
+      "avisos": 0,
+      "solapamientos_tarjetas": 0,
+      "tarjetas_atravesadas": 0,
+      "rutas_svg_drawio_coinciden": true
+    }
+  ],
+  "paginas_drawio": 3,
+  "servicios_vigentes": 13,
+  "candidato_separado": "F:C-04",
+  "innovaciones": 5,
+  "capas": 8,
+  "banda_compartida": "Capas transversales: 7 Seguridad y 8 Observabilidad",
+  "archivos_protegidos_verificados": 21,
+  "archivos_protegidos_alterados": [],
+  "alcance": "Comprobaciones documentales y gráficas; no pruebas de una plataforma Azure desplegada."
+}

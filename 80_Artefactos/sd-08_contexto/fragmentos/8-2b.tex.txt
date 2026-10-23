@@ -1,0 +1,83 @@
+\subsection{Análisis cuantitativo}
+
+El análisis cuantitativo traduce la calificación del apartado anterior en semanas, horas y probabilidades, de modo que el plan pueda reservar capacidad con una base numérica. Se aplican dos técnicas porque responden preguntas distintas. La simulación del cronograma responde por el plazo del proyecto, esto es, cuánto atraso acumulado puede esperarse en los hitos contractuales. El análisis de modos de falla y efectos responde por la solución en operación, es decir, qué falla del sistema ya entregado merece más atención de diseño y de monitoreo. Todas las cifras son estimaciones del proponente que se recalculan cuando cambia un supuesto de la calificación.
+
+\subsubsection{Valor esperado de los riesgos críticos y altos}
+
+La primera técnica multiplica la probabilidad de cada uno de los 14 riesgos críticos y altos por las semanas y las horas que costaría su ocurrencia, antes de aplicar la respuesta. La Tabla 8.6 presenta el resultado. Los valores de semanas y horas son los del supuesto indicado en cada ficha del apartado 8.3, y los resultados se expresan solo en tiempo y esfuerzo.
+
+Tabla 8.6: Valor esperado de los riesgos críticos y altos antes de la respuesta. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.12\linewidth}p{0.12\linewidth}p{0.16\linewidth}p{0.16\linewidth}p{0.34\linewidth}}
+\toprule
+\textbf{Riesgo} & \textbf{Probabilidad} & \textbf{Semanas} & \textbf{Horas} & \textbf{Valor esperado} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+R-02 & 0,60 & 3 & 600 & 1,80 semanas y 360 horas \\
+R-12 & 0,60 & 4 & 1.280 & 2,40 semanas y 768 horas \\
+R-13 & 0,60 & 6 & 1.920 & 3,60 semanas y 1.152 horas \\
+R-01 & 0,40 & 4 & 960 & 1,60 semanas y 384 horas \\
+R-11 & 0,40 & 3 & 360 & 1,20 semanas y 144 horas \\
+R-16 & 0,40 & 4 & 640 & 1,60 semanas y 256 horas \\
+R-18 & 0,60 & 5 & 1.200 & 3,00 semanas y 720 horas \\
+R-20 & 0,60 & 4 & 640 & 2,40 semanas y 384 horas \\
+R-23 & 0,40 & 4 & 480 & 1,60 semanas y 192 horas \\
+R-24 & 0,60 & 3 & 960 & 1,80 semanas y 576 horas \\
+R-25 & 0,40 & 10 & 2.400 & 4,00 semanas y 960 horas \\
+R-33 & 0,40 & 3 & 600 & 1,20 semanas y 240 horas \\
+R-34 & 0,60 & 3 & 360 & 1,80 semanas y 216 horas \\
+R-37 & 0,40 & 3 & 360 & 1,20 semanas y 144 horas \\
+\textbf{Total} & & \textbf{59} & \textbf{12.760} & \textbf{29,20 semanas y 6.496 horas} \\
+\end{longtable}
+
+El valor esperado suma 29,2 semanas y 6.496 horas. Tres riesgos concentran más de un tercio de las semanas, a saber R-25, R-13 y R-18, lo que confirma que la migración de la cartera de crédito y la carga inicial de existencias son los frentes que más tiempo pueden consumir. Como las respuestas del apartado 8.3 se calculan sobre estos mismos riesgos, el total sirve de referencia para medir cuánto reducen la exposición.
+
+\subsubsection{Análisis de modos de falla y efectos}
+
+La segunda técnica examina cinco modos de falla de la solución en operación, elegidos porque combinan consecuencias graves con controles ya definidos en el diseño. Cada modo se puntúa de 1 a 10 en severidad (S), ocurrencia (O) y detección (D), donde 10 en detección significa que la falla pasa inadvertida. El número de prioridad de riesgo (NPR) es el producto de los tres puntajes. La severidad sigue al impacto de la calificación y la ocurrencia a su probabilidad. La Tabla 8.7 muestra el resultado.
+
+Tabla 8.7: Análisis de modos de falla y efectos de la solución en operación. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.30\linewidth}p{0.36\linewidth}p{0.18\linewidth}p{0.10\linewidth}}
+\toprule
+\textbf{Modo de falla} & \textbf{Efecto} & \textbf{S / O / D} & \textbf{NPR} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Emisión tributaria en contingencia (R-16) & La tienda no emite documentos durante un corte. & 9 / 4 / 4 & 144 \\
+Sincronización del diario local (R-15) & Cobro doble o descuadre con ERP y DTE. & 6 / 4 / 5 & 120 \\
+Saturación en el evento anual (R-09) & Pedidos cancelados en los tres días de peak. & 7 / 4 / 4 & 112 \\
+Cruce indebido de datos (R-03) & Se quiebra la separación entre retail y emisor. & 10 / 2 / 3 & 60 \\
+Caída del centro de datos DC-01 (R-31) & Se detienen la emisión tributaria y el crédito. & 9 / 2 / 2 & 36 \\
+\end{longtable}
+
+La emisión en contingencia encabeza la lista porque combina una severidad alta, una ocurrencia moderada mientras la autoridad tributaria no apruebe la modalidad y una detección tardía. El cruce indebido de datos tiene la mayor severidad, pero su ocurrencia y su detección son bajas, porque el servicio de control de cruces lo bloquea por diseño y registra cada cruce; por eso queda bajo los demás en el NPR sin dejar de tener tolerancia cero. La caída de DC-01 se detecta de inmediato y es poco frecuente, aunque su efecto es grave y depende del recinto del cliente. En consecuencia, las pruebas de la sincronización, de la contingencia fiscal y de la capacidad del evento anual reciben la mayor atención de verificación antes del paso a producción.
+
+\subsubsection{Simulación del cronograma}
+
+La tercera lectura simula 10.000 veces el efecto conjunto de los mismos 14 riesgos sobre los hitos de los meses 16, 21 y 22. Cada riesgo se asigna a un eslabón de la ruta crítica del apartado 7.2, ocurre con su probabilidad y, si ocurre, aporta un atraso con distribución triangular entre la mitad y una vez y media las semanas estimadas. Los eventos se tratan como independientes. Dentro de un mismo eslabón los atrasos se solapan, porque corren en paralelo sobre la misma ventana, y se toma el mayor; entre eslabones distintos de la misma cadena se suman. El hito del mes 22 hereda la cadena de la Etapa 2 y agrega la migración de la cartera. Se corre el escenario sin respuestas, con las probabilidades originales, y el escenario con respuestas, con las probabilidades residuales del apartado 8.3. La Tabla 8.8 reúne los percentiles en semanas para el caso base solapado.
+
+Tabla 8.8: Atraso acumulado por hito, sin y con respuestas. Fuente: Elaboración propia.
+
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.34\linewidth}p{0.18\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}}
+\toprule
+\textbf{Hito} & \textbf{Escenario} & \textbf{P50} & \textbf{P80} & \textbf{P90} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Mes 16, paso a producción de la Etapa 1 & Sin respuestas & 13,6 & 17,3 & 19,3 \\
+Mes 16, paso a producción de la Etapa 1 & Con respuestas & 8,3 & 12,2 & 14,3 \\
+Mes 21, paso a producción de la Etapa 2 & Sin respuestas & 0,0 & 3,0 & 3,4 \\
+Mes 21, paso a producción de la Etapa 2 & Con respuestas & 0,0 & 1,7 & 3,0 \\
+Mes 22, retiro de la plataforma de 2011 & Sin respuestas & 7,8 & 11,3 & 13,0 \\
+Mes 22, retiro de la plataforma de 2011 & Con respuestas & 4,8 & 8,5 & 10,6 \\
+\end{longtable}
+
+Los hitos son contractuales y no se mueven. El P80 con respuestas estima una exposición en plazo de 12,2 semanas para el mes 16, 1,7 para el mes 21 y 8,5 para el mes 22; no equivale a capacidad reservada. El hito del mes 16 concentra la mayor exposición porque seis eslabones de su cadena están expuestos, y las respuestas reducen su P80 en cerca de 5 semanas. La suma en serie eleva el P80 con respuestas a 13,8 semanas en el mes 16 y a 10,0 en el mes 22. La capacidad de recuperación debe contrastarse con el CPM y el T-15.

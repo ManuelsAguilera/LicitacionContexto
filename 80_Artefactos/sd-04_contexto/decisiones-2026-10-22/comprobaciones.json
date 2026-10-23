@@ -1,0 +1,93 @@
+{
+  "nodos": 84,
+  "relaciones": 87,
+  "servicios_catalogados": 13,
+  "innovaciones": 5,
+  "tarjetas_sin_aristas": [
+    "aks_r",
+    "comunes_r",
+    "comunes_e",
+    "saga_r",
+    "saga_e",
+    "archivo_r",
+    "archivo_e",
+    "backup",
+    "entra",
+    "externalid",
+    "kv",
+    "sentinel",
+    "privado",
+    "arc",
+    "rum"
+  ],
+  "funcionales_sin_contrato": [
+    "comunes_r",
+    "comunes_e",
+    "saga_r",
+    "saga_e",
+    "archivo_r",
+    "archivo_e",
+    "backup"
+  ],
+  "lagos_sin_ingestion": [
+    "lago_r",
+    "lago_e"
+  ],
+  "tarjetas_por_acreditar": [
+    "operacion",
+    "aks_r",
+    "comunes_r",
+    "comunes_e",
+    "saga_r",
+    "saga_e",
+    "redis",
+    "powerbi",
+    "backup",
+    "cupo_local",
+    "entra",
+    "kv",
+    "sentinel",
+    "privado",
+    "otel",
+    "monitor",
+    "grafana",
+    "rum",
+    "pl_r",
+    "pl_e",
+    "front_door"
+  ],
+  "sd03_sd04_intactos": true,
+  "huellas_verificadas": {
+    "02_Propuesta\\latex_final\\sd-03\\OSS-Subdocumento3.tex": "e1d66da850523e659fe8dd46f085bf2887d44919db7a0a04c2b8069969febeed",
+    "02_Propuesta\\latex_final\\sd-04\\OSS-Formulario-T-11.tex": "fe5235a24600673ef310043cf07bbeab7b60c800a881f389c7b5faf711441643",
+    "02_Propuesta\\latex_final\\sd-04\\OSS-Subdocumento4.tex": "3a085a7504a947c7e74328f93d202e6c9b67383d1c147d2aa0ae49437ed9c895"
+  },
+  "fuentes": {
+    "C:/Users/manu/Downloads/registro-decisiones.md": "27268f9bb04facb544af9e59fb264dd36558b28268fca297e9c138a5a6415ee3",
+    "C:/Users/manu/AppData/Local/Temp/codex-clipboard-9f6ee71a-e50c-4b78-abb1-e50ca0dfae92.png": "1fa9411a73b5d4bc9b9cedfd3dba522cbd63575e744919f1507913ac6034395c",
+    "C:/Users/manu/AppData/Local/Temp/codex-clipboard-91543633-d5c6-4c55-a769-dc285e377e02.png": "a4c5b930ff1ed69d1053390d2f068411e32095adc0a4853d1ae77f28c0bd57bd"
+  },
+  "validacion_mcp": "válida sin avisos",
+  "comprobaciones": [
+    "IDs únicos y trece servicios preservados",
+    "Ningún enlace directo Retail–Filial",
+    "X-01 en ruta Ventas–APIM Filial",
+    "Buses separados y sin Event Hubs",
+    "Canales internos omiten Front Door",
+    "Externos dentro de capa 4 con adaptadores en capa 5",
+    "Cinco innovaciones sin nuevos microservicios",
+    "Huellas SD-03/04 iguales antes y después"
+  ],
+  "conectores_verificados": 87,
+  "anclajes_en_contorno": true,
+  "rutas_ortogonales_sin_atravesar_tarjetas": true,
+  "svg_drawio_mismos_puntos": true,
+  "lint_drawio": "correcto",
+  "harness": {
+    "ejemplos_validos": 8,
+    "negativos_rechazados": 18
+  },
+  "graphify_actualizado": true,
+  "front_door_simbolos": 1,
+  "front_door_perfiles_representados": 2
+}

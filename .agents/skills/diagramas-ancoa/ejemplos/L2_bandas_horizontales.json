@@ -1,0 +1,1116 @@
+{
+  "estilo": "L2",
+  "grupos": [
+    {
+      "id": "presentacion_r",
+      "etiqueta": "presentacion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "borde_r",
+      "etiqueta": "borde_r",
+      "frente": "retail"
+    },
+    {
+      "id": "api_r",
+      "etiqueta": "api_r",
+      "frente": "retail"
+    },
+    {
+      "id": "contratos_r",
+      "etiqueta": "contratos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "servicios_r",
+      "etiqueta": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "innovaciones",
+      "etiqueta": "innovaciones",
+      "frente": "retail"
+    },
+    {
+      "id": "datos_r",
+      "etiqueta": "datos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "frontera",
+      "etiqueta": "frontera",
+      "frente": "frontera"
+    },
+    {
+      "id": "datos_x",
+      "etiqueta": "datos_x",
+      "frente": "frontera"
+    },
+    {
+      "id": "presentacion_e",
+      "etiqueta": "presentacion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_e",
+      "etiqueta": "borde_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "api_e",
+      "etiqueta": "api_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "servicios_e",
+      "etiqueta": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "datos_e",
+      "etiqueta": "datos_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "integracion_r",
+      "etiqueta": "integracion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "integracion_e",
+      "etiqueta": "integracion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "externos",
+      "etiqueta": "externos",
+      "frente": "externo"
+    },
+    {
+      "id": "seguridad",
+      "etiqueta": "seguridad",
+      "frente": "transversal"
+    },
+    {
+      "id": "observabilidad",
+      "etiqueta": "observabilidad",
+      "frente": "transversal"
+    },
+    {
+      "id": "tecnologias",
+      "etiqueta": "tecnologias",
+      "frente": "transversal"
+    },
+    {
+      "id": "actores_r",
+      "etiqueta": "actores_r",
+      "frente": "retail"
+    },
+    {
+      "id": "actores_e",
+      "etiqueta": "actores_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_comun",
+      "etiqueta": "Borde (símbolos por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "api_comun",
+      "etiqueta": "API Management (símbolo por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "area_mercaderia",
+      "etiqueta": "Mercadería",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_venta",
+      "etiqueta": "Venta",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_clientes",
+      "etiqueta": "Relación con el cliente",
+      "frente": "retail",
+      "padre": "servicios_r"
+    }
+  ],
+  "figura": "4.30",
+  "composicion": "bandas_horizontales",
+  "titulo": "Arquitectura lógica · áreas, integración y datos por ámbito",
+  "fuente": "Elaboración propia: plan aprobado por el usuario y referencia horizontal del 22-10-2026; figuras 4.27–4.29, registro D-01–D-56 y fuentes vigentes del proyecto. SD-03/04 sin editar.",
+  "nodos": [
+    {
+      "id": "web",
+      "etiqueta": "Portal y app de la tienda\nReact / React Native",
+      "tipo": "react",
+      "grupo": "presentacion_r",
+      "descripcion": "D-06, D-09"
+    },
+    {
+      "id": "pos",
+      "etiqueta": "Caja y mesón\nReact web servido desde tienda",
+      "tipo": "canal_pc",
+      "grupo": "presentacion_r",
+      "descripcion": "D-09"
+    },
+    {
+      "id": "operacion",
+      "etiqueta": "App interna de tienda\n4 perfiles · RN / SQLite / DataWedge\nQR + PIN en vista previa",
+      "tipo": "canal_movil",
+      "grupo": "presentacion_r",
+      "descripcion": "D-07, D-09, D-42",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "logistica",
+      "etiqueta": "Vista logística\nWMS del CD conservado",
+      "tipo": "canal_pc",
+      "grupo": "presentacion_r",
+      "descripcion": "D-14"
+    },
+    {
+      "id": "movil",
+      "etiqueta": "Consola comercial y de atención",
+      "tipo": "canal_pc",
+      "grupo": "presentacion_r",
+      "descripcion": "D-06"
+    },
+    {
+      "id": "portal_f",
+      "etiqueta": "Portal y app de la tarjeta\nCódigo propio · simulador CAE",
+      "tipo": "react",
+      "grupo": "presentacion_e",
+      "descripcion": "D-06, D-09, D-10"
+    },
+    {
+      "id": "meson_f",
+      "etiqueta": "Mesón financiero\nSesión y permisos de la Filial",
+      "tipo": "canal_pc",
+      "grupo": "presentacion_e",
+      "descripcion": "D-06, D-44"
+    },
+    {
+      "id": "dns",
+      "etiqueta": "Azure DNS\nZonas y registros por ámbito",
+      "tipo": "dns_azure",
+      "grupo": "borde_comun",
+      "descripcion": "D-11, D-15"
+    },
+    {
+      "id": "aks_r",
+      "etiqueta": "Azure Kubernetes Service\nEjecución aislada por ámbito\nPremium / LTS por acreditar",
+      "tipo": "aks_azure",
+      "grupo": "tecnologias",
+      "descripcion": "D-28; verificar disponibilidad y versiones",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "oferta",
+      "etiqueta": "Oferta comercial",
+      "tipo": "servicio",
+      "grupo": "area_mercaderia",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:M-01"
+    },
+    {
+      "id": "abastecimiento",
+      "etiqueta": "Abastecimiento",
+      "tipo": "servicio",
+      "grupo": "area_mercaderia",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:M-02"
+    },
+    {
+      "id": "existencias",
+      "etiqueta": "Existencias · sugerencias de IA",
+      "tipo": "servicio",
+      "grupo": "area_mercaderia",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:M-03"
+    },
+    {
+      "id": "pedidos",
+      "etiqueta": "Pedidos",
+      "tipo": "servicio",
+      "grupo": "area_venta",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:V-01"
+    },
+    {
+      "id": "ventas",
+      "etiqueta": "Ventas",
+      "tipo": "servicio",
+      "grupo": "area_venta",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:V-02"
+    },
+    {
+      "id": "comisiones",
+      "etiqueta": "Comisiones",
+      "tipo": "servicio",
+      "grupo": "area_venta",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:V-03"
+    },
+    {
+      "id": "market",
+      "etiqueta": "Marketplace",
+      "tipo": "servicio",
+      "grupo": "area_venta",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:V-04"
+    },
+    {
+      "id": "posventa",
+      "etiqueta": "Posventa",
+      "tipo": "servicio",
+      "grupo": "area_clientes",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:CL-01"
+    },
+    {
+      "id": "clientes",
+      "etiqueta": "Clientes Retail",
+      "tipo": "servicio",
+      "grupo": "area_clientes",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "R:CL-02"
+    },
+    {
+      "id": "originacion",
+      "etiqueta": "Originación de crédito",
+      "tipo": "servicio",
+      "grupo": "servicios_e",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "F:C-01"
+    },
+    {
+      "id": "cartera",
+      "etiqueta": "Cartera de crédito",
+      "tipo": "servicio",
+      "grupo": "servicios_e",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "F:C-02"
+    },
+    {
+      "id": "evidencia",
+      "etiqueta": "Evidencia y consentimiento",
+      "tipo": "servicio",
+      "grupo": "servicios_e",
+      "descripcion": "D-24, D-27, D-28",
+      "codigo": "F:C-03"
+    },
+    {
+      "id": "x01",
+      "etiqueta": "Control de cruces",
+      "tipo": "politica_x01",
+      "grupo": "frontera",
+      "descripcion": "D-17, D-27, D-48",
+      "codigo": "X-01"
+    },
+    {
+      "id": "conteo",
+      "etiqueta": "Conteo cíclico predictivo\nExistencias · proceso",
+      "tipo": "politica_x01",
+      "grupo": "innovaciones",
+      "descripcion": "Existencias: historial autorizado → conjunto versionado → entrenamiento/validación → recomendación revisada por una persona. Sin ajuste automático de stock."
+    },
+    {
+      "id": "lockers",
+      "etiqueta": "Lockers Ancoa 24/7\nPedidos · producto",
+      "tipo": "politica_x01",
+      "grupo": "innovaciones",
+      "descripcion": "D-54; innovación dentro del servicio responsable"
+    },
+    {
+      "id": "busqueda",
+      "etiqueta": "Búsqueda vectorial multimodal\nOferta · tecnología",
+      "tipo": "politica_x01",
+      "grupo": "innovaciones",
+      "descripcion": "Oferta: catálogo e imágenes autorizados → trabajador de representaciones → pgvector; consulta híbrida y verificación de disponible con Existencias."
+    },
+    {
+      "id": "media",
+      "etiqueta": "Retail Media Network\nOferta · modelo de negocio",
+      "tipo": "politica_x01",
+      "grupo": "innovaciones",
+      "descripcion": "D-54; innovación dentro del servicio responsable"
+    },
+    {
+      "id": "fila",
+      "etiqueta": "Modo Tienda y fila virtual\nClientes · experiencia",
+      "tipo": "politica_x01",
+      "grupo": "innovaciones",
+      "descripcion": "D-54; innovación dentro del servicio responsable"
+    },
+    {
+      "id": "bus_r",
+      "etiqueta": "Azure Service Bus Premium\nRetail · outbox / reintentos",
+      "tipo": "service_bus",
+      "grupo": "integracion_r",
+      "descripcion": "D-29, D-33; contratos y rendimiento por validar"
+    },
+    {
+      "id": "bus_e",
+      "etiqueta": "Azure Service Bus Premium\nFilial · outbox / reintentos",
+      "tipo": "service_bus",
+      "grupo": "integracion_e",
+      "descripcion": "D-29, D-33; contratos y rendimiento por validar"
+    },
+    {
+      "id": "comercio",
+      "etiqueta": "Comercio · ERP/DTE y WMS",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r",
+      "descripcion": "D-30, D-34; cargas/descargas masivas incluidas"
+    },
+    {
+      "id": "canales",
+      "etiqueta": "Canales · e-commerce / marketplace / fidelización",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r",
+      "descripcion": "D-30, D-34; cargas/descargas masivas incluidas"
+    },
+    {
+      "id": "socios",
+      "etiqueta": "Socios · pagos / proveedores / transportistas",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r",
+      "descripcion": "D-30, D-34; cargas/descargas masivas incluidas"
+    },
+    {
+      "id": "credito",
+      "etiqueta": "Crédito · legado 2011 / CMF / firma",
+      "tipo": "adaptadores",
+      "grupo": "integracion_e",
+      "descripcion": "D-30, D-34; cargas/descargas masivas incluidas"
+    },
+    {
+      "id": "local_serv",
+      "etiqueta": "Operación sin enlace\nVenta y consulta de oferta vigente",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r",
+      "descripcion": "D-05, D-09; caché de oferta local L-01 dentro de este componente, sin renumerar SD-04"
+    },
+    {
+      "id": "local_sync",
+      "etiqueta": "Sincronización de operaciones\nReintentos y conciliación",
+      "tipo": "funcion_logica",
+      "grupo": "integracion_r",
+      "descripcion": "D-05, D-51",
+      "codigo": "L-03"
+    },
+    {
+      "id": "datos_merc",
+      "etiqueta": "PostgreSQL · Retail\nOferta / Abastecimiento / Existencias",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "datos_venta",
+      "etiqueta": "PostgreSQL · Retail\nPedidos / Ventas / Comisiones / Marketplace",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "datos_clientes",
+      "etiqueta": "PostgreSQL · Retail\nPosventa / Clientes",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "bitacora",
+      "etiqueta": "Bitácora\nde cruces",
+      "tipo": "base_datos",
+      "grupo": "datos_x",
+      "descripcion": "PostgreSQL propio de X-01: ficha, política y seudónimo del cruce; no es un perfil unificado."
+    },
+    {
+      "id": "datos_orig",
+      "etiqueta": "PostgreSQL · Filial\nOriginación / metadatos de Evidencia\nRepositorios por servicio",
+      "tipo": "base_datos",
+      "grupo": "datos_e",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "datos_cartera",
+      "etiqueta": "PostgreSQL · Filial\nCartera y estado de procesos",
+      "tipo": "base_datos",
+      "grupo": "datos_e",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "datos_evid",
+      "etiqueta": "Azure Blob Storage · Filial\nEvidencia y consentimiento vigentes",
+      "tipo": "blob",
+      "grupo": "datos_e",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "archivo_r",
+      "etiqueta": "Azure Blob Storage · Retail\nDocumentos, retención y conjuntos versionados",
+      "tipo": "blob",
+      "grupo": "datos_r",
+      "descripcion": "Contenedores separados: documentos/DTE, exportaciones temporales autorizadas, conjuntos de entrenamiento y archivo retenido. Política e identidades por finalidad."
+    },
+    {
+      "id": "archivo_e",
+      "etiqueta": "Azure Blob Storage · Filial\nArchivo retenido y consulta autorizada",
+      "tipo": "blob",
+      "grupo": "datos_e",
+      "descripcion": "Archivo propio de la Filial. Exportación verificable de evidencia y auditoría; consulta jurídica autorizada, retención y restauración por política del caso."
+    },
+    {
+      "id": "redis",
+      "etiqueta": "Azure Managed Redis · Retail\nCaché de oferta ≤ 30 s",
+      "tipo": "redis_azure",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "historial",
+      "etiqueta": "PostgreSQL · Retail\nHistorial de precios append-only",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44"
+    },
+    {
+      "id": "powerbi",
+      "etiqueta": "Microsoft Power BI\nModelos semánticos y espacios separados por ámbito\nDirectQuery / Import sobre repositorios analíticos",
+      "tipo": "power_bi",
+      "grupo": "tecnologias",
+      "descripcion": "Solo lee modelos analíticos dedicados. Acceso privado mediante conexión de datos propia de cada ámbito; no consulta repositorios transaccionales. Región, capacidad y actualización pendientes de acreditar.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "local_data",
+      "etiqueta": "Diario de operaciones pendientes\nPersistencia durable Retail",
+      "tipo": "datos_logicos",
+      "grupo": "datos_r",
+      "descripcion": "D-05, D-35–D-44",
+      "codigo": "L-02"
+    },
+    {
+      "id": "cupo_local",
+      "etiqueta": "Cupo preautorizado sin enlace\nDatos mínimos de Filial · vigencia pendiente",
+      "tipo": "datos_logicos",
+      "grupo": "datos_e",
+      "descripcion": "D-05, D-35–D-44",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "ext_comercio",
+      "etiqueta": "ERP/DTE y WMS conservados",
+      "tipo": "sistema_conservado",
+      "grupo": "externos",
+      "descripcion": "D-30; agrupación D-56",
+      "frente": "retail"
+    },
+    {
+      "id": "ext_canales",
+      "etiqueta": "E-commerce, marketplace y fidelización",
+      "tipo": "sistema_conservado",
+      "grupo": "externos",
+      "descripcion": "D-30; agrupación D-56",
+      "frente": "retail"
+    },
+    {
+      "id": "ext_socios",
+      "etiqueta": "Pagos, proveedores y transportistas\nLockers y publicidad: interfaz por precisar",
+      "tipo": "sistema_conservado",
+      "grupo": "externos",
+      "descripcion": "D-30; agrupación D-56",
+      "frente": "retail"
+    },
+    {
+      "id": "ext_credito",
+      "etiqueta": "Crédito 2011 (convivencia)\nReportes CMF y firma por interfaz",
+      "tipo": "sistema_conservado",
+      "grupo": "externos",
+      "descripcion": "D-30; agrupación D-56",
+      "frente": "emisor",
+      "estado": "convivencia"
+    },
+    {
+      "id": "entra",
+      "etiqueta": "Microsoft Entra ID P2\nTenant Filial separado: confirmar",
+      "tipo": "identidad",
+      "grupo": "seguridad",
+      "descripcion": "D-37, D-40–D-45; banda con instancias y permisos separados",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "externalid",
+      "etiqueta": "Microsoft Entra External ID\nTenant externo por negocio",
+      "tipo": "external_id",
+      "grupo": "seguridad",
+      "descripcion": "D-37, D-40–D-45; banda con instancias y permisos separados"
+    },
+    {
+      "id": "kv",
+      "etiqueta": "Azure Key Vault / Managed HSM\nClaves y cifrado de campo por ámbito",
+      "tipo": "secretos",
+      "grupo": "seguridad",
+      "descripcion": "D-37, D-40–D-45; banda con instancias y permisos separados",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "sentinel",
+      "etiqueta": "Microsoft Sentinel y Defender\nSOC: solo incidentes agregados",
+      "tipo": "sentinel_azure",
+      "grupo": "seguridad",
+      "descripcion": "D-37, D-40–D-45; banda con instancias y permisos separados",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "privado",
+      "etiqueta": "PIM / Bastion / Private Access\nAdministración y acceso remoto",
+      "tipo": "bastion_azure",
+      "grupo": "seguridad",
+      "descripcion": "D-37, D-40–D-45; banda con instancias y permisos separados",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "otel",
+      "etiqueta": "OpenTelemetry Collector\nPor clúster y tienda · cola local 24 h",
+      "tipo": "otel_logo",
+      "grupo": "observabilidad",
+      "descripcion": "D-47–D-53",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "monitor",
+      "etiqueta": "Azure Monitor / Log Analytics\nRegistros, trazas y alertas por ámbito",
+      "tipo": "telemetria",
+      "grupo": "observabilidad",
+      "descripcion": "D-47–D-53",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "grafana",
+      "etiqueta": "Prometheus / Azure Managed Grafana\nMétricas, SLO e indicadores de entrega",
+      "tipo": "grafana_azure",
+      "grupo": "observabilidad",
+      "descripcion": "Métricas de aplicación, salud y entrega. No almacena trazas/documentos de negocio; espacios y acceso por ámbito.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "rum",
+      "etiqueta": "Pruebas sintéticas y experiencia real\nTLS y herramienta móvil pendientes",
+      "tipo": "telemetria",
+      "grupo": "observabilidad",
+      "descripcion": "D-47–D-53",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "front_door",
+      "etiqueta": "Azure Front Door Premium\nRetail / Filial: perfiles separados\nWAF propio por ámbito · TLS 1.3 objetivo",
+      "tipo": "borde",
+      "grupo": "borde_comun",
+      "estado": "por_acreditar",
+      "descripcion": "Última instrucción: no duplicar Front Door. Un único símbolo gráfico representa los dos perfiles separados aprobados en D-11. No constituye un perfil compartido ni autoriza cruce de rutas entre ámbitos."
+    },
+    {
+      "id": "application_gateway",
+      "etiqueta": "Application Gateway v2\nInstancias Retail / Filial separadas",
+      "tipo": "app_gateway",
+      "grupo": "api_comun",
+      "descripcion": "D-13; un símbolo gráfico, una instancia por ámbito según el registro."
+    },
+    {
+      "id": "api_management",
+      "etiqueta": "Azure API Management Premium clásico\nInstancias, productos y contratos separados por ámbito",
+      "tipo": "entrada_api",
+      "grupo": "api_comun",
+      "descripcion": "D-16–D-21; un símbolo gráfico, una instancia por ámbito. Solo el contrato de X-01 puede acceder desde Retail a la puerta de Filial."
+    },
+    {
+      "id": "api_center",
+      "etiqueta": "Azure API Center\nCatálogos Retail / Filial separados",
+      "tipo": "api_center",
+      "grupo": "api_comun",
+      "descripcion": "Gobierno de contratos: OpenAPI 3.1 por ámbito; derivación 3.0.3 hacia APIM mediante pipeline. Anotación lateral, fuera del tráfico de negocio."
+    },
+    {
+      "id": "private_link",
+      "etiqueta": "Azure Private Link",
+      "tipo": "private_link",
+      "grupo": "borde_comun",
+      "descripcion": "Conexiones privadas a los orígenes de cada ámbito. Un símbolo no fusiona endpoints ni perfiles."
+    },
+    {
+      "id": "comunes",
+      "etiqueta": "Servicios comunes · definición pendiente\nSeparados por ámbito · sin consumidores supuestos",
+      "tipo": "funcion_logica",
+      "grupo": "tecnologias",
+      "descripcion": "Componente reservado por decisión del usuario. No se crean contratos, datos o consumidores hasta definir sus funciones.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "proy_r",
+      "etiqueta": "Procesadores de proyecciones · Retail\nDeduplicación, versión y conciliación",
+      "tipo": "adaptadores",
+      "grupo": "integracion_r",
+      "descripcion": "Consumidores propios del ámbito. Aplican hechos confirmados a modelos analíticos; confirmación del mensaje después del commit. Estado/checkpoints externos, sin usar el bus como archivo histórico."
+    },
+    {
+      "id": "mart_r",
+      "etiqueta": "PostgreSQL Flexible Server · Retail\nRepositorio analítico dedicado\nIndicadores, agregaciones y linaje",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "Instancia analítica separada de las transaccionales y del otro ámbito. No es una réplica operacional usada directamente como BI. Capacidad y latencias se verificarán con cargas y consultas del caso.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "proy_e",
+      "etiqueta": "Procesadores de proyecciones · Filial\nDeduplicación, versión y conciliación",
+      "tipo": "adaptadores",
+      "grupo": "integracion_e",
+      "descripcion": "Consumidores propios del ámbito. Aplican hechos confirmados a modelos analíticos; confirmación del mensaje después del commit. Estado/checkpoints externos, sin usar el bus como archivo histórico."
+    },
+    {
+      "id": "mart_e",
+      "etiqueta": "PostgreSQL Flexible Server · Filial\nRepositorio analítico dedicado\nIndicadores, agregaciones y linaje",
+      "tipo": "base_datos",
+      "grupo": "datos_e",
+      "descripcion": "Instancia analítica separada de las transaccionales y del otro ámbito. No es una réplica operacional usada directamente como BI. Capacidad y latencias se verificarán con cargas y consultas del caso.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "vector",
+      "etiqueta": "PostgreSQL / pgvector · Retail\nÍndice de búsqueda del catálogo",
+      "tipo": "base_datos",
+      "grupo": "datos_r",
+      "descripcion": "Índice derivado de Oferta. Reconstruible desde catálogo, imágenes y versión del modelo; no sustituye autoridad de precio o disponible.",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "tech_ui",
+      "etiqueta": "React / React Native\nTypeScript · canales separados",
+      "tipo": "react",
+      "grupo": "tecnologias",
+      "descripcion": "Tecnologías de presentación; no constituye otro canal o servicio."
+    },
+    {
+      "id": "tech_java",
+      "etiqueta": "Java 25 LTS\nAPIs y trabajadores propios",
+      "tipo": "java",
+      "grupo": "tecnologias",
+      "descripcion": "Lenguaje seleccionado en SD-04; soporte y versiones se acreditan en T-11."
+    },
+    {
+      "id": "tech_spring",
+      "etiqueta": "Spring Boot 4\nContratos y lógica de servicios",
+      "tipo": "spring",
+      "grupo": "tecnologias",
+      "descripcion": "Marco de servicios de aplicación seleccionado; no es un servicio adicional."
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "dns",
+      "a": "front_door",
+      "etiqueta": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy",
+      "semantica": "politica"
+    },
+    {
+      "de": "front_door",
+      "a": "private_link",
+      "etiqueta": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada",
+      "semantica": "condicionado"
+    },
+    {
+      "de": "application_gateway",
+      "a": "api_management",
+      "etiqueta": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "api_center",
+      "a": "api_management",
+      "etiqueta": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio",
+      "semantica": "politica"
+    },
+    {
+      "de": "web",
+      "a": "front_door",
+      "etiqueta": "Retail: host y perfil propios. API pública Retail",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "portal_f",
+      "a": "front_door",
+      "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "pos",
+      "a": "application_gateway",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "operacion",
+      "a": "application_gateway",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "logistica",
+      "a": "application_gateway",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "movil",
+      "a": "application_gateway",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "meson_f",
+      "a": "application_gateway",
+      "etiqueta": "Red privada del mesón financiero; omite Front Door",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "api_management",
+      "a": "area_mercaderia",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "api_management",
+      "a": "area_venta",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "api_management",
+      "a": "area_clientes",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "api_management",
+      "a": "servicios_e",
+      "etiqueta": "APIs Filial del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "area_venta",
+      "a": "x01",
+      "etiqueta": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01",
+      "semantica": "compra_autorizable"
+    },
+    {
+      "de": "x01",
+      "a": "api_management",
+      "etiqueta": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio",
+      "semantica": "compra_autorizable"
+    },
+    {
+      "de": "bus_r",
+      "a": "comercio",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    {
+      "de": "bus_r",
+      "a": "canales",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    {
+      "de": "bus_r",
+      "a": "socios",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    {
+      "de": "bus_e",
+      "a": "credito",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    {
+      "de": "area_mercaderia",
+      "a": "bus_r",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+      "semantica": "publicacion"
+    },
+    {
+      "de": "area_venta",
+      "a": "bus_r",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+      "semantica": "publicacion"
+    },
+    {
+      "de": "servicios_e",
+      "a": "bus_e",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+      "semantica": "publicacion"
+    },
+    {
+      "de": "bus_r",
+      "a": "area_clientes",
+      "etiqueta": "Clientes Retail: consumo para fila virtual; contrato por cerrar",
+      "semantica": "consumo"
+    },
+    {
+      "de": "pos",
+      "a": "local_serv",
+      "etiqueta": "Operación local cuando no hay enlace",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "local_serv",
+      "a": "local_sync",
+      "etiqueta": "Entrega de operaciones para reconciliar",
+      "semantica": "publicacion"
+    },
+    {
+      "de": "local_sync",
+      "a": "application_gateway",
+      "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "area_mercaderia",
+      "a": "datos_merc",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "area_venta",
+      "a": "datos_venta",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "area_clientes",
+      "a": "datos_clientes",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "x01",
+      "a": "bitacora",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "servicios_e",
+      "a": "datos_orig",
+      "etiqueta": "originacion: Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "servicios_e",
+      "a": "datos_cartera",
+      "etiqueta": "cartera: Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "servicios_e",
+      "a": "datos_evid",
+      "etiqueta": "evidencia: Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "area_mercaderia",
+      "a": "redis",
+      "etiqueta": "oferta: Publicación/consulta de oferta operacional; frescura por verificar",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "area_mercaderia",
+      "a": "historial",
+      "etiqueta": "oferta: Registro de precios publicados; solo anexado",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "local_serv",
+      "a": "local_data",
+      "etiqueta": "Diario transaccional local Retail",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "local_data",
+      "a": "local_sync",
+      "etiqueta": "Operaciones pendientes del diario",
+      "semantica": "flujo"
+    },
+    {
+      "de": "servicios_e",
+      "a": "cupo_local",
+      "etiqueta": "Cartera: provisión de cupo preautorizado; contrato, vigencia y datos mínimos propios de Filial",
+      "semantica": "condicionado"
+    },
+    {
+      "de": "meson_f",
+      "a": "cupo_local",
+      "etiqueta": "Consulta local en red del mesón; política offline pendiente",
+      "semantica": "condicionado"
+    },
+    {
+      "de": "comercio",
+      "a": "ext_comercio",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "canales",
+      "a": "ext_canales",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "socios",
+      "a": "ext_socios",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "credito",
+      "a": "ext_credito",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "otel",
+      "a": "monitor",
+      "etiqueta": "OTLP por colector del ámbito; exportador pendiente",
+      "semantica": "condicionado"
+    },
+    {
+      "de": "monitor",
+      "a": "grafana",
+      "etiqueta": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+      "semantica": "condicionado"
+    },
+    {
+      "de": "private_link",
+      "a": "application_gateway",
+      "semantica": "condicionado",
+      "etiqueta": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas"
+    },
+    {
+      "de": "bus_r",
+      "a": "local_sync",
+      "semantica": "consumo",
+      "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+    },
+    {
+      "de": "bus_r",
+      "a": "proy_r",
+      "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+      "semantica": "consumo"
+    },
+    {
+      "de": "proy_r",
+      "a": "mart_r",
+      "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "mart_r",
+      "a": "powerbi",
+      "etiqueta": "Lectura analítica Retail por conexión privada de datos; modelos y permisos propios",
+      "semantica": "flujo"
+    },
+    {
+      "de": "bus_e",
+      "a": "proy_e",
+      "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+      "semantica": "consumo"
+    },
+    {
+      "de": "proy_e",
+      "a": "mart_e",
+      "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "mart_e",
+      "a": "powerbi",
+      "etiqueta": "Lectura analítica Filial por conexión privada de datos; modelos y permisos propios",
+      "semantica": "flujo"
+    },
+    {
+      "de": "area_mercaderia",
+      "a": "vector",
+      "etiqueta": "Oferta/Búsqueda: actualizar y consultar el índice derivado; Existencias confirma disponible",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "proy_r",
+      "a": "archivo_r",
+      "etiqueta": "Exportar conjuntos de entrenamiento versionados y manifiestos; contenedor Retail propio",
+      "semantica": "flujo"
+    },
+    {
+      "de": "archivo_r",
+      "a": "area_mercaderia",
+      "etiqueta": "Existencias: lectura del conjunto autorizado para conteo predictivo; Oferta: imágenes autorizadas",
+      "semantica": "flujo"
+    },
+    {
+      "de": "comercio",
+      "a": "archivo_r",
+      "etiqueta": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "datos_evid",
+      "a": "archivo_e",
+      "etiqueta": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus",
+      "semantica": "flujo"
+    },
+    {
+      "de": "monitor",
+      "a": "archivo_r",
+      "etiqueta": "Exportación de auditoría del ámbito correspondiente a archivo inmutable; sin mezcla de espacios",
+      "semantica": "politica"
+    },
+    {
+      "de": "monitor",
+      "a": "archivo_e",
+      "etiqueta": "Exportación de auditoría del ámbito correspondiente a archivo inmutable; sin mezcla de espacios",
+      "semantica": "politica"
+    },
+    {
+      "de": "area_clientes",
+      "a": "bus_r",
+      "semantica": "publicacion",
+      "etiqueta": "Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección"
+    }
+  ],
+  "notas": [
+    "Ocho capas obligatorias: Presentación, Borde y exposición, Puerta de enlace de servicios, Servicios de negocio, Integración y eventos, Datos, Seguridad transversal y Observabilidad transversal. El usuario retiró la fila de actores en esta iteración.",
+    "La referencia solo aporta estructura: franjas horizontales, columna tecnológica y panel externo. No se trasladan nombres, proveedores ni componentes del ejemplo.",
+    "Un símbolo por producto de entrada; una instancia/perfil por ámbito según registro. Host, permisos, identidad y rutas determinan el ámbito. El dibujo no autoriza tráfico libre entre Retail y Filial.",
+    "X-01 conserva el único contrato de cruce. Los buses, repositorios, proyectores, archivos, modelos BI y credenciales permanecen separados por ámbito.",
+    "Outbox pertenece a la transacción de cada servicio. Las flechas desde áreas agrupan contratos de sus servicios, sin crear una transacción o base compartida por área.",
+    "Data Lake retirado por decisión aprobada. Los modelos analíticos se materializan en PostgreSQL Flexible Server dedicado por ámbito. Power BI no consulta las bases transaccionales.",
+    "Carga inicial y reconstrucción: exportación autorizada con manifiesto/punto de corte, aplicación idempotente y captura de hechos posteriores; Service Bus no se considera archivo histórico indefinido.",
+    "Servicios comunes se conserva como un componente separado pendiente de definición; dos ámbitos, sin contratos inventados. Coordinación durable es una responsabilidad de Integración, no dos motores elegidos sin procesos.",
+    "Backup Vault y Arc/Monitor Agent pasan al inventario físico/operativo. Persisten obligaciones de respaldo, restauración y cobertura observacional.",
+    "Blob separa documentos, evidencia, archivo y conjuntos de entrenamiento mediante contenedores, permisos y políticas propios. No se equiparan archivo retenido, respaldo recuperable e histórico analítico.",
+    "Capacidades de innovación dentro de sus servicios: conteo/Existencias, lockers/Pedidos, búsqueda y Retail Media/Oferta, fila/Clientes. Sin cinco servicios nuevos.",
+    "Continuidad se expresa como funciones lógicas y datos. No se representan servidores, VM, hardware ni CIDR. Tenant independiente de Filial y residencia/tránsito siguen pendientes de confirmación expresa.",
+    "SD-03 y SD-04 permanecen intactos. El análisis adjunto registra conciliación pendiente con ADR-06, Data Lake/BI, interfaces, continuidad y recuperación.",
+    "Las referencias de capacidad se basan en la volumetría del Caso 09, cap. 14; los tamaños de fila, retención, concurrencia, picos derivados y perfiles de consulta son supuestos por validar. No se acredita rendimiento desplegado.",
+    "Corrección posterior al plan aprobado: quitar la fila de actores. La vista comienza en Presentación; se conservan canales, roles y permisos en sus contratos, sin una novena capa ni personajes dibujados."
+  ]
+}

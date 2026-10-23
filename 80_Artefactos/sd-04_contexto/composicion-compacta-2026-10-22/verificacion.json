@@ -1,0 +1,13 @@
+{
+  "componentes": 79,
+  "relaciones": 53,
+  "relaciones_anteriores": 88,
+  "reduccion_porcentaje": 39.8,
+  "filas_csv": 205,
+  "puertos_asociacion": 26,
+  "referencias_csv_validas": true,
+  "terminales_logicos_coinciden": true,
+  "fuentes_protegidas_sin_cambios": 21,
+  "importacion_visual_csv_final": "PENDIENTE: revisión automática no pudo completarse por límite de uso; última acción de navegador no ejecutada.",
+  "diagrama_editable": "Renderizado y validado mediante MCP local; no es la importación de la última versión CSV."
+}

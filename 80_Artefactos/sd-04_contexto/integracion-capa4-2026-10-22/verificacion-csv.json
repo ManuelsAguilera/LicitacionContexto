@@ -1,0 +1,32 @@
+{
+  "auto": {
+    "version": "32.6.1",
+    "vertices": 100,
+    "conexiones": 76,
+    "terminales_y_semanticas_coinciden": true,
+    "importacion": "Motor oficial descargado; Chrome sin conexión, origen ficticio y toda red abortada o servida desde archivos locales",
+    "solicitudes_externas_enviadas": 0,
+    "errores": []
+  },
+  "conservar-capas": {
+    "version": "32.6.1",
+    "vertices": 100,
+    "conexiones": 76,
+    "terminales_y_semanticas_coinciden": true,
+    "importacion": "Motor oficial descargado; Chrome sin conexión, origen ficticio y toda red abortada o servida desde archivos locales",
+    "solicitudes_externas_enviadas": 0,
+    "errores": [],
+    "tarjetas_atravesadas_en_comprobacion_local": 0
+  },
+  "preferida": "conservar-capas",
+  "notas": [
+    "La variante auto puede dispersar las capas; no se recomienda para conservar la composición L2.",
+    "Conservar-capas mantiene agrupación y posiciones de componentes, con contenedores ajustados al contenido y enrutamiento libavoid.",
+    "La prueba con contenido real se ejecutó exclusivamente offline. La revisión automática bloqueó la prueba externa; no se insistió en ese envío.",
+    "Se conservan 84 componentes, 14 contenedores, título y leyenda, 76 conexiones y VPN.",
+    "La importación no acredita cumplimiento técnico de los servicios Azure."
+  ],
+  "fuentes_tex_intactas": true,
+  "mcp_fresco": "válido sin errores ni avisos",
+  "lint_drawio": "aprobado"
+}

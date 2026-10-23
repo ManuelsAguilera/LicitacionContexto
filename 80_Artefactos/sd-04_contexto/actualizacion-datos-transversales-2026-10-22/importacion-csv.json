@@ -1,0 +1,11 @@
+{
+  "conservar-capas": {
+    "version": "32.6.1",
+    "vertices": 100,
+    "conexiones": 88,
+    "terminales_y_semanticas_coinciden": true,
+    "importacion": "Motor oficial descargado; Chrome sin conexión, origen ficticio y toda red abortada o servida desde archivos locales",
+    "solicitudes_externas_enviadas": 0,
+    "errores": []
+  }
+}

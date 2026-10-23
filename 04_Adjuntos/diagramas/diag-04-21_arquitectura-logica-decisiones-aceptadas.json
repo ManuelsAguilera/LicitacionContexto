@@ -1,0 +1,257 @@
+{
+  "estilo": "L1",
+  "figura": "4.21",
+  "titulo": "Arquitectura lógica objetivo del mes 21 con cinco innovaciones",
+  "encabezado": "Figura 4.21 · Arquitectura lógica objetivo · mes 21",
+  "fuente": "elaboración propia a partir de SD-03, SD-13, T-11 y T-14 de main@1e097c2 y decisiones aceptadas por el usuario el 21-10-2026; SD-03 sin modificar.",
+  "grupos": [
+    {
+      "id": "retail",
+      "etiqueta": "RETAIL · 9 servicios funcionales",
+      "frente": "retail"
+    },
+    {
+      "id": "emisor",
+      "etiqueta": "FILIAL EMISORA · 3 servicios funcionales",
+      "frente": "emisor"
+    },
+    {
+      "id": "frontera",
+      "etiqueta": "FRONTERA · políticas aplicadas en ambos extremos",
+      "frente": "frontera"
+    },
+    {
+      "id": "controles",
+      "etiqueta": "Controles transversales · instancias, claves y permisos por ámbito",
+      "frente": "transversal"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "canales",
+      "etiqueta": "Canales Retail\nComercio electrónico y fidelización\nse integran inicialmente\nMóvil, mesón y consolas",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "local",
+      "etiqueta": "POS nuevo + nodo local de tienda\nL-01 caché · L-02 diario · L-03 sincronizador\n24 h sin enlace; retorno conciliado",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "api_r",
+      "etiqueta": "Entrada API Retail\nProducto regional por acreditar",
+      "grupo": "retail",
+      "tipo": "caja",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "mercaderia",
+      "etiqueta": "MERCADERÍA\nR:M-01 Oferta comercial\nR:M-02 Abastecimiento\nR:M-03 Existencias",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "venta",
+      "etiqueta": "VENTA\nR:V-01 Pedidos · R:V-02 Ventas\nR:V-03 Comisiones · R:V-04 Marketplace",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "clientes",
+      "etiqueta": "RELACIÓN CON EL CLIENTE\nR:CL-01 Posventa\nR:CL-02 Clientes Retail",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "innovaciones",
+      "etiqueta": "5 INNOVACIONES · ver Figura 4.22\nConteo cíclico predictivo · M16\nLockers 24/7 · Búsqueda multimodal\nRetail Media · Fila virtual · M21\nComponentes de apoyo, sin autoridad nueva",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "base_r",
+      "etiqueta": "Base técnica Retail\nRepositorios por autoridad; eventos propios\nAdaptadores, analítica y búsqueda aislada\nProductos regionales por acreditar",
+      "grupo": "retail",
+      "tipo": "caja",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "actuales",
+      "etiqueta": "Se conservan e integran\nERP/DTE · WMS principal · Marketplace\nUbicación actual por verificar",
+      "grupo": "retail",
+      "tipo": "caja"
+    },
+    {
+      "id": "canal_e",
+      "etiqueta": "Portal y mesón financieros\nSesión y roles propios",
+      "grupo": "emisor",
+      "tipo": "caja"
+    },
+    {
+      "id": "api_e",
+      "etiqueta": "Entrada API Emisor\nProducto regional por acreditar",
+      "grupo": "emisor",
+      "tipo": "caja",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "credito",
+      "etiqueta": "CRÉDITO\nF:C-01 Originación de crédito\nF:C-02 Cartera de crédito\nF:C-03 Evidencia financiera",
+      "grupo": "emisor",
+      "tipo": "caja"
+    },
+    {
+      "id": "base_e",
+      "etiqueta": "Base técnica Emisor\nRepositorios, eventos y analítica propios\nEvidencia contractual y claves separadas\nProductos regionales por acreditar",
+      "grupo": "emisor",
+      "tipo": "caja",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "dr",
+      "etiqueta": "Recuperación del Emisor\nResidencia y sitio por acreditar\nDC-02 no basta como única alternativa",
+      "grupo": "emisor",
+      "tipo": "caja",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "x01",
+      "etiqueta": "Control de cruces X-01\nFinalidad, mínimos y auditoría\nReversa y conciliación cerradas\nhasta aprobar sus contratos",
+      "grupo": "frontera",
+      "tipo": "caja",
+      "codigo": "X-01"
+    },
+    {
+      "id": "controles",
+      "etiqueta": "Seguridad y operación por ámbito\nIdentidad, secretos y telemetría segregados\nRegistros de red virtual · SLO y alertas",
+      "grupo": "controles",
+      "tipo": "caja"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "canales",
+      "a": "api_r",
+      "etiqueta": "contratos del canal",
+      "semantica": "flujo"
+    },
+    {
+      "de": "local",
+      "a": "api_r",
+      "etiqueta": "operaciones con enlace / sincronización",
+      "semantica": "flujo"
+    },
+    {
+      "de": "api_r",
+      "a": "mercaderia",
+      "etiqueta": "Mercadería",
+      "semantica": "flujo"
+    },
+    {
+      "de": "mercaderia",
+      "a": "base_r",
+      "etiqueta": "datos R:M",
+      "semantica": "flujo"
+    },
+    {
+      "de": "api_r",
+      "a": "venta",
+      "etiqueta": "Venta",
+      "semantica": "flujo"
+    },
+    {
+      "de": "venta",
+      "a": "base_r",
+      "etiqueta": "datos R:V",
+      "semantica": "flujo"
+    },
+    {
+      "de": "api_r",
+      "a": "clientes",
+      "etiqueta": "Clientes",
+      "semantica": "flujo"
+    },
+    {
+      "de": "clientes",
+      "a": "base_r",
+      "etiqueta": "datos R:CL",
+      "semantica": "flujo"
+    },
+    {
+      "de": "mercaderia",
+      "a": "innovaciones",
+      "etiqueta": "conteo / búsqueda / publicidad",
+      "semantica": "flujo"
+    },
+    {
+      "de": "venta",
+      "a": "innovaciones",
+      "etiqueta": "retiro",
+      "semantica": "flujo"
+    },
+    {
+      "de": "clientes",
+      "a": "innovaciones",
+      "etiqueta": "fila virtual",
+      "semantica": "flujo"
+    },
+    {
+      "de": "base_r",
+      "a": "actuales",
+      "etiqueta": "interfaces y conciliación",
+      "semantica": "flujo"
+    },
+    {
+      "de": "canal_e",
+      "a": "api_e",
+      "etiqueta": "operaciones financieras",
+      "semantica": "flujo"
+    },
+    {
+      "de": "api_e",
+      "a": "credito",
+      "etiqueta": "contratos de crédito",
+      "semantica": "flujo"
+    },
+    {
+      "de": "credito",
+      "a": "base_e",
+      "etiqueta": "autoridades financieras",
+      "semantica": "flujo"
+    },
+    {
+      "de": "base_e",
+      "a": "dr",
+      "etiqueta": "ruta de recuperación por verificar",
+      "semantica": "por_acreditar"
+    },
+    {
+      "de": "venta",
+      "a": "credito",
+      "etiqueta": "autorización de compra\nsolo con contrato aprobado",
+      "semantica": "compra_autorizable"
+    },
+    {
+      "de": "x01",
+      "a": "venta",
+      "etiqueta": "política Retail",
+      "semantica": "politica"
+    },
+    {
+      "de": "x01",
+      "a": "credito",
+      "etiqueta": "política Emisor",
+      "semantica": "politica"
+    }
+  ],
+  "notas": [
+    "Las cajas de áreas agrupan responsabilidades funcionales, no ejecutables ni bases compartidas.",
+    "La relación datos-eventos resume el registro de salida de cada productor; no implica CDC general ni acceso compartido.",
+    "Las cinco innovaciones están en Retail; el efecto de fallas no debe propagarse a venta ni originación.",
+    "El objetivo de M21 no declara completado el retiro de toda la cartera; las olas continúan según SD-03.",
+    "Esta vista resume familias de interacción. Los adaptadores también sirven solicitudes síncronas; no todo intercambio se hace por eventos.",
+    "La residencia y disponibilidad regional siguen condicionadas. No se diseñan cruces financieros nuevos."
+  ]
+}

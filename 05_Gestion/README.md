@@ -5,7 +5,7 @@ la propuesta.
 
 ## Sistema de artefactos
 
-`convenciones/artefactos.md` define IDs y metadatos; `reportes/` conserva informes de revisiones anteriores; `scripts/` en la raíz de esta carpeta contiene validación, estado, contexto y exportación. Ejecutar `python3 05_Gestion/scripts/<script>.py --help` para ver opciones.
+`convenciones/artefactos.md` define IDs y metadatos; `reportes/` conserva informes de revisiones anteriores (`vistas_previas/` son PDF derivados, no se versionan); `scripts/` en la raíz de esta carpeta contiene validación, estado, contexto y exportación. Ejecutar `python3 05_Gestion/scripts/<script>.py --help` para ver opciones.
 
 ### Flujo operativo
 

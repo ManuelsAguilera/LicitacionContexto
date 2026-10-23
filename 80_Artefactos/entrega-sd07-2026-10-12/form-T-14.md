@@ -1,0 +1,2214 @@
+# Anexo --- Formulario T-14: Plan de trabajo, EDT y carta Gantt
+
+### Resumen del diccionario de la EDT
+
+La Tabla resume las quince ramas con su número de cuentas de control, su entregable principal, su criterio general de aceptación y el esfuerzo esperado, según la distribución de esfuerzo de la propuesta.
+
+Tabla: Resumen del diccionario por rama. Fuente: Elaboración propia.
+
+| **Rama** | **Cuentas** | **Entregable principal** | **Criterio de aceptación general** | **HH** |
+| --- | --- | --- | --- | --- |
+| 1.1 Dirección, gobierno y control del proyecto | 12 | Plan de dirección integrado | Aprobado y actualizado en cada hito | 1.423 |
+| 1.2 Levantamiento y línea base de alcance | 8 | Línea base de alcance | Aprobada con el mapa de interfaces y la matriz de trazabilidad | 1.087 |
+| 1.3 Arquitectura y diseño | 7 | Documento de arquitectura y catálogo de decisiones | Aprobado con la frontera Retail–Emisor segregada | 863 |
+| 1.4 Infraestructura híbrida y plataforma base | 13 | Infraestructura híbrida con ambientes habilitados | Ambientes operativos con observabilidad | 1.622 |
+| 1.5 Desarrollo de software | 51 | Software de cada servicio por etapa | Calidad aprobada y evidencia de cobertura | 12.116 |
+| 1.6 Integraciones | 7 | Catálogo de interfaces y contratos | Interfaces certificadas sin diferencias no explicadas | 1.068 |
+| 1.7 Migración y saneamiento de datos | 12 | Datos saneados, migrados y conciliados | Conciliación por acta y plataformas sustituidas retiradas | 1.973 |
+| 1.8 Seguridad, identidad y cumplimiento | 8 | Plan de seguridad y matriz de controles | Controles implementados y probados | 949 |
+| 1.9 Calidad, pruebas y certificación | 12 | Certificación de cada etapa | Pruebas funcionales, carga, resiliencia y seguridad aprobadas | 1.539 |
+| 1.10 Innovaciones | 5 | Las cinco innovaciones entregadas | Cada innovación aceptada con trazabilidad | 9.888 |
+| 1.11 Implantación y despliegue | 4 | Plan de implantación y despliegue | Despliegue y reversión probados antes de cada paso a producción | 795 |
+| 1.12 Marchas blancas y aceptación por etapa | 7 | Actas de aceptación de cada etapa | Marcha blanca cerrada conforme a sus indicadores | 532 |
+| 1.13 Gestión del cambio y capacitación | 5 | Personal capacitado y certificado | Asistencia y evaluación aprobadas | 916 |
+| 1.14 Documentación, transferencia y reversibilidad | 7 | Documentación técnica y plan de reversibilidad | Entregados y aprobados antes del cierre | 969 |
+| 1.15 Operación y soporte | 6 | Operación con niveles de servicio cumplidos | Informes de nivel de servicio aceptados | 5.206 |
+| Total | 164 |  |  | 40.946 |
+
+| **Rama** | **Responsable** |
+| --- | --- |
+| 1.1 Dirección, gobierno y control del proyecto | Jefe de Proyecto |
+| 1.2 Levantamiento y línea base de alcance | Líder Funcional |
+| 1.3 Arquitectura y diseño | Arquitecto de Solución |
+| 1.4 Infraestructura híbrida y plataforma base | Arquitecto de Solución |
+| 1.5 Desarrollo de software | Líder de Desarrollo |
+| 1.6 Integraciones | Líder de Integración |
+| 1.7 Migración y saneamiento de datos | Especialista de Datos |
+| 1.8 Seguridad, identidad y cumplimiento | Encargado de Seguridad de la Información |
+| 1.9 Calidad, pruebas y certificación | Líder de Calidad y Pruebas |
+| 1.10 Innovaciones | Arquitecto de Solución |
+| 1.11 Implantación y despliegue | Líder de Implantación |
+| 1.12 Marchas blancas y aceptación por etapa | Jefe de Proyecto |
+| 1.13 Gestión del cambio y capacitación | Líder de Gestión del Cambio |
+| 1.14 Documentación, transferencia y reversibilidad | Jefe de Proyecto |
+| 1.15 Operación y soporte | Líder de Operación / SRE |
+| Total |  |
+
+La base anterior sumaba 31.853 HH. La estimación de las innovaciones sustituye sus 795 HH reservadas por 9.888 HH y deja 40.946 HH planificadas. Las otras 159 cuentas conservan 31.058 HH. La nueva cifra es una propuesta de actualización, sujeta al procedimiento de aprobación de la línea base. Esta distribución sustituye para la planificación a la referencia UCP anterior; no se atribuye su reparto al cálculo UCP. El detalle por cuenta y por paquete de trabajo se entrega en las tablas que siguen.
+
+### Rama 1.1 — Dirección, gobierno y control del proyecto
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.1. Fuente: Elaboración propia.
+
+#### 1.1.1 — Plan de dirección integrado
+
+Responsable. Jefe de Proyecto. Esfuerzo. 117 HH. Ventana. 1-3.
+
+Criterio de aceptación. Plan firmado por la Contraparte Técnica al terminar el mes 3; contiene las ocho áreas de gestión, cada una con línea base, responsable y umbral; 0 secciones vacías.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.1.2 — EDT y diccionario de paquetes
+
+Responsable. Jefe de Proyecto. Esfuerzo. 86 HH. Ventana. 1-3.
+
+Criterio de aceptación. Diccionario con entregable, criterio de aceptación y responsable por paquete; la suma de esfuerzo por rama cuadra con el total del proyecto; aprobado al terminar el mes 3.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.1.3 — Registro de solicitudes de cambio
+
+Responsable. Jefe de Proyecto. Esfuerzo. 174 HH. Ventana. 1-56.
+
+Criterio de aceptación. Registro con el 100 % de las solicitudes del período (fecha, origen, impacto en alcance/plazo/costo y resolución firmada); auditable en el informe mensual.
+
+Hito o entrega. Transversal (H1 a H12)
+
+#### 1.1.4 — Registros de riesgos, lecciones y supuestos
+
+Responsable. Jefe de Proyecto. Esfuerzo. 174 HH. Ventana. 1-56.
+
+Criterio de aceptación. Registros de riesgos, lecciones, supuestos y consultas actualizados antes de cada comité; cada riesgo con probabilidad, impacto, respuesta, responsable y estado.
+
+Hito o entrega. Transversal (H1 a H12)
+
+#### 1.1.5 — Calendario de congelamientos y eventos
+
+Responsable. Jefe de Proyecto. Esfuerzo. 64 HH. Ventana. 1-3.
+
+Criterio de aceptación. Calendario con las ventanas de congelamiento y los eventos anuales, con declaración de impacto por evento; aprobado por la Contraparte Técnica.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.1.6 — Actas de comités e informe mensual
+
+Responsable. Jefe de Proyecto. Esfuerzo. 349 HH. Ventana. 1-56.
+
+Criterio de aceptación. Actas de todos los comités (mensuales, quincenales y semanales) del período, firmadas; el informe mensual se acepta sin vacíos.
+
+Hito o entrega. Transversal (H1 a H12)
+
+#### 1.1.7 — Reporte mensual de consumo de nube
+
+Responsable. Jefe de Proyecto. Esfuerzo. 78 HH. Ventana. 4-56.
+
+Criterio de aceptación. Reporte mensual de consumo de nube conciliado con la factura del proveedor; toda desviación sobre el presupuesto justificada por escrito.
+
+Hito o entrega. Entrega inicial antes de uso; controles periódicos hasta fin de ventana
+
+Trazabilidad. RT-03.06.
+
+#### 1.1.8 — Actas de aceptación y habilitación de pagos
+
+Responsable. Jefe de Proyecto. Esfuerzo. 130 HH. Ventana. 1-56.
+
+Criterio de aceptación. Actas de aceptación por entrega firmadas por ambas partes; habilitan el pago del hito (Formulario E-25) conforme a la aceptación de cada entrega.
+
+Hito o entrega. Transversal (H1 a H12)
+
+#### 1.1.9 — Registro de garantías, seguros y certificados
+
+Responsable. Jefe de Proyecto. Esfuerzo. 66 HH. Ventana. 1-56.
+
+Criterio de aceptación. Registro de garantías, seguros y certificados laborales vigentes en el período; 0 documentos vencidos; auditable.
+
+Hito o entrega. Transversal (H1 a H12)
+
+#### 1.1.10 — Acta de constitución
+
+Responsable. Jefe de Proyecto. Esfuerzo. 24 HH. Ventana. 1-1.
+
+Criterio de aceptación. Acta de constitución firmada; fija alcance, plazo de 56 meses y equipo; aprobada al inicio del mes 1.
+
+Hito o entrega. H1 (mes 2)
+
+#### 1.1.11 — Línea base de costos y presupuesto
+
+Responsable. Jefe de Proyecto. Esfuerzo. 97 HH. Ventana. 1-3.
+
+Criterio de aceptación. Línea base de costos con estructura de desglose, reservas y flujo de caja; la suma iguala el presupuesto ofertado; aprobada por la Contraparte Técnica.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.1.12 — Planes alternativos del adelanto financiero
+
+Responsable. Jefe de Proyecto. Esfuerzo. 64 HH. Ventana. 3-5.
+
+Criterio de aceptación. Estudio con al menos dos planes alternativos para las dos condiciones del adelanto del negocio financiero, costeados y con criterios de decisión.
+
+Hito o entrega. H3 (mes 6)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.423 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.2 — Levantamiento y línea base de alcance
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.2. Fuente: Elaboración propia.
+
+#### 1.2.1 — Mapa de las 14 interfaces e inventario de plataformas
+
+Responsable. Líder Funcional. Esfuerzo. 155 HH. Ventana. 1-2.
+
+Criterio de aceptación. Mapa de las 14 interfaces entre las 9 plataformas de 6 proveedores, con inventario, criticidad y dependencias; trazable al caso; aprobado.
+
+Hito o entrega. H1 (mes 2)
+
+#### 1.2.2 — Levantamiento de procesos, reglas y volumetría
+
+Responsable. Líder Funcional. Esfuerzo. 231 HH. Ventana. 1-2.
+
+Criterio de aceptación. Levantamiento de procesos, reglas y volumetría (268.000 referencias; 620.000 clientes; 24 instalaciones) validado por los usuarios clave.
+
+Hito o entrega. H1 (mes 2)
+
+#### 1.2.3 — Catálogo de requerimientos y matriz de trazabilidad
+
+Responsable. Líder Funcional. Esfuerzo. 193 HH. Ventana. 1-18.
+
+Criterio de aceptación. Catálogo RF-001..RF-226, RNF-01..RNF-76 y OP-01..OP-09 con matriz de trazabilidad requisito$→$ módulo$→$ entregable; cobertura del 100 %. Línea base y matriz inicial en H1; actualización del alcance E2 en H8; mantenimiento hasta H10.
+
+Hito o entrega. H1 (mes 2); H8 (mes 14); H10 (mes 18)
+
+#### 1.2.4 — Línea base de alcance por etapa
+
+Responsable. Líder Funcional. Esfuerzo. 79 HH. Ventana. 1-2; 13-14.
+
+Criterio de aceptación. Línea base E1 aceptada en H1 y línea base/diseño E2 aceptados en H8, con exclusiones, supuestos y criterios por salida.
+
+Hito o entrega. H1 (mes 2); H8 (mes 14)
+
+#### 1.2.5 — Estudio: etiquetas electrónicas de precio
+
+Responsable. Líder Funcional. Esfuerzo. 117 HH. Ventana. 2-5.
+
+Criterio de aceptación. Estudio de etiquetas electrónicas de precio con $≥$2 opciones costeadas y criterios de decisión; la Contraparte Técnica resuelve.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.2.6 — Estudio: sistema de almacenes de Concepción
+
+Responsable. Líder Funcional. Esfuerzo. 117 HH. Ventana. 2-6.
+
+Criterio de aceptación. Estudio del sistema de almacenes de Concepción con $≥$2 opciones costeadas y criterios; la Contraparte Técnica resuelve.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.2.7 — Estudio: destino de las plataformas
+
+Responsable. Líder Funcional. Esfuerzo. 117 HH. Ventana. 2-5.
+
+Criterio de aceptación. Estudio del destino de las 9 plataformas con $≥$2 opciones costeadas (reemplazar, mantener o retirar) y criterios; la Contraparte Técnica resuelve.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.2.8 — Propuesta de criterios del cupo preaprobado
+
+Responsable. Líder Funcional. Esfuerzo. 78 HH. Ventana. 3-5.
+
+Criterio de aceptación. Propuesta de criterios del cupo preaprobado de la filial emisora con reglas y umbrales; validada con el mandante.
+
+Hito o entrega. H3 (mes 6)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.087 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.3 — Arquitectura y diseño
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.3. Fuente: Elaboración propia.
+
+#### 1.3.1 — Documento de arquitectura con cinco vistas
+
+Responsable. Arquitecto de Solución. Esfuerzo. 197 HH. Ventana. 2-4.
+
+Criterio de aceptación. Documento de arquitectura con las cinco vistas (lógica, física, datos, seguridad y despliegue) y catálogo de decisiones; trazable a los RT; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.3.2 — Arquitectura física con emplazamiento
+
+Responsable. Arquitecto de Solución. Esfuerzo. 117 HH. Ventana. 2-4.
+
+Criterio de aceptación. Arquitectura física con emplazamiento por componente y justificación del despliegue híbrido nube + on-premise; aprobada.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.3.3 — Modelo de datos con dominios segregados
+
+Responsable. Arquitecto de Solución. Esfuerzo. 197 HH. Ventana. 2-4.
+
+Criterio de aceptación. Modelo de datos con dominios Retail y Emisor segregados, frontera documentada y política de retención; 0 cruces no autorizados modelados.
+
+Hito o entrega. H2 (mes 4)
+
+Trazabilidad. RT-05.10.
+
+#### 1.3.4 — Contratos de integración versionados
+
+Responsable. Arquitecto de Solución. Esfuerzo. 97 HH. Ventana. 3-4.
+
+Criterio de aceptación. Contratos de integración versionados con esquema, reglas y gobierno; cubren las 14 interfaces; aprobados.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.3.5 — Especificación del modo desconectado de 24 h
+
+Responsable. Arquitecto de Solución. Esfuerzo. 79 HH. Ventana. 3-4.
+
+Criterio de aceptación. Especificación del modo desconectado de 24 h y de la sincronización posterior, con umbral de no pérdida de operaciones; aprobada.
+
+Hito o entrega. H2 (mes 4)
+
+Trazabilidad. RT-03.10, RT-03.13.
+
+#### 1.3.6 — Modelo de capacidad y dimensionamiento
+
+Responsable. Arquitecto de Solución. Esfuerzo. 79 HH. Ventana. 3-4.
+
+Criterio de aceptación. Modelo de capacidad y dimensionamiento (380 cajas, 640 terminales, 24 instalaciones) con supuestos y márgenes; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.3.7 — Especificación y costeo de obras del cliente
+
+Responsable. Arquitecto de Solución. Esfuerzo. 97 HH. Ventana. 3-6.
+
+Criterio de aceptación. Especificación y costeo de las obras de infraestructura del cliente, separada de la oferta de servicios; entregada al mandante.
+
+Hito o entrega. H3 (mes 6)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 863 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.4 — Infraestructura híbrida y plataforma base
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.4. Fuente: Elaboración propia.
+
+#### 1.4.1 — Entorno de nube (IaC, subredes, etiquetado)
+
+Responsable. Arquitecto de Solución. Esfuerzo. 193 HH. Ventana. 3-6.
+
+Criterio de aceptación. Entorno de nube desplegado por infraestructura como código, con subredes privadas y etiquetado de costos; reproducible; verificado.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.2 — Borde por sitio y red segmentada (13 tiendas)
+
+Responsable. Arquitecto de Solución. Esfuerzo. 156 HH. Ventana. 4-6.
+
+Criterio de aceptación. Borde configurado por sitio y red segmentada certificada en las 13 tiendas que no la tenían; prueba de conectividad conforme.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-03.24.
+
+#### 1.4.3 — Entorno dedicado del ámbito emisor
+
+Responsable. Arquitecto de Solución. Esfuerzo. 136 HH. Ventana. 4-6.
+
+Criterio de aceptación. Entorno dedicado del ámbito emisor con segregación física y lógica acreditada; 0 accesos cruzados entre ámbitos.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RNF-14, RNF-36.
+
+#### 1.4.4 — Ambientes dev/QA/preprod/prod/DR
+
+Responsable. Arquitecto de Solución. Esfuerzo. 235 HH. Ventana. 1-6.
+
+Criterio de aceptación. Cinco ambientes segregados de desarrollo, QA, preproducción, producción y recuperación ante desastres operativos en H3, con observabilidad y configuración verificada; entrega incremental para ensayos anteriores.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-04.01.
+
+#### 1.4.5 — Observabilidad unificada y catálogo de alertas
+
+Responsable. Arquitecto de Solución. Esfuerzo. 155 HH. Ventana. 4-6.
+
+Criterio de aceptación. Observabilidad unificada con catálogo de alertas y umbrales; cada SLO del Anexo B tiene al menos una alerta asociada.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.6 — Plataforma de integración y entrega continuas
+
+Responsable. Arquitecto de Solución. Esfuerzo. 136 HH. Ventana. 3-5.
+
+Criterio de aceptación. Plataforma de integración y entrega continuas por IaC, con pipeline reproducible; despliegue automatizado en todos los ambientes.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.7 — Licenciamiento de terceros a nombre del cliente
+
+Responsable. Arquitecto de Solución. Esfuerzo. 54 HH. Ventana. 2-6.
+
+Criterio de aceptación. Licencias de terceros registradas a nombre del cliente, con vigencias y cumplimiento; 0 licencias a nombre del proponente.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.8 — Especificación de hardware y dispositivos de terreno
+
+Responsable. Arquitecto de Solución. Esfuerzo. 79 HH. Ventana. 3-6.
+
+Criterio de aceptación. Especificación de hardware y dispositivos de terreno para adquisición del cliente, con cantidades y parámetros; aprobada.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.9 — Recinto técnico y obra civil de separación (spec)
+
+Responsable. Arquitecto de Solución. Esfuerzo. 94 HH. Ventana. 2-6.
+
+Criterio de aceptación. Plano y especificación del recinto técnico y coordinación de la obra civil de separación; aprobado por la Contraparte Técnica.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-06.03.
+
+#### 1.4.10 — Plan de cierre de la brecha del centro de datos
+
+Responsable. Arquitecto de Solución. Esfuerzo. 79 HH. Ventana. 2-5.
+
+Criterio de aceptación. Plan de cierre de la brecha del centro de datos frente al informe interno de 2024, con acciones, plazos y responsables.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.4.11 — Energía y climatización del centro de datos
+
+Responsable. Arquitecto de Solución. Esfuerzo. 94 HH. Ventana. 4-6.
+
+Criterio de aceptación. Sistemas de energía y climatización del centro de datos especificados con redundancia y autonomía objetivo; verificados.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-06.07, RT-06.08, RT-06.13, RT-06.14.
+
+#### 1.4.12 — Seguridad física del centro de datos
+
+Responsable. Arquitecto de Solución. Esfuerzo. 94 HH. Ventana. 4-6.
+
+Criterio de aceptación. Seguridad física del centro de datos y espacio de operación especificados con controles de acceso; verificados.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-06.16, RT-06.17, RT-06.20, RT-06.24.
+
+#### 1.4.13 — Respaldo en operación con custodia de medios
+
+Responsable. Arquitecto de Solución. Esfuerzo. 117 HH. Ventana. 4-6.
+
+Criterio de aceptación. Solución de respaldo en operación con custodia de medios y prueba de restauración; RPO y RTO cumplidos.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RT-07.09, RT-06.26.
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.622 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.5 — Desarrollo de software
+
+Las cuentas de control del desarrollo de software conservan las 12.116 horas asignadas en la asignación de esfuerzo de las cuentas; cada cuenta se descompone en los paquetes de trabajo de sus casos de uso (véase Paquetes de trabajo de software).
+
+Tabla: Diccionario de la rama 1.5. Fuente: Elaboración propia.
+
+#### 1.5.1 — Precio: cambio, propagación, consulta e historial
+
+Responsable. Líder de Desarrollo. Esfuerzo. 469 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-016, RF-018, RF-021, RF-030, RF-064, CU-OF-01, CU-OF-02, CU-OF-03, CU-OF-06.
+
+#### 1.5.2 — Etiquetas de exhibición y discrepancias de precio
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-019, RF-020, RF-022, RF-024, RF-028, RF-029, CU-OF-04, CU-OF-05, CU-OF-07, CU-OF-08.
+
+#### 1.5.3 — Promociones y su vigencia
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-032, RF-034, CU-OF-09, CU-OF-10.
+
+#### 1.5.4 — Maestro de artículos y reportes de calidad
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-142, RF-143, RF-147, RF-148, CU-OF-11, CU-OF-12.
+
+#### 1.5.5 — Propuesta diaria de reposición y su ajuste
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-144, RF-146, CU-AB-01, CU-AB-02.
+
+#### 1.5.6 — Órdenes de reposición a proveedores
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. CU-AB-03.
+
+#### 1.5.7 — Transferencias y recepción de mercadería
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. CU-AB-04, CU-AB-05.
+
+#### 1.5.8 — Disponible: cálculo, traza y consulta
+
+Responsable. Líder de Desarrollo. Esfuerzo. 469 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 5 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-036, RF-065, RF-066, RF-087, RF-101, RF-127, RF-130, RF-149, RF-152, RF-157, RF-160, RF-161, CU-EX-03, CU-EX-08, CU-EX-09, CU-EX-01, CU-EX-02.
+
+#### 1.5.9 — Reservas de existencia para el canal digital
+
+Responsable. Líder de Desarrollo. Esfuerzo. 469 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-035, RF-037, RF-042, RF-044, RF-098, CU-EX-04, CU-EX-05, CU-EX-06, CU-EX-07.
+
+#### 1.5.10 — Conteo, exactitud del inventario, merma y probador
+
+Responsable. Líder de Desarrollo. Esfuerzo. 558 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 6 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-131, RF-141, RF-153, RF-156, RF-158, RF-159, RF-162, CU-EX-10, CU-EX-11, CU-EX-12, CU-EX-13, CU-EX-14, CU-EX-15.
+
+#### 1.5.11 — Suspensión y degradación de la publicación por categoría
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-163, RF-164, RF-179, RF-182, RF-183, CU-EX-16, CU-EX-17.
+
+#### 1.5.12 — Integración de existencias con el sistema de almacenes y con las planillas de Concepción
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. CU-EX-18, CU-EX-19.
+
+#### 1.5.13 — Promesa de entrega, punto de despacho y elegibilidad del stock
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-053, RF-075, RF-080, RF-180, CU-PE-01, CU-PE-02, CU-PE-14.
+
+#### 1.5.14 — Preautorización, cobro y anulación del pago del pedido
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-043, RF-045, RF-047, RF-051, CU-PE-03, CU-PE-04, CU-PE-08, CU-PE-09.
+
+#### 1.5.15 — Resolución de pedidos sin existencia, reasignación y alternativas al cliente
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-046, RF-056, RF-061, RF-074, CU-PE-05, CU-PE-06, CU-PE-07.
+
+#### 1.5.16 — Estado único del pedido y sus consultas
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-052, RF-067, RF-068, RF-072, RF-073, CU-PE-10, CU-PE-11, CU-PE-12.
+
+#### 1.5.17 — Seguimiento y cumplimiento de la promesa de entrega
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-062, RF-063, RF-081, CU-PE-13, CU-PE-15.
+
+#### 1.5.18 — Punto de venta nuevo: registro y cobro de ventas, reversas, cierre de caja y medios de pago
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-001, RF-181, CU-VE-01, CU-VE-02, CU-VE-03, CU-VE-08.
+
+#### 1.5.19 — Punto de venta con operación sin conexión: reconciliación y validación posterior
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-082, RF-086, RF-088, RF-094, RF-097, RF-099, CU-VE-04, CU-VE-05, CU-VE-06, CU-VE-07.
+
+#### 1.5.20 — Ventas del canal digital y enrutamiento de los documentos tributarios al sistema de gestión empresarial
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-100, CU-VE-09, CU-VE-10.
+
+#### 1.5.21 — Cobro con la tarjeta de la casa
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. CU-VE-11.
+
+#### 1.5.22 — Cálculo de la base de comisión
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-054, RF-071, CU-CM-01.
+
+#### 1.5.23 — Entrega de la base de comisión al sistema de remuneraciones
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-055, CU-CM-02.
+
+#### 1.5.24 — Revisión de la atribución de comisiones
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. CU-CM-03.
+
+#### 1.5.25 — Existencia declarada por el vendedor y su publicación
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-102, RF-104, RF-109, RF-124, CU-MK-01, CU-MK-02.
+
+#### 1.5.26 — Evaluación de vendedores y su consulta
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-105, RF-110, RF-112, RF-119, RF-123, CU-MK-03, CU-MK-04, CU-MK-05, CU-MK-06.
+
+#### 1.5.27 — Devoluciones, base de comisión y liquidación de marketplace
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-106, RF-108, RF-125, RF-126, CU-MK-07, CU-MK-10, CU-MK-11.
+
+#### 1.5.28 — Identificación del vendedor y separación de la existencia propia
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-113, RF-118, CU-MK-08, CU-MK-09.
+
+#### 1.5.29 — Atención de garantía legal en el mesón, con sus plazos
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-187, RF-188, RF-192, RF-195, CU-PV-01, CU-PV-02, CU-PV-03.
+
+#### 1.5.30 — Devolución y aptitud de la unidad devuelta
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-189, RF-191, CU-PV-04.
+
+#### 1.5.31 — Resolución al consumidor y recuperación contra el tercero responsable
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-196, RF-198, CU-PV-05.
+
+#### 1.5.32 — Consolidación de los registros de clientes
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-227, CU-CL-01, RF-231.
+
+Las referencias RF-227 a RF-231 son adiciones propuestas, sujetas al control de alcance del anexo de trazabilidad.
+
+#### 1.5.33 — Puntos y sincronización con el sistema de fidelización
+
+Responsable. Líder de Desarrollo. Esfuerzo. 94 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional del caso de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-228, RF-231, CU-CL-02, RF-227.
+
+Las referencias RF-227 a RF-231 son adiciones propuestas, sujetas al control de alcance del anexo de trazabilidad.
+
+#### 1.5.34 — Segmentos y campañas con atributos comerciales
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 13-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Diseño M13-14; construcción dependiente M15-17 con QA; certificación M18.
+
+Hito o entrega. H8 (mes 14); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-229, RF-230, CU-CL-03, CU-CL-04, RF-227, RF-231.
+
+Las referencias RF-227 a RF-231 son adiciones propuestas, sujetas al control de alcance del anexo de trazabilidad.
+
+#### 1.5.35 — Evaluación crediticia, apertura de tarjeta y ampliación de cupo
+
+Responsable. Líder de Desarrollo. Esfuerzo. 376 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 4 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-220, RF-226, CU-OR-01, CU-OR-02, CU-OR-05, CU-OR-09.
+
+#### 1.5.36 — Simulación del costo total del crédito con la tasa máxima vigente
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-218, RF-219, CU-OR-03, CU-OR-04.
+
+#### 1.5.37 — Autorización de compra a cuotas sin enlace y sus topes
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-089, RF-093, CU-OR-06, CU-OR-07, CU-OR-08.
+
+#### 1.5.38 — Mora y gestión de cobranza
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega E1 en M10 y certificación M12; incremento E2 desde M13, entrega M17 y certificación M18.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-211, RF-213, CU-CA-01, CU-CA-05.
+
+#### 1.5.39 — Repactación, pagos y estado de cuenta
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 1-18.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega E1 en M10 y certificación M12; incremento E2 desde M13, entrega M17 y certificación M18.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-069, RF-070, CU-CA-02, CU-CA-04, CU-CA-03.
+
+#### 1.5.40 — Conciliación diaria y convivencia con la plataforma de crédito de 2011
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-18.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega E1 en M10 y certificación M12; incremento E2 desde M13, entrega M17 y certificación M18.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18)
+
+Trazabilidad. RF-216, CU-CA-06, CU-CA-07.
+
+#### 1.5.41 — Información precontractual entregada, aceptada y consultable
+
+Responsable. Líder de Desarrollo. Esfuerzo. 282 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 3 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-199, RF-206, RF-217, CU-EV-01, CU-EV-02, CU-EV-08.
+
+#### 1.5.42 — Consentimiento de modificaciones de condiciones y su enlace con la cobranza
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-207, RF-208, RF-214, RF-215, CU-EV-03, CU-EV-07.
+
+#### 1.5.43 — Reconstrucción y recuperación de la evidencia del consentimiento
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-209, RF-210, CU-EV-04, CU-EV-05.
+
+#### 1.5.44 — Inventario de flujos de cruce autorizados y registro de los cruces
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-165, RF-169, CU-CC-01, CU-CC-03.
+
+#### 1.5.45 — Rechazo de cruces no autorizados entre los ámbitos
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-170, RF-172, CU-CC-02, CU-CC-04.
+
+#### 1.5.46 — Correspondencia de identificadores y evaluación de impacto sobre la frontera
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-173, RF-176, CU-CC-05, CU-CC-06.
+
+#### 1.5.47 — Identidad individual y administración de identidades, roles y ámbitos
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-002, RF-006, CU-BT-01, CU-BT-12.
+
+#### 1.5.48 — Habilitación, revocación y conciliación de accesos
+
+Responsable. Líder de Desarrollo. Esfuerzo. 469 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 5 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-007, RF-015, CU-BT-02, CU-BT-03, CU-BT-04, CU-BT-05, CU-BT-06.
+
+#### 1.5.49 — Orden de degradación y ventanas de congelamiento
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. RF-177, RF-178, RF-184, RF-186, CU-BT-07, CU-BT-08.
+
+#### 1.5.50 — Plataforma de integración y convivencia con el sistema central de 2009
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. CU-BT-09, CU-BT-10.
+
+#### 1.5.51 — Observabilidad y capacidad analítica
+
+Responsable. Líder de Desarrollo. Esfuerzo. 188 HH. Ventana. 1-12.
+
+Criterio de aceptación. Prueba funcional de los 2 casos de uso de la cuenta contra los RF del Anexo B; 0 defectos bloqueantes. Entrega para pruebas con QA superado en M10; certificación de cierre en M12.
+
+Hito o entrega. H4 (mes 10); H5 (mes 12)
+
+Trazabilidad. CU-BT-11, CU-BT-13.
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 12.116 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.6 — Integraciones
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.6. Fuente: Elaboración propia.
+
+#### 1.6.1 — Catálogo de interfaces rediseñadas
+
+Responsable. Líder de Integración. Esfuerzo. 117 HH. Ventana. 2-5.
+
+Criterio de aceptación. Catálogo de las interfaces rediseñadas con contratos y niveles de servicio de integración; cubre las 14 interfaces; aprobado.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.6.2 — Rediseño de las integraciones de la Etapa 1
+
+Responsable. Líder de Integración. Esfuerzo. 273 HH. Ventana. 5-18.
+
+Criterio de aceptación. Integraciones de la Etapa 1 rediseñadas (precios y existencia, crédito con el ERP, cobranza y prevención de pérdidas) probadas extremo a extremo y conciliadas.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.6.3 — Rediseño de las integraciones de la Etapa 2
+
+Responsable. Líder de Integración. Esfuerzo. 193 HH. Ventana. 13-18.
+
+Criterio de aceptación. Integraciones de la Etapa 2 rediseñadas (pedidos, marketplace y fidelización) probadas extremo a extremo y conciliadas.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.6.4 — Canal de intercambio con proveedores
+
+Responsable. Líder de Integración. Esfuerzo. 155 HH. Ventana. 13-18.
+
+Criterio de aceptación. Canal de intercambio con los 940 proveedores operativo, con contratos de datos y monitoreo; probado con proveedores reales.
+
+Hito o entrega. H10 (mes 18)
+
+Trazabilidad. RNF-53.
+
+#### 1.6.5 — Reportes a las autoridades fiscalizadoras
+
+Responsable. Líder de Integración. Esfuerzo. 97 HH. Ventana. 8-12.
+
+Criterio de aceptación. Reportes a las autoridades fiscalizadoras generados y firmados en el formato exigido; validados con el área de cumplimiento.
+
+Hito o entrega. H5 (mes 12)
+
+#### 1.6.6 — Certificación de integraciones con conciliación
+
+Responsable. Líder de Integración. Esfuerzo. 136 HH. Ventana. 10-18.
+
+Criterio de aceptación. Certificación de las integraciones con evidencia de conciliación diaria; 0 diferencias no explicadas.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.6.7 — Contingencia tributaria probada con ERP/DTE
+
+Responsable. Líder de Integración. Esfuerzo. 97 HH. Ventana. 4-6.
+
+Criterio de aceptación. Modalidad de contingencia tributaria con el ERP/DTE aprobada y probada en el piloto; emisión y recepción de DTE conciliadas.
+
+Hito o entrega. H3 (mes 6)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.068 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.7 — Migración y saneamiento de datos
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.7. Fuente: Elaboración propia.
+
+#### 1.7.1 — Plan de migración con corte y retorno
+
+Responsable. Líder de Datos. Esfuerzo. 117 HH. Ventana. 2-4.
+
+Criterio de aceptación. Plan de migración con estrategia de corte, de retorno e inventario de datos históricos; tiempos y responsables definidos.
+
+Hito o entrega. H2 (mes 4)
+
+Trazabilidad. RT-05.11, RT-05.15.
+
+#### 1.7.2 — Maestro de artículos saneado (268.000)
+
+Responsable. Líder de Datos. Esfuerzo. 193 HH. Ventana. 4-10.
+
+Criterio de aceptación. Maestro de 268.000 referencias saneado y validado; discrepancia de conteo cíclico $≤$2 % (línea base 12,4 %); acta de conciliación firmada.
+
+Hito o entrega. H4 (mes 10)
+
+#### 1.7.3 — Corte de inventario en 24 instalaciones
+
+Responsable. Líder de Datos. Esfuerzo. 228 HH. Ventana. 11-15.
+
+Criterio de aceptación. Corte de inventario en las 24 instalaciones con acta de conciliación; 0 diferencias no autorizadas.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.7.4 — Migración del histórico comercial
+
+Responsable. Líder de Datos. Esfuerzo. 231 HH. Ventana. 8-15.
+
+Criterio de aceptación. Histórico comercial (ventas y pedidos) migrado con conciliación de totales contra el origen; 0 registros huérfanos.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.7.5 — Migración de clientes, vendedores y liquidaciones
+
+Responsable. Líder de Datos. Esfuerzo. 193 HH. Ventana. 14-18.
+
+Criterio de aceptación. Padrón de clientes deduplicado, vendedores y liquidaciones migrados; duplicados dentro del umbral acordado; conciliación firmada.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.7.6 — Migración de la cartera viva (620.000)
+
+Responsable. Líder de Datos. Esfuerzo. 349 HH. Ventana. 10-21.
+
+Criterio de aceptación. Cartera viva de 620.000 clientes migrada por tramos con acta de compuerta por tramo; conciliación de saldos conforme.
+
+Hito o entrega. H12 (mes 21)
+
+#### 1.7.7 — Repositorio de datos históricos no migrados
+
+Responsable. Líder de Datos. Esfuerzo. 117 HH. Ventana. 10-16.
+
+Criterio de aceptación. Repositorio de consulta de datos históricos no migrados operativo, con control de acceso y política de retención.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.7.8 — Plan de retiro de la plataforma de 2011
+
+Responsable. Líder de Datos. Esfuerzo. 79 HH. Ventana. 14-18.
+
+Criterio de aceptación. Plan de retiro de la plataforma de originación y cobranza de 2011 con hitos, responsables y plan de retorno.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.7.9 — Plataforma de 2011 fuera de servicio
+
+Responsable. Líder de Datos. Esfuerzo. 79 HH. Ventana. 22-22.
+
+Criterio de aceptación. Plataforma de 2011 fuera de servicio con evidencia de datos resguardados; acta de retiro firmada.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.7.10 — Sistema central de 2009 retirado
+
+Responsable. Líder de Datos. Esfuerzo. 97 HH. Ventana. 21-56.
+
+Criterio de aceptación. Sistema central de retail de 2009 retirado, con verificación de ausencia de tráfico y respaldo de datos; acta firmada.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.7.11 — Sustitución del punto de venta de 2014
+
+Responsable. Líder de Datos. Esfuerzo. 193 HH. Ventana. 8-10; 16-16.
+
+Criterio de aceptación. Preparación y pruebas de sustitución en M8-10; cambio del registro oficial por tienda en M16, después de marcha blanca y con retorno conciliado. No se realizan intervenciones productivas durante congelamientos.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.7.12 — Actas de compuerta por tramo de la cartera
+
+Responsable. Líder de Datos. Esfuerzo. 97 HH. Ventana. 12-21.
+
+Criterio de aceptación. Actas de compuerta por tramo de la cartera firmadas; cada tramo migrado y conciliado antes de continuar.
+
+Hito o entrega. H12 (mes 21)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.973 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.8 — Seguridad, identidad y cumplimiento
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.8. Fuente: Elaboración propia.
+
+#### 1.8.1 — Plan de seguridad, controles y amenazas
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 136 HH. Ventana. 1-4.
+
+Criterio de aceptación. Plan de seguridad, matriz de controles y modelo de amenazas trazable a RNF-33..RNF-38 y RNF-70..RNF-76; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.8.2 — Superficie de exposición y respuesta a incidentes
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 117 HH. Ventana. 4-8.
+
+Criterio de aceptación. Declaración de superficie de exposición y plan de respuesta a incidentes con tiempos objetivo; aprobado.
+
+Hito o entrega. H4 (mes 10)
+
+#### 1.8.3 — Modelo de identidad y segregación de funciones
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 136 HH. Ventana. 2-5.
+
+Criterio de aceptación. Modelo de identidad y segregación de funciones, incluido el ámbito emisor; 0 accesos cruzados; aprobado.
+
+Hito o entrega. H3 (mes 6)
+
+Trazabilidad. RNF-37.
+
+#### 1.8.4 — Cifrado y tokenización de medios de pago
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 117 HH. Ventana. 4-10.
+
+Criterio de aceptación. Cifrado y tokenización de los medios de pago conforme al estándar; verificado en entorno productivo.
+
+Hito o entrega. H4 (mes 10)
+
+Trazabilidad. RNF-33, RNF-34.
+
+#### 1.8.5 — Protección de datos y cumplimiento normativo
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 136 HH. Ventana. 3-8.
+
+Criterio de aceptación. Matriz de cumplimiento de protección de datos personales con controles y evidencia; aprobada.
+
+Hito o entrega. H4 (mes 10)
+
+Trazabilidad. RNF-74, RNF-76.
+
+#### 1.8.6 — Pruebas de intrusión y plan de remediación
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 156 HH. Ventana. 10-18.
+
+Criterio de aceptación. Informe de pruebas de intrusión con hallazgos clasificados; 0 hallazgos críticos o altos abiertos al cierre. Evidencia separada para E1 antes de H5 y para E2 antes de H10.
+
+Hito o entrega. H5 (mes 12); H10 (mes 18)
+
+Trazabilidad. RNF-14.
+
+#### 1.8.7 — Diligencia del proveedor de nube
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 54 HH. Ventana. 2-4.
+
+Criterio de aceptación. Informe de diligencia del proveedor de nube con evaluación de controles y brechas; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.8.8 — Atestación de cadena de suministro y confianza cero
+
+Responsable. Encargado de Seguridad de la Información. Esfuerzo. 97 HH. Ventana. 4-12.
+
+Criterio de aceptación. Atestación de la cadena de suministro y revisión de la arquitectura de confianza cero con evidencia; 0 brechas críticas abiertas.
+
+Hito o entrega. H5 (mes 12)
+
+Trazabilidad. RNF-70, RNF-71, RNF-73.
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 949 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.9 — Calidad, pruebas y certificación
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.9. Fuente: Elaboración propia.
+
+#### 1.9.1 — Plan de pruebas
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 97 HH. Ventana. 2-4.
+
+Criterio de aceptación. Plan de pruebas con niveles, tipos, ambientes, datos y calendario; cubre los 28 criterios de aceptación del caso; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.9.2 — Estándares de código y puertas de calidad
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 79 HH. Ventana. 1-6.
+
+Criterio de aceptación. Estándares de codificación, revisión por pares y puertas de calidad con umbral de cobertura; aplicados en el pipeline.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.9.3 — Batería de pruebas funcionales y no funcionales
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 311 HH. Ventana. 5-18.
+
+Criterio de aceptación. Batería funcional y no funcional (RNF-22..RNF-28, RNF-32) ejecutada; 0 defectos bloqueantes abiertos. Evidencia separada para E1 antes de H5 y para E2 antes de H10.
+
+Hito o entrega. H5 (mes 12); H10 (mes 18)
+
+#### 1.9.4 — Pruebas de desempeño, resiliencia y DR
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 193 HH. Ventana. 9-18.
+
+Criterio de aceptación. Pruebas de desempeño, resiliencia y recuperación ante desastres con resultados contra los umbrales del Anexo B; informes firmados. Evidencia separada para E1 antes de H5 y para E2 antes de H10.
+
+Hito o entrega. H5 (mes 12); H10 (mes 18)
+
+Trazabilidad. RNF-22, RNF-23, RNF-32.
+
+#### 1.9.5 — Ensayo de degradación del evento anual
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 117 HH. Ventana. 9-10; 16-16; 18-18.
+
+Criterio de aceptación. Ensayo inicial del alcance E1 en M9-10; revalidación del alcance productivo en M16 antes de los eventos de 2028; ensayo del incremento E2 en M18. SLO y retorno acreditados antes de cada exposición; reserva de dos semanas de reensayo fuera del congelamiento.
+
+Hito o entrega. H5 (mes 12); H10 (mes 18)
+
+#### 1.9.6 — Aceptación de los 28 criterios del caso
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 156 HH. Ventana. 11-21.
+
+Criterio de aceptación. Informes de aceptación del usuario y verificación de los 28 criterios del caso; cada corrección cerrada y re-probada.
+
+Hito o entrega. H12 (mes 21)
+
+#### 1.9.7 — Certificación de calidad de la Etapa 1
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 117 HH. Ventana. 12-12.
+
+Criterio de aceptación. Certificación de calidad de la Etapa 1 con evidencia de puertas superadas; habilita el hito.
+
+Hito o entrega. H5 (mes 12)
+
+#### 1.9.8 — Certificación de calidad de la Etapa 2
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 117 HH. Ventana. 18-18.
+
+Criterio de aceptación. Certificación de calidad de la Etapa 2 con evidencia de puertas superadas; habilita el hito.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.9.9 — Prueba de corte de enlace de 24 h en el piloto
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 97 HH. Ventana. 6-7.
+
+Criterio de aceptación. Prueba del corte de enlace de 24 h con retorno ensayado en el piloto; 0 pérdidas de operación no reconciliadas.
+
+Hito o entrega. H4 (mes 10)
+
+Trazabilidad. RT-03.10.
+
+#### 1.9.10 — Evaluación de comercio electrónico y fidelización
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 79 HH. Ventana. 9-12.
+
+Criterio de aceptación. Evaluación de comercio electrónico y fidelización con las pruebas de la Etapa 1; resultados contra el umbral; informe firmado.
+
+Hito o entrega. H5 (mes 12)
+
+#### 1.9.11 — Pruebas de tareas del punto de venta
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 79 HH. Ventana. 5-7.
+
+Criterio de aceptación. Pruebas de tareas del punto de venta con cajeros nuevos y experimentados; 0 errores críticos; informe firmado.
+
+Hito o entrega. H4 (mes 10)
+
+Trazabilidad. RNF-49.
+
+#### 1.9.12 — Pruebas de comprensión con clientes y titulares
+
+Responsable. Líder de Calidad y Pruebas. Esfuerzo. 97 HH. Ventana. 12-20.
+
+Criterio de aceptación. Pruebas de comprensión de precios, entrega e información crediticia con clientes y titulares; comprensión $≥$ umbral acordado.
+
+Hito o entrega. H12 (mes 21)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 1.539 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.10 — Innovaciones
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.10. Fuente: Elaboración propia.
+
+#### 1.10.1 — Lockers Ancoa 24/7
+
+Responsable. Arquitecto de Solución. Esfuerzo. 1.864 HH. Ventana. 13-18; 19-20; 21-56.
+
+Criterio de aceptación. Aceptación técnica E2 M19–20; habilitación M21; criterios por paquete en el anexo de estimación; seguimiento específico hasta M56.
+
+Hito o entrega. H10 (mes 18); H12 (mes 21)
+
+Trazabilidad. RT-26.02.
+
+#### 1.10.2 — Conteo cíclico predictivo
+
+Responsable. Arquitecto de Solución. Esfuerzo. 2.336 HH. Ventana. 5-12; 13-15; 16-20; 21-56.
+
+Criterio de aceptación. Aceptación E1 tras evaluación en sombra M13–15; uso M16; criterios por paquete en el anexo de estimación; seguimiento específico hasta M56.
+
+Hito o entrega. H5 (mes 12); H7 (mes 16)
+
+Trazabilidad. RT-26.02.
+
+#### 1.10.3 — Búsqueda vectorial multimodal
+
+Responsable. Arquitecto de Solución. Esfuerzo. 2.120 HH. Ventana. 13-18; 19-20; 21-56.
+
+Criterio de aceptación. Aceptación técnica E2 M19–20; habilitación M21; criterios por paquete en el anexo de estimación; seguimiento específico hasta M56.
+
+Hito o entrega. H10 (mes 18); H12 (mes 21)
+
+Trazabilidad. RT-26.02.
+
+#### 1.10.4 — Retail Media Network
+
+Responsable. Arquitecto de Solución. Esfuerzo. 1.784 HH. Ventana. 13-18; 19-20; 21-56.
+
+Criterio de aceptación. Aceptación técnica E2 M19–20; habilitación M21; criterios por paquete en el anexo de estimación; seguimiento específico hasta M56.
+
+Hito o entrega. H10 (mes 18); H12 (mes 21)
+
+Trazabilidad. RT-26.02.
+
+#### 1.10.5 — Modo Tienda con fila virtual de probadores
+
+Responsable. Arquitecto de Solución. Esfuerzo. 1.784 HH. Ventana. 13-18; 19-20; 21-56.
+
+Criterio de aceptación. Aceptación técnica E2 M19–20; habilitación M21; criterios por paquete en el anexo de estimación; seguimiento específico hasta M56.
+
+Hito o entrega. H10 (mes 18); H12 (mes 21)
+
+Trazabilidad. RT-26.02.
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 9.888 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.11 — Implantación y despliegue
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.11. Fuente: Elaboración propia.
+
+#### 1.11.1 — Plan de implantación y reversión probado
+
+Responsable. Líder de Implantación. Esfuerzo. 97 HH. Ventana. 3-5; 10-12.
+
+Criterio de aceptación. Plan de implantación y retorno con ensayo controlado previo al piloto para H3; evidencia del piloto tras M7; actualización y cierre de preparación en H5.
+
+Hito o entrega. H3 (mes 6); H5 (mes 12)
+
+#### 1.11.2 — Configuración y certificación de los sitios
+
+Responsable. Líder de Implantación. Esfuerzo. 463 HH. Ventana. 5-10; 15-17.
+
+Criterio de aceptación. Configuración E1 comprobada antes de H4 y E2 antes de H9; liberaciones comerciales únicamente en M16 y M21 tras la marcha blanca respectiva, fuera de congelamientos.
+
+Hito o entrega. H4 (mes 10); H9 (mes 17)
+
+#### 1.11.3 — Plan de convivencia entre etapas
+
+Responsable. Líder de Implantación. Esfuerzo. 79 HH. Ventana. 10-12.
+
+Criterio de aceptación. Plan de convivencia Etapa 1 / Etapa 2 con única fuente de verdad; probado sin doble captura de datos.
+
+Hito o entrega. H5 (mes 12)
+
+#### 1.11.4 — Piloto del punto de venta en tres tiendas
+
+Responsable. Líder de Implantación. Esfuerzo. 156 HH. Ventana. 6-7.
+
+Criterio de aceptación. Piloto técnico aislado en preproducción de tres tiendas en M6-7, fuera de congelamientos; venta y registro oficial permanecen en sistemas vigentes; no equivale a producción comercial anticipada.
+
+Hito o entrega. H4 (mes 10)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 795 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.12 — Marchas blancas y aceptación por etapa
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.12. Fuente: Elaboración propia.
+
+#### 1.12.1 — Plan de la marcha blanca de la Etapa 1
+
+Responsable. Jefe de Proyecto. Esfuerzo. 79 HH. Ventana. 8-9.
+
+Criterio de aceptación. Plan de marcha blanca E1 con criterios de salida y umbrales; objetivo de aprobación al terminar M9; aprobado antes de M13 como condición de entrada.
+
+Hito o entrega. H5 (mes 12)
+
+#### 1.12.2 — Informe de la marcha blanca de la Etapa 1
+
+Responsable. Jefe de Proyecto. Esfuerzo. 79 HH. Ventana. 13-15.
+
+Criterio de aceptación. Seguimiento de marcha blanca M13-15; informe acredita las seis condiciones del artículo 17.3, incluidas las últimas cuatro semanas; acta de producción en la cuenta 1.12.3.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.12.3 — Acta de aceptación de la Etapa 1
+
+Responsable. Jefe de Proyecto. Esfuerzo. 24 HH. Ventana. 16-16.
+
+Criterio de aceptación. Acta de aceptación de la Etapa 1 firmada por ambas partes; habilita el hito de pago.
+
+Hito o entrega. H7 (mes 16)
+
+#### 1.12.4 — Plan de la marcha blanca de la Etapa 2
+
+Responsable. Jefe de Proyecto. Esfuerzo. 79 HH. Ventana. 16-17.
+
+Criterio de aceptación. Plan de la marcha blanca de la Etapa 2, en convivencia con la Etapa 1 en producción; aprobado.
+
+Hito o entrega. H10 (mes 18)
+
+#### 1.12.5 — Informe de la marcha blanca de la Etapa 2
+
+Responsable. Jefe de Proyecto. Esfuerzo. 79 HH. Ventana. 19-20.
+
+Criterio de aceptación. Seguimiento de marcha blanca M19-20; informe acredita las seis condiciones del artículo 17.3; acta final en la cuenta 1.12.6.
+
+Hito o entrega. H12 (mes 21)
+
+#### 1.12.6 — Acta de aceptación final y garantía
+
+Responsable. Jefe de Proyecto. Esfuerzo. 36 HH. Ventana. 21-21.
+
+Criterio de aceptación. Acta de aceptación final y garantía de correcto funcionamiento firmada; habilita el hito final.
+
+Hito o entrega. H12 (mes 21)
+
+#### 1.12.7 — Soporte de estabilización post-marcha
+
+Responsable. Jefe de Proyecto. Esfuerzo. 156 HH. Ventana. 16-24.
+
+Criterio de aceptación. Informe de estabilización posterior a la marcha con incidencias y tiempos de resolución; SLO cumplidos en el período.
+
+Hito o entrega. Entrega inicial antes de uso; controles periódicos hasta fin de ventana
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 532 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.13 — Gestión del cambio y capacitación
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.13. Fuente: Elaboración propia.
+
+#### 1.13.1 — Plan de gestión del cambio
+
+Responsable. Líder de Gestión del Cambio. Esfuerzo. 117 HH. Ventana. 3-6.
+
+Criterio de aceptación. Plan de gestión del cambio con diagnóstico por perfil y medición de adopción; metas por rol; aprobado.
+
+Hito o entrega. H3 (mes 6)
+
+#### 1.13.2 — Plan de capacitación por rol
+
+Responsable. Líder de Gestión del Cambio. Esfuerzo. 156 HH. Ventana. 5-8.
+
+Criterio de aceptación. Plan de capacitación por rol con materiales editables en español; cubre los 1.100 repositores y el personal de tienda.
+
+Hito o entrega. H4 (mes 10)
+
+#### 1.13.3 — Capacitación ejecutada y certificada
+
+Responsable. Líder de Gestión del Cambio. Esfuerzo. 235 HH. Ventana. 10-12; 18-19.
+
+Criterio de aceptación. Certificación de administradores y equipo técnico por etapa. Usuarios habilitados antes de entrar a marcha blanca; ninguna persona no certificada asume funciones que exijan esa habilitación. Registro completo antes del acta de cierre.
+
+Hito o entrega. H7 (mes 16); H12 (mes 21)
+
+#### 1.13.4 — Acompañamiento en puesto
+
+Responsable. Líder de Gestión del Cambio. Esfuerzo. 311 HH. Ventana. 13-24.
+
+Criterio de aceptación. Informe de acompañamiento en puesto para el personal de tienda, temporero y externo; incidencias cerradas.
+
+Hito o entrega. Entrega inicial antes de uso; controles periódicos hasta fin de ventana
+
+#### 1.13.5 — Comunicación a los clientes por tramo
+
+Responsable. Líder de Gestión del Cambio. Esfuerzo. 97 HH. Ventana. 10-21.
+
+Criterio de aceptación. Plan de comunicación a los clientes de la cartera por tramo ejecutado; cobertura de contacto conforme al plan.
+
+Hito o entrega. H12 (mes 21)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 916 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.14 — Documentación, transferencia y reversibilidad
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.14. Fuente: Elaboración propia.
+
+#### 1.14.1 — Documentación técnica y funcional
+
+Responsable. Jefe de Proyecto. Esfuerzo. 311 HH. Ventana. 1-56.
+
+Criterio de aceptación. Documentación técnica y funcional con inventario de componentes de software; completa y vigente al cierre de cada etapa.
+
+Hito o entrega. Transversal (H1 a H12)
+
+Trazabilidad. RNF-70.
+
+#### 1.14.2 — Transferencia tecnológica (código y artefactos)
+
+Responsable. Jefe de Proyecto. Esfuerzo. 193 HH. Ventana. 48-56.
+
+Criterio de aceptación. Transferencia de código fuente, artefactos, scripts de infraestructura y procedimientos de despliegue; el cliente puede reconstruir el sistema.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.14.3 — Base de conocimiento y manuales de operación
+
+Responsable. Jefe de Proyecto. Esfuerzo. 193 HH. Ventana. 10-56.
+
+Criterio de aceptación. Base de conocimiento y manuales de operación que cubren las tareas de operación; aprobados por la Contraparte Técnica.
+
+Hito o entrega. Entrega inicial antes de uso; controles periódicos hasta fin de ventana
+
+#### 1.14.4 — Plan de reversibilidad
+
+Responsable. Jefe de Proyecto. Esfuerzo. 97 HH. Ventana. 1-3.
+
+Criterio de aceptación. Plan de Reversibilidad con exportación en formatos abiertos, entregado dentro de los primeros 90 días y actualizado cada año.
+
+Hito o entrega. H2 (mes 4)
+
+#### 1.14.5 — Acta de cierre y acompañamiento de reversibilidad
+
+Responsable. Jefe de Proyecto. Esfuerzo. 64 HH. Ventana. 54-56.
+
+Criterio de aceptación. Acompañamiento de reversibilidad durante al menos 90 días antes del cierre; ventana mensual M54–56 y fecha exacta de inicio comprobada. Acta y traspaso final firmados en M56.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.14.6 — Informe de lecciones aprendidas
+
+Responsable. Jefe de Proyecto. Esfuerzo. 47 HH. Ventana. 56-56.
+
+Criterio de aceptación. Informe de lecciones aprendidas del proyecto con acciones de mejora; aprobado.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.14.7 — Protocolo de aceptación de entregas
+
+Responsable. Jefe de Proyecto. Esfuerzo. 64 HH. Ventana. 1-3.
+
+Criterio de aceptación. Protocolo de aceptación de entregas y del producto final con criterios y responsables; aprobado.
+
+Hito o entrega. H2 (mes 4)
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 969 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Rama 1.15 — Operación y soporte
+
+Cuentas de control de la rama, con su entregable, criterio de aceptación con umbral, esfuerzo asignado, ventana, hito de aceptación asociado y trazas de requisitos.
+
+Tabla: Diccionario de la rama 1.15. Fuente: Elaboración propia.
+
+#### 1.15.1 — Mesa de servicio de tres niveles
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 1.065 HH. Ventana. 21-56.
+
+Criterio de aceptación. Mesa de servicio de tres niveles operando; cumple los tiempos de respuesta y resolución (SLA) del Anexo B durante los 36 meses.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.15.2 — Informes de nivel de servicio y certificaciones
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 273 HH. Ventana. 21-56.
+
+Criterio de aceptación. Informes periódicos de nivel de servicio y de certificaciones; disponibilidad $≥$99,9 % medida y evidencia mensual.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.15.3 — Pruebas periódicas de recuperación ante desastres
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 70 HH. Ventana. 21-56.
+
+Criterio de aceptación. Pruebas periódicas de recuperación ante desastres ejecutadas ($≥$2 al año); RTO y RPO cumplidos y documentados.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.15.4 — Mantención correctiva, preventiva y evolutiva
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 2.314 HH. Ventana. 21-56.
+
+Criterio de aceptación. Mantención correctiva, preventiva y evolutiva dentro de los SLA; backlog evolutivo cerrado según el plan.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.15.5 — Infraestructura en operación
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 1.382 HH. Ventana. 21-56.
+
+Criterio de aceptación. Infraestructura en operación con informe de gestión; capacidad y disponibilidad dentro de los umbrales.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### 1.15.6 — Jornadas de actualización del personal
+
+Responsable. Líder de Operación / SRE. Esfuerzo. 102 HH. Ventana. 21-56.
+
+Criterio de aceptación. Al menos dos jornadas anuales de actualización y capacitación de personal nuevo ejecutadas; asistencia y evaluación conformes.
+
+Hito o entrega. H12 y pagos mensuales de Operación
+
+#### Subtotal —
+
+Responsable. . Esfuerzo. 5.206 HH. Ventana. .
+
+Criterio de aceptación.
+
+Hito o entrega.
+
+### Paquetes de trabajo de software (127 casos de uso)
+
+Cada caso de uso es un paquete de trabajo. Su entregable es la implementación comprobada del caso de uso indicado. Su aceptación exige superar los escenarios acordados de ese caso, las pruebas de integración y seguridad aplicables, y los umbrales de su cuenta de control, identificada explícitamente en la misma fila. Incluye código revisado, documentación y evidencia trazable. El Líder de Desarrollo responde por cada paquete y el Líder de Calidad verifica su evidencia; la Contraparte Técnica conserva la aceptación contractual. Las horas de los paquetes se concilian con su cuenta mediante los pesos relativos de la estimación, usando el método del mayor resto a la hora entera. No se modifica el esfuerzo aprobado de ninguna cuenta. La cuenta es la unidad mínima utilizada para la curva mensual.
+
+Tabla: Paquetes de trabajo de software. Fuente: Elaboración propia.
+
+| **Paquete** | **Caso de uso** | **Cuenta** | **HH** | **Responsable** |
+| --- | --- | --- | --- | --- |
+| 1.5.1.1 | «Cambiar y propagar un precio» (CU-OF-01) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.1.2 | «Entregar la oferta vigente a los canales» (CU-OF-02) | 1.5.1 | 184 | Líder de Desarrollo |
+| 1.5.1.3 | «Consultar el precio vigente en línea» (CU-OF-03) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.1.4 | «Recuperar el precio publicado en un instante» (CU-OF-06) | 1.5.1 | 95 | Líder de Desarrollo |
+| 1.5.2.1 | «Registrar el cambio de etiqueta» (CU-OF-04) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.2 | «Consultar el estado de exhibición de la tienda» (CU-OF-05) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.3 | «Resolver el precio a cobrar ante diferencia con la etiqueta» (CU-OF-07) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.2.4 | «Revisar los incidentes de discrepancia de precio» (CU-OF-08) | 1.5.2 | 94 | Líder de Desarrollo |
+| 1.5.3.1 | «Aplicar las promociones vigentes en la venta» (CU-OF-09) | 1.5.3 | 94 | Líder de Desarrollo |
+| 1.5.3.2 | «Administrar las promociones y su vigencia» (CU-OF-10) | 1.5.3 | 94 | Líder de Desarrollo |
+| 1.5.4.1 | «Mantener el maestro de artículos» (CU-OF-11) | 1.5.4 | 94 | Líder de Desarrollo |
+| 1.5.4.2 | «Revisar los reportes de calidad del maestro y de publicación» (CU-OF-12) | 1.5.4 | 94 | Líder de Desarrollo |
+| 1.5.5.1 | «Generar la propuesta diaria de reposición» (CU-AB-01) | 1.5.5 | 94 | Líder de Desarrollo |
+| 1.5.5.2 | «Ajustar y confirmar la propuesta de reposición» (CU-AB-02) | 1.5.5 | 94 | Líder de Desarrollo |
+| 1.5.6.1 | «Colocar y seguir las órdenes a proveedores» (CU-AB-03) | 1.5.6 | 94 | Líder de Desarrollo |
+| 1.5.7.1 | «Gestionar las transferencias entre tiendas y centros de distribución» (CU-AB-04) | 1.5.7 | 94 | Líder de Desarrollo |
+| 1.5.7.2 | «Registrar la recepción de mercadería en la tienda» (CU-AB-05) | 1.5.7 | 94 | Líder de Desarrollo |
+| 1.5.8.1 | «Publicar el disponible a los canales» (CU-EX-03) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.2 | «Parametrizar el colchón de confianza y la vigencia de la reserva» (CU-EX-08) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.3 | «Consultar la traza del cálculo del disponible» (CU-EX-09) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.4 | «Consultar la disponibilidad para vender en sala» (CU-EX-01) | 1.5.8 | 94 | Líder de Desarrollo |
+| 1.5.8.5 | «Consultar la disponibilidad en línea» (CU-EX-02) | 1.5.8 | 93 | Líder de Desarrollo |
+| 1.5.9.1 | «Reservar una unidad para el canal digital» (CU-EX-04) | 1.5.9 | 184 | Líder de Desarrollo |
+| 1.5.9.2 | «Expirar las reservas vencidas» (CU-EX-05) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.9.3 | «Verificar la existencia física antes del cobro» (CU-EX-06) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.9.4 | «Resolver el conflicto de existencia comprometida» (CU-EX-07) | 1.5.9 | 95 | Líder de Desarrollo |
+| 1.5.10.1 | «Parametrizar el conteo cíclico» (CU-EX-10) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.2 | «Ejecutar el conteo cíclico» (CU-EX-11) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.3 | «Consultar la exactitud del inventario y recibir alertas» (CU-EX-12) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.4 | «Clasificar las diferencias y cerrar el ajuste» (CU-EX-13) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.5 | «Emitir el informe mensual de merma» (CU-EX-14) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.10.6 | «Gestionar las unidades en el probador» (CU-EX-15) | 1.5.10 | 93 | Líder de Desarrollo |
+| 1.5.11.1 | «Suspender la publicación de una categoría» (CU-EX-16) | 1.5.11 | 94 | Líder de Desarrollo |
+| 1.5.11.2 | «Degradar por cancelaciones» (CU-EX-17) | 1.5.11 | 94 | Líder de Desarrollo |
+| 1.5.12.1 | «Recibir los movimientos del sistema de almacenes» (CU-EX-18) | 1.5.12 | 94 | Líder de Desarrollo |
+| 1.5.12.2 | «Cargar las existencias de Concepción» (CU-EX-19) | 1.5.12 | 94 | Líder de Desarrollo |
+| 1.5.13.1 | «Calcular la fecha prometida de entrega» (CU-PE-01) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.13.2 | «Seleccionar el punto de despacho por costo total de servir» (CU-PE-02) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.13.3 | «Parametrizar la elegibilidad del stock y el límite por cliente» (CU-PE-14) | 1.5.13 | 94 | Líder de Desarrollo |
+| 1.5.14.1 | «Aceptar el pedido y preautorizar el medio de pago» (CU-PE-03) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.2 | «Capturar el cobro al confirmarse la preparación» (CU-PE-04) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.3 | «Cancelar el pedido y anular la preautorización» (CU-PE-08) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.14.4 | «Conciliar las preautorizaciones vencidas sin captura» (CU-PE-09) | 1.5.14 | 94 | Líder de Desarrollo |
+| 1.5.15.1 | «Resolver un pedido cuya unidad no existe» (CU-PE-05) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.15.2 | «Reasignar el pedido a otro punto de despacho» (CU-PE-06) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.15.3 | «Ofrecer al cliente las alternativas de resolución» (CU-PE-07) | 1.5.15 | 94 | Líder de Desarrollo |
+| 1.5.16.1 | «Consultar el estado único del pedido» (CU-PE-10) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.16.2 | «Consultar las compras y las devoluciones» (CU-PE-11) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.16.3 | «Atender en el mesón la consulta de un pedido» (CU-PE-12) | 1.5.16 | 94 | Líder de Desarrollo |
+| 1.5.17.1 | «Priorizar los pedidos próximos a vencer su promesa» (CU-PE-13) | 1.5.17 | 94 | Líder de Desarrollo |
+| 1.5.17.2 | «Seguir el pedido con el transportista hasta la entrega» (CU-PE-15) | 1.5.17 | 94 | Líder de Desarrollo |
+| 1.5.18.1 | «Registrar y cobrar una venta» (CU-VE-01) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.2 | «Reversar una venta o un pago» (CU-VE-02) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.3 | «Cerrar la caja del turno» (CU-VE-03) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.18.4 | «Desactivar los medios de pago de mayor fricción» (CU-VE-08) | 1.5.18 | 94 | Líder de Desarrollo |
+| 1.5.19.1 | «Operar la tienda sin enlace» (CU-VE-04) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.2 | «Reconciliar las ventas hechas sin enlace» (CU-VE-05) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.3 | «Revisar el informe de excepciones de la conciliación» (CU-VE-06) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.19.4 | «Validar las operaciones cursadas sin enlace» (CU-VE-07) | 1.5.19 | 94 | Líder de Desarrollo |
+| 1.5.20.1 | «Registrar las ventas del canal digital» (CU-VE-09) | 1.5.20 | 94 | Líder de Desarrollo |
+| 1.5.20.2 | «Enrutar los documentos tributarios al ERP/DTE» (CU-VE-10) | 1.5.20 | 94 | Líder de Desarrollo |
+| 1.5.21.1 | «Cobrar con la tarjeta de la casa» (CU-VE-11) | 1.5.21 | 94 | Líder de Desarrollo |
+| 1.5.22.1 | «Calcular la base de comisión por vendedor, tienda y canal» (CU-CM-01) | 1.5.22 | 94 | Líder de Desarrollo |
+| 1.5.23.1 | «Transmitir la base de comisión al sistema de remuneraciones» (CU-CM-02) | 1.5.23 | 94 | Líder de Desarrollo |
+| 1.5.24.1 | «Revisar la atribución de una comisión» (CU-CM-03) | 1.5.24 | 94 | Líder de Desarrollo |
+| 1.5.25.1 | «Declarar y actualizar la existencia del vendedor» (CU-MK-01) | 1.5.25 | 94 | Líder de Desarrollo |
+| 1.5.25.2 | «Publicar la existencia vigente y despublicar la vencida» (CU-MK-02) | 1.5.25 | 94 | Líder de Desarrollo |
+| 1.5.26.1 | «Consultar los pedidos, las devoluciones y la evaluación» (CU-MK-03) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.2 | «Calcular los indicadores de nivel de servicio por vendedor» (CU-MK-04) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.3 | «Dar a conocer las reglas de evaluación al vendedor» (CU-MK-05) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.26.4 | «Aplicar la consecuencia escalonada de un incumplimiento» (CU-MK-06) | 1.5.26 | 94 | Líder de Desarrollo |
+| 1.5.27.1 | «Gestionar una devolución de producto de marketplace» (CU-MK-07) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.27.2 | «Informar la base de comisión de marketplace al ERP» (CU-MK-10) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.27.3 | «Conciliar la liquidación de un vendedor» (CU-MK-11) | 1.5.27 | 94 | Líder de Desarrollo |
+| 1.5.28.1 | «Identificar al vendedor y las condiciones en la compra» (CU-MK-08) | 1.5.28 | 94 | Líder de Desarrollo |
+| 1.5.28.2 | «Impedir que un pedido intermediado use existencia propia» (CU-MK-09) | 1.5.28 | 94 | Líder de Desarrollo |
+| 1.5.29.1 | «Atender un caso de garantía legal íntegramente en el mesón» (CU-PV-01) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.29.2 | «Ofrecer y registrar la opción de garantía legal» (CU-PV-02) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.29.3 | «Parametrizar el plazo de garantía legal por tipo de producto» (CU-PV-03) | 1.5.29 | 94 | Líder de Desarrollo |
+| 1.5.30.1 | «Reingresar una unidad devuelta según su aptitud» (CU-PV-04) | 1.5.30 | 94 | Líder de Desarrollo |
+| 1.5.31.1 | «Seguir la resolución al consumidor y la recuperación contra el tercero» (CU-PV-05) | 1.5.31 | 94 | Líder de Desarrollo |
+| 1.5.32.1 | «Consolidar los registros duplicados de un cliente» (CU-CL-01) | 1.5.32 | 94 | Líder de Desarrollo |
+| 1.5.33.1 | «Mantener los puntos y la fidelización sincronizados» (CU-CL-02) | 1.5.33 | 94 | Líder de Desarrollo |
+| 1.5.34.1 | «Construir un segmento con atributos comerciales» (CU-CL-03) | 1.5.34 | 94 | Líder de Desarrollo |
+| 1.5.34.2 | «Ejecutar una campaña sobre un segmento» (CU-CL-04) | 1.5.34 | 94 | Líder de Desarrollo |
+| 1.5.35.1 | «Evaluar la solicitud y abrir una tarjeta en el mostrador» (CU-OR-01) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.2 | «Ofrecer la tarjeta y consultar el resultado» (CU-OR-02) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.3 | «Controlar los intentos de evaluación» (CU-OR-05) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.35.4 | «Solicitar la ampliación de un cupo con enlace» (CU-OR-09) | 1.5.35 | 94 | Líder de Desarrollo |
+| 1.5.36.1 | «Simular el costo total del crédito» (CU-OR-03) | 1.5.36 | 94 | Líder de Desarrollo |
+| 1.5.36.2 | «Mantener la tasa máxima convencional vigente» (CU-OR-04) | 1.5.36 | 94 | Líder de Desarrollo |
+| 1.5.37.1 | «Parametrizar los topes y la ventana de enfriamiento» (CU-OR-06) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.37.2 | «Autorizar compra a cuotas sin enlace contra el cupo preaprobado» (CU-OR-07) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.37.3 | «Mantener el cupo preaprobado en la tienda» (CU-OR-08) | 1.5.37 | 94 | Líder de Desarrollo |
+| 1.5.38.1 | «Iniciar y registrar una gestión de cobranza» (CU-CA-01) | 1.5.38 | 94 | Líder de Desarrollo |
+| 1.5.38.2 | «Calcular la mora y actualizar las cuentas» (CU-CA-05) | 1.5.38 | 94 | Líder de Desarrollo |
+| 1.5.39.1 | «Repactar las condiciones de una deuda» (CU-CA-02) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.39.2 | «Registrar el pago de una cuota» (CU-CA-04) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.39.3 | «Consultar el estado de cuenta y los documentos» (CU-CA-03) | 1.5.39 | 94 | Líder de Desarrollo |
+| 1.5.40.1 | «Revisar la conciliación diaria de la migración» (CU-CA-06) | 1.5.40 | 94 | Líder de Desarrollo |
+| 1.5.40.2 | «Convivir con la plataforma de crédito de 2011» (CU-CA-07) | 1.5.40 | 94 | Líder de Desarrollo |
+| 1.5.41.1 | «Entregar la información precontractual del crédito» (CU-EV-01) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.41.2 | «Aceptar la información precontractual con firma electrónica» (CU-EV-02) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.41.3 | «Consultar la información precontractual del crédito» (CU-EV-08) | 1.5.41 | 94 | Líder de Desarrollo |
+| 1.5.42.1 | «Registrar el consentimiento de una modificación de condiciones» (CU-EV-03) | 1.5.42 | 94 | Líder de Desarrollo |
+| 1.5.42.2 | «Enlazar la repactación con su cobranza y su consentimiento» (CU-EV-07) | 1.5.42 | 94 | Líder de Desarrollo |
+| 1.5.43.1 | «Reconstruir el acto de consentimiento» (CU-EV-04) | 1.5.43 | 94 | Líder de Desarrollo |
+| 1.5.43.2 | «Recuperar los antecedentes de una operación desde el archivo» (CU-EV-05) | 1.5.43 | 94 | Líder de Desarrollo |
+| 1.5.44.1 | «Mantener el inventario de flujos de cruce autorizados» (CU-CC-01) | 1.5.44 | 94 | Líder de Desarrollo |
+| 1.5.44.2 | «Revisar los cruces ejecutados y los intentos bloqueados» (CU-CC-03) | 1.5.44 | 94 | Líder de Desarrollo |
+| 1.5.45.1 | «Intentar una campaña con atributos de origen financiero» (CU-CC-02) | 1.5.45 | 94 | Líder de Desarrollo |
+| 1.5.45.2 | «Intentar un proceso crediticio con atributos de origen Retail» (CU-CC-04) | 1.5.45 | 94 | Líder de Desarrollo |
+| 1.5.46.1 | «Resolver la correspondencia de identificadores entre ámbitos» (CU-CC-05) | 1.5.46 | 94 | Líder de Desarrollo |
+| 1.5.46.2 | «Evaluar el impacto de una iniciativa sobre la frontera de datos» (CU-CC-06) | 1.5.46 | 94 | Líder de Desarrollo |
+| 1.5.47.1 | «Ingresar a una terminal compartida con identidad individual» (CU-BT-01) | 1.5.47 | 94 | Líder de Desarrollo |
+| 1.5.47.2 | «Administrar identidades, roles y ámbitos» (CU-BT-12) | 1.5.47 | 94 | Líder de Desarrollo |
+| 1.5.48.1 | «Habilitar y revocar funciones según la capacitación normativa» (CU-BT-02) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.2 | «Patrocinar el acceso temporal de un repositor externo» (CU-BT-03) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.3 | «Operar como repositor externo con identidad individualizada» (CU-BT-04) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.4 | «Retirar los accesos al término del vínculo» (CU-BT-05) | 1.5.48 | 94 | Líder de Desarrollo |
+| 1.5.48.5 | «Conciliar los accesos contra la nómina activa» (CU-BT-06) | 1.5.48 | 93 | Líder de Desarrollo |
+| 1.5.49.1 | «Declarar el orden y los criterios de degradación» (CU-BT-07) | 1.5.49 | 94 | Líder de Desarrollo |
+| 1.5.49.2 | «Parametrizar las ventanas de congelamiento y bloquear intervenciones» (CU-BT-08) | 1.5.49 | 94 | Líder de Desarrollo |
+| 1.5.50.1 | «Convivir con el sistema central de 2009» (CU-BT-09) | 1.5.50 | 94 | Líder de Desarrollo |
+| 1.5.50.2 | «Administrar la plataforma de integración» (CU-BT-10) | 1.5.50 | 94 | Líder de Desarrollo |
+| 1.5.51.1 | «Observar la operación y atender alertas» (CU-BT-11) | 1.5.51 | 94 | Líder de Desarrollo |
+| 1.5.51.2 | «Consultar tableros y exportar informes por ámbito» (CU-BT-13) | 1.5.51 | 94 | Líder de Desarrollo |
+
+### Paquetes de trabajo de las innovaciones
+
+El anexo de estimación de innovaciones detalla 40 paquetes, ocho por cuenta, con entregable, responsable, aceptación, tres escenarios de esfuerzo y meses activos. Se suman a los 127 paquetes de software existentes sin cambiar sus códigos ni sus HH. Cada cuenta 1.10 integra construcción, aceptación y seguimiento específico; su barra extendida no representa desarrollo continuo hasta M56. La instalación supone tres sitios piloto por solución física y deja la ampliación parametrizada por unidad.
+
+### Cronograma completo por cuenta de control
+
+La ventana de una cuenta representa los meses de trabajo y sus entregas parciales. No autoriza cambios en producción durante congelamientos. El punto y coma separa tramos activos; los intervalos intermedios no reciben carga en la curva. Las cinco innovaciones conservan su esfuerzo, pero su secuencia depende del diseño del Subdocumento 13.
+
+Las cuentas de software E1 incluyen diseño temprano, prototipos y pruebas parciales antes de H3; la entrega integrada de ambientes en M6 habilita la integración final, no el comienzo de todo el desarrollo. Las entregas para QA en M10/M17 anteceden a la certificación M12/M18. Las pruebas de cierre no se aplazan al término del contrato.
+
+Tabla: Cronograma por cuenta de control. Fuente: Elaboración propia a partir de la planificación y de los hitos del Formulario E-25.
+
+| **Cuenta** | **Rama** | **Ventana (mes)** | **Ámbito de imputación** | **Hitos o entregas** |
+| --- | --- | --- | --- | --- |
+| 1.1.1 | 1.1 | 1-3 | transversal | H2 (mes 4) |
+| 1.1.2 | 1.1 | 1-3 | transversal | H2 (mes 4) |
+| 1.1.3 | 1.1 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.1.4 | 1.1 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.1.5 | 1.1 | 1-3 | transversal | H2 (mes 4) |
+| 1.1.6 | 1.1 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.1.7 | 1.1 | 4-56 | transversal | Entrega inicial antes de uso; controles periódicos hasta fin de ventana |
+| 1.1.8 | 1.1 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.1.9 | 1.1 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.1.10 | 1.1 | 1-1 | transversal | H1 (mes 2) |
+| 1.1.11 | 1.1 | 1-3 | transversal | H2 (mes 4) |
+| 1.1.12 | 1.1 | 3-5 | transversal | H3 (mes 6) |
+| 1.2.1 | 1.2 | 1-2 | por tramo | H1 (mes 2) |
+| 1.2.2 | 1.2 | 1-2 | por tramo | H1 (mes 2) |
+| 1.2.3 | 1.2 | 1-18 | por tramo | H1 (mes 2); H8 (mes 14); H10 (mes 18) |
+| 1.2.4 | 1.2 | 1-2; 13-14 | por tramo | H1 (mes 2); H8 (mes 14) |
+| 1.2.5 | 1.2 | 2-5 | por tramo | H3 (mes 6) |
+| 1.2.6 | 1.2 | 2-6 | por tramo | H3 (mes 6) |
+| 1.2.7 | 1.2 | 2-5 | por tramo | H3 (mes 6) |
+| 1.2.8 | 1.2 | 3-5 | por tramo | H3 (mes 6) |
+| 1.3.1 | 1.3 | 2-4 | por tramo | H2 (mes 4) |
+| 1.3.2 | 1.3 | 2-4 | por tramo | H2 (mes 4) |
+| 1.3.3 | 1.3 | 2-4 | por tramo | H2 (mes 4) |
+| 1.3.4 | 1.3 | 3-4 | por tramo | H2 (mes 4) |
+| 1.3.5 | 1.3 | 3-4 | por tramo | H2 (mes 4) |
+| 1.3.6 | 1.3 | 3-4 | por tramo | H2 (mes 4) |
+| 1.3.7 | 1.3 | 3-6 | por tramo | H3 (mes 6) |
+| 1.4.1 | 1.4 | 3-6 | por tramo | H3 (mes 6) |
+| 1.4.2 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.4.3 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.4.4 | 1.4 | 1-6 | por tramo | H3 (mes 6) |
+| 1.4.5 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.4.6 | 1.4 | 3-5 | por tramo | H3 (mes 6) |
+| 1.4.7 | 1.4 | 2-6 | por tramo | H3 (mes 6) |
+| 1.4.8 | 1.4 | 3-6 | por tramo | H3 (mes 6) |
+| 1.4.9 | 1.4 | 2-6 | por tramo | H3 (mes 6) |
+| 1.4.10 | 1.4 | 2-5 | por tramo | H3 (mes 6) |
+| 1.4.11 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.4.12 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.4.13 | 1.4 | 4-6 | por tramo | H3 (mes 6) |
+| 1.5.1 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.2 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.3 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.4 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.5 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.6 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.7 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.8 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.9 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.10 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.11 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.12 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.13 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.14 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.15 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.16 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.17 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.18 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.19 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.20 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.21 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.22 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.23 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.24 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.25 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.26 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.27 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.28 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.29 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.30 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.31 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.32 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.33 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.34 | 1.5 | 13-18 | por tramo | H8 (mes 14); H9 (mes 17); H10 (mes 18) |
+| 1.5.35 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.36 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.37 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.38 | 1.5 | 1-18 | por tramo | H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18) |
+| 1.5.39 | 1.5 | 1-18 | por tramo | H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18) |
+| 1.5.40 | 1.5 | 1-18 | por tramo | H4 (mes 10); H5 (mes 12); H9 (mes 17); H10 (mes 18) |
+| 1.5.41 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.42 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.43 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.44 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.45 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.46 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.47 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.48 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.49 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.50 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.5.51 | 1.5 | 1-12 | por tramo | H4 (mes 10); H5 (mes 12) |
+| 1.6.1 | 1.6 | 2-5 | por tramo | H3 (mes 6) |
+| 1.6.2 | 1.6 | 5-18 | por tramo | H10 (mes 18) |
+| 1.6.3 | 1.6 | 13-18 | por tramo | H10 (mes 18) |
+| 1.6.4 | 1.6 | 13-18 | por tramo | H10 (mes 18) |
+| 1.6.5 | 1.6 | 8-12 | por tramo | H5 (mes 12) |
+| 1.6.6 | 1.6 | 10-18 | por tramo | H10 (mes 18) |
+| 1.6.7 | 1.6 | 4-6 | por tramo | H3 (mes 6) |
+| 1.7.1 | 1.7 | 2-4 | por tramo | H2 (mes 4) |
+| 1.7.2 | 1.7 | 4-10 | por tramo | H4 (mes 10) |
+| 1.7.3 | 1.7 | 11-15 | por tramo | H7 (mes 16) |
+| 1.7.4 | 1.7 | 8-15 | por tramo | H7 (mes 16) |
+| 1.7.5 | 1.7 | 14-18 | por tramo | H10 (mes 18) |
+| 1.7.6 | 1.7 | 10-21 | por tramo | H12 (mes 21) |
+| 1.7.7 | 1.7 | 10-16 | por tramo | H7 (mes 16) |
+| 1.7.8 | 1.7 | 14-18 | por tramo | H10 (mes 18) |
+| 1.7.9 | 1.7 | 22-22 | por tramo | H12 y pagos mensuales de Operación |
+| 1.7.10 | 1.7 | 21-56 | por tramo | H12 y pagos mensuales de Operación |
+| 1.7.11 | 1.7 | 8-10; 16-16 | por tramo | H7 (mes 16) |
+| 1.7.12 | 1.7 | 12-21 | por tramo | H12 (mes 21) |
+| 1.8.1 | 1.8 | 1-4 | por tramo | H2 (mes 4) |
+| 1.8.2 | 1.8 | 4-8 | por tramo | H4 (mes 10) |
+| 1.8.3 | 1.8 | 2-5 | por tramo | H3 (mes 6) |
+| 1.8.4 | 1.8 | 4-10 | por tramo | H4 (mes 10) |
+| 1.8.5 | 1.8 | 3-8 | por tramo | H4 (mes 10) |
+| 1.8.6 | 1.8 | 10-18 | por tramo | H5 (mes 12); H10 (mes 18) |
+| 1.8.7 | 1.8 | 2-4 | por tramo | H2 (mes 4) |
+| 1.8.8 | 1.8 | 4-12 | por tramo | H5 (mes 12) |
+| 1.9.1 | 1.9 | 2-4 | por tramo | H2 (mes 4) |
+| 1.9.2 | 1.9 | 1-6 | por tramo | H3 (mes 6) |
+| 1.9.3 | 1.9 | 5-18 | por tramo | H5 (mes 12); H10 (mes 18) |
+| 1.9.4 | 1.9 | 9-18 | por tramo | H5 (mes 12); H10 (mes 18) |
+| 1.9.5 | 1.9 | 9-10; 16-16; 18-18 | por tramo | H5 (mes 12); H10 (mes 18) |
+| 1.9.6 | 1.9 | 11-21 | por tramo | H12 (mes 21) |
+| 1.9.7 | 1.9 | 12-12 | por tramo | H5 (mes 12) |
+| 1.9.8 | 1.9 | 18-18 | por tramo | H10 (mes 18) |
+| 1.9.9 | 1.9 | 6-7 | por tramo | H4 (mes 10) |
+| 1.9.10 | 1.9 | 9-12 | por tramo | H5 (mes 12) |
+| 1.9.11 | 1.9 | 5-7 | por tramo | H4 (mes 10) |
+| 1.9.12 | 1.9 | 12-20 | por tramo | H12 (mes 21) |
+| 1.10.1 | 1.10 | 13-18; 19-20; 21-56 | E2 y operación | H10 (mes 18); H12 (mes 21) |
+| 1.10.2 | 1.10 | 5-12; 13-15; 16-20; 21-56 | E1 y operación | H5 (mes 12); H7 (mes 16) |
+| 1.10.3 | 1.10 | 13-18; 19-20; 21-56 | E2 y operación | H10 (mes 18); H12 (mes 21) |
+| 1.10.4 | 1.10 | 13-18; 19-20; 21-56 | E2 y operación | H10 (mes 18); H12 (mes 21) |
+| 1.10.5 | 1.10 | 13-18; 19-20; 21-56 | E2 y operación | H10 (mes 18); H12 (mes 21) |
+| 1.11.1 | 1.11 | 3-5; 10-12 | por tramo | H3 (mes 6); H5 (mes 12) |
+| 1.11.2 | 1.11 | 5-10; 15-17 | por tramo | H4 (mes 10); H9 (mes 17) |
+| 1.11.3 | 1.11 | 10-12 | por tramo | H5 (mes 12) |
+| 1.11.4 | 1.11 | 6-7 | por tramo | H4 (mes 10) |
+| 1.12.1 | 1.12 | 8-9 | por tramo | H5 (mes 12) |
+| 1.12.2 | 1.12 | 13-15 | por tramo | H7 (mes 16) |
+| 1.12.3 | 1.12 | 16-16 | por tramo | H7 (mes 16) |
+| 1.12.4 | 1.12 | 16-17 | por tramo | H10 (mes 18) |
+| 1.12.5 | 1.12 | 19-20 | por tramo | H12 (mes 21) |
+| 1.12.6 | 1.12 | 21-21 | por tramo | H12 (mes 21) |
+| 1.12.7 | 1.12 | 16-24 | por tramo | Entrega inicial antes de uso; controles periódicos hasta fin de ventana |
+| 1.13.1 | 1.13 | 3-6 | por tramo | H3 (mes 6) |
+| 1.13.2 | 1.13 | 5-8 | por tramo | H4 (mes 10) |
+| 1.13.3 | 1.13 | 10-12; 18-19 | por tramo | H7 (mes 16); H12 (mes 21) |
+| 1.13.4 | 1.13 | 13-24 | por tramo | Entrega inicial antes de uso; controles periódicos hasta fin de ventana |
+| 1.13.5 | 1.13 | 10-21 | por tramo | H12 (mes 21) |
+| 1.14.1 | 1.14 | 1-56 | transversal | Transversal (H1 a H12) |
+| 1.14.2 | 1.14 | 48-56 | transversal | H12 y pagos mensuales de Operación |
+| 1.14.3 | 1.14 | 10-56 | transversal | Entrega inicial antes de uso; controles periódicos hasta fin de ventana |
+| 1.14.4 | 1.14 | 1-3 | transversal | H2 (mes 4) |
+| 1.14.5 | 1.14 | 54-56 | transversal | H12 y pagos mensuales de Operación |
+| 1.14.6 | 1.14 | 56-56 | transversal | H12 y pagos mensuales de Operación |
+| 1.14.7 | 1.14 | 1-3 | transversal | H2 (mes 4) |
+| 1.15.1 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+| 1.15.2 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+| 1.15.3 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+| 1.15.4 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+| 1.15.5 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+| 1.15.6 | 1.15 | 21-56 | operación | H12 y pagos mensuales de Operación |
+
+### Carta Gantt de los 56 meses
+
+La carta Gantt cubre los 56 meses del contrato, dibuja los tramos activos de cada cuenta con ventana definida incluidas las cinco innovaciones, y marca los hitos de aceptación. Con el inicio supuesto en enero de 2027, los pasos a producción M16 y M21 caen en abril y septiembre de 2028. La fecha real del contrato obliga a comprobar nuevamente los congelamientos. La marcha blanca mantiene operación supervisada y conciliación; cualquier intervención productiva se excluye de las ventanas del Caso 09, cap. 13, núm. 13.2, p. 29.
+
+La Figura 7.3 representa las ventanas de este formulario.
+
+![Figura](figuras/sd07-figuras/sd07-73-gantt.png)
+
+Figura 7.3: Carta Gantt de los 56 meses. Fuente: elaboración propia
+
+Las bandas distinguen desarrollo, marcha blanca y producción. Los rombos representan entregas parciales, no necesariamente el cierre de una cuenta recurrente. El calendario por cuenta de control detalla los tramos activos de cada entregable.
+
+Tabla: Anclas de la carta Gantt. Fuente: Elaboración propia.
+
+| **Mes** | **Calendario** | **Hito de aceptación** |
+| --- | --- | --- |
+| 1 | enero 2027 | Inicio del contrato |
+| 1 a 3 | enero a marzo 2027 | Plan de reversibilidad, dentro de los primeros 90 días |
+| 2 | febrero 2027 | H1 — levantamiento y línea base de alcance |
+| 4 | abril 2027 | H2 — arquitectura, seguridad y modelo de datos |
+| 6 | junio 2027 | H3 — infraestructura híbrida y ambientes |
+| 1 a 12 | enero a diciembre 2027 | Etapa 1 en desarrollo |
+| 10 | octubre 2027 | H4 — software de la Etapa 1 para pruebas |
+| 12 | diciembre 2027 | H5 — certificación de la Etapa 1 |
+| 13 | enero 2028 | H6 — inicio de marcha blanca de la Etapa 1 |
+| 14 | febrero 2028 | H8 — línea base de alcance de la Etapa 2 |
+| 16 | abril 2028 | H7 — paso a producción de la Etapa 1 |
+| 13 a 18 | enero a junio 2028 | Etapa 2 en desarrollo |
+| 17 | mayo 2028 | H9 — software de la Etapa 2 para pruebas |
+| 18 | junio 2028 | H10 — certificación de la Etapa 2 |
+| 19 | julio 2028 | H11 — inicio de marcha blanca de la Etapa 2 |
+| 21 | septiembre 2028 | H12 — paso a producción de la Etapa 2, aceptación final e inicio de la Operación |
+| 22 | octubre 2028 | Objetivo interno de retiro de la plataforma de crédito de 2011 |
+| 24 | diciembre 2028 | Objetivo interno de cierre de remediación; vencimiento externo en 2029 |
+| 21 a 56 | septiembre 2028 a agosto 2031 | Operación con informe mensual de avance |
+| 56 | agosto 2031 | Cierre del contrato |
+
+### Secuenciamiento y dependencias
+
+La secuencia combina entregas completas y parciales. FS significa fin a inicio; SS, inicio a inicio; y FF, fin a fin. Los desfases se expresan en meses. Las 120 relaciones siguientes corresponden a la red de 57 nodos del cálculo CPM presentado en el T-15; no equivalen a una red detallada de las 164 cuentas. El inicio de un trabajo solapado requiere disponer de la entrega parcial que habilita su ejecución.
+
+La tabla registra cada restricción y su fundamento. Los desfases y duraciones son decisiones de planificación que deben contrastarse con los responsables.
+
+| **Predecesora** | **Sucesora** | **Tipo** | **Desfase** | **Entrega o condición** |
+| --- | --- | --- | --- | --- |
+| A | B | FS | 0 | Secuencia de cierre del modelo base |
+| B | C | FS | 0 | Secuencia de cierre del modelo base |
+| C | D | FS | 0 | Secuencia de cierre del modelo base |
+| D | E | FS | 0 | Secuencia de cierre del modelo base |
+| B | P1 | FS | 0 | Secuencia de cierre del modelo base |
+| C | T1 | FS | 0 | Secuencia de cierre del modelo base |
+| E | F | FS | 0 | Secuencia de cierre del modelo base |
+| P1 | F | FS | 0 | Secuencia de cierre del modelo base |
+| F | H7 | FS | 0 | Secuencia de cierre del modelo base |
+| T1 | H7 | FS | 0 | Secuencia de cierre del modelo base |
+| E | G | FS | 0 | Secuencia de cierre del modelo base |
+| G | H | FS | 0 | Secuencia de cierre del modelo base |
+| H | I | FS | 0 | Secuencia de cierre del modelo base |
+| G | P2 | FS | 0 | Secuencia de cierre del modelo base |
+| G | T2 | FS | 0 | Secuencia de cierre del modelo base |
+| I | J | FS | 0 | Secuencia de cierre del modelo base |
+| P2 | J | FS | 0 | Secuencia de cierre del modelo base |
+| J | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| T2 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| H7 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| H12 | K | FS | 0 | Secuencia de cierre del modelo base |
+| K | Z | FS | 0 | Secuencia de cierre del modelo base |
+| G | 1.10.1.1 | SS | 0 | Diseño concurrente con la línea base E2, sin esperar H8 para iniciarlo |
+| G | 1.10.1.1 | FF | 0 | El diseño cierra con la aprobación de la línea base E2 |
+| G | 1.10.3.1 | SS | 0 | Diseño concurrente con la línea base E2, sin esperar H8 para iniciarlo |
+| G | 1.10.3.1 | FF | 0 | El diseño cierra con la aprobación de la línea base E2 |
+| G | 1.10.4.1 | SS | 0 | Diseño concurrente con la línea base E2, sin esperar H8 para iniciarlo |
+| G | 1.10.4.1 | FF | 0 | El diseño cierra con la aprobación de la línea base E2 |
+| G | 1.10.5.1 | SS | 0 | Diseño concurrente con la línea base E2, sin esperar H8 para iniciarlo |
+| G | 1.10.5.1 | FF | 0 | El diseño cierra con la aprobación de la línea base E2 |
+| 1.10.1.1 | 1.10.1.2 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.1 | 1.10.1.3 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.1 | 1.10.1.5 | SS | 0 | Visitas y dimensionamiento de emplazamientos concurrentes con diseño |
+| 1.10.1.2 | 1.10.1.4 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.3 | 1.10.1.4 | SS | 2 | Versión ensayable de estados al cerrar el segundo mes de construcción |
+| 1.10.1.3 | 1.10.1.6 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.5 | 1.10.1.6 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.6 | 1.10.1.4 | FF | 0 | Las pruebas cierran después del ensayo del conjunto instalado |
+| B | 1.10.2.1 | FS | 0 | Arquitectura y reglas iniciales de datos aprobadas |
+| 1.10.2.1 | 1.10.2.2 | SS | 1 | Protocolo preliminar disponible al cierre de M5 |
+| 1.10.2.1 | 1.10.2.2 | FF | 0 | Preparación completa respeta el protocolo aprobado |
+| 1.10.2.2 | 1.10.2.3 | SS | 1 | Primer corte de historia validado al cierre de M6 |
+| 1.10.2.2 | 1.10.2.3 | FF | 0 | Evaluación final incluye historia depurada |
+| 1.10.2.3 | 1.10.2.4 | SS | 2 | Modelo parcial evaluado al cierre de M8 |
+| 1.10.2.3 | 1.10.2.4 | FF | 0 | Integración final utiliza versión evaluada |
+| 1.10.2.4 | 1.10.2.5 | SS | 0 | Pruebas por versiones durante la integración |
+| 1.10.2.4 | 1.10.2.5 | FF | 0 | Pruebas completas posteriores a la integración |
+| 1.10.2.4 | D | FF | 0 | La candidata E1 exige integración y ensayos predictivos completos |
+| 1.10.2.4 | 1.10.2.6 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.2.5 | D | FF | 0 | La candidata E1 exige integración y ensayos predictivos completos |
+| 1.10.2.5 | 1.10.2.6 | FS | 0 | Entrega completa del paquete precedente |
+| D | 1.10.2.6 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.2.6 | E | FF | 0 | Certificación específica y certificación E1 cierran juntas |
+| 1.10.2.6 | 1.10.2.7 | FS | 0 | Entrega completa del paquete precedente |
+| E | 1.10.2.7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.2.7 | H7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.3.1 | 1.10.3.2 | SS | 1 | Contrato, lote de datos o versión parcial verificable al terminar el primer mes del precedente |
+| 1.10.3.1 | 1.10.3.2 | FF | 0 | El sucesor no cierra antes de recibir el resultado completo |
+| 1.10.3.2 | 1.10.3.3 | SS | 1 | Contrato, lote de datos o versión parcial verificable al terminar el primer mes del precedente |
+| 1.10.3.2 | 1.10.3.3 | FF | 0 | El sucesor no cierra antes de recibir el resultado completo |
+| 1.10.3.3 | 1.10.3.4 | SS | 1 | Contrato, lote de datos o versión parcial verificable al terminar el primer mes del precedente |
+| 1.10.3.3 | 1.10.3.4 | FF | 0 | El sucesor no cierra antes de recibir el resultado completo |
+| 1.10.3.4 | 1.10.3.5 | SS | 1 | Contrato, lote de datos o versión parcial verificable al terminar el primer mes del precedente |
+| 1.10.3.4 | 1.10.3.5 | FF | 0 | El sucesor no cierra antes de recibir el resultado completo |
+| 1.10.3.4 | 1.10.3.6 | SS | 1 | Contrato, lote de datos o versión parcial verificable al terminar el primer mes del precedente |
+| 1.10.3.4 | 1.10.3.6 | FF | 0 | El sucesor no cierra antes de recibir el resultado completo |
+| 1.10.4.1 | 1.10.4.2 | SS | 1 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.1 | 1.10.4.2 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.4.2 | 1.10.4.3 | SS | 1 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.2 | 1.10.4.3 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.4.3 | 1.10.4.4 | SS | 1 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.3 | 1.10.4.4 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.4.3 | 1.10.4.5 | SS | 2 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.3 | 1.10.4.5 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.4.4 | 1.10.4.5 | SS | 1 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.4 | 1.10.4.5 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.4.5 | 1.10.4.6 | SS | 1 | Entrega parcial ensayable; formación con candidata antes de la aprobación final |
+| 1.10.4.5 | 1.10.4.6 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.5.1 | 1.10.5.2 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.5.1 | 1.10.5.3 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.5.2 | 1.10.5.4 | SS | 1 | Motor, interfaz o candidata parcial disponible para integración y preparación |
+| 1.10.5.2 | 1.10.5.4 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.5.3 | 1.10.5.4 | SS | 1 | Motor, interfaz o candidata parcial disponible para integración y preparación |
+| 1.10.5.3 | 1.10.5.4 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.5.3 | 1.10.5.5 | SS | 2 | Motor, interfaz o candidata parcial disponible para integración y preparación |
+| 1.10.5.3 | 1.10.5.5 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.5.4 | 1.10.5.5 | SS | 1 | Motor, interfaz o candidata parcial disponible para integración y preparación |
+| 1.10.5.4 | 1.10.5.5 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.5.5 | 1.10.5.6 | SS | 1 | Motor, interfaz o candidata parcial disponible para integración y preparación |
+| 1.10.5.5 | 1.10.5.6 | FF | 0 | Cierre sujeto al resultado completo y a pruebas aprobadas |
+| 1.10.1.4 | 1.10.1.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.4 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| 1.10.1.6 | 1.10.1.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.1.6 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| I | 1.10.1.7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.1.7 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.3.5 | 1.10.3.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.3.5 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| 1.10.3.6 | 1.10.3.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.3.6 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| I | 1.10.3.7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.3.7 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.4.5 | 1.10.4.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.4.5 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| 1.10.4.6 | 1.10.4.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.4.6 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| I | 1.10.4.7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.4.7 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.5.5 | 1.10.5.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.5.5 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| 1.10.5.6 | 1.10.5.7 | FS | 0 | Entrega completa del paquete precedente |
+| 1.10.5.6 | I | FF | 0 | Certificación E2 no cierra antes de las pruebas y preparación específicas |
+| I | 1.10.5.7 | FS | 0 | Secuencia de cierre del modelo base |
+| 1.10.5.7 | H12 | FS | 0 | Secuencia de cierre del modelo base |
+| H12 | MG | FS | 0 | Concluir la migración programada hasta M21; no basta H12 al inicio de M21 |
+| MG | RET | FS | 0 | Retiro solo después de conciliación y actas finales |
+| RET | Z | FS | 0 | Secuencia de cierre del modelo base |
+| H12 | TR | FS | 0 | Puede prepararse tras aceptar E2; fuentes se depositan por liberación |
+| TR | CI | FF | 0 | Acta final exige transferencia terminada; preparación concurrente del último mes |
+| CI | Z | FS | 0 | Secuencia de cierre del modelo base |
+
+## Referencias
+
+Multitiendas Ancoa S.A. (2026). Bases Técnicas del Caso 09 — Cadena Multitienda. Licitación TFEP-01/2026.

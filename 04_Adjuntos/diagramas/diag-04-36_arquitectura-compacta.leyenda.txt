@@ -1,0 +1,12 @@
+Figura 4.36: Arquitectura lógica por capas · vista compacta
+Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.
+
+Leyenda: verde Retail; lila Filial; gris productos agregados/transversales; amarillo control de cruces. Flechas por semántica de catálogo, sin evidencia documental visible.
+Vista única: capas 1–6 horizontales y una banda vertical izquierda Capas transversales con el resumen de 7 Seguridad y 8 Observabilidad. No hay carriles duplicados de Retail y Filial en esa banda.
+Datos usa círculos con icono y etiqueta y agrupaciones de microservicios. Un símbolo PostgreSQL por área no fusiona repositorios ni cambia la autoridad por servicio.
+Productos repetidos de analítica, lago, búsqueda y archivo se representan una vez; cada ámbito conserva instancias, credenciales, políticas y datos propios. La correspondencia de nodos y contratos se conserva en el archivo de mapeo.
+Se mantienen las decisiones de los dos registros de Datos y capas 7–8. Sus detalles anteriores quedan como documentación complementaria, no como páginas obligatorias de esta vista.
+VPN conservada. Sin actores. Trece servicios y cinco innovaciones; F:C-04 candidato sin contratos operacionales. Sin modificación de SD-03/SD-04.
+Las conexiones se agrupan por familias de contratos. Línea gris sin punta: asociación de lectura/escritura o dependencia, no secuencia de ejecución. El registro conserva todos los contratos detallados; el CSV usa layout libavoid y conexiones ortogonales.
+Conectores anclados al contorno; SVG y draw.io usan los mismos puntos. El diagrama valida estructura gráfica, no despliegue ni cumplimiento. SD-03/04 sin cambios. Uso de IA: Alto, registrar al incorporar a la propuesta.
+Iconos de diagrams; OpenSearch y OpenMetadata de sus repositorios oficiales. Datos: círculos con etiqueta inferior; banda transversal izquierda con resumen de productos, sin carriles por negocio. Key Vault y Managed HSM usan icono de familia; Blackbox usa icono de Prometheus.

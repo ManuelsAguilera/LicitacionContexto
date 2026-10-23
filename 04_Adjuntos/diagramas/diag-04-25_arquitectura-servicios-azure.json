@@ -1,0 +1,1008 @@
+{
+  "estilo": "L2",
+  "composicion": "columnas_organizadas",
+  "figura": "4.25",
+  "titulo": "Arquitectura lógica por capas y servicios de plataforma",
+  "fuente": "elaboración propia desde SD-03, SD-04, SD-13, T-11 y T-14 de main@1e097c2, RT-02.01 y decisiones aceptadas; composición basada en referencia visual del usuario, 21-10-2026.",
+  "grupos": [
+    {
+      "id": "presentacion_r",
+      "etiqueta": "presentacion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "borde_r",
+      "etiqueta": "borde_r",
+      "frente": "retail"
+    },
+    {
+      "id": "api_r",
+      "etiqueta": "api_r",
+      "frente": "retail"
+    },
+    {
+      "id": "contratos_r",
+      "etiqueta": "contratos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "servicios_r",
+      "etiqueta": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "innovaciones",
+      "etiqueta": "innovaciones",
+      "frente": "retail"
+    },
+    {
+      "id": "datos_r",
+      "etiqueta": "datos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "frontera",
+      "etiqueta": "frontera",
+      "frente": "frontera"
+    },
+    {
+      "id": "datos_x",
+      "etiqueta": "datos_x",
+      "frente": "frontera"
+    },
+    {
+      "id": "presentacion_e",
+      "etiqueta": "presentacion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_e",
+      "etiqueta": "borde_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "api_e",
+      "etiqueta": "api_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "servicios_e",
+      "etiqueta": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "datos_e",
+      "etiqueta": "datos_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "integracion_r",
+      "etiqueta": "integracion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "integracion_e",
+      "etiqueta": "integracion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "externos",
+      "etiqueta": "externos",
+      "frente": "retail"
+    },
+    {
+      "id": "seguridad",
+      "etiqueta": "seguridad",
+      "frente": "transversal"
+    },
+    {
+      "id": "observabilidad",
+      "etiqueta": "observabilidad",
+      "frente": "transversal"
+    },
+    {
+      "id": "tecnologias",
+      "etiqueta": "tecnologias",
+      "frente": "transversal"
+    },
+    {
+      "id": "actores_r",
+      "etiqueta": "actores_r",
+      "frente": "retail"
+    },
+    {
+      "id": "actores_e",
+      "etiqueta": "actores_e",
+      "frente": "emisor"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "web",
+      "etiqueta": "Comercio electrónico\nIntegración inicial",
+      "grupo": "presentacion_r",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "pos",
+      "etiqueta": "POS nuevo\nDiario y caché local: 24 h",
+      "grupo": "presentacion_r",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "operacion",
+      "etiqueta": "Terminal de inventario\nConteo, reposición y exhibición",
+      "grupo": "presentacion_r",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "movil",
+      "etiqueta": "Atención y posventa\nConsola comercial y planificación",
+      "grupo": "presentacion_r",
+      "tipo": "canal_movil"
+    },
+    {
+      "id": "portal",
+      "etiqueta": "API de vendedor externo\nSistema de contraparte → gateway",
+      "grupo": "presentacion_r",
+      "tipo": "entrada_api"
+    },
+    {
+      "id": "borde_r",
+      "etiqueta": "Azure Front Door Premium\nRuta Retail · perfil global",
+      "grupo": "borde_r",
+      "tipo": "borde",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "apim_r",
+      "etiqueta": "Azure API Management\nPremium · Retail\nMercadería · Venta · Clientes",
+      "grupo": "api_r",
+      "tipo": "entrada_api",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "oferta",
+      "etiqueta": "Oferta comercial",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:M-01"
+    },
+    {
+      "id": "abastecimiento",
+      "etiqueta": "Abastecimiento",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:M-02"
+    },
+    {
+      "id": "existencias",
+      "etiqueta": "Existencias",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:M-03"
+    },
+    {
+      "id": "pedidos",
+      "etiqueta": "Pedidos",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:V-01"
+    },
+    {
+      "id": "ventas",
+      "etiqueta": "Ventas",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:V-02"
+    },
+    {
+      "id": "comisiones",
+      "etiqueta": "Comisiones",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:V-03"
+    },
+    {
+      "id": "market",
+      "etiqueta": "Marketplace",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:V-04"
+    },
+    {
+      "id": "posventa",
+      "etiqueta": "Posventa",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:CL-01"
+    },
+    {
+      "id": "clientes",
+      "etiqueta": "Clientes Retail",
+      "grupo": "servicios_r",
+      "tipo": "servicio",
+      "codigo": "R:CL-02"
+    },
+    {
+      "id": "conteo",
+      "etiqueta": "Existencias · Conteo predictivo · M16\nRecomendaciones supervisadas",
+      "grupo": "innovaciones",
+      "tipo": "ml"
+    },
+    {
+      "id": "lockers",
+      "etiqueta": "Pedidos · Lockers 24/7 · M21\nRetiro con credencial de uso único",
+      "grupo": "innovaciones",
+      "tipo": "nodo_local"
+    },
+    {
+      "id": "busqueda",
+      "etiqueta": "Oferta · Búsqueda multimodal · M21\nCodificador e índice de lectura",
+      "grupo": "innovaciones",
+      "tipo": "ml"
+    },
+    {
+      "id": "media",
+      "etiqueta": "Oferta · Retail Media · M21\nCampañas contextuales",
+      "grupo": "innovaciones",
+      "tipo": "adaptadores"
+    },
+    {
+      "id": "fila",
+      "etiqueta": "Clientes · Fila virtual · M21\nEstado durable local",
+      "grupo": "innovaciones",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "x01",
+      "etiqueta": "Control de cruces · fichas, política y bitácora\nCompra con tarjeta propia: Ventas ↔ Originación, solo con contrato aprobado",
+      "grupo": "frontera",
+      "tipo": "politica_x01",
+      "codigo": "X-01"
+    },
+    {
+      "id": "bitacora",
+      "etiqueta": "Azure Database for PostgreSQL\nControl de cruces · repositorio propio",
+      "grupo": "datos_x",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "portal_f",
+      "etiqueta": "Portal financiero\nSesión y permisos propios",
+      "grupo": "presentacion_e",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "meson_f",
+      "etiqueta": "Mesón financiero\nSin acceso al perfil comercial",
+      "grupo": "presentacion_e",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "borde_e",
+      "etiqueta": "Azure Front Door Premium\nRuta Emisor · mismo perfil global",
+      "grupo": "borde_e",
+      "tipo": "borde",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "apim_e",
+      "etiqueta": "Azure API Management\nPremium · Emisor\nCrédito y evidencia financiera",
+      "grupo": "api_e",
+      "tipo": "entrada_api",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "originacion",
+      "etiqueta": "Originación de crédito",
+      "grupo": "servicios_e",
+      "tipo": "servicio",
+      "codigo": "F:C-01"
+    },
+    {
+      "id": "cartera",
+      "etiqueta": "Cartera de crédito",
+      "grupo": "servicios_e",
+      "tipo": "servicio",
+      "codigo": "F:C-02"
+    },
+    {
+      "id": "evidencia",
+      "etiqueta": "Evidencia financiera",
+      "grupo": "servicios_e",
+      "tipo": "servicio",
+      "codigo": "F:C-03"
+    },
+    {
+      "id": "datos_orig",
+      "etiqueta": "Azure Database for PostgreSQL\nOriginación · autoridad propia",
+      "grupo": "datos_e",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "datos_cartera",
+      "etiqueta": "Azure Database for PostgreSQL\nCartera · autoridad propia",
+      "grupo": "datos_e",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "datos_evid",
+      "etiqueta": "Azure Blob Storage\nExpediente financiero inmutable",
+      "grupo": "datos_e",
+      "tipo": "blob"
+    },
+    {
+      "id": "adapt_r",
+      "etiqueta": "Azure Kubernetes Service\nAdaptadores Retail",
+      "grupo": "integracion_r",
+      "tipo": "adaptadores"
+    },
+    {
+      "id": "event_r",
+      "etiqueta": "Azure Event Hubs Premium\nRetail\nPublican: Ventas, Pedidos y Oferta\nConsumen: Existencias, Comisiones,\nBúsqueda, Lockers y Analítica",
+      "grupo": "integracion_r",
+      "tipo": "eventos",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "adapt_e",
+      "etiqueta": "Azure Kubernetes Service\nAdaptadores Emisor",
+      "grupo": "integracion_e",
+      "tipo": "adaptadores"
+    },
+    {
+      "id": "event_e",
+      "etiqueta": "Azure Event Hubs Premium\nEmisor\nCartera publica · Evidencia consume",
+      "grupo": "integracion_e",
+      "tipo": "eventos",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "erp",
+      "etiqueta": "ERP/DTE\nÚnico emisor tributario",
+      "grupo": "externos",
+      "tipo": "sistema_conservado"
+    },
+    {
+      "id": "wms",
+      "etiqueta": "WMS principal\nEjecución física conservada",
+      "grupo": "externos",
+      "tipo": "sistema_conservado"
+    },
+    {
+      "id": "plataforma_market",
+      "etiqueta": "Marketplace 2022\nPlataforma conservada",
+      "grupo": "externos",
+      "tipo": "sistema_conservado"
+    },
+    {
+      "id": "ads",
+      "etiqueta": "Plataforma publicitaria\nSelección y contrato por validar",
+      "grupo": "externos",
+      "tipo": "sistema_conservado",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "controlador",
+      "etiqueta": "Controlador de lockers\nInterfaz del fabricante por validar",
+      "grupo": "externos",
+      "tipo": "sistema_conservado",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "entra",
+      "etiqueta": "Microsoft Entra ID P2\nÁmbitos separados",
+      "grupo": "seguridad",
+      "tipo": "identidad"
+    },
+    {
+      "id": "kv",
+      "etiqueta": "Azure Key Vault Premium\nBóvedas por ambiente y ámbito",
+      "grupo": "seguridad",
+      "tipo": "secretos",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "zero",
+      "etiqueta": "Azure Firewall Premium\nHub · controles entre ámbitos",
+      "grupo": "seguridad",
+      "tipo": "firewall"
+    },
+    {
+      "id": "otel",
+      "etiqueta": "OpenTelemetry",
+      "grupo": "observabilidad",
+      "tipo": "otel_logo"
+    },
+    {
+      "id": "monitor",
+      "etiqueta": "Azure Monitor",
+      "grupo": "observabilidad",
+      "tipo": "telemetria"
+    },
+    {
+      "id": "vnet",
+      "etiqueta": "Azure Network Watcher\nVNet flow logs",
+      "grupo": "observabilidad",
+      "tipo": "network_watcher"
+    },
+    {
+      "id": "datos_merc",
+      "etiqueta": "Azure Database for PostgreSQL\nMercadería · Retail\nRepositorios de Oferta, Abastecimiento\ny Existencias; autoridad por servicio",
+      "grupo": "datos_r",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "datos_venta",
+      "etiqueta": "Azure Database for PostgreSQL\nVenta · Retail\nPedidos, Ventas, Comisiones\ny Marketplace; autoridad por servicio",
+      "grupo": "datos_r",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "datos_clientes",
+      "etiqueta": "Azure Database for PostgreSQL\nClientes · Retail\nPosventa y Clientes; sin datos de cartera",
+      "grupo": "datos_r",
+      "tipo": "base_datos"
+    },
+    {
+      "id": "datos_lectura",
+      "etiqueta": "PostgreSQL + pgvector\nBúsqueda · proyección aislada",
+      "grupo": "datos_r",
+      "tipo": "base_datos",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "lago_r",
+      "etiqueta": "Azure Data Lake Storage Gen2\nRetail · proyecciones autorizadas",
+      "grupo": "datos_r",
+      "tipo": "lago_analitica",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "local_data",
+      "etiqueta": "Nodo local de tienda\nDiario POS / estado de fila separados\nMotor de persistencia por validar",
+      "grupo": "datos_r",
+      "tipo": "nodo_local",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "a_cliente",
+      "etiqueta": "Cliente",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_venta",
+      "etiqueta": "Vendedor y cajero",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_inventario",
+      "etiqueta": "Jefatura, reposición\ny prevención de pérdidas",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_cd",
+      "etiqueta": "Personal de centros\nde distribución",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_comercial",
+      "etiqueta": "Atención, comercial\ny planificación",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_vendedor",
+      "etiqueta": "Vendedor externo\nde marketplace",
+      "grupo": "actores_r",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_titular",
+      "etiqueta": "Titular de tarjeta",
+      "grupo": "actores_e",
+      "tipo": "persona"
+    },
+    {
+      "id": "a_ejecutivo",
+      "etiqueta": "Ejecutivo financiero",
+      "grupo": "actores_e",
+      "tipo": "persona"
+    },
+    {
+      "id": "logistica",
+      "etiqueta": "Vista logística\nWMS del centro principal",
+      "grupo": "presentacion_r",
+      "tipo": "canal_pc"
+    },
+    {
+      "id": "appgw_r",
+      "etiqueta": "Azure Application\nGateway v2\nRetail",
+      "grupo": "borde_r",
+      "tipo": "app_gateway",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "appgw_e",
+      "etiqueta": "Azure Application\nGateway v2\nEmisor",
+      "grupo": "borde_e",
+      "tipo": "app_gateway",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "aks_r",
+      "etiqueta": "Azure Kubernetes Service\nRetail · Java / Spring",
+      "grupo": "servicios_r",
+      "tipo": "aks_azure"
+    },
+    {
+      "id": "aks_e",
+      "etiqueta": "Azure Kubernetes Service\nEmisor · Java / Spring",
+      "grupo": "servicios_e",
+      "tipo": "aks_azure"
+    },
+    {
+      "id": "redis",
+      "etiqueta": "Azure Managed Redis\nRetail",
+      "grupo": "datos_r",
+      "tipo": "redis_azure",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "powerbi",
+      "etiqueta": "Microsoft Power BI\nRetail",
+      "grupo": "datos_r",
+      "tipo": "power_bi",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "lake_e",
+      "etiqueta": "Azure Data Lake Storage Gen2\nEmisor · datos y permisos propios",
+      "grupo": "datos_e",
+      "tipo": "lago_analitica",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "ddos",
+      "etiqueta": "Azure DDoS Protection\nHub / redes virtuales",
+      "grupo": "seguridad",
+      "tipo": "ddos_azure",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "hsm",
+      "etiqueta": "Azure Managed HSM\nEmisor",
+      "grupo": "seguridad",
+      "tipo": "secretos",
+      "estado": "por_acreditar"
+    },
+    {
+      "id": "typescript",
+      "etiqueta": "TypeScript",
+      "grupo": "tecnologias",
+      "tipo": "typescript"
+    },
+    {
+      "id": "react_ui",
+      "etiqueta": "React",
+      "grupo": "tecnologias",
+      "tipo": "react"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "web",
+      "a": "borde_r",
+      "etiqueta": "entrada protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "pos",
+      "a": "borde_r",
+      "etiqueta": "entrada protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "operacion",
+      "a": "borde_r",
+      "etiqueta": "entrada protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "movil",
+      "a": "borde_r",
+      "etiqueta": "entrada protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "portal",
+      "a": "borde_r",
+      "etiqueta": "entrada protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "appgw_r",
+      "a": "apim_r",
+      "etiqueta": "peticiones inspeccionadas",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "oferta",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "abastecimiento",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "existencias",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "pedidos",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "ventas",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "comisiones",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "market",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "posventa",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_r",
+      "a": "clientes",
+      "etiqueta": "operación de negocio",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "oferta",
+      "a": "datos_merc",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "abastecimiento",
+      "a": "datos_merc",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "existencias",
+      "a": "datos_merc",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "pedidos",
+      "a": "datos_venta",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "ventas",
+      "a": "datos_venta",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "comisiones",
+      "a": "datos_venta",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "market",
+      "a": "datos_venta",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "posventa",
+      "a": "datos_clientes",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "clientes",
+      "a": "datos_clientes",
+      "etiqueta": "repositorio de su autoridad",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "portal_f",
+      "a": "borde_e",
+      "etiqueta": "entrada financiera protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "meson_f",
+      "a": "borde_e",
+      "etiqueta": "entrada financiera protegida",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "appgw_e",
+      "a": "apim_e",
+      "etiqueta": "peticiones financieras inspeccionadas",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "apim_e",
+      "a": "originacion",
+      "etiqueta": "contrato financiero",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "originacion",
+      "a": "datos_orig",
+      "etiqueta": "autoridad financiera propia",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "apim_e",
+      "a": "cartera",
+      "etiqueta": "contrato financiero",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "cartera",
+      "a": "datos_cartera",
+      "etiqueta": "autoridad financiera propia",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "apim_e",
+      "a": "evidencia",
+      "etiqueta": "contrato financiero",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "evidencia",
+      "a": "datos_evid",
+      "etiqueta": "autoridad financiera propia",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "x01",
+      "a": "bitacora",
+      "etiqueta": "decisión y evidencia mínima",
+      "semantica": "persistencia"
+    },
+    {
+      "de": "adapt_r",
+      "a": "erp",
+      "etiqueta": "contrato contable y tributario",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "adapt_r",
+      "a": "wms",
+      "etiqueta": "movimientos y preparación",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "adapt_r",
+      "a": "plataforma_market",
+      "etiqueta": "contrato con plataforma conservada",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "adapt_r",
+      "a": "ads",
+      "etiqueta": "contrato publicitario",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "adapt_r",
+      "a": "controlador",
+      "etiqueta": "interfaz del controlador",
+      "semantica": "adaptacion"
+    },
+    {
+      "de": "ventas",
+      "a": "event_r",
+      "semantica": "publicacion",
+      "etiqueta": "Venta registrada"
+    },
+    {
+      "de": "pedidos",
+      "a": "event_r",
+      "semantica": "publicacion",
+      "etiqueta": "Pedido actualizado"
+    },
+    {
+      "de": "oferta",
+      "a": "event_r",
+      "semantica": "publicacion",
+      "etiqueta": "Catálogo actualizado"
+    },
+    {
+      "de": "event_r",
+      "a": "comisiones",
+      "semantica": "consumo",
+      "etiqueta": "Venta registrada"
+    },
+    {
+      "de": "event_r",
+      "a": "existencias",
+      "semantica": "consumo",
+      "etiqueta": "Venta registrada"
+    },
+    {
+      "de": "event_r",
+      "a": "busqueda",
+      "semantica": "consumo",
+      "etiqueta": "Catálogo actualizado"
+    },
+    {
+      "de": "event_r",
+      "a": "lockers",
+      "semantica": "consumo",
+      "etiqueta": "Pedido listo para retiro"
+    },
+    {
+      "de": "event_r",
+      "a": "lago_r",
+      "semantica": "consumo",
+      "etiqueta": "Proyecciones autorizadas"
+    },
+    {
+      "de": "adapt_r",
+      "a": "event_r",
+      "semantica": "publicacion",
+      "etiqueta": "Hechos conciliados"
+    },
+    {
+      "de": "cartera",
+      "a": "event_e",
+      "semantica": "publicacion",
+      "etiqueta": "Movimiento confirmado"
+    },
+    {
+      "de": "event_e",
+      "a": "evidencia",
+      "semantica": "consumo",
+      "etiqueta": "Evidencia de movimiento"
+    },
+    {
+      "de": "adapt_e",
+      "a": "event_e",
+      "semantica": "publicacion",
+      "etiqueta": "Hechos conciliados"
+    },
+    {
+      "de": "a_cliente",
+      "a": "web",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_venta",
+      "a": "pos",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_inventario",
+      "a": "operacion",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_cd",
+      "a": "logistica",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_comercial",
+      "a": "movil",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_vendedor",
+      "a": "portal",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_titular",
+      "a": "portal_f",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "a_ejecutivo",
+      "a": "meson_f",
+      "etiqueta": "Acceso según rol y ámbito",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "borde_r",
+      "a": "appgw_r",
+      "etiqueta": "Origen privado Retail",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "borde_e",
+      "a": "appgw_e",
+      "etiqueta": "Origen privado Emisor",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "logistica",
+      "a": "borde_r",
+      "etiqueta": "Entrada de la vista logística",
+      "semantica": "solicitud"
+    },
+    {
+      "de": "lago_r",
+      "a": "powerbi",
+      "etiqueta": "Modelo de lectura Retail",
+      "semantica": "consumo"
+    },
+    {
+      "de": "event_e",
+      "a": "lake_e",
+      "etiqueta": "Proyecciones financieras autorizadas",
+      "semantica": "consumo"
+    }
+  ],
+  "notas": [
+    "Las cajas de contratos en Negocios agrupan rutas del gateway: no son nuevos servicios ni ejecutables.",
+    "Los datos agrupan repositorios por área, conservando una autoridad y repositorio por servicio; no hay base común entre entidades.",
+    "Las innovaciones se conectan mediante contratos de sus servicios responsables, según SD-13 y T-14; no se añaden servicios funcionales.",
+    "Presentación no accede directamente a datos. La compra con tarjeta propia es el único cruce previsto y exige contrato aprobado.",
+    "Las selecciones de producto marcadas con asterisco requieren validación regional y técnica. No se afirma despliegue realizado.",
+    "M16: conteo predictivo; M21: las otras cuatro innovaciones. El retiro financiero por olas sigue SD-03.",
+    "Las flechas son familias de interfaz; no reconstruyen las catorce conexiones actuales ni sustituyen el catálogo de contratos.",
+    "Los iconos de base de datos representan el motor propuesto; el almacén documental financiero permanece separado.",
+    "La réplica y recuperación del Emisor permanecen por acreditar y no se cierran con DC-02 como único sitio.",
+    "Revisión visual solicitada: sin Cliente, franja amarilla ni códigos visibles. Códigos conservados para trazabilidad en JSON.",
+    "Los repositorios muestran autoridad lógica por servicio; no prescriben una instancia física por caja.",
+    "Salida transaccional (outbox) en cada productor; deduplicación en consumidores, reintentos y tratamiento de errores por ámbito.",
+    "Los nombres de eventos ilustran contratos de diseño; se deben detallar esquemas, suscripciones y retención antes de implementación.",
+    "La compra autorizable Ventas–Originación se explicita en el control transversal; las líneas de política se omiten para evitar atravesar el diagrama. No se habilitan cruces adicionales.",
+    "Los responsables de las innovaciones se indican en sus tarjetas; las cajas de contratos se consolidan visualmente dentro de la puerta de enlace.",
+    "Las autoridades de Búsqueda sobre su índice y POS/Fila sobre sus estados se rotulan en Datos; se omiten sus líneas para que no parezcan acceder a través del canal de eventos.",
+    "Revisión de conectores: puertos de borde explícitos y rutas ortogonales que evitan tarjetas y rótulos. Los recorridos Servicios–Datos se agrupan en carriles sin fusionar destinos.",
+    "Actores fuera de las ocho capas, conforme a la nueva referencia; no se reintroduce una capa Cliente.",
+    "Dos tarjetas Front Door representan rutas del mismo perfil global, no dos despliegues. Application Gateway y API Management se separan por ámbito.",
+    "Los iconos de Azure proceden del catálogo diagrams; OpenTelemetry del repositorio oficial CNCF artwork. Managed HSM se representa con icono de familia Key Vault, sin afirmar que sea el mismo servicio.",
+    "Se conservan 13 autoridades funcionales; AKS y los adaptadores no añaden servicios de negocio. Los repositorios agrupados no autorizan accesos cruzados.",
+    "La API de vendedor externo sigue la tabla 4.1 de SD-04; no se introduce un portal nuevo.",
+    "Nombres y SKU reproducen la propuesta actual; los asteriscos no acreditan disponibilidad regional ni despliegue."
+  ]
+}

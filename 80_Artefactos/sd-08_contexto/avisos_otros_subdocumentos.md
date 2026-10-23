@@ -61,3 +61,9 @@ La columna «Componente» de A.4 adoptó el vocabulario del sd-04 (SIT-01, CD-01
 ## sd-03 · Numeración de tablas · pendiente del responsable del sd-07 (2026-10-11)
 
 Por INT-03-M-01 las tablas del sd-03 se renumeraron: alternativas del núcleo Retail es la Tabla 3.7 (antes 3.5), control de cruces es la 3.8 (antes 3.6) y escenarios de intercambio es la 3.9 (antes 3.7). Los documentos de `80_Artefactos/sd-07_contexto/estimacion/` (casos de uso de ventas, cartera de crédito y control de cruces) y `80_Artefactos/maestro_actores.md` citan «Tabla 3.7» y «Tabla 3.6» con la numeración anterior.
+
+- **PENDIENTE sd-07 (D10, 2026-10-11):** agregar cuatro cuentas de control a la EDT (R-06, R-27, R-28, R-36). Procedimiento en `guia_cuentas_nuevas_sd-07.md`. Hasta que existan, el 8.3 las nombra como «cuenta nueva propuesta».
+
+- **sd-07 importado (2026-10-12):** el `.tex` nuevo reemplaza al anterior (respaldo en `latex_final/respaldo/sd-07.20261012T035738Z.tex`). Resuelve I-03 (marcha blanca habilitada en la ventana posterior al 6 de enero, 7.3.2.1). Cambia las referencias del sd-08: el CPM está en 7.3.3 (Tabla 7.5) y la estimación pasa a 40.946 HH; hay holgura de 3 meses (Etapa 1) y 1 mes (Etapa 2) en planes de marcha blanca y capacitación, y holgura cero en la cadena principal. Siguen pendientes las cuatro cuentas de D10 (la EDT sigue en 164 cuentas) y las 16 figuras de la EDT.
+
+- **2026-10-12:** el aviso pendiente al sd-07 por las cuatro cuentas de D10 queda sin efecto (D10 se revirtió), y tampoco se pide la frase del 7.3 por D9.

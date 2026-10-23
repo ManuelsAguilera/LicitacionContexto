@@ -1,0 +1,10 @@
+Figura 4.35: Capas transversales · Seguridad y Observabilidad por ámbito
+Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.
+
+Leyenda: verde Retail; lila Filial; gris productos agregados/transversales; amarillo control de cruces. Flechas por semántica de catálogo, sin evidencia documental visible.
+Una sola banda de Capas transversales contiene 7 Seguridad y 8 Observabilidad. Recursos y permisos separados por negocio; las relaciones son familias de contratos, no una cadena por solicitud.
+No hay Collector → Azure Monitor en la base productiva. Grafana consulta sus fuentes; Loki/Tempo/Prometheus tienen almacenes y políticas propias.
+Cada extremo del contrato X-01 emite auditoría/telemetría únicamente a su ámbito; correlación mínima autorizada, sin colector compartido ni agregado de payload financiero.
+Seguridad: 12 meses en línea y 24 adicionales de archivo; respaldo, diagnóstico y auditoría de negocio tienen otras políticas. Región, residencia, licencias, capacidad y pruebas siguen pendientes.
+Conectores anclados al contorno; SVG y draw.io usan los mismos puntos. El diagrama valida estructura gráfica, no despliegue ni cumplimiento. SD-03/04 sin cambios. Uso de IA: Alto, registrar al incorporar a la propuesta.
+Iconos de diagrams; OpenSearch y OpenMetadata de sus repositorios oficiales. Key Vault y Managed HSM usan icono de familia; Blackbox usa icono de Prometheus.

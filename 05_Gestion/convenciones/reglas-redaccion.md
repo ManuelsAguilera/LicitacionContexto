@@ -2,7 +2,7 @@
 
 Qué se escribe y cómo se estructura el texto de cada subdocumento T-7. **No** definen el aspecto visual (tipografía, márgenes, portada, estilo de tabla): eso son las [reglas de plantilla](reglas-plantilla.md).
 
-**Fuente y precedencia.** Estas reglas condensan el Comunicado 10 (`00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`, secciones 2 a 7). Si una regla de este archivo y el Comunicado difieren, **manda el Comunicado**. La política de migración de tablas (`artefactos.md`) es un procedimiento de importación y no sustituye estas reglas.
+**Fuente y precedencia.** Estas reglas reúnen el Comunicado 10 (`00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`, secciones 2 a 7) y decisiones editoriales del equipo. Para seleccionar citas y localizar folios se usa [citas-proyecto](../../.agents/skills/citas-proyecto/SKILL.md). La política de migración de tablas (`artefactos.md`) es un procedimiento de importación y no sustituye estas reglas.
 
 **Quién las aplica.** Quien redacta o edita un `.tex` (en el editor local o en Prism) y quien revisa. Los agentes las aplican al escribir y no las cambian: modificar una regla requiere decisión del equipo y actualizar este archivo.
 
@@ -46,7 +46,7 @@ Qué se escribe y cómo se estructura el texto de cada subdocumento T-7. **No** 
 
 | ID | Regla | Fuente | Verificación |
 | :--- | :--- | :--- | :--- |
-| RR-20 | Las referencias se citan en el lugar donde se usan, en APA 7; las citas a las Bases indican documento, capítulo o artículo y página. Toda cita está en la lista y toda referencia de la lista está citada. | C10 §6 | Manual |
+| RR-20 | Citar en el lugar de uso solo exigencias particulares y contexto o datos del Caso 09, con documento, capítulo o numeral y folio impreso verificado. No citar bibliográficamente exigencias generales de las Bases Administrativas o Transversales ni indicaciones del profesor. Toda cita está en Referencias y toda entrada de Referencias está citada. Aplicar `citas-proyecto`. | Decisión del equipo | Manual |
 | RR-21 | El subdocumento termina con dos secciones sin numerar, en este orden: Referencias y Declaración de uso de IA. | C10 §2.5, §6, §7.2 | Auto |
 | RR-22 | El texto no contiene marcadores ni notas de borrador o del asistente (`TODO`, `[VERIFICAR]`, `[INSERTAR…]`, «Anexo ??», «borrador», «pendiente de validar») ni lenguaje de contexto académico (docente, estudiantes, «propuesta académica»). Su detección en el Informe 2 o la Propuesta Final deja el subdocumento como no presentado. | C10 §7.1 d | Auto (ERROR marcadores; AVISO lenguaje académico) |
 | RR-23 | Ningún capítulo se entrega generado íntegramente por IA sin elaboración y revisión humana; el uso se declara en el A-6 y en la Declaración de uso de IA. No se declara una revisión humana que no ocurrió. | C10 §7.1–7.2 | Manual |

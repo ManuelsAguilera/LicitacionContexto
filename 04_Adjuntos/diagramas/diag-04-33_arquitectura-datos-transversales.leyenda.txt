@@ -1,0 +1,10 @@
+Figura 4.33: Arquitectura lógica por capas · datos y capacidades transversales
+Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.
+
+Leyenda: verde Retail; lila Filial; gris productos agregados/transversales; amarillo control de cruces. Flechas por semántica de catálogo, sin evidencia documental visible.
+Vista principal: capas 1–6 horizontales; capas 7–8 en una única banda Capas transversales. Detalles 4.34 y 4.35 en páginas del mismo draw.io.
+Un símbolo de producto puede representar instancias propias por ámbito. No significa recursos ni datos compartidos.
+ADLS Gen2 se reincorpora por el nuevo registro de Datos, que sustituye su retirada anterior. Región, residencia, capacidad y aceptación siguen por acreditar.
+F:C-04 sigue candidato, sin contratos operacionales inventados. VPN conservada.
+Conectores anclados al contorno; SVG y draw.io usan los mismos puntos. El diagrama valida estructura gráfica, no despliegue ni cumplimiento. SD-03/04 sin cambios. Uso de IA: Alto, registrar al incorporar a la propuesta.
+Iconos de diagrams; OpenSearch y OpenMetadata de sus repositorios oficiales. Key Vault y Managed HSM usan icono de familia; Blackbox usa icono de Prometheus.

@@ -1,0 +1,2207 @@
+[
+  {
+    "id": "a_cliente",
+    "nombre": "Cliente de la tienda",
+    "tipo": "persona",
+    "grupo": "actores_r",
+    "ambito": "retail",
+    "rol": "actor",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-56",
+    "relaciones": [
+      {
+        "de": "a_cliente",
+        "a": "web",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "a_tienda",
+    "nombre": "Vendedor, cajero y operación de tienda",
+    "tipo": "persona",
+    "grupo": "actores_r",
+    "ambito": "retail",
+    "rol": "actor",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 2,
+    "decisiones": "D-56",
+    "relaciones": [
+      {
+        "de": "a_tienda",
+        "a": "pos",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "a_tienda",
+        "a": "operacion",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "a_cd",
+    "nombre": "Personal del centro de distribución",
+    "tipo": "persona",
+    "grupo": "actores_r",
+    "ambito": "retail",
+    "rol": "actor",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-56",
+    "relaciones": [
+      {
+        "de": "a_cd",
+        "a": "logistica",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "a_comercial",
+    "nombre": "Atención, comercial y planificación",
+    "tipo": "persona",
+    "grupo": "actores_r",
+    "ambito": "retail",
+    "rol": "actor",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-56",
+    "relaciones": [
+      {
+        "de": "a_comercial",
+        "a": "movil",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "a_emisor",
+    "nombre": "Titular de tarjeta y ejecutivo financiero",
+    "tipo": "persona",
+    "grupo": "actores_e",
+    "ambito": "emisor",
+    "rol": "actor",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 2,
+    "decisiones": "D-56",
+    "relaciones": [
+      {
+        "de": "a_emisor",
+        "a": "portal_f",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "a_emisor",
+        "a": "meson_f",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "web",
+    "nombre": "Portal y app de la tienda / React / React Native",
+    "tipo": "react",
+    "grupo": "presentacion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-06, D-09",
+    "relaciones": [
+      {
+        "de": "a_cliente",
+        "a": "web",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "web",
+        "a": "front_door",
+        "etiqueta": "Retail: host y perfil propios. API pública Retail",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "pos",
+    "nombre": "Caja y mesón / React web servido desde tienda",
+    "tipo": "canal_pc",
+    "grupo": "presentacion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-09",
+    "relaciones": [
+      {
+        "de": "a_tienda",
+        "a": "pos",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pos",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pos",
+        "a": "local_serv",
+        "etiqueta": "Operación local cuando no hay enlace",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "operacion",
+    "nombre": "App interna de tienda / 4 perfiles · RN / SQLite / DataWedge / QR + PIN en vista previa",
+    "tipo": "canal_movil",
+    "grupo": "presentacion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-07, D-09, D-42",
+    "relaciones": [
+      {
+        "de": "a_tienda",
+        "a": "operacion",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "operacion",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "logistica",
+    "nombre": "Vista logística / WMS del CD conservado",
+    "tipo": "canal_pc",
+    "grupo": "presentacion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-14",
+    "relaciones": [
+      {
+        "de": "a_cd",
+        "a": "logistica",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "logistica",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "movil",
+    "nombre": "Consola comercial y de atención",
+    "tipo": "canal_pc",
+    "grupo": "presentacion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-06",
+    "relaciones": [
+      {
+        "de": "a_comercial",
+        "a": "movil",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "movil",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "portal_f",
+    "nombre": "Portal y app de la tarjeta / Código propio · simulador CAE",
+    "tipo": "react",
+    "grupo": "presentacion_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-06, D-09, D-10",
+    "relaciones": [
+      {
+        "de": "a_emisor",
+        "a": "portal_f",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "portal_f",
+        "a": "front_door",
+        "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "meson_f",
+    "nombre": "Mesón financiero / Sesión y permisos de la Filial",
+    "tipo": "canal_pc",
+    "grupo": "presentacion_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-06, D-44",
+    "relaciones": [
+      {
+        "de": "a_emisor",
+        "a": "meson_f",
+        "etiqueta": "Canal del perfil autorizado",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "meson_f",
+        "a": "appgw_e",
+        "etiqueta": "Red privada del mesón financiero; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "meson_f",
+        "a": "cupo_local",
+        "etiqueta": "Consulta local en red del mesón; política offline pendiente",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "dns",
+    "nombre": "Azure DNS / Zonas y registros por ámbito",
+    "tipo": "dns_azure",
+    "grupo": "borde_comun",
+    "ambito": "transversal",
+    "rol": "configuracion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 2,
+    "decisiones": "D-11, D-15",
+    "relaciones": [
+      {
+        "de": "dns",
+        "a": "front_door",
+        "etiqueta": "Retail: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+        "semantica": "politica"
+      },
+      {
+        "de": "dns",
+        "a": "front_door",
+        "etiqueta": "Filial: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "appgw_r",
+    "nombre": "Application Gateway v2 / Retail · entrada privada",
+    "tipo": "app_gateway",
+    "grupo": "api_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 6,
+    "salidas": 1,
+    "decisiones": "D-13, D-14",
+    "relaciones": [
+      {
+        "de": "appgw_r",
+        "a": "apim_r",
+        "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pos",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "operacion",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "logistica",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "movil",
+        "a": "appgw_r",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · SD-WAN y ExpressRoute; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "local_sync",
+        "a": "appgw_r",
+        "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pl_r",
+        "a": "appgw_r",
+        "semantica": "condicionado",
+        "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+      }
+    ]
+  },
+  {
+    "id": "apim_r",
+    "nombre": "Azure API Management / Premium clásico · Retail / Productos y cuotas por canal",
+    "tipo": "entrada_api",
+    "grupo": "api_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 2,
+    "salidas": 9,
+    "decisiones": "D-16–D-21",
+    "relaciones": [
+      {
+        "de": "appgw_r",
+        "a": "apim_r",
+        "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apic_r",
+        "a": "apim_r",
+        "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+        "semantica": "politica"
+      },
+      {
+        "de": "apim_r",
+        "a": "oferta",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "abastecimiento",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "existencias",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "pedidos",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "ventas",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "comisiones",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "market",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "posventa",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_r",
+        "a": "clientes",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      }
+    ]
+  },
+  {
+    "id": "apic_r",
+    "nombre": "Azure API Center / Retail · catálogo OpenAPI 3.1",
+    "tipo": "api_center",
+    "grupo": "api_r",
+    "ambito": "retail",
+    "rol": "configuracion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-16, D-18",
+    "relaciones": [
+      {
+        "de": "apic_r",
+        "a": "apim_r",
+        "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "appgw_e",
+    "nombre": "Application Gateway v2 / Filial · entrada privada",
+    "tipo": "app_gateway",
+    "grupo": "api_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 2,
+    "salidas": 1,
+    "decisiones": "D-13, D-14",
+    "relaciones": [
+      {
+        "de": "appgw_e",
+        "a": "apim_e",
+        "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "meson_f",
+        "a": "appgw_e",
+        "etiqueta": "Red privada del mesón financiero; omite Front Door",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pl_e",
+        "a": "appgw_e",
+        "semantica": "condicionado",
+        "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+      }
+    ]
+  },
+  {
+    "id": "apim_e",
+    "nombre": "Azure API Management / Premium clásico · Filial / Producto: Finanzas abiertas",
+    "tipo": "entrada_api",
+    "grupo": "api_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 3,
+    "salidas": 3,
+    "decisiones": "D-16–D-21",
+    "relaciones": [
+      {
+        "de": "appgw_e",
+        "a": "apim_e",
+        "etiqueta": "HTTPS privado al gateway del mismo ámbito",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apic_e",
+        "a": "apim_e",
+        "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+        "semantica": "politica"
+      },
+      {
+        "de": "apim_e",
+        "a": "originacion",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_e",
+        "a": "cartera",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "apim_e",
+        "a": "evidencia",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "x01",
+        "a": "apim_e",
+        "etiqueta": "Única identidad de Retail admitida por la puerta de la Filial; nuevo correlativo",
+        "semantica": "compra_autorizable"
+      }
+    ]
+  },
+  {
+    "id": "apic_e",
+    "nombre": "Azure API Center / Filial · catálogo OpenAPI 3.1",
+    "tipo": "api_center",
+    "grupo": "api_e",
+    "ambito": "emisor",
+    "rol": "configuracion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-16, D-18",
+    "relaciones": [
+      {
+        "de": "apic_e",
+        "a": "apim_e",
+        "etiqueta": "Contratos 3.0.3 derivados por pipeline; NO tráfico de aplicación",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "aks_r",
+    "nombre": "Azure Kubernetes Service / Premium / LTS · un clúster por ámbito",
+    "tipo": "aks_azure",
+    "grupo": "tecnologias",
+    "ambito": "transversal",
+    "rol": "contenedor",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-28; verificar disponibilidad y versiones",
+    "relaciones": []
+  },
+  {
+    "id": "oferta",
+    "nombre": "Oferta comercial",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 6,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "oferta",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "oferta",
+        "a": "busqueda",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      },
+      {
+        "de": "oferta",
+        "a": "media",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      },
+      {
+        "de": "oferta",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "oferta",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "oferta",
+        "a": "redis",
+        "etiqueta": "Publicación/consulta de oferta operacional; frescura por verificar",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "oferta",
+        "a": "historial",
+        "etiqueta": "Registro de precios publicados; solo anexado",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "abastecimiento",
+    "nombre": "Abastecimiento",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "abastecimiento",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "abastecimiento",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "existencias",
+    "nombre": "Existencias · sugerencias de IA",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 3,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "existencias",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "existencias",
+        "a": "conteo",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      },
+      {
+        "de": "existencias",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "existencias",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "pedidos",
+    "nombre": "Pedidos",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 3,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "pedidos",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "pedidos",
+        "a": "lockers",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      },
+      {
+        "de": "pedidos",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "pedidos",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "ventas",
+    "nombre": "Ventas",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 3,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "ventas",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "ventas",
+        "a": "x01",
+        "etiqueta": "Compra con tarjeta propia: solicitud mínima de autorización",
+        "semantica": "compra_autorizable"
+      },
+      {
+        "de": "ventas",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "ventas",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "comisiones",
+    "nombre": "Comisiones",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "comisiones",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "comisiones",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "market",
+    "nombre": "Marketplace",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "market",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "market",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "market",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "posventa",
+    "nombre": "Posventa",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "posventa",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "posventa",
+        "a": "datos_clientes",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "clientes",
+    "nombre": "Clientes Retail",
+    "tipo": "servicio",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 2,
+    "salidas": 2,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_r",
+        "a": "clientes",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "clientes",
+        "a": "fila",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      },
+      {
+        "de": "bus_r",
+        "a": "clientes",
+        "etiqueta": "Consumo para la fila virtual; contrato por detallar",
+        "semantica": "consumo"
+      },
+      {
+        "de": "clientes",
+        "a": "datos_clientes",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "originacion",
+    "nombre": "Originación de crédito",
+    "tipo": "servicio",
+    "grupo": "servicios_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_e",
+        "a": "originacion",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "originacion",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "originacion",
+        "a": "datos_orig",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "cartera",
+    "nombre": "Cartera de crédito",
+    "tipo": "servicio",
+    "grupo": "servicios_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 3,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_e",
+        "a": "cartera",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "cartera",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "cartera",
+        "a": "datos_cartera",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "cartera",
+        "a": "cupo_local",
+        "etiqueta": "Provisionar referencia seudonimizada, cupo y vigencia; ruta y caducidad pendientes",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "evidencia",
+    "nombre": "Evidencia y consentimiento",
+    "tipo": "servicio",
+    "grupo": "servicios_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-24, D-27, D-28",
+    "relaciones": [
+      {
+        "de": "apim_e",
+        "a": "evidencia",
+        "etiqueta": "Operaciones publicadas del servicio; autorización propia",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "evidencia",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "evidencia",
+        "a": "datos_evid",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "x01",
+    "nombre": "Control de cruces",
+    "tipo": "politica_x01",
+    "grupo": "frontera",
+    "ambito": "frontera",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-17, D-27, D-48",
+    "relaciones": [
+      {
+        "de": "ventas",
+        "a": "x01",
+        "etiqueta": "Compra con tarjeta propia: solicitud mínima de autorización",
+        "semantica": "compra_autorizable"
+      },
+      {
+        "de": "x01",
+        "a": "apim_e",
+        "etiqueta": "Única identidad de Retail admitida por la puerta de la Filial; nuevo correlativo",
+        "semantica": "compra_autorizable"
+      },
+      {
+        "de": "x01",
+        "a": "bitacora",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "comunes_r",
+    "nombre": "Servicios comunes · Retail / Parámetros, documentos, firma, avisos…",
+    "tipo": "aks_azure",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "pendiente_conexion",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-22 confirmado por D-28; consumidores y contratos pendientes",
+    "relaciones": []
+  },
+  {
+    "id": "comunes_e",
+    "nombre": "Servicios comunes · Filial / Parámetros, documentos, firma, avisos…",
+    "tipo": "aks_azure",
+    "grupo": "servicios_e",
+    "ambito": "emisor",
+    "rol": "pendiente_conexion",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-22 confirmado por D-28; consumidores y contratos pendientes",
+    "relaciones": []
+  },
+  {
+    "id": "conteo",
+    "nombre": "Conteo cíclico predictivo · proceso",
+    "tipo": "politica_x01",
+    "grupo": "innovaciones",
+    "ambito": "retail",
+    "rol": "capacidad",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-54; innovación dentro del servicio responsable",
+    "relaciones": [
+      {
+        "de": "existencias",
+        "a": "conteo",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "lockers",
+    "nombre": "Lockers Ancoa 24/7 · producto",
+    "tipo": "politica_x01",
+    "grupo": "innovaciones",
+    "ambito": "retail",
+    "rol": "capacidad",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-54; innovación dentro del servicio responsable",
+    "relaciones": [
+      {
+        "de": "pedidos",
+        "a": "lockers",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "busqueda",
+    "nombre": "Búsqueda vectorial multimodal · tecnología",
+    "tipo": "politica_x01",
+    "grupo": "innovaciones",
+    "ambito": "retail",
+    "rol": "capacidad",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-54; innovación dentro del servicio responsable",
+    "relaciones": [
+      {
+        "de": "oferta",
+        "a": "busqueda",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "media",
+    "nombre": "Retail Media Network · modelo de negocio",
+    "tipo": "politica_x01",
+    "grupo": "innovaciones",
+    "ambito": "retail",
+    "rol": "capacidad",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-54; innovación dentro del servicio responsable",
+    "relaciones": [
+      {
+        "de": "oferta",
+        "a": "media",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "fila",
+    "nombre": "Modo Tienda y fila virtual · experiencia",
+    "tipo": "politica_x01",
+    "grupo": "innovaciones",
+    "ambito": "retail",
+    "rol": "capacidad",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-54; innovación dentro del servicio responsable",
+    "relaciones": [
+      {
+        "de": "clientes",
+        "a": "fila",
+        "etiqueta": "Capacidad de innovación del servicio, no nuevo microservicio",
+        "semantica": "politica"
+      }
+    ]
+  },
+  {
+    "id": "bus_r",
+    "nombre": "Azure Service Bus Premium / Retail · outbox / reintentos",
+    "tipo": "service_bus",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 5,
+    "salidas": 5,
+    "decisiones": "D-29, D-33; contratos y rendimiento por validar",
+    "relaciones": [
+      {
+        "de": "bus_r",
+        "a": "comercio",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "bus_r",
+        "a": "canales",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "bus_r",
+        "a": "socios",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "oferta",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "existencias",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "pedidos",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "ventas",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "market",
+        "a": "bus_r",
+        "etiqueta": "Hechos del productor vía outbox transaccional",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "bus_r",
+        "a": "clientes",
+        "etiqueta": "Consumo para la fila virtual; contrato por detallar",
+        "semantica": "consumo"
+      },
+      {
+        "de": "bus_r",
+        "a": "local_sync",
+        "semantica": "consumo",
+        "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+      }
+    ]
+  },
+  {
+    "id": "saga_r",
+    "nombre": "Coordinación de procesos · Retail / Motor y sagas pendientes",
+    "tipo": "aks_azure",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "pendiente_conexion",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-23, D-25, D-32",
+    "relaciones": []
+  },
+  {
+    "id": "bus_e",
+    "nombre": "Azure Service Bus Premium / Filial · outbox / reintentos",
+    "tipo": "service_bus",
+    "grupo": "integracion_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 3,
+    "salidas": 1,
+    "decisiones": "D-29, D-33; contratos y rendimiento por validar",
+    "relaciones": [
+      {
+        "de": "bus_e",
+        "a": "credito",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "originacion",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "cartera",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "evidencia",
+        "a": "bus_e",
+        "etiqueta": "Hechos del lado receptor, sin bus compartido",
+        "semantica": "publicacion"
+      }
+    ]
+  },
+  {
+    "id": "saga_e",
+    "nombre": "Coordinación de procesos · Filial / Motor y sagas pendientes",
+    "tipo": "aks_azure",
+    "grupo": "integracion_e",
+    "ambito": "emisor",
+    "rol": "pendiente_conexion",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-23, D-25, D-32",
+    "relaciones": []
+  },
+  {
+    "id": "comercio",
+    "nombre": "Comercio · ERP/DTE y WMS",
+    "tipo": "adaptadores",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-30, D-34; cargas/descargas masivas incluidas",
+    "relaciones": [
+      {
+        "de": "bus_r",
+        "a": "comercio",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "comercio",
+        "a": "ext_comercio",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "canales",
+    "nombre": "Canales · e-commerce / marketplace / fidelización",
+    "tipo": "adaptadores",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-30, D-34; cargas/descargas masivas incluidas",
+    "relaciones": [
+      {
+        "de": "bus_r",
+        "a": "canales",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "canales",
+        "a": "ext_canales",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "socios",
+    "nombre": "Socios · pagos / proveedores / transportistas",
+    "tipo": "adaptadores",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-30, D-34; cargas/descargas masivas incluidas",
+    "relaciones": [
+      {
+        "de": "bus_r",
+        "a": "socios",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "socios",
+        "a": "ext_socios",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "credito",
+    "nombre": "Crédito · legado 2011 / CMF / firma",
+    "tipo": "adaptadores",
+    "grupo": "integracion_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-30, D-34; cargas/descargas masivas incluidas",
+    "relaciones": [
+      {
+        "de": "bus_e",
+        "a": "credito",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      {
+        "de": "credito",
+        "a": "ext_credito",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "local_serv",
+    "nombre": "Continuidad de tienda / Ventas y oferta en modo local",
+    "tipo": "nodo_local",
+    "grupo": "servicios_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 2,
+    "decisiones": "D-05, D-09; caché de oferta local L-01 dentro de este componente, sin renumerar SD-04",
+    "relaciones": [
+      {
+        "de": "pos",
+        "a": "local_serv",
+        "etiqueta": "Operación local cuando no hay enlace",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "local_serv",
+        "a": "local_sync",
+        "etiqueta": "Entrega de operaciones para reconciliar",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "local_serv",
+        "a": "local_data",
+        "etiqueta": "Diario transaccional local Retail",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "local_sync",
+    "nombre": "Sincronizador de tienda / Reintentos y conciliación",
+    "tipo": "nodo_local",
+    "grupo": "integracion_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 3,
+    "salidas": 1,
+    "decisiones": "D-05, D-51",
+    "relaciones": [
+      {
+        "de": "local_serv",
+        "a": "local_sync",
+        "etiqueta": "Entrega de operaciones para reconciliar",
+        "semantica": "publicacion"
+      },
+      {
+        "de": "local_sync",
+        "a": "appgw_r",
+        "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "local_data",
+        "a": "local_sync",
+        "etiqueta": "Operaciones pendientes del diario",
+        "semantica": "flujo"
+      },
+      {
+        "de": "bus_r",
+        "a": "local_sync",
+        "semantica": "consumo",
+        "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+      }
+    ]
+  },
+  {
+    "id": "datos_merc",
+    "nombre": "PostgreSQL · Retail / Oferta / Abastecimiento / Existencias",
+    "tipo": "base_datos",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 3,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "oferta",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "abastecimiento",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "existencias",
+        "a": "datos_merc",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "datos_venta",
+    "nombre": "PostgreSQL · Retail / Pedidos / Ventas / Comisiones / Marketplace",
+    "tipo": "base_datos",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 4,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "pedidos",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "ventas",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "comisiones",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "market",
+        "a": "datos_venta",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "datos_clientes",
+    "nombre": "PostgreSQL · Retail / Posventa / Clientes",
+    "tipo": "base_datos",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 2,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "posventa",
+        "a": "datos_clientes",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "clientes",
+        "a": "datos_clientes",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "bitacora",
+    "nombre": "PostgreSQL · Control de cruces / Bitácora y política propias",
+    "tipo": "base_datos",
+    "grupo": "datos_x",
+    "ambito": "frontera",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "x01",
+        "a": "bitacora",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "datos_orig",
+    "nombre": "PostgreSQL · Filial / Originación y estado de procesos",
+    "tipo": "base_datos",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "originacion",
+        "a": "datos_orig",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "datos_cartera",
+    "nombre": "PostgreSQL · Filial / Cartera y estado de procesos",
+    "tipo": "base_datos",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "cartera",
+        "a": "datos_cartera",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "datos_evid",
+    "nombre": "Azure Blob Storage · Filial / Evidencia y consentimiento",
+    "tipo": "blob",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "evidencia",
+        "a": "datos_evid",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "archivo_r",
+    "nombre": "Blob / Data Lake · Retail / Retención inmutable e histórico",
+    "tipo": "blob",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": []
+  },
+  {
+    "id": "archivo_e",
+    "nombre": "Blob / Data Lake · Filial / Retención inmutable e histórico",
+    "tipo": "blob",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": []
+  },
+  {
+    "id": "lago_r",
+    "nombre": "Data Lake Storage Gen2 · Retail / Modelos analíticos propios",
+    "tipo": "lago_analitica",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "lago_r",
+        "a": "powerbi",
+        "etiqueta": "Consulta analítica Retail; sin mezcla de modelos",
+        "semantica": "flujo"
+      }
+    ]
+  },
+  {
+    "id": "lago_e",
+    "nombre": "Data Lake Storage Gen2 · Filial / Posición financiera y modelos propios",
+    "tipo": "lago_analitica",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "lago_e",
+        "a": "powerbi",
+        "etiqueta": "Consulta analítica Filial; espacios separados",
+        "semantica": "flujo"
+      }
+    ]
+  },
+  {
+    "id": "redis",
+    "nombre": "Azure Managed Redis · Retail / Caché de oferta ≤ 30 s",
+    "tipo": "redis_azure",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "oferta",
+        "a": "redis",
+        "etiqueta": "Publicación/consulta de oferta operacional; frescura por verificar",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "historial",
+    "nombre": "PostgreSQL · Retail / Historial de precios append-only",
+    "tipo": "base_datos",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "oferta",
+        "a": "historial",
+        "etiqueta": "Registro de precios publicados; solo anexado",
+        "semantica": "persistencia"
+      }
+    ]
+  },
+  {
+    "id": "powerbi",
+    "nombre": "Microsoft Power BI / Espacios y modelos por ámbito",
+    "tipo": "power_bi",
+    "grupo": "tecnologias",
+    "ambito": "transversal",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 2,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "lago_r",
+        "a": "powerbi",
+        "etiqueta": "Consulta analítica Retail; sin mezcla de modelos",
+        "semantica": "flujo"
+      },
+      {
+        "de": "lago_e",
+        "a": "powerbi",
+        "etiqueta": "Consulta analítica Filial; espacios separados",
+        "semantica": "flujo"
+      }
+    ]
+  },
+  {
+    "id": "backup",
+    "nombre": "Azure Backup Vault / Cobertura y destino por definir",
+    "tipo": "backup_vault",
+    "grupo": "tecnologias",
+    "ambito": "transversal",
+    "rol": "pendiente_conexion",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": []
+  },
+  {
+    "id": "local_data",
+    "nombre": "Diario local de tienda / Persistencia durable de ventas Retail",
+    "tipo": "nodo_local",
+    "grupo": "datos_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "local_serv",
+        "a": "local_data",
+        "etiqueta": "Diario transaccional local Retail",
+        "semantica": "persistencia"
+      },
+      {
+        "de": "local_data",
+        "a": "local_sync",
+        "etiqueta": "Operaciones pendientes del diario",
+        "semantica": "flujo"
+      }
+    ]
+  },
+  {
+    "id": "cupo_local",
+    "nombre": "Cupo local de la Filial / VM y clave propias · datos mínimos",
+    "tipo": "nodo_local",
+    "grupo": "datos_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 2,
+    "salidas": 0,
+    "decisiones": "D-05, D-35–D-44",
+    "relaciones": [
+      {
+        "de": "cartera",
+        "a": "cupo_local",
+        "etiqueta": "Provisionar referencia seudonimizada, cupo y vigencia; ruta y caducidad pendientes",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "meson_f",
+        "a": "cupo_local",
+        "etiqueta": "Consulta local en red del mesón; política offline pendiente",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "ext_comercio",
+    "nombre": "ERP/DTE y WMS conservados",
+    "tipo": "sistema_conservado",
+    "grupo": "externos",
+    "ambito": "retail",
+    "rol": "externo",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-30; agrupación D-56",
+    "relaciones": [
+      {
+        "de": "comercio",
+        "a": "ext_comercio",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "ext_canales",
+    "nombre": "E-commerce, marketplace y fidelización",
+    "tipo": "sistema_conservado",
+    "grupo": "externos",
+    "ambito": "retail",
+    "rol": "externo",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-30; agrupación D-56",
+    "relaciones": [
+      {
+        "de": "canales",
+        "a": "ext_canales",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "ext_socios",
+    "nombre": "Pagos, proveedores y transportistas / Lockers y publicidad: interfaz por precisar",
+    "tipo": "sistema_conservado",
+    "grupo": "externos",
+    "ambito": "retail",
+    "rol": "externo",
+    "estado": "objetivo",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-30; agrupación D-56",
+    "relaciones": [
+      {
+        "de": "socios",
+        "a": "ext_socios",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "ext_credito",
+    "nombre": "Crédito 2011 (convivencia) / Reportes CMF y firma por interfaz",
+    "tipo": "sistema_conservado",
+    "grupo": "externos",
+    "ambito": "emisor",
+    "rol": "externo",
+    "estado": "convivencia",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-30; agrupación D-56",
+    "relaciones": [
+      {
+        "de": "credito",
+        "a": "ext_credito",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos y olas en inventario E1",
+        "semantica": "adaptacion"
+      }
+    ]
+  },
+  {
+    "id": "entra",
+    "nombre": "Microsoft Entra ID P2 / Tenant Filial separado: confirmar",
+    "tipo": "identidad",
+    "grupo": "seguridad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "relaciones": []
+  },
+  {
+    "id": "externalid",
+    "nombre": "Microsoft Entra External ID / Tenant externo por negocio",
+    "tipo": "external_id",
+    "grupo": "seguridad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "relaciones": []
+  },
+  {
+    "id": "kv",
+    "nombre": "Azure Key Vault / Managed HSM / Claves y cifrado de campo por ámbito",
+    "tipo": "secretos",
+    "grupo": "seguridad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "relaciones": []
+  },
+  {
+    "id": "sentinel",
+    "nombre": "Microsoft Sentinel y Defender / SOC: solo incidentes agregados",
+    "tipo": "sentinel_azure",
+    "grupo": "seguridad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "relaciones": []
+  },
+  {
+    "id": "privado",
+    "nombre": "PIM / Bastion / Private Access / Administración y acceso remoto",
+    "tipo": "bastion_azure",
+    "grupo": "seguridad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-37, D-40–D-45; banda con instancias y permisos separados",
+    "relaciones": []
+  },
+  {
+    "id": "otel",
+    "nombre": "OpenTelemetry Collector / Por clúster y tienda · cola local 24 h",
+    "tipo": "otel_logo",
+    "grupo": "observabilidad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 1,
+    "decisiones": "D-47–D-53",
+    "relaciones": [
+      {
+        "de": "otel",
+        "a": "monitor",
+        "etiqueta": "OTLP por colector del ámbito; exportador pendiente",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "monitor",
+    "nombre": "Azure Monitor / Log Analytics / Espacios por ámbito; exportador a probar",
+    "tipo": "telemetria",
+    "grupo": "observabilidad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-47–D-53",
+    "relaciones": [
+      {
+        "de": "otel",
+        "a": "monitor",
+        "etiqueta": "OTLP por colector del ámbito; exportador pendiente",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "monitor",
+        "a": "grafana",
+        "etiqueta": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "grafana",
+    "nombre": "Prometheus / Azure Managed Grafana / Indicadores, anomalías y vista NOC",
+    "tipo": "grafana_azure",
+    "grupo": "observabilidad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 0,
+    "decisiones": "D-47–D-53",
+    "relaciones": [
+      {
+        "de": "monitor",
+        "a": "grafana",
+        "etiqueta": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+        "semantica": "condicionado"
+      }
+    ]
+  },
+  {
+    "id": "arc",
+    "nombre": "Azure Arc / Azure Monitor Agent / Operación de servidores locales",
+    "tipo": "arc_azure",
+    "grupo": "observabilidad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "objetivo",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-47–D-53",
+    "relaciones": []
+  },
+  {
+    "id": "rum",
+    "nombre": "Pruebas sintéticas y experiencia real / TLS y herramienta móvil pendientes",
+    "tipo": "telemetria",
+    "grupo": "observabilidad",
+    "ambito": "transversal",
+    "rol": "transversal",
+    "estado": "por_acreditar",
+    "entradas": 0,
+    "salidas": 0,
+    "decisiones": "D-47–D-53",
+    "relaciones": []
+  },
+  {
+    "id": "pl_r",
+    "nombre": "Azure Private Link",
+    "tipo": "private_link",
+    "grupo": "borde_r",
+    "ambito": "retail",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-11, D-14, D-45; conexión de Front Door al Application Gateway propio. Tránsito Brazil South sujeto a validación y aprobación de residencia.",
+    "relaciones": [
+      {
+        "de": "front_door",
+        "a": "pl_r",
+        "etiqueta": "Retail: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "pl_r",
+        "a": "appgw_r",
+        "semantica": "condicionado",
+        "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+      }
+    ]
+  },
+  {
+    "id": "pl_e",
+    "nombre": "Azure Private Link",
+    "tipo": "private_link",
+    "grupo": "borde_e",
+    "ambito": "emisor",
+    "rol": "operacion",
+    "estado": "por_acreditar",
+    "entradas": 1,
+    "salidas": 1,
+    "decisiones": "D-11, D-14, D-45; conexión de Front Door al Application Gateway propio. Tránsito Brazil South sujeto a validación y aprobación de residencia.",
+    "relaciones": [
+      {
+        "de": "front_door",
+        "a": "pl_e",
+        "etiqueta": "Filial: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "pl_e",
+        "a": "appgw_e",
+        "semantica": "condicionado",
+        "etiqueta": "Origen privado Application Gateway del ámbito; región y residencia por verificar"
+      }
+    ]
+  },
+  {
+    "id": "front_door",
+    "nombre": "Azure Front Door Premium / Retail / Filial: perfiles separados / WAF propio por ámbito · TLS 1.3 objetivo",
+    "tipo": "borde",
+    "grupo": "borde_comun",
+    "ambito": "transversal",
+    "rol": "producto_agrupado",
+    "estado": "por_acreditar",
+    "entradas": 4,
+    "salidas": 2,
+    "decisiones": "Última instrucción: no duplicar Front Door. Un único símbolo gráfico representa los dos perfiles separados aprobados en D-11. No constituye un perfil compartido ni autoriza cruce de rutas entre ámbitos.",
+    "relaciones": [
+      {
+        "de": "dns",
+        "a": "front_door",
+        "etiqueta": "Retail: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+        "semantica": "politica"
+      },
+      {
+        "de": "dns",
+        "a": "front_door",
+        "etiqueta": "Filial: host y perfil propios. Resolución de nombres / configuración; no es proxy",
+        "semantica": "politica"
+      },
+      {
+        "de": "front_door",
+        "a": "pl_r",
+        "etiqueta": "Retail: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "front_door",
+        "a": "pl_e",
+        "etiqueta": "Filial: perfil y origen exclusivos del ámbito. HTTPS por Azure Private Link · tránsito Brazil South condicionado a D-45",
+        "semantica": "condicionado"
+      },
+      {
+        "de": "web",
+        "a": "front_door",
+        "etiqueta": "Retail: host y perfil propios. API pública Retail",
+        "semantica": "solicitud"
+      },
+      {
+        "de": "portal_f",
+        "a": "front_door",
+        "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+        "semantica": "solicitud"
+      }
+    ]
+  }
+]

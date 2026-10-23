@@ -1,0 +1,9 @@
+Figura 4.34: Detalle lógico de Datos · alimentación, gobierno y modelos
+Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.
+
+Leyenda: verde Retail; lila Filial; gris productos agregados/transversales; amarillo control de cruces. Flechas por semántica de catálogo, sin evidencia documental visible.
+Ámbitos independientes: sin pipelines, catálogos, índices, BI ni credenciales comunes. X-01 se muestra como referencia a la vista principal; su bitácora no es una fuente analítica conjunta.
+MLflow y scikit-learn únicamente en Retail. Índice de negocio OpenSearch distinto de dependencia de catálogo.
+La operación inmediata no depende de carga del lago ni de Power BI; frescura y restauración deben medirse de extremo a extremo.
+Conectores anclados al contorno; SVG y draw.io usan los mismos puntos. El diagrama valida estructura gráfica, no despliegue ni cumplimiento. SD-03/04 sin cambios. Uso de IA: Alto, registrar al incorporar a la propuesta.
+Iconos de diagrams; OpenSearch y OpenMetadata de sus repositorios oficiales. Key Vault y Managed HSM usan icono de familia; Blackbox usa icono de Prometheus.

@@ -132,6 +132,66 @@
     "verificador": "pendiente",
     "comprobaciones": [],
     "fecha": "2026-10-11"
+  },
+  {
+    "artefacto": "T7-08-8.1",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Redacción y revisión del enfoque, roles, escalas y ciclo de revisión del plan de riesgos",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Revisión humana del contenido declarada por Manuel Aguilera", "Estructura y redacción comprobadas mecánicamente"],
+    "fecha": "2026-10-12"
+  },
+  {
+    "artefacto": "T7-08-8.2",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Identificación, calificación y análisis cuantitativo de riesgos y oportunidades; generación y revisión de figuras",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Alto",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Revisión humana del contenido declarada por Manuel Aguilera", "Sumas y simulación contrastadas con el modelo; folios cotejados con el Caso"],
+    "fecha": "2026-10-12"
+  },
+  {
+    "artefacto": "T7-08-8.3",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Redacción y revisión de respuestas, disparadores, análisis de esfuerzo y reservas",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Manuel Aguilera confirmó la reserva adicional de 3.688 HH y la meta de precio inferior a 3 %", "La asignación nominal de T-15 aún requiere conciliación con SD12"],
+    "fecha": "2026-10-12"
+  },
+  {
+    "artefacto": "T7-08-REF",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Preparación y cotejo de referencias del capítulo",
+    "nivel_texto": "Medio",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Revisión humana declarada por Manuel Aguilera", "Citas y folios contrastados con el PDF del Caso"],
+    "fecha": "2026-10-12"
+  },
+  {
+    "artefacto": "T7-08-IA",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Redacción de la declaración de uso de IA",
+    "nivel_texto": "Medio",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Manuel Aguilera pidió incluir la tabla y quedar identificado como revisor"],
+    "fecha": "2026-10-12"
+  },
+  {
+    "artefacto": "ADJ-021",
+    "herramienta": "Claude (Anthropic); OpenAI Codex",
+    "finalidad": "Redacción y revisión del registro de riesgos del Formulario T-16 en LaTeX",
+    "nivel_texto": "Alto",
+    "nivel_diagramas": "Ninguno",
+    "verificador": "Manuel Aguilera",
+    "comprobaciones": ["Revisión humana del anexo declarada por Manuel Aguilera", "Fuente editable y verificaciones mecánicas presentes; PDF de entrega pendiente"],
+    "fecha": "2026-10-12"
   }
 ]
 }

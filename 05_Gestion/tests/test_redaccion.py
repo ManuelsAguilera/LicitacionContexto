@@ -73,6 +73,15 @@ class ReglasTest(unittest.TestCase):
         cuerpo = "\\section{A}\n\nIntro.\n\nTabla 1.1: T.\n\n" + tabla(cols, [["1"] * 6]) + "\n\nConcluye.\n"
         self.assertIn("RR-17", reglas(revisar(cuerpo), "ERROR"))
 
+    def test_declaracion_ia_admite_seis_columnas_y_tabla_dominante(self):
+        filas = [["8.1", "Codex", "Redacción", "Alto", "Ninguno", "Manuel Aguilera"]] * 10
+        cuerpo = ("\\section{Declaración de uso de IA}\n\nUso registrado.\n\n"
+                  "Tabla 8.12: Declaración de uso de IA. Fuente: elaboración propia.\n\n"
+                  + tabla(["Sección", "Herramienta", "Finalidad", "Texto", "Diagramas", "Revisión humana"], filas)
+                  + "\n\nLa tabla identifica la revisión humana.\n")
+        self.assertNotIn("RR-17", reglas(revisar(cuerpo)))
+        self.assertNotIn("RR-05", reglas(revisar(cuerpo)))
+
     def test_rr16_concepto_descripcion_y_celdas_con_varias_frases(self):
         cuerpo = ("\\section{A}\n\nIntro.\n\nTabla 1.1: T.\n\n"
                   + tabla(["Concepto", "Descripción"], [["Uno", "Primera frase larga. Segunda frase que explica más."]])

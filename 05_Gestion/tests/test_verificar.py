@@ -64,6 +64,15 @@ class VerificarTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "fuera de la plantilla"):
                 ex.compile_part("T7-14", final=False)
 
+    def test_control_final_no_trata_todo_como_marcador(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "sd-99.tex"
+            path.write_text("Referencias. Declaración de uso de IA. Se revisó todo.", encoding="utf-8")
+            ex.check_final(path)
+            path.write_text("Referencias. Declaración de uso de IA. TODO", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "marcador pendiente"):
+                ex.check_final(path)
+
 
 if __name__ == "__main__":
     unittest.main()

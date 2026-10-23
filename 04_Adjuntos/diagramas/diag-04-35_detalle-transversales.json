@@ -1,0 +1,1086 @@
+{
+  "estilo": "L2",
+  "composicion": "bandas_horizontales",
+  "figura": "4.35",
+  "titulo": "Capas transversales · Seguridad y Observabilidad por ámbito",
+  "fuente": "Fuente: elaboración propia a partir de los registros de Datos y capas 7–8 del 22-10-2026, figura 4.31 y especificación de capa 4; diseño propuesto, sin acreditación de despliegue.",
+  "grupos": [
+    {
+      "id": "presentacion_r",
+      "etiqueta": "presentacion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "borde_r",
+      "etiqueta": "borde_r",
+      "frente": "retail"
+    },
+    {
+      "id": "api_r",
+      "etiqueta": "api_r",
+      "frente": "retail"
+    },
+    {
+      "id": "contratos_r",
+      "etiqueta": "contratos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "servicios_r",
+      "etiqueta": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "innovaciones",
+      "etiqueta": "innovaciones",
+      "frente": "retail"
+    },
+    {
+      "id": "datos_r",
+      "etiqueta": "datos_r",
+      "frente": "retail"
+    },
+    {
+      "id": "frontera",
+      "etiqueta": "frontera",
+      "frente": "frontera"
+    },
+    {
+      "id": "datos_x",
+      "etiqueta": "datos_x",
+      "frente": "frontera"
+    },
+    {
+      "id": "presentacion_e",
+      "etiqueta": "presentacion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_e",
+      "etiqueta": "borde_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "api_e",
+      "etiqueta": "api_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "servicios_e",
+      "etiqueta": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "datos_e",
+      "etiqueta": "datos_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "integracion_r",
+      "etiqueta": "integracion_r",
+      "frente": "retail"
+    },
+    {
+      "id": "integracion_e",
+      "etiqueta": "integracion_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "externos",
+      "etiqueta": "externos",
+      "frente": "externo"
+    },
+    {
+      "id": "seguridad",
+      "etiqueta": "seguridad",
+      "frente": "transversal"
+    },
+    {
+      "id": "observabilidad",
+      "etiqueta": "observabilidad",
+      "frente": "transversal"
+    },
+    {
+      "id": "tecnologias",
+      "etiqueta": "tecnologias",
+      "frente": "transversal"
+    },
+    {
+      "id": "actores_r",
+      "etiqueta": "actores_r",
+      "frente": "retail"
+    },
+    {
+      "id": "actores_e",
+      "etiqueta": "actores_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "borde_comun",
+      "etiqueta": "Borde (símbolos por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "api_comun",
+      "etiqueta": "API Management (símbolo por producto)",
+      "frente": "transversal"
+    },
+    {
+      "id": "area_mercaderia",
+      "etiqueta": "Mercadería",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_venta",
+      "etiqueta": "Venta",
+      "frente": "retail",
+      "padre": "servicios_r"
+    },
+    {
+      "id": "area_clientes",
+      "etiqueta": "Relación con el cliente",
+      "frente": "retail",
+      "padre": "servicios_r"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "x01",
+      "etiqueta": "X-01 · bitácora propia\nCorrelación mínima autorizada",
+      "tipo": "politica_x01",
+      "grupo": "frontera",
+      "codigo": "X-01"
+    },
+    {
+      "id": "source_r",
+      "etiqueta": "Canales, servicios, datos y trabajadores\nRUM público entra por borde / APIM propio\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "admin_r",
+      "etiqueta": "Administradores y equipos compatibles\nIdentidad, cumplimiento y privilegios\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "resources_r",
+      "etiqueta": "Recursos privados autorizados\nMáquinas / APIs de administración propias\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "platform_r",
+      "etiqueta": "Recursos Azure y endpoints propios\nPlataforma, tiendas, CI/CD e incidentes\nRetail",
+      "tipo": "azure",
+      "grupo": "servicios_r",
+      "frente": "retail"
+    },
+    {
+      "id": "entra_r",
+      "etiqueta": "Microsoft Entra ID P2\nPersonal, MFA y acceso condicional\nRetail",
+      "tipo": "identidad",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "external_r",
+      "etiqueta": "Microsoft Entra External ID\nClientes / titulares del ámbito\nRetail",
+      "tipo": "external_id",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "intune_r",
+      "etiqueta": "Microsoft Intune\nDispositivos compatibles y modo compartido\nRetail",
+      "tipo": "intune",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "workload_r",
+      "etiqueta": "Managed / Workload Identity\nIdentidades de cargas y permisos mínimos\nRetail",
+      "tipo": "workload_identity",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "kv_r",
+      "etiqueta": "Azure Key Vault\nSecretos y certificados\nRetail",
+      "tipo": "secretos",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "hsm_r",
+      "etiqueta": "Azure Managed HSM\nClaves y envoltura de claves de datos\nRetail",
+      "tipo": "secretos",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "pim_r",
+      "etiqueta": "Microsoft Entra PIM\nElevación temporal y aprobación\nRetail",
+      "tipo": "pim",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "bastion_r",
+      "etiqueta": "Azure Bastion Premium\nSalto y grabación de máquinas compatibles\nRetail",
+      "tipo": "bastion_azure",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "private_r",
+      "etiqueta": "Microsoft Entra Private Access\nAcceso administrativo a recursos privados\nRetail",
+      "tipo": "private_access",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "endpoint_r",
+      "etiqueta": "Microsoft Defender for Endpoint\nProtección de equipos compatibles\nRetail",
+      "tipo": "defender_endpoint",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "cloud_r",
+      "etiqueta": "Microsoft Defender for Cloud\nPlanes de cargas expresamente cubiertas\nRetail",
+      "tipo": "defender_cloud",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "sentinel_r",
+      "etiqueta": "Microsoft Sentinel\nSIEM · conectores y eventos seleccionados\nRetail",
+      "tipo": "sentinel_azure",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "otel_r",
+      "etiqueta": "OpenTelemetry Collector\nInstrumentación / RUM · colas durables\nRetail",
+      "tipo": "otel_logo",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "prom_r",
+      "etiqueta": "Prometheus\nMétricas · OTLP HTTP / scrape\nRetail",
+      "tipo": "prometheus",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "loki_r",
+      "etiqueta": "Grafana Loki\nRegistros operacionales saneados\nRetail",
+      "tipo": "loki",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "tempo_r",
+      "etiqueta": "Grafana Tempo\nTrazas saneadas\nRetail",
+      "tipo": "tempo",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "monitor_r",
+      "etiqueta": "Azure Monitor / Log Analytics\nDiagnóstico Azure y seguridad necesaria\nRetail",
+      "tipo": "telemetria",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "grafana_r",
+      "etiqueta": "Grafana autogestionado\nConsultas y Grafana Alerting integrado\nRetail",
+      "tipo": "grafana",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "blackbox_r",
+      "etiqueta": "Prometheus Blackbox Exporter\nSondas externas e internas independientes\nRetail",
+      "tipo": "prometheus",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "stage_r",
+      "etiqueta": "Azure Blob Storage temporal\nGrabaciones: mutable, sin versionado\nRetail",
+      "tipo": "blob",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "audit_r",
+      "etiqueta": "Trabajador durable de auditoría\nCopiar, verificar y registrar integridad\nRetail",
+      "tipo": "adaptadores",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "worm_r",
+      "etiqueta": "Azure Blob Storage WORM\nArchivo y evidencia propia del ámbito\nRetail",
+      "tipo": "blob",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "soc_r",
+      "etiqueta": "SOC del ámbito · operación 24×7\nAnalistas, escalamiento y respuesta\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "seguridad",
+      "frente": "retail"
+    },
+    {
+      "id": "local_r",
+      "etiqueta": "OpenTelemetry Collector local\nCola persistente de al menos 24 horas\nRetail",
+      "tipo": "otel_logo",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "noc_r",
+      "etiqueta": "NOC y avisos propios del ámbito\nSalud mínima autorizada; sin payload sensible\nRetail",
+      "tipo": "funcion_logica",
+      "grupo": "observabilidad",
+      "frente": "retail"
+    },
+    {
+      "id": "source_e",
+      "etiqueta": "Canales, servicios, datos y trabajadores\nRUM público entra por borde / APIM propio\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "admin_e",
+      "etiqueta": "Administradores y equipos compatibles\nIdentidad, cumplimiento y privilegios\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "resources_e",
+      "etiqueta": "Recursos privados autorizados\nMáquinas / APIs de administración propias\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "platform_e",
+      "etiqueta": "Recursos Azure y endpoints propios\nPlataforma, tiendas, CI/CD e incidentes\nFilial",
+      "tipo": "azure",
+      "grupo": "servicios_e",
+      "frente": "emisor"
+    },
+    {
+      "id": "entra_e",
+      "etiqueta": "Microsoft Entra ID P2\nPersonal, MFA y acceso condicional\nFilial",
+      "tipo": "identidad",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "external_e",
+      "etiqueta": "Microsoft Entra External ID\nClientes / titulares del ámbito\nFilial",
+      "tipo": "external_id",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "intune_e",
+      "etiqueta": "Microsoft Intune\nDispositivos compatibles y modo compartido\nFilial",
+      "tipo": "intune",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "workload_e",
+      "etiqueta": "Managed / Workload Identity\nIdentidades de cargas y permisos mínimos\nFilial",
+      "tipo": "workload_identity",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "kv_e",
+      "etiqueta": "Azure Key Vault\nSecretos y certificados\nFilial",
+      "tipo": "secretos",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "hsm_e",
+      "etiqueta": "Azure Managed HSM\nClaves y envoltura de claves de datos\nFilial",
+      "tipo": "secretos",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "pim_e",
+      "etiqueta": "Microsoft Entra PIM\nElevación temporal y aprobación\nFilial",
+      "tipo": "pim",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "bastion_e",
+      "etiqueta": "Azure Bastion Premium\nSalto y grabación de máquinas compatibles\nFilial",
+      "tipo": "bastion_azure",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "private_e",
+      "etiqueta": "Microsoft Entra Private Access\nAcceso administrativo a recursos privados\nFilial",
+      "tipo": "private_access",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "endpoint_e",
+      "etiqueta": "Microsoft Defender for Endpoint\nProtección de equipos compatibles\nFilial",
+      "tipo": "defender_endpoint",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "cloud_e",
+      "etiqueta": "Microsoft Defender for Cloud\nPlanes de cargas expresamente cubiertas\nFilial",
+      "tipo": "defender_cloud",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "sentinel_e",
+      "etiqueta": "Microsoft Sentinel\nSIEM · conectores y eventos seleccionados\nFilial",
+      "tipo": "sentinel_azure",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "otel_e",
+      "etiqueta": "OpenTelemetry Collector\nInstrumentación / RUM · colas durables\nFilial",
+      "tipo": "otel_logo",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "prom_e",
+      "etiqueta": "Prometheus\nMétricas · OTLP HTTP / scrape\nFilial",
+      "tipo": "prometheus",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "loki_e",
+      "etiqueta": "Grafana Loki\nRegistros operacionales saneados\nFilial",
+      "tipo": "loki",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "tempo_e",
+      "etiqueta": "Grafana Tempo\nTrazas saneadas\nFilial",
+      "tipo": "tempo",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "monitor_e",
+      "etiqueta": "Azure Monitor / Log Analytics\nDiagnóstico Azure y seguridad necesaria\nFilial",
+      "tipo": "telemetria",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "grafana_e",
+      "etiqueta": "Grafana autogestionado\nConsultas y Grafana Alerting integrado\nFilial",
+      "tipo": "grafana",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "blackbox_e",
+      "etiqueta": "Prometheus Blackbox Exporter\nSondas externas e internas independientes\nFilial",
+      "tipo": "prometheus",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "stage_e",
+      "etiqueta": "Azure Blob Storage temporal\nGrabaciones: mutable, sin versionado\nFilial",
+      "tipo": "blob",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "audit_e",
+      "etiqueta": "Trabajador durable de auditoría\nCopiar, verificar y registrar integridad\nFilial",
+      "tipo": "adaptadores",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "worm_e",
+      "etiqueta": "Azure Blob Storage WORM\nArchivo y evidencia propia del ámbito\nFilial",
+      "tipo": "blob",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "soc_e",
+      "etiqueta": "SOC del ámbito · operación 24×7\nAnalistas, escalamiento y respuesta\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "seguridad",
+      "frente": "emisor"
+    },
+    {
+      "id": "local_e",
+      "etiqueta": "OpenTelemetry Collector local\nCola persistente de al menos 24 horas\nFilial",
+      "tipo": "otel_logo",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    },
+    {
+      "id": "noc_e",
+      "etiqueta": "NOC y avisos propios del ámbito\nSalud mínima autorizada; sin payload sensible\nFilial",
+      "tipo": "funcion_logica",
+      "grupo": "observabilidad",
+      "frente": "emisor"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "source_r",
+      "a": "entra_r",
+      "semantica": "politica",
+      "etiqueta": "Autenticación interna; JWT se valida localmente, no consulta por cada solicitud; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "external_r",
+      "semantica": "politica",
+      "etiqueta": "Autenticación de clientes o titulares con emisor propio; solo Retail"
+    },
+    {
+      "de": "intune_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Administrar solo equipos compatibles; revocación sin enlace no inmediata; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "workload_r",
+      "semantica": "politica",
+      "etiqueta": "Tokens de cargas/pods/pipelines con permisos por recurso; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "kv_r",
+      "semantica": "solicitud",
+      "etiqueta": "Lectura autorizada de secretos y certificados; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "hsm_r",
+      "semantica": "solicitud",
+      "etiqueta": "Operaciones criptográficas / envoltura DEK por propietario; solo Retail"
+    },
+    {
+      "de": "admin_r",
+      "a": "entra_r",
+      "semantica": "politica",
+      "etiqueta": "Identidad y MFA de administradores; solo Retail"
+    },
+    {
+      "de": "pim_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Autorizar elevación temporal; PIM no transporta sesiones; solo Retail"
+    },
+    {
+      "de": "admin_r",
+      "a": "private_r",
+      "semantica": "solicitud",
+      "etiqueta": "Acceso remoto autorizado por identidad, aplicación y recurso; solo Retail"
+    },
+    {
+      "de": "private_r",
+      "a": "resources_r",
+      "semantica": "solicitud",
+      "etiqueta": "Ruta autorizada a recursos privados; no sustituye VPN corporativa; solo Retail"
+    },
+    {
+      "de": "admin_r",
+      "a": "bastion_r",
+      "semantica": "solicitud",
+      "etiqueta": "Sesión administrativa autorizada para máquinas compatibles; solo Retail"
+    },
+    {
+      "de": "bastion_r",
+      "a": "resources_r",
+      "semantica": "solicitud",
+      "etiqueta": "Salto administrativo a máquinas compatibles; no todas las APIs; solo Retail"
+    },
+    {
+      "de": "endpoint_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Protección y detección de equipos con agente soportado; solo Retail"
+    },
+    {
+      "de": "cloud_r",
+      "a": "platform_r",
+      "semantica": "politica",
+      "etiqueta": "Planes y cobertura de cargas declarados; solo Retail"
+    },
+    {
+      "de": "entra_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Eventos de identidad por conectores soportados; solo Retail"
+    },
+    {
+      "de": "endpoint_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones seleccionadas; solo Retail"
+    },
+    {
+      "de": "cloud_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones de cargas seleccionadas; solo Retail"
+    },
+    {
+      "de": "kv_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnóstico de acceso y operación de claves/secretos; solo Retail"
+    },
+    {
+      "de": "hsm_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría criptográfica soportada; solo Retail"
+    },
+    {
+      "de": "sentinel_r",
+      "a": "soc_r",
+      "semantica": "flujo",
+      "etiqueta": "Incidentes y correlación con permisos del equipo; solo Retail"
+    },
+    {
+      "de": "bastion_r",
+      "a": "stage_r",
+      "semantica": "persistencia",
+      "etiqueta": "Destino inicial de grabación mutable, sin política WORM ni versionado; solo Retail"
+    },
+    {
+      "de": "stage_r",
+      "a": "audit_r",
+      "semantica": "flujo",
+      "etiqueta": "Procesar grabación y verificar copia antes de cerrar retención; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "audit_r",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría de negocio durable, distinta de logs muestreados; solo Retail"
+    },
+    {
+      "de": "audit_r",
+      "a": "worm_r",
+      "semantica": "persistencia",
+      "etiqueta": "Copia verificada, manifiesto e integridad bajo retención propia; solo Retail"
+    },
+    {
+      "de": "source_r",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Telemetría saneada; RUM público mediante ingreso de borde/gateway autorizado; solo Retail"
+    },
+    {
+      "de": "local_r",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Drenar cola local tras reconexión por red privada autorizada; solo Retail"
+    },
+    {
+      "de": "platform_r",
+      "a": "local_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo componentes locales y heartbeat; diferenciar no observable de fallo confirmado; solo Retail"
+    },
+    {
+      "de": "otel_r",
+      "a": "loki_r",
+      "semantica": "publicacion",
+      "etiqueta": "Registros mediante OTLP HTTP autenticado; solo Retail"
+    },
+    {
+      "de": "otel_r",
+      "a": "tempo_r",
+      "semantica": "publicacion",
+      "etiqueta": "Trazas mediante OTLP soportado; solo Retail"
+    },
+    {
+      "de": "otel_r",
+      "a": "prom_r",
+      "semantica": "publicacion",
+      "etiqueta": "Métricas mediante receptor OTLP HTTP habilitado y protegido; solo Retail"
+    },
+    {
+      "de": "prom_r",
+      "a": "platform_r",
+      "semantica": "solicitud",
+      "etiqueta": "Scrape de métricas/endpoints/exportadores y registro DORA; evitar doble serie; solo Retail"
+    },
+    {
+      "de": "platform_r",
+      "a": "monitor_r",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnósticos Azure soportados y fuentes necesarias para seguridad; solo Retail"
+    },
+    {
+      "de": "grafana_r",
+      "a": "prom_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar métricas y SLO con credenciales de lectura; solo Retail"
+    },
+    {
+      "de": "grafana_r",
+      "a": "loki_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar registros operacionales autorizados; solo Retail"
+    },
+    {
+      "de": "grafana_r",
+      "a": "tempo_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar trazas autorizadas; solo Retail"
+    },
+    {
+      "de": "grafana_r",
+      "a": "monitor_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar diagnóstico Azure con autenticación soportada; solo Retail"
+    },
+    {
+      "de": "grafana_r",
+      "a": "noc_r",
+      "semantica": "flujo",
+      "etiqueta": "Alerting integrado: avisos, agrupación y escalamiento sin payloads sensibles; solo Retail"
+    },
+    {
+      "de": "blackbox_r",
+      "a": "platform_r",
+      "semantica": "solicitud",
+      "etiqueta": "Probar DNS/TLS/URL segura pública y salud privada desde ubicaciones independientes; solo Retail"
+    },
+    {
+      "de": "prom_r",
+      "a": "blackbox_r",
+      "semantica": "solicitud",
+      "etiqueta": "Recoger resultados de sondas de endpoints; solo Retail"
+    },
+    {
+      "de": "blackbox_r",
+      "a": "noc_r",
+      "semantica": "flujo",
+      "etiqueta": "Observador independiente y ruta de aviso sobreviven a la falla monitorizada; solo Retail"
+    },
+    {
+      "de": "source_e",
+      "a": "entra_e",
+      "semantica": "politica",
+      "etiqueta": "Autenticación interna; JWT se valida localmente, no consulta por cada solicitud; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "external_e",
+      "semantica": "politica",
+      "etiqueta": "Autenticación de clientes o titulares con emisor propio; solo Filial"
+    },
+    {
+      "de": "intune_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Administrar solo equipos compatibles; revocación sin enlace no inmediata; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "workload_e",
+      "semantica": "politica",
+      "etiqueta": "Tokens de cargas/pods/pipelines con permisos por recurso; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "kv_e",
+      "semantica": "solicitud",
+      "etiqueta": "Lectura autorizada de secretos y certificados; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "hsm_e",
+      "semantica": "solicitud",
+      "etiqueta": "Operaciones criptográficas / envoltura DEK por propietario; solo Filial"
+    },
+    {
+      "de": "admin_e",
+      "a": "entra_e",
+      "semantica": "politica",
+      "etiqueta": "Identidad y MFA de administradores; solo Filial"
+    },
+    {
+      "de": "pim_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Autorizar elevación temporal; PIM no transporta sesiones; solo Filial"
+    },
+    {
+      "de": "admin_e",
+      "a": "private_e",
+      "semantica": "solicitud",
+      "etiqueta": "Acceso remoto autorizado por identidad, aplicación y recurso; solo Filial"
+    },
+    {
+      "de": "private_e",
+      "a": "resources_e",
+      "semantica": "solicitud",
+      "etiqueta": "Ruta autorizada a recursos privados; no sustituye VPN corporativa; solo Filial"
+    },
+    {
+      "de": "admin_e",
+      "a": "bastion_e",
+      "semantica": "solicitud",
+      "etiqueta": "Sesión administrativa autorizada para máquinas compatibles; solo Filial"
+    },
+    {
+      "de": "bastion_e",
+      "a": "resources_e",
+      "semantica": "solicitud",
+      "etiqueta": "Salto administrativo a máquinas compatibles; no todas las APIs; solo Filial"
+    },
+    {
+      "de": "endpoint_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Protección y detección de equipos con agente soportado; solo Filial"
+    },
+    {
+      "de": "cloud_e",
+      "a": "platform_e",
+      "semantica": "politica",
+      "etiqueta": "Planes y cobertura de cargas declarados; solo Filial"
+    },
+    {
+      "de": "entra_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Eventos de identidad por conectores soportados; solo Filial"
+    },
+    {
+      "de": "endpoint_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones seleccionadas; solo Filial"
+    },
+    {
+      "de": "cloud_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones de cargas seleccionadas; solo Filial"
+    },
+    {
+      "de": "kv_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnóstico de acceso y operación de claves/secretos; solo Filial"
+    },
+    {
+      "de": "hsm_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría criptográfica soportada; solo Filial"
+    },
+    {
+      "de": "sentinel_e",
+      "a": "soc_e",
+      "semantica": "flujo",
+      "etiqueta": "Incidentes y correlación con permisos del equipo; solo Filial"
+    },
+    {
+      "de": "bastion_e",
+      "a": "stage_e",
+      "semantica": "persistencia",
+      "etiqueta": "Destino inicial de grabación mutable, sin política WORM ni versionado; solo Filial"
+    },
+    {
+      "de": "stage_e",
+      "a": "audit_e",
+      "semantica": "flujo",
+      "etiqueta": "Procesar grabación y verificar copia antes de cerrar retención; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "audit_e",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría de negocio durable, distinta de logs muestreados; solo Filial"
+    },
+    {
+      "de": "audit_e",
+      "a": "worm_e",
+      "semantica": "persistencia",
+      "etiqueta": "Copia verificada, manifiesto e integridad bajo retención propia; solo Filial"
+    },
+    {
+      "de": "source_e",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Telemetría saneada; RUM público mediante ingreso de borde/gateway autorizado; solo Filial"
+    },
+    {
+      "de": "local_e",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Drenar cola local tras reconexión por red privada autorizada; solo Filial"
+    },
+    {
+      "de": "platform_e",
+      "a": "local_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo componentes locales y heartbeat; diferenciar no observable de fallo confirmado; solo Filial"
+    },
+    {
+      "de": "otel_e",
+      "a": "loki_e",
+      "semantica": "publicacion",
+      "etiqueta": "Registros mediante OTLP HTTP autenticado; solo Filial"
+    },
+    {
+      "de": "otel_e",
+      "a": "tempo_e",
+      "semantica": "publicacion",
+      "etiqueta": "Trazas mediante OTLP soportado; solo Filial"
+    },
+    {
+      "de": "otel_e",
+      "a": "prom_e",
+      "semantica": "publicacion",
+      "etiqueta": "Métricas mediante receptor OTLP HTTP habilitado y protegido; solo Filial"
+    },
+    {
+      "de": "prom_e",
+      "a": "platform_e",
+      "semantica": "solicitud",
+      "etiqueta": "Scrape de métricas/endpoints/exportadores y registro DORA; evitar doble serie; solo Filial"
+    },
+    {
+      "de": "platform_e",
+      "a": "monitor_e",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnósticos Azure soportados y fuentes necesarias para seguridad; solo Filial"
+    },
+    {
+      "de": "grafana_e",
+      "a": "prom_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar métricas y SLO con credenciales de lectura; solo Filial"
+    },
+    {
+      "de": "grafana_e",
+      "a": "loki_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar registros operacionales autorizados; solo Filial"
+    },
+    {
+      "de": "grafana_e",
+      "a": "tempo_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar trazas autorizadas; solo Filial"
+    },
+    {
+      "de": "grafana_e",
+      "a": "monitor_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar diagnóstico Azure con autenticación soportada; solo Filial"
+    },
+    {
+      "de": "grafana_e",
+      "a": "noc_e",
+      "semantica": "flujo",
+      "etiqueta": "Alerting integrado: avisos, agrupación y escalamiento sin payloads sensibles; solo Filial"
+    },
+    {
+      "de": "blackbox_e",
+      "a": "platform_e",
+      "semantica": "solicitud",
+      "etiqueta": "Probar DNS/TLS/URL segura pública y salud privada desde ubicaciones independientes; solo Filial"
+    },
+    {
+      "de": "prom_e",
+      "a": "blackbox_e",
+      "semantica": "solicitud",
+      "etiqueta": "Recoger resultados de sondas de endpoints; solo Filial"
+    },
+    {
+      "de": "blackbox_e",
+      "a": "noc_e",
+      "semantica": "flujo",
+      "etiqueta": "Observador independiente y ruta de aviso sobreviven a la falla monitorizada; solo Filial"
+    },
+    {
+      "de": "x01",
+      "a": "audit_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Retail del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    {
+      "de": "x01",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Retail del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    {
+      "de": "x01",
+      "a": "audit_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Filial del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    {
+      "de": "x01",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Filial del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    {
+      "de": "workload_r",
+      "a": "platform_r",
+      "semantica": "politica",
+      "etiqueta": "Obtener tokens para recursos Azure compatibles del propio ámbito; permisos por recurso, no secretos estáticos ni acceso universal."
+    },
+    {
+      "de": "workload_e",
+      "a": "platform_e",
+      "semantica": "politica",
+      "etiqueta": "Obtener tokens para recursos Azure compatibles del propio ámbito; permisos por recurso, no secretos estáticos ni acceso universal."
+    }
+  ],
+  "notas": [
+    "Una sola banda de Capas transversales contiene 7 Seguridad y 8 Observabilidad. Recursos y permisos separados por negocio; las relaciones son familias de contratos, no una cadena por solicitud.",
+    "No hay Collector → Azure Monitor en la base productiva. Grafana consulta sus fuentes; Loki/Tempo/Prometheus tienen almacenes y políticas propias.",
+    "Cada extremo del contrato X-01 emite auditoría/telemetría únicamente a su ámbito; correlación mínima autorizada, sin colector compartido ni agregado de payload financiero.",
+    "Seguridad: 12 meses en línea y 24 adicionales de archivo; respaldo, diagnóstico y auditoría de negocio tienen otras políticas. Región, residencia, licencias, capacidad y pruebas siguen pendientes."
+  ]
+}

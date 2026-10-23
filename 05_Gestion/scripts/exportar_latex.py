@@ -285,19 +285,29 @@ def check_final(tex: Path) -> None:
     for heading in required:
         if heading not in body:
             raise ValueError(f"{tex.name}: falta {heading} para la exportación final")
-    if re.search(r"\bTODO\b|\[VERIFICAR\]", body, re.I):
+    if re.search(r"\bTODO\b|\[VERIFICAR\]", body):
         raise ValueError(f"{tex.name}: contiene un marcador pendiente")
 
 
-def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
-    tex = main_tex(part)
+def compile_part(part: str, final: bool, attachment: str | None = None) -> tuple[str, Path, float, int]:
+    if attachment:
+        if final:
+            raise ValueError("Los adjuntos se compilan como vista previa; la entrega final se prepara por separado")
+        if Path(attachment).name != attachment or not attachment.endswith(".tex"):
+            raise ValueError("--adjunto debe ser el nombre de un archivo .tex, sin directorios")
+        tex = main_tex(part).parent / attachment
+        registered = json.loads((ROOT / "05_Gestion" / "adjuntos.json").read_text(encoding="utf-8"))
+        if not any(item["parte"] == part and item["ruta"] == str(tex.relative_to(ROOT)) for item in registered):
+            raise ValueError(f"{attachment} no está registrado como adjunto de {part}")
+    else:
+        tex = main_tex(part)
     if not tex.is_file():
         raise FileNotFoundError(f"{part}: falta {tex.relative_to(ROOT)}; importar primero")
     require_valid(tex)
     if final:
         check_final(tex)
     start = time.perf_counter()
-    outdir = BUILD / part
+    outdir = BUILD / part / tex.stem if attachment else BUILD / part
     outdir.mkdir(parents=True, exist_ok=True)
     command = ["latexmk", "-xelatex", "-interaction=nonstopmode", "-halt-on-error", "-file-line-error", f"-outdir={outdir}", str(tex.relative_to(LATEX))]
     result = subprocess.run(command, cwd=LATEX, capture_output=True, text=True)
@@ -312,7 +322,9 @@ def compile_part(part: str, final: bool) -> tuple[str, Path, float, int]:
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         if abs(width - 612) > 2 or abs(height - 792) > 2:
             raise RuntimeError(f"{part}: tamaño distinto de carta ({width:.1f} × {height:.1f} pt)")
-    dest = (OFFICIAL if final else PREVIEWS) / (f"{EMPRESA}-Subdocumento{int(part[-2:])}.pdf" if final else f"{part}_latex_preview.pdf")
+    name = (f"{part}_{tex.stem}_preview.pdf" if attachment else
+            f"{EMPRESA}-Subdocumento{int(part[-2:])}.pdf" if final else f"{part}_latex_preview.pdf")
+    dest = (OFFICIAL if final else PREVIEWS) / name
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(pdf, dest)
     return part, dest, time.perf_counter() - start, len(reader.pages)
@@ -367,6 +379,7 @@ def main() -> int:
     comp.add_argument("--todo", action="store_true")
     comp.add_argument("--final", action="store_true", help="publica en los entregables tras controles mínimos")
     comp.add_argument("--trabajadores", type=int, default=2)
+    comp.add_argument("--adjunto", help="compila un adjunto .tex registrado como vista previa")
     sub.add_parser("estado", help="muestra fuentes .tex disponibles y si respetan la plantilla")
     ver = sub.add_parser("verificar", help="comprueba que los .tex respeten la plantilla corporativa")
     ver.add_argument("--parte", choices=PARTS)
@@ -434,6 +447,8 @@ def main() -> int:
             return 1 if failed else 0
         if bool(args.parte) == bool(args.todo):
             raise ValueError("Indicar exactamente --parte T7-NN o --todo")
+        if args.accion == "compilar" and args.adjunto and (args.todo or args.final):
+            raise ValueError("--adjunto requiere --parte y vista previa sin --final")
         if args.accion == "importar":
             requested = [args.parte] if args.parte else PARTS
             failures = []
@@ -452,7 +467,7 @@ def main() -> int:
                 raise ValueError("--trabajadores debe ser positivo")
             compile_all(args.final, args.trabajadores)
         else:
-            part, dest, seconds, pages = compile_part(args.parte, args.final)
+            part, dest, seconds, pages = compile_part(args.parte, args.final, args.adjunto)
             print(f"{part}: {dest.relative_to(ROOT)} ({pages} páginas, {seconds:.1f} s)")
         return 0
     except Exception as exc:

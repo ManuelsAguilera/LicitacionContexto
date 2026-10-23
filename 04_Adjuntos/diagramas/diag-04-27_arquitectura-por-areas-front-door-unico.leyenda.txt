@@ -1,0 +1,15 @@
+Figura 4.27: Arquitectura lógica por capas y servicios de plataforma
+Fuente: Elaboración propia: registro de decisiones del usuario D-01–D-56 e imagen recibidos el 22-10-2026; contraste con la figura 4.26. Diseño propuesto, sin modificar SD-03/04.
+
+Leyenda:
+Seis franjas tenues: presentación amarillo, borde naranja, gateway verde, servicios rojo, integración azul, datos violeta. Capas 7 y 8 grises. Actores externos a las capas.
+Tarjetas verdes y punto azul: Retail; lilas y punto morado: Filial; control X-01 amarillo; plataformas transversales grises. La agrupación nunca implica recursos o datos compartidos.
+Iconos Azure del catálogo local diagrams; Managed Redis usa el icono de familia Redis, Managed HSM el de Key Vault, Power BI el de familia Power BI Embedded. OpenTelemetry: icono CNCF.
+Flechas: API azul, persistencia verde, publicación naranja, consumo violeta, contrato externo celeste. Dorado punteado: gobierno/capacidad; gris discontinuo: relación por validar. * decisión, disponibilidad o compatibilidad pendiente.
+Azure DNS resuelve nombres, API Center gobierna contratos y AKS aloja cargas: no son saltos adicionales de las peticiones. Capas 7/8 aplican por ámbito sin dibujar todas sus dependencias.
+Un único símbolo Front Door representa dos perfiles propios; host/rutas separados por ámbito, sin tráfico cruzado implícito.
+Front Door Premium → Azure Private Link → Application Gateway v2 → APIM Premium clásico. Entrada privada de tiendas/CD/DC-01 omite Front Door. Brazil South y residencia de la Filial condicionados a D-45.
+Ventana de continuidad: ventas/oferta locales en capa 4, sincronizador en 5, diario Retail y VM de cupo de Filial separados en 6.
+Servicios comunes, coordinadores, respaldo, ingestión analítica y archivo conservan contratos pendientes. El inventario adjunto distingue tarjetas sin aristas intencionales y vacíos funcionales.
+Servicios de capa 4 agrupados en Mercadería, Venta, Relación con el cliente y Crédito; X-01 media el cruce. Plataformas externas en esta capa por relación funcional, con traductores separados en capa 5. No se incorpora F:C-04 de la referencia.
+No se certifica cumplimiento ni se cambian SD-03/04. Registrar asistencia IA nivel Alto en Tabla 4.17 cuando se incorpore a la oferta.

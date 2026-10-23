@@ -1,0 +1,5554 @@
+[
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "entra_r",
+      "semantica": "politica",
+      "etiqueta": "Autenticación interna; JWT se valida localmente, no consulta por cada solicitud; solo Retail"
+    },
+    "points": [
+      [
+        280.0,
+        488
+      ],
+      [
+        280.0,
+        577
+      ]
+    ],
+    "source": {
+      "point": [
+        280.0,
+        488
+      ],
+      "stub": [
+        280.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        280.0,
+        577
+      ],
+      "stub": [
+        280.0,
+        568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "external_r",
+      "semantica": "politica",
+      "etiqueta": "Autenticación de clientes o titulares con emisor propio; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        410.996
+      ],
+      [
+        487,
+        410.996
+      ],
+      [
+        487,
+        647.5
+      ],
+      [
+        507,
+        647.5
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        410.996
+      ],
+      "stub": [
+        487,
+        410.996
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        507,
+        647.5
+      ],
+      "stub": [
+        498,
+        647.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "intune_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Administrar solo equipos compatibles; revocación sin enlace no inmediata; solo Retail"
+    },
+    "points": [
+      [
+        932,
+        647.5
+      ],
+      [
+        923,
+        647.5
+      ],
+      [
+        923,
+        425.0
+      ],
+      [
+        903,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        932,
+        647.5
+      ],
+      "stub": [
+        923,
+        647.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        903,
+        425.0
+      ],
+      "stub": [
+        912,
+        425.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "workload_r",
+      "semantica": "politica",
+      "etiqueta": "Tokens de cargas/pods/pipelines con permisos por recurso; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        439.004
+      ],
+      [
+        487,
+        439.004
+      ],
+      [
+        487,
+        574
+      ],
+      [
+        1348,
+        574
+      ],
+      [
+        1348,
+        631.745
+      ],
+      [
+        1357,
+        631.745
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        439.004
+      ],
+      "stub": [
+        487,
+        439.004
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        631.745
+      ],
+      "stub": [
+        1348,
+        631.745
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "kv_r",
+      "semantica": "solicitud",
+      "etiqueta": "Lectura autorizada de secretos y certificados; solo Retail"
+    },
+    "points": [
+      [
+        234.487,
+        488
+      ],
+      [
+        234.487,
+        497
+      ],
+      [
+        79,
+        497
+      ],
+      [
+        79,
+        793
+      ],
+      [
+        280.0,
+        793
+      ],
+      [
+        280.0,
+        802
+      ]
+    ],
+    "source": {
+      "point": [
+        234.487,
+        488
+      ],
+      "stub": [
+        234.487,
+        497
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        280.0,
+        802
+      ],
+      "stub": [
+        280.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "hsm_r",
+      "semantica": "solicitud",
+      "etiqueta": "Operaciones criptográficas / envoltura DEK por propietario; solo Retail"
+    },
+    "points": [
+      [
+        280.0,
+        488
+      ],
+      [
+        280.0,
+        497
+      ],
+      [
+        481,
+        497
+      ],
+      [
+        481,
+        793
+      ],
+      [
+        705.0,
+        793
+      ],
+      [
+        705.0,
+        802
+      ]
+    ],
+    "source": {
+      "point": [
+        280.0,
+        488
+      ],
+      "stub": [
+        280.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        705.0,
+        802
+      ],
+      "stub": [
+        705.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_r",
+      "a": "entra_r",
+      "semantica": "politica",
+      "etiqueta": "Identidad y MFA de administradores; solo Retail"
+    },
+    "points": [
+      [
+        507,
+        425.0
+      ],
+      [
+        498,
+        425.0
+      ],
+      [
+        498,
+        631.745
+      ],
+      [
+        478,
+        631.745
+      ]
+    ],
+    "source": {
+      "point": [
+        507,
+        425.0
+      ],
+      "stub": [
+        498,
+        425.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        478,
+        631.745
+      ],
+      "stub": [
+        487,
+        631.745
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pim_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Autorizar elevación temporal; PIM no transporta sesiones; solo Retail"
+    },
+    "points": [
+      [
+        280.0,
+        1027
+      ],
+      [
+        280.0,
+        1018
+      ],
+      [
+        504,
+        1018
+      ],
+      [
+        504,
+        497
+      ],
+      [
+        623.1,
+        497
+      ],
+      [
+        623.1,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        280.0,
+        1027
+      ],
+      "stub": [
+        280.0,
+        1018
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        623.1,
+        488
+      ],
+      "stub": [
+        623.1,
+        497
+      ],
+      "anchor": [
+        0.29,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_r",
+      "a": "private_r",
+      "semantica": "solicitud",
+      "etiqueta": "Acceso remoto autorizado por identidad, aplicación y recurso; solo Retail"
+    },
+    "points": [
+      [
+        677.7,
+        488
+      ],
+      [
+        677.7,
+        497
+      ],
+      [
+        912,
+        497
+      ],
+      [
+        912,
+        1018
+      ],
+      [
+        1084.487,
+        1018
+      ],
+      [
+        1084.487,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        677.7,
+        488
+      ],
+      "stub": [
+        677.7,
+        497
+      ],
+      "anchor": [
+        0.43,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1084.487,
+        1027
+      ],
+      "stub": [
+        1084.487,
+        1018
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "private_r",
+      "a": "resources_r",
+      "semantica": "solicitud",
+      "etiqueta": "Ruta autorizada a recursos privados; no sustituye VPN corporativa; solo Retail"
+    },
+    "points": [
+      [
+        1175.513,
+        1027
+      ],
+      [
+        1175.513,
+        1018
+      ],
+      [
+        1354,
+        1018
+      ],
+      [
+        1354,
+        497
+      ],
+      [
+        1555.0,
+        497
+      ],
+      [
+        1555.0,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        1175.513,
+        1027
+      ],
+      "stub": [
+        1175.513,
+        1018
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1555.0,
+        488
+      ],
+      "stub": [
+        1555.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_r",
+      "a": "bastion_r",
+      "semantica": "solicitud",
+      "etiqueta": "Sesión administrativa autorizada para máquinas compatibles; solo Retail"
+    },
+    "points": [
+      [
+        732.3,
+        488
+      ],
+      [
+        732.3,
+        497
+      ],
+      [
+        906,
+        497
+      ],
+      [
+        906,
+        1018
+      ],
+      [
+        705.0,
+        1018
+      ],
+      [
+        705.0,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        732.3,
+        488
+      ],
+      "stub": [
+        732.3,
+        497
+      ],
+      "anchor": [
+        0.57,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        705.0,
+        1027
+      ],
+      "stub": [
+        705.0,
+        1018
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bastion_r",
+      "a": "resources_r",
+      "semantica": "solicitud",
+      "etiqueta": "Salto administrativo a máquinas compatibles; no todas las APIs; solo Retail"
+    },
+    "points": [
+      [
+        903,
+        1097.5
+      ],
+      [
+        912,
+        1097.5
+      ],
+      [
+        912,
+        1024
+      ],
+      [
+        1348,
+        1024
+      ],
+      [
+        1348,
+        425.0
+      ],
+      [
+        1357,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        903,
+        1097.5
+      ],
+      "stub": [
+        912,
+        1097.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        425.0
+      ],
+      "stub": [
+        1348,
+        425.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "endpoint_r",
+      "a": "admin_r",
+      "semantica": "politica",
+      "etiqueta": "Protección y detección de equipos con agente soportado; solo Retail"
+    },
+    "points": [
+      [
+        1130.0,
+        802
+      ],
+      [
+        1130.0,
+        793
+      ],
+      [
+        923,
+        793
+      ],
+      [
+        923,
+        491
+      ],
+      [
+        786.9,
+        491
+      ],
+      [
+        786.9,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        1130.0,
+        802
+      ],
+      "stub": [
+        1130.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        786.9,
+        488
+      ],
+      "stub": [
+        786.9,
+        497
+      ],
+      "anchor": [
+        0.71,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cloud_r",
+      "a": "platform_r",
+      "semantica": "politica",
+      "etiqueta": "Planes y cobertura de cargas declarados; solo Retail"
+    },
+    "points": [
+      [
+        1555.0,
+        802
+      ],
+      [
+        1555.0,
+        793
+      ],
+      [
+        1331,
+        793
+      ],
+      [
+        1331,
+        497
+      ],
+      [
+        1039.013,
+        497
+      ],
+      [
+        1039.013,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        1555.0,
+        802
+      ],
+      "stub": [
+        1555.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1039.013,
+        488
+      ],
+      "stub": [
+        1039.013,
+        497
+      ],
+      "anchor": [
+        0.2667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "entra_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Eventos de identidad por conectores soportados; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        663.255
+      ],
+      [
+        487,
+        663.255
+      ],
+      [
+        487,
+        952
+      ],
+      [
+        1348,
+        952
+      ],
+      [
+        1348,
+        1069.15
+      ],
+      [
+        1357,
+        1069.15
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        663.255
+      ],
+      "stub": [
+        487,
+        663.255
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        1069.15
+      ],
+      "stub": [
+        1348,
+        1069.15
+      ],
+      "anchor": [
+        0,
+        0.29
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "endpoint_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones seleccionadas; solo Retail"
+    },
+    "points": [
+      [
+        1328,
+        872.5
+      ],
+      [
+        1337,
+        872.5
+      ],
+      [
+        1337,
+        1088.05
+      ],
+      [
+        1357,
+        1088.05
+      ]
+    ],
+    "source": {
+      "point": [
+        1328,
+        872.5
+      ],
+      "stub": [
+        1337,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        1088.05
+      ],
+      "stub": [
+        1348,
+        1088.05
+      ],
+      "anchor": [
+        0,
+        0.43
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cloud_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones de cargas seleccionadas; solo Retail"
+    },
+    "points": [
+      [
+        1368.0,
+        943
+      ],
+      [
+        1368.0,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        1368.0,
+        943
+      ],
+      "stub": [
+        1368.0,
+        952
+      ],
+      "anchor": [
+        0.020512820512820513,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1368.0,
+        1027
+      ],
+      "stub": [
+        1368.0,
+        1018
+      ],
+      "anchor": [
+        0.020512820512820513,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "kv_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnóstico de acceso y operación de claves/secretos; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        872.5
+      ],
+      [
+        487,
+        872.5
+      ],
+      [
+        487,
+        952
+      ],
+      [
+        1331,
+        952
+      ],
+      [
+        1331,
+        1106.95
+      ],
+      [
+        1357,
+        1106.95
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        872.5
+      ],
+      "stub": [
+        487,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        1106.95
+      ],
+      "stub": [
+        1348,
+        1106.95
+      ],
+      "anchor": [
+        0,
+        0.57
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "hsm_r",
+      "a": "sentinel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría criptográfica soportada; solo Retail"
+    },
+    "points": [
+      [
+        903,
+        872.5
+      ],
+      [
+        912,
+        872.5
+      ],
+      [
+        912,
+        946
+      ],
+      [
+        1331,
+        946
+      ],
+      [
+        1331,
+        1125.85
+      ],
+      [
+        1357,
+        1125.85
+      ]
+    ],
+    "source": {
+      "point": [
+        903,
+        872.5
+      ],
+      "stub": [
+        912,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1357,
+        1125.85
+      ],
+      "stub": [
+        1348,
+        1125.85
+      ],
+      "anchor": [
+        0,
+        0.71
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "sentinel_r",
+      "a": "soc_r",
+      "semantica": "flujo",
+      "etiqueta": "Incidentes y correlación con permisos del equipo; solo Retail"
+    },
+    "points": [
+      [
+        1368.0,
+        1168
+      ],
+      [
+        1368.0,
+        1252
+      ]
+    ],
+    "source": {
+      "point": [
+        1368.0,
+        1168
+      ],
+      "stub": [
+        1368.0,
+        1177
+      ],
+      "anchor": [
+        0.020512820512820513,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1368.0,
+        1252
+      ],
+      "stub": [
+        1368.0,
+        1243
+      ],
+      "anchor": [
+        0.020512820512820513,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bastion_r",
+      "a": "stage_r",
+      "semantica": "persistencia",
+      "etiqueta": "Destino inicial de grabación mutable, sin política WORM ni versionado; solo Retail"
+    },
+    "points": [
+      [
+        507,
+        1097.5
+      ],
+      [
+        498,
+        1097.5
+      ],
+      [
+        498,
+        1306.745
+      ],
+      [
+        478,
+        1306.745
+      ]
+    ],
+    "source": {
+      "point": [
+        507,
+        1097.5
+      ],
+      "stub": [
+        498,
+        1097.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        478,
+        1306.745
+      ],
+      "stub": [
+        487,
+        1306.745
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "stage_r",
+      "a": "audit_r",
+      "semantica": "flujo",
+      "etiqueta": "Procesar grabación y verificar copia antes de cerrar retención; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        1263.0
+      ],
+      [
+        507,
+        1263.0
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        1263.0
+      ],
+      "stub": [
+        487,
+        1263.0
+      ],
+      "anchor": [
+        1,
+        0.05925925925925926
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        507,
+        1263.0
+      ],
+      "stub": [
+        498,
+        1263.0
+      ],
+      "anchor": [
+        0,
+        0.05925925925925926
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "audit_r",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría de negocio durable, distinta de logs muestreados; solo Retail"
+    },
+    "points": [
+      [
+        325.513,
+        488
+      ],
+      [
+        325.513,
+        574
+      ],
+      [
+        481,
+        574
+      ],
+      [
+        481,
+        1243
+      ],
+      [
+        705.0,
+        1243
+      ],
+      [
+        705.0,
+        1252
+      ]
+    ],
+    "source": {
+      "point": [
+        325.513,
+        488
+      ],
+      "stub": [
+        325.513,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        705.0,
+        1252
+      ],
+      "stub": [
+        705.0,
+        1243
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "audit_r",
+      "a": "worm_r",
+      "semantica": "persistencia",
+      "etiqueta": "Copia verificada, manifiesto e integridad bajo retención propia; solo Retail"
+    },
+    "points": [
+      [
+        903,
+        1263.0
+      ],
+      [
+        932,
+        1263.0
+      ]
+    ],
+    "source": {
+      "point": [
+        903,
+        1263.0
+      ],
+      "stub": [
+        912,
+        1263.0
+      ],
+      "anchor": [
+        1,
+        0.05925925925925926
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        932,
+        1263.0
+      ],
+      "stub": [
+        923,
+        1263.0
+      ],
+      "anchor": [
+        0,
+        0.05925925925925926
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_r",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Telemetría saneada; RUM público mediante ingreso de borde/gateway autorizado; solo Retail"
+    },
+    "points": [
+      [
+        478,
+        477.0
+      ],
+      [
+        501.0,
+        477.0
+      ],
+      [
+        501.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        478,
+        477.0
+      ],
+      "stub": [
+        487,
+        477.0
+      ],
+      "anchor": [
+        1,
+        0.9333333333333333
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        501.0,
+        1577
+      ],
+      "stub": [
+        501.0,
+        1568
+      ],
+      "anchor": [
+        0.8,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_r",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Drenar cola local tras reconexión por red privada autorizada; solo Retail"
+    },
+    "points": [
+      [
+        647,
+        1588.0
+      ],
+      [
+        608,
+        1588.0
+      ]
+    ],
+    "source": {
+      "point": [
+        647,
+        1588.0
+      ],
+      "stub": [
+        638,
+        1588.0
+      ],
+      "anchor": [
+        0,
+        0.05517241379310345
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        608,
+        1588.0
+      ],
+      "stub": [
+        617,
+        1588.0
+      ],
+      "anchor": [
+        1,
+        0.05517241379310345
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "platform_r",
+      "a": "local_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo componentes locales y heartbeat; diferenciar no observable de fallo confirmado; solo Retail"
+    },
+    "points": [
+      [
+        932,
+        477.0
+      ],
+      [
+        910.0,
+        477.0
+      ],
+      [
+        910.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        932,
+        477.0
+      ],
+      "stub": [
+        923,
+        477.0
+      ],
+      "anchor": [
+        0,
+        0.9333333333333333
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        910.0,
+        1577
+      ],
+      "stub": [
+        910.0,
+        1568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_r",
+      "a": "loki_r",
+      "semantica": "publicacion",
+      "etiqueta": "Registros mediante OTLP HTTP autenticado; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        1652.5
+      ],
+      [
+        617,
+        1652.5
+      ],
+      [
+        617,
+        1875.579
+      ],
+      [
+        647,
+        1875.579
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        1652.5
+      ],
+      "stub": [
+        617,
+        1652.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        647,
+        1875.579
+      ],
+      "stub": [
+        638,
+        1875.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_r",
+      "a": "tempo_r",
+      "semantica": "publicacion",
+      "etiqueta": "Trazas mediante OTLP soportado; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        1677.875
+      ],
+      [
+        617,
+        1677.875
+      ],
+      [
+        617,
+        1814
+      ],
+      [
+        1203,
+        1814
+      ],
+      [
+        1203,
+        1875.579
+      ],
+      [
+        1212,
+        1875.579
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        1677.875
+      ],
+      "stub": [
+        617,
+        1677.875
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1212,
+        1875.579
+      ],
+      "stub": [
+        1203,
+        1875.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_r",
+      "a": "prom_r",
+      "semantica": "publicacion",
+      "etiqueta": "Métricas mediante receptor OTLP HTTP habilitado y protegido; solo Retail"
+    },
+    "points": [
+      [
+        93.0,
+        1728
+      ],
+      [
+        93.0,
+        1817
+      ]
+    ],
+    "source": {
+      "point": [
+        93.0,
+        1728
+      ],
+      "stub": [
+        93.0,
+        1737
+      ],
+      "anchor": [
+        0.015384615384615385,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        93.0,
+        1817
+      ],
+      "stub": [
+        93.0,
+        1808
+      ],
+      "anchor": [
+        0.015384615384615385,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "prom_r",
+      "a": "platform_r",
+      "semantica": "solicitud",
+      "etiqueta": "Scrape de métricas/endpoints/exportadores y registro DORA; evitar doble serie; solo Retail"
+    },
+    "points": [
+      [
+        405.684,
+        1817
+      ],
+      [
+        405.684,
+        1808
+      ],
+      [
+        611,
+        1808
+      ],
+      [
+        611,
+        1396
+      ],
+      [
+        910.0,
+        1396
+      ],
+      [
+        910.0,
+        497
+      ],
+      [
+        1130.0,
+        497
+      ],
+      [
+        1130.0,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        405.684,
+        1817
+      ],
+      "stub": [
+        405.684,
+        1808
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1130.0,
+        488
+      ],
+      "stub": [
+        1130.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "platform_r",
+      "a": "monitor_r",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnósticos Azure soportados y fuentes necesarias para seguridad; solo Retail"
+    },
+    "points": [
+      [
+        1175.513,
+        488
+      ],
+      [
+        1175.513,
+        568
+      ],
+      [
+        1340,
+        568
+      ],
+      [
+        1340,
+        1568
+      ],
+      [
+        1475.0,
+        1568
+      ],
+      [
+        1475.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        1175.513,
+        488
+      ],
+      "stub": [
+        1175.513,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1475.0,
+        1577
+      ],
+      "stub": [
+        1475.0,
+        1568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_r",
+      "a": "prom_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar métricas y SLO con credenciales de lectura; solo Retail"
+    },
+    "points": [
+      [
+        93.0,
+        2057
+      ],
+      [
+        93.0,
+        1968
+      ]
+    ],
+    "source": {
+      "point": [
+        93.0,
+        2057
+      ],
+      "stub": [
+        93.0,
+        2048
+      ],
+      "anchor": [
+        0.015384615384615385,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        93.0,
+        1968
+      ],
+      "stub": [
+        93.0,
+        1977
+      ],
+      "anchor": [
+        0.015384615384615385,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_r",
+      "a": "loki_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar registros operacionales autorizados; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        2102.05
+      ],
+      [
+        617,
+        2102.05
+      ],
+      [
+        617,
+        1909.421
+      ],
+      [
+        647,
+        1909.421
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        2102.05
+      ],
+      "stub": [
+        617,
+        2102.05
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        647,
+        1909.421
+      ],
+      "stub": [
+        638,
+        1909.421
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_r",
+      "a": "tempo_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar trazas autorizadas; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        2122.35
+      ],
+      [
+        617,
+        2122.35
+      ],
+      [
+        617,
+        1971
+      ],
+      [
+        1203,
+        1971
+      ],
+      [
+        1203,
+        1909.421
+      ],
+      [
+        1212,
+        1909.421
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        2122.35
+      ],
+      "stub": [
+        617,
+        2122.35
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1212,
+        1909.421
+      ],
+      "stub": [
+        1203,
+        1909.421
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_r",
+      "a": "monitor_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar diagnóstico Azure con autenticación soportada; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        2142.65
+      ],
+      [
+        617,
+        2142.65
+      ],
+      [
+        617,
+        1977
+      ],
+      [
+        1203,
+        1977
+      ],
+      [
+        1203,
+        1652.5
+      ],
+      [
+        1212,
+        1652.5
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        2142.65
+      ],
+      "stub": [
+        617,
+        2142.65
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1212,
+        1652.5
+      ],
+      "stub": [
+        1203,
+        1652.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_r",
+      "a": "noc_r",
+      "semantica": "flujo",
+      "etiqueta": "Alerting integrado: avisos, agrupación y escalamiento sin payloads sensibles; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        2162.95
+      ],
+      [
+        617,
+        2162.95
+      ],
+      [
+        617,
+        2211
+      ],
+      [
+        1203,
+        2211
+      ],
+      [
+        1203,
+        2115.579
+      ],
+      [
+        1212,
+        2115.579
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        2162.95
+      ],
+      "stub": [
+        617,
+        2162.95
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1212,
+        2115.579
+      ],
+      "stub": [
+        1203,
+        2115.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "blackbox_r",
+      "a": "platform_r",
+      "semantica": "solicitud",
+      "etiqueta": "Probar DNS/TLS/URL segura pública y salud privada desde ubicaciones independientes; solo Retail"
+    },
+    "points": [
+      [
+        910.0,
+        2057
+      ],
+      [
+        910.0,
+        2048
+      ],
+      [
+        1209,
+        2048
+      ],
+      [
+        1209,
+        1396
+      ],
+      [
+        1337,
+        1396
+      ],
+      [
+        1337,
+        497
+      ],
+      [
+        1220.987,
+        497
+      ],
+      [
+        1220.987,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        910.0,
+        2057
+      ],
+      "stub": [
+        910.0,
+        2048
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1220.987,
+        488
+      ],
+      "stub": [
+        1220.987,
+        497
+      ],
+      "anchor": [
+        0.7333,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "prom_r",
+      "a": "blackbox_r",
+      "semantica": "solicitud",
+      "etiqueta": "Recoger resultados de sondas de endpoints; solo Retail"
+    },
+    "points": [
+      [
+        608,
+        1892.5
+      ],
+      [
+        638,
+        1892.5
+      ],
+      [
+        638,
+        2132.5
+      ],
+      [
+        647,
+        2132.5
+      ]
+    ],
+    "source": {
+      "point": [
+        608,
+        1892.5
+      ],
+      "stub": [
+        617,
+        1892.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        647,
+        2132.5
+      ],
+      "stub": [
+        638,
+        2132.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "blackbox_r",
+      "a": "noc_r",
+      "semantica": "flujo",
+      "etiqueta": "Observador independiente y ruta de aviso sobreviven a la falla monitorizada; solo Retail"
+    },
+    "points": [
+      [
+        1173,
+        2068.0
+      ],
+      [
+        1212,
+        2068.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1173,
+        2068.0
+      ],
+      "stub": [
+        1182,
+        2068.0
+      ],
+      "anchor": [
+        1,
+        0.05517241379310345
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1212,
+        2068.0
+      ],
+      "stub": [
+        1203,
+        2068.0
+      ],
+      "anchor": [
+        0,
+        0.05517241379310345
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "entra_e",
+      "semantica": "politica",
+      "etiqueta": "Autenticación interna; JWT se valida localmente, no consulta por cada solicitud; solo Filial"
+    },
+    "points": [
+      [
+        2050.0,
+        488
+      ],
+      [
+        2050.0,
+        577
+      ]
+    ],
+    "source": {
+      "point": [
+        2050.0,
+        488
+      ],
+      "stub": [
+        2050.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2050.0,
+        577
+      ],
+      "stub": [
+        2050.0,
+        568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "external_e",
+      "semantica": "politica",
+      "etiqueta": "Autenticación de clientes o titulares con emisor propio; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        410.996
+      ],
+      [
+        2257,
+        410.996
+      ],
+      [
+        2257,
+        647.5
+      ],
+      [
+        2277,
+        647.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        410.996
+      ],
+      "stub": [
+        2257,
+        410.996
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2277,
+        647.5
+      ],
+      "stub": [
+        2268,
+        647.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "intune_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Administrar solo equipos compatibles; revocación sin enlace no inmediata; solo Filial"
+    },
+    "points": [
+      [
+        2702,
+        647.5
+      ],
+      [
+        2693,
+        647.5
+      ],
+      [
+        2693,
+        425.0
+      ],
+      [
+        2673,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2702,
+        647.5
+      ],
+      "stub": [
+        2693,
+        647.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2673,
+        425.0
+      ],
+      "stub": [
+        2682,
+        425.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "workload_e",
+      "semantica": "politica",
+      "etiqueta": "Tokens de cargas/pods/pipelines con permisos por recurso; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        439.004
+      ],
+      [
+        2257,
+        439.004
+      ],
+      [
+        2257,
+        574
+      ],
+      [
+        3118,
+        574
+      ],
+      [
+        3118,
+        631.745
+      ],
+      [
+        3127,
+        631.745
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        439.004
+      ],
+      "stub": [
+        2257,
+        439.004
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        631.745
+      ],
+      "stub": [
+        3118,
+        631.745
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "kv_e",
+      "semantica": "solicitud",
+      "etiqueta": "Lectura autorizada de secretos y certificados; solo Filial"
+    },
+    "points": [
+      [
+        2004.487,
+        488
+      ],
+      [
+        2004.487,
+        497
+      ],
+      [
+        1849,
+        497
+      ],
+      [
+        1849,
+        793
+      ],
+      [
+        2050.0,
+        793
+      ],
+      [
+        2050.0,
+        802
+      ]
+    ],
+    "source": {
+      "point": [
+        2004.487,
+        488
+      ],
+      "stub": [
+        2004.487,
+        497
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2050.0,
+        802
+      ],
+      "stub": [
+        2050.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "hsm_e",
+      "semantica": "solicitud",
+      "etiqueta": "Operaciones criptográficas / envoltura DEK por propietario; solo Filial"
+    },
+    "points": [
+      [
+        2050.0,
+        488
+      ],
+      [
+        2050.0,
+        497
+      ],
+      [
+        2251,
+        497
+      ],
+      [
+        2251,
+        793
+      ],
+      [
+        2475.0,
+        793
+      ],
+      [
+        2475.0,
+        802
+      ]
+    ],
+    "source": {
+      "point": [
+        2050.0,
+        488
+      ],
+      "stub": [
+        2050.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2475.0,
+        802
+      ],
+      "stub": [
+        2475.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_e",
+      "a": "entra_e",
+      "semantica": "politica",
+      "etiqueta": "Identidad y MFA de administradores; solo Filial"
+    },
+    "points": [
+      [
+        2277,
+        425.0
+      ],
+      [
+        2268,
+        425.0
+      ],
+      [
+        2268,
+        631.745
+      ],
+      [
+        2248,
+        631.745
+      ]
+    ],
+    "source": {
+      "point": [
+        2277,
+        425.0
+      ],
+      "stub": [
+        2268,
+        425.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2248,
+        631.745
+      ],
+      "stub": [
+        2257,
+        631.745
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pim_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Autorizar elevación temporal; PIM no transporta sesiones; solo Filial"
+    },
+    "points": [
+      [
+        2050.0,
+        1027
+      ],
+      [
+        2050.0,
+        1018
+      ],
+      [
+        2274,
+        1018
+      ],
+      [
+        2274,
+        497
+      ],
+      [
+        2393.1,
+        497
+      ],
+      [
+        2393.1,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2050.0,
+        1027
+      ],
+      "stub": [
+        2050.0,
+        1018
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2393.1,
+        488
+      ],
+      "stub": [
+        2393.1,
+        497
+      ],
+      "anchor": [
+        0.29,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_e",
+      "a": "private_e",
+      "semantica": "solicitud",
+      "etiqueta": "Acceso remoto autorizado por identidad, aplicación y recurso; solo Filial"
+    },
+    "points": [
+      [
+        2447.7,
+        488
+      ],
+      [
+        2447.7,
+        497
+      ],
+      [
+        2682,
+        497
+      ],
+      [
+        2682,
+        1018
+      ],
+      [
+        2854.487,
+        1018
+      ],
+      [
+        2854.487,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        2447.7,
+        488
+      ],
+      "stub": [
+        2447.7,
+        497
+      ],
+      "anchor": [
+        0.43,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2854.487,
+        1027
+      ],
+      "stub": [
+        2854.487,
+        1018
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "private_e",
+      "a": "resources_e",
+      "semantica": "solicitud",
+      "etiqueta": "Ruta autorizada a recursos privados; no sustituye VPN corporativa; solo Filial"
+    },
+    "points": [
+      [
+        2945.513,
+        1027
+      ],
+      [
+        2945.513,
+        1018
+      ],
+      [
+        3124,
+        1018
+      ],
+      [
+        3124,
+        497
+      ],
+      [
+        3325.0,
+        497
+      ],
+      [
+        3325.0,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2945.513,
+        1027
+      ],
+      "stub": [
+        2945.513,
+        1018
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        3325.0,
+        488
+      ],
+      "stub": [
+        3325.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "admin_e",
+      "a": "bastion_e",
+      "semantica": "solicitud",
+      "etiqueta": "Sesión administrativa autorizada para máquinas compatibles; solo Filial"
+    },
+    "points": [
+      [
+        2502.3,
+        488
+      ],
+      [
+        2502.3,
+        497
+      ],
+      [
+        2676,
+        497
+      ],
+      [
+        2676,
+        1018
+      ],
+      [
+        2475.0,
+        1018
+      ],
+      [
+        2475.0,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        2502.3,
+        488
+      ],
+      "stub": [
+        2502.3,
+        497
+      ],
+      "anchor": [
+        0.57,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2475.0,
+        1027
+      ],
+      "stub": [
+        2475.0,
+        1018
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bastion_e",
+      "a": "resources_e",
+      "semantica": "solicitud",
+      "etiqueta": "Salto administrativo a máquinas compatibles; no todas las APIs; solo Filial"
+    },
+    "points": [
+      [
+        2673,
+        1097.5
+      ],
+      [
+        2682,
+        1097.5
+      ],
+      [
+        2682,
+        1024
+      ],
+      [
+        3118,
+        1024
+      ],
+      [
+        3118,
+        425.0
+      ],
+      [
+        3127,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2673,
+        1097.5
+      ],
+      "stub": [
+        2682,
+        1097.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        425.0
+      ],
+      "stub": [
+        3118,
+        425.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "endpoint_e",
+      "a": "admin_e",
+      "semantica": "politica",
+      "etiqueta": "Protección y detección de equipos con agente soportado; solo Filial"
+    },
+    "points": [
+      [
+        2900.0,
+        802
+      ],
+      [
+        2900.0,
+        793
+      ],
+      [
+        2693,
+        793
+      ],
+      [
+        2693,
+        497
+      ],
+      [
+        2556.9,
+        497
+      ],
+      [
+        2556.9,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2900.0,
+        802
+      ],
+      "stub": [
+        2900.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2556.9,
+        488
+      ],
+      "stub": [
+        2556.9,
+        497
+      ],
+      "anchor": [
+        0.71,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cloud_e",
+      "a": "platform_e",
+      "semantica": "politica",
+      "etiqueta": "Planes y cobertura de cargas declarados; solo Filial"
+    },
+    "points": [
+      [
+        3325.0,
+        802
+      ],
+      [
+        3325.0,
+        793
+      ],
+      [
+        3101,
+        793
+      ],
+      [
+        3101,
+        497
+      ],
+      [
+        2809.013,
+        497
+      ],
+      [
+        2809.013,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        3325.0,
+        802
+      ],
+      "stub": [
+        3325.0,
+        793
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2809.013,
+        488
+      ],
+      "stub": [
+        2809.013,
+        497
+      ],
+      "anchor": [
+        0.2667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "entra_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Eventos de identidad por conectores soportados; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        663.255
+      ],
+      [
+        2257,
+        663.255
+      ],
+      [
+        2257,
+        952
+      ],
+      [
+        3118,
+        952
+      ],
+      [
+        3118,
+        1069.15
+      ],
+      [
+        3127,
+        1069.15
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        663.255
+      ],
+      "stub": [
+        2257,
+        663.255
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        1069.15
+      ],
+      "stub": [
+        3118,
+        1069.15
+      ],
+      "anchor": [
+        0,
+        0.29
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "endpoint_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones seleccionadas; solo Filial"
+    },
+    "points": [
+      [
+        3098,
+        872.5
+      ],
+      [
+        3107,
+        872.5
+      ],
+      [
+        3107,
+        1088.05
+      ],
+      [
+        3127,
+        1088.05
+      ]
+    ],
+    "source": {
+      "point": [
+        3098,
+        872.5
+      ],
+      "stub": [
+        3107,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        1088.05
+      ],
+      "stub": [
+        3118,
+        1088.05
+      ],
+      "anchor": [
+        0,
+        0.43
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "cloud_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Detecciones de cargas seleccionadas; solo Filial"
+    },
+    "points": [
+      [
+        3138.0,
+        943
+      ],
+      [
+        3138.0,
+        1027
+      ]
+    ],
+    "source": {
+      "point": [
+        3138.0,
+        943
+      ],
+      "stub": [
+        3138.0,
+        952
+      ],
+      "anchor": [
+        0.020512820512820513,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3138.0,
+        1027
+      ],
+      "stub": [
+        3138.0,
+        1018
+      ],
+      "anchor": [
+        0.020512820512820513,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "kv_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnóstico de acceso y operación de claves/secretos; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        872.5
+      ],
+      [
+        2257,
+        872.5
+      ],
+      [
+        2257,
+        952
+      ],
+      [
+        3101,
+        952
+      ],
+      [
+        3101,
+        1106.95
+      ],
+      [
+        3127,
+        1106.95
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        872.5
+      ],
+      "stub": [
+        2257,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        1106.95
+      ],
+      "stub": [
+        3118,
+        1106.95
+      ],
+      "anchor": [
+        0,
+        0.57
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "hsm_e",
+      "a": "sentinel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría criptográfica soportada; solo Filial"
+    },
+    "points": [
+      [
+        2673,
+        872.5
+      ],
+      [
+        2682,
+        872.5
+      ],
+      [
+        2682,
+        946
+      ],
+      [
+        3101,
+        946
+      ],
+      [
+        3101,
+        1125.85
+      ],
+      [
+        3127,
+        1125.85
+      ]
+    ],
+    "source": {
+      "point": [
+        2673,
+        872.5
+      ],
+      "stub": [
+        2682,
+        872.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3127,
+        1125.85
+      ],
+      "stub": [
+        3118,
+        1125.85
+      ],
+      "anchor": [
+        0,
+        0.71
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "sentinel_e",
+      "a": "soc_e",
+      "semantica": "flujo",
+      "etiqueta": "Incidentes y correlación con permisos del equipo; solo Filial"
+    },
+    "points": [
+      [
+        3138.0,
+        1168
+      ],
+      [
+        3138.0,
+        1252
+      ]
+    ],
+    "source": {
+      "point": [
+        3138.0,
+        1168
+      ],
+      "stub": [
+        3138.0,
+        1177
+      ],
+      "anchor": [
+        0.020512820512820513,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3138.0,
+        1252
+      ],
+      "stub": [
+        3138.0,
+        1243
+      ],
+      "anchor": [
+        0.020512820512820513,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bastion_e",
+      "a": "stage_e",
+      "semantica": "persistencia",
+      "etiqueta": "Destino inicial de grabación mutable, sin política WORM ni versionado; solo Filial"
+    },
+    "points": [
+      [
+        2277,
+        1097.5
+      ],
+      [
+        2268,
+        1097.5
+      ],
+      [
+        2268,
+        1306.745
+      ],
+      [
+        2248,
+        1306.745
+      ]
+    ],
+    "source": {
+      "point": [
+        2277,
+        1097.5
+      ],
+      "stub": [
+        2268,
+        1097.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2248,
+        1306.745
+      ],
+      "stub": [
+        2257,
+        1306.745
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "stage_e",
+      "a": "audit_e",
+      "semantica": "flujo",
+      "etiqueta": "Procesar grabación y verificar copia antes de cerrar retención; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        1263.0
+      ],
+      [
+        2277,
+        1263.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        1263.0
+      ],
+      "stub": [
+        2257,
+        1263.0
+      ],
+      "anchor": [
+        1,
+        0.05925925925925926
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2277,
+        1263.0
+      ],
+      "stub": [
+        2268,
+        1263.0
+      ],
+      "anchor": [
+        0,
+        0.05925925925925926
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "audit_e",
+      "semantica": "publicacion",
+      "etiqueta": "Auditoría de negocio durable, distinta de logs muestreados; solo Filial"
+    },
+    "points": [
+      [
+        2095.513,
+        488
+      ],
+      [
+        2095.513,
+        574
+      ],
+      [
+        2251,
+        574
+      ],
+      [
+        2251,
+        1243
+      ],
+      [
+        2475.0,
+        1243
+      ],
+      [
+        2475.0,
+        1252
+      ]
+    ],
+    "source": {
+      "point": [
+        2095.513,
+        488
+      ],
+      "stub": [
+        2095.513,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2475.0,
+        1252
+      ],
+      "stub": [
+        2475.0,
+        1243
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "audit_e",
+      "a": "worm_e",
+      "semantica": "persistencia",
+      "etiqueta": "Copia verificada, manifiesto e integridad bajo retención propia; solo Filial"
+    },
+    "points": [
+      [
+        2673,
+        1263.0
+      ],
+      [
+        2702,
+        1263.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2673,
+        1263.0
+      ],
+      "stub": [
+        2682,
+        1263.0
+      ],
+      "anchor": [
+        1,
+        0.05925925925925926
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2702,
+        1263.0
+      ],
+      "stub": [
+        2693,
+        1263.0
+      ],
+      "anchor": [
+        0,
+        0.05925925925925926
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "source_e",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Telemetría saneada; RUM público mediante ingreso de borde/gateway autorizado; solo Filial"
+    },
+    "points": [
+      [
+        2248,
+        477.0
+      ],
+      [
+        2271.0,
+        477.0
+      ],
+      [
+        2271.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        2248,
+        477.0
+      ],
+      "stub": [
+        2257,
+        477.0
+      ],
+      "anchor": [
+        1,
+        0.9333333333333333
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2271.0,
+        1577
+      ],
+      "stub": [
+        2271.0,
+        1568
+      ],
+      "anchor": [
+        0.8,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_e",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Drenar cola local tras reconexión por red privada autorizada; solo Filial"
+    },
+    "points": [
+      [
+        2417,
+        1588.0
+      ],
+      [
+        2378,
+        1588.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2417,
+        1588.0
+      ],
+      "stub": [
+        2408,
+        1588.0
+      ],
+      "anchor": [
+        0,
+        0.05517241379310345
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2378,
+        1588.0
+      ],
+      "stub": [
+        2387,
+        1588.0
+      ],
+      "anchor": [
+        1,
+        0.05517241379310345
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "platform_e",
+      "a": "local_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo componentes locales y heartbeat; diferenciar no observable de fallo confirmado; solo Filial"
+    },
+    "points": [
+      [
+        2702,
+        477.0
+      ],
+      [
+        2680.0,
+        477.0
+      ],
+      [
+        2680.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        2702,
+        477.0
+      ],
+      "stub": [
+        2693,
+        477.0
+      ],
+      "anchor": [
+        0,
+        0.9333333333333333
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2680.0,
+        1577
+      ],
+      "stub": [
+        2680.0,
+        1568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_e",
+      "a": "loki_e",
+      "semantica": "publicacion",
+      "etiqueta": "Registros mediante OTLP HTTP autenticado; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        1652.5
+      ],
+      [
+        2387,
+        1652.5
+      ],
+      [
+        2387,
+        1875.579
+      ],
+      [
+        2417,
+        1875.579
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        1652.5
+      ],
+      "stub": [
+        2387,
+        1652.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2417,
+        1875.579
+      ],
+      "stub": [
+        2408,
+        1875.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_e",
+      "a": "tempo_e",
+      "semantica": "publicacion",
+      "etiqueta": "Trazas mediante OTLP soportado; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        1677.875
+      ],
+      [
+        2387,
+        1677.875
+      ],
+      [
+        2387,
+        1814
+      ],
+      [
+        2973,
+        1814
+      ],
+      [
+        2973,
+        1875.579
+      ],
+      [
+        2982,
+        1875.579
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        1677.875
+      ],
+      "stub": [
+        2387,
+        1677.875
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2982,
+        1875.579
+      ],
+      "stub": [
+        2973,
+        1875.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel_e",
+      "a": "prom_e",
+      "semantica": "publicacion",
+      "etiqueta": "Métricas mediante receptor OTLP HTTP habilitado y protegido; solo Filial"
+    },
+    "points": [
+      [
+        1863.0,
+        1728
+      ],
+      [
+        1863.0,
+        1817
+      ]
+    ],
+    "source": {
+      "point": [
+        1863.0,
+        1728
+      ],
+      "stub": [
+        1863.0,
+        1737
+      ],
+      "anchor": [
+        0.015384615384615385,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1863.0,
+        1817
+      ],
+      "stub": [
+        1863.0,
+        1808
+      ],
+      "anchor": [
+        0.015384615384615385,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "prom_e",
+      "a": "platform_e",
+      "semantica": "solicitud",
+      "etiqueta": "Scrape de métricas/endpoints/exportadores y registro DORA; evitar doble serie; solo Filial"
+    },
+    "points": [
+      [
+        2175.684,
+        1817
+      ],
+      [
+        2175.684,
+        1808
+      ],
+      [
+        2381,
+        1808
+      ],
+      [
+        2381,
+        1396
+      ],
+      [
+        2699,
+        1396
+      ],
+      [
+        2699,
+        497
+      ],
+      [
+        2900.0,
+        497
+      ],
+      [
+        2900.0,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2175.684,
+        1817
+      ],
+      "stub": [
+        2175.684,
+        1808
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2900.0,
+        488
+      ],
+      "stub": [
+        2900.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "platform_e",
+      "a": "monitor_e",
+      "semantica": "publicacion",
+      "etiqueta": "Diagnósticos Azure soportados y fuentes necesarias para seguridad; solo Filial"
+    },
+    "points": [
+      [
+        2945.513,
+        488
+      ],
+      [
+        2945.513,
+        568
+      ],
+      [
+        3124,
+        568
+      ],
+      [
+        3124,
+        1568
+      ],
+      [
+        3245.0,
+        1568
+      ],
+      [
+        3245.0,
+        1577
+      ]
+    ],
+    "source": {
+      "point": [
+        2945.513,
+        488
+      ],
+      "stub": [
+        2945.513,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3245.0,
+        1577
+      ],
+      "stub": [
+        3245.0,
+        1568
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_e",
+      "a": "prom_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar métricas y SLO con credenciales de lectura; solo Filial"
+    },
+    "points": [
+      [
+        1863.0,
+        2057
+      ],
+      [
+        1863.0,
+        1968
+      ]
+    ],
+    "source": {
+      "point": [
+        1863.0,
+        2057
+      ],
+      "stub": [
+        1863.0,
+        2048
+      ],
+      "anchor": [
+        0.015384615384615385,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1863.0,
+        1968
+      ],
+      "stub": [
+        1863.0,
+        1977
+      ],
+      "anchor": [
+        0.015384615384615385,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_e",
+      "a": "loki_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar registros operacionales autorizados; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        2102.05
+      ],
+      [
+        2387,
+        2102.05
+      ],
+      [
+        2387,
+        1909.421
+      ],
+      [
+        2417,
+        1909.421
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        2102.05
+      ],
+      "stub": [
+        2387,
+        2102.05
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2417,
+        1909.421
+      ],
+      "stub": [
+        2408,
+        1909.421
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_e",
+      "a": "tempo_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar trazas autorizadas; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        2122.35
+      ],
+      [
+        2387,
+        2122.35
+      ],
+      [
+        2387,
+        1971
+      ],
+      [
+        2973,
+        1971
+      ],
+      [
+        2973,
+        1909.421
+      ],
+      [
+        2982,
+        1909.421
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        2122.35
+      ],
+      "stub": [
+        2387,
+        2122.35
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2982,
+        1909.421
+      ],
+      "stub": [
+        2973,
+        1909.421
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_e",
+      "a": "monitor_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar diagnóstico Azure con autenticación soportada; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        2142.65
+      ],
+      [
+        2387,
+        2142.65
+      ],
+      [
+        2387,
+        1977
+      ],
+      [
+        2973,
+        1977
+      ],
+      [
+        2973,
+        1652.5
+      ],
+      [
+        2982,
+        1652.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        2142.65
+      ],
+      "stub": [
+        2387,
+        2142.65
+      ],
+      "anchor": [
+        1,
+        0.57
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2982,
+        1652.5
+      ],
+      "stub": [
+        2973,
+        1652.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "grafana_e",
+      "a": "noc_e",
+      "semantica": "flujo",
+      "etiqueta": "Alerting integrado: avisos, agrupación y escalamiento sin payloads sensibles; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        2162.95
+      ],
+      [
+        2387,
+        2162.95
+      ],
+      [
+        2387,
+        2211
+      ],
+      [
+        2973,
+        2211
+      ],
+      [
+        2973,
+        2115.579
+      ],
+      [
+        2982,
+        2115.579
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        2162.95
+      ],
+      "stub": [
+        2387,
+        2162.95
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2982,
+        2115.579
+      ],
+      "stub": [
+        2973,
+        2115.579
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "blackbox_e",
+      "a": "platform_e",
+      "semantica": "solicitud",
+      "etiqueta": "Probar DNS/TLS/URL segura pública y salud privada desde ubicaciones independientes; solo Filial"
+    },
+    "points": [
+      [
+        2680.0,
+        2057
+      ],
+      [
+        2680.0,
+        2048
+      ],
+      [
+        2979,
+        2048
+      ],
+      [
+        2979,
+        1396
+      ],
+      [
+        3107,
+        1396
+      ],
+      [
+        3107,
+        497
+      ],
+      [
+        2990.987,
+        497
+      ],
+      [
+        2990.987,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2680.0,
+        2057
+      ],
+      "stub": [
+        2680.0,
+        2048
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2990.987,
+        488
+      ],
+      "stub": [
+        2990.987,
+        497
+      ],
+      "anchor": [
+        0.7333,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "prom_e",
+      "a": "blackbox_e",
+      "semantica": "solicitud",
+      "etiqueta": "Recoger resultados de sondas de endpoints; solo Filial"
+    },
+    "points": [
+      [
+        2378,
+        1892.5
+      ],
+      [
+        2408,
+        1892.5
+      ],
+      [
+        2408,
+        2132.5
+      ],
+      [
+        2417,
+        2132.5
+      ]
+    ],
+    "source": {
+      "point": [
+        2378,
+        1892.5
+      ],
+      "stub": [
+        2387,
+        1892.5
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2417,
+        2132.5
+      ],
+      "stub": [
+        2408,
+        2132.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "blackbox_e",
+      "a": "noc_e",
+      "semantica": "flujo",
+      "etiqueta": "Observador independiente y ruta de aviso sobreviven a la falla monitorizada; solo Filial"
+    },
+    "points": [
+      [
+        2943,
+        2068.0
+      ],
+      [
+        2982,
+        2068.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2943,
+        2068.0
+      ],
+      "stub": [
+        2952,
+        2068.0
+      ],
+      "anchor": [
+        1,
+        0.05517241379310345
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2982,
+        2068.0
+      ],
+      "stub": [
+        2973,
+        2068.0
+      ],
+      "anchor": [
+        0,
+        0.05517241379310345
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "audit_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Retail del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    "points": [
+      [
+        1182.6,
+        2837
+      ],
+      [
+        1182.6,
+        2828
+      ],
+      [
+        1423.3999999999999,
+        2828
+      ],
+      [
+        1423.3999999999999,
+        2660
+      ],
+      [
+        1176,
+        2660
+      ],
+      [
+        1176,
+        1402
+      ],
+      [
+        705.0,
+        1402
+      ],
+      [
+        705.0,
+        1393
+      ]
+    ],
+    "source": {
+      "point": [
+        1182.6,
+        2837
+      ],
+      "stub": [
+        1182.6,
+        2828
+      ],
+      "anchor": [
+        0.29,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        705.0,
+        1393
+      ],
+      "stub": [
+        705.0,
+        1402
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "otel_r",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Retail del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    "points": [
+      [
+        1594.2,
+        2837
+      ],
+      [
+        1594.2,
+        2660
+      ],
+      [
+        611,
+        2660
+      ],
+      [
+        611,
+        1737
+      ],
+      [
+        405.684,
+        1737
+      ],
+      [
+        405.684,
+        1728
+      ]
+    ],
+    "source": {
+      "point": [
+        1594.2,
+        2837
+      ],
+      "stub": [
+        1594.2,
+        2828
+      ],
+      "anchor": [
+        0.43,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        405.684,
+        1728
+      ],
+      "stub": [
+        405.684,
+        1737
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "audit_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Filial del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    "points": [
+      [
+        2382.0,
+        2837
+      ],
+      [
+        2382.0,
+        1393
+      ]
+    ],
+    "source": {
+      "point": [
+        2382.0,
+        2837
+      ],
+      "stub": [
+        2382.0,
+        2828
+      ],
+      "anchor": [
+        0.6979591836734694,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2382.0,
+        1393
+      ],
+      "stub": [
+        2382.0,
+        1402
+      ],
+      "anchor": [
+        0.26153846153846155,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "otel_e",
+      "semantica": "publicacion",
+      "etiqueta": "Solo extremo Filial del contrato X-01: auditoría/telemetría propia y correlación mínima autorizada, sin payload ajeno ni colector común."
+    },
+    "points": [
+      [
+        1800.0,
+        2837
+      ],
+      [
+        1800.0,
+        1717.0
+      ],
+      [
+        1852,
+        1717.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1800.0,
+        2837
+      ],
+      "stub": [
+        1800.0,
+        2828
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1852,
+        1717.0
+      ],
+      "stub": [
+        1843,
+        1717.0
+      ],
+      "anchor": [
+        0,
+        0.9448275862068966
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workload_r",
+      "a": "platform_r",
+      "semantica": "politica",
+      "etiqueta": "Obtener tokens para recursos Azure compatibles del propio ámbito; permisos por recurso, no secretos estáticos ni acceso universal."
+    },
+    "points": [
+      [
+        1357,
+        663.255
+      ],
+      [
+        1348,
+        663.255
+      ],
+      [
+        1348,
+        425.0
+      ],
+      [
+        1328,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1357,
+        663.255
+      ],
+      "stub": [
+        1348,
+        663.255
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1328,
+        425.0
+      ],
+      "stub": [
+        1337,
+        425.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workload_e",
+      "a": "platform_e",
+      "semantica": "politica",
+      "etiqueta": "Obtener tokens para recursos Azure compatibles del propio ámbito; permisos por recurso, no secretos estáticos ni acceso universal."
+    },
+    "points": [
+      [
+        3127,
+        663.255
+      ],
+      [
+        3107,
+        663.255
+      ],
+      [
+        3107,
+        425.0
+      ],
+      [
+        3098,
+        425.0
+      ]
+    ],
+    "source": {
+      "point": [
+        3127,
+        663.255
+      ],
+      "stub": [
+        3118,
+        663.255
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        3098,
+        425.0
+      ],
+      "stub": [
+        3107,
+        425.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  }
+]

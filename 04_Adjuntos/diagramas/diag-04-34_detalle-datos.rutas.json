@@ -1,0 +1,2810 @@
+[
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "bitacora_x",
+      "semantica": "persistencia",
+      "etiqueta": "Repositorio propio de X-01; no alimenta lago ni modelo analítico conjunto."
+    },
+    "points": [
+      [
+        1063,
+        2958.0
+      ],
+      [
+        1197,
+        2958.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1063,
+        2958.0
+      ],
+      "stub": [
+        1072,
+        2958.0
+      ],
+      "anchor": [
+        1,
+        0.06956521739130435
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1197,
+        2958.0
+      ],
+      "stub": [
+        1188,
+        2958.0
+      ],
+      "anchor": [
+        0,
+        0.06956521739130435
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_r",
+      "a": "oper_r",
+      "semantica": "persistencia",
+      "etiqueta": "Cada servicio escribe únicamente su contexto; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        363.0
+      ],
+      [
+        587,
+        363.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        363.0
+      ],
+      "stub": [
+        542,
+        363.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        363.0
+      ],
+      "stub": [
+        578,
+        363.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_r",
+      "a": "bus_r",
+      "semantica": "publicacion",
+      "etiqueta": "Publicar desde outbox durable, no desde una escritura no confirmada; únicamente Retail"
+    },
+    "points": [
+      [
+        68.0,
+        488
+      ],
+      [
+        68.0,
+        547
+      ]
+    ],
+    "source": {
+      "point": [
+        68.0,
+        488
+      ],
+      "stub": [
+        68.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        68.0,
+        547
+      ],
+      "stub": [
+        68.0,
+        538
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "workers_r",
+      "semantica": "consumo",
+      "etiqueta": "Deduplicar y aplicar versiones; manejar mensajes fallidos y desorden; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        558.0
+      ],
+      [
+        587,
+        558.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        558.0
+      ],
+      "stub": [
+        542,
+        558.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        558.0
+      ],
+      "stub": [
+        578,
+        558.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oper_r",
+      "a": "workers_r",
+      "semantica": "flujo",
+      "etiqueta": "Exportación autorizada con corte; cargas históricas, no consultas BI; únicamente Retail"
+    },
+    "points": [
+      [
+        598.0,
+        488
+      ],
+      [
+        598.0,
+        547
+      ]
+    ],
+    "source": {
+      "point": [
+        598.0,
+        488
+      ],
+      "stub": [
+        598.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        598.0,
+        547
+      ],
+      "stub": [
+        598.0,
+        538
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "adf_r",
+      "a": "workers_r",
+      "semantica": "politica",
+      "etiqueta": "Coordinar cargas y dependencias; factory y runtime con ubicación propia; únicamente Retail"
+    },
+    "points": [
+      [
+        1128.0,
+        488
+      ],
+      [
+        1128.0,
+        558.0
+      ],
+      [
+        1063,
+        558.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1128.0,
+        488
+      ],
+      "stub": [
+        1128.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1063,
+        558.0
+      ],
+      "stub": [
+        1072,
+        558.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_r",
+      "a": "lake_r",
+      "semantica": "persistencia",
+      "etiqueta": "Escribir landing, validar y producir curados definidos por finalidad; únicamente Retail"
+    },
+    "points": [
+      [
+        587,
+        615.0
+      ],
+      [
+        578,
+        615.0
+      ],
+      [
+        578,
+        879.829
+      ],
+      [
+        533,
+        879.829
+      ]
+    ],
+    "source": {
+      "point": [
+        587,
+        615.0
+      ],
+      "stub": [
+        578,
+        615.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        533,
+        879.829
+      ],
+      "stub": [
+        542,
+        879.829
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "lake_r",
+      "a": "workers_r",
+      "semantica": "flujo",
+      "etiqueta": "Reconstrucción desde conjuntos y manifiestos; sin retención infinita de mensajes; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        910.171
+      ],
+      [
+        542,
+        910.171
+      ],
+      [
+        542,
+        637.75
+      ],
+      [
+        587,
+        637.75
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        910.171
+      ],
+      "stub": [
+        542,
+        910.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        637.75
+      ],
+      "stub": [
+        578,
+        637.75
+      ],
+      "anchor": [
+        0,
+        0.675
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_r",
+      "a": "mart_r",
+      "semantica": "persistencia",
+      "etiqueta": "Mantener modelos de lectura, indicadores, punto aplicado y trazabilidad; únicamente Retail"
+    },
+    "points": [
+      [
+        598.0,
+        683
+      ],
+      [
+        598.0,
+        827
+      ]
+    ],
+    "source": {
+      "point": [
+        598.0,
+        683
+      ],
+      "stub": [
+        598.0,
+        692
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        598.0,
+        827
+      ],
+      "stub": [
+        598.0,
+        818
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bi_r",
+      "a": "mart_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar solo modelo analítico: DirectQuery o Import; únicamente Retail"
+    },
+    "points": [
+      [
+        1117,
+        838.0
+      ],
+      [
+        1063,
+        838.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1117,
+        838.0
+      ],
+      "stub": [
+        1108,
+        838.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1063,
+        838.0
+      ],
+      "stub": [
+        1072,
+        838.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_r",
+      "a": "search_r",
+      "semantica": "persistencia",
+      "etiqueta": "Actualizar índice y revocar permisos con la fuente; únicamente Retail"
+    },
+    "points": [
+      [
+        792.1,
+        683
+      ],
+      [
+        792.1,
+        692
+      ],
+      [
+        584,
+        692
+      ],
+      [
+        584,
+        1048
+      ],
+      [
+        825.0,
+        1048
+      ],
+      [
+        825.0,
+        1057
+      ]
+    ],
+    "source": {
+      "point": [
+        792.1,
+        683
+      ],
+      "stub": [
+        792.1,
+        692
+      ],
+      "anchor": [
+        0.43,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        825.0,
+        1057
+      ],
+      "stub": [
+        825.0,
+        1048
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "search_api_r",
+      "a": "search_r",
+      "semantica": "solicitud",
+      "etiqueta": "Consulta con autorización por documento y campo; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        1068.0
+      ],
+      [
+        587,
+        1068.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        1068.0
+      ],
+      "stub": [
+        542,
+        1068.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        1068.0
+      ],
+      "stub": [
+        578,
+        1068.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_r",
+      "a": "metadata_r",
+      "semantica": "politica",
+      "etiqueta": "Publicar linaje de ejecuciones y resultados durables de calidad por API; únicamente Retail"
+    },
+    "points": [
+      [
+        857.9,
+        683
+      ],
+      [
+        857.9,
+        824
+      ],
+      [
+        536,
+        824
+      ],
+      [
+        536,
+        1498
+      ],
+      [
+        295.0,
+        1498
+      ],
+      [
+        295.0,
+        1507
+      ]
+    ],
+    "source": {
+      "point": [
+        857.9,
+        683
+      ],
+      "stub": [
+        857.9,
+        692
+      ],
+      "anchor": [
+        0.57,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        295.0,
+        1507
+      ],
+      "stub": [
+        295.0,
+        1498
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "metadata_r",
+      "a": "metadata_pg_r",
+      "semantica": "persistencia",
+      "etiqueta": "Persistir catálogo y configuración propia; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        1518.0
+      ],
+      [
+        587,
+        1518.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        1518.0
+      ],
+      "stub": [
+        542,
+        1518.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        1518.0
+      ],
+      "stub": [
+        578,
+        1518.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "metadata_r",
+      "a": "metadata_idx_r",
+      "semantica": "solicitud",
+      "etiqueta": "Índice dedicado soportado por la versión; sin reutilizar búsqueda de negocio; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        1590.171
+      ],
+      [
+        542,
+        1590.171
+      ],
+      [
+        542,
+        1646
+      ],
+      [
+        1108,
+        1646
+      ],
+      [
+        1108,
+        1575.0
+      ],
+      [
+        1117,
+        1575.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        1590.171
+      ],
+      "stub": [
+        542,
+        1590.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1117,
+        1575.0
+      ],
+      "stub": [
+        1108,
+        1575.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_r",
+      "a": "blob_r",
+      "semantica": "persistencia",
+      "etiqueta": "Documentos bajo autoridad del servicio; C-03 verifica completitud; únicamente Retail"
+    },
+    "points": [
+      [
+        533,
+        435.171
+      ],
+      [
+        542,
+        435.171
+      ],
+      [
+        542,
+        544
+      ],
+      [
+        1108,
+        544
+      ],
+      [
+        1108,
+        1125.0
+      ],
+      [
+        1117,
+        1125.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        435.171
+      ],
+      "stub": [
+        542,
+        435.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1117,
+        1125.0
+      ],
+      "stub": [
+        1108,
+        1125.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_r",
+      "a": "archive_r",
+      "semantica": "persistencia",
+      "etiqueta": "Copiar, verificar y registrar evidencia/archivo por clase de retención; únicamente Retail"
+    },
+    "points": [
+      [
+        923.7,
+        683
+      ],
+      [
+        923.7,
+        692
+      ],
+      [
+        1072,
+        692
+      ],
+      [
+        1072,
+        1248
+      ],
+      [
+        1355.0,
+        1248
+      ],
+      [
+        1355.0,
+        1257
+      ]
+    ],
+    "source": {
+      "point": [
+        923.7,
+        683
+      ],
+      "stub": [
+        923.7,
+        692
+      ],
+      "anchor": [
+        0.71,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1355.0,
+        1257
+      ],
+      "stub": [
+        1355.0,
+        1248
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "backup_r",
+      "a": "oper_r",
+      "semantica": "politica",
+      "etiqueta": "Cobertura de respaldo por recurso y restauración probada con claves; únicamente Retail"
+    },
+    "points": [
+      [
+        770.151,
+        1257
+      ],
+      [
+        770.151,
+        1248
+      ],
+      [
+        1066,
+        1248
+      ],
+      [
+        1066,
+        497
+      ],
+      [
+        879.849,
+        497
+      ],
+      [
+        879.849,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        770.151,
+        1257
+      ],
+      "stub": [
+        770.151,
+        1248
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        879.849,
+        488
+      ],
+      "stub": [
+        879.849,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "backup_r",
+      "a": "mart_r",
+      "semantica": "politica",
+      "etiqueta": "Política por recurso; respaldo no equivale a archivo legal; únicamente Retail"
+    },
+    "points": [
+      [
+        879.849,
+        1257
+      ],
+      [
+        879.849,
+        1248
+      ],
+      [
+        1066,
+        1248
+      ],
+      [
+        1066,
+        972
+      ],
+      [
+        825.0,
+        972
+      ],
+      [
+        825.0,
+        963
+      ]
+    ],
+    "source": {
+      "point": [
+        879.849,
+        1257
+      ],
+      "stub": [
+        879.849,
+        1248
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        825.0,
+        963
+      ],
+      "stub": [
+        825.0,
+        972
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_e",
+      "a": "oper_e",
+      "semantica": "persistencia",
+      "etiqueta": "Cada servicio escribe únicamente su contexto; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        363.0
+      ],
+      [
+        2237,
+        363.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        363.0
+      ],
+      "stub": [
+        2192,
+        363.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2237,
+        363.0
+      ],
+      "stub": [
+        2228,
+        363.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_e",
+      "a": "bus_e",
+      "semantica": "publicacion",
+      "etiqueta": "Publicar desde outbox durable, no desde una escritura no confirmada; únicamente Filial"
+    },
+    "points": [
+      [
+        1718.0,
+        488
+      ],
+      [
+        1718.0,
+        547
+      ]
+    ],
+    "source": {
+      "point": [
+        1718.0,
+        488
+      ],
+      "stub": [
+        1718.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1718.0,
+        547
+      ],
+      "stub": [
+        1718.0,
+        538
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_e",
+      "a": "workers_e",
+      "semantica": "consumo",
+      "etiqueta": "Deduplicar y aplicar versiones; manejar mensajes fallidos y desorden; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        558.0
+      ],
+      [
+        2237,
+        558.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        558.0
+      ],
+      "stub": [
+        2192,
+        558.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2237,
+        558.0
+      ],
+      "stub": [
+        2228,
+        558.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "oper_e",
+      "a": "workers_e",
+      "semantica": "flujo",
+      "etiqueta": "Exportación autorizada con corte; cargas históricas, no consultas BI; únicamente Filial"
+    },
+    "points": [
+      [
+        2248.0,
+        488
+      ],
+      [
+        2248.0,
+        547
+      ]
+    ],
+    "source": {
+      "point": [
+        2248.0,
+        488
+      ],
+      "stub": [
+        2248.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2248.0,
+        547
+      ],
+      "stub": [
+        2248.0,
+        538
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "adf_e",
+      "a": "workers_e",
+      "semantica": "politica",
+      "etiqueta": "Coordinar cargas y dependencias; factory y runtime con ubicación propia; únicamente Filial"
+    },
+    "points": [
+      [
+        2778.0,
+        488
+      ],
+      [
+        2778.0,
+        558.0
+      ],
+      [
+        2713,
+        558.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2778.0,
+        488
+      ],
+      "stub": [
+        2778.0,
+        497
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2713,
+        558.0
+      ],
+      "stub": [
+        2722,
+        558.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_e",
+      "a": "lake_e",
+      "semantica": "persistencia",
+      "etiqueta": "Escribir landing, validar y producir curados definidos por finalidad; únicamente Filial"
+    },
+    "points": [
+      [
+        2237,
+        615.0
+      ],
+      [
+        2228,
+        615.0
+      ],
+      [
+        2228,
+        879.829
+      ],
+      [
+        2183,
+        879.829
+      ]
+    ],
+    "source": {
+      "point": [
+        2237,
+        615.0
+      ],
+      "stub": [
+        2228,
+        615.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2183,
+        879.829
+      ],
+      "stub": [
+        2192,
+        879.829
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "lake_e",
+      "a": "workers_e",
+      "semantica": "flujo",
+      "etiqueta": "Reconstrucción desde conjuntos y manifiestos; sin retención infinita de mensajes; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        910.171
+      ],
+      [
+        2192,
+        910.171
+      ],
+      [
+        2192,
+        637.75
+      ],
+      [
+        2237,
+        637.75
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        910.171
+      ],
+      "stub": [
+        2192,
+        910.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2237,
+        637.75
+      ],
+      "stub": [
+        2228,
+        637.75
+      ],
+      "anchor": [
+        0,
+        0.675
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_e",
+      "a": "mart_e",
+      "semantica": "persistencia",
+      "etiqueta": "Mantener modelos de lectura, indicadores, punto aplicado y trazabilidad; únicamente Filial"
+    },
+    "points": [
+      [
+        2248.0,
+        683
+      ],
+      [
+        2248.0,
+        827
+      ]
+    ],
+    "source": {
+      "point": [
+        2248.0,
+        683
+      ],
+      "stub": [
+        2248.0,
+        692
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2248.0,
+        827
+      ],
+      "stub": [
+        2248.0,
+        818
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bi_e",
+      "a": "mart_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consultar solo modelo analítico: DirectQuery o Import; únicamente Filial"
+    },
+    "points": [
+      [
+        2767,
+        838.0
+      ],
+      [
+        2713,
+        838.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2767,
+        838.0
+      ],
+      "stub": [
+        2758,
+        838.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2713,
+        838.0
+      ],
+      "stub": [
+        2722,
+        838.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_e",
+      "a": "search_e",
+      "semantica": "persistencia",
+      "etiqueta": "Actualizar índice y revocar permisos con la fuente; únicamente Filial"
+    },
+    "points": [
+      [
+        2442.1,
+        683
+      ],
+      [
+        2442.1,
+        692
+      ],
+      [
+        2234,
+        692
+      ],
+      [
+        2234,
+        1048
+      ],
+      [
+        2475.0,
+        1048
+      ],
+      [
+        2475.0,
+        1057
+      ]
+    ],
+    "source": {
+      "point": [
+        2442.1,
+        683
+      ],
+      "stub": [
+        2442.1,
+        692
+      ],
+      "anchor": [
+        0.43,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2475.0,
+        1057
+      ],
+      "stub": [
+        2475.0,
+        1048
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "search_api_e",
+      "a": "search_e",
+      "semantica": "solicitud",
+      "etiqueta": "Consulta con autorización por documento y campo; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        1068.0
+      ],
+      [
+        2237,
+        1068.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        1068.0
+      ],
+      "stub": [
+        2192,
+        1068.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2237,
+        1068.0
+      ],
+      "stub": [
+        2228,
+        1068.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_e",
+      "a": "metadata_e",
+      "semantica": "politica",
+      "etiqueta": "Publicar linaje de ejecuciones y resultados durables de calidad por API; únicamente Filial"
+    },
+    "points": [
+      [
+        2507.9,
+        683
+      ],
+      [
+        2507.9,
+        824
+      ],
+      [
+        2186,
+        824
+      ],
+      [
+        2186,
+        1498
+      ],
+      [
+        1945.0,
+        1498
+      ],
+      [
+        1945.0,
+        1507
+      ]
+    ],
+    "source": {
+      "point": [
+        2507.9,
+        683
+      ],
+      "stub": [
+        2507.9,
+        692
+      ],
+      "anchor": [
+        0.57,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1945.0,
+        1507
+      ],
+      "stub": [
+        1945.0,
+        1498
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "metadata_e",
+      "a": "metadata_pg_e",
+      "semantica": "persistencia",
+      "etiqueta": "Persistir catálogo y configuración propia; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        1518.0
+      ],
+      [
+        2237,
+        1518.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        1518.0
+      ],
+      "stub": [
+        2192,
+        1518.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2237,
+        1518.0
+      ],
+      "stub": [
+        2228,
+        1518.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "metadata_e",
+      "a": "metadata_idx_e",
+      "semantica": "solicitud",
+      "etiqueta": "Índice dedicado soportado por la versión; sin reutilizar búsqueda de negocio; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        1590.171
+      ],
+      [
+        2192,
+        1590.171
+      ],
+      [
+        2192,
+        1646
+      ],
+      [
+        2758,
+        1646
+      ],
+      [
+        2758,
+        1575.0
+      ],
+      [
+        2767,
+        1575.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        1590.171
+      ],
+      "stub": [
+        2192,
+        1590.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2767,
+        1575.0
+      ],
+      "stub": [
+        2758,
+        1575.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_e",
+      "a": "blob_e",
+      "semantica": "persistencia",
+      "etiqueta": "Documentos bajo autoridad del servicio; C-03 verifica completitud; únicamente Filial"
+    },
+    "points": [
+      [
+        2183,
+        435.171
+      ],
+      [
+        2192,
+        435.171
+      ],
+      [
+        2192,
+        544
+      ],
+      [
+        2758,
+        544
+      ],
+      [
+        2758,
+        1125.0
+      ],
+      [
+        2767,
+        1125.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2183,
+        435.171
+      ],
+      "stub": [
+        2192,
+        435.171
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2767,
+        1125.0
+      ],
+      "stub": [
+        2758,
+        1125.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "workers_e",
+      "a": "archive_e",
+      "semantica": "persistencia",
+      "etiqueta": "Copiar, verificar y registrar evidencia/archivo por clase de retención; únicamente Filial"
+    },
+    "points": [
+      [
+        2573.7,
+        683
+      ],
+      [
+        2573.7,
+        692
+      ],
+      [
+        2722,
+        692
+      ],
+      [
+        2722,
+        1248
+      ],
+      [
+        3005.0,
+        1248
+      ],
+      [
+        3005.0,
+        1257
+      ]
+    ],
+    "source": {
+      "point": [
+        2573.7,
+        683
+      ],
+      "stub": [
+        2573.7,
+        692
+      ],
+      "anchor": [
+        0.71,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3005.0,
+        1257
+      ],
+      "stub": [
+        3005.0,
+        1248
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "backup_e",
+      "a": "oper_e",
+      "semantica": "politica",
+      "etiqueta": "Cobertura de respaldo por recurso y restauración probada con claves; únicamente Filial"
+    },
+    "points": [
+      [
+        2420.151,
+        1257
+      ],
+      [
+        2420.151,
+        1248
+      ],
+      [
+        2716,
+        1248
+      ],
+      [
+        2716,
+        497
+      ],
+      [
+        2529.849,
+        497
+      ],
+      [
+        2529.849,
+        488
+      ]
+    ],
+    "source": {
+      "point": [
+        2420.151,
+        1257
+      ],
+      "stub": [
+        2420.151,
+        1248
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2529.849,
+        488
+      ],
+      "stub": [
+        2529.849,
+        497
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "backup_e",
+      "a": "mart_e",
+      "semantica": "politica",
+      "etiqueta": "Política por recurso; respaldo no equivale a archivo legal; únicamente Filial"
+    },
+    "points": [
+      [
+        2529.849,
+        1257
+      ],
+      [
+        2529.849,
+        1248
+      ],
+      [
+        2716,
+        1248
+      ],
+      [
+        2716,
+        972
+      ],
+      [
+        2475.0,
+        972
+      ],
+      [
+        2475.0,
+        963
+      ]
+    ],
+    "source": {
+      "point": [
+        2529.849,
+        1257
+      ],
+      "stub": [
+        2529.849,
+        1248
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        2475.0,
+        963
+      ],
+      "stub": [
+        2475.0,
+        972
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_r",
+      "a": "embeddings",
+      "semantica": "flujo",
+      "etiqueta": "Solo Oferta e imágenes autorizadas"
+    },
+    "points": [
+      [
+        295.0,
+        488
+      ],
+      [
+        295.0,
+        497
+      ],
+      [
+        53,
+        497
+      ],
+      [
+        53,
+        1938
+      ],
+      [
+        295.0,
+        1938
+      ],
+      [
+        295.0,
+        1947
+      ]
+    ],
+    "source": {
+      "point": [
+        295.0,
+        488
+      ],
+      "stub": [
+        295.0,
+        497
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        295.0,
+        1947
+      ],
+      "stub": [
+        295.0,
+        1938
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "embeddings",
+      "a": "vector",
+      "semantica": "persistencia",
+      "etiqueta": "Representaciones y versión del modelo; reconstrucción"
+    },
+    "points": [
+      [
+        533,
+        1958.0
+      ],
+      [
+        587,
+        1958.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        1958.0
+      ],
+      "stub": [
+        542,
+        1958.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        1958.0
+      ],
+      "stub": [
+        578,
+        1958.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "services_r",
+      "a": "vector",
+      "semantica": "solicitud",
+      "etiqueta": "Solo Oferta consulta; confirma precio y disponible con su autoridad"
+    },
+    "points": [
+      [
+        377.25,
+        488
+      ],
+      [
+        377.25,
+        497
+      ],
+      [
+        536,
+        497
+      ],
+      [
+        536,
+        895.0
+      ],
+      [
+        578,
+        895.0
+      ],
+      [
+        578,
+        1853
+      ],
+      [
+        825.0,
+        1853
+      ],
+      [
+        825.0,
+        1947
+      ]
+    ],
+    "source": {
+      "point": [
+        377.25,
+        488
+      ],
+      "stub": [
+        377.25,
+        497
+      ],
+      "anchor": [
+        0.675,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        825.0,
+        1947
+      ],
+      "stub": [
+        825.0,
+        1938
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "lake_r",
+      "a": "training",
+      "semantica": "flujo",
+      "etiqueta": "Conjunto autorizado versionado y manifiesto de Retail"
+    },
+    "points": [
+      [
+        295.0,
+        963
+      ],
+      [
+        295.0,
+        972
+      ],
+      [
+        38,
+        972
+      ],
+      [
+        38,
+        2168
+      ],
+      [
+        295.0,
+        2168
+      ],
+      [
+        295.0,
+        2177
+      ]
+    ],
+    "source": {
+      "point": [
+        295.0,
+        963
+      ],
+      "stub": [
+        295.0,
+        972
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        295.0,
+        2177
+      ],
+      "stub": [
+        295.0,
+        2168
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "training",
+      "a": "mlflow",
+      "semantica": "persistencia",
+      "etiqueta": "Registrar código, parámetros, métricas, modelo y referencia al conjunto"
+    },
+    "points": [
+      [
+        533,
+        2188.0
+      ],
+      [
+        587,
+        2188.0
+      ]
+    ],
+    "source": {
+      "point": [
+        533,
+        2188.0
+      ],
+      "stub": [
+        542,
+        2188.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        587,
+        2188.0
+      ],
+      "stub": [
+        578,
+        2188.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mlflow",
+      "a": "mlflow_pg",
+      "semantica": "persistencia",
+      "etiqueta": "Metadatos propios de MLflow"
+    },
+    "points": [
+      [
+        1063,
+        2188.0
+      ],
+      [
+        1117,
+        2188.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1063,
+        2188.0
+      ],
+      "stub": [
+        1072,
+        2188.0
+      ],
+      "anchor": [
+        1,
+        0.06153846153846154
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1117,
+        2188.0
+      ],
+      "stub": [
+        1108,
+        2188.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mlflow",
+      "a": "mlflow_blob",
+      "semantica": "persistencia",
+      "etiqueta": "Artefactos versionados; distintos de conjuntos de entrenamiento"
+    },
+    "points": [
+      [
+        1052.0,
+        2313
+      ],
+      [
+        1052.0,
+        2438.0
+      ],
+      [
+        1117,
+        2438.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1052.0,
+        2313
+      ],
+      "stub": [
+        1052.0,
+        2322
+      ],
+      "anchor": [
+        0.9829787234042553,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1117,
+        2438.0
+      ],
+      "stub": [
+        1108,
+        2438.0
+      ],
+      "anchor": [
+        0,
+        0.06153846153846154
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mlflow",
+      "a": "training",
+      "semantica": "flujo",
+      "etiqueta": "Modelo promovido con aprobación humana; deriva y fallback en trabajadores"
+    },
+    "points": [
+      [
+        587,
+        2245.0
+      ],
+      [
+        533,
+        2245.0
+      ]
+    ],
+    "source": {
+      "point": [
+        587,
+        2245.0
+      ],
+      "stub": [
+        578,
+        2245.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        533,
+        2245.0
+      ],
+      "stub": [
+        542,
+        2245.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "training",
+      "a": "recommendations",
+      "semantica": "flujo",
+      "etiqueta": "Inferencia controlada; sin ajuste automático de stock"
+    },
+    "points": [
+      [
+        68.0,
+        2313
+      ],
+      [
+        68.0,
+        2697
+      ]
+    ],
+    "source": {
+      "point": [
+        68.0,
+        2313
+      ],
+      "stub": [
+        68.0,
+        2322
+      ],
+      "anchor": [
+        0.01702127659574468,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        68.0,
+        2697
+      ],
+      "stub": [
+        68.0,
+        2688
+      ],
+      "anchor": [
+        0.01702127659574468,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  }
+]

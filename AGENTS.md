@@ -18,9 +18,13 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 
 ## Reglas de redacción y reglas de plantilla (dos cosas distintas)
 
-- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 (que prevalece). Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
+- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 y decisiones editoriales del equipo. Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Para seleccionar citas, aplicar `.agents/skills/citas-proyecto/SKILL.md`. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
 - **Plantilla (formato):** `05_Gestion/convenciones/reglas-plantilla.md`, IDs `RP-NN`, las cumple `oss.sty`/`plantilla/`. No se replican a mano en un `.tex` ni se cambian fuera del flujo de la plantilla.
 - Las tablas del cuerpo se rigen por RR-15 a RR-19 (ver `artefactos.md`).
+
+### Citas y páginas de las fuentes
+
+Aplicar [citas-proyecto](.agents/skills/citas-proyecto/SKILL.md) al redactar y revisar la oferta. Citar solo exigencias particulares y contexto o datos del Caso 09, identificando documento, capítulo o numeral y **folio impreso** verificado. No citar bibliográficamente exigencias generales de las Bases Administrativas o Transversales ni indicaciones del profesor; conservar sus contenidos obligatorios e IDs técnicos cuando sirvan para trazabilidad. Las decisiones propias y remisiones internas no generan entradas bibliográficas. El [índice de páginas](90_Referencia/indice_paginas_caso09.md) y el [OCR paginado](90_Referencia/caso09_ocr_paginado.txt) facilitan la búsqueda; comprobar el dato final en el PDF visible. Conservar `00_Bases/Caso_09_Cadena_Multitienda.md` como espejo de lectura.
 
 ## Identidad del proponente
 
@@ -29,11 +33,13 @@ Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación)
 
 ## Fuentes y precedencia
 
-Los tres documentos de `00_Bases/` son la fuente de verdad del contenido. Orden de precedencia estricto (Art. 5° de las Bases Administrativas):
+Los documentos de `00_Bases/` son la fuente de verdad del contenido. Orden de precedencia estricto (Art. 5° de las Bases Administrativas):
 
 1. `00_Bases/Bases_Administrativas.md` — reglas del proceso y del contrato: participación, cronograma obligatorio de 56 meses, modelo de despliegue híbrido, hitos, formularios/sobres, evaluación y las 5 innovaciones obligatorias.
 2. `00_Bases/Bases_Transversales.md` — requisitos técnicos comunes a las 13 industrias, codificados como **RT-CC.NN** (Obligatorio / Deseable / Según caso). Deben responderse uno a uno en el **Formulario T-12**.
 3. `00_Bases/Caso_09_Cadena_Multitienda.md` — el caso en sí. **No es una especificación de requerimientos**: traducir su narrativa (dolores, contradicciones, vacíos) en alcance, arquitectura, plan y estrategia es exactamente lo que se evalúa.
+
+**`00_Bases/DivisionNegocios.md`** — complemento del caso (parte de las bases): módulos de negocio retail, financiero y áreas compartidas de Ancoa, con su aporte económico y sus inputs/outputs. Se usa junto con el Caso 09, con su mismo rango (no rebaja ni endurece requisitos transversales). Inmutable.
 
 **Comunicado 10** (`00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`) — también es base: fija la **estructura obligatoria** de la Propuesta Técnica y de los informes preparatorios (capítulos, títulos, orden, qué contenido del T-7 va en cada título, reglas de redacción). No añade requisitos de contenido: gobierna la forma y la ubicación. Prevalece sobre las convenciones de este repositorio (`05_Gestion/convenciones/`) cuando difieran. El archivo es un correo reenviado sin limpiar; no se edita (inmutable, como el resto de `00_Bases/`).
 
@@ -66,12 +72,12 @@ Estructura de pipeline: los prefijos numéricos declaran la etapa del flujo.
 | `01_Requerimientos/` | Catálogos de requerimientos en Excel. **Fuente oficial: `RequerimientosAtomizados_Depuracion_Alcance.xlsx`** (catálogo v3.0 renumerado y depurado: `RF-001`..`RF-226`, `RNF-01`..`RNF-76`, `OP-01`..`OP-09`), con hojas `6_Equivalencia_IDs` (mapeo de IDs viejos a nuevos) y `7_Depuracion_Alcance` (decisiones ELIMINAR / TRASLADAR / CONSOLIDAR / RECLASIFICAR / CONDICIONAR / REVISAR). `RequerimientosAtomizados.xlsx` (v2.1) y `RequerimientosHumanos.xlsx` (análisis original de personas) quedan en `historico/`. Espejos `.md` en `md/`. |
 | `02_Propuesta/` | **Corazón del proyecto.** Los 14 subdocumentos del Formulario T-7, una carpeta `sd-NN_*/` por subdocumento. Ver "Cómo se escribe la propuesta". |
 | `03_Formularios/` | Formularios oficiales de los sobres: `A/` (A-1..A-6), `B/` (T-6..T-22), `C/` (E-21..E-26). |
-| `04_Adjuntos/` | Derivados que se citan desde la propuesta: `diagramas/` (exports PNG/SVG/PDF), `hardware/` (inventario a proveer), `tablas/` (cálculos de apoyo). |
+| `04_Adjuntos/` | Derivados que se citan desde la propuesta: `diagramas/` (fuente `.py`/`.drawio`/`.dot` y export PNG/PDF, sin subcarpetas), `hardware/` (inventario a proveer), `tablas/` (cálculos de apoyo). |
 | `05_Gestion/` | `jira/` con el plan de trabajo del proyecto `OSS`: `plan/`, `mapeo/`, `scripts/`, `historico/`. |
-| `06_Informes/` | Presentaciones preparatorias (Art. 45°): `presentaciones/`. Los informes se arman desde los `.tex` (no hay borradores `.docx`). |
+| `06_Informes/` | Presentaciones preparatorias (Art. 45°) en `presentaciones/` y PDF compilados de cada informe en `informes/Informe N/` (los PDF **no se versionan**, `.gitignore`; se entregan por Drive). Los informes se arman desde los `.tex` (no hay borradores `.docx`). |
 | `07_Entregables/` | Salida final: `sobre_1_administrativo/`, `sobre_2_tecnico/`, `sobre_3_economico/`, `pdf_final/`. |
-| `80_Artefactos/` | Material general del proyecto que no pertenece a una etapa: planilla de consultas al mandante, informes internos. |
-| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo (**no usar salvo instrucción expresa**, ver más abajo). `clases markdown/`: material de las clases del curso, base para evaluar críticamente las secciones. |
+| `80_Artefactos/` | Material de trabajo del equipo (no entregable): planilla de consultas al mandante, auditorías, rúbricas de revisión y `sd-NN_contexto/` con el contexto de cada subdocumento. |
+| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo (**no usar salvo instrucción expresa**, ver más abajo). `clases markdown/`: material de las clases del curso, base para evaluar críticamente las secciones. `CMF/`: documentos de terceros, no se versionan. |
 | `.opencode/` | Skills versionadas, plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` no se versionan. |
 
 Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la carpeta antes de escribir en ella. Las subcarpetas no lo tienen: su propósito está en la tabla de arriba y en un `.gitkeep` comentado mientras están vacías.
@@ -96,6 +102,7 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 - Todos los subdocumentos T-7 se generan y entregan en el formato corporativo LaTeX, con fuente `.tex` editable y PDF compilado desde ella usando `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF. Formularios e informes preparatorios no forman parte de este alcance.
 - La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
 - Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`. Codex y OpenCode las leen directamente; Claude Code solo lee `.claude/skills/`, que se crea con `python3 05_Gestion/scripts/link_skills.py` (symlinks en Linux/macOS, junctions en Windows). Editar siempre la fuente canónica.
+- Para cualquier trabajo sobre citas y Referencias de la propuesta, cargar `.agents/skills/citas-proyecto/SKILL.md`.
 
 ## Convención de nombres de los artefactos
 
@@ -106,6 +113,8 @@ Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la 
 | Adjunto | `sd-NN_sN_titulo.<ext>` | `sd-04_s2_inventario-hardware.xlsx` |
 | Diagrama exportado | `diag-NN-SN_titulo.<ext>` | `diag-04-02_arquitectura-fisica.svg` |
 | Formulario oficial | `form-<ID>_titulo.<ext>` | `form-T-12_matriz-cumplimiento-tecnico.xlsx` |
+| Fuente LaTeX de subdocumento | `OnlySimpleSolutions-SubdocumentoN[-Anexos].tex` en `latex_final/sd-NN/` | `OnlySimpleSolutions-Subdocumento4.tex` |
+| Fuente LaTeX de formulario | `OnlySimpleSolutions-Formulario-T-N.tex` en `latex_final/Formularios/` | `OnlySimpleSolutions-Formulario-T-16.tex` |
 
 El prefijo + id oficial hace que el orden alfabético de los archivos coincida con el orden del informe.
 
@@ -154,6 +163,16 @@ Son tres informes y tres presentaciones, no uno. El `Informe 1` cubre los subdoc
 - Los 62 originales `OSS-105`..`OSS-164` **ya fueron borrados**; `05_Gestion/jira/historico/borrar_manual.txt` está obsoleto a propósito.
 - La taxonomía de secciones del plan de Jira **no coincide** con el índice del Informe 1. Ver las observaciones de `02_Propuesta/indice.md`.
 - Estado de redacción (2026-10-06): el sd-01 y el sd-02 (borrador en `02_Propuesta/sd-02_problema-y-necesidad/subdoc2-enProgreso.md`) están avanzados. El contenido anterior de los sd-03 y siguientes fue retirado a propósito: se redacta de nuevo desde cero. El trabajo previo del sd-03 está en `80_Artefactos/sd-03_contexto/`. El checkpoint anterior a la purga es el tag `checkpoint-pre-purga-sd03`.
+- Estado de redacción (2026-10-12): el sd-08 (Plan de riesgos) está redactado como borrador completo en `02_Propuesta/latex_final/sd-08/OnlySimpleSolutions-Subdocumento8.tex` (37 riesgos y 8 oportunidades; sin revisión humana). El sd-07 tiene como fuente de verdad la rama remota `origin/codex/subdoc7-formularios-entrega` (commit `22a251a`), importada a `latex_final/sd-07/`; sus formularios T-14, T-15 y T-18 están como contexto en `80_Artefactos/entrega-sd07-2026-10-12/`. La integración sd-07 ↔ sd-08 y sus pendientes están en `80_Artefactos/sd-08_contexto/integracion_sd-07.md`; el punto de partida del sd-08 es `relevo_sesion_2026-10-12.md`.
+
+## Flujo git
+
+- `main` es la rama estable y solo recibe cambios por **Pull Request** (merge tras revisión de otra persona del equipo). No se commitea directo a `main`.
+- Una rama por tarea, con vida corta: `sdNN/<tema>` (o `feat/`, `fix/`, `chore/`). Se crea desde `origin/main` actualizado y se borra al mergear; no se reutiliza una rama ya mergeada.
+- Commits atómicos por tema, en español e imperativo. No mezclar contenido de subdocumentos distintos, figuras, scripts y limpieza en un mismo commit.
+- Nunca versionar: PDF de informes, zips, descargas de Prism (`* (1).tex`), documentos de terceros ni derivados regenerables (ver `.gitignore`). Los `.tex` vuelven de Prism **solo** con `prism-importar`.
+- Antes de abrir el PR: `python3 -m unittest discover -s 05_Gestion/tests` y `exportar_latex.py verificar`.
+- Un único worktree por persona salvo necesidad puntual; se eliminan al terminar.
 
 ## Verificación
 
@@ -236,6 +255,18 @@ Regla de selección:
 | Diagrama interactivo/animado (presentaciones, sobres) | **`architecture-diagrams`** | HTML en navegador (GitHub no lo muestra) | screenshot del HTML → PNG |
 
 Convención: los diagramas que se incorporan en la propuesta se entregan como imágenes PNG/SVG/PDF en `04_Adjuntos/diagramas/`; se incrustan en Markdown con rutas relativas y el importador LaTeX los copia a `02_Propuesta/latex_final/figuras/`. No usar bloques Mermaid. Se pueden conservar fuentes editables como `.dot` o `.puml`, pero el documento siempre incluye su exportación como imagen.
+
+## Guía de diagramación Ancoa
+
+Para crear, editar o revisar diagramas de arquitectura de esta propuesta, cargar
+`.agents/skills/diagramas-ancoa/SKILL.md`. La guía instalada define los estilos lógicos L1–L6
+y físicos F1–F5 y exige validar la especificación JSON antes de renderizar.
+Su procedimiento específico rige sobre las recomendaciones generales de herramientas de diagramación
+de este archivo. Los ejemplos de la guía no son decisiones de alcance ni fuentes de requisitos.
+
+El MCP local `diagramas-ancoa` expone catálogo, validación y renderizado. La instalación y las pruebas
+están en `.agents/skills/diagramas-ancoa/references/instalacion-mcp.md`.
+La revisión del contenido sigue contrastándose con las Bases y los subdocumentos vigentes.
 
 ## Graphify
 

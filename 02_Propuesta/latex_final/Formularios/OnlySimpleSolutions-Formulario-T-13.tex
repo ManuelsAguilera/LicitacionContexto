@@ -1,0 +1,289 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\thetable}{T-13.\arabic{table}}
+
+\ossCover{Plan de calidad y validación}{Subdocumento 9 · T-13}
+\tableofcontents
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:t13-1]{Tabla T-13.1: Niveles, tipos y alcance de las pruebas}\dotfill\pageref{tab:t13-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t13-2]{Tabla T-13.2: Ambientes y datos de prueba}\dotfill\pageref{tab:t13-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t13-3]{Tabla T-13.3: Calendario propuesto y compuertas}\dotfill\pageref{tab:t13-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:t13-4]{Tabla T-13.4: Trazabilidad y criterios de aceptación}\dotfill\pageref{tab:t13-4}\par\vspace{0.4\baselineskip}
+\clearpage
+
+
+\section{Formulario T-13 · Plan de pruebas y validación}\label{t13-formulario-t-13-plan-de-pruebas-y-validaciuxf3n}
+
+\textbf{Proponente:} Only Simple Solutions\\
+\textbf{Documento asociado:} Subdocumento 9 del Formulario T-7, Plan de Calidad\\
+\textbf{Estado de este plan:} planificación propuesta; no acredita campañas ejecutadas ni aceptación del Cliente.
+
+Este plan desarrolla el Subdocumento 9 y la estrategia del numeral 20.1 de las Bases Transversales. Organiza niveles, tipos, ambientes, datos, criterios de entrada y salida, automatización y calendario de pruebas conforme a ISO/IEC/IEEE 29119, manteniendo los umbrales y frecuencias contractuales. La trazabilidad utilizará el identificador oficial del requisito o resultado de negocio y lo vinculará con caso, versión, ambiente, datos, ejecución, defecto y evidencia.
+
+\subsection{1. Niveles, tipos y alcance}\label{t13-niveles-tipos-y-alcance}
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\caption[Niveles, tipos y alcance de las pruebas]{Niveles, tipos y alcance de las pruebas. Fuente: Elaboración propia.}\label{tab:t13-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Nivel / tipo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Alcance y método
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Entrada y salida mínima
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Automatización y responsables
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Unitarias y de componente & Reglas de negocio, cálculos, estados, validaciones y límites; particiones equivalentes, valores límite, tablas de decisión y transiciones de estado. & Historia/requisito aprobado, código revisado y datos sintéticos; salida: ≥70 \% de cobertura de lógica de negocio y ninguna prueba fallida (Bases Transversales 20.1). & Ejecución continua en CI. Desarrollo implementa; QA mantiene criterios y revisa resultados. \\
+Integración y contrato & Flujos entre servicios y plataformas que permanecen, incluidos mensajes válidos, inválidos, tardíos y repetidos; Retail, Emisor y frontera se prueban por separado y en sus cruces autorizados. & Contratos/versiones y ambiente QA disponible; salida: todos los flujos de integración del caso ejecutados sin error después de cada despliegue a QA. & Automatización de contratos, APIs y flujos cuando sea viable; Integración ejecuta, QA revisa, dueños de servicio resuelven defectos. \\
+Sistema, regresión y calidad de datos & Flujos de extremo a extremo, reglas, permisos, trazabilidad, rendimiento funcional, compatibilidad, migración y regresión. Aplicar análisis estático/dinámico y escaneos automatizados del pipeline. & Artefacto integrado y batería versionada; antes de promover a Preproducción, regresión completa sin regresiones. & Regresión y análisis de código automatizados en CI/CD; QA controla cobertura y excepciones. \\
+Aceptación de usuario (UAT) & Tareas de perfiles reales de tienda, operación, venta, cartera y cumplimiento del Emisor, con escenarios definidos y observables; revisión de resultados compartidos con el Cliente. & Criterios y datos aprobados, capacitación y entorno apto; salida: casos de aceptación de etapa aprobados y firmados por la Contraparte Técnica. & Ejecución guiada y evidencia capturada; QA facilita, responsables de negocio Cliente/Filial validan, Contraparte Técnica decide y firma. \\
+Desempeño, carga y estrés & En Preproducción equivalente a Producción: carga ≥1,5× peak declarado por perfil; probar por separado peak presencial navideño y peak digital del evento, con mezcla, concurrencia y tasas de llegada aprobadas. Estrés incremental hasta punto de quiebre, con detención y recuperación segura. & Perfil de carga, TPS, concurrencia y dependencias acordados; salida: umbrales del Capítulo 9 cumplidos bajo la carga exigida, con curva de carga, saturación y recuperación informadas. & Generadores, telemetría y análisis automatizados; Arquitectura de rendimiento y QA ejecutan; Canales y Operaciones validan perfil. La volumetría agregada del evento no se convierte en TPS. \\
+Resiliencia & Inyección controlada de fallos de componentes y enlaces; ensayar autonomía de 24 horas, venta con tarjeta propia dentro de topes preaprobados, orden de degradación y suspensión de publicación de una categoría durante el evento anual. & Catálogo de fallos, límites y procedimientos aprobados; salida: ventas sin pérdida ni duplicidad, conciliación en 30 minutos o menos tras el retorno, degradación en el orden aprobado y recuperación comprobada. No sustituye DR. & Líder de Operación y equipo de Calidad y Pruebas ejecutan y registran; filial emisora fija los topes de crédito y Contraparte Técnica valida el acta. \\
+Recuperación ante desastres (DR) & Conmutación real y retorno desde/hacia el ambiente de recuperación; medir RTO/RPO, integridad, atraso de réplica y conciliación de operaciones durante contingencia. & Servicio y datos críticos clasificados, procedimiento probado, autorizaciones y ventana convenida; salida: RTO ≤4 h y RPO ≤15 min donde aplica RT-07.04, con retorno y conciliación documentados. & Automatización de conmutación cuando corresponda; SRE y Datos ejecutan con Operaciones Cliente; QA verifica, Contraparte revisa. \\
+Seguridad ofensiva & Pentest independiente de superficies, APIs, identidades, nube, on-premise, cruces Retail/Emisor y rutas de datos; remediación y retest. & Alcance, activos, reglas de prueba y tercero independiente aprobados; salida antes de producción: ningún hallazgo crítico o alto abierto. & Herramientas del tercero y revisión manual; Seguridad coordina, tercero ejecuta e informa íntegramente, dueños corrigen y QA verifica cierre. \\
+Accesibilidad y usabilidad & WCAG 2.2 AA automatizada y manual; pruebas de usabilidad con personas usuarias reales del Cliente, dispositivos y perfiles definidos. & Interfaces/inventario, tareas y perfiles identificados; salida: conformidad documentada antes de cada producción y hallazgos de usabilidad tratados. & Herramientas automáticas más revisión manual/teclado/lector cuando aplique; UX y Accesibilidad ejecutan, QA verifica. \\
+Migración y conciliación & Perfilado, saneamiento, transformaciones, corte y retorno por dominio; conciliar recuentos, sumas de control y muestra dirigida registro a registro. & Fuentes, reglas y responsables de aceptación definidos; salida: dos ensayos completos previos a migración definitiva y ninguna diferencia sin explicación aprobada por el dueño del dominio. & Scripts versionados reproducibles; Datos/Migración ejecuta, QA recalcula o muestrea, responsables Retail y Emisor validan por separado. \\
+\end{longtable}
+
+Los criterios particulares de desempeño conservan los máximos de la fuente por transacción: disponibilidad digital ≤400 ms; confirmación de pedido ≤3 s durante el evento anual; venta completa en caja con pago externo ≤25 s; evaluación crediticia ≤8 s; propagación de precio a cajas y canal digital ≤5 min; consulta de existencia en terminal de sala ≤2 s con indicación del grado de confianza del dato; devolución en mesón ≤60 s (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 15, núm. RT-09.01, p.~34). La publicación de disponibilidad después de una venta debe completarse en 30 s o menos según RT-05.29 del Caso, y la conciliación tras reconexión en 30 min o menos. La disponibilidad mensual de los servicios críticos será al menos 99,9 \% (RT-10.01). No se sustituye un máximo por promedio o percentil. Se informarán P95 y curvas cuando corresponda, separadamente. Se aplican también los requisitos comunes de Capítulo 9 que el SD09 relaciona (portal, navegación, API, búsqueda, informes, lotes, archivos y arranque en frío). La medición conserva cada observación, perfil, versión, ambiente, resultado y denominador.
+
+La trazabilidad de campañas incluye RT-04.11 (cobertura unitaria), RT-05.13 y RT-05.14 (dos ensayos completos de migración y conciliación), RT-07.04 (DR), RT-09.06 a RT-09.08 (carga, informe y degradación) y RT-20.08 (protocolo T-17). Antes de cada campaña, el Líder de Calidad y Pruebas emite la ficha con umbral, población, método, instrumento, versión y evidencia; los umbrales particulares del Subdocumento 9, Tablas 9.1 y 9.2, se copian a esa ficha sin rebajarlos. Una ficha ausente bloquea la declaración de conformidad.
+
+La campaña del evento anual reproducirá 104.000 pedidos en tres días y, en un escenario separado, aplicará 1,5 veces el peak del perfil temporal acordado (RT-09.06). La cifra agregada no fija por sí sola la concurrencia ni los TPS peak: se medirá el perfil temporal para cada campaña (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.1, p.~31). Se observarán la confirmación de pedidos, la propagación de disponibilidad y precio y el orden de degradación, incluida la suspensión controlada de una categoría.
+
+\subsection{2. Ambientes y datos de prueba}\label{t13-ambientes-y-datos-de-prueba}
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\caption[Ambientes y datos de prueba]{Ambientes y datos de prueba. Fuente: Elaboración propia.}\label{tab:t13-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Ambiente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Uso / controles
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Datos permitidos y evidencia
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Desarrollo (DEV) & Prueba unitaria y de componente, aislada por ámbito. & Datos sintéticos o anonimizados; nunca copiar datos productivos sin autorización y controles expresos. \\
+QA & Integración, contrato, funcional, regresión, seguridad automatizada y calidad de datos. Aislado; configuraciones y conjuntos versionados/restablecibles. & Casos sintéticos, anonimizados o controlados y aprobados, separados por Retail, Emisor y cruces expresamente autorizados. Registrar versión y origen. \\
+Preproducción & Sistema, UAT, carga, estrés, accesibilidad, resiliencia, DR, migración y ensayo de promoción/reversión. Topología, versiones, configuración y volumen representativos de Producción; diferencias declaradas y justificadas. & Datos representativos sintéticos/anonimizados, volumen y distribución aprobados; conjuntos del Emisor protegidos y controlados. No se trasladan datos productivos salvo autorización formal. \\
+Tienda piloto en preproducción aislada & Una de las tres tiendas piloto aloja el nodo local de prueba para el corte provocado de 24 horas en M6--7; el entorno de prueba permanece separado de las ventas y cobros vigentes. No se altera el registro oficial de producción. & Transacciones de prueba identificadas y autorizadas por Retail y la filial emisora; topes de cupo preaprobado fijados por esta última, trazas del diario local y conciliación tras el retorno. \\
+Producción & Operación restringida y auditada. Sin acceso interactivo directo de desarrolladores. Verificación posterior por telemetría y auditoría. & Datos reales bajo autorización, acceso mínimo y controles de privacidad y segregación. No se usa como ambiente de ensayo ordinario. \\
+Recuperación ante Desastres & Ambiente restringido para conmutación y recuperación real autorizada, retorno y conciliación. & Réplicas bajo controles de continuidad; registrar marcas de tiempo, integridad, retraso y operaciones recuperadas. \\
+\end{longtable}
+
+Los conjuntos deben representar límites, errores, concurrencia, estados incompletos, indisponibilidad y duplicidad; identificar dominio, clasificación, origen, transformación, vigencia y responsable. Retail y Emisor mantienen dominios, llaves, permisos, mediciones y conciliación independientes. Las pruebas de frontera incluyen accesos denegados, exportaciones, analítica, respaldos y trazas de auditoría, sin habilitar usos cruzados no autorizados. Los ensayos completos de migración de la cartera viva podrán usar datos productivos del Emisor en preproducción solo con autorización formal, accesos nominados, cifrado, segregación y registro de uso; la conciliación de saldos se hará contra totales de origen y destino sin exponer los datos a Retail. La selección de datos y suficiencia jurídica del consentimiento quedan sujetas a decisión de los responsables del Emisor.
+
+\subsection{3. Criterios transversales de entrada, salida y tratamiento}\label{t13-criterios-transversales-de-entrada-salida-y-tratamiento}
+
+\textbf{Entrada de campaña:} requisito/criterio con versión y dueño; caso y resultado esperado aprobados; trazabilidad al catálogo y al diseño; build identificado; ambiente, configuración, dependencias y datos disponibles; instrumento calibrado/versionado; perfiles y umbrales convenidos cuando las Bases no fijan el detalle; accesos y ventana autorizados; riesgos y procedimiento de detención/retorno revisados. Los criterios de umbral o perfil pendientes en la matriz bloquean la declaración de aceptación de esa campaña.
+
+\textbf{Salida de ejecución:} cada caso queda en uno de estos estados: pendiente, ejecutado conforme, ejecutado no conforme o bloqueado. El cierre exige ejecución completa del alcance previsto, evidencia íntegra, resultado contrastado con criterio y defectos registrados. Los fallos bloqueantes se corrigen y se repiten; se reejecuta regresión afectada. No se promueve con fallos de prueba abiertos que contravengan criterios de salida ni con hallazgos críticos/altos de seguridad abiertos. Una excepción debe ser aprobada, justificada, delimitada, con responsable y fecha, y no puede dispensar umbrales contractuales. El cierre de etapa requiere expediente revisado y acta suscrita por Contraparte Técnica; la aceptación contractual se rige por T-17 y sus ventanas de revisión/subsanación.
+
+\textbf{Expediente por ejecución:} identificador de requisito/resultado y criterio interno; versión de diseño, código, datos, ambiente y configuración; precondiciones, método, instrumento y pasos; perfil y carga; esperado y obtenido; hora de inicio/fin; población, numerador y denominador cuando aplique; mediciones completas, defectos y severidad; evidencia íntegra con hash o ubicación controlada; responsable ejecutor y revisor; decisión, observaciones, corrección, repetición y aprobación. Para tasas se explicitan causas y ventana; para máximos se conservan todas las observaciones; para migración la conciliación es independiente por dominio.
+
+\subsection{4. Calendario propuesto y compuertas}\label{t13-calendario-propuesto-y-compuertas}
+
+El calendario queda subordinado a las producciones obligatorias: Etapa 1 en mes 16, Etapa 2 en mes 21 y operación hasta mes 56 (Art. 17 de Bases Administrativas). Los meses son relativos al inicio contractual; las fechas calendario del Anexo D del Subdocumento 3 son supuestos de planificación y no fechas adjudicadas. Ninguna conmutación o intervención productiva se programa en los cinco congelamientos del Caso 09, cap. 13, núm. 13.2, p.~29: 1 de noviembre a 6 de enero, última semana de noviembre, última semana de enero a primera de marzo, segunda semana de mayo, ni durante la semana previa y los tres días del evento anual. En esas ventanas las campañas no productivas usan preproducción y recuperación aisladas.
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\caption[Calendario propuesto y compuertas]{Calendario propuesto y compuertas. Fuente: Elaboración propia.}\label{tab:t13-3}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Hito / ventana
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Campañas y criterio de salida
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Responsable principal / aprobador
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Meses 1--10; H4 en mes 10 & Unitarias y componente en cada integración; contratos e integración tras cada despliegue QA; preparar datos, perfiles de carga, alcance del tercero, ambientes y trazabilidad. Ejecutar el primer ensayo completo de migración de Etapa 1 cuando las fuentes y reglas estén aprobadas. H4 entrega la versión E1 con QA y cobertura registradas. & Desarrollo e Integración ejecutan; QA controla; Datos, Arquitectura, Seguridad y dueños Retail/Emisor preparan campañas. \\
+Meses 6--7; piloto sin enlace & En una de las tres tiendas piloto, sobre preproducción aislada, provocar corte de enlace de 24 horas fuera de los congelamientos y de la semana previa y los tres días del evento anual. Ejecutar venta de prueba con tarjeta propia contra cupo preaprobado y topes fijados por la filial emisora; registrar cada operación en el nodo local, recuperar evidencia financiera, reconectar y conciliar en 30 minutos o menos sin pérdidas, duplicaciones ni diferencias no explicadas. Si no hay topes aprobados o falla la prueba, declarar no disponible la compra con tarjeta propia sin enlace. & Líder de Operación y Líder de Calidad y Pruebas ejecutan; filial emisora aprueba topes; Contraparte Técnica firma el acta de resultado. \\
+Meses 9--10; degradación E1 & Ensayar el orden documentado de degradación del evento anual, incluida la suspensión y restitución de la publicación de una categoría, con umbrales y responsables definidos; repetirlo antes de H7 en M16 si cambia versión, tráfico o configuración. & Arquitecto de Solución y Líder de Calidad y Pruebas ejecutan; responsable Retail y Contraparte Técnica revisan evidencia. \\
+Meses 11--12; certificación H5 en mes 12 & Ejecutar segundo ensayo completo de migración E1 y conciliación; sistema, regresión, UAT, carga y estrés a 1,5× del peak declarado, resiliencia, conmutación y retorno DR, accesibilidad y pentest independiente con corrección y retest. Presentar en H5 resultados versionados, umbrales, defectos resueltos y evidencia aprobada. & QA coordina; Datos y Operaciones ejecutan migración/DR; tercero independiente realiza pentest; responsables Retail/Emisor validan; Contraparte Técnica se pronunciará sobre la certificación según las Bases. \\
+Meses 13--15; marcha blanca E1 & Vigilar indicadores y conciliar diariamente con usuarios y datos reales autorizados. Repetir pruebas afectadas y regresión tras correcciones; renovar carga, resiliencia, DR, seguridad ofensiva o accesibilidad si cambian artefacto, configuración o condiciones que sustentaron su resultado. Preparar expediente y reservar revisión/subsanación contractual antes del paso productivo. & Implantación y Operaciones ejecutan; QA comprueba regresión y evidencia; Seguridad y Datos revalidan sus controles. \\
+Mes 16; producción E1, H7 & Comprobar vigencia de campañas previas, incluida la repetición del orden de degradación, cumplimiento del alcance E1 y las seis condiciones copulativas de salida de marcha blanca. Promover solo tras acta de la Contraparte Técnica; un incumplimiento exige corrección y repetición, sin autorización tácita de producción. & QA integra expediente; responsables de Retail y Emisor conforman su ámbito; Contraparte Técnica decide y firma. \\
+Meses 14--17; H8 y H9 & Aprobar línea base E2 en H8; continuar pruebas unitarias, de integración y regresión protegiendo E1; preparar perfiles, datos y alcance ofensivo E2. Ejecutar dos ensayos completos de migración E2 antes de su corte, con retorno y conciliación por dominio. H9 entrega versión E2 con QA superado. & Desarrollo, Integración y Datos ejecutan; QA verifica; Arquitectura, Seguridad y responsables de negocio validan criterios. \\
+Mes 18; certificación H10 & Ejecutar UAT E2, sistema y regresión de E1/E2; prueba completa del evento de 104.000 pedidos en tres días y escenario separado de 1,5 veces el peak del perfil acordado (RT-09.06), con informe de carga y degradación; ensayo del orden de degradación y suspensión de categoría; resiliencia, conmutación y retorno DR, accesibilidad y pentest independiente. Cerrar defectos y repetir pruebas afectadas antes de certificar. & Líder de Calidad y Pruebas coordina; Líder de Operación y Líder de Datos producen evidencia; tercero independiente realiza pentest; Contraparte Técnica se pronuncia sobre H10. \\
+Meses 19--20; marcha blanca E2 & Conciliar diariamente la convivencia E1/E2; repetir casos afectados y controles no funcionales si cambian versión, infraestructura o perfil. Preparar el expediente H12 y reservar revisión/subsanación; ninguna medición E2 podrá ocultar degradación de E1. & Implantación y Operaciones ejecutan; QA, Seguridad, Datos y dueños de dominio verifican. \\
+Mes 21; producción E2, H12 & Verificar vigencia de la prueba completa de 104.000 pedidos en tres días, del escenario 1,5 veces el peak, del orden de degradación, resiliencia, DR, pentest y accesibilidad; dos ensayos migratorios conformes, alcance E2, regresión E1/E2 y salida de marcha blanca. Solo el acta habilita producción y aceptación final de implementación. & QA integra expediente; responsables Retail/Emisor conforman; Contraparte Técnica decide y firma. \\
+Mes 22; cartera y retiro & Conciliar por tramo la cartera viva de 620.000 clientes con saldo, con retorno ensayado, recuentos, sumas de control y conciliación diaria independiente del Emisor. Ejecutar el último corte antes del 15 de octubre de 2028 y retirar la plataforma de crédito de 2011 antes del 31 de octubre de 2028, fuera del congelamiento que inicia el 1 de noviembre. El acta del período registra cualquier tramo aceptado después de H12, sin alterar la aceptación final de implementación. & Líder de Datos y filial emisora validan saldos; Líder de Calidad y Pruebas comprueba evidencia; Contraparte Técnica firma el acta del tramo. \\
+Primer evento anual posterior al mes 21 & Medición del evento real para cancelaciones por falta de existencias, desempeño y otros indicadores aplicables del Anexo D del SD03; conservar el ensayo previo y medir por perfil, operación y periodo acordado. & Operaciones/Canales y QA; validan dueños de negocio y Contraparte. \\
+Operación, meses 21--56 & Resiliencia y DR con conmutación real una vez dentro de cada semestre contractual, fuera de congelamientos: ventanas propuestas M22, M28, M34, M40, M46 y M52, sujetas al calendario efectivo y a autorización de cambio. M26, M38 y M50 quedan excluidos por caer en febrero con el inicio supuesto. Pentest independiente anual en M32, M44 y M56, también fuera de congelamientos. Mantener indicadores, regresión por liberación, trazabilidad y acciones correctivas. & Líder de Operación, Encargado de Seguridad y Líder de Calidad y Pruebas ejecutan; Cliente participa y Contraparte revisa evidencia. \\
+\end{longtable}
+
+Estas ventanas son la programación interna propuesta, subordinada a H5/H10 y a las producciones obligatorias. Cada campaña tendrá fecha, versión candidata, ambiente, perfil, responsable y duración en el calendario integrado T-14 antes de ejecutarse; QA reservará allí la repetición de pruebas y los diez días hábiles de revisión y, si procede, diez días hábiles de subsanación de cada entregable según T-17. La carga y el estrés se ejecutan antes de cada paso productivo; resiliencia y DR antes de cada producción y semestralmente en Operación; el pentest independiente antes de cada producción y anualmente; accesibilidad antes de cada producción. Un resultado deja de habilitar la puerta si un cambio afecta su validez. La necesidad de repetirlo se documenta y no desplaza por sí sola los meses 16, 21 ni 56.
+
+\subsection{5. Trazabilidad y criterios de aceptación}\label{t13-trazabilidad-y-criterios-de-aceptaciuxf3n}
+
+Antes de cada campaña, QA vinculará cada requisito y resultado aplicable del Caso y de las Bases Transversales con su criterio medible, método, caso, evidencia prevista, responsable y ventana. La matriz de campaña se conciliará con el catálogo oficial, la línea base aprobada y el Formulario T-12. Un requisito sin criterio, caso o evidencia prevista impide declarar cobertura completa del alcance de la campaña.
+
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\caption[Trazabilidad y criterios de aceptación]{Trazabilidad y criterios de aceptación. Fuente: Elaboración propia.}\label{tab:t13-4}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Línea de criterios
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Vínculos de resultado / requisitos oficiales
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Evidencia de aceptación prevista
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Retail & Anexo D del SD03, resultados 1--15; requisitos oficiales y reglas de inventario, precios, pedidos, marketplace, comisiones y posventa. & Casos, lecturas/eventos, conciliaciones, trazas y mediciones por hito; validación de negocio donde corresponda. \\
+Emisor & Anexo D del SD03, resultados 16--20; controles de originación, información precontractual, consentimiento, evidencia y recuperación. & Solicitudes y respuestas, pruebas negativas, evidencia recuperable, registros de integridad y decisión del dueño del Emisor. \\
+Frontera Retail/Emisor & Anexo D del SD03, resultados 21--22; separación entre Retail y filial emisora y registro de cruces autorizados. & Pruebas positivas/negativas de autorización, inspección de despliegue, auditoría, pentest independiente y trazas SIEM. \\
+Resultados complementarios y compartidos & Anexo D del SD03, resultados 23--28; remediación, migración de cartera, carga/evento, pedidos, inventario y apertura de tarjeta. & Conciliación por ámbito, perfiles de carga, trazas y evidencia de información/consentimiento; criterios del dueño y Contraparte. \\
+Requisitos transversales & Calidad del código y cobertura; trazabilidad; seguridad; continuidad y DR; accesibilidad; capacidad y desempeño; migración; ambientes y CI/CD; niveles y resiliencia. La respuesta individual por RT pertenece al Formulario T-12. & Pipeline y reportes, matriz requisito-caso-evidencia, pentest, informes carga/DR, conformidad WCAG, conciliaciones, inventario de ambientes y reportes de ejecución. \\
+\end{longtable}
+
+La tabla delimita las evidencias previstas por ámbito. La cobertura se comprobará sobre los requisitos oficiales aplicables a cada etapa, sin compensar omisiones ni resultados no conformes entre Retail y Emisor. El protocolo para presentar esa evidencia, resolver observaciones y obtener el pronunciamiento contractual se desarrolla en T-17.
+
+\subsection{6. Responsabilidades y evidencia}\label{t13-responsabilidades-y-evidencia}
+
+El Jefe de Proyecto reserva capacidad para corregir y repetir pruebas y escala bloqueos al Comité de Proyecto; los cambios de arquitectura o de seguridad pasan además al Comité de Arquitectura. Las pruebas unitarias, de contrato, integración y regresión repetible se automatizan en el canal CI/CD; UAT, accesibilidad con usuarios, pentest independiente, cortes de enlace y actas requieren ejecución o revisión humana. La herramienta y la proporción automatizada se registran en la ficha antes del primer pipeline, sin atribuir cobertura no medida.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Líder de Calidad y Pruebas:} mantiene plan, catálogo y trazabilidad; revisa expedientes, controla bloqueos, resultados no conformes y regresión; consolida informes por etapa.
+\item
+  \textbf{Desarrollo e Integración:} diseña/ejecuta unitarias, componentes, contratos e integración; corrige defectos y aporta registros CI/CD y versiones.
+\item
+  \textbf{Arquitectura de rendimiento / Canales:} define, con Ancoa, perfiles, concurrencia, TPS, ventanas y crecimiento; conduce campañas de carga y analiza cuellos de botella.
+\item
+  \textbf{Datos/Migración y dueños Retail y Emisor:} perfilan fuentes, autorizan conjuntos, ejecutan ensayos, concilian cada dominio y aceptan diferencias explicadas. No se compensan diferencias entre dominios.
+\item
+  \textbf{SRE/Operaciones y Operaciones Cliente:} ejecutan resiliencia, conmutación y retorno, documentan RTO/RPO y transferencia de procedimientos.
+\item
+  \textbf{Seguridad y tercero independiente:} acuerdan alcance, ejecutan pentest y retest, gestionan hallazgos y conservan el informe íntegro.
+\item
+  \textbf{UX/Accesibilidad:} investiga con personas usuarias, ejecuta evaluación automatizada y manual, presenta conformidad y cambios derivados.
+\item
+  \textbf{Responsables de negocio de Ancoa/Filial:} validan reglas y casos del ámbito; la \textbf{Contraparte Técnica} revisa evidencia y firma aceptación cuando corresponda. Los roles indicados son responsabilidades propuestas; las personas nominadas y las decisiones de criterio pendientes se definirán con el Cliente.
+\end{itemize}
+
+Los informes deben diferenciar criterio contractual, umbral de propuesta pendiente de validación y resultado medido; incluir conclusión limitada al ambiente, versión, perfil y muestra observados. Este formulario contiene el plan y la evidencia prevista; no presenta resultados de ejecución ni actas de aceptación del Cliente.
+
+\subsection{Referencias}\label{t13-referencias}
+
+Multitiendas Ancoa S.A. (2026). \emph{Caso 09. Cadena Multitienda: Bases Técnicas del Caso}. \url{https://drive.google.com/file/d/1cVj84Af4bNYeXu8R1FHi8BoYtOLfcGs1/view}
+
+\ossFinalPage
+
+\end{document}

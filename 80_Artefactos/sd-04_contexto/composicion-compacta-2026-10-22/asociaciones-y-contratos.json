@@ -1,0 +1,2174 @@
+{
+  "antecedente": "04_Adjuntos\\diagramas\\diag-04-33_arquitectura-datos-transversales.json",
+  "agrupaciones": {
+    "datos_orig": "datos_credito",
+    "datos_cartera": "datos_credito",
+    "evid_meta": "datos_credito",
+    "mart_r": "analitica",
+    "mart_e": "analitica",
+    "lake_r": "lake",
+    "lake_e": "lake",
+    "search_r": "search",
+    "search_e": "search",
+    "archivo_r": "archivo",
+    "archivo_e": "archivo"
+  },
+  "contratos": [
+    {
+      "origen": {
+        "de": "dns",
+        "a": "front_door",
+        "etiqueta": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy",
+        "semantica": "politica"
+      },
+      "agrupado": {
+        "de": "dns",
+        "a": "front_door",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "front_door",
+        "a": "private_link",
+        "etiqueta": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada",
+        "semantica": "condicionado"
+      },
+      "agrupado": {
+        "de": "front_door",
+        "a": "private_link",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "application_gateway",
+        "a": "api_management",
+        "etiqueta": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "application_gateway",
+        "a": "api_management",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_center",
+        "a": "api_management",
+        "etiqueta": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio",
+        "semantica": "politica"
+      },
+      "agrupado": {
+        "de": "api_center",
+        "a": "api_management",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "web",
+        "a": "front_door",
+        "etiqueta": "Retail: host y perfil propios. API pública Retail",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "web",
+        "a": "front_door",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "portal_f",
+        "a": "front_door",
+        "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "portal_f",
+        "a": "front_door",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "pos",
+        "a": "entrada_privada",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "pos",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "operacion",
+        "a": "entrada_privada",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "operacion",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "logistica",
+        "a": "entrada_privada",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "logistica",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "movil",
+        "a": "entrada_privada",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "movil",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "meson_f",
+        "a": "entrada_privada",
+        "etiqueta": "Red privada del mesón financiero; omite Front Door",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "meson_f",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "area_mercaderia",
+        "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "area_mercaderia",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "area_venta",
+        "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "area_venta",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "area_clientes",
+        "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "area_clientes",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "servicios_e",
+        "etiqueta": "APIs Filial del área; operaciones, contratos y permisos propios por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "servicios_e",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_venta",
+        "a": "x01",
+        "etiqueta": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01",
+        "semantica": "compra_autorizable"
+      },
+      "agrupado": {
+        "de": "area_venta",
+        "a": "x01",
+        "semantica": "compra_autorizable"
+      }
+    },
+    {
+      "origen": {
+        "de": "x01",
+        "a": "api_management",
+        "etiqueta": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio",
+        "semantica": "compra_autorizable"
+      },
+      "agrupado": {
+        "de": "x01",
+        "a": "api_management",
+        "semantica": "compra_autorizable"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "comercio",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "comercio",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "canales",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "canales",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "socios",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "socios",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_e",
+        "a": "credito",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_e",
+        "a": "credito",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_mercaderia",
+        "a": "bus_r",
+        "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+        "semantica": "publicacion"
+      },
+      "agrupado": {
+        "de": "area_mercaderia",
+        "a": "bus_r",
+        "semantica": "publicacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_venta",
+        "a": "bus_r",
+        "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+        "semantica": "publicacion"
+      },
+      "agrupado": {
+        "de": "area_venta",
+        "a": "bus_r",
+        "semantica": "publicacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "bus_e",
+        "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+        "semantica": "publicacion"
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "bus_e",
+        "semantica": "publicacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "area_clientes",
+        "etiqueta": "Clientes Retail: consumo para fila virtual; contrato por cerrar",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "area_clientes",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "local_serv",
+        "a": "local_sync",
+        "etiqueta": "Entrega de operaciones para reconciliar",
+        "semantica": "publicacion"
+      },
+      "agrupado": {
+        "de": "local_serv",
+        "a": "local_sync",
+        "semantica": "publicacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "local_sync",
+        "a": "entrada_privada",
+        "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+        "semantica": "solicitud"
+      },
+      "agrupado": {
+        "de": "local_sync",
+        "a": "entrada_privada",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_mercaderia",
+        "a": "datos_merc",
+        "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "area_mercaderia",
+        "a": "datos_merc",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_venta",
+        "a": "datos_venta",
+        "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "area_venta",
+        "a": "datos_venta",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_clientes",
+        "a": "datos_clientes",
+        "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "area_clientes",
+        "a": "datos_clientes",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "x01",
+        "a": "bitacora",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "x01",
+        "a": "bitacora",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "datos_orig",
+        "etiqueta": "Solo Originación F:C-01: repositorio propio de evaluación, cupo y autorización; sin metadatos de C-03.",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "datos_credito",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "datos_cartera",
+        "etiqueta": "cartera: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "datos_credito",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "datos_evid",
+        "etiqueta": "evidencia: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "datos_evid",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_mercaderia",
+        "a": "redis",
+        "etiqueta": "oferta: Publicación/consulta de oferta operacional; frescura por verificar",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "area_mercaderia",
+        "a": "redis",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_mercaderia",
+        "a": "historial",
+        "etiqueta": "oferta: Registro de precios publicados; solo anexado",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "area_mercaderia",
+        "a": "historial",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "local_serv",
+        "a": "local_data",
+        "etiqueta": "Diario transaccional local Retail",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "local_serv",
+        "a": "local_data",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "local_data",
+        "a": "local_sync",
+        "etiqueta": "Operaciones pendientes del diario",
+        "semantica": "flujo"
+      },
+      "agrupado": {
+        "de": "local_data",
+        "a": "local_sync",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "cupo_local",
+        "etiqueta": "Originación F:C-01: provisión de cupo preautorizado; límites y autorización propios de Filial; política, caducidad y factibilidad pendientes. La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+        "semantica": "condicionado"
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "cupo_local",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "comercio",
+        "a": "ext_comercio",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+        "semantica": "adaptacion"
+      },
+      "agrupado": {
+        "de": "comercio",
+        "a": "ext_comercio",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "canales",
+        "a": "ext_canales",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+        "semantica": "adaptacion"
+      },
+      "agrupado": {
+        "de": "canales",
+        "a": "ext_canales",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "socios",
+        "a": "ext_socios",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+        "semantica": "adaptacion"
+      },
+      "agrupado": {
+        "de": "socios",
+        "a": "ext_socios",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "credito",
+        "a": "ext_credito",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+        "semantica": "adaptacion"
+      },
+      "agrupado": {
+        "de": "credito",
+        "a": "ext_credito",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "private_link",
+        "a": "application_gateway",
+        "semantica": "condicionado",
+        "etiqueta": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas"
+      },
+      "agrupado": {
+        "de": "private_link",
+        "a": "application_gateway",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "local_sync",
+        "semantica": "consumo",
+        "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "local_sync",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "proy_r",
+        "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "proy_r",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_r",
+        "a": "mart_r",
+        "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "proy_r",
+        "a": "analitica",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_e",
+        "a": "proy_e",
+        "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+        "semantica": "consumo"
+      },
+      "agrupado": {
+        "de": "bus_e",
+        "a": "proy_e",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_e",
+        "a": "mart_e",
+        "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+        "semantica": "persistencia"
+      },
+      "agrupado": {
+        "de": "proy_e",
+        "a": "analitica",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "comercio",
+        "a": "archivo_r",
+        "etiqueta": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria",
+        "semantica": "adaptacion"
+      },
+      "agrupado": {
+        "de": "comercio",
+        "a": "archivo",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "datos_evid",
+        "a": "archivo_e",
+        "etiqueta": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus",
+        "semantica": "flujo"
+      },
+      "agrupado": {
+        "de": "datos_evid",
+        "a": "archivo",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_clientes",
+        "a": "bus_r",
+        "semantica": "publicacion",
+        "etiqueta": "Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección"
+      },
+      "agrupado": {
+        "de": "area_clientes",
+        "a": "bus_r",
+        "semantica": "publicacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "common_admin",
+        "a": "api_management",
+        "semantica": "solicitud",
+        "etiqueta": "Consola del ámbito → APIM propio → APIs de parámetros y consulta/exportación de auditoría; permisos y filtros del solicitante. No escritura en repositorios ajenos."
+      },
+      "agrupado": {
+        "de": "common_admin",
+        "a": "api_management",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "common_docs",
+        "a": "archivo_r",
+        "semantica": "persistencia",
+        "etiqueta": "Solo instancia documental Retail → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+      },
+      "agrupado": {
+        "de": "common_docs",
+        "a": "archivo",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_r",
+        "a": "common_notif",
+        "semantica": "consumo",
+        "etiqueta": "Solo instancia de notificaciones Retail: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+      },
+      "agrupado": {
+        "de": "bus_r",
+        "a": "common_notif",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_r",
+        "a": "search_r",
+        "semantica": "persistencia",
+        "etiqueta": "Proyector Retail mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+      },
+      "agrupado": {
+        "de": "proy_r",
+        "a": "search",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "mart_r",
+        "a": "archivo_r",
+        "semantica": "flujo",
+        "etiqueta": "Trabajo de exportación Retail: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+      },
+      "agrupado": {
+        "de": "analitica",
+        "a": "archivo",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "common_docs",
+        "a": "archivo_e",
+        "semantica": "persistencia",
+        "etiqueta": "Solo instancia documental Filial → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+      },
+      "agrupado": {
+        "de": "common_docs",
+        "a": "archivo",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "bus_e",
+        "a": "common_notif",
+        "semantica": "consumo",
+        "etiqueta": "Solo instancia de notificaciones Filial: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+      },
+      "agrupado": {
+        "de": "bus_e",
+        "a": "common_notif",
+        "semantica": "consumo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_e",
+        "a": "search_e",
+        "semantica": "persistencia",
+        "etiqueta": "Proyector Filial mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+      },
+      "agrupado": {
+        "de": "proy_e",
+        "a": "search",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "mart_e",
+        "a": "archivo_e",
+        "semantica": "flujo",
+        "etiqueta": "Trabajo de exportación Filial: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+      },
+      "agrupado": {
+        "de": "analitica",
+        "a": "archivo",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_venta",
+        "a": "local_serv",
+        "semantica": "condicionado",
+        "etiqueta": "Ventas ejecuta operación sin enlace; solo reglas y condiciones previamente sincronizadas."
+      },
+      "agrupado": {
+        "de": "area_venta",
+        "a": "local_serv",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "entrada_privada",
+        "a": "application_gateway",
+        "semantica": "solicitud",
+        "etiqueta": "Entrada privada del ámbito → Application Gateway propio, sin Front Door público."
+      },
+      "agrupado": {
+        "de": "entrada_privada",
+        "a": "application_gateway",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "common_docs",
+        "a": "ext_comunes",
+        "semantica": "adaptacion",
+        "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+      },
+      "agrupado": {
+        "de": "common_docs",
+        "a": "ext_comunes",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "common_notif",
+        "a": "ext_comunes",
+        "semantica": "adaptacion",
+        "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+      },
+      "agrupado": {
+        "de": "common_notif",
+        "a": "ext_comunes",
+        "semantica": "adaptacion"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "common_flujos",
+        "semantica": "condicionado",
+        "etiqueta": "Familia de APIs de tareas humanas y aprobaciones del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "common_flujos",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "common_docs",
+        "semantica": "condicionado",
+        "etiqueta": "Familia de APIs de documentos, plantillas y firma del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "common_docs",
+        "semantica": "condicionado"
+      }
+    },
+    {
+      "origen": {
+        "de": "servicios_e",
+        "a": "evid_meta",
+        "semantica": "persistencia",
+        "etiqueta": "Solo C-03: expediente y metadatos propios; no datos de Originación."
+      },
+      "agrupado": {
+        "de": "servicios_e",
+        "a": "datos_credito",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "adf",
+        "a": "lake_r",
+        "semantica": "politica",
+        "etiqueta": "Solo factory del ámbito: coordina cargas iniciales e incrementales autorizadas, punto de corte y manifiestos; no movimiento entre negocios."
+      },
+      "agrupado": {
+        "de": "adf",
+        "a": "lake",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_r",
+        "a": "lake_r",
+        "semantica": "persistencia",
+        "etiqueta": "Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto."
+      },
+      "agrupado": {
+        "de": "proy_r",
+        "a": "lake",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "lake_r",
+        "a": "proy_r",
+        "semantica": "flujo",
+        "etiqueta": "Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato."
+      },
+      "agrupado": {
+        "de": "lake",
+        "a": "proy_r",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_r",
+        "a": "metadata",
+        "semantica": "politica",
+        "etiqueta": "Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector."
+      },
+      "agrupado": {
+        "de": "proy_r",
+        "a": "metadata",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "powerbi",
+        "a": "mart_r",
+        "semantica": "solicitud",
+        "etiqueta": "Solo modelo semántico del ámbito consulta su PostgreSQL analítico mediante conexión privada de datos; DirectQuery / Import."
+      },
+      "agrupado": {
+        "de": "powerbi",
+        "a": "analitica",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "search_r",
+        "semantica": "solicitud",
+        "etiqueta": "Solo API de búsqueda del ámbito consulta OpenSearch con filtros de permisos; APIM no abre conexión directa al índice."
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "search",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "adf",
+        "a": "lake_e",
+        "semantica": "politica",
+        "etiqueta": "Solo factory del ámbito: coordina cargas iniciales e incrementales autorizadas, punto de corte y manifiestos; no movimiento entre negocios."
+      },
+      "agrupado": {
+        "de": "adf",
+        "a": "lake",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_e",
+        "a": "lake_e",
+        "semantica": "persistencia",
+        "etiqueta": "Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto."
+      },
+      "agrupado": {
+        "de": "proy_e",
+        "a": "lake",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "lake_e",
+        "a": "proy_e",
+        "semantica": "flujo",
+        "etiqueta": "Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato."
+      },
+      "agrupado": {
+        "de": "lake",
+        "a": "proy_e",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_e",
+        "a": "metadata",
+        "semantica": "politica",
+        "etiqueta": "Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector."
+      },
+      "agrupado": {
+        "de": "proy_e",
+        "a": "metadata",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "powerbi",
+        "a": "mart_e",
+        "semantica": "solicitud",
+        "etiqueta": "Solo modelo semántico del ámbito consulta su PostgreSQL analítico mediante conexión privada de datos; DirectQuery / Import."
+      },
+      "agrupado": {
+        "de": "powerbi",
+        "a": "analitica",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "api_management",
+        "a": "search_e",
+        "semantica": "solicitud",
+        "etiqueta": "Solo API de búsqueda del ámbito consulta OpenSearch con filtros de permisos; APIM no abre conexión directa al índice."
+      },
+      "agrupado": {
+        "de": "api_management",
+        "a": "search",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "proy_r",
+        "a": "vector",
+        "semantica": "persistencia",
+        "etiqueta": "Trabajador de representaciones de Oferta: índice reconstruible; modelo de embeddings por seleccionar, no scikit-learn por defecto."
+      },
+      "agrupado": {
+        "de": "proy_r",
+        "a": "vector",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "area_mercaderia",
+        "a": "vector",
+        "semantica": "solicitud",
+        "etiqueta": "Solo Oferta consulta su índice multimodal y confirma precio/disponible con los propietarios."
+      },
+      "agrupado": {
+        "de": "area_mercaderia",
+        "a": "vector",
+        "semantica": "solicitud"
+      }
+    },
+    {
+      "origen": {
+        "de": "lake_r",
+        "a": "training",
+        "semantica": "flujo",
+        "etiqueta": "Conjunto Retail autorizado, versionado y con manifiesto; validación temporal y línea base."
+      },
+      "agrupado": {
+        "de": "lake",
+        "a": "training",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "training",
+        "a": "mlflow",
+        "semantica": "persistencia",
+        "etiqueta": "Registrar experimento, parámetros, métricas y modelo con referencias a código y conjunto de datos."
+      },
+      "agrupado": {
+        "de": "training",
+        "a": "mlflow",
+        "semantica": "persistencia"
+      }
+    },
+    {
+      "origen": {
+        "de": "mlflow",
+        "a": "training",
+        "semantica": "flujo",
+        "etiqueta": "Obtener versión de modelo promovida por una persona; fallback y deriva implementados por trabajadores."
+      },
+      "agrupado": {
+        "de": "mlflow",
+        "a": "training",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "training",
+        "a": "area_mercaderia",
+        "semantica": "flujo",
+        "etiqueta": "Recomendaciones de conteo a Existencias; sin ajuste automático de stock."
+      },
+      "agrupado": {
+        "de": "training",
+        "a": "area_mercaderia",
+        "semantica": "flujo"
+      }
+    },
+    {
+      "origen": {
+        "de": "backup",
+        "a": "mart_r",
+        "semantica": "politica",
+        "etiqueta": "Cobertura por recurso; PITR no sustituye archivo, retención legal ni pruebas de restauración."
+      },
+      "agrupado": {
+        "de": "backup",
+        "a": "analitica",
+        "semantica": "politica"
+      }
+    },
+    {
+      "origen": {
+        "de": "backup",
+        "a": "mart_e",
+        "semantica": "politica",
+        "etiqueta": "Cobertura y destino propios de Filial; no respaldo común."
+      },
+      "agrupado": {
+        "de": "backup",
+        "a": "analitica",
+        "semantica": "politica"
+      }
+    }
+  ],
+  "asociaciones": [
+    {
+      "asociacion": {
+        "de": "dns",
+        "a": "front_door",
+        "semantica": "politica",
+        "etiqueta": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy"
+      },
+      "contratos": [
+        {
+          "de": "dns",
+          "a": "front_door",
+          "etiqueta": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy",
+          "semantica": "politica"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "front_door",
+        "a": "private_link",
+        "semantica": "condicionado",
+        "etiqueta": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada"
+      },
+      "contratos": [
+        {
+          "de": "front_door",
+          "a": "private_link",
+          "etiqueta": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada",
+          "semantica": "condicionado"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "application_gateway",
+        "a": "api_management",
+        "semantica": "solicitud",
+        "etiqueta": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados"
+      },
+      "contratos": [
+        {
+          "de": "application_gateway",
+          "a": "api_management",
+          "etiqueta": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "api_center",
+        "a": "api_management",
+        "semantica": "politica",
+        "etiqueta": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio"
+      },
+      "contratos": [
+        {
+          "de": "api_center",
+          "a": "api_management",
+          "etiqueta": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio",
+          "semantica": "politica"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "canales_publicos",
+        "a": "front_door",
+        "semantica": "solicitud",
+        "etiqueta": "Retail: host y perfil propios. API pública Retail / Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada"
+      },
+      "contratos": [
+        {
+          "de": "web",
+          "a": "front_door",
+          "etiqueta": "Retail: host y perfil propios. API pública Retail",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "portal_f",
+          "a": "front_door",
+          "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "canales_privados",
+        "a": "entrada_privada",
+        "semantica": "solicitud",
+        "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door / Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door / Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door / Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door / Red privada del mesón financiero; omite Front Door"
+      },
+      "contratos": [
+        {
+          "de": "pos",
+          "a": "entrada_privada",
+          "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "operacion",
+          "a": "entrada_privada",
+          "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "logistica",
+          "a": "entrada_privada",
+          "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "movil",
+          "a": "entrada_privada",
+          "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "meson_f",
+          "a": "entrada_privada",
+          "etiqueta": "Red privada del mesón financiero; omite Front Door",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "api_management",
+        "a": "servicios_r",
+        "semantica": "solicitud",
+        "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio / APIs Retail del área; operaciones, contratos y permisos propios por servicio / APIs Retail del área; operaciones, contratos y permisos propios por servicio"
+      },
+      "contratos": [
+        {
+          "de": "api_management",
+          "a": "area_mercaderia",
+          "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "api_management",
+          "a": "area_venta",
+          "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+          "semantica": "solicitud"
+        },
+        {
+          "de": "api_management",
+          "a": "area_clientes",
+          "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "api_management",
+        "a": "servicios_e",
+        "semantica": "solicitud",
+        "etiqueta": "APIs Filial del área; operaciones, contratos y permisos propios por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos."
+      },
+      "contratos": [
+        {
+          "de": "api_management",
+          "a": "servicios_e",
+          "etiqueta": "APIs Filial del área; operaciones, contratos y permisos propios por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "area_venta",
+        "a": "x01",
+        "semantica": "compra_autorizable",
+        "etiqueta": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01"
+      },
+      "contratos": [
+        {
+          "de": "area_venta",
+          "a": "x01",
+          "etiqueta": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01",
+          "semantica": "compra_autorizable"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "x01",
+        "a": "api_management",
+        "semantica": "compra_autorizable",
+        "etiqueta": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio"
+      },
+      "contratos": [
+        {
+          "de": "x01",
+          "a": "api_management",
+          "etiqueta": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio",
+          "semantica": "compra_autorizable"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_r",
+        "a": "adaptadores_retail",
+        "semantica": "consumo",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación / Consumo de hechos propios; traducción y deduplicación / Consumo de hechos propios; traducción y deduplicación"
+      },
+      "contratos": [
+        {
+          "de": "bus_r",
+          "a": "comercio",
+          "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+          "semantica": "consumo"
+        },
+        {
+          "de": "bus_r",
+          "a": "canales",
+          "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+          "semantica": "consumo"
+        },
+        {
+          "de": "bus_r",
+          "a": "socios",
+          "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+          "semantica": "consumo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_e",
+        "a": "credito",
+        "semantica": "consumo",
+        "etiqueta": "Consumo de hechos propios; traducción y deduplicación"
+      },
+      "contratos": [
+        {
+          "de": "bus_e",
+          "a": "credito",
+          "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+          "semantica": "consumo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_r",
+        "a": "bus_r",
+        "semantica": "publicacion",
+        "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio / Hechos confirmados por productores del área; outbox y contratos por servicio / Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección"
+      },
+      "contratos": [
+        {
+          "de": "area_mercaderia",
+          "a": "bus_r",
+          "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+          "semantica": "publicacion"
+        },
+        {
+          "de": "area_venta",
+          "a": "bus_r",
+          "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+          "semantica": "publicacion"
+        },
+        {
+          "de": "area_clientes",
+          "a": "bus_r",
+          "semantica": "publicacion",
+          "etiqueta": "Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_e",
+        "a": "bus_e",
+        "semantica": "publicacion",
+        "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos."
+      },
+      "contratos": [
+        {
+          "de": "servicios_e",
+          "a": "bus_e",
+          "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+          "semantica": "publicacion"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_r",
+        "a": "area_clientes",
+        "semantica": "consumo",
+        "etiqueta": "Clientes Retail: consumo para fila virtual; contrato por cerrar"
+      },
+      "contratos": [
+        {
+          "de": "bus_r",
+          "a": "area_clientes",
+          "etiqueta": "Clientes Retail: consumo para fila virtual; contrato por cerrar",
+          "semantica": "consumo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "local_serv",
+        "a": "local_sync",
+        "semantica": "publicacion",
+        "etiqueta": "Entrega de operaciones para reconciliar"
+      },
+      "contratos": [
+        {
+          "de": "local_serv",
+          "a": "local_sync",
+          "etiqueta": "Entrega de operaciones para reconciliar",
+          "semantica": "publicacion"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "local_sync",
+        "a": "entrada_privada",
+        "semantica": "solicitud",
+        "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD"
+      },
+      "contratos": [
+        {
+          "de": "local_sync",
+          "a": "entrada_privada",
+          "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+          "semantica": "solicitud"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_r",
+        "a": "datos_retail",
+        "semantica": "persistencia",
+        "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida / Repositorios propios de los servicios del área; agrupación visual, no escritura compartida / Repositorios propios de los servicios del área; agrupación visual, no escritura compartida"
+      },
+      "contratos": [
+        {
+          "de": "area_mercaderia",
+          "a": "datos_merc",
+          "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+          "semantica": "persistencia"
+        },
+        {
+          "de": "area_venta",
+          "a": "datos_venta",
+          "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+          "semantica": "persistencia"
+        },
+        {
+          "de": "area_clientes",
+          "a": "datos_clientes",
+          "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "x01",
+        "a": "bitacora",
+        "semantica": "persistencia",
+        "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus"
+      },
+      "contratos": [
+        {
+          "de": "x01",
+          "a": "bitacora",
+          "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_e",
+        "a": "datos_credito",
+        "semantica": "persistencia",
+        "etiqueta": "Solo Originación F:C-01: repositorio propio de evaluación, cupo y autorización; sin metadatos de C-03. / cartera: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos. / Solo C-03: expediente y metadatos propios; no datos de Originación."
+      },
+      "contratos": [
+        {
+          "de": "servicios_e",
+          "a": "datos_credito",
+          "etiqueta": "Solo Originación F:C-01: repositorio propio de evaluación, cupo y autorización; sin metadatos de C-03. / cartera: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos. / Solo C-03: expediente y metadatos propios; no datos de Originación.",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_e",
+        "a": "datos_evid",
+        "semantica": "persistencia",
+        "etiqueta": "evidencia: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos."
+      },
+      "contratos": [
+        {
+          "de": "servicios_e",
+          "a": "datos_evid",
+          "etiqueta": "evidencia: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "area_mercaderia",
+        "a": "datos_oferta",
+        "semantica": "asociacion",
+        "etiqueta": "oferta: Publicación/consulta de oferta operacional; frescura por verificar / oferta: Registro de precios publicados; solo anexado / Solo Oferta consulta su índice multimodal y confirma precio/disponible con los propietarios."
+      },
+      "contratos": [
+        {
+          "de": "area_mercaderia",
+          "a": "redis",
+          "etiqueta": "oferta: Publicación/consulta de oferta operacional; frescura por verificar",
+          "semantica": "persistencia"
+        },
+        {
+          "de": "area_mercaderia",
+          "a": "historial",
+          "etiqueta": "oferta: Registro de precios publicados; solo anexado",
+          "semantica": "persistencia"
+        },
+        {
+          "de": "area_mercaderia",
+          "a": "vector",
+          "semantica": "solicitud",
+          "etiqueta": "Solo Oferta consulta su índice multimodal y confirma precio/disponible con los propietarios."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "local_serv",
+        "a": "local_data",
+        "semantica": "persistencia",
+        "etiqueta": "Diario transaccional local Retail"
+      },
+      "contratos": [
+        {
+          "de": "local_serv",
+          "a": "local_data",
+          "etiqueta": "Diario transaccional local Retail",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "local_data",
+        "a": "local_sync",
+        "semantica": "flujo",
+        "etiqueta": "Operaciones pendientes del diario"
+      },
+      "contratos": [
+        {
+          "de": "local_data",
+          "a": "local_sync",
+          "etiqueta": "Operaciones pendientes del diario",
+          "semantica": "flujo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "servicios_e",
+        "a": "cupo_local",
+        "semantica": "condicionado",
+        "etiqueta": "Originación F:C-01: provisión de cupo preautorizado; límites y autorización propios de Filial; política, caducidad y factibilidad pendientes. La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos."
+      },
+      "contratos": [
+        {
+          "de": "servicios_e",
+          "a": "cupo_local",
+          "etiqueta": "Originación F:C-01: provisión de cupo preautorizado; límites y autorización propios de Filial; política, caducidad y factibilidad pendientes. La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+          "semantica": "condicionado"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "adaptadores_retail",
+        "a": "externos_retail",
+        "semantica": "adaptacion",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar / Familia de interfaces bidireccionales; contratos propios y migración por verificar / Familia de interfaces bidireccionales; contratos propios y migración por verificar"
+      },
+      "contratos": [
+        {
+          "de": "comercio",
+          "a": "ext_comercio",
+          "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+          "semantica": "adaptacion"
+        },
+        {
+          "de": "canales",
+          "a": "ext_canales",
+          "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+          "semantica": "adaptacion"
+        },
+        {
+          "de": "socios",
+          "a": "ext_socios",
+          "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+          "semantica": "adaptacion"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "credito",
+        "a": "ext_credito",
+        "semantica": "adaptacion",
+        "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar"
+      },
+      "contratos": [
+        {
+          "de": "credito",
+          "a": "ext_credito",
+          "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+          "semantica": "adaptacion"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "private_link",
+        "a": "application_gateway",
+        "semantica": "condicionado",
+        "etiqueta": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas"
+      },
+      "contratos": [
+        {
+          "de": "private_link",
+          "a": "application_gateway",
+          "semantica": "condicionado",
+          "etiqueta": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_r",
+        "a": "local_sync",
+        "semantica": "consumo",
+        "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+      },
+      "contratos": [
+        {
+          "de": "bus_r",
+          "a": "local_sync",
+          "semantica": "consumo",
+          "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_r",
+        "a": "proy_r",
+        "semantica": "consumo",
+        "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos"
+      },
+      "contratos": [
+        {
+          "de": "bus_r",
+          "a": "proy_r",
+          "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+          "semantica": "consumo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "integracion_asociaciones",
+        "a": "analitica",
+        "semantica": "persistencia",
+        "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación / Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación"
+      },
+      "contratos": [
+        {
+          "de": "proy_r",
+          "a": "analitica",
+          "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+          "semantica": "persistencia"
+        },
+        {
+          "de": "proy_e",
+          "a": "analitica",
+          "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+          "semantica": "persistencia"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_e",
+        "a": "proy_e",
+        "semantica": "consumo",
+        "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos"
+      },
+      "contratos": [
+        {
+          "de": "bus_e",
+          "a": "proy_e",
+          "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+          "semantica": "consumo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "comercio",
+        "a": "archivo",
+        "semantica": "adaptacion",
+        "etiqueta": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria"
+      },
+      "contratos": [
+        {
+          "de": "comercio",
+          "a": "archivo",
+          "etiqueta": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria",
+          "semantica": "adaptacion"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "datos_evid",
+        "a": "archivo",
+        "semantica": "flujo",
+        "etiqueta": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus"
+      },
+      "contratos": [
+        {
+          "de": "datos_evid",
+          "a": "archivo",
+          "etiqueta": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus",
+          "semantica": "flujo"
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "cap_comunes",
+        "a": "api_management",
+        "semantica": "asociacion",
+        "etiqueta": "Consola del ámbito → APIM propio → APIs de parámetros y consulta/exportación de auditoría; permisos y filtros del solicitante. No escritura en repositorios ajenos. / Familia de APIs de tareas humanas y aprobaciones del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas. / Familia de APIs de documentos, plantillas y firma del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+      },
+      "contratos": [
+        {
+          "de": "common_admin",
+          "a": "api_management",
+          "semantica": "solicitud",
+          "etiqueta": "Consola del ámbito → APIM propio → APIs de parámetros y consulta/exportación de auditoría; permisos y filtros del solicitante. No escritura en repositorios ajenos."
+        },
+        {
+          "de": "api_management",
+          "a": "common_flujos",
+          "semantica": "condicionado",
+          "etiqueta": "Familia de APIs de tareas humanas y aprobaciones del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+        },
+        {
+          "de": "api_management",
+          "a": "common_docs",
+          "semantica": "condicionado",
+          "etiqueta": "Familia de APIs de documentos, plantillas y firma del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "common_docs",
+        "a": "archivo",
+        "semantica": "persistencia",
+        "etiqueta": "Solo instancia documental Retail → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido. / Solo instancia documental Filial → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+      },
+      "contratos": [
+        {
+          "de": "common_docs",
+          "a": "archivo",
+          "semantica": "persistencia",
+          "etiqueta": "Solo instancia documental Retail → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido. / Solo instancia documental Filial → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_r",
+        "a": "common_notif",
+        "semantica": "consumo",
+        "etiqueta": "Solo instancia de notificaciones Retail: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+      },
+      "contratos": [
+        {
+          "de": "bus_r",
+          "a": "common_notif",
+          "semantica": "consumo",
+          "etiqueta": "Solo instancia de notificaciones Retail: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "integracion_asociaciones",
+        "a": "search",
+        "semantica": "persistencia",
+        "etiqueta": "Proyector Retail mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices. / Proyector Filial mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+      },
+      "contratos": [
+        {
+          "de": "proy_r",
+          "a": "search",
+          "semantica": "persistencia",
+          "etiqueta": "Proyector Retail mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+        },
+        {
+          "de": "proy_e",
+          "a": "search",
+          "semantica": "persistencia",
+          "etiqueta": "Proyector Filial mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "analitica",
+        "a": "archivo",
+        "semantica": "flujo",
+        "etiqueta": "Trabajo de exportación Retail: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional. / Trabajo de exportación Filial: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+      },
+      "contratos": [
+        {
+          "de": "analitica",
+          "a": "archivo",
+          "semantica": "flujo",
+          "etiqueta": "Trabajo de exportación Retail: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional. / Trabajo de exportación Filial: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "bus_e",
+        "a": "common_notif",
+        "semantica": "consumo",
+        "etiqueta": "Solo instancia de notificaciones Filial: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+      },
+      "contratos": [
+        {
+          "de": "bus_e",
+          "a": "common_notif",
+          "semantica": "consumo",
+          "etiqueta": "Solo instancia de notificaciones Filial: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "area_venta",
+        "a": "local_serv",
+        "semantica": "condicionado",
+        "etiqueta": "Ventas ejecuta operación sin enlace; solo reglas y condiciones previamente sincronizadas."
+      },
+      "contratos": [
+        {
+          "de": "area_venta",
+          "a": "local_serv",
+          "semantica": "condicionado",
+          "etiqueta": "Ventas ejecuta operación sin enlace; solo reglas y condiciones previamente sincronizadas."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "entrada_privada",
+        "a": "application_gateway",
+        "semantica": "solicitud",
+        "etiqueta": "Entrada privada del ámbito → Application Gateway propio, sin Front Door público."
+      },
+      "contratos": [
+        {
+          "de": "entrada_privada",
+          "a": "application_gateway",
+          "semantica": "solicitud",
+          "etiqueta": "Entrada privada del ámbito → Application Gateway propio, sin Front Door público."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "cap_comunes",
+        "a": "ext_comunes",
+        "semantica": "adaptacion",
+        "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos. / Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+      },
+      "contratos": [
+        {
+          "de": "common_docs",
+          "a": "ext_comunes",
+          "semantica": "adaptacion",
+          "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+        },
+        {
+          "de": "common_notif",
+          "a": "ext_comunes",
+          "semantica": "adaptacion",
+          "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "adf",
+        "a": "lake",
+        "semantica": "politica",
+        "etiqueta": "Solo factory del ámbito: coordina cargas iniciales e incrementales autorizadas, punto de corte y manifiestos; no movimiento entre negocios."
+      },
+      "contratos": [
+        {
+          "de": "adf",
+          "a": "lake",
+          "semantica": "politica",
+          "etiqueta": "Solo factory del ámbito: coordina cargas iniciales e incrementales autorizadas, punto de corte y manifiestos; no movimiento entre negocios."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "integracion_asociaciones",
+        "a": "lake",
+        "semantica": "asociacion",
+        "etiqueta": "Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto. / Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato. / Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto. / Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato."
+      },
+      "contratos": [
+        {
+          "de": "proy_r",
+          "a": "lake",
+          "semantica": "persistencia",
+          "etiqueta": "Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto."
+        },
+        {
+          "de": "lake",
+          "a": "proy_r",
+          "semantica": "flujo",
+          "etiqueta": "Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato."
+        },
+        {
+          "de": "proy_e",
+          "a": "lake",
+          "semantica": "persistencia",
+          "etiqueta": "Trabajadores propios escriben únicamente conjuntos autorizados; no duplicar todos los hechos por defecto."
+        },
+        {
+          "de": "lake",
+          "a": "proy_e",
+          "semantica": "flujo",
+          "etiqueta": "Lectura y validación de conjuntos para transformar y reconstruir modelos; no dependencia del recorrido operacional inmediato."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "integracion_asociaciones",
+        "a": "metadata",
+        "semantica": "politica",
+        "etiqueta": "Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector. / Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector."
+      },
+      "contratos": [
+        {
+          "de": "proy_r",
+          "a": "metadata",
+          "semantica": "politica",
+          "etiqueta": "Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector."
+        },
+        {
+          "de": "proy_e",
+          "a": "metadata",
+          "semantica": "politica",
+          "etiqueta": "Solo catálogo del ámbito: publicar ejecuciones, propietarios, calidad y linaje por API; ADLS no ofrece linaje nativo por el conector."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "powerbi",
+        "a": "analitica",
+        "semantica": "solicitud",
+        "etiqueta": "Solo modelo semántico del ámbito consulta su PostgreSQL analítico mediante conexión privada de datos; DirectQuery / Import."
+      },
+      "contratos": [
+        {
+          "de": "powerbi",
+          "a": "analitica",
+          "semantica": "solicitud",
+          "etiqueta": "Solo modelo semántico del ámbito consulta su PostgreSQL analítico mediante conexión privada de datos; DirectQuery / Import."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "api_management",
+        "a": "search",
+        "semantica": "solicitud",
+        "etiqueta": "Solo API de búsqueda del ámbito consulta OpenSearch con filtros de permisos; APIM no abre conexión directa al índice."
+      },
+      "contratos": [
+        {
+          "de": "api_management",
+          "a": "search",
+          "semantica": "solicitud",
+          "etiqueta": "Solo API de búsqueda del ámbito consulta OpenSearch con filtros de permisos; APIM no abre conexión directa al índice."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "proy_r",
+        "a": "vector",
+        "semantica": "persistencia",
+        "etiqueta": "Trabajador de representaciones de Oferta: índice reconstruible; modelo de embeddings por seleccionar, no scikit-learn por defecto."
+      },
+      "contratos": [
+        {
+          "de": "proy_r",
+          "a": "vector",
+          "semantica": "persistencia",
+          "etiqueta": "Trabajador de representaciones de Oferta: índice reconstruible; modelo de embeddings por seleccionar, no scikit-learn por defecto."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "lake",
+        "a": "training",
+        "semantica": "flujo",
+        "etiqueta": "Conjunto Retail autorizado, versionado y con manifiesto; validación temporal y línea base."
+      },
+      "contratos": [
+        {
+          "de": "lake",
+          "a": "training",
+          "semantica": "flujo",
+          "etiqueta": "Conjunto Retail autorizado, versionado y con manifiesto; validación temporal y línea base."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "training",
+        "a": "mlflow",
+        "semantica": "asociacion",
+        "etiqueta": "Registrar experimento, parámetros, métricas y modelo con referencias a código y conjunto de datos. / Obtener versión de modelo promovida por una persona; fallback y deriva implementados por trabajadores."
+      },
+      "contratos": [
+        {
+          "de": "training",
+          "a": "mlflow",
+          "semantica": "persistencia",
+          "etiqueta": "Registrar experimento, parámetros, métricas y modelo con referencias a código y conjunto de datos."
+        },
+        {
+          "de": "mlflow",
+          "a": "training",
+          "semantica": "flujo",
+          "etiqueta": "Obtener versión de modelo promovida por una persona; fallback y deriva implementados por trabajadores."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "training",
+        "a": "area_mercaderia",
+        "semantica": "flujo",
+        "etiqueta": "Recomendaciones de conteo a Existencias; sin ajuste automático de stock."
+      },
+      "contratos": [
+        {
+          "de": "training",
+          "a": "area_mercaderia",
+          "semantica": "flujo",
+          "etiqueta": "Recomendaciones de conteo a Existencias; sin ajuste automático de stock."
+        }
+      ]
+    },
+    {
+      "asociacion": {
+        "de": "backup",
+        "a": "analitica",
+        "semantica": "politica",
+        "etiqueta": "Cobertura por recurso; PITR no sustituye archivo, retención legal ni pruebas de restauración. / Cobertura y destino propios de Filial; no respaldo común."
+      },
+      "contratos": [
+        {
+          "de": "backup",
+          "a": "analitica",
+          "semantica": "politica",
+          "etiqueta": "Cobertura por recurso; PITR no sustituye archivo, retención legal ni pruebas de restauración. / Cobertura y destino propios de Filial; no respaldo común."
+        }
+      ]
+    }
+  ]
+}

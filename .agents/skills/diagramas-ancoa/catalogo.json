@@ -1,0 +1,1168 @@
+{
+  "version": "1.0",
+  "proyecto": "Only Simple Solutions · Licitación TFEP-01/2026 · Multitiendas Ancoa",
+  "idioma": "es",
+  "fuente_tipografica": "Helvetica, Arial, sans-serif",
+  "estilos": {
+    "L1": {
+      "nombre": "Vista lógica general por frentes",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Contenedores (nivel 2) con el contexto de actores y plataformas conservadas",
+      "figuras_referencia": [
+        "4.1",
+        "4.2"
+      ],
+      "proposito": "Mostrar la solución completa de una etapa: canales, entrada API, servicios por área, eventos, datos, adaptadores y plataformas conservadas, separados en frente Retail y frente Filial emisora, con X-01 entre ambos.",
+      "usar_cuando": "Se pide la vista general de la arquitectura lógica de una etapa (mes 16, mes 21) o una comparación entre etapas.",
+      "no_usar_cuando": "Se necesita el detalle de un solo bloque (usar L3) o un recorrido paso a paso (usar L4).",
+      "direccion": "TB",
+      "tipos_nodo": [
+        "persona",
+        "canal_pc",
+        "canal_movil",
+        "sistema_conservado",
+        "entrada_api",
+        "servicio",
+        "eventos",
+        "base_datos",
+        "lago_analitica",
+        "adaptadores",
+        "identidad",
+        "secretos",
+        "telemetria",
+        "politica_x01",
+        "nodo_local",
+        "caja"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "politica",
+        "convivencia",
+        "por_acreditar",
+        "compra_autorizable"
+      ],
+      "max_nodos": 40,
+      "grupos_obligatorios": [
+        "retail",
+        "emisor"
+      ],
+      "requiere_x01": true,
+      "etiqueta_en_cruces": "advertencia"
+    },
+    "L2": {
+      "nombre": "Vista por capas",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Vista transversal de contenedores agrupados por capa (complementaria a C4)",
+      "figuras_referencia": [
+        "4.3"
+      ],
+      "proposito": "Recorrer las ocho capas de RT-02.01 de arriba hacia abajo, con actores arriba y datos abajo, coloreando cada capa según el frente al que pertenece.",
+      "usar_cuando": "Se pide relacionar actores, capas y tecnología por capa.",
+      "no_usar_cuando": "Se quiere mostrar flujos concretos o ubicación física.",
+      "direccion": "TB",
+      "tipos_nodo": [
+        "caja"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "politica",
+        "compra_autorizable",
+        "solicitud",
+        "persistencia",
+        "publicacion",
+        "consumo",
+        "adaptacion",
+        "asociacion"
+      ],
+      "max_nodos": 22,
+      "prefijo_capa_obligatorio": true,
+      "etiqueta_en_cruces": "advertencia",
+      "referencia": {
+        "tipos_nodo": [
+          "persona",
+          "canal_pc",
+          "canal_movil",
+          "sistema_conservado",
+          "nodo_local",
+          "entrada_api",
+          "servicio",
+          "eventos",
+          "base_datos",
+          "lago_analitica",
+          "adaptadores",
+          "identidad",
+          "secretos",
+          "telemetria",
+          "ml",
+          "politica_x01",
+          "borde",
+          "blob",
+          "cola",
+          "react",
+          "spring",
+          "java",
+          "typescript",
+          "python",
+          "azure",
+          "vnet",
+          "firewall",
+          "otlp",
+          "app_gateway",
+          "ddos_azure",
+          "aks_azure",
+          "power_bi",
+          "redis_azure",
+          "network_watcher",
+          "otel_logo",
+          "private_link",
+          "dns_azure",
+          "api_center",
+          "service_bus",
+          "backup_vault",
+          "external_id",
+          "sentinel_azure",
+          "bastion_azure",
+          "grafana_azure",
+          "arc_azure",
+          "funcion_logica",
+          "datos_logicos",
+          "data_factory",
+          "openmetadata",
+          "opensearch",
+          "mlflow",
+          "intune",
+          "workload_identity",
+          "pim",
+          "private_access",
+          "defender_endpoint",
+          "defender_cloud",
+          "prometheus",
+          "loki",
+          "tempo",
+          "grafana"
+        ],
+        "max_nodos": 85,
+        "grupos_obligatorios": [
+          "presentacion_r",
+          "borde_r",
+          "api_r",
+          "contratos_r",
+          "servicios_r",
+          "innovaciones",
+          "datos_r",
+          "frontera",
+          "datos_x",
+          "presentacion_e",
+          "borde_e",
+          "api_e",
+          "servicios_e",
+          "datos_e",
+          "integracion_r",
+          "integracion_e",
+          "externos",
+          "seguridad",
+          "observabilidad",
+          "tecnologias"
+        ],
+        "grupos_admitidos": [
+          "actores_r",
+          "presentacion_r",
+          "borde_r",
+          "api_r",
+          "contratos_r",
+          "servicios_r",
+          "innovaciones",
+          "datos_r",
+          "frontera",
+          "datos_x",
+          "actores_e",
+          "presentacion_e",
+          "borde_e",
+          "api_e",
+          "servicios_e",
+          "datos_e",
+          "integracion_r",
+          "integracion_e",
+          "externos",
+          "seguridad",
+          "observabilidad",
+          "tecnologias",
+          "borde_comun",
+          "api_comun",
+          "area_mercaderia",
+          "area_venta",
+          "area_clientes",
+          "datos_resumen",
+          "canales_publicos",
+          "canales_privados",
+          "datos_retail",
+          "adaptadores_retail",
+          "externos_retail",
+          "cap_comunes",
+          "datos_oferta",
+          "integracion_asociaciones"
+        ],
+        "autorizacion": "Usuario: quitar Cliente, franja amarilla y códigos visibles; conexiones rectas de colores; Integración y Eventos entre Servicios y Datos, persistencia directa. 2026-10-21. Revisión: anclajes de borde y codos rectangulares para no tapar elementos; carriles agrupados, 2026-10-21. Usuario: organización de nueva referencia; seis columnas de capas, actores externos a las capas, icono y nombre de producto concreto. 2026-10-21.",
+        "datos_circulares": {
+          "forma": "ellipse",
+          "diametro": 84,
+          "etiqueta": "inferior",
+          "agrupacion": "area de microservicios; sin fusionar autoridad o instancias"
+        },
+        "banda_transversal_resumida": {
+          "seguridad": [
+            {
+              "tipo": "identidad",
+              "etiqueta": "Entra ID P2"
+            },
+            {
+              "tipo": "external_id",
+              "etiqueta": "Entra External ID"
+            },
+            {
+              "tipo": "intune",
+              "etiqueta": "Microsoft Intune"
+            },
+            {
+              "tipo": "workload_identity",
+              "etiqueta": "Workload Identity"
+            },
+            {
+              "tipo": "secretos",
+              "etiqueta": "Azure Key Vault"
+            },
+            {
+              "tipo": "secretos",
+              "etiqueta": "Azure Managed HSM"
+            },
+            {
+              "tipo": "pim",
+              "etiqueta": "Entra PIM"
+            },
+            {
+              "tipo": "bastion_azure",
+              "etiqueta": "Bastion Premium"
+            },
+            {
+              "tipo": "private_access",
+              "etiqueta": "Entra Private Access"
+            },
+            {
+              "tipo": "defender_endpoint",
+              "etiqueta": "Defender for Endpoint"
+            },
+            {
+              "tipo": "defender_cloud",
+              "etiqueta": "Defender for Cloud"
+            },
+            {
+              "tipo": "sentinel_azure",
+              "etiqueta": "Microsoft Sentinel"
+            }
+          ],
+          "observabilidad": [
+            {
+              "tipo": "otel_logo",
+              "etiqueta": "OpenTelemetry Collector"
+            },
+            {
+              "tipo": "prometheus",
+              "etiqueta": "Prometheus"
+            },
+            {
+              "tipo": "loki",
+              "etiqueta": "Grafana Loki"
+            },
+            {
+              "tipo": "tempo",
+              "etiqueta": "Grafana Tempo"
+            },
+            {
+              "tipo": "grafana",
+              "etiqueta": "Grafana / Alerting"
+            },
+            {
+              "tipo": "prometheus",
+              "etiqueta": "Blackbox Exporter"
+            },
+            {
+              "tipo": "telemetria",
+              "etiqueta": "Azure Monitor / Log Analytics"
+            }
+          ]
+        },
+        "grupos_conectables": [
+          "area_mercaderia",
+          "area_venta",
+          "area_clientes",
+          "servicios_e",
+          "servicios_r",
+          "canales_publicos",
+          "canales_privados",
+          "datos_retail",
+          "adaptadores_retail",
+          "externos_retail",
+          "cap_comunes",
+          "datos_oferta",
+          "integracion_asociaciones"
+        ]
+      }
+    },
+    "L3": {
+      "nombre": "Bloque funcional",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Zoom de un área: contenedores y componentes de un bloque (entre nivel 2 y 3)",
+      "figuras_referencia": [
+        "4.4",
+        "4.5",
+        "4.6",
+        "4.7",
+        "4.8",
+        "4.9"
+      ],
+      "proposito": "Detallar un bloque de la Figura 4.1 (tiendas, mercadería, venta y cumplimiento, relación con clientes, crédito y frontera, integración) conservando íconos, códigos y convención de trazos.",
+      "usar_cuando": "Se pide el detalle de un bloque funcional de la vista lógica.",
+      "no_usar_cuando": "El diagrama cubre más de un bloque (usar L1).",
+      "direccion": "TB",
+      "tipos_nodo": [
+        "persona",
+        "canal_pc",
+        "canal_movil",
+        "sistema_conservado",
+        "entrada_api",
+        "servicio",
+        "eventos",
+        "base_datos",
+        "lago_analitica",
+        "adaptadores",
+        "identidad",
+        "secretos",
+        "telemetria",
+        "politica_x01",
+        "nodo_local",
+        "ml",
+        "caja"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "politica",
+        "convivencia",
+        "por_acreditar",
+        "compra_autorizable"
+      ],
+      "max_nodos": 25,
+      "etiqueta_en_cruces": "advertencia"
+    },
+    "L4": {
+      "nombre": "Recorrido de proceso (dinámico)",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Diagrama dinámico (suplementario C4)",
+      "figuras_referencia": [
+        "4.10"
+      ],
+      "proposito": "Seguir un hecho de negocio (venta, pedido, crédito, corte de enlace, recuperación) desde el actor que lo origina hasta el registro de autoridad, su salida y el consumidor, por ámbito.",
+      "usar_cuando": "Se pide explicar cómo ocurre un proceso o qué pasa ante un corte de enlace o una reconexión.",
+      "no_usar_cuando": "Se quiere mostrar estructura estática (usar L1 o L3).",
+      "direccion": "TB",
+      "tipos_nodo": [
+        "actor",
+        "caja",
+        "almacen"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "politica",
+        "compra_autorizable"
+      ],
+      "max_nodos": 24,
+      "etiqueta_en_cruces": "error",
+      "todas_las_flechas_etiquetadas": true,
+      "pasos_numerados": "recomendado"
+    },
+    "L5": {
+      "nombre": "Autoridad de datos y frontera",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Vista de datos (complementaria a C4)",
+      "figuras_referencia": [
+        "4.12"
+      ],
+      "proposito": "Mostrar qué servicio es autoridad de cada dato, sus proyecciones analíticas y la frontera Retail–Emisor, incluyendo los accesos denegados.",
+      "usar_cuando": "Se pide la vista de datos, la autoridad del dato o qué cruza la frontera.",
+      "no_usar_cuando": "Se pide el flujo temporal de un proceso (usar L4).",
+      "direccion": "LR",
+      "tipos_nodo": [
+        "caja",
+        "almacen"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "politica",
+        "compra_autorizable",
+        "denegado"
+      ],
+      "max_nodos": 26,
+      "grupos_obligatorios": [
+        "retail",
+        "frontera",
+        "emisor"
+      ],
+      "etiqueta_en_cruces": "error"
+    },
+    "L6": {
+      "nombre": "Emplazamiento lógico y rutas",
+      "familia": "logica",
+      "herramienta": "diagrams (Python) + Graphviz",
+      "equivalente_c4": "Despliegue a nivel de sitio, sin equipos (suplementario C4, abstracto)",
+      "figuras_referencia": [
+        "4.11"
+      ],
+      "proposito": "Indicar dónde reside cada parte de la solución (sedes, casa matriz, Azure) y por qué rutas candidatas se conecta, sin dimensionar enlaces ni equipos.",
+      "usar_cuando": "Se pide ubicar componentes por sitio antes del diseño físico.",
+      "no_usar_cuando": "Ya se conocen equipos, subredes o enlaces concretos (usar F1 o F2).",
+      "direccion": "LR",
+      "tipos_nodo": [
+        "caja"
+      ],
+      "semanticas_enlace": [
+        "flujo",
+        "condicionado",
+        "por_acreditar"
+      ],
+      "max_nodos": 16,
+      "etiqueta_en_cruces": "error"
+    },
+    "F1": {
+      "nombre": "Topología física de sitios",
+      "familia": "fisica",
+      "herramienta": "draw.io (XML generado) + íconos oficiales Azure",
+      "equivalente_c4": "Diagrama de despliegue (suplementario C4), vista general",
+      "figuras_referencia": [
+        "4.13"
+      ],
+      "proposito": "Mostrar los sitios (SIT, CD, DC, CLD, EXT) de izquierda a derecha y sus conexiones, desde el Cliente hacia la nube.",
+      "usar_cuando": "Se pide la arquitectura física general o el emplazamiento de sitios.",
+      "no_usar_cuando": "Se necesita el detalle de subredes (F2) o de un solo sitio (F5).",
+      "disposicion_raiz": "fila",
+      "tipos_grupo": [
+        "sitio_cliente",
+        "seccion",
+        "nube_azure",
+        "ambito",
+        "zona"
+      ],
+      "semanticas_enlace": [
+        "enlace",
+        "enlace_propuesto",
+        "respaldo",
+        "vpn",
+        "replica",
+        "trafico_inspeccionado"
+      ],
+      "max_nodos": 30
+    },
+    "F2": {
+      "nombre": "Red y segmentación hub-spoke",
+      "familia": "fisica",
+      "herramienta": "draw.io (XML generado) + íconos oficiales Azure",
+      "equivalente_c4": "Diagrama de despliegue (suplementario C4), red",
+      "figuras_referencia": [
+        "4.14"
+      ],
+      "proposito": "Mostrar el hub, las ramas por ámbito (Retail, Emisor, Base tecnológica) y sus subredes, con la entrada desde Internet y desde los sitios.",
+      "usar_cuando": "Se pide redes, subredes, segmentación o el paso por el firewall.",
+      "no_usar_cuando": "Se pide continuidad o puntos de falla (F4).",
+      "disposicion_raiz": "fila",
+      "tipos_grupo": [
+        "sitio_cliente",
+        "seccion",
+        "nube_azure",
+        "ambito",
+        "subred"
+      ],
+      "semanticas_enlace": [
+        "enlace",
+        "enlace_propuesto",
+        "vpn",
+        "trafico_inspeccionado"
+      ],
+      "max_nodos": 34
+    },
+    "F3": {
+      "nombre": "Ambientes y flujo de despliegue",
+      "familia": "fisica",
+      "herramienta": "draw.io (XML generado) + íconos oficiales Azure",
+      "equivalente_c4": "Diagrama de despliegue (suplementario C4), por ambiente",
+      "figuras_referencia": [
+        "4.15"
+      ],
+      "proposito": "Mostrar la cadena repositorio → entrega continua → Desarrollo → QA → Preproducción → Producción → Recuperación, con una suscripción y un Key Vault por ámbito.",
+      "usar_cuando": "Se pide CI/CD, ambientes o promoción entre ambientes.",
+      "no_usar_cuando": "Se pide la red o la topología.",
+      "disposicion_raiz": "columna",
+      "tipos_grupo": [
+        "seccion",
+        "nube_azure",
+        "ambito"
+      ],
+      "semanticas_enlace": [
+        "despliegue",
+        "aprobacion",
+        "replica"
+      ],
+      "max_nodos": 24
+    },
+    "F4": {
+      "nombre": "Puntos de falla, contingencia y conmutación",
+      "familia": "fisica",
+      "herramienta": "draw.io (XML generado) + íconos oficiales Azure",
+      "equivalente_c4": "Diagrama de despliegue (suplementario C4), continuidad",
+      "figuras_referencia": [
+        "4.16",
+        "4.20"
+      ],
+      "proposito": "Identificar con insignias numeradas los puntos de falla y el camino alterno de cada uno, o la conmutación entre CLD-01 y CLD-02.",
+      "usar_cuando": "Se pide alta disponibilidad, contingencia, DR o conmutación.",
+      "no_usar_cuando": "No hay puntos de falla que numerar (usar F1).",
+      "disposicion_raiz": "fila",
+      "tipos_grupo": [
+        "sitio_cliente",
+        "seccion",
+        "nube_azure",
+        "ambito",
+        "zona"
+      ],
+      "semanticas_enlace": [
+        "enlace",
+        "enlace_propuesto",
+        "respaldo",
+        "vpn",
+        "replica",
+        "trafico_inspeccionado"
+      ],
+      "max_nodos": 30,
+      "insignias_obligatorias": true
+    },
+    "F5": {
+      "nombre": "Detalle de sitio",
+      "familia": "fisica",
+      "herramienta": "draw.io (XML generado) + íconos oficiales Azure",
+      "equivalente_c4": "Diagrama de despliegue (suplementario C4), un nodo de despliegue",
+      "figuras_referencia": [
+        "4.17",
+        "4.18",
+        "4.19"
+      ],
+      "proposito": "Abrir un solo sitio (tienda tipo, centro de datos en Azure por zonas, recinto técnico) y mostrar sus equipos, segmentos o zonas y su salida hacia Azure.",
+      "usar_cuando": "Se pide el interior de una tienda, de un recinto o de una región Azure.",
+      "no_usar_cuando": "Se pide más de un sitio a la vez (usar F1).",
+      "disposicion_raiz": "fila",
+      "tipos_grupo": [
+        "sitio_cliente",
+        "seccion",
+        "nube_azure",
+        "ambito",
+        "zona",
+        "subred"
+      ],
+      "semanticas_enlace": [
+        "enlace",
+        "enlace_propuesto",
+        "respaldo",
+        "vpn",
+        "replica",
+        "trafico_inspeccionado"
+      ],
+      "max_nodos": 30
+    }
+  },
+  "frentes": {
+    "retail": {
+      "etiqueta": "Retail",
+      "relleno": "#F3FAF6",
+      "borde": "#7FB59A",
+      "caja": "#DDF1E6"
+    },
+    "emisor": {
+      "etiqueta": "Filial emisora",
+      "relleno": "#F8F4FB",
+      "borde": "#A08CC8",
+      "caja": "#E9E1F5"
+    },
+    "frontera": {
+      "etiqueta": "Frontera X-01",
+      "relleno": "#FFF9E6",
+      "borde": "#D4A72C",
+      "caja": "#FFF1C2"
+    },
+    "transversal": {
+      "etiqueta": "Transversal",
+      "relleno": "#F5F7F9",
+      "borde": "#9AA5B1",
+      "caja": "#E8EEF4"
+    },
+    "cliente": {
+      "etiqueta": "Sedes del Cliente",
+      "relleno": "#F3FAF6",
+      "borde": "#7FB59A",
+      "caja": "#DDF1E6"
+    },
+    "azure": {
+      "etiqueta": "Microsoft Azure",
+      "relleno": "#F4F8FD",
+      "borde": "#5B9BD5",
+      "caja": "#E3EEF9"
+    },
+    "externo": {
+      "etiqueta": "Externo",
+      "relleno": "#FFFFFF",
+      "borde": "#9AA5B1",
+      "caja": "#F2F2F2"
+    },
+    "capa_servicios": {
+      "etiqueta": "Fondo lógico de servicios (no ámbito)",
+      "relleno": "#FFF3F3",
+      "borde": "#9AA5B1",
+      "caja": "#FFF3F3"
+    }
+  },
+  "estados_nodo": {
+    "objetivo": {
+      "descripcion": "componente de la solución objetivo",
+      "trazo": "solid",
+      "borde": null,
+      "relleno": null,
+      "sufijo": ""
+    },
+    "convivencia": {
+      "descripcion": "convivencia, se retira por olas conciliadas",
+      "trazo": "dashed",
+      "borde": "#9E9E9E",
+      "relleno": "#EEEEEE",
+      "sufijo": ""
+    },
+    "por_acreditar": {
+      "descripcion": "por acreditar",
+      "trazo": "dashed",
+      "borde": "#C77700",
+      "relleno": "#FFF3DF",
+      "sufijo": ""
+    },
+    "condicionado": {
+      "descripcion": "destino condicionado a las pruebas de la Etapa 1",
+      "trazo": "solid",
+      "borde": null,
+      "relleno": null,
+      "sufijo": "*"
+    },
+    "propuesto": {
+      "descripcion": "propuesto, no existente",
+      "trazo": "dashed",
+      "borde": null,
+      "relleno": null,
+      "sufijo": ""
+    }
+  },
+  "semanticas_enlace": {
+    "flujo": {
+      "familia": "logica",
+      "descripcion": "flujo propuesto / autoridad o consulta propia",
+      "color": "#5B6770",
+      "estilo": "solid",
+      "grosor": 1.0
+    },
+    "condicionado": {
+      "familia": "logica",
+      "descripcion": "contrato o emplazamiento condicionado",
+      "color": "#5B6770",
+      "estilo": "dashed",
+      "grosor": 1.0
+    },
+    "politica": {
+      "familia": "logica",
+      "descripcion": "política o efecto",
+      "color": "#B08A2E",
+      "estilo": "dotted",
+      "grosor": 1.2
+    },
+    "convivencia": {
+      "familia": "logica",
+      "descripcion": "conexión de convivencia (solo Etapa 1)",
+      "color": "#9E9E9E",
+      "estilo": "dashed",
+      "grosor": 1.0
+    },
+    "por_acreditar": {
+      "familia": "logica",
+      "descripcion": "conexión por acreditar / ruta por verificar",
+      "color": "#C77700",
+      "estilo": "dashed",
+      "grosor": 1.0
+    },
+    "compra_autorizable": {
+      "familia": "logica",
+      "descripcion": "autorización de compra con tarjeta propia (único cruce Retail–Emisor)",
+      "color": "#1F7A8C",
+      "estilo": "solid",
+      "grosor": 2.0
+    },
+    "denegado": {
+      "familia": "logica",
+      "descripcion": "solicitud denegada",
+      "color": "#C62828",
+      "estilo": "dashed",
+      "grosor": 1.2
+    },
+    "enlace": {
+      "familia": "fisica",
+      "descripcion": "enlace existente o principal",
+      "color": "#333333",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "enlace_propuesto": {
+      "familia": "fisica",
+      "descripcion": "enlace propuesto, por acreditar",
+      "color": "#333333",
+      "estilo": "dashed",
+      "grosor": 1.5
+    },
+    "respaldo": {
+      "familia": "fisica",
+      "descripcion": "enlace de respaldo",
+      "color": "#333333",
+      "estilo": "dashdot",
+      "grosor": 1.5
+    },
+    "vpn": {
+      "familia": "fisica",
+      "descripcion": "túnel VPN",
+      "color": "#333333",
+      "estilo": "dotted",
+      "grosor": 1.5
+    },
+    "replica": {
+      "familia": "fisica",
+      "descripcion": "réplica o copia de datos",
+      "color": "#333333",
+      "estilo": "longdash",
+      "grosor": 1.5
+    },
+    "trafico_inspeccionado": {
+      "familia": "fisica",
+      "descripcion": "tráfico que pasa por el firewall",
+      "color": "#C2185B",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "despliegue": {
+      "familia": "fisica",
+      "descripcion": "promoción entre ambientes",
+      "color": "#333333",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "aprobacion": {
+      "familia": "fisica",
+      "descripcion": "requiere aprobación explícita",
+      "color": "#C2185B",
+      "estilo": "dashed",
+      "grosor": 1.5
+    },
+    "solicitud": {
+      "familia": "logica",
+      "descripcion": "Solicitud / API",
+      "color": "#1F7A8C",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "persistencia": {
+      "familia": "logica",
+      "descripcion": "Acceso directo a datos",
+      "color": "#397349",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "publicacion": {
+      "familia": "logica",
+      "descripcion": "Publicación de evento",
+      "color": "#B85A00",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "consumo": {
+      "familia": "logica",
+      "descripcion": "Consumo de evento",
+      "color": "#7553A6",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "adaptacion": {
+      "familia": "logica",
+      "descripcion": "Contrato externo",
+      "color": "#247C98",
+      "estilo": "solid",
+      "grosor": 1.5
+    },
+    "asociacion": {
+      "familia": "logica",
+      "descripcion": "Familia de contratos / dependencia; no secuencia de ejecución",
+      "color": "#5B6770",
+      "estilo": "solid",
+      "grosor": 1.2,
+      "flecha": "ninguna"
+    }
+  },
+  "tipos_nodo_logicos": {
+    "persona": {
+      "icono": "diagrams.onprem.client.Users"
+    },
+    "canal_pc": {
+      "icono": "diagrams.onprem.client.Client"
+    },
+    "canal_movil": {
+      "icono": "diagrams.generic.device.Mobile"
+    },
+    "sistema_conservado": {
+      "icono": "diagrams.generic.compute.Rack"
+    },
+    "nodo_local": {
+      "icono": "diagrams.generic.compute.Rack"
+    },
+    "entrada_api": {
+      "icono": "diagrams.azure.integration.APIManagement"
+    },
+    "servicio": {
+      "icono": "assets/servicio.png",
+      "requiere_codigo": true
+    },
+    "eventos": {
+      "icono": "diagrams.azure.analytics.EventHubs"
+    },
+    "base_datos": {
+      "icono": "diagrams.azure.database.DatabaseForPostgresqlServers"
+    },
+    "lago_analitica": {
+      "icono": "diagrams.azure.storage.DataLakeStorage"
+    },
+    "adaptadores": {
+      "icono": "diagrams.azure.compute.KubernetesServices"
+    },
+    "identidad": {
+      "icono": "diagrams.azure.identity.ActiveDirectory"
+    },
+    "secretos": {
+      "icono": "diagrams.azure.security.KeyVaults"
+    },
+    "telemetria": {
+      "icono": "diagrams.azure.monitor.Monitor"
+    },
+    "ml": {
+      "icono": "diagrams.azure.ml.MachineLearningServiceWorkspaces"
+    },
+    "politica_x01": {
+      "icono": "assets/politica.png"
+    },
+    "caja": {
+      "forma": "box"
+    },
+    "actor": {
+      "forma": "ellipse"
+    },
+    "almacen": {
+      "forma": "cylinder"
+    },
+    "borde": {
+      "icono": "diagrams.azure.network.FrontDoors"
+    },
+    "blob": {
+      "icono": "diagrams.azure.storage.BlobStorage"
+    },
+    "cola": {
+      "icono": "diagrams.azure.storage.QueuesStorage"
+    },
+    "react": {
+      "icono": "diagrams.programming.framework.React"
+    },
+    "spring": {
+      "icono": "diagrams.programming.framework.Spring"
+    },
+    "java": {
+      "icono": "diagrams.programming.language.Java"
+    },
+    "typescript": {
+      "icono": "diagrams.programming.language.TypeScript"
+    },
+    "python": {
+      "icono": "diagrams.programming.language.Python"
+    },
+    "azure": {
+      "icono": "diagrams.azure.general.Resource"
+    },
+    "vnet": {
+      "icono": "diagrams.azure.network.VirtualNetworks"
+    },
+    "firewall": {
+      "icono": "diagrams.azure.network.Firewall"
+    },
+    "otlp": {
+      "icono": "diagrams.generic.compute.Rack"
+    },
+    "app_gateway": {
+      "icono": "diagrams.azure.network.ApplicationGateway"
+    },
+    "ddos_azure": {
+      "icono": "diagrams.azure.network.DDOSProtectionPlans"
+    },
+    "aks_azure": {
+      "icono": "diagrams.azure.compute.KubernetesServices"
+    },
+    "power_bi": {
+      "icono": "diagrams.azure.analytics.PowerBiEmbedded"
+    },
+    "redis_azure": {
+      "icono": "diagrams.azure.database.CacheForRedis"
+    },
+    "network_watcher": {
+      "icono": "diagrams.azure.network.NetworkWatcher"
+    },
+    "otel_logo": {
+      "icono": "assets/opentelemetry.png"
+    },
+    "private_link": {
+      "icono": "diagrams.azure.network.PrivateEndpoint"
+    },
+    "dns_azure": {
+      "icono": "diagrams.azure.network.DNSZones"
+    },
+    "api_center": {
+      "icono": "diagrams.azure.web.APICenter"
+    },
+    "service_bus": {
+      "icono": "diagrams.azure.integration.ServiceBus"
+    },
+    "backup_vault": {
+      "icono": "diagrams.azure.other.BackupVault"
+    },
+    "external_id": {
+      "icono": "diagrams.azure.identity.ExternalIdentities"
+    },
+    "sentinel_azure": {
+      "icono": "diagrams.azure.security.Sentinel"
+    },
+    "bastion_azure": {
+      "icono": "diagrams.azure.networking.Bastions"
+    },
+    "grafana_azure": {
+      "icono": "diagrams.azure.other.AzureManagedGrafana"
+    },
+    "arc_azure": {
+      "icono": "diagrams.azure.managementgovernance.AzureArc"
+    },
+    "funcion_logica": {
+      "icono": "assets/servicio.png"
+    },
+    "datos_logicos": {
+      "icono": "diagrams.generic.database.SQL"
+    },
+    "data_factory": {
+      "icono": "diagrams.azure.analytics.DataFactories"
+    },
+    "openmetadata": {
+      "icono": "assets/openmetadata.png"
+    },
+    "opensearch": {
+      "icono": "assets/opensearch.png"
+    },
+    "mlflow": {
+      "icono": "diagrams.onprem.mlops.Mlflow"
+    },
+    "intune": {
+      "icono": "diagrams.azure.intune.Intune"
+    },
+    "workload_identity": {
+      "icono": "diagrams.azure.identity.ManagedIdentities"
+    },
+    "pim": {
+      "icono": "diagrams.azure.identity.EntraPrivlegedIdentityManagement"
+    },
+    "private_access": {
+      "icono": "diagrams.azure.identity.PrivateAccess"
+    },
+    "defender_endpoint": {
+      "icono": "diagrams.azure.security.Defender"
+    },
+    "defender_cloud": {
+      "icono": "diagrams.azure.security.MicrosoftDefenderForCloud"
+    },
+    "prometheus": {
+      "icono": "diagrams.onprem.monitoring.Prometheus"
+    },
+    "loki": {
+      "icono": "diagrams.onprem.logging.Loki"
+    },
+    "tempo": {
+      "icono": "diagrams.onprem.tracing.Tempo"
+    },
+    "grafana": {
+      "icono": "diagrams.onprem.monitoring.Grafana"
+    }
+  },
+  "iconos_fisicos": {
+    "api_management": "image;aspect=fixed;html=1;image=img/lib/azure2/integration/API_Management_Services.svg",
+    "aks": "image;aspect=fixed;html=1;image=img/lib/azure2/containers/Kubernetes_Services.svg",
+    "event_hubs": "image;aspect=fixed;html=1;image=img/lib/azure2/analytics/Event_Hubs.svg",
+    "postgresql": "image;aspect=fixed;html=1;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg",
+    "redis": "image;aspect=fixed;html=1;image=img/lib/azure2/databases/Azure_Managed_Redis.svg",
+    "data_lake": "image;aspect=fixed;html=1;image=img/lib/azure2/storage/Data_Lake_Storage_Gen1.svg",
+    "storage": "image;aspect=fixed;html=1;image=img/lib/azure2/storage/Storage_Accounts.svg",
+    "power_bi": "image;aspect=fixed;html=1;image=img/lib/azure2/analytics/Power_BI_Embedded.svg",
+    "key_vault": "image;aspect=fixed;html=1;image=img/lib/azure2/security/Key_Vaults.svg",
+    "entra_id": "image;aspect=fixed;html=1;image=img/lib/azure2/identity/Azure_Active_Directory.svg",
+    "monitor": "image;aspect=fixed;html=1;image=img/lib/azure2/management_governance/Monitor.svg",
+    "front_door": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Front_Doors.svg",
+    "app_gateway": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Application_Gateways.svg",
+    "azure_firewall": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Firewalls.svg",
+    "vpn_gateway": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Network_Gateways.svg",
+    "expressroute": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/ExpressRoute_Circuits.svg",
+    "route_server": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Router.svg",
+    "bastion": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Bastions.svg",
+    "private_link": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Private_Link.svg",
+    "vnet": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Virtual_Networks.svg",
+    "container_registry": "image;aspect=fixed;html=1;image=img/lib/azure2/containers/Container_Registries.svg",
+    "devops": "image;aspect=fixed;html=1;image=img/lib/azure2/devops/Azure_DevOps.svg",
+    "repositorio": "image;aspect=fixed;html=1;image=img/lib/azure2/general/TFS_VC_Repository.svg",
+    "backup_vault": "image;aspect=fixed;html=1;image=img/lib/azure2/other/Backup_Vault.svg",
+    "hsm": "image;aspect=fixed;html=1;image=img/lib/azure2/other/Dedicated_HSM.svg",
+    "ml": "image;aspect=fixed;html=1;image=img/lib/azure2/ai_machine_learning/Machine_Learning.svg",
+    "personas": "image;aspect=fixed;html=1;image=img/lib/azure2/identity/Users.svg",
+    "sitio": "image;aspect=fixed;html=1;image=img/lib/azure2/networking/Local_Network_Gateways.svg",
+    "centro_datos": "image;aspect=fixed;html=1;image=img/lib/azure2/other/Modular_Data_Center.svg",
+    "internet": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Cloud_128x128.png",
+    "fortigate": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Firewall_02_128x128.png",
+    "switch": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Switch_128x128.png",
+    "router": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Router_Icon_128x128.png",
+    "servidor": "image;aspect=fixed;html=1;image=img/lib/clip_art/computers/Server_Tower_128x128.png",
+    "rack": "image;aspect=fixed;html=1;image=img/lib/clip_art/computers/Server_Rack_128x128.png",
+    "ups": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/UPS_128x128.png",
+    "pc": "image;aspect=fixed;html=1;image=img/lib/clip_art/computers/Monitor_128x128.png",
+    "impresora": "image;aspect=fixed;html=1;image=img/lib/clip_art/computers/Printer_128x128.png",
+    "movil": "image;aspect=fixed;html=1;image=img/lib/clip_art/telecommunication/Cellphone_128x128.png",
+    "access_point": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Wireless_Router_N_128x128.png",
+    "camara": "image;aspect=fixed;html=1;image=img/lib/clip_art/networking/Ip_Camera_128x128.png",
+    "antena_lte": "image;aspect=fixed;html=1;image=img/lib/clip_art/telecommunication/Signal_tower_on_128x128.png"
+  },
+  "grupos_fisicos": {
+    "nube_azure": {
+      "relleno": "#FFFFFF",
+      "borde": "#0078D4",
+      "trazo": "solid",
+      "redondeado": true,
+      "cabecera_negrita": true
+    },
+    "sitio_cliente": {
+      "relleno": "#FFFFFF",
+      "borde": "#1F3864",
+      "trazo": "solid",
+      "redondeado": true,
+      "cabecera_negrita": true
+    },
+    "seccion": {
+      "relleno": "#F5F5F5",
+      "borde": "none",
+      "trazo": "solid",
+      "redondeado": true,
+      "cabecera_negrita": true
+    },
+    "ambito": {
+      "relleno": "#FFFFFF",
+      "borde": "#7FB2E5",
+      "trazo": "dotted",
+      "redondeado": false,
+      "cabecera_negrita": true
+    },
+    "zona": {
+      "relleno": "#F7F7F7",
+      "borde": "#B0B0B0",
+      "trazo": "dashed",
+      "redondeado": false,
+      "cabecera_negrita": true
+    },
+    "subred": {
+      "relleno": "#F2F2F2",
+      "borde": "#D0D0D0",
+      "trazo": "solid",
+      "redondeado": false,
+      "cabecera_negrita": true
+    }
+  },
+  "insignia": {
+    "relleno": "#107C10",
+    "texto": "#FFFFFF",
+    "diametro": 22
+  },
+  "codigos": {
+    "servicio_retail": "^R:(M|V|CL)-\\d{2}$",
+    "servicio_emisor": "^F:C-\\d{2}$",
+    "frontera": "^X-01$",
+    "local_tienda": "^L-0[1-9]$",
+    "actor_humano": "^AH-\\d{2}$",
+    "actor_sistema": "^AS-\\d{2}$",
+    "sitio": "^(SIT|CD|DC|CLD|EXT)-\\d{2}$",
+    "adr": "^ADR-\\d{2}$"
+  },
+  "prohibido": {
+    "formatos": [
+      "mermaid",
+      "plantuml",
+      "graphviz DOT escrito a mano",
+      "ascii",
+      "imagen generada por IA",
+      "svg dibujado a mano"
+    ],
+    "tipos_diagrama": [
+      "UML de clases",
+      "UML de secuencia",
+      "diagrama de casos de uso",
+      "BPMN",
+      "entidad-relación",
+      "mapa mental",
+      "Gantt",
+      "isométrico o 3D",
+      "infografía",
+      "C4 nivel 4 (código)"
+    ],
+    "proveedores_iconos": [
+      "aws",
+      "gcp",
+      "alibabacloud",
+      "oci",
+      "ibm",
+      "openstack",
+      "digitalocean",
+      "saas",
+      "programming",
+      "elastic",
+      "firebase",
+      "outscale"
+    ],
+    "atributos_libres": [
+      "color",
+      "fillcolor",
+      "fontcolor",
+      "penwidth",
+      "style",
+      "shape",
+      "fontname"
+    ]
+  }
+}

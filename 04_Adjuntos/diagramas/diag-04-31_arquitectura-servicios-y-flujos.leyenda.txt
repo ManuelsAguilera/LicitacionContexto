@@ -1,0 +1,17 @@
+Figura 4.31: Arquitectura lógica · servicios y capacidades comunes por ámbito
+Fuente: Elaboración propia a partir de la figura 4.30, especificacion_servicios_capa4.md (22-10-2026) y nomenclatura SD-03; candidatos y decisiones pendientes identificados.
+
+Leyenda:
+Vista sin actores. Franjas horizontales 1–6; Seguridad y Observabilidad en franjas verticales laterales. Públicos → Front Door → origen privado → Gateway → APIM → áreas. Internos → acceso privado corporativo → Gateway → APIM → áreas.
+Columna izquierda: tecnologías y gobierno. Panel derecho: sistemas externos, con autoridad y ubicación propias. Los nombres del ejemplo no se trasladan.
+Verde Retail; lila Filial; amarillo X-01; gris producto agregado o transversal. Un símbolo por producto no equivale a recursos, red, tenant o bases compartidos.
+Conectores: azul API, verde persistencia, naranja publicación, violeta consumo, celeste contrato externo, dorado punteado gobierno, gris discontinuo por verificar. Puertos en contornos y rutas ortogonales sin atravesar tarjetas o títulos.
+Las flechas de área agrupan contratos por servicio. Cada servicio conserva su transacción y outbox; no hay una base o transacción común por área. X-01 rige el único cruce entre negocios.
+Data Lake retirado. Hechos confirmados → Service Bus del ámbito → procesadores de proyecciones → PostgreSQL analítico dedicado → Power BI del ámbito. BI no consulta repositorios operacionales. Conectividad privada de datos, no otra puerta de APIs.
+Carga inicial/reconstrucción desde exportación autorizada y punto de corte; el bus no es archivo histórico. Blob separa documentos, evidencia, retención y conjuntos versionados. pgvector contiene un índice reconstruible de Oferta.
+Capacidades comunes: administración/auditoría, flujos humanos, documentos/firma y notificaciones en base tecnológica; búsqueda global en Datos. Instancias separadas por ámbito. Productos pendientes, no servicios de negocio adicionales. Exportación asíncrona desde modelos analíticos a Blob con aviso y registro.
+Cada servicio lleva A/C/E/P: auditoría, control de acceso, exportación y parámetros como diseño propuesto, no acreditación. Trece servicios vigentes más F:C-04 candidato: alcance, RF, etapa y aprobación pendientes; sin contratos inventados.
+Backup Vault y Arc/Monitor Agent pasan al detalle físico/operativo. Continuidad se expresa como funciones de software y datos, no como hardware o VM.
+Las tecnologías son selecciones propuestas; * disponibilidad, capacidad, compatibilidad o decisión pendiente. Tenant y residencia de Filial sin aprobación expresa. SD-03/04 intactos.
+Iconos del catálogo local diagrams y OpenTelemetry CNCF; Managed HSM usa icono de familia Key Vault, Managed Redis de Redis, Power BI de la familia Power BI Embedded.
+Registrar asistencia IA en nivel Alto en Tabla 4.17 al incorporar la figura a la oferta.

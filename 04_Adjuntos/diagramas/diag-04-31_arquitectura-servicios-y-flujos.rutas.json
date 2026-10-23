@@ -1,0 +1,4674 @@
+[
+  {
+    "enlace": {
+      "de": "dns",
+      "a": "front_door",
+      "etiqueta": "Hosts de Retail y Filial; configuración DNS, sin actuar como proxy",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        303,
+        563.0
+      ],
+      [
+        397,
+        563.0
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        563.0
+      ],
+      "stub": [
+        312,
+        563.0
+      ],
+      "anchor": [
+        1,
+        0.07272727272727272
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        563.0
+      ],
+      "stub": [
+        388,
+        563.0
+      ],
+      "anchor": [
+        0,
+        0.06956521739130435
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "front_door",
+      "a": "private_link",
+      "etiqueta": "HTTPS privado por perfil y host del ámbito; endpoints separados; residencia condicionada",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        768.0,
+        673
+      ],
+      [
+        768.0,
+        707
+      ]
+    ],
+    "source": {
+      "point": [
+        768.0,
+        673
+      ],
+      "stub": [
+        768.0,
+        682
+      ],
+      "anchor": [
+        0.49066666666666664,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        768.0,
+        707
+      ],
+      "stub": [
+        768.0,
+        698
+      ],
+      "anchor": [
+        0.2,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "application_gateway",
+      "a": "api_management",
+      "etiqueta": "HTTPS privado al APIM del mismo ámbito; políticas y contratos separados",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        408.0,
+        908
+      ],
+      [
+        408.0,
+        927
+      ]
+    ],
+    "source": {
+      "point": [
+        408.0,
+        908
+      ],
+      "stub": [
+        408.0,
+        917
+      ],
+      "anchor": [
+        0.003686635944700461,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        408.0,
+        927
+      ],
+      "stub": [
+        408.0,
+        918
+      ],
+      "anchor": [
+        0.003686635944700461,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_center",
+      "a": "api_management",
+      "etiqueta": "Contratos: API Center → pipeline externo → APIM, separados por ámbito; no tráfico de negocio",
+      "semantica": "politica"
+    },
+    "points": [
+      [
+        303,
+        938.0
+      ],
+      [
+        397,
+        938.0
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        938.0
+      ],
+      "stub": [
+        312,
+        938.0
+      ],
+      "anchor": [
+        1,
+        0.704
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        938.0
+      ],
+      "stub": [
+        388,
+        938.0
+      ],
+      "anchor": [
+        0,
+        0.11428571428571428
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "web",
+      "a": "front_door",
+      "etiqueta": "Retail: host y perfil propios. API pública Retail",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        408.0,
+        388
+      ],
+      [
+        408.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        408.0,
+        388
+      ],
+      "stub": [
+        408.0,
+        397
+      ],
+      "anchor": [
+        0.09333333333333334,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        408.0,
+        552
+      ],
+      "stub": [
+        408.0,
+        543
+      ],
+      "anchor": [
+        0.010666666666666666,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "portal_f",
+      "a": "front_door",
+      "etiqueta": "Filial: host y perfil propios. API pública Filial; borde sujeto a residencia aprobada",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        713.0,
+        388
+      ],
+      [
+        713.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        713.0,
+        388
+      ],
+      "stub": [
+        713.0,
+        397
+      ],
+      "anchor": [
+        0.02666666666666667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        713.0,
+        552
+      ],
+      "stub": [
+        713.0,
+        543
+      ],
+      "anchor": [
+        0.41733333333333333,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "pos",
+      "a": "entrada_privada",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1228.0,
+        388
+      ],
+      [
+        1228.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        1228.0,
+        388
+      ],
+      "stub": [
+        1228.0,
+        397
+      ],
+      "anchor": [
+        0.66,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1228.0,
+        552
+      ],
+      "stub": [
+        1228.0,
+        543
+      ],
+      "anchor": [
+        0.0058823529411764705,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "operacion",
+      "a": "entrada_privada",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1505.0,
+        388
+      ],
+      [
+        1505.0,
+        397
+      ],
+      [
+        1741.288,
+        397
+      ],
+      [
+        1741.288,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        1505.0,
+        388
+      ],
+      "stub": [
+        1505.0,
+        397
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1741.288,
+        552
+      ],
+      "stub": [
+        1741.288,
+        543
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "logistica",
+      "a": "entrada_privada",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1688.0,
+        388
+      ],
+      [
+        1688.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        1688.0,
+        388
+      ],
+      "stub": [
+        1688.0,
+        397
+      ],
+      "anchor": [
+        0.02666666666666667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1688.0,
+        552
+      ],
+      "stub": [
+        1688.0,
+        543
+      ],
+      "anchor": [
+        0.34411764705882353,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "movil",
+      "a": "entrada_privada",
+      "etiqueta": "Red privada tiendas / CD / DC-01 · conectividad privada corporativa; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        2013.0,
+        388
+      ],
+      [
+        2013.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        2013.0,
+        388
+      ],
+      "stub": [
+        2013.0,
+        397
+      ],
+      "anchor": [
+        0.02666666666666667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2013.0,
+        552
+      ],
+      "stub": [
+        2013.0,
+        543
+      ],
+      "anchor": [
+        0.5830882352941177,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "meson_f",
+      "a": "entrada_privada",
+      "etiqueta": "Red privada del mesón financiero; omite Front Door",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        2338.0,
+        388
+      ],
+      [
+        2338.0,
+        552
+      ]
+    ],
+    "source": {
+      "point": [
+        2338.0,
+        388
+      ],
+      "stub": [
+        2338.0,
+        397
+      ],
+      "anchor": [
+        0.02666666666666667,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2338.0,
+        552
+      ],
+      "stub": [
+        2338.0,
+        543
+      ],
+      "anchor": [
+        0.8220588235294117,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "area_mercaderia",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        408.0,
+        1003
+      ],
+      [
+        408.0,
+        1117
+      ]
+    ],
+    "source": {
+      "point": [
+        408.0,
+        1003
+      ],
+      "stub": [
+        408.0,
+        1012
+      ],
+      "anchor": [
+        0.003686635944700461,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        408.0,
+        1117
+      ],
+      "stub": [
+        408.0,
+        1108
+      ],
+      "anchor": [
+        0.05714285714285714,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "area_venta",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        908.0,
+        1003
+      ],
+      [
+        908.0,
+        1117
+      ]
+    ],
+    "source": {
+      "point": [
+        908.0,
+        1003
+      ],
+      "stub": [
+        908.0,
+        1012
+      ],
+      "anchor": [
+        0.23410138248847925,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        908.0,
+        1117
+      ],
+      "stub": [
+        908.0,
+        1108
+      ],
+      "anchor": [
+        0.0163265306122449,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "area_clientes",
+      "etiqueta": "APIs Retail del área; operaciones, contratos y permisos propios por servicio",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1668.76,
+        1003
+      ],
+      [
+        1668.76,
+        1117
+      ]
+    ],
+    "source": {
+      "point": [
+        1668.76,
+        1003
+      ],
+      "stub": [
+        1668.76,
+        1012
+      ],
+      "anchor": [
+        0.5846820276497696,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1668.76,
+        1117
+      ],
+      "stub": [
+        1668.76,
+        1108
+      ],
+      "anchor": [
+        0.507673469387755,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "servicios_e",
+      "etiqueta": "APIs Filial del área; operaciones, contratos y permisos propios por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        2108.0,
+        1003
+      ],
+      [
+        2108.0,
+        1117
+      ]
+    ],
+    "source": {
+      "point": [
+        2108.0,
+        1003
+      ],
+      "stub": [
+        2108.0,
+        1012
+      ],
+      "anchor": [
+        0.7870967741935484,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2108.0,
+        1117
+      ],
+      "stub": [
+        2108.0,
+        1108
+      ],
+      "anchor": [
+        0.0163265306122449,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_venta",
+      "a": "x01",
+      "etiqueta": "Ventas: solicitud de autorización de compra con tarjeta propia vía X-01",
+      "semantica": "compra_autorizable"
+    },
+    "points": [
+      [
+        1393,
+        1402.0
+      ],
+      [
+        1952,
+        1402.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1393,
+        1402.0
+      ],
+      "stub": [
+        1402,
+        1402.0
+      ],
+      "anchor": [
+        1,
+        0.40869565217391307
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1952,
+        1402.0
+      ],
+      "stub": [
+        1943,
+        1402.0
+      ],
+      "anchor": [
+        0,
+        0.28888888888888886
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "api_management",
+      "etiqueta": "Autorización: X-01 entra SOLO al APIM de Filial con su identidad; correlativo propio",
+      "semantica": "compra_autorizable"
+    },
+    "points": [
+      [
+        1963.0,
+        1347
+      ],
+      [
+        1963.0,
+        1003
+      ]
+    ],
+    "source": {
+      "point": [
+        1963.0,
+        1347
+      ],
+      "stub": [
+        1963.0,
+        1338
+      ],
+      "anchor": [
+        0.06153846153846154,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1963.0,
+        1003
+      ],
+      "stub": [
+        1963.0,
+        1012
+      ],
+      "anchor": [
+        0.7202764976958526,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "comercio",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        408.0,
+        2078
+      ],
+      [
+        408.0,
+        2117
+      ]
+    ],
+    "source": {
+      "point": [
+        408.0,
+        2078
+      ],
+      "stub": [
+        408.0,
+        2087
+      ],
+      "anchor": [
+        0.005369127516778523,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        408.0,
+        2117
+      ],
+      "stub": [
+        408.0,
+        2108
+      ],
+      "anchor": [
+        0.017777777777777778,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "canales",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        928.0,
+        2078
+      ],
+      [
+        928.0,
+        2117
+      ]
+    ],
+    "source": {
+      "point": [
+        928.0,
+        2078
+      ],
+      "stub": [
+        928.0,
+        2087
+      ],
+      "anchor": [
+        0.35436241610738256,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        928.0,
+        2117
+      ],
+      "stub": [
+        928.0,
+        2108
+      ],
+      "anchor": [
+        0.017777777777777778,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "socios",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        1448.0,
+        2078
+      ],
+      [
+        1448.0,
+        2117
+      ]
+    ],
+    "source": {
+      "point": [
+        1448.0,
+        2078
+      ],
+      "stub": [
+        1448.0,
+        2087
+      ],
+      "anchor": [
+        0.7033557046979866,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1448.0,
+        2117
+      ],
+      "stub": [
+        1448.0,
+        2108
+      ],
+      "anchor": [
+        0.017777777777777778,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_e",
+      "a": "credito",
+      "etiqueta": "Consumo de hechos propios; traducción y deduplicación",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2292.485,
+        2078
+      ],
+      [
+        2292.485,
+        2087
+      ],
+      [
+        2114,
+        2087
+      ],
+      [
+        2114,
+        2258
+      ],
+      [
+        2345.0,
+        2258
+      ],
+      [
+        2345.0,
+        2267
+      ]
+    ],
+    "source": {
+      "point": [
+        2292.485,
+        2078
+      ],
+      "stub": [
+        2292.485,
+        2087
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2345.0,
+        2267
+      ],
+      "stub": [
+        2345.0,
+        2258
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_mercaderia",
+      "a": "bus_r",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        388.0,
+        1813
+      ],
+      [
+        388.0,
+        1998.0
+      ],
+      [
+        397,
+        1998.0
+      ]
+    ],
+    "source": {
+      "point": [
+        388.0,
+        1813
+      ],
+      "stub": [
+        388.0,
+        1822
+      ],
+      "anchor": [
+        0.0163265306122449,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        1998.0
+      ],
+      "stub": [
+        388,
+        1998.0
+      ],
+      "anchor": [
+        0,
+        0.09411764705882353
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_venta",
+      "a": "bus_r",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        1087.817,
+        1813
+      ],
+      [
+        1087.817,
+        1822
+      ],
+      [
+        397,
+        1822
+      ],
+      [
+        397,
+        1978
+      ],
+      [
+        1040.7,
+        1978
+      ],
+      [
+        1040.7,
+        1987
+      ]
+    ],
+    "source": {
+      "point": [
+        1087.817,
+        1813
+      ],
+      "stub": [
+        1087.817,
+        1822
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1040.7,
+        1987
+      ],
+      "stub": [
+        1040.7,
+        1978
+      ],
+      "anchor": [
+        0.43,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "servicios_e",
+      "a": "bus_e",
+      "etiqueta": "Hechos confirmados por productores del área; outbox y contratos por servicio La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        2582.0,
+        1813
+      ],
+      [
+        2582.0,
+        1998.0
+      ],
+      [
+        2573,
+        1998.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2582.0,
+        1813
+      ],
+      "stub": [
+        2582.0,
+        1822
+      ],
+      "anchor": [
+        0.9836734693877551,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2573,
+        1998.0
+      ],
+      "stub": [
+        2582,
+        1998.0
+      ],
+      "anchor": [
+        1,
+        0.09411764705882353
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "area_clientes",
+      "etiqueta": "Clientes Retail: consumo para fila virtual; contrato por cerrar",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        1249.3,
+        1987
+      ],
+      [
+        1249.3,
+        1873
+      ],
+      [
+        397,
+        1873
+      ],
+      [
+        397,
+        1844
+      ],
+      [
+        1579.25,
+        1844
+      ],
+      [
+        1579.25,
+        1813
+      ]
+    ],
+    "source": {
+      "point": [
+        1249.3,
+        1987
+      ],
+      "stub": [
+        1249.3,
+        1978
+      ],
+      "anchor": [
+        0.57,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1579.25,
+        1813
+      ],
+      "stub": [
+        1579.25,
+        1822
+      ],
+      "anchor": [
+        0.325,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_serv",
+      "a": "local_sync",
+      "etiqueta": "Entrega de operaciones para reconciliar",
+      "semantica": "publicacion"
+    },
+    "points": [
+      [
+        1092.485,
+        1693
+      ],
+      [
+        1092.485,
+        1702
+      ],
+      [
+        856,
+        1702
+      ],
+      [
+        856,
+        1804
+      ],
+      [
+        394,
+        1804
+      ],
+      [
+        394,
+        2348
+      ],
+      [
+        1066.25,
+        2348
+      ],
+      [
+        1066.25,
+        2357
+      ]
+    ],
+    "source": {
+      "point": [
+        1092.485,
+        1693
+      ],
+      "stub": [
+        1092.485,
+        1702
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1066.25,
+        2357
+      ],
+      "stub": [
+        1066.25,
+        2348
+      ],
+      "anchor": [
+        0.325,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_sync",
+      "a": "entrada_privada",
+      "etiqueta": "Reenvío por red privada hacia APIs Retail; nunca escritura directa en BD",
+      "semantica": "solicitud"
+    },
+    "points": [
+      [
+        1145.0,
+        2357
+      ],
+      [
+        1145.0,
+        2351
+      ],
+      [
+        378,
+        2351
+      ],
+      [
+        378,
+        682
+      ],
+      [
+        1741.288,
+        682
+      ],
+      [
+        1741.288,
+        673
+      ]
+    ],
+    "source": {
+      "point": [
+        1145.0,
+        2357
+      ],
+      "stub": [
+        1145.0,
+        2348
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1741.288,
+        673
+      ],
+      "stub": [
+        1741.288,
+        682
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_mercaderia",
+      "a": "datos_merc",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        388.0,
+        1813
+      ],
+      [
+        388.0,
+        2678.0
+      ],
+      [
+        397,
+        2678.0
+      ]
+    ],
+    "source": {
+      "point": [
+        388.0,
+        1813
+      ],
+      "stub": [
+        388.0,
+        1822
+      ],
+      "anchor": [
+        0.0163265306122449,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        2678.0
+      ],
+      "stub": [
+        388,
+        2678.0
+      ],
+      "anchor": [
+        0,
+        0.08421052631578947
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_venta",
+      "a": "datos_venta",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1202.183,
+        1813
+      ],
+      [
+        1202.183,
+        1835.0
+      ],
+      [
+        388,
+        1835.0
+      ],
+      [
+        388,
+        2658
+      ],
+      [
+        1145.0,
+        2658
+      ],
+      [
+        1145.0,
+        2667
+      ]
+    ],
+    "source": {
+      "point": [
+        1202.183,
+        1813
+      ],
+      "stub": [
+        1202.183,
+        1822
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1145.0,
+        2667
+      ],
+      "stub": [
+        1145.0,
+        2658
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_clientes",
+      "a": "datos_clientes",
+      "etiqueta": "Repositorios propios de los servicios del área; agrupación visual, no escritura compartida",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1665.0,
+        1813
+      ],
+      [
+        1665.0,
+        1822
+      ],
+      [
+        2576,
+        1822
+      ],
+      [
+        2576,
+        2658
+      ],
+      [
+        1665.0,
+        2658
+      ],
+      [
+        1665.0,
+        2667
+      ]
+    ],
+    "source": {
+      "point": [
+        1665.0,
+        1813
+      ],
+      "stub": [
+        1665.0,
+        1822
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1665.0,
+        2667
+      ],
+      "stub": [
+        1665.0,
+        2658
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "x01",
+      "a": "bitacora",
+      "etiqueta": "Persistencia directa propia por contexto; no pasa por el bus",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2020.0,
+        1533
+      ],
+      [
+        2020.0,
+        1844
+      ],
+      [
+        2570,
+        1844
+      ],
+      [
+        2570,
+        1984
+      ],
+      [
+        2020.0,
+        1984
+      ],
+      [
+        2020.0,
+        2667
+      ]
+    ],
+    "source": {
+      "point": [
+        2020.0,
+        1533
+      ],
+      "stub": [
+        2020.0,
+        1542
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2020.0,
+        2667
+      ],
+      "stub": [
+        2020.0,
+        2658
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "servicios_e",
+      "a": "datos_orig",
+      "etiqueta": "originacion: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2582.0,
+        1813
+      ],
+      [
+        2582.0,
+        2678.0
+      ],
+      [
+        2573,
+        2678.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2582.0,
+        1813
+      ],
+      "stub": [
+        2582.0,
+        1822
+      ],
+      "anchor": [
+        0.9836734693877551,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2573,
+        2678.0
+      ],
+      "stub": [
+        2582,
+        2678.0
+      ],
+      "anchor": [
+        1,
+        0.11428571428571428
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "servicios_e",
+      "a": "datos_cartera",
+      "etiqueta": "cartera: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2582.0,
+        1813
+      ],
+      [
+        2582.0,
+        2768.0
+      ],
+      [
+        2573,
+        2768.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2582.0,
+        1813
+      ],
+      "stub": [
+        2582.0,
+        1822
+      ],
+      "anchor": [
+        0.9836734693877551,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2573,
+        2768.0
+      ],
+      "stub": [
+        2582,
+        2768.0
+      ],
+      "anchor": [
+        1,
+        0.11428571428571428
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "servicios_e",
+      "a": "datos_evid",
+      "etiqueta": "evidencia: Persistencia directa propia por contexto; no pasa por el bus La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2582.0,
+        1813
+      ],
+      [
+        2582.0,
+        2858.0
+      ],
+      [
+        2573,
+        2858.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2582.0,
+        1813
+      ],
+      "stub": [
+        2582.0,
+        1822
+      ],
+      "anchor": [
+        0.9836734693877551,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2573,
+        2858.0
+      ],
+      "stub": [
+        2582,
+        2858.0
+      ],
+      "anchor": [
+        1,
+        0.11428571428571428
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_mercaderia",
+      "a": "redis",
+      "etiqueta": "oferta: Publicación/consulta de oferta operacional; frescura por verificar",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        388.0,
+        1813
+      ],
+      [
+        388.0,
+        2958.0
+      ],
+      [
+        397,
+        2958.0
+      ]
+    ],
+    "source": {
+      "point": [
+        388.0,
+        1813
+      ],
+      "stub": [
+        388.0,
+        1822
+      ],
+      "anchor": [
+        0.0163265306122449,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        2958.0
+      ],
+      "stub": [
+        388,
+        2958.0
+      ],
+      "anchor": [
+        0,
+        0.10666666666666667
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_mercaderia",
+      "a": "historial",
+      "etiqueta": "oferta: Registro de precios publicados; solo anexado",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        388.0,
+        1813
+      ],
+      [
+        388.0,
+        3068.0
+      ],
+      [
+        397,
+        3068.0
+      ]
+    ],
+    "source": {
+      "point": [
+        388.0,
+        1813
+      ],
+      "stub": [
+        388.0,
+        1822
+      ],
+      "anchor": [
+        0.0163265306122449,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        3068.0
+      ],
+      "stub": [
+        388,
+        3068.0
+      ],
+      "anchor": [
+        0,
+        0.10666666666666667
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_serv",
+      "a": "local_data",
+      "etiqueta": "Diario transaccional local Retail",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        1197.515,
+        1693
+      ],
+      [
+        1197.515,
+        1704
+      ],
+      [
+        862,
+        1704
+      ],
+      [
+        862,
+        1785
+      ],
+      [
+        385,
+        1785
+      ],
+      [
+        385,
+        3178
+      ],
+      [
+        1092.485,
+        3178
+      ],
+      [
+        1092.485,
+        3187
+      ]
+    ],
+    "source": {
+      "point": [
+        1197.515,
+        1693
+      ],
+      "stub": [
+        1197.515,
+        1702
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1092.485,
+        3187
+      ],
+      "stub": [
+        1092.485,
+        3178
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "local_data",
+      "a": "local_sync",
+      "etiqueta": "Operaciones pendientes del diario",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        1197.515,
+        3187
+      ],
+      [
+        1197.515,
+        3111
+      ],
+      [
+        914,
+        3111
+      ],
+      [
+        914,
+        2437
+      ],
+      [
+        1145.0,
+        2437
+      ],
+      [
+        1145.0,
+        2428
+      ]
+    ],
+    "source": {
+      "point": [
+        1197.515,
+        3187
+      ],
+      "stub": [
+        1197.515,
+        3178
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        1145.0,
+        2428
+      ],
+      "stub": [
+        1145.0,
+        2437
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "servicios_e",
+      "a": "cupo_local",
+      "etiqueta": "Originación F:C-01: provisión de cupo preautorizado; límites y autorización propios de Filial; política, caducidad y factibilidad pendientes. La familia no incorpora al candidato de Control regulatorio hasta que se aprueben sus contratos.",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        2582.0,
+        1813
+      ],
+      [
+        2582.0,
+        3208.0
+      ],
+      [
+        2573,
+        3208.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2582.0,
+        1813
+      ],
+      "stub": [
+        2582.0,
+        1822
+      ],
+      "anchor": [
+        0.9836734693877551,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2573,
+        3208.0
+      ],
+      "stub": [
+        2582,
+        3208.0
+      ],
+      "anchor": [
+        1,
+        0.12307692307692308
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "comercio",
+      "a": "ext_comercio",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        853,
+        2160.0
+      ],
+      [
+        862,
+        2160.0
+      ],
+      [
+        862,
+        2081
+      ],
+      [
+        2708,
+        2081
+      ],
+      [
+        2708,
+        1232.5
+      ],
+      [
+        2717,
+        1232.5
+      ]
+    ],
+    "source": {
+      "point": [
+        853,
+        2160.0
+      ],
+      "stub": [
+        862,
+        2160.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2717,
+        1232.5
+      ],
+      "stub": [
+        2708,
+        1232.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "canales",
+      "a": "ext_canales",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        1373,
+        2160.0
+      ],
+      [
+        1382,
+        2160.0
+      ],
+      [
+        1382,
+        2108
+      ],
+      [
+        2712,
+        2108
+      ],
+      [
+        2712,
+        1542.5
+      ],
+      [
+        2717,
+        1542.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1373,
+        2160.0
+      ],
+      "stub": [
+        1382,
+        2160.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2717,
+        1542.5
+      ],
+      "stub": [
+        2708,
+        1542.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "socios",
+      "a": "ext_socios",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        1893,
+        2160.0
+      ],
+      [
+        1902,
+        2160.0
+      ],
+      [
+        1902,
+        1873
+      ],
+      [
+        2708,
+        1873
+      ],
+      [
+        2708,
+        1852.5
+      ],
+      [
+        2717,
+        1852.5
+      ]
+    ],
+    "source": {
+      "point": [
+        1893,
+        2160.0
+      ],
+      "stub": [
+        1902,
+        2160.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2717,
+        1852.5
+      ],
+      "stub": [
+        2708,
+        1852.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "credito",
+      "a": "ext_credito",
+      "etiqueta": "Familia de interfaces bidireccionales; contratos propios y migración por verificar",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        2573,
+        2278.0
+      ],
+      [
+        2717,
+        2278.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2573,
+        2278.0
+      ],
+      "stub": [
+        2582,
+        2278.0
+      ],
+      "anchor": [
+        1,
+        0.11428571428571428
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2717,
+        2278.0
+      ],
+      "stub": [
+        2708,
+        2278.0
+      ],
+      "anchor": [
+        0,
+        0.09411764705882353
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "otel",
+      "a": "monitor",
+      "etiqueta": "OTLP por colector del ámbito; exportador pendiente",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        3618.0,
+        533
+      ],
+      [
+        3618.0,
+        657
+      ]
+    ],
+    "source": {
+      "point": [
+        3618.0,
+        533
+      ],
+      "stub": [
+        3618.0,
+        542
+      ],
+      "anchor": [
+        0.025806451612903226,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3618.0,
+        657
+      ],
+      "stub": [
+        3618.0,
+        648
+      ],
+      "anchor": [
+        0.025806451612903226,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "monitor",
+      "a": "grafana",
+      "etiqueta": "Consulta de métricas y salud por ámbito; agregación entre tenants pendiente",
+      "semantica": "condicionado"
+    },
+    "points": [
+      [
+        3618.0,
+        853
+      ],
+      [
+        3618.0,
+        977
+      ]
+    ],
+    "source": {
+      "point": [
+        3618.0,
+        853
+      ],
+      "stub": [
+        3618.0,
+        862
+      ],
+      "anchor": [
+        0.025806451612903226,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        3618.0,
+        977
+      ],
+      "stub": [
+        3618.0,
+        968
+      ],
+      "anchor": [
+        0.025806451612903226,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "private_link",
+      "a": "application_gateway",
+      "semantica": "condicionado",
+      "etiqueta": "Origen Application Gateway propio de cada ámbito; sin rutas cruzadas"
+    },
+    "points": [
+      [
+        768.0,
+        753
+      ],
+      [
+        768.0,
+        837
+      ]
+    ],
+    "source": {
+      "point": [
+        768.0,
+        753
+      ],
+      "stub": [
+        768.0,
+        762
+      ],
+      "anchor": [
+        0.2,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        768.0,
+        837
+      ],
+      "stub": [
+        768.0,
+        828
+      ],
+      "anchor": [
+        0.1695852534562212,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "local_sync",
+      "semantica": "consumo",
+      "etiqueta": "Cambios de oferta confirmados hacia caché local; contrato, entrega y conciliación por cerrar"
+    },
+    "points": [
+      [
+        1318.883,
+        2078
+      ],
+      [
+        1318.883,
+        2087
+      ],
+      [
+        1896,
+        2087
+      ],
+      [
+        1896,
+        2348
+      ],
+      [
+        1223.75,
+        2348
+      ],
+      [
+        1223.75,
+        2357
+      ]
+    ],
+    "source": {
+      "point": [
+        1318.883,
+        2078
+      ],
+      "stub": [
+        1318.883,
+        2087
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1223.75,
+        2357
+      ],
+      "stub": [
+        1223.75,
+        2348
+      ],
+      "anchor": [
+        0.675,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "proy_r",
+      "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        857.0,
+        2078
+      ],
+      [
+        857.0,
+        2247
+      ]
+    ],
+    "source": {
+      "point": [
+        857.0,
+        2078
+      ],
+      "stub": [
+        857.0,
+        2087
+      ],
+      "anchor": [
+        0.30671140939597313,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        857.0,
+        2247
+      ],
+      "stub": [
+        857.0,
+        2238
+      ],
+      "anchor": [
+        0.30671140939597313,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "proy_r",
+      "a": "mart_r",
+      "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        884.25,
+        2333
+      ],
+      [
+        884.25,
+        2808
+      ],
+      [
+        625.0,
+        2808
+      ],
+      [
+        625.0,
+        2817
+      ]
+    ],
+    "source": {
+      "point": [
+        884.25,
+        2333
+      ],
+      "stub": [
+        884.25,
+        2342
+      ],
+      "anchor": [
+        0.325,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        625.0,
+        2817
+      ],
+      "stub": [
+        625.0,
+        2808
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mart_r",
+      "a": "powerbi",
+      "etiqueta": "Lectura analítica Retail por conexión privada de datos; modelos y permisos propios",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        853,
+        2858.33
+      ],
+      [
+        862,
+        2858.33
+      ],
+      [
+        862,
+        3057.5
+      ],
+      [
+        917,
+        3057.5
+      ]
+    ],
+    "source": {
+      "point": [
+        853,
+        2858.33
+      ],
+      "stub": [
+        862,
+        2858.33
+      ],
+      "anchor": [
+        1,
+        0.3833
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        917,
+        3057.5
+      ],
+      "stub": [
+        908,
+        3057.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_e",
+      "a": "proy_e",
+      "etiqueta": "Hechos confirmados del ámbito; entrega al menos una vez, orden/versiones y mensajes fallidos",
+      "semantica": "consumo"
+    },
+    "points": [
+      [
+        2128.0,
+        2078
+      ],
+      [
+        2128.0,
+        2117
+      ]
+    ],
+    "source": {
+      "point": [
+        2128.0,
+        2078
+      ],
+      "stub": [
+        2128.0,
+        2087
+      ],
+      "anchor": [
+        0.017777777777777778,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2128.0,
+        2117
+      ],
+      "stub": [
+        2128.0,
+        2108
+      ],
+      "anchor": [
+        0.017777777777777778,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "proy_e",
+      "a": "mart_e",
+      "etiqueta": "Escritura idempotente de modelos, dimensiones, indicadores y punto de aplicación",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        2292.485,
+        2213
+      ],
+      [
+        2292.485,
+        2222
+      ],
+      [
+        2108,
+        2222
+      ],
+      [
+        2108,
+        2928
+      ],
+      [
+        2345.0,
+        2928
+      ],
+      [
+        2345.0,
+        2937
+      ]
+    ],
+    "source": {
+      "point": [
+        2292.485,
+        2213
+      ],
+      "stub": [
+        2292.485,
+        2222
+      ],
+      "anchor": [
+        0.3833,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2345.0,
+        2937
+      ],
+      "stub": [
+        2345.0,
+        2928
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mart_e",
+      "a": "powerbi",
+      "etiqueta": "Lectura analítica Filial por conexión privada de datos; modelos y permisos propios",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        2117,
+        3018.0
+      ],
+      [
+        1913,
+        3018.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2117,
+        3018.0
+      ],
+      "stub": [
+        2108,
+        3018.0
+      ],
+      "anchor": [
+        0,
+        0.78
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1913,
+        3018.0
+      ],
+      "stub": [
+        1922,
+        3018.0
+      ],
+      "anchor": [
+        1,
+        0.08421052631578947
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_mercaderia",
+      "a": "vector",
+      "etiqueta": "Oferta/Búsqueda: actualizar y consultar el índice derivado; Existencias confirma disponible",
+      "semantica": "persistencia"
+    },
+    "points": [
+      [
+        698.5,
+        1813
+      ],
+      [
+        698.5,
+        1822
+      ],
+      [
+        374,
+        1822
+      ],
+      [
+        374,
+        2791
+      ],
+      [
+        1665.0,
+        2791
+      ],
+      [
+        1665.0,
+        2817
+      ]
+    ],
+    "source": {
+      "point": [
+        698.5,
+        1813
+      ],
+      "stub": [
+        698.5,
+        1822
+      ],
+      "anchor": [
+        0.65,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1665.0,
+        2817
+      ],
+      "stub": [
+        1665.0,
+        2808
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "proy_r",
+      "a": "archivo_r",
+      "etiqueta": "Exportar conjuntos de entrenamiento versionados y manifiestos; contenedor Retail propio",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        1145.0,
+        2333
+      ],
+      [
+        1145.0,
+        2342
+      ],
+      [
+        908,
+        2342
+      ],
+      [
+        908,
+        2808
+      ],
+      [
+        1066.25,
+        2808
+      ],
+      [
+        1066.25,
+        2817
+      ]
+    ],
+    "source": {
+      "point": [
+        1145.0,
+        2333
+      ],
+      "stub": [
+        1145.0,
+        2342
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1066.25,
+        2817
+      ],
+      "stub": [
+        1066.25,
+        2808
+      ],
+      "anchor": [
+        0.325,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "archivo_r",
+      "a": "area_mercaderia",
+      "etiqueta": "Existencias: lectura del conjunto autorizado para conteo predictivo; Oferta: imágenes autorizadas",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        1145.0,
+        2817
+      ],
+      [
+        1145.0,
+        2814
+      ],
+      [
+        312,
+        2814
+      ],
+      [
+        312,
+        1776
+      ],
+      [
+        747.5,
+        1776
+      ],
+      [
+        747.5,
+        1813
+      ]
+    ],
+    "source": {
+      "point": [
+        1145.0,
+        2817
+      ],
+      "stub": [
+        1145.0,
+        2808
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    },
+    "target": {
+      "point": [
+        747.5,
+        1813
+      ],
+      "stub": [
+        747.5,
+        1822
+      ],
+      "anchor": [
+        0.75,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "comercio",
+      "a": "archivo_r",
+      "etiqueta": "Conservar copia autorizada de documentos ERP/DTE; sin asumir emisión tributaria",
+      "semantica": "adaptacion"
+    },
+    "points": [
+      [
+        625.0,
+        2203
+      ],
+      [
+        625.0,
+        2244
+      ],
+      [
+        394,
+        2244
+      ],
+      [
+        394,
+        2771
+      ],
+      [
+        1223.75,
+        2771
+      ],
+      [
+        1223.75,
+        2817
+      ]
+    ],
+    "source": {
+      "point": [
+        625.0,
+        2203
+      ],
+      "stub": [
+        625.0,
+        2212
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1223.75,
+        2817
+      ],
+      "stub": [
+        1223.75,
+        2808
+      ],
+      "anchor": [
+        0.675,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "datos_evid",
+      "a": "archivo_e",
+      "etiqueta": "Evidencia/C-03: copia verificada, integridad y retención; no borrar por confirmación del bus",
+      "semantica": "flujo"
+    },
+    "points": [
+      [
+        2345.0,
+        2923
+      ],
+      [
+        2345.0,
+        2932
+      ],
+      [
+        2576,
+        2932
+      ],
+      [
+        2576,
+        3048
+      ],
+      [
+        2345.0,
+        3048
+      ],
+      [
+        2345.0,
+        3057
+      ]
+    ],
+    "source": {
+      "point": [
+        2345.0,
+        2923
+      ],
+      "stub": [
+        2345.0,
+        2932
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2345.0,
+        3057
+      ],
+      "stub": [
+        2345.0,
+        3048
+      ],
+      "anchor": [
+        0.5,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_clientes",
+      "a": "bus_r",
+      "semantica": "publicacion",
+      "etiqueta": "Hechos confirmados de Posventa/Clientes; outbox de cada servicio, sin republicar cambios de proyección"
+    },
+    "points": [
+      [
+        1750.75,
+        1813
+      ],
+      [
+        1750.75,
+        1835.0
+      ],
+      [
+        2582,
+        1835.0
+      ],
+      [
+        2582,
+        1978
+      ],
+      [
+        1457.9,
+        1978
+      ],
+      [
+        1457.9,
+        1987
+      ]
+    ],
+    "source": {
+      "point": [
+        1750.75,
+        1813
+      ],
+      "stub": [
+        1750.75,
+        1822
+      ],
+      "anchor": [
+        0.675,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1457.9,
+        1987
+      ],
+      "stub": [
+        1457.9,
+        1978
+      ],
+      "anchor": [
+        0.71,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "common_admin",
+      "a": "api_management",
+      "semantica": "solicitud",
+      "etiqueta": "Consola del ámbito → APIM propio → APIs de parámetros y consulta/exportación de auditoría; permisos y filtros del solicitante. No escritura en repositorios ajenos."
+    },
+    "points": [
+      [
+        303,
+        1835.0
+      ],
+      [
+        312,
+        1835.0
+      ],
+      [
+        312,
+        960.1
+      ],
+      [
+        397,
+        960.1
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        1835.0
+      ],
+      "stub": [
+        312,
+        1835.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        397,
+        960.1
+      ],
+      "stub": [
+        388,
+        960.1
+      ],
+      "anchor": [
+        0,
+        0.43
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "common_docs",
+      "a": "archivo_r",
+      "semantica": "persistencia",
+      "etiqueta": "Solo instancia documental Retail → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+    },
+    "points": [
+      [
+        303,
+        2235.1
+      ],
+      [
+        306,
+        2235.1
+      ],
+      [
+        306,
+        2664
+      ],
+      [
+        898,
+        2664
+      ],
+      [
+        898,
+        2854.497
+      ],
+      [
+        917,
+        2854.497
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        2235.1
+      ],
+      "stub": [
+        312,
+        2235.1
+      ],
+      "anchor": [
+        1,
+        0.29
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        917,
+        2854.497
+      ],
+      "stub": [
+        908,
+        2854.497
+      ],
+      "anchor": [
+        0,
+        0.3833
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_r",
+      "a": "common_notif",
+      "semantica": "consumo",
+      "etiqueta": "Solo instancia de notificaciones Retail: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+    },
+    "points": [
+      [
+        397,
+        2032.5
+      ],
+      [
+        306,
+        2032.5
+      ],
+      [
+        306,
+        2461.75
+      ],
+      [
+        303,
+        2461.75
+      ]
+    ],
+    "source": {
+      "point": [
+        397,
+        2032.5
+      ],
+      "stub": [
+        388,
+        2032.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        303,
+        2461.75
+      ],
+      "stub": [
+        312,
+        2461.75
+      ],
+      "anchor": [
+        1,
+        0.325
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "proy_r",
+      "a": "search_r",
+      "semantica": "persistencia",
+      "etiqueta": "Proyector Retail mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+    },
+    "points": [
+      [
+        1405.75,
+        2333
+      ],
+      [
+        1405.75,
+        2342
+      ],
+      [
+        1916,
+        2342
+      ],
+      [
+        1916,
+        3178
+      ],
+      [
+        1612.485,
+        3178
+      ],
+      [
+        1612.485,
+        3187
+      ]
+    ],
+    "source": {
+      "point": [
+        1405.75,
+        2333
+      ],
+      "stub": [
+        1405.75,
+        2342
+      ],
+      "anchor": [
+        0.675,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1612.485,
+        3187
+      ],
+      "stub": [
+        1612.485,
+        3178
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "search_r",
+      "semantica": "condicionado",
+      "etiqueta": "API de consulta de búsqueda del propio ámbito; filtros de permiso en la capacidad, sin acceso directo del cliente al índice."
+    },
+    "points": [
+      [
+        1864.75,
+        1003
+      ],
+      [
+        1864.75,
+        1012
+      ],
+      [
+        2592,
+        1012
+      ],
+      [
+        2592,
+        3156
+      ],
+      [
+        1717.515,
+        3156
+      ],
+      [
+        1717.515,
+        3187
+      ]
+    ],
+    "source": {
+      "point": [
+        1864.75,
+        1003
+      ],
+      "stub": [
+        1864.75,
+        1012
+      ],
+      "anchor": [
+        0.675,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1717.515,
+        3187
+      ],
+      "stub": [
+        1717.515,
+        3178
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mart_r",
+      "a": "archivo_r",
+      "semantica": "flujo",
+      "etiqueta": "Trabajo de exportación Retail: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+    },
+    "points": [
+      [
+        853,
+        2828.0
+      ],
+      [
+        917,
+        2828.0
+      ]
+    ],
+    "source": {
+      "point": [
+        853,
+        2828.0
+      ],
+      "stub": [
+        862,
+        2828.0
+      ],
+      "anchor": [
+        1,
+        0.08
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        917,
+        2828.0
+      ],
+      "stub": [
+        908,
+        2828.0
+      ],
+      "anchor": [
+        0,
+        0.08888888888888889
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "common_docs",
+      "a": "archivo_e",
+      "semantica": "persistencia",
+      "etiqueta": "Solo instancia documental Filial → contenedores propios: documentos/plantillas/evidencia de firma, acceso e integridad por clase; sin almacén compartido."
+    },
+    "points": [
+      [
+        303,
+        2261.7
+      ],
+      [
+        312,
+        2261.7
+      ],
+      [
+        312,
+        2336
+      ],
+      [
+        1949,
+        2336
+      ],
+      [
+        1949,
+        3105.0
+      ],
+      [
+        2117,
+        3105.0
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        2261.7
+      ],
+      "stub": [
+        312,
+        2261.7
+      ],
+      "anchor": [
+        1,
+        0.43
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2117,
+        3105.0
+      ],
+      "stub": [
+        2108,
+        3105.0
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "bus_e",
+      "a": "common_notif",
+      "semantica": "consumo",
+      "etiqueta": "Solo instancia de notificaciones Filial: hechos autorizados y fin de exportación; plantillas/preferencias propias, al menos tres canales, reintentos y evidencia de entrega."
+    },
+    "points": [
+      [
+        2117,
+        2032.5
+      ],
+      [
+        1910,
+        2032.5
+      ],
+      [
+        1910,
+        2495.0
+      ],
+      [
+        303,
+        2495.0
+      ]
+    ],
+    "source": {
+      "point": [
+        2117,
+        2032.5
+      ],
+      "stub": [
+        2108,
+        2032.5
+      ],
+      "anchor": [
+        0,
+        0.5
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        303,
+        2495.0
+      ],
+      "stub": [
+        312,
+        2495.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "proy_e",
+      "a": "search_e",
+      "semantica": "persistencia",
+      "etiqueta": "Proyector Filial mantiene índice global derivado con permisos por objeto/usuario, texto completo, tolerancia y facetas. No cambia autoridad de datos ni comparte índices."
+    },
+    "points": [
+      [
+        2397.515,
+        2213
+      ],
+      [
+        2397.515,
+        2222
+      ],
+      [
+        2582,
+        2222
+      ],
+      [
+        2582,
+        3318
+      ],
+      [
+        2292.485,
+        3318
+      ],
+      [
+        2292.485,
+        3327
+      ]
+    ],
+    "source": {
+      "point": [
+        2397.515,
+        2213
+      ],
+      "stub": [
+        2397.515,
+        2222
+      ],
+      "anchor": [
+        0.6167,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2292.485,
+        3327
+      ],
+      "stub": [
+        2292.485,
+        3318
+      ],
+      "anchor": [
+        0.3833,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "search_e",
+      "semantica": "condicionado",
+      "etiqueta": "API de consulta de búsqueda del propio ámbito; filtros de permiso en la capacidad, sin acceso directo del cliente al índice."
+    },
+    "points": [
+      [
+        2054.625,
+        1003
+      ],
+      [
+        2054.625,
+        1012
+      ],
+      [
+        2592,
+        1012
+      ],
+      [
+        2592,
+        3296
+      ],
+      [
+        2397.515,
+        3296
+      ],
+      [
+        2397.515,
+        3327
+      ]
+    ],
+    "source": {
+      "point": [
+        2054.625,
+        1003
+      ],
+      "stub": [
+        2054.625,
+        1012
+      ],
+      "anchor": [
+        0.7625,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2397.515,
+        3327
+      ],
+      "stub": [
+        2397.515,
+        3318
+      ],
+      "anchor": [
+        0.6167,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "mart_e",
+      "a": "archivo_e",
+      "semantica": "flujo",
+      "etiqueta": "Trabajo de exportación Filial: lectura autorizada del modelo analítico al corte y archivo abierto con filtro, diccionario, auditoría, caducidad y enlace de acceso propio; no consultas BI en operacional."
+    },
+    "points": [
+      [
+        2128.0,
+        3043
+      ],
+      [
+        2128.0,
+        3057
+      ]
+    ],
+    "source": {
+      "point": [
+        2128.0,
+        3043
+      ],
+      "stub": [
+        2128.0,
+        3052
+      ],
+      "anchor": [
+        0.017777777777777778,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        2128.0,
+        3057
+      ],
+      "stub": [
+        2128.0,
+        3048
+      ],
+      "anchor": [
+        0.017777777777777778,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "area_venta",
+      "a": "local_serv",
+      "semantica": "condicionado",
+      "etiqueta": "Ventas ejecuta operación sin enlace; solo reglas y condiciones previamente sincronizadas."
+    },
+    "points": [
+      [
+        1393,
+        1545.523
+      ],
+      [
+        1402,
+        1545.523
+      ],
+      [
+        1402,
+        1660.0
+      ],
+      [
+        1373,
+        1660.0
+      ]
+    ],
+    "source": {
+      "point": [
+        1393,
+        1545.523
+      ],
+      "stub": [
+        1402,
+        1545.523
+      ],
+      "anchor": [
+        1,
+        0.6167
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        1373,
+        1660.0
+      ],
+      "stub": [
+        1382,
+        1660.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "entrada_privada",
+      "a": "application_gateway",
+      "semantica": "solicitud",
+      "etiqueta": "Entrada privada del ámbito → Application Gateway propio, sin Front Door público."
+    },
+    "points": [
+      [
+        1228.0,
+        673
+      ],
+      [
+        1228.0,
+        837
+      ]
+    ],
+    "source": {
+      "point": [
+        1228.0,
+        673
+      ],
+      "stub": [
+        1228.0,
+        682
+      ],
+      "anchor": [
+        0.0058823529411764705,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    },
+    "target": {
+      "point": [
+        1228.0,
+        837
+      ],
+      "stub": [
+        1228.0,
+        828
+      ],
+      "anchor": [
+        0.3815668202764977,
+        0
+      ],
+      "offset": [
+        0,
+        -3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "common_docs",
+      "a": "ext_comunes",
+      "semantica": "adaptacion",
+      "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+    },
+    "points": [
+      [
+        303,
+        2218.0
+      ],
+      [
+        2728.0,
+        2218.0
+      ],
+      [
+        2728.0,
+        2133
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        2218.0
+      ],
+      "stub": [
+        312,
+        2218.0
+      ],
+      "anchor": [
+        1,
+        0.2
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2728.0,
+        2133
+      ],
+      "stub": [
+        2728.0,
+        2142
+      ],
+      "anchor": [
+        0.018604651162790697,
+        1
+      ],
+      "offset": [
+        0,
+        3
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "common_notif",
+      "a": "ext_comunes",
+      "semantica": "adaptacion",
+      "etiqueta": "Instancia del ámbito → contraparte autorizada propia, contrato y proveedor pendientes; sin mezcla de datos entre ámbitos."
+    },
+    "points": [
+      [
+        303,
+        2528.25
+      ],
+      [
+        2708,
+        2528.25
+      ],
+      [
+        2708,
+        2076.338
+      ],
+      [
+        2717,
+        2076.338
+      ]
+    ],
+    "source": {
+      "point": [
+        303,
+        2528.25
+      ],
+      "stub": [
+        312,
+        2528.25
+      ],
+      "anchor": [
+        1,
+        0.675
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        2717,
+        2076.338
+      ],
+      "stub": [
+        2708,
+        2076.338
+      ],
+      "anchor": [
+        0,
+        0.6167
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "common_flujos",
+      "semantica": "condicionado",
+      "etiqueta": "Familia de APIs de tareas humanas y aprobaciones del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+    },
+    "points": [
+      [
+        397,
+        969.9
+      ],
+      [
+        306,
+        969.9
+      ],
+      [
+        306,
+        2055.0
+      ],
+      [
+        303,
+        2055.0
+      ]
+    ],
+    "source": {
+      "point": [
+        397,
+        969.9
+      ],
+      "stub": [
+        388,
+        969.9
+      ],
+      "anchor": [
+        0,
+        0.57
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        303,
+        2055.0
+      ],
+      "stub": [
+        312,
+        2055.0
+      ],
+      "anchor": [
+        1,
+        0.5
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  },
+  {
+    "enlace": {
+      "de": "api_management",
+      "a": "common_docs",
+      "semantica": "condicionado",
+      "etiqueta": "Familia de APIs de documentos, plantillas y firma del mismo ámbito; rutas de consumidores a precisar, sin instancias compartidas."
+    },
+    "points": [
+      [
+        397,
+        979.7
+      ],
+      [
+        374,
+        979.7
+      ],
+      [
+        374,
+        2314.9
+      ],
+      [
+        303,
+        2314.9
+      ]
+    ],
+    "source": {
+      "point": [
+        397,
+        979.7
+      ],
+      "stub": [
+        388,
+        979.7
+      ],
+      "anchor": [
+        0,
+        0.71
+      ],
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "target": {
+      "point": [
+        303,
+        2314.9
+      ],
+      "stub": [
+        312,
+        2314.9
+      ],
+      "anchor": [
+        1,
+        0.71
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    }
+  }
+]

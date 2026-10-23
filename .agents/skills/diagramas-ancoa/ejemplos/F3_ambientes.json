@@ -1,0 +1,154 @@
+{
+  "estilo": "F3",
+  "figura": "4.15",
+  "titulo": "Ambientes y flujo de despliegue",
+  "fuente": "elaboración propia a partir de RT-03, RT-07 y Subdocumento 3.",
+  "grupos": [
+    {
+      "id": "entrega",
+      "etiqueta": "Entrega",
+      "tipo": "seccion",
+      "disposicion": "fila"
+    },
+    {
+      "id": "cld01",
+      "etiqueta": "CLD-01 Chile Central",
+      "tipo": "nube_azure",
+      "disposicion": "columna"
+    },
+    {
+      "id": "qa",
+      "etiqueta": "QA · se prueba la calidad",
+      "tipo": "ambito",
+      "padre": "cld01"
+    },
+    {
+      "id": "pre",
+      "etiqueta": "Preproducción · se ensaya con carga",
+      "tipo": "ambito",
+      "padre": "cld01"
+    },
+    {
+      "id": "prod",
+      "etiqueta": "Producción · atiende a las tiendas",
+      "tipo": "ambito",
+      "padre": "cld01"
+    },
+    {
+      "id": "cld02",
+      "etiqueta": "CLD-02 Brazil South",
+      "tipo": "nube_azure",
+      "disposicion": "columna"
+    },
+    {
+      "id": "rec",
+      "etiqueta": "Recuperación · se crea si hay falla",
+      "tipo": "ambito",
+      "padre": "cld02"
+    }
+  ],
+  "nodos": [
+    {
+      "id": "repo",
+      "etiqueta": "Repositorio\ndel código",
+      "icono": "repositorio",
+      "grupo": "entrega"
+    },
+    {
+      "id": "cd",
+      "etiqueta": "Entrega continua\n(revisión y firma)",
+      "icono": "devops",
+      "grupo": "entrega"
+    },
+    {
+      "id": "acr",
+      "etiqueta": "Registro de\nimágenes",
+      "icono": "container_registry",
+      "grupo": "entrega"
+    },
+    {
+      "id": "qa_r",
+      "etiqueta": "Retail · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "qa"
+    },
+    {
+      "id": "qa_e",
+      "etiqueta": "Emisor · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "qa"
+    },
+    {
+      "id": "pre_r",
+      "etiqueta": "Retail · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "pre"
+    },
+    {
+      "id": "pre_e",
+      "etiqueta": "Emisor · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "pre"
+    },
+    {
+      "id": "pro_r",
+      "etiqueta": "Retail · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "prod"
+    },
+    {
+      "id": "pro_e",
+      "etiqueta": "Emisor · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "prod"
+    },
+    {
+      "id": "rec_r",
+      "etiqueta": "Retail · suscripción\ny Key Vault",
+      "icono": "key_vault",
+      "grupo": "rec"
+    },
+    {
+      "id": "rec_e",
+      "etiqueta": "Emisor",
+      "icono": "key_vault",
+      "estado": "condicionado",
+      "grupo": "rec"
+    }
+  ],
+  "enlaces": [
+    {
+      "de": "repo",
+      "a": "cd",
+      "semantica": "despliegue"
+    },
+    {
+      "de": "cd",
+      "a": "acr",
+      "semantica": "despliegue"
+    },
+    {
+      "de": "entrega",
+      "a": "qa",
+      "semantica": "despliegue",
+      "etiqueta": "despliega"
+    },
+    {
+      "de": "qa",
+      "a": "pre",
+      "semantica": "despliegue"
+    },
+    {
+      "de": "pre",
+      "a": "prod",
+      "semantica": "aprobacion",
+      "etiqueta": "aprobación"
+    },
+    {
+      "de": "cld01",
+      "a": "cld02",
+      "semantica": "replica",
+      "etiqueta": "mismo código (IaC)"
+    }
+  ]
+}
