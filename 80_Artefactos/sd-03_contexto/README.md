@@ -11,6 +11,7 @@ Material de apoyo para redactar y revisar el sd-03 (Esquema de solución y alcan
 | `conciliacion_catalogo.md` | Vigente | Decisiones sobre el catálogo de requerimientos y cambios que el equipo debe trasladar al Excel oficial |
 | `condiciones_caso_13_3.md` | Vigente | Las diez condiciones del Caso 13.3 y su cobertura |
 | `fundamentacion_credito_sin_conexion.md` | Vigente | Fundamento del crédito sin conexión (EXC-16, SP-03, RC-11) |
+| `mejoras_siguiente_entrega.md` | Vigente | Saltos de lógica de 3.2.1 y 3.2.2 detectados en el Informe 2, para corregir en la siguiente entrega |
 | `auditoria_decisiones.md` | Consulta puntual | Historial de decisiones con su puntaje. Parte está superada |
 | `insumos_3.3_3.4.md` | Para el integrante a cargo de 3.3 y 3.4 | Usa códigos antiguos. Verificar contra el `.tex` y los anexos |
 | `historico/no_usar_*.md` | Archivado | Planes y borradores ejecutados o superados. No usar como fuente |

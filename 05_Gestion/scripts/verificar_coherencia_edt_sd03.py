@@ -23,7 +23,7 @@ import generar_mapa_paquetes as gm  # noqa: E402
 import verificar_casos_uso as vcu  # noqa: E402
 
 RAIZ = vcu.RAIZ
-SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03" / "OSS-Subdocumento3.tex"
+SD03 = RAIZ / "02_Propuesta" / "latex_final" / "sd-03" / "OnlySimpleSolutions-Subdocumento3.tex"
 SALIDA = gm.DIR / "22_coherencia_edt_sd03.md"
 NODO_BASE = "Base tecnológica"
 

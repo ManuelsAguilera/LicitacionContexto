@@ -14,7 +14,7 @@ d = Diagram(font=32, zone_font=32)
 Z = d.zone
 W = 3
 
-Z(20, 20, 1660, 1090, "CLD-01 Chile Central  ·  ámbito Retail", "region", align="left")
+Z(20, 20, 1660, 1400, "CLD-01 Chile Central  ·  ámbito Retail y hub compartido", "region", align="left")
 
 XC = [40, 585, 1130]  # columnas de las tres zonas
 ZW = 520
@@ -32,11 +32,14 @@ pg2 = d.icon(ix[1], 555, "postgres", "PostgreSQL\nen espera", size=70)
 d.edge(pg1, pg2, "copia síncrona", line="dashed", width=W, exit=(1, 0.5), entry=(0, 0.5))
 
 # ---- Servicios que se reparten entre zonas ----
-band = Z(40, 750, 1620, 270, "Servicios repartidos entre las tres zonas", "inner")
+band = Z(40, 750, 1620, 270, "Ámbito Retail: servicios repartidos entre las tres zonas", "inner")
 items = [("eventhubs", "Event Hubs\nPremium"), ("mredis", "Azure Managed\nRedis"), ("datalake", "Data Lake\nStorage Gen2"),
-         ("keyvault", "Key Vault"), ("firewall", "Azure Firewall\nPremium"), ("fw_site", "FortiGate-VM\n(zonas 1 y 2)")]
+         ("keyvault", "Key Vault")]
 d.fill(band, items, size=70, top=60)
 
-d.text(40, 1040, 1620, 56, "Ámbito Emisor: mismo patrón, sin Redis y con Managed HSM", size=32, bold=True, color=ACCENT)
+hub = Z(40, 1045, 1620, 270, "Hub compartido (suscripción de Conectividad), fuera del ámbito Retail", "vnet")
+d.fill(hub, [("firewall", "Azure Firewall Premium\n(tres zonas)"), ("fw_site", "FortiGate-VM\n(zonas 1 y 2)")], size=70, top=60)
+
+d.text(40, 1335, 1620, 56, "Ámbito Emisor: mismo patrón, sin Redis y con Managed HSM", size=32, bold=True, color=ACCENT)
 
 d.save(Path(__file__).with_suffix(".drawio"), formats=("png", "pdf"), scale=2)

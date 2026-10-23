@@ -1,0 +1,2041 @@
+% oss-plantilla: oss-2026.11
+% Preámbulo corporativo fijo. No editar en sd-NN.tex: exportar_latex.py verificar lo compara byte a byte.
+% Para cambiar el formato, editar esta plantilla u oss.sty y subir la versión de la primera línea.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  % Prism y otros editores en la nube: pdfLaTeX con Helvetica como familia por defecto.
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage[scaled=0.92]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+  \DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+  \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+  \DeclareUnicodeCharacter{25CF}{\ensuremath{\bullet}}
+  \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+\else
+  % XeLaTeX/LuaLaTeX (compilación oficial local): DejaVu Sans.
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmainfont{DejaVu Sans}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+\usepackage[letterpaper,margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\providecommand{\st}[1]{\sout{#1}}
+\usepackage{fancyvrb}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\setcounter{secnumdepth}{-\maxdimen}
+\ifPDFTeX
+  \usepackage[spanish]{babel}
+\else
+  \usepackage[bidi=default]{babel}
+  \babelprovide[main,import]{spanish}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
+\usepackage{oss}
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\ossCover{Anexos}{Subdocumento 2}
+\hypersetup{pageanchor=true}
+\makeatletter\renewcommand{\@pnumwidth}{2.2em}\makeatother
+\tableofcontents
+\clearpage
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{Lista de tablas}
+\makeatletter\renewcommand*\l@table{\@dottedtocline{1}{0em}{4.2em}}\makeatother
+\listoftables
+\clearpage
+
+\section{A. Anexos}\label{a-anexos}
+
+\subsection{A.1. Listado de Requerimientos Funcionales (RF)}\label{a-1-listado-de-requerimientos-funcionales-rf}
+
+Este anexo consolida, la totalidad de los requerimientos funcionales (RF), no funcionales (RNF) y las obligaciones del proponente (OP)
+
+\subsubsection{A.1.1. Listado de Requerimientos Funcionales: Ventas en Tienda}\label{a-1-1-listado-de-requerimientos-funcionales-ventas-en-tienda}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Ventas en Tienda''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1766}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.8234}}@{}}
+\caption{Requerimientos Funcionales - Ventas en Tienda.}\label{tab:a-1-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-001} & El sistema deberá permitir la venta física de la unidad aunque exista una reserva temporal activa en el canal digital. \\
+\end{longtable}
+
+\subsubsection{A.1.2. Listado de Requerimientos Funcionales: Seguridad y Accesos}\label{a-1-2-listado-de-requerimientos-funcionales-seguridad-y-accesos}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Seguridad y Accesos''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Seguridad y Accesos.}\label{tab:a-1-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-002} & El sistema deberá exigir credenciales individuales al usuario antes de habilitar cualquier acción. \\
+\addlinespace[2pt]
+\textbf{RF-003} & El sistema debe impedir el acceso anónimo a una terminal. \\
+\addlinespace[2pt]
+\textbf{RF-004} & El sistema debe impedir el acceso mediante credencial compartida. \\
+\addlinespace[2pt]
+\textbf{RF-005} & El sistema deberá permitir el traspaso de sesión nominativa entre usuarios en una terminal compartida. \\
+\addlinespace[2pt]
+\textbf{RF-006} & El sistema deberá cerrar automáticamente la sesión por inactividad en la terminal compartida. \\
+\addlinespace[2pt]
+\textbf{RF-007} & El sistema deberá impedir la ejecución de la función de originación a un usuario sin capacitación normativa acreditada y vigente. \\
+\addlinespace[2pt]
+\textbf{RF-008} & El sistema deberá impedir la ejecución de la función de repactación a un usuario sin capacitación normativa acreditada y vigente. \\
+\addlinespace[2pt]
+\textbf{RF-009} & El sistema deberá revocar automáticamente la habilitación funcional del usuario al vencer su acreditación de capacitación. \\
+\addlinespace[2pt]
+\textbf{RF-010} & El sistema deberá permitir al proveedor patrocinar la habilitación temporal de acceso de su repositor externo, con fecha de término declarada. \\
+\addlinespace[2pt]
+\textbf{RF-011} & El sistema deberá caducar automáticamente la habilitación de acceso del personal externo al cumplirse su vigencia. \\
+\addlinespace[2pt]
+\textbf{RF-012} & El sistema deberá registrar de forma individualizada el acceso y la actividad del personal externo. \\
+\addlinespace[2pt]
+\textbf{RF-013} & El sistema deberá revocar la totalidad de los accesos y credenciales del trabajador a partir del término efectivo de su vínculo. \\
+\addlinespace[2pt]
+\textbf{RF-014} & El sistema debe conciliar los accesos vigentes contra la nómina activa. \\
+\addlinespace[2pt]
+\textbf{RF-015} & El sistema debe informar al oficial de seguridad los accesos huérfanos detectados en la conciliación. \\
+\end{longtable}
+
+\subsubsection{A.1.3. Listado de Requerimientos Funcionales: Precios y Etiquetado}\label{a-1-3-listado-de-requerimientos-funcionales-precios-y-etiquetado}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Precios y Etiquetado''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Precios y Etiquetado.}\label{tab:a-1-3}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-016} & El sistema deberá propagar el cambio de precio a las 380 líneas de caja. \\
+\addlinespace[2pt]
+\textbf{RF-017} & El sistema deberá propagar el cambio de precio al canal digital. \\
+\addlinespace[2pt]
+\textbf{RF-018} & El sistema deberá propagar el cambio de precio a los puntos de exhibición física de cada tienda afectada. \\
+\addlinespace[2pt]
+\textbf{RF-019} & El sistema deberá permitir al reponedor registrar la referencia y la tienda de la etiqueta cambiada, con el instante del cambio. \\
+\addlinespace[2pt]
+\textbf{RF-020} & El sistema deberá registrar la identidad individual del ejecutor del cambio de etiqueta. \\
+\addlinespace[2pt]
+\textbf{RF-021} & El sistema deberá permitir al ejecutivo de cumplimiento recuperar el precio publicado de una referencia para una fecha, hora y canal determinados. \\
+\addlinespace[2pt]
+\textbf{RF-022} & El sistema deberá obtener el precio vigente de la referencia según el último precio propagado a la etiqueta de esa tienda en la fecha de la venta. \\
+\addlinespace[2pt]
+\textbf{RF-023} & El sistema deberá cobrar el menor de ambos precios para el consumidor. \\
+\addlinespace[2pt]
+\textbf{RF-024} & El sistema deberá generar un registro de incidente de discrepancia de precio consultable. \\
+\addlinespace[2pt]
+\textbf{RF-027} & El sistema debe generar una alerta operativa al jefe de tienda identificando la etiqueta electrónica no confirmada. \\
+\addlinespace[2pt]
+\textbf{RF-028} & El sistema deberá impedir la venta de la referencia al precio nuevo mientras su punto de exhibición no confirme la actualización, salvo que el artículo se encuentre bloqueado para venta. \\
+\addlinespace[2pt]
+\textbf{RF-029} & El sistema deberá generar un indicador diario de puntos de exhibición desactualizados con identificación individual de cada punto. \\
+\addlinespace[2pt]
+\textbf{RF-030} & El sistema deberá agrupar los cambios de precio de sala en ventanas parametrizadas fuera del horario de atención. \\
+\addlinespace[2pt]
+\textbf{RF-032} & El sistema deberá evaluar la vigencia de cada promoción al instante de emisión del documento. \\
+\addlinespace[2pt]
+\textbf{RF-033} & El sistema deberá evaluar la aplicabilidad de la promoción según el canal de la venta. \\
+\addlinespace[2pt]
+\textbf{RF-034} & El sistema deberá evaluar la aplicabilidad de la promoción según la tienda en que se realiza la venta. \\
+\end{longtable}
+
+\subsubsection{A.1.4. Listado de Requerimientos Funcionales: Pedidos y Cumplimiento}\label{a-1-4-listado-de-requerimientos-funcionales-pedidos-y-cumplimiento}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Pedidos y Cumplimiento''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Pedidos y Cumplimiento.}\label{tab:a-1-4}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-035} & El sistema deberá crear una reserva temporal para la unidad agregada al carro. \\
+\addlinespace[2pt]
+\textbf{RF-036} & El sistema deberá permitir parametrizar el período de vigencia de la reserva temporal. \\
+\addlinespace[2pt]
+\textbf{RF-037} & El sistema deberá mantener activa la reserva mientras el cliente mantenga actividad, conforme al período parametrizado. \\
+\addlinespace[2pt]
+\textbf{RF-038} & El sistema deberá impedir que una misma unidad sea comprometida simultáneamente en más de una operación de venta digital. \\
+\addlinespace[2pt]
+\textbf{RF-039} & El sistema debe liberar la reserva temporal al expirar su período de vigencia. \\
+\addlinespace[2pt]
+\textbf{RF-040} & El sistema debe devolver la unidad liberada al disponible para vender. \\
+\addlinespace[2pt]
+\textbf{RF-041} & El sistema deberá liberar de inmediato la reserva digital de esa unidad, sin esperar la expiración del período. \\
+\addlinespace[2pt]
+\textbf{RF-042} & El sistema deberá aplicar el período de vigencia de reserva reducido declarado como parámetro para el evento anual. \\
+\addlinespace[2pt]
+\textbf{RF-043} & El sistema deberá preautorizar el medio de pago al aceptar el pedido, sin capturar el cobro. \\
+\addlinespace[2pt]
+\textbf{RF-044} & El sistema deberá verificar la existencia física real de la unidad en el punto asignado antes de habilitar la captura del cobro. \\
+\addlinespace[2pt]
+\textbf{RF-045} & El sistema deberá capturar el cobro únicamente al registrarse el evento de confirmación de la preparación física. \\
+\addlinespace[2pt]
+\textbf{RF-046} & El sistema deberá determinar automáticamente la alternativa de resolución aplicable según el motor de reglas (cancelar, sustituir, derivar a tercero o entrega diferida). \\
+\addlinespace[2pt]
+\textbf{RF-047} & El sistema deberá requerir la aceptación explícita del cliente antes de capturar el cobro. \\
+\addlinespace[2pt]
+\textbf{RF-048} & El sistema deberá anular la preautorización de pago del pedido. \\
+\addlinespace[2pt]
+\textbf{RF-049} & El sistema deberá cancelar el pedido registrando el motivo de la cancelación. \\
+\addlinespace[2pt]
+\textbf{RF-050} & El sistema deberá generar la conciliación diaria de preautorizaciones vencidas sin captura. \\
+\addlinespace[2pt]
+\textbf{RF-051} & El sistema deberá notificar al cliente el cambio de estado de su pedido antes de efectuar cualquier cobro definitivo. \\
+\addlinespace[2pt]
+\textbf{RF-052} & El sistema deberá permitir a todos los actores consultar el estado del pedido desde una única fuente de verdad. \\
+\addlinespace[2pt]
+\textbf{RF-053} & El sistema deberá permitir marcar como no elegible para cumplimiento digital el stock de exhibición de las categorías declaradas. \\
+\addlinespace[2pt]
+\textbf{RF-054} & El sistema debe calcular la base de comisión reconociendo al vendedor y a la tienda de origen de la unidad. \\
+\addlinespace[2pt]
+\textbf{RF-055} & El sistema debe condicionar la transmisión de la base de comisión al movimiento real de inventario verificado en bodega. \\
+\addlinespace[2pt]
+\textbf{RF-056} & El sistema deberá reasignar el pedido a otro punto de despacho con existencia disponible. \\
+\addlinespace[2pt]
+\textbf{RF-057} & El sistema deberá impedir una segunda reasignación del mismo pedido. \\
+\addlinespace[2pt]
+\textbf{RF-058} & El sistema deberá acotar la reasignación a la ventana de tiempo parametrizada. \\
+\addlinespace[2pt]
+\textbf{RF-059} & El sistema deberá ofrecer al cliente un producto equivalente. \\
+\addlinespace[2pt]
+\textbf{RF-060} & El sistema deberá ofrecer al cliente la espera compensada con la compensación parametrizada. \\
+\addlinespace[2pt]
+\textbf{RF-061} & El sistema deberá ofrecer al cliente la liberación del pedido con anulación de la preautorización. \\
+\addlinespace[2pt]
+\textbf{RF-062} & El sistema debe monitorear el tiempo restante de cada pedido respecto de su fecha prometida de entrega. \\
+\addlinespace[2pt]
+\textbf{RF-063} & El sistema debe priorizar la preparación del pedido al alcanzar el umbral parametrizado de tiempo restante. \\
+\addlinespace[2pt]
+\textbf{RF-064} & El sistema debe permitir al cliente no autenticado consultar el precio vigente de una referencia. \\
+\addlinespace[2pt]
+\textbf{RF-065} & El sistema debe permitir al cliente no autenticado consultar la disponibilidad de la referencia por tienda. \\
+\addlinespace[2pt]
+\textbf{RF-066} & El sistema debe permitir al cliente no autenticado consultar la disponibilidad de la referencia para despacho. \\
+\addlinespace[2pt]
+\textbf{RF-067} & El sistema debe permitir al cliente autenticado consultar sus compras. \\
+\addlinespace[2pt]
+\textbf{RF-068} & El sistema debe permitir al cliente autenticado consultar sus devoluciones. \\
+\addlinespace[2pt]
+\textbf{RF-069} & El sistema debe permitir al cliente autenticado consultar su estado de cuenta. \\
+\addlinespace[2pt]
+\textbf{RF-070} & El sistema debe permitir al cliente autenticado consultar sus documentos. \\
+\addlinespace[2pt]
+\textbf{RF-071} & El sistema deberá calcular la base de comisión considerando el canal de origen y el canal de cumplimiento cuando estos difieran. \\
+\addlinespace[2pt]
+\textbf{RF-072} & El sistema debe permitir al ejecutivo de mesón consultar el estado real del pedido. \\
+\addlinespace[2pt]
+\textbf{RF-073} & El sistema debe permitir al ejecutivo de mesón consultar el precio aplicado al pedido. \\
+\addlinespace[2pt]
+\textbf{RF-074} & El sistema debe permitir al ejecutivo de mesón ofrecer al cliente las opciones de resolución definidas en RF-059, RF-060 y RF-061. \\
+\addlinespace[2pt]
+\textbf{RF-075} & El sistema deberá excluir al centro de distribución de Concepción como origen de promesa de entrega en el canal digital mientras no esté acreditado su sistema de gestión de almacenes. \\
+\addlinespace[2pt]
+\textbf{RF-076} & El sistema deberá calcular el costo total de servir de cada punto de despacho candidato, incorporando costo logístico, costo de oportunidad de sala y plazo comprometido. \\
+\addlinespace[2pt]
+\textbf{RF-077} & El sistema deberá seleccionar como punto de despacho aquel de menor costo total de servir. \\
+\addlinespace[2pt]
+\textbf{RF-078} & El sistema deberá registrar el valor de cada término del costo total de servir que fundamento la selección. \\
+\addlinespace[2pt]
+\textbf{RF-079} & El sistema deberá calcular la fecha prometida de entrega en función del punto de despacho, la capacidad de preparación y el transportista asignado. \\
+\addlinespace[2pt]
+\textbf{RF-080} & El sistema deberá impedir la publicación de un plazo fijo de catálogo como fecha prometida de entrega. \\
+\addlinespace[2pt]
+\textbf{RF-081} & El sistema deberá calcular el cumplimiento de la promesa de entrega por pedido individual. \\
+\end{longtable}
+
+\subsubsection{A.1.5. Listado de Requerimientos Funcionales: Operación de Tienda}\label{a-1-5-listado-de-requerimientos-funcionales-operacion-de-tienda}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Operación de Tienda''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Operación de Tienda.}\label{tab:a-1-5}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-082} & El sistema deberá detectar la pérdida del enlace externo y conmutar automáticamente la tienda a modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-083} & El sistema deberá permitir al cajero registrar una venta en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-084} & El sistema deberá permitir al cajero cobrar la venta en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-085} & El sistema deberá aplicar las promociones vigentes en modo desconectado, evaluadas según RF-032, RF-033 y RF-034. \\
+\addlinespace[2pt]
+\textbf{RF-086} & El sistema deberá emitir el documento de venta en contingencia utilizando folios previamente asignados por el sistema de gestión empresarial. \\
+\addlinespace[2pt]
+\textbf{RF-087} & El sistema deberá permitir al vendedor consultar la existencia local de la tienda en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-088} & El sistema deberá detectar el restablecimiento del enlace y conmutar la tienda a modo conectado. \\
+\addlinespace[2pt]
+\textbf{RF-089} & El sistema deberá permitir el otorgamiento de crédito en modo desconectado exclusivamente contra cupo preaprobado vigente almacenado en caché local. \\
+\addlinespace[2pt]
+\textbf{RF-090} & El sistema deberá aplicar el tope de monto parametrizado a cada operación de crédito cursada en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-091} & El sistema deberá aplicar el tope parametrizado de número de operaciones de crédito en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-092} & El sistema deberá impedir la apertura de una tarjeta nueva en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-093} & El sistema deberá impedir la ampliación de cupo en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-094} & El sistema deberá marcar la operación como cursada en modo desconectado para su posterior validación. \\
+\addlinespace[2pt]
+\textbf{RF-095} & El sistema debe reconciliar hacia los sistemas centrales la totalidad de las ventas registradas en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-096} & El sistema debe reconciliar hacia los sistemas centrales la totalidad de los documentos emitidos en modo desconectado. \\
+\addlinespace[2pt]
+\textbf{RF-097} & El sistema deberá procesar la reconciliación de forma idempotente, impidiendo la duplicación de ventas o documentos ante reintentos. \\
+\addlinespace[2pt]
+\textbf{RF-098} & El sistema deberá resolver el conflicto de existencia comprometida aplicando la regla de precedencia declarada, produciendo el mismo resultado ante repetición. \\
+\addlinespace[2pt]
+\textbf{RF-099} & El sistema deberá generar un informe de excepciones de la reconciliación, identificando cada conflicto resuelto y su regla aplicada. \\
+\addlinespace[2pt]
+\textbf{RF-100} & El sistema deberá enrutar la emisión de todo documento tributario hacia el sistema de gestión empresarial como único emisor. \\
+\addlinespace[2pt]
+\textbf{RF-101} & El sistema deberá permitir al vendedor de piso consultar la disponibilidad para vender de una referencia. \\
+\end{longtable}
+
+\subsubsection{A.1.6. Listado de Requerimientos Funcionales: Marketplace}\label{a-1-6-listado-de-requerimientos-funcionales-marketplace}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Marketplace''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Marketplace.}\label{tab:a-1-6}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-102} & El sistema debe permitir al vendedor de marketplace declarar la existencia de sus referencias. \\
+\addlinespace[2pt]
+\textbf{RF-103} & El sistema debe permitir al vendedor de marketplace actualizar la existencia previamente declarada. \\
+\addlinespace[2pt]
+\textbf{RF-104} & El sistema deberá registrar cada actualización de existencia declarada con su fecha y hora. \\
+\addlinespace[2pt]
+\textbf{RF-105} & El sistema deberá calcular los indicadores de nivel de servicio por vendedor externo según las reglas publicadas. \\
+\addlinespace[2pt]
+\textbf{RF-106} & El sistema deberá notificar al vendedor de marketplace la recepción de la devolución en el momento en que se registra. \\
+\addlinespace[2pt]
+\textbf{RF-107} & El sistema deberá permitir al ejecutivo registrar que parte asume el costo de la devolución. \\
+\addlinespace[2pt]
+\textbf{RF-108} & El sistema deberá permitir al ejecutivo registrar la prestación entregada al cliente (reparación, reposición o devolución del precio). \\
+\addlinespace[2pt]
+\textbf{RF-109} & El sistema deberá publicar únicamente la existencia declarada en la última actualización vigente del vendedor. \\
+\addlinespace[2pt]
+\textbf{RF-110} & El sistema debe permitir al vendedor de marketplace consultar el estado de cada pedido intermediado. \\
+\addlinespace[2pt]
+\textbf{RF-111} & El sistema debe permitir al vendedor de marketplace consultar las devoluciones de sus pedidos. \\
+\addlinespace[2pt]
+\textbf{RF-112} & El sistema debe permitir al vendedor de marketplace consultar su evaluación de desempeño vigente. \\
+\addlinespace[2pt]
+\textbf{RF-113} & El sistema debe identificar visiblemente al vendedor de la unidad en el catálogo, la ficha de producto y el proceso de compra. \\
+\addlinespace[2pt]
+\textbf{RF-114} & El sistema debe identificar visiblemente a quien despacha la unidad en el catálogo, la ficha de producto y el proceso de compra. \\
+\addlinespace[2pt]
+\textbf{RF-115} & El sistema debe mostrar las condiciones de devolución aplicables a la unidad. \\
+\addlinespace[2pt]
+\textbf{RF-116} & El sistema debe mostrar las condiciones de garantía legal aplicables a la unidad. \\
+\addlinespace[2pt]
+\textbf{RF-117} & El sistema deberá impedir que un pedido intermediado comprometa existencia propia de la compañía. \\
+\addlinespace[2pt]
+\textbf{RF-118} & El sistema deberá impedir que una unidad de inventario propio sea asignada al cumplimiento de un pedido de marketplace. \\
+\addlinespace[2pt]
+\textbf{RF-119} & El sistema deberá registrar el acuse de conocimiento de las reglas de evaluación por parte de cada vendedor externo. \\
+\addlinespace[2pt]
+\textbf{RF-120} & El sistema deberá impedir la aplicación de una regla de evaluación a un vendedor que no tenga acuse de conocimiento previo de esa regla. \\
+\addlinespace[2pt]
+\textbf{RF-121} & El sistema deberá determinar la consecuencia escalonada aplicable según la matriz de escalamiento parametrizada (advertencia, restricción de publicación, suspensión). \\
+\addlinespace[2pt]
+\textbf{RF-122} & El sistema deberá requerir la ejecución de la sanción por el rol nominado en la matriz de escalamiento. \\
+\addlinespace[2pt]
+\textbf{RF-123} & El sistema deberá registrar la trazabilidad de la sanción aplicada, indicando regla incumplida, consecuencia, rol ejecutor e instante. \\
+\addlinespace[2pt]
+\textbf{RF-124} & El sistema deberá despublicar automáticamente la oferta cuyo stock declarado haya superado el plazo de vigencia sin actualización. \\
+\addlinespace[2pt]
+\textbf{RF-125} & El sistema deberá calcular e informar al sistema de gestión empresarial la base de comisión de marketplace sobre la venta efectivamente cumplida \\
+\addlinespace[2pt]
+\textbf{RF-126} & El sistema deberá notificar al sistema de gestión empresarial la anulación de la base de comisión calculada cuando ocurra una devolución o cancelación. \\
+\end{longtable}
+
+\subsubsection{A.1.7. Listado de Requerimientos Funcionales: Inventario y Disponibilidad}\label{a-1-7-listado-de-requerimientos-funcionales-inventario-y-disponibilidad}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Inventario y Disponibilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Inventario y Disponibilidad.}\label{tab:a-1-7}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-127} & El sistema deberá calcular la existencia disponible para vender restando de la existencia registrada las reservas vigentes, el comprometido no despachado y el colchón de confianza aplicable. \\
+\addlinespace[2pt]
+\textbf{RF-128} & El sistema deberá determinar el valor del colchón de confianza aplicable en función de la categoría del artículo. \\
+\addlinespace[2pt]
+\textbf{RF-129} & El sistema deberá determinar el valor del colchón de confianza aplicable en función del punto de existencia. \\
+\addlinespace[2pt]
+\textbf{RF-130} & El sistema deberá registrar la traza del cálculo del disponible, incluyendo el valor de cada término de la fórmula y la versión de parámetros aplicada. \\
+\addlinespace[2pt]
+\textbf{RF-131} & El sistema deberá permitir parametrizar la frecuencia de conteo cíclico por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-132} & El sistema deberá permitir parametrizar el método de conteo por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-133} & El sistema deberá permitir parametrizar el criterio de gatillo de recuento extraordinario por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-134} & El sistema deberá generar la programación de conteos cíclicos según la frecuencia parametrizada de cada categoría. \\
+\addlinespace[2pt]
+\textbf{RF-135} & El sistema debe permitir registrar el resultado del conteo cíclico. \\
+\addlinespace[2pt]
+\textbf{RF-136} & El sistema deberá señalar automáticamente los pasillos o referencias que requieren recuento extraordinario. \\
+\addlinespace[2pt]
+\textbf{RF-137} & El sistema deberá calcular la exactitud de inventario resultante por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-138} & El sistema deberá permitir clasificar cada diferencia detectada en uno de los componentes de merma definidos (pérdida física, daño no dado de baja, error de recepción, unidad mal ubicada, devolución mal reintegrada, error de digitación). \\
+\addlinespace[2pt]
+\textbf{RF-139} & El sistema deberá impedir el cierre de un ajuste de inventario que no tenga asignado un componente de merma. \\
+\addlinespace[2pt]
+\textbf{RF-140} & El sistema deberá cuantificar el monto y la proporción de cada componente de merma sobre el total del período. \\
+\addlinespace[2pt]
+\textbf{RF-141} & El sistema deberá generar el informe mensual de merma cuya suma de componentes sea igual al total registrado en el período. \\
+\addlinespace[2pt]
+\textbf{RF-142} & El sistema deberá exigir al analista comercial completar los atributos obligatorios de la referencia (categoría, dimensiones, fragilidad, volumen, restricción de despacho) antes de guardar el registro como apto para uso operativo. \\
+\addlinespace[2pt]
+\textbf{RF-143} & El sistema deberá impedir la publicación de esa referencia en el canal digital mientras no cuente con los atributos obligatorios completos. \\
+\addlinespace[2pt]
+\textbf{RF-144} & El sistema deberá generar automáticamente la propuesta diaria de reposición utilizando el disponible para vender calculado en RF-127. \\
+\addlinespace[2pt]
+\textbf{RF-145} & El sistema deberá permitir al planificador de logística ajustar la propuesta de reposición antes de confirmar el envío. \\
+\addlinespace[2pt]
+\textbf{RF-146} & El sistema deberá registrar el ajuste realizado indicando usuario, valor propuesto, valor confirmado e instante. \\
+\addlinespace[2pt]
+\textbf{RF-147} & El sistema debe generar un reporte periódico de referencias con atributos obligatorios incompletos. \\
+\addlinespace[2pt]
+\textbf{RF-148} & El sistema debe generar un reporte periódico de publicaciones fallidas indicando la causa del error. \\
+\addlinespace[2pt]
+\textbf{RF-149} & El sistema debe permitir al gerente de logística definir el valor del colchón de confianza por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-150} & El sistema debe permitir al gerente de logística definir el valor del colchón de confianza por punto de existencia. \\
+\addlinespace[2pt]
+\textbf{RF-151} & El sistema deberá registrar quien definió o modificó el colchón, cuando, el valor anterior y el valor nuevo. \\
+\addlinespace[2pt]
+\textbf{RF-152} & El sistema deberá sugerir un valor de referencia del colchón calculado a partir del histórico de ventas y quiebres de la categoría. \\
+\addlinespace[2pt]
+\textbf{RF-153} & El sistema deberá permitir al vendedor de piso registrar las unidades que ingresan al probador. \\
+\addlinespace[2pt]
+\textbf{RF-154} & El sistema deberá excluir del disponible para vender las unidades registradas en probador. \\
+\addlinespace[2pt]
+\textbf{RF-155} & El sistema debe permitir al vendedor de piso confirmar el reingreso a sala de la unidad registrada en probador. \\
+\addlinespace[2pt]
+\textbf{RF-156} & El sistema debe permitir al vendedor de piso registrar la venta de la unidad registrada en probador. \\
+\addlinespace[2pt]
+\textbf{RF-157} & El sistema deberá impedir que cualquier canal de venta consuma el saldo bruto de inventario para publicar o comprometer existencia. \\
+\addlinespace[2pt]
+\textbf{RF-158} & El sistema debe calcular el porcentaje de error probable de la referencia en función de su categoría. \\
+\addlinespace[2pt]
+\textbf{RF-159} & El sistema debe calcular el porcentaje de error probable de la referencia en función de su punto de existencia. \\
+\addlinespace[2pt]
+\textbf{RF-160} & El sistema deberá mostrar al cliente el porcentaje de error probable calculado en RF-158 y RF-159 junto a la disponibilidad publicada. \\
+\addlinespace[2pt]
+\textbf{RF-161} & El sistema deberá mostrar al vendedor de piso el porcentaje de error probable calculado en RF-158 y RF-159. \\
+\addlinespace[2pt]
+\textbf{RF-162} & El sistema deberá generar una alerta interna dirigida al rol facultado cuando la exactitud de una categoría caiga bajo el umbral definido. \\
+\addlinespace[2pt]
+\textbf{RF-163} & El sistema deberá permitir exclusivamente al rol facultado suspender manualmente la publicación de una categoría. \\
+\addlinespace[2pt]
+\textbf{RF-164} & El sistema deberá abstenerse de suspender automáticamente la publicación de una categoría que no tenga una regla de degradación declarada y aprobada previamente. \\
+\end{longtable}
+
+\subsubsection{A.1.8. Listado de Requerimientos Funcionales: Gobernanza de Datos}\label{a-1-8-listado-de-requerimientos-funcionales-gobernanza-de-datos}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Gobernanza de Datos''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Gobernanza de Datos.}\label{tab:a-1-8}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-165} & El sistema deberá registrar cada cruce de información ejecutado entre ámbitos, indicando el dato cruzado, la finalidad, la base de licitud, la autorización nominada y el instante. \\
+\addlinespace[2pt]
+\textbf{RF-166} & El sistema deberá bloquear todo intento de cruce de información que no corresponda a una interfaz declarada en el inventario de flujos autorizados. \\
+\addlinespace[2pt]
+\textbf{RF-167} & El sistema deberá registrar el intento de cruce bloqueado con el componente origen, el dato solicitado y el instante. \\
+\addlinespace[2pt]
+\textbf{RF-168} & El sistema debe permitir al oficial de cumplimiento mantener el inventario de interfaces de cruce declaradas. \\
+\addlinespace[2pt]
+\textbf{RF-169} & El sistema debe impedir el registro de una interfaz de cruce que no declare finalidad, base de licitud y autorización nominada. \\
+\addlinespace[2pt]
+\textbf{RF-170} & El sistema deberá excluir del catálogo de atributos disponibles en el motor de campañas todo atributo de origen financiero (mora, deuda, cupo utilizado, comportamiento de pago). \\
+\addlinespace[2pt]
+\textbf{RF-171} & El sistema deberá rechazar la ejecución de toda facilidad comercial que invoque un atributo de origen financiero sin un registro de cruce autorizado asociado. \\
+\addlinespace[2pt]
+\textbf{RF-172} & El sistema deberá rechazar la ejecución de todo proceso crediticio que invoque un atributo de origen retail sin un registro de cruce autorizado asociado. \\
+\addlinespace[2pt]
+\textbf{RF-173} & El sistema deberá asignar a la misma persona un identificador distinto en el ámbito retail y en el ámbito fiscalizado. \\
+\addlinespace[2pt]
+\textbf{RF-174} & El sistema deberá resolver la correspondencia entre identificadores exclusivamente a través de una tabla de correspondencia custodiada, con acceso nominado y registrado. \\
+\addlinespace[2pt]
+\textbf{RF-175} & El sistema deberá rechazar la persistencia de la clave del ámbito financiero como columna o atributo en cualquier entidad del ámbito retail. \\
+\addlinespace[2pt]
+\textbf{RF-176} & El sistema deberá exigir el registro de la evaluación de impacto sobre la frontera de datos antes de habilitar el estado 'aprobada' de una iniciativa. \\
+\end{longtable}
+
+\subsubsection{A.1.9. Listado de Requerimientos Funcionales: Evento de Alta Concurrencia}\label{a-1-9-listado-de-requerimientos-funcionales-evento-de-alta-concurrencia}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Evento de Alta Concurrencia''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Evento de Alta Concurrencia.}\label{tab:a-1-9}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-177} & El sistema debe permitir declarar previamente el orden de degradación de los servicios. \\
+\addlinespace[2pt]
+\textbf{RF-178} & El sistema debe permitir parametrizar los criterios que activan cada nivel de degradación declarado. \\
+\addlinespace[2pt]
+\textbf{RF-179} & El sistema deberá suspender la publicación de la categoría indicada por el orden de degradación declarado. \\
+\addlinespace[2pt]
+\textbf{RF-180} & El sistema deberá reducir el límite de unidades por cliente al valor declarado. \\
+\addlinespace[2pt]
+\textbf{RF-181} & El sistema deberá desactivar temporalmente los medios de pago de mayor fricción operativa declarados. \\
+\addlinespace[2pt]
+\textbf{RF-182} & El sistema deberá monitorear en tiempo real la tasa de cancelación por falta de existencia por categoría. \\
+\addlinespace[2pt]
+\textbf{RF-183} & El sistema deberá activar la acción de degradación declarada para esa categoría en RF-026.1. \\
+\addlinespace[2pt]
+\textbf{RF-184} & El sistema deberá permitir parametrizar las cinco ventanas de congelamiento (1 nov - 6 ene; evento anual y su semana previa; evento de noviembre; semana del Día de la Madre; última semana de enero a primera de marzo). \\
+\addlinespace[2pt]
+\textbf{RF-185} & El sistema deberá impedir la ejecución del despliegue o intervención en producción durante la ventana de congelamiento. \\
+\addlinespace[2pt]
+\textbf{RF-186} & El sistema deberá registrar el intento de despliegue bloqueado, indicando componente, solicitante e instante. \\
+\end{longtable}
+
+\subsubsection{A.1.10. Listado de Requerimientos Funcionales: Devoluciones y Garantía Legal}\label{a-1-10-listado-de-requerimientos-funcionales-devoluciones-y-garantia-legal}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Devoluciones y Garantía Legal''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Devoluciones y Garantía Legal.}\label{tab:a-1-10}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-187} & El sistema debe permitir al ejecutivo de mesón atender íntegramente el caso de garantía legal en la tienda. \\
+\addlinespace[2pt]
+\textbf{RF-188} & El sistema debe impedir que el flujo de atención exija la derivación del consumidor al fabricante, al servicio técnico o al vendedor de marketplace como condición para ser atendido. \\
+\addlinespace[2pt]
+\textbf{RF-189} & El sistema deberá permitir al ejecutivo registrar el motivo de la devolución (talla, color, expectativa, falla). \\
+\addlinespace[2pt]
+\textbf{RF-190} & El sistema deberá impedir el reingreso de una unidad devuelta al inventario disponible mientras no exista una decisión de aptitud registrada. \\
+\addlinespace[2pt]
+\textbf{RF-191} & El sistema deberá permitir al ejecutivo registrar la decisión de aptitud de la unidad devuelta, identificando al responsable de la decisión y su instante. \\
+\addlinespace[2pt]
+\textbf{RF-192} & El sistema deberá presentar al ejecutivo las tres opciones de garantía legal (reparación, reposición y devolución del precio) para que el consumidor elija. \\
+\addlinespace[2pt]
+\textbf{RF-193} & El sistema debe registrar la opción de garantía legal ofrecida al consumidor. \\
+\addlinespace[2pt]
+\textbf{RF-194} & El sistema debe registrar la opción de garantía legal efectivamente elegida por el consumidor. \\
+\addlinespace[2pt]
+\textbf{RF-195} & El sistema deberá permitir parametrizar el plazo de garantía legal por tipo de producto, sin requerir modificación de código. \\
+\addlinespace[2pt]
+\textbf{RF-196} & El sistema deberá registrar el hito de resolución al consumidor con su fecha propia. \\
+\addlinespace[2pt]
+\textbf{RF-197} & El sistema deberá registrar el hito de recuperación contra el tercero responsable con una fecha independiente de la resolución al consumidor. \\
+\addlinespace[2pt]
+\textbf{RF-198} & El sistema deberá impedir que el estado de la recuperación contra el tercero condicione el cierre de la resolución al consumidor. \\
+\end{longtable}
+
+\subsubsection{A.1.11. Listado de Requerimientos Funcionales: Crédito y Cobranza}\label{a-1-11-listado-de-requerimientos-funcionales-credito-y-cobranza}
+
+A continuación, se detalla el listado de requerimientos funcionales (RF) del módulo/categoría ``Crédito y Cobranza''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0979}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9021}}@{}}
+\caption{Requerimientos Funcionales - Crédito y Cobranza.}\label{tab:a-1-11}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RF-199} & El sistema deberá exigir la entrega completa de la información precontractual antes de habilitar la evaluación de la solicitud de crédito. \\
+\addlinespace[2pt]
+\textbf{RF-200} & El sistema deberá registrar la versión del documento precontractual entregado. \\
+\addlinespace[2pt]
+\textbf{RF-201} & El sistema deberá registrar el instante de entrega de la información precontractual. \\
+\addlinespace[2pt]
+\textbf{RF-202} & El sistema deberá registrar el instante de aceptación del cliente. \\
+\addlinespace[2pt]
+\textbf{RF-203} & El sistema deberá registrar el medio por el cual se entrego y se aceptó la información precontractual. \\
+\addlinespace[2pt]
+\textbf{RF-204} & El sistema deberá registrar el contenido exacto aceptado por el cliente o su huella de integridad verificable. \\
+\addlinespace[2pt]
+\textbf{RF-205} & El sistema deberá dejar constancia expresa de que el cliente recibió la información antes de aceptar, mediante un mecanismo distinto de la sola firma en papel archivado. \\
+\addlinespace[2pt]
+\textbf{RF-206} & El sistema deberá impedir el registro de la aceptación del crédito mientras no exista acreditación de entrega previa de la información precontractual completa. \\
+\addlinespace[2pt]
+\textbf{RF-207} & El sistema deberá registrar la evidencia del consentimiento expreso e informado del cliente mediante un mecanismo verificable de integridad. \\
+\addlinespace[2pt]
+\textbf{RF-208} & El sistema deberá impedir el registro de una modificación de condiciones del crédito que no tenga evidencia de consentimiento asociada. \\
+\addlinespace[2pt]
+\textbf{RF-209} & El sistema deberá reconstruir el acto de consentimiento presentando que se informó, en qué versión y que aceptó el cliente. \\
+\addlinespace[2pt]
+\textbf{RF-210} & El sistema deberá restaurar desde archivo frío los antecedentes de una operación de crédito de cualquier cohorte dentro del plazo de conservación. \\
+\addlinespace[2pt]
+\textbf{RF-211} & El sistema debe permitir al ejecutivo de cobranza iniciar una gestión de cobranza. \\
+\addlinespace[2pt]
+\textbf{RF-212} & El sistema debe registrar la gestión de cobranza ejecutada con su medio, su instante y su ejecutor. \\
+\addlinespace[2pt]
+\textbf{RF-213} & El sistema debe impedir la ejecución de una gestión de cobranza fuera de los límites normativos de horario y de medio de contacto. \\
+\addlinespace[2pt]
+\textbf{RF-214} & El sistema debe enlazar el expediente de la repactación con la gestión de cobranza que la originó. \\
+\addlinespace[2pt]
+\textbf{RF-215} & El sistema debe enlazar el expediente de la repactación con la evidencia de consentimiento registrada en RF-207. \\
+\addlinespace[2pt]
+\textbf{RF-216} & El sistema deberá generar un reporte de conciliación diaria de saldos durante todo el proceso de migración. \\
+\addlinespace[2pt]
+\textbf{RF-217} & El sistema deberá permitir al cliente no autenticado consultar la información precontractual del crédito. \\
+\addlinespace[2pt]
+\textbf{RF-218} & El sistema deberá permitir al cliente no autenticado utilizar un simulador de costo total del crédito. \\
+\addlinespace[2pt]
+\textbf{RF-219} & El sistema deberá mantener cargada la Tasa Máxima Convencional vigente por tipo y tramo de operación, con su fecha de vigencia. \\
+\addlinespace[2pt]
+\textbf{RF-220} & El sistema deberá impedir la originación de una operación cuya tasa supere la Tasa Máxima Convencional vigente a la fecha de la operación. \\
+\addlinespace[2pt]
+\textbf{RF-221} & El sistema deberá determinar el cupo exclusivamente a partir de las variables de la evaluación de capacidad de pago documentada. \\
+\addlinespace[2pt]
+\textbf{RF-222} & El sistema deberá excluir el monto de la venta en curso del conjunto de variables de asignación de cupo. \\
+\addlinespace[2pt]
+\textbf{RF-223} & El sistema deberá excluir la solicitud del vendedor del conjunto de variables de asignación de cupo. \\
+\addlinespace[2pt]
+\textbf{RF-224} & El sistema deberá impedir al vendedor alterar el resultado de una evaluación crediticia. \\
+\addlinespace[2pt]
+\textbf{RF-225} & El sistema deberá impedir la repetición de la evaluación crediticia del mismo cliente dentro de la ventana de enfriamiento parametrizada. \\
+\addlinespace[2pt]
+\textbf{RF-226} & El sistema deberá registrar cada intento de evaluación con la identidad del solicitante y el resultado obtenido. \\
+\end{longtable}
+
+\subsection{A.2. Listado de Requerimientos No Funcionales (RNF)}\label{a-2-listado-de-requerimientos-no-funcionales-rnf}
+
+A continuación, se detalla el listado completo de requerimientos no funcionales (RNF) del Catálogo Atómico, agrupado por categoría, incluyendo su umbral/métrica y método de verificación. Total: 75 requerimientos.
+
+\subsubsection{A.2.1. Listado de Requerimientos No Funcionales: Disponibilidad}\label{a-2-1-listado-de-requerimientos-no-funcionales-disponibilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Disponibilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Disponibilidad.}\label{tab:a-2-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-02} & La interfaz de declaración de existencia del vendedor de marketplace debe estar disponible de forma continua. & 24x7x365; disponibilidad \textgreater{}= 99,5 \% (supuesto fundamentado). & Medición mensual de disponibilidad de la interfaz de sincronización de catálogo. \\
+\addlinespace[2pt]
+\textbf{RNF-24} & Una tienda debe poder operar sin enlace externo durante el período mínimo definido. & ≥ 24 horas continuas en tienda & Prueba de desconexión controlada en tienda. \\
+\addlinespace[2pt]
+\textbf{RNF-25} & El centro de distribución principal debe poder operar sin enlace externo durante el período mínimo definido. & \textgreater{}= 4 horas continuas. & Prueba de desconexión controlada en CD. \\
+\addlinespace[2pt]
+\textbf{RNF-26} & La sincronización tras la reconexión no debe superar el plazo definido. & \textless{}= 30 minutos tras 8 horas de desconexión. & Prueba de reconexión cronometrada tras desconexión programada de 8 horas. \\
+\addlinespace[2pt]
+\textbf{RNF-27} & La sincronización tras la reconexión no debe producir pérdida de ventas ni de documentos. & 0 ventas y 0 documentos perdidos o duplicados. & Cuadratura del universo de transacciones de la ventana desconectada contra el sistema central. \\
+\addlinespace[2pt]
+\textbf{RNF-28} & La operación desconectada autónoma on-premise debe sostenerse durante el período mínimo exigido por las bases técnicas. & \textgreater{}= 24 horas (bases técnicas transversales), superior al mínimo de 8 h de RN-46. & Prueba de desconexión extendida. \\
+\addlinespace[2pt]
+\textbf{RNF-29} & La operación de tiendas y centros de distribución debe estar disponible en la ventana horaria definida. & 09:00 a 23:00, todos los días del año. & Monitoreo continuo de disponibilidad por servicio. \\
+\addlinespace[2pt]
+\textbf{RNF-30} & El canal digital debe estar disponible de forma continua. & 24x7x365; disponibilidad \textgreater{}= 99,9 \% & Medición mensual de disponibilidad contra el nivel de servicio comprometido. \\
+\addlinespace[2pt]
+\textbf{RNF-31} & Los servicios financieros que afectan pagos, estados de cuenta y bloqueo de tarjetas deben estar disponibles de forma continua. & 24x7x365; disponibilidad \textgreater{}= 99,9 \% & Medición mensual segregada por ámbito, informada a la filial emisora. \\
+\end{longtable}
+
+\subsubsection{A.2.2. Listado de Requerimientos No Funcionales: Desempeño}\label{a-2-2-listado-de-requerimientos-no-funcionales-desempeno}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Desempeño''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Desempeño.}\label{tab:a-2-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-03} & El registro del conteo cíclico no debe bloquear ni degradar la operación de venta de la sala. & 0 bloqueos de la línea de caja durante el conteo; degradación del tiempo de venta \textless{}= 5 \% respecto de la línea base de RNF-18. & Prueba de conteo cíclico ejecutado en horario de venta con medición simultánea del tiempo de transacción en caja. \\
+\addlinespace[2pt]
+\textbf{RNF-05} & La actualización del estado de un pedido debe reflejarse en todos los puntos de consulta dentro del plazo máximo definido. & Desfase máximo entre cambio real de estado y su reflejo en cualquier canal: \textless{}= 30 segundos & Auditoría cruzada de estado entre los cuatro canales (alineado con Subdocumento 3, sección 3.4.3). \\
+\addlinespace[2pt]
+\textbf{RNF-06} & El tiempo de evaluación de una solicitud de crédito en el punto de venta físico no debe exceder el umbral objetivo. & \textless{}= 8 segundos. & Prueba de tiempo de respuesta en punto de venta bajo carga representativa. \\
+\addlinespace[2pt]
+\textbf{RNF-16} & La consulta de disponibilidad en la ficha de producto del canal digital debe responder dentro del umbral definido. & \textless{}= 400 ms. & Prueba de tiempo de respuesta bajo carga representativa. \\
+\addlinespace[2pt]
+\textbf{RNF-17} & La confirmación de un pedido durante el evento anual debe completarse dentro del umbral definido. & \textless{}= 3 s. & Prueba de carga con volumetria del evento anual. \\
+\addlinespace[2pt]
+\textbf{RNF-18} & La venta completa en caja con medio de pago externo debe completarse dentro del umbral definido. & \textless{}= 25 s. & Prueba de tiempo de respuesta en linea de caja. \\
+\addlinespace[2pt]
+\textbf{RNF-19} & La propagación de un cambio de precio a las 380 líneas de caja y al canal digital debe completarse dentro del umbral definido. & \textless{}= 5 minutos. & Medicion de latencia de propagación por destino. \\
+\addlinespace[2pt]
+\textbf{RNF-20} & El registro de una devolución en el mesón debe completarse dentro del umbral definido. & \textless{}= 60 s. & Prueba de tiempo de respuesta en mesón de atención. \\
+\addlinespace[2pt]
+\textbf{RNF-21} & La consulta de disponibilidad desde una terminal compartida del piso de venta debe responder dentro del umbral definido. & \textless{}= 2 s. & Prueba de tiempo de respuesta en terminal de sala. \\
+\addlinespace[2pt]
+\textbf{RNF-58} & La recuperación del precio publicado de una referencia en una fecha, hora y canal arbitrarios debe completarse dentro del plazo objetivo. & \textless{}= 1 minuto, sobre una ventana de 3 años. & Consulta de auditoría sobre fecha/hora/canal aleatorios. \\
+\end{longtable}
+
+\subsubsection{A.2.3. Listado de Requerimientos No Funcionales: Consistencia de datos}\label{a-2-3-listado-de-requerimientos-no-funcionales-consistencia-de-datos}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Consistencia de datos''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Consistencia de datos.}\label{tab:a-2-3}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-04} & El estado de un pedido no debe presentar discrepancias entre canales de consulta. & 0\% de discrepancias en auditoría cruzada. & Prueba de sincronización cruzada entre canales tras cada cambio de estado. \\
+\end{longtable}
+
+\subsubsection{A.2.4. Listado de Requerimientos No Funcionales: Desempeño / Cumplimiento}\label{a-2-4-listado-de-requerimientos-no-funcionales-desempeno-cumplimiento}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Desempeño / Cumplimiento''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Desempeño / Cumplimiento.}\label{tab:a-2-4}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-07} & El tiempo total de originación de crédito en el mesón, con información precontractual acreditada, no debe superar el tiempo del proceso actual. & \textless{}= 3 minutos (tiempo actual declarado en el caso). & Medicion de tiempo de originación extremo a extremo en mesón, con y sin acreditación. \\
+\end{longtable}
+
+\subsubsection{A.2.5. Listado de Requerimientos No Funcionales: Portabilidad / Migración}\label{a-2-5-listado-de-requerimientos-no-funcionales-portabilidad-migracion}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Portabilidad / Migración''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Portabilidad / Migración.}\label{tab:a-2-5}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-08} & La migración de la cartera de crédito viva no debe generar pérdida de datos. & 0 registros perdidos respecto del universo de 620.000 clientes con saldo. & Conteo y cuadratura de universos origen y destino en cada corte de migración. \\
+\addlinespace[2pt]
+\textbf{RNF-09} & La migración de la cartera de crédito viva no debe interrumpir el servicio de cobro. & 0 interrupciones del servicio de cobro durante la ventana de migración. & Monitoreo continuo de disponibilidad del servicio de cobro durante cada etapa de coexistencia. \\
+\addlinespace[2pt]
+\textbf{RNF-10} & La migración de la cartera de crédito viva no debe producir divergencia de saldos. & 0 divergencias no conciliadas en la conciliación diaria; migración completa antes de 2029. & Conciliación diaria automatizada de saldos entre entorno origen y destino (RF-216). \\
+\end{longtable}
+
+\subsubsection{A.2.6. Listado de Requerimientos No Funcionales: Seguridad / Arquitectura}\label{a-2-6-listado-de-requerimientos-no-funcionales-seguridad-arquitectura}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Seguridad / Arquitectura''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Seguridad / Arquitectura.}\label{tab:a-2-6}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-11} & La separación lógica entre los datos del retail y los del negocio financiero debe estar implementada. & Separación lógica operativa en todos los componentes que tratan datos de ambos ámbitos. & Revisión de arquitectura desplegada y prueba de acceso denegado desde el ámbito retail. \\
+\addlinespace[2pt]
+\textbf{RNF-12} & La separación lógica entre ambos ámbitos debe estar documentada. & Documento de separación vigente y versionado, aprobado por la Contraloría interna. & Revisión documental contra el diseño desplegado. \\
+\addlinespace[2pt]
+\textbf{RNF-13} & La separación lógica entre ambos ámbitos debe ser verificada por auditoría independiente. & Informe de auditoría aprobado con 0 hallazgos críticos abiertos, previo a cualquier vista unificada. & Auditoría independiente con informe formal y seguimiento de hallazgos. \\
+\addlinespace[2pt]
+\textbf{RNF-14} & La separación física entre la infraestructura del retail y la de la filial emisora debe estar implementada y acreditada. & Informe técnico de separación física acreditado; prueba de penetración que demuestre que un componente del retail no alcanza datos de crédito. & Prueba de penetración e inspección de infraestructura. \\
+\end{longtable}
+
+\subsubsection{A.2.7. Listado de Requerimientos No Funcionales: Auditabilidad}\label{a-2-7-listado-de-requerimientos-no-funcionales-auditabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Auditabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Auditabilidad.}\label{tab:a-2-7}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-15} & Toda acción relevante ejecutada en el sistema debe quedar registrada indicando usuario individual, acción e instante. & 100\% de acciones relevantes con registro de auditoría. & Auditoría de logs sobre muestra de transacciones. \\
+\addlinespace[2pt]
+\textbf{RNF-38} & Debe registrarse todo acceso a la cartera de crédito, al comportamiento de pago y a los antecedentes de evaluación crediticia. & 100\% de accesos a información sensible con registro (usuario, dato, finalidad, instante). & Auditoría de logs de acceso sobre muestra representativa. \\
+\end{longtable}
+
+\subsubsection{A.2.8. Listado de Requerimientos No Funcionales: Desempeño / Capacidad}\label{a-2-8-listado-de-requerimientos-no-funcionales-desempeno-capacidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Desempeño / Capacidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Desempeño / Capacidad.}\label{tab:a-2-8}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-22} & La plataforma debe soportar la concurrencia y el volumen del peak digital del evento anual sin degradar los umbrales de NFR-06.x. & Perfil declarado por el PROPONENTE sobre 104.000 pedidos en 3 días (proyección 150.000), equivalente a 22 días de venta en línea. & Prueba de carga con perfil del evento anual a 1,5 veces el peak declarado (RT-09.06). \\
+\addlinespace[2pt]
+\textbf{RNF-23} & La plataforma debe soportar la concurrencia y el volumen del peak presencial de la campaña de noviembre y diciembre sin degradar los umbrales de NFR-06.x. & Perfil declarado por el PROPONENTE sobre 380 líneas de caja (430 proyectadas) en peak de sábado de diciembre. & Prueba de carga con perfil presencial sostenido, independiente de la prueba del peak digital. \\
+\end{longtable}
+
+\subsubsection{A.2.9. Listado de Requerimientos No Funcionales: Recuperabilidad}\label{a-2-9-listado-de-requerimientos-no-funcionales-recuperabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Recuperabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Recuperabilidad.}\label{tab:a-2-9}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-32} & La solución debe cumplir los objetivos de recuperación ante desastres exigidos. & RTO \textless{}= 4 h; RPO \textless{}= 15 min. & Ensayo de recuperación ante desastres con medición de RTO y RPO efectivos. \\
+\addlinespace[2pt]
+\textbf{RNF-68} & La restauración desde archivo frío de una operación de crédito de la cohorte más antigua debe completarse dentro del plazo objetivo. & \textless{}= 24 horas (supuesto fundamentado). & Prueba de restauración desde archivo frío. \\
+\end{longtable}
+
+\subsubsection{A.2.10. Listado de Requerimientos No Funcionales: Seguridad}\label{a-2-10-listado-de-requerimientos-no-funcionales-seguridad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Seguridad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Seguridad.}\label{tab:a-2-10}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-33} & Los datos de identificación de clientes, la cartera de crédito, el comportamiento de pago y los antecedentes de evaluación crediticia deben cifrarse a nivel de campo. & 100\% de campos sensibles cifrados. & Auditoría de esquema de datos y prueba de exfiltración controlada. \\
+\addlinespace[2pt]
+\textbf{RNF-34} & Los datos de medios de pago no deben almacenarse en claro, sino tokenizarse. & 0\% de datos de medios de pago almacenados sin tokenizar. & Auditoría de esquema y prueba de exfiltración controlada. \\
+\addlinespace[2pt]
+\textbf{RNF-35} & La red de cajas, la administrativa, la de videovigilancia y la inalámbrica de clientes deben estar segmentadas en las 22 tiendas. & 22/22 tiendas con segmentación verificada (hoy 9). & Auditoría de configuración de red por tienda. \\
+\addlinespace[2pt]
+\textbf{RNF-36} & La red y el ámbito de sistemas de la filial emisora deben estar separados de forma acreditada respecto del retail. & Separación acreditada mediante informe técnico. & Auditoría de arquitectura de red. \\
+\addlinespace[2pt]
+\textbf{RNF-37} & Debe existir segregación de funciones verificable entre originación, aprobación, modificación de condiciones y cobranza. & 0 usuarios con permisos combinados de originación + aprobación o de modificación + cobranza sobre un mismo caso. & Auditoría de matriz de roles y permisos. \\
+\addlinespace[2pt]
+\textbf{RNF-59} & La revocación total de accesos de un trabajador debe completarse dentro del plazo máximo de la política interna. & \textless{}= 4 horas desde el término efectivo del vínculo (supuesto fundamentado). & Auditoría de accesos vigentes contra nómina activa. \\
+\end{longtable}
+
+\subsubsection{A.2.11. Listado de Requerimientos No Funcionales: Seguridad / Cumplimiento}\label{a-2-11-listado-de-requerimientos-no-funcionales-seguridad-cumplimiento}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Seguridad / Cumplimiento''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Seguridad / Cumplimiento.}\label{tab:a-2-11}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-39} & Los actos de crédito de apertura de tarjeta y de repactación deben contar con un mecanismo de consentimiento de integridad verificable. & 100 \% de aperturas y repactaciones con evidencia de integridad verificable, en la modalidad que la normativa admita para cada canal. & Auditoría censal del período y verificación de la huella de integridad por muestreo. \\
+\addlinespace[2pt]
+\textbf{RNF-40} & La conformidad de recepción de mercadería y la constancia de devolución deben contar con un mecanismo de consentimiento de integridad verificable. & 100 \% de conformidades y constancias con evidencia de integridad verificable. & Verificación de la validez de la firma y de la integridad del documento por muestreo. \\
+\end{longtable}
+
+\subsubsection{A.2.12. Listado de Requerimientos No Funcionales: Cumplimiento}\label{a-2-12-listado-de-requerimientos-no-funcionales-cumplimiento}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Cumplimiento''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Cumplimiento.}\label{tab:a-2-12}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-41} & Los documentos tributarios y antecedentes de venta deben conservarse por el plazo definido. & 6 años. & Auditoría de políticas de retención por tipo de dato. \\
+\addlinespace[2pt]
+\textbf{RNF-42} & Los antecedentes del crédito deben conservarse por el plazo del crédito más el período posterior exigido. & Plazo del crédito + 6 años (sustituye la práctica actual de 90 días para grabaciones). & Auditoría de retención y prueba de restauración desde archivo frío. \\
+\addlinespace[2pt]
+\textbf{RNF-43} & La evidencia de consentimiento de originación y repactación debe conservarse por el mismo plazo que el crédito. & Plazo del crédito + 6 años; recuperable a 10 años según RN-35. & Auditoría de retención y prueba de recuperación. \\
+\addlinespace[2pt]
+\textbf{RNF-44} & La trazabilidad del precio publicado debe conservarse por el plazo definido. & 3 años. & Auditoría de retención. \\
+\addlinespace[2pt]
+\textbf{RNF-45} & Los movimientos de inventario y conteos cíclicos deben conservarse por el plazo definido. & 6 años. & Auditoría de retención. \\
+\addlinespace[2pt]
+\textbf{RNF-46} & Los datos de fidelización deben conservarse por el plazo definido. & Duración de la relación + 2 años. & Auditoría de retención. \\
+\addlinespace[2pt]
+\textbf{RNF-47} & Los registros de videovigilancia deben conservarse por el plazo definido. & 30 días. & Auditoría de retención. \\
+\addlinespace[2pt]
+\textbf{RNF-69} & La atención de garantía legal en mesón no debe derivar al consumidor a un tercero como condición de atención, en ninguna tienda. & 0 derivaciones como condición de atención, medido con cliente oculto en las 22 tiendas. & Programa de cliente oculto en las 22 tiendas. \\
+\addlinespace[2pt]
+\textbf{RNF-74} & Todo tratamiento de datos personales debe declarar su finalidad. & 100 \% de los flujos con finalidad declarada. & Revisión del registro de actividades de tratamiento. \\
+\addlinespace[2pt]
+\textbf{RNF-75} & Todo tratamiento de datos personales debe invocar una de las bases de licitud de la Ley N° 21.719. & 100 \% de los flujos con base de licitud declarada; 0 tratamientos con consentimiento presunto. & Auditoría de conformidad por el oficial de cumplimiento. \\
+\addlinespace[2pt]
+\textbf{RNF-76} & La compañía debe mantener el registro de actividades de tratamiento de datos personales. & Registro completo y vigente, actualizado ante cada cambio de flujo. & Revisión documental periódica contra el inventario de interfaces de RF-168. \\
+\end{longtable}
+
+\subsubsection{A.2.13. Listado de Requerimientos No Funcionales: Portabilidad / Escalabilidad}\label{a-2-13-listado-de-requerimientos-no-funcionales-portabilidad-escalabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Portabilidad / Escalabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Portabilidad / Escalabilidad.}\label{tab:a-2-13}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-48} & La solución debe admitir la apertura de una tienda nueva por parametrización, sin desarrollo a medida. & Alta de tienda por configuración en \textless{}= 10 días hábiles (supuesto fundamentado, compatible con una apertura comercial). & Prueba de aprovisionamiento de una tienda simulada. \\
+\end{longtable}
+
+\subsubsection{A.2.14. Listado de Requerimientos No Funcionales: Usabilidad}\label{a-2-14-listado-de-requerimientos-no-funcionales-usabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Usabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Usabilidad.}\label{tab:a-2-14}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-49} & Las interfaces de sala, caja y mesón financiero deben ser operables por personal recién incorporado con capacitación mínima. & Tiempo de capacitación operativa básica \textless{}= 4 horas (supuesto fundamentado), medido con personal de temporada. & Prueba de usabilidad con personal recién incorporado en condiciones reales. \\
+\end{longtable}
+
+\subsubsection{A.2.15. Listado de Requerimientos No Funcionales: Usabilidad / Cumplimiento}\label{a-2-15-listado-de-requerimientos-no-funcionales-usabilidad-cumplimiento}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Usabilidad / Cumplimiento''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Usabilidad / Cumplimiento.}\label{tab:a-2-15}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-50} & Toda comunicación relativa al crédito debe cumplir criterios verificables de lenguaje claro, validados con personas usuarias reales. & 100\% de plantillas validadas con pruebas de comprensión lectora con usuarios reales. & Prueba de comprensión lectora sobre muestra de plantillas. \\
+\end{longtable}
+
+\subsubsection{A.2.16. Listado de Requerimientos No Funcionales: Operabilidad}\label{a-2-16-listado-de-requerimientos-no-funcionales-operabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Operabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Operabilidad.}\label{tab:a-2-16}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-51} & Las notificaciones definidas funcionalmente deben emitirse y registrarse en el 100\% de los eventos que las gatillan. & 100\% de eventos definidos con notificación generada y registrada. & Prueba de disparo de eventos y verificación del registro. \\
+\addlinespace[2pt]
+\textbf{RNF-64} & El tiempo entre la detección de un quiebre y el aviso al cliente no debe superar el objetivo declarado. & \textless{}= 30 minutos (supuesto fundamentado). & Medición de la latencia entre el evento de quiebre y el envío de la notificación. \\
+\addlinespace[2pt]
+\textbf{RNF-65} & No debe mantenerse un cobro capturado sobre un pedido declarado no cumplible. & 0 casos de cobro sostenido sobre pedido no cumplible. & Auditoría de conciliación diaria de preautorizaciones y capturas (RF-050). \\
+\addlinespace[2pt]
+\textbf{RNF-66} & La latencia entre la recepción física de una devolución en tienda y la notificación al vendedor de marketplace no debe superar el objetivo declarado. & \textless{}= 15 minutos (supuesto fundamentado). & Medición de la latencia entre el registro de recepción y el envío de la notificación. \\
+\addlinespace[2pt]
+\textbf{RNF-67} & No debe permanecer mercadería de marketplace en bodega sin aviso a su propietario. & 0 unidades en bodega sin notificación asociada al cierre de cada día. & Conciliación diaria entre recepciones registradas y notificaciones emitidas. \\
+\end{longtable}
+
+\subsubsection{A.2.17. Listado de Requerimientos No Funcionales: Interoperabilidad}\label{a-2-17-listado-de-requerimientos-no-funcionales-interoperabilidad}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Interoperabilidad''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Interoperabilidad.}\label{tab:a-2-17}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-52} & La solución debe adoptar un estándar identificado y justificado para el catálogo e identificación de producto. & Estándar identificado por su denominación y justificado en la Oferta Técnica. & Prueba de interoperabilidad con al menos una contraparte real del dominio. \\
+\addlinespace[2pt]
+\textbf{RNF-53} & La solución debe adoptar un estándar identificado y justificado para el intercambio de órdenes y avisos de despacho con los proveedores. & Estándar identificado y justificado; 100 \% de las interfaces con proveedores mapeadas a él. & Prueba de intercambio con un proveedor piloto. \\
+\addlinespace[2pt]
+\textbf{RNF-54} & La solución debe adoptar un estándar identificado y justificado para el intercambio con los transportistas de última milla. & Estándar identificado y justificado; trazabilidad del estado del pedido hasta la entrega. & Prueba de integración con un transportista piloto. \\
+\addlinespace[2pt]
+\textbf{RNF-55} & La solución debe adoptar un estándar identificado y justificado para la sincronización de catálogo, existencia y pedido con los vendedores de marketplace. & Estándar identificado y justificado; 100 \% de vendedores sincronizados por él. & Prueba de sincronización con un vendedor piloto. \\
+\addlinespace[2pt]
+\textbf{RNF-56} & La solución debe adoptar el formato normativo vigente de documento tributario electrónico. & 100 \% de los documentos emitidos conforme al formato vigente de la autoridad tributaria. & Validación de esquema sobre una muestra de documentos emitidos. \\
+\end{longtable}
+
+\subsubsection{A.2.18. Listado de Requerimientos No Funcionales: Auditabilidad / Desempeño}\label{a-2-18-listado-de-requerimientos-no-funcionales-auditabilidad-desempeno}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Auditabilidad / Desempeño''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Auditabilidad / Desempeño.}\label{tab:a-2-18}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-57} & La evidencia completa de consentimiento de una operación arbitraria debe recuperarse dentro del plazo objetivo, a diez años. & Recuperación \textless{}= 5 minutos (supuesto fundamentado) sobre operaciones de hasta 10 años de antigüedad. & Simulacro de requerimiento de la autoridad fiscalizadora. \\
+\end{longtable}
+
+\subsubsection{A.2.19. Listado de Requerimientos No Funcionales: Usabilidad / Desempeño}\label{a-2-19-listado-de-requerimientos-no-funcionales-usabilidad-desempeno}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Usabilidad / Desempeño''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Usabilidad / Desempeño.}\label{tab:a-2-19}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-60} & El traspaso de sesión nominativa en una terminal compartida debe completarse dentro del plazo objetivo. & \textless{}= 5 segundos (supuesto fundamentado). & Medición de tiempo de traspaso en terminal de sala. \\
+\end{longtable}
+
+\subsubsection{A.2.20. Listado de Requerimientos No Funcionales: Efectividad de negocio}\label{a-2-20-listado-de-requerimientos-no-funcionales-efectividad-de-negocio}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Efectividad de negocio''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Efectividad de negocio.}\label{tab:a-2-20}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-61} & La tasa de cancelación de pedidos por falta de existencia no debe superar el umbral comprometido. & \textless{} 0,3\% anual. & Medición anual sobre el total de pedidos aceptados. \\
+\addlinespace[2pt]
+\textbf{RNF-62} & El cumplimiento de la promesa de entrega publicada debe alcanzar el umbral comprometido, medido por pedido. & \textgreater{}= 97\% (línea base 81\%), medido por pedido y no por promedio de canal. & Medición por pedido sobre el período. \\
+\addlinespace[2pt]
+\textbf{RNF-63} & La diferencia de inventario por categoría debe reducirse al umbral comprometido. & \textless{} 2\% (linea base 12,4\%). & Medición sobre resultados de conteo cíclico por categoría. \\
+\end{longtable}
+
+\subsubsection{A.2.21. Listado de Requerimientos No Funcionales: Seguridad / DevSecOps}\label{a-2-21-listado-de-requerimientos-no-funcionales-seguridad-devsecops}
+
+A continuación, se detalla el listado de requerimientos no funcionales (RNF) de la categoría ``Seguridad / DevSecOps''.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1027}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4302}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2087}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2584}}@{}}
+\caption{Requerimientos No Funcionales - Seguridad / DevSecOps.}\label{tab:a-2-21}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Umbral / Métrica}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Método de verificación}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RNF-70} & El ciclo de desarrollo debe producir un inventario de componentes (SBOM) por artefacto desplegado. & SBOM del 100 \% de los artefactos desplegados. & Verificación del SBOM en cada liberación. \\
+\addlinespace[2pt]
+\textbf{RNF-71} & La cadena de suministro de software debe alcanzar el nivel SLSA 3 o superior. & Nivel SLSA 3 o superior acreditado. & Atestación de la cadena de construcción por artefacto. \\
+\addlinespace[2pt]
+\textbf{RNF-72} & La capa expuesta debe cumplir el estándar OWASP ASVS en el nivel comprometido. & 0 hallazgos críticos abiertos en el nivel ASVS comprometido. & Análisis estático y dinámico por ciclo y prueba de seguridad ofensiva. \\
+\addlinespace[2pt]
+\textbf{RNF-73} & La arquitectura debe implementar un modelo Zero Trust conforme a NIST SP 800-207. & Verificación explícita en cada solicitud y denegación por omisión en el 100 \% de los puntos de control. & Revisión de arquitectura contra los principios de NIST SP 800-207. \\
+\end{longtable}
+
+\subsection{A.3. Listado de Obligaciones del Proponente (OP)}\label{a-3-listado-de-obligaciones-del-proponente-op}
+
+A continuación, se detalla el listado de obligaciones del proponente (OP) extraídas del Catálogo Atómico: compromisos de la oferta que no constituyen funciones del sistema y por lo tanto no admiten caso de prueba de software. Total: 9 obligaciones.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0865}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.9135}}@{}}
+\caption{Obligación del PROPONENTE.}\label{tab:a-3-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Requerimiento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{OP-01} & El PROPONENTE debe especificar la alternativa de etiquetas electrónicas frente a las demás opciones de resolución de la discrepancia de precio. \\
+\addlinespace[2pt]
+\textbf{OP-02} & El PROPONENTE debe costear la alternativa de etiquetas electrónicas sin asumir su adquisición dentro del alcance. \\
+\addlinespace[2pt]
+\textbf{OP-03} & El PROPONENTE debe especificar la cobertura de despliegue de las etiquetas electrónicas. \\
+\addlinespace[2pt]
+\textbf{OP-04} & El PROPONENTE debe especificar el hardware requerido por la alternativa de etiquetas electrónicas. \\
+\addlinespace[2pt]
+\textbf{OP-05} & El PROPONENTE debe presentar el costo de la alternativa separadamente del resto de la solución. \\
+\addlinespace[2pt]
+\textbf{OP-06} & El PROPONENTE debe especificar la cantidad de dispositivos móviles requeridos por tienda y por departamento. \\
+\addlinespace[2pt]
+\textbf{OP-07} & El PROPONENTE debe especificar las características técnicas de los dispositivos móviles requeridos. \\
+\addlinespace[2pt]
+\textbf{OP-08} & El PROPONENTE debe presentar el análisis de hacer o comprar del centro de distribución de Concepción con sus tres alternativas. \\
+\addlinespace[2pt]
+\textbf{OP-09} & El PROPONENTE debe declarar el impacto de la alternativa seleccionada sobre el cumplimiento de RN-15. \\
+\end{longtable}
+
+\subsection{A.4. Listado de Supuestos, Exclusiones y Restricciones}\label{a-4-listado-de-supuestos-exclusiones-y-restricciones}
+
+Este anexo consolida los supuestos declarados por Only Simple Solutions, las exclusiones del alcance y las restricciones que condicionan la propuesta. Los supuestos corresponden a decisiones propuestas por el equipo y deben mantenerse coherentes con el alcance, la arquitectura y la oferta económica.
+
+\subsubsection{A.4.1. Listado de Supuestos}\label{a-4-1-listado-de-supuestos}
+
+A continuación, se detalla el listado de supuestos propuestos para abordar las decisiones pendientes del numeral 16.1 del Caso 09. Ningún supuesto podrá reducir los requisitos obligatorios establecidos en las Bases.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1010}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4952}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4038}}@{}}
+\caption{Supuestos declarados del análisis.}\label{tab:a-4-1}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Supuesto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fundamento}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción del Supuesto}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fundamento}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{SUP-01} & Se propone calcular el disponible para vender desde una fuente autorizada, descontando reservas y un margen de seguridad diferenciado por categoría y punto. & El registro de inventario presenta un 12,4 \% de discrepancia, por lo que la existencia registrada no basta para comprometer unidades. \\
+\addlinespace[2pt]
+\textbf{SUP-02} & Se propone transformar progresivamente el sistema central y sus integraciones, manteniendo la continuidad operacional y preservando el ERP. & La operación depende de nueve plataformas y catorce interfaces cuyo mapa completo debe levantarse. \\
+\addlinespace[2pt]
+\textbf{SUP-03} & Se propone relacionar la identidad de una misma persona mediante un identificador común, conservando separados sus registros comerciales y financieros. & Compartir la identidad del cliente no autoriza mezclar los datos de ambos negocios. \\
+\addlinespace[2pt]
+\textbf{SUP-04} & Se propone permitir únicamente intercambios de datos expresamente autorizados entre retail y filial emisora, con finalidad, dirección, fundamento y controles documentados. & La separación entre negocios debe resolverse antes de construir una vista unificada del cliente. \\
+\addlinespace[2pt]
+\textbf{SUP-05} & Se propone conservar evidencia del consentimiento vinculada a las condiciones aceptadas, íntegra y recuperable durante todo el plazo del crédito más seis años. & Existen 1.240 repactaciones sin evidencia recuperable y una práctica actual de conservación insuficiente. \\
+\addlinespace[2pt]
+\textbf{SUP-06} & Se propone registrar la entrega de información precontractual antes de la aceptación, impidiendo que se omita para acelerar la venta. & La rapidez comercial no puede sustituir la entrega de información ni su acreditación. \\
+\addlinespace[2pt]
+\textbf{SUP-07} & Se propone utilizar reglas y límites pre aprobados para el crédito de contingencia durante la desconexión, manteniendo autonomía de al menos 24 horas continuas. & La continuidad de venta y cobro debe contemplar el crédito sin depender de una evaluación remota. \\
+\addlinespace[2pt]
+\textbf{SUP-08} & Se propone aplicar una política que respete el precio exhibido y, ante discrepancias acreditadas de una misma oferta, cobrar el menor precio aplicable y registrar la diferencia. & El desfase entre etiquetas y caja no debe trasladarse al cliente; su consecuencia económica debe dimensionarse. \\
+\addlinespace[2pt]
+\textbf{SUP-09} & Se propone evaluar la actualización manual verificable de etiquetas frente a la alternativa de etiquetas electrónicas. & La instalación de etiquetas electrónicas no es obligatoria, pero su evaluación, especificación y costeo sí lo son. \\
+\addlinespace[2pt]
+\textbf{SUP-10} & Se propone conservar un historial del precio publicado por canal, con vigencia y evidencia de actualización física, durante tres años. & Actualmente no puede acreditarse qué precio estaba publicado en un instante determinado. \\
+\addlinespace[2pt]
+\textbf{SUP-11} & Se propone condicionar el cobro a la confirmación de disponibilidad y establecer un procedimiento para atender pedidos ya cobrados cuya unidad no esté disponible. & Las cancelaciones del evento evidencian compromisos y cobros sobre existencia inexistente. \\
+\addlinespace[2pt]
+\textbf{SUP-12} & Se propone utilizar reservas temporales de existencia, con liberación automática al vencer o cancelarse la compra. Su duración y condiciones deberán quedar parametrizadas. & Una reserva excesiva limita ventas y una insuficiente facilita la sobreventa. \\
+\addlinespace[2pt]
+\textbf{SUP-13} & Se propone asignar el punto de despacho considerando costo total de servir, disponibilidad confiable, capacidad y efecto sobre la operación de tienda. & La asignación actual por distancia no contempla todos los efectos operacionales. \\
+\addlinespace[2pt]
+\textbf{SUP-14} & Se propone reconocer de manera trazable la participación de la tienda y del vendedor en ventas que se originan en otro canal. & El despacho digital compite con las metas y comisiones de la venta presencial. \\
+\addlinespace[2pt]
+\textbf{SUP-15} & Se propone recibir y registrar en tienda las devoluciones de marketplace, notificando al vendedor y separando la atención al cliente de la recuperación de costos. & Actualmente no existe una regla escrita y el vendedor conoce la devolución al revisar su liquidación. \\
+\addlinespace[2pt]
+\textbf{SUP-16} & Se propone evaluar a los vendedores de marketplace mediante indicadores, períodos, umbrales y consecuencias conocidos y trazables. & La experiencia del cliente depende de terceros, aunque la relación comercial se presenta bajo la marca Ancoa. \\
+\addlinespace[2pt]
+\textbf{SUP-17} & Se propone clasificar las diferencias de inventario en pérdida física, daño no registrado, error de recepción, devolución mal reintegrada y error de digitación. & La cifra agregada de merma mezcla causas que requieren respuestas diferentes. \\
+\addlinespace[2pt]
+\textbf{SUP-18} & Se propone priorizar los conteos cíclicos según categoría, riesgo y rotación, definiendo frecuencias y condiciones de recuento extraordinario sin cerrar las tiendas. & La confiabilidad del disponible depende de medir y mejorar la exactitud del registro. \\
+\addlinespace[2pt]
+\textbf{SUP-19} & Se propone gestionar el acceso de repositores externos mediante patrocinio del proveedor, identificación y permisos limitados. & No existe vínculo laboral que permita imponerles herramientas o capacitación. \\
+\addlinespace[2pt]
+\textbf{SUP-20} & Se propone seleccionar la alternativa para el CD de Concepción después de comparar incorporación al WMS, solución específica y continuidad controlada de su operación actual. & Su incorporación debe evaluarse y costearse; no constituye una decisión previamente tomada por el CLIENTE. \\
+\addlinespace[2pt]
+\textbf{SUP-21} & Se propone que Ancoa atienda directamente la garantía legal y gestione posteriormente la recuperación correspondiente frente al fabricante o vendedor externo. & La atención no puede condicionarse a derivar al consumidor. \\
+\addlinespace[2pt]
+\textbf{SUP-22} & Se propone establecer un procedimiento común para el retracto, registrando solicitud, devolución de fondos y tratamiento de la unidad recibida. & La resolución caso a caso y el reingreso manual generan inconsistencias. \\
+\addlinespace[2pt]
+\textbf{SUP-23} & Se propone degradar primero las funciones no críticas durante alta concurrencia, preservando la integridad de pedidos, cobros y evidencia. & La saturación debe gestionarse antes de aceptar operaciones que no puedan cumplirse. \\
+\addlinespace[2pt]
+\textbf{SUP-24} & Se propone asignar accesos individuales asociados a función y vigencia, incluso cuando se utilicen dispositivos compartidos. & La rotación y contratación temporal aumentan el riesgo de accesos no revocados. \\
+\addlinespace[2pt]
+\textbf{SUP-25} & Se propone migrar la cartera mediante convivencia controlada, conciliación y un procedimiento de retorno preparado antes del corte definitivo. & Los 620.000 clientes con saldo deben migrar sin pérdida de información, interrupción del servicio ni divergencia de saldos. \\
+\addlinespace[2pt]
+\textbf{SUP-26} & Para el escenario de planificación se considera enero de 2027 como inicio del proyecto, manteniendo los 56 meses contractuales. & Permite ubicar hitos y congelamientos en fechas calendario; la fecha debe confirmarse antes de cerrar la planificación. \\
+\addlinespace[2pt]
+\textbf{SUP-27} & Para el dimensionamiento territorial se consideran supuestas las ubicaciones de Illapel, Valparaíso, Talca y Concepcion, y la concentración de once tiendas en el entorno de Santiago. & Estas localizaciones se utilizan como escenario metodológico y no como información confirmada por el mandante. \\
+\end{longtable}
+
+\textbf{Fuente:} Elaboración propia a partir del numeral 16.1 de las Bases Técnicas del Caso 09. SUP-26 y SUP-27 corresponden a supuestos metodológicos adicionales del proponente.
+
+\subsubsection{A.4.2. Listado de Exclusiones}\label{a-4-2-listado-de-exclusiones}
+
+A continuación, se detalla el listado de actividades excluidas del alcance, indicando las obligaciones que permanecen bajo responsabilidad del proponente.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0865}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4631}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4503}}@{}}
+\caption{Exclusiones del alcance.}\label{tab:a-4-2}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción de la Exclusión}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Obligación que permanece dentro del alcance}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción de la Exclusión}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Obligación que permanece dentro del alcance}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{EX-01} & Se excluye el reemplazo del ERP y de la emisión de documentos tributarios. & Integrar la solución con el ERP, manteniéndolo como único emisor tributario. \\
+\addlinespace[2pt]
+\textbf{EX-02} & No se exige instalar etiquetas electrónicas en las 22 tiendas. & Evaluar, especificar y costear la alternativa frente a otras opciones. \\
+\addlinespace[2pt]
+\textbf{EX-03} & Se excluye la adquisición de dispositivos móviles para el personal de venta. & Especificar las cantidades y características necesarias, considerando dispositivos compartidos. \\
+\addlinespace[2pt]
+\textbf{EX-04} & Se excluyen el desarrollo de las plataformas de los vendedores de marketplace y la operación de su logística. & Integrarlas, medir su desempeño y resolver las devoluciones en tienda. \\
+\addlinespace[2pt]
+\textbf{EX-05} & Se excluye la gestión de remuneraciones. & Calcular la base de comisión cuando una venta se origina en un canal y se cumple en otro. \\
+\addlinespace[2pt]
+\textbf{EX-06} & Se excluye la operación de cobranza judicial. & Mantener el expediente trazable de las operaciones de cobranza y repactación. \\
+\addlinespace[2pt]
+\textbf{EX-07} & Se excluye la sustitución de las empresas de transporte de última milla. & Integrarlas y mantener la trazabilidad del pedido hasta su entrega. \\
+\addlinespace[2pt]
+\textbf{EX-08} & Se excluye la ejecución de canalizaciones, obras eléctricas y cableado. & Especificar y costear las obras necesarias; su ejecución corresponde al cliente. \\
+\addlinespace[2pt]
+\textbf{EX-09} & Se excluye resolver la relación contractual con los administradores de centros comerciales. & Diseñar la continuidad de venta y cobro ante la indisponibilidad de sus enlaces. \\
+\addlinespace[2pt]
+\textbf{EX-10} & Se excluye la adquisición por el proponente del hardware cuya compra corresponde al cliente. & Especificar exactamente los equipos, cantidades y características conforme a las Bases Transversales. \\
+\end{longtable}
+
+\subsubsection{A.4.3. Listado de Restricciones}\label{a-4-3-listado-de-restricciones}
+
+A continuación, se detalla el listado de restricciones del caso y de condiciones contractuales y técnicas que deben respetarse durante el diseño, la implementación y la operación.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1024}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.6976}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}@{}}
+\caption{Restricciones de la propuesta.}\label{tab:a-5-3}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción de la Restricción}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Origen}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{ID}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Descripción de la Restricción}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Origen}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{RES-01} & La separación de datos entre retail y filial emisora deberá quedar definida, implementada técnicamente, documentada y auditable. & Caso 09, capítulo 10, restricción 1. \\
+\addlinespace[2pt]
+\textbf{RES-02} & Ninguna modificación de condiciones del crédito podrá registrarse sin evidencia recuperable del consentimiento informado, conservada durante el plazo del crédito más seis años. & Caso 09, capítulo 10, restricción 2; numeral 15, RT-05.10. \\
+\addlinespace[2pt]
+\textbf{RES-03} & La información precontractual deberá entregarse antes de aceptar el crédito y su entrega deberá acreditarse de manera estructurada. & Caso 09, capítulo 10, restricción 3. \\
+\addlinespace[2pt]
+\textbf{RES-04} & El precio cobrado deberá respetar el precio exhibido y la compañía deberá acreditar el precio publicado en cada canal. & Caso 09, capítulo 10, restricción 4. \\
+\addlinespace[2pt]
+\textbf{RES-05} & Las tiendas deberán continuar vendiendo y cobrando ante la pérdida del enlace externo, con autonomía local y degradada durante \textbf{≥ 24 horas continuas}. & Caso 09, capítulo 10, restricción 5; Bases Transversales, RT-03.10. \\
+\addlinespace[2pt]
+\textbf{RES-06} & El ERP deberá mantenerse como único emisor de documentos tributarios. & Caso 09, capítulo 10, restricción 6. \\
+\addlinespace[2pt]
+\textbf{RES-07} & La garantía legal deberá atenderse directamente en la compañía, sin derivar al consumidor como condición de atención. & Caso 09, capítulo 10, restricción 7. \\
+\addlinespace[2pt]
+\textbf{RES-08} & La migración de los 620.000 clientes con saldo no admitirá pérdida de información, interrupción del servicio ni divergencia de saldos. & Caso 09, capítulo 10, restricción 8. \\
+\addlinespace[2pt]
+\textbf{RES-09} & Las intervenciones deberán respetar las cinco ventanas de congelamiento comercial definidas por el caso. & Caso 09, capítulo 10, restricción 9. \\
+\addlinespace[2pt]
+\textbf{RES-10} & La planificación deberá absorber la fecha del evento anual, anunciada con aproximadamente seis semanas de anticipación, sin desplazar hitos contractuales. & Caso 09, capítulo 10, restricción 10. \\
+\addlinespace[2pt]
+\textbf{RES-11} & La solución no podrá suponer un dispositivo por vendedor; deberá considerar 640 terminales compartidas para 3.820 personas. & Caso 09, capítulo 10, restricción 11. \\
+\addlinespace[2pt]
+\textbf{RES-12} & No podrán imponerse herramientas o capacitación a los repositores externos por la vía laboral. & Caso 09, capítulo 10, restricción 12. \\
+\addlinespace[2pt]
+\textbf{RES-13} & La capacitación y gestión de accesos deberán considerar una rotación anual del 62 \% y 1.900 incorporaciones de temporada durante congelamientos. & Caso 09, capítulo 10, restricción 13. \\
+\addlinespace[2pt]
+\textbf{RES-14} & La incorporación del CD de Concepción a un sistema de gestión de almacenes deberá evaluarse y costearse; no podrá darse por supuesta. & Caso 09, capítulo 10, restricción 14. \\
+\addlinespace[2pt]
+\textbf{RES-15} & El levantamiento de las catorce integraciones será parte del trabajo del proponente y no una entrega previa que deba resolver el CLIENTE. & Caso 09, capítulo 10, restricción 15. \\
+\addlinespace[2pt]
+\textbf{RES-16} & El despliegue deberá ser híbrido, con carga principal en nube pública y componentes on-premise. & Bases Administrativas, artículo 16. \\
+\addlinespace[2pt]
+\textbf{RES-17} & El contrato tendrá una duración obligatoria de 56 meses: Etapa 1 en meses 1–15 y producción en el mes 16; Etapa 2 en meses 13–20 y producción en el mes 21; operación en meses 21–56. & Bases Administrativas, artículo 17. \\
+\addlinespace[2pt]
+\textbf{RES-18} & La propuesta deberá incorporar cinco innovaciones obligatorias, una por tipo, trazables con arquitectura, EDT y flujo de caja. & Bases Administrativas, capítulo 5. \\
+\addlinespace[2pt]
+\textbf{RES-19} & La transición financiera deberá coordinarse con el fin de soporte de la plataforma y el último hito de remediación, ambos en 2029. & Caso 09, numerales 13.1–13.2. \\
+\addlinespace[2pt]
+\textbf{RES-20} & La solución deberá cumplir, entre otros umbrales, evaluación crediticia \textbf{≤8 s}, propagación de precios a cajas y canal digital \textbf{≤5 min} y disponibilidad publicada actualizada \textbf{≤30 s} después de una venta. & Caso 09, numeral 15, RT-09.01 y RT-05.29. \\
+\end{longtable}
+
+\ossFinalPage
+
+\end{document}
