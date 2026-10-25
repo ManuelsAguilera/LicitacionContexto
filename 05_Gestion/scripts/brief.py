@@ -1,25 +1,42 @@
 #!/usr/bin/env python3
-"""Imprime el contexto compacto registrado para una parte, sección o adjunto."""
+"""Contexto de la fuente vigente: T7-NN, sección, T-N o ADJ-NNN."""
 from __future__ import annotations
-import argparse, json, re
-from pathlib import Path
-from artefactos import ROOT, parse_frontmatter
+import argparse
+import re
+from artefactos import ROOT
+from contexto_fuentes import resolve, sha256, review
+
+
+def render(root, artifact_id, max_words=1800):
+    source = resolve(root, artifact_id)
+    parts = [f"# {artifact_id} · {source.meta.get('titulo', source.path.stem)}",
+             f"Fuente: {source.path.relative_to(root).as_posix()}",
+             f"SHA-256: {sha256(source.path)}",
+             f"Estado declarado: {source.meta.get('estado', 'sin estado declarado')}",
+             f"Revisión humana: {review(source.meta)}",
+             "Referencia de consistencia: SD-04 (arquitectura) y SD-07 (planificación), subordinados a las Bases y al Comunicado 10.",
+             "Decisiones y pendientes activos: 80_Artefactos/contexto-activo/indice.md"]
+    if source.warning: parts += [f"Aviso: {source.warning}"]
+    parts += ["", "## Contenido de la fuente vigente"]
+    content = source.text.strip()
+    tokens = list(re.finditer(r"\S+", content))
+    if len(tokens) > max_words:
+        content = content[:tokens[max_words - 1].end()] + "\n[Contenido truncado por límite de palabras]"
+    return "\n".join(parts + [content]) + "\n"
+
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__); ap.add_argument("id"); ap.add_argument("--max-palabras",type=int,default=1800); a=ap.parse_args()
-    registry_path=ROOT/"05_Gestion"/"adjuntos.json"; registry=json.loads(registry_path.read_text(encoding="utf-8")) if registry_path.exists() else []
-    target=None
-    for p in (ROOT/"02_Propuesta").rglob("*.md"):
-        fm,_=parse_frontmatter(p.read_text(encoding="utf-8-sig"))
-        if fm.get("id")==a.id: target=(p,fm); break
-    if target is None:
-        print(f"No se encontró artefacto Markdown con ID {a.id}"); return 2
-    p,fm=target; _,body=parse_frontmatter(p.read_text(encoding="utf-8-sig")); parts=[]
-    parts += [f"# {fm.get('id')} · {fm.get('titulo')}",f"Estado: {fm.get('estado')}",f"Fuente: {p.relative_to(ROOT).as_posix()}","", "## Bases citadas", ", ".join(fm.get("bases",[])) or "Sin citas declaradas.","", "## Requisitos", ", ".join(fm.get("requisitos",[])) or "Sin mapeo explícito.","", "## Dependencias", ", ".join(fm.get("depende_de",[])) or "Ninguna declarada.","", "## Jira", ", ".join(fm.get("jira",[])) or "Sin asociación.","", "## Cifras", ", ".join(fm.get("cifras",[])) or "Sin claves declaradas.","", "## Contenido",body.strip()]
-    for aid in fm.get("adjuntos",[]) if isinstance(fm.get("adjuntos"),list) else []:
-        item=next((x for x in registry if x["id"]==aid),None)
-        if item: parts += ["",f"Adjunto {aid}: {item['nombre']} — {'presente' if item['existe'] else 'pendiente'}"]
-    result="\n".join(parts); tokens=re.findall(r"\S+",result)
-    if len(tokens)>a.max_palabras: result=" ".join(tokens[:a.max_palabras])+"\n[Contexto truncado por límite]"
-    print(result); return 0
-if __name__=="__main__": raise SystemExit(main())
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("id", help="T7-04, T7-04-4.1, T7-04-REF, T-11 o ADJ-001")
+    ap.add_argument("--max-palabras", type=int, default=1800)
+    args = ap.parse_args()
+    if args.max_palabras < 1: ap.error("--max-palabras debe ser positivo")
+    try:
+        print(render(ROOT, args.id, args.max_palabras), end="")
+    except ValueError as error:
+        print(error)
+        return 2
+    return 0
+
+
+if __name__ == "__main__": raise SystemExit(main())

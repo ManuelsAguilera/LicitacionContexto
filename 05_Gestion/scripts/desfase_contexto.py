@@ -19,7 +19,7 @@ PATRONES = [
     (r"\b(R-0[1-9]|F-0[1-3])\b", "código de servicio antiguo (usar R:M-01, F:C-01, etc.)"),
     (r"capacidad de absorci", "criterio descartado (capacidad de absorción)"),
     (r"se consultará al mandante|período de consultas|periodo de consultas", "el período de consultas ya cerró (validar al inicio del proyecto)"),
-    (r"\b226 RF\b|\b76 RNF\b|\b311\b", "recuento antiguo del catálogo (vigente 308: 227 RF, 72 RNF, 9 OP)"),
+    (r"\b(?:308|311)\b|\b227 RF\b|\b72 RNF\b", "recuento de una versión por conciliar: v3.0 sigue oficial; v3.1 no se promueve automáticamente"),
     (r"cinco años de historial|historial de precios de 5 años|5 años de historial", "historial de precios vigente: tres años"),
     (r"\bplataforma común\b", "nombre antiguo (usar base tecnológica)"),
 ]
