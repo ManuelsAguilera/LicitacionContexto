@@ -5,7 +5,7 @@ Documento de contexto, no entregable. Sirve para responder preguntas de integrac
 ## 1. Fuente de verdad del sd-07
 
 - **Rama remota `origin/codex/subdoc7-formularios-entrega`**, commit `22a251a` (12-10-2026, 02:08, alexalfaro-ctrl). Por decisión del usuario, esa rama manda para el sd-07.
-- **Qué se tomó de la rama:** el texto del sd-07 (idéntico al `.tex` ya importado, salvo las rutas de las cinco figuras del cronograma y tres líneas de preámbulo que la plantilla rechaza), las 16 figuras de la EDT, y como contexto los formularios T-14, T-15 y T-18, el `sd-07.md` y el README, en `80_Artefactos/entrega-sd07-2026-10-12/`.
+- **Qué se tomó de la rama:** el texto del sd-07 (idéntico al `.tex` ya importado, salvo las rutas de las cinco figuras del cronograma y tres líneas de preámbulo que la plantilla rechaza), las 16 figuras de la EDT, y como contexto los formularios T-14, T-15 y T-18, el `sd-07.md` y el README, en `80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/`.
 - **Qué no se tomó:** copias de `oss.sty` y `recursos/`, los `.drawio` fuente, las cinco imágenes duplicadas y el `sd-07.tex` duplicado de esa carpeta.
 - **Dónde vive en el repositorio:** `02_Propuesta/latex_final/sd-07/OSS-Subdocumento7.tex` (importado con `prism-importar --forzar`, respaldo en `latex_final/respaldo/sd-07.20261012T035738Z.tex`), figuras en `latex_final/figuras/` y `latex_final/figuras/sd07-figuras/`. Compila a 31 páginas (verificado el 2026-10-12).
 - **Sin revisión humana.** El README de la rama no acredita aprobación técnica ni cierre de pendientes.

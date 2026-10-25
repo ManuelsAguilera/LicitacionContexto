@@ -13,11 +13,14 @@ cifras: []
 secciones:
   - T7-10-10.1
   - T7-10-10.2
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 10 — Servicios de operación y niveles de servicio
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-10.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente LaTeX pendiente. Este Markdown conserva el borrador y la estructura para su futura redacción, consistente con SD-04 y SD-07.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-10/OnlySimpleSolutions-Subdocumento10.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -56,7 +59,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | 10.1 | Servicios de operación | Modelo de soporte basado en ITIL 4 (niveles, canales, horarios, escalamiento); dimensionamiento de la mesa de servicio con fundamento cuantitativo (teoría de colas, Erlang C u otro); libros de operación, guías de resolución, gestión del conocimiento y automatización progresiva; observabilidad de extremo a extremo, correlación de eventos y detección proactiva. | Sin redactar |
 | 10.2 | Niveles de servicio | Indicadores, objetivos y acuerdos de nivel de servicio coherentes con el Art. 78.º; acuerdos de nivel operacional y contratos de apoyo internos coherentes con los compromisos externos. | Sin redactar |
 
-La redacción vive en `02_Propuesta/latex_final/sd-10.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-10/OnlySimpleSolutions-Subdocumento10.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

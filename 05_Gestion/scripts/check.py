@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida metadatos, trazabilidad y referencias locales de los artefactos."""
+"""Valida metadatos, trazabilidad y referencias Markdown; no certifica contenido LaTeX."""
 from __future__ import annotations
 import argparse, json, re, sys
 from pathlib import Path
@@ -96,6 +96,7 @@ def main():
                     warnings.append(f"{p.relative_to(ROOT)}:{line_no}: cifra no localizada en datos.yml (revisar): {number}")
     report=[f"Artefactos revisados: {len(files)}",f"Errores: {len(errors)}",f"Avisos: {len(warnings)}",f"Requisitos catálogo: {len(catalog)}; cubiertos por referencia/texto: {len(catalog & covered)}; sin cobertura: {len(missing)}" if not a.parte else f"Requisitos catálogo: {len(catalog)}; cobertura global omitida (validación parcial: {', '.join(a.parte)})"]
     report += ["", "ERRORES", *(["- "+x for x in errors] or ["- ninguno"]), "", "AVISOS", *(["- "+x for x in warnings] or ["- ninguno"]), "", "REQUISITOS SIN COBERTURA", *(["- "+x for x in missing] or ["- ninguno"])]
+    report.insert(0, "Alcance: metadatos y trazabilidad Markdown; no acredita consistencia, revisión humana ni cobertura del contenido LaTeX.")
     output="\n".join(report)+"\n"
     if a.salida and not a.dry_run: a.salida.write_text(output,encoding="utf-8")
     print(output,end="")

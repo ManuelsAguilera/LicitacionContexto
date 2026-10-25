@@ -33,7 +33,7 @@ Este proyecto produce la propuesta técnico-económica de una licitación públi
 - **5 innovaciones obligatorias** (Cap. 5), una por tipo, trazables con arquitectura, EDT y flujo de caja.
 - **Línea roja del caso**: la compañía es tienda + emisor de crédito fiscalizado (dos regímenes). No tratar como un solo negocio ni mezclar sus datos.
 - **TrabajosAnteriores_DistriProducto/** (en `90_Referencia/`) proviene de un caso distinto (logística WMS/TMS/YMS). Usar SOLO como referencia de formato; no relacionar su contenido.
-- **Formato de los artefactos**: los subdocumentos T-7 ya importados tienen como fuente `02_Propuesta/latex_final/sd-NN.tex`; los `.md` de `02_Propuesta/` quedan solo como contexto. La exportación sigue la regla de `AGENTS.md` ("Regla de exportación").
+- **Formato de los artefactos**: los subdocumentos T-7 ya importados tienen como fuente `02_Propuesta/latex_final/sd-NN/OnlySimpleSolutions-SubdocumentoN.tex`; los `.md` de `02_Propuesta/` quedan solo como contexto. La exportación sigue la regla de `AGENTS.md` ("Regla de exportación").
 - **Citas**: usar `citas-proyecto` y el OCR paginado del Caso 09; confirmar cada folio en el PDF visible.
 - **Tablas incompletas**: la tabla de ponderación del T-21 en `00_Bases/` no se puede reconstruir. No hardcodear porcentajes; dejarlos en blanco con nota de pendiente.
 - **Idioma**: todo en español.

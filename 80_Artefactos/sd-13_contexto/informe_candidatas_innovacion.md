@@ -19,7 +19,7 @@ Documento de contexto, no es entregable. Fecha: 2026-10-08. Mejora el informe de
 4. Se declara lo que cada candidata agrega sobre lo obligatorio, con los requisitos que ya lo cubren. Las candidatas 1 y 2 chocan con RF-131 a RF-139 y RF-152, y con RT-05.30 (analítica predictiva, deseable).
 5. Se advierte que las candidatas 1 y 2 comparten servicio y datos, y que la candidata 4 puede quedar en «servicio estándar» si no se redefine.
 6. Se agrega la trazabilidad por candidata (sección 5) y la lista de pendientes ordenada por dependencia (sección 6).
-7. El borrador anterior `80_Artefactos/seccion3_innovaciones.md` (septiembre) queda superado. Propone etiquetas electrónicas y otras ideas que contradicen decisiones posteriores.
+7. El borrador anterior `80_Artefactos/archivo-contexto/2026-10-25/seccion3_innovaciones.md` (septiembre) queda superado. Propone etiquetas electrónicas y otras ideas que contradicen decisiones posteriores.
 
 ## 3. Cartera candidata
 

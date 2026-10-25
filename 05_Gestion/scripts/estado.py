@@ -1,33 +1,40 @@
 #!/usr/bin/env python3
-"""Genera el tablero Markdown de estado y pendientes de cada subdocumento."""
+"""Tablero de disponibilidad, estado declarado, compilación y revisión humana."""
 from __future__ import annotations
-import argparse, re
+import argparse
 from pathlib import Path
-from artefactos import ROOT, parse_frontmatter, words
+from artefactos import ROOT
+from contexto_fuentes import main_tex, master, metadata, compilation, review
+
+
+def render(root):
+    lines = ["# Estado de artefactos", "",
+             "Disponibilidad y compilación no acreditan consistencia ni revisión humana. Referencias actuales: SD-04 y SD-07; resto por conciliar. Los maestros conservan el estado declarado.", "",
+             "| Parte / artefacto | Fuente disponible | Estado declarado | Compilación disponible | Revisión humana |",
+             "|---|---|---|---|---|"]
+    for number in range(1, 15):
+        part = f"T7-{number:02d}"
+        tex = main_tex(root, part)
+        m = master(root, part)
+        fm = metadata(m)
+        availability = (f"[LaTeX](../{tex.relative_to(root).as_posix()})" if tex.is_file() else
+                        f"[Markdown; pendiente LaTeX](../{m.relative_to(root).as_posix()})" if m else "sin fuente")
+        lines.append(f"| `{part}` | {availability} | {fm.get('estado', 'sin estado declarado')} | {compilation(root, part) if tex.is_file() else 'no aplica: sin LaTeX'} | {review(fm)} |")
+    for p in sorted((root / "02_Propuesta/latex_final/Formularios").glob("OnlySimpleSolutions-Formulario-T-*.tex")):
+        artifact = p.stem.replace("OnlySimpleSolutions-Formulario-", "")
+        lines.append(f"| `{artifact}` | [LaTeX](../{p.relative_to(root).as_posix()}) | sin estado declarado | CLI del exportador sin ruta de formularios | sin revisión humana registrada |")
+    return "\n".join(lines) + "\n"
+
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--salida",type=Path,default=ROOT/"05_Gestion"/"ESTADO.md"); a=ap.parse_args()
-    lines=["# Estado de artefactos", "", "Generado desde los maestros y sus archivos de sección. `revisado` y `congelado` requieren decisión humana.", "", "| Parte / artefacto | Estado | Palabras | Requisitos | Adjuntos pendientes |", "|---|---|---:|---:|---:|"]
-    prop=ROOT/"02_Propuesta"
-    import json
-    reg=ROOT/"05_Gestion"/"adjuntos.json"
-    records={x["id"]:x for x in json.loads(reg.read_text(encoding="utf-8"))} if reg.exists() else {}
-    for folder in sorted(prop.glob("sd-[0-9][0-9]_*")):
-        master=next(folder.glob("sd-*.md"),None)
-        if not master: continue
-        raw=master.read_text(encoding="utf-8-sig"); fm,body=parse_frontmatter(raw); part=f"T7-{int(folder.name[3:5]):02d}"
-        rows=re.findall(r"\|\s*(\d+)\s*\|\s*([^|]+)\|\s*`?(sd-\d+_s\d+_[^`|]+\.md)`?",body)
-        missing=[row for row in rows if not (folder/row[2].strip()).exists()]
-        pending=sum(1 for aid in fm.get("adjuntos",[]) if aid in records and not (ROOT/records[aid]["ruta"]).exists())
-        lines.append(f"| `{part}` | {'incompleta: '+str(len(missing))+'/'+str(len(rows))+' secciones ausentes' if missing else fm.get('estado','sin estado')} | {words(body)} | {len(fm.get('requisitos',[]))} | {pending} |")
-        for number,title,filename in rows:
-            filename=filename.strip(); p=folder/filename; sid=f"{part}-{int(part[3:])}.{int(number)}"
-            if p.exists():
-                text=p.read_text(encoding="utf-8-sig"); sfm,content=parse_frontmatter(text)
-                req_count=len(sfm.get("requisitos",[])) if isinstance(sfm.get("requisitos"),list) else 0
-                lines.append(f"| `{sid}` · {title.strip()} | {sfm.get('estado','sin metadatos')} | {words(content)} | {req_count} | 0 |")
-            else: lines.append(f"| `{sid}` · {title.strip()} | vacio (archivo ausente) | 0 | 0 | 0 |")
-    output="\n".join(lines)+"\n"
-    if not a.dry_run: a.salida.write_text(output,encoding="utf-8")
-    print(output,end=""); return 0
-if __name__=="__main__": raise SystemExit(main())
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--salida", type=Path, default=ROOT / "05_Gestion/ESTADO.md")
+    args = ap.parse_args()
+    output = render(ROOT)
+    if not args.dry_run: args.salida.write_text(output, encoding="utf-8")
+    print(output, end="")
+    return 0
+
+
+if __name__ == "__main__": raise SystemExit(main())

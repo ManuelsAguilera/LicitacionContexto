@@ -13,11 +13,14 @@ cifras: []
 secciones:
   - T7-11-11.1
   - T7-11-11.2
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 11 — Planes en operación
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-11.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente LaTeX pendiente. Este Markdown conserva el borrador y la estructura para su futura redacción, consistente con SD-04 y SD-07.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-11/OnlySimpleSolutions-Subdocumento11.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -56,7 +59,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | 11.1 | Plan Mantención Preventiva / Evolutiva | Mantención preventiva, correctiva y evolutiva con criterios de priorización y presupuesto de capacidad; actualización de dependencias, deuda técnica y ventana de obsolescencia. | Sin redactar |
 | 11.2 | Plan Servicios de Operación | Operación conforme a ingeniería de confiabilidad (presupuesto de error, reducción del trabajo manual, análisis retrospectivo sin culpa); gestión de la capacidad y FinOps; pruebas periódicas de recuperación ante desastres y de resiliencia. | Sin redactar |
 
-La redacción vive en `02_Propuesta/latex_final/sd-11.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-11/OnlySimpleSolutions-Subdocumento11.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

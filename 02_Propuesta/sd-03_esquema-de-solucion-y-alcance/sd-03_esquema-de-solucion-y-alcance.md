@@ -26,11 +26,14 @@ secciones:
   - T7-03-3.2
   - T7-03-3.3
   - T7-03-3.4
-actualizado: 2026-10-08
+actualizado: 2026-10-25
 ---
 # Subdocumento 3 — Esquema de solución y alcance
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-03.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento3.tex`](../latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -41,7 +44,7 @@ actualizado: 2026-10-08
 | Carpeta | `02_Propuesta/sd-03_esquema-de-solucion-y-alcance/` |
 | Capítulo en el informe | Capítulo III |
 | Formularios asociados | T-12 |
-| Estado | Desarrollado en el Informe 1 |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -68,12 +71,12 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | :--- | :--- | :--- | :--- |
 | 3.1 | Resumen Ejecutivo de la Solución | Todo el alcance del proyecto: implementación (Etapa 1 y Etapa 2), implantación (marchas blancas y pasos a producción) y operación (36 meses). | Redactada (versión compacta en `sd-03.tex`, 2026-10-07; faltan las dos figuras marcadas y la revisión humana) |
 | 3.2 | Alcance | Alcance de la solución descompuesto en componentes manejables: alcance de la Etapa 1 y de la Etapa 2 con criterios de asignación; exclusiones, supuestos y restricciones; catálogo de requerimientos funcionales y no funcionales priorizado y trazable (resumen aquí, trazabilidad completa en el Formulario T-12); criterios de aceptación. | En redacción (2026-10-08). 3.2.1 a 3.2.4 reescritas y evaluadas con los agentes; 3.2.5 reescrita y evaluada en dos rondas con los agentes (2026-10-08), con el Anexo D. Faltan las figuras, los Anexos A a D como documento aparte y la revisión humana. Pendientes del catálogo: ver `80_Artefactos/sd-03_contexto/conciliacion_catalogo.md` (RN-07, RNF-05, SUP-08 y SUP-09, ubicación de RF-180 y RF-181, pocos RF en abastecimiento, comisiones y cartera, trasladar las decisiones al Excel) |
-| 3.3 | Esquema de solución | Uno o varios esquemas del modelo conceptual de la solución. Cada diagrama se explica en el texto, por partes si es complejo (sección 6 del Comunicado 10). | Sin redactar |
-| 3.4 | Explicación de la Solución | Descripción de la solución según la operación o el negocio y su coherencia con el problema del Capítulo 2. Incluye la estrategia para obtener el apoyo de los grupos de interés clave identificados en 2.4. Mapea al 100 % con la Arquitectura Lógica (4.1): mismos nombres de componentes. | Sin redactar |
+| 3.3 | Esquema de solución | Uno o varios esquemas del modelo conceptual de la solución. Cada diagrama se explica en el texto, por partes si es complejo (sección 6 del Comunicado 10). | Borrador LaTeX; consistencia pendiente |
+| 3.4 | Explicación de la Solución | Descripción de la solución según la operación o el negocio y su coherencia con el problema del Capítulo 2. Incluye la estrategia para obtener el apoyo de los grupos de interés clave identificados en 2.4. Mapea al 100 % con la Arquitectura Lógica (4.1): mismos nombres de componentes. | Borrador LaTeX; consistencia pendiente |
 
 Anexos: Formulario T-12.
 
-La redacción vive en `02_Propuesta/latex_final/sd-03.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 

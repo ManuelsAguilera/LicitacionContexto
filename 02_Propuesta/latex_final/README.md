@@ -1,6 +1,6 @@
 # Fuentes LaTeX de edición final
 
-Todos los subdocumentos T-7 deben tener una fuente `.tex` editable y su PDF en el formato corporativo. El exportador `05_Gestion/scripts/exportar_latex.py` importa Markdown **una vez** para crear `sd-NN.tex`. Desde entonces, el `.tex` es la única fuente del subdocumento y del PDF; los `.md` de `02_Propuesta/` quedan solo como contexto. El importador nunca sobrescribe un `.tex` existente salvo con `--reemplazar`, que primero lo respalda en `respaldo/`.
+Todos los subdocumentos T-7 deben tener una fuente `.tex` editable y su PDF en el formato corporativo. El exportador `05_Gestion/scripts/exportar_latex.py` importa Markdown **una vez** para crear `sd-NN/OnlySimpleSolutions-SubdocumentoN.tex`. Desde entonces, el `.tex` es la única fuente del subdocumento y del PDF; los `.md` de `02_Propuesta/` quedan solo como contexto. El importador nunca sobrescribe un `.tex` existente salvo con `--reemplazar`, que primero lo respalda en `respaldo/`.
 
 Comandos desde la raíz del repositorio:
 
@@ -50,10 +50,10 @@ El formato (este directorio) y el contenido se rigen por documentos separados: `
 
 ## Plantilla
 
-- `plantilla/oss-pandoc.latex`: preámbulo fijo. Su primera línea `% oss-plantilla: <versión>` se copia a cada `sd-NN.tex`. `verificar` exige que el preámbulo de cada `.tex` sea idéntico. Para cambiar el formato, editar la plantilla u `oss.sty`, subir la versión, actualizar `05_Gestion/tests/golden/preambulo.tex` y regenerar los `.tex` con `--reemplazar` (con respaldo).
+- `plantilla/oss-pandoc.latex`: preámbulo fijo. Su primera línea `% oss-plantilla: <versión>` se copia a cada `sd-NN/OnlySimpleSolutions-SubdocumentoN.tex`. `verificar` exige que el preámbulo de cada `.tex` sea idéntico. Para cambiar el formato, editar la plantilla u `oss.sty`, subir la versión, actualizar `05_Gestion/tests/golden/preambulo.tex` y regenerar los `.tex` con `--reemplazar` (con respaldo).
 - `plantilla/oss.lua`: filtro de importación. Normaliza los niveles de título (sin saltos), convierte `<br>` en salto de línea, descarta el resto del HTML y los comentarios, quita el resaltado de código y rechaza Mermaid.
 - `oss.sty`: formato visual. En cada página de contenido incorpora la marca de agua tenue y el logo azul en el pie. `\ossCover{título}{subdocumento}`, que el importador añade automáticamente, genera la portada geométrica con fotografía, tarjetas, bordes y sombras. `\ossFinalPage`, también añadido por el importador, crea la página final azul con el logo blanco. Los recursos están en `recursos/`.
 
 Las figuras son imágenes PDF, PNG o JPEG dentro de `figuras/` y se enlazan desde el `.tex` con `\includegraphics`. `respaldo/` guarda las versiones previas de los `.tex` regenerados.
 
-Para un documento individual también se puede abrir `sd-NN.tex` en un editor LaTeX y compilarlo allí, pero el PDF oficial sale de `exportar_latex.py compilar`.
+Para un documento individual también se puede abrir `sd-NN/OnlySimpleSolutions-SubdocumentoN.tex` en un editor LaTeX y compilarlo allí, pero el PDF oficial sale de `exportar_latex.py compilar`.

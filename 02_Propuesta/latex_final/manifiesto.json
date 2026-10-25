@@ -20,8 +20,9 @@
       ],
       "importado_utc": "2026-10-05T19:42:15.071305+00:00",
       "prism": {
-        "empaquetado_sha256": "29dfc31e534633555bfe3496f68d6d7fbbd3ab6c1fbcd0e251646d07182be653",
-        "empaquetado_utc": "2026-10-05T20:58:58.714406+00:00"
+        "empaquetado_sha256": "3cea03bfa922d9cb259f93a0fb6415fa818be9f16a19c1a72a6783efb84327ce",
+        "empaquetado_utc": "2026-10-25T04:58:55.060298+00:00",
+        "importado_utc": "2026-10-25T04:59:25.878477+00:00"
       }
     },
     "T7-02": {
@@ -41,8 +42,9 @@
       ],
       "importado_utc": "2026-10-05T19:42:15.393428+00:00",
       "prism": {
-        "empaquetado_sha256": "d8dd3f2e2007552504c4f1b9a31907acb488c35dcd09e87690758822ec654116",
-        "empaquetado_utc": "2026-10-05T20:58:58.877368+00:00"
+        "empaquetado_sha256": "d81f0fc275d6ee031fba67465609dd674c20924caf739c94da61928e9202cf94",
+        "empaquetado_utc": "2026-10-25T04:58:57.318517+00:00",
+        "importado_utc": "2026-10-25T04:59:26.705972+00:00"
       }
     },
     "T7-03": {
@@ -61,15 +63,65 @@
       ],
       "importado_utc": "2026-10-05T19:42:15.814290+00:00",
       "prism": {
-        "empaquetado_sha256": "275b6584172d650505bcb82ae852ad7357994ee31b2bb37b837ba51c064117d8",
-        "empaquetado_utc": "2026-10-05T22:41:00.497557+00:00"
+        "empaquetado_sha256": "e2690a783308750246e8f5ea2fea368b0e60c77c81c18de1540890e25f1ed3a7",
+        "empaquetado_utc": "2026-10-25T04:58:58.913367+00:00",
+        "importado_utc": "2026-10-25T04:59:27.667814+00:00"
       }
     },
     "T7-07": {
       "tex": "OSS-Subdocumento7.tex",
       "prism": {
-        "empaquetado_sha256": "974f4b4240be1b7cd4845b8488438ec2dbc2272f5e55bb4986a053fa59f534cf",
-        "importado_utc": "2026-10-12T03:57:38.095158+00:00"
+        "empaquetado_sha256": "52e6d0d8bd150d837904fc57ef245a5c4dffaf8466355d9c11821e1079225ce9",
+        "importado_utc": "2026-10-25T04:59:32.593440+00:00",
+        "empaquetado_utc": "2026-10-25T04:59:06.787509+00:00"
+      }
+    },
+    "T7-04": {
+      "tex": "OnlySimpleSolutions-Subdocumento4.tex",
+      "prism": {
+        "empaquetado_sha256": "13abeee05a7c70eab58c4330987e890479b94106cb2b6e72ec9f17e9235390a4",
+        "empaquetado_utc": "2026-10-25T04:59:00.720108+00:00",
+        "importado_utc": "2026-10-25T04:59:29.432261+00:00"
+      }
+    },
+    "T7-05": {
+      "tex": "OnlySimpleSolutions-Subdocumento5.tex",
+      "prism": {
+        "empaquetado_sha256": "107f6b8228fc4af8e704ef535d06259c5349820f9f59b79324677ca381df2bce",
+        "empaquetado_utc": "2026-10-25T04:59:03.195338+00:00",
+        "importado_utc": "2026-10-25T04:59:30.630212+00:00"
+      }
+    },
+    "T7-06": {
+      "tex": "OnlySimpleSolutions-Subdocumento6.tex",
+      "prism": {
+        "empaquetado_sha256": "28009b571cc72d57292400bc2d7b75491b14d96291b3b8e83601790ae61efed3",
+        "empaquetado_utc": "2026-10-25T04:59:04.724318+00:00",
+        "importado_utc": "2026-10-25T04:59:31.486144+00:00"
+      }
+    },
+    "T7-08": {
+      "tex": "OnlySimpleSolutions-Subdocumento8.tex",
+      "prism": {
+        "empaquetado_sha256": "abbc1318982ad2e4b1ea28932f9c62917a913419a0230150481201e9cce5747c",
+        "empaquetado_utc": "2026-10-25T04:59:08.139981+00:00",
+        "importado_utc": "2026-10-25T04:59:33.998372+00:00"
+      }
+    },
+    "T7-09": {
+      "tex": "OnlySimpleSolutions-Subdocumento9.tex",
+      "prism": {
+        "empaquetado_sha256": "4ad59ccd0e44e089afac49984c9fcd2b987d704807850eca7509f6e58418e922",
+        "empaquetado_utc": "2026-10-25T04:59:09.982825+00:00",
+        "importado_utc": "2026-10-25T04:59:34.798049+00:00"
+      }
+    },
+    "T7-13": {
+      "tex": "OnlySimpleSolutions-Subdocumento13.tex",
+      "prism": {
+        "empaquetado_sha256": "d3cbb5b0d089f1eb170fce49775c2c28973492ba0b1193921b15d460341c016a",
+        "empaquetado_utc": "2026-10-25T04:59:11.502364+00:00",
+        "importado_utc": "2026-10-25T04:59:35.732082+00:00"
       }
     }
   }

@@ -1,5 +1,8 @@
 # Contexto de trabajo del sd-07
 
+> Contexto seleccionado: [índice activo](../contexto-activo/indice.md) y [matriz de ajustes](../contexto-activo/matriz-ajustes.md). Este directorio contiene decisiones, pendientes y antecedentes; su fecha no acredita vigencia. Cotejar cada nota con SD-04 (arquitectura), SD-07 (planificación) y la fuente LaTeX afectada. No cargar el directorio completo.
+
+
 Material de apoyo para el sd-07 (Plan de trabajo, EDT, cronograma e implantación). No es entregable. Manda siempre `02_Propuesta/latex_final/sd-07.tex` cuando exista.
 
 | Archivo | Para qué sirve |

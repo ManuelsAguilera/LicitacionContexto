@@ -6,6 +6,9 @@ actualizado: 2026-10-11
 ---
 # Matriz interna de cobertura, verificación y aceptación de SD09
 
+> Contexto seleccionado: [índice activo](../contexto-activo/indice.md) y [matriz de ajustes](../contexto-activo/matriz-ajustes.md). Este directorio contiene decisiones, pendientes y antecedentes; su fecha no acredita vigencia. Cotejar cada nota con SD-04 (arquitectura), SD-07 (planificación) y la fuente LaTeX afectada. No cargar el directorio completo.
+
+
 La matriz prepara el Plan de Calidad y el Plan de Pruebas. Es un instrumento de análisis para el equipo; no constituye aprobación, certificación ni evidencia de pruebas ejecutadas. El alcance de esta primera versión son los 28 resultados del Anexo D y las obligaciones transversales pertinentes identificadas en las fichas. No acredita cobertura completa de todos los RF, RNF, OP o RT del proyecto.
 
 Se lee en tres vistas enlazadas. [Cobertura](cobertura.md) relaciona resultado, fuente y servicio/diseño; [verificación](verificacion.md) permite localizar escenarios, métodos, umbrales y evidencia prevista; [aceptación](aceptacion.md) organiza calendario, responsables y dependencias. Las decisiones pendientes están en [brechas](brechas.md). Las fichas sustantivas viven en [resultados](resultados.md), [pilotos](pilotos.md) y [transversales](transversales.md); las vistas remiten a ellas para evitar repetir requisitos y tablas extensas.

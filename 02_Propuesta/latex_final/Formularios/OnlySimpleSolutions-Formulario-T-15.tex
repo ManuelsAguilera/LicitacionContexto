@@ -85,14 +85,14 @@
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-15.\arabic{table}}
 \makeatletter
-\newcommand{\ossFigCaption}[1]{\def\@captype{figure}\caption{#1}}
+
 \makeatother
 \renewcommand{\figurename}{Figura}
 \renewcommand{\thefigure}{T-15.\arabic{figure}}
 
-\hypersetup{pageanchor=false}
+
 \ossCover{Nivelación de recursos}{Subdocumento 7 · T-15}
-\hypersetup{pageanchor=true}
+
 \tableofcontents
 \clearpage
 \section*{Lista de figuras}
@@ -129,9 +129,9 @@ Only Simple Solutions · Licitación N.° TFEP-01/2026
 
 \subsection{Base y método}
 
-Las 159 cuentas ajenas a innovación suman 31.058 HH y las cinco cuentas de innovación, 9.888 HH. Las 164 cuentas totalizan 40.946 HH, distribuidas en sus ventanas de ejecución. El esfuerzo de innovaciones se obtiene mediante el método de tres valores de su anexo; no se atribuye al cálculo de puntos de caso de uso.
+Los 159 elementos de tercer nivel ajenos a innovación suman 31.058 HH y los cinco de innovación, 9.888 HH. Los 164 elementos de tercer nivel totalizan 40.946 HH, distribuidos en sus ventanas de ejecución. El esfuerzo de las cinco cuentas de innovación se reparte entre sus 40 paquetes de trabajo con los pesos relativos de la estimación, sin alterar la HH aprobada de ninguna cuenta; no se atribuye al cálculo de puntos de caso de uso.
 
-Salvo el acompañamiento final 1.14.5, las cuentas ajenas a innovación reparten sus horas uniformemente entre sus meses activos, incluidos los tramos discontinuos. Las cinco innovaciones se distribuyen por las ventanas de sus 40 paquetes, no uniformemente por toda la vida de la cuenta. El acompañamiento final conserva 64 HH: 16 en M54, 16 en M55 y 32 en M56 (48 HH de acompañamiento y 16 HH de cierre). Su inicio efectivo debe permitir al menos 90 días antes del término. La distribución uniforme es una hipótesis de nivelación, no una medición de productividad. Se conserva precisión racional en el cálculo y se muestran dos decimales; las diferencias de centésimas se deben a la presentación, no a horas agregadas o eliminadas.
+Salvo el acompañamiento final 1.14.5, los elementos de tercer nivel ajenos a innovación reparten sus horas uniformemente entre sus meses activos, incluidos los tramos discontinuos. Las cinco innovaciones se distribuyen por las ventanas de sus 40 paquetes, no uniformemente por toda la vida de la cuenta de control. El acompañamiento final conserva 64 HH: 16 en M54, 16 en M55 y 32 en M56 (48 HH de acompañamiento y 16 HH de cierre). Su inicio efectivo debe permitir al menos 90 días antes del término. La distribución uniforme es una hipótesis de nivelación, no una medición de productividad. Se conserva precisión racional en el cálculo y se muestran dos decimales; las diferencias de centésimas se deben a la presentación, no a horas agregadas o eliminadas.
 
 La imputación separa E1, E2, transversal y operación directa. No se asigna esfuerzo E2 antes de M13. Gobierno y documentación permanecen transversales; desde M21 se suman a la curva de operación para representar su carga completa y no duplicarlos en implementación. El acta H12 de M21 pertenece a implementación. La estabilización posterior, el acompañamiento y los retiros se imputan a operación desde M21. Las cuentas compartidas se distribuyen por tramo temporal, con distribución por rol que debe conciliarse con las dedicaciones del Subdocumento 12. Los trabajos E1 de inventario, histórico, repositorio y sustitución permanecen en E1 durante su ventana. La revalidación 1.9.5 de M16 se imputa a E1. El acompañamiento 1.13.4 se asigna a E1 en M13-18, por mitades a E1 y E2 en M19-20 y a operación desde M21; esta división es una hipótesis explícita de nivelación.
 
@@ -139,7 +139,7 @@ La imputación separa E1, E2, transversal y operación directa. No se asigna esf
 
 La planificación de cada equipo usa su capacidad efectiva del intervalo, descontando ausencias y obligaciones ya asignadas. El 15 \% se reserva para deuda técnica, conforme a 6.2.3.3. Cuando el equipo participa en una marcha blanca, reserva además el 30 \% para estabilización, conforme a 6.2.7. Ambos porcentajes se calculan sobre la misma capacidad efectiva; queda hasta un 55 \% para otras historias durante esa coincidencia y hasta un 85 \% fuera de ella. No se aplican estos porcentajes a las horas de todo el contrato ni a equipos ajenos a esas obligaciones.
 
-Cada responsable registra por intervalo el equipo y rol, las HH disponibles, las HH de deuda, las HH de estabilización y las HH de las restantes actividades. Cada paquete se vincula a una sola cuenta del T-14 y se imputa una sola vez. Una corrección de incidente se registra como estabilización, aunque además reduzca deuda; no ocupa dos veces la capacidad. Las pruebas y revisiones se incluyen en las tareas que las requieren.
+Cada responsable registra por intervalo el equipo y rol, las HH disponibles, las HH de deuda, las HH de estabilización y las HH de las restantes actividades. Cada paquete de trabajo se imputa una sola vez; en las ramas 1.5 y 1.10 se vincula a su cuenta de control y en las demás ramas es el propio elemento de tercer nivel. Una corrección de incidente se registra como estabilización, aunque además reduzca deuda; no ocupa dos veces la capacidad. Las pruebas y revisiones se incluyen en las tareas que las requieren.
 
 En M13–15 se distingue estabilización E1 de trabajo E2; en M19–20 se distinguen operación E1 y estabilización E2. El jefe de proyecto revisa semanalmente carga y capacidad, y el Comité de Proyecto trata sus desviaciones cada dos semanas. No se libera la reserva para asumir nuevas historias sin comprobar la demanda de incidencias y registrar la decisión. Si falta capacidad, se reordena trabajo independiente o se asignan recursos con las competencias necesarias mediante el control de cambios aplicable.
 
@@ -147,7 +147,7 @@ La distribución mensual programa 40.946 HH base incluidas las innovaciones; las
 
 \subsection{Reserva de contingencia de riesgos}
 
-A las 40.946 HH del trabajo base se suman 3.688 HH adicionales de contingencia para los 14 riesgos críticos y altos del Subdocumento 8, §8.3. El esfuerzo comprometido asciende a 44.634 HH. Las 1.660 HH de acciones preventivas ya están incluidas en las cuentas base y no se suman otra vez. La reserva de contingencia no duplica los porcentajes de capacidad para deuda técnica (15 \%) y estabilización (30 \%). Su distribución por área de trabajo y ventana se fija al activar cada disparador y se registra con el perfil competente, las HH consumidas y el efecto en la red de dependencias. El desglose previo por cuatro áreas anunciado en el Subdocumento 8 sigue pendiente de definición; no se atribuyen horas ficticias a esas áreas.
+A las 40.946 HH del trabajo base se suman 3.688 HH adicionales de contingencia para los 14 riesgos críticos y altos del Subdocumento 8, §8.3. El esfuerzo comprometido asciende a 44.634 HH. Las 1.660 HH de acciones preventivas ya están incluidas en las cuentas base y no se suman otra vez. La reserva de contingencia no duplica los porcentajes de capacidad para deuda técnica (15 \%) y estabilización (30 \%). Su distribución por área de trabajo y ventana se fija al activar cada disparador y se registra con el perfil competente, las HH consumidas y el efecto en la red de dependencias.
 
 \subsection{Resumen de horas}
 
@@ -159,8 +159,8 @@ A las 40.946 HH del trabajo base se suman 3.688 HH adicionales de contingencia p
 \endhead
 \bottomrule
 \endlastfoot
-Etapa 1 & 18.074,92 \\
-Etapa 2 & 12.415,03 \\
+Etapa 1 & 18.002,92 \\
+Etapa 2 & 12.487,03 \\
 Transversal durante todo el contrato & 2.392,00 \\
 Operación directa & 8.064,05 \\
 Total planificado por cuentas & 40.946,00 \\
@@ -179,31 +179,31 @@ La tabla presenta los cinco tramos del Formulario T-15. Las HH de cada etapa inc
 Etapa & HH totales & Personas (peak) & Frentes & Meses \\
 \midrule
 \endhead
-Etapa 1 - Desarrollo & 17.080,06 & 13 & Desarrollo y frentes habilitantes & 1–12 \\
-Etapa 1 - Marcha blanca & 606,32 & 2 & Implantación, pruebas y acompañamiento & 13–15 \\
-Etapa 2 - Desarrollo & 11.403,46 & 16 & Desarrollo, integración e innovaciones & 13–18 \\
-Etapa 2 - Marcha blanca & 975,57 & 4 & Implantación, pruebas y acompañamiento & 19–20 \\
+Etapa 1 - Desarrollo & 17.014,06 & 13 & Desarrollo y frentes habilitantes & 1–12 \\
+Etapa 1 - Marcha blanca & 590,32 & 2 & Implantación, pruebas y acompañamiento & 13–15 \\
+Etapa 2 - Desarrollo & 11.711,46 & 14 & Desarrollo, integración e innovaciones & 13–18 \\
+Etapa 2 - Marcha blanca & 739,57 & 3 & Implantación, pruebas y acompañamiento & 19–20 \\
 Operación & 9.342,86 & 3 & Operación, soporte y gobierno & 21–56 \\
 \bottomrule
 \end{longtable}
 
-Para conciliar los cinco tramos con las 40.946 HH se añaden 388,55 HH de E1 en M16–20, 36,00 HH del acta H12 en M21 y 1.113,19 HH transversales de M1–20. Las HH transversales desde M21 ya están incluidas en operación. Las filas no duplican esas cargas.
+Para conciliar los cinco tramos con las 40.946 HH se añaden 398,55 HH de E1 en M16–20, 36,00 HH del acta H12 en M21 y 1.113,19 HH transversales de M1–20. Las HH transversales desde M21 ya están incluidas en operación. Las filas no duplican esas cargas.
 
 \paragraph{Capacidad equivalente por tramo}
 
 Etapa 1 - Desarrollo: máximo mensual de 1.926,41 HH, equivalente a 12,04 dedicaciones de 160 HH mensuales.
 
-Etapa 1 - Marcha blanca: máximo mensual de 202,11 HH, equivalente a 1,26 dedicaciones de 160 HH mensuales.
+Etapa 1 - Marcha blanca: máximo mensual de 196,77 HH, equivalente a 1,23 dedicaciones de 160 HH mensuales.
 
-Etapa 2 - Desarrollo: máximo mensual de 2.288,24 HH, equivalente a 14,30 dedicaciones de 160 HH mensuales.
+Etapa 2 - Desarrollo: máximo mensual de 2.214,04 HH, equivalente a 13,84 dedicaciones de 160 HH mensuales.
 
-Etapa 2 - Marcha blanca: máximo mensual de 511,28 HH, equivalente a 3,20 dedicaciones de 160 HH mensuales.
+Etapa 2 - Marcha blanca: máximo mensual de 393,28 HH, equivalente a 2,46 dedicaciones de 160 HH mensuales.
 
 Operación: máximo mensual de 364,63 HH, equivalente a 2,28 dedicaciones de 160 HH mensuales.
 
 \subsection{Horas por rama y paquete}
 
-La cuenta es la unidad de conciliación; las 127 asignaciones de paquetes de software suman exactamente las 12.116 HH de su rama tras distribuir los restos de redondeo dentro de cada cuenta.
+La cuenta de control es la unidad de conciliación; las 127 asignaciones de paquetes de software suman exactamente las 12.116 HH de su rama tras distribuir los restos de redondeo dentro de cada cuenta.
 
 \begin{longtable}{@{}p{0.755\linewidth}p{0.175\linewidth}@{}}
 \caption[Suma de horas por rama]{Suma de horas por rama.}\label{tab:t15-3}\\
@@ -233,7 +233,7 @@ Total & 40.946 \\
 
 \subsubsection{Paquetes de trabajo de software (127 casos de uso)}
 
-Cada caso de uso es un paquete de trabajo. Su entregable es la implementación comprobada del caso de uso indicado. Su aceptación exige superar los escenarios acordados de ese caso, las pruebas de integración y seguridad aplicables, y los umbrales de su cuenta de control, identificada explícitamente en la misma fila. Incluye código revisado, documentación y evidencia trazable. El Líder de Desarrollo responde por cada paquete y el Líder de Calidad verifica su evidencia; la Contraparte Técnica conserva la aceptación contractual. Las horas de los paquetes se concilian con su cuenta mediante los pesos relativos de la estimación, usando el método del mayor resto a la hora entera. No se modifica el esfuerzo aprobado de ninguna cuenta. La cuenta es la unidad mínima utilizada para la curva mensual.
+Cada caso de uso es un paquete de trabajo. Su entregable es la implementación comprobada del caso de uso indicado. Su aceptación exige superar los escenarios acordados de ese caso, las pruebas de integración y seguridad aplicables, y los umbrales de su cuenta de control, identificada explícitamente en la misma fila. Incluye código revisado, documentación y evidencia trazable. El Líder de Desarrollo responde por cada paquete y el Líder de Calidad verifica su evidencia; la Contraparte Técnica conserva la aceptación contractual. Las horas de los paquetes se concilian con su cuenta mediante los pesos relativos de la estimación, usando el método del mayor resto a la hora entera. No se modifica el esfuerzo aprobado de ninguna cuenta. La cuenta de control es la unidad mínima utilizada para la curva mensual.
 
 \begin{longtable}{@{}p{0.075\linewidth}p{0.451\linewidth}p{0.075\linewidth}p{0.075\linewidth}p{0.179\linewidth}@{}}
 \caption[Paquetes de trabajo de software]{Paquetes de trabajo de software. Fuente: Elaboración propia.}\label{tab:t15-4}\\
@@ -374,18 +374,18 @@ Cada caso de uso es un paquete de trabajo. Su entregable es la implementación c
 
 \subsubsection{Paquetes de trabajo de las innovaciones}
 
-El anexo de estimación de innovaciones detalla 40 paquetes, ocho por cuenta, con entregable, responsable, aceptación, tres escenarios de esfuerzo y meses activos. Se suman a los 127 paquetes de software existentes sin cambiar sus códigos ni sus HH. Cada cuenta 1.10 integra construcción, aceptación y seguimiento específico; su barra extendida no representa desarrollo continuo hasta M56. La instalación supone tres sitios piloto por solución física y deja la ampliación parametrizada por unidad.
+El diccionario de la rama 1.10 del T-14 detalla 40 paquetes, ocho por cuenta, con entregable, criterio de aceptación, responsable, HH asignadas y ventana de ejecución. Las HH de cada paquete se obtienen por reparto proporcional de la HH aprobada de su cuenta de control, con el método del mayor resto a la hora entera. Se suman a los 127 paquetes de software existentes sin cambiar sus códigos ni sus HH. Cada cuenta 1.10 integra construcción, aceptación y seguimiento específico; su barra extendida no representa desarrollo continuo hasta M56. La instalación supone tres sitios piloto por solución física y deja la ampliación parametrizada por unidad.
 
 
 \subsection{Curva mensual}
 
 La Figura T-15.1 muestra la implementación por etapa y total, y la operación en un panel separado. Las franjas indican los solapamientos M13-15 y M19-20.
 
-\begin{center}\includegraphics[width=\linewidth,height=0.75\textheight,keepaspectratio]{figuras/sd07-73-curva-hh.png}\end{center}
+\begin{center}\includegraphics[width=\linewidth,height=0.75\textheight,keepaspectratio]{figuras/recepcion-20261025/a5b23c8cc4c3.png}\end{center}
 
 \ossFigCaption{Curva mensual de implementación y operación. Fuente: cálculo desde las cuentas y tramos del T-14.}\label{fig:t15-1}
 
-El máximo de implementación es 2.492,78 HH en M16; el de operación, incluidos gobierno y documentación, es 364,63 HH en M22. Son cargas de la planificación actualizada, no certificaciones de suficiencia de personal.
+El máximo de implementación es 2.376,08 HH en M16; el de operación, incluidos gobierno y documentación, es 364,63 HH en M22. Son cargas de la planificación actualizada, no certificaciones de suficiencia de personal.
 
 \begin{longtable}{@{}p{0.171\linewidth}p{0.171\linewidth}p{0.171\linewidth}p{0.171\linewidth}p{0.171\linewidth}@{}}
 \caption[Curva mensual por ámbito]{Curva mensual por ámbito. Fuente: cálculo exacto; visualización a dos decimales.}\label{tab:t15-5}\\
@@ -399,22 +399,22 @@ El máximo de implementación es 2.492,78 HH en M16; el de operación, incluidos
 2 & 1.418,53 & 0,00 & 196,50 & 0,00 \\
 3 & 1.564,94 & 0,00 & 217,83 & 0,00 \\
 4 & 1.926,41 & 0,00 & 44,31 & 0,00 \\
-5 & 1.751,73 & 0,00 & 44,31 & 0,00 \\
-6 & 1.766,57 & 0,00 & 22,97 & 0,00 \\
-7 & 1.315,40 & 0,00 & 22,97 & 0,00 \\
-8 & 1.298,59 & 0,00 & 22,97 & 0,00 \\
-9 & 1.364,49 & 0,00 & 22,97 & 0,00 \\
-10 & 1.354,15 & 0,00 & 27,08 & 0,00 \\
-11 & 1.108,70 & 0,00 & 27,08 & 0,00 \\
-12 & 1.246,18 & 0,00 & 27,08 & 0,00 \\
-13 & 202,11 & 1.283,98 & 27,08 & 0,00 \\
-14 & 202,11 & 1.554,38 & 27,08 & 0,00 \\
-15 & 202,11 & 2.120,74 & 27,08 & 0,00 \\
-16 & 177,46 & 2.288,24 & 27,08 & 0,00 \\
-17 & 59,25 & 2.188,24 & 27,08 & 0,00 \\
-18 & 59,25 & 1.967,88 & 27,08 & 0,00 \\
-19 & 46,29 & 511,28 & 27,08 & 0,00 \\
-20 & 46,29 & 464,28 & 27,08 & 0,00 \\
+5 & 1.775,73 & 0,00 & 44,31 & 0,00 \\
+6 & 1.758,57 & 0,00 & 22,97 & 0,00 \\
+7 & 1.232,40 & 0,00 & 22,97 & 0,00 \\
+8 & 1.215,59 & 0,00 & 22,97 & 0,00 \\
+9 & 1.376,99 & 0,00 & 22,97 & 0,00 \\
+10 & 1.417,65 & 0,00 & 27,08 & 0,00 \\
+11 & 1.112,70 & 0,00 & 27,08 & 0,00 \\
+12 & 1.250,18 & 0,00 & 27,08 & 0,00 \\
+13 & 196,77 & 1.443,28 & 27,08 & 0,00 \\
+14 & 196,77 & 1.822,18 & 27,08 & 0,00 \\
+15 & 196,77 & 2.085,54 & 27,08 & 0,00 \\
+16 & 179,46 & 2.169,54 & 27,08 & 0,00 \\
+17 & 61,25 & 2.214,04 & 27,08 & 0,00 \\
+18 & 61,25 & 1.976,88 & 27,08 & 0,00 \\
+19 & 48,29 & 393,28 & 27,08 & 0,00 \\
+20 & 48,29 & 346,28 & 27,08 & 0,00 \\
 21 & 0,00 & 36,00 & 27,08 & 319,60 \\
 22 & 0,00 & 0,00 & 27,08 & 337,56 \\
 23 & 0,00 & 0,00 & 27,08 & 258,56 \\
@@ -466,22 +466,22 @@ El máximo de implementación es 2.492,78 HH en M16; el de operación, incluidos
 2 & 1.615,03 \\
 3 & 1.782,78 \\
 4 & 1.970,71 \\
-5 & 1.796,04 \\
-6 & 1.789,54 \\
-7 & 1.338,37 \\
-8 & 1.321,56 \\
-9 & 1.387,46 \\
-10 & 1.381,23 \\
-11 & 1.135,78 \\
-12 & 1.273,26 \\
-13 & 1.513,16 \\
-14 & 1.783,56 \\
-15 & 2.349,92 \\
-16 & 2.492,78 \\
-17 & 2.274,57 \\
-18 & 2.054,21 \\
-19 & 584,65 \\
-20 & 537,65 \\
+5 & 1.820,04 \\
+6 & 1.781,54 \\
+7 & 1.255,37 \\
+8 & 1.238,56 \\
+9 & 1.399,96 \\
+10 & 1.444,73 \\
+11 & 1.139,78 \\
+12 & 1.277,26 \\
+13 & 1.667,13 \\
+14 & 2.046,03 \\
+15 & 2.309,39 \\
+16 & 2.376,08 \\
+17 & 2.302,37 \\
+18 & 2.065,21 \\
+19 & 468,65 \\
+20 & 421,65 \\
 21 & 382,68 \\
 22 & 364,63 \\
 23 & 285,63 \\
@@ -524,7 +524,7 @@ El máximo de implementación es 2.492,78 HH en M16; el de operación, incluidos
 
 Se usa 160 HH por persona-mes como hipótesis de conversión. La razón HH/160 expresa equivalentes de dedicación; redondearla hacia arriba solo da capacidad mensual agregada. No determina cuántas personas distintas cubren turnos, especialidades, guardias, reemplazos ni tareas simultáneas.
 
-El pico equivale a 15,58 personas equivalentes de implementación y 2,28 de operación. Los mínimos aritméticos son 16 y 3 personas equivalentes, respectivamente; no representan dotación contratada ni incluyen relevos, ausencias y reservas. La dotación nominal se establece por rol y cobertura en SD-12 y debe sostener los SLA de SD-10; no se afirma que esos techos basten para un servicio continuo.
+El pico equivale a 14,85 personas equivalentes de implementación y 2,28 de operación. Los mínimos aritméticos son 15 y 3 personas equivalentes, respectivamente; no representan dotación contratada ni incluyen relevos, ausencias y reservas. La dotación nominal se establece por rol y cobertura en SD-12 y debe sostener los SLA de SD-10; no se afirma que esos techos basten para un servicio continuo.
 
 \subsection{Frentes y solapamientos}
 
@@ -551,15 +551,15 @@ En M21–56 hay un máximo de 7 frentes simultáneos con cuentas programadas. El
 \endhead
 \bottomrule
 \endlastfoot
-M13-15 & 606,32 & 4.959,10 & 81,23 & 5.646,65 \\
-M19-20 & 92,58 & 975,57 & 54,16 & 1.122,31 \\
+M13-15 & 590,32 & 5.351,00 & 81,23 & 6.022,55 \\
+M19-20 & 96,58 & 739,57 & 54,16 & 890,31 \\
 \end{longtable}
 
 \subsubsection{Ruta crítica (CPM) y holguras}
 
 \paragraph{Alcance y resultado}
 
-La red contiene 57 nodos y 120 relaciones. Integra los 18 nodos del modelo inicial, los 35 paquetes de implementación de las cinco innovaciones, la compuerta de conciliación final de cartera y tres actividades de retiro y transferencia. Los cinco paquetes de seguimiento de innovaciones y las cuentas de servicio recurrente se controlan por cobertura y frecuencia, no como tareas libremente desplazables. El análisis calcula las tareas discretas y clasifica la cobertura periódica de los trabajos de implementación, transición y operación; Su alcance no equivale a una red de detalle de las 164 cuentas ni a una asignación de capacidad por persona.
+La red contiene 57 nodos y 120 relaciones. Integra los 18 nodos del modelo inicial, los 35 paquetes de implementación de las cinco innovaciones, la compuerta de conciliación final de cartera y tres actividades de retiro y transferencia. Los cinco paquetes de seguimiento de innovaciones y las cuentas de servicio recurrente se controlan por cobertura y frecuencia, no como tareas libremente desplazables. El análisis calcula las tareas discretas y clasifica la cobertura periódica de los trabajos de implementación, transición y operación; Su alcance no equivale a una red de detalle de los 331 elementos de la EDT ni a una asignación de capacidad por persona.
 
 Se mantienen H7 al inicio de M16, H12 al inicio de M21 y el cierre al terminar M56. Los 35 paquetes de implementación de innovación tienen holgura total cero con las duraciones y dependencias propuestas. Este resultado expresa que el plan ocupa el tiempo disponible; no acredita que la productividad, los suministros o la dotación sean suficientes. Las duraciones son supuestos de programación, no mediciones históricas.
 
@@ -745,7 +745,7 @@ El calendario operativo descompone cada prueba y jornada cuando se conoce la fec
 
 Las tablas presentan las duraciones, relaciones de precedencia y fechas tempranas y tardías que sustentan el cálculo. Se comprueba la ausencia de ciclos, el cumplimiento de límites y el margen restante desde las fechas programadas.
 
-El PERT del anexo de innovaciones estima esfuerzo. No se interpreta como distribución de duración ni como probabilidad de cumplir M16/M21. Una evaluación probabilística de plazo necesita tres estimaciones de duración y sus dependencias de riesgo. La red actual es determinista y supone capacidad suficiente; T-15 debe contrastarla con perfiles y dedicaciones.
+El reparto por pesos relativos de los 40 paquetes de innovación estima el esfuerzo de cada paquete dentro de la HH aprobada de su cuenta de control. No se interpreta como distribución de duración ni como probabilidad de cumplir M16/M21. Una evaluación probabilística de plazo necesita tres estimaciones de duración y sus dependencias de riesgo. La red actual es determinista y supone capacidad suficiente; T-15 debe contrastarla con perfiles y dedicaciones.
 
 \paragraph{Sensibilidad de las entregas parciales}
 
@@ -756,7 +756,7 @@ Las relaciones de precedencia se detallan en el apartado de secuenciamiento del 
 
 \subsection{Capacidad específica de innovaciones}
 
-El anexo de estimación distingue construcción y servicio recurrente. El mantenimiento mensual específico suma 68 HH desde M21, repartidas entre modelos, índice, conciliación y componentes de tienda. No incluye de nuevo la mesa de servicio general ni las plataformas base. El máximo de implementación pasa a M16; el jefe de proyecto debe comprobar capacidad por especialidad durante el solapamiento, aplicando las reservas del Capítulo 6 a los equipos que correspondan. La suma mensual es demanda de esfuerzo y no demuestra por sí sola dotación suficiente.
+La estimación de las cinco cuentas de innovación distingue construcción y servicio recurrente. El mantenimiento mensual específico suma 68 HH desde M21, repartidas entre modelos, índice, conciliación y componentes de tienda. No incluye de nuevo la mesa de servicio general ni las plataformas base. El máximo de implementación pasa a M16; el jefe de proyecto debe comprobar capacidad por especialidad durante el solapamiento, aplicando las reservas del Capítulo 6 a los equipos que correspondan. La suma mensual es demanda de esfuerzo y no demuestra por sí sola dotación suficiente.
 
 
 \end{document}

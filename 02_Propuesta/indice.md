@@ -6,20 +6,20 @@ La Propuesta Técnica se estructura en **catorce subdocumentos** (Formulario T-7
 
 | N | Subdocumento | Formularios | Capítulo del informe | Estado |
 | :--- | :--- | :--- | :--- | :--- |
-| 01 | [Presentación de la empresa](sd-01_presentacion-empresa/) | T-6 | Capítulo I | Desarrollado en el Informe 1 |
-| 02 | [Resumen Ejecutivo, comprensión del problema y de la necesidad](sd-02_problema-y-necesidad/) | - | Capítulo II | Desarrollado en el Informe 1 |
-| 03 | [Esquema de solución y alcance](sd-03_esquema-de-solucion-y-alcance/) | T-12 | Capítulo III | En redacción (rehecho desde cero) |
-| 04 | [Arquitectura lógica y física de la solución](sd-04_arquitectura-logica-y-fisica/) | T-11 | Capítulo IV | Sin redactar |
-| 05 | [Modelo y gestión de datos](sd-05_modelo-y-gestion-de-datos/) | - | Capítulo V | Sin redactar |
-| 06 | [Metodologías](sd-06_metodologias/) | T-9, T-10 | Informe 2/3 | Sin redactar |
-| 07 | [Plan de trabajo, EDT, cronograma e implantación](sd-07_plan-de-trabajo-EDT-e-implantacion/) | T-14, T-15, T-18 | Informe 2/3 | Sin redactar |
-| 08 | [Plan de riesgos](sd-08_plan-de-riesgos/) | T-16 | Informe 2/3 | Sin redactar |
-| 09 | [Plan de calidad](sd-09_plan-de-calidad/) | T-13, T-17 | Informe 2/3 | Sin redactar |
-| 10 | [Servicios de operación y niveles de servicio](sd-10_servicios-de-operacion-y-niveles-de-servicio/) | - | Informe 2/3 | Sin redactar |
-| 11 | [Planes en operación](sd-11_planes-en-operacion/) | - | Informe 2/3 | Sin redactar |
-| 12 | [Equipo de trabajo, subcontrataciones y alianzas](sd-12_equipo-subcontrataciones-y-alianzas/) | T-8 | Informe 2/3 | Sin redactar |
-| 13 | [Innovaciones](sd-13_innovaciones/) | T-19 | Capítulo VI | Borrador redactado; exportación y T-19 sin completar |
-| 14 | [Ventajas, beneficios y consolidación](sd-14_ventajas-beneficios-y-consolidacion/) | - | Informe 2/3 | Sin redactar |
+| 01 | [Presentación de la empresa](sd-01_presentacion-empresa/) | T-6 | Capítulo I | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 02 | [Resumen Ejecutivo, comprensión del problema y de la necesidad](sd-02_problema-y-necesidad/) | - | Capítulo II | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 03 | [Esquema de solución y alcance](sd-03_esquema-de-solucion-y-alcance/) | T-12 | Capítulo III | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 04 | [Arquitectura lógica y física de la solución](sd-04_arquitectura-logica-y-fisica/) | T-11 | Capítulo IV | LaTeX disponible; referencia actual, sin revisión humana |
+| 05 | [Modelo y gestión de datos](sd-05_modelo-y-gestion-de-datos/) | - | Capítulo V | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 06 | [Metodologías](sd-06_metodologias/) | T-9, T-10 | Informe 2/3 | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 07 | [Plan de trabajo, EDT, cronograma e implantación](sd-07_plan-de-trabajo-EDT-e-implantacion/) | T-14, T-15, T-18 | Informe 2/3 | LaTeX disponible; referencia actual, sin revisión humana |
+| 08 | [Plan de riesgos](sd-08_plan-de-riesgos/) | T-16 | Informe 2/3 | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 09 | [Plan de calidad](sd-09_plan-de-calidad/) | T-13, T-17 | Informe 2/3 | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 10 | [Servicios de operación y niveles de servicio](sd-10_servicios-de-operacion-y-niveles-de-servicio/) | - | Informe 2/3 | Pendiente de fuente LaTeX; conservar borrador Markdown |
+| 11 | [Planes en operación](sd-11_planes-en-operacion/) | - | Informe 2/3 | Pendiente de fuente LaTeX; conservar borrador Markdown |
+| 12 | [Equipo de trabajo, subcontrataciones y alianzas](sd-12_equipo-subcontrataciones-y-alianzas/) | T-8 | Informe 2/3 | Pendiente de fuente LaTeX; conservar borrador Markdown |
+| 13 | [Innovaciones](sd-13_innovaciones/) | T-19 | Capítulo VI | LaTeX disponible; consistencia pendiente frente a SD-04/SD-07 |
+| 14 | [Ventajas, beneficios y consolidación](sd-14_ventajas-beneficios-y-consolidacion/) | - | Informe 2/3 | Pendiente de fuente LaTeX; conservar borrador Markdown |
 
 ## Ponderación (Formulario T-21)
 
@@ -35,19 +35,19 @@ Los documentos de `80_Artefactos/` se conservan como fuentes de trabajo y no se 
 
 | Artefacto | Destino de consolidación | Uso actual |
 | :--- | :--- | :--- |
-| `seccion3_innovaciones.md` | Subdocumento 13 | Superado. La cartera elegida está en `80_Artefactos/sd-13_contexto/decision_cartera_equipo.md` y se desarrolla en las secciones 13.1–13.5. |
+| `80_Artefactos/archivo-contexto/2026-10-25/seccion3_innovaciones.md` | Subdocumento 13 | Superado. La cartera elegida está en `80_Artefactos/sd-13_contexto/decision_cartera_equipo.md` y se desarrolla en las secciones 13.1–13.5. |
 
 La consolidación queda pendiente porque el Informe 1 ya cubre estos capítulos y debe evitarse duplicar o reemplazar contenido sin cotejarlo. Los artefactos mantienen enlaces relativos a las rutas vigentes.
 
 ## Ensamblado del documento final
 
-El documento final se arma concatenando, en orden, los archivos `sd-NN_sN_*.md` de las 14 carpetas:
+El contenido de los subdocumentos importados se toma de `latex_final/sd-NN/OnlySimpleSolutions-SubdocumentoN.tex`. Los maestros Markdown conservan identificación, estructura y estado; sus secciones anteriores no se concatenan para sustituir una fuente LaTeX.
 
-1. Se recorren las carpetas `sd-01_` a `sd-14_` en orden numérico.
-2. Dentro de cada carpeta, se recorren los `sd-NN_sN_*.md` en orden de sección.
-3. Cada adjunto referenciado se inserta en su lugar, no al final.
-4. Los diagramas se insertan desde el export en `04_Adjuntos/diagramas/`.
-5. La salida oficial va a `07_Entregables/sobre_2_tecnico/` y `07_Entregables/pdf_final/`.
+1. Compilar mediante `05_Gestion/scripts/exportar_latex.py`, según la skill exportar.
+2. Las partes sin `.tex` siguen pendientes; no se declara completa la propuesta mientras falten SD-10, SD-11, SD-12 y SD-14.
+3. Formularios y anexos mantienen sus fuentes y formatos propios. El CLI actual no compila la carpeta `Formularios/`.
+4. La referencia para conciliar el contenido es SD-04 (arquitectura) y SD-07 (planificación), subordinados a las Bases y al Comunicado 10.
+5. Estado y pendientes actuales: [contexto activo](../80_Artefactos/contexto-activo/indice.md) y [matriz de ajustes](../80_Artefactos/contexto-activo/matriz-ajustes.md).
 
 ## Convención de nombres
 
@@ -59,9 +59,9 @@ El documento final se arma concatenando, en orden, los archivos `sd-NN_sN_*.md` 
 | Diagrama exportado | `diag-NN-SN_titulo.<ext>` | `diag-04-02_arquitectura-fisica.svg` |
 | Formulario oficial | `form-<ID>_titulo.<ext>` | `form-T-12_matriz-cumplimiento.docx` |
 
-## Observaciones sobre el estado actual
+## Observaciones históricas del Informe 1 — revalidar antes de usarlas
 
-Detectadas al comparar el índice del Informe 1 con su cuerpo. **No se corrigen acá**: las tablas del informe quedan tal cual hasta que se reparen las de las Bases.
+Estas observaciones describen la versión revisada del Informe 1; no son una auditoría del LaTeX actual. Detectadas al comparar el índice de esa entrega con su cuerpo. **No se corrigen acá**: las tablas del informe quedan tal cual hasta que se reparen las de las Bases.
 
 1. El capítulo I del Informe 1 no tiene la sección *Modelo de gobierno interno de calidad, seguridad y gestión del conocimiento*, que su índice anuncia como 1.6 y el T-7 exige. En el cuerpo, 1.6 es *Frente de jefaturas asignado*.
 2. El índice del capítulo III anuncia una sección 3.12 *Muestra de matriz de trazabilidad (T-12)* que no aparece en el cuerpo.

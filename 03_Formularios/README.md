@@ -30,10 +30,13 @@ Formularios exigidos por las Bases Administrativas, agrupados según el sobre en
 ## Dónde viven hoy los formularios del Sobre 2
 
 Los formularios técnicos T-6 a T-22 se redactan como `.tex` con Prism y viven en
-`02_Propuesta/latex_final/Formularios/` (`OnlySimpleSolutions-Formulario-T-N.tex`). Se compilan con
-`exportar_latex.py` y el PDF va en `06_Informes/informes/Informe N/`. Las carpetas `A/`, `B/` y `C/`
+`02_Propuesta/latex_final/Formularios/` (`OnlySimpleSolutions-Formulario-T-N.tex`). El CLI actual de
+`exportar_latex.py` no ofrece una ruta para compilar esta carpeta; la integración disponible tuvo comprobación estática, no certifica PDF de formularios. Las carpetas `A/`, `B/` y `C/`
 de aquí quedan para los formularios que se completen en otros formatos (por ejemplo `.docx` o `.xlsx`).
 
 ## Estado
 
-`A/`, `B/` y `C/` vacías. Los formularios del Sobre 2 están en `latex_final/Formularios/`.
+Los formularios del Sobre 2 están en `latex_final/Formularios/`. `A/`, `B/` y `C/` quedan para formatos distintos de `.tex`.
+
+- `B/form-T-11_especificaciones-tecnicas-ofertadas.md`: antecedente de redacción, sin revisión humana. El ZIP se integró en `02_Propuesta/latex_final/Formularios/OnlySimpleSolutions-Formulario-T-11.tex`; también se conserva `sd-04/OSS-Formulario-T-11.tex`, una copia local divergente. Ninguna se elimina ni se declara versión definitiva de entrega hasta conciliar ambas contra SD-04.
+- SD-04 y SD-07 son las referencias más actualizadas para conciliar arquitectura, suministro, EDT, esfuerzo e implantación; las Bases y el Comunicado 10 mantienen su precedencia. Ver la [matriz activa](../80_Artefactos/contexto-activo/matriz-ajustes.md).

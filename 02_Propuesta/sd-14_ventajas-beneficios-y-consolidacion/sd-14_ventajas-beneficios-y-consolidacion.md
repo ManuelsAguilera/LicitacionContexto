@@ -13,11 +13,14 @@ cifras: []
 secciones:
   - T7-14-14.1
   - T7-14-14.2
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 14 — Ventajas, beneficios y consolidación
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-14.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente LaTeX pendiente. Este Markdown conserva el borrador y la estructura para su futura redacción, consistente con SD-04 y SD-07.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-14/OnlySimpleSolutions-Subdocumento14.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -56,7 +59,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 | 14.1 | Ventajas | Síntesis de la propuesta de valor desde una perspectiva de ingeniería integral. | Sin redactar |
 | 14.2 | Beneficios y consolidación | Análisis cuantitativo de beneficios para el CLIENTE (desempeño, tiempo de restauración, disponibilidad, ahorro operacional); equilibrio entre alcance, tiempo, costo y calidad; coherencia arquitectónica y tecnológica entre todas las secciones; trazabilidad de extremo a extremo (requerimiento, diseño, construcción, prueba, implantación y operación). | Sin redactar |
 
-La redacción vive en `02_Propuesta/latex_final/sd-14.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-14/OnlySimpleSolutions-Subdocumento14.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

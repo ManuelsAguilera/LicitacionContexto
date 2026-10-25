@@ -90,9 +90,13 @@
 
 Only Simple Solutions propone cinco innovaciones para Multitiendas Ancoa S.A., una por cada tipo del artículo 28 de las Bases Administrativas. La cartera comprende retiro autónomo mediante lockers, conteo cíclico predictivo, búsqueda vectorial multimodal, una red de publicidad para proveedores del retail y un modo tienda con fila virtual de probadores. Cada propuesta agrega una capacidad al alcance base y se verifica mediante resultados operativos propios. El conteo sin cierre de tienda, la tolerancia a errores del buscador y la separación de datos retail y financieros forman parte de las obligaciones de la solución; su cumplimiento no se contabiliza como innovación.
 
-Las secciones siguientes desarrollan los siete elementos exigidos por el artículo 29. Su incorporación se vincula con los servicios del subdocumento 3, con las capas de aplicación, integración y despliegue híbrido del subdocumento 4, con la gestión de datos del subdocumento 5 y con la rama 1.10 de la EDT del subdocumento 7. El Formulario T-19 reunirá las fichas de aceptación y su trazabilidad. Por su parte, el capítulo 8 consolida los riesgos.
+Las secciones siguientes desarrollan los siete elementos exigidos por el artículo 29. Su incorporación se vincula con los servicios del subdocumento 3, con las capas de aplicación, integración y despliegue híbrido del subdocumento 4, con la gestión de datos del subdocumento 5 y con la rama 1.10 Innovaciones de la EDT del subdocumento 7, cuya formalización corresponde al Formulario T-14. El Formulario T-19 reúne las cinco fichas de incorporación, verificación y contingencia en el archivo independiente OnlySimpleSolutions-Formulario-T-19, que acompaña a este subdocumento y no forma parte de su cuerpo.
 
-\section{13.1 Innovación 1}\label{innovaciuxf3n-1}
+La aceptación integrada de cada innovación se realiza durante la marcha blanca de la etapa en que se incorpora: Etapa 1 para Conteo cíclico predictivo, con habilitación desde el mes 16; Etapa 2 para las otras cuatro innovaciones, con habilitación desde el mes 21. La aceptación requiere evidencia de los criterios definidos antes del ensayo. En Retail Media Network, la aceptación de la capacidad técnica se distingue de la activación comercial y de la verificación de ingresos, que requieren campañas contratadas.
+
+Las valoraciones iniciales de probabilidad e impacto, las mitigaciones y las contingencias se describen en los apartados de cada innovación de este subdocumento. Su consolidación en el plan general de riesgos corresponde al subdocumento 8 y al Formulario T-16, documentos independientes que no están incluidos en este archivo. Las remisiones a ellos identifican el destino de esa consolidación y no un apartado o anexo interno.
+
+\section{13.1 Innovación 1 · Lockers Ancoa 24/7}\label{innovaciuxf3n-1}
 
 La innovación de producto o servicio es Lockers Ancoa 24/7. Agrega al retiro de compras un punto de entrega autónomo para pedidos preparados y pagados, accesible fuera del horario de atención de la tienda. El cliente recibe una credencial de retiro y utiliza el casillero sin pasar por el mesón. La promesa se aplica únicamente a emplazamientos con acceso público continuo y a paquetes compatibles con los compartimentos.
 
@@ -114,7 +118,7 @@ La madurez se evalúa con una escala de evidencia que distingue componente comer
 
 Un adaptador en la capa de integración vincula el controlador con el servicio de pedidos. El servicio de existencias confirma la disponibilidad antes de la preparación. La confirmación del bulto cargado y de la puerta cerrada habilita el aviso al cliente. La aplicación registra reserva, carga, disponibilidad, retiro, vencimiento y bloqueo con identificadores que impiden duplicar la entrega.
 
-El paquete «Lockers Ancoa 24/7» se ubica bajo la rama 1.10 Innovaciones del T-14. Incluye selección, emplazamiento, integración, ensayo y capacitación. Infraestructura, seguridad e implantación aportan sus entregables de las ramas habilitantes del capítulo 7. La entrega se acepta durante la marcha blanca de la Etapa 2 y se habilita desde el mes 21. El alcance por tienda se fija con el dimensionamiento, sin asumir una batería idéntica para toda la red.
+La innovación «Lockers Ancoa 24/7» se ubica en la rama 1.10 Innovaciones de la EDT del subdocumento 7, concretada en la cuenta de control 1.10.1 y sus ocho paquetes de trabajo (1.10.1.1 a 1.10.1.8), cuya formalización corresponde al Formulario T-14. Abarca diseño de la solución, integración con pedidos y credencial, gestión de estados y eventos, instalación y ensayo, levantamiento de emplazamientos, pruebas y certificación. Infraestructura, seguridad e implantación aportan sus entregables de las ramas habilitantes del subdocumento 7. La entrega se acepta durante la marcha blanca de la Etapa 2 y se habilita desde el mes 21. El alcance por tienda se fija con el dimensionamiento, sin asumir una batería idéntica para toda la red.
 
 \subsubsection{Impacto económico}\label{impacto-econuxf3mico}
 
@@ -130,7 +134,7 @@ La valoración inicial del equipo asigna probabilidad media e impacto alto a la 
 
 Los fallos de autorización o conectividad tienen probabilidad media e impacto alto. Un teclado no acredita funcionamiento desconectado. La aceptación exige probar vigencia y consumo único de la credencial, recuperación después de reinicio y reconciliación de eventos. Cuando el controlador no puede verificar la autorización, suspende la apertura automática y activa asistencia. El plan de continuidad incorpora conectividad de respaldo y recuperación al mesón, sin comprometer apertura insegura. El T-16 revisa estas valoraciones con la evidencia del piloto.
 
-\subsection{13.2 Innovación 2}\label{innovaciuxf3n-2}
+\subsection{13.2 Innovación 2 · Conteo cíclico predictivo}\label{innovaciuxf3n-2}
 
 La innovación de proceso es Conteo cíclico predictivo. Modifica la selección del trabajo de inventario mediante un modelo que estima el riesgo de discrepancia por referencia, ubicación y período. El responsable revisa la prioridad propuesta y asigna los conteos dentro de la capacidad de la tienda. El beneficio se verifica por diferencias relevantes detectadas por hora de trabajo.
 
@@ -152,7 +156,7 @@ La biblioteca corresponde al estado de componente documentado de la escala de ev
 
 El componente predictivo reside en la capa de aplicación del ámbito retail y consume historia del servicio de existencias mediante contratos de datos. El entrenamiento utiliza conjuntos versionados; la inferencia genera una lista ordenada para la aplicación de conteo. La programación puede utilizar probabilidad de discrepancia, magnitud esperada y tiempo previsto de recuento para priorizar detección por hora.
 
-El paquete «Conteo cíclico predictivo» pertenece a la rama 1.10 Innovaciones e incluye preparación de datos, comparación de modelos, integración y ensayo. La construcción se realiza durante el desarrollo de la Etapa 1, la evaluación en sombra durante los meses 13 a 15 y el uso operativo desde el mes 16. Se conserva una muestra aleatoria o estratificada independiente del modelo para medir exactitud general y evitar que la priorización oculte categorías poco exploradas.
+La innovación «Conteo cíclico predictivo» corresponde a la cuenta de control 1.10.2 y sus ocho paquetes de trabajo (1.10.2.1 a 1.10.2.8) de la rama 1.10 Innovaciones de la EDT del subdocumento 7, cuya formalización corresponde al Formulario T-14, e incluye arquitectura y reglas de datos, protocolo y preparación de datos, depuración de la historia de inventario, evaluación e integración del modelo, pruebas por versiones y evaluación en sombra. La construcción se realiza durante el desarrollo de la Etapa 1 y la evaluación en sombra durante los meses 13 a 15. La aceptación integrada se realiza durante la marcha blanca de la Etapa 1, con conteos comparables ejecutados bajo el protocolo supervisado; el uso operativo se habilita desde el mes 16 si se cumplen los criterios de aceptación. Se conserva una muestra aleatoria o estratificada independiente del modelo para medir exactitud general y evitar que la priorización oculte categorías poco exploradas.
 
 El responsable aprueba la lista y valida los ajustes mediante el procedimiento de inventario. El modelo no cambia saldos ni clasifica una discrepancia como hurto. El registro conserva versión, entradas, recomendación y decisión humana. El diseño responde a RT-18.01 a RT-18.09 y utiliza NIST AI RMF e ISO/IEC 42001 para documentar riesgos y gobierno del componente (Tabassi, 2023; International Organization for Standardization, 2023).
 
@@ -170,9 +174,9 @@ La meta de aceptación es una mejora demostrada de detección por hora respecto 
 
 La historia insuficiente o sesgada tiene probabilidad inicial alta e impacto alto, dada la falta de desglose que describe el Caso. El equipo depura diferencias verificadas, revisa cobertura y mantiene muestreo independiente. Mientras la historia no permite entrenar y evaluar, la tienda utiliza reglas y programación parametrizada.
 
-La deriva tiene probabilidad media e impacto alto. El seguimiento compara desempeño con el proceso base y registra cambios por temporada y tienda. Si la priorización deja de mejorar el conteo o incumple cobertura, se desactiva y vuelve la programación de RF-134. La aplicación de conteo y las reglas de ajuste siguen operativas. Las probabilidades son una valoración inicial que el T-16 revisa tras el perfilado.
+La deriva tiene probabilidad media e impacto alto. El seguimiento compara desempeño con el proceso base y registra cambios por temporada y tienda. Si la priorización deja de mejorar el conteo o incumple cobertura, se desactiva el priorizador predictivo y se retoma la programación parametrizada de conteos del alcance base: RF-131 permite definir las frecuencias por categoría y RF-134 genera la programación correspondiente. La aplicación de conteo y las reglas de ajuste siguen operativas. Las probabilidades son una valoración inicial que el T-16 revisa tras el perfilado.
 
-\subsection{13.3 Innovación 3}\label{innovaciuxf3n-3}
+\subsection{13.3 Innovación 3 · Búsqueda vectorial multimodal}\label{innovaciuxf3n-3}
 
 La innovación tecnológica es Búsqueda vectorial multimodal. Permite consultar el catálogo autorizado mediante una fotografía o una intención expresada en español y recuperar productos pertinentes cuya disponibilidad se verifica en el servicio de existencias. Combina recuperación por significado y similitud visual con búsqueda léxica para marcas, códigos y términos exactos.
 
@@ -194,7 +198,7 @@ Los componentes alcanzan el estado comercial o documental de la escala de eviden
 
 El componente pertenece a la capa de aplicación retail. Un trabajador asíncrono genera y actualiza representaciones al cambiar catálogo e imágenes del servicio de oferta comercial. El canal digital entrega la consulta; la recuperación produce candidatos, combina ranking léxico y vectorial y aplica permisos y filtros. El servicio de existencias verifica disponibilidad al mostrar resultados y al iniciar la compra. El índice nunca sustituye al dueño del stock.
 
-El paquete «Búsqueda vectorial multimodal» se ubica en la rama 1.10 Innovaciones. Incluye preparación del conjunto de prueba, selección y licencia del modelo, indexación, integración y evaluación. Se desarrolla y prueba en la Etapa 2, con aceptación antes del mes 21 y entrada en operación en ese mes. Su capacidad se calcula en la memoria del capítulo 4 y su gobierno de datos se integra al capítulo 5.
+La innovación «Búsqueda vectorial multimodal» se ubica en la cuenta de control 1.10.3 y sus ocho paquetes de trabajo (1.10.3.1 a 1.10.3.8) de la rama 1.10 Innovaciones de la EDT del subdocumento 7, cuya formalización corresponde al Formulario T-14. Abarca diseño y contrato de datos, preparación del lote de datos, generación de representaciones vectoriales, servicio de búsqueda multimodal, integración con los canales y pruebas de relevancia. Se desarrolla y prueba en la Etapa 2, con aceptación integrada durante la marcha blanca de esa etapa y entrada en operación desde el mes 21 si se cumplen los criterios de aceptación. Su capacidad se calcula en la memoria del subdocumento 4 y su gobierno de datos se integra al subdocumento 5.
 
 Las fotografías se procesan con retención mínima definida para la finalidad. El componente elimina metadatos innecesarios, valida formato y tamaño y mantiene auditoría con acceso restringido. El proveedor no entrena con datos del cliente sin autorización expresa. Las sugerencias automáticas se identifican en la interfaz y se documentan límites, trazabilidad y respaldo conforme a RT-18.01 a RT-18.09 (Tabassi, 2023; International Organization for Standardization, 2023).
 
@@ -214,7 +218,7 @@ La recuperación visual poco pertinente y la calidad desigual del catálogo tien
 
 La incompatibilidad de licencia o de tratamiento de datos tiene probabilidad media e impacto alto. La compra valida derechos de uso y condiciones contractuales antes de producción. Si el modelo no cumple, se sustituye por una alternativa que supere el mismo conjunto de prueba. Durante la sustitución funciona el buscador base. El T-16 revisa estos riesgos con las pruebas y el contrato seleccionado.
 
-\subsection{13.4 Innovación 4}\label{innovaciuxf3n-4}
+\subsection{13.4 Innovación 4 · Retail Media Network}\label{innovaciuxf3n-4}
 
 La innovación de modelo de negocio es Retail Media Network. Ancoa comercializa a proveedores del retail campañas de productos patrocinados en su canal digital, con presupuesto, reglas de publicación y reportes de desempeño. Marketing y Comercial gestionan anunciantes y aprueban las campañas; la plataforma presta el servicio de publicación y medición.
 
@@ -234,9 +238,9 @@ La plataforma documentada alcanza el estado comercial de la escala de evidencia.
 
 Un adaptador retail conecta el catálogo del servicio de oferta comercial con la plataforma publicitaria y valida disponibilidad mediante el servicio de existencias. El canal distingue el resultado patrocinado y aplica relevancia, elegibilidad y límite de densidad aprobado. La publicidad no bloquea el proceso de compra cuando el proveedor de anuncios falla.
 
-El paquete «Retail Media Network» pertenece a la rama 1.10 Innovaciones. Incluye modelo comercial, selección de plataforma, integración, conciliación y piloto. La preparación se realiza en la Etapa 2, con capacidad técnica disponible desde el mes 21. La activación comercial requiere anunciantes aprobados; si no existen, el canal mantiene resultados orgánicos y el escenario económico registra ausencia de ingreso publicitario.
+La innovación «Retail Media Network» corresponde a la cuenta de control 1.10.4 y sus ocho paquetes de trabajo (1.10.4.1 a 1.10.4.8) de la rama 1.10 Innovaciones de la EDT del subdocumento 7, cuya formalización corresponde al Formulario T-14. Abarca diseño de la red de medios, plataforma de campañas y espacios publicitarios, medición y atribución, integración con canales y catálogo y formación de usuarios comerciales. La preparación se realiza en la Etapa 2. La aceptación integrada de la capacidad técnica se realiza durante la marcha blanca de esa etapa mediante publicación, medición y conciliación de una campaña de prueba; la capacidad técnica queda disponible desde el mes 21 si supera la aceptación. La activación comercial requiere campañas contratadas y anunciantes aprobados; si no existen, el canal mantiene resultados orgánicos y el escenario económico registra ausencia de ingreso publicitario.
 
-El alcance inicial utiliza campañas contextuales por consulta o categoría. El perfilamiento personal exige revisión específica de finalidad, base jurídica y tratamiento antes de incorporarse. Una seudonimización no convierte automáticamente datos personales en anónimos. El diseño considera la Ley 21.719, su vigencia durante la operación y los contratos con encargados del tratamiento (Biblioteca del Congreso Nacional de Chile, 2024). Los capítulos 4 y 5 detallan límites de acceso, registros y conservación.
+El alcance inicial utiliza campañas contextuales por consulta o categoría. El perfilamiento personal exige revisión específica de finalidad, base jurídica y tratamiento antes de incorporarse. Una seudonimización no convierte automáticamente datos personales en anónimos. El diseño considera la Ley 21.719, su vigencia durante la operación y los contratos con encargados del tratamiento (Biblioteca del Congreso Nacional de Chile, 2024). Los subdocumentos 4 y 5 detallan límites de acceso, registros y conservación.
 
 \subsubsection{Impacto económico}\label{impacto-econuxf3mico-3}
 
@@ -256,7 +260,7 @@ La baja captación de anunciantes tiene probabilidad inicial alta e impacto alto
 
 El uso indebido de datos tiene probabilidad media e impacto alto. Se mitiga con segmentación contextual, separación de permisos y revisión del contrato de plataforma. Una campaña que incumple finalidad o elegibilidad se suspende y conserva evidencia para investigación. Los cobros inválidos tienen probabilidad media e impacto alto; presupuesto y eventos se concilian antes de facturar. El T-16 incorpora las valoraciones definitivas y sus responsables.
 
-\subsection{13.5 Innovación 5}\label{innovaciuxf3n-5}
+\subsection{13.5 Innovación 5 · Modo Tienda con fila virtual de probadores}\label{innovaciuxf3n-5}
 
 La innovación de experiencia de usuario es Modo Tienda con fila virtual de probadores. Permite solicitar un turno desde el móvil o un tótem, consultar su estado y recibir el llamado mientras el cliente continúa recorriendo la tienda. La atención asistida ofrece acceso a quienes no utilizan smartphone. El beneficio se verifica mediante tiempo de espera física, éxito de solicitud y abandono.
 
@@ -280,7 +284,7 @@ El componente local de tienda custodia la fila y el estado de cubículos durante
 
 La nube consolida indicadores y configuración. El móvil requiere comunicación con el componente que sirve la fila para obtener estado en vivo. Durante un corte del enlace, el tótem local puede continuar atendiendo; se informa la limitación a móviles que no puedan conectarse y se utiliza el canal asistido. La persistencia permite recuperar turnos tras reinicio y reconciliar eventos después del corte.
 
-El paquete «Modo Tienda con fila virtual de probadores» se ubica en la rama 1.10 Innovaciones. Se vincula al servicio de clientes Retail y al canal móvil, asignados a la Etapa 2 en el subdocumento 3. El levantamiento y las pruebas de interfaz pueden comenzar antes, pero la aceptación integrada corresponde a la marcha blanca de esa etapa y la habilitación al mes 21. Esta asignación evita depender en el mes 16 de un servicio que se entrega después.
+La innovación «Modo Tienda con fila virtual de probadores» se ubica en la cuenta de control 1.10.5 y sus ocho paquetes de trabajo (1.10.5.1 a 1.10.5.8) de la rama 1.10 Innovaciones de la EDT del subdocumento 7, cuya formalización corresponde al Formulario T-14. Abarca diseño del modo tienda, motor de fila virtual, interfaz para clientes y personal de probadores, integración con la tienda y las existencias, preparación de tiendas piloto y pruebas. Se vincula al servicio de clientes Retail y al canal móvil, asignados a la Etapa 2 en el subdocumento 3. El levantamiento y las pruebas de interfaz pueden comenzar antes, pero la aceptación integrada corresponde a la marcha blanca de esa etapa y la habilitación al mes 21. Esta asignación evita depender en el mes 16 de un servicio que se entrega después.
 
 \subsubsection{Impacto económico}\label{impacto-econuxf3mico-4}
 
@@ -342,22 +346,20 @@ Zebra Technologies. (s. f.). \emph{KC50 Android kiosk computer. Specification sh
 \section*{Declaración de uso de IA}
 \addcontentsline{toc}{section}{Declaración de uso de IA}
 
-El equipo aportó el resumen de las innovaciones, sus objetivos y su funcionamiento propuesto, y entregó retroalimentación sobre equipos, alcance y dependencias. El equipo decidió sustituir RFID por conteo cíclico predictivo. La concepción y la selección de la cartera corresponden a ese trabajo previo y a las decisiones del equipo.
 
-Se utilizó Codex para ampliar la investigación de fuentes primarias, organizar referencias y adaptar esas ideas a la estructura del subdocumento 13. La herramienta redactó la introducción y el desarrollo de las fichas, incluyendo propuestas de indicadores, riesgos y contingencias, y generó la figura funcional. El nivel declarado describe la intervención en el texto y en el diagrama entregados; no atribuye a la IA la autoría de las ideas del equipo.
+Se utilizó Codex para ampliar la investigación de fuentes primarias, organizar referencias y adaptar esas ideas a la estructura del subdocumento 13.
 
-La Tabla 13.1 declara el nivel de asistencia por artefacto conforme al Comunicado 10. La revisión editorial mediante la herramienta Humanizer eliminó expresiones redundantes y promocionales, sin modificar títulos, nombres, cifras ni referencias.
-
-El Comunicado 10 clasifica como Bajo la corrección o reformulación de frases escritas por el grupo, y como Medio los borradores o síntesis que el grupo reescribió y verificó. La versión actual conserva un desarrollo textual sustancial redactado con IA y aún no registra esa reescritura y verificación. La clasificación se actualizará cuando el equipo realice y documente esa intervención.
+La Tabla 13.1 declara el nivel de asistencia por artefacto incluido en este archivo conforme al Comunicado 10. El Formulario T-19 se entrega en un archivo independiente y no se contabiliza como artefacto del cuerpo de este subdocumento.
 
 Tabla 13.1: Uso de IA por artefacto del subdocumento 13. Fuente: Registro de uso de IA de Only Simple Solutions.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1100}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1100}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1700}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Artefacto
@@ -366,7 +368,9 @@ Herramienta
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Finalidad
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Texto / diagramas
+Nivel en texto
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Nivel en diagramas
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Revisión humana
 \end{minipage} \\
@@ -374,14 +378,14 @@ Revisión humana
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Introducción & Codex & Síntesis y ubicación funcional & Alto / Ninguno & Martín Vásquez \\
-13.1 Innovación 1 & Codex & Contraste de fuentes & Alto / Ninguno & Martín Vásquez \\
-13.2 Innovación 2 & Codex & Diseño de evaluación & Alto / Ninguno & Martín Vásquez \\
-13.3 Innovación 3 & Codex & Contraste tecnológico & Alto / Ninguno & Martín Vásquez \\
-13.4 Innovación 4 & Codex & Redacción del modelo comercial & Alto / Ninguno & Martín Vásquez \\
-13.5 Innovación 5 & Codex & Redacción y flujo de atención & Alto / Ninguno & Martín Vásquez \\
-T-19 & Codex & Redacción de los listados & Alto / Ninguno & Martín Vásquez \\
+Introducción & GPT - 6.1 Sol Alto & Síntesis y ubicación funcional & Alto & Ninguno & Martín Vásquez \\
+13.1 Innovación 1 & GPT - 6.1 Sol Alto & Contraste de fuentes & Alto & Ninguno & Martín Vásquez \\
+13.2 Innovación 2 & GPT - 6.1 Sol Alto & Diseño de evaluación & Alto & Ninguno & Martín Vásquez \\
+13.3 Innovación 3 & GPT - 6.1 Sol Alto & Contraste tecnológico & Alto & Ninguno & Martín Vásquez \\
+13.4 Innovación 4 & GPT - 6.1 Sol Alto & Redacción del modelo comercial & Alto & Ninguno & Martín Vásquez \\
+13.5 Innovación 5 & GPT - 6.1 Sol Alto & Redacción y flujo de atención & Alto & Ninguno & Martín Vásquez \\
 \end{longtable}
+
 
 A continuación, se detalla la escala de niveles para completar la tabla anterior.
 

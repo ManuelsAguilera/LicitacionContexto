@@ -1,6 +1,6 @@
 # Enlace de los 37 riesgos con la EDT vigente (Formulario T-14)
 
-Documento de contexto, no entregable, fechado el 2026-10-12. Cuenta, responsable, ventana y hito provienen de `80_Artefactos/entrega-sd07-2026-10-12/form-T-14.md`. Los códigos antiguos de `calificacion.md` se tradujeron por nombre de cuenta con la equivalencia que figura al final de ese archivo y, donde no figuraba, con `14_edt_corregida.md`. Ningún riesgo quedó sin cuenta equivalente.
+Documento de contexto, no entregable, fechado el 2026-10-12. Cuenta, responsable, ventana y hito provienen de `80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-14.md`. Los códigos antiguos de `calificacion.md` se tradujeron por nombre de cuenta con la equivalencia que figura al final de ese archivo y, donde no figuraba, con `14_edt_corregida.md`. Ningún riesgo quedó sin cuenta equivalente.
 
 | ID | Cuenta(s) vigente(s) del T-14 | Nombre de la cuenta principal | Responsable del T-14 | Ventana (meses) | Hito o entrega | Plazo de la acción | Cómo se obtuvo |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |

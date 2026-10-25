@@ -34,11 +34,14 @@ secciones:
   - T7-04-4.3
   - T7-04-4.3.1
   - T7-04-4.3.2
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 4 — Arquitectura lógica y física de la solución
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-04.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento4.tex`](../latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Referencia actual de consistencia; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -49,7 +52,7 @@ actualizado: 2026-10-06
 | Carpeta | `02_Propuesta/sd-04_arquitectura-logica-y-fisica/` |
 | Capítulo en el informe | Capítulo IV |
 | Formularios asociados | T-11 |
-| Estado | Sin redactar |
+| Estado | Borrador LaTeX disponible; referencia actual de consistencia; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -76,19 +79,19 @@ En todo el capítulo: la arquitectura es propia de la solución planteada (no se
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Sin redactar |
-| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Sin redactar |
-| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Sin redactar |
-| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Sin redactar |
-| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Sin redactar |
-| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Sin redactar |
-| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Sin redactar |
+| 4.1 | Arquitectura lógica | Mapeada al 100 % con el Esquema de Solución (3.3) y la Explicación de la Solución (3.4). Capas, módulos, límites de contexto, responsabilidades e interfaces; arquitectura de integración (servicios, contratos, mensajería, versionado, gobierno); arquitectura de seguridad (Zero Trust, capa expuesta, identidad, cifrado, controles). | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.1.1 | Especificaciones Tecnologías de Software a utilizar | Lenguajes, marcos, motores, servicios y productos, con alternativas evaluadas y criterio de decisión. | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.2 | Arquitectura física | Mapeada al 100 % con la Arquitectura Lógica. Emplazamiento de cada componente en nube y on-premise (Art. 16.º); servicios contratados en nube; arquitectura de despliegue (ambientes Desarrollo, QA, Preproducción, Producción y Recuperación ante Desastres, redes, alta disponibilidad, DR, respaldos); conexiones y puntos de falla con su contingencia; dimensionamiento y plan de capacidad. | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.2.1 | Especificaciones Implementos a proveer (Hardware y Software) | Resumen y análisis; el detalle va en el Formulario T-11. | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.3 | Data center | Texto que presenta la estrategia de centros de datos antes de los subtítulos. | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.3.1 | Especificaciones Data Center Primaria | Proveedor, región, zonas de disponibilidad, servicios y sitio on-premise, según corresponda. | Borrador LaTeX; referencia actual, sin revisión humana |
+| 4.3.2 | Especificaciones Data Center Secundario | Región o sitio de recuperación, replicación, RPO y RTO, y procedimiento de conmutación. | Borrador LaTeX; referencia actual, sin revisión humana |
 
 Anexos: Formulario T-11.
 
 Se sugiere incluir en 4.2 una tabla de mapeo que muestre, para cada componente, su correspondencia entre esquema de solución (3.3), arquitectura lógica (4.1) y componente físico (4.2).
 
-La redacción vive en `02_Propuesta/latex_final/sd-04.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 

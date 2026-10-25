@@ -82,18 +82,23 @@
 \usepackage{oss}
 \begin{document}
 
-\ossCover{Subdocumento 6}{Metodologías}
+
+\ossCover{Metodologías}{Subdocumento 6}
+
 \renewcommand{\contentsname}{Índice general}
 \renewcommand{\listfigurename}{Lista de figuras}
 \renewcommand{\listtablename}{Lista de tablas}
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
+\renewcommand{\thefigure}{6.\arabic{figure}}
+\renewcommand{\thetable}{6.\arabic{table}}
 \setcounter{tocdepth}{4}
 \makeatletter
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{2.2ex \@plus 1ex \@minus .2ex}{0.6ex}{\normalfont\normalsize\bfseries}}
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}{1.8ex \@plus .6ex \@minus .2ex}{0.4ex}{\normalfont\normalsize\bfseries\itshape}}
 \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.9em}}
 \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{2.9em}}
+
 \makeatother
 \tableofcontents
 \clearpage
@@ -109,13 +114,12 @@ y organizará la construcción, verificación y entrega de la solución de
 Multitiendas Ancoa S.A. La gestión del apartado 6.1 integra compromisos
 contractuales y coordinación de frentes; el desarrollo del 6.2 produce
 incrementos dentro del alcance y de sus condiciones de calidad y
-aceptación. Los formularios T-9 y T-10 recogerán el detalle operativo en
-archivos separados.
+aceptación. Los formularios T-9 y T-10 recogerán el detalle operativo en archivos separados, y el Anexo A reúne las planillas de gestión de interesados. En este subdocumento, las tablas y figuras se numeran 6.n; en su anexo, A.x.y; y en los formularios, por apartado (por ejemplo, T-9.4.2). Toda referencia a otro documento indica su nombre.
 
 La metodología utiliza el gobierno corporativo del Subdocumento 1, el
-diagnóstico e interesados del 2, el alcance del 3 y la arquitectura del
-4. Sus decisiones alimentan el cronograma y recursos del 7, los riesgos
-del 8, las pruebas del 9 y la organización del 12. La Tabla 1 muestra
+diagnóstico e interesados del Subdocumento 2, el alcance del Subdocumento 3 y la arquitectura del
+Subdocumento 4. Sus decisiones alimentan el cronograma y recursos del Subdocumento 7, los riesgos
+del Subdocumento 8, las pruebas del Subdocumento 9 y la organización del Subdocumento 12. La Tabla 6.1 muestra
 la correspondencia de control que se empleará para relacionar gestión y
 construcción con esos productos.
 
@@ -158,8 +162,7 @@ Construcción y entrega & 6.2 & DevSecOps, seguridad, pruebas y
 aceptación & Versiones, pruebas y conformidades \\
 Convivencia e implantación & 6.1 y 6.2 & Marchas blancas, pasos a
 producción y convivencia & Conciliación, preparación y retorno \\
-Operación y conocimiento & 6.1.7 y 6.2.7 & Continuidad, métricas y
-transferencia & Servicio, métricas y transferencia \\
+Operación y conocimiento & 6.1.3.4, 6.1.7.1 y 6.2.7 & Continuidad, métricas y transferencia & Servicio, métricas y transferencia \\
 \end{longtable}
 
 La correspondencia obliga a que una decisión de metodología tenga un
@@ -312,8 +315,7 @@ autorizar pasos a producción.
 La asignación de personas y dedicaciones cubrirá esos roles durante los
 períodos exigidos. El líder de desarrollo y el líder funcional tendrán
 dedicación completa durante implementación; datos e integración serán
-permanentes en esa fase, el líder de operación/SRE participará desde el
-mes 6 y el líder de implantación desde el mes 8. La composición por
+permanentes en esa fase, el líder de operación/SRE participará desde el mes 6, en que el hito H3 entrega los ambientes, y el líder de implantación desde el mes 8. La composición por
 equipo, las suplencias y cualquier acumulación de funciones se
 documentarán en el Subdocumento 12, el Formulario T-8 y la nivelación
 T-15, sin contabilizar dos veces la capacidad de una persona (Bases
@@ -368,10 +370,7 @@ responsables explícitos. El líder de datos evaluará autoridad,
 integridad y tratamiento de la información; el encargado de seguridad
 verificará accesos y segregación; y la contraparte de cumplimiento
 designada por Ancoa evaluará las obligaciones del emisor fiscalizado.
-Toda decisión que afecte cruces entre ambos negocios incorporará sus
-evaluaciones documentadas antes de la aprobación por la instancia
-competente. Ninguna prioridad comercial autorizará eliminar la
-separación entre retail y el emisor. Como mecanismo de resolución, las
+Toda decisión que afecte cruces entre ambos negocios seguirá una ruta única, coherente con el Subdocumento 4, que exige aprobación jurídica de cada cruce, y con el Subdocumento 5, que asigna el dominio Frontera a Contraloría y al Negocio Financiero en conjunto. Primero, el líder de datos preparará la ficha de intercambio de X-01 con la finalidad, la base de licitud y los campos mínimos del cruce. Segundo, el encargado de seguridad y la contraparte de cumplimiento designada por Ancoa emitirán sus evaluaciones documentadas. Tercero, el área jurídica de Ancoa validará la base de licitud, y Contraloría y el Negocio Financiero aprobarán en conjunto la ficha; esta aprobación es la única que habilita el cruce. Cuarto, el Comité de Arquitectura verificará que la política de X-01 aplica exactamente la ficha aprobada y registrará la decisión de arquitectura. El Comité Ejecutivo será informado de cada ficha aprobada; si un cruce afecta el alcance o una línea base, se tramitará además por control integrado de cambios. Ante un desacuerdo, el cruce permanecerá denegado y el asunto se escalará al Comité Ejecutivo, que podrá redefinir o repriorizar la necesidad, pero no sustituir la validación jurídica ni la aprobación conjunta. Ninguna prioridad comercial autorizará eliminar la separación entre retail y el emisor. Como mecanismo de resolución, las
 decisiones conjuntas requerirán representantes autorizados de ambas
 partes y responsables de la materia afectada. El acuerdo será explícito
 y quedará en acta; si falta un responsable necesario o existe
@@ -663,7 +662,7 @@ coordinación de personas, sin presumir un organigrama confirmado.
 \end{itemize}
 
 Los cuatro procesos no se ejecutarán una sola vez. Only Simple Solutions
-los repetirá al cierre de cada intervalo de coordinación, al pasar de la
+los repetirá al cierre de cada intervalo de planificación, al pasar de la
 Etapa 1 a la Etapa 2 y antes de cada marcha blanca y paso a producción,
 porque en cada uno de esos momentos cambian los interesados que deben
 participar y el nivel de compromiso que el proyecto necesita de ellos.
@@ -704,7 +703,8 @@ Cada interesado registrado se clasifica, además, según cuatro criterios.
 \item
   \textbf{Contexto:} retail, emisor, frontera retail--emisor (participa
   en ambos negocios o controla el cruce entre ellos) o plataforma
-  compartida (sostiene la infraestructura que usan ambos). Este criterio
+  compartida (sostiene la infraestructura que usan ambos); los dueños de
+  la compañía se clasifican en el contexto propiedad. Este criterio
   responde a la operación de Ancoa, porque Ancoa es a la vez una tienda
   y un emisor de crédito fiscalizado; ningún cruce de datos entre ambos
   ámbitos se habilitará sin una finalidad definida, una base de licitud
@@ -806,7 +806,7 @@ Contraloría y al Negocio Financiero.
 
 \textbf{Ecosistema de interesados}
 
-La Figura 1 ubica a los 26 interesados en sus siete grupos. El color
+La Figura 6.1 ubica a los 26 interesados en sus siete grupos. El color
 del borde indica el contexto, el tipo de borde distingue a los actores
 de los interesados no operativos y el código de cada uno será su
 identificador en el registro de interesados.
@@ -816,7 +816,7 @@ identificador en el registro de interesados.
 \centering
 \ossFigCaption{Ecosistema de actores e interesados de Multitiendas Ancoa.}\label{fig:6-1}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{prism-uploads/Figura 1 - Ecosistema de actores e interesados - rediseño.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/112122353c05.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Subdocumento 2, sección 2.4.
 \end{minipage}
@@ -827,16 +827,14 @@ convención de considerar Propiedad externa a la estructura operativa. La
 adopción se concentra en quienes ejecutan los procesos de tienda y en
 los terceros que intervienen en ellos. La frontera Retail--Emisor
 involucra a dirección, Contraloría y las áreas responsables de ambos
-negocios; las decisiones de cruce incorporarán las evaluaciones
-documentadas de datos, seguridad y cumplimiento antes de la aprobación
-competente. Las comunicaciones con fiscalizadores se realizarán por
+negocios; cada cruce seguirá la ruta única de aprobación descrita en la sección 6.1.2. Las comunicaciones con fiscalizadores se realizarán por
 Ancoa. Propiedad se relacionará con el proyecto por medio del
 Directorio, sin crear una vía de aprobación paralela.
 
 \textbf{Registro de interesados}
 
 La información obtenida se documentará en el registro de interesados,
-conservado en el PMIS definido en 6.1.5.1. La Tabla 2 sintetiza cinco
+conservado en el PMIS definido en 6.1.5.1. La Tabla 6.2 sintetiza cinco
 registros del universo de interesados para mostrar su función de
 gestión. El registro completo identificará a I-01 a I-26; los nombres,
 contactos, atribuciones y expectativas de los representantes se
@@ -892,16 +890,37 @@ I-26 & Agencia de Protección de Datos Personales & Organismo externo &
 Fiscalización aplicable & Representantes autorizados de Ancoa \\
 \end{longtable}
 
-La síntesis muestra responsabilidades y canales; el registro completo
-conservará los tres bloques de identificación, evaluación y
-clasificación del PMBOK (PMI, 2017). El bloque de identificación
-permitirá contactar a cada representante; el de evaluación registrará
-qué espera del proyecto y cuánto puede influir en él; y el de
-clasificación aplicará los cuatro criterios descritos al inicio de esta
-sección. El registro se mantendrá actualizado durante todo el contrato.
-Las evaluaciones sensibles de actitud tendrán acceso restringido al jefe
-de proyecto, al líder de implantación y al patrocinador de Ancoa,
-conforme a los permisos del plan.
+La síntesis muestra responsabilidades y canales. El registro completo se define una sola vez, con tres bloques del PMBOK
+(PMI, 2017), y esa misma definición rige la planilla del Anexo A.1 y la
+propuesta inicial del Formulario T-9.
+
+\begin{itemize}
+\item
+  \textbf{Identificación:} código (I-01 a I-26), interesado, grupo de
+  interés y rol en el proyecto; representante titular y suplente, cargo y
+  área, correo y teléfono; atribuciones confirmadas por Ancoa y canal de
+  validación.
+\item
+  \textbf{Evaluación:} requerimientos y expectativas, influencia, interés,
+  dirección de la influencia y actitud observada.
+\item
+  \textbf{Clasificación:} relación con Ancoa, forma de participación,
+  contexto y cuadrante de poder e interés, según los cuatro criterios
+  descritos al inicio de esta sección.
+\end{itemize}
+
+Los niveles actual y deseado de involucramiento no forman parte del
+registro; se gestionan en la matriz de evaluación del involucramiento
+(sección 6.1.4.2 y Anexo A.2). El Formulario T-9 contiene la propuesta
+inicial de Only Simple Solutions, preparada con la información disponible
+antes de la adjudicación: identificación y clasificación de los 26
+interesados y niveles deseados propuestos. Las planillas del Anexo A son
+el formato en blanco en que esa propuesta se validará y completará con
+los representantes durante el levantamiento del mes 1, y en que se
+mantendrán los registros vigentes durante todo el contrato. Las
+evaluaciones sensibles de actitud tendrán acceso restringido al jefe de
+proyecto, al líder de implantación y al patrocinador de Ancoa, conforme a
+los permisos del plan.
 
 \textbf{Análisis de poder e interés}
 
@@ -909,7 +928,7 @@ Con el registro completo se elaborará la matriz de poder e interés. El
 poder es la capacidad del interesado para aprobar, detener o condicionar
 decisiones del proyecto; el interés es el grado en que la solución
 cambia su trabajo, sus resultados o las obligaciones que fiscaliza. La
-Figura 2 muestra la ubicación de los 26 interesados, relacionada con
+Figura 6.2 muestra la ubicación de los 26 interesados, relacionada con
 el análisis del Subdocumento 2.
 
 \begin{center}
@@ -917,9 +936,9 @@ el análisis del Subdocumento 2.
 \centering
 \ossFigCaption{Matriz de poder e interés de los interesados.}\label{fig:6-2}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/Figura_6.2_matriz_poder_interes}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/0e54198d8fb4.png}
 
-\raggedright\textbf{Fuente:} Elaboración propia a partir de la Figura 1 y de PMI (2017).
+\raggedright\textbf{Fuente:} Elaboración propia a partir de la Figura 6.1 y de PMI (2017).
 \end{minipage}
 \end{center}
 
@@ -990,7 +1009,7 @@ y su cierre se mide en el monitoreo. La matriz usa cinco niveles.
   activamente el éxito del proyecto dentro de la organización.
 \end{itemize}
 
-La Tabla 3 presenta cinco ejemplos de acciones y niveles deseados. El
+La Tabla 6.3 presenta cinco ejemplos de acciones y niveles deseados. El
 nivel actual se determinará mediante entrevistas, encuestas y talleres
 del levantamiento. Los niveles deseados se acordarán con Ancoa al
 aprobar la estrategia de involucramiento, con sus acciones, responsables
@@ -1078,12 +1097,12 @@ tres aspectos de cada interesado.
   cuando se relaciona con una obligación fiscalizada.
 \item
   \textbf{Brecha de involucramiento:} diferencia entre el nivel actual y
-  el deseado registrados en la matriz de la Tabla 3, que indica
+  el deseado registrados en la matriz de la Tabla 6.3, que indica
   quiénes requieren acciones específicas.
 \end{itemize}
 
 Este análisis define el enfoque de gestión de cada cuadrante, que la
-Tabla 4 resume. La ubicación de cada interesado se revisará durante el
+Tabla 6.4 resume. La ubicación de cada interesado se revisará durante el
 proyecto y no se considerará permanente.
 
 \begin{longtable}[]{@{}
@@ -1192,8 +1211,7 @@ perfil de cada interesado, organizadas en cuatro dimensiones.
   tiendas del piloto probarán la solución antes de cada ola, y se
   realizarán talleres con vendedores de marketplace, proveedores y
   transportistas, a través de Ancoa, para validar sus integraciones.
-  Antes del hito H6 habrá un agente de cambio en cada una de las 22
-  tiendas, elegido por su jefatura.
+  Only Simple Solutions se compromete a que cada una de las 22 tiendas cuente con un agente de cambio activo antes del hito H6. La designación corresponde a la jefatura de cada tienda y es una dependencia de Ancoa; Only Simple Solutions propondrá el perfil, capacitará a los agentes y escalará al Comité de Proyecto toda designación pendiente.
 \item
   \textbf{Reconocimiento y refuerzo positivo:} Only Simple Solutions y
   Ancoa destacarán a las tiendas, agentes de cambio y usuarios piloto
@@ -1213,8 +1231,7 @@ de Ancoa de cada grupo de interés para su validación y ajuste. La
 estrategia de involucramiento se aprobará junto con el plan para la
 dirección del proyecto en el hito H1 y contendrá la matriz de evaluación
 validada, las estrategias por dimensión, el calendario por ola y las
-dedicaciones comprometidas por Ancoa. En la misma instancia se fijarán
-las metas de los indicadores de la Tabla 5. Desde entonces, todo
+dedicaciones comprometidas por Ancoa. En la misma instancia se confirmarán las metas de los indicadores de la Tabla 6.5, que Only Simple Solutions propone desde ya; cualquier ajuste quedará fundamentado en el acta. Desde entonces, todo
 cambio en las dedicaciones o en los niveles deseados se revisará en el
 Comité de Proyecto y, si afecta una línea base, se tramitará como
 solicitud de cambio.
@@ -1325,9 +1342,7 @@ la instancia que corresponda.
   datos de ambos canales.
 \item
   \textbf{Uso comercial de datos financieros (I-06, I-03 e I-09).}
-  Ningún cruce de datos entre retail y emisor se habilitará sin
-  finalidad definida, base de licitud y aprobación de Contraloría y del
-  Negocio Financiero, conforme a la Ley N.º 21.719.
+  Ningún cruce de datos entre retail y emisor se habilitará sin finalidad definida y base de licitud (Ley N.º 21.719, 2024), ni fuera de la ruta única de la sección 6.1.2: validación jurídica de Ancoa y aprobación conjunta de Contraloría y del Negocio Financiero.
 \item
   \textbf{Prioridad del inventario frente al plazo de 2029 (I-02 e
   I-09).} La preparación de la migración de la cartera se planificará
@@ -1407,7 +1422,7 @@ siguiente.
 Monitorear el involucramiento es el proceso de supervisar las relaciones con los interesados y adaptar las estrategias para involucrarlos (PMI, 2017). Será un proceso iterativo y basado en evidencia, orientado a comprobar si cada interesado se mantiene en el nivel requerido y a detectar a tiempo cambios en su influencia, disponibilidad o disposición frente al proyecto.
 
 El jefe de proyecto actualizará la matriz de evaluación del
-involucramiento al cierre de cada intervalo de coordinación, con
+involucramiento al cierre de cada intervalo de planificación, con
 información de comités, revisiones, talleres, pruebas y encuestas.
 Además, hará una revisión extraordinaria antes de cada marcha blanca y
 paso a producción, al inicio de la Etapa 2 y cuando cambie un
@@ -1427,8 +1442,7 @@ mínimo, cuatro aspectos.
   Evolución de su nivel de involucramiento respecto del nivel deseado.
 \end{itemize}
 
-Estos antecedentes se consolidarán en los indicadores de la Tabla 5.
-Sus metas son umbrales internos de gestión de Only Simple Solutions y se
+Estos antecedentes se consolidarán en los indicadores de la Tabla 6.5. Sus metas son la propuesta de Only Simple Solutions, se confirman en H1 y son umbrales internos de gestión y se
 gestionarán sin reducir obligaciones contractuales ni condiciones de
 aceptación.
 
@@ -1479,20 +1493,19 @@ Decisiones de Ancoa a tiempo & Resueltas en plazo / decisiones vencidas
 del período & Registro de decisiones en Jira & Mensual & ≥ 90
 \% \\
 Satisfacción de los interesados & Promedio de encuesta breve, escala de
-1 a 5 & Encuesta posterior a revisiones y pilotos & Por intervalo & ≥
+1 a 5 & Encuesta posterior a revisiones y pilotos & Por intervalo de planificación & ≥
 4,0 \\
 Resolución de conflictos & Días hábiles desde el registro hasta la
 resolución efectiva & Registro de incidentes en Jira & Mensual & ≤ 10
 días hábiles \\
 Cobertura de agentes de cambio & Tiendas con agente de cambio activo /
-22 tiendas & Registro de agentes de cambio & Por intervalo & 22 de 22
-antes de H6 \\
+22 tiendas & Registro de agentes de cambio & Por intervalo de planificación & 22 de 22 antes de H6 (designación por la jefatura de cada tienda) \\
 Personal capacitado por ola & Personal que aprobó la capacitación /
 dotación de la ola & Plataforma de capacitación & Antes de cada ola & ≥
 95 \% \\
 Interesados internos críticos en nivel deseado & Internos de gestión
 cercana en nivel deseado / internos de ese cuadrante & Matriz de
-evaluación del involucramiento & Por intervalo & 100 \% antes de cada
+evaluación del involucramiento & Por intervalo de planificación & 100 \% antes de cada
 paso a producción \\
 \end{longtable}
 
@@ -1557,7 +1570,7 @@ versión vigente de la estrategia de involucramiento. Si un ajuste
 modifica una línea base, un entregable o un compromiso contractual, se
 tramitará mediante el control integrado de cambios (sección 6.1.3.6). Si
 un interesado crítico interno permanece bajo el nivel requerido durante
-dos intervalos seguidos, el asunto se escalará al Comité Ejecutivo.
+dos intervalos de planificación seguidos, el asunto se escalará al Comité Ejecutivo.
 
 \textbf{Salidas del proceso}
 
@@ -1640,7 +1653,7 @@ funciones de cada participante y a la clasificación de la información,
 restringiendo los antecedentes confidenciales y los correspondientes al
 negocio financiero a las personas autorizadas.
 
-La Figura 3 presenta el plan como un mapa conceptual. La figura
+La Figura 6.3 presenta el plan como un mapa conceptual. La figura
 relaciona los insumos, ocho componentes de decisión y los productos que
 genera. Cada componente identifica una pregunta que el plan debe
 resolver.
@@ -1650,7 +1663,7 @@ resolver.
 \centering
 \ossFigCaption{Mapa conceptual del plan de gestión de las comunicaciones.}\label{fig:6-3}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-03.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/1c5944e6ac44.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia a partir de PMI (2017).
 \end{minipage}
@@ -1690,7 +1703,7 @@ al último cierre mensual.
 
 \paragraph{6.1.5.2 Matriz de comunicaciones}\label{6-1-5-2-matriz-de-comunicaciones}
 
-La matriz de comunicaciones lleva el plan a la práctica. Indica qué información se comunicará, quién la emite, quién la recibe y por qué canal. La Tabla 6 presenta las comunicaciones esenciales del proyecto; la frecuencia de cada una sigue las cadencias de gobierno, y la matriz se ajustará en el mes 1 con los representantes de cada grupo de interés.
+La matriz de comunicaciones lleva el plan a la práctica. Indica qué información se comunicará, quién la emite, quién la recibe y por qué canal. La Tabla 6.6 presenta las comunicaciones esenciales del proyecto; la frecuencia de cada una sigue las cadencias de gobierno, y la matriz se ajustará en el mes 1 con los representantes de cada grupo de interés.
 
 Se diferenciarán las comunicaciones programadas de aquellas que deban
 emitirse por la detección de una desviación relevante o un incidente
@@ -1862,7 +1875,7 @@ La reunión semanal de seguimiento registrará impedimentos y compromisos
 operativos. Los product owners revisarán los incrementos y realizarán la
 validación funcional dentro de sus atribuciones, sin sustituir la
 aceptación contractual, y las gerencias involucradas participarán en la
-planificación de cada intervalo cuando corresponda.
+planificación de cada intervalo de planificación cuando corresponda.
 
 El jefe de proyecto supervisará la publicación de las actas en
 SharePoint y la incorporación de los compromisos a Jira, verificando que
@@ -1871,8 +1884,7 @@ pendientes se mantendrán visibles en el tablero hasta su resolución, de
 modo que una reunión concluida no implique el cierre de los asuntos que
 permanezcan abiertos.
 
-Se propondrá que Ancoa designe un agente de cambio por cada una de las
-22 tiendas, en coordinación con el área de personas que corresponda.
+Only Simple Solutions se compromete a que cada una de las 22 tiendas cuente con un agente de cambio activo antes del hito H6. La designación corresponde a la jefatura de cada tienda y es una dependencia de Ancoa; Only Simple Solutions propondrá el perfil, capacitará a los agentes y escalará al Comité de Proyecto toda designación pendiente.
 Cada mensaje dirigido a las tiendas indicará qué cambia, cuándo cambia y
 a quién preguntar. En sentido inverso, los responsables de desarrollo,
 el arquitecto de solución y el líder de implantación y gestión del
@@ -2001,7 +2013,7 @@ responsables.
 
 Dentro de cualquiera de las tres áreas, cada mensaje seguirá uno de los
 tres métodos de comunicación que reconoce el PMBOK, elegido según su
-propósito (PMI, 2017). La Figura 4 muestra el flujo de procesos de
+propósito (PMI, 2017). La Figura 6.4 muestra el flujo de procesos de
 cada tipo. Primero se identifica la necesidad de comunicar y su
 propósito, y luego el mensaje sigue la secuencia de pasos que
 corresponde a su método.
@@ -2011,7 +2023,7 @@ corresponde a su método.
 \centering
 \ossFigCaption{Flujo de procesos según el tipo de comunicación.}\label{fig:6-4}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-04.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/9e84b9e7806f.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia a partir de PMI (2017).
 \end{minipage}
@@ -2026,7 +2038,7 @@ registros de resultados y compromisos proporcionales a su finalidad, sin
 imponerles automáticamente un acta de comité. Un asunto que continúe
 abierto seguirá en el registro hasta comprobar su cierre.
 
-En la rama interactiva de la Figura 4, el acta dentro de dos días
+En la rama interactiva de la Figura 6.4, el acta dentro de dos días
 hábiles corresponde a las sesiones de los comités contractuales. Las
 demás reuniones conservarán el registro de resultados y compromisos que
 corresponda a su finalidad.
@@ -2095,13 +2107,13 @@ correctiva.
 
 \paragraph{6.1.5.4 Monitoreo y control de las comunicaciones}\label{6-1-5-4-monitoreo-y-control-de-las-comunicaciones}
 
-El monitoreo verificará que la información llegue a quien la necesita, que se entienda y que produzca las decisiones o acciones esperadas, no solo que se envíe. Será un proceso continuo, que combinará el control documental del PMBOK con la revisión ágil al cierre de cada intervalo, y permitirá ajustar el plan cuando un canal, un mensaje o una frecuencia no funcione.
+El monitoreo verificará que la información llegue a quien la necesita, que se entienda y que produzca las decisiones o acciones esperadas, no solo que se envíe. Será un proceso continuo, que combinará el control documental del PMBOK con la revisión ágil al cierre de cada intervalo de planificación, y permitirá ajustar el plan cuando un canal, un mensaje o una frecuencia no funcione.
 
 \emph{\textbf{Metodología de ejecución del monitoreo}}
 
 El monitoreo se ejecutará como un ciclo de seis fases, que se repite en
 cada intervalo de planificación y se acorta durante la marcha blanca. La
-Figura 5 muestra las seis fases del ciclo y resume a la derecha sus
+Figura 6.5 muestra las seis fases del ciclo y resume a la derecha sus
 cadencias de revisión.
 
 \begin{center}
@@ -2109,7 +2121,7 @@ cadencias de revisión.
 \centering
 \ossFigCaption{Ciclo de monitoreo y control de las comunicaciones.}\label{fig:6-5}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-05.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/41d36fe83bda.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia a partir de PMI (2017).
 \end{minipage}
@@ -2118,8 +2130,7 @@ cadencias de revisión.
 \textbf{Fase 1. Recolectar.} Se reúnen listas de asistencia a comités,
 revisiones y talleres, actas y su fecha de publicación, acuses de
 lectura de mensajes dirigidos, estadísticas de uso del tablero y del
-repositorio y resultados de la encuesta breve de eficacia aplicada por
-intervalo a los representantes pertinentes. Los datos se obtendrán
+repositorio y resultados de la encuesta breve de eficacia aplicada por intervalo de planificación a los representantes pertinentes. Los datos se obtendrán
 preferentemente del PMIS y de los registros de los responsables,
 reduciendo la consolidación manual y manteniendo trazabilidad de su
 origen. Se añadirán las fechas que acreditan cumplimiento. El registro
@@ -2182,13 +2193,13 @@ La cadencia del monitoreo sigue la del gobierno del proyecto. El scrum
 master revisa a diario la comunicación interna de su equipo; el jefe de
 proyecto revisa cada semana las actas, los acuerdos y la bitácora; los
 indicadores se incluyen cada mes en el informe de desempeño y se revisan
-en el Comité de Proyecto; y al cierre de cada intervalo se aplica la
+en el Comité de Proyecto; y al cierre de cada intervalo de planificación se aplica la
 encuesta de eficacia y se ajusta el plan. En marcha blanca el ciclo se
 acelera. La sala de control revisará a diario la comunicación con las
 tiendas, porque un problema en caja se resuelve en horas o se convierte
 en venta perdida.
 
-La Tabla 7 distribuye las actividades de monitoreo entre los
+La Tabla 6.7 distribuye las actividades de monitoreo entre los
 responsables. Ancoa participa en la revisión de las comunicaciones con
 terceros y en la validación de los resultados, porque la eficacia de una
 comunicación la juzga quien la recibe.
@@ -2413,8 +2424,7 @@ trazabilidad suficiente para su operación y auditoría. Los cambios
 realizados durante la implantación o posteriormente en operación
 quedarán controlados y documentados.
 
-Cuando la provisión o instalación física sea realizada directamente por
-Ancoa o por un integrador contratado por este, Only Simple Solutions
+Cuando la provisión o instalación física corresponda a Ancoa o a un integrador contratado por este, según la Tabla 6.8, Only Simple Solutions
 mantendrá la responsabilidad por la especificación técnica, la
 coordinación de su incorporación y la verificación de que el resultado
 obtenido se ajusta a la arquitectura prevista.
@@ -2456,15 +2466,63 @@ el entorno en que será utilizado.
 
 \textbf{Obras y habilitaciones a cargo de Ancoa}
 
-La obra civil de separación de instalaciones es responsabilidad de
-Ancoa, con especificación y coordinación del proponente. Las obras
-eléctricas, canalizaciones y cableado de tiendas y centros de
-distribución se regirán por las exclusiones contractuales y el reparto
-de suministro por sitio. En el centro local de la solución, Only Simple
-Solutions proveerá la conectividad, seguridad y las canalizaciones,
-cañerías o ductos requeridos para su habilitación; ninguna exclusión
-  general trasladará esa obligación al cliente (Bases Técnicas
-  Transversales, 2026, RT-06.06 y RT-06.33).
+La obra civil de separación de instalaciones es responsabilidad de Ancoa, con especificación y coordinación del proponente. Las obras eléctricas, canalizaciones y cableado de tiendas y centros de distribución las ejecutará Ancoa según la especificación y el costeo de Only Simple Solutions. En DC-01 y DC-02, Only Simple Solutions proveerá la conectividad, la seguridad y las canalizaciones, cañerías o ductos requeridos para su habilitación; ninguna exclusión general trasladará esa obligación al cliente (Bases Técnicas Transversales, 2026, RT-06.06 y RT-06.33).
+
+La Tabla 6.8 fija el reparto de obras y suministros por sitio. Usa los
+códigos del glosario de la arquitectura: DC-01 (casa matriz) y DC-02
+(sitio de respaldo) alojan los componentes on-premise de la solución;
+SIT-01 corresponde a las tiendas; CD-01 y CD-02, a los centros de
+distribución; y CLD-01 y CLD-02, a las regiones de Azure. Este reparto es
+el mismo que rige el alcance del Subdocumento 3 (SP-04) y la arquitectura
+física del Subdocumento 4 (Tabla 4.11).
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2300}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2100}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}@{}}
+\caption{Reparto de obras y suministros por sitio.}\label{tab:6-8-reparto}\\
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sitio}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Obras civiles y eléctricas, canalizaciones y cableado}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Equipamiento de red y seguridad}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Hardware y dispositivos operacionales}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Componentes de la solución}
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sitio}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Obras civiles y eléctricas, canalizaciones y cableado}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Equipamiento de red y seguridad}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Hardware y dispositivos operacionales}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Componentes de la solución}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de las Bases Técnicas Transversales (2026, RT-06.06 y RT-06.33).} \\
+\endlastfoot
+\textbf{DC-01 (casa matriz) y DC-02 (sitio de respaldo)} & Obra civil de separación de instalaciones: Ancoa, con especificación de Only Simple Solutions. Conectividad, canalizaciones, cañerías y ductos: Only Simple Solutions. & Only Simple Solutions provee, instala y configura. & No aplica. & Only Simple Solutions provee, licencia, instala y configura servidores, almacenamiento y módulos de seguridad. \\ \addlinespace
+\textbf{SIT-01 (tiendas)} & Ancoa ejecuta, según la especificación y el costeo de Only Simple Solutions. & Ancoa adquiere e instala, directamente o con su integrador; Only Simple Solutions especifica, configura y verifica. & Ancoa adquiere cajas, terminales, lectores e impresoras; Only Simple Solutions especifica, dimensiona y verifica. & Only Simple Solutions provee, licencia y configura el nodo local de la solución. \\ \addlinespace
+\textbf{CD-01 y CD-02 (centros de distribución)} & Ancoa ejecuta, según la especificación y el costeo de Only Simple Solutions. & Ancoa adquiere e instala, directamente o con su integrador; Only Simple Solutions especifica, configura y verifica. & Ancoa adquiere lectores, impresoras de etiquetas y equipamiento del centro; Only Simple Solutions especifica, dimensiona y verifica. & Only Simple Solutions provee, licencia y configura los componentes de la solución del sitio. \\ \addlinespace
+\textbf{CLD-01 y CLD-02 (Azure)} & No aplica. & Only Simple Solutions configura los servicios de seguridad de red de la nube. & No aplica. & Only Simple Solutions provee y configura los servicios. \\
+\end{longtable}
+
+En todos los sitios, el inventario de implementos distinguirá lo
+adquirido por Ancoa y lo provisto por Only Simple Solutions, con su
+criterio de recepción.
 
 No obstante, Only Simple Solutions deberá definir las condiciones
 técnicas que cada sitio debe cumplir. Estas podrán incluir energía,
@@ -2608,7 +2666,7 @@ gestionarse mediante el proceso de control integrado de cambios.
 
 La recepción de una compra, la terminación de una obra o la declaración de cumplimiento emitida por un proveedor no implicarán automáticamente que la dependencia se encuentra satisfecha. Todo componente, servicio o trabajo externo deberá superar una verificación técnica antes de ser incorporado al proyecto.
 
-La Tabla 8 sintetiza los criterios por tipo de dependencia. Estos se
+La Tabla 6.9 sintetiza los criterios por tipo de dependencia. Estos se
 definirán antes de solicitar, adquirir o contratar el resultado
 correspondiente y se ajustarán a la naturaleza de cada dependencia. En
 términos generales, la recepción deberá comprobar su correspondencia con
@@ -2762,8 +2820,7 @@ corresponda a otra organización.
 Ancoa mantendrá las compras de terreno, obras civiles y gestiones
 contractuales que le asigna el alcance contractual. Only Simple
 Solutions conservará la provisión de componentes de solución bajo su
-responsabilidad y la conectividad, seguridad y canalizaciones del centro
-local, además de especificación, coordinación, recepción y configuración
+responsabilidad y la conectividad, seguridad y canalizaciones de DC-01 y DC-02 según la Tabla 6.8, además de especificación, coordinación, recepción y configuración
 comprometidas. El inventario por sitio identificará responsable de
 provisión y criterio de recepción; ningún componente se considerará
 disponible solo por una comunicación de su comprador.
@@ -2781,7 +2838,7 @@ valorización económica de los componentes o servicios considerados.
 
 \subsubsection{6.1.7. Mecanismos de decisión y cadencias de gobierno del proyecto}\label{6-1-7-mecanismos-de-decision-y-cadencias-de-gobierno-del-proyecto}
 
-Las instancias descritas en 6.1.2 funcionarán con una cadencia estable y con límites de autoridad explícitos. Las ceremonias ágiles, reuniones técnicas y coordinaciones de trabajo complementarán este gobierno, pero no crearán niveles paralelos de aprobación. Los equipos podrán resolver el detalle de ejecución dentro de las líneas base y decisiones vigentes; los asuntos que excedan sus atribuciones se escalarán a la instancia correspondiente. La Tabla 9 compara sus cadencias y ámbitos de decisión.
+Las instancias descritas en 6.1.2 funcionarán con una cadencia estable y con límites de autoridad explícitos. Las ceremonias ágiles, reuniones técnicas y coordinaciones de trabajo complementarán este gobierno, pero no crearán niveles paralelos de aprobación. Los equipos podrán resolver el detalle de ejecución dentro de las líneas base y decisiones vigentes; los asuntos que excedan sus atribuciones se escalarán a la instancia correspondiente. La Tabla 6.10 compara sus cadencias y ámbitos de decisión.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
@@ -2905,8 +2962,7 @@ esos compromisos, se evaluará su impacto y se establecerán acciones de
 recuperación, conforme al control integrado de cambios definido en la
 sección 6.1.3.6.
 
-La construcción se organizará en sprints de dos semanas. Al comienzo de
-cada intervalo de coordinación de cuatro sprints, los equipos y dueños
+La construcción se organizará en sprints de dos semanas. Al comienzo de cada intervalo de planificación, de cuatro sprints, los equipos y dueños
 de producto acordarán objetivos, dependencias y contribución a hitos; en
 cada sprint seleccionarán trabajo según prioridad, capacidad disponible
 y condiciones de entrada. Las actividades de planificación, revisión y
@@ -2932,7 +2988,7 @@ las ventanas de congelamiento establecidas para el proyecto.
 
 Este enfoque tiene implicancias directas en cinco ámbitos, la gestión de
 requerimientos, la arquitectura evolutiva, la refactorización, la deuda
-técnica y el tiempo de salida al mercado. La Figura 6 resume la
+técnica y el tiempo de salida al mercado. La Figura 6.6 resume la
 condición del proyecto que hace exigente cada ámbito y la respuesta que
 la metodología desarrolla en las secciones siguientes.
 
@@ -2941,7 +2997,7 @@ la metodología desarrolla en las secciones siguientes.
 \centering
 \ossFigCaption{Implicancias del enfoque de desarrollo.}\label{fig:6-6}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-06.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/dc7d6b56c8a3.png}
 
 \raggedright\textbf{Fuente:} elaboración propia.
 \end{minipage}
@@ -2971,7 +3027,7 @@ prevista.
 
 Cada requisito se relacionará con el producto o servicio responsable y
 con el trabajo que lo satisface, conservando su identificador oficial en
-la cadena. La Figura 7 distingue la trazabilidad declarada en la
+la cadena. La Figura 6.7 distingue la trazabilidad declarada en la
 oferta de los registros y resultados que se producirán durante
 ejecución. Las obligaciones del proponente se vincularán con entregables
 documentales o análisis, no necesariamente con historias funcionales de
@@ -2982,7 +3038,7 @@ software.
 \centering
 \ossFigCaption{Trazabilidad del requisito a la evidencia de aceptación.}\label{fig:6-7}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-07.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/43633f99f021.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3012,9 +3068,7 @@ cuenta con datos de prueba y declara si opera en el contexto Retail, en
 el Emisor o en la frontera entre ambos. Esta última condición responde a
 la separación operativa entre Retail y Emisor. Toda historia que cruce
 información entre los dos negocios requerirá, antes de planificarse, la
-evaluación documentada de datos, seguridad y la contraparte de
-cumplimiento designada por Ancoa, conforme a 6.1.2 y a las políticas de
-X-01.
+evaluación documentada de datos, seguridad y la contraparte de cumplimiento designada por Ancoa, y no se liberará sin la ficha de intercambio aprobada según la ruta única de la sección 6.1.2.
 
 Los criterios de aceptación se escriben con la estructura Dado, Cuando,
 Entonces, propia del desarrollo guiado por el comportamiento (Cucumber,
@@ -3046,6 +3100,8 @@ incorpora además la meta de desempeño del requisito no funcional. Su
 comprobación utilizará la campaña de carga en un ambiente representativo
 y publicará el resultado por versión; una regresión rápida del pipeline
 no sustituirá esa evidencia.
+
+Para comprobar estos requerimientos de forma continua se usarán funciones de aptitud. Una función de aptitud es una prueba automatizada que mide si la solución mantiene una característica de arquitectura comprometida, como un tiempo de respuesta, la separación de datos entre Retail y Emisor o la compatibilidad de un contrato de interfaz, y entrega un resultado verificable por versión (Ford et al., 2017). Las funciones rápidas se ejecutarán en cada integración del pipeline; las de desempeño, autonomía y resiliencia, en las campañas de los ambientes representativos.
 
 Los requerimientos no funcionales se comprobarán progresivamente. Las
 regresiones rápidas del pipeline protegerán contratos y reglas
@@ -3114,8 +3170,7 @@ reemplaza y sus dependencias.
 Toda decisión que afecte a más de un equipo, a la frontera
 Retail--Emisor o a un requerimiento no funcional se registrará como una
 decisión de arquitectura (ADR), con su contexto, las alternativas
-evaluadas, la decisión y sus consecuencias (Nygard, 2011), y será
-aprobada por el Comité de Arquitectura. Las funciones de aptitud de la
+evaluadas, la decisión y sus consecuencias (Nygard, 2011), y será aprobada por el Comité de Arquitectura. Cuando la decisión habilite un cruce entre Retail y Emisor, el Comité solo aprobará su implementación técnica, después de la aprobación del cruce por la ruta única de la sección 6.1.2. Las funciones de aptitud de la
 sección 6.2.2 protegen esas decisiones. Además de las metas de
 desempeño, el pipeline verificará reglas estructurales, como que ningún
 servicio del retail acceda directamente a datos del Emisor o que un
@@ -3130,7 +3185,7 @@ conservarán con su relación a la nueva decisión (Nygard, 2011).
 
 \paragraph{6.2.3.2 Refactorización}\label{6-2-3-2-refactorizacion}
 
-La refactorización será parte del trabajo diario y no una fase aparte. Cada historia incluye mejorar el código que modifica, y la definición de terminado exige justificar el efecto del cambio sobre duplicación y complejidad, comprobar las pruebas y cumplir las puertas acordadas. Un aumento localizado se evaluará por su necesidad y efecto global, sin autorizar incumplimientos de seguridad o del contrato. Las refactorizaciones mayores, como dividir un servicio o cambiar el modelo de un evento, se planificarán como historias habilitadoras en la planificación del intervalo y requerirán una ADR.
+La refactorización será parte del trabajo diario y no una fase aparte. Cada historia incluye mejorar el código que modifica, y la definición de terminado exige justificar el efecto del cambio sobre duplicación y complejidad, comprobar las pruebas y cumplir las puertas acordadas. Un aumento localizado se evaluará por su necesidad y efecto global, sin autorizar incumplimientos de seguridad o del contrato. Las refactorizaciones mayores, como dividir un servicio o cambiar el modelo de un evento, se planificarán como historias habilitadoras al preparar cada intervalo de planificación y requerirán una ADR.
 
 La refactorización segura se apoyará en pruebas automatizadas de
 regresión y de contrato. El flujo de integración bloqueará cambios que
@@ -3144,20 +3199,20 @@ Transversales, 2026, RT-04.11).
 
 \paragraph{6.2.3.3 Deuda técnica}\label{6-2-3-3-deuda-tecnica}
 
-La deuda técnica se gestionará como un pasivo visible. Todo atajo, defecto de diseño o dependencia obsoleta que se detecte se registrará en el backlog con una etiqueta de deuda, su origen, su impacto y una fecha estimada de pago. Para clasificarla se usarán los cuadrantes de Fowler (2009), que distinguen si la deuda se asumió de forma deliberada o inadvertida, y si fue prudente o imprudente. La Figura 8 resume el tratamiento de cada clase.
+La deuda técnica se gestionará como un pasivo visible. Todo atajo, defecto de diseño o dependencia obsoleta que se detecte se registrará en el backlog con una etiqueta de deuda, su origen, su impacto y una fecha estimada de pago. Para clasificarla se usarán los cuadrantes de Fowler (2009), que distinguen si la deuda se asumió de forma deliberada o inadvertida, y si fue prudente o imprudente. La Figura 6.8 resume el tratamiento de cada clase.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{Cuadrantes de la deuda técnica.}\label{fig:6-8}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-08.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/8bd9e2a8c5c5.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia a partir de Fowler (2009).
 \end{minipage}
 \end{center}
 
-La Figura 8 distingue intención y prudencia, sin equiparar antigüedad
+La Figura 6.8 distingue intención y prudencia, sin equiparar antigüedad
 y deuda. Los ejemplos siguientes ilustran ambas clases de deuda.
 Omitir pruebas para alcanzar una fecha es un atajo deliberado e
 imprudente; duplicar una regla de cálculo en dos servicios es un defecto
@@ -3165,11 +3220,7 @@ inadvertido que debe corregirse según su riesgo y las pruebas de
 regresión. La coexistencia planificada con una plataforma conservada se
 registra como transición y no se presume deuda.
 
-La política conservará tres reglas de control. Primero, se reservará 15
-\% de capacidad para deuda priorizada en la construcción ordinaria.
-Durante marcha blanca, la planificación de capacidad considerará
-conjuntamente la deuda técnica y la reserva de estabilización, evitando
-el doble conteo de recursos.
+La política conservará tres reglas de control. Primero, se reservará 15 \% de capacidad para deuda priorizada en la construcción ordinaria. Las reservas se calculan sobre el 100 \% de la capacidad nominal de cada equipo en el sprint. En construcción ordinaria, el 15 \% se destina a deuda técnica priorizada y el 85 \% restante a construcción, pruebas, calidad, seguridad, coordinación y soporte. En los equipos involucrados en una marcha blanca, el 30 \% se destina a estabilización, que incluye el pago de deuda técnica, y el 70 \% restante a las demás actividades. Las dos reservas no se suman: la reserva máxima de un equipo en un sprint es 30 \%, y los equipos que no participan en la marcha blanca mantienen la de 15 \%.
 
 Segundo, se aplicarán umbrales de razón de deuda técnica no superior a 5
 \% y duplicación no superior a 3 \%. La razón de deuda se medirá como
@@ -3188,23 +3239,23 @@ de las tareas de transición; la antigüedad de una plataforma o su
 coexistencia temporal no la convierten automáticamente en deuda que deba
 retirarse (Fowler, 2009).
 
-La Figura 9 resume las tres reglas y sus distintos tipos de evidencia.
+La Figura 6.9 resume las tres reglas y sus distintos tipos de evidencia.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{Reglas de la política de deuda técnica.}\label{fig:6-9}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-09.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/cf22bae951d1.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
 \end{center}
 
-La Figura 9 separa capacidad, medición y condiciones obligatorias. Los
+La Figura 6.9 separa capacidad, medición y condiciones obligatorias. Los
 porcentajes propios requieren nivelación y un método de cálculo; la
 regla de seguridad y segregación se aplica a cada liberación. El estado
-de la deuda se revisará al cierre de cada intervalo de coordinación y se
+de la deuda se revisará al cierre de cada intervalo de planificación y se
 informará al Comité de Arquitectura, conservando responsable y fecha de
 tratamiento.
 
@@ -3212,7 +3263,7 @@ tratamiento.
 
 Only Simple Solutions aplicará DevSecOps para que desarrollo, seguridad y operación compartan un flujo automatizado desde la integración del cambio hasta su funcionamiento. El despliegue seguirá el Subdocumento 4, con servicios nuevos de Retail y Emisor segregados en Azure y componentes locales para continuidad e integración. La recuperación y el tratamiento de información financiera se implementarán conforme a la arquitectura aprobada, preservando las condiciones de residencia, custodia, segregación y conmutación aplicables.
 
-La Figura 10 muestra el flujo de entrega. Cada cambio pasa por cinco
+La Figura 6.10 muestra el flujo de entrega. Cada cambio pasa por cinco
 etapas, código, construcción, QA, preproducción y producción, y cada
 etapa termina en una puerta de calidad que la versión debe superar para
 avanzar. La compilación y los controles de integración precederán a las
@@ -3224,7 +3275,7 @@ principal.
 \centering
 \ossFigCaption{Flujo de entrega DevSecOps.}\label{fig:6-10}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-10.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/ccd38c5c8b72.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3280,14 +3331,13 @@ de configuración. Las migraciones de esquema serán versionadas,
 compatibles con coexistencia de versiones y reversibles de forma
 automatizada; sus efectos sobre datos se ensayarán antes de producción.
 
-La infraestructura como código permitirá reconstruir los ambientes. H3
-entregará Desarrollo, QA, Preproducción, Producción y Recuperación ante
+La infraestructura como código permitirá reconstruir los ambientes. H3, en el mes 6, entregará Desarrollo, QA, Preproducción, Producción y Recuperación ante
 Desastres habilitados y operativos. Preproducción reproducirá topología,
 configuración, versiones y volumen representativo de producción.
 Recuperación mantendrá la replicación y el procedimiento de conmutación
 y retorno probados antes de producción y al menos semestralmente durante
 operación; no es un quinto paso ordinario de promoción de código. La
-Figura 11 muestra los cinco ambientes y distingue su función (Bases
+Figura 6.11 muestra los cinco ambientes y distingue su función (Bases
 Técnicas Transversales, 2026, RT-04.01 y núm. 4.1).
 
 \begin{center}
@@ -3295,7 +3345,7 @@ Técnicas Transversales, 2026, RT-04.01 y núm. 4.1).
 \centering
 \ossFigCaption{Ambientes del proyecto.}\label{fig:6-11}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-11.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/5664879c53b5.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3339,7 +3389,7 @@ y T-13 reunirán niveles, datos, ambientes, calendario y criterios de
 salida; cada resultado quedará relacionado con requisito y versión
 (Bases Técnicas Transversales, 2026, núm. 20.1).
 
-La Figura 12 resume las puertas de calidad del flujo de entrega y el
+La Figura 6.12 resume las puertas de calidad del flujo de entrega y el
 criterio que una versión debe cumplir para avanzar a la etapa siguiente.
 
 \begin{center}
@@ -3347,7 +3397,7 @@ criterio que una versión debe cumplir para avanzar a la etapa siguiente.
 \centering
 \ossFigCaption{Criterios de las puertas de calidad.}\label{fig:6-12}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-12.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/2e57db6c8171.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3405,26 +3455,26 @@ e incidencias podrán seguir un flujo Kanban separado.
 
 \paragraph{6.2.6.1 Ceremonias, artefactos y cadencias}\label{6-2-6-1-ceremonias-artefactos-y-cadencias}
 
-Los equipos seguirán los eventos de Scrum y sus compromisos de producto, sprint y terminado (Schwaber y Sutherland, 2020). La coordinación conjunta de ocho semanas utilizará planificación de dependencias y revisión de resultados; se distinguen esas prácticas seleccionadas de los eventos propios de Scrum y de los comités contractuales. La Figura 13 representa cuatro sprints y la interacción de ambos niveles, sin equipararlos a dos meses calendario.
+Los equipos seguirán los eventos de Scrum y sus compromisos de producto, sprint y terminado (Schwaber y Sutherland, 2020). La coordinación conjunta de ocho semanas utilizará planificación de dependencias y revisión de resultados; se distinguen esas prácticas seleccionadas de los eventos propios de Scrum y de los comités contractuales. La Figura 6.13 representa cuatro sprints y la interacción de ambos niveles, sin equipararlos a dos meses calendario.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{Cadencia de un intervalo de planificación.}\label{fig:6-13}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-13.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/579a3cae8227.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
 \end{center}
 
-La Figura 13 muestra cuatro sprints consecutivos y coordinaciones
+La Figura 6.13 muestra cuatro sprints consecutivos y coordinaciones
 adicionales dentro de ocho semanas. Sus símbolos de gobierno son
 ilustrativos; las fechas mensuales y quincenales se fijarán en el
 calendario contractual, sin deducirlas de una equivalencia entre semanas
 y meses.
 
-La Figura 14 detalla cada ceremonia, su cadencia, sus participantes y
+La Figura 6.14 detalla cada ceremonia, su cadencia, sus participantes y
 el resultado que produce.
 
 \begin{center}
@@ -3432,14 +3482,14 @@ el resultado que produce.
 \centering
 \ossFigCaption{Ceremonias y cadencias del desarrollo.}\label{fig:6-14}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-14.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/722588ff4876.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
 \end{center}
 
 Las ceremonias de cada equipo sostienen el ritmo de entrega cada dos
-semanas; las del intervalo aseguran que los equipos avancen hacia los
+semanas; las del intervalo de planificación aseguran que los equipos avancen hacia los
 mismos objetivos y que las dependencias, en especial las de la
 plataforma y la frontera de datos, se resuelvan antes de bloquear el
 trabajo. La revisión del sprint no reemplaza la aceptación contractual,
@@ -3452,8 +3502,8 @@ conversación.
 
 Los artefactos del desarrollo serán el backlog del producto, el backlog
 del sprint y el incremento, con objetivo del producto, objetivo del
-sprint y definición de terminado. Se añadirán objetivos del intervalo de
-coordinación, tablero de dependencias, ADR, registro de deuda y
+sprint y definición de terminado. Se añadirán objetivos del intervalo de planificación,
+tablero de dependencias, ADR, registro de deuda y
 trazabilidad. Jira mantendrá trabajo y relaciones; el repositorio,
 código y artefactos técnicos; SharePoint, actas y documentación
 controlada. Las configuraciones y resultados de esas relaciones se
@@ -3461,14 +3511,14 @@ comprobarán durante la habilitación del flujo de entrega.
 
 \paragraph{6.2.6.2 Mecanismos de decisión}\label{6-2-6-2-mecanismos-de-decision}
 
-Las decisiones del desarrollo se tomarán en el nivel que disponga de información y atribuciones para resolverlas. La Figura 15 distingue aprobación del cambio, validación de datos y seguridad, conformidad productiva y autonomía técnica. La decisión quedará registrada y se escalará cuando exceda la autoridad; ninguna aprobación de detalle sustituirá el control integrado de cambios.
+Las decisiones del desarrollo se tomarán en el nivel que disponga de información y atribuciones para resolverlas. La Figura 6.15 distingue aprobación del cambio, validación de datos y seguridad, conformidad productiva y autonomía técnica. La decisión quedará registrada y se escalará cuando exceda la autoridad; ninguna aprobación de detalle sustituirá el control integrado de cambios.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{Mecanismos de decisión del desarrollo.}\label{fig:6-15}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-15.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/89d8043bc9be.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3481,7 +3531,7 @@ instancia formal. Ningún rol ágil, ni el product owner ni el Scrum
 Master, tiene atribución para modificar el alcance o las fechas del
 contrato.
 
-La Figura 15 identifica la instancia principal para resolver cada
+La Figura 6.15 identifica la instancia principal para resolver cada
 materia; sus rutas no excluyen otros controles aplicables al mismo
 cambio. Una modificación puede afectar a la vez el alcance, el cruce de
 datos y la producción. En ese caso acumulará la aprobación del cambio,
@@ -3497,12 +3547,12 @@ duraciones comerciales. La unión de ventanas evitará contar dos veces
 eventos contenidos en una misma campaña y comprobará los cruces entre
 períodos protegidos. El cronograma integrado relacionará los meses
 contractuales con fechas calendario desde el acta de inicio, sin alterar
-los hitos obligatorios. La Figura 16 representa las fases y
+los hitos obligatorios. La Figura 6.16 representa las fases y
 convivencias del contrato; el cronograma integrado incorporará las
 ventanas comerciales vigentes.
 
-La Figura 16 sintetiza las fases por meses y sus convivencias. La
-ubicación por fechas de los intervalos de coordinación, hitos E-25 y
+La Figura 6.16 sintetiza las fases por meses y sus convivencias. La
+ubicación por fechas de los intervalos de planificación, hitos E-25 y
 ventanas comerciales se desarrollará en el cronograma integrado; la
 figura no representa ese detalle.
 
@@ -3511,7 +3561,7 @@ figura no representa ese detalle.
 \centering
 \ossFigCaption{Calendario de entregas del desarrollo.}\label{fig:6-16}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-16.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/dd39960c0ee2.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
@@ -3556,12 +3606,7 @@ coordinación.
   validación, autorización y ventana. Su activación con efectos reales
   respetará el mismo gobierno productivo.
 \item
-  \textbf{Capacidad reservada para la estabilización.} Se reservará 30
-  \% de capacidad para los equipos involucrados en cada marcha blanca.
-  La planificación considerará conjuntamente esta reserva y la capacidad
-  destinada a deuda técnica, sin doble conteo. El resto de capacidad
-  nominal incluirá calidad, seguridad, coordinación y soporte. El T-15 y
-  el cronograma reflejarán el reparto sin desplazar hitos.
+  \textbf{Capacidad reservada para la estabilización.} Se reservará 30 \% de capacidad para los equipos involucrados en cada marcha blanca. Esa reserva incluye el pago de deuda técnica y no se suma al 15 \% de la construcción ordinaria (sección 6.2.3.3); el 70 \% restante cubre construcción, pruebas, calidad, seguridad, coordinación y soporte. El T-15 y el cronograma reflejarán el reparto sin desplazar hitos.
 \item
   \textbf{Lotes pequeños.} Las historias se dimensionan para completarse
   dentro de un sprint, lo que reduce el riesgo de cada liberación y
@@ -3575,7 +3620,7 @@ en Producción por período; el tiempo de entrega transcurrirá desde el
 commit hasta el despliegue productivo, incluidas esperas; la tasa de
 cambios fallidos relacionará despliegues que requieren intervención con
 despliegues totales; y la restauración medirá el retorno del servicio
-tras un cambio fallido. La Figura 17 distingue esos resultados de las
+tras un cambio fallido. La Figura 6.17 distingue esos resultados de las
 métricas internas de QA y Preproducción (DORA, s.f.; Bases Técnicas
 Transversales, 2026, RT-04.12).
 
@@ -3594,13 +3639,13 @@ hasta cinco días hábiles para verificar un cambio en Preproducción.
 \centering
 \ossFigCaption{Indicadores de tiempo de entrega.}\label{fig:6-17}
 
-\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{\detokenize{figuras/Imagenes subdoc6/sd06-figura-6-17.png}}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/baf289d8c137.png}
 
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
 \end{center}
 
-Los indicadores se revisarán por intervalo de coordinación y en el
+Los indicadores se revisarán por intervalo de planificación y en el
 informe mensual, y continuarán midiéndose durante la Operación desde el
 mes 21 al 56. Sus resultados conservarán versión, servicio, ventana,
 numerador, denominador y fuente. Cuando no existan despliegues o fallos
@@ -3626,6 +3671,8 @@ citados en este capítulo.
 
 \noindent\hangindent=1.5em\hangafter=1 DORA. (s.f.). \emph{DORA's software delivery performance metrics}. \url{https://dora.dev/guides/dora-metrics/}
 
+\noindent\hangindent=1.5em\hangafter=1 Ford, N., Parsons, R., y Kua, P. (2017). \emph{Building evolutionary architectures: Support constant change}. O'Reilly Media.
+
 \noindent\hangindent=1.5em\hangafter=1 Fowler, M. (2004, 29 de junio). \emph{Original strangler fig application}. \url{https://martinfowler.com/bliki/OriginalStranglerFigApplication.html}
 
 \noindent\hangindent=1.5em\hangafter=1 Fowler, M. (2009, 14 de octubre). \emph{Technical debt quadrant}. \url{https://martinfowler.com/bliki/TechnicalDebtQuadrant.html}
@@ -3650,7 +3697,7 @@ citados en este capítulo.
 
 \noindent\hangindent=1.5em\hangafter=1 Schwaber, K., y Sutherland, J. (2020, noviembre). \emph{The Scrum Guide}. Scrum Guides. \url{https://scrumguides.org/scrum-guide.html}
 
-\section{Declaración de uso de IA}\label{declaracion-de-uso-de-ia}
+\section{DECLARACIÓN USO IA}\label{declaracion-de-uso-de-ia}
 
 El equipo declara que el uso de herramientas de inteligencia artificial generativa en este subdocumento se limitó a las actividades indicadas en la siguiente tabla. Todo contenido, dato, cálculo, decisión de diseño, diagrama, conclusión y referencia fue revisado y verificado por las personas identificadas, quienes asumen como propio el resultado final y la responsabilidad íntegra sobre su exactitud, originalidad y coherencia técnica.
 
@@ -3696,50 +3743,24 @@ Revisión humana
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-% PENDIENTE: completar herramienta, finalidad, niveles y revisor de cada fila.
-Capítulo 6 & & & & & \\
-6.1.1. & & & & & \\
-6.1.2. & & & & & \\
-6.1.3. & & & & & \\
-6.1.4. & & & & & \\
-6.1.5. & & & & & \\
-6.1.6. & & & & & \\
-6.1.7. & & & & & \\
-6.2.1. & & & & & \\
-6.2.2. & & & & & \\
-6.2.3. & & & & & \\
-6.2.4. & & & & & \\
-6.2.5. & & & & & \\
-6.2.6. & & & & & \\
-6.2.7. & & & & & \\
-Formulario T-9 & & & & & \\
-Formulario T-10 & & & & & \\
+6.1 & Codex GPT-6 Sol Alto / Claude Sonnet 5.5 & Se utilizó para organizar los subpuntos de la sección, generar figuras para complementar el texto, identificar referencias, identificar con qué otros subdocumentos y anexos se relaciona en la introducción, generar la redacción final y verificar inconsistencias con los otros subdocumentos de la licitación. & Alto & Alto & Daniel Cepeda \\
+6.2 & Codex GPT-6 Sol Alto / Claude Sonnet 5.5 & Se utilizó para organizar los subpuntos de la sección, generar figuras para complementar el texto, identificar referencias, identificar con qué otros subdocumentos y anexos se relaciona en la introducción, generar la redacción final y verificar inconsistencias con los otros subdocumentos de la licitación. & Alto & Alto & Samira Becerra Saa \\
+Anexo & Claude Opus 5.5 & Se utilizó para trasladar al anexo las planillas de la sección 6.1.4, darles el diseño de los anexos del Subdocumento 2 y alinear sus campos con el registro de interesados. & Alto & Ninguno & Samira Becerra Saa \\
+Formulario T-09 & Claude Opus 5.5 & Se utilizó para generar el formulario en base a la sección 6.1 y para corregir las inconsistencias con el subdocumento y los otros formularios. & Alto & Ninguno & Samira Becerra Saa \\
+Formulario T-10 & Claude Sonnet 5.5 & Se utilizó para generar el archivo en base al subdocumento 6 y las instrucciones del usuario. También, para buscar referencias. & Alto & Ninguno & Samira Becerra Saa \\
 \end{longtable}
 
 A continuación, se detalla la escala de niveles para completar la tabla anterior.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\caption{Niveles de uso de IA}\label{tab:niveles-uso-ia}\\
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Nivel
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Texto
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Diagramas
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
 Ninguno & Sin uso de IA. & Sin uso de IA. \\
 Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
 Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
-Alto & Texto generado sustancialmente por IA y editado por el grupo. & Diagrama generado sustancialmente por IA. \\
-\end{longtable}
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
 
 \ossFinalPage
 
