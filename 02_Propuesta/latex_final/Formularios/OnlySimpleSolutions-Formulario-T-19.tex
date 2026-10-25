@@ -84,9 +84,9 @@
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-19.\arabic{table}}
 
-\hypersetup{pageanchor=false}
+
 \ossCover{Cartera de innovaciones}{Subdocumento 13 · T-19}
-\hypersetup{pageanchor=true}
+
 \tableofcontents
 \clearpage
 \section*{Lista de tablas}
@@ -109,12 +109,6 @@ Only Simple Solutions presenta cinco fichas para Multitiendas Ancoa S.A., Caso 0
 \addcontentsline{toc}{subsection}{Ficha 1 - Innovación 1}
 
 Esta ficha corresponde al apartado 13.1 del subdocumento 13.
-
-\subsection*{Ficha 1 - Innovación 1}\label{ficha-1-innovaciuxf3n-1}
-\addcontentsline{toc}{subsection}{Ficha 1 - Innovación 1}
-
-Esta ficha corresponde al apartado 13.1 del subdocumento 13.
-
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.72\linewidth-2\tabcolsep\relax}@{}}
 \caption[Ficha 1: Lockers Ancoa 24/7]{Ficha 1: Lockers Ancoa 24/7. Fuente: Elaboración propia.}\label{tab:t19-1}\\
@@ -171,7 +165,7 @@ Capa de integración Retail, mediante un adaptador entre el controlador local de
 \\
 \midrule
 \textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan} &
-Rama 1.10 Innovaciones del SD-07, paquete denominado «Lockers Ancoa 24/7». Entregables de selección, emplazamiento, integración, ensayo y capacitación. Intervienen las ramas 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Marchas blancas y aceptación y 1.13 Gestión del cambio y capacitación. La rama está documentada; el código detallado del paquete debe conciliarse con el T-14.
+Rama 1.10 Innovaciones del SD-07, cuenta de control 1.10.1 y paquetes 1.10.1.1 a 1.10.1.8, que cubren diseño, integración, gestión de estados y eventos, instalación y ensayo, levantamiento de emplazamientos, pruebas, certificación y seguimiento hasta M56. Intervienen las ramas 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Marchas blancas y aceptación y 1.13 Gestión del cambio y capacitación. Los códigos, entregables, criterios de aceptación, HH asignadas y ventanas constan en el diccionario de la rama 1.10 del T-14.
 \\
 \midrule
 \textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa} &
@@ -281,7 +275,7 @@ Procesador de apoyo en aplicación Retail, CLD-01, para R:M-03, Servicio de exis
 \\
 \midrule
 \textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-1} &
-Rama 1.10, paquete «Conteo cíclico predictivo», con preparación de datos, comparación, integración y ensayo. Participan 1.7 Migración y saneamiento, 1.8 Seguridad, 1.9 Calidad, 1.12 Marchas blancas y aceptación y 1.13 Capacitación. R:M-03 conserva su paquete funcional en 1.5; el esfuerzo predictivo no se confunde con el conteo obligatorio. El código detallado requiere conciliación con el T-14.
+Rama 1.10, cuenta de control 1.10.2 y paquetes 1.10.2.1 a 1.10.2.8, que cubren arquitectura y reglas de datos, protocolo y preparación de datos, depuración de la historia de inventario, evaluación e integración del modelo, pruebas por versiones, certificación específica, evaluación en sombra y seguimiento hasta M56. Participan 1.7 Migración y saneamiento, 1.8 Seguridad, 1.9 Calidad, 1.12 Marchas blancas y aceptación y 1.13 Capacitación. R:M-03 conserva su paquete funcional en 1.5; el esfuerzo predictivo no se confunde con el conteo obligatorio. Los códigos y las HH asignadas constan en el diccionario de la rama 1.10 del T-14.
 \\
 \midrule
 \textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-1} &
@@ -391,7 +385,7 @@ Aplicación Retail en CLD-01. Un trabajador asíncrono actualiza representacione
 \\
 \midrule
 \textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-2} &
-Rama 1.10, paquete «Búsqueda vectorial multimodal», con conjunto de prueba, selección y licencia de modelo, indexación, integración y evaluación. Apoyo de 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Marchas blancas y aceptación. El código detallado se concilia con el T-14 sin crear numeración ajena a la EDT vigente.
+Rama 1.10, cuenta de control 1.10.3 y paquetes 1.10.3.1 a 1.10.3.8, que cubren diseño y contrato de datos, preparación del lote de datos, generación de representaciones vectoriales, servicio de búsqueda multimodal, integración con los canales, pruebas de relevancia, certificación y seguimiento hasta M56. Apoyo de 1.4 Infraestructura, 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Marchas blancas y aceptación. El diccionario de la rama 1.10 del T-14 concilia los códigos sin crear numeración ajena a la EDT vigente.
 \\
 \midrule
 \textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-2} &
@@ -476,7 +470,7 @@ Modelo de venta de campañas contextuales por consulta o categoría, con product
 \\
 \midrule
 \textbf{5. Nivel de madurez y escala utilizada}\label{nivel-de-madurez-y-escala-utilizada-3} &
-Escala de componente documentado, integración probada y operación aceptada. La documentación comercial acredita disponibilidad de una plataforma, no demanda en Ancoa. La integración exige una campaña de prueba conciliada; operación aceptada requiere campaña contratada, aprobación comercial y registro de resultados. No hay evidencia de esos dos estados en el repositorio.
+Escala de componente documentado, integración probada y operación aceptada. La documentación comercial acredita disponibilidad de una plataforma, no demanda en Ancoa. La integración exige una campaña de prueba conciliada; operación aceptada requiere campaña contratada, aprobación comercial y registro de resultados.
 \\
 \midrule
 \textbf{6. Fuentes citadas (APA 7.ª ed.)}\label{fuentes-citadas-apa-7.uxaa-ed.-3} &
@@ -494,7 +488,7 @@ Adaptador en integración Retail entre R:M-01, Servicio de oferta comercial, pla
 \\
 \midrule
 \textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-3} &
-Rama 1.10, paquete «Retail Media Network», con modelo comercial, selección, integración, conciliación y piloto. Apoyo de 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Aceptación. El plan comercial identifica a Ancoa como responsable de captación; el T-14 debe consolidar código y límites del paquete.
+Rama 1.10, cuenta de control 1.10.4 y paquetes 1.10.4.1 a 1.10.4.8, que cubren diseño de la red de medios, plataforma de campañas, medición y atribución, integración con canales y catálogo, formación comercial, pruebas, certificación y seguimiento hasta M56. Apoyo de 1.6 Integraciones, 1.8 Seguridad, 1.9 Calidad y 1.12 Aceptación. El plan comercial identifica a Ancoa como responsable de captación; el diccionario de la rama 1.10 del T-14 consolida el código, las HH asignadas y los límites de cada paquete.
 \\
 \midrule
 \textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-3} &
@@ -609,7 +603,7 @@ Qmatic. (2024, 4 de marzo). \emph{Introducing estimated wait time in Qmatic Mobi
 \\
 \midrule
 \textbf{8. Paquetes de la EDT que la ejecutan}\label{paquetes-de-la-edt-que-la-ejecutan-4} &
-Rama 1.10, paquete «Modo Tienda con fila virtual de probadores», con levantamiento, interfaz, instalación, integración y pruebas con usuarios. Apoyo de 1.4 Infraestructura, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Aceptación y 1.13 Capacitación. El código detallado y el componente local nuevo deben conciliarse con T-14 y SD-04.
+Rama 1.10, cuenta de control 1.10.5 y paquetes 1.10.5.1 a 1.10.5.8, que cubren diseño del modo tienda, motor de fila virtual, interfaz para clientes y personal de probadores, integración con la tienda y las existencias, preparación de tiendas piloto, pruebas, certificación y seguimiento hasta M56. Apoyo de 1.4 Infraestructura, 1.8 Seguridad, 1.9 Calidad, 1.11 Implantación, 1.12 Aceptación y 1.13 Capacitación. El diccionario de la rama 1.10 del T-14 concilia los códigos del componente local nuevo con el SD-04.
 \\
 \midrule
 \textbf{9. Mes del cronograma en que se materializa}\label{mes-del-cronograma-en-que-se-materializa-4} &
