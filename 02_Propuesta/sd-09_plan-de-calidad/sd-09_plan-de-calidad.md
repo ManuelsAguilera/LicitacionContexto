@@ -16,11 +16,14 @@ secciones:
   - T7-09-9.1
   - T7-09-9.2
   - T7-09-9.3
-actualizado: 2026-10-11
+actualizado: 2026-10-25
 ---
 # Subdocumento 9 — Plan de calidad
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. La fuente editable es `02_Propuesta/latex_final/sd-09/OSS-Subdocumento9.tex`; las figuras editables y exportadas están en `04_Adjuntos/diagramas/`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento9.tex`](../latex_final/sd-09/OnlySimpleSolutions-Subdocumento9.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. La fuente editable es `02_Propuesta/latex_final/sd-09/OnlySimpleSolutions-Subdocumento9.tex`; las figuras editables y exportadas están en `04_Adjuntos/diagramas/`.
 
 ## Identificación
 
@@ -31,7 +34,7 @@ actualizado: 2026-10-11
 | Carpeta | `02_Propuesta/sd-09_plan-de-calidad/` |
 | Capítulo en el informe | Borrador del T7-09 preparado; integración al Informe 2 o 3 pendiente |
 | Formularios asociados | T-13, T-17 |
-| Estado | Borrador redactado; revisión humana y formularios asociados pendientes |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -62,7 +65,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 Anexos: Formulario T-13; Formulario T-17.
 
-La redacción vive en `02_Propuesta/latex_final/sd-09/OSS-Subdocumento9.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad. La [matriz interna](../../80_Artefactos/sd-09_contexto/README.md) conserva cobertura, verificación, aceptación y brechas de diseño.
+La redacción vive en `02_Propuesta/latex_final/sd-09/OnlySimpleSolutions-Subdocumento9.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad. La [matriz interna](../../80_Artefactos/sd-09_contexto/README.md) conserva cobertura, verificación, aceptación y brechas de diseño.
 
 ## Adjuntos esperados
 

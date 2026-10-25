@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-25",
+  "criterio": "Referencias actuales indicadas por el usuario; Bases y Comunicado 10 mantienen precedencia",
+  "referencias": [
+    {
+      "documento": "SD-04",
+      "ruta": "02_Propuesta/latex_final/sd-04/OnlySimpleSolutions-Subdocumento4.tex",
+      "ambito": "arquitectura, tecnologías, infraestructura y suministro",
+      "sha256": "13abeee05a7c70eab58c4330987e890479b94106cb2b6e72ec9f17e9235390a4",
+      "bytes": 206919
+    },
+    {
+      "documento": "SD-07",
+      "ruta": "02_Propuesta/latex_final/sd-07/OnlySimpleSolutions-Subdocumento7.tex",
+      "ambito": "EDT, planificación, esfuerzo e implantación",
+      "sha256": "52e6d0d8bd150d837904fc57ef245a5c4dffaf8466355d9c11821e1079225ce9",
+      "bytes": 112107
+    }
+  ]
+}

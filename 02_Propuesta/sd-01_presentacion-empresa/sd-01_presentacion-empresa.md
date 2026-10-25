@@ -28,9 +28,12 @@ secciones:
   - T7-01-1.4
   - T7-01-1.5
   - T7-01-1.6
-actualizado: 2026-10-03
+actualizado: 2026-10-25
 ---
 # Subdocumento 1 — Presentación de la empresa
+
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento1.tex`](../latex_final/sd-01/OnlySimpleSolutions-Subdocumento1.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
 
 > Maestro del subdocumento. Cada sección se redacta en su propio archivo `sd-01_sN_*.md` dentro de esta carpeta; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
@@ -43,7 +46,7 @@ actualizado: 2026-10-03
 | Carpeta | `02_Propuesta/sd-01_presentacion-empresa/` |
 | Capítulo en el informe | Capítulo I |
 | Formularios asociados | T-6 |
-| Estado | Borrador alineado con rúbrica; acreditaciones pendientes |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 

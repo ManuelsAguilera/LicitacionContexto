@@ -37,11 +37,14 @@ secciones:
   - T7-13-REF
   - T7-13-IA
 origen: "80_Artefactos/sd-13_contexto/investigacion_cinco_innovaciones.md; decision_cartera_equipo.md"
-actualizado: 2026-10-11
+actualizado: 2026-10-25
 ---
 # Subdocumento 13 — Innovaciones
 
-> Maestro del subdocumento. La fuente inicial está en los archivos de sección enumerados abajo. Tras la primera importación, la fuente final será `02_Propuesta/latex_final/sd-13/OSS-Subdocumento13.tex`. No existe todavía esa importación porque faltan las herramientas de exportación en este entorno.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento13.tex`](../latex_final/sd-13/OnlySimpleSolutions-Subdocumento13.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. La fuente inicial está en los archivos de sección enumerados abajo. Tras la primera importación, la fuente final será `02_Propuesta/latex_final/sd-13/OnlySimpleSolutions-Subdocumento13.tex`. No existe todavía esa importación porque faltan las herramientas de exportación en este entorno.
 
 ## Identificación
 
@@ -52,7 +55,7 @@ actualizado: 2026-10-11
 | Carpeta | `02_Propuesta/sd-13_innovaciones/` |
 | Capítulo en el informe | Capítulo VI |
 | Formularios asociados | T-19 |
-| Estado | Borrador redactado; sin revisión humana ni exportación |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 

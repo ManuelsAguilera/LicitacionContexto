@@ -5,6 +5,12 @@ la propuesta.
 
 ## Sistema de artefactos
 
+El punto de entrada de decisiones y pendientes es [contexto activo](../80_Artefactos/contexto-activo/indice.md). SD-04 es referencia de arquitectura y SD-07 de planificación, subordinados a las Bases. `brief.py <ID>` selecciona primero el LaTeX actual; acepta `T7-04`, `T7-04-4.1`, `T7-04-REF`, formularios `T-11` y adjuntos `ADJ-001`. Si una sección no se puede identificar inequívocamente, muestra un aviso y la fuente principal, sin recurrir a una copia Markdown antigua.
+
+`estado.py [--dry-run]` separa disponibilidad de fuente, estado declarado, compilación disponible y revisión humana. Los informes de compilación anteriores que no registran hash de fuente no acreditan vigencia del PDF. `check.py` mantiene controles de metadatos y trazabilidad: su cobertura de Markdown no certifica contenido, consistencia o aceptación del LaTeX.
+
+`.ignore` filtra las búsquedas habituales con `rg`; `.graphifyignore` filtra la indexación. Para una investigación histórica, abrir explícitamente la ruta del manifiesto. Ninguna exclusión equivale a borrar archivos. El catálogo v3.0 sigue oficial; v3.1 requiere decisión del equipo antes de promoverse.
+
 `convenciones/artefactos.md` define IDs y metadatos; `reportes/` conserva informes de revisiones anteriores (`vistas_previas/` son PDF derivados, no se versionan); `scripts/` en la raíz de esta carpeta contiene validación, estado, contexto y exportación. Ejecutar `python3 05_Gestion/scripts/<script>.py --help` para ver opciones.
 
 ### Flujo operativo
@@ -20,6 +26,8 @@ El modo `--final` exige referencias y declaración de uso de IA en el `.tex`. Lo
 Las diferencias entre un maestro y el índice del Comunicado 10 se resuelven siempre a favor de este último.
 
 La fuente de skills compartidas está en `.agents/skills/`. Codex y OpenCode la leen directamente; para Claude Code ejecutar `python3 05_Gestion/scripts/link_skills.py` (`python` en Windows), que crea symlinks (Linux/macOS) o junctions (Windows) hacia `.claude/skills/`. El script es idempotente y no reemplaza carpetas con contenido; `link_skills.ps1` es solo un envoltorio.
+
+Grafo de scripts actualizado y acotado: `05_Gestion/scripts/graphify-out/graph.json` (40 archivos, 452 nodos, 1028 relaciones). Consultarlo con `graphify query "pregunta" --graph 05_Gestion/scripts/graphify-out/graph.json`; regenerar con `graphify update 05_Gestion/scripts`. El grafo mixto anterior de la raíz se conserva como antecedente y no determina vigencia del contexto.
 
 ## `jira/`
 

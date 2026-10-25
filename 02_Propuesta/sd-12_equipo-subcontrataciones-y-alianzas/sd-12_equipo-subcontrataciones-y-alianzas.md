@@ -15,11 +15,14 @@ secciones:
   - T7-12-12.1
   - T7-12-12.2
   - T7-12-12.3
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 12 — Equipo de trabajo, subcontrataciones y alianzas
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-12.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente LaTeX pendiente. Este Markdown conserva el borrador y la estructura para su futura redacción, consistente con SD-04 y SD-07.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-12/OnlySimpleSolutions-Subdocumento12.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -61,7 +64,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 Anexos: Formulario T-8.
 
-La redacción vive en `02_Propuesta/latex_final/sd-12.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-12/OnlySimpleSolutions-Subdocumento12.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

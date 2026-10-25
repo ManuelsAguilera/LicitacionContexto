@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-10-25",
+  "eliminacion_definitiva": false,
+  "traslados": [
+    {
+      "origen": "80_Artefactos/seccion3_innovaciones.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/seccion3_innovaciones.md",
+      "sha256": "095259ac084a278786b836935dd558d0789093445da67d8580f9faba4e479973",
+      "bytes": 16959,
+      "motivo": "Cartera explícitamente superada"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-14.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-14.md",
+      "sha256": "51287cc2c6212a2c5ff7bc695a221a4eead0d1294182c2bd67f745557e8b5fe7",
+      "bytes": 112187,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-14.tex",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-14.tex",
+      "sha256": "6451c0956c7a7c95e09989da7df00221fe776fb5a5dcd7e96add51e88db241e4",
+      "bytes": 118514,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-15.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-15.md",
+      "sha256": "0458ab692021123983e9a6aff811b6ae3a121fb2887306d575dac087f8570789",
+      "bytes": 44470,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-15.tex",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-15.tex",
+      "sha256": "4a49bc1154a6f8e35dd12c5c43acbd955f833d5e8e87ac4d62bc3d2d46fbcc20",
+      "bytes": 46876,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-18.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-18.md",
+      "sha256": "555b1b506f92f57cc707bd2ea3be6a7d6b042776da76c81091c8f785c27b3ad6",
+      "bytes": 25213,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/form-T-18.tex",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/form-T-18.tex",
+      "sha256": "648e1105f040fe996028afd1bf540df9c1fb00d716744c64723c2a29ed0d7cb5",
+      "bytes": 30275,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/README.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/README.md",
+      "sha256": "cc643b899c8af0648be3b7256b363be058895da723c8f47feba676459732ecd5",
+      "bytes": 4112,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    },
+    {
+      "origen": "80_Artefactos/entrega-sd07-2026-10-12/sd-07.md",
+      "destino": "80_Artefactos/archivo-contexto/2026-10-25/entrega-sd07-2026-10-12/sd-07.md",
+      "sha256": "ba6da0de9de064ccc56f8a9ca4681f989266eea9a57a1d232659cca4a6a6c837",
+      "bytes": 71244,
+      "motivo": "Paquete fechado de entrega anterior, sustituido por fuentes actuales; se conserva íntegro"
+    }
+  ],
+  "conservados": [
+    "80_Artefactos/sd-03_contexto/historico/ (10 no_usar, ya archivados)",
+    "Contextos SD-04/07/08/09: decisiones y pendientes por clasificar, sin traslado masivo",
+    "Fuentes editables de diagramas y revisión del profesor"
+  ]
+}

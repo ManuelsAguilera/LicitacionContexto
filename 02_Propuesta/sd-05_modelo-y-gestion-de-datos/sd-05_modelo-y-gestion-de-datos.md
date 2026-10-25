@@ -24,11 +24,14 @@ secciones:
   - T7-05-5.2
   - T7-05-5.3
   - T7-05-5.4
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 5 — Modelo y gestión de datos
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-05.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento5.tex`](../latex_final/sd-05/OnlySimpleSolutions-Subdocumento5.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-05/OnlySimpleSolutions-Subdocumento5.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -39,7 +42,7 @@ actualizado: 2026-10-06
 | Carpeta | `02_Propuesta/sd-05_modelo-y-gestion-de-datos/` |
 | Capítulo en el informe | Capítulo V |
 | Formularios asociados | ninguno |
-| Estado | Sin redactar |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -64,12 +67,12 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 5.1 | Modelo | Dominios de información y modelo de datos por dominio, en figuras legibles. El diccionario de datos va en anexos. | Sin redactar |
-| 5.2 | Gestión de datos | Selección del motor y del paradigma de persistencia con justificación (relacional o no relacional, transaccionalidad, consistencia y disponibilidad según el teorema CAP); separación transaccional y analítico y modelo de explotación; calidad de datos, retención, archivado y eliminación segura. | Sin redactar |
-| 5.3 | Estrategia de migración | Migración, saneamiento, validación y conciliación de los datos históricos, con volumen y ventanas de corte compatibles con el cronograma. | Sin redactar |
-| 5.4 | Estrategia de desempeño | Indexación, particionamiento, caché y optimización de consultas, fundados en la volumetría del caso. | Sin redactar |
+| 5.1 | Modelo | Dominios de información y modelo de datos por dominio, en figuras legibles. El diccionario de datos va en anexos. | Borrador LaTeX; consistencia pendiente |
+| 5.2 | Gestión de datos | Selección del motor y del paradigma de persistencia con justificación (relacional o no relacional, transaccionalidad, consistencia y disponibilidad según el teorema CAP); separación transaccional y analítico y modelo de explotación; calidad de datos, retención, archivado y eliminación segura. | Borrador LaTeX; consistencia pendiente |
+| 5.3 | Estrategia de migración | Migración, saneamiento, validación y conciliación de los datos históricos, con volumen y ventanas de corte compatibles con el cronograma. | Borrador LaTeX; consistencia pendiente |
+| 5.4 | Estrategia de desempeño | Indexación, particionamiento, caché y optimización de consultas, fundados en la volumetría del caso. | Borrador LaTeX; consistencia pendiente |
 
-La redacción vive en `02_Propuesta/latex_final/sd-05.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-05/OnlySimpleSolutions-Subdocumento5.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Trazabilidad con Jira
 

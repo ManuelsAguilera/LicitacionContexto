@@ -15,11 +15,14 @@ cifras: []
 secciones:
   - T7-06-6.1
   - T7-06-6.2
-actualizado: 2026-10-06
+actualizado: 2026-10-25
 ---
 # Subdocumento 6 — Metodologías
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-06.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento6.tex`](../latex_final/sd-06/OnlySimpleSolutions-Subdocumento6.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-06/OnlySimpleSolutions-Subdocumento6.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -30,7 +33,7 @@ actualizado: 2026-10-06
 | Carpeta | `02_Propuesta/sd-06_metodologias/` |
 | Capítulo en el informe | No cubierto todavía; se redactará en el Informe 2 o 3 |
 | Formularios asociados | T-9, T-10 |
-| Estado | Sin redactar |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -55,12 +58,12 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 | N | Título oficial | Contenido que debe desarrollar | Estado |
 | :--- | :--- | :--- | :--- |
-| 6.1 | Metodología de Gestión de Proyectos | PMBOK adaptado a la complejidad del proyecto, con enfoques ágiles donde corresponda. Gestión de interesados, comunicaciones, adquisiciones e integración. Mecanismos de decisión y cadencias de gobierno. Anexo: Formulario T-9. | Sin redactar |
-| 6.2 | Metodología de Desarrollo Software | Enfoque coherente con la naturaleza del proyecto (requerimientos, arquitectura evolutiva, refactorización, deuda técnica, tiempo de salida al mercado); DevSecOps, integración y entrega continuas, infraestructura como código, automatización de pruebas; ceremonias, artefactos, cadencias y decisión del desarrollo. Anexo: Formulario T-10. | Sin redactar |
+| 6.1 | Metodología de Gestión de Proyectos | PMBOK adaptado a la complejidad del proyecto, con enfoques ágiles donde corresponda. Gestión de interesados, comunicaciones, adquisiciones e integración. Mecanismos de decisión y cadencias de gobierno. Anexo: Formulario T-9. | Borrador LaTeX; consistencia pendiente |
+| 6.2 | Metodología de Desarrollo Software | Enfoque coherente con la naturaleza del proyecto (requerimientos, arquitectura evolutiva, refactorización, deuda técnica, tiempo de salida al mercado); DevSecOps, integración y entrega continuas, infraestructura como código, automatización de pruebas; ceremonias, artefactos, cadencias y decisión del desarrollo. Anexo: Formulario T-10. | Borrador LaTeX; consistencia pendiente |
 
 Anexos: Formulario T-9 (6.1); Formulario T-10 (6.2).
 
-La redacción vive en `02_Propuesta/latex_final/sd-06.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-06/OnlySimpleSolutions-Subdocumento6.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

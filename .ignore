@@ -1,0 +1,22 @@
+# Contexto histórico o derivado: acceso explícito cuando una tarea investiga procedencia.
+**/historico/
+80_Artefactos/archivo-contexto/
+80_Artefactos/recepcion-subdocumentos-*/
+80_Artefactos/**/borradores/
+80_Artefactos/**/figuras-anteriores/
+02_Propuesta/latex_final/respaldo/
+02_Propuesta/latex_final/build/
+05_Gestion/build/
+05_Gestion/tests/.tmp-contexto/
+05_Gestion/reportes/vistas_previas/
+graphify-out/
+tmp/
+07_Entregables/
+90_Referencia/TrabajosAnteriores_DistriProducto/
+
+# Registros de mantenimiento: consultar explícitamente cuando se necesiten.
+80_Artefactos/auditoria-contexto-ia-*.md
+05_Gestion/reportes/limpieza-contexto-*.md
+05_Gestion/contexto-referencias-*.json
+05_Gestion/registro-limpieza-contexto-*.json
+05_Gestion/registro-contexto-equipo-*.json

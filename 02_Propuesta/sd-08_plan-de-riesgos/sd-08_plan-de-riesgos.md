@@ -15,11 +15,14 @@ secciones:
   - T7-08-8.1
   - T7-08-8.2
   - T7-08-8.3
-actualizado: 2026-10-12
+actualizado: 2026-10-25
 ---
 # Subdocumento 8 — Plan de riesgos
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. Las fuentes editables son `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` y `02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento8.tex`](../latex_final/sd-08/OnlySimpleSolutions-Subdocumento8.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Pendiente de conciliación con SD-04 y SD-07; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. Las fuentes editables son `02_Propuesta/latex_final/sd-08/OnlySimpleSolutions-Subdocumento8.tex` y `02_Propuesta/latex_final/sd-08/OSS-Formulario-T-16.tex`.
 
 ## Identificación
 
@@ -30,7 +33,7 @@ actualizado: 2026-10-12
 | Carpeta | `02_Propuesta/sd-08_plan-de-riesgos/` |
 | Capítulo en el informe | Informe 2 |
 | Formularios asociados | T-16 |
-| Estado | Borrador redactado con asistencia de IA, sin revisión humana (2026-10-12) |
+| Estado | Borrador LaTeX disponible; por conciliar contra SD-04 y SD-07; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -63,7 +66,7 @@ En todo el capítulo: los riesgos corresponden a la solución efectivamente prop
 
 Formulario asociado: T-16, en una fuente LaTeX separada del subdocumento.
 
-La redacción vive en `02_Propuesta/latex_final/sd-08/OSS-Subdocumento8.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-08/OnlySimpleSolutions-Subdocumento8.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

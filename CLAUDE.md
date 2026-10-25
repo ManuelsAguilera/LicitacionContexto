@@ -28,7 +28,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p test_verificar.py           
 ```
 
 - Edición: el contenido se redacta en los `.tex` con Prism; no hay importación desde Google Docs ni DOCX.
-- PDF de la propuesta: cumplir la "Regla de exportación" de `AGENTS.md` y `.agents/skills/exportar/SKILL.md`. `sd-NN.tex` manda tras importar; los `.md` son solo contexto. Nunca escribir preámbulos ni llamar a `pandoc`/`xelatex` directamente.
+- PDF de la propuesta: cumplir la "Regla de exportación" de `AGENTS.md` y `.agents/skills/exportar/SKILL.md`. `sd-NN/OnlySimpleSolutions-SubdocumentoN.tex` manda tras importar; los `.md` son solo contexto. Nunca escribir preámbulos ni llamar a `pandoc`/`xelatex` directamente.
 - Estado `revisado` solo lo asigna un humano, nunca un script o agente.
 
 ## Notas para Claude Code en Linux
@@ -38,7 +38,7 @@ python3 -m unittest discover -s 05_Gestion/tests -p test_verificar.py           
 
 ## Skills y plugin de opencode
 
-El skill orquestador `licitacion-workflow` y el plugin `activar-skills.ts` que viven en `.opencode/` son **específicos de opencode**. No aplican a Claude Code; ignóralos. La exportación a PDF no depende de ellos: la regla está en `AGENTS.md` y la skill `exportar`.
+El plugin `activar-skills.ts` solo se ejecuta en OpenCode. La guía `licitacion-workflow` puede leerse como orquestador del proyecto según AGENTS.md; la exportación a PDF sigue dependiendo de `exportar_latex.py` y la skill `exportar`. El contexto de inicio está en `80_Artefactos/contexto-activo/indice.md`: SD-04 es referencia de arquitectura y SD-07 de planificación. No cargar en bloque borradores, recepción, históricos o respaldos.
 
 ## Skills compartidas
 

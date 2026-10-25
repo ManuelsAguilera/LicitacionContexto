@@ -1,6 +1,6 @@
 # Contexto de trabajo del sd-03
 
-Material de apoyo para redactar y revisar el sd-03 (Esquema de solución y alcance). No es entregable. Manda siempre `02_Propuesta/latex_final/sd-03.tex`.
+Material de apoyo para redactar y revisar el sd-03 (Esquema de solución y alcance). No es entregable. Manda siempre `02_Propuesta/latex_final/sd-03/OnlySimpleSolutions-Subdocumento3.tex`.
 
 **Para cargar en un agente, empezar por `ficha_alcance_sd-03.md`** (resumen vigente, 2.000 palabras aprox.). Los demás archivos se abren solo cuando la tarea los necesita.
 

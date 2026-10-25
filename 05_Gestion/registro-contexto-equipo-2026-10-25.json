@@ -1,0 +1,21 @@
+{
+  "fecha": "2026-10-25",
+  "objetivo": "Contexto activo para trabajo del equipo, separado del mantenimiento",
+  "traslado": {
+    "origen": "80_Artefactos/contexto-activo/limpieza.md",
+    "destino": "05_Gestion/reportes/limpieza-contexto-2026-10-25.md",
+    "sha256_original": "72b5c89f7da4626e1b83c712f89376419098589b1caa96f59387e59a56c1243b",
+    "sha256_destino_actual": "738e5bfdcb7bf44e4e3ab2637b233d90270b53beede3ca3a838632680972201c",
+    "respaldo_original": "05_Gestion/build/contexto-equipo-20261025/limpieza.md.antes"
+  },
+  "contexto_activo": [
+    "80_Artefactos/contexto-activo/indice.md",
+    "80_Artefactos/contexto-activo/matriz-ajustes.md"
+  ],
+  "cambios": [
+    "Índice de equipo; tablas de frentes y pendientes compartidos",
+    "Hashes y trazabilidad trasladados a registros técnicos",
+    "Incidencias de formato/pruebas fuera de la matriz de contenido",
+    "Fuentes de propuesta sin modificación"
+  ]
+}

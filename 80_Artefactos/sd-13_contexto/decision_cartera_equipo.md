@@ -41,4 +41,4 @@ La cartera completa del informe `informe_candidatas_innovacion.md`, fechado el 2
 - Completar trazabilidad con arquitectura, EDT, cronograma y flujo de caja.
 - Estimar inversión, costo operacional y beneficio sin atribuir toda la reducción de merma al modelo.
 
-Esta nota registra la selección del equipo. El SD-13 y el Formulario T-19 mantienen su estado pendiente de redacción y validación.
+Esta nota registra la selección del equipo. El SD-13 y el Formulario T-19 ya tienen fuentes LaTeX; su consistencia con SD-04 y SD-07 y su validación siguen pendientes. La selección de cartera se conserva como decisión de origen.

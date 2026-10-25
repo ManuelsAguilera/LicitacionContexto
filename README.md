@@ -24,8 +24,11 @@ Pipeline numerado: el prefijo declara la etapa del flujo.
 
 Cada carpeta tiene su `README.md` con el propósito y las reglas específicas.
 
+Grafo de scripts actualizado y acotado: `05_Gestion/scripts/graphify-out/graph.json` (40 archivos, 452 nodos, 1028 relaciones). Consultarlo con `graphify query "pregunta" --graph 05_Gestion/scripts/graphify-out/graph.json`; regenerar con `graphify update 05_Gestion/scripts`. El grafo mixto anterior de la raíz se conserva como antecedente y no determina vigencia del contexto.
+
 ## Contexto
 
+- **`80_Artefactos/contexto-activo/indice.md`** — decisiones, pendientes y versiones de referencia. SD-04 rige la arquitectura y SD-07 la planificación; los demás documentos deben conciliarse contra ellos, subordinados a las Bases y al Comunicado 10. Cargar solo lo pertinente a la tarea.
 - **`AGENTS.md`** — reglas de oro del proyecto (única fuente de verdad). Léelo primero.
 - **`02_Propuesta/indice.md`** — índice de los 14 subdocumentos, cobertura por informe y reglas de ensamblado.
 - **`CLAUDE.md`** — puntero para usuarios de Claude Code + cómo instalar skills equivalentes.
@@ -93,5 +96,7 @@ codex mcp add graphify -- graphify-mcp "$(pwd)/graphify-out/graph.json"
 ```
 
 Reinicia Codex para cargar la skill y el servidor. Luego pide `$graphify .` para generar el grafo o `$graphify . --update` para actualizar los documentos modificados. El registro MCP apunta a una ruta absoluta: si mueves el repositorio o cambias de worktree, actualiza el registro para que consulte el grafo de la nueva carpeta. La configuración de usuario y el grafo se mantienen por máquina.
+
+Para esta propuesta se distinguen dos grafos: `graphify-out/graph.json` conserva el grafo anterior de scripts y contexto; el documental de las fuentes LaTeX integradas está en `graphify-out/documentos-20261025/graph.json`. Para contenido de la propuesta usar `graphify query "pregunta" --graph graphify-out/documentos-20261025/graph.json`, contrastando con los `.tex`. El MCP por defecto sigue apuntando al grafo anterior. La existencia de un grafo no demuestra vigencia de todos sus nodos; los derivados y antecedentes excluidos no se usan como fuentes actuales.
 
 Ambos son opcionales: quien clone el repo sin cuentas ni claves sigue pudiendo trabajar con normalidad. Ver la sección correspondiente de `AGENTS.md`.

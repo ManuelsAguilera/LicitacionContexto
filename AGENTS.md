@@ -1,275 +1,171 @@
 # AGENTS.MD
 
-## Qué es este proyecto
+## Proyecto
 
-Proyecto de universidad (PUCV, Escuela de Informática — Taller de Formulación de Proyectos Informáticos, ICI-5444). El objetivo es redactar la propuesta técnico-económica para una licitación pública **ficticia** (Licitación N° TFEP-01/2026) del caso asignado: **Caso 09 — Cadena Multitienda** (Multitiendas Ancoa S.A.).
+Proyecto universitario (PUCV, Escuela de Informática — ICI-5444 Taller de Formulación de Proyectos Informáticos). Se redacta la propuesta técnico-económica para una licitación pública **ficticia** (N° TFEP-01/2026), **Caso 09 — Cadena Multitienda** (Multitiendas Ancoa S.A.). Todo en **español**. La salida es documentación tipo oferta (arquitectura, servicios, requerimientos, plan, riesgos), no código.
 
-Todo el trabajo se desarrolla en **español** (idioma oficial de la licitación). La salida esperada es documentación tipo oferta (arquitectura, servicios, requerimientos, planificación, evaluación de riesgos), no código.
+**Proponente:** Only Simple Solutions (planilla de consultas col. B, nomenclatura de archivos Art. 43.3, todos los documentos/sobres). **Equipo:** Vicente Rosales (líder), Alex Alfaro, Samira Becerra, Manuel Aguilera, Martin Vasquez, Daniel Cepeda, Eliseo Guarda.
 
-## Regla de exportación (obligatoria, leer antes de tocar LaTeX o PDF)
+## Regla de exportación LaTeX/PDF (obligatoria, leer antes de tocar LaTeX o PDF)
 
-- Markdown → LaTeX → PDF de los subdocumentos T-7 se hace **solo** con `05_Gestion/scripts/exportar_latex.py`, siguiendo `.agents/skills/exportar/SKILL.md`. Orden: `doctor` → `estado` → `importar` (solo si falta el `.tex`) → editar `.tex` → `verificar` → `compilar`.
-- **Fuente de verdad:** tras la importación, `02_Propuesta/latex_final/sd-NN.tex`. Los `.md` de `02_Propuesta/` son **solo contexto** para agentes; editarlos no cambia el subdocumento. Los cambios de contenido se hacen en el `.tex`.
-- El preámbulo de cada `.tex` es la plantilla fija `02_Propuesta/latex_final/plantilla/oss-pandoc.latex` (marcador `% oss-plantilla:` en la línea 1). El formato visual vive en `oss.sty`. `verificar` y `compilar` rechazan cualquier `.tex` que se aparte.
-- **Prohibido:** escribir o editar preámbulos, crear `.tex` a mano, llamar a `pandoc`/`xelatex`/`latexmk` directamente, borrar un `.tex` para reimportarlo, o usar `pdf-handling`, WeasyPrint, `docx` o HTML para la propuesta. `importar --reemplazar` solo con instrucción explícita del usuario (respalda en `latex_final/respaldo/`).
-- Edición colaborativa en Prism: los paquetes salen con `exportar_latex.py prism-empaquetar` (zip por subdocumento en `05_Gestion/build/prism/`) y los cambios vuelven **solo** con `prism-importar --parte T7-NN --zip <archivo>` (usar `--dry-run` antes). No copiar `.tex` de Prism a mano ni editar el preámbulo, `oss.sty` o `recursos/` en Prism.
-- Intérprete: usar `python3` (Linux/macOS) o `python` (Windows); si uno falla, probar el otro. No improvisar otro flujo.
-- Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
+- Markdown → LaTeX → PDF de los subdocumentos T-7 **solo** con `05_Gestion/scripts/exportar_latex.py`, según `.agents/skills/exportar/SKILL.md`. Orden: `doctor` → `estado` → `importar` (solo si falta el `.tex`) → editar `.tex` → `verificar` → `compilar`.
+- **Fuente de verdad** tras importar: `02_Propuesta/latex_final/sd-NN/…Subdocumento N.tex`. Los `.md` de `02_Propuesta/` son solo contexto; los cambios de contenido van en el `.tex`.
+- El preámbulo es la plantilla fija `latex_final/plantilla/oss-pandoc.latex` (marcador `% oss-plantilla:` en línea 1); el formato visual vive en `oss.sty`. `verificar`/`compilar` rechazan cualquier desvío.
+- **Prohibido:** escribir/editar preámbulos, crear `.tex` a mano, llamar a `pandoc`/`xelatex`/`latexmk`, borrar un `.tex` para reimportarlo, usar `pdf-handling`/WeasyPrint/`docx`/HTML para la propuesta. `importar --reemplazar` solo con instrucción explícita (respalda en `latex_final/respaldo/`).
+- Prism: `exportar_latex.py prism-empaquetar` (zips en `05_Gestion/build/prism/`); los cambios vuelven **solo** con `prism-importar --parte T7-NN --zip <archivo>` (antes `--dry-run`). No copiar `.tex` de Prism a mano ni editar preámbulo, `oss.sty` o `recursos/` allí.
+- Intérprete: `python3` (Linux/macOS) o `python` (Windows); si falla, probar el otro. Pruebas: `python3 -m unittest discover -s 05_Gestion/tests -v`.
 
-## Reglas de redacción y reglas de plantilla (dos cosas distintas)
+## Reglas de redacción vs. plantilla
 
-- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md`, IDs `RR-NN`, basadas en el Comunicado 10 y decisiones editoriales del equipo. Aplicarlas al escribir o editar un `.tex`, tanto en local como en Prism. Para seleccionar citas, aplicar `.agents/skills/citas-proyecto/SKILL.md`. Comprobación mecánica: `exportar_latex.py verificar-redaccion` (solo informa; no edita ni convierte tablas a párrafos ni al revés).
-- **Plantilla (formato):** `05_Gestion/convenciones/reglas-plantilla.md`, IDs `RP-NN`, las cumple `oss.sty`/`plantilla/`. No se replican a mano en un `.tex` ni se cambian fuera del flujo de la plantilla.
-- Las tablas del cuerpo se rigen por RR-15 a RR-19 (ver `artefactos.md`).
-
-### Citas y páginas de las fuentes
-
-Aplicar [citas-proyecto](.agents/skills/citas-proyecto/SKILL.md) al redactar y revisar la oferta. Citar solo exigencias particulares y contexto o datos del Caso 09, identificando documento, capítulo o numeral y **folio impreso** verificado. No citar bibliográficamente exigencias generales de las Bases Administrativas o Transversales ni indicaciones del profesor; conservar sus contenidos obligatorios e IDs técnicos cuando sirvan para trazabilidad. Las decisiones propias y remisiones internas no generan entradas bibliográficas. El [índice de páginas](90_Referencia/indice_paginas_caso09.md) y el [OCR paginado](90_Referencia/caso09_ocr_paginado.txt) facilitan la búsqueda; comprobar el dato final en el PDF visible. Conservar `00_Bases/Caso_09_Cadena_Multitienda.md` como espejo de lectura.
-
-## Identidad del proponente
-
-- **Empresa proponente:** Only Simple Solutions (usar en columna B de la planilla de consultas, nomenclatura de archivos Art. 43.3, y en todos los documentos/sobres).
-- **Equipo:** Vicente Rosales (líder), Alex Alfaro, Samira Becerra, Manuel Aguilera, Martin Vasquez, Daniel Cepeda, Eliseo Guarda.
+- **Redacción (contenido):** `05_Gestion/convenciones/reglas-redaccion.md` (`RR-NN`, del Comunicado 10 y decisiones del equipo). Aplicar al escribir/editar un `.tex`, local o en Prism. Verificación mecánica: `exportar_latex.py verificar-redaccion` (solo informa). Tablas del cuerpo: RR-15 a RR-19.
+- **Plantilla (formato):** `reglas-plantilla.md` (`RP-NN`), las cumple `oss.sty`/`plantilla/`. No se replican a mano ni se cambian fuera del flujo de la plantilla.
+- **Citas:** aplicar `.agents/skills/citas-proyecto/SKILL.md` (obligatorio para citas y Referencias). Citar solo exigencias particulares y contexto/datos del Caso 09, con documento, capítulo/numeral y **folio impreso** verificado en el PDF. No citar exigencias generales de las Bases Administrativas/Transversales ni indicaciones del profesor (sí conservar sus contenidos obligatorios e IDs técnicos para trazabilidad). Decisiones propias y remisiones internas no generan entradas bibliográficas. Ayudas: `90_Referencia/indice_paginas_caso09.md` y `caso09_ocr_paginado.txt`. Conservar `00_Bases/Caso_09_Cadena_Multitienda.md` como espejo de lectura.
 
 ## Fuentes y precedencia
 
-Los documentos de `00_Bases/` son la fuente de verdad del contenido. Orden de precedencia estricto (Art. 5° de las Bases Administrativas):
+`00_Bases/` es la fuente de verdad (inmutable). Precedencia (Art. 5° Bases Administrativas):
 
-1. `00_Bases/Bases_Administrativas.md` — reglas del proceso y del contrato: participación, cronograma obligatorio de 56 meses, modelo de despliegue híbrido, hitos, formularios/sobres, evaluación y las 5 innovaciones obligatorias.
-2. `00_Bases/Bases_Transversales.md` — requisitos técnicos comunes a las 13 industrias, codificados como **RT-CC.NN** (Obligatorio / Deseable / Según caso). Deben responderse uno a uno en el **Formulario T-12**.
-3. `00_Bases/Caso_09_Cadena_Multitienda.md` — el caso en sí. **No es una especificación de requerimientos**: traducir su narrativa (dolores, contradicciones, vacíos) en alcance, arquitectura, plan y estrategia es exactamente lo que se evalúa.
+1. `Bases_Administrativas.md` — proceso y contrato: cronograma de 56 meses, despliegue híbrido, hitos, formularios/sobres, evaluación, 5 innovaciones obligatorias.
+2. `Bases_Transversales.md` — requisitos técnicos comunes `RT-CC.NN` (Obligatorio/Deseable/Según caso), respondidos uno a uno en el **Formulario T-12**.
+3. `Caso_09_Cadena_Multitienda.md` — **no es una especificación**: traducir su narrativa (dolores, contradicciones, vacíos) en alcance, arquitectura, plan y estrategia es lo que se evalúa.
 
-**`00_Bases/DivisionNegocios.md`** — complemento del caso (parte de las bases): módulos de negocio retail, financiero y áreas compartidas de Ancoa, con su aporte económico y sus inputs/outputs. Se usa junto con el Caso 09, con su mismo rango (no rebaja ni endurece requisitos transversales). Inmutable.
+Complementos con rango de base: `DivisionNegocios.md` (módulos retail, financiero y áreas compartidas de Ancoa; mismo rango que el caso) y el **Comunicado 10** (`Comunicado_10_…md`, correo reenviado sin limpiar): fija la **estructura obligatoria** de la Propuesta Técnica e informes preparatorios (capítulos, títulos, orden, contenido del T-7 por título, reglas de redacción); gobierna forma y ubicación, no añade requisitos, y prevalece sobre `05_Gestion/convenciones/`.
 
-**Comunicado 10** (`00_Bases/Comunicado_10_Estructura_Propuestas_Preparatorias_y_Tecnica_Final.md`) — también es base: fija la **estructura obligatoria** de la Propuesta Técnica y de los informes preparatorios (capítulos, títulos, orden, qué contenido del T-7 va en cada título, reglas de redacción). No añade requisitos de contenido: gobierna la forma y la ubicación. Prevalece sobre las convenciones de este repositorio (`05_Gestion/convenciones/`) cuando difieran. El archivo es un correo reenviado sin limpiar; no se edita (inmutable, como el resto de `00_Bases/`).
+El caso puede **endurecer** un requisito transversal, nunca **rebajarlo**. Un "Según caso" se completa con los valores del caso; si no los define, rige el default del transversal.
 
-Regla de precedencia: el caso puede **endurecer** un requisito transversal, nunca **rebajarlo**. Un requisito marcado "Según caso" se completa con la volumetría/valores del documento del caso (si el caso no lo define, rige el valor por defecto del transversal).
+**Tablas de las Bases incompletas** (la extracción perdió contenido; p. ej. ponderación del T-21, `Bases_Administrativas.md:2366`, y fila del Plan de Riesgos): no estimar ni hardcodear esas cifras; dejarlas en blanco con nota de pendiente que apunte al ítem del T-21. Las tablas del informe quedan tal cual hasta una etapa posterior.
 
-### Tablas de las Bases: incompletas, no se reparan por ahora
+## Reglas que condicionan el diseño
 
-La extracción de los `.md` de `00_Bases/` perdió parte del contenido de las tablas. El caso más visible es la **ponderación del Formulario T-21** (`00_Bases/Bases_Administrativas.md:2366`): los porcentajes por ítem no se reconstruyen y la fila del Plan de Riesgos es ilegible.
-
-**Regla:** no estimar ni hardcodear cifras que provengan de esas tablas. Dejarlas en blanco con una nota de pendiente que apunte al ítem del T-21. Cuando se reparen las tablas, se completan los maestros de `02_Propuesta/`.
-
-Las **tablas del informe** quedan tal cual por la misma decisión: se arreglan en una etapa posterior.
-
-## Reglas que condicionan todo el diseño
-
-- **Despliegue híbrido obligatorio** (Art. 16): carga principal en nube pública + componentes on-premise. No se admiten propuestas solo-nube ni solo-on-premise.
-- **Cronograma de 56 meses innegociable** (Art. 17): Etapa 1 (meses 1–15: desarrollo, marcha blanca, producción mes 16), Etapa 2 (meses 13–20, producción mes 21), Operación 36 meses (21–56). Salidas no negociables.
+- **Despliegue híbrido obligatorio** (Art. 16): carga principal en nube pública + componentes on-premise; ni solo-nube ni solo-on-premise.
+- **Cronograma de 56 meses innegociable** (Art. 17): Etapa 1 (meses 1–15, producción mes 16), Etapa 2 (meses 13–20, producción mes 21), Operación 36 meses (21–56).
 - **5 innovaciones obligatorias** (Cap. 5 Bases Admin), una por tipo, trazables con arquitectura, EDT y flujo de caja.
-- **Línea roja del caso**: la compañía es simultáneamente una tienda y un **emisor de crédito fiscalizado** (dos negocios, dos regímenes jurídicos). Ninguna propuesta que los trate como uno solo o que borre la separación de sus datos será aceptada. Esto gobierna todas las decisiones de arquitectura de datos.
-- **Presupuesto ilimitado / mejor solución**: para efectos de esta propuesta el presupuesto se considera **efectivamente ilimitado**. Nunca se sacrifica calidad técnica, arquitectura ni diseño por costo. Al evaluar alternativas, el criterio de decisión es **siempre ofrecer la mejor solución al problema** (correctitud, robustez, escalabilidad, disponibilidad, seguridad, cumplimiento), no la más barata. La oferta económica se construye para sostener esa mejor solución, no para recortarla. Aplica a arquitectura, selección de piezas/servicios, tecnologías y plan; la única restricción real sigue siendo el cronograma obligatorio de 56 meses.
-- El problema del caso **no es un sistema legado**, sino el tejido de 9 plataformas de 6 proveedores con 14 interfaces punto a punto y registros imprecisos (12,4% de discrepancia en conteo cíclico). Abordarlo como reemplazo de un sistema es un error conceptual.
+- **Línea roja:** Ancoa es a la vez una tienda y un **emisor de crédito fiscalizado** (dos negocios, dos regímenes jurídicos). Tratarlos como uno o borrar la separación de sus datos descalifica la propuesta; gobierna toda decisión de arquitectura de datos.
+- **Presupuesto efectivamente ilimitado:** nunca se sacrifica calidad, arquitectura ni diseño por costo. Criterio siempre: la mejor solución (correctitud, robustez, escalabilidad, disponibilidad, seguridad, cumplimiento). La oferta económica sostiene esa solución; la única restricción real es el cronograma.
+- **No es un sistema legado:** es el tejido de 9 plataformas de 6 proveedores con 14 interfaces punto a punto y registros imprecisos (12,4% de discrepancia en conteo cíclico). Plantearlo como reemplazo de un sistema es un error conceptual.
 
 ## Carpetas
 
-Estructura de pipeline: los prefijos numéricos declaran la etapa del flujo.
+Los prefijos numéricos indican la etapa del pipeline. Cada carpeta principal tiene `README.md`: leerlo antes de escribir en ella.
 
 | Carpeta | Contenido |
 | :--- | :--- |
-| `00_Bases/` | Documentos rectores (ver precedencia arriba). **Inmutables**: son la fuente de verdad. |
-| `01_Requerimientos/` | Catálogos de requerimientos en Excel. **Fuente oficial: `RequerimientosAtomizados_Depuracion_Alcance.xlsx`** (catálogo v3.0 renumerado y depurado: `RF-001`..`RF-226`, `RNF-01`..`RNF-76`, `OP-01`..`OP-09`), con hojas `6_Equivalencia_IDs` (mapeo de IDs viejos a nuevos) y `7_Depuracion_Alcance` (decisiones ELIMINAR / TRASLADAR / CONSOLIDAR / RECLASIFICAR / CONDICIONAR / REVISAR). `RequerimientosAtomizados.xlsx` (v2.1) y `RequerimientosHumanos.xlsx` (análisis original de personas) quedan en `historico/`. Espejos `.md` en `md/`. |
-| `02_Propuesta/` | **Corazón del proyecto.** Los 14 subdocumentos del Formulario T-7, una carpeta `sd-NN_*/` por subdocumento. Ver "Cómo se escribe la propuesta". |
-| `03_Formularios/` | Formularios oficiales de los sobres: `A/` (A-1..A-6), `B/` (T-6..T-22), `C/` (E-21..E-26). |
-| `04_Adjuntos/` | Derivados que se citan desde la propuesta: `diagramas/` (fuente `.py`/`.drawio`/`.dot` y export PNG/PDF, sin subcarpetas), `hardware/` (inventario a proveer), `tablas/` (cálculos de apoyo). |
-| `05_Gestion/` | `jira/` con el plan de trabajo del proyecto `OSS`: `plan/`, `mapeo/`, `scripts/`, `historico/`. |
-| `06_Informes/` | Presentaciones preparatorias (Art. 45°) en `presentaciones/` y PDF compilados de cada informe en `informes/Informe N/` (los PDF **no se versionan**, `.gitignore`; se entregan por Drive). Los informes se arman desde los `.tex` (no hay borradores `.docx`). |
-| `07_Entregables/` | Salida final: `sobre_1_administrativo/`, `sobre_2_tecnico/`, `sobre_3_economico/`, `pdf_final/`. |
-| `80_Artefactos/` | Material de trabajo del equipo (no entregable): planilla de consultas al mandante, auditorías, rúbricas de revisión y `sd-NN_contexto/` con el contexto de cada subdocumento. |
-| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/`: fragmentos de un caso previo (**no usar salvo instrucción expresa**, ver más abajo). `clases markdown/`: material de las clases del curso, base para evaluar críticamente las secciones. `CMF/`: documentos de terceros, no se versionan. |
-| `.opencode/` | Skills versionadas, plugin `activar-skills.ts` y dependencias. `node_modules/` y `opencode-loop/` no se versionan. |
+| `00_Bases/` | Documentos rectores, **inmutables**. |
+| `01_Requerimientos/` | Excel. **Fuente oficial: `RequerimientosAtomizados_Depuracion_Alcance.xlsx`** (v3.0: `RF-001`..`RF-226`, `RNF-01`..`RNF-76`, `OP-01`..`OP-09`; hojas `6_Equivalencia_IDs` y `7_Depuracion_Alcance`). v2.1 y `RequerimientosHumanos.xlsx` en `historico/`. Espejos `.md` en `md/`. |
+| `02_Propuesta/` | **Corazón del proyecto:** los 14 subdocumentos del T-7, una carpeta `sd-NN_*/` cada uno. |
+| `03_Formularios/` | `A/` (A-1..A-6), `B/` (T-6..T-22), `C/` (E-21..E-26). |
+| `04_Adjuntos/` | `diagramas/` (fuente `.py`/`.drawio`/`.dot` + export PNG/PDF, sin subcarpetas), `hardware/`, `tablas/`. |
+| `05_Gestion/` | Scripts, convenciones, tests y `jira/` (plan del proyecto `OSS`). |
+| `06_Informes/` | `presentaciones/` (Art. 45°) e `informes/Informe N/` (PDF no versionados; se entregan por Drive). Se arman desde los `.tex`. |
+| `07_Entregables/` | `sobre_1_administrativo/`, `sobre_2_tecnico/`, `sobre_3_economico/`, `pdf_final/`. |
+| `80_Artefactos/` | Material de trabajo (no entregable): consultas al mandante, auditorías, rúbricas, `sd-NN_contexto/`. |
+| `90_Referencia/` | `TrabajosAnteriores_DistriProducto/` (ver abajo), `clases markdown/`, `CMF/` (terceros, no versionado). |
+| `.opencode/` | Skills, plugin `activar-skills.ts` y dependencias (`node_modules/`, `opencode-loop/` no versionados). |
 
-Cada carpeta del pipeline tiene un `README.md` con su propósito. Leer el de la carpeta antes de escribir en ella. Las subcarpetas no lo tienen: su propósito está en la tabla de arriba y en un `.gitkeep` comentado mientras están vacías.
+## Artefactos
 
-## Convención de formato de los artefactos
+- **Formato:** todo contenido en `.md` (o `.txt` para volcados); `.xlsx/.docx/.pptx/.pdf` solo como lectura/entrega o export final. Exentos: `*.py`, `*.ps1`, `*.json`, `*.csv` de `05_Gestion/`. Los subdocumentos sin `.tex` se redactan en `.md`; una vez importados, manda el `.tex` (importación única a `latex_final/`, no se regenera desde Markdown). El contenido se redacta directamente en el `.tex` con Prism; no hay importación desde Google Docs/DOCX. No existe un segundo renderizador de PDF. Formularios e informes preparatorios quedan fuera del alcance del exportador.
+- **Espejos:** un `.xlsx` oficial puede tener espejo `.md`; si difieren, manda el Excel. Se regeneran, no se editan.
+- IDs, estados, frontmatter y procedencia: `05_Gestion/convenciones/artefactos.md`. El estado `revisado` lo asigna solo un humano, nunca un script o agente.
+- El índice del Comunicado 10 gobierna la estructura: cada maestro reproduce sus capítulos y títulos tal cual.
+- `check.py`, `estado.py` y `brief.py` verifican documentación; no sustituyen la revisión técnica ni humana.
+- Retroalimentación del Informe 1: `80_Artefactos/revision_informe_1_transcripcion.md` y rúbrica `revision_informe_1_rubrica_de_cierre.md`; usar la rúbrica por subsección, contrastando cada criterio con Bases, Comunicado 10 y estado actual antes de marcarlo cumplido.
+- Skills compartidas (redactar, revisar, cerrar, exportar) en `.agents/skills/` (fuente canónica, léanla Codex y OpenCode). Claude Code lee `.claude/skills/`, creada con `python3 05_Gestion/scripts/link_skills.py`. Editar siempre la fuente canónica.
 
-**Regla:** todo artefacto de contenido se escribe en **`.md`** (o `.txt` para volcados de datos). Los binarios (`.xlsx`, `.docx`, `.pptx`, `.pdf`) existen **únicamente** como documento de lectura/entrega para el usuario o como export final.
-
-**Consecuencia práctica:** los subdocumentos sin `.tex` aún se redactan en `.md` dentro de `02_Propuesta/`; una vez importados, el `.tex` manda y el `.md` queda solo como contexto (ver "Regla de exportación"). Cada subdocumento T-7 debe además contar con una fuente LaTeX editable y un PDF compilado con el formato corporativo. Se importa una sola vez a `02_Propuesta/latex_final/`; desde entonces, el `.tex` es la fuente de edición final y el PDF se compila desde esa versión, conforme a `.agents/skills/exportar/SKILL.md`. Formularios y otros documentos conservan sus formatos propios.
-
-**Exentos de la regla:** `*.py`, `*.ps1`, `*.json`, `*.csv` de `05_Gestion/` — son código y datos de máquina que consumen scripts, no documentos.
-
-**Espejos:** cuando un `.xlsx` es la fuente oficial y además hay que leerlo con agentes, se genera un `.md` espejo. **Si el espejo y el Excel difieren, manda el Excel.** Los espejos se regeneran, no se editan a mano.
-
-### Sistema de artefactos verificables
-
-- La convención de IDs, estados, frontmatter y procedencia vive en `05_Gestion/convenciones/artefactos.md`.
-- El estado `revisado` requiere revisión humana registrada; ningún script o agente lo asigna automáticamente.
-- El índice obligatorio del Comunicado 10 gobierna la estructura entregable: cada maestro reproduce sus capítulos y títulos tal cual.
-- **Flujo de trabajo:** el contenido se redacta directamente en el `.tex` de `02_Propuesta/latex_final/` con edición colaborativa en Prism. No hay importación desde Google Docs ni DOCX (la herramienta de migración fue retirada).
-- `05_Gestion/scripts/check.py`, `estado.py` y `brief.py` son verificadores de documentación; sus resultados no sustituyen la revisión técnica ni la validación humana.
-- Todos los subdocumentos T-7 se generan y entregan en el formato corporativo LaTeX, con fuente `.tex` editable y PDF compilado desde ella usando `05_Gestion/scripts/exportar_latex.py`; `.agents/skills/exportar/SKILL.md` es el procedimiento canónico e incluye importación, figuras, compilación y verificación. Tras la importación inicial, `02_Propuesta/latex_final/sd-NN.tex` es la fuente de edición final y no se regenera automáticamente desde Markdown. No existe un segundo renderizador de propuesta PDF. Formularios e informes preparatorios no forman parte de este alcance.
-- La retroalimentación del Informe 1 está en `80_Artefactos/revision_informe_1_transcripcion.md`; su rúbrica normalizada para el siguiente ciclo está en `80_Artefactos/revision_informe_1_rubrica_de_cierre.md`. Usar la rúbrica como contexto de revisión por subsección, contrastando cada criterio con las Bases, el Comunicado 10 y el estado actual del artefacto antes de marcarlo cumplido.
-- Las skills compartidas para redactar, revisar, cerrar y exportar artefactos se mantienen en `.agents/skills/`. Codex y OpenCode las leen directamente; Claude Code solo lee `.claude/skills/`, que se crea con `python3 05_Gestion/scripts/link_skills.py` (symlinks en Linux/macOS, junctions en Windows). Editar siempre la fuente canónica.
-- Para cualquier trabajo sobre citas y Referencias de la propuesta, cargar `.agents/skills/citas-proyecto/SKILL.md`.
-
-## Convención de nombres de los artefactos
+### Nombres
 
 | Tipo | Patrón | Ejemplo |
 | :--- | :--- | :--- |
-| Maestro de subdocumento | `sd-NN_titulo.md` | `sd-04_arquitectura-logica-y-fisica.md` |
-| Texto de sección | `sd-NN_sN_titulo.md` | `sd-04_s2_arquitectura-fisica.md` |
+| Maestro | `sd-NN_titulo.md` | `sd-04_arquitectura-logica-y-fisica.md` |
+| Sección | `sd-NN_sN_titulo.md` | `sd-04_s2_arquitectura-fisica.md` |
 | Adjunto | `sd-NN_sN_titulo.<ext>` | `sd-04_s2_inventario-hardware.xlsx` |
-| Diagrama exportado | `diag-NN-SN_titulo.<ext>` | `diag-04-02_arquitectura-fisica.svg` |
-| Formulario oficial | `form-<ID>_titulo.<ext>` | `form-T-12_matriz-cumplimiento-tecnico.xlsx` |
-| Fuente LaTeX de subdocumento | `OnlySimpleSolutions-SubdocumentoN[-Anexos].tex` en `latex_final/sd-NN/` | `OnlySimpleSolutions-Subdocumento4.tex` |
-| Fuente LaTeX de formulario | `OnlySimpleSolutions-Formulario-T-N.tex` en `latex_final/Formularios/` | `OnlySimpleSolutions-Formulario-T-16.tex` |
-
-El prefijo + id oficial hace que el orden alfabético de los archivos coincida con el orden del informe.
+| Diagrama | `diag-NN-SN_titulo.<ext>` | `diag-04-02_arquitectura-fisica.svg` |
+| Formulario | `form-<ID>_titulo.<ext>` | `form-T-12_matriz-cumplimiento-tecnico.xlsx` |
+| LaTeX subdocumento | `OnlySimpleSolutions-SubdocumentoN[-Anexos].tex` en `latex_final/sd-NN/` | `OnlySimpleSolutions-Subdocumento4.tex` |
+| LaTeX formulario | `OnlySimpleSolutions-Formulario-T-N.tex` en `latex_final/Formularios/` | `OnlySimpleSolutions-Formulario-T-16.tex` |
 
 ## Cómo se escribe la propuesta
 
-La Propuesta Técnica se estructura en **14 subdocumentos** (Formulario T-7, `00_Bases/Bases_Administrativas.md:2066`).
+Son **14 subdocumentos** (Formulario T-7, `Bases_Administrativas.md:2066`). Cada `02_Propuesta/sd-NN_<titulo>/` conserva un **`.md` maestro** de identificación, estructura, estado y trazabilidad; los archivos Markdown de contenido previo son antecedentes cuando ya existe fuente LaTeX. El maestro es la **fuente de verdad del estado**: actualizar su fila al empezar o terminar una sección. `02_Propuesta/indice.md` contiene el índice general, la cobertura por informe y las reglas de ensamblado. La numeración del informe no coincide con la del plan Jira: manda el maestro.
 
-- Cada subdocumento es una carpeta `02_Propuesta/sd-NN_<titulo>/` con un **`.md` maestro** (identificación, contenido exigido por el T-7, tabla de secciones con estado, trazabilidad con Jira, adjuntos esperados y checklist) y **un archivo por sección**.
-- El maestro es la **fuente de verdad del estado**: al empezar o terminar una sección, actualizar su fila en la tabla de secciones.
-- `02_Propuesta/indice.md` es el índice general: los 14 subdocumentos, la cobertura por informe preparatorio, la convención de nombres y **las reglas de ensamblado** del documento final.
-- Los números de sección del informe **no coinciden** con los del plan de Jira: mandan los del maestro.
+**Informes preparatorios (Art. 45°):** tres informes y tres presentaciones. El Informe 1 cubre los sd 1–5 y 13; los sd 6–12 y 14 van en los informes 2 y 3.
 
-### Informes preparatorios (Art. 45°)
+## Clases del profesor (evaluar críticamente)
 
-Son tres informes y tres presentaciones, no uno. El `Informe 1` cubre los subdocumentos 1 a 5 y el 13; los subdocumentos 6 a 12 y el 14 corresponden a los informes 2 y 3. Los informes se arman desde los `.tex` de `02_Propuesta/latex_final/` (no existen ya borradores `.docx` en `06_Informes/informes/`).
+`90_Referencia/clases markdown/` tiene las clases FEP01–FEP05 y `Guia_de_Navegacion_FEP01-FEP05.md` (índice por diapositiva; empezar por ella y abrir solo la transcripción pertinente, son grandes). Úsalas para contrastar definiciones, criterios y errores comunes (criterio de aceptación con umbral, regla del 100 % de la EDT, validar vs. controlar alcance) y cita la diapositiva que apoye un juicio. No aportan hechos ni cifras de Ancoa; si contradicen las Bases o el Comunicado 10, mandan estos.
 
-## Clases del profesor: material para evaluar críticamente
+## TrabajosAnteriores: no usar salvo instrucción expresa
 
-`90_Referencia/clases markdown/` contiene las transcripciones de las clases FEP01 a FEP05 y una `Guia_de_Navegacion_FEP01-FEP05.md` que indexa los temas por diapositiva. Es el marco con el que se evalúa cada sección de la propuesta (arquitectura, requisitos y alcance, estimación, riesgos, infraestructura).
+No consultar `TrabajosAnteriores_DistriProducto/` salvo que el usuario lo indique. Solo sirve para copiar la **estructura** de un capítulo (títulos, orden, tablas, anexos); **nunca** trasladar tecnologías, módulos, volúmenes, cifras ni servicios. Mapeo (archivo → capítulo): sd-02 `subdocumento_2.md` (Cap 3 Alcance), sd-03 `subdocumento_3.md` (Cap 4 Lógica), sd-04 `subdocumento_4.md` (Cap 5 Física), sd-06 `Subdocumento_6.md` (Cap 7 Metodologías), sd-07 `_7` (Cap 8 Plan de Trabajo), sd-08 `_8` (Cap 9 Riesgo), sd-09 `_9` (Cap 10 Calidad), sd-10 `_10` (Cap 11 Operación), sd-11 `_11` (Cap 12 Planes en Operación), sd-12 `_12` (Cap 13 Equipo y Alianzas).
 
-- **Úsalo para ser crítico:** al redactar o revisar, contrasta definiciones, criterios y errores comunes con lo que enseña la clase (por ejemplo, el criterio de aceptación con umbral, la regla del 100 % de la EDT, validar vs. controlar el alcance). Cita la diapositiva cuando apoye un juicio.
-- **No es fuente de contenido del caso:** no aporta cifras ni hechos de Ancoa. El contenido sigue rigiéndose por `00_Bases/`.
-- Si algo de la clase contradice las Bases o el Comunicado 10, mandan las Bases y el Comunicado.
-- Empezar por la guía de navegación y abrir solo la transcripción pertinente (son archivos grandes).
+## Estado del proyecto y contexto de inicio (2026-10-25)
 
-## TrabajosAnteriores: no usar salvo instrucción expresa (solo referencia de forma)
-
-**Los agentes no deben consultar `TrabajosAnteriores_DistriProducto/` a menos que el usuario lo indique.** Existe para copiar la estructura de cada capítulo de la propuesta (títulos, orden de secciones, tablas, anexos). **Nunca** trasladar contenido: tecnologías, módulos, volúmenes, cifras ni servicios no aplican al caso actual (Cadena Multitienda). La fuente de verdad del contenido sigue siendo `00_Bases/`.
-
-| Subdocumento | Capítulo (DistriProducto) | Cuándo ir a leerlo |
-| :--- | :--- | :--- |
-| `subdocumento_2.md` | Cap 3 — Alcance del Servicio | Para estructurar el alcance: contexto, problema, objetivos, entregables/hitos, módulos, ventajas/desventajas |
-| `subdocumento_3.md` | Cap 4 — Descripción Lógica de la Solución | Para armar el capítulo de solución lógica: capas, módulos, arquitectura de bloques |
-| `subdocumento_4.md` | Cap 5 — Descripción Física de la Solución | Para el capítulo físico: zonas/segmentación de red, infraestructura, especificaciones |
-| `Subdocumento_6.md` | Cap 7 — Metodologías | Para estructurar metodología de gestión + desarrollo (PMBOK/ágil) |
-| `Subdocumento_7.md` | Cap 8 — Plan de Trabajo | Para plantear EDT, carta gantt e implantación |
-| `Subdocumento_8.md` | Cap 9 — Plan de Riesgo | Para RBS, análisis cualitativo/cuantitativo y plan de acción |
-| `Subdocumento_9.md` | Cap 10 — Plan de Calidad | Para plan QA: gobernanza, niveles de prueba, métricas |
-| `Subdocumento_10.md` | Cap 11 — Servicios de Operación | Para call center, SLA y soporte técnico |
-| `Subdocumento_11.md` | Cap 12 — Planes en Operación | Para mantención preventiva/evolutiva |
-| `Subdocumento_12.md` | Cap 13 — Equipo, Subcontrataciones y Alianzas | Para estructura organizacional, competencias y alianzas |
-
-## Estado real del proyecto (leído del Jira el 2026-09-29)
-
-- El plan de trabajo vive en el proyecto Jira `OSS`: **8 agrupadoras → 34 historias → 77 subtareas** (119 incidencias etiquetadas), más `OSS-250` como tarea suelta.
-- Los 62 originales `OSS-105`..`OSS-164` **ya fueron borrados**; `05_Gestion/jira/historico/borrar_manual.txt` está obsoleto a propósito.
-- La taxonomía de secciones del plan de Jira **no coincide** con el índice del Informe 1. Ver las observaciones de `02_Propuesta/indice.md`.
-- Estado de redacción (2026-10-06): el sd-01 y el sd-02 (borrador en `02_Propuesta/sd-02_problema-y-necesidad/subdoc2-enProgreso.md`) están avanzados. El contenido anterior de los sd-03 y siguientes fue retirado a propósito: se redacta de nuevo desde cero. El trabajo previo del sd-03 está en `80_Artefactos/sd-03_contexto/`. El checkpoint anterior a la purga es el tag `checkpoint-pre-purga-sd03`.
-- Estado de redacción (2026-10-12): el sd-08 (Plan de riesgos) está redactado como borrador completo en `02_Propuesta/latex_final/sd-08/OnlySimpleSolutions-Subdocumento8.tex` (37 riesgos y 8 oportunidades; sin revisión humana). El sd-07 tiene como fuente de verdad la rama remota `origin/codex/subdoc7-formularios-entrega` (commit `22a251a`), importada a `latex_final/sd-07/`; sus formularios T-14, T-15 y T-18 están como contexto en `80_Artefactos/entrega-sd07-2026-10-12/`. La integración sd-07 ↔ sd-08 y sus pendientes están en `80_Artefactos/sd-08_contexto/integracion_sd-07.md`; el punto de partida del sd-08 es `relevo_sesion_2026-10-12.md`.
+- **Referencias de consistencia indicadas por el usuario:** SD-04 para arquitectura, tecnologías, infraestructura y suministro; SD-07 para EDT, planificación, esfuerzo e implantación. Las Bases y el Comunicado 10 mantienen su precedencia. Una contradicción entre ambas referencias se registra como decisión pendiente; no se resuelve por inferencia.
+- **Entrada de contexto:** `80_Artefactos/contexto-activo/indice.md`; referencias de trabajo del equipo. Los hashes de corte están en `05_Gestion/contexto-referencias-2026-10-25.json`, para consulta de vigencia; no cargar ese registro como contenido de redacción. Cargar únicamente las decisiones y pendientes pertinentes a la tarea y confirmar en el `.tex` actual. No cargar recursivamente todos los antecedentes.
+- Hay fuentes LaTeX para SD-01 a SD-09 y SD-13. El resto debe conciliarse con SD-04 y SD-07; una importación reciente no acredita consistencia. SD-10, SD-11, SD-12 y SD-14 siguen pendientes de fuente LaTeX.
+- Los 13 formularios recibidos están en `02_Propuesta/latex_final/Formularios/`. T-11 tiene además una copia local divergente en `sd-04/OSS-Formulario-T-11.tex`: conservar ambas hasta su conciliación; no elegir contenido por nombre o fecha.
+- **Estados separados:** fuente disponible, estado declarado en el maestro, compilación disponible y revisión humana. Importado o compilado no significa consistente, revisado ni aceptado.
+- `brief.py <ID>` selecciona LaTeX cuando existe; admite partes, secciones, formularios T-N y adjuntos ADJ-NNN. `estado.py` muestra esas dimensiones separadas. `check.py` controla metadatos y trazabilidad, no certifica el contenido LaTeX.
+- Contextos históricos, paquetes de recepción, respaldos y derivados quedan fuera de las búsquedas habituales; consultarlos deliberadamente cuando se necesite procedencia. Ver el manifiesto y el registro de limpieza en `05_Gestion/registro-limpieza-contexto-2026-10-25.json` y `05_Gestion/reportes/limpieza-contexto-2026-10-25.md`.
+- La información anterior sobre ramas, commits de entrega y diagnósticos de herramientas describe instantáneas históricas; no sustituye las fuentes actuales. Jira debe consultarse en su estado real si la tarea lo necesita.
 
 ## Flujo git
 
-- `main` es la rama estable y solo recibe cambios por **Pull Request** (merge tras revisión de otra persona del equipo). No se commitea directo a `main`.
-- Una rama por tarea, con vida corta: `sdNN/<tema>` (o `feat/`, `fix/`, `chore/`). Se crea desde `origin/main` actualizado y se borra al mergear; no se reutiliza una rama ya mergeada.
-- Commits atómicos por tema, en español e imperativo. No mezclar contenido de subdocumentos distintos, figuras, scripts y limpieza en un mismo commit.
-- Nunca versionar: PDF de informes, zips, descargas de Prism (`* (1).tex`), documentos de terceros ni derivados regenerables (ver `.gitignore`). Los `.tex` vuelven de Prism **solo** con `prism-importar`.
-- Antes de abrir el PR: `python3 -m unittest discover -s 05_Gestion/tests` y `exportar_latex.py verificar`.
-- Un único worktree por persona salvo necesidad puntual; se eliminan al terminar.
+- `main` solo recibe cambios por **Pull Request** revisado por otra persona; no se commitea directo.
+- Una rama corta por tarea (`sdNN/<tema>`, `feat/`, `fix/`, `chore/`) desde `origin/main` actualizado; se borra al mergear y no se reutiliza.
+- Commits atómicos por tema, en español e imperativo; no mezclar subdocumentos distintos, figuras, scripts y limpieza.
+- Nunca versionar PDF de informes, zips, descargas de Prism (`* (1).tex`), documentos de terceros ni derivados regenerables (`.gitignore`). Los `.tex` vuelven de Prism solo con `prism-importar`.
+- Antes del PR: `python3 -m unittest discover -s 05_Gestion/tests` y `exportar_latex.py verificar`.
+- Un worktree por persona salvo necesidad puntual; eliminarlos al terminar.
 
 ## Verificación
 
-No hay build ni lint. El exportador LaTeX sí tiene pruebas (`python3 -m unittest discover -s 05_Gestion/tests -v`) y `exportar_latex.py verificar` comprueba que cada `.tex` respete la plantilla. La "verificación" del trabajo es la coherencia entre documentos: respetar la precedencia, trazabilidad de requerimientos (requisito RT → módulo → entregable) y consistencia de cifras/plazos con el cronograma obligatorio.
+No hay build ni lint. Hay pruebas del exportador y `exportar_latex.py verificar` (cada `.tex` respeta la plantilla). La verificación del trabajo es la coherencia entre documentos: precedencia, trazabilidad (RT → módulo → entregable) y consistencia de cifras/plazos con el cronograma obligatorio.
 
-## Skills útiles y su activación
+## Skills y herramientas
 
-Las skills se cargan con la herramienta `skill`. El skill **`licitacion-workflow`** (`.opencode/skills/licitacion-workflow/`) es el orquestador: **cárgalo al iniciar cualquier avance de la propuesta**; indica qué skill activar en cada fase. El plugin **`.opencode/plugins/activar-skills.ts`** refuerza esa activación inyectándola en el prompt de sistema.
+Cargar el skill orquestador **`licitacion-workflow`** (`.opencode/skills/`) al iniciar cualquier avance de la propuesta; indica qué skill usar en cada fase (el plugin `.opencode/plugins/activar-skills.ts` refuerza la activación). Las skills del proyecto están versionadas en `.opencode/skills/`:
 
-Nota: `opencode.jsonc` agrega el plugin `opencode-mermaid-renderer` (render ASCII de bloques Mermaid en la terminal). Requiere opencode ≥ 1.0.137 y **reiniciar opencode** tras cualquier cambio de config.
-
-Skills del proyecto, **versionadas en `.opencode/skills/`** (openCode las detecta al clonar el repo, no dependen de la config global de cada máquina) y su fase:
-
-| Skill | Uso en la propuesta |
+| Skill | Uso |
 | :--- | :--- |
-| `licitacion-workflow` | Orquestación: qué skill activar en cada fase (cargar siempre) |
-| `xlsx` | Requerimientos/volumetría, oferta económica (CLP/UF/USD) y flujo de caja (Excel) |
-| `docx` | Llenar formularios/plantillas oficiales (.docx) de los sobres |
-| `pptx` | Las 3 presentaciones preparatorias |
-| `exportar` (`.agents/skills/`) | Única ruta para pasar subdocumentos a LaTeX corporativo y PDF (`exportar_latex.py`). `pdf-handling` no se usa para la propuesta |
+| `licitacion-workflow` | Orquestación (cargar siempre) |
+| `xlsx` / `docx` / `pptx` | Requerimientos, oferta económica y flujo de caja / formularios de sobres / las 3 presentaciones |
+| `exportar` (`.agents/skills/`) | Única ruta a LaTeX corporativo y PDF; `pdf-handling` no se usa |
 | `architecture-diagrams` | Diagramas de arquitectura (lógica/física/datos/seguridad/despliegue) |
-| `cloud-architecture` | Justificar la arquitectura híbrida nube+on-premise (RT-03) |
-| `sre-practices` | Disponibilidad 99,9%, RTO/RPO, SLOs, observabilidad |
-| `project-estimation` | Estimación de esfuerzo y desglose por rol (nivelación T-15) |
-| `legal-risk-assessment` / `risk-assessment` | Evaluación de riesgos contractuales y técnicos |
-| `deep-research` | Investigar lo que el caso no explica (normativa, estándares, mercado) |
-| `technical-writing` | Redacción de documentos técnicos extensos |
-| `mermaid-diagrams` | No usar para la propuesta: el importador rechaza Mermaid; se incrustan diagramas como imágenes |
-| `plantuml-diagrams` | Diagramas UML/C4 formales (.puml) renderizados a PNG/SVG vía Kroki (curl); ver "Renderizado de diagramas" |
-| `jira-workflow` | Integración opcional con Jira Cloud: tomar tareas, marcarlas asignadas/en progreso/completadas, consultar sprint/board y comentar |
+| `cloud-architecture` / `sre-practices` | Arquitectura híbrida (RT-03) / disponibilidad 99,9 %, RTO/RPO, SLOs |
+| `project-estimation` | Esfuerzo y desglose por rol (nivelación T-15) |
+| `legal-risk-assessment` / `risk-assessment` | Riesgos contractuales y técnicos |
+| `deep-research` / `technical-writing` | Investigar lo que el caso no explica / redacción técnica extensa |
+| `mermaid-diagrams` | **No usar**: el importador rechaza Mermaid |
+| `plantuml-diagrams` | UML/C4 formal (.puml) → PNG/SVG vía Kroki |
+| `jira-workflow` | Tomar tareas, cambiar estado, consultar sprint/board, comentar |
 
-Nota: se eliminó la skill global `risk-manager-financiero` (era de trading financiero, no aplica al caso).
+`opencode.jsonc` agrega `opencode-mermaid-renderer` (requiere opencode ≥ 1.0.137; reiniciar opencode tras cambiar la config).
 
-## Integración con Jira (opcional)
+### Jira (opcional)
 
-Este proyecto puede conectarse a **Jira Cloud** vía el servidor MCP oficial de Atlassian (Rovo) para gestionar tareas mientras se trabaja: **tomar una tarea, marcarla como asignada/en progreso/completada, consultar sprints/boards y registrar comentarios** — todo restringido a los permisos del usuario autenticado.
+MCP oficial de Atlassian (Rovo) vía `mcp.jira` en `opencode.jsonc` (`"enabled": true`, autenticado en esta máquina). Sin cuenta no se bloquea nada: las herramientas `jira_*` solo aparecen tras autenticar. Si hay tareas por gestionar, recomendar activarlo, sin bloquear el trabajo. Activación (una vez por usuario): `enabled: true` en `mcp.jira` → reiniciar opencode → `opencode mcp auth jira` (OAuth en el navegador) → verificar con `opencode mcp list`. Requiere Jira Cloud; endpoint `https://mcp.atlassian.com/v1/mcp/authv2`; el token queda en `~/.local/share/opencode/mcp-auth.json`, nunca en el repo. Flujo tomar → marcar → completar: skill `jira-workflow`.
 
-**Estado actual:** el bloque `mcp.jira` está en `opencode.jsonc` con `"enabled": true` y autenticado en esta máquina. Quien clone el repo sin cuenta **no queda bloqueado**: las herramientas `jira_*` solo aparecen tras autenticar, y el resto de las herramientas sigue disponible.
+### MCP `ragdocs` (búsqueda semántica)
 
-**Los agentes deben:** si notan tareas por gestionar o el servidor `jira` activo, **recomendar de forma proactiva** conectar/activar Jira y explicar cómo (pasos abajo). Si el usuario no tiene cuenta o el MCP está desactivado, **no bloquear el trabajo**: mencionarlo brevemente y seguir.
+Servidor `mcp-server-ragdocs` sobre Qdrant Cloud, para preguntas como "¿dónde dice el caso que el inventario discrepa?". Viene en `enabled: false`: copiar `.env.example` a `.env` (`QDRANT_URL`, `QDRANT_API_KEY`, proveedor de embeddings), poner `enabled: true` en `mcp.ragdocs` y reiniciar opencode. Reglas:
 
-**Cómo activarlo (una vez por máquina/usuario):**
+- Solo texto: no lee `.xlsx/.docx/.pdf`; indexar `00_Bases/`, espejos `.md` de `01_Requerimientos/` y `02_Propuesta/**`.
+- La base vectorial es caché, no fuente de verdad: contrastar con el archivo original antes de citar.
+- Nunca indexar material sensible (Formulario A-1, datos de la contraparte).
+- Claves por `{env:...}`; los valores viven en `.env` (en `.gitignore`).
 
-1. En `opencode.jsonc`, poner `"enabled": true` en el bloque `mcp.jira` (ya está así en el repo).
-2. Reiniciar opencode (los cambios de MCP requieren reinicio).
-3. Autenticar con el flujo OAuth de Atlassian (abre el navegador):
-   ```bash
-   opencode mcp auth jira
-   ```
-4. Verificar: `opencode mcp list`
+## Diagramas
 
-Requisitos: cuenta **Jira Cloud**; endpoint oficial `https://mcp.atlassian.com/v1/mcp/authv2`; no se crea app en Atlassian (Dynamic Client Registration). El token OAuth se guarda localmente en `~/.local/share/opencode/mcp-auth.json` y **nunca en el repositorio**.
+- Los diagramas de la propuesta se entregan como imágenes PNG/SVG/PDF en `04_Adjuntos/diagramas/`, con la fuente editable (`.dot`, `.puml`, etc.) al lado; se enlazan en Markdown con rutas relativas y el importador los copia a `latex_final/figuras/`. Sin bloques Mermaid.
+- UML/C4 formal: PlantUML exportado a imagen (GitHub no lo renderiza): `curl https://kroki.io/plantuml/png -d 'diagram_source=...'`. Interactivos/animados (presentaciones, sobres): `architecture-diagrams` (HTML → screenshot PNG).
+- **Diagramas de arquitectura de esta propuesta:** cargar `.agents/skills/diagramas-ancoa/SKILL.md` (estilos lógicos L1–L6 y físicos F1–F5; validar la especificación JSON antes de renderizar). Su procedimiento prevalece sobre las recomendaciones generales; sus ejemplos no son decisiones de alcance. El MCP local `diagramas-ancoa` expone catálogo, validación y renderizado (instalación: `references/instalacion-mcp.md`). El contenido se sigue contrastando con las Bases y los subdocumentos vigentes.
 
-Para el flujo "tomar tarea → marcarla → completar al cerrar", cargar el skill **`jira-workflow`** (`.opencode/skills/jira-workflow/`).
-
-## MCP de búsqueda documental: `ragdocs`
-
-`opencode.jsonc` declara un segundo servidor MCP, **`ragdocs`** (`mcp-server-ragdocs`), que indexa documentación en una base de vectores **Qdrant Cloud** y permite buscar por significado en lugar de por palabra clave. Es la herramienta para preguntas como "¿dónde dice el caso que el inventario discrepa?" en lugar de leer 3.000 líneas de `.md`.
-
-**Viene en `enabled: false`**: no arranca hasta que exista la configuración. Para activarlo:
-
-1. Copiar `.env.example` a `.env` y completar `QDRANT_URL` y `QDRANT_API_KEY` (del dashboard de Qdrant Cloud) más las variables del proveedor de embeddings.
-2. Poner `"enabled": true` en el bloque `mcp.ragdocs` de `opencode.jsonc` y reiniciar opencode.
-
-**Reglas de uso:**
-
-- **Indexar solo texto**: el servidor no lee `.xlsx`, `.docx` ni `.pdf`. Se indexan `00_Bases/`, los espejos `.md` de `01_Requerimientos/` y `02_Propuesta/**`. Para indexar un Excel, usar antes su espejo `.md`.
-- **La base vectorial es caché, no fuente de verdad.** Toda respuesta se contrasta contra el archivo original: el RAG puede devolver un fragmento descontextualizado o de una versión vieja del documento. Para citar en la propuesta, abrir el archivo y confirmar la línea.
-- **Nunca indexar material sensible**: el Formulario A-1 y los datos de la contraparte quedan fuera.
-- Las claves van por `{env:...}` en `opencode.jsonc`; los valores viven en `.env`, que está en `.gitignore`.
-
-## Renderizado de diagramas
-
-Regla de selección:
-
-| Tipo de diagrama | Herramienta | Dónde se ve | Export para `.docx`/`.pdf` |
-| :--- | :--- | :--- | :--- |
-| Diagramas de la propuesta | Imagen PNG/SVG/PDF exportada, enlazada desde Markdown | El repositorio guarda la fuente gráfica y la imagen en `04_Adjuntos/diagramas/` | El importador LaTeX copia la imagen a `02_Propuesta/latex_final/figuras/` |
-| UML/C4 formal, componente, secuencia estricta | **PlantUML** (`.puml`) | GitHub **no** lo renderiza: exportar siempre a imagen | `curl https://kroki.io/plantuml/png -d 'diagram_source=...'` (o kroki docker local) |
-| Diagrama interactivo/animado (presentaciones, sobres) | **`architecture-diagrams`** | HTML en navegador (GitHub no lo muestra) | screenshot del HTML → PNG |
-
-Convención: los diagramas que se incorporan en la propuesta se entregan como imágenes PNG/SVG/PDF en `04_Adjuntos/diagramas/`; se incrustan en Markdown con rutas relativas y el importador LaTeX los copia a `02_Propuesta/latex_final/figuras/`. No usar bloques Mermaid. Se pueden conservar fuentes editables como `.dot` o `.puml`, pero el documento siempre incluye su exportación como imagen.
-
-## Guía de diagramación Ancoa
-
-Para crear, editar o revisar diagramas de arquitectura de esta propuesta, cargar
-`.agents/skills/diagramas-ancoa/SKILL.md`. La guía instalada define los estilos lógicos L1–L6
-y físicos F1–F5 y exige validar la especificación JSON antes de renderizar.
-Su procedimiento específico rige sobre las recomendaciones generales de herramientas de diagramación
-de este archivo. Los ejemplos de la guía no son decisiones de alcance ni fuentes de requisitos.
-
-El MCP local `diagramas-ancoa` expone catálogo, validación y renderizado. La instalación y las pruebas
-están en `.agents/skills/diagramas-ancoa/references/instalacion-mcp.md`.
-La revisión del contenido sigue contrastándose con las Bases y los subdocumentos vigentes.
+Grafo de scripts actualizado y acotado: `05_Gestion/scripts/graphify-out/graph.json` (40 archivos, 452 nodos, 1028 relaciones). Consultarlo con `graphify query "pregunta" --graph 05_Gestion/scripts/graphify-out/graph.json`; regenerar con `graphify update 05_Gestion/scripts`. El grafo mixto anterior de la raíz se conserva como antecedente y no determina vigencia del contexto.
 
 ## Graphify
 
-La copia de trabajo tiene un grafo local en `graphify-out/graph.json`. Por ahora indexa únicamente scripts; no incluye el contenido de la propuesta ni de las Bases. Para consultas sobre relaciones entre scripts, usar `graphify query`, `graphify path` o `graphify explain` y confirmar los resultados en los archivos originales. Para contenido documental, rigen las fuentes y la precedencia definidas arriba.
-
-La skill está en `.codex/skills/graphify/` y se invoca como `$graphify` en Codex. Después de modificar scripts, ejecutar `graphify update .` para actualizar la parte estructural del grafo.
+- `graphify-out/graph.json`: grafo anterior de scripts y contexto, con contenido histórico; no representa el LaTeX actualizado ni determina vigencia de decisiones. El MCP por defecto apunta a él.
+- `graphify-out/documentos-20261025/graph.json`: grafo documental de las 26 fuentes integradas, extracción enfocada y no exhaustiva. Consultar con `graphify query "pregunta" --graph graphify-out/documentos-20261025/graph.json` y confirmar siempre en los `.tex`.
+- Búsqueda habitual: `rg` respeta `.ignore`; Graphify usa `.graphifyignore`. Los históricos pueden leerse explícitamente para investigar procedencia. Ningún grafo sustituye las Bases o las fuentes actuales. Skill en `.codex/skills/graphify/`.
+- Tras cambios de scripts, actualizar el grafo de scripts con el corpus filtrado y registrar su alcance; no ampliar automáticamente el corpus a todos los documentos del repositorio.

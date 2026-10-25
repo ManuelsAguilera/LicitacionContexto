@@ -18,11 +18,14 @@ secciones:
   - T7-07-7.1
   - T7-07-7.2
   - T7-07-7.3
-actualizado: 2026-10-12
+actualizado: 2026-10-25
 ---
 # Subdocumento 7 — Plan de trabajo, EDT, cronograma e implantación
 
-> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-07/OSS-Subdocumento7.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
+> Fuente de contenido: [`OnlySimpleSolutions-Subdocumento7.tex`](../latex_final/sd-07/OnlySimpleSolutions-Subdocumento7.tex). Este maestro conserva estructura, estado y trazabilidad; su contenido previo no sustituye el LaTeX. Referencia actual de consistencia; sin revisión humana.
+
+
+> Maestro del subdocumento. Registra la estructura obligatoria del Comunicado 10, el estado y la trazabilidad. El contenido se redacta en `02_Propuesta/latex_final/sd-07/OnlySimpleSolutions-Subdocumento7.tex`; los adjuntos van como archivos hermanos con prefijo `adj-`, `diag-` o `form-`.
 
 ## Identificación
 
@@ -33,7 +36,7 @@ actualizado: 2026-10-12
 | Carpeta | `02_Propuesta/sd-07_plan-de-trabajo-EDT-e-implantacion/` |
 | Capítulo en el informe | Informe 2 |
 | Formularios asociados | T-14, T-15, T-18 |
-| Estado | Borrador importado desde Prism el 2026-10-12, sin revisión humana. Faltan 16 figuras de la EDT (sd07-edt1.0 a 1.15); el PDF no compila hasta tenerlas |
+| Estado | Borrador LaTeX disponible; referencia actual de consistencia; sin revisión humana registrada |
 
 ## Ponderación (Formulario T-21)
 
@@ -64,7 +67,7 @@ Cada capítulo abre con un texto de introducción: resumen del capítulo y su co
 
 Anexos: Formulario T-14; Formulario T-15; Formulario T-18.
 
-La redacción vive en `02_Propuesta/latex_final/sd-07/OSS-Subdocumento7.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
+La redacción vive en `02_Propuesta/latex_final/sd-07/OnlySimpleSolutions-Subdocumento7.tex` (edición colaborativa en Prism); este maestro solo registra estructura, estado y trazabilidad.
 
 ## Adjuntos esperados
 

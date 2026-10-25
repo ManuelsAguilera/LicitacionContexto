@@ -57,3 +57,6 @@ Thumbs.db
 # Derivados regenerables y documentos de terceros
 05_Gestion/reportes/vistas_previas/
 90_Referencia/CMF/
+
+# Directorios temporales de las pruebas locales de contexto/publicación.
+05_Gestion/tests/.tmp-*/

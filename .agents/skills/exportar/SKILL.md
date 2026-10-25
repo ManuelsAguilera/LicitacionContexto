@@ -9,7 +9,9 @@ description: Única ruta para convertir, formatear o pasar Markdown (.md) a LaTe
 
 Todos los subdocumentos T-7 de la propuesta técnica se entregan en el formato corporativo LaTeX: cada uno debe tener una fuente `.tex` editable y un PDF compilado desde esa fuente con `05_Gestion/scripts/exportar_latex.py`. La portada, el estilo interior y la página final son comunes y deben coincidir con la vista previa aprobada. Esta es la única ruta de conversión admitida. No usar build.py, Pandoc a PDF, Chromium/Edge, CSS ni otra plantilla de Markdown: esas rutas producían una segunda composición y fueron retiradas.
 
-Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propuesta/latex_final/sd-NN.tex` es la **única fuente** del subdocumento; los `.md` de `02_Propuesta/` quedan **solo como contexto** (si el `.md` y el `.tex` difieren, manda el `.tex` y no se reimporta). Los cambios de contenido pedidos por el usuario se escriben directamente en el cuerpo del `.tex`. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
+Todo subdocumento T-7 sin `.tex` se importa una vez. Desde ese momento `02_Propuesta/latex_final/sd-NN/OnlySimpleSolutions-SubdocumentoN.tex` es la **única fuente** del subdocumento; los `.md` de `02_Propuesta/` quedan **solo como contexto** (si el `.md` y el `.tex` difieren, manda el `.tex` y no se reimporta). Los cambios de contenido pedidos por el usuario se escriben directamente en el cuerpo del `.tex`. Entregar ambos archivos (fuente `.tex` y PDF) cuando se solicite generar o actualizar un subdocumento.
+
+El contexto activo se consulta en `80_Artefactos/contexto-activo/indice.md`: SD-04 y SD-07 son referencias de consistencia, subordinadas a las Bases. Una compilación correcta no prueba consistencia ni revisión humana.
 
 ## Reglas de redacción (aparte de la plantilla)
 
@@ -32,7 +34,7 @@ Cambios de plantilla: tras editar `plantilla/oss-pandoc.latex` (y subir su versi
 ## Qué NO hacer (causas de PDF fuera de plantilla)
 
 - No escribir, copiar ni editar el preámbulo (todo lo anterior a `\begin{document}`). Es la plantilla fija `plantilla/oss-pandoc.latex`; `verificar` lo compara byte a byte.
-- No crear `sd-NN.tex` a mano ni con `pandoc` directo; no llamar a `xelatex`/`latexmk` por fuera del script.
+- No crear `sd-NN/OnlySimpleSolutions-SubdocumentoN.tex` a mano ni con `pandoc` directo; no llamar a `xelatex`/`latexmk` por fuera del script.
 - No borrar un `.tex` para forzar una reimportación. `importar --reemplazar` existe, pero solo se usa si el usuario lo pide explícitamente; respalda el anterior en `respaldo/`.
 - No poner en el cuerpo `\usepackage`, `\documentclass`, `\pagecolor`, `\newgeometry`, `\setmainfont`, `\hypersetup` ni redefinir macros `\oss…`: el formato lo da `oss.sty`.
 - No copiar a mano un `.tex` descargado de Prism: usar `prism-importar`.
@@ -154,7 +156,7 @@ No recrear estos elementos manualmente en cada sd-NN.tex. La macro común y los 
 
 ### Rutas de salida
 
-- Fuente final editable: 02_Propuesta/latex_final/sd-NN.tex
+- Fuente final editable: 02_Propuesta/latex_final/sd-NN/OnlySimpleSolutions-SubdocumentoN.tex
 - Auxiliares ignorados por Git: 02_Propuesta/latex_final/build/
 - Vista previa individual y consolidada: 05_Gestion/reportes/vistas_previas/
 - PDF oficial por subdocumento: 07_Entregables/sobre_2_tecnico/
