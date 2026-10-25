@@ -81,9 +81,19 @@
 \hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
 \usepackage{oss}
 \begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\thetable}{3.\arabic{table}}
+\renewcommand{\thefigure}{3.\arabic{figure}}
 
 \ossCover{Esquema de solución y alcance}{Subdocumento 3}
 \tableofcontents
+\clearpage
+\renewcommand{\listfigurename}{Lista de figuras}
+\listoffigures
+\clearpage
+\renewcommand{\listtablename}{Lista de tablas}
+\listoftables
 \clearpage
 
 \section{Capítulo 3 · Introducción al Alcance de la Solución}
@@ -97,13 +107,17 @@ Como objetivo general, se busca que la compañía pueda cumplir y acreditar sus 
 
 La solución se organiza en trece servicios, cada uno responsable de sus propios datos. Nueve corresponden al negocio de retail y se agrupan en tres áreas, mercadería, venta y relación con el cliente. Tres corresponden a la filial emisora y cubren la originación del crédito, la cartera con su cobranza y la evidencia financiera, que guarda la prueba de lo que se informó y aceptó el cliente. El último, el servicio de control de cruces, autoriza y audita los cruces de datos entre ambos negocios. Todos operan sobre una base tecnológica, que reúne la plataforma de integración, la identidad y gestión de accesos y la observabilidad, y sobre un despliegue híbrido, con la carga principal en nube pública y componentes locales que permiten seguir operando durante 24 horas sin enlace (Multitiendas Ancoa S.A., 2026a, art. 16; 2026c, RT-03.10). La Figura 3.1 muestra los trece servicios con la etapa en que entra cada uno.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-01_mapa-servicios.png}
-\end{center}
+\clearpage
 
-Figura 3.1: Servicios de la solución por frente y área, con su etapa y los sistemas que se conservan.
+\begin{figure}[htbp]
+\centering
+\caption{Servicios de la solución por frente y área, con su etapa y los sistemas que se conservan.}
+\label{fig:3-1}
+\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/recepcion-20261025/c3f368166fe2.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5) y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15 y 16).\par}
+\end{figure}
 
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5) y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15 y 16).
+\clearpage
 
 La figura agrupa los trece servicios en los tres frentes, indica la etapa en que entra cada uno y muestra la base tecnológica sobre la que operan. Los cinco sistemas que se conservan se integran por medio de esa base, y el marketplace y la fidelización tienen además un servicio que gobierna su relación con la solución.
 
@@ -111,13 +125,13 @@ La implementación se divide en dos etapas. La Etapa 1, con desarrollo entre los
 
 Ningún componente entra en producción sin haber convivido antes con la operación vigente. Cada etapa tiene una marcha blanca, en los meses 13 a 15 (en paralelo con el desarrollo de la Etapa 2) y 19 a 20, con plan de reversión activo, medición diaria de indicadores y conciliación con los sistemas actuales. El despliegue avanza por tienda, por proceso y por categoría, con un piloto de tres tiendas para el punto de venta, y la cartera de 620.000 clientes con saldo migra por tramos y sin corte único. Con el inicio supuesto en enero de 2027, los pasos a producción de los meses 16 y 21, en abril y septiembre de 2028, quedan fuera de las ventanas de congelamiento. La Figura 3.2 muestra el horizonte completo.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-02_horizonte-56-meses.png}
-\end{center}
-
-Figura 3.2: Horizonte de 56 meses con etapas, marchas blancas, pasos a producción y ventanas de congelamiento.
-
-Fuente: elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 17) y del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.2); el inicio en enero de 2027 es el supuesto SUP-26.
+\begin{figure}[htbp]
+\centering
+\caption{Horizonte de 56 meses con etapas, marchas blancas, pasos a producción y ventanas de congelamiento.}
+\label{fig:3-2}
+\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/recepcion-20261025/246d3cf0c062.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 17) y del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.2); el inicio en enero de 2027 es el supuesto SUP-26.\par}
+\end{figure}
 
 La figura muestra que los pasos a producción de los meses 16 y 21 quedan fuera de toda ventana de congelamiento. Muestra también que la plataforma de crédito de 2011 se retira en octubre de 2028, antes del fin de su soporte en 2029.
 
@@ -137,14 +151,15 @@ La descomposición avanza de lo general a lo particular y se refiere al alcance 
 
 Retail tiene tres áreas. La de mercadería reúne los servicios de oferta comercial, abastecimiento y existencias. La de venta reúne los de pedidos, ventas, comisiones y marketplace, y la de relación con el cliente los de posventa y clientes Retail. La filial emisora tiene el área de crédito, con los servicios de originación de crédito, que recibe y autoriza las solicitudes, de cartera de crédito, que lleva los saldos, la cobranza y las repactaciones, y de evidencia financiera, que guarda la prueba de lo que se informó y aceptó el cliente. La frontera no tiene áreas y se conecta directamente con el servicio de control de cruces, que autoriza y audita cada uso de datos de un negocio por el otro. La Figura 3.3 muestra qué servicios atienden cada causa.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-03_cobertura-causas.png}
-\end{center}
+\clearpage
 
-Figura 3.3: Causas raíz atendidas por cada servicio, la base tecnológica y los componentes locales de las tiendas.
-
-Fuente: elaboración propia a partir del Subdocumento 2 y de la descomposición del alcance de esta subsección.
-
+\begin{figure}[htbp]
+\centering
+\caption{Causas raíz atendidas por cada servicio, la base tecnológica y los componentes locales de las tiendas.}
+\label{fig:3-3}
+\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/recepcion-20261025/25d14f93fc5b.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Subdocumento 2 y de la descomposición del alcance de esta subsección.\par}
+\end{figure}
 
 La Figura 3.3 muestra que cada una de las cinco causas queda atendida por al menos un servicio. Un mismo servicio responde a más de una causa, como el de oferta comercial, que corrige el maestro de artículos (causa C1) y crea el motor de precios que hoy no existe (causa C2). Las causas C4 y C5 se mitigan y no se eliminan, porque una parte de ellas depende de decisiones de la compañía, como las remuneraciones y la infraestructura de las tiendas, que la subsección 3.2.3 trata. La causa C5 se atiende, además del servicio de ventas, con componentes locales en las tiendas, cuyo detalle corresponde a la sección 3.3.
 
@@ -152,13 +167,15 @@ Cada tipo de dato tiene un solo servicio dueño. El servicio de existencias deci
 
 La base tecnológica reúne la plataforma de integración, que conecta los servicios y reemplaza las catorce conexiones directas entre plataformas, la identidad y gestión de accesos y la observabilidad. Sobre ella se decide el destino de las nueve plataformas actuales. El sistema central de retail de 2009, la plataforma de crédito de 2011 y el punto de venta de 2014 se reemplazan por etapas. El sistema de gestión empresarial, el marketplace y el sistema de almacenes del centro de distribución principal se conservan e integran. El comercio electrónico y el sistema de fidelización se integran inicialmente, y su destino posterior se decide tras las pruebas. El marketplace conservado es la plataforma de 2022, y el servicio de marketplace es la capa nueva que gobierna su relación con los vendedores. El sistema de fidelización se integra al servicio de clientes Retail, que gobierna sus datos. La novena plataforma es el motor de precios y promociones, que no existe como sistema y se construye dentro del Servicio de oferta comercial, y las planillas y listas impresas dejan de ser el registro oficial. La Figura 3.4 muestra el destino de cada una.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-04_destino-plataformas.png}
-\end{center}
+\begin{figure}[htbp]
+\centering
+\caption{Destino de las nueve plataformas actuales y etapa en que cambia cada una.}
+\label{fig:3-4}
+\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figuras/recepcion-20261025/fe68ede29e8c.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5).\par}
+\end{figure}
 
-Figura 3.4: Destino de las nueve plataformas actuales y etapa en que cambia cada una.
-
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5).
+\clearpage
 
 La figura muestra que tres plataformas se reemplazan por etapas, que cinco se conservan y se integran, y que las planillas y listas impresas dejan de ser el registro oficial. Del sistema de almacenes del centro de distribución principal y del comercio electrónico queda por definir la etapa en que se integran.
 
@@ -172,12 +189,16 @@ El primer paso asigna cada componente a una etapa con cuatro pruebas de primera 
 
 El segundo paso contrasta esa asignación con las fechas externas, que el Caso pide considerar para justificar el reparto (Multitiendas Ancoa S.A., 2026b, núm. 13.1 y 17.3), y con la preferencia del comité, de la que el Caso pide hacerse cargo de forma explícita. Las dependencias técnicas ya quedaron aplicadas en la cuarta prueba. Las fechas externas son las que Ancoa no controla y que el Caso reúne en el numeral 13.2, donde las llama hitos externos. Entre ellas están el fin de soporte de la plataforma de crédito y el último plazo del plan de remediación de la autoridad financiera, ambos en 2029, y las cinco ventanas de congelamiento, que son períodos de venta alta en que no se puede cambiar nada. El riesgo de incumplir esas fechas se analiza en el capítulo 8. La preferencia del comité es un orden de urgencia que pone primero la exactitud del inventario y la disponibilidad publicada, luego el precio y su trazabilidad, y al final el negocio financiero, el marketplace y la analítica. El propio Caso la presenta como una preferencia y no como una definición de alcance, por lo que se contrasta al final y toda diferencia se justifica. La Tabla 3.1 muestra el reparto resultante.
 
-Tabla 3.1: Prueba de primera prioridad que cumple cada componente y su etapa.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4200}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4600}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1200}}@{}}
+\caption{Prueba de primera prioridad que cumple cada componente y su etapa.}
+\label{tab:3-1}\\
+\toprule\noalign{}
+Componente & Prueba que cumple & Etapa \\
+\midrule\noalign{}
+\endfirsthead
 \toprule\noalign{}
 Componente & Prueba que cumple & Etapa \\
 \midrule\noalign{}
@@ -200,30 +221,33 @@ Servicio de marketplace & Ninguna, requiere el servicio de existencias & 2 \\
 Servicio de posventa & Ninguna, requiere los servicios de existencias y de ventas & 2 \\
 Servicio de clientes Retail & Ninguna, requiere los servicios de oferta comercial y de control de cruces & 2 \\
 \end{longtable}
-
-Fuente: elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15) y del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.1).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15) y del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.1).\par}
 
 La tabla muestra que la Etapa 1 reúne lo que las demás piezas necesitan para funcionar y lo que hace falta para que el sistema sea oficial en el mes 16, y que la Etapa 2 solo agrega servicios que dependen de los de la Etapa 1 y entre sí. Abastecimiento y pedidos también sostienen las promesas de existencia y de entrega, pero van en la Etapa 2 porque el comité nombró la exactitud del inventario y la disponibilidad publicada, y no la reposición ni el estado del pedido, y porque ambos requieren que el servicio de existencias ya esté en producción. El segundo paso confirma esta asignación y la ajusta en dos puntos. Por las fechas externas, el negocio financiero va en la Etapa 1 y la cartera de crédito se reparte entre ambas etapas según su complejidad y migra por tramos, de modo que en la Etapa 1 pasan los clientes con saldo al día y sin repactación ni cobranza en curso, y en la Etapa 2 los que tienen repactaciones, cobranzas o juicios en curso. Y los pasos a producción de los meses 16 y 21 caen fuera de las ventanas de congelamiento. El sistema central de 2009 también se reparte, pues entrega en la Etapa 1 el maestro de artículos, los precios y el inventario, y en la Etapa 2 las órdenes, la recepción y la reposición. La Etapa 1 incluye además las integraciones críticas, que son aquellas cuya falla rompe una promesa o la separación entre los negocios. La Figura 3.5 muestra las dependencias entre los servicios y la etapa de cada uno.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-05_dependencias-etapas.png}
-\end{center}
+\newpage
 
-Figura 3.5: Dependencias entre los servicios y etapa de cada uno.
-
-Fuente: elaboración propia a partir de la Tabla 3.1 y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15).
+\begin{figure}[htbp]
+\centering
+\caption{Dependencias entre los servicios y etapa de cada uno.}
+\label{fig:3-5}
+\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figuras/recepcion-20261025/617046fc3183.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir de la Tabla 3.1 y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 15).\par}
+\end{figure}
 
 La figura muestra que todos los servicios requieren la base tecnológica y que los de la Etapa 2 solo requieren servicios de la Etapa 1 o de la propia Etapa 2. Los servicios de existencias y de ventas concentran la mayor parte de esas dependencias, y por eso entran primero.
 
 La preferencia del comité coincide con la asignación en que el inventario y el precio van en la Etapa 1 y el marketplace en la Etapa 2, y se aparta en un solo punto, porque el negocio financiero, que el comité ubicó al final, se adelanta a la Etapa 1. Tiene tres razones. El fin de soporte de la plataforma de crédito y el último hito del plan de remediación vencen en 2029 (Multitiendas Ancoa S.A., 2026b, núm. 13.2). El gerente del negocio financiero dejó registrado que migrar una cartera viva de 620.000 clientes con saldo no se hace en un semestre y que, si queda en la Etapa 2, no se llega a tiempo (núm. 13.1), porque la migración exige convivencia y conciliación diaria en más de una marcha blanca y la Etapa 2 tiene una sola, de dos meses (núm. 13.3). Y el servicio de evidencia financiera es una dependencia de la originación y de la cartera. La objeción de la contralora se atiende construyendo el servicio de control de cruces antes que cualquier servicio que combine datos de ambos negocios. El adelanto del negocio financiero exige además un plan alternativo para el crédito, que la subsección 3.2.3 desarrolla. La Figura 3.2 de la sección 3.1 muestra el horizonte completo con las ventanas de congelamiento, y la Figura 3.6 muestra cómo se reparte la migración de la cartera de crédito entre las dos etapas.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-06_migracion-cartera.png}
-\end{center}
+\clearpage
 
-Figura 3.6: Migración de la cartera de crédito por tramos en las dos etapas.
-
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.1 a 13.3 y 16.1 n.º 25).
+\begin{figure}[htbp]
+\centering
+\caption{Migración de la cartera de crédito por tramos en las dos etapas.}
+\label{fig:3-6}
+\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/recepcion-20261025/59a98d95393a.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, núm. 13.1 a 13.3 y 16.1 n.º 25).\par}
+\end{figure}
 
 La figura muestra que los clientes con saldo al día migran durante la marcha blanca de la Etapa 1, y los que tienen repactaciones, cobranzas o juicios en curso durante la de la Etapa 2. Cada tramo se abre con una compuerta y se acompaña de conciliación diaria hasta el mes 21, y la plataforma de 2011 convive hasta su retiro. El número de tramos queda por definir y se valida con el cliente al inicio del proyecto.
 
@@ -233,12 +257,11 @@ Delimitar el alcance exige decir con la misma claridad qué no se hará, qué se
 
 Las 18 exclusiones vigentes se agrupan en cinco categorías. Diez las declara el cliente, una se deduce de las Bases Técnicas Transversales y siete las decide el proponente. La Tabla 3.2 las resume con lo que sí se hace en cada categoría, y su listado completo está en el Anexo A del Subdocumento 3.
 
-Tabla 3.2: Categorías de exclusión y lo que sí se hace en cada una.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2800}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4200}}@{}}
+\caption{Categorías de exclusión y lo que sí se hace en cada una.}\label{tab:3-2}\\
 \toprule\noalign{}
 Categoría & Exclusiones & Qué sí se hace \\
 \midrule\noalign{}
@@ -252,18 +275,21 @@ Decisiones y datos del cliente & EXC-17, EXC-18 & Rediseñar los procesos que lo
 Función diferida & EXC-16 & Autorizar compras con cupo vigente dentro de los topes de la filial emisora \\
 \end{longtable}
 
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 10, cap. 11 y núm. 16.1) y de las Bases Técnicas Transversales (Multitiendas Ancoa S.A., 2026c, cap. 21).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 10, cap. 11 y núm. 16.1) y de las Bases Técnicas Transversales (Multitiendas Ancoa S.A., 2026c, cap. 21).\par}
 
 La tabla muestra que ninguna categoría libera a la solución de una dependencia, porque todas terminan en una acción del proponente. Esas dependencias quedan en el plan de trabajo (capítulo 7) y en el análisis de riesgos (capítulo 8), y lo que el cliente adquiere o construye se especifica y se certifica antes de ponerlo en servicio.
 
 El Caso pide que las decisiones que deja pendientes en su numeral 16.1 se resuelvan y se declaren como supuesto, junto con su fundamento y la instancia que las valida (Multitiendas Ancoa S.A., 2026b, núm. 16.1 y 17.1). El capítulo 2 registra las veinticinco. Aquí se recogen las que delimitan el alcance, más las que decide el proponente fuera de esa lista. El alcance descansa en seis supuestos, cuatro del proponente (SP) y dos del capítulo 2 (SUP), que la Tabla 3.3 resume con su consecuencia si no se cumplen.
 
-Tabla 3.3: Supuestos del alcance y su consecuencia si no se cumplen.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1200}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4800}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}@{}}
+\caption{Supuestos del alcance y su consecuencia si no se cumplen.}\label{tab:3-3}\\
+\toprule\noalign{}
+ID & Supuesto & Si no se cumple \\
+\midrule\noalign{}
+\endfirsthead
 \toprule\noalign{}
 ID & Supuesto & Si no se cumple \\
 \midrule\noalign{}
@@ -278,7 +304,7 @@ SUP-26 & El proyecto comienza en enero de 2027 & Se recalculan los meses y las v
 SUP-27 & Once tiendas se ubican en el entorno de Santiago & Se rehace la selección de las tiendas piloto \\
 \end{longtable}
 
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 11 y núm. 16.1) y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 14 y art. 72).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 5, cap. 11 y núm. 16.1) y de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 14 y art. 72).\par}
 
 El inicio en enero de 2027 (SUP-26) se infiere del calendario de la licitación, porque los resultados se entregan el 1 de diciembre de 2026, el contrato se firma dentro de diez días hábiles desde la entrega de la documentación (Multitiendas Ancoa S.A., 2026a, formulario T-20 y art. 68) y el Caso congela los sistemas hasta el 6 de enero (2026b, núm. 13.2). De esa fecha depende que los pasos a producción de los meses 16 y 21 caigan en abril y septiembre de 2028, fuera de los congelamientos. Con un inicio en diciembre de 2026 el mes 16 caería en marzo, y con uno en febrero de 2027 caería en mayo, en ambos casos dentro de un congelamiento. En toda la propuesta rige una sola regla: ningún paso a producción, ola de cartera, corte, apagado ni mantenimiento programado puede ejecutarse dentro de las cinco ventanas de congelamiento (Multitiendas Ancoa S.A., 2026b, núm. 13.2 y 13.3 y RT-10.05); el desarrollo, las pruebas en preproducción y la conciliación en paralelo, que no cambian producción, sí pueden continuar en ellas.
 
@@ -286,14 +312,15 @@ El supuesto que más condiciona la propuesta es SP-04, porque define quién ejec
 
 Las restricciones del Caso y de las Bases no son negociables y se resumen en el capítulo 2. Las que más delimitan el alcance son la separación entre los negocios, que responden a regímenes jurídicos distintos, la venta sin conexión, el cronograma de 56 meses y el despliegue híbrido. Los requisitos obligatorios de las Bases Técnicas Transversales se responden uno a uno en el Formulario T-12. La Figura 3.7 muestra la frontera entre los negocios y los cruces autorizados.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-07_frontera-cruces.png}
-\end{center}
+\clearpage
 
-Figura 3.7: Frontera entre Retail y la filial emisora y cruces autorizados.
-
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 10 y núm. 16.1).
-
+\begin{figure}[htbp]
+\centering
+\caption{Frontera entre Retail y la filial emisora y cruces autorizados.}
+\label{fig:3-7}
+\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figuras/recepcion-20261025/a84f48068aea.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 10 y núm. 16.1).\par}
+\end{figure}
 
 La Figura 3.7 muestra que cada negocio conserva sus datos y que el único paso entre ambos es el servicio de control de cruces, que exige una finalidad declarada, una autorización, el dato mínimo y un registro de cada uso. Muestra también lo que queda prohibido, que son un maestro único de clientes, el paso de atributos financieros a marketing y el paso de saldos al servicio de clientes Retail, y la excepción del registro local del crédito sin conexión, que no guarda saldo, mora ni comportamiento de pago.
 
@@ -311,13 +338,12 @@ Después se depuró el catálogo con el alcance de la propuesta. Se eliminó un 
 
 La prioridad sigue la clasificación MoSCoW, que separa lo que el sistema debe cumplir, de prioridad alta, de lo que debería cumplir, de prioridad media. Usa el mismo criterio que el reparto entre etapas, de modo que alcance y catálogo no se contradicen. Es de prioridad alta todo requerimiento de un servicio de la Etapa 1, todo requerimiento no funcional y toda obligación del proponente, porque fijan las condiciones con que se acepta cada servicio en su marcha blanca, y también todo requerimiento que sostiene una restricción no negociable. Es el caso de los seis de garantía legal de la Etapa 2, que sostienen la atención del consumidor ante la compañía sin derivarlo al fabricante. Es de prioridad media el resto de los requerimientos de un servicio de la Etapa 2. De los 227 requerimientos funcionales, 152 son de prioridad alta, que son los 146 de la Etapa 1 y los seis de garantía legal, y 75 de prioridad media. La Tabla 3.4 muestra la distribución por etapa.
 
-Tabla 3.4: Distribución del catálogo vigente por etapa.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}@{}}
+\caption{Distribución del catálogo vigente por etapa.}\label{tab:3-4}\\
 \toprule\noalign{}
 Etapa & Funcionales & No funcionales & Obligaciones \\
 \midrule\noalign{}
@@ -331,7 +357,7 @@ Todo el proyecto & 0 & 0 & 9 \\
 Total & 227 & 72 & 9 \\
 \end{longtable}
 
-Fuente: elaboración propia a partir del catálogo de requerimientos del proyecto, versión 3.1 (Anexo B del Subdocumento 3).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del catálogo de requerimientos del proyecto, versión 3.1 (Anexo B del Subdocumento 3).\par}
 
 La tabla muestra que la mayor parte de los requerimientos funcionales, 142 de 227, y 61 de los 72 no funcionales se concentran en la Etapa 1, porque sostienen el registro oficial desde el mes 16. Cada requerimiento no funcional se asigna a la etapa del servicio que mide, por eso 11 quedan en la Etapa 2, con el segundo alcance.
 
@@ -339,12 +365,15 @@ La trazabilidad va hacia atrás y hacia adelante. Hacia atrás, cada requerimien
 
 El Caso pide resolver con un criterio explícito y consistente los enunciados que mezclan lo funcional con lo no funcional (Multitiendas Ancoa S.A., 2026b, núm. 17.2). El criterio adoptado es que un enunciado es funcional si cambia lo que el sistema hace o registra, y no funcional si fija cuán bien, cuán rápido o por cuánto tiempo. Si tiene ambos componentes, se divide en dos requerimientos. La Tabla 3.5 lo aplica a los seis casos que el Caso plantea.
 
-Tabla 3.5: Criterio aplicado a los casos limítrofes del Caso.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3600}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3400}}@{}}
+\caption{Criterio aplicado a los casos limítrofes del Caso.}\label{tab:3-5}\\
+\toprule\noalign{}
+Enunciado del Caso & Requerimiento funcional & Requerimiento no funcional \\
+\midrule\noalign{}
+\endfirsthead
 \toprule\noalign{}
 Enunciado del Caso & Requerimiento funcional & Requerimiento no funcional \\
 \midrule\noalign{}
@@ -359,7 +388,7 @@ Grado de confianza de la existencia & Calcular y mostrar al vendedor qué tan co
 Soportar el evento anual & Quién suspende la publicación de una categoría y con qué criterio & Soportar 104.000 pedidos en tres días \\
 \end{longtable}
 
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, núm. 17.2 y cap. 15).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, núm. 17.2 y cap. 15).\par}
 
 Aplicado de esta forma, el criterio deja cada enunciado dividido en una parte que se verifica con una prueba funcional y otra que se verifica con una medición, y ambas quedan trazadas al mismo servicio en el Formulario T-12.
 
@@ -367,13 +396,15 @@ Aplicado de esta forma, el criterio deja cada enunciado dividido en una parte qu
 
 Un alcance sin criterio de aceptación no se puede recibir ni rechazar. Lo comprometido se acepta en tres niveles encadenados, que son cada entregable, cada marcha blanca y los resultados de negocio con que el cliente juzgará el proyecto. En todos, el equipo del proponente controla la calidad antes de presentar lo entregado y la Contraparte Técnica, la persona que el cliente designa para validar los entregables, firma el acta de aceptación. En el tercer nivel el juicio de éxito es del cliente y la Contraparte Técnica formaliza su resultado en el acta. Cualquier cambio de lo aceptado se tramita como solicitud formal de cambio. La Figura 3.8 resume los tres niveles.
 
-\begin{center}
-  \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figuras/figuras s03/diag-03-08_niveles-aceptacion.png}
-\end{center}
+\clearpage
 
-Figura 3.8: Tres niveles de aceptación y qué ocurre si no se cumplen.
-
-Fuente: elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 17.3 y 18) y del Caso (Multitiendas Ancoa S.A., 2026b, cap. 18).
+\begin{figure}[htbp]
+\centering
+\caption{Tres niveles de aceptación y qué ocurre si no se cumplen.}
+\label{fig:3-8}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/b4db9f13bd2b.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir de las Bases Administrativas (Multitiendas Ancoa S.A., 2026a, art. 17.3 y 18) y del Caso (Multitiendas Ancoa S.A., 2026b, cap. 18).\par}
+\end{figure}
 
 La figura muestra que el equipo del proponente controla la calidad en los tres niveles, que lo que se mide y la consecuencia de no cumplir cambian en cada uno, y que superar un nivel no exime del siguiente.
 
@@ -383,13 +414,12 @@ En el segundo nivel, cada marcha blanca se cierra solo si se cumplen todas las c
 
 En el tercer nivel, el Caso enumera 28 resultados de negocio con los que juzgará si el proyecto fue exitoso. Pide comprometerse con ellos, proponer la meta cuando no la fije e indicar cuándo y cómo se medirá cada uno (Multitiendas Ancoa S.A., 2026b, cap. 18). Los 28 se tratan uno a uno en el Anexo D, con su línea base, su meta, el servicio responsable, el momento en que se alcanza, la evidencia con que se mide y quién responde. Si un resultado no llega a su meta en el momento indicado, el proponente presenta un plan de corrección con plazo, sin alterar los 56 meses. La Tabla 3.6 los resume por grupos de resultados.
 
-Tabla 3.6: Resultados de negocio del Caso agrupados por grupo de resultados.
-
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}@{}}
+\caption{Resultados de negocio del Caso agrupados por grupo de resultados.}\label{tab:3-6}\\
 \toprule\noalign{}
 Grupo & Resultados & Compromiso principal & Momento \\
 \midrule\noalign{}
@@ -404,12 +434,11 @@ Crédito & 16 a 20 y 28 & Evaluación en 8 segundos o menos y ninguna repactaci�
 Frontera y cumplimiento & 21 a 24 & Separación auditada, cruces registrados, cartera migrada sin diferencias y remediación cerrada & Meses 16 a 21; cartera migrada a más tardar en el mes 22 y cierre de la remediación en el mes 24 \\
 \end{longtable}
 
-Fuente: elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 7, cap. 15 y cap. 18).
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso (Multitiendas Ancoa S.A., 2026b, cap. 7, cap. 15 y cap. 18).\par}
 
 La tabla muestra que los resultados de existencia, precio, crédito y frontera se alcanzan desde la Etapa 1, y los de entrega y garantía legal con la Etapa 2, en línea con el reparto de la subsección 3.2.2. Cuatro resultados, el 2, el 4, el 9 y el 26, dependen también de la operación del cliente, como la preparación de pedidos o el conteo en sala. Para cada uno, el Anexo D declara qué parte del indicador depende de la solución y cuál de la operación. Tres de ellos, la cancelación de pedidos, la exactitud del inventario y el cumplimiento de la entrega, es decir los resultados 2, 4 y 26, el catálogo los traía como requerimientos no funcionales. Se tratan aquí como criterios de aceptación porque la solución no los controla sola. El mes 22 (31 de octubre de 2028) es el último día en que puede cortarse una ola de cartera o apagarse la plataforma de crédito de 2011, porque desde el 1 de noviembre hasta el 6 de enero rige el congelamiento total (Multitiendas Ancoa S.A., 2026b, núm. 13.2). Los meses 23 y 24 solo se usan para observación, conciliación en lectura y el cierre documental de la remediación, sin cambios en producción.
 
 Los resultados 26, 27 y 28 resumen el caso mejor que cualquier indicador. La clienta que espera un pedido debe saber su estado y ser avisada antes de que se le cobre una unidad inexistente. La jefa de tienda debe poder demostrar qué parte de la diferencia de su tienda es pérdida física y qué parte es error de registro. Y el vendedor debe abrir una tarjeta más rápido mientras el cliente recibe la información completa (Multitiendas Ancoa S.A., 2026b, cap. 18). Los tres dependen de que el proceso impida omitir un paso y no de la voluntad de quien lo ejecuta, condición con que se diseñaron los servicios de existencias, de pedidos, de originación de crédito, que recibe y autoriza las solicitudes, y de evidencia financiera. Se verifican por observación, con la auditoría del estado del pedido y de los avisos previos al cobro, la revisión del informe de merma con una jefatura de tienda y la medición comparada del tiempo de apertura de una tarjeta de crédito de la filial emisora.
-
 
 \section{3.3 Esquema de solución}
 
@@ -431,9 +460,8 @@ El esquema selecciona el destino del núcleo Retail (el sistema central de retai
 
 {La Tabla 3.7 sintetiza cómo ambas alternativas resuelven los criterios anteriores. Agrupa la autoridad y el papel del núcleo, el esfuerzo de transición, la integración y su dependencia, y la continuidad.}
 
-Tabla 3.7: Comparación de alternativas para el núcleo Retail.
-
 \begin{longtable}{@{}p{0.18\linewidth}p{0.36\linewidth}p{0.36\linewidth}@{}}
+\caption{Comparación de alternativas para el núcleo Retail.}\label{tab:3-7}\\
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -445,17 +473,21 @@ Tabla 3.7: Comparación de alternativas para el núcleo Retail.
 {Continuidad y riesgo} & {Coherencia sujeta a sincronización y calidad del núcleo.} & {Autoridad por dato, conciliación, convivencia y retorno probado.} \\
 \end{longtable}
 
-{Fuente: elaboración propia a partir del Caso 09, capítulo 5, y de SD-02.}
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, capítulo 5, y de SD-02.\par}
 
 {Only Simple Solutions elige el escenario B porque convierte la dependencia permanente de un núcleo concentrador en una transición que puede verificarse por función y registro. A conserva procesos conocidos y reduce la migración inicial, pero mantiene la necesidad de conciliar continuamente el núcleo con los servicios nuevos. B exige mayor esfuerzo de transferencia; la propuesta acepta ese esfuerzo para asignar autoridades claras y retirar la dependencia una vez probada cada ola. La elección no supone que la antigüedad del sistema explique todas las fallas ni que A incumpla las metas sin una prueba.}
 
 {La Figura 3.9 resume el análisis anterior y vincula la elección de B con las condiciones que deben verificarse durante la transición.}
 
-{Figura 3.9. Secuencia de selección del escenario B y habilitación de etapas.}
+\clearpage
 
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-01_seleccion-escenario-b.pdf}}\end{center}
-
-Fuente: Elaboración propia.
+\begin{figure}[htbp]
+\centering
+\caption{Secuencia de selección del escenario B y habilitación de etapas.}
+\label{fig:3-9}
+\includegraphics[width=\linewidth,height=0.66\textheight,keepaspectratio]{figuras/recepcion-20261025/e01444e5137a.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia.\par}
+\end{figure}
 
 {La lectura comienza en el diagnóstico y aplica las mismas condiciones y criterios a las alternativas A y B. La elección acepta el esfuerzo de migración para reducir la dependencia permanente del núcleo. Cada avance requiere evidencia y pruebas; si no las supera, se corrige la transición manteniendo la operación vigente.}
 
@@ -530,11 +562,13 @@ Fuente: Elaboración propia.
 
 {La Figura 3.10 presenta el contexto general del escenario B. Las Figuras 3.11, 3.12 y 3.13 amplían las relaciones de Retail, del Emisor y los escenarios de intercambio. Los rótulos abrevian los nombres del catálogo y omiten el prefijo «Servicio de»; los códigos R/F/X se mantienen en el alcance y los entregables. Las flechas opuestas representan solicitudes y respuestas. Los contratos y mecanismos de transporte se definirán en la arquitectura lógica.}
 
-{Figura 3.10. Contexto de la solución propuesta para Ancoa (escenario B).}
-
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-02_contexto-solucion.pdf}}\end{center}
-
-{Fuente: elaboración propia a partir del Caso 09, capítulo 5, y del alcance de SD-03.}
+\begin{figure}[htbp]
+\centering
+\caption{Contexto de la solución propuesta para Ancoa (escenario B).}
+\label{fig:3-10}
+\includegraphics{figuras/recepcion-20261025/0b4f6a76e59d.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, capítulo 5, y del alcance de SD-03.\par}
+\end{figure}
 
 {La Figura 3.10 muestra los tres frentes y el límite de la solución. Retail agrupa nueve servicios en Mercadería, Venta y Relación con el cliente; la Filial emisora reúne tres en Crédito. Frontera contiene el Servicio de control de cruces. Las plataformas externas se conservan o evalúan según el alcance ya expuesto.}
 
@@ -544,31 +578,41 @@ Fuente: Elaboración propia.
 
 {La Figura 3.11 amplía el ámbito Retail. Muestra los nueve servicios comerciales, sus canales y las plataformas que permanecen integradas. La lectura sigue el ciclo desde la oferta y la disponibilidad hasta el pedido, la venta y la atención posterior.}
 
-{Figura 3.11. Servicios Retail y relaciones con canales y plataformas conservadas.}
-
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-03_servicios-retail.pdf}}\end{center}
-
-{Fuente: elaboración propia a partir del Caso 09, capítulos 4 y 5, y del alcance de SD-03.}
+\begin{figure}[htbp]
+\centering
+\caption{Servicios Retail y relaciones con canales y plataformas conservadas.}
+\label{fig:3-11}
+\includegraphics{figuras/recepcion-20261025/4c53d1a012a2.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, capítulos 4 y 5, y del alcance de SD-03.\par}
+\end{figure}
 
 {La Figura 3.11 vincula las áreas Retail con sus canales y plataformas. Las conexiones amarillas de las Figuras 3.11 y 3.12 representan la aplicación de la política de cruces en cada ámbito; la compra se desarrolla en la Figura 3.13. Estas relaciones de control no fijan una ruta física única.}
 
 {La Figura 3.12 amplía el ámbito del Emisor. Presenta la evaluación y autorización de crédito, la administración de cartera y la custodia de evidencia financiera, junto con el acceso de titulares y personal autorizado.}
 
-{Figura 3.12. Servicios del Emisor y custodia de decisión y evidencia financiera.}
+\clearpage
 
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-04_servicios-emisor.pdf}}\end{center}
-
-{Fuente: elaboración propia a partir del Caso 09, capítulos 4, 5 y 9, y del alcance de SD-03.}
+\begin{figure}[htbp]
+\centering
+\caption{Servicios del Emisor y custodia de decisión y evidencia financiera.}
+\label{fig:3-12}
+\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/39a30e0f2681.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, capítulos 4, 5 y 9, y del alcance de SD-03.\par}
+\end{figure}
 
 {La figura separa decisión, administración de deuda y prueba contractual. Originación y repactación consultan la evidencia de la información entregada y aceptada antes de confirmarse. La plataforma de crédito de 2011 participa en la migración por olas hasta su retiro; la falta de enlace no autoriza nuevas tarjetas ni aumentos de cupo.}
 
 {La Figura 3.13 reúne operaciones en las que podría cruzarse información entre Retail y Emisor, además de una solicitud que debe rechazarse. Presenta compra con tarjeta propia y reversa con sus respuestas; también muestra una originación iniciada en caja, que puede permanecer íntegramente bajo rol financiero, y la venta local durante desconexión, sin consulta al Emisor.}
 
-{Figura 3.13. Escenarios y límites del intercambio Retail--Emisor.}
+\clearpage
 
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-05_escenarios-cruces.pdf}}\end{center}
-
-{Fuente: elaboración propia a partir del Caso 09, 9.10 y 10.1, y del alcance de SD-03.}
+\begin{figure}[htbp]
+\centering
+\caption{Escenarios y límites del intercambio Retail--Emisor.}
+\label{fig:3-13}
+\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/fde6139d366a.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, 9.10 y 10.1, y del alcance de SD-03.\par}
+\end{figure}
 
 {La compra con tarjeta propia devuelve a Retail solo el resultado de esa venta; saldo y mora permanecen en el Emisor. La reversa es una propuesta cuya necesidad y contrato aún deben acreditarse. Marketing recibe una denegación sin datos de pago. La originación en caja exige evidencia precontractual distinta de la autorización de compra; si el canal actúa bajo el rol del Emisor, su ubicación en una tienda no crea un cruce hacia Retail. Durante la desconexión, el POS registra la venta y la concilia al volver el enlace; una compra contra autorización previa exige reglas específicas y no permite originar tarjetas ni ampliar cupos. El control transversal registra la decisión de intercambio y el Servicio de evidencia financiera conserva la prueba contractual.}
 
@@ -592,10 +636,8 @@ Fuente: Elaboración propia.
 
 {La Tabla 3.8 relaciona separación, licitud, acceso y retención con responsable, control y evidencia.}
 
-Tabla 3.8: Obligación, responsable, control y evidencia del Servicio de control de cruces.
-
-
 \begin{longtable}{@{}p{0.19\linewidth}p{0.20\linewidth}p{0.27\linewidth}p{0.25\linewidth}@{}}
+\caption{Obligación, responsable, control y evidencia del Servicio de control de cruces.}\label{tab:3-8}\\
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -607,7 +649,7 @@ Tabla 3.8: Obligación, responsable, control y evidencia del Servicio de control
 {Retención; Caso 09 RT-05.10 y plazo jurídico aplicable} & {Dueño del registro; F:C-03 custodia evidencia contractual} & {Separar bitácora de cruce de expediente financiero; calendario aprobado} & {Prueba de recuperación, purga y trazabilidad; crédito: plazo + 6 años según Bases} \\
 \end{longtable}
 
-{Fuente: elaboración propia a partir del Caso 09, 9.10 y RT-05.10; Bases Transversales, RT-11.11; y legislación citada en referencias.}
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, 9.10 y RT-05.10; Bases Transversales, RT-11.11; y legislación citada en referencias.\par}
 
 {La Tabla 3.8 relaciona los controles que deberán aplicarse y probarse en ambos ámbitos. El plazo de la evidencia contractual no se traslada automáticamente a la bitácora de intercambio: esta requiere una regla propia, según su categoría y fundamento.}
 
@@ -615,10 +657,8 @@ Tabla 3.8: Obligación, responsable, control y evidencia del Servicio de control
 
 {La Tabla 3.9 compara los cruces por dirección, finalidad, autoridad, condición y estado. Ventas/POS corresponde al Servicio de ventas y su canal; Crédito, al Servicio de originación de crédito; Cartera, al Servicio de cartera de crédito; y control, al Servicio de control de cruces.}
 
-Tabla 3.9: Escenarios de intercambio Retail--Emisor y condiciones de habilitación.
-
-
 \begin{longtable}{@{}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.18\linewidth}@{}}
+\caption{Escenarios de intercambio Retail--Emisor y condiciones de habilitación.}\label{tab:3-9}\\
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -631,7 +671,7 @@ Tabla 3.9: Escenarios de intercambio Retail--Emisor y condiciones de habilitaci�
 {Marketing → control de cruces} & {Solicitud de perfil con datos de pago} & {Emisor conserva; Retail no recibe} & {Sin fundamento acreditado} & {Denegado; intento registrado} \\
 \end{longtable}
 
-{Fuente: elaboración propia a partir del Caso 09, capítulos 4 y 9, y del alcance propuesto en SD-03.}
+{\raggedright\textbf{Fuente:} Elaboración propia a partir del Caso 09, capítulos 4 y 9, y del alcance propuesto en SD-03.\par}
 
 {La Tabla 3.9 delimita los intercambios habilitables y aquellos que permanecen cerrados. La aprobación de la ficha, su contrato y las pruebas de bloqueo preceden a la activación de cada flujo; el registro deberá permitir demostrar que la operación respetó el límite autorizado.}
 
@@ -672,11 +712,13 @@ Tabla 3.9: Escenarios de intercambio Retail--Emisor y condiciones de habilitaci�
 
 {La Figura 3.14 integra las promesas de existencia, precio y entrega en un recorrido operativo e identifica las salidas ante falta de disponibilidad o una incidencia de entrega.}
 
-{Figura 3.14. Recorrido Retail desde la oferta hasta la entrega y la devolución.}
-
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-06_recorrido-retail.pdf}}\end{center}
-
-Fuente: Elaboración propia.
+\begin{figure}[htbp]
+\centering
+\caption{Recorrido Retail desde la oferta hasta la entrega y la devolución.}
+\label{fig:3-14}
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{figuras/recepcion-20261025/05e617f40d40.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia.\par}
+\end{figure}
 
 {El recorrido consulta la oferta y el disponible, reserva y confirma la existencia antes del cobro. Después registra la venta y coordina la preparación y entrega. Las ramas de excepción informan al cliente y derivan la incidencia a posventa; la devolución exige constancia, inspección y ajuste confirmado. Los rótulos abrevian los nombres del catálogo de 3.3.}
 
@@ -690,21 +732,29 @@ Fuente: Elaboración propia.
 
 {Las Figuras 3.15 y 3.16 presentan por separado la originación de crédito y la compra con tarjeta. La separación distingue la decisión financiera del control sobre los datos comunicados a Retail.}
 
-{Figura 3.15. Originación de crédito dentro del ámbito del Emisor.}
+\clearpage
 
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-07_originacion-credito.pdf}}\end{center}
-
-Fuente: Elaboración propia.
+\begin{figure}[htbp]
+\centering
+\caption{Originación de crédito dentro del ámbito del Emisor.}
+\label{fig:3-15}
+\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figuras/recepcion-20261025/8aa8fc576737.png}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia.\par}
+\end{figure}
 
 {La solicitud incorpora la información precontractual y su aceptación verificable. La evidencia completa permite al Emisor decidir la elegibilidad y el cupo; su ausencia detiene el trámite hasta subsanarla. Este recorrido conserva la decisión y el expediente en el ámbito financiero.}
 
 {La Figura 3.16 muestra la autorización de una compra concreta y el control del intercambio necesario para responder a Retail.}
 
-{Figura 3.16. Autorización de compra con tarjeta y respuesta limitada a Retail.}
+\clearpage
 
-\begin{center}\pandocbounded{\includegraphics{figuras/diag-03-08_autorizacion-compra.pdf}}\end{center}
-
-Fuente: Elaboración propia.
+\begin{figure}[htbp]
+\centering
+\caption{Autorización de compra con tarjeta y respuesta limitada a Retail.}
+\label{fig:3-16}
+\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figuras/recepcion-20261025/215530fda35d.pdf}
+\par\smallskip{\raggedright\textbf{Fuente:} Elaboración propia.\par}
+\end{figure}
 
 {Ventas/POS solicita una autorización por importe y referencia. Si el cruce está habilitado para esa finalidad y sus campos, el Emisor autoriza o deniega la transacción y X-01 limita el resultado comunicado; de otro modo, bloquea el cruce y registra el rechazo. La aceptación de crédito no habilita por sí sola el intercambio ni autoriza una compra posterior.}
 
@@ -751,7 +801,40 @@ Project Management Institute. (2017). \textit{A guide to the project management 
 \section*{Declaración de uso de IA}
 \addcontentsline{toc}{section}{Declaración de uso de IA}
 
-Las secciones 3.1 y 3.2 se redactaron con asistencia de un modelo de lenguaje (Claude, de Anthropic) a partir de las decisiones de alcance tomadas por el equipo de Only Simple Solutions y de sus documentos de trabajo. El equipo definió los objetivos, las exclusiones, los supuestos y el reparto entre etapas. El modelo propuso la redacción y contrastó las cifras con las Bases. La sección 3.1 se revisó además con la herramienta humanizer, restringida a eliminar patrones de escritura automática sin alterar cifras, nombres ni citas, y con un lector automatizado que simuló a un interesado sin formación informática. Un integrante del equipo aprobó cada párrafo de la sección 3.1 antes de incorporarlo. La revisión humana del texto se registra en el Formulario A-6.
+El equipo declara que las herramientas, finalidades, niveles de intervención y revisiones humanas se desglosan por sección en la Tabla 3.10. El equipo asume como propio el resultado final y la responsabilidad íntegra sobre la exactitud, originalidad y coherencia técnica de su contenido.
+
+\footnotesize
+\begin{longtable}{@{}p{0.070\linewidth}@{\hspace{3pt}}p{0.160\linewidth}@{\hspace{3pt}}p{0.300\linewidth}@{\hspace{3pt}}p{0.075\linewidth}@{\hspace{3pt}}p{0.095\linewidth}@{\hspace{3pt}}p{0.250\linewidth}@{}}
+\caption{Declaración de uso de IA por sección del Capítulo 3 y Formulario T-12.}\label{tab:3-10}\\
+\toprule Sección & Herramientas & Finalidad de uso & Nivel en texto & Nivel en diagramas & Revisión humana \\
+\midrule
+\endfirsthead
+\caption[]{Declaración de uso de IA por sección del Capítulo 3 y Formulario T-12 (continuación).}\\
+\toprule Sección & Herramientas & Finalidad de uso & Nivel en texto & Nivel en diagramas & Revisión humana \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+3.1 & Claude Sonnet 5.5 & Organizar los objetivos y las decisiones del equipo, redactar el resumen ejecutivo, generar los diagramas de servicios y etapas, y contrastar cifras y plazos con las Bases. & Alto & Alto & Manuel Aguilera \\
+3.2 & Claude Sonnet 5.5 & Desarrollar la descomposición del alcance y su distribución por etapas, organizar exclusiones, supuestos y restricciones, elaborar diagramas y verificar la coherencia entre requerimientos y criterios de aceptación. & Alto & Alto & Vicente Rosales \\
+3.3 & Claude Sonnet 5.5 & Organizar el esquema de solución, comparar alternativas, desarrollar el texto y los diagramas de los servicios y sus relaciones, y verificar la separación de datos y los controles de intercambio entre Retail y el Emisor. & Alto & Alto & Vicente Rosales y Manuel Aguilera \\
+3.4 & Claude Sonnet 5.5 & Desarrollar la explicación de las promesas de existencia, precio, entrega y crédito, elaborar los diagramas de sus recorridos y verificar su coherencia con el alcance, la continuidad operacional y las responsabilidades de los actores. & Alto & Alto & Vicente Rosales y Manuel Aguilera \\
+Formulario T-12 & Claude Sonnet 5.5 & Organizar la matriz de cumplimiento, relacionar los requisitos con los componentes y secciones de la propuesta, redactar las justificaciones y revisar la consistencia de los estados de cumplimiento y las referencias. & Alto & Alto & Eliseo Guarda \\
+\end{longtable}
+\normalsize
+
+
+A continuación, se detalla la escala de niveles para completar la tabla anterior.
+
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
+Ninguno & Sin uso de IA. & Sin uso de IA. \\
+Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
+Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
 
 \ossFinalPage
 
