@@ -82,10 +82,40 @@
 \usepackage{oss}
 \begin{document}
 
-\ossCover{Plan de riesgos}{Subdocumento 8}
+\ossCover{Introducción a los Riesgos}{Subdocumento 8}
 \tableofcontents
 \clearpage
 
+\section*{Lista de figuras}
+\addcontentsline{toc}{section}{Lista de figuras}
+
+\noindent\hangindent=2em\hyperref[fig:8-1]{Figura 8.1: Estructura de desglose de riesgos, con las cinco ramas y los 37 riesgos}\dotfill\pageref{fig:8-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[fig:8-2]{Figura 8.2: Matriz de exposición con los 37 riesgos ubicados por probabilidad e impacto}\dotfill\pageref{fig:8-2}\par\vspace{0.4\baselineskip}
+\clearpage
+\section*{Lista de tablas}
+\addcontentsline{toc}{section}{Lista de tablas}
+
+\noindent\hangindent=2em\hyperref[tab:8-1]{Tabla 8.1: Escala de probabilidad e impacto en plazo, esfuerzo y costo}\dotfill\pageref{tab:8-1}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-2]{Tabla 8.2: Escala de impacto en alcance y calidad, y en servicio}\dotfill\pageref{tab:8-2}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-3]{Tabla 8.3: Zonas de exposición y regla de acción}\dotfill\pageref{tab:8-3}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-4]{Tabla 8.4: Riesgos exigidos por el Caso y por las Bases}\dotfill\pageref{tab:8-4}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-5]{Tabla 8.5: Riesgos críticos y altos}\dotfill\pageref{tab:8-5}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-6]{Tabla 8.6: Valor esperado de los riesgos críticos y altos antes de la respuesta}\dotfill\pageref{tab:8-6}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-7]{Tabla 8.7: Análisis de modos de falla y efectos de la solución en operación}\dotfill\pageref{tab:8-7}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-8]{Tabla 8.8: Atraso acumulado por hito, sin y con respuestas}\dotfill\pageref{tab:8-8}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-9]{Tabla 8.9: Respuesta a los riesgos críticos y altos}\dotfill\pageref{tab:8-9}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-10]{Tabla 8.10: Disparadores y contingencia de los riesgos altos}\dotfill\pageref{tab:8-10}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-11]{Tabla 8.11: Costo-beneficio de las respuestas}\dotfill\pageref{tab:8-11}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-12]{Tabla 8.12: Declaración de uso de IA por sección y formulario}\dotfill\pageref{tab:8-12}\par\vspace{0.4\baselineskip}
+\noindent\hangindent=2em\hyperref[tab:8-13]{Tabla 8.13: Escala de niveles de uso de IA}\dotfill\pageref{tab:8-13}\par\vspace{0.4\baselineskip}
+\clearpage
+
+\let\ossOriginalSection\section
+\renewcommand{\section}{\phantomsection\ossOriginalSection}
+\let\ossOriginalSubsection\subsection
+\renewcommand{\subsection}{\phantomsection\ossOriginalSubsection}
+\let\ossOriginalSubsubsection\subsubsection
+\renewcommand{\subsubsection}{\phantomsection\ossOriginalSubsubsection}
 \section{Capítulo 8 · Introducción a los Riesgos}\label{capuxedtulo-8-introducciuxf3n-a-los-riesgos}
 
 Este capítulo presenta cómo Only Simple Solutions identifica, califica y trata los riesgos de la solución propuesta a Multitiendas Ancoa S.A. durante los 56 meses del contrato. Se organiza en tres apartados que se leen en orden. El apartado 8.1 define el plan de gestión, con el enfoque, los roles, las escalas de probabilidad e impacto, las zonas de exposición y los umbrales de escalamiento. El apartado 8.2 identifica y analiza los riesgos y reúne 37 riesgos y 8 oportunidades, de los cuales 3 son críticos y 11 son altos. El apartado 8.3 define el plan de acción de cada riesgo y las reservas que lo sostienen.
@@ -116,7 +146,7 @@ Tres instancias de gobierno del Capítulo 6 reciben los riesgos según su natura
 
 Los riesgos se califican en cinco niveles, desde muy bajo hasta muy alto. La Tabla 8.1 define la probabilidad y los impactos en plazo, esfuerzo y costo, y la Tabla 8.2 define los impactos en alcance y calidad y en servicio.
 
-Tabla 8.1: Escala de probabilidad e impacto en plazo, esfuerzo y costo. Fuente: Elaboración propia.
+Tabla 8.1: Escala de probabilidad e impacto en plazo, esfuerzo y costo. Fuente: Elaboración propia.\phantomsection\label{tab:8-1}
 
 \begin{longtable}{p{0.158\linewidth}p{0.158\linewidth}p{0.218\linewidth}p{0.237\linewidth}p{0.158\linewidth}}
 \toprule
@@ -134,7 +164,7 @@ Muy bajo (1) & 1 a 10\% & Menos de 2 días & Menos de 0,5\% de las horas & Menos
 
 El impacto en costo se expresa siempre como porcentaje del contrato, porque el monto corresponde únicamente al Sobre 3. El impacto en esfuerzo se expresa como porcentaje de las horas de la estimación del apartado 7.2.
 
-Tabla 8.2: Escala de impacto en alcance y calidad, y en servicio. Fuente: Elaboración propia.
+Tabla 8.2: Escala de impacto en alcance y calidad, y en servicio. Fuente: Elaboración propia.\phantomsection\label{tab:8-2}
 
 \begin{longtable}{p{0.16\linewidth}p{0.34\linewidth}p{0.42\linewidth}}
 \toprule
@@ -158,7 +188,7 @@ Cuatro reglas gobiernan la calificación y evitan que dos personas califiquen el
 
 La exposición de cada riesgo es el producto de su probabilidad por su impacto, ambos en valor numérico, y ubica al riesgo en una de cuatro zonas. La Tabla 8.3 define cada zona y lo que obliga.
 
-Tabla 8.3: Zonas de exposición y regla de acción. Fuente: Elaboración propia.
+Tabla 8.3: Zonas de exposición y regla de acción. Fuente: Elaboración propia.\phantomsection\label{tab:8-3}
 
 \begin{longtable}{p{0.12\linewidth}p{0.20\linewidth}p{0.40\linewidth}p{0.20\linewidth}}
 \toprule
@@ -177,7 +207,7 @@ Con los valores adoptados, un riesgo de probabilidad 0,60 e impacto 0,80 tiene e
 
 \subsection{Apetito, tolerancia y umbral de escalamiento}
 
-El apetito de riesgo es bajo en lo contractual y regulatorio, esto es, en los hitos, en la separación de los dos negocios y en el cumplimiento ante la CMF, y es moderado en lo técnico mejorable, como el rendimiento y la adopción, donde se acepta ajustar el diseño mientras no cambie un hito. La tolerancia es cero atraso en los hitos de los meses 16, 21 y 56 y cero cruces de datos sin base, y en el resto llega hasta lo que cubra la reserva de contingencia.
+El apetito de riesgo es bajo en lo contractual y regulatorio, esto es, en los hitos, en la separación de los dos negocios y en el cumplimiento ante la CMF, y es moderado en lo técnico mejorable, como el rendimiento y la adopción, donde se acepta ajustar el diseño mientras no cambie un hito. La tolerancia es cero atraso en los hitos de los meses 16, 21, 22 y 56 y cero cruces de datos sin base, y en el resto llega hasta lo que cubra la reserva de contingencia.
 
 El umbral de escalamiento traduce lo anterior en instancias de decisión. Todo riesgo en zona crítica pasa al Comité Ejecutivo, todo riesgo en zona alta pasa al Comité de Proyecto, y los riesgos técnicos se presentan además al Comité de Arquitectura. La liberación de la reserva de gestión corresponde únicamente al Comité Ejecutivo.
 
@@ -191,7 +221,7 @@ El apartado 8.2 aplica estas escalas y zonas a los riesgos identificados y justi
 
 \section{8.2 Identificación y Análisis de Riesgos}\label{identificaciuxf3n-y-anuxe1lisis-de-riesgos}
 
-Este apartado identifica y analiza los riesgos de la solución que Only Simple Solutions propone a Multitiendas Ancoa S.A. Los riesgos provienen de tres fuentes. La primera es el Caso, con sus dolores, sus restricciones y sus fechas. La segunda es la solución descrita en los capítulos 3 y 4, con sus servicios, sus decisiones de arquitectura y su despliegue híbrido. La tercera es el plan del capítulo 7, con el cronograma de 56 meses, los hitos sin holgura y las ventanas de congelamiento. Por esa razón, cada riesgo nace de una causa concreta de esta solución y no de un catálogo genérico. El resultado es un registro de 37 riesgos y 8 oportunidades, cuyo detalle completo se presenta en el Formulario T-16. El cuerpo del apartado desarrolla los riesgos críticos, los altos y los once que el Caso y las Bases exigen abordar, y deja el análisis cuantitativo y las respuestas para los apartados siguientes.
+Este apartado identifica y analiza los riesgos de la solución que Only Simple Solutions propone a Multitiendas Ancoa S.A. Los riesgos provienen de tres fuentes. La primera es el Caso, con sus dolores, sus restricciones y sus fechas. La segunda es la solución descrita en los capítulos 3 y 4, con sus servicios, sus decisiones de arquitectura y su despliegue híbrido. La tercera es el plan del capítulo 7, con el cronograma de 56 meses, los hitos sin holgura y las ventanas de congelamiento. Por esa razón, cada riesgo nace de una causa concreta de esta solución y no de un catálogo genérico. El resultado es un registro de 37 riesgos y 8 oportunidades, cuyo detalle completo se presenta en el Formulario T-16. Los identificadores llegan a R-38 porque R-26 no está asignado; el total corresponde a las 37 entradas efectivas. El cuerpo del apartado desarrolla los riesgos críticos, los altos y los once que el Caso y las Bases exigen abordar, y deja el análisis cuantitativo y las respuestas para los apartados siguientes.
 
 \subsection{Estructura de desglose de riesgos}
 
@@ -201,7 +231,7 @@ Los 37 riesgos se ordenan en una estructura de desglose de riesgos de cinco rama
   \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/diag-08-01_rbs.pdf}
 \end{center}
 
-Figura 8.1: Estructura de desglose de riesgos, con las cinco ramas y los 37 riesgos. Fuente: Elaboración propia.
+Figura 8.1: Estructura de desglose de riesgos, con las cinco ramas y los 37 riesgos. Fuente: Elaboración propia.\phantomsection\label{fig:8-1}
 
 La figura muestra que la rama de proyecto concentra casi la mitad de los riesgos, lo que es coherente con un cronograma de 56 meses con hitos contractuales sin holgura y con ventanas de congelamiento que limitan las fechas de despliegue. Nueve de esos 16 riesgos tienen origen externo, ya sea normativo o de terceros. Son R-16 (modalidad fiscal de contingencia sin aprobación de la autoridad tributaria), R-17 (residencia de los datos de recuperación), R-19 (reglamentación de la Ley 21.719), R-20 (hardware, enlaces y obras que provee el cliente), R-27 (cooperación de los seis proveedores actuales), R-28 (retención de grabaciones de repactación), R-29 (procedimiento abierto por el SERNAC), R-32 (ubicación de plataformas y enlaces por tienda) y R-36 (adopción de contratos de estado por transportistas y vendedores de marketplace). El Caso excluye de la ejecución del proponente obras y compras de hardware, pero exige que las dependencias excluidas se documenten y se consideren en el plan y en el riesgo (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 11, p. 27).
 
@@ -209,7 +239,7 @@ La figura muestra que la rama de proyecto concentra casi la mitad de los riesgos
 
 El Caso espera seis riesgos en el plan, que son la divergencia de saldos en la cartera (R-01), el evento anual con un servicio a medio desplegar (R-02), el cruce indebido de datos entre los dos negocios (R-03), la integración no documentada (R-04), la rotación del 62 \% del personal (R-05) y la comisión del vendedor (R-06) (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 19, p. 46). Además, deben abordarse cinco riesgos adicionales, que son la obsolescencia de los servicios administrados (R-07), el bloqueo por proveedor (R-08), la escalabilidad (R-09), la ciberseguridad (R-10) y las contrapartes del cliente (R-11). El registro cubre los once. Cada riesgo se mira desde la solución, el desarrollo o la implantación, y un mismo riesgo puede tocar más de una mirada. En total, 14 riesgos tocan la solución, 13 el desarrollo y 14 la implantación. La Tabla 8.4 sintetiza los once riesgos exigidos con su rama, su exposición y su zona.
 
-Tabla 8.4: Riesgos exigidos por el Caso y por las Bases. Fuente: Elaboración propia.
+Tabla 8.4: Riesgos exigidos por el Caso y por las Bases. Fuente: Elaboración propia.\phantomsection\label{tab:8-4}
 
 \begin{longtable}{p{0.097\linewidth}p{0.407\linewidth}p{0.155\linewidth}p{0.136\linewidth}p{0.136\linewidth}}
 \toprule
@@ -241,11 +271,11 @@ Cada riesgo se calificó con las escalas y zonas del apartado 8.1, y la Figura 8
   \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/diag-08-02_matriz-exposicion.pdf}
 \end{center}
 
-Figura 8.2: Matriz de exposición con los 37 riesgos ubicados por probabilidad e impacto. Fuente: Elaboración propia.
+Figura 8.2: Matriz de exposición con los 37 riesgos ubicados por probabilidad e impacto. Fuente: Elaboración propia.\phantomsection\label{fig:8-2}
 
-La matriz distribuye los riesgos en 3 críticos, 11 altos, 21 medios y 2 bajos. Los tres críticos (R-02, R-12 y R-13) coinciden en probabilidad 0,60 e impacto 0,80, y los tres afectan un hito contractual sin holgura. Siete de los once altos tienen impacto 0,80 con probabilidad 0,40, y los otros cuatro combinan probabilidad 0,60 con impacto 0,40. Cinco riesgos (R-02, R-11, R-23, R-33 y R-37) alcanzan impacto 0,80 por la regla del hito contractual, ya que atrasan eslabones de la ruta crítica del apartado 7.3.3, que tienen holgura cero. Los dos riesgos bajos son R-29 y R-38. La Tabla 8.5 presenta los 14 riesgos críticos y altos, ordenados por exposición.
+La matriz distribuye los riesgos en 3 críticos, 11 altos, 21 medios y 2 bajos. Los tres críticos (R-02, R-12 y R-13) coinciden en probabilidad 0,60 e impacto 0,80, y los tres afectan un hito contractual sin holgura. Siete de los once altos tienen impacto 0,80 con probabilidad 0,40, y los otros cuatro combinan probabilidad 0,60 con impacto 0,40. Siete riesgos (R-02, R-11, R-12, R-13, R-23, R-33 y R-37) alcanzan impacto 0,80 por la regla del hito contractual, ya que atrasan eslabones de la ruta crítica del apartado 7.3.3, que tienen holgura cero. Los dos riesgos bajos son R-29 y R-38. La Tabla 8.5 presenta los 14 riesgos críticos y altos, ordenados por exposición.
 
-Tabla 8.5: Riesgos críticos y altos. Fuente: Elaboración propia.
+Tabla 8.5: Riesgos críticos y altos. Fuente: Elaboración propia.\phantomsection\label{tab:8-5}
 
 \begin{longtable}{p{0.097\linewidth}p{0.465\linewidth}p{0.116\linewidth}p{0.116\linewidth}p{0.136\linewidth}}
 \toprule
@@ -267,7 +297,7 @@ R-37 & Decisiones del cliente demoradas antes de la línea base & 0,40 & 0,80 & 
 R-18 & Carga inicial de existencias con errores & 0,60 & 0,40 & 0,24 \\
 R-20 & Hardware y enlaces de tienda no listos para su ola & 0,60 & 0,40 & 0,24 \\
 R-24 & Primer peak con defectos latentes & 0,60 & 0,40 & 0,24 \\
-R-34 & Meta de error de precio con etiquetas en papel & 0,60 & 0,40 & 0,24 \\
+R-34 & Meta de discrepancia de precio con etiquetas en papel & 0,60 & 0,40 & 0,24 \\
 \end{longtable}
 
 La tabla permite ver que los riesgos de mayor exposición se concentran en la migración de la cartera, en las ventanas de congelamiento y en las dependencias del cliente. Los apartados siguientes desarrollan cada uno.
@@ -306,7 +336,7 @@ El riesgo R-24 resulta de que la Etapa 1 entra en producción en abril de 2028 y
 
 Los dos últimos se relacionan con aprobaciones y metas de operación. El riesgo R-16 se origina en que la autoridad tributaria no ha aprobado la modalidad fiscal de contingencia, según la Tabla 4.9 del capítulo 4. Sin ella, un corte de enlace en tienda incumple las restricciones 5 o 6 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 10, restricciones 5 y 6, p. 26). Tiene origen externo, probabilidad 0,40, impacto 0,80 y exposición 0,32.
 
-El riesgo R-34 parte de la meta comprometida de error de precio menor que 3 \% y de la estimación de 2,6 \% con etiquetas de papel calculada en el apartado 2.2.3. El Caso informa hasta 400.000 cambios de precio en un día de campaña (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.1, p. 31). El margen es estrecho y las oleadas diurnas de cambio de etiquetas dependen del personal de tienda. La probabilidad es 0,60, el impacto 0,40 en alcance y calidad y la exposición 0,24.
+El riesgo R-34 parte de la meta comprometida de discrepancia de precio inferior a 3 \% y de la estimación de 2,6 \% con etiquetas de papel calculada en el apartado 2.2.3. El Caso informa hasta 400.000 cambios de precio en un día de campaña (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.1, p. 31). El margen es estrecho y las oleadas diurnas de cambio de etiquetas dependen del personal de tienda. La probabilidad es 0,60, el impacto 0,40 en alcance y calidad y la exposición 0,24.
 
 \subsection{Riesgos exigidos en zona media}
 
@@ -344,9 +374,9 @@ El análisis cuantitativo traduce la calificación del apartado anterior en sema
 
 \subsubsection{Valor esperado de los riesgos críticos y altos}
 
-La primera técnica multiplica la probabilidad de cada uno de los 14 riesgos críticos y altos por las semanas y las horas que costaría su ocurrencia, antes de aplicar la respuesta. La Tabla 8.6 presenta el resultado. Los valores de semanas y horas son los del supuesto indicado en cada ficha del apartado 8.3, y los resultados se expresan solo en tiempo y esfuerzo.
+La primera técnica multiplica la probabilidad de cada uno de los 14 riesgos críticos y altos por las semanas y las horas que costaría su ocurrencia, antes de aplicar la respuesta. La Tabla 8.6 presenta los supuestos y el resultado en tiempo y esfuerzo. El Formulario T-16 contiene el registro completo de los riesgos; el apartado 8.3 desarrolla las respuestas.
 
-Tabla 8.6: Valor esperado de los riesgos críticos y altos antes de la respuesta. Fuente: Elaboración propia.
+Tabla 8.6: Valor esperado de los riesgos críticos y altos antes de la respuesta. Fuente: Elaboración propia.\phantomsection\label{tab:8-6}
 
 \begin{longtable}{p{0.12\linewidth}p{0.12\linewidth}p{0.16\linewidth}p{0.16\linewidth}p{0.34\linewidth}}
 \toprule
@@ -378,7 +408,7 @@ El valor esperado suma 29,2 semanas y 6.496 horas. Tres riesgos concentran más 
 
 La segunda técnica examina cinco modos de falla de la solución en operación, elegidos porque combinan consecuencias graves con controles ya definidos en el diseño. Cada modo se puntúa de 1 a 10 en severidad (S), ocurrencia (O) y detección (D), donde 10 en detección significa que la falla pasa inadvertida. El número de prioridad de riesgo (NPR) es el producto de los tres puntajes. La severidad refleja el efecto sobre la operación de la tienda y del emisor y no equivale al nivel de impacto del análisis cualitativo. Para estos cinco modos, O se obtiene redondeando diez veces la probabilidad de la Tabla T-16.2: 0,20 da O = 2 y 0,40 da O = 4. D es un juicio de diseño: 2 para falla visible de inmediato, 3 para una anomalía registrada por el control, 4 para una falla que se descubre durante el incidente o ensayo y 5 para una falla que requiere conciliación posterior. S y D deben recalibrarse con resultados de pruebas antes de aprobar la línea base. La Tabla 8.7 muestra el resultado.
 
-Tabla 8.7: Análisis de modos de falla y efectos de la solución en operación. Fuente: Elaboración propia.
+Tabla 8.7: Análisis de modos de falla y efectos de la solución en operación. Fuente: Elaboración propia.\phantomsection\label{tab:8-7}
 
 \begin{longtable}{p{0.30\linewidth}p{0.36\linewidth}p{0.18\linewidth}p{0.10\linewidth}}
 \toprule
@@ -394,13 +424,13 @@ Cruce indebido de datos (R-03) & Se quiebra la separación entre retail y emisor
 Caída del centro de datos DC-01 (R-31) & Se detienen la emisión tributaria y el crédito. & 9 / 2 / 2 & 36 \\
 \end{longtable}
 
-La emisión en contingencia encabeza la lista porque combina una severidad alta, una ocurrencia moderada mientras la autoridad tributaria no apruebe la modalidad y una detección que solo ocurre cuando se produce un corte de enlace. El cruce indebido de datos tiene la mayor severidad, pero su ocurrencia y su detección son bajas, porque el servicio de control de cruces lo bloquea por diseño y registra cada cruce; por eso queda bajo los demás en el NPR sin dejar de tener tolerancia cero. La caída de DC-01 se detecta de inmediato y es poco frecuente, aunque su efecto es grave y depende del recinto del cliente. En consecuencia, las pruebas de la sincronización, de la contingencia fiscal y de la capacidad del evento anual reciben la mayor atención de verificación antes del paso a producción.
+La emisión en contingencia encabeza la lista porque combina una severidad alta, una ocurrencia moderada mientras la autoridad tributaria no apruebe la modalidad y una detección que solo ocurre cuando se produce un corte de enlace. El cruce indebido de datos tiene la mayor severidad, pero su ocurrencia y su detección son bajas, porque el Servicio de control de cruces (X-01) lo bloquea por diseño y registra cada cruce; por eso queda bajo los demás en el NPR sin dejar de tener tolerancia cero. La caída de DC-01 se detecta de inmediato y es poco frecuente, aunque su efecto es grave y depende del recinto del cliente. En consecuencia, las pruebas de la sincronización, de la contingencia fiscal y de la capacidad del evento anual reciben la mayor atención de verificación antes del paso a producción.
 
 \subsubsection{Simulación del cronograma}
 
 La tercera lectura simula 10.000 veces el efecto de los 13 riesgos críticos y altos que pueden retrasar los hitos de los meses 16, 21 y 22. R-24 conserva su calificación y su estimación de esfuerzo, pero queda fuera de esta simulación porque el primer peak ocurre después del paso a producción del mes 16. Cada uno de los otros riesgos se asigna a un eslabón de la ruta crítica del apartado 7.3.3, ocurre con su probabilidad y, si ocurre, aporta un atraso con distribución triangular entre la mitad y una vez y media las semanas estimadas. Los eventos se tratan como independientes. Dentro de un mismo eslabón los atrasos se solapan, porque corren en paralelo sobre la misma ventana, y se toma el mayor; entre eslabones distintos de la misma cadena se suman. El hito del mes 22 hereda la cadena de la Etapa 2 y agrega la migración de la cartera. Se corre el escenario sin respuestas, con las probabilidades originales, y el escenario con respuestas, con las probabilidades residuales del apartado 8.3. La Tabla 8.8 reúne los percentiles en semanas para el caso base solapado. Es una estimación indicativa sobre una red resumida, que debe contrastarse con el CPM y la capacidad por rol del Formulario T-15.
 
-Tabla 8.8: Atraso acumulado por hito, sin y con respuestas. Fuente: Elaboración propia.
+Tabla 8.8: Atraso acumulado por hito, sin y con respuestas. Fuente: Elaboración propia.\phantomsection\label{tab:8-8}
 
 \begin{longtable}{p{0.34\linewidth}p{0.18\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}}
 \toprule
@@ -427,7 +457,7 @@ Este apartado define la respuesta a cada riesgo del registro. Los riesgos críti
 
 La estrategia de cada riesgo se eligió según su zona y según la causa que lo origina. Cuando la causa depende del diseño o del calendario del proponente, se prefirió evitar, porque una decisión temprana elimina el evento. Es el caso de R-12, que se evita al certificar en Preproducción y programar el despliegue fuera de los congelamientos, y de R-13, R-25 y R-37, que se evitan al fijar secuencias y fechas antes de que el atraso ocurra. Cuando el evento no puede eliminarse pero sí su probabilidad o su efecto, se mitigó, como en R-02, R-01, R-11, R-18, R-23, R-24, R-33 y R-34. R-20 transfiere al cliente las dependencias de hardware, enlaces y obra civil de tienda, con obligaciones y fechas por ola. R-16 se escala, porque la aprobación de la modalidad fiscal de contingencia corresponde a la autoridad tributaria y el proponente solo puede gestionarla. Se acepta únicamente lo que la regla de zona permite aceptar, esto es, riesgos medios y bajos, de los cuales R-19, R-29 y R-38 se aceptan con monitoreo. R-31 transfiere al cliente la entrega del informe de brecha y la obra civil de DC-01, mientras el proponente conserva la habilitación y certificación del recinto técnico. R-17 exige demostrar una recuperación del Emisor que cumpla RTO y RPO antes de cerrar el diseño; DC-02, por estar en la misma comuna que DC-01, es solo un respaldo complementario según el apartado 4.3.2. Las demás respuestas se detallan en el Formulario T-16. Para las oportunidades se usan las estrategias simétricas, que son explotar, mejorar y compartir. La Tabla 8.9 resume las respuestas de los 14 riesgos críticos y altos.
 
-Tabla 8.9: Respuesta a los riesgos críticos y altos. Fuente: Elaboración propia.
+Tabla 8.9: Respuesta a los riesgos críticos y altos. Fuente: Elaboración propia.\phantomsection\label{tab:8-9}
 
 \begin{longtable}{p{0.069\linewidth}p{0.109\linewidth}p{0.406\linewidth}p{0.178\linewidth}p{0.168\linewidth}}
 \toprule
@@ -456,7 +486,7 @@ Ocho de las catorce respuestas son mitigaciones, cuatro evitan el riesgo, una lo
 
 \subsection{Respuesta a los riesgos críticos}
 
-Para R-02, la respuesta consiste en fijar una ventana de ocho semanas sin despliegues de servicios nuevos antes del evento anual y en programar las entregas previas fuera de ella. El disparador es recibir la fecha con menos de ocho semanas de aviso o tener un servicio a medio desplegar en esa fecha. Si la respuesta falla, el Jefe de Proyecto reordena las entregas con cinco personas durante tres semanas, lo que equivale a 600 horas. La respuesta baja la probabilidad de 0,60 a 0,40, pero el impacto se mantiene en 0,80 por la regla del hito contractual, de modo que la exposición residual es 0,32 y el riesgo queda en zona alta, bajo seguimiento del Comité Ejecutivo.
+Para R-02, la respuesta consiste en fijar una ventana de ocho semanas sin despliegues de servicios nuevos antes del evento anual y en programar las entregas previas fuera de ella. El disparador es recibir la fecha con menos de seis semanas de aviso o tener un servicio a medio desplegar en esa fecha. Si la respuesta falla, el Jefe de Proyecto reordena las entregas con cinco personas durante tres semanas, lo que equivale a 600 horas. La respuesta baja la probabilidad de 0,60 a 0,40, pero el impacto se mantiene en 0,80 por la regla del hito contractual, de modo que la exposición residual es 0,32 y el riesgo queda en zona alta, bajo seguimiento del Comité Ejecutivo.
 
 Para R-12, la respuesta evita el choque con los congelamientos. La certificación de la Etapa 1 se hace en Preproducción en el mes 12, que no es un sistema en producción del cliente. El despliegue que inicia la marcha blanca se ejecuta en la ventana libre del 7 al 24 de enero de 2028, solo con lo certificado, y las correcciones se liberan en la ventana libre que va desde la segunda semana de marzo hasta fines de ese mes, unas tres semanas y media antes del paso a producción de abril. Durante los congelamientos solo se admiten correcciones de emergencia autorizadas por el Comité Ejecutivo. El disparador es tener defectos de severidad alta abiertos al 20 de enero de 2028 o el despliegue sin terminar al 24 de enero. Si la respuesta falla y se pierde la ventana de corrección, el Jefe de Proyecto solicita al Comité Ejecutivo las correcciones de emergencia y reasigna ocho personas durante cuatro semanas, equivalentes a 1.280 horas. La probabilidad residual es 0,20, la exposición 0,16 y la zona media. Las fechas dependen de SUP-26 y se recalculan si cambia.
 
@@ -466,13 +496,13 @@ Para R-13, la respuesta fija desde el mes 16 la secuencia de cortes por tramo, c
 
 Los once riesgos altos se agrupan por tema. En la cartera y el retiro de la plataforma de 2011, R-01 se mitiga cortando por tramo con conciliación diaria y reservando el tramo difícil para la marcha blanca de la Etapa 2, y su disparador es una divergencia sin conciliar dos días seguidos en un tramo. R-25 se evita cortando el último tramo antes del 15 de octubre de 2028 y acordando con el Comité Ejecutivo un plan de retorno para el congelamiento; su disparador es que algún tramo siga sin corte en esa fecha. En la carga de existencias, R-18 se mitiga con conteo y conciliación antes del corte; su disparador es una diferencia igual o superior a 2 \% en la carga de prueba por categoría, conforme al resultado 4 del Anexo D del capítulo 3.
 
-Para el primer peak tras la producción, R-24 amplía el soporte reforzado entre el paso a producción y el Día de la Madre y el evento anual, y su disparador es tener defectos de severidad alta abiertos a cuatro semanas del Día de la Madre. R-34 dimensiona las oleadas de cambio de etiquetas para sostener la meta de menos de 3 \% y evalúa las etiquetas electrónicas, y su disparador es un error de precio igual o superior a 3 \% en el piloto.
+Para el primer peak tras la producción, R-24 amplía el soporte reforzado entre el paso a producción y el Día de la Madre y el evento anual, y su disparador es tener defectos de severidad alta abiertos a cuatro semanas del Día de la Madre. R-34 dimensiona las oleadas de cambio de etiquetas para sostener la meta de discrepancia de precio inferior a 3 \% y evalúa las etiquetas electrónicas, y su disparador es una discrepancia de precio igual o superior a 3 \% en el piloto.
 
 Las dependencias del cliente se tratan de dos maneras. R-11 y R-37 se resuelven con actas de plazo fijo y con un calendario de las siete decisiones antes de la línea base del mes 4, y sus disparadores son un acta sin validar al décimo día hábil y decisiones pendientes al mes 3. R-20 se transfiere con obligaciones contractuales por ola y su disparador es una certificación de sitio no emitida ocho semanas antes de la ola. R-16 se escala y su disparador es la modalidad sin aprobar al mes 9, antes de la certificación del mes 12.
 
 En el equipo del proponente, R-23 se mitiga con suplentes y traspaso documentado, con disparador en una vacante de rol clave sin cubrir por más de 30 días. R-33 se mitiga nivelando los recursos de los meses 13 a 15, con disparador en una carga sobre 100 \% de un rol clave. La Tabla 8.10 presenta el disparador, el plan de contingencia y la exposición antes y después de la respuesta.
 
-Tabla 8.10: Disparadores y contingencia de los riesgos altos. Fuente: Elaboración propia.
+Tabla 8.10: Disparadores y contingencia de los riesgos altos. Fuente: Elaboración propia.\phantomsection\label{tab:8-10}
 
 \begin{longtable}{p{0.066\linewidth}p{0.275\linewidth}p{0.323\linewidth}p{0.133\linewidth}p{0.133\linewidth}}
 \toprule
@@ -484,13 +514,13 @@ Tabla 8.10: Disparadores y contingencia de los riesgos altos. Fuente: Elaboraci�
 R-01 & Divergencia sin conciliar dos días seguidos. & Repetir el corte del tramo con seis personas. & 0,32 & 0,16 \\
 R-11 & Acta sin validar al décimo día hábil. & Escalar a la Contraparte Técnica. & 0,32 & 0,16 \\
 R-16 & Modalidad sin aprobar al mes 9. & Rediseñar la emisión sin enlace con cuatro personas. & 0,32 & 0,16 \\
-R-18 & Diferencia de conteo igual o superior a 2 \% en la carga de prueba. & Repetir la carga y la conciliación con seis personas. & 0,24 & 0,08 \\
-R-20 & Certificación de sitio no emitida a ocho semanas. & Reprogramar la ola con cuatro personas. & 0,24 & 0,08 \\
+R-18 & Diferencia de conteo igual o superior a 2 \% en la carga de prueba. & Repetir la carga y la conciliación con seis personas. & 0,24 & 0,16 \\
+R-20 & Certificación de sitio no emitida a ocho semanas. & Reprogramar la ola con cuatro personas. & 0,24 & 0,16 \\
 R-23 & Vacante clave sin cubrir por 30 días. & Reemplazar y traspasar el rol con tres personas. & 0,32 & 0,16 \\
-R-24 & Defectos graves abiertos a cuatro semanas. & Corregir en producción con ocho personas. & 0,24 & 0,08 \\
+R-24 & Defectos graves abiertos a cuatro semanas. & Corregir en producción con ocho personas. & 0,24 & 0,16 \\
 R-25 & Tramo sin corte al 15 de octubre. & Activar el plan de retorno acordado. & 0,32 & 0,16 \\
 R-33 & Carga sobre 100 \% en los meses 13 a 15. & Reasignar cinco personas entre las ramas. & 0,32 & 0,16 \\
-R-34 & Error de precio igual o superior a 3 \% en el piloto. & Rediseñar el proceso de etiquetas con tres personas. & 0,24 & 0,08 \\
+R-34 & Discrepancia de precio igual o superior a 3 \% en el piloto. & Rediseñar el proceso de etiquetas con tres personas. & 0,24 & 0,16 \\
 R-37 & Decisiones pendientes al mes 3. & Reasignar a tres personas de arquitectura mientras se decide. & 0,32 & 0,16 \\
 \end{longtable}
 
@@ -502,7 +532,7 @@ Dos respuestas generan riesgos secundarios que se vigilan con el mismo registro.
 
 El beneficio de cada respuesta se mide como la reducción del valor esperado en horas, esto es, la probabilidad por las horas que costaría el evento, antes y después de la acción. El valor esperado residual usa la probabilidad residual de cada riesgo con las mismas horas. El esfuerzo de ejecutar cada acción es una estimación del proponente en horas, y la razón entre la reducción y ese esfuerzo indica cuántas horas de exposición evita cada hora invertida. La Tabla 8.11 presenta el resultado.
 
-Tabla 8.11: Costo-beneficio de las respuestas. Fuente: Elaboración propia.
+Tabla 8.11: Costo-beneficio de las respuestas. Fuente: Elaboración propia.\phantomsection\label{tab:8-11}
 
 \begin{longtable}{p{0.099\linewidth}p{0.178\linewidth}p{0.218\linewidth}p{0.258\linewidth}p{0.178\linewidth}}
 \toprule
@@ -532,7 +562,7 @@ Las respuestas reducen el valor esperado de 6.496 a 3.688 horas, es decir, en 2.
 
 \subsection{Cuentas de control que ejecutan las respuestas}
 
-Todas las respuestas se ejecutan en cuentas de control que ya existen en la estructura de desglose del trabajo del Formulario T-14, sin agregar cuentas nuevas. Cuatro respuestas de riesgos medios no tenían cuenta asignada y se ubican así. El acuerdo con la filial emisora sobre la regla de comisión del vendedor, que responde a R-06, se ejecuta en la cuenta 1.13.1, Plan de gestión del cambio. Los acuerdos de cooperación y salida con los proveedores de las plataformas que se reemplazan, que responden a R-27, se ejecutan en la cuenta 1.2.1, Mapa de las 14 interfaces e inventario de plataformas. La medida transitoria de retención de grabaciones de repactación, que responde a R-28, se ejecuta en la cuenta 1.8.5, Protección de datos y cumplimiento normativo. El plan de incorporación de transportistas y vendedores de marketplace a los contratos de estado, que responde a R-36, se ejecuta en la cuenta 1.6.3, Rediseño de las integraciones de la Etapa 2. La nivelación de los meses 13 a 15, que responde a R-33, se ejecuta en la cuenta 1.11.3, Plan de convivencia entre etapas. Ninguna de estas acciones integra la ruta crítica.
+Todas las respuestas se ejecutan en cuentas de control que ya existen en la estructura de desglose del trabajo del Formulario T-14, sin agregar cuentas nuevas. Cuatro respuestas de riesgos medios no tenían cuenta asignada y se ubican así; además se precisa la cuenta de R-33, riesgo alto. El acuerdo con la filial emisora sobre la regla de comisión del vendedor, que responde a R-06, se ejecuta en la cuenta 1.13.1, Plan de gestión del cambio. Los acuerdos de cooperación y salida con los proveedores de las plataformas que se reemplazan, que responden a R-27, se ejecutan en la cuenta 1.2.1, Mapa de las 14 interfaces e inventario de plataformas. La medida transitoria de retención de grabaciones de repactación, que responde a R-28, se ejecuta en la cuenta 1.8.5, Protección de datos y cumplimiento normativo. El plan de incorporación de transportistas y vendedores de marketplace a los contratos de estado, que responde a R-36, se ejecuta en la cuenta 1.6.3, Rediseño de las integraciones de la Etapa 2. La nivelación de los meses 13 a 15, que responde a R-33, se ejecuta en la cuenta 1.11.3, Plan de convivencia entre etapas. Ninguna de estas acciones integra la ruta crítica.
 
 \subsection{Reserva de contingencia}
 
@@ -555,7 +585,7 @@ Las oportunidades se gestionan con las mismas instancias, pero no se suman a las
 \section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}
 
-\noindent\hangindent=1.5em\hangafter=1 International Organization for Standardization. (2018). \textit{Risk management — Guidelines} (ISO 31000:2018).
+\noindent\hangindent=1.5em\hangafter=1 International Organization for Standardization. (2018). \textit{Risk management - Guidelines} (ISO 31000:2018).
 
 \noindent\hangindent=1.5em\hangafter=1 Multitiendas Ancoa S.A. (2026). \textit{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
 
@@ -564,10 +594,9 @@ Las oportunidades se gestionan con las mismas instancias, pero no se suman a las
 
 Claude (Anthropic) y OpenAI Codex asistieron la redacción, el registro, los cálculos, las figuras y la revisión de coherencia del capítulo y del Formulario T-16. Manuel Aguilera declaró su revisión humana y confirmó las decisiones de comprometer 3.688 horas hombre adicionales de contingencia y una meta de discrepancia de precio inferior a 3 \%. La comprobación automática de estructura, cifras y referencias se indica aparte y no sustituye esa revisión. Las columnas Texto y Diag. indican el nivel de asistencia en cada medio.
 
-Tabla 8.12: Declaración de uso de IA por sección y formulario. Fuente: Elaboración propia.
+Tabla 8.12: Declaración de uso de IA por sección y formulario. Fuente: Elaboración propia.\phantomsection\label{tab:8-12}
 
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.085\linewidth}>{\raggedright\arraybackslash}p{0.130\linewidth}>{\raggedright\arraybackslash}p{0.200\linewidth}>{\raggedright\arraybackslash}p{0.075\linewidth}>{\raggedright\arraybackslash}p{0.080\linewidth}>{\raggedright\arraybackslash}p{0.215\linewidth}}
-\caption{Declaración de uso de IA por sección y formulario.}\label{tab:sd08-ia}\\
 \toprule
 \textbf{Parte} & \textbf{Herramienta} & \textbf{Finalidad} & \textbf{Texto} & \textbf{Diag.} & \textbf{Revisión humana} \\
 \midrule
@@ -585,6 +614,21 @@ Formulario T-16 & Claude; Codex & Identificación, calificación y respuestas po
 Refs. & Claude; Codex & Localización y cotejo de los folios citados. & Medio & Ninguno & Manuel Aguilera: revisión declarada; folios cotejados con el Caso. \\
 Uso de IA & Claude; Codex & Registro del uso y alcance de la revisión. & Medio & Ninguno & Manuel Aguilera: identificado como revisor a petición propia. \\
 \end{longtable}
+
+
+A continuación, se detalla la escala de niveles para completar la tabla anterior.
+
+Tabla 8.13: Escala de niveles de uso de IA. Fuente: Elaboración propia.\phantomsection\label{tab:8-13}
+
+\begin{tabular}{@{}p{0.069\linewidth}p{0.429\linewidth}p{0.429\linewidth}@{}}
+\toprule Nivel & Texto & Diagramas \\
+\midrule
+Ninguno & Sin uso de IA. & Sin uso de IA. \\
+Bajo & Corrección ortográfica, de estilo o reformulación de frases escritas por el grupo. & Sugerencias de formato o disposición sobre un diagrama elaborado por el grupo. \\
+Medio & Borradores o síntesis de partes que el grupo reescribió y verificó. & Diagrama generado con asistencia (por ejemplo, código Mermaid o PlantUML) a partir de un modelo definido por el grupo. \\
+Alto & Texto generado o modificado sustancialmente por IA; la revisión humana se registra en su propia columna. & Diagrama generado sustancialmente por IA. \\
+\bottomrule
+\end{tabular}
 
 Los hechos del Caso proceden de la fuente indicada en Referencias. Las probabilidades, impactos, horas, respuestas y metas propuestas son decisiones de Only Simple Solutions.
 
