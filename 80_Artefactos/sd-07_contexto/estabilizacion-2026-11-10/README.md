@@ -2,6 +2,8 @@
 
 Documento de trabajo, no entregable. Paso B del plan del SD-07: histograma por rol y mes y análisis de nivelación de los solapamientos M13–M15 y M19–M20. Parte de los datos de `../traspaso-2026-11-10/` y de la conciliación `../conciliacion-hh-2026-11-10.md`.
 
+> **Reemplazado como insumo** por `../red-fisica-2026-11-10/` (paso C), que agrega la instalación física del SD-04 a la red y repite esta misma estabilización. Este directorio conserva el análisis del paso B.
+
 ## Técnica
 
 Se aplica **estabilización de recursos** (PMBOK 6.5.2.3, p. 211): las actividades se mueven solo dentro de su holgura, entre su inicio temprano (ES) y su inicio tardío (LS). No cambian la ruta crítica ni la fecha final.
