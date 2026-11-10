@@ -1,0 +1,240 @@
+﻿mes,perfil,personas
+1,Analista de negocio,12
+1,Arquitecto / diseñador técnico,4
+1,Desarrollador,3
+1,Especialista de seguridad,4
+1,QA / probador,4
+2,Analista de negocio,3
+2,Arquitecto / diseñador técnico,12
+2,Auditor de seguridad,3
+2,Desarrollador,3
+2,Especialista de datos,2
+2,Especialista de redes,2
+2,Especialista de seguridad,3
+2,Especialista financiero / cumplimiento,5
+2,Especialista logística,2
+2,Ingeniero infraestructura física,2
+2,QA / probador,2
+2,SRE / plataforma,5
+3,Analista de negocio,14
+3,Arquitecto / diseñador técnico,33
+3,Desarrollador,43
+3,Especialista IoT / hardware,1
+3,Especialista de seguridad,4
+3,Especialista privacidad / legal,8
+3,Gestor del cambio,3
+3,Implantador,1
+3,Ingeniero QA,2
+3,Ingeniero infraestructura física,2
+3,Líder técnico / coordinación de desarrollo,7
+3,QA / probador,2
+3,SRE / plataforma,9
+4,Arquitecto / diseñador técnico,3
+4,Desarrollador,49
+4,Especialista IoT / hardware,1
+4,Especialista de datos,2
+4,Especialista de redes,4
+4,Especialista de seguridad,6
+4,Especialista financiero / cumplimiento,3
+4,Gestor de activos,1
+4,Implantador,3
+4,Ingeniero QA,26
+4,Ingeniero infraestructura física,16
+4,Líder técnico / coordinación de desarrollo,7
+4,QA / probador,3
+4,SRE / plataforma,10
+5,Analista de negocio,10
+5,Arquitecto / diseñador técnico,23
+5,Desarrollador,46
+5,Especialista de datos,1
+5,Especialista de redes,1
+5,Especialista de seguridad,1
+5,Formador,1
+5,Implantador,1
+5,Ingeniero QA,4
+5,Líder técnico / coordinación de desarrollo,9
+5,QA / probador,1
+5,SRE / plataforma,1
+5,UX / investigador,1
+6,Analista de negocio,4
+6,Desarrollador,47
+6,Especialista de datos,5
+6,Ingeniero QA,25
+6,Líder técnico / coordinación de desarrollo,9
+6,QA / probador,1
+6,SRE / plataforma,1
+7,Analista de negocio,18
+7,Arquitecto / diseñador técnico,33
+7,Científico de datos / ML,2
+7,Desarrollador,52
+7,Especialista de datos,3
+7,Ingeniero QA,4
+7,Líder técnico / coordinación de desarrollo,9
+8,Analista de negocio,2
+8,Científico de datos / ML,1
+8,Desarrollador,53
+8,Especialista de datos,3
+8,Especialista financiero / cumplimiento,4
+8,Ingeniero QA,37
+8,Líder técnico / coordinación de desarrollo,8
+8,QA / probador,2
+9,Científico de datos / ML,1
+9,Desarrollador,2
+9,Especialista de datos,3
+9,QA / probador,2
+9,UX / investigador,2
+10,Analista de negocio,3
+10,Científico de datos / ML,10
+10,Comunicador,1
+10,Desarrollador,3
+10,Especialista de datos,19
+10,Especialista de operación,1
+10,Especialista de seguridad,1
+10,Especialista financiero / cumplimiento,7
+10,Formador,3
+10,QA / probador,6
+10,Redactor técnico,1
+10,SRE / plataforma,3
+11,Analista de negocio,7
+11,Científico de datos / ML,2
+11,Especialista de datos,4
+11,Especialista de seguridad,6
+11,Especialista financiero / cumplimiento,1
+11,Especialista seguridad ofensiva,2
+11,Formador,5
+11,QA / probador,9
+11,SRE / plataforma,4
+12,Analista de negocio,4
+12,Arquitecto / diseñador técnico,1
+12,Especialista de datos,3
+12,Especialista financiero / cumplimiento,2
+12,Especialista logística,2
+12,Formador,6
+12,Implantador,5
+12,QA / probador,1
+12,SRE / plataforma,1
+12,UX / investigador,1
+13,Analista de negocio,18
+13,Arquitecto / diseñador técnico,36
+13,Científico de datos / ML,3
+13,Comunicador,1
+13,Desarrollador,8
+13,Especialista de datos,17
+13,Especialista financiero / cumplimiento,7
+13,Especialista logística,2
+13,Formador,22
+13,Implantador,24
+13,Ingeniero QA,8
+13,Líder técnico / coordinación de desarrollo,8
+13,QA / probador,12
+13,UX / investigador,3
+14,Analista de negocio,12
+14,Arquitecto / diseñador técnico,25
+14,Científico de datos / ML,7
+14,Desarrollador,20
+14,Especialista de datos,19
+14,Especialista financiero / cumplimiento,7
+14,Ingeniero QA,8
+14,Líder técnico / coordinación de desarrollo,14
+14,QA / probador,7
+14,SRE / plataforma,2
+15,Analista de negocio,9
+15,Científico de datos / ML,6
+15,Desarrollador,87
+15,Especialista IoT / hardware,6
+15,Especialista de datos,8
+15,Formador,88
+15,Implantador,88
+15,Ingeniero QA,21
+15,Líder técnico / coordinación de desarrollo,13
+15,QA / probador,8
+15,SRE / plataforma,2
+15,UX / investigador,4
+16,Analista de negocio,2
+16,Científico de datos / ML,5
+16,Desarrollador,48
+16,Formador,88
+16,Implantador,88
+16,Ingeniero QA,17
+16,Líder técnico / coordinación de desarrollo,5
+16,QA / probador,2
+17,Analista de negocio,5
+17,Científico de datos / ML,4
+17,Desarrollador,22
+17,Especialista IoT / hardware,2
+17,Especialista de datos,3
+17,Especialista de operación,1
+17,Especialista de seguridad,7
+17,Especialista seguridad ofensiva,2
+17,Formador,5
+17,Implantador,2
+17,Ingeniero QA,20
+17,Líder técnico / coordinación de desarrollo,3
+17,QA / probador,14
+17,Redactor técnico,1
+17,SRE / plataforma,5
+17,UX / investigador,3
+18,Analista de negocio,16
+18,Desarrollador,8
+18,Formador,16
+18,Ingeniero QA,8
+19,Analista de negocio,4
+19,Científico de datos / ML,1
+19,Comunicador,1
+19,Desarrollador,9
+19,Especialista IoT / hardware,3
+19,Especialista de datos,7
+19,Especialista financiero / cumplimiento,4
+19,Formador,2
+19,Implantador,2
+19,Ingeniero QA,8
+19,QA / probador,5
+19,UX / investigador,1
+20,Analista de negocio,3
+20,Científico de datos / ML,1
+20,Desarrollador,10
+20,Especialista IoT / hardware,1
+20,Especialista de datos,4
+20,Ingeniero QA,8
+20,QA / probador,3
+21,Comunicador,1
+21,Diseñador instruccional,1
+21,Especialista de operación,1
+21,Especialista financiero / cumplimiento,1
+21,Formador,1
+22,Diseñador instruccional,1
+22,Especialista de datos,1
+22,Especialista de operación,1
+22,Especialista financiero / cumplimiento,1
+22,Formador,1
+22,QA / probador,1
+22,SRE / plataforma,1
+23,Diseñador instruccional,1
+23,Formador,2
+24,Arquitecto / diseñador técnico,1
+24,Diseñador instruccional,1
+24,Formador,1
+24,SRE / plataforma,1
+27,Analista de negocio,1
+27,Desarrollador,1
+27,QA / probador,1
+27,SRE / plataforma,1
+48,Desarrollador,1
+48,Especialista transferencia,1
+48,QA / probador,1
+48,SRE / plataforma,1
+49,Desarrollador,1
+49,Especialista transferencia,1
+49,QA / probador,1
+49,SRE / plataforma,1
+54,Arquitecto / diseñador técnico,1
+54,Especialista de datos,1
+54,Especialista transferencia,4
+54,QA / probador,1
+54,SRE / plataforma,1
+55,Arquitecto / diseñador técnico,2
+55,Especialista de datos,2
+55,QA / probador,2
+55,SRE / plataforma,2
+56,Facilitador,2
+56,Redactor técnico,2

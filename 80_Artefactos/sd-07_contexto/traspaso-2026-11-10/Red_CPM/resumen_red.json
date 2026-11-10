@@ -1,0 +1,12 @@
+{
+  "nodes": 853,
+  "relations": 1836,
+  "negative": 0,
+  "late": 0,
+  "work_HH": 67933.47,
+  "capacity_HH": 166560,
+  "additional_work_HH": 616,
+  "base_HH": 234493.47,
+  "contingency_HH": 3688,
+  "with_contingency_HH": 238181.47
+}

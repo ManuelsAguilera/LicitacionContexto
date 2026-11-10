@@ -1,0 +1,567 @@
+﻿Mes;Rol;HH
+M1;Analista / Diseñador (negocio);1248,00
+M1;Analista PMO;80,00
+M1;Analista QA (ejecución de pruebas);101,32
+M1;Arquitecto (solución);101,32
+M1;Especialista de seguridad;101,36
+M1;Ingeniero (desarrollo);279,18
+M1;Jefe de Proyecto;96,00
+M2;Analista / Diseñador (negocio);203,97
+M2;Analista PMO;80,00
+M2;Analista QA (ejecución de pruebas);48,00
+M2;Arquitecto (solución);873,36
+M2;Auditor de seguridad;81,34
+M2;Especialista de redes;42,22
+M2;Especialista de seguridad;70,00
+M2;Especialista en procesos logísticos (adicional);81,34
+M2;Especialista financiero y de cumplimiento (adicional);145,55
+M2;Ingeniero (desarrollo);149,49
+M2;Ingeniero DevOps / SRE;144,00
+M2;Ingeniero de Datos (integración y migración);43,56
+M2;Ingeniero infraestructura física;49,34
+M2;Jefe de Proyecto;96,00
+M3;Analista / Diseñador (negocio);551,61
+M3;Analista PMO;80,00
+M3;Analista QA (ejecución de pruebas);49,77
+M3;Analista QA (ingeniería de pruebas);27,81
+M3;Arquitecto (solución);1599,83
+M3;Especialista de seguridad;101,32
+M3;Especialista privacidad / legal;202,68
+M3;Gestor del cambio;162,67
+M3;Ingeniero (IoT y hardware);135,14
+M3;Ingeniero (desarrollo);1308,19
+M3;Ingeniero DevOps / SRE;687,51
+M3;Ingeniero infraestructura física;198,40
+M3;Jefe de Desarrollo;506,39
+M3;Jefe de Proyecto;96,00
+M3;TIC (implantación);33,78
+M4;Analista PMO;80,00
+M4;Analista QA (ejecución de pruebas);48,00
+M4;Analista QA (ingeniería de pruebas);935,83
+M4;Arquitecto (solución);20,32
+M4;Especialista de redes;306,66
+M4;Especialista de seguridad;248,96
+M4;Especialista financiero y de cumplimiento (adicional);48,00
+M4;Gestor de activos;26,00
+M4;Ingeniero (IoT y hardware);12,86
+M4;Ingeniero (desarrollo);1309,38
+M4;Ingeniero DevOps / SRE;462,61
+M4;Ingeniero de Datos (integración y migración);187,34
+M4;Ingeniero infraestructura física;668,27
+M4;Jefe de Desarrollo;457,24
+M4;Jefe de Proyecto;96,00
+M4;TIC (implantación);212,29
+M5;Analista / Diseñador (UX);24,00
+M5;Analista / Diseñador (negocio);672,97
+M5;Analista PMO;80,00
+M5;Analista QA (ejecución de pruebas);24,00
+M5;Analista QA (ingeniería de pruebas);18,54
+M5;Arquitecto (solución);1482,08
+M5;Especialista de redes;6,05
+M5;Especialista de seguridad;1,71
+M5;Formador de usuarios (adicional);128,00
+M5;Ingeniero (desarrollo);1870,71
+M5;Ingeniero DevOps / SRE;12,66
+M5;Ingeniero de Datos (integración y migración);129,40
+M5;Jefe de Desarrollo;666,30
+M5;Jefe de Proyecto;96,00
+M5;TIC (implantación);4,33
+M6;Analista / Diseñador (negocio);192,00
+M6;Analista PMO;80,00
+M6;Analista QA (ejecución de pruebas);64,02
+M6;Analista QA (ingeniería de pruebas);1130,33
+M6;Ingeniero (desarrollo);1760,70
+M6;Ingeniero DevOps / SRE;64,02
+M6;Ingeniero de Datos (integración y migración);321,40
+M6;Jefe de Desarrollo;482,57
+M6;Jefe de Proyecto;96,00
+M7;Analista / Diseñador (negocio);403,91
+M7;Analista PMO;80,00
+M7;Analista QA (ingeniería de pruebas);46,34
+M7;Arquitecto (solución);1220,04
+M7;Ingeniero (desarrollo);1809,81
+M7;Ingeniero de Datos (integración y migración);283,14
+M7;Ingeniero de Datos (modelos y ML);140,80
+M7;Jefe de Desarrollo;569,44
+M7;Jefe de Proyecto;96,00
+M8;Analista / Diseñador (negocio);40,66
+M8;Analista PMO;80,00
+M8;Analista QA (ejecución de pruebas);40,67
+M8;Analista QA (ingeniería de pruebas);954,28
+M8;Especialista financiero y de cumplimiento (adicional);162,68
+M8;Ingeniero (desarrollo);1576,38
+M8;Ingeniero de Datos (integración y migración);270,27
+M8;Ingeniero de Datos (modelos y ML);134,40
+M8;Jefe de Desarrollo;431,18
+M8;Jefe de Proyecto;96,00
+M9;Analista / Diseñador (UX);50,67
+M9;Analista PMO;80,00
+M9;Analista QA (ejecución de pruebas);50,66
+M9;Ingeniero (desarrollo);129,10
+M9;Ingeniero de Datos (integración y migración);244,55
+M9;Ingeniero de Datos (modelos y ML);108,80
+M9;Jefe de Proyecto;96,00
+M10;Analista / Diseñador (negocio);376,58
+M10;Analista PMO;80,00
+M10;Analista QA (ejecución de pruebas);370,65
+M10;Especialista de operación;57,06
+M10;Especialista de seguridad;30,38
+M10;Especialista en comunicación y cambio (adicional);24,00
+M10;Especialista financiero y de cumplimiento (adicional);165,35
+M10;Formador de usuarios (adicional);388,29
+M10;Ingeniero (desarrollo);162,67
+M10;Ingeniero DevOps / SRE;80,99
+M10;Ingeniero de Datos (integración y migración);478,25
+M10;Ingeniero de Datos (modelos y ML);805,32
+M10;Jefe de Proyecto;96,00
+M10;Redactor técnico;56,94
+M11;Analista / Diseñador (negocio);643,80
+M11;Analista PMO;80,00
+M11;Analista QA (ejecución de pruebas);441,45
+M11;Especialista de seguridad;154,65
+M11;Especialista financiero y de cumplimiento (adicional);54,00
+M11;Especialista seguridad ofensiva;53,34
+M11;Formador de usuarios (adicional);407,61
+M11;Ingeniero DevOps / SRE;101,32
+M11;Ingeniero de Datos (integración y migración);242,00
+M11;Ingeniero de Datos (modelos y ML);38,00
+M11;Jefe de Proyecto;96,00
+M12;Analista / Diseñador (UX);5,00
+M12;Analista / Diseñador (negocio);192,20
+M12;Analista PMO;80,00
+M12;Analista QA (ejecución de pruebas);4,00
+M12;Arquitecto (solución);33,34
+M12;Especialista en procesos logísticos (adicional);8,00
+M12;Especialista financiero y de cumplimiento (adicional);11,00
+M12;Formador de usuarios (adicional);206,10
+M12;Ingeniero DevOps / SRE;33,33
+M12;Ingeniero de Datos (integración y migración);35,33
+M12;Jefe de Proyecto;96,00
+M12;TIC (implantación);20,00
+M13;Analista / Diseñador (UX);92,33
+M13;Analista / Diseñador (negocio);1055,55
+M13;Analista PMO;80,00
+M13;Analista QA (ejecución de pruebas);592,05
+M13;Arquitecto (solución);1868,47
+M13;Especialista en comunicación y cambio (adicional);32,00
+M13;Especialista en procesos logísticos (adicional);168,00
+M13;Especialista financiero y de cumplimiento (adicional);280,72
+M13;Formador de usuarios (adicional);252,00
+M13;Ingeniero de Datos (integración y migración);1089,86
+M13;Ingeniero de Datos (modelos y ML);64,02
+M13;Jefe de Desarrollo;265,88
+M13;Jefe de Proyecto;96,00
+M13;TIC (implantación);508,00
+M14;Analista / Diseñador (negocio);119,84
+M14;Analista PMO;80,00
+M14;Analista QA (ejecución de pruebas);217,63
+M14;Arquitecto (solución);497,05
+M14;Especialista financiero y de cumplimiento (adicional);135,57
+M14;Ingeniero (desarrollo);704,00
+M14;Ingeniero DevOps / SRE;42,22
+M14;Ingeniero de Datos (integración y migración);791,60
+M14;Ingeniero de Datos (modelos y ML);247,98
+M14;Jefe de Desarrollo;544,88
+M14;Jefe de Proyecto;96,00
+M15;Analista / Diseñador (UX);123,99
+M15;Analista / Diseñador (negocio);457,64
+M15;Analista PMO;80,00
+M15;Analista QA (ejecución de pruebas);355,67
+M15;Analista QA (ingeniería de pruebas);509,60
+M15;Formador de usuarios (adicional);352,00
+M15;Ingeniero (IoT y hardware);192,00
+M15;Ingeniero (desarrollo);4316,65
+M15;Ingeniero DevOps / SRE;16,33
+M15;Ingeniero de Datos (integración y migración);569,35
+M15;Ingeniero de Datos (modelos y ML);352,00
+M15;Jefe de Desarrollo;561,49
+M15;Jefe de Proyecto;96,00
+M15;TIC (implantación);352,00
+M16;Analista / Diseñador (negocio);40,66
+M16;Analista PMO;80,00
+M16;Analista QA (ejecución de pruebas);40,67
+M16;Analista QA (ingeniería de pruebas);667,08
+M16;Formador de usuarios (adicional);3872,00
+M16;Ingeniero (desarrollo);2340,49
+M16;Ingeniero de Datos (modelos y ML);197,32
+M16;Jefe de Desarrollo;218,14
+M16;Jefe de Proyecto;96,00
+M16;TIC (implantación);7392,00
+M17;Analista / Diseñador (UX);82,66
+M17;Analista / Diseñador (negocio);135,21
+M17;Analista PMO;80,00
+M17;Analista QA (ejecución de pruebas);763,52
+M17;Analista QA (ingeniería de pruebas);454,01
+M17;Especialista de operación;57,06
+M17;Especialista de seguridad;185,03
+M17;Especialista seguridad ofensiva;53,34
+M17;Formador de usuarios (adicional);56,00
+M17;Ingeniero (IoT y hardware);42,66
+M17;Ingeniero (desarrollo);529,08
+M17;Ingeniero DevOps / SRE;131,56
+M17;Ingeniero de Datos (integración y migración);101,33
+M17;Ingeniero de Datos (modelos y ML);119,99
+M17;Jefe de Desarrollo;40,30
+M17;Jefe de Proyecto;96,00
+M17;Redactor técnico;56,94
+M17;TIC (implantación);24,00
+M18;Analista / Diseñador (negocio);960,00
+M18;Analista PMO;80,00
+M18;Formador de usuarios (adicional);960,00
+M18;Jefe de Proyecto;96,00
+M19;Analista / Diseñador (UX);4,00
+M19;Analista / Diseñador (negocio);72,65
+M19;Analista PMO;80,00
+M19;Analista QA (ejecución de pruebas);281,50
+M19;Especialista en comunicación y cambio (adicional);16,00
+M19;Especialista financiero y de cumplimiento (adicional);137,76
+M19;Formador de usuarios (adicional);24,00
+M19;Ingeniero (IoT y hardware);26,67
+M19;Ingeniero (desarrollo);5,32
+M19;Ingeniero de Datos (integración y migración);551,79
+M19;Ingeniero de Datos (modelos y ML);2,67
+M19;Jefe de Proyecto;96,00
+M19;TIC (implantación);24,00
+M20;Analista / Diseñador (negocio);16,02
+M20;Analista PMO;80,00
+M20;Analista QA (ejecución de pruebas);144,92
+M20;Gerente de servicio;16,00
+M20;Ingeniero (IoT y hardware);4,00
+M20;Ingeniero (desarrollo);8,02
+M20;Ingeniero / Ingeniero de Datos (L3);32,00
+M20;Ingeniero DevOps / SRE (L2);32,00
+M20;Ingeniero de Datos (integración y migración);372,00
+M20;Ingeniero de Datos (modelos y ML);4,00
+M20;Jefe de Proyecto;96,00
+M20;TIC (NOC);112,00
+M20;TIC (mesa de servicio L1);112,00
+M20;TIC (operación SOC);112,00
+M21;Analista PMO;32,00
+M21;Diseñador instruccional;61,00
+M21;Especialista de operación;126,72
+M21;Especialista en comunicación y cambio (adicional);8,00
+M21;Especialista financiero y de cumplimiento (adicional);8,00
+M21;Formador de usuarios (adicional);129,00
+M21;Gerente de servicio;160,00
+M21;Ingeniero / Ingeniero de Datos (L3);320,00
+M21;Ingeniero DevOps / SRE (L2);320,00
+M21;Jefe de Proyecto;32,00
+M21;TIC (NOC);1120,00
+M21;TIC (mesa de servicio L1);1120,00
+M21;TIC (operación SOC);1120,00
+M22;Analista PMO;32,00
+M22;Analista QA (ejecución de pruebas);25,33
+M22;Diseñador instruccional;57,95
+M22;Especialista de operación;101,28
+M22;Especialista financiero y de cumplimiento (adicional);25,33
+M22;Formador de usuarios (adicional);122,55
+M22;Gerente de servicio;160,00
+M22;Ingeniero / Ingeniero de Datos (L3);320,00
+M22;Ingeniero DevOps / SRE;25,33
+M22;Ingeniero DevOps / SRE (L2);320,00
+M22;Ingeniero de Datos (integración y migración);25,34
+M22;Jefe de Proyecto;32,00
+M22;TIC (NOC);1120,00
+M22;TIC (mesa de servicio L1);1120,00
+M22;TIC (operación SOC);1120,00
+M23;Analista PMO;32,00
+M23;Diseñador instruccional;67,10
+M23;Formador de usuarios (adicional);141,90
+M23;Gerente de servicio;160,00
+M23;Ingeniero / Ingeniero de Datos (L3);320,00
+M23;Ingeniero DevOps / SRE (L2);320,00
+M23;Jefe de Proyecto;32,00
+M23;TIC (NOC);1120,00
+M23;TIC (mesa de servicio L1);1120,00
+M23;TIC (operación SOC);1120,00
+M24;Analista PMO;32,00
+M24;Arquitecto (solución);32,00
+M24;Diseñador instruccional;57,95
+M24;Formador de usuarios (adicional);122,55
+M24;Gerente de servicio;160,00
+M24;Ingeniero / Ingeniero de Datos (L3);320,00
+M24;Ingeniero DevOps / SRE;32,00
+M24;Ingeniero DevOps / SRE (L2);320,00
+M24;Jefe de Proyecto;32,00
+M24;TIC (NOC);1120,00
+M24;TIC (mesa de servicio L1);1120,00
+M24;TIC (operación SOC);1120,00
+M25;Analista PMO;32,00
+M25;Gerente de servicio;160,00
+M25;Ingeniero / Ingeniero de Datos (L3);320,00
+M25;Ingeniero DevOps / SRE (L2);320,00
+M25;Jefe de Proyecto;32,00
+M25;TIC (NOC);1120,00
+M25;TIC (mesa de servicio L1);1120,00
+M25;TIC (operación SOC);1120,00
+M26;Analista PMO;32,00
+M26;Gerente de servicio;160,00
+M26;Ingeniero / Ingeniero de Datos (L3);320,00
+M26;Ingeniero DevOps / SRE (L2);320,00
+M26;Jefe de Proyecto;32,00
+M26;TIC (NOC);1120,00
+M26;TIC (mesa de servicio L1);1120,00
+M26;TIC (operación SOC);1120,00
+M27;Analista / Diseñador (negocio);48,99
+M27;Analista PMO;32,00
+M27;Analista QA (ejecución de pruebas);49,02
+M27;Gerente de servicio;160,00
+M27;Ingeniero (desarrollo);48,99
+M27;Ingeniero / Ingeniero de Datos (L3);320,00
+M27;Ingeniero DevOps / SRE;49,00
+M27;Ingeniero DevOps / SRE (L2);320,00
+M27;Jefe de Proyecto;32,00
+M27;TIC (NOC);1120,00
+M27;TIC (mesa de servicio L1);1120,00
+M27;TIC (operación SOC);1120,00
+M28;Analista PMO;32,00
+M28;Gerente de servicio;160,00
+M28;Ingeniero / Ingeniero de Datos (L3);320,00
+M28;Ingeniero DevOps / SRE (L2);320,00
+M28;Jefe de Proyecto;32,00
+M28;TIC (NOC);1120,00
+M28;TIC (mesa de servicio L1);1120,00
+M28;TIC (operación SOC);1120,00
+M29;Analista PMO;32,00
+M29;Gerente de servicio;160,00
+M29;Ingeniero / Ingeniero de Datos (L3);320,00
+M29;Ingeniero DevOps / SRE (L2);320,00
+M29;Jefe de Proyecto;32,00
+M29;TIC (NOC);1120,00
+M29;TIC (mesa de servicio L1);1120,00
+M29;TIC (operación SOC);1120,00
+M30;Analista PMO;32,00
+M30;Gerente de servicio;160,00
+M30;Ingeniero / Ingeniero de Datos (L3);320,00
+M30;Ingeniero DevOps / SRE (L2);320,00
+M30;Jefe de Proyecto;32,00
+M30;TIC (NOC);1120,00
+M30;TIC (mesa de servicio L1);1120,00
+M30;TIC (operación SOC);1120,00
+M31;Analista PMO;32,00
+M31;Gerente de servicio;160,00
+M31;Ingeniero / Ingeniero de Datos (L3);320,00
+M31;Ingeniero DevOps / SRE (L2);320,00
+M31;Jefe de Proyecto;32,00
+M31;TIC (NOC);1120,00
+M31;TIC (mesa de servicio L1);1120,00
+M31;TIC (operación SOC);1120,00
+M32;Analista PMO;32,00
+M32;Gerente de servicio;160,00
+M32;Ingeniero / Ingeniero de Datos (L3);320,00
+M32;Ingeniero DevOps / SRE (L2);320,00
+M32;Jefe de Proyecto;32,00
+M32;TIC (NOC);1120,00
+M32;TIC (mesa de servicio L1);1120,00
+M32;TIC (operación SOC);1120,00
+M33;Analista PMO;32,00
+M33;Gerente de servicio;160,00
+M33;Ingeniero / Ingeniero de Datos (L3);320,00
+M33;Ingeniero DevOps / SRE (L2);320,00
+M33;Jefe de Proyecto;32,00
+M33;TIC (NOC);1120,00
+M33;TIC (mesa de servicio L1);1120,00
+M33;TIC (operación SOC);1120,00
+M34;Analista PMO;32,00
+M34;Gerente de servicio;160,00
+M34;Ingeniero / Ingeniero de Datos (L3);320,00
+M34;Ingeniero DevOps / SRE (L2);320,00
+M34;Jefe de Proyecto;32,00
+M34;TIC (NOC);1120,00
+M34;TIC (mesa de servicio L1);1120,00
+M34;TIC (operación SOC);1120,00
+M35;Analista PMO;32,00
+M35;Gerente de servicio;160,00
+M35;Ingeniero / Ingeniero de Datos (L3);320,00
+M35;Ingeniero DevOps / SRE (L2);320,00
+M35;Jefe de Proyecto;32,00
+M35;TIC (NOC);1120,00
+M35;TIC (mesa de servicio L1);1120,00
+M35;TIC (operación SOC);1120,00
+M36;Analista PMO;32,00
+M36;Gerente de servicio;160,00
+M36;Ingeniero / Ingeniero de Datos (L3);320,00
+M36;Ingeniero DevOps / SRE (L2);320,00
+M36;Jefe de Proyecto;32,00
+M36;TIC (NOC);1120,00
+M36;TIC (mesa de servicio L1);1120,00
+M36;TIC (operación SOC);1120,00
+M37;Analista PMO;32,00
+M37;Gerente de servicio;160,00
+M37;Ingeniero / Ingeniero de Datos (L3);320,00
+M37;Ingeniero DevOps / SRE (L2);320,00
+M37;Jefe de Proyecto;32,00
+M37;TIC (NOC);1120,00
+M37;TIC (mesa de servicio L1);1120,00
+M37;TIC (operación SOC);1120,00
+M38;Analista PMO;32,00
+M38;Gerente de servicio;160,00
+M38;Ingeniero / Ingeniero de Datos (L3);320,00
+M38;Ingeniero DevOps / SRE (L2);320,00
+M38;Jefe de Proyecto;32,00
+M38;TIC (NOC);1120,00
+M38;TIC (mesa de servicio L1);1120,00
+M38;TIC (operación SOC);1120,00
+M39;Analista PMO;32,00
+M39;Gerente de servicio;160,00
+M39;Ingeniero / Ingeniero de Datos (L3);320,00
+M39;Ingeniero DevOps / SRE (L2);320,00
+M39;Jefe de Proyecto;32,00
+M39;TIC (NOC);1120,00
+M39;TIC (mesa de servicio L1);1120,00
+M39;TIC (operación SOC);1120,00
+M40;Analista PMO;32,00
+M40;Gerente de servicio;160,00
+M40;Ingeniero / Ingeniero de Datos (L3);320,00
+M40;Ingeniero DevOps / SRE (L2);320,00
+M40;Jefe de Proyecto;32,00
+M40;TIC (NOC);1120,00
+M40;TIC (mesa de servicio L1);1120,00
+M40;TIC (operación SOC);1120,00
+M41;Analista PMO;32,00
+M41;Gerente de servicio;160,00
+M41;Ingeniero / Ingeniero de Datos (L3);320,00
+M41;Ingeniero DevOps / SRE (L2);320,00
+M41;Jefe de Proyecto;32,00
+M41;TIC (NOC);1120,00
+M41;TIC (mesa de servicio L1);1120,00
+M41;TIC (operación SOC);1120,00
+M42;Analista PMO;32,00
+M42;Gerente de servicio;160,00
+M42;Ingeniero / Ingeniero de Datos (L3);320,00
+M42;Ingeniero DevOps / SRE (L2);320,00
+M42;Jefe de Proyecto;32,00
+M42;TIC (NOC);1120,00
+M42;TIC (mesa de servicio L1);1120,00
+M42;TIC (operación SOC);1120,00
+M43;Analista PMO;32,00
+M43;Gerente de servicio;160,00
+M43;Ingeniero / Ingeniero de Datos (L3);320,00
+M43;Ingeniero DevOps / SRE (L2);320,00
+M43;Jefe de Proyecto;32,00
+M43;TIC (NOC);1120,00
+M43;TIC (mesa de servicio L1);1120,00
+M43;TIC (operación SOC);1120,00
+M44;Analista PMO;32,00
+M44;Gerente de servicio;160,00
+M44;Ingeniero / Ingeniero de Datos (L3);320,00
+M44;Ingeniero DevOps / SRE (L2);320,00
+M44;Jefe de Proyecto;32,00
+M44;TIC (NOC);1120,00
+M44;TIC (mesa de servicio L1);1120,00
+M44;TIC (operación SOC);1120,00
+M45;Analista PMO;32,00
+M45;Gerente de servicio;160,00
+M45;Ingeniero / Ingeniero de Datos (L3);320,00
+M45;Ingeniero DevOps / SRE (L2);320,00
+M45;Jefe de Proyecto;32,00
+M45;TIC (NOC);1120,00
+M45;TIC (mesa de servicio L1);1120,00
+M45;TIC (operación SOC);1120,00
+M46;Analista PMO;32,00
+M46;Gerente de servicio;160,00
+M46;Ingeniero / Ingeniero de Datos (L3);320,00
+M46;Ingeniero DevOps / SRE (L2);320,00
+M46;Jefe de Proyecto;32,00
+M46;TIC (NOC);1120,00
+M46;TIC (mesa de servicio L1);1120,00
+M46;TIC (operación SOC);1120,00
+M47;Analista PMO;32,00
+M47;Gerente de servicio;160,00
+M47;Ingeniero / Ingeniero de Datos (L3);320,00
+M47;Ingeniero DevOps / SRE (L2);320,00
+M47;Jefe de Proyecto;32,00
+M47;TIC (NOC);1120,00
+M47;TIC (mesa de servicio L1);1120,00
+M47;TIC (operación SOC);1120,00
+M48;Analista PMO;32,00
+M48;Analista QA (ejecución de pruebas);13,39
+M48;Especialista transferencia;118,75
+M48;Gerente de servicio;160,00
+M48;Ingeniero (desarrollo);13,39
+M48;Ingeniero / Ingeniero de Datos (L3);320,00
+M48;Ingeniero DevOps / SRE;13,39
+M48;Ingeniero DevOps / SRE (L2);320,00
+M48;Jefe de Proyecto;32,00
+M48;TIC (NOC);1120,00
+M48;TIC (mesa de servicio L1);1120,00
+M48;TIC (operación SOC);1120,00
+M49;Analista PMO;32,00
+M49;Analista QA (ejecución de pruebas);3,50
+M49;Especialista transferencia;31,25
+M49;Gerente de servicio;160,00
+M49;Ingeniero (desarrollo);3,50
+M49;Ingeniero / Ingeniero de Datos (L3);320,00
+M49;Ingeniero DevOps / SRE;3,50
+M49;Ingeniero DevOps / SRE (L2);320,00
+M49;Jefe de Proyecto;32,00
+M49;TIC (NOC);1120,00
+M49;TIC (mesa de servicio L1);1120,00
+M49;TIC (operación SOC);1120,00
+M50;Analista PMO;32,00
+M50;Gerente de servicio;160,00
+M50;Ingeniero / Ingeniero de Datos (L3);320,00
+M50;Ingeniero DevOps / SRE (L2);320,00
+M50;Jefe de Proyecto;32,00
+M50;TIC (NOC);1120,00
+M50;TIC (mesa de servicio L1);1120,00
+M50;TIC (operación SOC);1120,00
+M51;Analista PMO;32,00
+M51;Gerente de servicio;160,00
+M51;Ingeniero / Ingeniero de Datos (L3);320,00
+M51;Ingeniero DevOps / SRE (L2);320,00
+M51;Jefe de Proyecto;32,00
+M51;TIC (NOC);1120,00
+M51;TIC (mesa de servicio L1);1120,00
+M51;TIC (operación SOC);1120,00
+M52;Analista PMO;32,00
+M52;Gerente de servicio;160,00
+M52;Ingeniero / Ingeniero de Datos (L3);320,00
+M52;Ingeniero DevOps / SRE (L2);320,00
+M52;Jefe de Proyecto;32,00
+M52;TIC (NOC);1120,00
+M52;TIC (mesa de servicio L1);1120,00
+M52;TIC (operación SOC);1120,00
+M53;Analista PMO;32,00
+M53;Gerente de servicio;160,00
+M53;Ingeniero / Ingeniero de Datos (L3);320,00
+M53;Ingeniero DevOps / SRE (L2);320,00
+M53;Jefe de Proyecto;32,00
+M53;TIC (NOC);1120,00
+M53;TIC (mesa de servicio L1);1120,00
+M53;TIC (operación SOC);1120,00
+M54;Analista PMO;32,00
+M54;Analista QA (ejecución de pruebas);10,00
+M54;Arquitecto (solución);10,00
+M54;Especialista transferencia;124,00
+M54;Gerente de servicio;160,00
+M54;Ingeniero / Ingeniero de Datos (L3);320,00
+M54;Ingeniero DevOps / SRE;10,00
+M54;Ingeniero DevOps / SRE (L2);320,00
+M54;Ingeniero de Datos (integración y migración);10,00
+M54;Jefe de Proyecto;32,00
+M54;TIC (NOC);1120,00
+M54;TIC (mesa de servicio L1);1120,00
+M54;TIC (operación SOC);1120,00
+M55;Analista PMO;32,00
+M55;Analista QA (ejecución de pruebas);23,00
+M55;Arquitecto (solución);23,00
+M55;Gerente de servicio;160,00
+M55;Ingeniero / Ingeniero de Datos (L3);320,00
+M55;Ingeniero DevOps / SRE;23,00
+M55;Ingeniero DevOps / SRE (L2);320,00
+M55;Ingeniero de Datos (integración y migración);23,00
+M55;Jefe de Proyecto;32,00
+M55;TIC (NOC);1120,00
+M55;TIC (mesa de servicio L1);1120,00
+M55;TIC (operación SOC);1120,00
+M56;Analista PMO;32,00
+M56;Facilitador;25,01
+M56;Gerente de servicio;160,00
+M56;Ingeniero / Ingeniero de Datos (L3);320,00
+M56;Ingeniero DevOps / SRE (L2);320,00
+M56;Jefe de Proyecto;32,00
+M56;Redactor técnico;24,99
+M56;TIC (NOC);1120,00
+M56;TIC (mesa de servicio L1);1120,00
+M56;TIC (operación SOC);1120,00
