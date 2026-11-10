@@ -1,0 +1,14 @@
+{
+  "base_HH": "234493.47",
+  "contingencia_separada": "3688.00",
+  "ajuste_centimos": "0.00",
+  "pico_implementacion": {
+    "mes": 16,
+    "HH": "14944.36"
+  },
+  "pico_periodo_operacion": {
+    "mes": 22,
+    "HH": "4607.11"
+  },
+  "alcance": "HH de trabajo y dotación presupuestada; guardias de disponibilidad no convertidas en horas trabajadas"
+}
