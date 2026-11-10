@@ -1,0 +1,19 @@
+﻿Componente;Rol;Personas;HH base;Período
+Cobertura de campo;Formador de usuarios (adicional);88;3520,00;M16
+Cobertura de campo;TIC (implantación);88;7040,00;M16
+Retén;Analista QA (ingeniería de pruebas);8;0,00;M13–M20, valorar disponibilidad por separado
+Retén;Ingeniero (desarrollo);8;0,00;M13–M20, valorar disponibilidad por separado
+Dirección y PMO;Jefe de Proyecto;1;3072,00;M1–M56
+Dirección y PMO;Analista PMO;1;2752,00;M1–M56
+Operación;TIC (mesa de servicio L1);7;40320,00;M21–M56
+Inducción de operación;TIC (mesa de servicio L1);7;112,00;M20, mismas personas de operación
+Operación;TIC (NOC);7;40320,00;M21–M56
+Inducción de operación;TIC (NOC);7;112,00;M20, mismas personas de operación
+Operación;TIC (operación SOC);7;40320,00;M21–M56
+Inducción de operación;TIC (operación SOC);7;112,00;M20, mismas personas de operación
+Operación;Ingeniero DevOps / SRE (L2);2;11520,00;M21–M56
+Inducción de operación;Ingeniero DevOps / SRE (L2);2;32,00;M20, mismas personas de operación
+Operación;Ingeniero / Ingeniero de Datos (L3);2;11520,00;M21–M56
+Inducción de operación;Ingeniero / Ingeniero de Datos (L3);2;32,00;M20, mismas personas de operación
+Operación;Gerente de servicio;1;5760,00;M21–M56
+Inducción de operación;Gerente de servicio;1;16,00;M20, mismas personas de operación
