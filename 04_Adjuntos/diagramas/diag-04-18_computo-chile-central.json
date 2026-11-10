@@ -1,0 +1,231 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Cómputo de Azure Chile Central: clústeres de AKS y máquinas de apoyo",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central · grupos de nodos repartidos en 3 zonas",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "retail"
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "frontera"
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "emisor"
+  },
+  {
+   "id": "r_k",
+   "etiqueta": "Clúster de AKS de Retail · 17 nodos base",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "r_m",
+   "etiqueta": "Máquinas de apoyo de Retail (fuera del clúster)",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "x_k",
+   "etiqueta": "Clúster de AKS de X-01 · 6 nodos",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "f_k",
+   "etiqueta": "Clúster de AKS de la filial · 17 nodos base",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 2
+  },
+  {
+   "id": "f_m",
+   "etiqueta": "Máquinas de apoyo de la filial (fuera del clúster)",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 2
+  }
+ ],
+ "nodos": [
+  {
+   "id": "r_cp",
+   "etiqueta": "Plano de control\n(AKS Premium)",
+   "icono": "aks",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_sys",
+   "etiqueta": "Grupo de sistema\n3 nodos",
+   "icono": "vmss",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_biz",
+   "etiqueta": "Grupo de negocio\n5 nodos",
+   "icono": "vmss",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_int",
+   "etiqueta": "Grupo de integración\n3 nodos",
+   "icono": "vmss",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_st",
+   "etiqueta": "Grupo de estado, 3 nodos\n(OpenSearch, MLflow\ny OpenMetadata)",
+   "icono": "vmss",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_ops",
+   "etiqueta": "Grupo de operación, 3 nodos\n(pila de observabilidad)",
+   "icono": "vmss",
+   "grupo": "r_k"
+  },
+  {
+   "id": "r_ela",
+   "etiqueta": "Grupo elástico de modelos\n0 a 3 nodos",
+   "icono": "vmss",
+   "grupo": "r_k",
+   "estado": "condicionado"
+  },
+  {
+   "id": "r_bi",
+   "etiqueta": "Gateways de\nPower BI ×2",
+   "icono": "vm",
+   "grupo": "r_m"
+  },
+  {
+   "id": "r_ir",
+   "etiqueta": "Extracción de datos\n(Data Factory) ×2",
+   "icono": "vm",
+   "grupo": "r_m"
+  },
+  {
+   "id": "r_pa",
+   "etiqueta": "Conectores de\nacceso privado ×2",
+   "icono": "vm",
+   "grupo": "r_m"
+  },
+  {
+   "id": "r_syn",
+   "etiqueta": "Sonda de vigilancia",
+   "icono": "vm",
+   "grupo": "r_m"
+  },
+  {
+   "id": "x_cp",
+   "etiqueta": "Plano de control\n(AKS Premium)",
+   "icono": "aks",
+   "grupo": "x_k"
+  },
+  {
+   "id": "x_sys",
+   "etiqueta": "Grupo de sistema\n3 nodos",
+   "icono": "vmss",
+   "grupo": "x_k"
+  },
+  {
+   "id": "x_biz",
+   "etiqueta": "Grupo de negocio, 3 nodos\n(servicio y su observabilidad)",
+   "icono": "vmss",
+   "grupo": "x_k"
+  },
+  {
+   "id": "f_cp",
+   "etiqueta": "Plano de control\n(AKS Premium)",
+   "icono": "aks",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_sys",
+   "etiqueta": "Grupo de sistema\n3 nodos",
+   "icono": "vmss",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_biz",
+   "etiqueta": "Grupo de negocio\n5 nodos",
+   "icono": "vmss",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_int",
+   "etiqueta": "Grupo de integración\n3 nodos",
+   "icono": "vmss",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_st",
+   "etiqueta": "Grupo de estado, 3 nodos\n(OpenMetadata)",
+   "icono": "vmss",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_ops",
+   "etiqueta": "Grupo de operación, 3 nodos\n(pila de observabilidad)",
+   "icono": "vmss",
+   "grupo": "f_k"
+  },
+  {
+   "id": "f_bi",
+   "etiqueta": "Gateways de\nPower BI ×2",
+   "icono": "vm",
+   "grupo": "f_m"
+  },
+  {
+   "id": "f_ir",
+   "etiqueta": "Extracción de datos\n(Data Factory) ×2",
+   "icono": "vm",
+   "grupo": "f_m"
+  },
+  {
+   "id": "f_pa",
+   "etiqueta": "Conectores de\nacceso privado ×2",
+   "icono": "vm",
+   "grupo": "f_m"
+  },
+  {
+   "id": "f_syn",
+   "etiqueta": "Sonda de vigilancia",
+   "icono": "vm",
+   "grupo": "f_m"
+  }
+ ],
+ "enlaces": []
+}

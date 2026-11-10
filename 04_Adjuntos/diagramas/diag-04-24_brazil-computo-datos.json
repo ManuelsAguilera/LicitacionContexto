@@ -1,0 +1,220 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Azure Brazil South: cómputo y datos en espera por frente",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South · activo-pasivo templado",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "emisor",
+   "columnas": 2
+  }
+ ],
+ "nodos": [
+  {
+   "id": "r_aks",
+   "etiqueta": "Clúster de AKS en espera\n17 nodos base, encendido",
+   "icono": "aks",
+   "grupo": "r"
+  },
+  {
+   "id": "r_vm",
+   "etiqueta": "Máquinas templadas\n(extracción ×2, acceso\nprivado ×2 y sonda)",
+   "icono": "vm",
+   "grupo": "r"
+  },
+  {
+   "id": "r_bi",
+   "etiqueta": "Gateways de Power BI ×2\n(apagadas)",
+   "icono": "vm",
+   "grupo": "r"
+  },
+  {
+   "id": "r_pg",
+   "etiqueta": "6 bases PostgreSQL\nde recuperación (réplicas)",
+   "icono": "postgresql",
+   "grupo": "r"
+  },
+  {
+   "id": "r_sb",
+   "etiqueta": "Service Bus Premium\n(se habilita en la contingencia)",
+   "icono": "service_bus",
+   "grupo": "r"
+  },
+  {
+   "id": "r_rd",
+   "etiqueta": "Memoria rápida (Redis)\n(se reconstruye)",
+   "icono": "redis",
+   "grupo": "r"
+  },
+  {
+   "id": "r_dl",
+   "etiqueta": "Data Lake y archivo\n(copia programada)",
+   "icono": "data_lake",
+   "grupo": "r"
+  },
+  {
+   "id": "r_kv",
+   "etiqueta": "Key Vault\n(reinyección controlada)",
+   "icono": "key_vault",
+   "grupo": "r"
+  },
+  {
+   "id": "r_acr",
+   "etiqueta": "Container Registry\n(copia por digest)",
+   "icono": "container_registry",
+   "grupo": "r"
+  },
+  {
+   "id": "r_bk",
+   "etiqueta": "Bóveda de respaldo",
+   "icono": "backup_vault",
+   "grupo": "r"
+  },
+  {
+   "id": "r_se",
+   "etiqueta": "Microsoft Sentinel",
+   "icono": "sentinel",
+   "grupo": "r"
+  },
+  {
+   "id": "x_aks",
+   "etiqueta": "Clúster de AKS en espera\n6 nodos base, encendido",
+   "icono": "aks",
+   "grupo": "x"
+  },
+  {
+   "id": "x_pg",
+   "etiqueta": "Base PostgreSQL de la\nbitácora (réplica)",
+   "icono": "postgresql",
+   "grupo": "x"
+  },
+  {
+   "id": "x_kv",
+   "etiqueta": "Key Vault",
+   "icono": "key_vault",
+   "grupo": "x"
+  },
+  {
+   "id": "x_hsm",
+   "etiqueta": "Managed HSM\n(réplica multirregión)",
+   "icono": "hsm",
+   "grupo": "x",
+   "estado": "condicionado"
+  },
+  {
+   "id": "x_acr",
+   "etiqueta": "Container Registry\n(copia por digest)",
+   "icono": "container_registry",
+   "grupo": "x"
+  },
+  {
+   "id": "x_bk",
+   "etiqueta": "Bóveda de respaldo",
+   "icono": "backup_vault",
+   "grupo": "x"
+  },
+  {
+   "id": "x_se",
+   "etiqueta": "Microsoft Sentinel",
+   "icono": "sentinel",
+   "grupo": "x"
+  },
+  {
+   "id": "f_aks",
+   "etiqueta": "Clúster de AKS en espera\n17 nodos base, encendido",
+   "icono": "aks",
+   "grupo": "f"
+  },
+  {
+   "id": "f_vm",
+   "etiqueta": "Máquinas templadas\n(extracción ×2, acceso\nprivado ×2 y sonda)",
+   "icono": "vm",
+   "grupo": "f"
+  },
+  {
+   "id": "f_bi",
+   "etiqueta": "Gateways de Power BI ×2\n(apagadas)",
+   "icono": "vm",
+   "grupo": "f"
+  },
+  {
+   "id": "f_pg",
+   "etiqueta": "5 bases PostgreSQL\nde recuperación (réplicas)",
+   "icono": "postgresql",
+   "grupo": "f"
+  },
+  {
+   "id": "f_sb",
+   "etiqueta": "Service Bus Premium\n(se habilita en la contingencia)",
+   "icono": "service_bus",
+   "grupo": "f"
+  },
+  {
+   "id": "f_dl",
+   "etiqueta": "Data Lake, evidencia\ny archivo (copia programada)",
+   "icono": "data_lake",
+   "grupo": "f"
+  },
+  {
+   "id": "f_kv",
+   "etiqueta": "Key Vault",
+   "icono": "key_vault",
+   "grupo": "f"
+  },
+  {
+   "id": "f_hsm",
+   "etiqueta": "Managed HSM\n(réplica multirregión)",
+   "icono": "hsm",
+   "grupo": "f",
+   "estado": "condicionado"
+  },
+  {
+   "id": "f_acr",
+   "etiqueta": "Container Registry\n(copia por digest)",
+   "icono": "container_registry",
+   "grupo": "f"
+  },
+  {
+   "id": "f_bk",
+   "etiqueta": "Bóveda de respaldo",
+   "icono": "backup_vault",
+   "grupo": "f"
+  },
+  {
+   "id": "f_se",
+   "etiqueta": "Microsoft Sentinel",
+   "icono": "sentinel",
+   "grupo": "f"
+  }
+ ],
+ "enlaces": []
+}

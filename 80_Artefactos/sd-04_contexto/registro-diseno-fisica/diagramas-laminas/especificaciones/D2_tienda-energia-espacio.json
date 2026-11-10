@@ -1,0 +1,111 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Tienda tipo: energía y espacio",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "tie",
+   "etiqueta": "Tienda tipo · sala técnica de sitio",
+   "tipo": "sitio_cliente",
+   "disposicion": "fila"
+  },
+  {
+   "id": "rk",
+   "etiqueta": "Racks (31 de 72U ocupadas al inicio)",
+   "tipo": "zona",
+   "disposicion": "columna",
+   "padre": "tie"
+  },
+  {
+   "id": "en",
+   "etiqueta": "Energía (carga de 2,57 kW; 3,341 kW con margen)",
+   "tipo": "zona",
+   "disposicion": "columna",
+   "padre": "tie"
+  },
+  {
+   "id": "am",
+   "etiqueta": "Ambiente del recinto",
+   "tipo": "zona",
+   "disposicion": "columna",
+   "padre": "tie"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "rr",
+   "etiqueta": "Rack de 24U de Retail\n(8U, PDU A y B)",
+   "icono": "rack",
+   "grupo": "rk"
+  },
+  {
+   "id": "rf",
+   "etiqueta": "Rack de 24U de la filial\n(8U, PDU A y B)",
+   "icono": "rack",
+   "grupo": "rk"
+  },
+  {
+   "id": "rc",
+   "etiqueta": "Rack de 24U de comunicaciones\n(15U, PDU A y B)",
+   "icono": "rack",
+   "grupo": "rk"
+  },
+  {
+   "id": "ua",
+   "etiqueta": "UPS de 6 kVA, rama A\n(30 minutos)",
+   "icono": "ups",
+   "grupo": "en"
+  },
+  {
+   "id": "ub",
+   "etiqueta": "UPS de 6 kVA, rama B\n(30 minutos)",
+   "icono": "ups",
+   "grupo": "en"
+  },
+  {
+   "id": "ats",
+   "etiqueta": "Transferidor automático",
+   "icono": "ups",
+   "grupo": "en"
+  },
+  {
+   "id": "gen",
+   "etiqueta": "Grupo electrógeno inicial",
+   "icono": "ups",
+   "grupo": "en"
+  },
+  {
+   "id": "cli",
+   "etiqueta": "Climatización y sensores de\ntemperatura, humedad y energía",
+   "icono": "monitor",
+   "grupo": "am"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "ua",
+   "a": "rk",
+   "semantica": "enlace",
+   "etiqueta": "rama A"
+  },
+  {
+   "de": "ub",
+   "a": "rk",
+   "semantica": "enlace",
+   "etiqueta": "rama B"
+  },
+  {
+   "de": "gen",
+   "a": "ats",
+   "semantica": "respaldo",
+   "etiqueta": "corte prolongado"
+  },
+  {
+   "de": "ats",
+   "a": "ub",
+   "semantica": "enlace",
+   "etiqueta": "alimenta las UPS"
+  }
+ ]
+}

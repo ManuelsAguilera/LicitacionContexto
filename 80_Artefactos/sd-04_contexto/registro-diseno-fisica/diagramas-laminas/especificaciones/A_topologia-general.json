@@ -1,0 +1,255 @@
+{
+ "estilo": "F1",
+ "figura": "4.99",
+ "titulo": "Arquitectura física: sitios, conexiones y regiones",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "cli",
+   "etiqueta": "Sitios del Cliente",
+   "tipo": "sitio_cliente",
+   "disposicion": "columna"
+  },
+  {
+   "id": "con",
+   "etiqueta": "Conexiones",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central · producción en 3 zonas",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "cl_r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "retail"
+  },
+  {
+   "id": "cl_x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "frontera"
+  },
+  {
+   "id": "cl_f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "emisor"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South · recuperación activo-pasivo templado",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "glo",
+   "etiqueta": "Servicios globales",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "ext",
+   "etiqueta": "Plataformas conservadas y contrapartes",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "tie",
+   "etiqueta": "Tienda tipo ×22\n(+1 de laboratorio en Preproducción)",
+   "icono": "sitio",
+   "grupo": "cli"
+  },
+  {
+   "id": "cd1",
+   "etiqueta": "Centro de distribución principal\n(CD-01)",
+   "icono": "sitio",
+   "grupo": "cli"
+  },
+  {
+   "id": "cd2",
+   "etiqueta": "Centro de distribución de Concepción\n(CD-02)",
+   "icono": "sitio",
+   "grupo": "cli"
+  },
+  {
+   "id": "dc1",
+   "etiqueta": "Centro de datos de casa matriz\n(DC-01)",
+   "icono": "centro_datos",
+   "grupo": "cli"
+  },
+  {
+   "id": "dc2",
+   "etiqueta": "Sala de respaldo de casa matriz\n(DC-02)",
+   "icono": "centro_datos",
+   "grupo": "cli"
+  },
+  {
+   "id": "op",
+   "etiqueta": "Operadores fijos A y B\n(accesos por sitio)",
+   "icono": "router",
+   "grupo": "con"
+  },
+  {
+   "id": "mov",
+   "etiqueta": "Red móvil 4G/5G\n(respaldo de tiendas y centros)",
+   "icono": "antena_lte",
+   "grupo": "con"
+  },
+  {
+   "id": "usu",
+   "etiqueta": "Clientes y titulares\n(Internet)",
+   "icono": "personas",
+   "grupo": "con"
+  },
+  {
+   "id": "afd",
+   "etiqueta": "Azure Front Door\n(perfil de Retail y de la filial)",
+   "icono": "front_door",
+   "grupo": "con"
+  },
+  {
+   "id": "cl_rn",
+   "etiqueta": "Red central, AKS\ny datos de Retail",
+   "icono": "vnet",
+   "grupo": "cl_r"
+  },
+  {
+   "id": "cl_xn",
+   "etiqueta": "Red central, AKS y bitácora\ndel Control de cruces",
+   "icono": "vnet",
+   "grupo": "cl_x"
+  },
+  {
+   "id": "cl_fn",
+   "etiqueta": "Red central, AKS\ny datos de la filial",
+   "icono": "vnet",
+   "grupo": "cl_f"
+  },
+  {
+   "id": "br_n",
+   "etiqueta": "Copia en espera\nde los tres frentes",
+   "icono": "aks",
+   "grupo": "br"
+  },
+  {
+   "id": "sent",
+   "etiqueta": "Microsoft Sentinel ×3\n(operación habitual)",
+   "icono": "sentinel",
+   "grupo": "br"
+  },
+  {
+   "id": "dnsp",
+   "etiqueta": "Azure DNS público",
+   "icono": "dns",
+   "grupo": "glo"
+  },
+  {
+   "id": "ide",
+   "etiqueta": "Entra ID, External ID\ne Intune",
+   "icono": "entra_id",
+   "grupo": "glo"
+  },
+  {
+   "id": "dev",
+   "etiqueta": "Azure Pipelines\n(agentes efímeros)",
+   "icono": "devops",
+   "grupo": "glo"
+  },
+  {
+   "id": "apc",
+   "etiqueta": "Azure API Center ×2\n(East US)",
+   "icono": "api_management",
+   "grupo": "glo"
+  },
+  {
+   "id": "erp",
+   "etiqueta": "ERP y facturación\nelectrónica",
+   "icono": "servidor",
+   "grupo": "ext",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "wms",
+   "etiqueta": "WMS de 2016\n(centro principal)",
+   "icono": "servidor",
+   "grupo": "ext",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "leg",
+   "etiqueta": "Sistema central de retail (2009)\ny plataforma de crédito (2011)",
+   "icono": "servidor",
+   "grupo": "ext",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "ter",
+   "etiqueta": "Comercio electrónico, marketplace,\nfidelización, pagos, firma,\nproveedores y plataforma publicitaria",
+   "icono": "internet",
+   "grupo": "ext"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "cli",
+   "a": "op",
+   "semantica": "enlace",
+   "etiqueta": "accesos fijos"
+  },
+  {
+   "de": "cli",
+   "a": "mov",
+   "semantica": "respaldo",
+   "etiqueta": "respaldo móvil"
+  },
+  {
+   "de": "op",
+   "a": "cl",
+   "semantica": "vpn",
+   "etiqueta": "un túnel por negocio"
+  },
+  {
+   "de": "usu",
+   "a": "afd",
+   "semantica": "enlace",
+   "etiqueta": "HTTPS"
+  },
+  {
+   "de": "afd",
+   "a": "cl",
+   "semantica": "enlace",
+   "etiqueta": "punto privado por negocio"
+  },
+  {
+   "de": "cl_rn",
+   "a": "cl_xn",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "autorización de compra"
+  },
+  {
+   "de": "cl_xn",
+   "a": "cl_fn",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "consulta de cupo"
+  },
+  {
+   "de": "cl",
+   "a": "br",
+   "semantica": "replica",
+   "etiqueta": "réplica asíncrona"
+  }
+ ]
+}

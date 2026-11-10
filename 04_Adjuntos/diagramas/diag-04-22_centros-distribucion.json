@@ -1,0 +1,148 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Centros de distribución CD-01 y CD-02",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "c1",
+   "etiqueta": "Centro de distribución principal (CD-01, 42.000 m²)",
+   "tipo": "sitio_cliente",
+   "disposicion": "rejilla",
+   "columnas": 3
+  },
+  {
+   "id": "az",
+   "etiqueta": "Hacia Azure Chile Central",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "c2",
+   "etiqueta": "Centro de distribución de Concepción (CD-02, 9.000 m²)",
+   "tipo": "sitio_cliente",
+   "disposicion": "rejilla",
+   "columnas": 3
+  }
+ ],
+ "nodos": [
+  {
+   "id": "c1_p1",
+   "etiqueta": "Nodo local de captura 1\n(activo)",
+   "icono": "servidor",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_p2",
+   "etiqueta": "Nodo local de captura 2\n(espera)",
+   "icono": "servidor",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_t",
+   "etiqueta": "Terminales del centro",
+   "icono": "movil",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_fw",
+   "etiqueta": "Firewall y switching",
+   "icono": "fortigate",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_ap",
+   "etiqueta": "Acceso inalámbrico",
+   "icono": "access_point",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_l",
+   "etiqueta": "Enlace redundante\nde dos proveedores",
+   "icono": "router",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_m",
+   "etiqueta": "Router 4G/5G",
+   "icono": "antena_lte",
+   "grupo": "c1"
+  },
+  {
+   "id": "c1_w",
+   "etiqueta": "WMS de 2016\n(alojamiento por acreditar)",
+   "icono": "servidor",
+   "grupo": "c1",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "vr",
+   "etiqueta": "VPN Gateway de Retail",
+   "icono": "vpn_gateway",
+   "grupo": "az"
+  },
+  {
+   "id": "c2_p1",
+   "etiqueta": "Nodo local de captura 1\n(activo)",
+   "icono": "servidor",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_p2",
+   "etiqueta": "Nodo local de captura 2\n(espera)",
+   "icono": "servidor",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_t",
+   "etiqueta": "Terminales del centro",
+   "icono": "movil",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_fw",
+   "etiqueta": "Firewall y switching",
+   "icono": "fortigate",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_ap",
+   "etiqueta": "Acceso inalámbrico",
+   "icono": "access_point",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_l",
+   "etiqueta": "Enlace único\n(Caso 09)",
+   "icono": "router",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_m",
+   "etiqueta": "Router 4G/5G",
+   "icono": "antena_lte",
+   "grupo": "c2"
+  },
+  {
+   "id": "c2_l2",
+   "etiqueta": "Segundo enlace fijo\n(propuesto al Cliente)",
+   "icono": "router",
+   "grupo": "c2",
+   "estado": "propuesto"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "c1",
+   "a": "vr",
+   "semantica": "vpn",
+   "etiqueta": "túnel de Retail"
+  },
+  {
+   "de": "c2",
+   "a": "vr",
+   "semantica": "vpn",
+   "etiqueta": "túnel de Retail"
+  }
+ ]
+}
