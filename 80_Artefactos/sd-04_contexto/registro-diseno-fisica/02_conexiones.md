@@ -17,7 +17,7 @@
 | E-01 | Cliente → DNS público | DNS por el resolutor del cliente | — | Servicio global | Ver 04 | C01 | propuesto |
 | E-02 | Cliente (Internet) → Azure Front Door | HTTPS (TCP 443) | TLS | Servicio global | Sin Front Door no hay entrada por Internet; ver 04 | C02, FL-01 | propuesto |
 | E-03 | Azure Front Door → punto privado de Front Door en Brazil South (origen privado 1) | Private Link | Cifrado de la plataforma | Un punto por negocio | Si el clúster regional de Brazil South no responde, el tráfico sigue por E-03b; 06, P-05 | C03, FL-02 (D-FIS-15) | propuesto |
-| E-03b | Azure Front Door → punto privado de Front Door en una segunda región admitida de las Américas (origen privado 2, prioridad menor) | Private Link | Cifrado de la plataforma | Un punto por negocio, región por medir | Respaldo del origen privado 1; mayor latencia | D-FIS-15 (A+) | propuesto; región por elegir |
+| E-03b | Azure Front Door → punto privado de Front Door en una segunda región admitida de las Américas (origen privado 2, prioridad menor) | Private Link | Cifrado de la plataforma | Un punto por negocio, región por medir | Respaldo del origen privado 1; mayor latencia | D-FIS-15 (A+) | propuesto; East US con prioridad 2 (S-03) |
 | E-04 | Punto privado en Brazil South → Application Gateway del negocio (Chile Central) | Red privada entre regiones, HTTPS 443 | TLS | Una puerta por negocio | Conmutación a Brazil South solo por procedimiento y prueba de salud | FL-02 | propuesto |
 | E-05 | Application Gateway → API Management del mismo negocio | HTTPS 443 | TLS | 1 por negocio | Ver 04 | C04, FL-03 | propuesto |
 | E-06 | Application Gateway → balanceador interno del clúster (interfaz web) | HTTPS 443 | TLS | 1 por frente | No hay desvío hacia las APIs operacionales | C05, FL-04 | propuesto |
@@ -116,8 +116,8 @@
 
 | E | Origen → destino | Medio y protocolo | Cifrado | Redundancia | Si falla / contingencia | ID interno | Estado |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| E-54 | PostgreSQL de Chile → réplica en Brazil South | Réplica asíncrona del producto | Sí | Una por base crítica | Retraso medido; sobre 15 min no se promete el RPO | C42, FL-12 | propuesto |
-| E-55 | Service Bus de Chile → Service Bus de Brazil South | Geo-replicación de datos y metadatos | Sí | Una por negocio | Consumidores toleran duplicados | C42, FL-12 | propuesto |
+| E-54 | PostgreSQL de Chile → réplica en Brazil South | Réplica asíncrona del producto | Sí | Una por servidor (12, S-06) | Retraso medido; sobre 15 min no se promete el RPO | C42, FL-12 | propuesto |
+| E-55 | Registros durables de productores y consumidores (con la réplica de PostgreSQL) → Service Bus de Brazil South, habilitado en la contingencia | Republicación desde un punto de recuperación; sin geo-replicación del namespace | Sí | Una por negocio | Consumidores toleran duplicados y descartan lo ya procesado | C42, FL-12 | propuesto; reformulado 06-11 (K-01) |
 | E-56 | Almacenamiento de Chile → almacenamiento de Brazil South | Copia explícita (Chile Central no tiene región emparejada): Data Factory o AzCopy programados para los Data Lake; replicación de objetos para cuentas Blob sin espacio jerárquico (S-21) | Sí | Una por cuenta | Verificación de hash e inmutabilidad | C42, C44 | propuesto |
 | E-57 | Claves y secretos de Chile → Brazil South | Key Vault: re-inyección por procedimiento, sin réplica automática. Managed HSM: replicación multirregión nativa (S-20) | Sí | Key Vault propio en Brasil; HSM activo en las dos regiones | Dominio de seguridad y quórum del HSM fuera de Chile | C42 | propuesto |
 | E-58 | Front Door y sitios → entradas de Brazil South | HTTPS / túneles privados de recuperación | TLS | Origen de menor prioridad | Cambio solo tras puerta de salud completa | C43 | propuesto |

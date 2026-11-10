@@ -21,7 +21,7 @@ Lectura: **Sí** = existe con ese propósito; **Reducido** = mismo tipo pero tam
 | Clúster de AKS por frente | Reducido, clúster o espacio propio | Reducido | Reducido permanente; escala temporal para carga | Sí: 40 nodos base (Retail 17, Filial 17, Control de cruces 6) | Templado: 40 nodos base |
 | Grupo elástico de modelos de conteo | Por definir | Por definir | Por definir | 0 a 3 nodos | 0 a 3, solo tras estabilizar |
 | PostgreSQL | Reducido | Reducido | Reducido | 12 servidores, 4.500 GiB | 12, **del mismo tamaño que Producción** (una réplica menor no podría asumir la carga) |
-| Service Bus | Reducido | Reducido | Reducido | 2 espacios | 2 con geo-replicación |
+| Service Bus | Reducido | Reducido | Reducido | 2 espacios | 2, habilitados en la contingencia y recuperados por republicación desde registros durables |
 | Memoria rápida (Redis) | Por definir | Por definir | Por definir | 1 (Retail) | 1, reconstruible |
 | Data Lake y almacenamiento | Reducido | Reducido | Reducido | Por frente | Copia explícita |
 | Key Vault | Uno por frente | Uno por frente | Uno por frente | 3 | 3 |
