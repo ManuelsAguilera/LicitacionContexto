@@ -39,3 +39,13 @@ Documento de trabajo, no entregable. Insumo para redactar el SD-07 §7.3.3 (ruta
 | :-- | :-- |
 | `escenarios.py` | Ejecuta los escenarios con el motor del equipo. Uso: `python3 -I escenarios.py <traspaso> <dir con Red_CPM y estabilizacion.json>` |
 | `escenarios_resultado.json` | Resultado por escenario y respuesta: hitos atrasados, actividades tardías y HH extra |
+
+## Decisión sobre S7 y resultado (red v3)
+
+El usuario eligió la **opción A con B de respaldo**: adelantar a M17 el 30 % de la capacitación E2 que no depende del software (procesos, roles, módulos compartidos y formación de formadores), y usar a esos formadores como reserva para duplicar la dotación si hay atraso. Sobre la red v3 (`../red-v3-2026-11-10/`):
+
+- la capacitación sobre el software pasa de 0 a 3 días de holgura;
+- S7 sin respuesta baja de +14 a +11 días; con intensificación queda en +1 día;
+- con intensificación más horas extra se recupera la fecha con +202 HH y unas 134 equivalentes (antes 288 y 192).
+
+El total de horas no cambia (239.250,01). Los escenarios S1 a S6b dan los mismos resultados.
