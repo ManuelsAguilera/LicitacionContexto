@@ -1,284 +1,256 @@
-﻿Paquete EDT;Rama;Nombre;HH trabajo;HH dotación;HH imputadas;Ventana;Financiado por;Origen
-1.1.1;1.1;Plan de dirección integrado;0,00;3072,00;3072,00;"M1-20; M21-56";;traspaso
-1.1.2;1.1;EDT y diccionario de paquetes;0,00;0,00;0,00;1-3;GOB-JP/PMO;traspaso
-1.1.3;1.1;Registro de solicitudes de cambio;0,00;0,00;0,00;1-56;GOB-JP/PMO;traspaso
-1.1.4;1.1;Registros de riesgos, lecciones y supuestos;0,00;0,00;0,00;1-56;GOB-JP/PMO;traspaso
-1.1.5;1.1;Calendario de congelamientos y eventos;0,00;0,00;0,00;1-3;GOB-JP/PMO;traspaso
-1.1.6;1.1;Actas de comités e informe mensual;0,00;2752,00;2752,00;"M1-20; M21-56";;traspaso
-1.1.7;1.1;Reporte mensual de consumo de nube;0,00;0,00;0,00;4-56;GOB-JP/PMO;traspaso
-1.1.8;1.1;Actas de aceptación y habilitación de pagos;0,00;0,00;0,00;1-56;GOB-JP/PMO;traspaso
-1.1.9;1.1;Registro de garantías, seguros y certificados;0,00;0,00;0,00;1-56;GOB-JP/PMO;traspaso
-1.1.10;1.1;Acta de constitución;0,00;0,00;0,00;1-1;GOB-JP/PMO;traspaso
-1.1.11;1.1;Línea base de costos y presupuesto;0,00;0,00;0,00;1-3;GOB-JP/PMO;traspaso
-1.1.12;1.1;Planes alternativos del adelanto financiero;0,00;0,00;0,00;3-5;GOB-JP/PMO;traspaso
-1.2.1;1.2;Mapa de las 14 interfaces e inventario de plataformas;368,00;0,00;368,00;M1–M2;;traspaso
-1.2.2;1.2;Levantamiento de procesos, reglas y volumetría;0,00;0,00;0,00;M1–M1;UCP-ANALISIS;traspaso
-1.2.3;1.2;Catálogo de requerimientos y matriz de trazabilidad;0,00;0,00;0,00;M1–M1;UCP-ANALISIS;traspaso
-1.2.4;1.2;Línea base de alcance por etapa;0,00;0,00;0,00;"1-2; 13-14";GOB-JP/PMO;traspaso
-1.2.5;1.2;Estudio: etiquetas electrónicas de precio;180,00;0,00;180,00;M2–M2;;traspaso
-1.2.6;1.2;Estudio: sistema de almacenes de Concepción;162,67;0,00;162,67;M2–M2;;traspaso
-1.2.7;1.2;Estudio: destino de las plataformas;228,00;0,00;228,00;M2–M2;;traspaso
-1.2.8;1.2;Propuesta de criterios del cupo preaprobado;0,00;0,00;0,00;M1–M1;UCP-ANALISIS;traspaso
-1.3.1;1.3;Documento de arquitectura con cinco vistas;0,00;0,00;0,00;M2–M2;UCP-DISEÑO;traspaso
-1.3.2;1.3;Arquitectura física con emplazamiento;192,00;0,00;192,00;M2–M3;;traspaso
-1.3.3;1.3;Modelo de datos con dominios segregados;0,00;0,00;0,00;M2–M2;UCP-DISEÑO;traspaso
-1.3.4;1.3;Contratos de integración versionados;224,00;0,00;224,00;M3–M3;;traspaso
-1.3.5;1.3;Especificación del modo desconectado de 24 h;0,00;0,00;0,00;M3–M3;UCP-DISEÑO;traspaso
-1.3.6;1.3;Modelo de capacidad y dimensionamiento;152,00;0,00;152,00;M3–M3;;traspaso
-1.3.7;1.3;Especificación y costeo de obras del cliente;384,00;0,00;384,00;M3–M4;;traspaso
-1.4.1;1.4;Entorno de nube (IaC, subredes, etiquetado);413,33;0,00;413,33;M3–M3;;traspaso
-1.4.2;1.4;Borde por sitio y red segmentada (13 tiendas);625,33;0,00;625,33;M4–M5;;traspaso
-1.4.3;1.4;Entorno dedicado del ámbito emisor;162,67;0,00;162,67;M4–M4;;traspaso
-1.4.4;1.4;Ambientes dev/QA/preprod/prod/DR;160,00;0,00;160,00;M2–M4;;traspaso
-1.4.5;1.4;Observabilidad unificada y catálogo de alertas;152,00;0,00;152,00;M4–M5;;traspaso
-1.4.6;1.4;Plataforma de integración y entrega continuas;224,00;0,00;224,00;M3–M4;;traspaso
-1.4.7;1.4;Licenciamiento de terceros a nombre del cliente;26,00;0,00;26,00;M4–M4;;traspaso
-1.4.8;1.4;Especificación de hardware y dispositivos de terreno;148,00;0,00;148,00;M3–M4;;traspaso
-1.4.9;1.4;Recinto técnico y obra civil de separación (spec);98,67;0,00;98,67;M2–M2;;traspaso
-1.4.10;1.4;Plan de cierre de la brecha del centro de datos;126,67;0,00;126,67;M2–M2;;traspaso
-1.4.11;1.4;Energía y climatización del centro de datos;320,00;0,00;320,00;M4–M4;;traspaso
-1.4.12;1.4;Seguridad física del centro de datos;162,67;0,00;162,67;M4–M4;;traspaso
-1.4.13;1.4;Respaldo en operación con custodia de medios;90,00;0,00;90,00;M4–M4;;traspaso
-1.5.1.1;1.5;Cambiar y propagar un precio;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.1.2;1.5;Entregar la oferta vigente a los canales;494,15;0,00;494,15;M3–M4;;traspaso
-1.5.1.3;1.5;Consultar el precio vigente en línea;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.1.4;1.5;Recuperar el precio publicado en un instante;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.2.1;1.5;Registrar el cambio de etiqueta;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.2.2;1.5;Consultar el estado de exhibición de la tienda;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.2.3;1.5;Resolver el precio a cobrar ante diferencia con la etiqueta;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.2.4;1.5;Revisar los incidentes de discrepancia de precio;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.3.1;1.5;Aplicar las promociones vigentes en la venta;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.3.2;1.5;Administrar las promociones y su vigencia;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.4.1;1.5;Mantener el maestro de artículos;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.4.2;1.5;Revisar los reportes de calidad del maestro y de publicación;247,07;0,00;247,07;M3–M4;;traspaso
-1.5.5.1;1.5;Generar la propuesta diaria de reposición;247,10;0,00;247,10;M13–M17;;traspaso
-1.5.5.2;1.5;Ajustar y confirmar la propuesta de reposición;247,10;0,00;247,10;M13–M17;;traspaso
-1.5.6.1;1.5;Colocar y seguir las órdenes a proveedores;247,10;0,00;247,10;M14–M17;;traspaso
-1.5.7.1;1.5;Gestionar las transferencias entre tiendas y centros de distribución;247,10;0,00;247,10;M14–M17;;traspaso
-1.5.7.2;1.5;Registrar la recepción de mercadería en la tienda;247,10;0,00;247,10;M14–M17;;traspaso
-1.5.8.1;1.5;Publicar el disponible a los canales;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.8.2;1.5;Parametrizar el colchón de confianza y la vigencia de la reserva;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.8.3;1.5;Consultar la traza del cálculo del disponible;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.8.4;1.5;Consultar la disponibilidad para vender en sala;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.8.5;1.5;Consultar la disponibilidad en línea;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.9.1;1.5;Reservar una unidad para el canal digital;494,15;0,00;494,15;M5–M6;;traspaso
-1.5.9.2;1.5;Expirar las reservas vencidas;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.9.3;1.5;Verificar la existencia física antes del cobro;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.9.4;1.5;Resolver el conflicto de existencia comprometida;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.1;1.5;Parametrizar el conteo cíclico;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.2;1.5;Ejecutar el conteo cíclico;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.3;1.5;Consultar la exactitud del inventario y recibir alertas;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.4;1.5;Clasificar las diferencias y cerrar el ajuste;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.5;1.5;Emitir el informe mensual de merma;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.10.6;1.5;Gestionar las unidades en el probador;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.11.1;1.5;Suspender la publicación de una categoría;247,08;0,00;247,08;M5–M6;;traspaso
-1.5.11.2;1.5;Degradar por cancelaciones;247,07;0,00;247,07;M5–M6;;traspaso
-1.5.12.1;1.5;Recibir los movimientos del sistema de almacenes;247,07;0,00;247,07;M5–M6;;traspaso
-1.5.12.2;1.5;Cargar las existencias de Concepción;247,07;0,00;247,07;M5–M6;;traspaso
-1.5.13.1;1.5;Calcular la fecha prometida de entrega;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.13.2;1.5;Seleccionar el punto de despacho por costo total de servir;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.13.3;1.5;Parametrizar la elegibilidad del stock y el límite por cliente;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.14.1;1.5;Aceptar el pedido y preautorizar el medio de pago;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.14.2;1.5;Capturar el cobro al confirmarse la preparación;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.14.3;1.5;Cancelar el pedido y anular la preautorización;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.14.4;1.5;Conciliar las preautorizaciones vencidas sin captura;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.15.1;1.5;Resolver un pedido cuya unidad no existe;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.15.2;1.5;Reasignar el pedido a otro punto de despacho;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.15.3;1.5;Ofrecer al cliente las alternativas de resolución;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.16.1;1.5;Consultar el estado único del pedido;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.16.2;1.5;Consultar las compras y las devoluciones;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.16.3;1.5;Atender en el mesón la consulta de un pedido;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.17.1;1.5;Priorizar los pedidos próximos a vencer su promesa;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.17.2;1.5;Seguir el pedido con el transportista hasta la entrega;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.18.1;1.5;Registrar y cobrar una venta;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.18.2;1.5;Reversar una venta o un pago;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.18.3;1.5;Cerrar la caja del turno;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.18.4;1.5;Desactivar los medios de pago de mayor fricción;247,05;0,00;247,05;M5–M6;;traspaso
-1.5.19.1;1.5;Operar la tienda sin enlace;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.19.2;1.5;Reconciliar las ventas hechas sin enlace;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.19.3;1.5;Revisar el informe de excepciones de la conciliación;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.19.4;1.5;Validar las operaciones cursadas sin enlace;247,06;0,00;247,06;M5–M6;;traspaso
-1.5.20.1;1.5;Registrar las ventas del canal digital;247,05;0,00;247,05;M5–M6;;traspaso
-1.5.20.2;1.5;Enrutar los documentos tributarios al ERP/DTE;247,05;0,00;247,05;M5–M6;;traspaso
-1.5.21.1;1.5;Cobrar con la tarjeta de la casa;247,05;0,00;247,05;M5–M6;;traspaso
-1.5.22.1;1.5;Calcular la base de comisión por vendedor, tienda y canal;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.23.1;1.5;Transmitir la base de comisión al sistema de remuneraciones;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.24.1;1.5;Revisar la atribución de una comisión;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.25.1;1.5;Declarar y actualizar la existencia del vendedor;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.25.2;1.5;Publicar la existencia vigente y despublicar la vencida;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.26.1;1.5;Consultar los pedidos, las devoluciones y la evaluación;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.26.2;1.5;Calcular los indicadores de nivel de servicio por vendedor;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.26.3;1.5;Dar a conocer las reglas de evaluación al vendedor;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.26.4;1.5;Aplicar la consecuencia escalonada de un incumplimiento;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.27.1;1.5;Gestionar una devolución de producto de marketplace;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.27.2;1.5;Informar la base de comisión de marketplace al ERP;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.27.3;1.5;Conciliar la liquidación de un vendedor;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.28.1;1.5;Identificar al vendedor y las condiciones en la compra;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.28.2;1.5;Impedir que un pedido intermediado use existencia propia;247,07;0,00;247,07;M13–M17;;traspaso
-1.5.29.1;1.5;Atender un caso de garantía legal íntegramente en el mesón;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.29.2;1.5;Ofrecer y registrar la opción de garantía legal;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.29.3;1.5;Parametrizar el plazo de garantía legal por tipo de producto;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.30.1;1.5;Reingresar una unidad devuelta según su aptitud;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.31.1;1.5;Seguir la resolución al consumidor y la recuperación contra el tercero;247,06;0,00;247,06;M13–M17;;traspaso
-1.5.32.1;1.5;Consolidar los registros duplicados de un cliente;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.33.1;1.5;Mantener los puntos y la fidelización sincronizados;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.34.1;1.5;Construir un segmento con atributos comerciales;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.34.2;1.5;Ejecutar una campaña sobre un segmento;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.35.1;1.5;Evaluar la solicitud y abrir una tarjeta en el mostrador;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.35.2;1.5;Ofrecer la tarjeta y consultar el resultado;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.35.3;1.5;Controlar los intentos de evaluación;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.35.4;1.5;Solicitar la ampliación de un cupo con enlace;247,06;0,00;247,06;M7–M8;;traspaso
-1.5.36.1;1.5;Simular el costo total del crédito;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.36.2;1.5;Mantener la tasa máxima convencional vigente;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.37.1;1.5;Parametrizar los topes y la ventana de enfriamiento;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.37.2;1.5;Autorizar compra a cuotas sin enlace contra el cupo preaprobado;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.37.3;1.5;Mantener el cupo preaprobado en la tienda;247,07;0,00;247,07;M7–M8;;traspaso
-1.5.38.1;1.5;Iniciar y registrar una gestión de cobranza;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.38.2;1.5;Calcular la mora y actualizar las cuentas;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.39.1;1.5;Repactar las condiciones de una deuda;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.39.2;1.5;Registrar el pago de una cuota;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.39.3;1.5;Consultar el estado de cuenta y los documentos;247,08;0,00;247,08;M13–M17;;traspaso
-1.5.40.1;1.5;Revisar la conciliación diaria de la migración;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.40.2;1.5;Convivir con la plataforma de crédito de 2011;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.41.1;1.5;Entregar la información precontractual del crédito;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.41.2;1.5;Aceptar la información precontractual con firma electrónica;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.41.3;1.5;Consultar la información precontractual del crédito;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.42.1;1.5;Registrar el consentimiento de una modificación de condiciones;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.42.2;1.5;Enlazar la repactación con su cobranza y su consentimiento;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.43.1;1.5;Reconstruir el acto de consentimiento;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.43.2;1.5;Recuperar los antecedentes de una operación desde el archivo;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.44.1;1.5;Mantener el inventario de flujos de cruce autorizados;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.44.2;1.5;Revisar los cruces ejecutados y los intentos bloqueados;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.45.1;1.5;Intentar una campaña con atributos de origen financiero;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.45.2;1.5;Intentar un proceso crediticio con atributos de origen Retail;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.46.1;1.5;Resolver la correspondencia de identificadores entre ámbitos;0,00;0,00;0,00;[[1, 12]];;traspaso
-1.5.46.2;1.5;Evaluar el impacto de una iniciativa sobre la frontera de datos;247,08;0,00;247,08;M7–M8;;traspaso
-1.5.47.1;1.5;Ingresar a una terminal compartida con identidad individual;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.47.2;1.5;Administrar identidades, roles y ámbitos;247,08;0,00;247,08;M3–M4;;traspaso
-1.5.48.1;1.5;Habilitar y revocar funciones según la capacitación normativa;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.48.2;1.5;Patrocinar el acceso temporal de un repositor externo;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.48.3;1.5;Operar como repositor externo con identidad individualizada;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.48.4;1.5;Retirar los accesos al término del vínculo;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.48.5;1.5;Conciliar los accesos contra la nómina activa;247,10;0,00;247,10;M3–M4;;traspaso
-1.5.49.1;1.5;Declarar el orden y los criterios de degradación;247,09;0,00;247,09;M3–M4;;traspaso
-1.5.49.2;1.5;Parametrizar las ventanas de congelamiento y bloquear intervenciones;247,08;0,00;247,08;M3–M4;;traspaso
-1.5.50.1;1.5;Convivir con el sistema central de 2009;247,08;0,00;247,08;M3–M4;;traspaso
-1.5.50.2;1.5;Administrar la plataforma de integración;247,08;0,00;247,08;M3–M4;;traspaso
-1.5.51.1;1.5;Observar la operación y atender alertas;247,08;0,00;247,08;M3–M4;;traspaso
-1.5.51.2;1.5;Consultar tableros y exportar informes por ámbito;247,08;0,00;247,08;M3–M4;;traspaso
-1.6.1;1.6;Catálogo de interfaces rediseñadas;60,67;0,00;60,67;M2–M2;;traspaso
-1.6.2;1.6;Rediseño de las integraciones de la Etapa 1;1188,00;0,00;1188,00;M5–M9;;traspaso
-1.6.3;1.6;Rediseño de las integraciones de la Etapa 2;660,00;0,00;660,00;M15–M16;;traspaso
-1.6.4;1.6;Canal de intercambio con proveedores;488,00;0,00;488,00;M15–M16;;traspaso
-1.6.5;1.6;Reportes a las autoridades fiscalizadoras;325,33;0,00;325,33;M8–M8;;traspaso
-1.6.6;1.6;Certificación de integraciones con conciliación;448,00;0,00;448,00;M10–M17;;traspaso
-1.6.7;1.6;Contingencia tributaria probada con ERP/DTE;96,00;0,00;96,00;M4–M4;;traspaso
-1.7.1;1.7;Plan de migración con corte y retorno;130,67;0,00;130,67;M2–M2;;traspaso
-1.7.2;1.7;Maestro de artículos saneado (268.000);912,00;0,00;912,00;M4–M10;;traspaso
-1.7.3;1.7;Corte de inventario en 24 instalaciones;1216,00;0,00;1216,00;M11–M14;;traspaso
-1.7.4;1.7;Migración del histórico comercial;506,67;0,00;506,67;M10–M13;;traspaso
-1.7.5;1.7;Migración de clientes, vendedores y liquidaciones;244,00;0,00;244,00;M17–M19;;traspaso
-1.7.6;1.7;Migración de la cartera viva (620.000);1266,67;0,00;1266,67;M10–M19;;traspaso
-1.7.7;1.7;Repositorio de datos históricos no migrados;456,00;0,00;456,00;M10–M13;;traspaso
-1.7.8;1.7;Plan de retiro de la plataforma de 2011;126,67;0,00;126,67;M18–M18;;traspaso
-1.7.9;1.7;Plataforma de 2011 fuera de servicio;101,33;0,00;101,33;M22–M22;;traspaso
-1.7.10;1.7;Sistema central de 2009 retirado;132,00;0,00;132,00;M54–M55;;traspaso
-1.7.11;1.7;Sustitución del punto de venta de 2014;0,00;0,00;0,00;"8-10; 16-16";UCP-PROGRAMACION + FIELD-1.11.2;traspaso
-1.7.12;1.7;Actas de compuerta por tramo de la cartera;0,00;0,00;0,00;12-21;GOB-JP/PMO +1.7.6;traspaso
-1.8.1;1.8;Plan de seguridad, controles y amenazas;304,00;0,00;304,00;M1–M1;;traspaso
-1.8.2;1.8;Superficie de exposición y respuesta a incidentes;64,00;40320,00;40384,00;M4–M4;;traspaso
-1.8.3;1.8;Modelo de identidad y segregación de funciones;162,67;0,00;162,67;M2–M2;;traspaso
-1.8.4;1.8;Cifrado y tokenización de medios de pago;82,67;0,00;82,67;M4–M4;;traspaso
-1.8.5;1.8;Protección de datos y cumplimiento normativo;304,00;0,00;304,00;M3–M3;;traspaso
-1.8.6;1.8;Pruebas de intrusión y plan de remediación;320,00;0,00;320,00;M11–M17;;traspaso
-1.8.7;1.8;Diligencia del proveedor de nube;41,33;0,00;41,33;M2–M2;;traspaso
-1.8.8;1.8;Atestación de cadena de suministro y confianza cero;121,33;0,00;121,33;M10–M17;;traspaso
-1.9.1;1.9;Plan de pruebas;32,00;0,00;32,00;M2–M2;;traspaso
-1.9.2;1.9;Estándares de código y puertas de calidad;0,00;0,00;0,00;1-6;UCP-PRUEBAS/SOBRECARGA +1.4.6;traspaso
-1.9.3;1.9;Batería de pruebas funcionales y no funcionales;0,00;0,00;0,00;5-18;UCP-PRUEBAS +1.9.4;traspaso
-1.9.4;1.9;Pruebas de desempeño, resiliencia y DR;608,00;0,00;608,00;M11–M17;;traspaso
-1.9.5;1.9;Ensayo de degradación del evento anual;261,33;0,00;261,33;M15–M27;;traspaso
-1.9.6;1.9;Aceptación de los 28 criterios del caso;242,67;0,00;242,67;M11–M17;;traspaso
-1.9.7;1.9;Certificación de calidad de la Etapa 1;0,00;0,00;0,00;12-12;1.9.6 + GOB-JP/PMO;traspaso
-1.9.8;1.9;Certificación de calidad de la Etapa 2;0,00;0,00;0,00;18-18;1.9.6 + GOB-JP/PMO;traspaso
-1.9.9;1.9;Prueba de corte de enlace de 24 h en el piloto;192,00;0,00;192,00;M6–M6;;traspaso
-1.9.10;1.9;Evaluación de comercio electrónico y fidelización;101,33;0,00;101,33;M9–M9;;traspaso
-1.9.11;1.9;Pruebas de tareas del punto de venta;48,00;0,00;48,00;M5–M5;;traspaso
-1.9.12;1.9;Pruebas de comprensión con clientes y titulares;40,00;0,00;40,00;M12–M19;;traspaso
-1.10.1.1;1.10;Diseño lockers ycredencial;162,67;0,00;162,67;M14–M14;;traspaso
-1.10.1.2;1.10;Integraciónpedidos/autorización;304,00;0,00;304,00;M15–M16;;traspaso
-1.10.1.3;1.10;Estados/eventoscasilleros;384,00;0,00;384,00;M16–M16;;traspaso
-1.10.1.4;1.10;Instalación/ensayopiloto;96,00;0,00;96,00;M17–M19;;traspaso
-1.10.1.5;1.10;Visitasyemplazamiento;52,00;0,00;52,00;M16–M17;;traspaso
-1.10.1.6;1.10;Pruebasfuncionales/continuidad;52,00;0,00;52,00;M17–M17;;traspaso
-1.10.1.7;1.10;CertificaciónE2/aceptación;76,00;0,00;76,00;M17–M20;;traspaso
-1.10.1.8;1.10;Seguimientoespecífico;0,00;0,00;0,00;[[21, 56]];L3: 1.12.7 antes M21 y 1.15.4 desde M21;traspaso
-1.10.2.1;1.10;Arquitectura/reglasdatos;162,67;0,00;162,67;M5–M5;;traspaso
-1.10.2.2;1.10;Protocoloypreparacióndatos;384,00;0,00;384,00;M6–M6;;traspaso
-1.10.2.3;1.10;Depuraciónhistoriainventario;768,00;0,00;768,00;M7–M9;;traspaso
-1.10.2.4;1.10;Evaluacióneintegraciónmodelo;640,00;0,00;640,00;M10–M10;;traspaso
-1.10.2.5;1.10;Pruebasversionesmodelo;330,67;0,00;330,67;M10–M10;;traspaso
-1.10.2.6;1.10;CertificaciónespecíficaE1;76,00;0,00;76,00;M11–M11;;traspaso
-1.10.2.7;1.10;Evaluaciónensombra/aceptación;192,00;0,00;192,00;M14–M14;;traspaso
-1.10.2.8;1.10;Seguimientoespecífico;0,00;0,00;0,00;[[16, 56]];L3: 1.12.7 antes M21 y 1.15.4 desde M21;traspaso
-1.10.3.1;1.10;Diseñoycontratodatos;162,67;0,00;162,67;M14–M14;;traspaso
-1.10.3.2;1.10;Lotedatoscatálogoeimágenes;496,00;0,00;496,00;M14–M15;;traspaso
-1.10.3.3;1.10;Generación/cargavectores;352,00;0,00;352,00;M15–M16;;traspaso
-1.10.3.4;1.10;Serviciobúsquedamultimodal;394,67;0,00;394,67;M16–M16;;traspaso
-1.10.3.5;1.10;Integracióncanales;248,00;0,00;248,00;M17–M17;;traspaso
-1.10.3.6;1.10;Relevanciaydesempeño;202,67;0,00;202,67;M17–M17;;traspaso
-1.10.3.7;1.10;CertificaciónE2/aceptación;76,00;0,00;76,00;M17–M20;;traspaso
-1.10.3.8;1.10;Seguimientoespecífico;0,00;0,00;0,00;[[21, 56]];L3: 1.12.7 antes M21 y 1.15.4 desde M21;traspaso
-1.10.4.1;1.10;Diseñoredmedios/campañas;162,67;0,00;162,67;M14–M14;;traspaso
-1.10.4.2;1.10;Plataformacampañas/espacios;704,00;0,00;704,00;M14–M14;;traspaso
-1.10.4.3;1.10;Mediciónyatribución;394,67;0,00;394,67;M16–M16;;traspaso
-1.10.4.4;1.10;Integracióncanales/catálogo;248,00;0,00;248,00;M16–M17;;traspaso
-1.10.4.5;1.10;Formaciónusuarioscomerciales;32,00;0,00;32,00;M17–M17;;traspaso
-1.10.4.6;1.10;Pruebassolución;202,67;0,00;202,67;M17–M17;;traspaso
-1.10.4.7;1.10;CertificaciónE2/aceptación;76,00;0,00;76,00;M17–M20;;traspaso
-1.10.4.8;1.10;Seguimientoespecífico;0,00;0,00;0,00;[[21, 56]];L3: 1.12.7 antes M21 y 1.15.4 desde M21;traspaso
-1.10.5.1;1.10;Diseñomodotienda/filavirtual;162,67;0,00;162,67;M14–M14;;traspaso
-1.10.5.2;1.10;Motorfilaprobadores;413,33;0,00;413,33;M15–M16;;traspaso
-1.10.5.3;1.10;Interfazclientes/personal;248,00;0,00;248,00;M15–M15;;traspaso
-1.10.5.4;1.10;Integracióntienda/existencias;248,00;0,00;248,00;M16–M16;;traspaso
-1.10.5.5;1.10;Pilotoyformación;96,00;0,00;96,00;M17–M19;;traspaso
-1.10.5.6;1.10;Pruebassolución;165,33;0,00;165,33;M17–M17;;traspaso
-1.10.5.7;1.10;CertificaciónE2/aceptación;76,00;0,00;76,00;M17–M20;;traspaso
-1.10.5.8;1.10;Seguimientoespecífico;0,00;0,00;0,00;[[21, 56]];L3: 1.12.7 antes M21 y 1.15.4 desde M21;traspaso
-1.11.1;1.11;Plan de implantación y reversión probado;101,33;0,00;101,33;M3–M3;;traspaso
-1.11.2;1.11;Configuración y certificación de los sitios;2376,00;10560,00;12936,00;M12–M16;C0138;traspaso
-1.11.3;1.11;Plan de convivencia entre etapas;101,33;0,00;101,33;M10–M10;;traspaso
-1.11.4;1.11;Piloto del punto de venta en tres tiendas;0,00;0,00;0,00;6-7;1.9.9 + FIELD-1.11.2;traspaso
-1.12.1;1.12;Plan de la marcha blanca de la Etapa 1;81,33;0,00;81,33;M8–M8;;traspaso
-1.12.2;1.12;Informe de la marcha blanca de la Etapa 1;1482,00;0,00;1482,00;M13–M16;1.12.2 / 1.12.7 / 1.15.5 (NOC según período);traspaso
-1.12.3;1.12;Acta de aceptación de la Etapa 1;0,00;0,00;0,00;16-16;GOB-JP/PMO +1.9.6;traspaso
-1.12.4;1.12;Plan de la marcha blanca de la Etapa 2;81,33;0,00;81,33;M16–M16;;traspaso
-1.12.5;1.12;Informe de la marcha blanca de la Etapa 2;1002,00;0,00;1002,00;M19–M21;1.12.2 / 1.12.7 / 1.15.5 (NOC según período);traspaso
-1.12.6;1.12;Acta de aceptación final y garantía;0,00;0,00;0,00;21-21;GOB-JP/PMO +1.9.6;traspaso
-1.12.7;1.12;Soporte de estabilización post-marcha;0,00;0,00;0,00;M16-20;;traspaso
-1.13.1;1.13;Plan de gestión del cambio;325,33;0,00;325,33;M3–M3;;traspaso
-1.13.2;1.13;Plan de capacitación por rol;256,00;0,00;256,00;M5–M5;;traspaso
-1.13.3;1.13;Capacitación ejecutada y certificada;3870,00;0,00;3870,00;M10–M18;;traspaso
-1.13.4;1.13;Acompañamiento en puesto;0,00;416,00;416,00;M20–M20;FIELD-1.11.2 + MB-E1/E2;traspaso
-1.13.5;1.13;Comunicación a los clientes por tramo;160,00;0,00;160,00;M10–M21;;traspaso
-1.14.1;1.14;Documentación técnica y funcional;0,00;0,00;0,00;1-56;UCP-DISEÑO/SOBRECARGA +1.14.3;traspaso
-1.14.2;1.14;Transferencia tecnológica (código y artefactos);200,67;0,00;200,67;M48–M49;;traspaso
-1.14.3;1.14;Base de conocimiento y manuales de operación;456,00;0,00;456,00;M10–M22;;traspaso
-1.14.4;1.14;Plan de reversibilidad;156,00;0,00;156,00;M12–M24;;traspaso
-1.14.5;1.14;Acta de cierre y acompañamiento de reversibilidad;124,00;0,00;124,00;M54–M54;;traspaso
-1.14.6;1.14;Informe de lecciones aprendidas;50,00;0,00;50,00;M56–M56;;traspaso
-1.14.7;1.14;Protocolo de aceptación de entregas;0,00;0,00;0,00;1-3;GOB-JP/PMO +1.9.1;traspaso
-1.15.1;1.15;Mesa de servicio de tres niveles;0,00;51840,00;51840,00;M21-56;;traspaso
-1.15.2;1.15;Informes de nivel de servicio y certificaciones;0,00;5760,00;5760,00;M21-56;;traspaso
-1.15.3;1.15;Pruebas periódicas de recuperación ante desastres;0,00;0,00;0,00;M21-56;1.15.1 / 1.15.4 / 1.15.5 / 1.8.2;traspaso
-1.15.4;1.15;Mantención correctiva, preventiva y evolutiva;0,00;11520,00;11520,00;M21-56;"1.15.1 (L2); 1.15.4 (L3)";traspaso
-1.15.5;1.15;Infraestructura en operación;0,00;40320,00;40320,00;M21-56;;traspaso
-1.15.6;1.15;Jornadas de actualización del personal;760,00;0,00;760,00;M21–M24;"1.15.4 (L3); Indisponibilidad 25% del equipo exclusivo";traspaso
-1.4.14;1.4;Levantamiento físico de 25 sitios;353,60;0,00;353,60;M1–M2;;ampliación física
-1.4.15;1.4;Tienda de laboratorio en Preproducción;81,60;0,00;81,60;M5–M5;;ampliación física
-1.4.16;1.4;Suministro de DC-01 y del lote 1;27,20;0,00;27,20;M1–M5;;ampliación física
-1.4.17;1.4;Tres tiendas piloto instaladas;244,80;0,00;244,80;M5–M6;;ampliación física
-1.4.18;1.4;Suministro del lote 2;13,60;0,00;13,60;M5–M7;;ampliación física
-1.4.19;1.4;Instalación del lote 2 (19 tiendas y 2 CD);1659,20;0,00;1659,20;M7–M8;;ampliación física
-1.4.20;1.4;Recuperación en Brazil South a tamaño completo;68,00;0,00;68,00;M9–M9;;ampliación física
-1.4.3;1.4;Entorno dedicado del Control de cruces (ampliación);162,67;0,00;162,67;M4–M4;;ampliación física
+﻿Paquete EDT;Rama;Nombre;HH;Ventana
+1.1.1;1.1;Plan de dirección integrado;5824,00;Dotación (ver Dotacion_coberturas.csv)
+1.2.1;1.2;Mapa de las 14 interfaces e inventario de plataformas;368,00;M1–M2
+1.2.2;1.2;Levantamiento de procesos, reglas y volumetría;914,67;M1–M1
+1.2.3;1.2;Catálogo de requerimientos y matriz de trazabilidad;252,00;M1–M1
+1.2.5;1.2;Estudio: etiquetas electrónicas de precio;180,00;M2–M2
+1.2.6;1.2;Estudio: sistema de almacenes de Concepción;162,67;M2–M2
+1.2.7;1.2;Estudio: destino de las plataformas;228,00;M2–M2
+1.2.8;1.2;Propuesta de criterios del cupo preaprobado;81,33;M1–M1
+1.3.1;1.3;Documento de arquitectura con cinco vistas;206,67;M2–M2
+1.3.2;1.3;Arquitectura física con emplazamiento;192,00;M2–M3
+1.3.3;1.3;Modelo de datos con dominios segregados;253,33;M2–M2
+1.3.4;1.3;Contratos de integración versionados;224,00;M3–M3
+1.3.5;1.3;Especificación del modo desconectado de 24 h;81,33;M3–M3
+1.3.6;1.3;Modelo de capacidad y dimensionamiento;152,00;M3–M3
+1.3.7;1.3;Especificación y costeo de obras del cliente;384,00;M3–M4
+1.4.1;1.4;Entorno de nube (IaC, subredes, etiquetado);620,00;M3–M3
+1.4.2;1.4;Borde por sitio y red segmentada (13 tiendas);1025,29;M4–M9
+1.4.3;1.4;Entorno dedicado del ámbito emisor;325,34;M4–M4
+1.4.4;1.4;Ambientes dev/QA/preprod/prod/DR;240,00;M2–M4
+1.4.5;1.4;Observabilidad unificada y catálogo de alertas;152,00;M4–M5
+1.4.6;1.4;Plataforma de integración y entrega continuas;224,00;M3–M4
+1.4.7;1.4;Licenciamiento de terceros a nombre del cliente;26,00;M4–M4
+1.4.8;1.4;Especificación de hardware y dispositivos de terreno;154,17;M3–M4
+1.4.9;1.4;Recinto técnico y obra civil de separación (spec);98,67;M2–M2
+1.4.10;1.4;Plan de cierre de la brecha del centro de datos;126,67;M2–M2
+1.4.11;1.4;Energía y climatización del centro de datos;320,00;M4–M4
+1.4.12;1.4;Seguridad física del centro de datos;162,67;M4–M4
+1.4.13;1.4;Respaldo en operación con custodia de medios;135,00;M4–M4
+1.4.14;1.4;Levantamiento físico de DC-01;406,75;M1–M3
+1.4.15;1.4;Tienda de laboratorio instalado físicamente (cuadrilla A);73,20;M5–M6
+1.4.16;1.4;Orden de compra DC-01;32,54;M1–M3
+1.4.17;1.4;Tienda piloto 1 instalado físicamente (cuadrilla A);219,60;M5–M6
+1.4.18;1.4;Orden de compra lote 2 (19 tiendas y 2 CD);16,27;M5–M5
+1.4.19;1.4;Sitio T01 instalado físicamente (cuadrilla A);1488,40;M7–M9
+1.4.20;1.4;Recuperación del frente R a tamaño completo;48,81;M9–M9
+1.4.21;1.4;Plataforma de datos y analítica (Retail);325,34;M5–M5
+1.4.22;1.4;Equipamiento TI y redes de DC-01 instalados;325,34;M4–M4
+1.4.23;1.4;Pila local de LAB desplegada y probada;406,75;M6–M9
+1.4.24;1.4;Replicación entre regiones del frente R;146,40;M7–M7
+1.5.1.1;1.5;Cambiar y propagar un precio;233,09;M3–M4
+1.5.1.2;1.5;Entregar la oferta vigente a los canales;466,19;M3–M4
+1.5.1.3;1.5;Consultar el precio vigente en línea;233,09;M3–M4
+1.5.1.4;1.5;Recuperar el precio publicado en un instante;233,09;M3–M4
+1.5.2.1;1.5;Registrar el cambio de etiqueta;233,09;M3–M4
+1.5.2.2;1.5;Consultar el estado de exhibición de la tienda;233,09;M3–M4
+1.5.2.3;1.5;Resolver el precio a cobrar ante diferencia con la etiqueta;233,09;M3–M4
+1.5.2.4;1.5;Revisar los incidentes de discrepancia de precio;233,09;M3–M4
+1.5.3.1;1.5;Aplicar las promociones vigentes en la venta;233,09;M3–M4
+1.5.3.2;1.5;Administrar las promociones y su vigencia;233,09;M3–M4
+1.5.4.1;1.5;Mantener el maestro de artículos;233,09;M3–M4
+1.5.4.2;1.5;Revisar los reportes de calidad del maestro y de publicación;233,09;M3–M4
+1.5.5.1;1.5;Generar la propuesta diaria de reposición;233,12;M13–M17
+1.5.5.2;1.5;Ajustar y confirmar la propuesta de reposición;233,12;M13–M17
+1.5.6.1;1.5;Colocar y seguir las órdenes a proveedores;233,12;M14–M17
+1.5.7.1;1.5;Gestionar las transferencias entre tiendas y centros de distribución;233,12;M14–M17
+1.5.7.2;1.5;Registrar la recepción de mercadería en la tienda;233,12;M14–M17
+1.5.8.1;1.5;Publicar el disponible a los canales;233,10;M5–M6
+1.5.8.2;1.5;Parametrizar el colchón de confianza y la vigencia de la reserva;233,10;M5–M6
+1.5.8.3;1.5;Consultar la traza del cálculo del disponible;233,10;M5–M6
+1.5.8.4;1.5;Consultar la disponibilidad para vender en sala;233,10;M5–M6
+1.5.8.5;1.5;Consultar la disponibilidad en línea;233,10;M5–M6
+1.5.9.1;1.5;Reservar una unidad para el canal digital;466,19;M5–M6
+1.5.9.2;1.5;Expirar las reservas vencidas;233,10;M5–M6
+1.5.9.3;1.5;Verificar la existencia física antes del cobro;233,10;M5–M6
+1.5.9.4;1.5;Resolver el conflicto de existencia comprometida;233,10;M5–M6
+1.5.10.1;1.5;Parametrizar el conteo cíclico;233,10;M5–M6
+1.5.10.2;1.5;Ejecutar el conteo cíclico;233,10;M5–M6
+1.5.10.3;1.5;Consultar la exactitud del inventario y recibir alertas;233,10;M5–M6
+1.5.10.4;1.5;Clasificar las diferencias y cerrar el ajuste;233,10;M5–M6
+1.5.10.5;1.5;Emitir el informe mensual de merma;233,10;M5–M6
+1.5.10.6;1.5;Gestionar las unidades en el probador;233,10;M5–M6
+1.5.11.1;1.5;Suspender la publicación de una categoría;233,10;M5–M6
+1.5.11.2;1.5;Degradar por cancelaciones;233,09;M5–M6
+1.5.12.1;1.5;Recibir los movimientos del sistema de almacenes;233,09;M5–M6
+1.5.12.2;1.5;Cargar las existencias de Concepción;233,09;M5–M6
+1.5.13.1;1.5;Calcular la fecha prometida de entrega;233,08;M13–M17
+1.5.13.2;1.5;Seleccionar el punto de despacho por costo total de servir;233,08;M13–M17
+1.5.13.3;1.5;Parametrizar la elegibilidad del stock y el límite por cliente;233,09;M13–M17
+1.5.14.1;1.5;Aceptar el pedido y preautorizar el medio de pago;233,08;M13–M17
+1.5.14.2;1.5;Capturar el cobro al confirmarse la preparación;233,08;M13–M17
+1.5.14.3;1.5;Cancelar el pedido y anular la preautorización;233,08;M13–M17
+1.5.14.4;1.5;Conciliar las preautorizaciones vencidas sin captura;233,08;M13–M17
+1.5.15.1;1.5;Resolver un pedido cuya unidad no existe;233,08;M13–M17
+1.5.15.2;1.5;Reasignar el pedido a otro punto de despacho;233,08;M13–M17
+1.5.15.3;1.5;Ofrecer al cliente las alternativas de resolución;233,08;M13–M17
+1.5.16.1;1.5;Consultar el estado único del pedido;233,09;M13–M17
+1.5.16.2;1.5;Consultar las compras y las devoluciones;233,09;M13–M17
+1.5.16.3;1.5;Atender en el mesón la consulta de un pedido;233,09;M13–M17
+1.5.17.1;1.5;Priorizar los pedidos próximos a vencer su promesa;233,09;M13–M17
+1.5.17.2;1.5;Seguir el pedido con el transportista hasta la entrega;233,09;M13–M17
+1.5.18.1;1.5;Registrar y cobrar una venta;233,08;M5–M6
+1.5.18.2;1.5;Reversar una venta o un pago;233,08;M5–M6
+1.5.18.3;1.5;Cerrar la caja del turno;233,08;M5–M6
+1.5.18.4;1.5;Desactivar los medios de pago de mayor fricción;233,07;M5–M6
+1.5.19.1;1.5;Operar la tienda sin enlace;233,08;M5–M6
+1.5.19.2;1.5;Reconciliar las ventas hechas sin enlace;233,08;M5–M6
+1.5.19.3;1.5;Revisar el informe de excepciones de la conciliación;233,08;M5–M6
+1.5.19.4;1.5;Validar las operaciones cursadas sin enlace;233,08;M5–M6
+1.5.20.1;1.5;Registrar las ventas del canal digital;233,07;M5–M6
+1.5.20.2;1.5;Enrutar los documentos tributarios al ERP/DTE;233,07;M5–M6
+1.5.21.1;1.5;Cobrar con la tarjeta de la casa;233,07;M5–M6
+1.5.22.1;1.5;Calcular la base de comisión por vendedor, tienda y canal;233,10;M13–M17
+1.5.23.1;1.5;Transmitir la base de comisión al sistema de remuneraciones;233,10;M13–M17
+1.5.24.1;1.5;Revisar la atribución de una comisión;233,10;M13–M17
+1.5.25.1;1.5;Declarar y actualizar la existencia del vendedor;233,09;M13–M17
+1.5.25.2;1.5;Publicar la existencia vigente y despublicar la vencida;233,09;M13–M17
+1.5.26.1;1.5;Consultar los pedidos, las devoluciones y la evaluación;233,09;M13–M17
+1.5.26.2;1.5;Calcular los indicadores de nivel de servicio por vendedor;233,09;M13–M17
+1.5.26.3;1.5;Dar a conocer las reglas de evaluación al vendedor;233,09;M13–M17
+1.5.26.4;1.5;Aplicar la consecuencia escalonada de un incumplimiento;233,09;M13–M17
+1.5.27.1;1.5;Gestionar una devolución de producto de marketplace;233,09;M13–M17
+1.5.27.2;1.5;Informar la base de comisión de marketplace al ERP;233,09;M13–M17
+1.5.27.3;1.5;Conciliar la liquidación de un vendedor;233,09;M13–M17
+1.5.28.1;1.5;Identificar al vendedor y las condiciones en la compra;233,09;M13–M17
+1.5.28.2;1.5;Impedir que un pedido intermediado use existencia propia;233,09;M13–M17
+1.5.29.1;1.5;Atender un caso de garantía legal íntegramente en el mesón;233,09;M13–M17
+1.5.29.2;1.5;Ofrecer y registrar la opción de garantía legal;233,09;M13–M17
+1.5.29.3;1.5;Parametrizar el plazo de garantía legal por tipo de producto;233,09;M13–M17
+1.5.30.1;1.5;Reingresar una unidad devuelta según su aptitud;233,09;M13–M17
+1.5.31.1;1.5;Seguir la resolución al consumidor y la recuperación contra el tercero;233,09;M13–M17
+1.5.32.1;1.5;Consolidar los registros duplicados de un cliente;233,10;M13–M17
+1.5.33.1;1.5;Mantener los puntos y la fidelización sincronizados;233,10;M13–M17
+1.5.34.1;1.5;Construir un segmento con atributos comerciales;233,10;M13–M17
+1.5.34.2;1.5;Ejecutar una campaña sobre un segmento;233,10;M13–M17
+1.5.35.1;1.5;Evaluar la solicitud y abrir una tarjeta en el mostrador;233,09;M7–M8
+1.5.35.2;1.5;Ofrecer la tarjeta y consultar el resultado;233,09;M7–M8
+1.5.35.3;1.5;Controlar los intentos de evaluación;233,09;M7–M8
+1.5.35.4;1.5;Solicitar la ampliación de un cupo con enlace;233,08;M7–M8
+1.5.36.1;1.5;Simular el costo total del crédito;233,09;M7–M8
+1.5.36.2;1.5;Mantener la tasa máxima convencional vigente;233,09;M7–M8
+1.5.37.1;1.5;Parametrizar los topes y la ventana de enfriamiento;233,09;M7–M8
+1.5.37.2;1.5;Autorizar compra a cuotas sin enlace contra el cupo preaprobado;233,09;M7–M8
+1.5.37.3;1.5;Mantener el cupo preaprobado en la tienda;233,09;M7–M8
+1.5.38.1;1.5;Iniciar y registrar una gestión de cobranza;233,10;M7–M8
+1.5.38.2;1.5;Calcular la mora y actualizar las cuentas;233,10;M7–M8
+1.5.39.1;1.5;Repactar las condiciones de una deuda;233,10;M7–M8
+1.5.39.2;1.5;Registrar el pago de una cuota;233,10;M7–M8
+1.5.39.3;1.5;Consultar el estado de cuenta y los documentos;233,10;M13–M17
+1.5.40.1;1.5;Revisar la conciliación diaria de la migración;233,10;M7–M8
+1.5.40.2;1.5;Convivir con la plataforma de crédito de 2011;233,10;M7–M8
+1.5.41.1;1.5;Entregar la información precontractual del crédito;233,10;M7–M8
+1.5.41.2;1.5;Aceptar la información precontractual con firma electrónica;233,10;M7–M8
+1.5.41.3;1.5;Consultar la información precontractual del crédito;233,10;M7–M8
+1.5.42.1;1.5;Registrar el consentimiento de una modificación de condiciones;233,10;M7–M8
+1.5.42.2;1.5;Enlazar la repactación con su cobranza y su consentimiento;233,10;M7–M8
+1.5.43.1;1.5;Reconstruir el acto de consentimiento;233,10;M7–M8
+1.5.43.2;1.5;Recuperar los antecedentes de una operación desde el archivo;233,10;M7–M8
+1.5.44.1;1.5;Mantener el inventario de flujos de cruce autorizados;233,10;M7–M8
+1.5.44.2;1.5;Revisar los cruces ejecutados y los intentos bloqueados;233,10;M7–M8
+1.5.45.1;1.5;Intentar una campaña con atributos de origen financiero;233,10;M7–M8
+1.5.45.2;1.5;Intentar un proceso crediticio con atributos de origen Retail;233,10;M7–M8
+1.5.46.2;1.5;Evaluar el impacto de una iniciativa sobre la frontera de datos;233,10;M7–M8
+1.5.47.1;1.5;Ingresar a una terminal compartida con identidad individual;233,12;M3–M4
+1.5.47.2;1.5;Administrar identidades, roles y ámbitos;233,10;M3–M4
+1.5.48.1;1.5;Habilitar y revocar funciones según la capacitación normativa;233,12;M3–M4
+1.5.48.2;1.5;Patrocinar el acceso temporal de un repositor externo;233,12;M3–M4
+1.5.48.3;1.5;Operar como repositor externo con identidad individualizada;233,12;M3–M4
+1.5.48.4;1.5;Retirar los accesos al término del vínculo;233,12;M3–M4
+1.5.48.5;1.5;Conciliar los accesos contra la nómina activa;233,12;M3–M4
+1.5.49.1;1.5;Declarar el orden y los criterios de degradación;233,11;M3–M4
+1.5.49.2;1.5;Parametrizar las ventanas de congelamiento y bloquear intervenciones;233,10;M3–M4
+1.5.50.1;1.5;Convivir con el sistema central de 2009;233,10;M3–M4
+1.5.50.2;1.5;Administrar la plataforma de integración;233,10;M3–M4
+1.5.51.1;1.5;Observar la operación y atender alertas;233,10;M3–M4
+1.5.51.2;1.5;Consultar tableros y exportar informes por ámbito;233,10;M3–M4
+1.6.1;1.6;Catálogo de interfaces rediseñadas;60,67;M2–M2
+1.6.2;1.6;Rediseño de las integraciones de la Etapa 1;1188,00;M5–M9
+1.6.3;1.6;Rediseño de las integraciones de la Etapa 2;660,00;M15–M16
+1.6.4;1.6;Canal de intercambio con proveedores;488,00;M15–M16
+1.6.5;1.6;Reportes a las autoridades fiscalizadoras;325,33;M8–M8
+1.6.6;1.6;Certificación de integraciones con conciliación;448,00;M10–M17
+1.6.7;1.6;Contingencia tributaria probada con ERP/DTE;96,00;M4–M4
+1.7.1;1.7;Plan de migración con corte y retorno;130,67;M2–M2
+1.7.2;1.7;Maestro de artículos saneado (268.000);912,00;M4–M10
+1.7.3;1.7;Corte de inventario en 24 instalaciones;1216,00;M11–M14
+1.7.4;1.7;Migración del histórico comercial;506,67;M10–M13
+1.7.5;1.7;Migración de clientes, vendedores y liquidaciones;244,00;M17–M19
+1.7.6;1.7;Migración de la cartera viva (620.000);1266,67;M10–M19
+1.7.7;1.7;Repositorio de datos históricos no migrados;456,00;M10–M13
+1.7.8;1.7;Plan de retiro de la plataforma de 2011;126,67;M18–M18
+1.7.9;1.7;Plataforma de 2011 fuera de servicio;101,33;M22–M22
+1.7.10;1.7;Sistema central de 2009 retirado;132,00;M54–M55
+1.8.1;1.8;Plan de seguridad, controles y amenazas;304,00;M1–M1
+1.8.2;1.8;Superficie de exposición y respuesta a incidentes;40384,00;M4–M4
+1.8.3;1.8;Modelo de identidad y segregación de funciones;162,67;M2–M2
+1.8.4;1.8;Cifrado y tokenización de medios de pago;124,00;M4–M4
+1.8.5;1.8;Protección de datos y cumplimiento normativo;304,00;M3–M3
+1.8.6;1.8;Pruebas de intrusión y plan de remediación;320,00;M11–M17
+1.8.7;1.8;Diligencia del proveedor de nube;41,33;M2–M2
+1.8.8;1.8;Atestación de cadena de suministro y confianza cero;121,33;M10–M17
+1.8.9;1.8;Control de seguridad desplegado #1;292,80;M4–M6
+1.9.1;1.9;Plan de pruebas;32,00;M2–M2
+1.9.4;1.9;Pruebas de desempeño, resiliencia y DR;608,00;M11–M17
+1.9.5;1.9;Ensayo de degradación del evento anual;261,33;M15–M27
+1.9.6;1.9;Aceptación de los 28 criterios del caso;242,67;M11–M17
+1.9.9;1.9;Prueba de corte de enlace de 24 h en el piloto;192,00;M6–M7
+1.9.10;1.9;Evaluación de comercio electrónico y fidelización;101,33;M9–M9
+1.9.11;1.9;Pruebas de tareas del punto de venta;48,00;M5–M5
+1.9.12;1.9;Pruebas de comprensión con clientes y titulares;40,00;M12–M19
+1.10.1;1.10;Orden de compra de lockers;16,27;M15–M15
+1.10.1.1;1.10;Diseño lockers ycredencial;162,67;M14–M14
+1.10.1.2;1.10;Integraciónpedidos/autorización;304,00;M15–M16
+1.10.1.3;1.10;Estados/eventoscasilleros;384,00;M16–M16
+1.10.1.4;1.10;Instalación/ensayopiloto;96,00;M17–M19
+1.10.1.5;1.10;Visitasyemplazamiento;52,00;M16–M17
+1.10.1.6;1.10;Pruebasfuncionales/continuidad;52,00;M17–M17
+1.10.1.7;1.10;CertificaciónE2/aceptación;76,00;M17–M20
+1.10.2.1;1.10;Arquitectura/reglasdatos;162,67;M5–M5
+1.10.2.2;1.10;Protocoloypreparacióndatos;384,00;M6–M6
+1.10.2.3;1.10;Depuraciónhistoriainventario;768,00;M7–M9
+1.10.2.4;1.10;Evaluacióneintegraciónmodelo;640,00;M10–M10
+1.10.2.5;1.10;Pruebasversionesmodelo;330,67;M10–M10
+1.10.2.6;1.10;CertificaciónespecíficaE1;76,00;M11–M11
+1.10.2.7;1.10;Evaluaciónensombra/aceptación;192,00;M14–M14
+1.10.3.1;1.10;Diseñoycontratodatos;162,67;M14–M14
+1.10.3.2;1.10;Lotedatoscatálogoeimágenes;496,00;M14–M15
+1.10.3.3;1.10;Generación/cargavectores;352,00;M15–M16
+1.10.3.4;1.10;Serviciobúsquedamultimodal;394,67;M16–M16
+1.10.3.5;1.10;Integracióncanales;248,00;M17–M17
+1.10.3.6;1.10;Relevanciaydesempeño;202,67;M17–M17
+1.10.3.7;1.10;CertificaciónE2/aceptación;76,00;M17–M20
+1.10.4.1;1.10;Diseñoredmedios/campañas;162,67;M14–M14
+1.10.4.2;1.10;Plataformacampañas/espacios;704,00;M14–M14
+1.10.4.3;1.10;Mediciónyatribución;394,67;M16–M16
+1.10.4.4;1.10;Integracióncanales/catálogo;248,00;M16–M17
+1.10.4.5;1.10;Formaciónusuarioscomerciales;32,00;M17–M17
+1.10.4.6;1.10;Pruebassolución;202,67;M17–M17
+1.10.4.7;1.10;CertificaciónE2/aceptación;76,00;M17–M20
+1.10.5;1.10;Orden de compra de tótems;16,27;M15–M15
+1.10.5.1;1.10;Diseñomodotienda/filavirtual;162,67;M14–M14
+1.10.5.2;1.10;Motorfilaprobadores;413,33;M15–M16
+1.10.5.3;1.10;Interfazclientes/personal;248,00;M15–M15
+1.10.5.4;1.10;Integracióntienda/existencias;248,00;M16–M16
+1.10.5.5;1.10;Pilotoyformación;96,00;M17–M19
+1.10.5.6;1.10;Pruebassolución;165,33;M17–M17
+1.10.5.7;1.10;CertificaciónE2/aceptación;76,00;M17–M20
+1.11.1;1.11;Plan de implantación y reversión probado;101,33;M3–M3
+1.11.2;1.11;Configuración y certificación de los sitios;12936,00;M12–M16
+1.11.3;1.11;Plan de convivencia entre etapas;101,33;M10–M10
+1.12.1;1.12;Plan de la marcha blanca de la Etapa 1;81,33;M8–M8
+1.12.2;1.12;Informe de la marcha blanca de la Etapa 1;1482,00;M13–M16
+1.12.4;1.12;Plan de la marcha blanca de la Etapa 2;81,33;M16–M16
+1.12.5;1.12;Informe de la marcha blanca de la Etapa 2;1002,00;M19–M21
+1.13.1;1.13;Plan de gestión del cambio;325,33;M3–M3
+1.13.2;1.13;Plan de capacitación por rol;256,00;M5–M5
+1.13.3;1.13;Capacitación ejecutada y certificada;3870,00;M10–M18
+1.13.4;1.13;Acompañamiento en puesto;416,00;Dotación (ver Dotacion_coberturas.csv)
+1.13.5;1.13;Comunicación a los clientes por tramo;160,00;M10–M21
+1.14.2;1.14;Transferencia tecnológica (código y artefactos);200,67;M48–M49
+1.14.3;1.14;Base de conocimiento y manuales de operación;456,00;M10–M22
+1.14.4;1.14;Plan de reversibilidad;156,00;M12–M24
+1.14.5;1.14;Acta de cierre y acompañamiento de reversibilidad;124,00;M54–M54
+1.14.6;1.14;Informe de lecciones aprendidas;50,00;M56–M56
+1.15;1.15;;109440,00;Dotación (ver Dotacion_coberturas.csv)
+1.15.6;1.15;Jornadas de actualización del personal;760,00;M21–M24

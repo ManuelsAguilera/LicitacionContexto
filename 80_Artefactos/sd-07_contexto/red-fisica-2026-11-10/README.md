@@ -2,6 +2,8 @@
 
 Documento de trabajo, no entregable. Paso C del plan del SD-07: calendario de compras y habilitación (insumo R4 del modelo financiero). Reemplaza como insumo de horas a `../estabilizacion-2026-11-10/`, que no incluía la instalación física.
 
+> **Reemplazado como insumo** por `../red-sd04-v2-2026-11-10/` (traspaso completo del SD-04 con el método de HH del SD-07). Este directorio conserva el paso C.
+
 ## Por qué se amplió la red
 
 La red del traspaso (853 nodos) no planificaba la infraestructura física que define el SD-04 vigente (rama `sd04/redaccion-y-figuras-fisicas`: §4.3, Tablas 4.13 y 4.15, registro D-FIS):

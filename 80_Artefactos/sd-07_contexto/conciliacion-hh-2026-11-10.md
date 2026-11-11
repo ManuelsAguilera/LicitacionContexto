@@ -73,3 +73,19 @@ Se valorizan aparte, sin sumarse a las HH:
 2. **La Gantt se rehace.** En el cuerpo va un resumen (hitos y ramas) y la Gantt completa va al anexo T-14. Las 28 láminas actuales no se reutilizan.
 3. **Horas nominales:** se usan 160 HH por persona al mes. Sirve para el costo; la tarifa del Excel debe considerar horas productivas (FEP02·90).
 4. **El calendario de compras (R4) no viene en el traspaso.** Paso C.
+
+## 7. Actualización v2: traspaso completo del SD-04 (2026-11-10)
+
+Tras cruzar unos 90 componentes del SD-04 (commit `1d63376`) con la EDT, se ajustaron las cantidades de 7 componentes existentes (3 frentes en vez de 2, más el laboratorio) y se agregaron los paquetes físicos y los cambios E1–E7. Todo se calculó con el mismo método del ledger: unidad × PERT, M = personas × días × 8, O = 0,6 M y P = 1,5 M.
+
+| Concepto | HH |
+| :-- | --: |
+| Traspaso | 234.493,47 |
+| Ajuste de cantidades de componentes existentes (1.4.1, 1.4.4, 1.4.13, 1.8.4, 1.4.8) | +379,17 |
+| Entorno del Control de cruces (1.4.3, huellas 2 → 4) | +162,67 |
+| Red de sitio en 12 sitios adicionales (C0169, 13 → 25) | +399,96 |
+| Paquetes físicos (levantamiento, compras, instalación, pila local, recuperación) | +2.692,32 |
+| Plataforma de datos, controles de seguridad, DC-01, replicación y compras de lockers y tótems | +1.122,41 |
+| **Total base v2** | **239.250,01** |
+
+La red v2, su validación, el calendario de compras y los 21 perfiles del E-26 están en `red-sd04-v2-2026-11-10/README.md`. La v2 reemplaza las 237.104,14 HH del paso C, que usaba otra fórmula para la parte física.
