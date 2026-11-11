@@ -45,4 +45,9 @@ Estabilización con margen de 10 días: 77 actividades movidas.
 | Matrices por rol y por perfil del E-26, `HH_paquete_x_perfil_E26.csv`, `HH_por_paquete_EDT.csv` | Igual formato que la v2; copiadas a `Economica/insumos-sd07/` |
 | `escenarios_resultado_v3.json` | Los 8 escenarios del paso D sobre la v3 |
 
-Los scripts de estabilización, matrices y equivalencia son los de `../red-sd04-v2-2026-11-10/`, aplicados a esta red.
+| `estabilizar.py` | Versión de la v3: agrega un piso para que ninguna actividad de la Etapa 2 o de su marcha blanca empiece antes de M13 (7 de enero de 2028, Art. 17) |
+| `programacion_v3.csv` | Programación estabilizada por actividad, base de las figuras diag-07-0* |
+
+Los scripts de matrices y equivalencia son los de `../red-sd04-v2-2026-11-10/`, aplicados a esta red. La estabilización usa `estabilizar.py` de esta carpeta.
+
+**Corrección del 2026-11-10 (piso de la Etapa 2).** La primera estabilización adelantó a M12 (7 de diciembre de 2027) la actividad 1.9.12 E2, «Pruebas de comprensión con clientes y titulares · E2», de 22 HH, hasta su inicio temprano. Ese mes es anterior al período contractual de la Etapa 2. Con el piso, la actividad queda el 14 de julio de 2028 (M19), dentro de su holgura. Las otras 76 actividades movidas, los hitos, el total de HH y los 8 escenarios del paso D no cambian. Cambian 22 HH entre meses: M12 baja y M19 sube.
