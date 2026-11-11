@@ -1,0 +1,212 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Centro de datos de casa matriz (DC-01)",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "dc",
+   "etiqueta": "DC-01 · recinto propio de 140 m² (2011), sala técnica principal",
+   "tipo": "sitio_cliente",
+   "disposicion": "fila"
+  },
+  {
+   "id": "rt",
+   "etiqueta": "Recinto técnico (provisto por el proponente)",
+   "tipo": "zona",
+   "disposicion": "rejilla",
+   "padre": "dc",
+   "columnas": 2
+  },
+  {
+   "id": "rr",
+   "etiqueta": "Retail en DC-01",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "dc",
+   "frente": "retail"
+  },
+  {
+   "id": "rf",
+   "etiqueta": "Filial emisora en DC-01",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "dc",
+   "frente": "emisor"
+  },
+  {
+   "id": "sc",
+   "etiqueta": "Sistemas conservados (supuesto de dimensionamiento)",
+   "tipo": "zona",
+   "disposicion": "columna",
+   "padre": "dc"
+  },
+  {
+   "id": "pa",
+   "etiqueta": "Ubicación por acreditar",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "sal",
+   "etiqueta": "Salida",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "az",
+   "etiqueta": "Hacia Azure Chile Central",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "k1",
+   "etiqueta": "Rack de 42U de Retail",
+   "icono": "rack",
+   "grupo": "rt"
+  },
+  {
+   "id": "k2",
+   "etiqueta": "Rack de 42U de la filial",
+   "icono": "rack",
+   "grupo": "rt"
+  },
+  {
+   "id": "k3",
+   "etiqueta": "Rack de 42U de\ncomunicaciones",
+   "icono": "rack",
+   "grupo": "rt"
+  },
+  {
+   "id": "k4",
+   "etiqueta": "Rack de 42U de\nrespaldo local",
+   "icono": "rack",
+   "grupo": "rt"
+  },
+  {
+   "id": "ups",
+   "etiqueta": "UPS de 30 minutos",
+   "icono": "ups",
+   "grupo": "rt"
+  },
+  {
+   "id": "gen",
+   "etiqueta": "Generador y transferidor\nautomático (24 h)",
+   "icono": "ups",
+   "grupo": "rt"
+  },
+  {
+   "id": "cli",
+   "etiqueta": "Climatización, sensores y\ndetección y extinción de incendio",
+   "icono": "monitor",
+   "grupo": "rt"
+  },
+  {
+   "id": "acc",
+   "etiqueta": "Control de acceso\ny videovigilancia",
+   "icono": "camara",
+   "grupo": "rt"
+  },
+  {
+   "id": "nr",
+   "etiqueta": "Red y firewall de Retail",
+   "icono": "fortigate",
+   "grupo": "rr"
+  },
+  {
+   "id": "ir",
+   "etiqueta": "Nodos de integración de\nData Factory ×2 (propuestos)",
+   "icono": "servidor",
+   "grupo": "rr",
+   "estado": "propuesto"
+  },
+  {
+   "id": "nf",
+   "etiqueta": "Red y firewall de la filial",
+   "icono": "fortigate",
+   "grupo": "rf"
+  },
+  {
+   "id": "if",
+   "etiqueta": "Nodos de integración de\nData Factory ×2 (transitorios)",
+   "icono": "servidor",
+   "grupo": "rf",
+   "estado": "propuesto"
+  },
+  {
+   "id": "erp",
+   "etiqueta": "ERP y facturación\nelectrónica",
+   "icono": "servidor",
+   "grupo": "sc",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "c09",
+   "etiqueta": "Sistema central de retail\n(2009)",
+   "icono": "servidor",
+   "grupo": "sc",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "c11",
+   "etiqueta": "Plataforma de crédito (2011),\nen convivencia durante su migración",
+   "icono": "servidor",
+   "grupo": "pa",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "oa",
+   "etiqueta": "Acceso de operador A\n(propuesto)",
+   "icono": "router",
+   "grupo": "sal",
+   "estado": "propuesto"
+  },
+  {
+   "id": "ob",
+   "etiqueta": "Acceso de operador B\n(propuesto, otra ruta)",
+   "icono": "router",
+   "grupo": "sal",
+   "estado": "propuesto"
+  },
+  {
+   "id": "dc2",
+   "etiqueta": "Sala de respaldo DC-02\n(misma comuna)",
+   "icono": "centro_datos",
+   "grupo": "sal"
+  },
+  {
+   "id": "vr",
+   "etiqueta": "VPN Gateway de Retail",
+   "icono": "vpn_gateway",
+   "grupo": "az"
+  },
+  {
+   "id": "vf",
+   "etiqueta": "VPN Gateway de la filial",
+   "icono": "vpn_gateway",
+   "grupo": "az"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "dc",
+   "a": "sal",
+   "semantica": "enlace",
+   "etiqueta": "un túnel por negocio"
+  },
+  {
+   "de": "sal",
+   "a": "vr",
+   "semantica": "vpn",
+   "etiqueta": "túnel de Retail"
+  },
+  {
+   "de": "sal",
+   "a": "vf",
+   "semantica": "vpn",
+   "etiqueta": "túnel de la filial"
+  }
+ ]
+}

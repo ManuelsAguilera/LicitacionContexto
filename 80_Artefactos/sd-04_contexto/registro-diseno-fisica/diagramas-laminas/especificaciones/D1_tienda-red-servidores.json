@@ -1,0 +1,225 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Tienda tipo: red, servidores y equipos",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "tie",
+   "etiqueta": "Tienda tipo (se repite 22 veces)",
+   "tipo": "sitio_cliente",
+   "disposicion": "columna"
+  },
+  {
+   "id": "tr",
+   "etiqueta": "Retail en la tienda",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "tie",
+   "frente": "retail",
+   "columnas": 4
+  },
+  {
+   "id": "tf",
+   "etiqueta": "Filial emisora en la tienda",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "tie",
+   "frente": "emisor",
+   "columnas": 4
+  },
+  {
+   "id": "tn",
+   "etiqueta": "Red de la tienda",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "tie",
+   "frente": "transversal",
+   "columnas": 4
+  },
+  {
+   "id": "sal",
+   "etiqueta": "Salida de la tienda",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "az",
+   "etiqueta": "Hacia Azure Chile Central",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "pos",
+   "etiqueta": "Cajas, impresoras\ny lectores",
+   "icono": "pc",
+   "grupo": "tr"
+  },
+  {
+   "id": "mov",
+   "etiqueta": "Terminales móviles",
+   "icono": "movil",
+   "grupo": "tr"
+  },
+  {
+   "id": "tot",
+   "etiqueta": "Tótem de Modo Tienda\ny fila virtual",
+   "icono": "pc",
+   "grupo": "tr"
+  },
+  {
+   "id": "lck",
+   "etiqueta": "Controlador de lockers\n(tiendas con lockers)",
+   "icono": "servidor",
+   "grupo": "tr"
+  },
+  {
+   "id": "sr1",
+   "etiqueta": "Servidor de Retail 1\n(activo)",
+   "icono": "servidor",
+   "grupo": "tr"
+  },
+  {
+   "id": "sr2",
+   "etiqueta": "Servidor de Retail 2\n(espera)",
+   "icono": "servidor",
+   "grupo": "tr"
+  },
+  {
+   "id": "ar",
+   "etiqueta": "Árbitro de Retail",
+   "icono": "servidor",
+   "grupo": "tr"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Copia local cifrada\nde Retail",
+   "icono": "storage",
+   "grupo": "tr"
+  },
+  {
+   "id": "mes",
+   "etiqueta": "Terminales del\nmesón de crédito",
+   "icono": "pc",
+   "grupo": "tf"
+  },
+  {
+   "id": "sf1",
+   "etiqueta": "Servidor de la filial 1\n(activo)",
+   "icono": "servidor",
+   "grupo": "tf"
+  },
+  {
+   "id": "sf2",
+   "etiqueta": "Servidor de la filial 2\n(espera)",
+   "icono": "servidor",
+   "grupo": "tf"
+  },
+  {
+   "id": "af",
+   "etiqueta": "Árbitro de la filial",
+   "icono": "servidor",
+   "grupo": "tf"
+  },
+  {
+   "id": "bf",
+   "etiqueta": "Copia local cifrada\nde la filial",
+   "icono": "storage",
+   "grupo": "tf"
+  },
+  {
+   "id": "xl",
+   "etiqueta": "Copia local del Control de cruces ×2\n(dentro de los servidores de la filial)",
+   "icono": "servidor",
+   "grupo": "tf"
+  },
+  {
+   "id": "bx",
+   "etiqueta": "Copia local cifrada\ndel Control de cruces",
+   "icono": "storage",
+   "grupo": "tf"
+  },
+  {
+   "id": "fwr",
+   "etiqueta": "Firewalls de Retail ×2\ncon SD-WAN",
+   "icono": "fortigate",
+   "grupo": "tn"
+  },
+  {
+   "id": "fwf",
+   "etiqueta": "Firewalls de la filial ×2\ncon SD-WAN",
+   "icono": "fortigate",
+   "grupo": "tn"
+  },
+  {
+   "id": "sw",
+   "etiqueta": "Switches ×4\n(dos por negocio)",
+   "icono": "switch",
+   "grupo": "tn"
+  },
+  {
+   "id": "ap",
+   "etiqueta": "Puntos inalámbricos\ncorporativos",
+   "icono": "access_point",
+   "grupo": "tn"
+  },
+  {
+   "id": "cam",
+   "etiqueta": "Cámaras y grabador local\n(30 días)",
+   "icono": "camara",
+   "grupo": "tn"
+  },
+  {
+   "id": "oa",
+   "etiqueta": "Acceso fijo, operador A",
+   "icono": "router",
+   "grupo": "sal"
+  },
+  {
+   "id": "ob",
+   "etiqueta": "Acceso fijo, operador B",
+   "icono": "router",
+   "grupo": "sal"
+  },
+  {
+   "id": "lte",
+   "etiqueta": "Router de respaldo 4G/5G\n(doble SIM)",
+   "icono": "antena_lte",
+   "grupo": "sal"
+  },
+  {
+   "id": "vr",
+   "etiqueta": "VPN Gateway de Retail",
+   "icono": "vpn_gateway",
+   "grupo": "az"
+  },
+  {
+   "id": "vf",
+   "etiqueta": "VPN Gateway de la filial",
+   "icono": "vpn_gateway",
+   "grupo": "az"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "tn",
+   "a": "sal",
+   "semantica": "enlace",
+   "etiqueta": "un túnel por negocio"
+  },
+  {
+   "de": "sal",
+   "a": "vr",
+   "semantica": "vpn",
+   "etiqueta": "túnel de Retail"
+  },
+  {
+   "de": "sal",
+   "a": "vf",
+   "semantica": "vpn",
+   "etiqueta": "túnel de la filial"
+  }
+ ]
+}

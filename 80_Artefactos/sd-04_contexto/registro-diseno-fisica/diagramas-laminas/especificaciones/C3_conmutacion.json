@@ -1,0 +1,121 @@
+{
+ "estilo": "F4",
+ "figura": "4.99",
+ "titulo": "Conmutación a Azure Brazil South: orden de arranque",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central (primaria)",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South · siete etapas, la suma cabe en el RTO de 4 horas",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "dec",
+   "etiqueta": "Declaración de contingencia:\ndos sondas, métricas\ny verificación humana",
+   "icono": "personas",
+   "grupo": "cl"
+  },
+  {
+   "id": "e1",
+   "etiqueta": "Identidad y claves\nde cada frente",
+   "icono": "key_vault",
+   "grupo": "br",
+   "insignia": 1
+  },
+  {
+   "id": "e2",
+   "etiqueta": "Red y DNS: los sitios\nreconectan al VPN\nGateway de Brasil",
+   "icono": "vpn_gateway",
+   "grupo": "br",
+   "insignia": 2
+  },
+  {
+   "id": "e3",
+   "etiqueta": "Datos y mensajería: se\naísla Chile, se promueve\ncada réplica y se habilita\nla alta disponibilidad",
+   "icono": "postgresql",
+   "grupo": "br",
+   "insignia": 3
+  },
+  {
+   "id": "e4",
+   "etiqueta": "Cómputo y herramientas\n(ya encendidos)",
+   "icono": "aks",
+   "grupo": "br",
+   "insignia": 4
+  },
+  {
+   "id": "e5",
+   "etiqueta": "Servicios de cada frente",
+   "icono": "aks",
+   "grupo": "br",
+   "insignia": 5
+  },
+  {
+   "id": "e6",
+   "etiqueta": "Front Door activa el\norigen de Brasil,\ntráfico gradual",
+   "icono": "front_door",
+   "grupo": "br",
+   "insignia": 6
+  },
+  {
+   "id": "e7",
+   "etiqueta": "Prueba funcional: venta,\ncrédito, compra por X-01\ny conciliación",
+   "icono": "personas",
+   "grupo": "br",
+   "insignia": 7
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "dec",
+   "a": "e1",
+   "semantica": "enlace",
+   "etiqueta": "inicio"
+  },
+  {
+   "de": "e1",
+   "a": "e2",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  },
+  {
+   "de": "e2",
+   "a": "e3",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  },
+  {
+   "de": "e3",
+   "a": "e4",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  },
+  {
+   "de": "e4",
+   "a": "e5",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  },
+  {
+   "de": "e5",
+   "a": "e6",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  },
+  {
+   "de": "e6",
+   "a": "e7",
+   "semantica": "enlace",
+   "etiqueta": "luego"
+  }
+ ]
+}

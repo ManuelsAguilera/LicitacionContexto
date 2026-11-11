@@ -1,0 +1,272 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Identidad, seguridad, observabilidad y entrega de Azure Chile Central",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "glo",
+   "etiqueta": "Servicios globales o fuera de Chile Central",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "retail"
+  },
+  {
+   "id": "r_s",
+   "etiqueta": "Claves y seguridad",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "r_o",
+   "etiqueta": "Observabilidad, datos y entrega",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "frontera"
+  },
+  {
+   "id": "x_s",
+   "etiqueta": "Claves y seguridad",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "x_o",
+   "etiqueta": "Observabilidad, datos y entrega",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "emisor"
+  },
+  {
+   "id": "f_s",
+   "etiqueta": "Claves y seguridad",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 2
+  },
+  {
+   "id": "f_o",
+   "etiqueta": "Observabilidad, datos y entrega",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 2
+  }
+ ],
+ "nodos": [
+  {
+   "id": "ent",
+   "etiqueta": "Microsoft Entra ID con PIM\n(un tenant, permisos por frente)",
+   "icono": "entra_id",
+   "grupo": "glo"
+  },
+  {
+   "id": "exi",
+   "etiqueta": "Entra External ID\n(una configuración por negocio)",
+   "icono": "external_id",
+   "grupo": "glo"
+  },
+  {
+   "id": "itn",
+   "etiqueta": "Microsoft Intune",
+   "icono": "intune",
+   "grupo": "glo"
+  },
+  {
+   "id": "pip",
+   "etiqueta": "Azure Pipelines con agentes\nefímeros (un conjunto por frente)",
+   "icono": "devops",
+   "grupo": "glo"
+  },
+  {
+   "id": "apc",
+   "etiqueta": "Azure API Center ×2\n(East US, solo contratos)",
+   "icono": "api_management",
+   "grupo": "glo"
+  },
+  {
+   "id": "sen",
+   "etiqueta": "Microsoft Sentinel ×3\n(Brazil South)",
+   "icono": "sentinel",
+   "grupo": "glo"
+  },
+  {
+   "id": "r_kv",
+   "etiqueta": "Key Vault",
+   "icono": "key_vault",
+   "grupo": "r_s"
+  },
+  {
+   "id": "r_def",
+   "etiqueta": "Microsoft Defender",
+   "icono": "defender",
+   "grupo": "r_s"
+  },
+  {
+   "id": "r_law",
+   "etiqueta": "Log Analytics",
+   "icono": "log_analytics",
+   "grupo": "r_o"
+  },
+  {
+   "id": "r_adf",
+   "etiqueta": "Azure Data Factory",
+   "icono": "data_factory",
+   "grupo": "r_o"
+  },
+  {
+   "id": "r_pbi",
+   "etiqueta": "Capacidad de Power BI",
+   "icono": "power_bi",
+   "grupo": "r_o"
+  },
+  {
+   "id": "r_acr",
+   "etiqueta": "Container Registry\nPremium",
+   "icono": "container_registry",
+   "grupo": "r_o"
+  },
+  {
+   "id": "r_tf",
+   "etiqueta": "Estado de Terraform",
+   "icono": "storage",
+   "grupo": "r_o"
+  },
+  {
+   "id": "x_kv",
+   "etiqueta": "Key Vault",
+   "icono": "key_vault",
+   "grupo": "x_s"
+  },
+  {
+   "id": "x_hsm",
+   "etiqueta": "Managed HSM\n(condicionado al censo)",
+   "icono": "hsm",
+   "grupo": "x_s",
+   "estado": "condicionado"
+  },
+  {
+   "id": "x_def",
+   "etiqueta": "Microsoft Defender",
+   "icono": "defender",
+   "grupo": "x_s"
+  },
+  {
+   "id": "x_law",
+   "etiqueta": "Log Analytics",
+   "icono": "log_analytics",
+   "grupo": "x_o"
+  },
+  {
+   "id": "x_acr",
+   "etiqueta": "Container Registry\nPremium",
+   "icono": "container_registry",
+   "grupo": "x_o"
+  },
+  {
+   "id": "x_tf",
+   "etiqueta": "Estado de Terraform",
+   "icono": "storage",
+   "grupo": "x_o"
+  },
+  {
+   "id": "f_kv",
+   "etiqueta": "Key Vault",
+   "icono": "key_vault",
+   "grupo": "f_s"
+  },
+  {
+   "id": "f_hsm",
+   "etiqueta": "Managed HSM\n(condicionado al censo)",
+   "icono": "hsm",
+   "grupo": "f_s",
+   "estado": "condicionado"
+  },
+  {
+   "id": "f_def",
+   "etiqueta": "Microsoft Defender",
+   "icono": "defender",
+   "grupo": "f_s"
+  },
+  {
+   "id": "f_law",
+   "etiqueta": "Log Analytics",
+   "icono": "log_analytics",
+   "grupo": "f_o"
+  },
+  {
+   "id": "f_adf",
+   "etiqueta": "Azure Data Factory",
+   "icono": "data_factory",
+   "grupo": "f_o"
+  },
+  {
+   "id": "f_pbi",
+   "etiqueta": "Capacidad de Power BI",
+   "icono": "power_bi",
+   "grupo": "f_o"
+  },
+  {
+   "id": "f_acr",
+   "etiqueta": "Container Registry\nPremium",
+   "icono": "container_registry",
+   "grupo": "f_o"
+  },
+  {
+   "id": "f_tf",
+   "etiqueta": "Estado de Terraform",
+   "icono": "storage",
+   "grupo": "f_o"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "r_o",
+   "a": "sen",
+   "semantica": "enlace",
+   "etiqueta": "solo eventos de seguridad"
+  }
+ ]
+}

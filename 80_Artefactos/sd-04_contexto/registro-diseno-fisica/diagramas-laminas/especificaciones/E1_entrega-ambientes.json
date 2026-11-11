@@ -1,0 +1,257 @@
+{
+ "estilo": "F3",
+ "figura": "4.99",
+ "titulo": "Canal de entrega y ambientes por frente",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "ent",
+   "etiqueta": "Entrega",
+   "tipo": "seccion",
+   "disposicion": "fila"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central · 3 grupos de administración y 12 suscripciones",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "dev",
+   "etiqueta": "Desarrollo",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl"
+  },
+  {
+   "id": "qa",
+   "etiqueta": "QA",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl"
+  },
+  {
+   "id": "pre",
+   "etiqueta": "Preproducción",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl"
+  },
+  {
+   "id": "prd",
+   "etiqueta": "Producción",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South · 3 suscripciones",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "rec",
+   "etiqueta": "Recuperación ante Desastres · misma definición de infraestructura que Producción",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "br"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "repo",
+   "etiqueta": "Repositorio de código",
+   "icono": "repositorio",
+   "grupo": "ent"
+  },
+  {
+   "id": "pip",
+   "etiqueta": "Azure Pipelines\n(agentes en conjunto de escalado)",
+   "icono": "devops",
+   "grupo": "ent"
+  },
+  {
+   "id": "acr",
+   "etiqueta": "Container Registry Premium\n(uno por frente)",
+   "icono": "container_registry",
+   "grupo": "ent"
+  },
+  {
+   "id": "tf",
+   "etiqueta": "Estado de Terraform\n(por frente y ambiente)",
+   "icono": "storage",
+   "grupo": "ent"
+  },
+  {
+   "id": "dev_r",
+   "etiqueta": "Suscripción y Key Vault\nde Retail",
+   "icono": "key_vault",
+   "grupo": "dev"
+  },
+  {
+   "id": "dev_x",
+   "etiqueta": "Suscripción y Key Vault\nde Control de cruces",
+   "icono": "key_vault",
+   "grupo": "dev"
+  },
+  {
+   "id": "dev_f",
+   "etiqueta": "Suscripción y Key Vault\nde la filial",
+   "icono": "key_vault",
+   "grupo": "dev"
+  },
+  {
+   "id": "qa_r",
+   "etiqueta": "Suscripción y Key Vault\nde Retail",
+   "icono": "key_vault",
+   "grupo": "qa"
+  },
+  {
+   "id": "qa_x",
+   "etiqueta": "Suscripción y Key Vault\nde Control de cruces",
+   "icono": "key_vault",
+   "grupo": "qa"
+  },
+  {
+   "id": "qa_f",
+   "etiqueta": "Suscripción y Key Vault\nde la filial",
+   "icono": "key_vault",
+   "grupo": "qa"
+  },
+  {
+   "id": "pre_r",
+   "etiqueta": "Suscripción y Key Vault\nde Retail",
+   "icono": "key_vault",
+   "grupo": "pre"
+  },
+  {
+   "id": "pre_x",
+   "etiqueta": "Suscripción y Key Vault\nde Control de cruces",
+   "icono": "key_vault",
+   "grupo": "pre"
+  },
+  {
+   "id": "pre_f",
+   "etiqueta": "Suscripción y Key Vault\nde la filial",
+   "icono": "key_vault",
+   "grupo": "pre"
+  },
+  {
+   "id": "prd_r",
+   "etiqueta": "Suscripción y Key Vault\nde Retail",
+   "icono": "key_vault",
+   "grupo": "prd"
+  },
+  {
+   "id": "prd_x",
+   "etiqueta": "Suscripción y Key Vault\nde Control de cruces",
+   "icono": "key_vault",
+   "grupo": "prd"
+  },
+  {
+   "id": "prd_f",
+   "etiqueta": "Suscripción y Key Vault\nde la filial",
+   "icono": "key_vault",
+   "grupo": "prd"
+  },
+  {
+   "id": "lab",
+   "etiqueta": "Tienda de laboratorio\n(4 servidores y 2 árbitros)",
+   "icono": "sitio",
+   "grupo": "pre"
+  },
+  {
+   "id": "rec_r",
+   "etiqueta": "Suscripción y Key Vault\nde Retail",
+   "icono": "key_vault",
+   "grupo": "rec"
+  },
+  {
+   "id": "rec_x",
+   "etiqueta": "Suscripción y Key Vault\nde Control de cruces",
+   "icono": "key_vault",
+   "grupo": "rec"
+  },
+  {
+   "id": "rec_f",
+   "etiqueta": "Suscripción y Key Vault\nde la filial",
+   "icono": "key_vault",
+   "grupo": "rec"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "repo",
+   "a": "pip",
+   "semantica": "despliegue",
+   "etiqueta": "cambio revisado"
+  },
+  {
+   "de": "pip",
+   "a": "acr",
+   "semantica": "despliegue",
+   "etiqueta": "imagen firmada"
+  },
+  {
+   "de": "acr",
+   "a": "cl",
+   "semantica": "despliegue",
+   "etiqueta": "despliegue por frente y ambiente"
+  },
+  {
+   "de": "dev_r",
+   "a": "qa_r",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "qa_r",
+   "a": "pre_r",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "pre_r",
+   "a": "prd_r",
+   "semantica": "aprobacion",
+   "etiqueta": "aprobación del cambio"
+  },
+  {
+   "de": "dev_x",
+   "a": "qa_x",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "qa_x",
+   "a": "pre_x",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "pre_x",
+   "a": "prd_x",
+   "semantica": "aprobacion",
+   "etiqueta": "aprobación del cambio"
+  },
+  {
+   "de": "dev_f",
+   "a": "qa_f",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "qa_f",
+   "a": "pre_f",
+   "semantica": "despliegue",
+   "etiqueta": "promoción"
+  },
+  {
+   "de": "pre_f",
+   "a": "prd_f",
+   "semantica": "aprobacion",
+   "etiqueta": "aprobación del cambio"
+  }
+ ]
+}

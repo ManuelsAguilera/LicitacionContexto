@@ -1,0 +1,172 @@
+{
+ "estilo": "F4",
+ "figura": "4.99",
+ "titulo": "Puntos de falla y contingencias de los sitios y de la nube",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "tie",
+   "etiqueta": "Tienda tipo ×22 (túneles IPsec hacia Azure)",
+   "tipo": "sitio_cliente",
+   "disposicion": "columna"
+  },
+  {
+   "id": "sit",
+   "etiqueta": "Centros y casa matriz",
+   "tipo": "sitio_cliente",
+   "disposicion": "columna"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "zon",
+   "etiqueta": "Tres zonas de disponibilidad",
+   "tipo": "zona",
+   "disposicion": "fila",
+   "padre": "cl"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "glo",
+   "etiqueta": "Servicios globales",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  }
+ ],
+ "nodos": [
+  {
+   "id": "srv",
+   "etiqueta": "Par de servidores por negocio\ncon árbitro",
+   "icono": "servidor",
+   "grupo": "tie",
+   "insignia": 1
+  },
+  {
+   "id": "acc",
+   "etiqueta": "Dos accesos fijos\nde operadores distintos",
+   "icono": "router",
+   "grupo": "tie",
+   "insignia": 2
+  },
+  {
+   "id": "lte",
+   "etiqueta": "Router 4G/5G\n(tercer camino, 5 Mbps)",
+   "icono": "antena_lte",
+   "grupo": "tie",
+   "insignia": 3
+  },
+  {
+   "id": "aut",
+   "etiqueta": "Operación local de 24 horas\n(sin ningún enlace)",
+   "icono": "sitio",
+   "grupo": "tie",
+   "insignia": 4
+  },
+  {
+   "id": "cd2",
+   "etiqueta": "Enlace único de CD-02, con\ncaptura local y router 4G/5G",
+   "icono": "antena_lte",
+   "grupo": "sit",
+   "insignia": 5
+  },
+  {
+   "id": "dc1",
+   "etiqueta": "Conexión de DC-01\n(dos accesos de operador)",
+   "icono": "centro_datos",
+   "grupo": "sit",
+   "insignia": 6
+  },
+  {
+   "id": "erp",
+   "etiqueta": "ERP/DTE conservado\n(modalidad fiscal de contingencia)",
+   "icono": "servidor",
+   "grupo": "sit",
+   "estado": "por_acreditar",
+   "insignia": 9
+  },
+  {
+   "id": "wms",
+   "etiqueta": "WMS de CD-01\n(degradación por interfaz)",
+   "icono": "servidor",
+   "grupo": "sit",
+   "estado": "por_acreditar",
+   "insignia": 10
+  },
+  {
+   "id": "z",
+   "etiqueta": "Servicios zonales con\ncontinuidad en las otras dos",
+   "icono": "aks",
+   "grupo": "zon",
+   "insignia": 7
+  },
+  {
+   "id": "sb",
+   "etiqueta": "Service Bus de un negocio\n(reintento y reproceso)",
+   "icono": "service_bus",
+   "grupo": "cl",
+   "insignia": 11
+  },
+  {
+   "id": "reg",
+   "etiqueta": "Región completa",
+   "icono": "vnet",
+   "grupo": "cl",
+   "insignia": 8
+  },
+  {
+   "id": "rec",
+   "etiqueta": "Recuperación de los tres frentes\n(RTO 4 h, RPO 15 min)",
+   "icono": "aks",
+   "grupo": "br"
+  },
+  {
+   "id": "afd",
+   "etiqueta": "Front Door y entrada pública\n(punto privado por East US)",
+   "icono": "front_door",
+   "grupo": "glo",
+   "insignia": 12
+  },
+  {
+   "id": "ent",
+   "etiqueta": "Entra ID\n(cuentas de emergencia por frente)",
+   "icono": "entra_id",
+   "grupo": "glo",
+   "insignia": 13
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "srv",
+   "a": "acc",
+   "semantica": "enlace",
+   "etiqueta": "túneles por negocio"
+  },
+  {
+   "de": "acc",
+   "a": "lte",
+   "semantica": "respaldo",
+   "etiqueta": "si caen ambos accesos"
+  },
+  {
+   "de": "sit",
+   "a": "cl",
+   "semantica": "vpn",
+   "etiqueta": "túneles IPsec de los sitios"
+  },
+  {
+   "de": "reg",
+   "a": "rec",
+   "semantica": "replica",
+   "etiqueta": "conmutación de región"
+  }
+ ]
+}

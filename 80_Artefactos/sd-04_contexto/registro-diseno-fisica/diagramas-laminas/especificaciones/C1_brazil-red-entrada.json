@@ -1,0 +1,213 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Azure Brazil South: red y entrada de recuperación por frente",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "ext",
+   "etiqueta": "Desde fuera de la región",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "br",
+   "etiqueta": "Azure Brazil South · rangos 10.68, 10.69 y 10.70",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "rejilla",
+   "padre": "br",
+   "frente": "emisor",
+   "columnas": 2
+  }
+ ],
+ "nodos": [
+  {
+   "id": "afd",
+   "etiqueta": "Front Door: origen de recuperación,\ndeshabilitado hasta la etapa 6",
+   "icono": "front_door",
+   "grupo": "ext"
+  },
+  {
+   "id": "sit",
+   "etiqueta": "Sitios del Cliente\n(segundo destino del túnel)",
+   "icono": "sitio",
+   "grupo": "ext"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central\n(primaria)",
+   "icono": "vnet",
+   "grupo": "ext"
+  },
+  {
+   "id": "r_pe",
+   "etiqueta": "Punto privado de\nFront Door",
+   "icono": "private_link",
+   "grupo": "r"
+  },
+  {
+   "id": "r_agw",
+   "etiqueta": "Application Gateway\ncon firewall web",
+   "icono": "app_gateway",
+   "grupo": "r"
+  },
+  {
+   "id": "r_vpn",
+   "etiqueta": "VPN Gateway\n(con zonas)",
+   "icono": "vpn_gateway",
+   "grupo": "r"
+  },
+  {
+   "id": "r_apim",
+   "etiqueta": "Gateway regional de\nAPI Management",
+   "icono": "api_management",
+   "grupo": "r"
+  },
+  {
+   "id": "r_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "r"
+  },
+  {
+   "id": "r_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "r"
+  },
+  {
+   "id": "r_bas",
+   "etiqueta": "Azure Bastion\n(sin zonas)",
+   "icono": "bastion",
+   "grupo": "r"
+  },
+  {
+   "id": "f_pe",
+   "etiqueta": "Punto privado de\nFront Door",
+   "icono": "private_link",
+   "grupo": "f"
+  },
+  {
+   "id": "f_agw",
+   "etiqueta": "Application Gateway\ncon firewall web",
+   "icono": "app_gateway",
+   "grupo": "f"
+  },
+  {
+   "id": "f_vpn",
+   "etiqueta": "VPN Gateway\n(con zonas)",
+   "icono": "vpn_gateway",
+   "grupo": "f"
+  },
+  {
+   "id": "f_apim",
+   "etiqueta": "Gateway regional de\nAPI Management",
+   "icono": "api_management",
+   "grupo": "f"
+  },
+  {
+   "id": "f_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "f"
+  },
+  {
+   "id": "f_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "f"
+  },
+  {
+   "id": "f_bas",
+   "etiqueta": "Azure Bastion\n(sin zonas)",
+   "icono": "bastion",
+   "grupo": "f"
+  },
+  {
+   "id": "x_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "x"
+  },
+  {
+   "id": "x_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "x"
+  },
+  {
+   "id": "x_bas",
+   "etiqueta": "Azure Bastion\n(sin zonas)",
+   "icono": "bastion",
+   "grupo": "x"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "afd",
+   "a": "r_pe",
+   "semantica": "enlace",
+   "etiqueta": "solo tras activarlo"
+  },
+  {
+   "de": "r_pe",
+   "a": "r_agw",
+   "semantica": "enlace",
+   "etiqueta": "HTTPS privado"
+  },
+  {
+   "de": "r_agw",
+   "a": "r_apim",
+   "semantica": "enlace",
+   "etiqueta": "rutas de API"
+  },
+  {
+   "de": "f_pe",
+   "a": "f_agw",
+   "semantica": "enlace",
+   "etiqueta": "HTTPS privado"
+  },
+  {
+   "de": "f_agw",
+   "a": "f_apim",
+   "semantica": "enlace",
+   "etiqueta": "rutas de API"
+  },
+  {
+   "de": "sit",
+   "a": "r_vpn",
+   "semantica": "vpn",
+   "etiqueta": "reconexión en contingencia"
+  },
+  {
+   "de": "cl",
+   "a": "br",
+   "semantica": "replica",
+   "etiqueta": "réplica privada"
+  }
+ ]
+}

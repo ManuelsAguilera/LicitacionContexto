@@ -1,0 +1,251 @@
+{
+ "estilo": "F5",
+ "figura": "4.99",
+ "titulo": "Datos, mensajería y respaldo de Azure Chile Central por frente",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central · datos copiados entre zonas",
+   "tipo": "nube_azure",
+   "disposicion": "fila"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "retail"
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "frontera"
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "columna",
+   "padre": "cl",
+   "frente": "emisor"
+  },
+  {
+   "id": "r_pg",
+   "etiqueta": "Bases PostgreSQL de Retail (6)",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 3
+  },
+  {
+   "id": "r_ms",
+   "etiqueta": "Mensajería, caché y almacenamiento de Retail",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 3
+  },
+  {
+   "id": "x_pg",
+   "etiqueta": "Base PostgreSQL de X-01 (1)",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 3
+  },
+  {
+   "id": "x_ms",
+   "etiqueta": "Almacenamiento y respaldo de X-01",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 3
+  },
+  {
+   "id": "f_pg",
+   "etiqueta": "Bases PostgreSQL de la filial (5)",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 3
+  },
+  {
+   "id": "f_ms",
+   "etiqueta": "Mensajería y almacenamiento de la filial",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 3
+  }
+ ],
+ "nodos": [
+  {
+   "id": "r_pg0",
+   "etiqueta": "Mercadería e\nhistorial de precios",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_pg1",
+   "etiqueta": "Venta",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_pg2",
+   "etiqueta": "Clientes",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_pg3",
+   "etiqueta": "Vectores\n(búsqueda multimodal)",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_pg4",
+   "etiqueta": "Analítico",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_pg5",
+   "etiqueta": "Técnico",
+   "icono": "postgresql",
+   "grupo": "r_pg"
+  },
+  {
+   "id": "r_sb",
+   "etiqueta": "Service Bus Premium\nde Retail",
+   "icono": "service_bus",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "r_rd",
+   "etiqueta": "Memoria rápida\n(Redis B20, 24 GB)",
+   "icono": "redis",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "r_dl",
+   "etiqueta": "Data Lake de Retail\n(3 TiB)",
+   "icono": "data_lake",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "r_ar",
+   "etiqueta": "Archivo inmutable\nde Retail (25 TiB)",
+   "icono": "storage",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "r_op",
+   "etiqueta": "Almacenamiento de\noperación (1 TiB)",
+   "icono": "storage",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "r_bk",
+   "etiqueta": "Bóveda de respaldo\n(redundante entre zonas)",
+   "icono": "backup_vault",
+   "grupo": "r_ms"
+  },
+  {
+   "id": "x_pg0",
+   "etiqueta": "Bitácora de cruces",
+   "icono": "postgresql",
+   "grupo": "x_pg"
+  },
+  {
+   "id": "x_op",
+   "etiqueta": "Almacenamiento de\noperación (1 TiB)",
+   "icono": "storage",
+   "grupo": "x_ms"
+  },
+  {
+   "id": "x_bk",
+   "etiqueta": "Bóveda de respaldo\n(redundante entre zonas)",
+   "icono": "backup_vault",
+   "grupo": "x_ms"
+  },
+  {
+   "id": "f_pg0",
+   "etiqueta": "Originación",
+   "icono": "postgresql",
+   "grupo": "f_pg"
+  },
+  {
+   "id": "f_pg1",
+   "etiqueta": "Cartera",
+   "icono": "postgresql",
+   "grupo": "f_pg"
+  },
+  {
+   "id": "f_pg2",
+   "etiqueta": "Evidencia",
+   "icono": "postgresql",
+   "grupo": "f_pg"
+  },
+  {
+   "id": "f_pg3",
+   "etiqueta": "Analítico",
+   "icono": "postgresql",
+   "grupo": "f_pg"
+  },
+  {
+   "id": "f_pg4",
+   "etiqueta": "Técnico",
+   "icono": "postgresql",
+   "grupo": "f_pg"
+  },
+  {
+   "id": "f_sb",
+   "etiqueta": "Service Bus Premium\nde la filial",
+   "icono": "service_bus",
+   "grupo": "f_ms"
+  },
+  {
+   "id": "f_dl",
+   "etiqueta": "Data Lake de la filial\n(2 TiB)",
+   "icono": "data_lake",
+   "grupo": "f_ms"
+  },
+  {
+   "id": "f_ev",
+   "etiqueta": "Evidencia de la filial\n(5 TiB)",
+   "icono": "storage",
+   "grupo": "f_ms"
+  },
+  {
+   "id": "f_ar",
+   "etiqueta": "Archivo inmutable\nde la filial (12 TiB)",
+   "icono": "storage",
+   "grupo": "f_ms"
+  },
+  {
+   "id": "f_op",
+   "etiqueta": "Almacenamiento de\noperación (1 TiB)",
+   "icono": "storage",
+   "grupo": "f_ms"
+  },
+  {
+   "id": "f_bk",
+   "etiqueta": "Bóveda de respaldo\n(redundante entre zonas)",
+   "icono": "backup_vault",
+   "grupo": "f_ms"
+  }
+ ],
+ "enlaces": []
+}

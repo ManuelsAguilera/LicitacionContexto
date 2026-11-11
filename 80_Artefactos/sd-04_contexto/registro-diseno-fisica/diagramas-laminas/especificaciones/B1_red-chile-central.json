@@ -1,0 +1,424 @@
+{
+ "estilo": "F2",
+ "figura": "4.99",
+ "titulo": "Red y entrada de Azure Chile Central por frente",
+ "fuente": "elaboración propia a partir del registro de diseño de la física y del Subdocumento 4.",
+ "grupos": [
+  {
+   "id": "ext",
+   "etiqueta": "Entrada desde fuera de la región",
+   "tipo": "seccion",
+   "disposicion": "columna"
+  },
+  {
+   "id": "cl",
+   "etiqueta": "Azure Chile Central · producción en 3 zonas",
+   "tipo": "nube_azure",
+   "disposicion": "columna"
+  },
+  {
+   "id": "r",
+   "etiqueta": "Retail",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "retail"
+  },
+  {
+   "id": "r_hub",
+   "etiqueta": "Red central",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 3
+  },
+  {
+   "id": "r_app",
+   "etiqueta": "Red de aplicaciones",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 2
+  },
+  {
+   "id": "r_dat",
+   "etiqueta": "Red de datos",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "r",
+   "frente": "retail",
+   "columnas": 1
+  },
+  {
+   "id": "x",
+   "etiqueta": "Control de cruces",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "frontera"
+  },
+  {
+   "id": "x_hub",
+   "etiqueta": "Red central",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 3
+  },
+  {
+   "id": "x_app",
+   "etiqueta": "Red de aplicaciones",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 2
+  },
+  {
+   "id": "x_dat",
+   "etiqueta": "Red de datos",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "x",
+   "frente": "frontera",
+   "columnas": 1
+  },
+  {
+   "id": "f",
+   "etiqueta": "Filial emisora",
+   "tipo": "ambito",
+   "disposicion": "fila",
+   "padre": "cl",
+   "frente": "emisor"
+  },
+  {
+   "id": "f_hub",
+   "etiqueta": "Red central",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 3
+  },
+  {
+   "id": "f_app",
+   "etiqueta": "Red de aplicaciones",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 2
+  },
+  {
+   "id": "f_dat",
+   "etiqueta": "Red de datos",
+   "tipo": "subred",
+   "disposicion": "rejilla",
+   "padre": "f",
+   "frente": "emisor",
+   "columnas": 1
+  }
+ ],
+ "nodos": [
+  {
+   "id": "pe_br",
+   "etiqueta": "Punto privado de tránsito\nen Brazil South (prioridad 1)",
+   "icono": "private_link",
+   "grupo": "ext"
+  },
+  {
+   "id": "afd_r",
+   "etiqueta": "Front Door de Retail",
+   "icono": "front_door",
+   "grupo": "ext"
+  },
+  {
+   "id": "pe_us",
+   "etiqueta": "Punto privado de tránsito\nen East US (prioridad 2,\nal mismo Application Gateway)",
+   "icono": "private_link",
+   "grupo": "ext"
+  },
+  {
+   "id": "afd_f",
+   "etiqueta": "Front Door de la filial\n(mismo recorrido, con\nsus puntos privados)",
+   "icono": "front_door",
+   "grupo": "ext"
+  },
+  {
+   "id": "dnsp",
+   "etiqueta": "Azure DNS público",
+   "icono": "dns",
+   "grupo": "ext"
+  },
+  {
+   "id": "ddos",
+   "etiqueta": "Azure DDoS Protection\n(IP públicas que queden)",
+   "icono": "ddos",
+   "grupo": "ext"
+  },
+  {
+   "id": "r_vpn",
+   "etiqueta": "VPN Gateway\n(túneles de los sitios)",
+   "icono": "vpn_gateway",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "r_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "r_agw",
+   "etiqueta": "Application Gateway\ncon firewall web",
+   "icono": "app_gateway",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "r_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "r_bas",
+   "etiqueta": "Azure Bastion",
+   "icono": "bastion",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "r_apim",
+   "etiqueta": "API Management\nPremium",
+   "icono": "api_management",
+   "grupo": "r_hub"
+  },
+  {
+   "id": "f_vpn",
+   "etiqueta": "VPN Gateway\n(túneles de los sitios)",
+   "icono": "vpn_gateway",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "f_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "f_agw",
+   "etiqueta": "Application Gateway\ncon firewall web",
+   "icono": "app_gateway",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "f_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "f_bas",
+   "etiqueta": "Azure Bastion",
+   "icono": "bastion",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "f_apim",
+   "etiqueta": "API Management\nPremium",
+   "icono": "api_management",
+   "grupo": "f_hub"
+  },
+  {
+   "id": "x_fw",
+   "etiqueta": "Azure Firewall\nPremium",
+   "icono": "azure_firewall",
+   "grupo": "x_hub"
+  },
+  {
+   "id": "x_dns",
+   "etiqueta": "DNS Private\nResolver",
+   "icono": "dns_resolver",
+   "grupo": "x_hub"
+  },
+  {
+   "id": "x_vpn",
+   "etiqueta": "VPN Gateway\n(solo si se acredita)",
+   "icono": "vpn_gateway",
+   "grupo": "x_hub",
+   "estado": "por_acreditar"
+  },
+  {
+   "id": "x_bas",
+   "etiqueta": "Azure Bastion",
+   "icono": "bastion",
+   "grupo": "x_hub"
+  },
+  {
+   "id": "r_lb",
+   "etiqueta": "Balanceador interno\nde AKS",
+   "icono": "load_balancer",
+   "grupo": "r_app"
+  },
+  {
+   "id": "r_aks",
+   "etiqueta": "Clúster de AKS\nde Retail",
+   "icono": "aks",
+   "grupo": "r_app"
+  },
+  {
+   "id": "x_lb",
+   "etiqueta": "Balanceador interno\nde AKS",
+   "icono": "load_balancer",
+   "grupo": "x_app"
+  },
+  {
+   "id": "x_aks",
+   "etiqueta": "Clúster de AKS\nde X-01",
+   "icono": "aks",
+   "grupo": "x_app"
+  },
+  {
+   "id": "f_lb",
+   "etiqueta": "Balanceador interno\nde AKS",
+   "icono": "load_balancer",
+   "grupo": "f_app"
+  },
+  {
+   "id": "f_aks",
+   "etiqueta": "Clúster de AKS\nde la filial",
+   "icono": "aks",
+   "grupo": "f_app"
+  },
+  {
+   "id": "r_pd",
+   "etiqueta": "Puntos privados de las\n6 bases PostgreSQL",
+   "icono": "private_link",
+   "grupo": "r_dat"
+  },
+  {
+   "id": "r_pm",
+   "etiqueta": "Puntos privados de mensajería,\ncaché y almacenamiento",
+   "icono": "private_link",
+   "grupo": "r_dat"
+  },
+  {
+   "id": "x_pd",
+   "etiqueta": "Punto privado de la\nbitácora de cruces",
+   "icono": "private_link",
+   "grupo": "x_dat"
+  },
+  {
+   "id": "x_pm",
+   "etiqueta": "Punto privado del\nalmacenamiento de operación",
+   "icono": "private_link",
+   "grupo": "x_dat"
+  },
+  {
+   "id": "f_pd",
+   "etiqueta": "Puntos privados de las\n5 bases PostgreSQL",
+   "icono": "private_link",
+   "grupo": "f_dat"
+  },
+  {
+   "id": "f_pm",
+   "etiqueta": "Puntos privados de mensajería\ny almacenamiento",
+   "icono": "private_link",
+   "grupo": "f_dat"
+  }
+ ],
+ "enlaces": [
+  {
+   "de": "afd_r",
+   "a": "pe_br",
+   "semantica": "enlace",
+   "etiqueta": "origen privado"
+  },
+  {
+   "de": "afd_r",
+   "a": "pe_us",
+   "semantica": "enlace",
+   "etiqueta": "origen secundario"
+  },
+  {
+   "de": "pe_br",
+   "a": "r_agw",
+   "semantica": "enlace",
+   "etiqueta": "HTTPS privado"
+  },
+  {
+   "de": "r_agw",
+   "a": "r_apim",
+   "semantica": "enlace",
+   "etiqueta": "rutas de API"
+  },
+  {
+   "de": "r_apim",
+   "a": "r_lb",
+   "semantica": "enlace",
+   "etiqueta": "llamadas autorizadas"
+  },
+  {
+   "de": "r_lb",
+   "a": "r_aks",
+   "semantica": "enlace",
+   "etiqueta": "hacia los servicios"
+  },
+  {
+   "de": "r_aks",
+   "a": "r_pd",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "acceso a datos"
+  },
+  {
+   "de": "f_agw",
+   "a": "f_apim",
+   "semantica": "enlace",
+   "etiqueta": "rutas de API"
+  },
+  {
+   "de": "f_apim",
+   "a": "f_lb",
+   "semantica": "enlace",
+   "etiqueta": "llamadas autorizadas"
+  },
+  {
+   "de": "f_lb",
+   "a": "f_aks",
+   "semantica": "enlace",
+   "etiqueta": "hacia los servicios"
+  },
+  {
+   "de": "f_aks",
+   "a": "f_pd",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "acceso a datos"
+  },
+  {
+   "de": "x_lb",
+   "a": "x_aks",
+   "semantica": "enlace",
+   "etiqueta": "hacia el servicio"
+  },
+  {
+   "de": "x_aks",
+   "a": "x_pd",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "bitácora"
+  },
+  {
+   "de": "r_aks",
+   "a": "x_lb",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "autorización de compra"
+  },
+  {
+   "de": "x_aks",
+   "a": "f_lb",
+   "semantica": "trafico_inspeccionado",
+   "etiqueta": "consulta de cupo"
+  }
+ ]
+}
