@@ -2,6 +2,7 @@
 
 Reemplazan las imágenes importadas sd07-edt1.0/1.4/1.8.png, que mostraban 13 paquetes en 1.4 y 8 en 1.8.
 Datos: red v2/v3 del SD-07 (paquetes 1.4.14 a 1.4.24 y 1.8.9 traspasados desde el SD-04).
+Nombres iguales a los de las láminas Gantt (diag-07-04) y al diccionario del T-14.
 El título y la fuente los pone la leyenda del .tex; la imagen no los repite.
 Uso: <python con matplotlib> diag-07-06_edt-raiz-y-ramas.py
 Salida: diag-07-06_edt-1-0/1-4/1-8.(png|pdf) aquí y sd07-edt1.0/1.4/1.8.png en latex_final/figuras/sd07-figuras/.
@@ -37,8 +38,8 @@ RAMAS = [  # código, nombre, elementos de tercer nivel
 ]
 R14 = [
     'Entorno de nube (IaC, subredes, etiquetado)',
-    'Borde por sitio y red segmentada (25 sitios)',
-    'Entorno de Producción y DR de la filial y control de cruces',
+    'Red de sitio y segmentación (25 sitios)',
+    'Entornos dedicados de la Filial y del Control de cruces',
     'Ambientes dev/QA/preprod/prod/DR',
     'Observabilidad unificada y catálogo de alertas',
     'Plataforma de integración y entrega continuas',
@@ -49,16 +50,16 @@ R14 = [
     'Energía y climatización del centro de datos',
     'Seguridad física del centro de datos',
     'Respaldo en operación con custodia de medios',
-    'Levantamiento físico de los 25 sitios',
-    'Tienda de laboratorio instalada',
-    'Órdenes de compra de DC-01 y del lote 1',
-    'Tiendas piloto instaladas',
-    'Orden de compra del lote 2 (19 tiendas y 2 CD)',
-    'Tiendas y centros de distribución del lote 2 instalados',
-    'Recuperación a tamaño completo',
+    'Levantamiento físico de 25 sitios',
+    'Tienda de laboratorio en Preproducción',
+    'Suministro de DC-01 y del lote 1',
+    'Tres tiendas piloto instaladas',
+    'Suministro del lote 2 (19 tiendas y 2 CD)',
+    'Instalación del lote 2',
+    'Recuperación en Brazil South completa',
     'Plataforma de datos y analítica',
     'Equipamiento TI y redes de DC-01',
-    'Pila local de tienda',
+    'Pila local de tienda (25 sitios)',
     'Replicación entre regiones',
 ]
 R18 = [
@@ -80,8 +81,13 @@ def ajustar(ax, x, y, texto, ancho, **kw):
     def mide(t):
         tt = ax.text(0, 0, t, **kw); w = tt.get_window_extent(renderer=r).width / fig.dpi; tt.remove(); return w
     lineas, actual = [], ''
-    for palabra in texto.split():
-        prueba = (actual + ' ' + palabra).strip()
+    palabras = []
+    for w in texto.split():  # una palabra con barras puede cortarse después de cada barra
+        partes = w.split('/')
+        palabras += [p + '/' for p in partes[:-1]] + [partes[-1]] if mide(w) > ancho else [w]
+    for palabra in palabras:
+        sep = '' if actual.endswith('/') else ' '
+        prueba = (actual + sep + palabra).strip()
         if actual and mide(prueba) > ancho:
             lineas.append(actual); actual = palabra
         else:
