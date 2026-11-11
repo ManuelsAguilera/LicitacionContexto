@@ -1,0 +1,210 @@
+{
+ "S1 Levantamiento (1.2.2)": {
+  "actividad": "1.2.2:E1:TRABAJO:006",
+  "HH": 914.67,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 2,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 137.2
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 71.2
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 208.4
+  }
+ },
+ "S2 Nube base (1.4.1)": {
+  "actividad": "1.4.1:E1:E1:151",
+  "HH": 620.0,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 93.0
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 0.0
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 93.0
+  }
+ },
+ "S3 Construcción E1 (1.5.36.1)": {
+  "actividad": "1.5.36.1:E1:DEV:562",
+  "HH": 98.83,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 14.8
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 7.4
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 22.2
+  }
+ },
+ "S4 Entrega UPS lote 1": {
+  "actividad": "F:1.4.16:ENT-L1-UPS",
+  "HH": 0,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 0.0
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 29.3
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 29.3
+  }
+ },
+ "S5 Corte de inventario (1.7.3)": {
+  "actividad": "1.7.3:E1:PREP:347",
+  "HH": 24.0,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 3.6
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 0.0
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 3.6
+  }
+ },
+ "S6 Construcción E2 (1.5.22.1)": {
+  "actividad": "1.5.22.1:E2:DIS:272",
+  "HH": 60.15,
+  "sin_respuesta": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 9.0
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 0.0
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 9.0
+  }
+ },
+ "S6b Innovación E2 (1.10.4.6)": {
+  "actividad": "1.10.4.6:E2:E2:592",
+  "HH": 202.67,
+  "sin_respuesta": {
+   "hitos": {
+    "H10": 6,
+    "H11": 6,
+    "H12": 6
+   },
+   "actividades_tardias": 14,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 30.4
+  },
+  "ejecucion_rapida": {
+   "hitos": {},
+   "actividades_tardias": 1,
+   "HH_extra": 4.0
+  },
+  "ambas": {
+   "hitos": {},
+   "actividades_tardias": 0,
+   "HH_extra": 34.4
+  }
+ },
+ "S7 Capacitación (1.13.3)": {
+  "actividad": "1.13.3:E2:E2:237",
+  "HH": 1920.0,
+  "sin_respuesta": {
+   "hitos": {
+    "H11": 14,
+    "H12": 14
+   },
+   "actividades_tardias": 6,
+   "HH_extra": 0.0
+  },
+  "intensificacion": {
+   "hitos": {
+    "H11": 4,
+    "H12": 4
+   },
+   "actividades_tardias": 6,
+   "HH_extra": 288.0
+  },
+  "ejecucion_rapida": {
+   "hitos": {
+    "H11": 14,
+    "H12": 14
+   },
+   "actividades_tardias": 6,
+   "HH_extra": 0.0
+  },
+  "ambas": {
+   "hitos": {
+    "H11": 4,
+    "H12": 4
+   },
+   "actividades_tardias": 6,
+   "HH_extra": 288.0
+  }
+ }
+}

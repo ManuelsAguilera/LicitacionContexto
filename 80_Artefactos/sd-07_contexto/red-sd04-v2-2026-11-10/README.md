@@ -2,6 +2,8 @@
 
 Documento de trabajo, no entregable. Reemplaza a `../red-fisica-2026-11-10/` (paso C) como insumo vigente de horas, dotación y calendario. Corte del SD-04: rama `sd04/redaccion-y-figuras-fisicas`, commit `1d63376`.
 
+> **Reemplazado como insumo** por `../red-v3-2026-11-10/` (misma red con la capacitación E2 dividida, decisión del paso D). Este directorio conserva el traspaso del SD-04.
+
 ## Qué resuelve
 
 1. **Cruce SD-04 → EDT** (regla del 100 % aplicada a la arquitectura, Art. 57.2): de unos 90 componentes del SD-04, el software, las interfaces, la migración y la entrega estaban cubiertos. Faltaban paquetes para la plataforma de datos, los controles de seguridad desplegados, el equipamiento TI de DC-01 y la pila local de tienda. Además, la nube y la recuperación estaban estimadas para 2 frentes en vez de 3.

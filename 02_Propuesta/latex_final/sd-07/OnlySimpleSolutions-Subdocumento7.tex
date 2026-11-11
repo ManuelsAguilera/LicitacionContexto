@@ -82,7 +82,6 @@
 \usepackage{oss}
 \begin{document}
 \makeatletter
-
 \makeatother
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
@@ -123,7 +122,7 @@ La estructura incluye las dos etapas de implementación y los 36 meses de operac
 
 \subsection{7.1.2 Estructura de la EDT}
 
-La Figura 7.1 presenta la estructura general, desde la solución completa hasta sus quince ramas, mientras que la Tabla 7.1 resume el número de elementos de tercer nivel, el entregable principal y el responsable de cada rama, permitiendo ubicar tanto la construcción de la solución como el trabajo necesario para ponerla en servicio y mantenerla.
+La Figura~\ref{fig:7-1} presenta la estructura general, desde la solución completa hasta sus quince ramas, mientras que la Tabla~\ref{tab:7-1} resume el número de elementos de tercer nivel, el entregable principal y el responsable de cada rama, permitiendo ubicar tanto la construcción de la solución como el trabajo necesario para ponerla en servicio y mantenerla.
 
 Las ramas agrupan tipos de entregables y pueden desarrollarse al mismo tiempo. Su numeración es solamente para identificarlas; el orden de ejecución y sus dependencias se explican en los apartados 7.2 y 7.3.
 
@@ -131,12 +130,12 @@ Las ramas agrupan tipos de entregables y pueden desarrollarse al mismo tiempo. S
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{Estructura de descomposición del trabajo, con la raíz y las quince ramas.}\label{fig:7-1}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/374779858283.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.0.png}
 \raggedright\textbf{Fuente:} Elaboración propia.
 \end{minipage}
 \end{center}
 
-La figura muestra la raíz y las quince ramas, con el número de elementos de tercer nivel de cada una. La Tabla 7.1 facilita la comparación entre ramas.
+La figura muestra la raíz y las quince ramas, con el número de elementos de tercer nivel de cada una. La Tabla~\ref{tab:7-1} facilita la comparación entre ramas.
 
 \begin{longtable}{p{0.2\linewidth}p{0.11\linewidth}p{0.2\linewidth}p{0.25\linewidth}p{0.12\linewidth}}
 \caption{Diccionario resumido de la EDT por rama.}\label{tab:7-1}\\
@@ -150,11 +149,11 @@ La figura muestra la raíz y las quince ramas, con el número de elementos de te
 1.1 Dirección, gobierno y control del proyecto & 12 paquetes & Plan de dirección integrado & Aprobado por el comité del proyecto y actualizado en cada hito. & Jefe de Proyecto \\
 1.2 Levantamiento y línea base de alcance & 8 paquetes & Línea base de alcance & Aprobada por el CLIENTE con el mapa de interfaces y la matriz de trazabilidad. & Líder Funcional \\
 1.3 Arquitectura y diseño & 7 paquetes & Documento de arquitectura y catálogo de decisiones & Aprobado por el CLIENTE con la frontera Retail–Emisor segregada en el modelo de datos. & Arquitecto de Solución \\
-1.4 Infraestructura híbrida y plataforma base & 13 paquetes & Infraestructura híbrida con ambientes habilitados & Ambientes de Desarrollo, Calidad, Preproducción, Producción y Recuperación ante desastres operativos con observabilidad. & Arquitecto de Solución \\
+1.4 Infraestructura híbrida y plataforma base & 24 paquetes & Infraestructura híbrida con ambientes habilitados y sitios instalados & Ambientes de Desarrollo, Calidad, Preproducción, Producción y Recuperación ante desastres operativos con observabilidad, y 25 sitios instalados y probados. & Arquitecto de Solución \\
 1.5 Desarrollo de software & 51 cuentas y 127 paquetes & Software de cada servicio por etapa & Entregable por etapa con calidad aprobada y evidencia de cobertura. & Líder de Desarrollo \\
 1.6 Integraciones & 7 paquetes & Catálogo de interfaces y contratos & Interfaces certificadas sin diferencias con el mapa AS-IS aprobado. & Líder de Integración \\
 1.7 Migración y saneamiento de datos & 12 paquetes & Datos saneados, migrados y conciliados & Conciliación aprobada por acta y plataformas heredadas retiradas conforme al plan. & Líder de Datos \\
-1.8 Seguridad, identidad y cumplimiento & 8 paquetes & Plan de seguridad y matriz de controles & Controles implementados y probados, con la remediación cerrada. & Encargado de Seguridad de la Información \\
+1.8 Seguridad, identidad y cumplimiento & 9 paquetes & Plan de seguridad y matriz de controles & Controles implementados y probados, con la remediación cerrada. & Encargado de Seguridad de la Información \\
 1.9 Calidad, pruebas y certificación & 12 paquetes & Certificación de cada etapa & Pruebas de aceptación, carga, resiliencia y seguridad ofensiva aprobadas. & Líder de Calidad y Pruebas \\
 1.10 Innovaciones & 5 cuentas y 40 paquetes & Las cinco innovaciones entregadas & Cada innovación aceptada con trazabilidad a arquitectura, EDT y flujo de caja. & Arquitecto de Solución \\
 1.11 Implantación y despliegue & 4 paquetes & Plan de implantación y pipeline de despliegue & Despliegue y reversión probados antes de cada paso a producción. & Líder de Implantación y Gestión del Cambio \\
@@ -166,7 +165,7 @@ La figura muestra la raíz y las quince ramas, con el número de elementos de te
 
 La columna de la segunda posición indica el número de elementos de tercer nivel de cada rama. En las ramas 1.5 y 1.10 esos elementos son cuentas de control, que alojan los paquetes de trabajo señalados a continuación; en las trece ramas restantes son paquetes de trabajo, que constituyen el nivel más bajo de la EDT.
 
-Las quince ramas suman 164 elementos de tercer nivel, que comprenden 56 cuentas de control y 108 paquetes de trabajo; con los 167 paquetes alojados en las cuentas de las ramas 1.5 y 1.10, la EDT completa contiene 331 elementos. La rama 1.5 concentra 51 cuentas de control y 127 paquetes de software; la rama 1.10, 5 cuentas de control y 40 paquetes de innovación. Las demás ramas reúnen los entregables de preparación, control, implantación y operación. El Formulario T-14 desarrolla el detalle que corresponde a cada elemento; los párrafos siguientes explican para qué sirve cada rama dentro del proyecto.
+Las quince ramas suman 176 elementos de tercer nivel, que comprenden 56 cuentas de control y 120 paquetes de trabajo. Con los 167 paquetes alojados en las cuentas de las ramas 1.5 y 1.10, la EDT completa contiene 343 elementos. La rama 1.5 concentra 51 cuentas de control y 127 paquetes de software; la rama 1.10, 5 cuentas de control y 40 paquetes de innovación. Las demás ramas reúnen los entregables de preparación, control, implantación y operación. El Formulario T-14 desarrolla el detalle que corresponde a cada elemento; los párrafos siguientes explican para qué sirve cada rama dentro del proyecto.
 
 \subsection{7.1.3 Descripción de las ramas de la EDT}
 
@@ -176,13 +175,13 @@ Cada rama responde a una necesidad concreta de la solución, y su descripción p
 
 Esta rama organiza la conducción del proyecto y la relación de trabajo entre Only Simple Solutions y Ancoa. Su objetivo es que las decisiones, los compromisos y los cambios puedan seguirse durante todo el contrato. El plan de dirección establece cómo se coordina el equipo y cómo se revisa el avance. Las actas de los comités dejan constancia de los acuerdos y permiten identificar qué debe resolver cada responsable antes de la siguiente revisión.
 
-La Figura 7.2 presenta las 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-2} presenta los 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.1}\label{fig:7-2}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/75f51993b60d.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.1.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -195,13 +194,13 @@ Los resultados de esta rama son documentos de gestión vigentes y registros que 
 
 El levantamiento permite comprender cómo trabaja Ancoa antes de completar el diseño de la solución. Su propósito es acordar qué problemas debe resolver el proyecto, qué funciones se entregarán y qué condiciones deben cumplirse para aceptarlas. Para ello se documentan los procesos, las reglas del negocio y los volúmenes de información. También se revisa cómo se comunican las plataformas existentes, porque una modificación puede afectar a varios sistemas y áreas de la empresa.
 
-La Figura 7.3 presenta las 8 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-3} presenta los 8 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.2}\label{fig:7-3}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/8d150c253d74.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.2.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -214,13 +213,13 @@ El resultado esperado es un alcance entendido de la misma forma por el cliente y
 
 La arquitectura convierte las necesidades acordadas en una descripción de cómo funcionará la solución. Explica qué responsabilidad tiene cada componente, dónde se instalará y qué información podrá intercambiar. En Ancoa, esta definición debe respetar la separación entre la actividad comercial y el emisor de crédito (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condición 7, p. 30). Por ello, el diseño documenta los límites de sus datos y los intercambios autorizados, de manera que las funciones compartidas mantengan esa separación.
 
-La Figura 7.4 presenta las 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-4} presenta los 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.3}\label{fig:7-4}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/1d6c0a41dca1.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.3.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -233,13 +232,13 @@ Estos documentos permiten que los equipos de infraestructura y desarrollo trabaj
 
 Esta rama prepara los medios tecnológicos que necesita la solución para funcionar. La carga principal se sitúa en nube pública y se complementa con componentes en las dependencias de Ancoa. Esta distribución permite atender las necesidades centrales y las de los sitios que deben mantener funciones locales. El trabajo incluye configurar las redes y los entornos, con la separación requerida para el ámbito del emisor de crédito.
 
-La Figura 7.5 presenta las 13 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-5} presenta los 24 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal. Los paquetes con borde azul, 1.4.14 a 1.4.24, son los que incorpora el trabajo físico del Subdocumento 4.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.4}\label{fig:7-5}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/09a71a6115cb.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.4.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -247,19 +246,21 @@ La Figura 7.5 presenta las 13 paquetes de trabajo de esta rama, alineados en un 
 
 Se habilitan ambientes diferenciados para desarrollar, comprobar la calidad, ensayar antes de la puesta en servicio, operar y recuperar la solución ante desastres. Un ambiente es un espacio tecnológico preparado para un uso específico; separarlos permite realizar pruebas sin intervenir directamente sobre la operación real. La rama incorpora además respaldos, alertas y herramientas para instalar versiones de forma repetible. Las alertas permiten advertir condiciones que podrían afectar el servicio y los respaldos deben demostrar que la información puede recuperarse.
 
+Los paquetes 1.4.14 a 1.4.24 incorporan el trabajo físico definido en el Subdocumento 4. Comprenden el levantamiento físico de los 25 sitios (22 tiendas, 2 centros de distribución y la tienda de laboratorio) en M1--M3, las órdenes de compra del centro de datos DC-01 y de los lotes de equipos, la instalación física de la tienda de laboratorio, de las tiendas piloto, de las tiendas restantes y de los centros de distribución, la recuperación a tamaño completo, la plataforma de datos y analítica, el equipamiento y las redes de DC-01, la pila local de cada tienda y la replicación entre regiones. El entorno de producción y recuperación del paquete 1.4.3 se dimensiona para la filial emisora y para el control de cruces entre los dos negocios.
+
 Las entregas parciales de infraestructura permiten iniciar ensayos antes de completar la plataforma integrada. También se preparan las especificaciones de equipos y de las condiciones físicas, como energía, climatización y control de acceso. El resultado de esta rama debe ser una plataforma configurada y comprobada, sobre la que puedan trabajar los equipos de software, pruebas y operación.
 
 \subsubsection{7.1.3.5 Desarrollo de software (EDT 1.5)}
 
 El desarrollo de software construye las funciones que utilizarán las personas y los procesos de Ancoa. Comprende tareas de negocio como consultar precios, registrar movimientos de inventario o gestionar operaciones de crédito, según los servicios definidos en la solución. Cada paquete corresponde a un caso de uso, es decir, una tarea con un propósito y un resultado identificables. Esta organización permite revisar el avance mediante funciones concretas que se pueden demostrar y probar.
 
-La Figura 7.6 resume las 51 cuentas de control de desarrollo de software en catorce grupos funcionales, con sus rangos de códigos. Cada cuenta de control agrupa los paquetes de trabajo de los casos de uso que ejecuta; la agrupación por grupos funcionales facilita la lectura y no añade niveles oficiales a la EDT.
+La Figura~\ref{fig:7-6} resume las 51 cuentas de control de desarrollo de software en catorce grupos funcionales, con sus rangos de códigos. Cada cuenta de control agrupa los paquetes de trabajo de los casos de uso que ejecuta; la agrupación por grupos funcionales facilita la lectura y no añade niveles oficiales a la EDT.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.5}\label{fig:7-6}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/1b74916ac03a.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.5.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -273,13 +274,13 @@ La rama entrega software cuyo comportamiento debe coincidir con las reglas aprob
 
 Las integraciones permiten que los sistemas intercambien información para completar una operación del negocio. En Ancoa, el proyecto debe abordar una red de plataformas y conexiones existentes (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 5, p. 13). Antes de modificar esos intercambios se documenta qué información circula, quién la envía y quién la recibe. El catálogo de interfaces reúne esas conexiones y sus reglas; una interfaz es el medio acordado para que dos sistemas se comuniquen.
 
-La Figura 7.7 presenta las 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-7} presenta los 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.6}\label{fig:7-7}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/c35e8e3f3a8c.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.6.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -292,13 +293,13 @@ La verificación compara la información entre los sistemas que participan. Esta
 
 La nueva solución necesita recibir información que ya existe en las plataformas de Ancoa. Esta rama prepara ese traslado y revisa la calidad de los datos antes de utilizarlos. El saneamiento trata problemas como duplicados o registros inconsistentes. La migración mueve la información al destino previsto, mientras que la conciliación compara ambos lados para comprobar que el traslado conserva los datos y los saldos que corresponden.
 
-La Figura 7.8 presenta las 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-8} presenta los 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.7}\label{fig:7-8}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/3900a6afeda1.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.7.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -311,32 +312,32 @@ La rama contempla el retiro de plataformas cuando se hayan cumplido las condicio
 
 Esta rama protege la información y establece quién puede acceder a ella o ejecutar una acción. Su propósito es que los permisos correspondan a las responsabilidades de cada persona y que los datos sensibles cuenten con controles adecuados. La separación entre el negocio comercial y el emisor de crédito orienta estas definiciones (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condición 7, p. 30). Los controles contemplan además la separación de funciones dentro de los procesos financieros.
 
-La Figura 7.9 presenta las 8 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-9} presenta los 9 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal. El paquete con borde azul, 1.8.9, registra el despliegue de los controles.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.8}\label{fig:7-9}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/82d38d42b355.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.8.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
 
 El trabajo comprende el análisis de amenazas, las medidas de protección de datos y la preparación de la respuesta a incidentes. Una amenaza es una situación que podría comprometer la información o el servicio; identificarla permite definir controles y procedimientos de respuesta. La rama también incluye la evaluación de controles del proveedor de nube y de los componentes incorporados a la solución. Las pruebas de intrusión buscan debilidades mediante intentos controlados de vulnerar las protecciones.
 
-Los entregables reúnen las medidas implementadas y la evidencia de su comprobación. Los hallazgos detectados deben tratarse según su gravedad y verificarse de nuevo antes de la aceptación correspondiente. Este trabajo comienza durante el diseño y se coordina con la infraestructura, el desarrollo y las pruebas de cada etapa. La rama aporta los controles y su evidencia; el seguimiento cotidiano durante el servicio se articula con la operación.
+El paquete 1.8.9 registra el despliegue de los controles en cada frente, entre M4 y M6, antes de que la rama 1.9 los pruebe. Los entregables reúnen las medidas implementadas y la evidencia de su comprobación. Los hallazgos detectados deben tratarse según su gravedad y verificarse de nuevo antes de la aceptación correspondiente. Este trabajo comienza durante el diseño y se coordina con la infraestructura, el desarrollo y las pruebas de cada etapa. La rama aporta los controles y su evidencia; el seguimiento cotidiano durante el servicio se articula con la operación.
 
 \subsubsection{7.1.3.9 Calidad, pruebas y certificación (EDT 1.9)}
 
 La calidad se comprueba mediante pruebas planificadas y resultados observables. Esta rama define qué se revisará, con qué condiciones y qué evidencia permitirá decidir si una entrega cumple lo comprometido. Las pruebas funcionales verifican tareas del negocio. Las pruebas de desempeño revisan cómo responde el sistema ante la carga prevista, y las de recuperación comprueban su comportamiento frente a interrupciones.
 
-La Figura 7.10 presenta las 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-10} presenta los 12 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.9}\label{fig:7-10}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/6839cd3f127b.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.9.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -349,13 +350,13 @@ La certificación reúne los resultados de las pruebas exigidas para cada etapa.
 
 Esta rama reúne cinco mejoras que amplían los servicios de Ancoa y la forma en que sus clientes y trabajadores los utilizan. Abarca el retiro de pedidos, el conteo de inventario, la búsqueda de productos, la publicidad para proveedores y la atención en probadores. La EDT identifica el trabajo necesario para poner cada mejora en funcionamiento y comprobar su aporte. El Subdocumento 13 desarrolla su justificación, tecnología, indicadores, riesgos e impacto económico; aquí se resume qué hace cada una y para qué se incorpora.
 
-La Figura 7.11 muestra las cinco cuentas de control reservadas para innovaciones, cada una con sus ocho paquetes de trabajo. Su definición y alcance detallado están en el Subdocumento 13 y en el diccionario de la rama 1.10 del Formulario T-14.
+La Figura~\ref{fig:7-11} muestra las cinco cuentas de control reservadas para innovaciones, cada una con sus ocho paquetes de trabajo. Su definición y alcance detallado están en el Subdocumento 13 y en el diccionario de la rama 1.10 del Formulario T-14.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.10}\label{fig:7-11}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/d041aaeb786f.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.10.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -370,13 +371,13 @@ El Modo Tienda con fila virtual de probadores permite solicitar un turno sin per
 
 La implantación prepara la solución para su uso en las dependencias de Ancoa. Esta rama coordina la configuración de los sitios y la publicación de las versiones que utilizará cada etapa. El plan identifica cómo realizar el cambio y cómo volver a la situación anterior si aparecen fallas. Este retorno debe ensayarse, porque durante una intervención pueden existir operaciones que es necesario conservar y conciliar.
 
-La Figura 7.12 presenta las 4 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-12} presenta los 4 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.11}\label{fig:7-12}
-\includegraphics[width=\linewidth,height=0.75\textheight,keepaspectratio]{figuras/recepcion-20261025/11d73358ba54.png}
+\includegraphics[width=\linewidth,height=0.75\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.11.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -389,13 +390,13 @@ El resultado esperado es una preparación de los sitios y un procedimiento de de
 
 La marcha blanca permite observar la solución en funcionamiento real bajo supervisión antes de aceptar cada etapa. Su plan define qué se medirá, qué evidencia se recogerá y qué condiciones deben cumplirse al finalizar. Durante ese período se registran los problemas encontrados y sus correcciones. Los informes permiten evaluar si el comportamiento observado es consistente con los compromisos de la propuesta.
 
-La Figura 7.13 presenta las 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-13} presenta los 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.12}\label{fig:7-13}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/ab40f4ebddcb.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.12.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -408,32 +409,32 @@ Esta rama entrega los planes e informes de ambas marchas blancas, junto con sus 
 
 La incorporación de una solución modifica tareas habituales y requiere preparar a quienes las realizan. Esta rama identifica las necesidades de aprendizaje según el rol y organiza la capacitación para que cada persona pueda utilizar las funciones que le corresponden. La preparación debe considerar tanto al personal de las tiendas como a quienes administrarán y sostendrán técnicamente el servicio.
 
-La Figura 7.14 presenta las 5 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-14} presenta los 5 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.13}\label{fig:7-14}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/8062f1ba79bb.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.13.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
 
 El trabajo incluye planes de capacitación, materiales editables en español y evaluaciones que permitan comprobar el aprendizaje. También contempla acompañamiento en el puesto, donde pueden aparecer dudas que no se detectaron durante una sesión de formación. Ese apoyo cobra relevancia para el personal nuevo, temporal o externo que participa en la operación. La formación de esos grupos y la comunicación a los clientes durante la migración de cartera responden a condiciones del caso (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condiciones 5 y 8, p. 30). Las comunicaciones se coordinan con los tramos de migración previstos.
 
-Los resultados se expresan en registros de formación y certificación, materiales disponibles y evidencia del acompañamiento. La preparación de los usuarios necesarios para la marcha blanca debe completarse antes de su participación. Las certificaciones de cierre se documentan conforme al plan de cada etapa. Esta rama conecta el trabajo técnico con su uso cotidiano y aporta a la aceptación evidencia de que las personas cuentan con la habilitación requerida para desempeñar sus funciones.
+Los resultados se expresan en registros de formación y certificación, materiales disponibles y evidencia del acompañamiento. La preparación de los usuarios necesarios para la marcha blanca debe completarse antes de su participación. En la Etapa 2, la capacitación ejecutada (1.13.3) se divide en dos partes. La primera, de 576 HH, se dicta en M17 sobre los procesos y reglas aprobados en H8. La segunda, de 1.344 HH, se dicta desde H9 sobre el software con pruebas superadas. Las certificaciones de cierre se documentan conforme al plan de cada etapa. Esta rama conecta el trabajo técnico con su uso cotidiano y aporta a la aceptación evidencia de que las personas cuentan con la habilitación requerida para desempeñar sus funciones.
 
 \subsubsection{7.1.3.14 Documentación, transferencia y reversibilidad (EDT 1.14)}
 
 Esta rama conserva el conocimiento necesario para comprender y administrar la solución durante su vida contractual. La documentación describe las funciones y los componentes técnicos, mientras que los manuales y la base de conocimiento apoyan las tareas habituales de operación. Mantener estos materiales al día permite que los cambios implementados queden reflejados en la información que utiliza el personal.
 
-La Figura 7.15 presenta las 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-15} presenta los 7 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.14}\label{fig:7-15}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/7471e485cb84.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.14.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
@@ -448,20 +449,20 @@ El traspaso final se prepara en M48–56 y su acompañamiento se programa en M54
 
 La operación sostiene el funcionamiento de la solución durante los 36 meses comprendidos entre M21 y M56. Esta rama reúne la atención a los usuarios, el tratamiento de incidentes y la administración de los medios tecnológicos. La mesa de servicio recibe los problemas y los deriva al nivel de atención que corresponde según su naturaleza. El seguimiento debe permitir conocer su estado y comprobar los tiempos de respuesta y resolución comprometidos.
 
-La Figura 7.16 presenta las 6 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
+La Figura~\ref{fig:7-16} presenta los 6 paquetes de trabajo de esta rama, alineados en un mismo nivel bajo el entregable principal.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
 \ossFigCaption{EDT resumida de la rama 1.15}\label{fig:7-16}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/cedab3f10c09.png}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/sd07-figuras/sd07-edt1.15.png}
 \raggedright\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.
 \end{minipage}
 \end{center}
 
 El mantenimiento correctivo resuelve fallas; el preventivo atiende condiciones que podrían causarlas, y el evolutivo incorpora los cambios previstos en su plan. La administración de infraestructura revisa la capacidad y disponibilidad del servicio. También se realizan pruebas periódicas de recuperación para comprobar que los procedimientos y respaldos siguen siendo utilizables. Las jornadas de actualización apoyan al personal nuevo y a quienes deben adaptarse a cambios durante la operación.
 
-Los informes de nivel de servicio reúnen las mediciones y la evidencia de cumplimiento. Así, Ancoa puede evaluar el funcionamiento con registros del período, además de conocer las incidencias y acciones realizadas. Los subdocumentos de operación desarrollan estas obligaciones y los planes relacionados. La EDT identifica sus entregables; la dotación por rol y la cobertura de atención deben completarse en los documentos de equipo y recursos, porque una asignación de horas por sí sola no demuestra capacidad suficiente para sostener el servicio.
+Los informes de nivel de servicio reúnen las mediciones y la evidencia de cumplimiento. Así, Ancoa puede evaluar el funcionamiento con registros del período, además de conocer las incidencias y acciones realizadas. Los subdocumentos de operación desarrollan estas obligaciones y los planes relacionados. La EDT identifica sus entregables; el Líder de Operación planificará los turnos y las especialidades de atención a partir de la demanda prevista y los niveles de servicio comprometidos. Los subdocumentos 10 y 12 desarrollan las responsabilidades del servicio y los perfiles del equipo.
 
 
 \section{7.2 Plan de trabajo}\label{plan-de-trabajo}
@@ -470,27 +471,49 @@ El plan organiza las quince ramas de la EDT en once frentes y mantiene el despli
 
 \subsection{7.2.1 Secuenciamiento y estimación}
 
-La línea base inicial se acepta en H1, mes 2. La arquitectura, el modelo de datos y el plan de seguridad se aprueban en H2, mes 4; la infraestructura híbrida y los cinco ambientes operativos se entregan en H3, mes 6. Los ambientes se habilitan progresivamente para diseño, pruebas de componentes y el piloto técnico. La entrega integrada de H3 permite la integración final; no significa que todo el desarrollo deba esperar hasta ese mes; las entregas mantienen su trazabilidad con el Formulario E-25 y el requisito RT-04.01.
+La línea base inicial se acepta en H1, mes 2. La arquitectura, el modelo de datos y el plan de seguridad se aprueban en H2, mes 4; la infraestructura híbrida y los cinco ambientes operativos se entregan en H3, mes 6. Los ambientes se habilitan progresivamente para diseño, pruebas de componentes y el piloto técnico. La entrega integrada de H3 permite la integración final. El desarrollo utiliza previamente las capacidades habilitadas para cada entrega, manteniendo la trazabilidad con el Formulario E-25 y el requisito RT-04.01.
 
-El software E1 llega a pruebas con QA superado en H4, mes 10, y se certifica en H5, mes 12. La marcha blanca ocupa M13-15 y la aceptación productiva H7 ocurre en M16. E2 comienza en M13 con análisis y diseño, cuya línea base se aprueba en H8, mes 14. La construcción dependiente se concentra en M15-17, entrega para pruebas en H9 y se certifica en H10, mes 18. La marcha blanca M19-20 antecede a H12, mes 21. Los paquetes que abarcan ambos alcances tienen entregas parciales separadas.
+El software E1 llega a pruebas con QA superado en H4, mes 10, y se certifica en H5, mes 12. La marcha blanca ocupa M13–15 y la aceptación productiva H7 ocurre en M16. E2 comienza en M13 con análisis y diseño, cuya línea base se aprueba en H8, mes 14. La construcción dependiente se concentra en M15–17, entrega para pruebas en H9 y se certifica en H10, mes 18. La marcha blanca M19–20 antecede a H12, mes 21. Los paquetes que abarcan ambos alcances tienen entregas parciales separadas.
 
-La Tabla 7.2 resume el esfuerzo planificado por ámbito. El T-14 presenta el detalle por elemento de la EDT y por los 127 paquetes de software.
+El esfuerzo se estima según la naturaleza del trabajo y se asigna a los paquetes de la EDT. Para el software se utiliza el método de puntos de casos de uso, UCP, sobre 126 casos de uso. El conteo obtiene 704 puntos sin ajustar, un factor técnico de 1,19 y un factor de ambiente de 0,755, que producen 632,5088 UCP. Se adopta una productividad de programación de 20 HH/UCP y una participación de programación del 40 \% en el esfuerzo del ciclo de vida considerado. El cálculo es 632,5088 \(\times\) 20 \(\div\) 0,40 = 31.625,44 HH. Ambos parámetros son supuestos de estimación del proponente. La comprobación del conteo y su asignación por paquete forman parte del respaldo del T-14.
 
-\begin{longtable}{p{0.55\linewidth}p{0.14\linewidth}p{0.2\linewidth}}
-\caption{Esfuerzo de la base de planificación.}\label{tab:7-2}\\
-\toprule\noalign{}
-\textbf{Ámbito} & \textbf{Elementos de tercer nivel} & \textbf{Horas hombre} \\
+Los demás trabajos se dimensionan por paquete mediante sus actividades, cantidades y dedicaciones por rol. Este grupo comprende infraestructura, integraciones, migración, innovaciones y los restantes entregables técnicos. Las innovaciones mantienen su desglose propio; cualquier componente compartido con el software se imputa una sola vez. La trazabilidad de la estimación relaciona cada entregable con su paquete EDT y con los componentes de esfuerzo que lo financian. Los componentes físicos que define el Subdocumento 4, como los sitios, el centro de datos DC-01, las compras y la instalación, se estimaron con el mismo método. Cada uno multiplica su cantidad de unidades por las HH por unidad de la estimación de tres valores, (O + 4M + P) \(\div\) 6. Esa incorporación agrega 4.756,54 HH y lleva la base a 239.250,01 HH.
+
+Las horas de dotación de campo, dirección y operación se presupuestan por separado del esfuerzo técnico. En particular, el soporte de operación contempla un equipo exclusivo propuesto de 26 personas, con una asignación presupuestada de 160 HH por persona y mes durante M21–M56. Su asignación suma 26 \(\times\) 160 \(\times\) 36 = 149.760 HH y cubre conjuntamente las plataformas, el software y las innovaciones. La preparación inicial del equipo incorpora otras 416 HH, equivalentes a 16 HH por persona, antes del inicio de operación. La atención anterior a M21 se asigna a implantación, estabilización y al retén técnico del proyecto. Las intervenciones se registran en sus paquetes de trabajo y la disponibilidad del retén se remunera por unidades de servicio.
+
+La Tabla~\ref{tab:7-2} resume las horas planificadas por etapa y ámbito. Las actividades concurrentes se imputan una sola vez según su finalidad y fecha de ejecución. El detalle por paquete y rol corresponde a los formularios T-14 y T-15.
+
+
+\begin{longtable}{p{0.47\linewidth}p{0.20\linewidth}r}
+\caption{Horas planificadas por etapa y ámbito.}\label{tab:7-2}\\
+\toprule
+\textbf{Etapa o ámbito} & \textbf{Meses} & \textbf{HH planificadas} \\
 \midrule
 \endhead
 \bottomrule
-\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de los elementos de tercer nivel planificados en el T-14.} \\
 \endlastfoot
-Desarrollo de software, rama 1.5 & 51 & 12.116 \\
-Ramas distintas del software & 113 & 28.830 \\
-Total & 164 & 40.946 \\
+Desarrollo E1 & M1–M12 & 42.194,73 \\
+Marcha blanca E1 & M13–M15 & 4.646,56 \\
+Desarrollo E2 & M13–M18 & 21.235,40 \\
+Producción y estabilización E1 & M16–M20 & 11.264,00 \\
+Marcha blanca E2 & M19–M20 & 2.133,32 \\
+Cierre de implementación E2 & M21–M22 & 117,33 \\
+Operación & M21–M56 & 150.848,00 \\
+Gestión y documentación transversales & M1–M56 & 6.810,67 \\
+\textbf{Total base} & & \textbf{239.250,01} \\
+Contingencia & Según riesgos & 3.688,00 \\
+\textbf{Total con contingencia} & & \textbf{242.938,01} \\
 \end{longtable}
 
-Las horas por paquete de software se concilian dentro de cada cuenta de control, distribuyendo los restos de redondeo sin cambiar la asignación de esa cuenta. La descomposición por roles, dedicaciones y cobertura de turnos debe conservar esos totales y demostrar los niveles de servicio en los subdocumentos 10 y 12. Una suma de horas no demuestra por sí sola una dotación suficiente.
+\textbf{Fuente:} Elaboración propia a partir de las actividades fechadas y del presupuesto por paquetes EDT.
+
+Las horas transversales reúnen dirección, PMO y documentación, evitando repartirlas arbitrariamente entre etapas que coinciden. Operación incluye las 149.760 HH del equipo de 26 personas y los trabajos específicos programados durante ese período. La inducción del equipo, de 416 HH, se propone en M20 dentro de la preparación de entrada a operación. La atención anterior a M21 se distribuye entre las actividades de implantación, marcha blanca y estabilización y el retén técnico del proyecto. La contingencia se mantiene separada de las horas programadas.
+
+La distribución por etapa imputa cada asignación de trabajo o dotación una sola vez y conserva el total de HH de la base de planificación. La distribución por etapa se concilia con el detalle de paquetes y recursos de los formularios T-14 y T-15.
+
+Las estimaciones de tres valores distinguen los escenarios optimista, más probable y pesimista. Cuando se utiliza PERT para una duración, se calcula (O + 4M + P) / 6 y se conserva su unidad temporal; cuando los valores representan esfuerzo, el resultado se expresa en HH. La conversión de esfuerzo a duración considera las personas asignadas, su dedicación y el calendario de trabajo. El método CPM utiliza después esas duraciones y las dependencias para obtener las fechas tempranas y tardías y las holguras; no origina la estimación de HH.
+
+Las horas de dotación representan una asignación presupuestaria. La suficiencia del equipo de operación depende de los contactos por franja, los tiempos de atención y las competencias disponibles para resolver incidencias. El Líder de Operación evaluará la demanda por franja horaria, los tiempos de atención y las competencias requeridas para definir los turnos y las dedicaciones. El T-15 recogerá estas asignaciones, coordinadas con los servicios del Subdocumento 10 y los perfiles del Subdocumento 12.
 
 \subsection{7.2.2 Organización del trabajo conforme al Capítulo 6}
 
@@ -500,9 +523,38 @@ Una historia entra al sprint cuando tiene requisito y paquete asociados, criteri
 
 Los equipos de Retail, Emisor y plataforma conservan responsabilidades separadas. El frente de plataforma habilita ambientes, identidad, integración y observabilidad antes del trabajo dependiente. La reunión semanal resuelve impedimentos y el Comité de Proyecto quincenal revisa su efecto sobre los hitos. El avance se reconoce por entregables comprobados, con trazabilidad hacia la EDT, conforme a 6.1.3.5.
 
+\subsubsection{7.2.2.1 Incrementos y primeros sprints}
+
+Cada intervalo bimestral contiene cuatro sprints consecutivos de catorce días naturales. El remanente de tres a seis días según el intervalo se reserva para revisión integrada y planificación. Esta cadencia ofrece cuarenta días de lunes a viernes antes de descontar feriados y ausencias; el compromiso del equipo se ajusta a su disponibilidad real. Los períodos de marcha blanca mantienen sus fechas y su duración íntegra.
+
+En I01, del 7 de enero al 6 de marzo de 2027, la red programa levantamiento, arquitectura y preparación. No se declara un incremento funcional de software terminado donde aún no existe QA. En I02, del 7 de marzo al 6 de mayo, el primer sprint abarca el 7--20 de marzo, el segundo el 21 de marzo--3 de abril, el tercero el 4--17 de abril y el cuarto el 18 de abril--1 de mayo. Los días 2--6 de mayo se utilizan para revisión e integración. Las actividades que atraviesan una frontera de sprint continúan en el siguiente; no se anticipa su aceptación para llenar una casilla.
+
+La planificación separa Retail, Emisor y servicios transversales. Un flujo construido se considera candidato a incremento cuando completa pruebas, integra sus contratos y demuestra el criterio de aceptación de su paquete. El diseño y la programación intermedios son trabajo habilitante. La aceptación funcional corresponde al responsable del dominio y la certificación conserva H5/H10. Ninguna revisión de sprint habilita por sí sola una intervención productiva.
+
+La Tabla~\ref{tab:7-flujos} identifica los primeros flujos con cierre de QA en I02. Los criterios específicos del diccionario, la revisión de integración y la separación de datos determinan su aceptación.
+
+\begin{longtable}{p{0.14\linewidth}p{0.14\linewidth}p{0.12\linewidth}p{0.50\linewidth}}
+\caption{Primeros flujos candidatos a incremento.}\label{tab:7-flujos}\\
+\toprule\noalign{}
+\textbf{EDT} & \textbf{Dominio} & \textbf{Sprint} & \textbf{Resultado} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia.} \\
+\endlastfoot
+1.5.1.1 & Retail & 4 & Cambiar y propagar un precio \\
+1.5.1.2 & Retail & 4 & Entregar la oferta vigente a los canales \\
+1.5.1.3 & Retail & 4 & Consultar el precio vigente en línea \\
+1.5.2.1 & Retail & 4 & Registrar el cambio de etiqueta \\
+1.5.2.2 & Retail & 4 & Consultar el estado de exhibición de la tienda \\
+1.5.1.4 & Retail & 4 & Recuperar el precio publicado en un instante \\
+\end{longtable}
+
+El plan de incrementos entregado conserva los nueve intervalos de desarrollo y sus objetivos por dominio. El registro por sprint distingue diseño, construcción y pruebas y enlaza cada cierre con su ID del programa. Los cierres que ocurren en los días de revisión del intervalo se validan en esa revisión, sin trasladarlos ficticiamente al cuarto sprint. La especificación fina de historias posteriores se realiza progresivamente con las dependencias y los responsables del T-14.
+
 \subsection{7.2.3 Frentes de trabajo}
 
-Los once frentes agrupan responsabilidades que avanzan en paralelo y entregan evidencia en los hitos contractuales. La Tabla 7.3 identifica su alcance temporal; las ventanas por cuenta mandan sobre este resumen.
+Los once frentes agrupan responsabilidades que avanzan en paralelo y entregan evidencia en los hitos contractuales. La Tabla~\ref{tab:7-3} identifica su alcance temporal; las ventanas por cuenta mandan sobre este resumen.
 
 \begin{longtable}{p{0.23\linewidth}p{0.12\linewidth}p{0.29\linewidth}p{0.24\linewidth}}
 \caption{Frentes de trabajo.}\label{tab:7-3}\\
@@ -531,26 +583,52 @@ La arquitectura y los controles de seguridad se entregan antes de los incremento
 
 \subsection{7.2.4 Paralelización y sincronización entre etapas}
 
-Durante M13-15 coexisten la marcha blanca E1 y el análisis, diseño e inicio de construcción E2. Durante M19-20 coexisten E1 en producción y la marcha blanca E2. El plan de convivencia de la cuenta 1.11.3 se prepara en M10-12, antes de comenzar el primer solapamiento. La conciliación identifica la fuente de verdad por entidad dentro de cada dominio; no mezcla los datos comerciales con los de la filial emisora.
+Durante M13–M15 coinciden la marcha blanca de la Etapa 1 y el análisis, diseño y desarrollo de la Etapa 2. Durante M19–M20, la Etapa 1 permanece en producción mientras se ejecuta la marcha blanca de la Etapa 2. La planificación distingue las responsabilidades y las horas asignadas a cada frente para evitar que una misma disponibilidad se comprometa simultáneamente en actividades incompatibles.
 
-El T-15 asigna el esfuerzo E2 únicamente desde M13. Los trabajos de gobierno y documentación permanecen transversales y su carga posterior a M21 se incluye en la curva de operación. El acta de aceptación final en M21 se mantiene en implementación; así se evita duplicar horas en el mes de transición.
+El plan de convivencia se prepara antes del primer solapamiento y establece los procedimientos de conciliación, la coordinación de cambios y las condiciones de retorno. Cada dominio conserva su fuente de verdad y sus controles de acceso, manteniendo la separación entre Retail y Emisor. Las modificaciones de componentes compartidos requieren comprobar su efecto sobre la etapa que ya se encuentra en uso.
 
-El máximo de la implementación recalculada es 2.376,08 HH en M16. La conversión a 160 HH por persona-mes expresa capacidad equivalente, no número suficiente de profesionales por rol. El T-15 muestra las cargas de ambos solapamientos y distingue esta medida de la dotación nominal.
+La atención anterior a M21 se asigna a los equipos de implantación y estabilización y al retén técnico rotativo. Los turnos de disponibilidad se coordinan con las jornadas de desarrollo y los descansos; las intervenciones se imputan al trabajo correspondiente. El equipo previsto para la operación contractual comienza en M21 y permanece hasta M56.
+
+La Tabla~\ref{tab:7-2} resume las HH por etapa y ámbito. La coincidencia temporal de dos etapas no duplica sus asignaciones. El T-15 debe relacionar las actividades concurrentes con las personas y dedicaciones disponibles, mientras que las actividades de gobierno y documentación se presentan como trabajo transversal.
 
 \subsubsection{7.2.4.1 Capacidad durante los solapamientos}
 
-En M13–15, los responsables separan la capacidad de estabilización de E1 de la comprometida para análisis, diseño y construcción de E2. En M19–20, separan el soporte de E1 en producción de la marcha blanca E2. Según 6.2.7, cada equipo de desarrollo que participa en una marcha blanca reserva el 30 \% de su capacidad disponible para incidencias y estabilización. La reserva del 15 \% para deuda técnica de 6.2.3.3 se mantiene sobre la misma base; cuando ambas coinciden, el máximo comprometible para otras historias es el 55 \%. Un trabajo no se imputa simultáneamente a las dos reservas.
+Durante la marcha blanca de la Etapa 1 se distingue la dedicación destinada a incidencias y estabilización de la comprometida para construir la Etapa 2. La misma separación se aplica durante M19–M20 entre la atención de la Etapa 1 en producción y la marcha blanca de la Etapa 2.
 
-Estas proporciones son reglas de asignación de capacidad y no recargos sobre las 40.946 HH planificadas. El T-15 establece su conciliación por equipo, rol e intervalo. Si la carga supera la capacidad disponible, el jefe de proyecto resuelve la asignación antes de comprometer el sprint y eleva los cambios necesarios, preservando los hitos y controles. La distribución mensual agregada no sustituye esa comprobación.
+El apartado 6.2.7 establece una reserva del 30 \% de la capacidad de los equipos de desarrollo que participan en marcha blanca para incidencias y estabilización. El apartado 6.2.3.3 prevé el 15 \% para deuda priorizada durante la construcción ordinaria y exige considerar conjuntamente ambas asignaciones durante la marcha blanca, evitando el doble conteo. Cuando se apliquen simultáneamente sobre la misma capacidad, el compromiso para otras tareas no superará el 55 \%. Estas proporciones distribuyen las horas disponibles y no incrementan las HH presupuestadas ni sustituyen la reserva de contingencia.
+
+La conciliación se documentará en el T-15 por equipo e intervalo, identificando la capacidad disponible y las HH asignadas a estabilización, deuda técnica y otras tareas. Una tarea se imputará una sola vez. Antes de comprometer cada intervalo, el Jefe de Proyecto comprobará con los responsables de los equipos que las asignaciones de estabilización, deuda técnica y otras tareas se ajusten a la capacidad disponible.
+
+La programación se estabilizó para que los solapamientos de M13--M15 y M19--M20 no concentren la carga en un solo mes. La estabilización mueve actividades solo dentro de su holgura, entre su inicio temprano y su inicio tardío, de modo que no cambia la ruta crítica ni las fechas contractuales. Se aplicó con un margen mínimo de 10 días hábiles por actividad desplazada, para no convertir en críticas actividades que hoy pueden absorber un atraso. La Figura~\ref{fig:7-histograma} compara la carga mensual antes y después de este ajuste.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\ossFigCaption{Personas equivalentes por grupo de perfiles, M1--M21, antes y después de la estabilización.}\label{fig:7-histograma}
+\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/sd07-figuras/diag-07-03_histograma-estabilizacion.pdf}
+\raggedright\textbf{Fuente:} Elaboración propia a partir de la red del cronograma.
+\end{minipage}
+\end{center}
+
+El panel superior muestra la programación con los inicios propuestos originalmente y el inferior, la programación estabilizada. Ambos usan la misma escala. Cada barra suma las horas del mes divididas por 160 y se separa por grupo de perfiles. Las franjas sombreadas marcan los dos solapamientos que exige el Art. 17.2. La figura incluye solo el trabajo de la red, sin la cobertura de campo de M16, la dirección ni la operación, que tienen dotación fija y no se desplazan.
+
+El pico de M15 baja de 46,3 a 30,9 personas equivalentes. El desarrollo de la Etapa 2, que antes partía completo el mismo día en que se aprueba su línea base (H8), queda repartido entre M15 y M17. Se movieron 77 actividades y ninguna pasó de su inicio tardío, por lo que H1--H12, el fin de ambas marchas blancas y el ingreso de las 22 tiendas el 7 de abril de 2028 se mantienen. Después del ajuste, el mes de mayor carga pasa a ser M4, con 38,5 personas equivalentes, por la construcción en paralelo de la nube, la arquitectura y la infraestructura antes de H3. Ese pico se dejó como está porque la cadena hacia H3 tiene poco margen, y moverla dejaría al hito expuesto a un atraso como el de la nube base (§\ref{sec:7-3-3-2}).
+
+Ante una sobrecarga, el Jefe de Proyecto coordinará con los responsables de cada frente la reasignación de profesionales y la reprogramación de actividades dentro de sus holguras. Los ajustes deberán mantener la cobertura de las tareas concurrentes, las fechas de los hitos contractuales y la duración íntegra de las marchas blancas.
+
+Los congelamientos restringen las intervenciones productivas. Durante esos períodos pueden continuar las actividades de análisis, construcción y pruebas en ambientes aislados que no alteren la operación. La atención de incidencias utiliza los procedimientos de continuidad y retorno previstos en el T-18.
 
 \subsubsection{7.2.4.2 Sincronización de las innovaciones}
 
-Conteo cíclico predictivo requiere historia depurada y aplicación de conteo antes de su candidata de M10. Su evaluación en sombra M13–15 no modifica saldos automáticamente y precede a H7. Lockers, búsqueda multimodal, publicidad y fila virtual dependen de los servicios y canales E2, con diseño M13–14, integración hasta M17 y pruebas M18. En M19–20 se evalúan junto con E2; su habilitación técnica comienza en M21. Retail Media separa esa disponibilidad de la activación con anunciantes. Los equipos verifican contratos de proveedores y suministro de gabinetes y tótems antes de comprometer los ensayos locales de M18.
+Las cinco innovaciones se coordinan con los entregables de las etapas que las habilitan. Su esfuerzo se mantiene identificado en los paquetes de la rama 1.10 del T-14, con sus actividades de implementación y seguimiento. Los componentes compartidos con otras ramas se imputan una sola vez.
 
-El CPM ampliado de 7.3 y del anexo T-14 representa estas entregas mediante relaciones de fin a inicio, de inicio a inicio y de fin a fin. Los 35 paquetes de implementación de innovaciones tienen margen cero para desplazar su inicio con las duraciones propuestas. La instalación y la capacitación pueden prepararse con una versión candidata, pero su cierre es condición de las pruebas finales y de la aceptación. Cualquier retraso obliga a revisar la entrega parcial afectada y la capacidad disponible.
+El conteo cíclico predictivo requiere datos depurados, disponibilidad de la aplicación de conteo y mecanismos de comparación con los resultados observados. Su evaluación en sombra durante la marcha blanca de la Etapa 1 permite comprobar las recomendaciones sin modificar automáticamente los saldos. La aceptación de sus resultados se coordina con la puesta en producción de la etapa.
 
-El acompañamiento final conserva sus 64 HH, distribuidas en M54–56 para cubrir al menos 90 días efectivos antes del cierre. Esta redistribución no cambia las 40.946 HH totales; modifica la curva de operación, cuyo máximo queda en 364,63 HH en M22.
+Los lockers, la búsqueda multimodal, Retail Media y la fila virtual se sincronizan con los servicios y canales de la Etapa 2. Sus pruebas integradas requieren las interfaces y los controles de acceso correspondientes. Los componentes físicos también dependen del suministro, la preparación del sitio y los ensayos de instalación y retorno. Retail Media distingue la disponibilidad técnica de la plataforma de la activación comercial con anunciantes.
 
+La red del cronograma relaciona estas condiciones con las actividades de integración, pruebas y aceptación. El cálculo de la red determina las fechas tempranas y tardías y la holgura de cada actividad. Los responsables de las innovaciones controlarán el consumo de esos márgenes y su efecto sobre las entregas comprometidas. Las preparaciones que puedan avanzar con una versión candidata se ejecutan en paralelo cuando sus entradas estén definidas y el riesgo de retrabajo resulte aceptable.
+
+Las instalaciones, activaciones y cambios que afecten producción se programan fuera de los congelamientos y considerando los eventos del negocio. Antes de cada intervención se comprueban sus dependencias, la disponibilidad del sitio y el procedimiento de retorno. El seguimiento posterior de las innovaciones se integra en las obligaciones de operación desde M21, manteniendo su trazabilidad y evitando duplicar las HH del servicio común.
 
 \section{7.3 Cronograma e implantación}\label{cronograma-e-implantaciuxf3n}
 
@@ -568,124 +646,180 @@ El Comité de Operación participa mensualmente desde M13. Antes de cada liberac
 
 \subsection{7.3.2 Calendario y anclas del contrato}
 
-La duración contractual es de 56 meses. Enero de 2027 se utiliza como inicio supuesto de la oferta para comprobar restricciones estacionales. El mes 1 corresponde al primer mes completo desde el inicio contractual; el calendario se ajustará a la fecha efectiva, conservando M16, M21 y los 36 meses de operación.
+La fecha de inicio de la planificación es el 7 de enero de 2027. Cada mes contractual comienza el día 7 y termina el día 6 del mes siguiente. Los 56 meses se extienden hasta el 6 de septiembre de 2031 inclusive. El calendario se articula sobre esta fecha de referencia y conserva los hitos relativos M16 y M21, las marchas blancas completas y los 36 meses de operación. La formalización del inicio contractual con Ancoa determinará la fecha efectiva de ejecución.
 
-La Tabla 7.4 distingue las fechas obligatorias de los objetivos internos anticipados. El vencimiento de remediación y el fin de soporte de la plataforma de crédito se sitúan en 2029, mientras que el resultado de aceptación exige cumplir los hitos de remediación antes de ese año (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29; cap. 18, resultado 23, p. 45).
+La Tabla~\ref{tab:7-4} distingue los períodos contractuales de los objetivos internos de transición. Las fechas programadas se calculan a partir del inicio de la planificación. Los objetivos de retiro de la plataforma de crédito y remediación financiera anticipan las restricciones identificadas para 2029 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29; cap. 18, resultado 23, p. 45).
 
-\begin{longtable}{p{0.30\linewidth}p{0.12\linewidth}p{0.23\linewidth}p{0.23\linewidth}}
+\begin{longtable}{p{0.29\linewidth}p{0.12\linewidth}p{0.27\linewidth}p{0.20\linewidth}}
 \caption{Etapas y objetivos temporales.}\label{tab:7-4}\\
-\toprule\noalign{}
-\textbf{Tramo o hito} & \textbf{Mes} & \textbf{Calendario supuesto} & \textbf{Naturaleza} \\
+\toprule
+\textbf{Tramo o hito} & \textbf{Mes} & \textbf{Fechas programadas} & \textbf{Naturaleza} \\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
-Desarrollo E1 & M1--12 & Ene--dic 2027 & Contractual \\
-Marcha blanca E1 & M13--15 & Ene--mar 2028 & Contractual \\
-Producción E1 & M16 & Abr 2028 & Contractual \\
-Desarrollo E2 & M13--18 & Ene--jun 2028 & Contractual \\
-Marcha blanca E2 & M19--20 & Jul--ago 2028 & Contractual \\
-Producción E2 e inicio de operación & M21 & Sep 2028 & Contractual \\
-Retiro de plataforma de crédito de 2011 & M22 & Oct 2028 & Objetivo interno \\
-Cierre de remediación financiera & M24 & Dic 2028 & Objetivo interno \\
-Operación & M21--56 & Sep 2028--ago 2031 & Contractual, 36 meses \\
+Desarrollo E1 & M1--12 & 07/01/2027--06/01/2028 & Período contractual \\
+Marcha blanca E1 & M13--15 & 07/01/2028--06/04/2028 & Tres meses completos \\
+Producción E1 & Inicio M16 & 07/04/2028 & Hito contractual \\
+Desarrollo E2 & M13--18 & 07/01/2028--06/07/2028 & Período contractual \\
+Marcha blanca E2 & M19--20 & 07/07/2028--06/09/2028 & Dos meses completos \\
+Producción E2 e inicio de operación & Inicio M21 & 07/09/2028 & Hito contractual \\
+Retiro de plataforma de crédito de 2011 & M22 & 07/10/2028--06/11/2028 & Objetivo interno; intervención fuera de congelamiento \\
+Cierre de remediación financiera & M24 & A más tardar el 31/12/2028 & Objetivo interno \\
+Operación & M21--56 & 07/09/2028--06/09/2031 & 36 meses completos \\
 \end{longtable}
 \textbf{Fuente:} Elaboración propia a partir del calendario contractual y del Caso 09, cap. 13, núm. 13.2, p. 29, y cap. 18, resultado 23, p. 45.
 
-M22 y M24 anticipan ambos compromisos a 2029. El caso no precisa sus días de vencimiento, por lo que no se calcula una holgura exacta respecto de esas fechas externas. El margen del retiro frente al objetivo interno M22 se calcula por separado en el anexo CPM.
+Los intervalos incluyen sus fechas de inicio y término. La marcha blanca E1 comprende 91 días naturales y la de E2, 62 días; la operación comprende 1.095 días naturales. Los cambios de fase se programan en las fechas indicadas, sujetos al cumplimiento de las condiciones de aceptación del T-18 y a la formalización de la conformidad por Ancoa.
 
-La marcha blanca E1 coincide parcialmente con el congelamiento navideño, que termina el 6 de enero, y con vuelta a clases, desde la última semana de enero hasta la primera de marzo. No existe un bloqueo continuo de enero a marzo. El calendario de la cuenta 1.1.5 incorpora también la segunda semana de mayo, los tres días del evento anual de mayo o junio y su semana previa, y la última semana de noviembre, incluida en el bloqueo del 1 de noviembre al 6 de enero (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29).
+El objetivo de remediación se fija dentro de M24 y antes de comenzar 2029. El retiro de la plataforma de crédito requiere completar previamente la migración y conciliación del alcance correspondiente; su intervención productiva se programará antes del congelamiento del 1 de noviembre. Los objetivos internos no sustituyen los vencimientos externos, cuya precisión corresponde al calendario de transición.
 
-La operación supervisada y la conciliación continúan durante esos períodos con los mecanismos preparados. Las intervenciones y liberaciones productivas se programan fuera de ellos, conforme a la restricción de puesta en producción del caso (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condición 3, p. 30). El ensayo de degradación de la cuenta 1.9.5 se ejecuta inicialmente en M9--10, se revalida para E1 en M16 y se completa para E2 en M18. La versión productiva debe llegar ensayada a los eventos.
+El calendario de restricciones incorpora el congelamiento del 1 de noviembre al 6 de enero, la vuelta a clases desde la última semana de enero hasta la primera de marzo, la segunda semana de mayo y los tres días del evento anual de mayo o junio, junto con su semana previa. La última semana de noviembre queda comprendida en el congelamiento de fin de año (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29). Con el calendario programado, la marcha blanca E1 comienza después del congelamiento navideño y atraviesa la restricción de vuelta a clases.
+
+Los congelamientos bloquean las instalaciones, activaciones, migraciones y liberaciones que modifiquen producción. La operación supervisada, el monitoreo y la conciliación continúan con la configuración previamente habilitada. El análisis, la construcción y las pruebas pueden ejecutarse en ambientes aislados, sin alterar los servicios productivos. Cada intervención se programa con su duración completa dentro de una ventana permitida, incluido el tiempo necesario para comprobar el resultado y ejecutar el retorno previsto en el T-18 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condición 3, p. 30).
+
+Para vuelta a clases, el cálculo adopta de forma conservadora el intervalo del 25 de enero al 7 de marzo. Mientras se confirma la fecha del evento anual, reserva del 24 de abril al 2 de julio como envolvente preventiva de sus posibles fechas y de la semana previa. Esta envolvente es una decisión de programación del proponente y no amplía el congelamiento contractual. El Jefe de Proyecto mantendrá las fechas efectivas en el calendario de la cuenta 1.1.5 y ajustará las intervenciones cuando Ancoa comunique el evento.
+
+El aviso del evento, previsto aproximadamente seis semanas antes, permite organizar la preparación de carga y continuidad. La planificación asigna una semana a confirmar el calendario y las condiciones del ensayo, dos a pruebas y correcciones, dos a reensayo y la última al congelamiento previo. Los ensayos se realizan en preproducción y la versión productiva se mantiene estable durante la restricción. Esta preparación constituye una estrategia de programación y no una ampliación de los hitos contractuales (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29).
+
+El calendario incluye además las compras de equipos, porque sus plazos de entrega condicionan la infraestructura. El levantamiento físico de los sitios ocupa M1--M2. La orden del centro de datos DC-01 se emite el 11 de enero de 2027 y su equipamiento se instala entre el 16 de abril y el 5 de mayo, antes de H3. La orden del lote 1, para las tiendas piloto y la tienda de laboratorio, se emite el 8 de marzo y sus equipos quedan instalados entre el 2 y el 18 de junio, antes del piloto técnico. La orden del lote 2, para las 19 tiendas restantes y los 2 centros de distribución, se emite el 7 de mayo y esos sitios quedan en servicio el 19 de septiembre de 2027, antes del congelamiento del 1 de noviembre. Los lockers y tótems de las innovaciones se ordenan el 8 de marzo de 2028 y se entregan el 5 de mayo de 2028.
 
 \subsubsection{7.3.2.1 Preparación de la versión antes del congelamiento}
 
-Con el inicio supuesto en enero de 2027, el compromiso del apartado 6.2.7 exige una versión candidata de E1 verificada en preproducción antes del 1 de noviembre, al terminar M10. Esta entrega interna se vincula con H4 e incluye los flujos que entrarán en marcha blanca, las pruebas de integración, la separación Retail--Emisor y el ensayo de despliegue y retorno. Calidad registra la versión exacta y sus resultados; implantación comprueba que los mecanismos necesarios estén preparados.
+La versión candidata E1 se verificará en preproducción antes del 1 de noviembre de 2027, conforme al apartado 6.2.7. El objetivo interno se fija a más tardar el 31 de octubre, dentro de M10; el cierre de ese mes contractual ocurre el 6 de noviembre. La entrega se vincula con H4 e incluye los flujos previstos para marcha blanca, la integración, la separación Retail--Emisor y los ensayos de despliegue y retorno. El Líder de Calidad registrará la versión y sus resultados, y el Líder de Implantación comprobará los procedimientos de habilitación.
 
-La certificación H5 permanece en M12. Durante M11--12 se completan las pruebas de certificación en ambientes aislados, las comprobaciones independientes y el expediente de aceptación. Si aparece un defecto, la versión corregida vuelve a probarse en preproducción y conserva trazabilidad respecto de la candidata. La habilitación de la marcha blanca se realiza en la ventana disponible de M13, después del 6 de enero y antes del congelamiento de vuelta a clases, con H5 aceptado y retorno activo.
+La certificación H5 permanece en M12. Las pruebas de certificación y las comprobaciones independientes se completan en ambientes aislados, con trazabilidad de las correcciones respecto de la versión candidata. La preparación técnica se coordina para comenzar la marcha blanca el 7 de enero de 2028 con H5 aceptado, los mecanismos de retorno disponibles y los participantes habilitados. Su ejecución conserva íntegros los tres meses de M13--M15.
 
-Las fechas exactas se confirman contra el calendario efectivo del contrato. Durante un congelamiento, la respuesta a incidentes utiliza los mecanismos de continuidad y retorno previamente ensayados; la urgencia no habilita una nueva liberación funcional.
+La preparación de E2 sigue el mismo criterio de habilitación previa a la marcha blanca y de estabilidad durante los eventos. Las instalaciones y activaciones productivas se ajustan a las ventanas permitidas, mientras las pruebas aisladas mantienen su programación. Durante un congelamiento, la atención de incidentes utiliza los mecanismos de continuidad y retorno previamente ensayados, preservando las restricciones sobre nuevas liberaciones funcionales.
 
 \subsection{7.3.3 Ruta crítica y holguras}
 
-El anexo CPM del T-14 contiene una red de 57 nodos y 120 relaciones, formada por 18 actividades e hitos agregados, 35 paquetes de implementación de innovaciones y cuatro nodos de transición y cierre. Presenta duraciones de calendario, dependencias y fechas tempranas y tardías. Las duraciones son decisiones de programación del proponente y se distinguen de las horas hombre.
+La red del cronograma relaciona las entregas de los paquetes EDT con los insumos que requieren, las revisiones de aceptación y los hitos contractuales. El software se representa mediante sus entregas de diseño, construcción y pruebas. Los trabajos de infraestructura, integración, migración y seguridad se conectan con las entregas que habilitan. Las ramas y cuentas de control agrupan los paquetes; los períodos de servicio y los hitos se identifican como controles temporales.
 
-El cálculo hacia adelante obtiene el inicio y fin más tempranos de cada actividad. El cálculo hacia atrás obtiene las fechas más tardías compatibles con la aceptación E1 al inicio de M16, la aceptación E2 al inicio de M21 y el cierre al terminar M56. La holgura total es la diferencia entre el inicio tardío y el temprano; el margen restante se obtiene restando el inicio programado al tardío. Las relaciones fin a inicio (FS), inicio a inicio (SS) y fin a fin (FF) permiten representar entregas completas o parciales y sus desfases. Calcular únicamente contra el cierre global daría a E1 una holgura que su fecha contractual no permite.
+Las duraciones de trabajo se estiman con tres escenarios por rol. El escenario optimista utiliza un rendimiento propuesto de 7,5 HH efectivas por persona y jornada; el más probable, 6,8 HH, y el pesimista, 5,1 HH. La duración de cada escenario se obtiene del esfuerzo y de los profesionales asignados por especialidad. Los roles paralelos se coordinan conforme al de mayor duración; el análisis y diseño secuenciales suman sus tiempos. Estos rendimientos son parámetros de planificación adoptados por Only Simple Solutions. El anexo de cálculo del T-14 presenta los valores, las asignaciones y el fundamento por actividad.
 
-La Tabla 7.5 resume los resultados de las actividades agregadas. La habilitación incremental de ambientes permite diseño y pruebas antes de la entrega integrada H3. La construcción e integración final E1 de M7--10 no representa todo el trabajo de software anterior a H4.
+La duración esperada se calcula mediante PERT, con la expresión $T_e=(O+4M+P)/6$, y se programa el día entero superior. La dispersión individual se obtiene mediante $(P-O)/6$. Las estimaciones permiten comparar escenarios de ejecución; no se les atribuye una probabilidad de cumplimiento contractual sin una calibración adicional. Los períodos completos de marcha blanca y operación y los plazos de revisión conservan su duración programada fija.
 
-\begin{longtable}{p{0.53\linewidth}p{0.24\linewidth}p{0.13\linewidth}}
-\caption{Resultados del CPM agregado.}\label{tab:7-5}\\
+El cálculo CPM hacia adelante determina el inicio y fin tempranos de cada actividad. El recorrido hacia atrás obtiene las fechas tardías compatibles con las entregas intermedias, la aceptación E1 al inicio de M16, la aceptación E2 al inicio de M21 y el cierre de M56. La holgura se obtiene comparando el inicio temprano con el tardío en el calendario aplicable. El control independiente de H7 y H12 evita trasladar a las etapas un margen que corresponde al cierre global.
+
+La Tabla~\ref{tab:7-5} resume las fechas calculadas de los doce hitos. El anexo de cálculo del T-14 entrega, por actividad, los escenarios O/M/P, la duración esperada, las fechas tempranas y tardías, la holgura y las HH. El listado de precedencias identifica los códigos de origen y destino, el tipo de relación, el desfase y su fundamento.
+
+\begin{longtable}{p{0.12\linewidth}p{0.25\linewidth}p{0.25\linewidth}r}
+\caption{Fechas tempranas, tardías y holguras de los hitos.}\label{tab:7-5}\\
 \toprule
-\textbf{Actividad} & \textbf{Programación temprana} & \textbf{Holgura} \\
+\textbf{Hito} & \textbf{Fecha temprana} & \textbf{Fecha tardía} & \textbf{Holgura (días)} \\
 \midrule
 \endhead
 \bottomrule
-\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia; cálculo del anexo CPM del T-14.} \\
 \endlastfoot
-Línea base E1 y arquitectura integrada & M1--2 y M3--4 & 0 meses \\
-Plataforma y ambientes integrados & M5--6 & 0 meses \\
-Construcción e integración final E1 & M7--10 & 0 meses \\
-Certificación E1 & M11--12 & 0 meses \\
-Plan de marcha blanca E1 & M8--9 & 3 meses \\
-Certificación de administradores E1 & M10--12 & 3 meses \\
-Marcha blanca E1 & M13--15 & 0 meses \\
-Línea base y diseño E2 & M13--14 & 0 meses \\
-Construcción e integración E2 & M15--17 & 0 meses \\
-Certificación E2 & M18 & 0 meses \\
-Plan de marcha blanca E2 & M16--17 & 1 mes \\
-Certificación de administradores E2 & M18--19 & 1 mes \\
-Marcha blanca E2 & M19--20 & 0 meses \\
-Operación contractual & M21--56 & 0 meses \\
+H1 & 03/03/2027 & 07/03/2027 & 4 \\
+H2 & 16/04/2027 & 07/05/2027 & 21 \\
+H3 & 07/06/2027 & 07/07/2027 & 30 \\
+H4 & 07/10/2027 & 07/11/2027 & 31 \\
+H5 & 07/01/2028 & 07/01/2028 & 0 \\
+H6 & 07/01/2028 & 07/01/2028 & 0 \\
+H7 & 07/04/2028 & 07/04/2028 & 0 \\
+H8 & 07/02/2028 & 07/03/2028 & 29 \\
+H9 & 07/05/2028 & 07/06/2028 & 31 \\
+H10 & 07/07/2028 & 07/07/2028 & 0 \\
+H11 & 07/07/2028 & 07/07/2028 & 0 \\
+H12 & 07/09/2028 & 07/09/2028 & 0 \\
 \end{longtable}
+\textbf{Fuente:} Elaboración propia a partir del cálculo PERT/CPM por entregas EDT.
 
-La cadena principal E1 y la rama E2 consumen sus ventanas en este modelo. Los planes de marcha blanca y las certificaciones de administradores conservan los márgenes indicados. La capacitación necesaria para entrar en marcha blanca debe terminar antes de la participación de los usuarios y no utiliza la holgura de los certificados de cierre. Los resultados corresponden a la red modelada y no a cada uno de los 331 elementos de la EDT; su ejecución requiere comprobar capacidad por especialidad y dependencias de detalle.
+Las fechas de los hitos representan instantes de control. El límite del 7 de enero de 2028 corresponde al término de las actividades de M12 el día 6 y al inicio de M13 el día 7. Las tablas de actividades del anexo muestran su último día de ejecución inclusive. Las holguras de los hitos se expresan en días naturales; las de actividades, en jornadas del calendario correspondiente.
 
-PERT se aplica por separado al resumen histórico de esfuerzo, anterior a la nueva estimación de innovaciones. Para valores optimista (O), más probable (P) y pesimista (Pe), expresados en HH, se calcula $E=(O+4P+Pe)/6$. La suma recalculada es 19.719,67 HH, frente a 19.737 HH asignadas a las ramas distintas del software. El T-14 conserva la diferencia de 17,33 HH sin atribuirla a redondeos no demostrados. Las desviaciones informadas por rama agregan 332,21 HH bajo el supuesto de independencia. Esa cifra mide dispersión de esfuerzo y no meses de atraso. La estimación vigente de las cinco innovaciones se desglosa en el anexo del T-14; sus 9.888 HH sustituyen las 795 HH de reserva del resumen histórico.
+H5, H6, H7, H10, H11 y H12 presentan holgura cero. La cadena crítica de E1 comprende la revisión del expediente y el período previsto para subsanación, H5, H6, la marcha blanca registrada en el paquete 1.12.2 y H7. En E2, H10 y H11 habilitan la marcha blanca del paquete 1.12.5 hasta H12. En ambas etapas concurren también las cuatro últimas semanas de evidencia y la revisión del expediente de marcha blanca. Estas condiciones forman caminos simultáneos de cumplimiento; el cierre de una sola cadena no reemplaza las demás aceptaciones.
 
-Para el evento anual se reservan dos semanas de reensayo en preproducción antes de la semana de congelamiento previa. El aviso aproximado de seis semanas procede del caso (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29). La propuesta asigna una semana a confirmar calendario y carga, dos al ensayo y corrección, dos a la reserva de reensayo y la última al congelamiento. Esta reserva es una decisión de programación distinta de la holgura CPM. Si el calendario real reduce el margen, se mantiene la versión ya ensayada y se escala la restricción sin desplazar las producciones contractuales.
+La revisión de los expedientes de marcha blanca se organiza sobre evidencia versionada, con examen progresivo durante sus diez últimas jornadas hábiles y cierre de las observaciones antes del acta. La Contraparte Técnica formaliza la conformidad con los resultados finales de la etapa. El período previsto para subsanación se controla como reserva temporal; su utilización no amplía las marchas blancas ni desplaza las salidas a producción.
 
-La Figura~\ref{fig:7-17} contrasta el calendario con la carga de trabajo. Su panel superior separa las etapas y el esfuerzo transversal; el inferior reúne la operación directa, su gobierno y documentación desde M21.
+El Jefe de Proyecto revisará semanalmente la duración restante y el consumo de holgura con los responsables de los frentes. Las actividades críticas tendrán seguimiento por entrega y cualquier desviación se evaluará inmediatamente contra el hito afectado. En actividades con margen se controlará la diferencia entre la fecha programada y la tardía, manteniendo registro de su consumo.
+
+Las respuestas ante un atraso se analizaron con escenarios sobre la red del cronograma. La sección~\ref{sec:7-3-3-2} presenta el efecto de cada atraso, la respuesta que recupera la fecha y su costo en horas.
+
+La Figura~\ref{fig:curva-hh} presenta la distribución mensual de las horas de trabajo y de la dotación, que suman 239.250,01 HH. La implementación alcanza su mayor carga en M16, con 17.066 HH, cuando se concentra el acompañamiento simultáneo de las veintidós tiendas. Durante M21--M56, el equipo de operación aporta 4.160 HH mensuales, a las que se suman el cierre y los trabajos transversales del período. El desglose por perfil y por mes está en el Formulario T-15.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
-\ossFigCaption{Curva de horas hombre de la implementación por etapa y del total, y de la Operación por separado.}\label{fig:7-17}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/a5b23c8cc4c3.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir de T-14 y T-15.
+\ossFigCaption{Distribución mensual de HH de implementación y del período de operación.}\label{fig:curva-hh}
+\includegraphics[width=\linewidth,keepaspectratio]{figuras/sd07-figuras/diag-07-05_curva-hh-mensual.pdf}
+\raggedright\textbf{Fuente:} Elaboración propia a partir de la red del cronograma.
 \end{minipage}
 \end{center}
 
-La implementación alcanza su máximo de 2.376,08 HH en M16. La operación alcanza 364,63 HH en M22, después de distribuir el acompañamiento final entre M54 y M56. Las franjas M13--15 y M19--20 representan coexistencia de frentes. La curva incluye las 9.888 HH de innovaciones y su seguimiento; el total planificado alcanza 40.946 HH. La capacidad disponible por especialidad se contrasta con la demanda máxima de M16 antes de comprometer la ejecución.
+La reserva de 3.688 HH se vincula a catorce riesgos del Subdocumento 8. Su distribución esperada residual comprende 1.920 HH para datos y migración, 600 para gobierno y capacidad, 512 para implantación y continuidad y 656 para solución y calidad. Las 1.660 HH preventivas ya financiadas no se vuelven a cargar. El registro de conciliación identifica riesgo, respuesta, dueño, actividad EDT, IDs de red y ventana vigente. La reserva se activa por evidencia del riesgo, se registra contra su respuesta y se vuelve a comprobar el efecto sobre H7/H12 y los congelamientos. Su valor esperado no garantiza suficiencia de alta confianza ni autoriza acortar las marchas blancas.
 
 \subsubsection{7.3.3.1 Margen de las innovaciones y del cierre}
 
-Los siete paquetes de implementación de cada innovación tienen holgura total y margen restante de cero meses. No se puede desplazar íntegramente su programación conservando las duraciones y los hitos. Con entregas parciales, una extensión de duración no retrasa necesariamente el hito si esas entregas se mantienen. Por ejemplo, ampliar de dos a tres meses el paquete 1.10.3.2 mantiene H12; desplazar su inicio un mes desplaza H12 un mes y resulta incompatible con el contrato. El jefe de proyecto confirma estas entregas parciales con los equipos y proveedores antes de comprometer su ejecución.
+Cada innovación conserva la trazabilidad de sus entregas con la rama 1.10 del T-14. Las dependencias distinguen la preparación de datos, los servicios habilitantes, la integración y las pruebas. Las instalaciones y activaciones productivas se separan de la preparación aislada y se programan completas dentro de las ventanas permitidas.
 
-El retiro de la plataforma tiene margen cero respecto del objetivo interno M22, condicionado al cierre de migración en M21. La transferencia de nueve meses tiene una holgura total de 27 meses desde su inicio más temprano; al programarla en M48--56 ese margen ya está consumido. El acta final presenta la misma situación. La entrega del código por liberación y su custodia continúan durante el contrato.
+El margen se controla por actividad y entrega. Las actividades de una misma innovación pueden tener holguras diferentes según sus insumos y el hito al que contribuyen. Los responsables de cada frente revisarán los retrasos de suministro, interfaces o preparación de sitios antes de comprometer una intervención y coordinarán su efecto sobre H7 o H12.
 
-Los servicios continuos y los ensayos periódicos se controlan mediante su frecuencia, sus fechas comprometidas y sus niveles de servicio. No se les asigna una holgura de 36 meses. El anexo CPM contiene la red y las fechas tempranas, tardías y programadas.
+La transferencia y la reversibilidad se controlan junto con los objetivos de retiro de plataformas y el cierre contractual. La operación de M21--M56 mantiene sus 36 meses completos y concluye el 6 de septiembre de 2031. La cobertura continua se gestiona por turnos, frecuencias y niveles de servicio, preservando el tiempo comprometido durante toda la vigencia del contrato.
+
+\subsubsection{7.3.3.2 Escenarios de atraso y respuestas de compresión}\label{sec:7-3-3-2}
+
+Los hitos sin holgura dependen de ventanas de duración fija, como las marchas blancas y la habilitación de las tiendas, que no se pueden acortar. Por eso el análisis se hizo sobre el trabajo que llega a esas ventanas. Se agruparon las actividades con 10 días hábiles de margen o menos y se eligieron siete frentes, más una variante en las innovaciones de la Etapa 2. En cada uno se atrasó 10 días hábiles la actividad que lo dispara (14 días corridos cuando el atraso es de un proveedor) y se recalculó la programación estabilizada con la misma red del cronograma.
+
+Se probaron dos respuestas. La intensificación agrega personas, como máximo el doble de las asignadas, y suma un 15~\% de horas sobre lo comprimido por coordinación y aprendizaje. La ejecución rápida adelanta una actividad para que empiece cuando su predecesora va a la mitad. Solo se aplica a dependencias discrecionales y suma un 10~\% de horas por retrabajo en la actividad adelantada. Cuando ninguna alcanza, se agregan horas extraordinarias de hasta dos horas diarias con el recargo legal del 50~\%. La Tabla~\ref{tab:7-escenarios} resume el resultado.
+
+\begin{longtable}{p{0.22\linewidth}p{0.25\linewidth}p{0.17\linewidth}p{0.09\linewidth}p{0.17\linewidth}}
+\caption{Efecto de un atraso de 10 días hábiles y respuesta que recupera la fecha.}\label{tab:7-escenarios}\\
+\toprule\noalign{}
+\textbf{Escenario} & \textbf{Efecto sin respuesta} & \textbf{Respuesta} & \textbf{HH} & \textbf{Riesgo que agrega} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{5}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir de la red del cronograma.} \\
+\endlastfoot
+Levantamiento de procesos (1.2.2) & Expediente de H1 incompleto; 1.2.2 y 1.2.3 terminan 13 días tarde & Intensificación & 137 & Integrar analistas nuevos en el primer mes \\
+Nube base (1.4.1) & Ambientes 10 días tarde; H3 en riesgo & Intensificación & 93 & Bajo \\
+Construcción de la Etapa 1 (1.5.36) & Lo absorbe el margen & No requiere & 0 & --- \\
+Entrega de UPS del lote 1 & Prueba de corte del piloto 9 días fuera de M6--M7 & Ejecución rápida de la pila local & 29 & Retrabajo si cambia la instalación \\
+Corte de inventario (1.7.3) & Lo absorbe el margen & No requiere & 0 & --- \\
+Construcción de la Etapa 2 (1.5.22) & Lo absorbe el margen & No requiere & 0 & --- \\
+Pruebas de Retail Media (1.10.4.6) & H10, H11 y H12 se atrasan 6 días & Intensificación & 30 & Bajo \\
+Capacitación de la Etapa 2 (1.13.3) & H11, H12 y el inicio de la operación se atrasan 11 días & Intensificación y horas extraordinarias & 202 & Doble de formadores y fatiga \\
+\end{longtable}
+
+Tres de los ocho atrasos se absorben con el margen de la programación. En los frentes de construcción probados, de la Etapa 1 y de la Etapa 2, un atraso de dos semanas no llega a ningún hito. Los otros cinco tienen una respuesta que recupera la fecha, y la respuesta depende del tipo de atraso. Cuando el trabajo es propio, se intensifica. Cuando el atraso viene de un proveedor, la intensificación no sirve, porque no acelera una entrega, y se usa la ejecución rápida. En la nube base pasa lo contrario. La ejecución rápida no es posible, porque los ambientes requieren la red ya creada, y la única respuesta es intensificar.
+
+La capacitación de la Etapa 2 es el frente más sensible, porque su atraso mueve el inicio de la operación. En la planificación inicial ocupaba 36 personas durante 9 días, entre la entrega del software para pruebas (H9) y el comienzo de la marcha blanca, sin holgura. Para reducir ese riesgo se adelantó a M17 el 30~\% de la capacitación, 576 HH que no dependen del software terminado. Esa parte cubre los procesos y reglas de la Etapa 2, los cambios de rol, los módulos compartidos con la Etapa 1 y la formación de formadores, y se apoya en el diseño aprobado en H8. El 70~\% restante se dicta desde H9 sobre el software con pruebas superadas. Con este cambio, la capacitación sobre el software gana 3 días de holgura, un atraso de 10 días baja de 14 a 11 días de efecto sobre H11 y H12, y los formadores preparados en M17 quedan disponibles para duplicar la dotación si hace falta. La medida no agrega horas, solo cambia su fecha.
+
+Las respuestas suman 491 HH, más el equivalente a unas 134 HH por el recargo de las horas extraordinarias. Se financian con la reserva de contingencia de 3.688 HH, que se administra por riesgo y se mantiene separada de la holgura temporal y de las asignaciones de capacidad del T-15. El Jefe de Proyecto activa la respuesta cuando el control semanal muestra que el atraso de una actividad supera su margen restante, y registra contra qué riesgo se imputan las horas.
 
 \subsection{7.3.4 Carta Gantt y relación con los hitos del Anexo E-25}
 
-La carta Gantt se presenta en tres niveles de lectura que usan la misma escala, los mismos colores y la misma numeración de la EDT. El primero es el plan integrado de los 56 meses (Figura~\ref{fig:7-18}), que resume las quince ramas. El segundo corresponde a las dos etapas contractuales (Figuras~\ref{fig:7-19} y~\ref{fig:7-20}), con su cadena de dependencias y los márgenes del CPM. El tercero reúne 24 láminas de detalle por rama (sección 7.3.4.4, Figuras~\ref{fig:7-22} a~\ref{fig:7-45}), una por cada rama de la EDT salvo las que se dividen en varias láminas por su tamaño: 1.4 en dos, 1.5 en cinco y 1.10 en cinco. La operación se muestra en la Figura~\ref{fig:7-21}.
-
-En todas las láminas los colores distinguen el tipo de tramo: azul para M1--12, naranja para M13--20, ocre para la marcha blanca, verde para la producción y el seguimiento, y gris para las actividades transversales. Las dos bandas superiores E1 y E2 muestran el desarrollo, la marcha blanca y la producción de cada etapa. Las franjas crema marcan la convivencia entre etapas (M13--15 y M19--20) y la tira «Congelamientos de producción» recuerda las ventanas en que no se autorizan cambios productivos. Un rombo indica una entrega parcial o un hito de aceptación dentro de la ventana de la cuenta; no significa que el trabajo haya terminado. Un elemento puede tener varios tramos activos y más de un hito. Las cinco cuentas de innovación comprenden construcción, aceptación y seguimiento. El Formulario T-14 presenta el calendario por elemento de la EDT y es la fuente de todas las ventanas.
+El cronograma se presenta en tres niveles de lectura. La Figura~\ref{fig:7-hitos} muestra solo los hitos y las fases del contrato. La Figura~\ref{fig:7-resumen} resume las quince ramas de la EDT. El detalle por paquete de trabajo está en el anexo del Formulario T-14, en una lámina por rama (§7.3.4.4). El horizonte de planificación va del 7 de enero de 2027 al 6 de septiembre de 2031.
 
 \begin{center}
 \begin{minipage}{\linewidth}
 \centering
-\ossFigCaption{Gantt general: plan integrado de 56 meses por rama de la EDT, con las bandas de cada etapa y los hitos H1 a H12.}\label{fig:7-18}
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{figuras/recepcion-20261025/98526c37d597.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
+\ossFigCaption{Cronograma de hitos H1--H12 y fases del contrato, M1--M21.}\label{fig:7-hitos}
+\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/sd07-figuras/diag-07-01_cronograma-hitos.pdf}
+\raggedright\textbf{Fuente:} Elaboración propia a partir de la red del cronograma y del Formulario E-25.
 \end{minipage}
 \end{center}
 
-La Figura~\ref{fig:7-18} presenta 18 frentes de lectura: las quince ramas, con las ramas 1.5, 1.10 y 1.12 separadas por etapa. Las barras son de resumen; las entregas parciales y los tramos discontinuos se precisan en las láminas por rama. Se observan cuatro patrones. Las ramas de preparación (1.2 a 1.4, 1.6 a 1.9, 1.11 y 1.13) trabajan en M1--12 y, cuando corresponde, reabren un tramo naranja en M13--18 para la Etapa 2. Las ramas 1.1 y 1.14 son transversales (gris) durante los 56 meses; la 1.14 pasa a verde desde M48 por la transferencia final. El software de la rama 1.5 se divide en E1 (M1--12, con un tramo claro previo a M7 que corresponde a la construcción incremental) y E2 (M13--18). Las cinco innovaciones de la rama 1.10 se muestran como el conteo cíclico predictivo en E1 (M5--15 de desarrollo y marcha blanca, producción desde M16) y las otras cuatro en E2 (producción desde M21). La rama 1.15 inicia en M21 y ocupa los 36 meses de operación.
+Las barras superiores son las fases del contrato. La operación continúa hasta el 6 de septiembre de 2031, fuera del tramo dibujado. Cada rombo es un hito en su fecha contractual. La línea gris que lo precede va desde la fecha más temprana en que el hito puede cumplirse hasta la fecha comprometida, y su largo es la holgura. Los rombos naranjos son hitos sin holgura. Las franjas grises marcan el congelamiento de fin de año, la vuelta a clases y la envolvente preventiva de eventos (§7.3.2).
 
-La rama 1.7 muestra el retiro de plataformas como una ventana larga M21--56 de tono claro. Esa ventana no implica un corte productivo durante 36 meses: el retiro de la plataforma de 2009 se programa dentro de ella y la plataforma de 2011 se retira en M22, después de la compuerta final. Los rombos H1 a H12 al pie reproducen los hitos del Formulario E-25 (Tabla~\ref{tab:7-6}). La nota inferior aclara que el calendario es supuesto: enero de 2027 a agosto de 2031.
+Los hitos de construcción tienen margen. H1 tiene 4 días; H2, 21; H3, 30; H4, 31; H8, 29; y H9, 31. En cambio, H5, H6, H7, H10, H11 y H12 no tienen holgura, porque dependen de ventanas de duración fija, como la marcha blanca de tres meses de la Etapa 1, la de dos meses de la Etapa 2 y la habilitación de las tiendas. Esas ventanas no se pueden acortar, así que el control de plazos se concentra en el trabajo que llega a ellas. La versión candidata de la Etapa 1 se verifica antes del congelamiento del 1 de noviembre (§7.3.2.1), y H4 se formaliza el 7 de noviembre sobre esa versión, sin intervenir producción durante la restricción.
 
-La Tabla 7.6 relaciona los hitos del Formulario E-25 con la evidencia principal de aceptación.
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\ossFigCaption{Cronograma resumen de las quince ramas de la EDT, M1--M25.}\label{fig:7-resumen}
+\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/sd07-figuras/diag-07-02_cronograma-resumen-ramas.pdf}
+\raggedright\textbf{Fuente:} Elaboración propia a partir de la red del cronograma y de la dotación por componente.
+\end{minipage}
+\end{center}
+
+Cada fila es una rama de la EDT y sus barras unen las ventanas de sus actividades según la etapa. La flecha a la derecha indica que la rama continúa hasta M56. El borde oscuro marca los tramos con actividades sin margen en la programación estabilizada, es decir, actividades cuyo atraso pasa directo al hito que alimentan. La columna «Recibe de» indica las ramas que entregan insumos a cada rama. Se obtuvo siguiendo las relaciones de la red, incluidas las que pasan por un hito o por una revisión intermedia.
+
+El desarrollo de software recibe insumos de la infraestructura (1.4) y del levantamiento (1.2), por lo que ambos van primero. Las integraciones (1.6) y la migración de datos (1.7) alimentan las innovaciones, la implantación, las marchas blancas, la capacitación y la operación. Son las ramas con más sucesoras, y un atraso en cualquiera de ellas afecta a cinco o seis ramas. Los tramos sin margen se concentran al inicio (levantamiento e infraestructura), en el piloto de junio de 2027 (calidad), en el corte de inventario previo a la marcha blanca E1 (migración) y en las propias marchas blancas. La construcción de la Etapa 2 ocurre durante la marcha blanca de la Etapa 1, y la operación comienza en M21 con las ramas de seguridad, documentación y operación activas hasta el cierre. El retiro de la plataforma de crédito de 2011 se programa en M22, después de la compuerta final, y no implica un corte productivo durante los 36 meses de operación.
+
+La Tabla~\ref{tab:7-6} relaciona los hitos del Formulario E-25 con la evidencia principal de aceptación.
 
 \begin{longtable}{p{0.09\linewidth}p{0.08\linewidth}p{0.71\linewidth}}
 \caption{Hitos de aceptación.}\label{tab:7-6}\\
@@ -717,18 +851,7 @@ La Etapa 1 prepara la base de la solución y entrega el alcance inicial que Anco
 
 La secuencia comienza con el alcance y la arquitectura, seguidos de la integración de infraestructura y ambientes. Estos se habilitan progresivamente. El piloto técnico aislado de M6--7 aporta evidencia para preparar el despliegue; las ventas oficiales permanecen en los sistemas vigentes durante el ensayo. La construcción e integración final llega a H4 en M10 y las pruebas de cierre sustentan H5 en M12. En paralelo se preparan el plan de marcha blanca y la capacitación.
 
-La Figura~\ref{fig:7-19} presenta la secuencia agregada A--F hasta H7. Las flechas indican las dependencias entre actividades; el contorno discontinuo representa el margen CPM condicionado de P1 y T1. El cronograma detallado del conteo predictivo y del piloto aislado figura en las Figuras~\ref{fig:7-37} y~\ref{fig:7-41}; el piloto conserva su ventana en el T-14, pero no integra la red CPM y no se le atribuye criticidad en esta vista.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la Etapa 1: entregas y aceptación en M16, con dependencias y márgenes del CPM.}\label{fig:7-19}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/126da3194147.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y su anexo CPM.
-\end{minipage}
-\end{center}
-
-La cadena A--B--C--D--E--F--H7 tiene holgura cero: línea base inicial (A, M1--2), arquitectura integrada (B, M3--4), plataforma híbrida y ambientes (C, M5--6), construcción e integración final con entrega H4 (D, M7--10), pruebas de cierre y certificación con H5 (E, M11--12), marcha blanca con inicio H6 (F, M13--15) y aceptación y paso a producción H7 en M16. Las últimas cuatro semanas de la marcha blanca son la ventana en que se acredita el volumen real. El plan P1 (M8--9) y la certificación de administradores T1 (M10--12) conservan tres meses cada uno; H6 se habilita dentro de M13, después del 6 de enero y antes de la vuelta a clases. La construcción incremental anterior a M7 no aparece en esta lámina y se detalla en la rama 1.5. Estos márgenes no se trasladan automáticamente a las cuentas del T-14. La habilitación de usuarios debe estar resuelta antes de su incorporación a la operación supervisada. Entre M13 y M15 también comienza E2, por lo que ambos equipos coordinan cambios y ambientes compartidos. La aceptación E1 requiere demostrar las condiciones de cierre desarrolladas en el T-18.
+En la Figura~\ref{fig:7-hitos}, la construcción conserva margen hasta H4, que tiene 31 días de holgura, y la cadena se vuelve rígida desde la certificación. H5 (M12), el inicio de la marcha blanca con H6 (M13) y la aceptación con H7 (M16) no tienen holgura, porque dependen de la ventana fija de tres meses de marcha blanca y de la habilitación de las tiendas. Las últimas cuatro semanas de la marcha blanca son la ventana en que se acredita el volumen real. H6 se habilita dentro de M13, después del 6 de enero y antes de la vuelta a clases. Entre M13 y M15 también comienza E2, por lo que ambos equipos coordinan cambios y ambientes compartidos. La habilitación de usuarios debe estar resuelta antes de su incorporación a la operación supervisada. La aceptación E1 requiere demostrar las condiciones de cierre de §7.3.6, que el Formulario T-18 desarrolla.
 
 \subsubsection{7.3.4.2 Etapa 2 - Ampliación de la solución y convivencia con la Etapa 1}
 
@@ -736,18 +859,7 @@ La Etapa 2 incorpora el alcance adicional de la segunda entrega. Su desarrollo o
 
 La línea base y el diseño detallado se preparan en M13--14 y se aceptan en H8. La construcción e integración se concentran en M15--17, con entrega para pruebas en H9. La certificación M18, asociada a H10, precede a H11. El plan de marcha blanca se prepara en M16--17. La certificación de administradores se programa en M18--19, sin desplazar la capacitación necesaria para participar desde el inicio.
 
-La Figura~\ref{fig:7-20} muestra la secuencia G--H--I--J y su cierre en H12. Conserva los meses contractuales M13--22 para comparar sus fechas con el Gantt general; las bandas superiores recuerdan que E1 permanece en marcha blanca en M13--15 y en producción desde M16. Los paquetes de las otras cuatro innovaciones se presentan en las Figuras~\ref{fig:7-36} y~\ref{fig:7-38} a~\ref{fig:7-40}. La certificación E de la primera etapa es un antecedente externo a esta ventana.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la Etapa 2: entregas y aceptación en M21, con dependencias y márgenes del CPM.}\label{fig:7-20}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/a5ab6343436d.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14, su anexo CPM y los hitos del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La secuencia E--G--H--I--J--H12 conserva holgura cero: línea base y diseño E2 con H8 (G, M13--14), construcción e integración con H9 (H, M15--17), certificación con H10 (I, M18), marcha blanca con inicio H11 (J, M19--20) y aceptación final con inicio de operación H12 en M21. Su tramo previo A--B--C--D--E aparece en la Figura~\ref{fig:7-19}. P2 (plan de marcha blanca, M16--17) y T2 (capacitación certificada, M18--19) tienen un mes de margen condicionado cada uno. El evento anual cae en M17--18 y afecta la convivencia con E1 en producción; el recuadro morado de la lámina señala su fecha variable y no un bloqueo de dos meses. H12 depende además de H7 y requiere los resultados de marcha blanca, conciliación y capacitación. En M21 coinciden la producción E2 y el inicio de operación, sin duplicar el esfuerzo entre ambas prestaciones.
+En la Figura~\ref{fig:7-hitos}, H8 y H9 tienen 29 y 31 días de holgura, mientras H10 (M18), H11 (M19) y H12 (M21) no tienen holgura, por la ventana fija de dos meses de marcha blanca. La capacitación de la Etapa 2 se divide en dos partes. El 30\,\% se dicta en M17, después de H8, y el resto desde H9 sobre el software con pruebas superadas, con 3 días de holgura (§\ref{sec:7-3-3-2}). El evento anual cae en M17--18 y afecta la convivencia con E1 en producción. H12 depende además de H7 y requiere los resultados de marcha blanca, conciliación y capacitación. En M21 coinciden la producción E2 y el inicio de operación, sin duplicar el esfuerzo entre ambas prestaciones.
 
 \subsubsection{7.3.4.3 Operación - Continuidad del servicio y cierre contractual}
 
@@ -755,330 +867,122 @@ La operación comprende los 36 meses M21--56. Sostiene el servicio aceptado, ati
 
 La estabilización continúa hasta M24 y el retiro de la plataforma de crédito se programa en M22 como objetivo interno anticipado. La documentación se mantiene vigente durante el servicio. La transferencia tecnológica M48--56 prepara el traspaso final, cuyo cierre se registra en M56.
 
-La Figura~\ref{fig:7-21} distingue la operación contractual, el retiro, la transferencia y el cierre. El rojo indica holgura cero; el violeta, holgura ya consumida por las fechas programadas. Las barras grises representan obligaciones periódicas que no tienen una holgura única. El acompañamiento final se programa en M54--56, con inicio efectivo al menos 90 días antes del término.
+En la Figura~\ref{fig:7-resumen}, las ramas que continúan hasta M56 llevan una flecha a la derecha. El acompañamiento final se programa en M54--56, con inicio efectivo al menos 90 días antes del término.
 
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de operación, plazo crítico agregado y ventanas de servicio, M21--56.}\label{fig:7-21}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figuras/recepcion-20261025/506a781522f0.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y de la planificación mensual del T-15.
-\end{minipage}
-\end{center}
+Las pruebas de recuperación comprenden al menos dos ejecuciones al año y la actualización del personal, al menos dos jornadas anuales (RT-22.06). Los informes mensuales permiten comprobar los niveles de servicio. El Líder de Operación revisará la carga de atención, la cobertura por turno y la disponibilidad de especialistas. Ante una desviación, coordinará las medidas de recuperación con los responsables del servicio y del equipo.
 
-Las barras largas representan obligaciones vigentes durante la operación. Las pruebas de recuperación comprenden al menos dos ejecuciones al año y la actualización del personal, al menos dos jornadas anuales (RT-22.06). Los informes mensuales permiten comprobar los niveles de servicio. La dotación por rol y la cobertura de atención deben contrastarse con los capítulos de equipo y operación para demostrar que los recursos permiten cumplir esas obligaciones.
-
-Los 35 paquetes de implementación de las innovaciones tienen holgura cero bajo las duraciones y dependencias previstas. Su seguimiento durante la operación comprende cinco paquetes de actividades periódicas.
+Cada innovación tiene además un paquete de seguimiento durante la operación, cinco en total, con actividades periódicas.
 
 \subsubsection{7.3.4.4 Cronogramas por rama de la EDT}
 
-Las láminas siguientes detallan, rama por rama, las ventanas de los paquetes y cuentas de control del Formulario T-14. Cada una conserva el encabezado con las bandas E1 y E2, la tira de congelamientos de producción y la escala de meses (M1--24 en la mayoría, M13--22 en las innovaciones de la Etapa 2, y M1--56 o M21--56 en las ramas 1.14 y 1.15). A la izquierda se indican el código, la ventana en meses y el nombre de cada paquete; a la derecha, su barra con los hitos del Formulario E-25. Cuando un paquete tiene dos ventanas, como M3--5 y M10--12, las dos aparecen separadas y se rotulan juntas. La leyenda de colores es la de la sección 7.3.4. Las láminas de la rama 1.10 incluyen flechas de dependencia y una nota con los ajustes propuestos entre paquetes. Las ramas se presentan en el orden de la EDT.
+El detalle por paquete de trabajo está en el anexo del Formulario T-14, en 18 láminas que desarrollan cada rama de la EDT hasta su tercer nivel. Cada fila es un paquete de trabajo o, en las ramas 1.5 y 1.10, una cuenta de control, con sus horas, su ventana y su margen. La Tabla~\ref{tab:7-laminas} indica qué lámina corresponde a cada rama.
 
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.1, Dirección, gobierno y control del proyecto.}\label{fig:7-22}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/6447a7a21703.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
+\begin{longtable}{p{0.50\linewidth}p{0.18\linewidth}p{0.22\linewidth}}
+\caption{Láminas del cronograma detallado por rama en el anexo del Formulario T-14.}\label{tab:7-laminas}\\
+\toprule
+\textbf{Rama} & \textbf{Láminas} & \textbf{Elementos de tercer nivel} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Formulario T-14.} \\
+\endlastfoot
+1.1 a 1.3 & T-14.1 a T-14.3 & Una lámina por rama \\
+1.4 Infraestructura híbrida y plataforma base & T-14.4 y T-14.5 & 24 paquetes \\
+1.5 Desarrollo de software & T-14.6 a T-14.8 & 51 cuentas de control \\
+1.6 a 1.15 & T-14.9 a T-14.18 & Una lámina por rama \\
+\end{longtable}
 
-La rama 1.1 reúne 12 paquetes. Los de planificación inicial (plan de dirección integrado, EDT y diccionario, calendario de congelamientos y línea base de costos) ocupan M1--3; el acta de constitución, M1; y los planes alternativos del adelanto financiero, M3--5. Los registros de solicitudes de cambio, de riesgos, lecciones y supuestos, las actas de comités e informes mensuales, las actas de aceptación y habilitación de pagos y el registro de garantías, seguros y certificados se mantienen durante los 56 meses, y el reporte mensual de consumo de nube desde M4. Todas las barras son grises por ser transversales. Los rombos solo señalan entregas dentro de la ventana: un hito de pago posterior no amplía el trabajo del paquete.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.2, Levantamiento y línea base de alcance.}\label{fig:7-23}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/8bc9e0052af1.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los paquetes 1.2.1 y 1.2.2 (mapa de las 14 interfaces, inventario de plataformas, procesos, reglas y volumetría) se ejecutan en M1--2 y cierran H1. El catálogo de requerimientos y la matriz de trazabilidad (1.2.3) mantienen su ventana M1--18 con entregas parciales H1, H8 y H10, y la línea base de alcance (1.2.4) tiene dos tramos separados, M1--2 y M13--14, este último asociado a H8. Los cuatro estudios (etiquetas electrónicas, sistema de almacenes de Concepción, destino de las plataformas y criterios del cupo preaprobado) se desarrollan entre M2 y M6 como apoyo a decisiones: no habilitan por sí solos intervenciones productivas.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.3, Arquitectura y diseño.}\label{fig:7-24}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/bd8d2d71f055.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Seis de los siete paquetes (documento de arquitectura con cinco vistas, arquitectura física, modelo de datos con dominios segregados, contratos de integración versionados, modo desconectado de 24 h y modelo de capacidad) concluyen en M4 y sustentan H2. La especificación y el costeo de las obras del cliente (1.3.7) continúan hasta M6 y se entregan con H3. La frontera Retail--Emisor se conserva antes de integrar vistas o procesos de ambos ámbitos.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.4, Infraestructura híbrida y plataforma base (1/2).}\label{fig:7-25}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/657c51d41004.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La rama 1.4 tiene 13 paquetes y se divide en dos láminas. Esta primera cubre los paquetes 1.4.1 a 1.4.7: entorno de nube, borde por sitio con red segmentada para las 13 tiendas, entorno dedicado del ámbito emisor, ambientes dev/QA/preproducción/producción/DR, observabilidad, plataforma de integración y entrega continuas y licenciamiento de terceros a nombre del cliente. Todos son de M1--6 (con inicios entre M1 y M4) y casi todos cierran con H3. La habilitación es incremental: H3 recibe los ambientes integrados al terminar M6.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.4, Infraestructura híbrida y plataforma base (2/2).}\label{fig:7-26}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/4436c32cf628.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La segunda lámina cubre los paquetes 1.4.8 a 1.4.13: hardware y dispositivos de terreno, recinto técnico y obra civil de separación, plan de cierre de la brecha del centro de datos, energía y climatización, seguridad física y respaldo en operación con custodia de medios. Sus ventanas están entre M2 y M6 y cierran con H3, salvo el plan de brecha (M2--5). La entrega permite construcción y piloto aislado, pero no autoriza por sí sola el cambio del registro oficial en tiendas.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.5, Software, cuentas de control 1.5.1 a 1.5.11 (1/5).}\label{fig:7-27}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/326834de0605.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La rama 1.5 reúne las 51 cuentas de control de desarrollo de software y los 127 casos de uso se encuentran en el detalle del T-14. Para legibilidad se divide en cinco láminas. Las barras representan la ventana de cada cuenta y no una construcción uniforme. Un rombo corresponde a una entrega parcial (H4 para E1, H9 para E2) o al cierre (H5 y H10 respectivamente). Las cuentas de M1--12 requieren evidencia de cierre de E1; las de M13--18, de E2; y las de M1--18 requieren evidencia por cada etapa. Esta primera lámina abre la rama con las cuentas 1.5.1 a 1.5.11.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.5, Software, cuentas de control 1.5.12 a 1.5.21 (2/5).}\label{fig:7-28}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/cb88d9429f44.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La segunda lámina muestra dos patrones de ventana. Las cuentas de punto de venta (1.5.18 y 1.5.19), la integración de existencias con el sistema de almacenes (1.5.12), las ventas del canal digital (1.5.20) y el cobro con la tarjeta de la casa (1.5.21) son de M1--12, con H4 y H5. Las cuentas del flujo de pedidos y la promesa de entrega (1.5.13 a 1.5.17) pertenecen a E2: M13--18, con H8, H9 y H10.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.5, Software, cuentas de control 1.5.22 a 1.5.32 (3/5).}\label{fig:7-29}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/f5893a55bc15.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La tercera lámina presenta las cuentas 1.5.22 a 1.5.32, con las mismas convenciones: ventanas por cuenta, entregas parciales H4/H9 y cierres H5/H10. Su lectura debe contrastarse con el diccionario del Formulario T-14, que contiene los casos de uso de cada cuenta.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.5, Software, cuentas de control 1.5.33 a 1.5.42 (4/5).}\label{fig:7-30}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/108b63c11459.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La cuarta lámina separa tres grupos. Las cuentas de fidelización y segmentación (1.5.33 y 1.5.34) son de E2 (M13--18). Las de crédito y compra a cuotas (1.5.35 a 1.5.37) y las de información precontractual y consentimiento (1.5.41 y 1.5.42) son de E1 (M1--12). Mora y cobranza, repactación y estado de cuenta y la conciliación diaria con la plataforma de crédito de 2011 (1.5.38 a 1.5.40) se extienden en M1--18, con entregas en ambas etapas (H4/H5 y H9/H10) por la convivencia de las plataformas.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.5, Software, cuentas de control 1.5.43 a 1.5.51 (5/5).}\label{fig:7-31}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/a9eb5a2878a5.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La quinta lámina cierra la rama con las cuentas 1.5.43 a 1.5.51. Se mantienen las convenciones de las anteriores. El conjunto de las cinco láminas muestra que el software se construye por incrementos durante E1 y que E2 incorpora el alcance adicional entre M13 y M18, sin que ninguna barra implique construcción uniforme durante su ventana.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.6, Integraciones y conciliación.}\label{fig:7-32}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/884ccf2e9269.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Las siete cuentas de la rama se distribuyen así: 1.6.7 (M4--6, cierra H3), 1.6.1 (M2--5), 1.6.5 (M8--12), 1.6.6 (M10--18) y 1.6.2 (M5--18, con entregas H4 y H5 en E1 y H10 en E2). Las cuentas 1.6.3 y 1.6.4 pertenecen a E2 (M13--18). La rama sostiene la integración entre los dominios Retail y Emisor y la conciliación por dominio.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.7, Migración y saneamiento.}\label{fig:7-33}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/714ccf3936ba.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Las 12 cuentas de la rama distinguen preparación, ensayos y corte. Las de preparación y saneamiento (1.7.1 a 1.7.5, 1.7.7, 1.7.8 y 1.7.12) se ubican entre M2 y M21; la cuenta 1.7.6 va de M10 a M21; 1.7.11 separa la preparación M8--10 del cambio productivo en M16; y 1.7.10 (M21--56) es la ventana larga de retiro de plataformas. El retiro de la plataforma de 2011 (1.7.9) se fija en M22, tras la compuerta final. La preparación y las pruebas no equivalen a un corte productivo; la migración de los 620.000 clientes con saldo requiere convivencia real, conciliación diaria y comunicación previa.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.8, Seguridad, identidad y cumplimiento.}\label{fig:7-34}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/217b745de580.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-La rama tiene ocho paquetes entre M1 y M18 (la escala llega a M24). El plan de seguridad (1.8.1, M1--4) y la diligencia del proveedor de nube (1.8.7, M2--4) cierran H2; el cifrado y tokenización de medios de pago (1.8.4, M4--10) entrega H4; la atestación de la cadena de suministro (1.8.8, M4--12) cierra H5. Las pruebas de intrusión y el plan de remediación (1.8.6, M10--18) tienen dos tramos: evidencia independiente para E1 antes de H5 y para E2 antes de H10. La validación productiva del cifrado debe conciliarse con M16 y con los congelamientos; la barra M4--10 corresponde a la preparación publicada.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.9, Calidad, pruebas y certificación.}\label{fig:7-35}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/3e3c70a590db.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los 12 paquetes de la rama muestran el calendario de pruebas. El plan de pruebas (1.9.1, M2--4) cierra H2 y los estándares de código y puertas de calidad (1.9.2, M1--6), H3. La batería de pruebas funcionales y no funcionales (1.9.3, M5--18) y las pruebas de desempeño, resiliencia y DR (1.9.4, M9--18) tienen un tramo por etapa. El ensayo de degradación del evento anual se ejecuta en M9--10, se revalida en M16 y se cierra en M18. La aceptación de los 28 criterios del caso (1.9.6) se extiende de M11 a M21 y la de comprensión con clientes y titulares (1.9.12), de M12 a M20. Las certificaciones de calidad de E1 (1.9.7, M12) y E2 (1.9.8, M18) se apoyan en expedientes separados por alcance. El evento de 2028 es M17--18 y no coincide con ambas marchas blancas; las pruebas aisladas pueden continuar durante congelamientos.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma detallado de la innovación 1.10.1, Lockers Ancoa 24/7.}\label{fig:7-36}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/722c8558e36c.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Corresponde a la rama 1.10, que agrupa las cinco innovaciones con ocho paquetes cada una (siete de implementación y uno de seguimiento). La lámina muestra los siete paquetes de implementación y el de seguimiento. Todos son de E2: diseño (1.10.1.1, M13--14, H8), visitas y dimensionamiento de emplazamientos (1.10.1.5, M13--17), integración con pedidos y credencial (1.10.1.2, M15--16), gestión de estados de casilleros (1.10.1.3, M15--17), instalación y ensayo en sitios piloto (1.10.1.4, M17--18, H10), pruebas funcionales y de continuidad (1.10.1.6, M18) y certificación y aceptación E2 (1.10.1.7, M19--20, en marcha blanca). El seguimiento específico (1.10.1.8) corre de M21 a M56 y se muestra en la vista conjunta. Las flechas son dependencias; el ajuste propuesto enlaza instalación con pruebas (SS+1, FF0) y emplazamientos con instalación (SS+4, FF0), con cierres completos antes de aceptar.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma detallado de la innovación 1.10.2, Conteo cíclico predictivo.}\label{fig:7-37}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/1d92bd6eb5df.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Es la innovación de E1. Sus paquetes avanzan desde M5: arquitectura y reglas iniciales de datos (1.10.2.1, M5--6, H3), protocolo y preparación de datos (M6--8), depuración y validación de la historia de inventario (M7--9), evaluación e integración del modelo (M9--10, H4) y pruebas por versiones (M9--10, H4), certificación específica junto con la de E1 (M11--12, H5), evaluación en sombra y aceptación E1 (1.10.2.7, M13--15) y seguimiento real desde M16 hasta M56. La evaluación en sombra no modifica saldos automáticamente.  
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma detallado de la innovación 1.10.3, Búsqueda vectorial multimodal.}\label{fig:7-38}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/8ec07f5e2108.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los siete paquetes de implementación pertenecen a E2: diseño y contrato de datos (M13--14, H8), preparación del lote de datos (M14--15), generación y carga de representaciones vectoriales (M15--16), servicio de búsqueda multimodal (M16--17), integración con los canales y pruebas de relevancia y desempeño (ambos M17--18, H10), certificación y aceptación E2 (M19--20) y seguimiento M21--56. El ajuste propuesto enlaza la integración con canales con las pruebas (SS0 y FF0), de modo que los ensayos finales incluyen los canales ya integrados.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma detallado de la innovación 1.10.4, Retail Media Network.}\label{fig:7-39}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/59914df84dd8.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los paquetes de E2 son: diseño de la red de medios y del modelo de campañas (M13--14, H8), plataforma de campañas y espacios publicitarios (M14--15), medición y atribución de resultados (M15--17), integración con canales y catálogo (M16--17), formación de usuarios comerciales (M17--18, H10), pruebas de la solución (M18, H10), certificación y aceptación E2 (M19--20) y seguimiento M21--56. Las flechas seleccionadas marcan entregas completas o parciales; no representan una fecha fija para el evento anual de M17--18.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma detallado de la innovación 1.10.5, Modo Tienda con fila virtual de probadores.}\label{fig:7-40}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/d1e64fea1ec1.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los paquetes de E2 son: diseño del modo tienda y de la fila virtual (M13--14, H8), motor de fila virtual (M15--16), interfaz para clientes y personal (M15--17), integración con la tienda y las existencias (M16--17), preparación de tiendas piloto y formación (M17--18, H10), pruebas de la solución (M18, H10), certificación y aceptación E2 (M19--20) y seguimiento M21--56. Como en las otras innovaciones de E2, la aceptación técnica se hace en M19--20 y la habilitación comienza en M21.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.11, Implantación y despliegue.}\label{fig:7-41}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/270762818e99.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-El plan de implantación y reversión probado (1.11.1) tiene dos tramos, M3--5 y M10--12, y cierra H5. La configuración y certificación de los sitios (1.11.2) se hace por etapa: M5--10 (H4) y M15--17 (H9). El plan de convivencia entre etapas (1.11.3, M10--12, H5) queda listo antes de M13. El piloto del punto de venta en tres tiendas (1.11.4, M6--7) se realiza en un entorno aislado: la venta oficial continúa en los sistemas vigentes.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.12, Marchas blancas y aceptación por etapa.}\label{fig:7-42}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/f015532d7c9d.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-El plan de marcha blanca de E1 se prepara en M8--9 (1.12.1) y su informe se registra en M13--15 (1.12.2) con H7 al inicio de M16; el acta de aceptación de E1 (1.12.3) se emite en M16. Para E2, el plan (1.12.4) se prepara en M16--17, el informe (1.12.5) se registra en M19--20 y el acta de aceptación final y garantía (1.12.6) se emite en M21, con H12. El soporte de estabilización posterior (1.12.7, M16--24) es una prestación separada. Las últimas cuatro semanas de cada marcha blanca exigen las condiciones del T-18.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.13, Gestión del cambio y capacitación.}\label{fig:7-43}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/e7c8d07477c9.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-El plan de gestión del cambio (1.13.1, M3--6, H3) y el plan de capacitación por rol (1.13.2, M5--8) preceden a la capacitación ejecutada y certificada, que se hace en dos tramos, M10--12 y M18--19 (1.13.3). El acompañamiento en puesto (1.13.4) corre en M13--24 y convive con E2 y con el inicio de la operación; no demuestra por sí solo la dotación disponible. La comunicación a los clientes por tramo (1.13.5, M10--21) llega a H12. Cada persona debe estar habilitada antes de participar.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.14, Documentación, transferencia y reversibilidad.}\label{fig:7-44}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/d2b14d227b24.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-A diferencia de las demás ramas, esta lámina usa el horizonte completo de 56 meses (con la escala por año). La documentación técnica y funcional (1.14.1, M1--56) y la base de conocimiento y manuales de operación (1.14.3, M10--56) son continuas. El plan de reversibilidad (1.14.4) y el protocolo de aceptación de entregas (1.14.7) se preparan en M1--3. La transferencia tecnológica de código y artefactos se ejecuta en M48--56 (1.14.2), el acta de cierre y el acompañamiento de reversibilidad en M54--56 (1.14.5) y el informe de lecciones aprendidas en M56 (1.14.6). Un hito H12 de referencia no adelanta la transferencia final a M21.
-
-\begin{center}
-\begin{minipage}{\linewidth}
-\centering
-\ossFigCaption{Cronograma de la rama 1.15, Operación y soporte.}\label{fig:7-45}
-\includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figuras/recepcion-20261025/bdddec717150.png}
-\raggedright\textbf{Fuente:} Elaboración propia a partir del T-14 y del Formulario E-25.
-\end{minipage}
-\end{center}
-
-Los seis paquetes (mesa de servicio de tres niveles, informes de nivel de servicio y certificaciones, pruebas periódicas de recuperación ante desastres, mantención correctiva, preventiva y evolutiva, infraestructura en operación y jornadas de actualización del personal) cubren los 36 meses completos de M21 a M56. Las barras indican vigencia del servicio; la cobertura por turnos, especialidades y capacidad requiere su dimensionamiento y se trata en los capítulos de equipo y operación.
+Con este detalle se puede ubicar cada hora planificada en su paquete y en su mes, y ver qué paquetes no tienen margen. Esos paquetes son los que el Jefe de Proyecto controla semanalmente (§7.3.1) y los primeros en recibir las respuestas de compresión de §\ref{sec:7-3-3-2}.
 
 \subsection{7.3.5 Plan de implantación}
 
-El T-18 desarrolla la puesta en servicio por oleadas, las pruebas y la reversión. La estrategia responde a la convivencia previa, la continuidad de venta y cobro y el despliegue por tienda, proceso o categoría exigidos para Ancoa (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condiciones 1--4, pp. 29--30). Como decisión de planificación, en M6--7 se propone un piloto técnico del punto de venta en tres tiendas, en preproducción aislada y fuera de congelamientos. El ensayo propuesto de corte de enlace de 24 horas afecta al entorno de prueba, mientras los sistemas vigentes sostienen venta y cobro. La convivencia con datos y usuarios reales se acredita durante M13--15 y el cambio de registro oficial por tienda ocurre desde M16.
+La implantación combina dos estrategias. Los servicios de nube se despliegan en modalidad azul-verde, de modo que la versión anterior sigue disponible mientras se observa la nueva y el retorno consiste en devolver el tráfico. Las tiendas se habilitan de forma progresiva por oleadas, y la primera oleada de tres tiendas funciona como grupo canario, porque el resto solo se habilita si ese grupo cumple su compuerta. En ambos casos el despliegue se separa de la liberación. Una versión puede quedar instalada sin ser visible hasta que una bandera de función la activa por tienda, canal o grupo de usuarios. La Tabla~\ref{tab:7-oleadas} resume las oleadas.
 
-La cuenta 1.7.11 separa la preparación M8--10 del cambio productivo M16. Las banderas de función controlan la liberación, sin autorizar intervenciones durante congelamientos. El despliegue mantiene la separación Retail--Emisor, la conciliación por dominio y el retorno probado por tramo de cartera. La migración de los 620.000 clientes con saldo requiere convivencia real, conciliación diaria y un plan de comunicación, sin una fecha única de corte sin respaldo (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.3, condiciones 5 y 7, p. 30).
+\begin{longtable}{p{0.17\linewidth}p{0.20\linewidth}p{0.20\linewidth}p{0.33\linewidth}}
+\caption{Oleadas de implantación y compuerta de avance.}\label{tab:7-oleadas}\\
+\toprule
+\textbf{Oleada} & \textbf{Ventana} & \textbf{Sitios} & \textbf{Compuerta para avanzar} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{4}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Formulario T-18.} \\
+\endlastfoot
+Piloto técnico & M6--M7 (junio y julio de 2027) & 3 tiendas a la calle, en preproducción aislada & Corte de enlace de 24 h, conciliación en 30 minutos o menos y retorno ensayado \\
+Grupo canario E1 & 7 y 8 de enero de 2028 & 3 tiendas & Candidata certificada, usuarios capacitados y retorno probado \\
+Resto de la Etapa 1 & 10 y 11 de enero de 2028 & 19 tiendas y 2 CD & Grupo canario conforme y conciliación diaria sin diferencias no explicadas \\
+Producción E1 (H7) & 7 de abril de 2028 & 22 tiendas & Seis condiciones del Art. 17.3 (Tabla~\ref{tab:7-cierre}) \\
+Etapa 2 (H12) & Julio a septiembre de 2028 & Alcance E2 y cohortes de cartera & Seis condiciones del Art. 17.3 y todas las cohortes conciliadas el 4 de agosto \\
+\end{longtable}
 
-Antes de cada aceptación se presentan pruebas funcionales, de seguridad, resiliencia y recuperación, de carga a 1,5 veces el máximo declarado y de estrés hasta el punto de quiebre. Los indicadores y evidencias se trazan a los 28 resultados de aceptación del caso (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 18, pp. 44--45). Además, se comprueba el cumplimiento de los umbrales técnicos aplicables. El T-18 distingue los umbrales obligatorios de las mejoras que requieren una línea base acordada; una media corporativa no constituye por sí sola un volumen de aceptación aprobado por sitio.
+Ninguna oleada avanza con un incidente crítico o alto atribuible a la solución, con un indicador bajo su umbral, con una diferencia financiera o de inventario no explicada o con personal sin certificar. El piloto de junio de 2027 prueba la operación desconectada en tiendas a la calle, que no dependen de la administración de un centro comercial, y no reemplaza los tres meses de marcha blanca. Las tiendas del grupo canario y las del resto de la Etapa 1 son distintas, por lo que ninguna se cuenta dos veces. Ambos centros de distribución completan su preparación entre el 7 y el 20 de enero, con equipos propios por sitio. Durante la marcha blanca se utilizan usuarios, datos y operaciones reales, y el registro vigente se conserva hasta el cambio oficial. Las interfaces dirigen cada transacción a una sola fuente autorizada y mantienen la conciliación diaria.
 
-Cada reversión se ensaya antes de exponer el alcance. El procedimiento conserva las transacciones efectuadas durante la convivencia y las concilia con la versión restaurada. Recuperar una copia antigua sin tratar las operaciones posteriores no permite acreditar la integridad de la cartera.
+El alcance completo de E1 entra oficialmente en producción en las veintidós tiendas el 7 de abril de 2028, en H7. Las fechas posteriores corresponden a acompañamiento y estabilización y no difieren funciones obligatorias. El acompañamiento presencial cubre catorce días consecutivos desde el 7 hasta el 20 de abril, con cuatro implantadores por tienda y cuatro formadores por tienda para el tramo inicial previsto. Los turnos y relevos se coordinan con los horarios de operación.
+
+La cartera financiera se habilita por cohortes. El tramo T1, correspondiente a E1, se ejecuta y observa del 10 al 23 de enero. Los tramos T2 y T3 de E2 se ejecutan y observan del 7 al 20 de julio y del 21 de julio al 3 de agosto, respectivamente. Todas las cohortes E2 quedan listas antes de las cuatro semanas finales de evidencia, del 10 de agosto al 6 de septiembre. La aceptación final y el cambio oficial de E2 ocurren en H12, el 7 de septiembre. El retiro de la plataforma de 2011 en octubre se limita a archivo y desconexión; ninguna función E2 se difiere hasta ese momento.
+
+La atención técnica entre M13 y M20 se apoya en los equipos de implantación y desarrollo. Un retén rotativo de ocho profesionales por semana, procedentes de un grupo de dieciséis, mantiene primarios y secundarios para Retail y Emisor en dos franjas de disponibilidad. Los profesionales de guardia quedan liberados de jornadas ordinarias durante su semana y de los días de transición necesarios para el descanso. Esta disponibilidad se remunera por unidades de servicio y se distingue de las horas de intervención efectiva. El equipo común de veintiséis personas comienza su cobertura de operación en M21.
+
+Cada paso a producción exige seis pruebas previas, detalladas en la Tabla T-18.3 del formulario. Son la prueba de desempeño con una carga de 1,5 veces el peak declarado, la de estrés hasta encontrar el punto de quiebre y comprobar la recuperación, la de resiliencia y recuperación ante desastres, la de seguridad ofensiva con sus hallazgos remediados, el ensayo de degradación del evento anual y, en la Etapa 1, el corte de enlace provocado de 24 horas.
+
+Los criterios de éxito se miden con los umbrales del caso. La consulta de disponibilidad en el canal digital responde en 400 milisegundos o menos, la venta en caja con pago externo en 25 segundos o menos, la evaluación crediticia en 8 segundos o menos y la propagación de un cambio de precio en 5 minutos o menos (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 15, RT-09.01, p. 34). La transacción de negocio crítica de extremo a extremo debe mantener una disponibilidad mensual de 99,9\,\% (RT-10.01). Cada indicador se registra a diario por servicio, con numerador, denominador, fuente y período, y se evalúa con el percentil que fija el catálogo de requisitos, no con una media diaria. Los resultados de negocio del capítulo 18 del caso se miden contra la línea base del levantamiento. El 12,4\,\% de discrepancia en el conteo de inventario describe la situación actual y no es la meta de aceptación (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 18, resultado 4, p. 44).
 
 \subsubsection{7.3.5.1 Liberación por componente y decisión de retorno}
 
-Conforme a 6.2.5, los servicios de nube utilizan despliegue azul-verde. La nueva versión se prepara en un entorno equivalente y el tráfico cambia hacia ella después de superar las pruebas y la autorización de liberación. La versión anterior permanece disponible durante la observación. En tiendas, una primera tienda recibe la liberación como canario y las siguientes avanzan por oleadas una vez verificados los indicadores. Este canario productivo es distinto del piloto técnico aislado de M6--7.
+El despliegue por componente mantiene la separación Retail--Emisor y la trazabilidad de versiones y datos. El retorno se ensaya antes de cada liberación y tiene un tiempo máximo por componente, que el Líder de Operación mide y la Contraparte Técnica revisa. La Tabla~\ref{tab:7-retorno} resume esos tiempos.
 
-El dominio financiero mantiene su despliegue segregado en el entorno local. La migración avanza por tramos de cartera conciliados, con control del Líder de Datos y del Encargado de Seguridad. La reversión de la aplicación se automatiza solo cuando se ha probado su compatibilidad con los datos. Una diferencia de saldos o una vulneración de la frontera de datos detiene el avance y activa la contención y conciliación del T-18.
+\begin{longtable}{p{0.26\linewidth}p{0.20\linewidth}p{0.44\linewidth}}
+\caption{Tiempo máximo de retorno por componente.}\label{tab:7-retorno}\\
+\toprule
+\textbf{Componente} & \textbf{Tiempo máximo} & \textbf{Condición previa} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Formulario T-18.} \\
+\endlastfoot
+Aplicación o bandera de función & 30 minutos & Ensayo de desactivación con tráfico y sesiones íntegros \\
+Punto de venta de la tienda & 60 minutos & Retorno al punto de venta vigente sin perder ventas confirmadas \\
+Datos y servicio crítico & 4 horas & Compatible con el RTO de 4 horas y el RPO de 15 minutos (RT-07.04), sin restaurar copias que borren transacciones \\
+Tramo de cartera & 4 horas para restablecer la atención & Retorno probado antes del corte y saldos conciliados con la filial emisora \\
+\end{longtable}
 
-Antes de cada oleada, Operación y Calidad configuran los umbrales de disponibilidad, respuesta y errores del servicio y el período de observación aprobado. El proceso de despliegue ejecuta el retorno automático si se incumple una condición configurada y el ensayo demostró que el retorno conserva las transacciones. Si volver atrás exige transformar o restaurar datos, se bloquea la expansión y Operación coordina el retorno asistido con Datos. Ninguna oleada continúa mientras exista una condición bloqueante.
+Si un indicador incumple el umbral configurado, el pipeline detiene la expansión y devuelve el tráfico o la versión al estado anterior, siempre que la compatibilidad de los datos esté ensayada. Cuando el retorno afecta datos o compromete la separación de dominios, el Líder de Datos dirige la conciliación antes de reanudar el servicio. Un incumplimiento del tiempo de retorno impide ampliar la oleada.
 
 \subsection{7.3.6 Marcha blanca y criterios de cierre}
 
-Las cuentas 1.12.1 y 1.12.4 preparan los planes de marcha blanca E1 y E2; las cuentas 1.12.2 y 1.12.5 registran sus resultados en M13--15 y M19--20. El cierre exige conjuntamente las seis condiciones de aceptación desarrolladas en el T-18.
+Los planes de marcha blanca se preparan en los paquetes 1.12.1 y 1.12.4, y sus resultados se registran en 1.12.2 (Etapa 1, M13--M15) y 1.12.5 (Etapa 2, M19--M20). Cada una cierra solo si cumple a la vez las seis condiciones del Art. 17.3. La Tabla~\ref{tab:7-cierre} indica cómo se mide cada condición y qué umbral debe alcanzar. Las cuatro semanas de evidencia van del 10 de marzo al 6 de abril de 2028 en la Etapa 1 y del 10 de agosto al 6 de septiembre de 2028 en la Etapa 2.
 
-Deben estar cerrados los incidentes críticos y altos atribuibles a la solución. Durante al menos las cuatro últimas semanas debe alcanzarse el volumen real comprometido y sostenerse la disponibilidad y los tiempos de respuesta. La conciliación no debe presentar diferencias no explicadas, el personal debe estar capacitado y certificado conforme al plan aprobado y la Contraparte Técnica debe firmar el acta correspondiente.
+\begin{longtable}{p{0.22\linewidth}p{0.36\linewidth}p{0.32\linewidth}}
+\caption{Condiciones de cierre de la marcha blanca, medición y umbral.}\label{tab:7-cierre}\\
+\toprule
+\textbf{Condición (Art. 17.3)} & \textbf{Cómo se mide} & \textbf{Umbral para cerrar} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{3}{@{}l}{\rule{0pt}{3.2ex}\textbf{Fuente:} Elaboración propia a partir del Art. 17.3, del Caso 09 y del Formulario T-18.} \\
+\endlastfoot
+Incidentes críticos y altos & Registro de incidentes atribuibles a la solución & Ninguno abierto \\
+Volumen real comprometido & Volumen por proceso y sitio registrado en el plan aprobado antes de iniciar la marcha blanca & 100\,\% del volumen comprometido en cada una de las cuatro últimas semanas \\
+Disponibilidad y tiempos de respuesta & Medición diaria por servicio con el percentil del catálogo de requisitos & 99,9\,\% mensual en la transacción crítica y umbrales de RT-09.01, sostenidos las cuatro semanas \\
+Conciliación & Comparación diaria por cuenta, saldo e inventario con el registro vigente & Ninguna diferencia sin explicar \\
+Capacitación & Registros de asistencia y evaluación del paquete 1.13.3 & 100\,\% del personal del plan certificado \\
+Acta & Revisión del expediente por la Contraparte Técnica & Acta de aceptación suscrita \\
+\end{longtable}
 
-Si alguna condición falla, la marcha blanca se extiende a costo del adjudicatario, sin desplazar las fechas contractuales siguientes y con las consecuencias contractuales aplicables. El plan de recuperación identifica trabajo, responsables y evidencia de cierre. La fecha programada no equivale a una aceptación automática.
+El volumen de referencia del caso orienta el plan, pero no es una cuota. Por ejemplo, 31.000.000 de documentos de venta al año equivalen a unos 2.378.082 en 28 días para toda la compañía (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 14, núm. 14.1, p. 31). El volumen comprometido por tienda y proceso se aprueba antes de cada marcha blanca, y esa aprobación es condición para iniciarla. La condición de capacitación depende de la capacitación de la Etapa 2, cuyo 30\,\% se adelantó a M17 para darle holgura (§\ref{sec:7-3-3-2}).
+
+Si alguna condición falla, la marcha blanca se extiende a costo del adjudicatario, sin desplazar las fechas contractuales siguientes y con las multas del Art. 80. La medición de cuatro semanas cubre también ese período adicional. El plan de recuperación identifica trabajo, responsables y evidencia de cierre. La fecha programada no equivale a una aceptación automática. Tras H7 y H12 se mantienen catorce días corridos de atención reforzada.
 
 La trazabilidad utiliza el código de cuenta del T-14 para relacionar esfuerzo del T-15, ventana del Gantt, hito y evidencia del T-18. Los números de tabla y figura son referencias editoriales distintas de esos códigos.
 
 
 \section{Referencias}\label{referencias}
 
-\noindent\hangindent=1.5em\hangafter=1 Bases Administrativas para la Preparación de la Propuesta. (2026). \emph{Licitación N.º TFEP-01/2026}, versión 1.0.
-
-\noindent\hangindent=1.5em\hangafter=1 Bases Técnicas del Caso 09 Cadena Multitienda. (2026). \emph{Licitación N.º TFEP-01/2026}, versión 1.0.
-
-\noindent\hangindent=1.5em\hangafter=1 Project Management Institute {[}PMI{]}. (2017). \emph{A guide to the project management body of knowledge (PMBOK® guide)} (6.ª ed.). Project Management Institute.
+\noindent\hangindent=1.5em\hangafter=1 Multitiendas Ancoa S.A. (2026). \textit{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
 
 \section*{Declaración de uso de IA}
 \addcontentsline{toc}{section}{Declaración de uso de IA}
 
-\textbf{Tabla 7.7: Registro de uso de inteligencia artificial}
+\textbf{Tabla 7.13: Registro de uso de inteligencia artificial}
 
 \begin{longtable}{p{0.12\linewidth}p{0.13\linewidth}p{0.22\linewidth}p{0.10\linewidth}p{0.10\linewidth}p{0.25\linewidth}}
 \toprule
@@ -1089,6 +993,8 @@ Introducción & OpenAI Codex & Síntesis y relaciones entre capítulos y formula
 7.1 & OpenAI Codex & Redacción, descomposición de entregables, diagramas mermaid & Alto & Medio & Alex Alfaro \\
 7.2 & OpenAI Codex & Redacción, planificación del trabajo & Alto & Ninguno & Alex Alfaro \\
 7.3 & OpenAI Codex & Redacción, cálculo del cronograma, planificación de la implantación, figuras cronograma & Alto & Alto & Alex Alfaro \\
+7.1 y 7.2 & Claude Code (Anthropic) & Actualización de cifras de la EDT y de las horas por etapa con la red ampliada, texto de las ramas 1.4, 1.8 y 1.13 y de la estabilización & Alto & Alto & Pendiente \\
+7.3 & Claude Code (Anthropic) & Análisis de escenarios de atraso, figuras de hitos, resumen por rama, histograma y curva de HH, y redacción de 7.3.3.2, 7.3.4 a 7.3.6 & Alto & Alto & Pendiente \\
 Formulario T-14 & OpenAI Codex & Detalle del diccionario EDT, cálculo de cronograma, figura carta Gantt & Alto & Alto & Alex Alfaro \\
 Formulario T-15 & OpenAI Codex & Detalle de los recursos asignados, gráfico de curva & Alto & Alto & Alex Alfaro \\
 Formulario T-18 & OpenAI Codex & Detalle de la implantación y marcha blanca & Alto & Ninguno & Alex Alfaro \\

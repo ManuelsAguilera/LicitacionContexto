@@ -81,23 +81,14 @@
 \hypersetup{pdflang={es-CL},pdfcreator={Only Simple Solutions - exportar_latex.py}}
 \usepackage{oss}
 \begin{document}
+\renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\thetable}{T-18.\arabic{table}}
 
-
-\ossCover{Implantación y puesta en marcha controlada}{Subdocumento 7 · T-18}
-
+\ossCover{Implantación y puesta en marcha controlada}{Formulario T-18}
 \tableofcontents
 \clearpage
-\section*{Lista de tablas}
-\addcontentsline{toc}{section}{Lista de tablas}
-
-\noindent\hangindent=2em\hyperref[tab:t18-1]{Tabla T-18.1: Plan por sitio, perfil y compuerta de ola}\dotfill\pageref{tab:t18-1}\par\vspace{0.4\baselineskip}
-\noindent\hangindent=2em\hyperref[tab:t18-2]{Tabla T-18.2: Cortes de datos y de cartera de crédito}\dotfill\pageref{tab:t18-2}\par\vspace{0.4\baselineskip}
-\noindent\hangindent=2em\hyperref[tab:t18-3]{Tabla T-18.3: Pruebas y su alcance}\dotfill\pageref{tab:t18-3}\par\vspace{0.4\baselineskip}
-\noindent\hangindent=2em\hyperref[tab:t18-4]{Tabla T-18.4: Preparación del evento anual por año}\dotfill\pageref{tab:t18-4}\par\vspace{0.4\baselineskip}
-\noindent\hangindent=2em\hyperref[tab:t18-5]{Tabla T-18.5: Tiempo máximo de reversión por componente}\dotfill\pageref{tab:t18-5}\par\vspace{0.4\baselineskip}
-\noindent\hangindent=2em\hyperref[tab:t18-6]{Tabla T-18.6: Hitos de aceptación y su evidencia}\dotfill\pageref{tab:t18-6}\par\vspace{0.4\baselineskip}
+\listoftables
 \clearpage
 
 
@@ -113,11 +104,11 @@ Only Simple Solutions
 \subsection*{Objeto}
 \addcontentsline{toc}{subsection}{Objeto}
 
-Este anexo acompaña al Subdocumento 7 y describe cómo la solución pasa a producción sin cortes bruscos y con retorno ensayado. La implantación se ordena en una estrategia de despliegue por oleadas, la puesta en servicio separada de cada etapa, el plan de convivencia entre ambas, las pruebas que respaldan cada paso a producción, las condiciones de cierre de cada marcha blanca, el procedimiento de reversión y la aceptación por hito.
+Este formulario acompaña al Subdocumento 7 y describe cómo la solución pasa a producción sin cortes bruscos y con retorno ensayado. La implantación se ordena en una estrategia de despliegue por oleadas, la puesta en servicio separada de cada etapa, el plan de convivencia entre ambas, las pruebas que respaldan cada paso a producción, las condiciones de cierre de cada marcha blanca, el procedimiento de reversión y la aceptación por hito.
 
 La implantación respeta el cronograma de 56 meses del artículo 17 de las Bases Administrativas. La Etapa 1 se desarrolla entre los meses 1 y 12, su marcha blanca ocupa los meses 13 a 15 y pasa a producción en el mes 16. La Etapa 2 se desarrolla entre los meses 13 y 18, su marcha blanca ocupa los meses 19 y 20 y pasa a producción en el mes 21, junto con la aceptación final y el inicio de la Operación, que se extiende hasta el mes 56.
 
-La correspondencia con enero de 2027 a agosto de 2031 es un supuesto de planificación de la oferta. El mes 1 corresponde al primer mes completo de ejecución desde el inicio del contrato, según el artículo 10. Una vez fijada esa fecha, el calendario se comprobará contra los congelamientos del caso sin desplazar las anclas contractuales. Los hitos se relacionan con el Formulario E-25.
+El calendario del proyecto comienza el 7 de enero de 2027 y termina el 6 de septiembre de 2031. La marcha blanca E1 ocupa del 7 de enero al 6 de abril de 2028; H7 corresponde al 7 de abril. La marcha blanca E2 ocupa del 7 de julio al 6 de septiembre de 2028; H12 corresponde al 7 de septiembre. La Operación comprende M21--M56, hasta el 6 de septiembre de 2031. Los hitos conservan su correspondencia con el Formulario E-25.
 
 \subsection*{Estrategia de despliegue}
 \addcontentsline{toc}{subsection}{Estrategia de despliegue}
@@ -125,42 +116,43 @@ La correspondencia con enero de 2027 a agosto de 2031 es un supuesto de planific
 El despliegue avanza por oleadas y separa el despliegue de la liberación. Un cambio puede quedar instalado sin estar visible para la persona usuaria hasta que la liberación lo habilita, mediante banderas de función y activación gradual por tienda, por canal y por segmento de usuarios. Esta separación permite instalar, verificar y, si hace falta, retirar un cambio sin exponerlo a la operación real.
 
 \begin{enumerate}
-\item Piloto. El punto de venta nuevo se prueba en tres tiendas en los meses 6 y 7, con acompañamiento en el puesto de trabajo y medición diaria de indicadores. Es un piloto técnico en preproducción aislada dentro de la tienda; la operación vigente sostiene las ventas y conserva el registro oficial. En una de esas tiendas se provoca un corte de 24 horas sobre el enlace del POS nuevo, sin cortar el enlace de producción. La venta de prueba con tarjeta propia usa cupo preaprobado y topes fijados por la filial emisora; debe conservar todas las transacciones y su evidencia, y conciliar en 30 minutos o menos tras el retorno, sin diferencias no explicadas. La Contraparte Técnica firma el acta. Si los topes no están aprobados o falla el ensayo, la compra con tarjeta propia sin enlace se declara no disponible. Toda intervención se programa fuera de congelamientos y de la semana previa y los tres días del evento anual. Si este cae en junio, el piloto se desplaza a julio dentro de M7. La selección de tiendas y categorías se documenta con su volumen, conectividad y posibilidad de retorno; la propuesta no supone una selección ya aprobada por el Cliente. La operación real supervisada corresponde a los meses 13 a 15 y el paso a producción, al mes 16.
-\item Sustitución progresiva. El punto de venta de 2014 se sustituye tienda por tienda después del cierre conforme de la marcha blanca y desde el paso a producción del mes 16, con retorno probado disponible durante cada ventana.
+\item Piloto. El punto de venta nuevo se prueba en tres tiendas en los meses 6 y 7, con acompañamiento en el puesto de trabajo y medición diaria de indicadores. Las tres tiendas son tiendas a la calle, que no dependen de la administración de un centro comercial para intervenir su red, su energía o su horario, de modo que el corte de enlace se ensaya sin autorizaciones de terceros. Es un piloto técnico en preproducción aislada dentro de la tienda; la operación vigente sostiene las ventas y conserva el registro oficial. En una de esas tiendas se provoca un corte de 24 horas sobre el enlace del POS nuevo, sin cortar el enlace de producción. La venta de prueba con tarjeta propia usa cupo preaprobado y topes fijados por la filial emisora; debe conservar todas las transacciones y su evidencia, y conciliar en 30 minutos o menos tras el retorno, sin diferencias no explicadas. La Contraparte Técnica firma el acta. Si los topes no están aprobados o falla el ensayo, la compra con tarjeta propia sin enlace se declara no disponible. Toda intervención se programa fuera de congelamientos y de la semana previa y los tres días del evento anual. Si este cae en junio, el piloto se desplaza a julio dentro de M7. La selección de tiendas y categorías se documenta con su volumen, conectividad y posibilidad de retorno; la propuesta no supone una selección ya aprobada por el Cliente. La operación real supervisada corresponde a los meses 13 a 15 y el paso a producción, al mes 16.
+\item Sustitución controlada. Las tiendas se habilitan para operación real supervisada durante la marcha blanca E1. La autoridad oficial del alcance E1 se transfiere en las 22 tiendas el 7 de abril de 2028, H7, con retorno probado. La progresividad de la habilitación previa no difiere la entrada en producción hasta meses posteriores.
 \item Pasos a producción. La Etapa 1 pasa a producción en el mes 16 y la Etapa 2 en el mes 21, cada uno tras el cierre conforme de su marcha blanca.
 \item Degradación controlada. El orden de degradación de funciones y las ventanas de congelamiento se aplican durante toda la implantación, sin nuevas liberaciones funcionales dentro de un congelamiento. La atención de incidentes utiliza contención y retorno previamente ensayados, sin convertir la urgencia en autorización para ampliar el alcance.
 \end{enumerate}
 
 La implantación se apoya en la plataforma de integración y entrega continuas de la rama 1.4 y en el principio de una sola fuente de verdad para los datos compartidos. El despliegue se ensaya primero en los ambientes habilitados y observables de la rama 1.4, y solo después se libera a producción, de modo que todo paso a producción llega con su configuración probada y con su reversión disponible.
 
-\subsubsection*{Plan por sitio, perfil y compuerta de ola (RT-20.01 y RT-20.02)}
+\subsubsection*{Plan por sitio, perfil y condición de avance (RT-20.01 y RT-20.02)}
 
-El registro de implantación identifica individualmente las 22 tiendas SIT-01, la tienda insignia si no está entre las tres piloto, CD-01, CD-02 y DC-01/DC-02, con región, conectividad, periféricos, versión, volumen y responsable. La asignación de cada tienda a una ola se aprueba en H1 tras el inventario, sin contar dos veces una tienda piloto. Ninguna de las 11 regiones queda fuera del registro. En cada sitio se comprueban los perfiles de cajero, vendedor de sala, preparación de pedidos, conteo cíclico y prevención de pérdidas, recepción y supervisión; los perfiles del Emisor se prueban y aceptan por separado.
+El registro de implantación identifica individualmente las 22 tiendas SIT-01, la tienda insignia si no está entre las tres piloto, la tienda de laboratorio, CD-01, CD-02 y DC-01/DC-02, con región, conectividad, periféricos, versión, volumen y responsable. La asignación de cada tienda a una ola se aprueba en H1 tras el inventario, sin contar dos veces una tienda piloto. Ninguna de las 11 regiones queda fuera del registro. En cada sitio se comprueban los perfiles de cajero, vendedor de sala, preparación de pedidos, conteo cíclico y prevención de pérdidas, recepción y supervisión; los perfiles del Emisor se prueban y aceptan por separado.
 
 
 \begin{longtable}{@{}p{0.18\linewidth}p{0.29\linewidth}p{0.43\linewidth}@{}}
-\caption[Plan por sitio, perfil y compuerta de ola]{Plan por sitio, perfil y compuerta de ola. Fuente: Elaboración propia.}\label{tab:t18-1}\\
+\caption[Plan por sitio, perfil y condición de avance]{Plan por sitio, perfil y condición de avance. Fuente: Elaboración propia.}\label{tab:t18-1}\\
 \toprule
-\textbf{Ola y ventana} & \textbf{Sitios y perfiles} & \textbf{Compuerta de avance} \\
+\textbf{Grupo y ventana} & \textbf{Sitios y perfiles} & \textbf{Compuerta de avance} \\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
-Piloto técnico, M6--7 & Tres tiendas identificadas en H1; POS nuevo y perfiles operativos en preproducción aislada. & Corte de enlace de 24 h, conciliación en 30 min o menos, retorno ensayado y acta; sin cambio del registro oficial. \\
-Canario E1, desde M16 & Una tienda del alcance E1, preferentemente la tienda insignia si supera el inventario y la certificación. & Seis condiciones del Art. 17.3, cero incidentes críticos o altos abiertos y cero diferencias no explicadas; autorización de la Contraparte Técnica. \\
-Olas E1, M16--20 & Resto de las 22 tiendas, por grupos registrados con sitio y perfiles; no se despliega dentro de congelamientos. & Cada grupo exige cinco días hábiles de medición diaria conforme antes de ampliar, retorno dentro del tiempo ensayado y acta de la ola. \\
-E2, M21 en adelante & Servicios y perfiles de la Etapa 2 por sitio, proceso o categoría; E1 continúa en producción. & Acta H12, regresión E1 conforme, conciliación por dominio y revisión diaria antes de ampliar exposición. \\
+Piloto técnico, M6--7 & Tres tiendas a la calle identificadas en H1; POS nuevo y perfiles operativos en preproducción aislada. & Corte de enlace de 24 h, conciliación en 30 min o menos, retorno ensayado y acta; sin cambio del registro oficial. \\
+Habilitación inicial E1, 7--8 de enero de 2028 & Tres tiendas identificadas en el registro de sitios; operaciones reales supervisadas y convivencia controlada. & Candidata certificada, usuarios capacitados, retorno probado y comprobación antes de ampliar el grupo. \\
+Habilitación del resto E1, 10--11 de enero de 2028 & Diecinueve tiendas restantes, con equipos paralelos; las tres primeras no se vuelven a contar. & Comprobación satisfactoria del grupo inicial, conciliación diaria y control por sitio; las 22 tiendas participan antes de la evidencia final. \\
+Producción E1, 7 de abril de 2028 & Las 22 tiendas, tras tres meses completos de marcha blanca. & H7 y seis condiciones de cierre verificadas; acompañamiento simultáneo durante catorce días. \\
+E2, julio--septiembre de 2028 & Alcance E2 habilitado y conciliado durante M19--M20; producción oficial el 7 de septiembre, H12. & Todas las funciones y cohortes operativas antes de las cuatro semanas finales de evidencia; no se deja una primera migración funcional para octubre. \\
 \end{longtable}
 
 El Líder de Implantación y Gestión del Cambio mantiene la lista de sitios y perfiles por ola; el Líder de Calidad y el Líder de Operación validan la compuerta. Un grupo no avanza con incidentes críticos o altos atribuibles, con caída de disponibilidad o respuesta bajo el umbral comprometido, con diferencia financiera o de inventario no explicada, ni con personal sin la certificación aprobada. La observación diaria registra numerador, denominador, fuente y período de cada indicador. El cálculo de disponible se ensaya primero en un subconjunto de categorías con conteo físico y comparación de publicación, reserva y venta antes de ampliar el catálogo.
 
 \subsubsection*{Modalidad por componente y controles del Capítulo 6}
 
-Los servicios de nube se liberan mediante azul-verde, conservando la versión anterior disponible durante la observación. En tiendas se libera primero en una tienda como canario y después por oleadas autorizadas. El canario pertenece a la liberación del alcance correspondiente y no sustituye el piloto técnico aislado de tres tiendas de M6–7. Cada oleada requiere resultados satisfactorios antes de ampliar su exposición.
+Los servicios de nube se liberan mediante azul-verde, conservando la versión anterior disponible durante la observación. La exposición progresiva de tiendas ocurre dentro de la habilitación de marcha blanca, con comprobación del primer grupo antes de ampliar al resto. No sustituye el piloto técnico aislado de tres tiendas de M6--M7 ni reduce las cuatro semanas finales de evidencia del alcance completo. H7 incorpora las 22 tiendas al registro oficial de E1.
 
 El Emisor permanece segregado en su ámbito, con datos, identidades, redes y claves propios; su carga principal se aloja en CLD-01 y la plataforma de crédito de 2011 continúa en DC-01 hasta su retiro. Sus cambios y migraciones requieren conformidad de datos y seguridad, conciliación por tramo y retorno compatible con las transacciones ya registradas. El despliegue técnico, la habilitación de funcionalidades y la aceptación contractual se registran como decisiones distintas.
 
-La versión candidata E1 se verifica en preproducción antes del 1 de noviembre de 2027, con el inicio supuesto de enero, y se identifica en la entrega H4 de M10. Incluye pruebas de los flujos previstos para marcha blanca y ensayo de retorno. En M11–12 se completa la certificación H5 en ambientes aislados, sin intervenir producción durante el congelamiento. Toda corrección obliga a repetir las pruebas afectadas y registrar la nueva versión. La marcha blanca comienza en la ventana habilitada de M13 después del 6 de enero y antes de vuelta a clases, sin anticipar H7.
+La versión candidata E1 se verifica en preproducción antes del 1 de noviembre de 2027, y se identifica en la entrega H4 de M10. Incluye pruebas de los flujos previstos para marcha blanca y ensayo de retorno. En M11–12 se completa la certificación H5 en ambientes aislados, sin intervenir producción durante el congelamiento. Toda corrección obliga a repetir las pruebas afectadas y registrar la nueva versión. La marcha blanca comienza en la ventana habilitada de M13 después del 6 de enero y antes de vuelta a clases, sin anticipar H7.
 
 El jefe de proyecto reúne las verificaciones de calidad, seguridad, datos, implantación y operación antes de presentar cada liberación al Comité de Proyecto y a la Contraparte Técnica. El Comité de Operación participa mensualmente desde M13, conforme a 6.1.7.
 
@@ -169,7 +161,7 @@ El jefe de proyecto reúne las verificaciones de calidad, seguridad, datos, impl
 
 La Etapa 1 se desarrolla entre los meses 1 y 12 y entra en marcha blanca entre los meses 13 y 15. La marcha blanca es operación supervisada con datos y usuarios reales, en convivencia con la operación vigente del Cliente, con plan de reversión activo y medición diaria de indicadores. El paso a producción ocurre en el mes 16, cuando la Etapa 1 pasa a ser el sistema de registro oficial del alcance comprometido.
 
-Con el supuesto de inicio en enero de 2027, la marcha blanca de la Etapa 1 se desarrolla entre enero y marzo de 2028. Coincide parcialmente con el congelamiento navideño, que termina el 6 de enero, y con vuelta a clases, desde la última semana de enero hasta la primera de marzo. Estas ventanas no forman un bloqueo continuo de tres meses. El paquete 1.1.5 registra también la segunda semana de mayo, el evento anual de comercio electrónico durante tres días de mayo o junio y su semana previa, y la última semana de noviembre, incluida en el bloqueo del 1 de noviembre al 6 de enero (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29).
+La marcha blanca E1 comienza el 7 de enero de 2028, después del congelamiento de fin de año. Las tres primeras tiendas se habilitan el 7 y 8 de enero y las otras diecinueve el 10 y 11. Ambos centros de distribución se preparan en paralelo del 7 al 20 de enero. El alcance E1 y sus comprobaciones quedan completos a más tardar el 7 de febrero, para preservar las cuatro semanas finales de evidencia del 10 de marzo al 6 de abril. La restricción de vuelta a clases impide nuevas intervenciones productivas, pero permite mantener la operación y conciliación de lo ya habilitado. El paquete 1.1.5 controla también la segunda semana de mayo, la semana previa y los tres días del evento anual, y el bloqueo del 1 de noviembre al 6 de enero (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29).
 
 Los ambientes, mecanismos de convivencia y procedimientos de retorno se preparan y ensayan antes de la marcha blanca. Durante un congelamiento se mantiene la operación supervisada ya preparada, con conciliación diaria y medición de indicadores, sin introducir nuevas liberaciones funcionales. Los incidentes se atienden mediante los mecanismos de continuidad y retorno previamente ensayados. La capacitación de los usuarios participantes precede a su incorporación; la certificación exigida para el cierre se acredita con el registro del paquete 1.13.3. El plan contempla las incorporaciones de temporada sin exigir intervenciones de producción dentro del congelamiento.
 
@@ -177,6 +169,8 @@ Los ambientes, mecanismos de convivencia y procedimientos de retorno se preparan
 \addcontentsline{toc}{subsection}{Puesta en servicio de la Etapa 2}
 
 La Etapa 2 se desarrolla entre los meses 13 y 18, en paralelo con la marcha blanca y la estabilización de la Etapa 1. Su marcha blanca ocupa los meses 19 y 20, con la Etapa 1 ya en producción, y su paso a producción ocurre en el mes 21, simultáneo con la aceptación final del proyecto y el inicio de la Operación. Los meses 13 y 14 incluyen el análisis y el diseño detallado cuya aprobación corresponde a H8. La construcción dependiente de esas decisiones comienza tras su aprobación; el trabajo preparatorio explica el inicio contractual de la etapa en el mes 13.
+
+Las cohortes de repactaciones y cobranza se habilitan y observan del 7 al 20 de julio de 2028; las restantes cohortes y juicios, del 21 de julio al 3 de agosto. El alcance E2 completo queda conciliado el 4 de agosto, antes de las cuatro semanas finales de evidencia del 10 de agosto al 6 de septiembre. H12 no acepta funciones aplazadas hasta el retiro físico de la plataforma.
 
 Durante los meses 13 a 15 coinciden el cierre de la Etapa 1 y el desarrollo de la Etapa 2; durante los meses 19 y 20 coinciden la Etapa 1 ya en producción con la marcha blanca de la Etapa 2. El detalle del esfuerzo y del solapamiento está en el Formulario T-15.
 
@@ -201,17 +195,17 @@ La migración de los 620.000 clientes con saldo se ejecuta por tramos separados 
 \endhead
 \bottomrule
 \endlastfoot
-T1, cartera al día & 18--31 de marzo de 2028; aceptación E1 en M16. & Dos ensayos y retorno conformes, saldos conciliados; el corte no invalida las cuatro semanas de medición real exigidas para cerrar la marcha blanca E1. Si las altera, se reprograma fuera del congelamiento sin adelantar H7. \\
-T2, repactaciones & 18--31 de agosto de 2028; aceptación E2 en M21. & Conciliación diaria y acta por tramo antes de ampliar la cartera migrada. \\
-T3, cobranza y juicios & 1--14 de octubre de 2028; último corte antes del 15 de octubre. & Validación específica de casos difíciles y retorno ensayado; plataforma de crédito de 2011 apagada antes del 31 de octubre de 2028. \\
+Cartera al día, E1 & Corte el 10--11 de enero; observación del 12 al 23 de enero de 2028. & Dos ensayos y retorno conformes, una autoridad por cohorte y conciliación diaria. Alcance completo antes de las cuatro semanas finales de evidencia E1. \\
+Repactaciones y cobranza, E2 & Corte el 7--8 de julio; observación del 9 al 20 de julio de 2028. & Conciliación y acta antes de ampliar al siguiente grupo; el trabajo se realiza dentro de la marcha blanca E2. \\
+Cohortes restantes y juicios, E2 & Corte el 21--22 de julio; observación del 23 de julio al 3 de agosto de 2028. & Todas las cohortes conciliadas el 4 de agosto, antes de la evidencia final y H12. Octubre se reserva para archivo y desconexión. \\
 \end{longtable}
 
-El Líder de Datos prepara, con la filial emisora y el Cliente, la comunicación a los clientes afectados, los canales de consulta y el tratamiento de discrepancias antes de cada tramo. Los cortes y el apagado se excluyen de todos los congelamientos; el período del 1 de noviembre al 6 de enero no se usa como margen de trabajo. Estas fechas son compromisos de la oferta anteriores a los vencimientos externos de 2029 y se revalidan con el inicio contractual sin desplazar los hitos de los meses 16 y 21.
+El Líder de Datos prepara con la filial emisora la comunicación a los clientes afectados, los canales de consulta y el tratamiento de discrepancias. Durante la marcha blanca se procesan operaciones reales y se conserva una sola autoridad por entidad y cohorte, sin doble captura; las interfaces mantienen el registro oficial hasta H7 o H12 según el alcance. El calendario diferencia corte, observación, aceptación contractual y retiro técnico. Los cortes se ejecutan fuera de congelamientos; el apagado de octubre no representa una migración funcional pendiente. La plataforma de 2011 se archiva y desconecta antes del 1 de noviembre de 2028.
 
 \subsection*{Pruebas que respaldan el paso a producción}
 \addcontentsline{toc}{subsection}{Pruebas que respaldan el paso a producción}
 
-La Tabla T-18.3 resume las pruebas que condicionan el avance. Sus resultados se incorporan al expediente de certificación de cada etapa y al plan de calidad del Subdocumento 9.
+La Tabla~\ref{tab:t18-3} resume las pruebas que condicionan el avance. Sus resultados se incorporan al expediente de certificación de cada etapa y al plan de calidad del Subdocumento 9.
 
 \begin{longtable}{@{}p{0.176\linewidth}p{0.399\linewidth}p{0.330\linewidth}@{}}
 \caption[Pruebas y su alcance]{Pruebas y su alcance. Fuente: Elaboración propia a partir del Caso 09, cap. 13, núm. 13.3, pp. 29–30, y cap. 17, núm. 17.6, p. 43; condiciones técnicas del proyecto.}\label{tab:t18-3}\\
@@ -277,6 +271,25 @@ Una marcha blanca solo se da por concluida y habilita el paso a producción cuan
 \item La Contraparte Técnica suscribió el acta de aceptación correspondiente.
 \end{enumerate}
 
+La Tabla~\ref{tab:t18-cierre} indica cómo se mide cada condición y qué umbral debe alcanzar. Las cuatro semanas de evidencia van del 10 de marzo al 6 de abril de 2028 en la Etapa 1 y del 10 de agosto al 6 de septiembre de 2028 en la Etapa 2.
+
+\begin{longtable}{@{}p{0.22\linewidth}p{0.38\linewidth}p{0.32\linewidth}@{}}
+\caption[Medición y umbral de las condiciones de cierre]{Medición y umbral de las condiciones de cierre. Fuente: Elaboración propia a partir del artículo 17.3 y del Caso 09.}\label{tab:t18-cierre}\\
+\toprule
+\textbf{Condición} & \textbf{Cómo se mide} & \textbf{Umbral para cerrar} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Incidentes críticos y altos & Registro de incidentes atribuibles a la solución & Ninguno abierto \\
+Volumen real comprometido & Volumen por proceso y sitio registrado en el plan aprobado antes de iniciar la marcha blanca & 100\,\% del volumen comprometido en cada una de las cuatro últimas semanas \\
+Disponibilidad y tiempos de respuesta & Medición diaria por servicio con el percentil del catálogo de requisitos & 99,9\,\% mensual en la transacción crítica y umbrales de RT-09.01, sostenidos las cuatro semanas \\
+Conciliación & Comparación diaria por cuenta, saldo e inventario con el registro vigente & Ninguna diferencia sin explicar \\
+Capacitación & Registros de asistencia y evaluación del paquete 1.13.3 & 100\,\% del personal del plan certificado \\
+Acta & Revisión del expediente por la Contraparte Técnica & Acta de aceptación suscrita \\
+\end{longtable}
+
+La condición de capacitación de la Etapa 2 se apoya en la capacitación adelantada a M17, que cubre el 30\,\% de las horas sobre los procesos y reglas aprobados en H8; el resto se dicta desde H9 sobre el software con pruebas superadas.
 Si al término del período no se satisfacen las condiciones anteriores, la marcha blanca se extiende a costo del adjudicatario, sin cargo adicional para el Cliente y sin desplazar las fechas contractuales de las fases siguientes, con aplicación de las multas por atraso previstas en el artículo 80. La medición de las cuatro últimas semanas debe cubrir también cualquier período adicional que sea necesario para acreditar el cierre.
 
 \subsubsection*{Observación y activación del retorno}
@@ -320,14 +333,14 @@ Los tiempos anteriores son compromisos de diseño de Only Simple Solutions sujet
 \subsection*{Acompañamiento y estabilización por ola (RT-20.04 a RT-20.06)}
 \addcontentsline{toc}{subsection}{Acompañamiento y estabilización por ola}
 
-Cada tienda incorporada recibe durante los primeros cinco días hábiles una pareja presencial: un especialista de implantación del POS y un formador de usuarios. En los cinco días hábiles siguientes permanece al menos un especialista presencial por tienda, con apoyo remoto del Líder de Operación, QA, Datos y Seguridad según el incidente. La dotación decrece solo cuando los indicadores diarios están conformes; si no, se mantiene o refuerza. Las cuadrillas son capacidad adicional del despliegue y su número simultáneo se nivelará en T-15 por ola y sitio antes de autorizar el calendario.
+Las 22 tiendas reciben acompañamiento presencial simultáneo del 7 al 20 de abril de 2028, durante catorce días corridos. La primera semana cubre implantación y formación en el horario del sitio; la segunda mantiene implantación. Se asignan cuatro implantadores y cuatro formadores por tienda para sus respectivos turnos y relevos: 176 profesionales de campo, con 10.560 HH nominales presupuestadas en el T-15. La plantilla no representa ocho personas presentes simultáneamente en cada tienda. Los dos centros de distribución cuentan, en total, con cuatro profesionales dedicados para su preparación de enero. Los 44 profesionales de habilitación de enero pertenecen al mismo conjunto que se moviliza en abril.
 
-Tras H7 (M16) y H12 (M21) se mantienen 14 días corridos de atención reforzada con mesa de servicio, guardia de operación y especialistas de Retail y Emisor segregados. Esta estabilización no genera cargo adicional al Cliente. Cada día se publica por sitio, perfil y servicio: volumen real frente al comprometido, disponibilidad y tiempo de respuesta frente a sus umbrales, incidentes críticos/altos abiertos (meta cero), diferencias de conciliación no explicadas (meta cero), usuarios certificados y tiempo de retorno probado. Una sola falla de las condiciones de cierre del Art. 17.3, una diferencia financiera no explicada o un retorno fuera de límite bloquea la ampliación y exige nueva observación conforme antes de reanudarla.
+Tras H7 y H12 se mantienen catorce días corridos de atención reforzada, sin cargo adicional al Cliente. Antes de M21 intervienen los equipos de proyecto, campo y el retén segregado de Retail y Emisor; desde M21 participa el equipo de operación de 26 personas, con especialistas de proyecto para los trabajos de cierre que les corresponden. La disponibilidad del retén se distingue de las HH efectivamente activadas, conforme al T-15. Cada día se publica por sitio, perfil y servicio el volumen real, disponibilidad, tiempos de respuesta, incidentes críticos y altos, diferencias no explicadas, usuarios certificados y tiempo de retorno probado. El incumplimiento bloquea la ampliación y exige corrección y nueva comprobación conforme.
 
 \subsection*{Aceptación por hito}
 \addcontentsline{toc}{subsection}{Aceptación por hito}
 
-La Tabla T-18.6 relaciona cada hito de aceptación del Anexo E-25 con su mes, su evidencia de aceptación y el paso de la implantación que habilita. Los hitos del cierre de la marcha blanca y del paso a producción de cada etapa son los que ordenan la puesta en servicio controlada.
+La Tabla~\ref{tab:t18-6} relaciona cada hito de aceptación del Anexo E-25 con su mes, su evidencia de aceptación y el paso de la implantación que habilita. Los hitos del cierre de la marcha blanca y del paso a producción de cada etapa son los que ordenan la puesta en servicio controlada.
 
 \begin{longtable}{@{}p{0.290\linewidth}p{0.048\linewidth}p{0.290\linewidth}p{0.251\linewidth}@{}}
 \caption[Hitos de aceptación y su evidencia]{Hitos de aceptación y su evidencia. Fuente: elaboración propia a partir del Anexo E-25.}\label{tab:t18-6}\\
@@ -351,7 +364,7 @@ H11 - inicio de la marcha blanca de la Etapa 2 & 19 & Inicio de la marcha blanca
 H12 - paso a producción de la Etapa 2 y aceptación final & 21 & Acta de aceptación final y garantía de correcto funcionamiento & Paso a producción de la Etapa 2 e inicio de la Operación \\
 \end{longtable}
 
-Tras el H12, la Operación se paga con un hito mensual durante los 36 meses de operación (meses 21 a 56). El retiro de la plataforma de crédito de 2011 en el mes 22 y el cierre de la remediación en el mes 24 son compromisos de la oferta anteriores a los vencimientos externos de 2029. El último corte de cartera se realiza antes del 15 de octubre de 2028 y el apagado antes del 31 de octubre de 2028. El fin de soporte y el último hito de remediación se sitúan en 2029 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29). El resultado de aceptación exige cumplir los hitos de remediación antes de ese año (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 18, resultado 23, p. 45). Las fechas externas exactas se confirman durante el levantamiento y se controlan en el registro de restricciones; esa confirmación no rebaja los compromisos de la oferta ni desplaza los hitos contractuales.
+Tras H12, la Operación se paga mediante hitos mensuales durante M21--M56. El alcance funcional de crédito de E2 queda migrado y aceptado antes de H12; octubre de 2028 se reserva para archivo, comprobación de lectura y desconexión de la plataforma de 2011 antes del 1 de noviembre. El cierre de remediación conserva M24. Estos compromisos preceden a los vencimientos externos de 2029 y no permiten aplazar la aceptación de E2 (Multitiendas Ancoa S.A., 2026, Caso 09, cap. 13, núm. 13.2, p. 29; cap. 18, resultado 23, p. 45).
 
 \subsection*{Definición del volumen y de las metas de aceptación}
 \addcontentsline{toc}{subsection}{Definición del volumen y de las metas de aceptación}
@@ -370,18 +383,19 @@ Los pilotos dimensionados consideran tres emplazamientos de lockers y tres tiend
 
 Las entregas parciales del CPM permiten preparar instalación y capacitación con una versión candidata; las pruebas finales y la aceptación exigen completar ambas y superar los criterios de esta sección. El margen cero de los paquetes de innovación no reemplaza las autorizaciones de liberación.
 
-El traspaso 1.14.2 se programa en M48–56 y el acompañamiento final 1.14.5 en M54–56, con inicio efectivo al menos 90 días antes del fin contractual, conforme al artículo 77.2. Las 64 HH de la cuenta 1.14.5 incluyen 48 de acompañamiento y 16 de cierre; no son las HH de 1.14.2. Esta dedicación parcial requiere verificar suficiencia por rol y no sustituye la continuidad del servicio. La entrega del código por liberación y la custodia semestral exigidas por el artículo 84 siguen vigentes durante todo el contrato. El plan de reversibilidad inicial y sus actualizaciones tampoco se postergan al cierre.
+El traspaso 1.14.2 se programa en M48–56 y el acompañamiento final 1.14.5 en M54–56, con inicio efectivo al menos 90 días antes del fin contractual, conforme al artículo 77.2. La cuenta 1.14.5 dispone de 124 HH para acompañamiento y cierre; la cuenta 1.14.2 dispone separadamente de 200,67 HH para transferencia. Ambas se concilian con el T-14 y el T-15 y no sustituyen la dotación de continuidad. Esta dedicación parcial requiere verificar suficiencia por rol y no sustituye la continuidad del servicio. La entrega del código por liberación y la custodia semestral exigidas por el artículo 84 siguen vigentes durante todo el contrato. El plan de reversibilidad inicial y sus actualizaciones tampoco se postergan al cierre.
 
 \subsection*{Referencias}
 \addcontentsline{toc}{subsection}{Referencias}
 
-Multitiendas Ancoa S.A. (2026). Bases Técnicas del Caso 09 - Cadena Multitienda. Licitación TFEP-01/2026.
+\noindent\hangindent=1.5em\hangafter=1 Multitiendas Ancoa S.A. (2026). \textit{Bases técnicas. Caso 09: Cadena multitienda} (Licitación N.° TFEP-01/2026, versión 1.0).
 
 \subsection*{Declaración de uso de IA}
 \addcontentsline{toc}{subsection}{Declaración de uso de IA}
 
-Se utilizó Codex para apoyar la organización del contenido, la comprobación de cálculos y la revisión de redacción. Se aplicaron las pautas de humanizer para conservar un registro formal y retirar expresiones de relleno. La asistencia automatizada no sustituye la aprobación técnica y contractual del proponente.
+Se utilizó OpenAI Codex para asistir en la organización del contenido, la conciliación de fechas y recursos y la revisión de redacción. En esta actualización se utilizó Claude Code (Anthropic) para incorporar el piloto en tiendas a la calle, la tienda de laboratorio, la tabla de medición y umbral de las condiciones de cierre y la capacitación adelantada de la Etapa 2. La revisión humana de esta versión corresponde al equipo autor y se registrará al realizarse.
 
 
 
+\ossFinalPage
 \end{document}
