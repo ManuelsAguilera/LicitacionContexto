@@ -1,0 +1,41 @@
+﻿Rol del plan;Perfil E-26;Costo mín UF/h;Costo máx UF/h;Tarifa mín UF/h;Tarifa máx UF/h;HH del rol;Regla o razón
+Especialista en procesos logísticos (adicional);Analista / Diseñador Experto;0,5;0,8;0,8;1,2;257,34;Dominio especializado
+Especialista financiero y de cumplimiento (adicional);Analista / Diseñador Experto;0,5;0,8;0,8;1,2;1173,96;Regulación del emisor
+Especialista en comunicación y cambio (adicional);Analista / Diseñador Junior;0,3;0,6;0,5;0,8;80,00;Comunicación
+Analista / Diseñador (UX);Analista / Diseñador Senior;0,5;0,7;0,7;1,0;382,65;Experiencia de usuario
+Analista / Diseñador (negocio);Analista / Diseñador Senior;0,5;0,7;0,7;1,0;7432,26;"Líder Funcional hasta 160 HH/mes en M1–M20; resto Senior"
+Analista / Diseñador (negocio);Jefe de Análisis y Diseño;0,7;1,4;1,0;2,0;7432,26;"Líder Funcional hasta 160 HH/mes en M1–M20; resto Senior"
+Analista PMO;Analista / Diseñador Senior;0,5;0,7;0,7;1,0;2752,00;Control del proyecto
+Diseñador instruccional;Analista / Diseñador Senior;0,5;0,7;0,7;1,0;244,00;Diseño de capacitación
+Especialista transferencia;Analista / Diseñador Senior;0,5;0,7;0,7;1,0;274,00;Traspaso
+Facilitador;Analista / Diseñador Senior;0,5;0,7;0,7;1,0;25,01;Talleres
+Gestor del cambio;Analista / Diseñador Senior;0,5;0,7;0,7;1,0;162,67;Gestión del cambio
+Analista QA (ejecución de pruebas);Analista QA Junior;0,3;0,4;0,4;0,6;3802,74;Ejecuta pruebas
+Analista QA (ingeniería de pruebas);Analista QA Senior;0,4;0,6;0,6;0,8;4743,82;"Líder de Calidad hasta 160 HH/mes en M1–M21; resto Senior"
+Analista QA (ingeniería de pruebas);Analista QA Experto;0,5;0,7;0,8;1,0;4743,82;"Líder de Calidad hasta 160 HH/mes en M1–M21; resto Senior"
+Arquitecto (solución);Arquitecto Senior;0,8;1,4;1,2;2,0;7801,46;"1 Arquitecto Experto hasta 160 HH/mes; resto Senior"
+Arquitecto (solución);Arquitecto Experto;0,8;1,4;1,5;2,5;7801,46;"1 Arquitecto Experto hasta 160 HH/mes; resto Senior"
+Redactor técnico;Documentador;0,3;0,7;0,5;1,0;138,87;Equivalencia directa
+Auditor de seguridad;Encargado de Seguridad TI;0,8;1,4;1,5;2,5;81,34;Cumplimiento
+Especialista de seguridad;Encargado de Seguridad TI;0,8;1,4;1,5;2,5;1388,17;Controles de seguridad
+Especialista seguridad ofensiva;Encargado de Seguridad TI;0,8;1,4;1,5;2,5;106,68;Pruebas de intrusión
+Ingeniero DevOps / SRE;Ingeniero DevOps / SRE;0,6;1,0;1,0;1,5;2783,73;Equivalencia directa
+Ingeniero DevOps / SRE (L2);Ingeniero DevOps / SRE;0,6;1,0;1,0;1,5;11552,00;Equivalencia directa
+Ingeniero / Ingeniero de Datos (L3);Ingeniero Experto;0,6;1,0;1,0;1,5;11552,00;Tercer nivel de soporte
+Especialista de operación;Ingeniero Senior;0,6;0,8;0,8;1,2;342,12;Procedimientos de operación
+Especialista de redes;Ingeniero Senior;0,6;0,8;0,8;1,2;920,89;Red de sitio
+Ingeniero (IoT y hardware);Ingeniero Senior;0,6;0,8;0,8;1,2;435,76;Lockers y dispositivos
+Ingeniero (desarrollo);Ingeniero Senior;0,6;0,8;0,8;1,2;18325,05;Construcción de software (decisión: todo Senior)
+Ingeniero infraestructura física;Ingeniero Senior;0,6;0,8;0,8;1,2;2493,78;Racks, energía y clima
+Ingeniero de Datos (integración y migración);Ingeniero de Datos;0,6;1,0;1,0;1,5;6036,01;Equivalencia directa
+Ingeniero de Datos (modelos y ML);Ingeniero de Datos;0,6;1,0;1,0;1,5;2215,30;Conteo predictivo y búsqueda
+Jefe de Desarrollo;Jefe de Desarrollo;0,7;1,4;1,0;2,0;4744,37;Incluye coordinación técnica
+Jefe de Proyecto;Jefe de Proyecto;0,8;2,1;1,5;3,0;3072,00;Equivalencia directa
+Gerente de servicio;Jefe de TIC;0,7;1,4;1,0;2,0;5776,00;Dirige la operación TIC
+Especialista privacidad / legal;Otro: Especialista legal y de privacidad;0,5;0,8;0,8;1,2;202,68;"No está en el E-26; declarado"
+Formador de usuarios (adicional);Otro: Formador de usuarios;0,3;0,6;0,5;0,8;7162,00;"No está en el E-26; declarado"
+Gestor de activos;TIC;0,6;1,0;0,8;1,5;26,00;Inventario
+TIC (NOC);TIC;0,6;1,0;0,8;1,5;40432,00;Operación de monitoreo
+TIC (implantación);TIC;0,6;1,0;0,8;1,5;9467,35;Instalación y acompañamiento
+TIC (mesa de servicio L1);TIC;0,6;1,0;0,8;1,5;40432,00;Primer nivel
+TIC (operación SOC);TIC;0,6;1,0;0,8;1,5;40432,00;Vigilancia 24/7
