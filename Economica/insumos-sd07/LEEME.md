@@ -1,6 +1,6 @@
 # Insumos del SD-07 para el modelo financiero (Informe 3)
 
-Datos del plan de trabajo que el Excel necesita, conciliados y validados el 2026-11-10. **Versión v3**: traspaso completo del SD-04 (3 frentes, tienda tipo, DC-01, datos, seguridad y recuperación) calculado con el mismo método de HH del SD-07, más la medida preventiva de la capacitación E2 (30 % adelantado a M17). Las cantidades salen de aquí; **los precios, tarifas y tasas los decide el equipo en el Excel**. Origen y método: `80_Artefactos/sd-07_contexto/red-v3-2026-11-10/README.md` (y la v2 que la origina).
+Datos del plan de trabajo que el Excel necesita, conciliados y validados el 2026-11-10. **Versión v3**: traspaso completo del SD-04 (3 frentes, tienda tipo, DC-01, datos, seguridad y recuperación) calculado con el mismo método de HH del SD-07, más la medida preventiva de la capacitación E2 (30 % adelantado a M17) y la programación estabilizada dentro de las holguras (77 actividades desplazadas, sin mover hitos ni el total de HH). Las cantidades salen de aquí; **los precios, tarifas y tasas los decide el equipo en el Excel**. Origen y método: `80_Artefactos/sd-07_contexto/red-v3-2026-11-10/README.md` (y la v2 que la origina).
 
 **Recordatorio del profesor:** el Excel se trabaja sin manejo directo de IA, por personas. Estos archivos son datos de entrada, no celdas del Excel.
 
@@ -53,5 +53,5 @@ Datos del plan de trabajo que el Excel necesita, conciliados y validados el 2026
 1. **Mes de cobro de cada hito:** la fecha del hito marca el inicio del mes siguiente (por ejemplo, H1 = 7 de marzo de 2027 = cierre de M2). Hay que definir en qué mes entra el pago (al aceptar o al mes siguiente) y dejarlo en Parámetros.
 2. **Impuesto a la renta en el flujo:** el comunicado mide la rentabilidad sin impuestos; está pendiente de consultar al profesor.
 3. **Supuestos declarados (no validados por el cliente):** las 26 personas de operación (el SD-10 y el SD-12 no existen) los plazos de entrega de 8 y 12 semanas y los rendimientos de instalación (3 días por tienda tipo). Ambos deben quedar marcados como supuestos en Parámetros.
-4. **El SD-07 del repositorio todavía dice 40.946 HH.** La cifra vigente es 239.250,01 (v3) y la redacción se actualizará después. El Excel debe usar estos insumos.
-5. **Si ya cargaron una versión anterior:** las matrices tienen el mismo formato de meses; basta reemplazar los valores. De v1 a v2 cambian M1–M10 y los perfiles; de v2 a v3 solo se mueven 576 HH de capacitación de M18 a M17 (el total no cambia).
+4. **Cifra vigente:** 239.250,01 HH, la misma que usan el SD-07 y el Formulario T-15. El Excel debe usar estos insumos.
+5. **Si ya cargaron una versión anterior:** las matrices tienen el mismo formato de meses; basta reemplazar los valores. De v1 a v2 cambian M1–M10 y los perfiles; de v2 a v3 se mueven 576 HH de capacitación de M18 a M17 y la estabilización reparte el trabajo de la Etapa 2 entre M13 y M17 (por ejemplo, M15 baja de 52 a 37 personas equivalentes y M16 y M17 suben). El total no cambia, pero sí los valores mes a mes, así que hay que reemplazar las matrices completas.
