@@ -1,13 +1,13 @@
-﻿hito,resultado,mes_contractual,fecha,evidencia
-H1,"cierre del levantamiento, línea base de alcance y matriz de trazabilidad",2,2027-03-07,Acta de cierre del levantamiento y línea base aprobada
-H2,"arquitectura, plan de seguridad y modelo de datos",4,2027-05-07,Documento de arquitectura y catálogo de decisiones aprobado
-H3,infraestructura híbrida y ambientes con observabilidad,6,2027-07-07,Cinco ambientes operativos con observabilidad y segregación verificadas
-H4,"software de la Etapa 1 para pruebas, QA superado",10,2027-11-07,Software de la Etapa 1 con cobertura de pruebas
-H5,certificación de la Etapa 1,12,2028-01-07,Certificación de calidad de la Etapa 1
-H6,inicio de la marcha blanca de la Etapa 1,13,2028-01-07,Inicio de la marcha blanca con reversión activa y usuarios capacitados
-H7,paso a producción de la Etapa 1 y cierre de la marcha blanca,16,2028-04-07,Acta de aceptación de la Etapa 1
-H8,línea base de alcance de la Etapa 2 y diseño detallado,14,2028-03-07,Línea base de alcance y diseño de la Etapa 2 aprobados
-H9,"software de la Etapa 2 para pruebas, QA superado",17,2028-06-07,Software de la Etapa 2 con cobertura de pruebas
-H10,certificación de la Etapa 2 y cierre del desarrollo,18,2028-07-07,Certificación de calidad de la Etapa 2
-H11,inicio de la marcha blanca de la Etapa 2,19,2028-07-07,Inicio de la marcha blanca de la Etapa 2 con la Etapa 1 en producción
-H12,paso a producción de la Etapa 2 y aceptación final,21,2028-09-07,Acta de aceptación final y garantía de correcto funcionamiento
+﻿hito,resultado,mes_contractual,porcentaje_implementacion,etapa,fecha,evidencia
+H1,"cierre del levantamiento, línea base de alcance y matriz de trazabilidad",2,8,1,2027-03-07,Acta de cierre del levantamiento y línea base aprobada
+H2,"arquitectura, plan de seguridad y modelo de datos",4,7,1,2027-05-07,Documento de arquitectura y catálogo de decisiones aprobado
+H3,infraestructura híbrida y ambientes con observabilidad,6,10,1,2027-07-07,Cinco ambientes operativos con observabilidad y segregación verificadas
+H4,"software de la Etapa 1 para pruebas, QA superado",10,10,1,2027-11-07,Software de la Etapa 1 con cobertura de pruebas
+H5,certificación de la Etapa 1,12,10,1,2028-01-07,Certificación de calidad de la Etapa 1
+H6,inicio de la marcha blanca de la Etapa 1,13,5,1,2028-01-07,Inicio de la marcha blanca con reversión activa y usuarios capacitados
+H7,paso a producción de la Etapa 1 y cierre de la marcha blanca,16,10,1,2028-04-07,Acta de aceptación de la Etapa 1
+H8,línea base de alcance de la Etapa 2 y diseño detallado,14,5,2,2028-03-07,Línea base de alcance y diseño de la Etapa 2 aprobados
+H9,"software de la Etapa 2 para pruebas, QA superado",17,10,2,2028-06-07,Software de la Etapa 2 con cobertura de pruebas
+H10,certificación de la Etapa 2 y cierre del desarrollo,18,10,2,2028-07-07,Certificación de calidad de la Etapa 2
+H11,inicio de la marcha blanca de la Etapa 2,19,5,2,2028-07-07,Inicio de la marcha blanca de la Etapa 2 con la Etapa 1 en producción
+H12,paso a producción de la Etapa 2 y aceptación final,21,10,2,2028-09-07,Acta de aceptación final y garantía de correcto funcionamiento
