@@ -1,0 +1,14 @@
+﻿Escenario;Grupo (1 frentes, 2 actividades que llegan a la revisión del cliente);Actividad;Paquete EDT;Efecto de un atraso de 10 días hábiles sin respuesta;Respuesta que recupera la fecha;HH de la respuesta;HH equivalentes por recargo de horas extraordinarias;Riesgo que agrega
+S1;1;Levantamiento de procesos;1.2.2;"Expediente de H1 incompleto; 1.2.2 y 1.2.3 terminan 13 días tarde";Intensificación;137;0;Integrar analistas nuevos en el primer mes
+S2;1;Nube base;1.4.1;"Ambientes 10 días tarde; H3 en riesgo";Intensificación;93;0;Integrar especialistas nuevos en la nube
+S3;1;Construcción de la Etapa 1;1.5.36;Lo absorbe el margen;No requiere;0;0;
+S4;1;Entrega de UPS del lote 1;1.4.16;La prueba de corte del piloto termina 9 días después de su plazo del 7 de julio;Ejecución rápida de la pila local;29;0;Retrabajo si cambia la instalación
+S5;1;Corte de inventario;1.7.3;Lo absorbe el margen;No requiere;0;0;
+S6;1;Construcción de la Etapa 2;1.5.22;Lo absorbe el margen;No requiere;0;0;
+S6b;1;Pruebas de Retail Media;1.10.4.6;H10, H11 y H12 se atrasan 6 días;Intensificación;30;0;Coordinar más probadores en la misma semana
+S7;1;Capacitación de la Etapa 2;1.13.3;H11, H12 y el inicio de la operación se atrasan 11 días;Intensificación y horas extraordinarias;202;134,4;Doble de formadores y fatiga
+S8;2;Capacitación de la Etapa 1;1.13.3;H6, H7 y H12 se atrasan 12 días;Intensificación;293;0;Doble de formadores al cierre de la Etapa 1
+S9;2;Aceptación de los 28 criterios de la Etapa 1;1.9.6;H5, H6, H7 y H12 se atrasan 11 días;Intensificación;18;0;Más revisores sobre la misma evidencia
+S10;2;Pruebas de los lockers;1.10.1.6;H10, H11 y H12 se atrasan 8 días;Intensificación;8;0;Coordinar más probadores en los sitios piloto
+S11;2;Pruebas del modo tienda;1.10.5.6;H10, H11 y H12 se atrasan 8 días;Intensificación;25;0;Coordinar más probadores en las tiendas piloto
+S12;2;Aceptación de los 28 criterios de la Etapa 2;1.9.6;H10, H11 y H12 se atrasan 13 días;Intensificación y horas extraordinarias;18;12,1;Fatiga del equipo antes de la revisión del cliente

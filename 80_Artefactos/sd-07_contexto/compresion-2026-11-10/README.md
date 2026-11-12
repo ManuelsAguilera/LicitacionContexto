@@ -49,3 +49,17 @@ El usuario eligió la **opción A con B de respaldo**: adelantar a M17 el 30 % d
 - con intensificación más horas extra se recupera la fecha con +202 HH y unas 134 equivalentes (antes 288 y 192).
 
 El total de horas no cambia (239.250,01). Los escenarios S1 a S6b dan los mismos resultados.
+
+## Escenarios S8–S12: actividades que llegan a la revisión del cliente (red v3, 2026-11-11)
+
+Agregados tras la revisión del hilo lógico: el criterio de 10 días de margen dejaba fuera las actividades más ajustadas. Mismo método (atraso de 10 días hábiles, intensificación ≤ 2× y +15 % HH, horas extra con duración × 0,8 y recargo equivalente al 10 % de las HH). Script: `escenarios_ajustadas_v3.py` (uso: `python3 -I escenarios_ajustadas_v3.py <traspaso> red-v3-2026-11-10 escenarios.py`, desde `80_Artefactos/sd-07_contexto/`).
+
+| Escenario | Holgura | Sin respuesta | Respuesta | HH | Recargo equiv. |
+| :-- | --: | :-- | :-- | --: | --: |
+| S8 Capacitación E1 (1.13.3, 1.950 HH) | 2 | H6, H7, H12 +12 | Intensificación | 292,5 | — |
+| S9 Aceptación 28 criterios E1 (1.9.6, 121,34 HH) | 2 | H5, H6, H7, H12 +11 | Intensificación | 18,2 | — |
+| S10 Pruebas lockers (1.10.1.6, 52 HH) | 2 | H10–H12 +8 | Intensificación | 7,8 | — |
+| S11 Pruebas modo tienda (1.10.5.6, 165,33 HH) | 2 | H10–H12 +8 | Intensificación | 24,8 | — |
+| S12 Aceptación 28 criterios E2 (1.9.6, 121,33 HH) | 1 | H10–H12 +13 | Intensificación + horas extra (solo intensificación deja +1) | 18,2 | 12,1 |
+
+Total de respuestas S1–S12: 853 HH (491 + 362) y unas 147 HH equivalentes por recargo (134 + 12).

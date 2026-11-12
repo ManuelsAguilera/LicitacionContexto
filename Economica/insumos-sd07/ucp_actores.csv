@@ -1,0 +1,30 @@
+﻿Actor;Nombre;Tipo (1 API, 2 protocolo o archivo, 3 persona con interfaz);Peso
+AH-02;Titular de tarjeta;3;3
+AH-03;Vendedor de piso;3;3
+AH-04;Cajero;3;3
+AH-05;Jefatura de tienda o de departamento;3;3
+AH-06;Personal de reposición y bodega de tienda;3;3
+AH-07;Personal de centros de distribución;3;3
+AH-08;Repositor externo de proveedor;3;3
+AH-09;Ejecutivo de atención y posventa;3;3
+AH-10;Ejecutivo del negocio financiero;3;3
+AH-11;Comercial y compras;3;3
+AH-12;Planificación de abastecimiento;3;3
+AH-13;Canales digitales y Marketing;3;3
+AH-14;Prevención de pérdidas;3;3
+AH-15;Contraloría y Cumplimiento;3;3
+AH-16;Administrador de sistemas (TI);3;3
+AH-17;Vendedor de marketplace (externo);1;1
+AH-18;Analista de información;3;3
+AS-01;Sistema de gestión empresarial y facturación (ERP/DTE);1;1
+AS-02;Sistema de gestión de almacenes principal (WMS);1;1
+AS-03;Plataforma de marketplace;1;1
+AS-04;Plataforma de comercio electrónico;1;1
+AS-05;Sistema de fidelización;1;1
+AS-07;Transportistas de última milla;1;1
+AS-08;Medios y terminales de pago;1;1
+AS-09;Sistema central de retail (2009);2;2
+AS-10;Plataforma de originación y cobranza (2011);2;2
+AS-11;Sistema de remuneraciones (módulo del ERP);1;1
+AS-13;Proveedores de mercadería;2;2
+AS-14;Temporizador de procesos periódicos;1;1

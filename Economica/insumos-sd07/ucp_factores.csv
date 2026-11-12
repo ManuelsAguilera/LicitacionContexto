@@ -1,0 +1,22 @@
+﻿Factor;Descripción;Tipo;Peso;Valor (0-5);Peso × valor;Justificación
+T1;Sistema distribuido;Técnico (TCF);2,0;5;10,0;Casi todo el procesamiento está repartido: nube pública, on-premise, 13 servicios más la base y 22 tiendas que operan 24 h sin enlace
+T2;Objetivos de desempeño;Técnico (TCF);1,0;5;5,0;El desempeño es exigible por umbrales numéricos con prueba de carga
+T3;Eficiencia del usuario final;Técnico (TCF);1,0;4;4,0;La productividad del cajero y del vendedor es un objetivo, pero no el principal
+T4;Procesamiento interno complejo;Técnico (TCF);1,0;4;4,0;Hay reglas no triviales (disponible con colchón, costo total de servir, atribución de comisión, conciliaciones), sin algoritmos científicos
+T5;Código reutilizable;Técnico (TCF);1,0;3;3,0;La plataforma común la reusan los 13 servicios, pero no se pide diseñar componentes para otros sistemas
+T6;Facilidad de instalación;Técnico (TCF);0,5;4;2,0;Instalar es un proyecto: piloto de 3 tiendas, despliegue gradual, convivencia y reversión
+T7;Facilidad de uso;Técnico (TCF);0,5;4;2,0;Lo usa personal recién incorporado, con rotación de 62 %
+T8;Portabilidad;Técnico (TCF);2,0;3;6,0;Varios entornos (sitio, app móvil sin conexión, terminal compartida, caja, mesón), sin exigencia multiplataforma por componente
+T9;Facilidad de cambio;Técnico (TCF);1,0;4;4,0;Muchas reglas se cambian sin programar
+T10;Concurrencia;Técnico (TCF);1,0;5;5,0;Hay choque real de datos: reservas contra venta física, 104.000 pedidos en 3 días, 380 cajas
+T11;Objetivos de seguridad;Técnico (TCF);1,0;5;5,0;Una filtración de datos de crédito fiscalizado tiene daño legal y reputacional máximo
+T12;Acceso de terceras partes;Técnico (TCF);1,0;5;5,0;Entran y salen muchos sistemas y organizaciones ajenas
+T13;Entrenamiento a usuarios;Técnico (TCF);1,0;4;4,0;Hay que capacitar a mucha gente, con rotación alta y capacitación normativa obligatoria
+E1;Modelo de proyecto;Ambiente (EF);1,5;5;7,5;El equipo tiene experiencia con el modelo de gestión híbrido que usará el proyecto (declarado por el usuario). El sd-01, apartado 1.5, describe un gobierno ya definido (PMIS con Jira y SharePoint, comité ejecutivo mensual, comité de proyecto quincenal, comité de arquitectura, comité de operación y seguimiento semanal), y el apartado 1.4 reúne tres proyectos de referencia como contratista principal. El sd-06 debe describir ese modelo híbrido con las mismas instancias
+E2;Experiencia en el negocio;Ambiente (EF);0,5;4;2,0;El equipo conoce el negocio (retail, crédito y omnicanal) por los tres proyectos de referencia del sd-01, apartado 1.4
+E3;Orientación a objetos;Ambiente (EF);1,0;4;4,0;Experiencia significativa: el stack informado usa Java Spring Boot, TypeScript, Node.js, Go y React, y la empresa es una fábrica de software a medida (sd-01, 1.1.1)
+E4;Capacidad del analista;Ambiente (EF);0,5;4;2,0;El Arquitecto de Solución trabajó como analista en proyectos anteriores
+E5;Motivación;Ambiente (EF);1,0;5;5,0;Autoevaluación del equipo (la clase pide asignar E5 en grupo, diapositiva 43): el equipo se declara muy motivado con el proyecto. Indicadores verificables: trabajo sostenido en el repositorio durante 12 días con actividad entre el 2026-09-01 y el 2026-10-08, con aportes de tres integrantes distintos, y una entrega continua de artefactos (subdocumentos, anexos y estimación). Se refleja en el sd-01 (`80_Artefactos/sd-01_contexto/notas_sd-01.md`, N-01)
+E6;Estabilidad de requisitos;Ambiente (EF);2,0;2;4,0;Hay 5 RF por validar, metas del Anexo D por validar con el cliente y decisiones abiertas (pregunta 8)
+E7;Personal a tiempo parcial;Ambiente (EF);-1,0;0;-0,0;Supuesto del equipo: todo el personal asignado es de dedicación exclusiva. No se respalda con un hecho porque la dotación y la dedicación son del sd-12, que no forma parte de este avance
+E8;Dificultad del lenguaje;Ambiente (EF);-1,0;3;-3,0;Lenguajes comunes, pero unas 30 tecnologías y tres alternativas sin decidir (`contexto_sd-04.md`, D-12)
