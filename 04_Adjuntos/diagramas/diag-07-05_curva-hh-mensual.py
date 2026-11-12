@@ -1,6 +1,6 @@
-"""Figura SD-07 · Distribución mensual de HH, M1–M56 (red v3).
+"""Figura SD-07 · Distribución mensual de HH, M1–M56.
 
-Suma mensual de la matriz de HH por rol de la red v3 (trabajo, campo, dirección, inducción y operación).
+Suma mensual de la matriz de HH por rol de la red del cronograma (trabajo, campo, dirección, inducción y operación).
 Dos series: implementación (M1–M20) y período de operación (M21–M56). Paleta validada (dataviz).
 Uso: <python con matplotlib> diag-07-05_curva-hh-mensual.py
 """
@@ -45,10 +45,7 @@ for s in ('top', 'right', 'left'):
 ax.tick_params(axis='y', length=0)
 ax.legend(handles=[Patch(color=AZUL, label='Implementación (M1–M20)'), Patch(color=VIOLETA, label='Período de operación (M21–M56)')],
           loc='upper right', frameon=False, fontsize=9)
-total_txt = f'{sum(total):,.2f}'.replace(',', 'X').replace('.', ',').replace('X', '.')
-fig.text(0.01, 0.01, f'Fuente: elaboración propia a partir de la red CPM v3. Total: {total_txt} HH.',
-         fontsize=9, color=TEXTO2)
-fig.tight_layout(rect=(0, 0.04, 1, 1))
+fig.tight_layout()
 fig.savefig(SALIDA + '.png', dpi=300)
 fig.savefig(SALIDA + '.pdf')
 print('ok', SALIDA)

@@ -178,14 +178,14 @@ El acompañamiento de campo comprende 10.560 HH nominales: $22\times8\times40=7.
 
 La habilitación de marcha blanca en enero incorpora $22\times12=264$ HH de implantación y familiarización local, más $44\times8=352$ HH de desplazamientos de ida y vuelta. Estas 616 HH se imputan a 1.11.2, sin repetir la formación general ni el acompañamiento de abril.
 
-\subsubsection{Componentes físicos incorporados desde el Subdocumento 4}
+\subsubsection{Componentes físicos del Subdocumento 4}
 
-La arquitectura física del Subdocumento 4 agrega trabajo que la base anterior no contenía. Comprende el levantamiento y la instalación de los 25 sitios (22 tiendas, 2 centros de distribución y la tienda de laboratorio), las órdenes de compra, el centro de datos DC-01, la pila local de tienda, la replicación entre regiones y los controles de seguridad desplegados. Se estimó con el mismo método que el resto del trabajo ajeno a UCP. Cada componente multiplica su cantidad por las HH por unidad de tres valores, con $M$ igual a personas por días por ocho horas, $O=0{,}6M$ y $P=1{,}5M$. Cuando un componente existente aumentó su cantidad, como la red de sitio de 13 a 25 sitios, se mantuvo la duración y se ajustó la dotación a la ventana. La Tabla~\ref{tab:t15-sd04} resume los componentes.
+La arquitectura física del Subdocumento 4 define el trabajo en los sitios y el centro de datos. Comprende el levantamiento y la instalación de los 25 sitios (22 tiendas, 2 centros de distribución y la tienda de laboratorio), las órdenes de compra, el centro de datos DC-01, la pila local de tienda, la replicación entre regiones y los controles de seguridad desplegados. Se estimó con el mismo método que el resto del trabajo ajeno a UCP. Cada componente multiplica su cantidad por las HH por unidad de tres valores, con $M$ igual a personas por días por ocho horas, $O=0{,}6M$ y $P=1{,}5M$. Cuando un componente se repite por sitio, como la red de sitio en los 25 sitios, la duración se mantiene dentro de su ventana y la dotación se ajusta a ella. La Tabla~\ref{tab:t15-sd04} resume los componentes.
 
 \begingroup
 \small
 \begin{longtable}{@{}p{0.13\linewidth}p{0.33\linewidth}p{0.14\linewidth}p{0.22\linewidth}p{0.11\linewidth}@{}}
-\caption[Componentes físicos incorporados desde el Subdocumento 4]{Componentes físicos incorporados desde el Subdocumento 4. Fuente: Elaboración propia.}\label{tab:t15-sd04}\\
+\caption[Componentes físicos del Subdocumento 4]{Componentes físicos del Subdocumento 4. Fuente: Elaboración propia.}\label{tab:t15-sd04}\\
 \toprule
 \textbf{EDT} & \textbf{Trabajo estimado} & \textbf{Cantidad} & \textbf{O / M / P (HH por unidad)} & \textbf{HH} \\
 \midrule
@@ -208,7 +208,7 @@ La arquitectura física del Subdocumento 4 agrega trabajo que la base anterior n
 \end{longtable}
 \endgroup
 
-Estos componentes agregan 4.756,54 HH de trabajo técnico. Los paquetes nuevos son 1.4.14 a 1.4.24 y 1.8.9; los paquetes 1.4.1 a 1.4.4, 1.4.8, 1.4.13 y 1.8.4 aumentan su esfuerzo, y las cuentas 1.10.1 y 1.10.5 incorporan las órdenes de compra de lockers y tótems. Las duraciones se calcularon con los mismos rendimientos de 7,5, 6,8 y 5,1 HH por persona y jornada.
+Estos componentes suman 4.756,54 HH de trabajo técnico. Corresponden a los paquetes 1.4.14 a 1.4.24 y 1.8.9, a parte del esfuerzo de 1.4.1 a 1.4.4, 1.4.8, 1.4.13 y 1.8.4, y a las órdenes de compra de lockers y tótems de las cuentas 1.10.1 y 1.10.5. Las duraciones se calcularon con los mismos rendimientos de 7,5, 6,8 y 5,1 HH por persona y jornada.
 
 \subsection{Conciliación del presupuesto}
 
@@ -977,15 +977,15 @@ La asignación distingue especialidad, dominio, actividad y fecha. El formulario
 \endhead
 \bottomrule
 \endlastfoot
-Etapa 1 — Desarrollo & 42.194,73 & 36,7 & Dirección y gobierno\newline Levantamiento, alcance y arquitectura\newline Infraestructura híbrida\newline Software\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad & 1--12 \\
-Etapa 1 — Marcha blanca & 4.646,56 & 18,3 & Dirección y gobierno\newline Integraciones y datos\newline Implantación, marchas blancas y cambio & 13--15 \\
-Etapa 2 — Desarrollo & 21.235,40 & 35,2 & Dirección y gobierno\newline Software\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad & 13--18 \\
-Etapa 2 — Marcha blanca & 2.133,32 & 7,3 & Dirección y gobierno\newline Integraciones y datos\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio & 19--20 \\
-Operación & 150.848,00 & 27,8 & Dirección y gobierno\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad\newline Operación y soporte & 21--56 \\
+Etapa 1 — Desarrollo & 42.194,73 & 37 & Dirección y gobierno\newline Levantamiento, alcance y arquitectura\newline Infraestructura híbrida\newline Software\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad & 1--12 \\
+Etapa 1 — Marcha blanca & 4.646,56 & 19 & Dirección y gobierno\newline Integraciones y datos\newline Implantación, marchas blancas y cambio & 13--15 \\
+Etapa 2 — Desarrollo & 21.235,40 & 36 & Dirección y gobierno\newline Software\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad & 13--18 \\
+Etapa 2 — Marcha blanca & 2.133,32 & 8 & Dirección y gobierno\newline Integraciones y datos\newline Calidad y certificación\newline Innovaciones\newline Implantación, marchas blancas y cambio & 19--20 \\
+Operación & 150.848,00 & 28 & Dirección y gobierno\newline Integraciones y datos\newline Seguridad y cumplimiento\newline Calidad y certificación\newline Implantación, marchas blancas y cambio\newline Documentación y reversibilidad\newline Operación y soporte & 21--56 \\
 \end{longtable}
 \endgroup
 
-La dotación se expresa en personas equivalentes, es decir, HH del mes divididas por 160 HH nominales. El pico de cada etapa es el mes de mayor carga de esa etapa, sin la dirección del proyecto, que se presenta aparte. Una persona equivalente no es una persona distinta; varias personas con dedicación parcial suman una persona equivalente. Esta medida reemplaza al recuento de personas distintas por jornada de la versión anterior, que incluía turnos, desplazamientos y retén. La marcha blanca E1 alcanza su máximo en M13, con la habilitación de las tiendas en enero; el acompañamiento de abril (M16) pertenece a producción y estabilización E1. Dirección y PMO son dos perfiles compartidos a dedicación parcial, presentados separadamente y no incluidos en estos máximos. Los picos de etapas solapadas no se suman, porque pueden ocurrir en meses distintos.
+La dotación se expresa en personas equivalentes, es decir, HH del mes divididas por 160 HH nominales y redondeadas hacia arriba, porque no se asigna una fracción de persona. El pico de cada etapa es el mes de mayor carga de esa etapa, sin la dirección del proyecto, que se presenta aparte. Una persona equivalente no es una persona distinta; varias personas con dedicación parcial suman una persona equivalente. La marcha blanca E1 alcanza su máximo en M13, con la habilitación de las tiendas en enero; el acompañamiento de abril (M16) pertenece a producción y estabilización E1. Dirección y PMO son dos perfiles compartidos a dedicación parcial, presentados separadamente y no incluidos en estos máximos. Los picos de etapas solapadas no se suman, porque pueden ocurrir en meses distintos.
 
 En Operación se consideran 26 personas permanentes más un máximo de ocho especialistas de trabajos complementarios. Se conservan los once frentes de la sección 7.2.3 del Subdocumento 7. La columna identifica por nombre los frentes con tareas o cobertura durante la etapa, incluido el gobierno compartido. Sus intervenciones pueden ocurrir en jornadas distintas; la lista no implica que todos estén activos simultáneamente. El SOC pertenece a Seguridad y cumplimiento; la mesa, NOC, L2, L3 y gerencia de servicio pertenecen a Operación y soporte. Estos perfiles no constituyen frentes nuevos. El retén anterior a M21 se registra en Implantación, marchas blancas y cambio.
 
@@ -1004,69 +1004,69 @@ Las cifras mensuales siguientes expresan en personas equivalentes las HH de cada
 \begingroup
 \small
 \begin{longtable}{@{}p{0.08\linewidth}p{0.23\linewidth}p{0.23\linewidth}p{0.23\linewidth}p{0.13\linewidth}@{}}
-\caption[Personas equivalentes por mes]{Personas equivalentes por mes (HH del mes divididas por 160). Fuente: Elaboración propia.}\label{tab:t15-8}\\
+\caption[Personas equivalentes por mes]{Personas equivalentes por mes (HH del mes divididas por 160, redondeadas hacia arriba). Fuente: Elaboración propia.}\label{tab:t15-8}\\
 \toprule
 \textbf{Mes} & \textbf{Proyecto y campo} & \textbf{Dirección y PMO} & \textbf{Operación e inducción} & \textbf{Total} \\
 \midrule
 \endhead
 \bottomrule
 \endlastfoot
-1 & 12,7 & 1,1 & 0,0 & 13,8 \\
-2 & 13,2 & 1,1 & 0,0 & 14,3 \\
-3 & 36,7 & 1,1 & 0,0 & 37,8 \\
-4 & 35,5 & 1,1 & 0,0 & 36,6 \\
-5 & 35,1 & 1,1 & 0,0 & 36,2 \\
-6 & 27,9 & 1,1 & 0,0 & 29,0 \\
-7 & 29,8 & 1,1 & 0,0 & 30,9 \\
-8 & 31,8 & 1,1 & 0,0 & 32,9 \\
-9 & 6,9 & 1,1 & 0,0 & 8,0 \\
-10 & 18,7 & 1,1 & 0,0 & 19,8 \\
-11 & 13,4 & 1,1 & 0,0 & 14,5 \\
-12 & 3,4 & 1,1 & 0,0 & 4,5 \\
-13 & 31,6 & 1,1 & 0,0 & 32,7 \\
-14 & 20,6 & 1,1 & 0,0 & 21,7 \\
-15 & 36,3 & 1,1 & 0,0 & 37,4 \\
-16 & 105,6 & 1,1 & 0,0 & 106,7 \\
-17 & 29,2 & 1,1 & 0,0 & 30,3 \\
-18 & 9,6 & 1,1 & 0,0 & 10,7 \\
-19 & 7,3 & 1,1 & 0,0 & 8,4 \\
-20 & 3,4 & 1,1 & 2,6 & 7,1 \\
-21 & 2,1 & 0,4 & 26,0 & 28,5 \\
-22 & 2,4 & 0,4 & 26,0 & 28,8 \\
-23 & 1,3 & 0,4 & 26,0 & 27,7 \\
-24 & 1,5 & 0,4 & 26,0 & 27,9 \\
-25 & 0,0 & 0,4 & 26,0 & 26,4 \\
-26 & 0,0 & 0,4 & 26,0 & 26,4 \\
-27 & 1,2 & 0,4 & 26,0 & 27,6 \\
-28 & 0,0 & 0,4 & 26,0 & 26,4 \\
-29 & 0,0 & 0,4 & 26,0 & 26,4 \\
-30 & 0,0 & 0,4 & 26,0 & 26,4 \\
-31 & 0,0 & 0,4 & 26,0 & 26,4 \\
-32 & 0,0 & 0,4 & 26,0 & 26,4 \\
-33 & 0,0 & 0,4 & 26,0 & 26,4 \\
-34 & 0,0 & 0,4 & 26,0 & 26,4 \\
-35 & 0,0 & 0,4 & 26,0 & 26,4 \\
-36 & 0,0 & 0,4 & 26,0 & 26,4 \\
-37 & 0,0 & 0,4 & 26,0 & 26,4 \\
-38 & 0,0 & 0,4 & 26,0 & 26,4 \\
-39 & 0,0 & 0,4 & 26,0 & 26,4 \\
-40 & 0,0 & 0,4 & 26,0 & 26,4 \\
-41 & 0,0 & 0,4 & 26,0 & 26,4 \\
-42 & 0,0 & 0,4 & 26,0 & 26,4 \\
-43 & 0,0 & 0,4 & 26,0 & 26,4 \\
-44 & 0,0 & 0,4 & 26,0 & 26,4 \\
-45 & 0,0 & 0,4 & 26,0 & 26,4 \\
-46 & 0,0 & 0,4 & 26,0 & 26,4 \\
-47 & 0,0 & 0,4 & 26,0 & 26,4 \\
-48 & 1,0 & 0,4 & 26,0 & 27,4 \\
-49 & 0,3 & 0,4 & 26,0 & 26,7 \\
-50 & 0,0 & 0,4 & 26,0 & 26,4 \\
-51 & 0,0 & 0,4 & 26,0 & 26,4 \\
-52 & 0,0 & 0,4 & 26,0 & 26,4 \\
-53 & 0,0 & 0,4 & 26,0 & 26,4 \\
-54 & 1,0 & 0,4 & 26,0 & 27,4 \\
-55 & 0,6 & 0,4 & 26,0 & 27,0 \\
-56 & 0,3 & 0,4 & 26,0 & 26,7 \\
+1 & 13 & 2 & 0 & 15 \\
+2 & 14 & 2 & 0 & 16 \\
+3 & 37 & 2 & 0 & 39 \\
+4 & 36 & 2 & 0 & 38 \\
+5 & 36 & 2 & 0 & 38 \\
+6 & 28 & 2 & 0 & 30 \\
+7 & 30 & 2 & 0 & 32 \\
+8 & 32 & 2 & 0 & 34 \\
+9 & 7 & 2 & 0 & 9 \\
+10 & 19 & 2 & 0 & 21 \\
+11 & 14 & 2 & 0 & 16 \\
+12 & 4 & 2 & 0 & 6 \\
+13 & 32 & 2 & 0 & 34 \\
+14 & 21 & 2 & 0 & 23 \\
+15 & 37 & 2 & 0 & 39 \\
+16 & 106 & 2 & 0 & 108 \\
+17 & 30 & 2 & 0 & 32 \\
+18 & 10 & 2 & 0 & 12 \\
+19 & 8 & 2 & 0 & 10 \\
+20 & 4 & 2 & 3 & 9 \\
+21 & 3 & 1 & 26 & 30 \\
+22 & 3 & 1 & 26 & 30 \\
+23 & 2 & 1 & 26 & 29 \\
+24 & 2 & 1 & 26 & 29 \\
+25 & 0 & 1 & 26 & 27 \\
+26 & 0 & 1 & 26 & 27 \\
+27 & 2 & 1 & 26 & 29 \\
+28 & 0 & 1 & 26 & 27 \\
+29 & 0 & 1 & 26 & 27 \\
+30 & 0 & 1 & 26 & 27 \\
+31 & 0 & 1 & 26 & 27 \\
+32 & 0 & 1 & 26 & 27 \\
+33 & 0 & 1 & 26 & 27 \\
+34 & 0 & 1 & 26 & 27 \\
+35 & 0 & 1 & 26 & 27 \\
+36 & 0 & 1 & 26 & 27 \\
+37 & 0 & 1 & 26 & 27 \\
+38 & 0 & 1 & 26 & 27 \\
+39 & 0 & 1 & 26 & 27 \\
+40 & 0 & 1 & 26 & 27 \\
+41 & 0 & 1 & 26 & 27 \\
+42 & 0 & 1 & 26 & 27 \\
+43 & 0 & 1 & 26 & 27 \\
+44 & 0 & 1 & 26 & 27 \\
+45 & 0 & 1 & 26 & 27 \\
+46 & 0 & 1 & 26 & 27 \\
+47 & 0 & 1 & 26 & 27 \\
+48 & 1 & 1 & 26 & 28 \\
+49 & 1 & 1 & 26 & 28 \\
+50 & 0 & 1 & 26 & 27 \\
+51 & 0 & 1 & 26 & 27 \\
+52 & 0 & 1 & 26 & 27 \\
+53 & 0 & 1 & 26 & 27 \\
+54 & 1 & 1 & 26 & 28 \\
+55 & 1 & 1 & 26 & 28 \\
+56 & 1 & 1 & 26 & 28 \\
 \end{longtable}
 \endgroup
 
@@ -1080,22 +1080,22 @@ Las cifras mensuales siguientes expresan en personas equivalentes las HH de cada
 \endhead
 \bottomrule
 \endlastfoot
-Analista / Diseñador (UX) & 0,0 & 0,5 & 0,8 \\
-Analista / Diseñador (negocio) & 5,1 & 1,9 & 1,2 \\
-Analista QA (ejecución de pruebas) & 2,9 & 2,2 & 2,0 \\
-Arquitecto (solución) & 9,3 & 5,1 & 0,1 \\
-Especialista en comunicación y cambio (adicional) & 0,0 & 0,2 & 0,0 \\
-Especialista en procesos logísticos (adicional) & 1,0 & 0,0 & 0,0 \\
-Especialista financiero y de cumplimiento (adicional) & 1,5 & 0,8 & 0,0 \\
-Formador de usuarios (adicional) & 1,6 & 0,0 & 2,2 \\
-Ingeniero (IoT y hardware) & 0,0 & 0,0 & 0,1 \\
-Ingeniero (desarrollo) & 0,0 & 4,4 & 22,1 \\
-Ingeniero DevOps / SRE & 0,0 & 0,0 & 0,1 \\
-Ingeniero de Datos (integración y migración) & 6,8 & 3,5 & 3,1 \\
-Ingeniero de Datos (modelos y ML) & 0,0 & 1,2 & 1,5 \\
-Jefe de Desarrollo & 0,2 & 0,8 & 0,9 \\
-TIC (implantación) & 3,2 & 0,0 & 2,2 \\
-Total & 31,6 & 20,6 & 36,3 \\
+Analista / Diseñador (UX) & 0 & 1 & 1 \\
+Analista / Diseñador (negocio) & 6 & 2 & 2 \\
+Analista QA (ejecución de pruebas) & 3 & 3 & 2 \\
+Arquitecto (solución) & 10 & 6 & 1 \\
+Especialista en comunicación y cambio (adicional) & 0 & 1 & 0 \\
+Especialista en procesos logísticos (adicional) & 1 & 0 & 0 \\
+Especialista financiero y de cumplimiento (adicional) & 2 & 1 & 0 \\
+Formador de usuarios (adicional) & 2 & 0 & 3 \\
+Ingeniero (IoT y hardware) & 0 & 0 & 1 \\
+Ingeniero (desarrollo) & 0 & 5 & 23 \\
+Ingeniero DevOps / SRE & 0 & 0 & 1 \\
+Ingeniero de Datos (integración y migración) & 7 & 4 & 4 \\
+Ingeniero de Datos (modelos y ML) & 0 & 2 & 2 \\
+Jefe de Desarrollo & 1 & 1 & 1 \\
+TIC (implantación) & 4 & 0 & 3 \\
+Total & 36 & 26 & 44 \\
 \end{longtable}
 \endgroup
 
@@ -1109,21 +1109,21 @@ Total & 31,6 & 20,6 & 36,3 \\
 \endhead
 \bottomrule
 \endlastfoot
-Analista / Diseñador (UX) & 0,0 & 0,1 & 0,0 \\
-Analista / Diseñador (negocio) & 1,9 & 0,5 & 0,1 \\
-Analista QA (ejecución de pruebas) & 0,5 & 1,8 & 0,9 \\
-Analista QA (ingeniería de pruebas) & 3,8 & 0,0 & 0,0 \\
-Arquitecto (solución) & 0,2 & 0,0 & 0,0 \\
-Especialista en comunicación y cambio (adicional) & 0,0 & 0,1 & 0,0 \\
-Especialista financiero y de cumplimiento (adicional) & 0,0 & 0,9 & 0,0 \\
-Formador de usuarios (adicional) & 24,2 & 0,2 & 0,0 \\
-Ingeniero (IoT y hardware) & 1,2 & 0,2 & 0,0 \\
-Ingeniero (desarrollo) & 19,3 & 0,0 & 0,1 \\
-Ingeniero de Datos (integración y migración) & 1,2 & 3,4 & 2,3 \\
-Ingeniero de Datos (modelos y ML) & 2,7 & 0,0 & 0,0 \\
-Jefe de Desarrollo & 4,4 & 0,0 & 0,0 \\
-TIC (implantación) & 46,2 & 0,2 & 0,0 \\
-Total & 105,6 & 7,3 & 3,4 \\
+Analista / Diseñador (UX) & 0 & 1 & 0 \\
+Analista / Diseñador (negocio) & 2 & 1 & 1 \\
+Analista QA (ejecución de pruebas) & 1 & 2 & 1 \\
+Analista QA (ingeniería de pruebas) & 4 & 0 & 0 \\
+Arquitecto (solución) & 1 & 0 & 0 \\
+Especialista en comunicación y cambio (adicional) & 0 & 1 & 0 \\
+Especialista financiero y de cumplimiento (adicional) & 0 & 1 & 0 \\
+Formador de usuarios (adicional) & 25 & 1 & 0 \\
+Ingeniero (IoT y hardware) & 2 & 1 & 0 \\
+Ingeniero (desarrollo) & 20 & 0 & 1 \\
+Ingeniero de Datos (integración y migración) & 2 & 4 & 3 \\
+Ingeniero de Datos (modelos y ML) & 3 & 0 & 0 \\
+Jefe de Desarrollo & 5 & 0 & 0 \\
+TIC (implantación) & 47 & 1 & 0 \\
+Total & 112 & 13 & 6 \\
 \end{longtable}
 \endgroup
 
@@ -1145,21 +1145,21 @@ La dirección y PMO se mantienen en Dirección y gobierno, con dos perfiles parc
 \endhead
 \bottomrule
 \endlastfoot
-M13 & 1 · Dirección y gobierno & 1,1 & 0,00 \\
-M13 & 4 · Software & 13,3 & 2.124,87 \\
-M13 & 5 · Integraciones y datos & 7,2 & 1.146,67 \\
-M13 & 9 · Implantación, marchas blancas y cambio & 9,0 & 1.432,99 \\
-M14 & 1 · Dirección y gobierno & 1,1 & 0,00 \\
-M14 & 4 · Software & 4,3 & 692,65 \\
-M14 & 5 · Integraciones y datos & 1,7 & 280,00 \\
-M14 & 8 · Innovaciones & 11,2 & 1.794,68 \\
-M14 & 9 · Implantación, marchas blancas y cambio & 3,4 & 536,33 \\
-M15 & 1 · Dirección y gobierno & 1,1 & 0,00 \\
-M15 & 4 · Software & 16,9 & 2.696,41 \\
-M15 & 5 · Integraciones y datos & 5,0 & 803,60 \\
-M15 & 7 · Calidad y certificación & 0,4 & 65,33 \\
-M15 & 8 · Innovaciones & 6,4 & 1.028,32 \\
-M15 & 9 · Implantación, marchas blancas y cambio & 7,6 & 1.208,68 \\
+M13 & 1 · Dirección y gobierno & 2 & 0,00 \\
+M13 & 4 · Software & 14 & 2.124,87 \\
+M13 & 5 · Integraciones y datos & 8 & 1.146,67 \\
+M13 & 9 · Implantación, marchas blancas y cambio & 9 & 1.432,99 \\
+M14 & 1 · Dirección y gobierno & 2 & 0,00 \\
+M14 & 4 · Software & 5 & 692,65 \\
+M14 & 5 · Integraciones y datos & 2 & 280,00 \\
+M14 & 8 · Innovaciones & 12 & 1.794,68 \\
+M14 & 9 · Implantación, marchas blancas y cambio & 4 & 536,33 \\
+M15 & 1 · Dirección y gobierno & 2 & 0,00 \\
+M15 & 4 · Software & 17 & 2.696,41 \\
+M15 & 5 · Integraciones y datos & 5 & 803,60 \\
+M15 & 7 · Calidad y certificación & 1 & 65,33 \\
+M15 & 8 · Innovaciones & 7 & 1.028,32 \\
+M15 & 9 · Implantación, marchas blancas y cambio & 8 & 1.208,68 \\
 \end{longtable}
 \endgroup
 
@@ -1173,15 +1173,15 @@ M15 & 9 · Implantación, marchas blancas y cambio & 7,6 & 1.208,68 \\
 \endhead
 \bottomrule
 \endlastfoot
-M19 & 1 · Dirección y gobierno & 1,1 & 0,00 \\
-M19 & 5 · Integraciones y datos & 0,8 & 124,00 \\
-M19 & 7 · Calidad y certificación & 0,2 & 30,00 \\
-M19 & 8 · Innovaciones & 0,8 & 128,00 \\
-M19 & 9 · Implantación, marchas blancas y cambio & 3,3 & 533,04 \\
-M20 & 1 · Dirección y gobierno & 1,1 & 0,00 \\
-M20 & 8 · Innovaciones & 0,3 & 48,00 \\
-M20 & 9 · Implantación, marchas blancas y cambio & 3,1 & 500,96 \\
-M20 & 11 · Operación y soporte & 2,6 & 0,00 \\
+M19 & 1 · Dirección y gobierno & 2 & 0,00 \\
+M19 & 5 · Integraciones y datos & 1 & 124,00 \\
+M19 & 7 · Calidad y certificación & 1 & 30,00 \\
+M19 & 8 · Innovaciones & 1 & 128,00 \\
+M19 & 9 · Implantación, marchas blancas y cambio & 4 & 533,04 \\
+M20 & 1 · Dirección y gobierno & 2 & 0,00 \\
+M20 & 8 · Innovaciones & 1 & 48,00 \\
+M20 & 9 · Implantación, marchas blancas y cambio & 4 & 500,96 \\
+M20 & 11 · Operación y soporte & 3 & 0,00 \\
 \end{longtable}
 \endgroup
 
@@ -1231,7 +1231,7 @@ Se reserva el 15 \% de capacidad efectiva del equipo de desarrollo para deuda t�
 
 La nivelación desplaza actividades independientes dentro de su holgura y asigna especialistas adicionales cuando los hitos exigen frentes concurrentes. La intensificación se concentra en tareas que admiten reparto de trabajo; las revisiones, evidencias y marchas blancas mantienen su duración. Los solapamientos de construcción, integración y pruebas requieren una entrega parcial verificable. Una dependencia FS no se sustituye por SS únicamente para acortar el dibujo del cronograma.
 
-La programación se estabilizó dentro de las holguras. Se desplazaron 77 actividades, con 10.636,05 HH, entre su inicio temprano y su inicio tardío, sin mover hitos ni fechas contractuales. Cada actividad desplazada conserva al menos 10 días hábiles de margen, o el que ya tenía si era menor, y ninguna actividad de la Etapa 2 empieza antes de M13. Con el trabajo de la red, el pico de M15 baja de 46,3 a 30,9 personas equivalentes y el desarrollo de la Etapa 2 se reparte entre M15 y M17. El mayor valor queda en M4, con 38,5 personas equivalentes, porque la cadena hacia H3 tiene poco margen. La Figura 7.17 del Subdocumento 7 compara ambas programaciones.
+La programación se estabilizó dentro de las holguras. Se desplazaron 77 actividades, con 10.636,05 HH, entre su inicio temprano y su inicio tardío, sin mover hitos ni fechas contractuales. Cada actividad desplazada conserva al menos 10 días hábiles de margen, o el que ya tenía si era menor, y ninguna actividad de la Etapa 2 empieza antes de M13. Con el trabajo programado, el pico de M15 baja de 52 a 37 personas equivalentes y el desarrollo de la Etapa 2 se reparte hacia M16 y M17. Los meses M3 a M5 mantienen entre 36 y 37 personas equivalentes porque la cadena hacia H3 tiene poco margen. La Figura 7.19 del Subdocumento 7 compara ambas programaciones.
 
 Las intervenciones productivas se sitúan fuera de las ventanas bloqueadas; análisis, construcción y pruebas en ambientes aislados pueden continuar. Los eventos anuales requieren preparar ensayos y recursos antes de su ventana efectiva y confirmar sus fechas antes de comprometer una intervención. El congelamiento no se utiliza para reducir las marchas blancas ni posponer funciones exigidas en H7 o H12.
 
@@ -1350,7 +1350,7 @@ Las cadenas parten de la primera actividad cuya fecha temprana está gobernada p
 \end{longtable}
 \endgroup
 
-La prueba de corte de enlace del piloto (1.9.9) tiene 3 días de holgura total, pero queda programada en su inicio tardío para coincidir con la instalación del lote 1; no le queda margen. La capacitación de la Etapa 2 se divide en dos partes. La parte anticipada de M17 (576 HH) no depende del software, y la parte dictada desde H9 (1.344 HH) tiene 3 días de holgura; por eso deja de pertenecer a una cadena vinculante de H12.
+La prueba de corte de enlace del piloto (1.9.9) tiene 3 días de holgura total, pero queda programada en su inicio tardío para coincidir con la instalación del lote 1; no le queda margen. La capacitación de la Etapa 2 se divide en dos partes. La parte anticipada de M17 (576 HH) no depende del software, y la parte dictada desde H9 (1.344 HH) tiene 3 días de holgura; por eso no forma parte de las cadenas vinculantes de H12.
 
 Las relaciones de las tablas incluyen FS, SS y FF conforme a la red; las flechas indican precedencia, no necesariamente espera hasta terminar toda la actividad. La revisión del expediente puede solaparse con la observación cuando la entrega parcial existe. Una cadena gobernada por cobertura continua no implica que toda la construcción de software carezca de holgura.
 
@@ -2411,7 +2411,7 @@ Se conserva una reserva separada de 3.688 HH para respuestas a riesgos. No forma
 
 El monto de 3.688 HH corresponde al escenario vigente de riesgos; no constituye una garantía de cobertura de todos los incidentes ni un percentil de confianza PERT. La revisión de impactos y probabilidades se concilia con el Subdocumento 8 antes de modificar esa reserva. Los escenarios de activación del retén no se declaran financiados automáticamente por ella.
 
-El análisis de escenarios de atraso del Subdocumento 7 (sección 7.3.3.2) atrasó 10 días hábiles la actividad que dispara cada uno de siete frentes, más una variante. Las respuestas que recuperan la fecha suman 491 HH, más el equivalente a unas 134 HH por el recargo de las horas extraordinarias. Se financian con esta reserva y se imputan al riesgo que las origina. El Jefe de Proyecto activa una respuesta cuando el control semanal muestra que el atraso de una actividad supera su margen restante.
+El análisis de escenarios de atraso del Subdocumento 7 (sección 7.3.3.2) atrasó 10 días hábiles la actividad que dispara cada uno de siete frentes, más una variante, y cada una de las cinco actividades con 2 días hábiles de margen o menos que llegan a la revisión del cliente. Las respuestas que recuperan la fecha suman 853 HH, más el equivalente a unas 147 HH por el recargo de las horas extraordinarias. Se financian con esta reserva y se imputan al riesgo que las origina. El Jefe de Proyecto activa una respuesta cuando el control semanal muestra que el atraso de una actividad supera su margen restante.
 
 \subsection{Incrementos y activación de la reserva}
 
@@ -2441,11 +2441,11 @@ Se utilizó OpenAI Codex para asistir en la conciliación de las HH, la preparac
 \endlastfoot
 Estimación y dotación & OpenAI Codex & Conciliación de datos y redacción del método & Alta & Alex Alfaro \\
 PERT, CPM y curva HH & OpenAI Codex & Preparación y comprobación de cálculos y figura & Alta & Alex Alfaro \\
-Actualización con la red ampliada & Claude Code (Anthropic) & Componentes del Subdocumento 4, recálculo de tablas por paquete, mes, dotación y holguras, estabilización, curva y redacción de los cambios & Alta & Pendiente \\
+Componentes físicos, dotación y holguras & Claude Code (Anthropic) & Componentes del Subdocumento 4, cálculo de tablas por paquete, mes, dotación y holguras, estabilización, curva y redacción & Alta & Pendiente \\
 \end{longtable}
 \endgroup
 
-La presente actualización fue asistida por OpenAI Codex y por Claude Code en texto, cálculos y figuras. La revisión humana de esta versión corresponde al equipo autor y se registrará al realizarse. Los responsables indicados en filas anteriores no implican aprobación de los cambios actuales.
+La revisión humana de las filas marcadas como pendientes corresponde al equipo autor y se registrará al realizarse.
 
 \ossFinalPage
 \end{document}
